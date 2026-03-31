@@ -1,0 +1,684 @@
+"""
+Charged Alpha — Unified Flask Server
+All investing tools served from one app.
+
+Routes:
+  /                              → Homepage
+  /screener/                     → Stock Screener
+  /screener/api/...              → Stock Screener API
+  /etf/                          → ETF Screener
+  /etf/api/...                   → ETF Screener API
+  /crypto/                       → Crypto Screener
+  /crypto/api/...                → Crypto Screener API
+  /options/                      → Options Scanner
+  /options/api/...               → Options Scanner API
+  /bonds/                        → Bond Dashboard
+  /bonds/api/...                 → Bond Dashboard API
+  /reits/                        → REIT Screener
+  /reits/api/...                 → REIT Screener API
+  /forex/                        → Forex Heatmap
+  /forex/api/...                 → Forex Heatmap API
+  /commodities/                  → Commodities Dashboard
+  /commodities/api/...           → Commodities Dashboard API
+  /earnings/                     → Earnings Calendar
+  /earnings/api/...              → Earnings Calendar API
+  /gold/                         → Precious Metals Aggregator
+  /gold/api/...                  → Precious Metals API
+"""
+
+import os
+import uuid
+import time
+import threading
+
+import pandas as pd
+import yfinance as yf
+from flask import Flask, render_template, request, jsonify
+
+# ── Import backend modules ──────────────────────────────────────────────────
+from stock_screener import (screen_stocks, get_stock_detail,
+                            get_sp500_tickers, get_ticker_sector)
+from etf_screener import screen_etfs, get_etf_detail
+from crypto_screener import screen_cryptos, get_crypto_chart
+from options_scanner import scan_options
+from bond_data import get_yields, get_yield_history, get_bond_etfs
+from reit_screener import screen_reits, get_reit_chart
+from forex_data import get_all_pairs, get_pair_chart, get_currency_strength
+from commodities_data import get_all_commodities, get_commodity_chart
+from earnings_data import get_earnings_week, get_stock_earnings_history
+from gold_server import get_spot_price, fetch_ebay, fetch_sdbullion, \
+    fetch_craigslist, generate_facebook_links, get_purity_fraction
+
+app = Flask(__name__)
+
+# ── Shared job store ────────────────────────────────────────────────────────
+jobs: dict = {}
+
+# ── Shared caches ───────────────────────────────────────────────────────────
+_detail_cache: dict = {}
+_chart_cache: dict = {}
+_DETAIL_TTL = 300
+_CHART_TTL = 300
+
+# ── Market cap range definitions ────────────────────────────────────────────
+CAP_RANGES = {
+    "micro":  (0,           300_000_000),
+    "small":  (300_000_000, 2_000_000_000),
+    "mid":    (2_000_000_000, 10_000_000_000),
+    "large":  (10_000_000_000, 200_000_000_000),
+    "mega":   (200_000_000_000, float("inf")),
+}
+
+# ── Live ticker banner ──────────────────────────────────────────────────────
+_ticker_cache: dict = {}
+_TICKER_TTL = 120
+
+BANNER_TICKERS = [
+    "AAPL", "MSFT", "NVDA", "AMZN", "META", "GOOGL", "TSLA", "BRK-B", "JPM",
+    "V", "UNH", "XOM", "JNJ", "WMT", "PG", "MA", "HD", "CVX", "MRK",
+    "ABBV", "PEP", "KO", "COST", "BAC", "AVGO", "TMO", "MCD", "CSCO",
+    "ACN", "NKE", "ORCL", "CRM", "AMGN", "INTC", "QCOM", "SBUX", "GS",
+    "CAT", "BA", "DE", "GE", "IBM", "DIS", "NFLX", "PYPL", "AMD", "T",
+    "F", "GM", "DAL",
+]
+
+
+# ── Helper ──────────────────────────────────────────────────────────────────
+def _f_body(body, key, default=None):
+    v = body.get(key)
+    if v in (None, ""):
+        return default
+    try:
+        return float(v)
+    except (TypeError, ValueError):
+        return default
+
+
+def _start_job(fn, *args):
+    job_id = str(uuid.uuid4())
+    jobs[job_id] = {"status": "running", "processed": 0, "total": 0,
+                    "matches": [], "error": None}
+
+    def run():
+        try:
+            def on_progress(p, t):
+                jobs[job_id]["processed"] = p
+                jobs[job_id]["total"] = t
+
+            def on_match(m):
+                jobs[job_id]["matches"].append(m)
+
+            fn(*args, on_progress=on_progress, on_match=on_match)
+            jobs[job_id]["status"] = "done"
+        except Exception as e:
+            jobs[job_id]["status"] = "error"
+            jobs[job_id]["error"] = str(e)
+
+    threading.Thread(target=run, daemon=True).start()
+    return job_id
+
+
+def _get_job(job_id):
+    job = jobs.get(job_id)
+    if not job:
+        return jsonify({"error": "Job not found"}), 404
+    return jsonify(job)
+
+
+def _chart_helper(symbol, range_key, params_map=None):
+    sym = symbol.upper()
+    cache_key = (sym, range_key)
+    cached = _chart_cache.get(cache_key)
+    ttl = 60 if range_key in ("1d", "1w") else _CHART_TTL
+    if cached and (time.time() - cached[0]) < ttl:
+        return jsonify(cached[1])
+    default_params = {
+        "1d":  dict(period="1d",  interval="5m"),
+        "1w":  dict(period="5d",  interval="30m"),
+        "1m":  dict(period="1mo", interval="1d"),
+        "6m":  dict(period="6mo", interval="1d"),
+        "1y":  dict(period="1y",  interval="1d"),
+        "5y":  dict(period="5y",  interval="1wk"),
+        "10y": dict(period="10y", interval="1mo"),
+    }
+    p = (params_map or default_params).get(range_key, default_params["1y"])
+    try:
+        t = yf.Ticker(sym)
+        hist = t.history(period=p["period"], interval=p["interval"])
+        if hist.empty:
+            return jsonify({"error": "No price data available"}), 404
+        if hist.index.tz is not None:
+            hist.index = hist.index.tz_localize(None)
+        fmt = "%Y-%m-%d %H:%M" if range_key in ("1d", "1w") else "%Y-%m-%d"
+        labels = hist.index.strftime(fmt).tolist()
+        prices = [round(float(v), 2) if pd.notna(v) else None for v in hist["Close"]]
+        data = {"labels": labels, "prices": prices}
+        _chart_cache[cache_key] = (time.time(), data)
+        return jsonify(data)
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+
+
+# ═════════════════════════════════════════════════════════════════════════════
+#  HOMEPAGE
+# ═════════════════════════════════════════════════════════════════════════════
+@app.route("/")
+def index():
+    return render_template("index.html")
+
+
+# ═════════════════════════════════════════════════════════════════════════════
+#  STOCK SCREENER  /screener/
+# ═════════════════════════════════════════════════════════════════════════════
+@app.route("/screener/")
+@app.route("/screener")
+def screener_index():
+    return render_template("stock_screener.html")
+
+
+@app.route("/screener/api/screen", methods=["POST"])
+def screener_start():
+    body = request.get_json(force=True)
+    _f = lambda k, d=None: _f_body(body, k, d)
+
+    cap_labels = body.get("cap_ranges")
+    cap_ranges = None
+    if cap_labels and isinstance(cap_labels, list):
+        cap_ranges = [CAP_RANGES[k] for k in cap_labels if k in CAP_RANGES]
+        if not cap_ranges:
+            cap_ranges = None
+
+    sectors = body.get("sectors")
+    if sectors and isinstance(sectors, list):
+        sectors = [s for s in sectors if s] or None
+    else:
+        sectors = None
+
+    analyst_recs = body.get("analyst_recs")
+    if analyst_recs and isinstance(analyst_recs, list):
+        analyst_recs = [r for r in analyst_recs if r] or None
+    else:
+        analyst_recs = None
+
+    criteria = {
+        "pe_below_historical": bool(body.get("pe_below_historical", False)),
+        "pe_min_discount_pct": _f("pe_min_discount_pct", 0),
+        "min_price": _f("min_price"), "max_price": _f("max_price"),
+        "min_pb": _f("min_pb"), "max_pb": _f("max_pb"),
+        "min_div_yield": _f("min_div_yield"), "max_div_yield": _f("max_div_yield"),
+        "max_payout_ratio": _f("max_payout_ratio"),
+        "min_div_streak": _f("min_div_streak"),
+        "ex_div_window": _f("ex_div_window"),
+        "min_revenue_growth": _f("min_revenue_growth"),
+        "min_eps_growth": _f("min_eps_growth"),
+        "min_w52_perf": _f("min_w52_perf"), "max_w52_perf": _f("max_w52_perf"),
+        "max_w52_dist_high": _f("max_w52_dist_high"),
+        "max_debt_to_equity": _f("max_debt_to_equity"),
+        "min_current_ratio": _f("min_current_ratio"),
+        "min_fcf_yield": _f("min_fcf_yield"),
+        "min_operating_margin": _f("min_operating_margin"),
+        "min_put_iv": _f("min_put_iv"), "max_put_iv": _f("max_put_iv"),
+        "max_put_spread_pct": _f("max_put_spread_pct"),
+        "min_put_oi": _f("min_put_oi"), "min_put_volume": _f("min_put_volume"),
+        "sectors": sectors, "cap_ranges": cap_ranges, "analyst_recs": analyst_recs,
+        "min_analyst_count": _f("min_analyst_count"),
+        "min_target_upside": _f("min_target_upside"),
+    }
+    job_id = _start_job(screen_stocks, criteria)
+    return jsonify({"job_id": job_id})
+
+
+@app.route("/screener/api/screen/<job_id>")
+def screener_status(job_id):
+    return _get_job(job_id)
+
+
+@app.route("/screener/api/stock/<symbol>")
+def screener_stock_detail(symbol):
+    sym = symbol.upper()
+    cached = _detail_cache.get(("stock", sym))
+    if cached and (time.time() - cached[0]) < _DETAIL_TTL:
+        return jsonify(cached[1])
+    data = get_stock_detail(sym)
+    if not data:
+        return jsonify({"error": "Could not load stock data"}), 404
+    _detail_cache[("stock", sym)] = (time.time(), data)
+    return jsonify(data)
+
+
+@app.route("/screener/api/stock/<symbol>/chart")
+def screener_stock_chart(symbol):
+    return _chart_helper(symbol, request.args.get("range", "1y"))
+
+
+@app.route("/screener/api/ticker-banner")
+def screener_ticker_banner():
+    cached = _ticker_cache.get("data")
+    if cached and (time.time() - _ticker_cache.get("ts", 0)) < _TICKER_TTL:
+        return jsonify(cached)
+
+    from concurrent.futures import ThreadPoolExecutor, as_completed
+    results = []
+
+    def fetch(sym):
+        try:
+            t = yf.Ticker(sym)
+            hist = t.history(period="1d", interval="5m")
+            if hist.empty or len(hist) < 2:
+                return None
+            closes = [round(float(v), 2) for v in hist["Close"] if pd.notna(v)]
+            if len(closes) < 2:
+                return None
+            current = closes[-1]
+            open_price = closes[0]
+            change_pct = round((current - open_price) / open_price * 100, 2) if open_price else 0
+            step = max(1, len(closes) // 20)
+            spark = closes[::step]
+            if spark[-1] != closes[-1]:
+                spark.append(closes[-1])
+            return {"symbol": sym, "price": current, "change_pct": change_pct, "spark": spark}
+        except Exception:
+            return None
+
+    with ThreadPoolExecutor(max_workers=15) as pool:
+        futures = {pool.submit(fetch, s): s for s in BANNER_TICKERS}
+        for f in as_completed(futures):
+            r = f.result()
+            if r:
+                results.append(r)
+
+    order = {s: i for i, s in enumerate(BANNER_TICKERS)}
+    results.sort(key=lambda x: order.get(x["symbol"], 999))
+    _ticker_cache["data"] = results
+    _ticker_cache["ts"] = time.time()
+    return jsonify(results)
+
+
+# ═════════════════════════════════════════════════════════════════════════════
+#  ETF SCREENER  /etf/
+# ═════════════════════════════════════════════════════════════════════════════
+@app.route("/etf/")
+@app.route("/etf")
+def etf_index():
+    return render_template("etf_screener.html")
+
+
+@app.route("/etf/api/screen", methods=["POST"])
+def etf_start():
+    body = request.get_json(force=True)
+    _f = lambda k, d=None: _f_body(body, k, d)
+
+    categories = body.get("categories")
+    if categories and isinstance(categories, list):
+        categories = [c for c in categories if c] or None
+    else:
+        categories = None
+
+    asset_classes = body.get("asset_classes")
+    if asset_classes and isinstance(asset_classes, list):
+        asset_classes = [a for a in asset_classes if a] or None
+    else:
+        asset_classes = None
+
+    criteria = {
+        "max_expense_ratio": _f("max_expense_ratio"),
+        "min_aum": _f("min_aum"),
+        "min_div_yield": _f("min_div_yield"), "max_div_yield": _f("max_div_yield"),
+        "min_ytd_return": _f("min_ytd_return"),
+        "min_1y_return": _f("min_1y_return"),
+        "min_3y_return": _f("min_3y_return"),
+        "min_avg_volume": _f("min_avg_volume"),
+        "min_w52_perf": _f("min_w52_perf"), "max_w52_perf": _f("max_w52_perf"),
+        "max_w52_dist_high": _f("max_w52_dist_high"),
+        "categories": categories, "asset_classes": asset_classes,
+    }
+    job_id = _start_job(screen_etfs, criteria)
+    return jsonify({"job_id": job_id})
+
+
+@app.route("/etf/api/screen/<job_id>")
+def etf_status(job_id):
+    return _get_job(job_id)
+
+
+@app.route("/etf/api/etf/<symbol>")
+def etf_detail(symbol):
+    sym = symbol.upper()
+    cached = _detail_cache.get(("etf", sym))
+    if cached and (time.time() - cached[0]) < _DETAIL_TTL:
+        return jsonify(cached[1])
+    data = get_etf_detail(sym)
+    if not data:
+        return jsonify({"error": "Could not load ETF data"}), 404
+    _detail_cache[("etf", sym)] = (time.time(), data)
+    return jsonify(data)
+
+
+@app.route("/etf/api/etf/<symbol>/chart")
+def etf_chart(symbol):
+    return _chart_helper(symbol, request.args.get("range", "1y"))
+
+
+# ═════════════════════════════════════════════════════════════════════════════
+#  CRYPTO SCREENER  /crypto/
+# ═════════════════════════════════════════════════════════════════════════════
+@app.route("/crypto/")
+@app.route("/crypto")
+def crypto_index():
+    return render_template("crypto_screener.html")
+
+
+@app.route("/crypto/api/screen", methods=["POST"])
+def crypto_start():
+    body = request.get_json(force=True)
+    _f = lambda k, d=None: _f_body(body, k, d)
+    criteria = {
+        "min_price": _f("min_price"), "max_price": _f("max_price"),
+        "min_market_cap": _f("min_market_cap"), "max_market_cap": _f("max_market_cap"),
+        "min_change_24h": _f("min_change_24h"), "max_change_24h": _f("max_change_24h"),
+        "min_change_7d": _f("min_change_7d"), "max_change_7d": _f("max_change_7d"),
+        "min_volume": _f("min_volume"), "max_volume": _f("max_volume"),
+    }
+    job_id = _start_job(screen_cryptos, criteria)
+    return jsonify({"job_id": job_id})
+
+
+@app.route("/crypto/api/screen/<job_id>")
+def crypto_status(job_id):
+    return _get_job(job_id)
+
+
+@app.route("/crypto/api/crypto/<coin_id>/chart")
+def crypto_chart_route(coin_id):
+    days = request.args.get("days", "30")
+    data = get_crypto_chart(coin_id, days)
+    if not data:
+        return jsonify({"error": "No chart data"}), 404
+    return jsonify(data)
+
+
+# ═════════════════════════════════════════════════════════════════════════════
+#  OPTIONS SCANNER  /options/
+# ═════════════════════════════════════════════════════════════════════════════
+@app.route("/options/")
+@app.route("/options")
+def options_index():
+    return render_template("options_scanner.html")
+
+
+@app.route("/options/api/scan", methods=["POST"])
+def options_start():
+    body = request.get_json(force=True)
+    _f = lambda k, d=None: _f_body(body, k, d)
+
+    symbols_raw = body.get("symbols", "")
+    if isinstance(symbols_raw, str):
+        symbols = [s.strip().upper() for s in symbols_raw.split(",") if s.strip()]
+    else:
+        symbols = symbols_raw
+
+    criteria = {
+        "symbols": symbols if symbols else None,
+        "option_type": body.get("option_type", "both"),
+        "min_oi": _f("min_oi"), "min_volume": _f("min_volume"),
+        "max_spread_pct": _f("max_spread_pct"),
+        "min_dte": _f("min_dte"), "max_dte": _f("max_dte"),
+        "min_vol_oi": _f("min_vol_oi"),
+        "unusual_only": bool(body.get("unusual_only", False)),
+    }
+    job_id = _start_job(scan_options, criteria)
+    return jsonify({"job_id": job_id})
+
+
+@app.route("/options/api/scan/<job_id>")
+def options_status(job_id):
+    return _get_job(job_id)
+
+
+# ═════════════════════════════════════════════════════════════════════════════
+#  BOND DASHBOARD  /bonds/
+# ═════════════════════════════════════════════════════════════════════════════
+@app.route("/bonds/")
+@app.route("/bonds")
+def bonds_index():
+    return render_template("bond_dashboard.html")
+
+
+@app.route("/bonds/api/yields")
+def bonds_yields():
+    return jsonify(get_yields())
+
+
+@app.route("/bonds/api/yields/history")
+def bonds_yield_history():
+    ticker = request.args.get("ticker", "^TNX")
+    range_key = request.args.get("range", "1y")
+    return jsonify(get_yield_history(ticker, range_key))
+
+
+@app.route("/bonds/api/etfs")
+def bonds_etfs():
+    return jsonify(get_bond_etfs())
+
+
+# ═════════════════════════════════════════════════════════════════════════════
+#  REIT SCREENER  /reits/
+# ═════════════════════════════════════════════════════════════════════════════
+@app.route("/reits/")
+@app.route("/reits")
+def reits_index():
+    return render_template("reit_screener.html")
+
+
+@app.route("/reits/api/screen", methods=["POST"])
+def reits_start():
+    body = request.get_json(force=True)
+    _f = lambda k, d=None: _f_body(body, k, d)
+
+    sectors = body.get("sectors")
+    if sectors and isinstance(sectors, list):
+        sectors = [s for s in sectors if s] or None
+    else:
+        sectors = None
+
+    criteria = {
+        "min_div_yield": _f("min_div_yield"), "max_div_yield": _f("max_div_yield"),
+        "min_price": _f("min_price"), "max_price": _f("max_price"),
+        "min_pe": _f("min_pe"), "max_pe": _f("max_pe"),
+        "max_debt_to_equity": _f("max_debt_to_equity"),
+        "min_market_cap": _f("min_market_cap"),
+        "min_w52_perf": _f("min_w52_perf"), "max_w52_perf": _f("max_w52_perf"),
+        "sectors": sectors,
+    }
+    job_id = _start_job(screen_reits, criteria)
+    return jsonify({"job_id": job_id})
+
+
+@app.route("/reits/api/screen/<job_id>")
+def reits_status(job_id):
+    return _get_job(job_id)
+
+
+@app.route("/reits/api/reit/<symbol>/chart")
+def reits_chart(symbol):
+    return _chart_helper(symbol, request.args.get("range", "1y"))
+
+
+# ═════════════════════════════════════════════════════════════════════════════
+#  FOREX HEATMAP  /forex/
+# ═════════════════════════════════════════════════════════════════════════════
+@app.route("/forex/")
+@app.route("/forex")
+def forex_index():
+    return render_template("forex_heatmap.html")
+
+
+@app.route("/forex/api/pairs")
+def forex_pairs():
+    tf = request.args.get("timeframe", "1d")
+    return jsonify(get_all_pairs(tf))
+
+
+@app.route("/forex/api/strength")
+def forex_strength():
+    tf = request.args.get("timeframe", "1d")
+    return jsonify(get_currency_strength(tf))
+
+
+@app.route("/forex/api/pair/<pair>/chart")
+def forex_pair_chart(pair):
+    range_key = request.args.get("range", "1y")
+    data = get_pair_chart(pair, range_key)
+    if not data:
+        return jsonify({"error": "No data"}), 404
+    return jsonify(data)
+
+
+# ═════════════════════════════════════════════════════════════════════════════
+#  COMMODITIES DASHBOARD  /commodities/
+# ═════════════════════════════════════════════════════════════════════════════
+@app.route("/commodities/")
+@app.route("/commodities")
+def commodities_index():
+    return render_template("commodities_dashboard.html")
+
+
+@app.route("/commodities/api/commodities")
+def commodities_data():
+    return jsonify(get_all_commodities())
+
+
+@app.route("/commodities/api/commodity/<path:ticker>/chart")
+def commodities_chart(ticker):
+    range_key = request.args.get("range", "1y")
+    data = get_commodity_chart(ticker, range_key)
+    if not data:
+        return jsonify({"error": "No data"}), 404
+    return jsonify(data)
+
+
+# ═════════════════════════════════════════════════════════════════════════════
+#  EARNINGS CALENDAR  /earnings/
+# ═════════════════════════════════════════════════════════════════════════════
+@app.route("/earnings/")
+@app.route("/earnings")
+def earnings_index():
+    return render_template("earnings_calendar.html")
+
+
+@app.route("/earnings/api/earnings")
+def earnings_data():
+    week = request.args.get("week")
+    sector = request.args.get("sector")
+    return jsonify(get_earnings_week(week, sector))
+
+
+@app.route("/earnings/api/stock/<symbol>/earnings-history")
+def earnings_history(symbol):
+    return jsonify(get_stock_earnings_history(symbol.upper()))
+
+
+# ═════════════════════════════════════════════════════════════════════════════
+#  PRECIOUS METALS (GOLD)  /gold/
+# ═════════════════════════════════════════════════════════════════════════════
+@app.route("/gold/")
+@app.route("/gold")
+def gold_index():
+    return render_template("gold.html")
+
+
+@app.route("/gold/api/spot")
+def gold_spot():
+    metal = request.args.get("metal", "gold").lower()
+    if metal not in ("gold", "silver", "platinum"):
+        metal = "gold"
+    price = get_spot_price(metal)
+    return jsonify({"price": price, "metal": metal})
+
+
+@app.route("/gold/api/listings")
+def gold_listings():
+    metal = request.args.get("metal", "gold").lower()
+    if metal not in ("gold", "silver", "platinum"):
+        metal = "gold"
+
+    src = (request.args.get("source", "") or "").lower().replace(" ", "")
+    min_karat_raw = request.args.get("min_karat")
+    max_karat_raw = request.args.get("max_karat")
+    item_type = request.args.get("type")
+    include_misc = request.args.get("include_misc", "0") == "1"
+    q = (request.args.get("q", "") or "").lower()
+    min_price_raw = request.args.get("min_price")
+    max_price_raw = request.args.get("max_price")
+    min_weight_raw = request.args.get("min_weight_oz")
+    max_weight_raw = request.args.get("max_weight_oz")
+
+    min_purity_frac = get_purity_fraction(min_karat_raw, metal) if min_karat_raw else None
+    max_purity_frac = get_purity_fraction(max_karat_raw, metal) if max_karat_raw else None
+    min_price = float(min_price_raw) if min_price_raw else None
+    max_price = float(max_price_raw) if max_price_raw else None
+    min_weight = float(min_weight_raw) if min_weight_raw else None
+    max_weight = float(max_weight_raw) if max_weight_raw else None
+
+    spot = get_spot_price(metal)
+
+    from concurrent.futures import ThreadPoolExecutor
+    listings = []
+    with ThreadPoolExecutor(max_workers=4) as ex:
+        futs = {}
+        if not src or src == "ebay":
+            futs["ebay"] = ex.submit(fetch_ebay, metal, include_misc)
+        if not src or src == "sdbullion":
+            futs["sd"] = ex.submit(fetch_sdbullion, metal)
+        if include_misc and (not src or src == "craigslist"):
+            futs["cl"] = ex.submit(fetch_craigslist, metal)
+        if include_misc and (not src or src == "facebook"):
+            futs["fb"] = ex.submit(generate_facebook_links, metal)
+        for name, fut in futs.items():
+            try:
+                listings.extend(fut.result())
+            except Exception as e:
+                print(f"[gold api] {name}: {e}")
+
+    if item_type:
+        listings = [l for l in listings if l.get("type") == item_type]
+    if min_purity_frac is not None or max_purity_frac is not None:
+        filtered = []
+        for l in listings:
+            pf = l.get("purity_fraction")
+            if pf is None:
+                continue
+            if min_purity_frac is not None and pf < min_purity_frac:
+                continue
+            if max_purity_frac is not None and pf > max_purity_frac:
+                continue
+            filtered.append(l)
+        listings = filtered
+    if min_price is not None:
+        listings = [l for l in listings if l.get("price", 0) >= min_price]
+    if max_price is not None:
+        listings = [l for l in listings if l.get("price", 0) <= max_price]
+    if min_weight is not None:
+        listings = [l for l in listings if (l.get("weight_oz") or 0) >= min_weight]
+    if max_weight is not None:
+        listings = [l for l in listings if l.get("weight_oz") and l["weight_oz"] <= max_weight]
+    if q:
+        listings = [l for l in listings if q in l.get("title", "").lower()]
+
+    listings = [l for l in listings if l.get("weight_oz") and not l.get("is_search_link")]
+    listings.sort(key=lambda x: x["price"])
+
+    return jsonify({
+        "count": len(listings),
+        "spot_price": spot,
+        "metal": metal,
+        "listings": listings,
+    })
+
+
+# ═════════════════════════════════════════════════════════════════════════════
+#  RUN
+# ═════════════════════════════════════════════════════════════════════════════
+if __name__ == "__main__":
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host="0.0.0.0", port=port, debug=False)

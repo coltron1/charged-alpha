@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Bond & Treasury Dashboard — Charged Alpha</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Inter',system-ui,sans-serif}
+body{background:#0a0f1e;color:#e2e8f0;min-height:100vh}
+header{background:#111827;border-bottom:1px solid #1e293b;padding:16px 24px;display:flex;align-items:center;justify-content:space-between}
+.logo{display:flex;align-items:center;gap:10px;font-weight:800;color:white;font-size:14px;text-decoration:none}
+.logo-bolt{width:36px;height:36px;background:linear-gradient(135deg,#6366f1,#8b5cf6);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:18px}
+h1{font-size:22px;color:white;font-weight:700}
+.container{max-width:1200px;margin:0 auto;padding:20px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.grid4{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:16px}
+.card{background:#111827;border:1px solid #1e293b;border-radius:12px;padding:20px}
+.card h3{color:white;font-size:16px;margin-bottom:12px}
+.yield-card{text-align:center}
+.yield-val{font-size:32px;font-weight:800;color:white;margin:8px 0}
+.yield-name{font-size:13px;color:#94a3b8}
+.yield-change{font-size:14px;font-weight:600}
+.green{color:#10b981}.red{color:#ef4444}
+.spread-card{display:flex;justify-content:space-around;align-items:center;padding:24px}
+.spread-item{text-align:center}
+.spread-val{font-size:28px;font-weight:800}
+.spread-label{font-size:12px;color:#94a3b8;margin-top:4px}
+.inverted{color:#ef4444}.normal{color:#10b981}
+table{width:100%;border-collapse:collapse;font-size:13px}
+th{background:#1e293b;color:#94a3b8;font-weight:600;text-transform:uppercase;font-size:11px;letter-spacing:.5px;padding:10px 12px;text-align:left}
+td{padding:10px 12px;border-bottom:1px solid #1e293b}
+.right{text-align:right}
+.range-btns{display:flex;gap:6px;margin-bottom:12px}
+.range-btn{padding:5px 12px;border-radius:6px;border:1px solid #334155;background:transparent;color:#94a3b8;font-size:12px;font-weight:600;cursor:pointer;transition:.15s}
+.range-btn:hover,.range-btn.active{background:rgba(6,182,212,.1);border-color:#06b6d4;color:#06b6d4}
+.section-title{font-size:18px;font-weight:700;color:white;margin:24px 0 16px}
+.refresh-note{font-size:11px;color:#475569;text-align:right;margin-top:8px}
+</style>
+</head>
+<body>
+<header>
+  <a href="http://localhost:8080" class="logo"><div class="logo-bolt">⚡</div>CHARGED ALPHA</a>
+  <h1>🏛 Bond & Treasury Dashboard</h1>
+</header>
+<div class="container">
+  <!-- Yield Cards -->
+  <div class="section-title">Current Treasury Yields</div>
+  <div class="grid4" id="yieldCards"></div>
+
+  <!-- Spreads -->
+  <div class="section-title">Yield Spreads</div>
+  <div class="card spread-card" id="spreadCard">
+    <div class="spread-item"><div class="spread-val" id="spread_10_3m">—</div><div class="spread-label">10Y − 3M Spread</div></div>
+    <div class="spread-item"><div class="spread-val" id="spread_30_10">—</div><div class="spread-label">30Y − 10Y Spread</div></div>
+  </div>
+
+  <!-- Charts -->
+  <div class="grid2" style="margin-top:20px">
+    <div class="card">
+      <h3>Yield Curve</h3>
+      <canvas id="curveChart" height="200"></canvas>
+    </div>
+    <div class="card">
+      <h3>10-Year Treasury History</h3>
+      <div class="range-btns">
+        <button class="range-btn active" onclick="loadHistory('^TNX','1m',this)">1M</button>
+        <button class="range-btn" onclick="loadHistory('^TNX','3m',this)">3M</button>
+        <button class="range-btn" onclick="loadHistory('^TNX','1y',this)">1Y</button>
+        <button class="range-btn" onclick="loadHistory('^TNX','5y',this)">5Y</button>
+      </div>
+      <canvas id="histChart" height="200"></canvas>
+    </div>
+  </div>
+
+  <!-- Bond ETFs -->
+  <div class="section-title">Bond ETF Tracker</div>
+  <div class="card">
+    <table>
+      <thead><tr><th>Symbol</th><th>Name</th><th class="right">Price</th><th class="right">Day Change</th><th class="right">YTD Return</th><th class="right">Div Yield</th></tr></thead>
+      <tbody id="etfBody"></tbody>
+    </table>
+  </div>
+  <div class="refresh-note">Auto-refreshes every 5 minutes</div>
+</div>
+
+<script>
+let curveChart=null,histChart=null;
+
+async function loadYields(){
+  const d=await(await fetch('/bonds/api/yields')).json();
+  const cards=document.getElementById('yieldCards');
+  cards.innerHTML=d.yields.map(y=>`
+    <div class="card yield-card">
+      <div class="yield-name">${y.name}</div>
+      <div class="yield-val">${y.yield_pct.toFixed(3)}%</div>
+      <div class="yield-change ${y.change>=0?'green':'red'}">${y.change>=0?'+':''}${y.change.toFixed(3)}</div>
+    </div>
+  `).join('');
+
+  // Spreads
+  if(d.spreads.hasOwnProperty('10Y_3M')){
+    const v=d.spreads['10Y_3M'];
+    const el=document.getElementById('spread_10_3m');
+    el.textContent=v.toFixed(3)+'%';
+    el.className='spread-val '+(v<0?'inverted':'normal');
+  }
+  if(d.spreads.hasOwnProperty('30Y_10Y')){
+    const v=d.spreads['30Y_10Y'];
+    const el=document.getElementById('spread_30_10');
+    el.textContent=v.toFixed(3)+'%';
+    el.className='spread-val '+(v<0?'inverted':'normal');
+  }
+
+  // Yield curve
+  if(curveChart) curveChart.destroy();
+  const sorted=[...d.yields].sort((a,b)=>a.maturity-b.maturity);
+  const ctx=document.getElementById('curveChart').getContext('2d');
+  curveChart=new Chart(ctx,{type:'line',data:{labels:sorted.map(y=>y.name.replace(' Treasury','')),datasets:[{label:'Yield %',data:sorted.map(y=>y.yield_pct),borderColor:'#06b6d4',backgroundColor:'rgba(6,182,212,.1)',fill:true,tension:.4,pointRadius:6,pointBackgroundColor:'#06b6d4'}]},options:{responsive:true,plugins:{legend:{display:false}},scales:{y:{ticks:{color:'#64748b',callback:v=>v+'%'},grid:{color:'#1e293b'}},x:{ticks:{color:'#64748b'},grid:{color:'#1e293b'}}}}});
+}
+
+async function loadHistory(ticker,range,btn){
+  if(btn){document.querySelectorAll('.range-btn').forEach(b=>b.classList.remove('active'));btn.classList.add('active')}
+  const d=await(await fetch(`/api/yields/history?ticker=${encodeURIComponent(ticker)}&range=${range}`)).json();
+  if(histChart)histChart.destroy();
+  const ctx=document.getElementById('histChart').getContext('2d');
+  histChart=new Chart(ctx,{type:'line',data:{labels:d.labels,datasets:[{label:'Yield %',data:d.values,borderColor:'#06b6d4',backgroundColor:'rgba(6,182,212,.08)',fill:true,tension:.3,pointRadius:0}]},options:{responsive:true,plugins:{legend:{display:false}},scales:{y:{ticks:{color:'#64748b',callback:v=>v+'%'},grid:{color:'#1e293b'}},x:{ticks:{color:'#64748b',maxTicksLimit:8},grid:{color:'#1e293b'}}}}});
+}
+
+async function loadETFs(){
+  const d=await(await fetch('/bonds/api/etfs')).json();
+  document.getElementById('etfBody').innerHTML=d.map(e=>`
+    <tr>
+      <td><strong style="color:white">${e.symbol}</strong></td>
+      <td>${e.name}</td>
+      <td class="right">$${e.price.toFixed(2)}</td>
+      <td class="right ${e.day_change>=0?'green':'red'}">${e.day_change>=0?'+':''}${e.day_change.toFixed(2)}%</td>
+      <td class="right ${(e.ytd_return||0)>=0?'green':'red'}">${e.ytd_return!=null?(e.ytd_return>=0?'+':'')+e.ytd_return.toFixed(2)+'%':'—'}</td>
+      <td class="right">${e.div_yield!=null?e.div_yield.toFixed(2)+'%':'—'}</td>
+    </tr>
+  `).join('');
+}
+
+loadYields();loadHistory('^TNX','1m',null);loadETFs();
+setInterval(()=>{loadYields();loadETFs()},300000);
+</script>
+</body>
+</html>

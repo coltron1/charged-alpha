@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Commodities Dashboard — Charged Alpha</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Inter',system-ui,sans-serif}
+body{background:#0a0f1e;color:#e2e8f0;min-height:100vh}
+header{background:#111827;border-bottom:1px solid #1e293b;padding:16px 24px;display:flex;align-items:center;justify-content:space-between}
+.logo{display:flex;align-items:center;gap:10px;font-weight:800;color:white;font-size:14px;text-decoration:none}
+.logo-bolt{width:36px;height:36px;background:linear-gradient(135deg,#6366f1,#8b5cf6);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:18px}
+h1{font-size:22px;color:white;font-weight:700}
+.container{max-width:1200px;margin:0 auto;padding:20px}
+.cat-btns{display:flex;gap:6px;margin-bottom:20px;flex-wrap:wrap}
+.cat-btn{padding:8px 16px;border-radius:8px;border:1px solid #334155;background:transparent;color:#94a3b8;font-size:13px;font-weight:600;cursor:pointer;transition:.15s}
+.cat-btn:hover,.cat-btn.active{background:rgba(217,119,6,.1);border-color:#d97706;color:#d97706}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px}
+.comm-card{background:#111827;border:1px solid #1e293b;border-radius:12px;padding:16px;cursor:pointer;transition:.2s}
+.comm-card:hover{transform:translateY(-3px);border-color:#334155;box-shadow:0 8px 24px rgba(0,0,0,.3)}
+.comm-name{font-size:14px;font-weight:700;color:white;margin-bottom:4px}
+.comm-cat{font-size:11px;color:#64748b;text-transform:uppercase;letter-spacing:.5px}
+.comm-price{font-size:24px;font-weight:800;color:white;margin:8px 0}
+.changes{display:flex;gap:12px;font-size:12px;font-weight:600}
+.green{color:#10b981}.red{color:#ef4444}
+.tabs{display:flex;gap:4px;margin-bottom:16px}
+.tab{padding:8px 16px;border-radius:8px;border:none;background:#1e293b;color:#94a3b8;font-weight:600;font-size:13px;cursor:pointer}
+.tab.active{background:rgba(217,119,6,.15);color:#d97706}
+.view{display:none}.view.active{display:block}
+table{width:100%;border-collapse:collapse;font-size:13px}
+th{background:#1e293b;color:#94a3b8;font-weight:600;text-transform:uppercase;font-size:11px;padding:10px 12px;text-align:left;cursor:pointer;user-select:none}
+th:hover{color:#e2e8f0}td{padding:10px 12px;border-bottom:1px solid #1e293b}
+tr:hover td{background:rgba(217,119,6,.04)}.right{text-align:right}
+.modal-overlay{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.7);z-index:100;align-items:center;justify-content:center}
+.modal-overlay.active{display:flex}
+.modal{background:#111827;border:1px solid #1e293b;border-radius:16px;padding:24px;width:90%;max-width:700px}
+.modal h2{color:white;margin-bottom:16px}
+.modal-close{float:right;background:none;border:none;color:#94a3b8;font-size:24px;cursor:pointer}
+.range-btns{display:flex;gap:6px;margin-bottom:12px}
+.range-btn{padding:5px 12px;border-radius:6px;border:1px solid #334155;background:transparent;color:#94a3b8;font-size:12px;font-weight:600;cursor:pointer}
+.range-btn:hover,.range-btn.active{background:rgba(217,119,6,.1);border-color:#d97706;color:#d97706}
+.card{background:#111827;border:1px solid #1e293b;border-radius:12px;padding:20px}
+.refresh-note{font-size:11px;color:#475569;text-align:right;margin-top:8px}
+</style>
+</head>
+<body>
+<header>
+  <a href="http://localhost:8080" class="logo"><div class="logo-bolt">⚡</div>CHARGED ALPHA</a>
+  <h1>🌿 Commodities Dashboard</h1>
+</header>
+<div class="container">
+  <div class="cat-btns">
+    <button class="cat-btn active" onclick="setCat('All',this)">All</button>
+    <button class="cat-btn" onclick="setCat('Energy',this)">Energy</button>
+    <button class="cat-btn" onclick="setCat('Metals',this)">Metals</button>
+    <button class="cat-btn" onclick="setCat('Agriculture',this)">Agriculture</button>
+    <button class="cat-btn" onclick="setCat('Livestock',this)">Livestock</button>
+  </div>
+  <div class="tabs">
+    <button class="tab active" onclick="showView('cards',this)">Cards</button>
+    <button class="tab" onclick="showView('table',this)">Table</button>
+  </div>
+  <div class="view active" id="view-cards">
+    <div class="grid" id="cardsGrid"></div>
+  </div>
+  <div class="view" id="view-table">
+    <div class="card"><table><thead id="thead"></thead><tbody id="tbody"></tbody></table></div>
+  </div>
+  <div class="refresh-note">Auto-refreshes every 5 minutes</div>
+</div>
+<div class="modal-overlay" id="modal">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal()">&times;</button>
+    <h2 id="modalTitle"></h2>
+    <div class="range-btns">
+      <button class="range-btn active" onclick="loadChart('1m',this)">1M</button>
+      <button class="range-btn" onclick="loadChart('3m',this)">3M</button>
+      <button class="range-btn" onclick="loadChart('6m',this)">6M</button>
+      <button class="range-btn" onclick="loadChart('1y',this)">1Y</button>
+      <button class="range-btn" onclick="loadChart('5y',this)">5Y</button>
+    </div>
+    <canvas id="chartCanvas" height="200"></canvas>
+  </div>
+</div>
+<script>
+let allData=[],currentCat='All',chartInst=null,selectedTicker=null,tSortKey='name',tSortAsc=true;
+
+function setCat(cat,btn){
+  currentCat=cat;
+  document.querySelectorAll('.cat-btn').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');render();
+}
+function showView(v,btn){
+  document.querySelectorAll('.view').forEach(el=>el.classList.remove('active'));
+  document.getElementById('view-'+v).classList.add('active');
+  document.querySelectorAll('.tab').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+}
+function filtered(){return currentCat==='All'?allData:allData.filter(d=>d.category===currentCat)}
+
+function render(){renderCards();renderTableView()}
+
+function renderCards(){
+  const data=filtered();
+  document.getElementById('cardsGrid').innerHTML=data.map(d=>{
+    const bg=d.change_1d>=0?'rgba(16,185,129,.06)':'rgba(239,68,68,.06)';
+    const border=d.change_1d>=0?'rgba(16,185,129,.2)':'rgba(239,68,68,.2)';
+    return `<div class="comm-card" style="background:${bg};border-color:${border}" onclick="openModal('${d.ticker}','${d.name}')">
+      <div class="comm-cat">${d.category}</div>
+      <div class="comm-name">${d.name}</div>
+      <div class="comm-price">$${d.price.toLocaleString()}</div>
+      <div class="changes">
+        <span class="${d.change_1d>=0?'green':'red'}">1D: ${d.change_1d>=0?'+':''}${d.change_1d}%</span>
+        <span class="${d.change_1w>=0?'green':'red'}">1W: ${d.change_1w>=0?'+':''}${d.change_1w}%</span>
+        <span class="${d.change_1m>=0?'green':'red'}">1M: ${d.change_1m>=0?'+':''}${d.change_1m}%</span>
+      </div>
+    </div>`;
+  }).join('');
+}
+
+function renderTableView(){
+  const cols=[{key:'name',label:'Commodity'},{key:'category',label:'Category'},{key:'price',label:'Price',align:'right'},{key:'change_1d',label:'1D %',align:'right'},{key:'change_1w',label:'1W %',align:'right'},{key:'change_1m',label:'1M %',align:'right'}];
+  const data=[...filtered()].sort((a,b)=>{let av=a[tSortKey],bv=b[tSortKey];if(av==null)return 1;if(bv==null)return-1;if(typeof av==='string')return tSortAsc?av.localeCompare(bv):bv.localeCompare(av);return tSortAsc?av-bv:bv-av});
+  document.getElementById('thead').innerHTML='<tr>'+cols.map(c=>`<th class="${c.align==='right'?'right':''}" onclick="doTSort('${c.key}')">${c.label}</th>`).join('')+'</tr>';
+  document.getElementById('tbody').innerHTML=data.map(d=>`
+    <tr style="cursor:pointer" onclick="openModal('${d.ticker}','${d.name}')">
+      <td><strong style="color:white">${d.name}</strong></td>
+      <td>${d.category}</td>
+      <td class="right">$${d.price.toLocaleString()}</td>
+      <td class="right ${d.change_1d>=0?'green':'red'}">${d.change_1d>=0?'+':''}${d.change_1d}%</td>
+      <td class="right ${d.change_1w>=0?'green':'red'}">${d.change_1w>=0?'+':''}${d.change_1w}%</td>
+      <td class="right ${d.change_1m>=0?'green':'red'}">${d.change_1m>=0?'+':''}${d.change_1m}%</td>
+    </tr>
+  `).join('');
+}
+
+function doTSort(key){if(tSortKey===key)tSortAsc=!tSortAsc;else{tSortKey=key;tSortAsc=key==='name'||key==='category'}renderTableView()}
+
+function openModal(ticker,name){
+  selectedTicker=ticker;document.getElementById('modalTitle').textContent=name;
+  document.getElementById('modal').classList.add('active');loadChart('1m',null);
+}
+function closeModal(){document.getElementById('modal').classList.remove('active');if(chartInst)chartInst.destroy()}
+
+async function loadChart(range,btn){
+  if(btn){document.querySelectorAll('.range-btn').forEach(b=>b.classList.remove('active'));btn.classList.add('active')}
+  if(chartInst)chartInst.destroy();
+  const d=await(await fetch(`/api/commodity/${encodeURIComponent(selectedTicker)}/chart?range=${range}`)).json();
+  if(!d.labels)return;
+  const ctx=document.getElementById('chartCanvas').getContext('2d');
+  chartInst=new Chart(ctx,{type:'line',data:{labels:d.labels,datasets:[{label:'Price',data:d.prices,borderColor:'#d97706',backgroundColor:'rgba(217,119,6,.1)',fill:true,tension:.3,pointRadius:0}]},options:{responsive:true,plugins:{legend:{display:false}},scales:{x:{ticks:{color:'#64748b',maxTicksLimit:8},grid:{color:'#1e293b'}},y:{ticks:{color:'#64748b',callback:v=>'$'+v},grid:{color:'#1e293b'}}}}});
+}
+
+async function loadData(){
+  allData=await(await fetch('/commodities/api/commodities')).json();
+  render();
+}
+loadData();
+setInterval(loadData,300000);
+</script>
+</body>
+</html>

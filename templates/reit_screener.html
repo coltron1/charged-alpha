@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>REIT Screener — Charged Alpha</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Inter',system-ui,sans-serif}
+body{background:#0a0f1e;color:#e2e8f0;min-height:100vh}
+header{background:#111827;border-bottom:1px solid #1e293b;padding:16px 24px;display:flex;align-items:center;justify-content:space-between}
+.logo{display:flex;align-items:center;gap:10px;font-weight:800;color:white;font-size:14px;text-decoration:none}
+.logo-bolt{width:36px;height:36px;background:linear-gradient(135deg,#6366f1,#8b5cf6);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:18px}
+h1{font-size:22px;color:white;font-weight:700}
+.panel{background:#111827;border:1px solid #1e293b;border-radius:12px;padding:20px;margin:20px}
+.filters{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:12px;margin-bottom:16px}
+label{display:block;font-size:11px;color:#94a3b8;text-transform:uppercase;letter-spacing:.5px;margin-bottom:4px;font-weight:600}
+input[type=number],select{width:100%;background:#0f172a;border:1px solid #334155;border-radius:8px;padding:8px 12px;color:#e2e8f0;font-size:13px}
+input:focus,select:focus{outline:none;border-color:#6366f1}
+select[multiple]{height:100px}
+.btn{padding:10px 24px;border-radius:8px;border:none;font-weight:700;font-size:14px;cursor:pointer;transition:.15s}
+.btn-primary{background:linear-gradient(135deg,#8b5cf6,#7c3aed);color:white}
+.btn-primary:hover{transform:translateY(-1px);box-shadow:0 4px 16px rgba(139,92,246,.3)}
+.btn-primary:disabled{opacity:.5;cursor:not-allowed;transform:none}
+.btn-secondary{background:#1e293b;color:#a5b4fc;border:1px solid #334155}
+.actions{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.progress{font-size:13px;color:#94a3b8;margin-left:12px}
+.presets{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:16px}
+.preset-btn{padding:6px 14px;border-radius:20px;border:1px solid #334155;background:transparent;color:#a5b4fc;font-size:12px;font-weight:600;cursor:pointer;transition:.15s}
+.preset-btn:hover{background:rgba(139,92,246,.1);border-color:#8b5cf6}
+table{width:100%;border-collapse:collapse;font-size:13px}
+th{position:sticky;top:0;background:#1e293b;color:#94a3b8;font-weight:600;text-transform:uppercase;font-size:11px;letter-spacing:.5px;padding:10px 12px;text-align:left;cursor:pointer;user-select:none}
+th:hover{color:#e2e8f0}
+td{padding:10px 12px;border-bottom:1px solid #1e293b}
+tr:hover td{background:rgba(139,92,246,.04)}
+.right{text-align:right}
+.green{color:#10b981}.red{color:#ef4444}
+.table-wrap{max-height:70vh;overflow:auto;border:1px solid #1e293b;border-radius:12px}
+.sector-badge{display:inline-block;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;background:rgba(139,92,246,.12);color:#a78bfa}
+.modal-overlay{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.7);z-index:100;align-items:center;justify-content:center}
+.modal-overlay.active{display:flex}
+.modal{background:#111827;border:1px solid #1e293b;border-radius:16px;padding:24px;width:90%;max-width:700px}
+.modal h2{color:white;margin-bottom:16px}
+.modal-close{float:right;background:none;border:none;color:#94a3b8;font-size:24px;cursor:pointer}
+.range-btns{display:flex;gap:6px;margin-bottom:12px}
+.range-btn{padding:5px 12px;border-radius:6px;border:1px solid #334155;background:transparent;color:#94a3b8;font-size:12px;font-weight:600;cursor:pointer}
+.range-btn:hover,.range-btn.active{background:rgba(139,92,246,.1);border-color:#8b5cf6;color:#a78bfa}
+</style>
+</head>
+<body>
+<header>
+  <a href="http://localhost:8080" class="logo"><div class="logo-bolt">⚡</div>CHARGED ALPHA</a>
+  <h1>🏢 REIT Screener</h1>
+</header>
+<div class="panel">
+  <div class="presets">
+    <button class="preset-btn" onclick="applyPreset('high_yield')">High Yield (&gt;5%)</button>
+    <button class="preset-btn" onclick="applyPreset('growth')">Growth (52W &gt;10%)</button>
+    <button class="preset-btn" onclick="applyPreset('value')">Value (PE&lt;15, Yield&gt;3%)</button>
+    <button class="preset-btn" onclick="clearFilters()">Clear All</button>
+  </div>
+  <div class="filters">
+    <div><label>Min Div Yield %</label><input type="number" id="min_div_yield" step="any"></div>
+    <div><label>Max Div Yield %</label><input type="number" id="max_div_yield" step="any"></div>
+    <div><label>Min Price</label><input type="number" id="min_price" step="any"></div>
+    <div><label>Max Price</label><input type="number" id="max_price" step="any"></div>
+    <div><label>Min P/E</label><input type="number" id="min_pe" step="any"></div>
+    <div><label>Max P/E</label><input type="number" id="max_pe" step="any"></div>
+    <div><label>Max Debt/Equity</label><input type="number" id="max_debt_to_equity" step="any"></div>
+    <div><label>Min Market Cap ($)</label><input type="number" id="min_market_cap" step="any"></div>
+    <div><label>Min 52W Perf %</label><input type="number" id="min_w52_perf" step="any"></div>
+    <div><label>Max 52W Perf %</label><input type="number" id="max_w52_perf" step="any"></div>
+    <div><label>Sectors (Ctrl+click)</label>
+      <select id="sectors" multiple>
+        <option>Residential</option><option>Office</option><option>Retail</option><option>Industrial</option>
+        <option>Healthcare</option><option>Data Center</option><option>Specialty</option><option>Diversified</option>
+      </select>
+    </div>
+  </div>
+  <div class="actions">
+    <button class="btn btn-primary" id="screenBtn" onclick="runScreen()">Screen REITs</button>
+    <button class="btn btn-secondary" id="csvBtn" onclick="exportCSV()" style="display:none">Export CSV</button>
+    <span class="progress" id="progress"></span>
+  </div>
+</div>
+<div class="panel" id="resultsPanel" style="display:none">
+  <div class="table-wrap"><table><thead id="thead"></thead><tbody id="tbody"></tbody></table></div>
+</div>
+<div class="modal-overlay" id="modal">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal()">&times;</button>
+    <h2 id="modalTitle"></h2>
+    <div class="range-btns">
+      <button class="range-btn active" onclick="loadChart('1m',this)">1M</button>
+      <button class="range-btn" onclick="loadChart('6m',this)">6M</button>
+      <button class="range-btn" onclick="loadChart('1y',this)">1Y</button>
+      <button class="range-btn" onclick="loadChart('5y',this)">5Y</button>
+    </div>
+    <canvas id="chartCanvas" height="200"></canvas>
+  </div>
+</div>
+<script>
+const fields=['min_div_yield','max_div_yield','min_price','max_price','min_pe','max_pe','max_debt_to_equity','min_market_cap','min_w52_perf','max_w52_perf'];
+let results=[],sortKey='div_yield',sortAsc=false,chartInst=null,selectedSym=null;
+
+const cols=[
+  {key:'symbol',label:'Symbol'},{key:'name',label:'Name'},{key:'sector',label:'Sector'},
+  {key:'price',label:'Price',align:'right'},{key:'div_yield',label:'Div Yield',align:'right'},
+  {key:'pe',label:'P/E',align:'right'},{key:'market_cap',label:'Mkt Cap',align:'right'},
+  {key:'debt_to_equity',label:'D/E',align:'right'},{key:'payout_ratio',label:'Payout',align:'right'},
+  {key:'w52_perf',label:'52W Perf',align:'right'},
+];
+
+function applyPreset(p){
+  clearFilters();
+  if(p==='high_yield') document.getElementById('min_div_yield').value=5;
+  if(p==='growth') document.getElementById('min_w52_perf').value=10;
+  if(p==='value'){document.getElementById('max_pe').value=15;document.getElementById('min_div_yield').value=3}
+}
+function clearFilters(){fields.forEach(f=>document.getElementById(f).value='');document.getElementById('sectors').selectedIndex=-1}
+
+function fmt(v){if(v==null)return'—';if(v>=1e12)return'$'+(v/1e12).toFixed(2)+'T';if(v>=1e9)return'$'+(v/1e9).toFixed(2)+'B';if(v>=1e6)return'$'+(v/1e6).toFixed(1)+'M';return'$'+v.toLocaleString()}
+
+async function runScreen(){
+  const body={};
+  fields.forEach(f=>{const v=document.getElementById(f).value;if(v!=='')body[f]=v});
+  const sel=document.getElementById('sectors');
+  const sectors=[...sel.selectedOptions].map(o=>o.value);
+  if(sectors.length)body.sectors=sectors;
+  document.getElementById('screenBtn').disabled=true;
+  document.getElementById('progress').textContent='Screening REITs...';
+  results=[];
+  const r=await fetch('/reits/api/screen',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body)});
+  const{job_id}=await r.json();
+  const poll=setInterval(async()=>{
+    const s=await(await fetch('/reits/api/screen/'+job_id)).json();
+    document.getElementById('progress').textContent=`${s.processed}/${s.total} — ${s.matches.length} matches`;
+    if(s.status==='done'||s.status==='error'){
+      clearInterval(poll);results=s.matches;renderTable();
+      document.getElementById('screenBtn').disabled=false;
+      document.getElementById('csvBtn').style.display='inline-block';
+      document.getElementById('resultsPanel').style.display='block';
+    }
+  },800);
+}
+
+function renderTable(){
+  const sorted=[...results].sort((a,b)=>{let av=a[sortKey],bv=b[sortKey];if(av==null)return 1;if(bv==null)return-1;if(typeof av==='string')return sortAsc?av.localeCompare(bv):bv.localeCompare(av);return sortAsc?av-bv:bv-av});
+  document.getElementById('thead').innerHTML='<tr>'+cols.map(c=>`<th class="${c.align==='right'?'right':''}" onclick="doSort('${c.key}')">${c.label}${sortKey===c.key?(sortAsc?' ▲':' ▼'):''}</th>`).join('')+'</tr>';
+  document.getElementById('tbody').innerHTML=sorted.map(r=>'<tr style="cursor:pointer" onclick="openModal(\''+r.symbol+'\',\''+r.name+'\')">'+cols.map(c=>{
+    let v=r[c.key],cls=c.align==='right'?'right':'';
+    if(c.key==='sector') return `<td><span class="sector-badge">${v}</span></td>`;
+    if(c.key==='div_yield') return `<td class="${cls}">${v!=null?v.toFixed(2)+'%':'—'}</td>`;
+    if(c.key==='pe') return `<td class="${cls}">${v!=null?v.toFixed(1):'—'}</td>`;
+    if(c.key==='market_cap') return `<td class="${cls}">${fmt(v)}</td>`;
+    if(c.key==='debt_to_equity') return `<td class="${cls}">${v!=null?v.toFixed(2):'—'}</td>`;
+    if(c.key==='payout_ratio') return `<td class="${cls}">${v!=null?v.toFixed(1)+'%':'—'}</td>`;
+    if(c.key==='w52_perf') return `<td class="${cls} ${(v||0)>=0?'green':'red'}">${v!=null?(v>=0?'+':'')+v.toFixed(1)+'%':'—'}</td>`;
+    if(c.key==='price') return `<td class="${cls}">$${v.toFixed(2)}</td>`;
+    return `<td class="${cls}">${v!=null?v:'—'}</td>`;
+  }).join('')+'</tr>').join('');
+}
+
+function doSort(key){if(sortKey===key)sortAsc=!sortAsc;else{sortKey=key;sortAsc=key==='symbol'||key==='name'||key==='sector'}renderTable()}
+
+function openModal(sym,name){
+  selectedSym=sym;document.getElementById('modalTitle').textContent=name+' ('+sym+')';
+  document.getElementById('modal').classList.add('active');loadChart('1y',null);
+}
+function closeModal(){document.getElementById('modal').classList.remove('active');if(chartInst)chartInst.destroy()}
+
+async function loadChart(range,btn){
+  if(btn){document.querySelectorAll('.range-btn').forEach(b=>b.classList.remove('active'));btn.classList.add('active')}
+  if(chartInst)chartInst.destroy();
+  const d=await(await fetch(`/api/reit/${selectedSym}/chart?range=${range}`)).json();
+  if(!d.labels)return;
+  const ctx=document.getElementById('chartCanvas').getContext('2d');
+  chartInst=new Chart(ctx,{type:'line',data:{labels:d.labels,datasets:[{label:'Price',data:d.prices,borderColor:'#8b5cf6',backgroundColor:'rgba(139,92,246,.1)',fill:true,tension:.3,pointRadius:0}]},options:{responsive:true,plugins:{legend:{display:false}},scales:{x:{ticks:{color:'#64748b',maxTicksLimit:8},grid:{color:'#1e293b'}},y:{ticks:{color:'#64748b',callback:v=>'$'+v},grid:{color:'#1e293b'}}}}});
+}
+
+function exportCSV(){
+  if(!results.length)return;const keys=cols.map(c=>c.key);
+  let csv=keys.join(',')+'\n';results.forEach(r=>{csv+=keys.map(k=>{let v=r[k];return v==null?'':typeof v==='string'?'"'+v+'"':v}).join(',')+'\n'});
+  const blob=new Blob([csv],{type:'text/csv'});const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='reit_screen.csv';a.click();
+}
+</script>
+</body>
+</html>

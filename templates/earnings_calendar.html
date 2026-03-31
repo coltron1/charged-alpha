@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Earnings Calendar — Charged Alpha</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Inter',system-ui,sans-serif}
+body{background:#0a0f1e;color:#e2e8f0;min-height:100vh}
+header{background:#111827;border-bottom:1px solid #1e293b;padding:16px 24px;display:flex;align-items:center;justify-content:space-between}
+.logo{display:flex;align-items:center;gap:10px;font-weight:800;color:white;font-size:14px;text-decoration:none}
+.logo-bolt{width:36px;height:36px;background:linear-gradient(135deg,#6366f1,#8b5cf6);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:18px}
+h1{font-size:22px;color:white;font-weight:700}
+.container{max-width:1200px;margin:0 auto;padding:20px}
+.week-nav{display:flex;align-items:center;gap:12px;margin-bottom:24px}
+.week-btn{padding:8px 16px;border-radius:8px;border:1px solid #334155;background:transparent;color:#94a3b8;font-weight:600;font-size:13px;cursor:pointer;transition:.15s}
+.week-btn:hover{background:rgba(99,102,241,.1);border-color:#6366f1;color:#6366f1}
+.week-label{font-size:18px;font-weight:700;color:white}
+.card{background:#111827;border:1px solid #1e293b;border-radius:12px;padding:20px;margin-bottom:20px}
+.day-header{font-size:16px;font-weight:700;color:white;margin-bottom:12px;padding-bottom:8px;border-bottom:1px solid #1e293b;display:flex;justify-content:space-between;align-items:center}
+.day-count{font-size:12px;color:#94a3b8;font-weight:500}
+table{width:100%;border-collapse:collapse;font-size:13px}
+th{background:#1e293b;color:#94a3b8;font-weight:600;text-transform:uppercase;font-size:11px;letter-spacing:.5px;padding:8px 12px;text-align:left}
+td{padding:10px 12px;border-bottom:1px solid #1e293b}
+tr:hover td{background:rgba(99,102,241,.04);cursor:pointer}
+.right{text-align:right}
+.green{color:#10b981}.red{color:#ef4444}
+.sector-badge{display:inline-block;padding:2px 8px;border-radius:4px;font-size:10px;font-weight:600;background:rgba(99,102,241,.12);color:#a5b4fc}
+.empty-msg{color:#475569;font-size:14px;padding:20px;text-align:center}
+.loading{text-align:center;padding:40px;color:#94a3b8;font-size:14px}
+.search-wrap{margin-bottom:20px}
+.search-input{width:100%;max-width:300px;background:#0f172a;border:1px solid #334155;border-radius:8px;padding:10px 14px;color:#e2e8f0;font-size:14px}
+.search-input:focus{outline:none;border-color:#6366f1}
+.modal-overlay{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.7);z-index:100;align-items:center;justify-content:center}
+.modal-overlay.active{display:flex}
+.modal{background:#111827;border:1px solid #1e293b;border-radius:16px;padding:24px;width:90%;max-width:800px;max-height:90vh;overflow:auto}
+.modal h2{color:white;margin-bottom:16px}
+.modal-close{float:right;background:none;border:none;color:#94a3b8;font-size:24px;cursor:pointer}
+.earnings-hist{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:12px;margin-bottom:20px}
+.hist-card{background:#0f172a;border:1px solid #1e293b;border-radius:8px;padding:12px;text-align:center}
+.hist-date{font-size:11px;color:#64748b;margin-bottom:4px}
+.hist-eps{font-size:16px;font-weight:700}
+.hist-est{font-size:11px;color:#94a3b8}
+.hist-surprise{font-size:12px;font-weight:600;margin-top:4px}
+.summary{display:flex;gap:16px;margin-bottom:20px;flex-wrap:wrap;font-size:13px;color:#94a3b8}
+.stat-box{background:#0f172a;border:1px solid #1e293b;border-radius:8px;padding:12px 16px;text-align:center}
+.stat-val{font-size:20px;font-weight:800;color:white}
+.stat-label{font-size:11px;color:#64748b;margin-top:2px}
+</style>
+</head>
+<body>
+<header>
+  <a href="http://localhost:8080" class="logo"><div class="logo-bolt">⚡</div>CHARGED ALPHA</a>
+  <h1>📅 Earnings Calendar</h1>
+</header>
+<div class="container">
+  <div class="week-nav">
+    <button class="week-btn" onclick="changeWeek(-7)">&larr; Prev Week</button>
+    <button class="week-btn" onclick="resetWeek()">This Week</button>
+    <button class="week-btn" onclick="changeWeek(7)">Next Week &rarr;</button>
+    <span class="week-label" id="weekLabel"></span>
+  </div>
+
+  <div class="search-wrap">
+    <input type="text" class="search-input" id="search" placeholder="Search by ticker or company..." oninput="renderDays()">
+  </div>
+
+  <div class="summary" id="summary"></div>
+
+  <div id="daysContainer"><div class="loading">Loading earnings data...</div></div>
+</div>
+
+<div class="modal-overlay" id="modal">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal()">&times;</button>
+    <h2 id="modalTitle"></h2>
+    <div id="modalContent"></div>
+    <canvas id="chartCanvas" height="200"></canvas>
+  </div>
+</div>
+
+<script>
+let weekOffset=0, earningsData=null, chartInst=null;
+
+function getMonday(){
+  const d=new Date();
+  d.setDate(d.getDate()-d.getDay()+1+weekOffset);
+  return d.toISOString().split('T')[0];
+}
+
+function changeWeek(days){weekOffset+=days;loadWeek()}
+function resetWeek(){weekOffset=0;loadWeek()}
+
+function fmt(v){if(v==null)return'—';if(Math.abs(v)>=1e12)return'$'+(v/1e12).toFixed(1)+'T';if(Math.abs(v)>=1e9)return'$'+(v/1e9).toFixed(1)+'B';if(Math.abs(v)>=1e6)return'$'+(v/1e6).toFixed(0)+'M';return'$'+v.toLocaleString()}
+
+async function loadWeek(){
+  const monday=getMonday();
+  document.getElementById('daysContainer').innerHTML='<div class="loading">Loading earnings data...</div>';
+  document.getElementById('weekLabel').textContent='';
+
+  const d=await(await fetch('/earnings/api/earnings?week='+monday)).json();
+  earningsData=d;
+
+  document.getElementById('weekLabel').textContent=`Week of ${d.week_start} — ${d.total} earnings`;
+  renderSummary();renderDays();
+}
+
+function renderSummary(){
+  if(!earningsData)return;
+  const e=earningsData.earnings;
+  const sectors={};
+  e.forEach(x=>{if(x.sector)sectors[x.sector]=(sectors[x.sector]||0)+1});
+  const topSectors=Object.entries(sectors).sort((a,b)=>b[1]-a[1]).slice(0,4);
+
+  document.getElementById('summary').innerHTML=`
+    <div class="stat-box"><div class="stat-val">${e.length}</div><div class="stat-label">Earnings This Week</div></div>
+    ${topSectors.map(([s,c])=>`<div class="stat-box"><div class="stat-val">${c}</div><div class="stat-label">${s}</div></div>`).join('')}
+  `;
+}
+
+function renderDays(){
+  if(!earningsData)return;
+  const search=document.getElementById('search').value.toLowerCase();
+  const days=['Monday','Tuesday','Wednesday','Thursday','Friday'];
+  let earnings=earningsData.earnings;
+  if(search){earnings=earnings.filter(e=>e.symbol.toLowerCase().includes(search)||e.name.toLowerCase().includes(search))}
+
+  const byDay={};
+  days.forEach(d=>byDay[d]=[]);
+  earnings.forEach(e=>{if(byDay[e.day_of_week])byDay[e.day_of_week].push(e)});
+
+  let html='';
+  days.forEach(day=>{
+    const items=byDay[day];
+    html+=`<div class="card">
+      <div class="day-header">${day}<span class="day-count">${items.length} report${items.length!==1?'s':''}</span></div>`;
+    if(!items.length){
+      html+=`<div class="empty-msg">No earnings scheduled</div>`;
+    } else {
+      html+=`<table><thead><tr><th>Symbol</th><th>Company</th><th>Sector</th><th class="right">EPS Est</th><th class="right">Rev Est</th><th class="right">Mkt Cap</th><th class="right">Price</th></tr></thead><tbody>`;
+      items.forEach(e=>{
+        html+=`<tr onclick="openDetail('${e.symbol}')">
+          <td><strong style="color:white">${e.symbol}</strong></td>
+          <td>${e.name}</td>
+          <td>${e.sector?`<span class="sector-badge">${e.sector}</span>`:''}</td>
+          <td class="right">${e.eps_estimate!=null?'$'+e.eps_estimate.toFixed(2):'—'}</td>
+          <td class="right">${e.revenue_estimate!=null?fmt(e.revenue_estimate):'—'}</td>
+          <td class="right">${fmt(e.market_cap)}</td>
+          <td class="right">${e.price!=null?'$'+e.price.toFixed(2):'—'}</td>
+        </tr>`;
+      });
+      html+=`</tbody></table>`;
+    }
+    html+=`</div>`;
+  });
+  document.getElementById('daysContainer').innerHTML=html;
+}
+
+async function openDetail(sym){
+  document.getElementById('modal').classList.add('active');
+  document.getElementById('modalTitle').textContent=sym+' — Earnings Detail';
+  document.getElementById('modalContent').innerHTML='<div class="loading">Loading...</div>';
+
+  const d=await(await fetch('/earnings/api/stock/'+sym+'/earnings-history')).json();
+  if(d.error){document.getElementById('modalContent').innerHTML='<div class="empty-msg">No data available</div>';return}
+
+  let html=`<p style="color:#94a3b8;margin-bottom:16px">${d.name} — ${d.sector||''} — ${fmt(d.market_cap)}</p>`;
+
+  if(d.earnings_history&&d.earnings_history.length){
+    html+=`<h3 style="color:white;font-size:14px;margin-bottom:12px">Recent Quarters</h3><div class="earnings-hist">`;
+    d.earnings_history.forEach(q=>{
+      const beat=q.eps_actual!=null&&q.eps_estimate!=null&&q.eps_actual>=q.eps_estimate;
+      html+=`<div class="hist-card">
+        <div class="hist-date">${q.date}</div>
+        <div class="hist-eps">${q.eps_actual!=null?'$'+q.eps_actual.toFixed(2):'—'}</div>
+        <div class="hist-est">Est: ${q.eps_estimate!=null?'$'+q.eps_estimate.toFixed(2):'—'}</div>
+        ${q.surprise_pct!=null?`<div class="hist-surprise ${beat?'green':'red'}">${q.surprise_pct>=0?'+':''}${q.surprise_pct.toFixed(1)}%</div>`:''}
+      </div>`;
+    });
+    html+=`</div>`;
+  }
+  document.getElementById('modalContent').innerHTML=html;
+
+  // Chart
+  if(chartInst)chartInst.destroy();
+  if(d.chart&&d.chart.labels&&d.chart.labels.length){
+    const ctx=document.getElementById('chartCanvas').getContext('2d');
+    chartInst=new Chart(ctx,{type:'line',data:{labels:d.chart.labels,datasets:[{label:'Price',data:d.chart.prices,borderColor:'#6366f1',backgroundColor:'rgba(99,102,241,.1)',fill:true,tension:.3,pointRadius:0}]},options:{responsive:true,plugins:{legend:{display:false}},scales:{x:{ticks:{color:'#64748b',maxTicksLimit:8},grid:{color:'#1e293b'}},y:{ticks:{color:'#64748b',callback:v=>'$'+v},grid:{color:'#1e293b'}}}}});
+  }
+}
+
+function closeModal(){document.getElementById('modal').classList.remove('active');if(chartInst)chartInst.destroy()}
+
+loadWeek();
+</script>
+</body>
+</html>

@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Forex Heatmap — Charged Alpha</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Inter',system-ui,sans-serif}
+body{background:#0a0f1e;color:#e2e8f0;min-height:100vh}
+header{background:#111827;border-bottom:1px solid #1e293b;padding:16px 24px;display:flex;align-items:center;justify-content:space-between}
+.logo{display:flex;align-items:center;gap:10px;font-weight:800;color:white;font-size:14px;text-decoration:none}
+.logo-bolt{width:36px;height:36px;background:linear-gradient(135deg,#6366f1,#8b5cf6);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:18px}
+h1{font-size:22px;color:white;font-weight:700}
+.container{max-width:1200px;margin:0 auto;padding:20px}
+.card{background:#111827;border:1px solid #1e293b;border-radius:12px;padding:20px;margin-bottom:20px}
+.card h3{color:white;font-size:16px;margin-bottom:12px}
+.tf-btns{display:flex;gap:6px;margin-bottom:20px;flex-wrap:wrap}
+.tf-btn{padding:8px 16px;border-radius:8px;border:1px solid #334155;background:transparent;color:#94a3b8;font-size:13px;font-weight:600;cursor:pointer;transition:.15s}
+.tf-btn:hover,.tf-btn.active{background:rgba(20,184,166,.1);border-color:#14b8a6;color:#14b8a6}
+.heatmap{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:8px;margin-bottom:20px}
+.heat-cell{padding:12px;border-radius:10px;text-align:center;cursor:pointer;transition:.2s;border:1px solid transparent}
+.heat-cell:hover{transform:translateY(-2px);border-color:#334155}
+.heat-pair{font-size:14px;font-weight:700;color:white;margin-bottom:4px}
+.heat-rate{font-size:11px;color:#94a3b8}
+.heat-pct{font-size:16px;font-weight:800;margin-top:4px}
+.section-title{font-size:18px;font-weight:700;color:white;margin:24px 0 16px}
+.strength-bar-wrap{display:flex;align-items:center;gap:12px;margin-bottom:8px}
+.strength-label{width:40px;font-weight:700;font-size:14px;color:white}
+.strength-bar{height:28px;border-radius:6px;min-width:4px;transition:.3s}
+.strength-val{font-size:13px;font-weight:600;min-width:60px}
+.green{color:#10b981}.red{color:#ef4444}
+table{width:100%;border-collapse:collapse;font-size:13px}
+th{background:#1e293b;color:#94a3b8;font-weight:600;text-transform:uppercase;font-size:11px;padding:10px 12px;text-align:left;cursor:pointer;user-select:none}
+th:hover{color:#e2e8f0}td{padding:10px 12px;border-bottom:1px solid #1e293b}
+tr:hover td{background:rgba(20,184,166,.04)}
+.right{text-align:right}
+.modal-overlay{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.7);z-index:100;align-items:center;justify-content:center}
+.modal-overlay.active{display:flex}
+.modal{background:#111827;border:1px solid #1e293b;border-radius:16px;padding:24px;width:90%;max-width:700px}
+.modal h2{color:white;margin-bottom:16px}
+.modal-close{float:right;background:none;border:none;color:#94a3b8;font-size:24px;cursor:pointer}
+.range-btns{display:flex;gap:6px;margin-bottom:12px}
+.range-btn{padding:5px 12px;border-radius:6px;border:1px solid #334155;background:transparent;color:#94a3b8;font-size:12px;font-weight:600;cursor:pointer}
+.range-btn:hover,.range-btn.active{background:rgba(20,184,166,.1);border-color:#14b8a6;color:#14b8a6}
+.tabs{display:flex;gap:4px;margin-bottom:16px}
+.tab{padding:8px 16px;border-radius:8px;border:none;background:#1e293b;color:#94a3b8;font-weight:600;font-size:13px;cursor:pointer}
+.tab.active{background:rgba(20,184,166,.15);color:#14b8a6}
+.view{display:none}.view.active{display:block}
+.refresh-note{font-size:11px;color:#475569;text-align:right;margin-top:8px}
+</style>
+</head>
+<body>
+<header>
+  <a href="http://localhost:8080" class="logo"><div class="logo-bolt">⚡</div>CHARGED ALPHA</a>
+  <h1>💱 Forex Heatmap</h1>
+</header>
+<div class="container">
+  <div class="tf-btns">
+    <button class="tf-btn active" onclick="setTF('1d',this)">1D</button>
+    <button class="tf-btn" onclick="setTF('1w',this)">1W</button>
+    <button class="tf-btn" onclick="setTF('1m',this)">1M</button>
+    <button class="tf-btn" onclick="setTF('3m',this)">3M</button>
+    <button class="tf-btn" onclick="setTF('ytd',this)">YTD</button>
+    <button class="tf-btn" onclick="setTF('1y',this)">1Y</button>
+  </div>
+
+  <div class="tabs">
+    <button class="tab active" onclick="showView('heatmap',this)">Heatmap</button>
+    <button class="tab" onclick="showView('table',this)">Table</button>
+  </div>
+
+  <div class="view active" id="view-heatmap">
+    <div class="heatmap" id="heatGrid"></div>
+  </div>
+  <div class="view" id="view-table">
+    <div class="card"><table><thead><tr><th onclick="tSort('display')">Pair</th><th class="right" onclick="tSort('rate')">Rate</th><th class="right" onclick="tSort('change_pct')">Change %</th></tr></thead><tbody id="tableBody"></tbody></table></div>
+  </div>
+
+  <div class="section-title">Currency Strength Index</div>
+  <div class="card" id="strengthCard"></div>
+  <div class="refresh-note">Auto-refreshes every 2 minutes</div>
+</div>
+
+<div class="modal-overlay" id="modal">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal()">&times;</button>
+    <h2 id="modalTitle"></h2>
+    <div class="range-btns">
+      <button class="range-btn" onclick="loadChart('1d',this)">1D</button>
+      <button class="range-btn" onclick="loadChart('1w',this)">1W</button>
+      <button class="range-btn active" onclick="loadChart('1m',this)">1M</button>
+      <button class="range-btn" onclick="loadChart('3m',this)">3M</button>
+      <button class="range-btn" onclick="loadChart('1y',this)">1Y</button>
+    </div>
+    <canvas id="chartCanvas" height="200"></canvas>
+  </div>
+</div>
+
+<script>
+let pairs=[],currentTF='1d',tableSortKey='display',tableSortAsc=true,chartInst=null,selectedPair=null;
+
+function setTF(tf,btn){
+  currentTF=tf;
+  document.querySelectorAll('.tf-btn').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  loadData();
+}
+function showView(v,btn){
+  document.querySelectorAll('.view').forEach(el=>el.classList.remove('active'));
+  document.getElementById('view-'+v).classList.add('active');
+  document.querySelectorAll('.tab').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+}
+
+function heatColor(pct){
+  if(pct>0){const i=Math.min(pct/2,1);return `rgba(16,185,129,${0.1+i*0.4})`}
+  if(pct<0){const i=Math.min(Math.abs(pct)/2,1);return `rgba(239,68,68,${0.1+i*0.4})`}
+  return 'rgba(148,163,184,.1)';
+}
+
+async function loadData(){
+  const[pairsData,strengthData]=await Promise.all([
+    fetch('/forex/api/pairs?timeframe='+currentTF).then(r=>r.json()),
+    fetch('/forex/api/strength?timeframe='+currentTF).then(r=>r.json()),
+  ]);
+  pairs=pairsData;
+  renderHeatmap();renderTable();renderStrength(strengthData);
+}
+
+function renderHeatmap(){
+  document.getElementById('heatGrid').innerHTML=pairs.map(p=>`
+    <div class="heat-cell" style="background:${heatColor(p.change_pct)}" onclick="openModal('${p.pair}','${p.display}')">
+      <div class="heat-pair">${p.display}</div>
+      <div class="heat-rate">${p.rate}</div>
+      <div class="heat-pct ${p.change_pct>=0?'green':'red'}">${p.change_pct>=0?'+':''}${p.change_pct.toFixed(3)}%</div>
+    </div>
+  `).join('');
+}
+
+function renderTable(){
+  const sorted=[...pairs].sort((a,b)=>{
+    let av=a[tableSortKey],bv=b[tableSortKey];
+    if(typeof av==='string') return tableSortAsc?av.localeCompare(bv):bv.localeCompare(av);
+    return tableSortAsc?av-bv:bv-av;
+  });
+  document.getElementById('tableBody').innerHTML=sorted.map(p=>`
+    <tr style="cursor:pointer" onclick="openModal('${p.pair}','${p.display}')">
+      <td><strong style="color:white">${p.display}</strong></td>
+      <td class="right">${p.rate}</td>
+      <td class="right ${p.change_pct>=0?'green':'red'}">${p.change_pct>=0?'+':''}${p.change_pct.toFixed(3)}%</td>
+    </tr>
+  `).join('');
+}
+
+function tSort(key){if(tableSortKey===key)tableSortAsc=!tableSortAsc;else{tableSortKey=key;tableSortAsc=true}renderTable()}
+
+function renderStrength(data){
+  const maxAbs=Math.max(...data.map(d=>Math.abs(d.strength)),0.01);
+  document.getElementById('strengthCard').innerHTML=data.map(d=>{
+    const w=Math.abs(d.strength)/maxAbs*100;
+    const color=d.strength>=0?'#10b981':'#ef4444';
+    return `<div class="strength-bar-wrap">
+      <div class="strength-label">${d.currency}</div>
+      <div class="strength-bar" style="width:${Math.max(w,2)}%;background:${color}"></div>
+      <div class="strength-val ${d.strength>=0?'green':'red'}">${d.strength>=0?'+':''}${d.strength.toFixed(3)}%</div>
+    </div>`;
+  }).join('');
+}
+
+function openModal(pair,display){
+  selectedPair=pair;document.getElementById('modalTitle').textContent=display;
+  document.getElementById('modal').classList.add('active');loadChart('1m',null);
+}
+function closeModal(){document.getElementById('modal').classList.remove('active');if(chartInst)chartInst.destroy()}
+
+async function loadChart(range,btn){
+  if(btn){document.querySelectorAll('.range-btn').forEach(b=>b.classList.remove('active'));btn.classList.add('active')}
+  if(chartInst)chartInst.destroy();
+  const d=await(await fetch(`/api/pair/${selectedPair}/chart?range=${range}`)).json();
+  if(!d.labels)return;
+  const ctx=document.getElementById('chartCanvas').getContext('2d');
+  chartInst=new Chart(ctx,{type:'line',data:{labels:d.labels,datasets:[{label:'Rate',data:d.prices,borderColor:'#14b8a6',backgroundColor:'rgba(20,184,166,.1)',fill:true,tension:.3,pointRadius:0}]},options:{responsive:true,plugins:{legend:{display:false}},scales:{x:{ticks:{color:'#64748b',maxTicksLimit:8},grid:{color:'#1e293b'}},y:{ticks:{color:'#64748b'},grid:{color:'#1e293b'}}}}});
+}
+
+loadData();
+setInterval(loadData,120000);
+</script>
+</body>
+</html>

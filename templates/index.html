@@ -1,0 +1,823 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Charged Alpha — Data-Driven Investing Tools</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    * { font-family: 'Inter', system-ui, sans-serif; }
+    body { background: #0a0f1e; color: #e2e8f0; }
+
+    /* ── Glow accents ─────────────────────────────────────────── */
+    .glow-indigo { box-shadow: 0 0 40px rgba(99,102,241,.15), 0 0 80px rgba(99,102,241,.05); }
+    .glow-amber  { box-shadow: 0 0 40px rgba(245,158,11,.12), 0 0 80px rgba(245,158,11,.04); }
+    .glow-green  { box-shadow: 0 0 40px rgba(16,185,129,.12), 0 0 80px rgba(16,185,129,.04); }
+    .glow-purple { box-shadow: 0 0 40px rgba(139,92,246,.12), 0 0 80px rgba(139,92,246,.04); }
+
+    /* ── Hero gradient ────────────────────────────────────────── */
+    .hero-bg {
+      background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(99,102,241,.12) 0%, transparent 60%),
+                  radial-gradient(ellipse 60% 40% at 80% 20%, rgba(139,92,246,.08) 0%, transparent 50%),
+                  #0a0f1e;
+    }
+
+    /* ── Logo bolt ────────────────────────────────────────────── */
+    .logo-bolt {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 48px;
+      height: 48px;
+      background: linear-gradient(135deg, #6366f1, #8b5cf6);
+      border-radius: 12px;
+      font-size: 24px;
+      box-shadow: 0 0 24px rgba(99,102,241,.35);
+    }
+    .logo-bolt-lg {
+      width: 72px;
+      height: 72px;
+      border-radius: 16px;
+      font-size: 36px;
+      box-shadow: 0 0 40px rgba(99,102,241,.4);
+    }
+
+    /* ── Cards ─────────────────────────────────────────────────── */
+    .card {
+      background: #111827;
+      border: 1px solid #1e293b;
+      border-radius: 16px;
+      transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+    }
+    .card:hover {
+      transform: translateY(-4px);
+      border-color: #334155;
+    }
+
+    /* ── Tool cards ────────────────────────────────────────────── */
+    .tool-card { position: relative; overflow: hidden; }
+    .tool-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      border-radius: 16px 16px 0 0;
+    }
+    .tool-card.screener::before  { background: linear-gradient(90deg, #6366f1, #8b5cf6); }
+    .tool-card.metals::before   { background: linear-gradient(90deg, #f59e0b, #d97706); }
+    .tool-card.etf::before      { background: linear-gradient(90deg, #10b981, #059669); }
+    .tool-card.crypto::before   { background: linear-gradient(90deg, #f59e0b, #ea580c); }
+    .tool-card.options::before  { background: linear-gradient(90deg, #ef4444, #dc2626); }
+    .tool-card.bonds::before    { background: linear-gradient(90deg, #06b6d4, #0891b2); }
+    .tool-card.reit::before     { background: linear-gradient(90deg, #8b5cf6, #7c3aed); }
+    .tool-card.forex::before    { background: linear-gradient(90deg, #14b8a6, #0d9488); }
+    .tool-card.commodities::before { background: linear-gradient(90deg, #d97706, #b45309); }
+    .tool-card.earnings::before { background: linear-gradient(90deg, #6366f1, #4f46e5); }
+
+    /* ── Buttons ───────────────────────────────────────────────── */
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 32px;
+      background: linear-gradient(135deg, #6366f1, #7c3aed);
+      color: white;
+      font-weight: 700;
+      border-radius: 12px;
+      border: none;
+      cursor: pointer;
+      font-size: 16px;
+      transition: transform .15s ease, box-shadow .15s ease;
+      text-decoration: none;
+    }
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(99,102,241,.35);
+    }
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 32px;
+      background: transparent;
+      color: #a5b4fc;
+      font-weight: 600;
+      border-radius: 12px;
+      border: 1px solid #334155;
+      cursor: pointer;
+      font-size: 16px;
+      transition: all .15s ease;
+      text-decoration: none;
+    }
+    .btn-secondary:hover {
+      background: rgba(99,102,241,.08);
+      border-color: #6366f1;
+    }
+
+    /* ── Show cards ────────────────────────────────────────────── */
+    .show-badge {
+      display: inline-block;
+      padding: 3px 10px;
+      border-radius: 6px;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .5px;
+    }
+    .badge-daily   { background: rgba(99,102,241,.15); color: #a5b4fc; }
+    .badge-weekly  { background: rgba(16,185,129,.15); color: #6ee7b7; }
+    .badge-markets { background: rgba(245,158,11,.15); color: #fcd34d; }
+
+    /* ── Coming soon pulse ────────────────────────────────────── */
+    @keyframes pulse-dot { 0%,100% { opacity: .4; } 50% { opacity: 1; } }
+    .pulse-dot { animation: pulse-dot 2s ease-in-out infinite; }
+
+    /* ── Section divider ──────────────────────────────────────── */
+    .section-line {
+      height: 1px;
+      background: linear-gradient(90deg, transparent, #1e293b 30%, #1e293b 70%, transparent);
+    }
+
+    /* ── Nav ───────────────────────────────────────────────────── */
+    nav a { position: relative; }
+    nav a::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0; right: 0;
+      height: 2px;
+      background: #6366f1;
+      border-radius: 1px;
+      transform: scaleX(0);
+      transition: transform .2s ease;
+    }
+    nav a:hover::after { transform: scaleX(1); }
+
+    /* ── Responsive embed ─────────────────────────────────────── */
+    .embed-wrap { border-radius: 12px; overflow: hidden; }
+
+    /* ── Stat counter ─────────────────────────────────────────── */
+    .stat-num {
+      background: linear-gradient(135deg, #e2e8f0, #94a3b8);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    /* ── Smooth scroll ────────────────────────────────────────── */
+    html { scroll-behavior: smooth; }
+  </style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════════════════════════
+     NAVIGATION
+     ═══════════════════════════════════════════════════════════════ -->
+<header class="fixed top-0 left-0 right-0 z-50" style="background:rgba(10,15,30,.85);backdrop-filter:blur(16px);border-bottom:1px solid rgba(30,41,59,.6)">
+  <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+    <!-- Logo -->
+    <a href="#" class="flex items-center gap-3 text-white no-underline">
+      <div class="logo-bolt">&#9889;</div>
+      <div>
+        <span class="font-extrabold text-lg tracking-tight">CHARGED ALPHA</span>
+        <span class="text-xs text-slate-400 block -mt-1 tracking-widest">MEDIA</span>
+      </div>
+    </a>
+    <!-- Nav links -->
+    <nav class="hidden md:flex items-center gap-8">
+      <a href="#tools" class="text-sm text-slate-300 hover:text-white transition-colors no-underline font-medium">Tools</a>
+      <a href="#shows" class="text-sm text-slate-300 hover:text-white transition-colors no-underline font-medium">Shows</a>
+      <a href="#roadmap" class="text-sm text-slate-300 hover:text-white transition-colors no-underline font-medium">Roadmap</a>
+      <a href="#about" class="text-sm text-slate-300 hover:text-white transition-colors no-underline font-medium">About</a>
+    </nav>
+    <!-- Mobile menu button -->
+    <button class="md:hidden text-slate-300" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
+      <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+    </button>
+  </div>
+  <!-- Mobile menu -->
+  <div id="mobile-menu" class="hidden md:hidden px-6 pb-4 space-y-3">
+    <a href="#tools" class="block text-sm text-slate-300 no-underline">Tools</a>
+    <a href="#shows" class="block text-sm text-slate-300 no-underline">Shows</a>
+    <a href="#roadmap" class="block text-sm text-slate-300 no-underline">Roadmap</a>
+    <a href="#about" class="block text-sm text-slate-300 no-underline">About</a>
+  </div>
+</header>
+
+<!-- ═══════════════════════════════════════════════════════════════
+     HERO
+     ═══════════════════════════════════════════════════════════════ -->
+<section class="hero-bg pt-32 pb-20 px-6">
+  <div class="max-w-5xl mx-auto text-center">
+    <!-- Logo mark large -->
+    <div class="flex justify-center mb-8">
+      <div class="logo-bolt logo-bolt-lg">&#9889;</div>
+    </div>
+
+    <h1 class="text-5xl md:text-7xl font-black tracking-tight text-white leading-tight mb-6">
+      Invest with<br>
+      <span style="background:linear-gradient(135deg,#6366f1,#a78bfa,#8b5cf6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">an Edge</span>
+    </h1>
+
+    <p class="text-xl md:text-2xl text-slate-400 max-w-2xl mx-auto mb-4 leading-relaxed">
+      Data-driven investing tools for investment markets.
+    </p>
+    <p class="text-base text-slate-500 max-w-xl mx-auto mb-10">
+      Free screening tools, daily stock breakdowns, and market analysis built for retail investors who want to make smarter decisions.
+    </p>
+
+    <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+      <a href="#tools" class="btn-primary">
+        Explore Tools
+        <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 4l6 5-6 5"/></svg>
+      </a>
+      <a href="#shows" class="btn-secondary">
+        Listen to Shows
+        <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 4v10M6 7l3-3 3 3M5 14h8"/></svg>
+      </a>
+    </div>
+
+    <!-- Quick stats -->
+    <div class="flex flex-wrap justify-center gap-10 mt-16">
+      <div class="text-center">
+        <div class="stat-num text-3xl font-extrabold">10</div>
+        <div class="text-xs text-slate-500 mt-1 uppercase tracking-wide">Live Tools</div>
+      </div>
+      <div class="text-center">
+        <div class="stat-num text-3xl font-extrabold">7</div>
+        <div class="text-xs text-slate-500 mt-1 uppercase tracking-wide">Asset Classes</div>
+      </div>
+      <div class="text-center">
+        <div class="stat-num text-3xl font-extrabold">1000+</div>
+        <div class="text-xs text-slate-500 mt-1 uppercase tracking-wide">Securities Tracked</div>
+      </div>
+      <div class="text-center">
+        <div class="stat-num text-3xl font-extrabold">Daily</div>
+        <div class="text-xs text-slate-500 mt-1 uppercase tracking-wide">Shows & Picks</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="section-line"></div>
+
+<!-- ═══════════════════════════════════════════════════════════════
+     TOOLS
+     ═══════════════════════════════════════════════════════════════ -->
+<section id="tools" class="py-24 px-6">
+  <div class="max-w-6xl mx-auto">
+    <div class="text-center mb-16">
+      <p class="text-sm font-bold text-indigo-400 uppercase tracking-widest mb-3">Free Tools</p>
+      <h2 class="text-4xl md:text-5xl font-extrabold text-white mb-4">Your Market Toolkit</h2>
+      <p class="text-lg text-slate-400 max-w-xl mx-auto">
+        Powerful screening tools that run real-time data so you don't have to dig through spreadsheets.
+      </p>
+    </div>
+
+    <!-- Featured tools — 2-column -->
+    <div class="grid md:grid-cols-2 gap-8 mb-8">
+
+      <!-- Stock Screener Card -->
+      <div class="card tool-card screener p-8 glow-indigo">
+        <div class="flex items-start gap-4 mb-6">
+          <div class="flex-shrink-0 w-14 h-14 rounded-xl flex items-center justify-center text-2xl" style="background:rgba(99,102,241,.12)">&#128200;</div>
+          <div>
+            <h3 class="text-2xl font-bold text-white">S&P 500 Stock Screener</h3>
+            <p class="text-sm text-slate-400 mt-1">Real-time screening across 500+ stocks</p>
+          </div>
+        </div>
+        <p class="text-slate-300 leading-relaxed mb-6">
+          Scan every stock in the S&P 500 against your custom criteria — valuation, dividends, growth, financial health, analyst sentiment, and options data.
+        </p>
+        <div class="grid grid-cols-2 gap-3 mb-8">
+          <div class="flex items-center gap-2 text-sm text-slate-400"><span class="text-indigo-400">&#10003;</span> P/E vs historical average</div>
+          <div class="flex items-center gap-2 text-sm text-slate-400"><span class="text-indigo-400">&#10003;</span> Dividend yield & payout</div>
+          <div class="flex items-center gap-2 text-sm text-slate-400"><span class="text-indigo-400">&#10003;</span> Revenue & EPS growth</div>
+          <div class="flex items-center gap-2 text-sm text-slate-400"><span class="text-indigo-400">&#10003;</span> Analyst target upside</div>
+          <div class="flex items-center gap-2 text-sm text-slate-400"><span class="text-indigo-400">&#10003;</span> Debt-to-equity & FCF</div>
+          <div class="flex items-center gap-2 text-sm text-slate-400"><span class="text-indigo-400">&#10003;</span> Put options screening</div>
+        </div>
+        <a href="http://localhost:5001" target="_blank" class="btn-primary w-full justify-center">
+          Launch Stock Screener
+          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 3h8v8M13 3L5 11"/></svg>
+        </a>
+      </div>
+
+      <!-- Precious Metals Card -->
+      <div class="card tool-card metals p-8 glow-amber">
+        <div class="flex items-start gap-4 mb-6">
+          <div class="flex-shrink-0 w-14 h-14 rounded-xl flex items-center justify-center text-2xl" style="background:rgba(245,158,11,.12)">&#129689;</div>
+          <div>
+            <h3 class="text-2xl font-bold text-white">Precious Metals Aggregator</h3>
+            <p class="text-sm text-slate-400 mt-1">Compare prices across dealers & marketplaces</p>
+          </div>
+        </div>
+        <p class="text-slate-300 leading-relaxed mb-6">
+          Find the best deals on physical gold, silver, and platinum. Aggregates listings from major dealers and peer-to-peer marketplaces with premium-over-spot calculations.
+        </p>
+        <div class="grid grid-cols-2 gap-3 mb-8">
+          <div class="flex items-center gap-2 text-sm text-slate-400"><span class="text-amber-400">&#10003;</span> Live spot prices</div>
+          <div class="flex items-center gap-2 text-sm text-slate-400"><span class="text-amber-400">&#10003;</span> Gold, Silver & Platinum</div>
+          <div class="flex items-center gap-2 text-sm text-slate-400"><span class="text-amber-400">&#10003;</span> Premium-over-spot calc</div>
+          <div class="flex items-center gap-2 text-sm text-slate-400"><span class="text-amber-400">&#10003;</span> Dealer + P2P sources</div>
+        </div>
+        <a href="http://localhost:8765" target="_blank" class="btn-primary w-full justify-center" style="background:linear-gradient(135deg,#d97706,#b45309);">
+          Launch Metals Aggregator
+          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 3h8v8M13 3L5 11"/></svg>
+        </a>
+      </div>
+
+    </div>
+
+    <!-- All tools — 3-column grid -->
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+      <!-- ETF Screener -->
+      <div class="card tool-card etf p-6">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="w-12 h-12 rounded-xl flex items-center justify-center text-xl" style="background:rgba(16,185,129,.12)">&#128202;</div>
+          <div>
+            <h3 class="font-bold text-white text-lg">ETF Screener</h3>
+          </div>
+        </div>
+        <p class="text-slate-400 text-sm leading-relaxed mb-5">Filter 200+ ETFs by expense ratio, AUM, dividend yield, returns, category, and asset class.</p>
+        <a href="http://localhost:5002" target="_blank" class="btn-primary w-full justify-center text-sm" style="padding:10px 20px;background:linear-gradient(135deg,#10b981,#059669);">
+          Launch ETF Screener
+          <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M4 2h7v7M11 2L4 9"/></svg>
+        </a>
+      </div>
+
+      <!-- Crypto Screener -->
+      <div class="card tool-card crypto p-6">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="w-12 h-12 rounded-xl flex items-center justify-center text-xl" style="background:rgba(245,158,11,.12)">&#8383;</div>
+          <div>
+            <h3 class="font-bold text-white text-lg">Crypto Screener</h3>
+          </div>
+        </div>
+        <p class="text-slate-400 text-sm leading-relaxed mb-5">Screen top 250 cryptocurrencies by price, market cap, 24h/7d change, and volume via CoinGecko.</p>
+        <a href="http://localhost:5003" target="_blank" class="btn-primary w-full justify-center text-sm" style="padding:10px 20px;background:linear-gradient(135deg,#f59e0b,#ea580c);">
+          Launch Crypto Screener
+          <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M4 2h7v7M11 2L4 9"/></svg>
+        </a>
+      </div>
+
+      <!-- Options Flow Scanner -->
+      <div class="card tool-card options p-6">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="w-12 h-12 rounded-xl flex items-center justify-center text-xl" style="background:rgba(239,68,68,.12)">&#9889;</div>
+          <div>
+            <h3 class="font-bold text-white text-lg">Options Scanner</h3>
+          </div>
+        </div>
+        <p class="text-slate-400 text-sm leading-relaxed mb-5">Scan options chains for unusual activity, high volume, and tight spreads across top stocks.</p>
+        <a href="http://localhost:5004" target="_blank" class="btn-primary w-full justify-center text-sm" style="padding:10px 20px;background:linear-gradient(135deg,#ef4444,#dc2626);">
+          Launch Options Scanner
+          <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M4 2h7v7M11 2L4 9"/></svg>
+        </a>
+      </div>
+
+      <!-- Bond & Treasury Dashboard -->
+      <div class="card tool-card bonds p-6">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="w-12 h-12 rounded-xl flex items-center justify-center text-xl" style="background:rgba(6,182,212,.12)">&#127974;</div>
+          <div>
+            <h3 class="font-bold text-white text-lg">Bond Dashboard</h3>
+          </div>
+        </div>
+        <p class="text-slate-400 text-sm leading-relaxed mb-5">Treasury yields, yield curve visualization, spread analysis, and bond ETF tracking in one view.</p>
+        <a href="http://localhost:5005" target="_blank" class="btn-primary w-full justify-center text-sm" style="padding:10px 20px;background:linear-gradient(135deg,#06b6d4,#0891b2);">
+          Launch Bond Dashboard
+          <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M4 2h7v7M11 2L4 9"/></svg>
+        </a>
+      </div>
+
+      <!-- REIT Screener -->
+      <div class="card tool-card reit p-6">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="w-12 h-12 rounded-xl flex items-center justify-center text-xl" style="background:rgba(139,92,246,.12)">&#127970;</div>
+          <div>
+            <h3 class="font-bold text-white text-lg">REIT Screener</h3>
+          </div>
+        </div>
+        <p class="text-slate-400 text-sm leading-relaxed mb-5">Screen 75+ REITs by dividend yield, sector, P/E, debt-to-equity, and 52-week performance.</p>
+        <a href="http://localhost:5006" target="_blank" class="btn-primary w-full justify-center text-sm" style="padding:10px 20px;background:linear-gradient(135deg,#8b5cf6,#7c3aed);">
+          Launch REIT Screener
+          <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M4 2h7v7M11 2L4 9"/></svg>
+        </a>
+      </div>
+
+      <!-- Forex Heatmap -->
+      <div class="card tool-card forex p-6">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="w-12 h-12 rounded-xl flex items-center justify-center text-xl" style="background:rgba(20,184,166,.12)">&#128177;</div>
+          <div>
+            <h3 class="font-bold text-white text-lg">Forex Heatmap</h3>
+          </div>
+        </div>
+        <p class="text-slate-400 text-sm leading-relaxed mb-5">Visual heatmap of 28 currency pairs with strength index and multi-timeframe change tracking.</p>
+        <a href="http://localhost:5007" target="_blank" class="btn-primary w-full justify-center text-sm" style="padding:10px 20px;background:linear-gradient(135deg,#14b8a6,#0d9488);">
+          Launch Forex Heatmap
+          <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M4 2h7v7M11 2L4 9"/></svg>
+        </a>
+      </div>
+
+      <!-- Commodities Dashboard -->
+      <div class="card tool-card commodities p-6">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="w-12 h-12 rounded-xl flex items-center justify-center text-xl" style="background:rgba(217,119,6,.12)">&#127805;</div>
+          <div>
+            <h3 class="font-bold text-white text-lg">Commodities</h3>
+          </div>
+        </div>
+        <p class="text-slate-400 text-sm leading-relaxed mb-5">Track energy, metals, agriculture, and livestock futures with price charts and category filters.</p>
+        <a href="http://localhost:5008" target="_blank" class="btn-primary w-full justify-center text-sm" style="padding:10px 20px;background:linear-gradient(135deg,#d97706,#b45309);">
+          Launch Commodities
+          <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M4 2h7v7M11 2L4 9"/></svg>
+        </a>
+      </div>
+
+      <!-- Earnings Calendar -->
+      <div class="card tool-card earnings p-6">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="w-12 h-12 rounded-xl flex items-center justify-center text-xl" style="background:rgba(99,102,241,.12)">&#128197;</div>
+          <div>
+            <h3 class="font-bold text-white text-lg">Earnings Calendar</h3>
+          </div>
+        </div>
+        <p class="text-slate-400 text-sm leading-relaxed mb-5">Upcoming earnings dates for top S&P 500 companies with estimates, history, and sector filters.</p>
+        <a href="http://localhost:5009" target="_blank" class="btn-primary w-full justify-center text-sm" style="padding:10px 20px;background:linear-gradient(135deg,#6366f1,#4f46e5);">
+          Launch Earnings Calendar
+          <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M4 2h7v7M11 2L4 9"/></svg>
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<div class="section-line"></div>
+
+<!-- ═══════════════════════════════════════════════════════════════
+     SHOWS / PODCASTS
+     ═══════════════════════════════════════════════════════════════ -->
+<section id="shows" class="py-24 px-6">
+  <div class="max-w-6xl mx-auto">
+    <div class="text-center mb-16">
+      <p class="text-sm font-bold text-indigo-400 uppercase tracking-widest mb-3">Listen & Learn</p>
+      <h2 class="text-4xl md:text-5xl font-extrabold text-white mb-4">Charged Alpha Shows</h2>
+      <p class="text-lg text-slate-400 max-w-xl mx-auto">
+        Daily picks, market breakdowns, and investing strategies — from the tools to your ears.
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-8">
+
+      <!-- Show 1: Daily Stock Pick -->
+      <div class="card p-6 glow-indigo">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="w-12 h-12 rounded-xl flex items-center justify-center text-xl" style="background:rgba(99,102,241,.12)">
+            &#127911;
+          </div>
+          <div>
+            <h3 class="font-bold text-white text-lg">The Daily Alpha</h3>
+            <span class="show-badge badge-daily">Daily</span>
+          </div>
+        </div>
+        <p class="text-slate-400 text-sm leading-relaxed mb-5">
+          One stock. Every day. Picked by running our screener filters — value, growth, momentum, and more. We break down why the numbers stand out and whether it deserves your attention.
+        </p>
+        <!-- Spotify embed placeholder -->
+        <div class="embed-wrap bg-slate-800 rounded-xl p-4 text-center">
+          <div class="text-slate-500 text-sm py-6">
+            <svg class="mx-auto mb-2" width="32" height="32" viewBox="0 0 24 24" fill="#1DB954"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg>
+            Spotify embed coming soon
+          </div>
+        </div>
+      </div>
+
+      <!-- Show 2: International Markets -->
+      <div class="card p-6 glow-green">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="w-12 h-12 rounded-xl flex items-center justify-center text-xl" style="background:rgba(16,185,129,.12)">
+            &#127758;
+          </div>
+          <div>
+            <h3 class="font-bold text-white text-lg">Global Pulse</h3>
+            <span class="show-badge badge-markets">Markets</span>
+          </div>
+        </div>
+        <p class="text-slate-400 text-sm leading-relaxed mb-5">
+          International markets, emerging opportunities, and macro trends from around the world. What's moving overseas and why it matters to your portfolio back home.
+        </p>
+        <!-- Spotify embed placeholder -->
+        <div class="embed-wrap bg-slate-800 rounded-xl p-4 text-center">
+          <div class="text-slate-500 text-sm py-6">
+            <svg class="mx-auto mb-2" width="32" height="32" viewBox="0 0 24 24" fill="#1DB954"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg>
+            Spotify embed coming soon
+          </div>
+        </div>
+      </div>
+
+      <!-- Show 3: Strategy / Education -->
+      <div class="card p-6 glow-purple">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="w-12 h-12 rounded-xl flex items-center justify-center text-xl" style="background:rgba(139,92,246,.12)">
+            &#128218;
+          </div>
+          <div>
+            <h3 class="font-bold text-white text-lg">Alpha Academy</h3>
+            <span class="show-badge badge-weekly">Weekly</span>
+          </div>
+        </div>
+        <p class="text-slate-400 text-sm leading-relaxed mb-5">
+          Deep dives into investing strategies, how to read financial data, options basics, and building a portfolio. Made for people who are learning and those sharpening their edge.
+        </p>
+        <!-- Spotify embed placeholder -->
+        <div class="embed-wrap bg-slate-800 rounded-xl p-4 text-center">
+          <div class="text-slate-500 text-sm py-6">
+            <svg class="mx-auto mb-2" width="32" height="32" viewBox="0 0 24 24" fill="#1DB954"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg>
+            Spotify embed coming soon
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Subscribe CTA -->
+    <div class="text-center mt-12">
+      <p class="text-slate-400 mb-4">Available wherever you listen to podcasts</p>
+      <div class="flex flex-wrap justify-center gap-4">
+        <a href="#" class="flex items-center gap-2 px-5 py-3 rounded-xl text-sm font-semibold text-white no-underline transition-all hover:scale-105" style="background:#1DB954;">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg>
+          Spotify
+        </a>
+        <a href="#" class="flex items-center gap-2 px-5 py-3 rounded-xl text-sm font-semibold text-white no-underline transition-all hover:scale-105" style="background:linear-gradient(135deg,#9933ff,#7733bb);">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M5.34 0A5.328 5.328 0 000 5.34v13.32A5.328 5.328 0 005.34 24h13.32A5.328 5.328 0 0024 18.66V5.34A5.328 5.328 0 0018.66 0H5.34zm6.525 4.8c.6 0 1.18.06 1.56.18.48.12.84.36 1.14.66.3.3.48.66.6 1.08.12.42.18.84.18 1.32v.36c0 .48-.06.9-.24 1.32-.12.36-.36.66-.66.96-.24.18-.48.36-.84.48.48.12.84.36 1.08.72.24.36.36.84.36 1.44v1.08c0 .24 0 .48.06.72.06.18.12.3.24.42v.12h-2.1c-.06-.12-.12-.24-.12-.42-.06-.18-.06-.42-.06-.66v-1.14c0-.48-.12-.84-.3-1.02-.24-.24-.54-.36-1.02-.36h-1.68v3.6h-2.1V4.8h3.78zm-.48 1.68h-1.2v2.82h1.08c.48 0 .84-.06 1.08-.24.24-.18.36-.48.36-.96v-.36c0-.42-.06-.72-.24-.96-.18-.18-.48-.3-1.08-.3z"/></svg>
+          Apple Podcasts
+        </a>
+        <a href="#" class="flex items-center gap-2 px-5 py-3 rounded-xl text-sm font-semibold text-white no-underline transition-all hover:scale-105" style="background:#ff0000;">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+          YouTube
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="section-line"></div>
+
+<!-- ═══════════════════════════════════════════════════════════════
+     HOW IT CONNECTS — The Charged Alpha Loop
+     ═══════════════════════════════════════════════════════════════ -->
+<section class="py-24 px-6">
+  <div class="max-w-5xl mx-auto">
+    <div class="text-center mb-16">
+      <p class="text-sm font-bold text-indigo-400 uppercase tracking-widest mb-3">How It Works</p>
+      <h2 class="text-4xl md:text-5xl font-extrabold text-white mb-4">The Charged Alpha Loop</h2>
+      <p class="text-lg text-slate-400 max-w-xl mx-auto">
+        Our tools power our shows. Our shows teach you to use the tools better.
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-8">
+      <div class="text-center">
+        <div class="w-16 h-16 rounded-2xl flex items-center justify-center text-3xl mx-auto mb-4" style="background:rgba(99,102,241,.1)">1</div>
+        <h3 class="font-bold text-white text-lg mb-2">Screen</h3>
+        <p class="text-slate-400 text-sm leading-relaxed">
+          Run the screener with value, growth, dividend, or momentum filters to surface interesting stocks from the S&P 500.
+        </p>
+      </div>
+      <div class="text-center">
+        <div class="w-16 h-16 rounded-2xl flex items-center justify-center text-3xl mx-auto mb-4" style="background:rgba(139,92,246,.1)">2</div>
+        <h3 class="font-bold text-white text-lg mb-2">Analyze</h3>
+        <p class="text-slate-400 text-sm leading-relaxed">
+          Dive into the detail view — charts, financials, options chains, and analyst targets. We do the same thing live on the shows.
+        </p>
+      </div>
+      <div class="text-center">
+        <div class="w-16 h-16 rounded-2xl flex items-center justify-center text-3xl mx-auto mb-4" style="background:rgba(16,185,129,.1)">3</div>
+        <h3 class="font-bold text-white text-lg mb-2">Decide</h3>
+        <p class="text-slate-400 text-sm leading-relaxed">
+          Make informed decisions with real data — not hype. Whether you're building a watchlist or placing a trade, you've done the homework.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="section-line"></div>
+
+<!-- ═══════════════════════════════════════════════════════════════
+     ROADMAP / COMING SOON
+     ═══════════════════════════════════════════════════════════════ -->
+<section id="roadmap" class="py-24 px-6">
+  <div class="max-w-4xl mx-auto">
+    <div class="text-center mb-16">
+      <p class="text-sm font-bold text-indigo-400 uppercase tracking-widest mb-3">What's Next</p>
+      <h2 class="text-4xl md:text-5xl font-extrabold text-white mb-4">On the Roadmap</h2>
+      <p class="text-lg text-slate-400 max-w-xl mx-auto">
+        We're building more tools and expanding coverage. Here's what's coming.
+      </p>
+    </div>
+
+    <div class="space-y-4">
+      <!-- Live tools -->
+      <div class="card p-5 flex items-center gap-4">
+        <div class="w-3 h-3 rounded-full bg-emerald-400 flex-shrink-0" style="box-shadow:0 0 8px rgba(16,185,129,.5);"></div>
+        <div class="flex-1">
+          <span class="font-bold text-white">S&P 500 Stock Screener</span>
+          <span class="text-slate-500 text-sm ml-2">20+ filters, strategy presets, options chains</span>
+        </div>
+        <span class="text-xs font-bold text-emerald-400 uppercase tracking-wide">Live</span>
+      </div>
+
+      <div class="card p-5 flex items-center gap-4">
+        <div class="w-3 h-3 rounded-full bg-emerald-400 flex-shrink-0" style="box-shadow:0 0 8px rgba(16,185,129,.5);"></div>
+        <div class="flex-1">
+          <span class="font-bold text-white">Precious Metals Aggregator</span>
+          <span class="text-slate-500 text-sm ml-2">Gold, silver, platinum price comparison</span>
+        </div>
+        <span class="text-xs font-bold text-emerald-400 uppercase tracking-wide">Live</span>
+      </div>
+
+      <div class="card p-5 flex items-center gap-4">
+        <div class="w-3 h-3 rounded-full bg-emerald-400 flex-shrink-0" style="box-shadow:0 0 8px rgba(16,185,129,.5);"></div>
+        <div class="flex-1">
+          <span class="font-bold text-white">ETF Screener</span>
+          <span class="text-slate-500 text-sm ml-2">200+ ETFs by expense ratio, AUM, returns, category</span>
+        </div>
+        <span class="text-xs font-bold text-emerald-400 uppercase tracking-wide">Live</span>
+      </div>
+
+      <div class="card p-5 flex items-center gap-4">
+        <div class="w-3 h-3 rounded-full bg-emerald-400 flex-shrink-0" style="box-shadow:0 0 8px rgba(16,185,129,.5);"></div>
+        <div class="flex-1">
+          <span class="font-bold text-white">Crypto Screener</span>
+          <span class="text-slate-500 text-sm ml-2">Top 250 coins by volume, market cap, momentum</span>
+        </div>
+        <span class="text-xs font-bold text-emerald-400 uppercase tracking-wide">Live</span>
+      </div>
+
+      <div class="card p-5 flex items-center gap-4">
+        <div class="w-3 h-3 rounded-full bg-emerald-400 flex-shrink-0" style="box-shadow:0 0 8px rgba(16,185,129,.5);"></div>
+        <div class="flex-1">
+          <span class="font-bold text-white">Options Flow Scanner</span>
+          <span class="text-slate-500 text-sm ml-2">Unusual activity, volume, open interest, IV</span>
+        </div>
+        <span class="text-xs font-bold text-emerald-400 uppercase tracking-wide">Live</span>
+      </div>
+
+      <div class="card p-5 flex items-center gap-4">
+        <div class="w-3 h-3 rounded-full bg-emerald-400 flex-shrink-0" style="box-shadow:0 0 8px rgba(16,185,129,.5);"></div>
+        <div class="flex-1">
+          <span class="font-bold text-white">Bond & Treasury Dashboard</span>
+          <span class="text-slate-500 text-sm ml-2">Yield curve, spreads, bond ETF tracker</span>
+        </div>
+        <span class="text-xs font-bold text-emerald-400 uppercase tracking-wide">Live</span>
+      </div>
+
+      <div class="card p-5 flex items-center gap-4">
+        <div class="w-3 h-3 rounded-full bg-emerald-400 flex-shrink-0" style="box-shadow:0 0 8px rgba(16,185,129,.5);"></div>
+        <div class="flex-1">
+          <span class="font-bold text-white">REIT Screener</span>
+          <span class="text-slate-500 text-sm ml-2">75+ REITs by yield, sector, valuation</span>
+        </div>
+        <span class="text-xs font-bold text-emerald-400 uppercase tracking-wide">Live</span>
+      </div>
+
+      <div class="card p-5 flex items-center gap-4">
+        <div class="w-3 h-3 rounded-full bg-emerald-400 flex-shrink-0" style="box-shadow:0 0 8px rgba(16,185,129,.5);"></div>
+        <div class="flex-1">
+          <span class="font-bold text-white">Forex Heatmap</span>
+          <span class="text-slate-500 text-sm ml-2">28 currency pairs, strength index, multi-timeframe</span>
+        </div>
+        <span class="text-xs font-bold text-emerald-400 uppercase tracking-wide">Live</span>
+      </div>
+
+      <div class="card p-5 flex items-center gap-4">
+        <div class="w-3 h-3 rounded-full bg-emerald-400 flex-shrink-0" style="box-shadow:0 0 8px rgba(16,185,129,.5);"></div>
+        <div class="flex-1">
+          <span class="font-bold text-white">Commodities Dashboard</span>
+          <span class="text-slate-500 text-sm ml-2">Energy, metals, agriculture & livestock futures</span>
+        </div>
+        <span class="text-xs font-bold text-emerald-400 uppercase tracking-wide">Live</span>
+      </div>
+
+      <div class="card p-5 flex items-center gap-4">
+        <div class="w-3 h-3 rounded-full bg-emerald-400 flex-shrink-0" style="box-shadow:0 0 8px rgba(16,185,129,.5);"></div>
+        <div class="flex-1">
+          <span class="font-bold text-white">Earnings Calendar</span>
+          <span class="text-slate-500 text-sm ml-2">Upcoming earnings, estimates, and history</span>
+        </div>
+        <span class="text-xs font-bold text-emerald-400 uppercase tracking-wide">Live</span>
+      </div>
+
+      <!-- Coming Soon -->
+      <div class="card p-5 flex items-center gap-4" style="border-color:#1e293b80;">
+        <div class="w-3 h-3 rounded-full bg-amber-400 flex-shrink-0 pulse-dot"></div>
+        <div class="flex-1">
+          <span class="font-bold text-slate-300">Portfolio Tracker</span>
+          <span class="text-slate-500 text-sm ml-2">Track your positions, see screener alerts on your holdings</span>
+        </div>
+        <span class="text-xs font-bold text-amber-400 uppercase tracking-wide">Coming Soon</span>
+      </div>
+
+      <div class="card p-5 flex items-center gap-4" style="border-color:#1e293b80;">
+        <div class="w-3 h-3 rounded-full bg-slate-600 flex-shrink-0"></div>
+        <div class="flex-1">
+          <span class="font-bold text-slate-400">International Markets Screener</span>
+          <span class="text-slate-500 text-sm ml-2">Screen stocks across global exchanges</span>
+        </div>
+        <span class="text-xs font-bold text-slate-500 uppercase tracking-wide">Planned</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="section-line"></div>
+
+<!-- ═══════════════════════════════════════════════════════════════
+     ABOUT
+     ═══════════════════════════════════════════════════════════════ -->
+<section id="about" class="py-24 px-6">
+  <div class="max-w-3xl mx-auto text-center">
+    <div class="logo-bolt logo-bolt-lg mx-auto mb-8">&#9889;</div>
+    <h2 class="text-3xl md:text-4xl font-extrabold text-white mb-6">Built for Retail Investors</h2>
+    <p class="text-lg text-slate-400 leading-relaxed mb-6">
+      Charged Alpha exists because good investing data shouldn't be locked behind expensive terminals. We build free, no-signup tools that give everyday investors the same screening power the pros use — and we break it all down on our daily shows so you know exactly what to do with it.
+    </p>
+    <p class="text-lg text-slate-400 leading-relaxed">
+      Whether you're just getting started or you've been trading for years, there's something here for you. Run a screen. Listen to a show. Make better decisions.
+    </p>
+  </div>
+</section>
+
+<div class="section-line"></div>
+
+<!-- ═══════════════════════════════════════════════════════════════
+     FOOTER
+     ═══════════════════════════════════════════════════════════════ -->
+<footer class="py-16 px-6">
+  <div class="max-w-6xl mx-auto">
+    <div class="grid md:grid-cols-4 gap-10 mb-12">
+      <!-- Brand -->
+      <div class="md:col-span-2">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="logo-bolt" style="width:36px;height:36px;font-size:18px;border-radius:8px;">&#9889;</div>
+          <span class="font-extrabold text-white tracking-tight">CHARGED ALPHA</span>
+        </div>
+        <p class="text-sm text-slate-500 leading-relaxed max-w-sm">
+          Data-driven investing tools and shows for retail investors who want to make smarter decisions in the market.
+        </p>
+      </div>
+
+      <!-- Tools -->
+      <div>
+        <h4 class="text-sm font-bold text-slate-300 uppercase tracking-wide mb-4">Tools</h4>
+        <ul class="space-y-2 text-sm">
+          <li><a href="http://localhost:5001" class="text-slate-500 hover:text-indigo-400 transition-colors no-underline">Stock Screener</a></li>
+          <li><a href="http://localhost:8765" class="text-slate-500 hover:text-amber-400 transition-colors no-underline">Metals Aggregator</a></li>
+          <li><a href="http://localhost:5002" class="text-slate-500 hover:text-emerald-400 transition-colors no-underline">ETF Screener</a></li>
+          <li><a href="http://localhost:5003" class="text-slate-500 hover:text-orange-400 transition-colors no-underline">Crypto Screener</a></li>
+          <li><a href="http://localhost:5004" class="text-slate-500 hover:text-red-400 transition-colors no-underline">Options Scanner</a></li>
+          <li><a href="http://localhost:5005" class="text-slate-500 hover:text-cyan-400 transition-colors no-underline">Bond Dashboard</a></li>
+          <li><a href="http://localhost:5006" class="text-slate-500 hover:text-purple-400 transition-colors no-underline">REIT Screener</a></li>
+          <li><a href="http://localhost:5007" class="text-slate-500 hover:text-teal-400 transition-colors no-underline">Forex Heatmap</a></li>
+          <li><a href="http://localhost:5008" class="text-slate-500 hover:text-amber-400 transition-colors no-underline">Commodities</a></li>
+          <li><a href="http://localhost:5009" class="text-slate-500 hover:text-indigo-400 transition-colors no-underline">Earnings Calendar</a></li>
+        </ul>
+      </div>
+
+      <!-- Social -->
+      <div>
+        <h4 class="text-sm font-bold text-slate-300 uppercase tracking-wide mb-4">Follow Us</h4>
+        <div class="flex gap-3">
+          <a href="#" class="w-9 h-9 rounded-lg flex items-center justify-center text-slate-500 hover:text-white transition-colors" style="background:#1e293b;" title="Twitter/X">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          </a>
+          <a href="#" class="w-9 h-9 rounded-lg flex items-center justify-center text-slate-500 hover:text-white transition-colors" style="background:#1e293b;" title="YouTube">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814z M9.545 15.568V8.432L15.818 12z"/></svg>
+          </a>
+          <a href="#" class="w-9 h-9 rounded-lg flex items-center justify-center text-slate-500 hover:text-white transition-colors" style="background:#1e293b;" title="Instagram">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+          </a>
+          <a href="#" class="w-9 h-9 rounded-lg flex items-center justify-center text-slate-500 hover:text-white transition-colors" style="background:#1e293b;" title="Discord">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.317 4.3698a19.7913 19.7913 0 00-4.8851-1.5152.0741.0741 0 00-.0785.0371c-.211.3753-.4447.8648-.6083 1.2495-1.8447-.2762-3.68-.2762-5.4868 0-.1636-.3933-.4058-.8742-.6177-1.2495a.077.077 0 00-.0785-.037 19.7363 19.7363 0 00-4.8852 1.515.0699.0699 0 00-.0321.0277C.5334 9.0458-.319 13.5799.0992 18.0578a.0824.0824 0 00.0312.0561c2.0528 1.5076 4.0413 2.4228 5.9929 3.0294a.0777.0777 0 00.0842-.0276c.4616-.6304.8731-1.2952 1.226-1.9942a.076.076 0 00-.0416-.1057c-.6528-.2476-1.2743-.5495-1.8722-.8923a.077.077 0 01-.0076-.1277c.1258-.0943.2517-.1923.3718-.2914a.0743.0743 0 01.0776-.0105c3.9278 1.7933 8.18 1.7933 12.0614 0a.0739.0739 0 01.0785.0095c.1202.099.246.1981.3728.2924a.077.077 0 01-.0066.1276 12.2986 12.2986 0 01-1.873.8914.0766.0766 0 00-.0407.1067c.3604.698.7719 1.3628 1.225 1.9932a.076.076 0 00.0842.0286c1.961-.6067 3.9495-1.5219 6.0023-3.0294a.077.077 0 00.0313-.0552c.5004-5.177-.8382-9.6739-3.5485-13.6604a.061.061 0 00-.0312-.0286zM8.02 15.3312c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9555-2.4189 2.157-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.9555 2.4189-2.1569 2.4189zm7.9748 0c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9554-2.4189 2.1569-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.946 2.4189-2.1568 2.4189z"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="border-t border-slate-800 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
+      <p class="text-xs text-slate-600">&copy; 2026 Charged Alpha. All rights reserved.</p>
+      <p class="text-xs text-slate-600">
+        Not financial advice. Tools provide data for educational purposes only.
+      </p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

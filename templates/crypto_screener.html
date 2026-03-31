@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Crypto Screener — Charged Alpha</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Inter',system-ui,sans-serif}
+body{background:#0a0f1e;color:#e2e8f0;min-height:100vh}
+header{background:#111827;border-bottom:1px solid #1e293b;padding:16px 24px;display:flex;align-items:center;justify-content:space-between}
+.logo{display:flex;align-items:center;gap:10px;font-weight:800;color:white;font-size:14px;text-decoration:none}
+.logo-bolt{width:36px;height:36px;background:linear-gradient(135deg,#6366f1,#8b5cf6);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:18px}
+h1{font-size:22px;color:white;font-weight:700}
+.panel{background:#111827;border:1px solid #1e293b;border-radius:12px;padding:20px;margin:20px}
+.filters{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:12px;margin-bottom:16px}
+label{display:block;font-size:11px;color:#94a3b8;text-transform:uppercase;letter-spacing:.5px;margin-bottom:4px;font-weight:600}
+input[type=number]{width:100%;background:#0f172a;border:1px solid #334155;border-radius:8px;padding:8px 12px;color:#e2e8f0;font-size:13px}
+input:focus{outline:none;border-color:#6366f1}
+.btn{padding:10px 24px;border-radius:8px;border:none;font-weight:700;font-size:14px;cursor:pointer;transition:.15s}
+.btn-primary{background:linear-gradient(135deg,#6366f1,#7c3aed);color:white}
+.btn-primary:hover{transform:translateY(-1px);box-shadow:0 4px 16px rgba(99,102,241,.3)}
+.btn-primary:disabled{opacity:.5;cursor:not-allowed;transform:none}
+.btn-secondary{background:#1e293b;color:#a5b4fc;border:1px solid #334155}
+.actions{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.progress{font-size:13px;color:#94a3b8;margin-left:12px}
+table{width:100%;border-collapse:collapse;font-size:13px}
+th{position:sticky;top:0;background:#1e293b;color:#94a3b8;font-weight:600;text-transform:uppercase;font-size:11px;letter-spacing:.5px;padding:10px 12px;text-align:left;cursor:pointer;user-select:none}
+th:hover{color:#e2e8f0}
+td{padding:10px 12px;border-bottom:1px solid #1e293b}
+tr:hover td{background:rgba(99,102,241,.04)}
+.right{text-align:right}
+.green{color:#10b981}.red{color:#ef4444}
+.coin-info{display:flex;align-items:center;gap:8px}
+.coin-img{width:24px;height:24px;border-radius:50%}
+.table-wrap{max-height:70vh;overflow:auto;border:1px solid #1e293b;border-radius:12px}
+.modal-overlay{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.7);z-index:100;align-items:center;justify-content:center}
+.modal-overlay.active{display:flex}
+.modal{background:#111827;border:1px solid #1e293b;border-radius:16px;padding:24px;width:90%;max-width:700px;max-height:90vh;overflow:auto}
+.modal h2{color:white;margin-bottom:16px;font-size:20px}
+.modal-close{float:right;background:none;border:none;color:#94a3b8;font-size:24px;cursor:pointer}
+.presets{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:16px}
+.preset-btn{padding:6px 14px;border-radius:20px;border:1px solid #334155;background:transparent;color:#a5b4fc;font-size:12px;font-weight:600;cursor:pointer;transition:.15s}
+.preset-btn:hover{background:rgba(99,102,241,.1);border-color:#6366f1}
+.stat{display:inline-block;padding:4px 10px;border-radius:6px;font-size:12px;font-weight:600}
+</style>
+</head>
+<body>
+<header>
+  <a href="http://localhost:8080" class="logo"><div class="logo-bolt">⚡</div>CHARGED ALPHA</a>
+  <h1>₿ Crypto Screener</h1>
+</header>
+<div class="panel">
+  <div class="presets">
+    <button class="preset-btn" onclick="applyPreset('large')">Large Cap (&gt;$10B)</button>
+    <button class="preset-btn" onclick="applyPreset('gainers')">24h Gainers (&gt;5%)</button>
+    <button class="preset-btn" onclick="applyPreset('losers')">24h Losers (&lt;-5%)</button>
+    <button class="preset-btn" onclick="applyPreset('highvol')">High Volume</button>
+    <button class="preset-btn" onclick="clearFilters()">Clear All</button>
+  </div>
+  <div class="filters">
+    <div><label>Min Price ($)</label><input type="number" id="min_price" step="any"></div>
+    <div><label>Max Price ($)</label><input type="number" id="max_price" step="any"></div>
+    <div><label>Min Market Cap ($)</label><input type="number" id="min_market_cap" step="any"></div>
+    <div><label>Max Market Cap ($)</label><input type="number" id="max_market_cap" step="any"></div>
+    <div><label>Min 24h Change %</label><input type="number" id="min_change_24h" step="any"></div>
+    <div><label>Max 24h Change %</label><input type="number" id="max_change_24h" step="any"></div>
+    <div><label>Min 7d Change %</label><input type="number" id="min_change_7d" step="any"></div>
+    <div><label>Max 7d Change %</label><input type="number" id="max_change_7d" step="any"></div>
+    <div><label>Min Volume ($)</label><input type="number" id="min_volume" step="any"></div>
+    <div><label>Max Volume ($)</label><input type="number" id="max_volume" step="any"></div>
+  </div>
+  <div class="actions">
+    <button class="btn btn-primary" id="screenBtn" onclick="runScreen()">Screen Cryptos</button>
+    <button class="btn btn-secondary" id="csvBtn" onclick="exportCSV()" style="display:none">Export CSV</button>
+    <span class="progress" id="progress"></span>
+  </div>
+</div>
+<div class="panel" id="resultsPanel" style="display:none">
+  <div class="table-wrap"><table><thead id="thead"></thead><tbody id="tbody"></tbody></table></div>
+</div>
+
+<div class="modal-overlay" id="modal">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal()">&times;</button>
+    <h2 id="modalTitle"></h2>
+    <div style="margin-bottom:16px">
+      <button class="preset-btn" onclick="loadChart(7)">7D</button>
+      <button class="preset-btn" onclick="loadChart(30)">30D</button>
+      <button class="preset-btn" onclick="loadChart(90)">90D</button>
+      <button class="preset-btn" onclick="loadChart(365)">1Y</button>
+    </div>
+    <canvas id="chartCanvas" height="200"></canvas>
+  </div>
+</div>
+
+<script>
+const fields=['min_price','max_price','min_market_cap','max_market_cap','min_change_24h','max_change_24h','min_change_7d','max_change_7d','min_volume','max_volume'];
+let results=[], sortKey='rank', sortAsc=true, chartInstance=null, selectedCoin=null;
+
+const cols=[
+  {key:'rank',label:'#',align:'right'},
+  {key:'name',label:'Name'},
+  {key:'symbol',label:'Symbol'},
+  {key:'price',label:'Price',align:'right'},
+  {key:'market_cap',label:'Market Cap',align:'right'},
+  {key:'change_24h',label:'24h %',align:'right'},
+  {key:'change_7d',label:'7d %',align:'right'},
+  {key:'volume',label:'Volume',align:'right'},
+  {key:'supply_ratio',label:'Circ/Total %',align:'right'},
+];
+
+function applyPreset(p){
+  clearFilters();
+  if(p==='large') document.getElementById('min_market_cap').value=10000000000;
+  if(p==='gainers') document.getElementById('min_change_24h').value=5;
+  if(p==='losers') document.getElementById('max_change_24h').value=-5;
+  if(p==='highvol') document.getElementById('min_volume').value=1000000000;
+}
+function clearFilters(){fields.forEach(f=>document.getElementById(f).value='')}
+
+function fmt(v){
+  if(v==null) return '—';
+  if(Math.abs(v)>=1e12) return '$'+(v/1e12).toFixed(2)+'T';
+  if(Math.abs(v)>=1e9) return '$'+(v/1e9).toFixed(2)+'B';
+  if(Math.abs(v)>=1e6) return '$'+(v/1e6).toFixed(1)+'M';
+  if(Math.abs(v)>=1e3) return '$'+(v/1e3).toFixed(1)+'K';
+  return '$'+v.toLocaleString();
+}
+function pct(v){return v==null?'—':(v>=0?'+':'')+v.toFixed(2)+'%'}
+
+async function runScreen(){
+  const body={};
+  fields.forEach(f=>{const v=document.getElementById(f).value;if(v!=='')body[f]=v});
+  document.getElementById('screenBtn').disabled=true;
+  document.getElementById('progress').textContent='Starting...';
+  results=[];
+  const r=await fetch('/crypto/api/screen',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body)});
+  const{job_id}=await r.json();
+  const poll=setInterval(async()=>{
+    const s=await(await fetch('/crypto/api/screen/'+job_id)).json();
+    document.getElementById('progress').textContent=`${s.processed}/${s.total} screened — ${s.matches.length} matches`;
+    if(s.status==='done'||s.status==='error'){
+      clearInterval(poll);
+      results=s.matches;
+      renderTable();
+      document.getElementById('screenBtn').disabled=false;
+      document.getElementById('csvBtn').style.display='inline-block';
+      document.getElementById('resultsPanel').style.display='block';
+    }
+  },500);
+}
+
+function renderTable(){
+  const sorted=[...results].sort((a,b)=>{
+    let av=a[sortKey],bv=b[sortKey];
+    if(av==null) return 1;if(bv==null) return -1;
+    if(typeof av==='string') return sortAsc?av.localeCompare(bv):bv.localeCompare(av);
+    return sortAsc?av-bv:bv-av;
+  });
+  document.getElementById('thead').innerHTML='<tr>'+cols.map(c=>
+    `<th class="${c.align==='right'?'right':''}" onclick="doSort('${c.key}')">${c.label}${sortKey===c.key?(sortAsc?' ▲':' ▼'):''}</th>`
+  ).join('')+'</tr>';
+  document.getElementById('tbody').innerHTML=sorted.map(r=>'<tr onclick="openModal(\''+r.id+'\',\''+r.name+'\')" style="cursor:pointer">'+cols.map(c=>{
+    let v=r[c.key];
+    let cls=c.align==='right'?'right':'';
+    if(c.key==='name') return `<td><div class="coin-info"><img class="coin-img" src="${r.image}" alt="">${v}</div></td>`;
+    if(c.key==='change_24h'||c.key==='change_7d') return `<td class="${cls} ${v>0?'green':v<0?'red':''}">${pct(v)}</td>`;
+    if(c.key==='market_cap'||c.key==='volume') return `<td class="${cls}">${fmt(v)}</td>`;
+    if(c.key==='price') return `<td class="${cls}">${v!=null?'$'+v.toLocaleString():'—'}</td>`;
+    if(c.key==='supply_ratio') return `<td class="${cls}">${v!=null?v+'%':'—'}</td>`;
+    return `<td class="${cls}">${v!=null?v:'—'}</td>`;
+  }).join('')+'</tr>').join('');
+}
+
+function doSort(key){if(sortKey===key)sortAsc=!sortAsc;else{sortKey=key;sortAsc=true}renderTable()}
+
+function openModal(id,name){
+  selectedCoin=id;
+  document.getElementById('modalTitle').textContent=name;
+  document.getElementById('modal').classList.add('active');
+  loadChart(30);
+}
+function closeModal(){document.getElementById('modal').classList.remove('active');if(chartInstance)chartInstance.destroy()}
+
+async function loadChart(days){
+  if(chartInstance)chartInstance.destroy();
+  const r=await(await fetch(`/api/crypto/${selectedCoin}/chart?days=${days}`)).json();
+  if(!r.labels) return;
+  const ctx=document.getElementById('chartCanvas').getContext('2d');
+  chartInstance=new Chart(ctx,{type:'line',data:{labels:r.labels,datasets:[{label:'Price (USD)',data:r.prices,borderColor:'#6366f1',backgroundColor:'rgba(99,102,241,.1)',fill:true,tension:.3,pointRadius:0}]},options:{responsive:true,plugins:{legend:{display:false}},scales:{x:{ticks:{color:'#64748b',maxTicksLimit:8},grid:{color:'#1e293b'}},y:{ticks:{color:'#64748b'},grid:{color:'#1e293b'}}}}});
+}
+
+function exportCSV(){
+  if(!results.length) return;
+  const keys=cols.map(c=>c.key);
+  let csv=keys.join(',')+'\n';
+  results.forEach(r=>{csv+=keys.map(k=>{let v=r[k];return v==null?'':typeof v==='string'?'"'+v+'"':v}).join(',')+'\n'});
+  const blob=new Blob([csv],{type:'text/csv'});
+  const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='crypto_screen.csv';a.click();
+}
+</script>
+</body>
+</html>

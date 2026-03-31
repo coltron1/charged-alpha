@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Options Flow Scanner — Charged Alpha</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Inter',system-ui,sans-serif}
+body{background:#0a0f1e;color:#e2e8f0;min-height:100vh}
+header{background:#111827;border-bottom:1px solid #1e293b;padding:16px 24px;display:flex;align-items:center;justify-content:space-between}
+.logo{display:flex;align-items:center;gap:10px;font-weight:800;color:white;font-size:14px;text-decoration:none}
+.logo-bolt{width:36px;height:36px;background:linear-gradient(135deg,#6366f1,#8b5cf6);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:18px}
+h1{font-size:22px;color:white;font-weight:700}
+.panel{background:#111827;border:1px solid #1e293b;border-radius:12px;padding:20px;margin:20px}
+.filters{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:12px;margin-bottom:16px}
+label{display:block;font-size:11px;color:#94a3b8;text-transform:uppercase;letter-spacing:.5px;margin-bottom:4px;font-weight:600}
+input,select{width:100%;background:#0f172a;border:1px solid #334155;border-radius:8px;padding:8px 12px;color:#e2e8f0;font-size:13px}
+input:focus,select:focus{outline:none;border-color:#6366f1}
+.btn{padding:10px 24px;border-radius:8px;border:none;font-weight:700;font-size:14px;cursor:pointer;transition:.15s}
+.btn-primary{background:linear-gradient(135deg,#ef4444,#dc2626);color:white}
+.btn-primary:hover{transform:translateY(-1px);box-shadow:0 4px 16px rgba(239,68,68,.3)}
+.btn-primary:disabled{opacity:.5;cursor:not-allowed;transform:none}
+.btn-secondary{background:#1e293b;color:#a5b4fc;border:1px solid #334155}
+.actions{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.progress{font-size:13px;color:#94a3b8;margin-left:12px}
+table{width:100%;border-collapse:collapse;font-size:12px}
+th{position:sticky;top:0;background:#1e293b;color:#94a3b8;font-weight:600;text-transform:uppercase;font-size:10px;letter-spacing:.5px;padding:8px 10px;text-align:left;cursor:pointer;user-select:none;white-space:nowrap}
+th:hover{color:#e2e8f0}
+td{padding:8px 10px;border-bottom:1px solid #1e293b;white-space:nowrap}
+tr:hover td{background:rgba(99,102,241,.04)}
+tr.unusual td{background:rgba(239,68,68,.06)}
+.right{text-align:right}
+.green{color:#10b981}.red{color:#ef4444}.amber{color:#f59e0b}
+.table-wrap{max-height:70vh;overflow:auto;border:1px solid #1e293b;border-radius:12px}
+.call-badge{background:rgba(16,185,129,.15);color:#10b981;padding:2px 8px;border-radius:4px;font-weight:700;font-size:11px}
+.put-badge{background:rgba(239,68,68,.15);color:#ef4444;padding:2px 8px;border-radius:4px;font-weight:700;font-size:11px}
+.tag{display:inline-block;padding:2px 8px;border-radius:4px;font-size:10px;font-weight:700;background:rgba(245,158,11,.15);color:#f59e0b}
+.check-wrap{display:flex;align-items:center;gap:6px}
+input[type=checkbox]{width:auto;accent-color:#6366f1}
+</style>
+</head>
+<body>
+<header>
+  <a href="http://localhost:8080" class="logo"><div class="logo-bolt">⚡</div>CHARGED ALPHA</a>
+  <h1>⚡ Options Flow Scanner</h1>
+</header>
+<div class="panel">
+  <div class="filters">
+    <div><label>Symbols (comma sep)</label><input type="text" id="symbols" placeholder="AAPL,TSLA,NVDA..."></div>
+    <div><label>Type</label><select id="option_type"><option value="both">Both</option><option value="call">Calls Only</option><option value="put">Puts Only</option></select></div>
+    <div><label>Min Open Interest</label><input type="number" id="min_oi"></div>
+    <div><label>Min Volume</label><input type="number" id="min_volume"></div>
+    <div><label>Max Spread %</label><input type="number" id="max_spread_pct" step="any"></div>
+    <div><label>Min DTE</label><input type="number" id="min_dte"></div>
+    <div><label>Max DTE</label><input type="number" id="max_dte"></div>
+    <div><label>Min Vol/OI Ratio</label><input type="number" id="min_vol_oi" step="any"></div>
+    <div class="check-wrap" style="align-self:end;padding-bottom:8px"><input type="checkbox" id="unusual_only"><label style="margin:0">Unusual Only (Vol/OI ≥ 3)</label></div>
+  </div>
+  <div class="actions">
+    <button class="btn btn-primary" id="scanBtn" onclick="runScan()">Scan Options</button>
+    <button class="btn btn-secondary" id="csvBtn" onclick="exportCSV()" style="display:none">Export CSV</button>
+    <span class="progress" id="progress"></span>
+  </div>
+</div>
+<div class="panel" id="resultsPanel" style="display:none">
+  <div class="table-wrap"><table><thead id="thead"></thead><tbody id="tbody"></tbody></table></div>
+</div>
+<script>
+let results=[],sortKey='vol_oi',sortAsc=false;
+
+const cols=[
+  {key:'symbol',label:'Symbol'},{key:'type',label:'Type'},{key:'strike',label:'Strike',align:'right'},
+  {key:'expiry',label:'Expiry'},{key:'dte',label:'DTE',align:'right'},
+  {key:'bid',label:'Bid',align:'right'},{key:'ask',label:'Ask',align:'right'},
+  {key:'spread_pct',label:'Spread%',align:'right'},{key:'volume',label:'Volume',align:'right'},
+  {key:'open_interest',label:'OI',align:'right'},{key:'vol_oi',label:'Vol/OI',align:'right'},
+  {key:'iv',label:'IV%',align:'right'},
+];
+
+async function runScan(){
+  const body={
+    symbols:document.getElementById('symbols').value,
+    option_type:document.getElementById('option_type').value,
+    unusual_only:document.getElementById('unusual_only').checked,
+  };
+  ['min_oi','min_volume','max_spread_pct','min_dte','max_dte','min_vol_oi'].forEach(f=>{
+    const v=document.getElementById(f).value;if(v!=='')body[f]=v;
+  });
+  document.getElementById('scanBtn').disabled=true;
+  document.getElementById('progress').textContent='Scanning options chains...';
+  results=[];
+  const r=await fetch('/options/api/scan',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body)});
+  const{job_id}=await r.json();
+  const poll=setInterval(async()=>{
+    const s=await(await fetch('/options/api/scan/'+job_id)).json();
+    document.getElementById('progress').textContent=`${s.processed}/${s.total} symbols — ${s.matches.length} contracts`;
+    if(s.status==='done'||s.status==='error'){
+      clearInterval(poll);
+      results=s.matches;
+      renderTable();
+      document.getElementById('scanBtn').disabled=false;
+      document.getElementById('csvBtn').style.display='inline-block';
+      document.getElementById('resultsPanel').style.display='block';
+    }
+  },800);
+}
+
+function renderTable(){
+  const sorted=[...results].sort((a,b)=>{
+    let av=a[sortKey],bv=b[sortKey];
+    if(av==null)return 1;if(bv==null)return-1;
+    if(typeof av==='string')return sortAsc?av.localeCompare(bv):bv.localeCompare(av);
+    return sortAsc?av-bv:bv-av;
+  });
+  document.getElementById('thead').innerHTML='<tr>'+cols.map(c=>
+    `<th class="${c.align==='right'?'right':''}" onclick="doSort('${c.key}')">${c.label}${sortKey===c.key?(sortAsc?' ▲':' ▼'):''}</th>`
+  ).join('')+'</tr>';
+  document.getElementById('tbody').innerHTML=sorted.map(r=>{
+    const unusual=r.unusual?'unusual':'';
+    return `<tr class="${unusual}">`+cols.map(c=>{
+      let v=r[c.key],cls=c.align==='right'?'right':'';
+      if(c.key==='type') return `<td><span class="${v==='Call'?'call-badge':'put-badge'}">${v}</span></td>`;
+      if(c.key==='vol_oi') return `<td class="${cls} ${v>=3?'amber':''}">${v}${v>=3?' <span class="tag">UNUSUAL</span>':''}</td>`;
+      if(c.key==='iv') return `<td class="${cls}">${v!=null?v+'%':'—'}</td>`;
+      if(c.key==='spread_pct') return `<td class="${cls}">${v!=null?v.toFixed(1)+'%':'—'}</td>`;
+      if(c.key==='strike'||c.key==='bid'||c.key==='ask') return `<td class="${cls}">${v!=null?'$'+v.toFixed(2):'—'}</td>`;
+      if(c.key==='volume'||c.key==='open_interest') return `<td class="${cls}">${v!=null?v.toLocaleString():'—'}</td>`;
+      return `<td class="${cls}">${v!=null?v:'—'}</td>`;
+    }).join('')+'</tr>';
+  }).join('');
+}
+
+function doSort(key){if(sortKey===key)sortAsc=!sortAsc;else{sortKey=key;sortAsc=key==='symbol'||key==='type'||key==='expiry'}renderTable()}
+
+function exportCSV(){
+  if(!results.length)return;
+  const keys=cols.map(c=>c.key);
+  let csv=keys.join(',')+'\n';
+  results.forEach(r=>{csv+=keys.map(k=>{let v=r[k];return v==null?'':typeof v==='string'?'"'+v+'"':v}).join(',')+'\n'});
+  const blob=new Blob([csv],{type:'text/csv'});
+  const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='options_scan.csv';a.click();
+}
+</script>
+</body>
+</html>
