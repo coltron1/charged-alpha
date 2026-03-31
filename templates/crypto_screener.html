@@ -8,9 +8,28 @@
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:'Inter',system-ui,sans-serif}
 body{background:#0a0f1e;color:#e2e8f0;min-height:100vh}
-header{background:#111827;border-bottom:1px solid #1e293b;padding:16px 24px;display:flex;align-items:center;justify-content:space-between}
-.logo{display:flex;align-items:center;gap:10px;font-weight:800;color:white;font-size:14px;text-decoration:none}
-.logo-bolt{width:36px;height:36px;background:linear-gradient(135deg,#6366f1,#8b5cf6);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:18px}
+.ca-nav{background:#111827;border-bottom:1px solid #1e293b;padding:0 24px;display:flex;align-items:center;justify-content:space-between;height:56px;position:relative;z-index:100}
+.ca-nav .logo{display:flex;align-items:center;gap:10px;font-weight:800;color:white;font-size:14px;text-decoration:none}
+.ca-nav .logo-bolt{width:36px;height:36px;background:linear-gradient(135deg,#6366f1,#8b5cf6);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:18px}
+.ca-nav-links{display:flex;align-items:center;gap:6px}
+.ca-nav-title{font-size:18px;color:white;font-weight:700;margin-left:16px}
+.ca-tools-wrap{position:relative}
+.ca-tools-btn{background:none;border:1px solid #334155;border-radius:8px;color:#94a3b8;font-size:13px;font-weight:600;padding:7px 14px;cursor:pointer;display:flex;align-items:center;gap:6px;transition:.15s}
+.ca-tools-btn:hover{border-color:#6366f1;color:#e2e8f0}
+.ca-tools-btn .arrow{font-size:10px;transition:transform .2s}
+.ca-tools-wrap.open .ca-tools-btn .arrow{transform:rotate(180deg)}
+.ca-tools-dd{display:none;position:absolute;top:calc(100% + 6px);right:0;background:#111827;border:1px solid #1e293b;border-radius:12px;padding:8px 0;min-width:220px;box-shadow:0 12px 40px rgba(0,0,0,.5)}
+.ca-tools-wrap.open .ca-tools-dd{display:block}
+.ca-tools-dd a{display:block;padding:8px 16px;color:#94a3b8;text-decoration:none;font-size:13px;font-weight:500;transition:.1s}
+.ca-tools-dd a:hover{background:rgba(99,102,241,.08);color:#e2e8f0}
+.ca-tools-dd a.active{color:#a5b4fc;background:rgba(99,102,241,.1)}
+.ca-hamburger{display:none;background:none;border:none;color:#94a3b8;cursor:pointer;padding:4px}
+.ca-mobile-menu{display:none;position:absolute;top:56px;left:0;right:0;background:#111827;border-bottom:1px solid #1e293b;padding:12px 24px;z-index:99}
+.ca-mobile-menu.open{display:block}
+.ca-mobile-menu a{display:block;padding:8px 0;color:#94a3b8;text-decoration:none;font-size:14px;font-weight:500}
+.ca-mobile-menu a:hover{color:#e2e8f0}
+.ca-mobile-menu a.active{color:#a5b4fc}
+@media(max-width:768px){.ca-nav-links{display:none}.ca-hamburger{display:block}.ca-nav-title{font-size:15px}}
 h1{font-size:22px;color:white;font-weight:700}
 .panel{background:#111827;border:1px solid #1e293b;border-radius:12px;padding:20px;margin:20px}
 .filters{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:12px;margin-bottom:16px}
@@ -46,10 +65,45 @@ tr:hover td{background:rgba(99,102,241,.04)}
 </style>
 </head>
 <body>
-<header>
-  <a href="http://localhost:8080" class="logo"><div class="logo-bolt">⚡</div>CHARGED ALPHA</a>
-  <h1>₿ Crypto Screener</h1>
-</header>
+<nav class="ca-nav">
+  <div style="display:flex;align-items:center">
+    <a href="/" class="logo"><div class="logo-bolt">⚡</div>CHARGED ALPHA</a>
+    <span class="ca-nav-title">Crypto Screener</span>
+  </div>
+  <div class="ca-nav-links">
+    <div class="ca-tools-wrap" id="toolsWrap">
+      <button class="ca-tools-btn" onclick="document.getElementById('toolsWrap').classList.toggle('open')">Tools <span class="arrow">&#9662;</span></button>
+      <div class="ca-tools-dd">
+        <a href="/screener/">Stock Screener</a>
+        <a href="/etf/">ETF Screener</a>
+        <a href="/crypto/" class="active">Crypto Screener</a>
+        <a href="/options/">Options Scanner</a>
+        <a href="/bonds/">Bond Dashboard</a>
+        <a href="/reits/">REIT Screener</a>
+        <a href="/forex/">Forex Heatmap</a>
+        <a href="/commodities/">Commodities</a>
+        <a href="/earnings/">Earnings Calendar</a>
+        <a href="/gold/">Precious Metals</a>
+      </div>
+    </div>
+  </div>
+  <button class="ca-hamburger" onclick="document.getElementById('mobileMenu').classList.toggle('open')">
+    <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+  </button>
+  <div class="ca-mobile-menu" id="mobileMenu">
+    <a href="/">Home</a>
+    <a href="/screener/">Stock Screener</a>
+    <a href="/etf/">ETF Screener</a>
+    <a href="/crypto/" class="active">Crypto Screener</a>
+    <a href="/options/">Options Scanner</a>
+    <a href="/bonds/">Bond Dashboard</a>
+    <a href="/reits/">REIT Screener</a>
+    <a href="/forex/">Forex Heatmap</a>
+    <a href="/commodities/">Commodities</a>
+    <a href="/earnings/">Earnings Calendar</a>
+    <a href="/gold/">Precious Metals</a>
+  </div>
+</nav>
 <div class="panel">
   <div class="presets">
     <button class="preset-btn" onclick="applyPreset('large')">Large Cap (&gt;$10B)</button>
@@ -185,7 +239,7 @@ function closeModal(){document.getElementById('modal').classList.remove('active'
 
 async function loadChart(days){
   if(chartInstance)chartInstance.destroy();
-  const r=await(await fetch(`/api/crypto/${selectedCoin}/chart?days=${days}`)).json();
+  const r=await(await fetch(`/crypto/api/crypto/${selectedCoin}/chart?days=${days}`)).json();
   if(!r.labels) return;
   const ctx=document.getElementById('chartCanvas').getContext('2d');
   chartInstance=new Chart(ctx,{type:'line',data:{labels:r.labels,datasets:[{label:'Price (USD)',data:r.prices,borderColor:'#6366f1',backgroundColor:'rgba(99,102,241,.1)',fill:true,tension:.3,pointRadius:0}]},options:{responsive:true,plugins:{legend:{display:false}},scales:{x:{ticks:{color:'#64748b',maxTicksLimit:8},grid:{color:'#1e293b'}},y:{ticks:{color:'#64748b'},grid:{color:'#1e293b'}}}}});
@@ -199,6 +253,7 @@ function exportCSV(){
   const blob=new Blob([csv],{type:'text/csv'});
   const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='crypto_screen.csv';a.click();
 }
+document.addEventListener('click',function(e){var w=document.getElementById('toolsWrap');if(w&&!w.contains(e.target))w.classList.remove('open');var m=document.getElementById('mobileMenu');if(m&&!e.target.closest('.ca-hamburger')&&!m.contains(e.target))m.classList.remove('open');});
 </script>
 </body>
 </html>

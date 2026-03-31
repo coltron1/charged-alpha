@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Charged Alpha — Data-Driven Investing Tools</title>
+  <title>Charged Alpha â Data-Driven Investing Tools</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -11,20 +11,20 @@
     * { font-family: 'Inter', system-ui, sans-serif; }
     body { background: #0a0f1e; color: #e2e8f0; }
 
-    /* ── Glow accents ─────────────────────────────────────────── */
+    /* ââ Glow accents âââââââââââââââââââââââââââââââââââââââââââ */
     .glow-indigo { box-shadow: 0 0 40px rgba(99,102,241,.15), 0 0 80px rgba(99,102,241,.05); }
     .glow-amber  { box-shadow: 0 0 40px rgba(245,158,11,.12), 0 0 80px rgba(245,158,11,.04); }
     .glow-green  { box-shadow: 0 0 40px rgba(16,185,129,.12), 0 0 80px rgba(16,185,129,.04); }
     .glow-purple { box-shadow: 0 0 40px rgba(139,92,246,.12), 0 0 80px rgba(139,92,246,.04); }
 
-    /* ── Hero gradient ────────────────────────────────────────── */
+    /* ââ Hero gradient ââââââââââââââââââââââââââââââââââââââââââ */
     .hero-bg {
       background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(99,102,241,.12) 0%, transparent 60%),
                   radial-gradient(ellipse 60% 40% at 80% 20%, rgba(139,92,246,.08) 0%, transparent 50%),
                   #0a0f1e;
     }
 
-    /* ── Logo bolt ────────────────────────────────────────────── */
+    /* ââ Logo bolt ââââââââââââââââââââââââââââââââââââââââââââââ */
     .logo-bolt {
       display: inline-flex;
       align-items: center;
@@ -44,7 +44,7 @@
       box-shadow: 0 0 40px rgba(99,102,241,.4);
     }
 
-    /* ── Cards ─────────────────────────────────────────────────── */
+    /* ââ Cards âââââââââââââââââââââââââââââââââââââââââââââââââââ */
     .card {
       background: #111827;
       border: 1px solid #1e293b;
@@ -56,7 +56,7 @@
       border-color: #334155;
     }
 
-    /* ── Tool cards ────────────────────────────────────────────── */
+    /* ââ Tool cards ââââââââââââââââââââââââââââââââââââââââââââââ */
     .tool-card { position: relative; overflow: hidden; }
     .tool-card::before {
       content: '';
@@ -76,7 +76,7 @@
     .tool-card.commodities::before { background: linear-gradient(90deg, #d97706, #b45309); }
     .tool-card.earnings::before { background: linear-gradient(90deg, #6366f1, #4f46e5); }
 
-    /* ── Buttons ───────────────────────────────────────────────── */
+    /* ââ Buttons âââââââââââââââââââââââââââââââââââââââââââââââââ */
     .btn-primary {
       display: inline-flex;
       align-items: center;
@@ -116,7 +116,7 @@
       border-color: #6366f1;
     }
 
-    /* ── Show cards ────────────────────────────────────────────── */
+    /* ââ Show cards ââââââââââââââââââââââââââââââââââââââââââââââ */
     .show-badge {
       display: inline-block;
       padding: 3px 10px;
@@ -130,17 +130,17 @@
     .badge-weekly  { background: rgba(16,185,129,.15); color: #6ee7b7; }
     .badge-markets { background: rgba(245,158,11,.15); color: #fcd34d; }
 
-    /* ── Coming soon pulse ────────────────────────────────────── */
+    /* ââ Coming soon pulse ââââââââââââââââââââââââââââââââââââââ */
     @keyframes pulse-dot { 0%,100% { opacity: .4; } 50% { opacity: 1; } }
     .pulse-dot { animation: pulse-dot 2s ease-in-out infinite; }
 
-    /* ── Section divider ──────────────────────────────────────── */
+    /* ââ Section divider ââââââââââââââââââââââââââââââââââââââââ */
     .section-line {
       height: 1px;
       background: linear-gradient(90deg, transparent, #1e293b 30%, #1e293b 70%, transparent);
     }
 
-    /* ── Nav ───────────────────────────────────────────────────── */
+    /* ââ Nav âââââââââââââââââââââââââââââââââââââââââââââââââââââ */
     nav a { position: relative; }
     nav a::after {
       content: '';
@@ -155,38 +155,63 @@
     }
     nav a:hover::after { transform: scaleX(1); }
 
-    /* ── Responsive embed ─────────────────────────────────────── */
+    /* ââ Responsive embed âââââââââââââââââââââââââââââââââââââââ */
     .embed-wrap { border-radius: 12px; overflow: hidden; }
 
-    /* ── Stat counter ─────────────────────────────────────────── */
+    /* -- Tools dropdown -- */
+    .ca-tools-wrap{position:relative;display:inline-block}
+    .ca-tools-trigger{background:none;border:none;color:#cbd5e1;font-size:14px;font-weight:500;cursor:pointer;display:flex;align-items:center;gap:4px;padding:0;transition:color .15s;font-family:inherit}
+    .ca-tools-trigger:hover{color:white}
+    .ca-tools-trigger .arrow{font-size:10px;transition:transform .2s}
+    .ca-tools-wrap.open .ca-tools-trigger .arrow{transform:rotate(180deg)}
+    .ca-tools-dd{display:none;position:absolute;top:calc(100% + 12px);left:50%;transform:translateX(-50%);background:#111827;border:1px solid #1e293b;border-radius:12px;padding:8px 0;min-width:220px;box-shadow:0 12px 40px rgba(0,0,0,.5);z-index:200}
+    .ca-tools-wrap.open .ca-tools-dd{display:block}
+    .ca-tools-dd a{display:block;padding:8px 16px;color:#94a3b8;text-decoration:none;font-size:13px;font-weight:500;transition:.1s}
+    .ca-tools-dd a:hover{background:rgba(99,102,241,.08);color:#e2e8f0}
+    .ca-tools-dd a::after{display:none !important}
+
+    /* ââ Stat counter âââââââââââââââââââââââââââââââââââââââââââ */
     .stat-num {
       background: linear-gradient(135deg, #e2e8f0, #94a3b8);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
 
-    /* ── Smooth scroll ────────────────────────────────────────── */
+    /* ââ Smooth scroll ââââââââââââââââââââââââââââââââââââââââââ */
     html { scroll-behavior: smooth; }
   </style>
 </head>
 <body>
 
-<!-- ═══════════════════════════════════════════════════════════════
+<!-- âââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââ
      NAVIGATION
-     ═══════════════════════════════════════════════════════════════ -->
+     âââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââ -->
 <header class="fixed top-0 left-0 right-0 z-50" style="background:rgba(10,15,30,.85);backdrop-filter:blur(16px);border-bottom:1px solid rgba(30,41,59,.6)">
   <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
     <!-- Logo -->
-    <a href="#" class="flex items-center gap-3 text-white no-underline">
+    <a href="/" class="flex items-center gap-3 text-white no-underline">
       <div class="logo-bolt">&#9889;</div>
       <div>
         <span class="font-extrabold text-lg tracking-tight">CHARGED ALPHA</span>
-        <span class="text-xs text-slate-400 block -mt-1 tracking-widest">MEDIA</span>
       </div>
     </a>
     <!-- Nav links -->
     <nav class="hidden md:flex items-center gap-8">
-      <a href="#tools" class="text-sm text-slate-300 hover:text-white transition-colors no-underline font-medium">Tools</a>
+      <div class="ca-tools-wrap" id="toolsWrap">
+        <button class="ca-tools-trigger" onclick="document.getElementById('toolsWrap').classList.toggle('open')">Tools <span class="arrow">&#9662;</span></button>
+        <div class="ca-tools-dd">
+          <a href="/screener/">Stock Screener</a>
+          <a href="/etf/">ETF Screener</a>
+          <a href="/crypto/">Crypto Screener</a>
+          <a href="/options/">Options Scanner</a>
+          <a href="/bonds/">Bond Dashboard</a>
+          <a href="/reits/">REIT Screener</a>
+          <a href="/forex/">Forex Heatmap</a>
+          <a href="/commodities/">Commodities</a>
+          <a href="/earnings/">Earnings Calendar</a>
+          <a href="/gold/">Precious Metals</a>
+        </div>
+      </div>
       <a href="#shows" class="text-sm text-slate-300 hover:text-white transition-colors no-underline font-medium">Shows</a>
       <a href="#roadmap" class="text-sm text-slate-300 hover:text-white transition-colors no-underline font-medium">Roadmap</a>
       <a href="#about" class="text-sm text-slate-300 hover:text-white transition-colors no-underline font-medium">About</a>
@@ -198,16 +223,27 @@
   </div>
   <!-- Mobile menu -->
   <div id="mobile-menu" class="hidden md:hidden px-6 pb-4 space-y-3">
-    <a href="#tools" class="block text-sm text-slate-300 no-underline">Tools</a>
+    <p class="text-xs font-bold uppercase tracking-wider text-slate-500 mt-2 mb-1">Tools</p>
+    <a href="/screener/" class="block text-sm text-slate-300 no-underline">Stock Screener</a>
+    <a href="/etf/" class="block text-sm text-slate-300 no-underline">ETF Screener</a>
+    <a href="/crypto/" class="block text-sm text-slate-300 no-underline">Crypto Screener</a>
+    <a href="/options/" class="block text-sm text-slate-300 no-underline">Options Scanner</a>
+    <a href="/bonds/" class="block text-sm text-slate-300 no-underline">Bond Dashboard</a>
+    <a href="/reits/" class="block text-sm text-slate-300 no-underline">REIT Screener</a>
+    <a href="/forex/" class="block text-sm text-slate-300 no-underline">Forex Heatmap</a>
+    <a href="/commodities/" class="block text-sm text-slate-300 no-underline">Commodities</a>
+    <a href="/earnings/" class="block text-sm text-slate-300 no-underline">Earnings Calendar</a>
+    <a href="/gold/" class="block text-sm text-slate-300 no-underline">Precious Metals</a>
+    <div style="height:1px;background:#1e293b;margin:8px 0"></div>
     <a href="#shows" class="block text-sm text-slate-300 no-underline">Shows</a>
     <a href="#roadmap" class="block text-sm text-slate-300 no-underline">Roadmap</a>
     <a href="#about" class="block text-sm text-slate-300 no-underline">About</a>
   </div>
 </header>
 
-<!-- ═══════════════════════════════════════════════════════════════
+<!-- âââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââ
      HERO
-     ═══════════════════════════════════════════════════════════════ -->
+     âââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââ -->
 <section class="hero-bg pt-32 pb-20 px-6">
   <div class="max-w-5xl mx-auto text-center">
     <!-- Logo mark large -->
@@ -262,9 +298,9 @@
 
 <div class="section-line"></div>
 
-<!-- ═══════════════════════════════════════════════════════════════
+<!-- âââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââ
      TOOLS
-     ═══════════════════════════════════════════════════════════════ -->
+     âââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââ -->
 <section id="tools" class="py-24 px-6">
   <div class="max-w-6xl mx-auto">
     <div class="text-center mb-16">
@@ -275,7 +311,7 @@
       </p>
     </div>
 
-    <!-- Featured tools — 2-column -->
+    <!-- Featured tools â 2-column -->
     <div class="grid md:grid-cols-2 gap-8 mb-8">
 
       <!-- Stock Screener Card -->
@@ -288,7 +324,7 @@
           </div>
         </div>
         <p class="text-slate-300 leading-relaxed mb-6">
-          Scan every stock in the S&P 500 against your custom criteria — valuation, dividends, growth, financial health, analyst sentiment, and options data.
+          Scan every stock in the S&P 500 against your custom criteria â valuation, dividends, growth, financial health, analyst sentiment, and options data.
         </p>
         <div class="grid grid-cols-2 gap-3 mb-8">
           <div class="flex items-center gap-2 text-sm text-slate-400"><span class="text-indigo-400">&#10003;</span> P/E vs historical average</div>
@@ -298,7 +334,7 @@
           <div class="flex items-center gap-2 text-sm text-slate-400"><span class="text-indigo-400">&#10003;</span> Debt-to-equity & FCF</div>
           <div class="flex items-center gap-2 text-sm text-slate-400"><span class="text-indigo-400">&#10003;</span> Put options screening</div>
         </div>
-        <a href="http://localhost:5001" target="_blank" class="btn-primary w-full justify-center">
+        <a href="/screener/" class="btn-primary w-full justify-center">
           Launch Stock Screener
           <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 3h8v8M13 3L5 11"/></svg>
         </a>
@@ -322,7 +358,7 @@
           <div class="flex items-center gap-2 text-sm text-slate-400"><span class="text-amber-400">&#10003;</span> Premium-over-spot calc</div>
           <div class="flex items-center gap-2 text-sm text-slate-400"><span class="text-amber-400">&#10003;</span> Dealer + P2P sources</div>
         </div>
-        <a href="http://localhost:8765" target="_blank" class="btn-primary w-full justify-center" style="background:linear-gradient(135deg,#d97706,#b45309);">
+        <a href="/gold/" class="btn-primary w-full justify-center" style="background:linear-gradient(135deg,#d97706,#b45309);">
           Launch Metals Aggregator
           <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 3h8v8M13 3L5 11"/></svg>
         </a>
@@ -330,7 +366,7 @@
 
     </div>
 
-    <!-- All tools — 3-column grid -->
+    <!-- All tools â 3-column grid -->
     <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
 
       <!-- ETF Screener -->
@@ -342,7 +378,7 @@
           </div>
         </div>
         <p class="text-slate-400 text-sm leading-relaxed mb-5">Filter 200+ ETFs by expense ratio, AUM, dividend yield, returns, category, and asset class.</p>
-        <a href="http://localhost:5002" target="_blank" class="btn-primary w-full justify-center text-sm" style="padding:10px 20px;background:linear-gradient(135deg,#10b981,#059669);">
+        <a href="/etf/" class="btn-primary w-full justify-center text-sm" style="padding:10px 20px;background:linear-gradient(135deg,#10b981,#059669);">
           Launch ETF Screener
           <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M4 2h7v7M11 2L4 9"/></svg>
         </a>
@@ -357,7 +393,7 @@
           </div>
         </div>
         <p class="text-slate-400 text-sm leading-relaxed mb-5">Screen top 250 cryptocurrencies by price, market cap, 24h/7d change, and volume via CoinGecko.</p>
-        <a href="http://localhost:5003" target="_blank" class="btn-primary w-full justify-center text-sm" style="padding:10px 20px;background:linear-gradient(135deg,#f59e0b,#ea580c);">
+        <a href="/crypto/" class="btn-primary w-full justify-center text-sm" style="padding:10px 20px;background:linear-gradient(135deg,#f59e0b,#ea580c);">
           Launch Crypto Screener
           <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M4 2h7v7M11 2L4 9"/></svg>
         </a>
@@ -372,7 +408,7 @@
           </div>
         </div>
         <p class="text-slate-400 text-sm leading-relaxed mb-5">Scan options chains for unusual activity, high volume, and tight spreads across top stocks.</p>
-        <a href="http://localhost:5004" target="_blank" class="btn-primary w-full justify-center text-sm" style="padding:10px 20px;background:linear-gradient(135deg,#ef4444,#dc2626);">
+        <a href="/options/" class="btn-primary w-full justify-center text-sm" style="padding:10px 20px;background:linear-gradient(135deg,#ef4444,#dc2626);">
           Launch Options Scanner
           <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M4 2h7v7M11 2L4 9"/></svg>
         </a>
@@ -387,7 +423,7 @@
           </div>
         </div>
         <p class="text-slate-400 text-sm leading-relaxed mb-5">Treasury yields, yield curve visualization, spread analysis, and bond ETF tracking in one view.</p>
-        <a href="http://localhost:5005" target="_blank" class="btn-primary w-full justify-center text-sm" style="padding:10px 20px;background:linear-gradient(135deg,#06b6d4,#0891b2);">
+        <a href="/bonds/" class="btn-primary w-full justify-center text-sm" style="padding:10px 20px;background:linear-gradient(135deg,#06b6d4,#0891b2);">
           Launch Bond Dashboard
           <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M4 2h7v7M11 2L4 9"/></svg>
         </a>
@@ -402,7 +438,7 @@
           </div>
         </div>
         <p class="text-slate-400 text-sm leading-relaxed mb-5">Screen 75+ REITs by dividend yield, sector, P/E, debt-to-equity, and 52-week performance.</p>
-        <a href="http://localhost:5006" target="_blank" class="btn-primary w-full justify-center text-sm" style="padding:10px 20px;background:linear-gradient(135deg,#8b5cf6,#7c3aed);">
+        <a href="/reits/" class="btn-primary w-full justify-center text-sm" style="padding:10px 20px;background:linear-gradient(135deg,#8b5cf6,#7c3aed);">
           Launch REIT Screener
           <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M4 2h7v7M11 2L4 9"/></svg>
         </a>
@@ -417,7 +453,7 @@
           </div>
         </div>
         <p class="text-slate-400 text-sm leading-relaxed mb-5">Visual heatmap of 28 currency pairs with strength index and multi-timeframe change tracking.</p>
-        <a href="http://localhost:5007" target="_blank" class="btn-primary w-full justify-center text-sm" style="padding:10px 20px;background:linear-gradient(135deg,#14b8a6,#0d9488);">
+        <a href="/forex/" class="btn-primary w-full justify-center text-sm" style="padding:10px 20px;background:linear-gradient(135deg,#14b8a6,#0d9488);">
           Launch Forex Heatmap
           <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M4 2h7v7M11 2L4 9"/></svg>
         </a>
@@ -432,7 +468,7 @@
           </div>
         </div>
         <p class="text-slate-400 text-sm leading-relaxed mb-5">Track energy, metals, agriculture, and livestock futures with price charts and category filters.</p>
-        <a href="http://localhost:5008" target="_blank" class="btn-primary w-full justify-center text-sm" style="padding:10px 20px;background:linear-gradient(135deg,#d97706,#b45309);">
+        <a href="/commodities/" class="btn-primary w-full justify-center text-sm" style="padding:10px 20px;background:linear-gradient(135deg,#d97706,#b45309);">
           Launch Commodities
           <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M4 2h7v7M11 2L4 9"/></svg>
         </a>
@@ -447,7 +483,7 @@
           </div>
         </div>
         <p class="text-slate-400 text-sm leading-relaxed mb-5">Upcoming earnings dates for top S&P 500 companies with estimates, history, and sector filters.</p>
-        <a href="http://localhost:5009" target="_blank" class="btn-primary w-full justify-center text-sm" style="padding:10px 20px;background:linear-gradient(135deg,#6366f1,#4f46e5);">
+        <a href="/earnings/" class="btn-primary w-full justify-center text-sm" style="padding:10px 20px;background:linear-gradient(135deg,#6366f1,#4f46e5);">
           Launch Earnings Calendar
           <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M4 2h7v7M11 2L4 9"/></svg>
         </a>
@@ -459,16 +495,16 @@
 
 <div class="section-line"></div>
 
-<!-- ═══════════════════════════════════════════════════════════════
+<!-- âââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââ
      SHOWS / PODCASTS
-     ═══════════════════════════════════════════════════════════════ -->
+     âââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââ -->
 <section id="shows" class="py-24 px-6">
   <div class="max-w-6xl mx-auto">
     <div class="text-center mb-16">
       <p class="text-sm font-bold text-indigo-400 uppercase tracking-widest mb-3">Listen & Learn</p>
       <h2 class="text-4xl md:text-5xl font-extrabold text-white mb-4">Charged Alpha Shows</h2>
       <p class="text-lg text-slate-400 max-w-xl mx-auto">
-        Daily picks, market breakdowns, and investing strategies — from the tools to your ears.
+        Daily picks, market breakdowns, and investing strategies â from the tools to your ears.
       </p>
     </div>
 
@@ -486,7 +522,7 @@
           </div>
         </div>
         <p class="text-slate-400 text-sm leading-relaxed mb-5">
-          One stock. Every day. Picked by running our screener filters — value, growth, momentum, and more. We break down why the numbers stand out and whether it deserves your attention.
+          One stock. Every day. Picked by running our screener filters â value, growth, momentum, and more. We break down why the numbers stand out and whether it deserves your attention.
         </p>
         <!-- Spotify embed placeholder -->
         <div class="embed-wrap bg-slate-800 rounded-xl p-4 text-center">
@@ -568,9 +604,9 @@
 
 <div class="section-line"></div>
 
-<!-- ═══════════════════════════════════════════════════════════════
-     HOW IT CONNECTS — The Charged Alpha Loop
-     ═══════════════════════════════════════════════════════════════ -->
+<!-- âââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââ
+     HOW IT CONNECTS â The Charged Alpha Loop
+     âââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââ -->
 <section class="py-24 px-6">
   <div class="max-w-5xl mx-auto">
     <div class="text-center mb-16">
@@ -593,14 +629,14 @@
         <div class="w-16 h-16 rounded-2xl flex items-center justify-center text-3xl mx-auto mb-4" style="background:rgba(139,92,246,.1)">2</div>
         <h3 class="font-bold text-white text-lg mb-2">Analyze</h3>
         <p class="text-slate-400 text-sm leading-relaxed">
-          Dive into the detail view — charts, financials, options chains, and analyst targets. We do the same thing live on the shows.
+          Dive into the detail view â charts, financials, options chains, and analyst targets. We do the same thing live on the shows.
         </p>
       </div>
       <div class="text-center">
         <div class="w-16 h-16 rounded-2xl flex items-center justify-center text-3xl mx-auto mb-4" style="background:rgba(16,185,129,.1)">3</div>
         <h3 class="font-bold text-white text-lg mb-2">Decide</h3>
         <p class="text-slate-400 text-sm leading-relaxed">
-          Make informed decisions with real data — not hype. Whether you're building a watchlist or placing a trade, you've done the homework.
+          Make informed decisions with real data â not hype. Whether you're building a watchlist or placing a trade, you've done the homework.
         </p>
       </div>
     </div>
@@ -609,9 +645,9 @@
 
 <div class="section-line"></div>
 
-<!-- ═══════════════════════════════════════════════════════════════
+<!-- âââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââ
      ROADMAP / COMING SOON
-     ═══════════════════════════════════════════════════════════════ -->
+     âââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââ -->
 <section id="roadmap" class="py-24 px-6">
   <div class="max-w-4xl mx-auto">
     <div class="text-center mb-16">
@@ -738,15 +774,15 @@
 
 <div class="section-line"></div>
 
-<!-- ═══════════════════════════════════════════════════════════════
+<!-- âââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââ
      ABOUT
-     ═══════════════════════════════════════════════════════════════ -->
+     âââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââ -->
 <section id="about" class="py-24 px-6">
   <div class="max-w-3xl mx-auto text-center">
     <div class="logo-bolt logo-bolt-lg mx-auto mb-8">&#9889;</div>
     <h2 class="text-3xl md:text-4xl font-extrabold text-white mb-6">Built for Retail Investors</h2>
     <p class="text-lg text-slate-400 leading-relaxed mb-6">
-      Charged Alpha exists because good investing data shouldn't be locked behind expensive terminals. We build free, no-signup tools that give everyday investors the same screening power the pros use — and we break it all down on our daily shows so you know exactly what to do with it.
+      Charged Alpha exists because good investing data shouldn't be locked behind expensive terminals. We build free, no-signup tools that give everyday investors the same screening power the pros use â and we break it all down on our daily shows so you know exactly what to do with it.
     </p>
     <p class="text-lg text-slate-400 leading-relaxed">
       Whether you're just getting started or you've been trading for years, there's something here for you. Run a screen. Listen to a show. Make better decisions.
@@ -756,9 +792,9 @@
 
 <div class="section-line"></div>
 
-<!-- ═══════════════════════════════════════════════════════════════
+<!-- âââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââ
      FOOTER
-     ═══════════════════════════════════════════════════════════════ -->
+     âââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââ -->
 <footer class="py-16 px-6">
   <div class="max-w-6xl mx-auto">
     <div class="grid md:grid-cols-4 gap-10 mb-12">
@@ -777,16 +813,16 @@
       <div>
         <h4 class="text-sm font-bold text-slate-300 uppercase tracking-wide mb-4">Tools</h4>
         <ul class="space-y-2 text-sm">
-          <li><a href="http://localhost:5001" class="text-slate-500 hover:text-indigo-400 transition-colors no-underline">Stock Screener</a></li>
-          <li><a href="http://localhost:8765" class="text-slate-500 hover:text-amber-400 transition-colors no-underline">Metals Aggregator</a></li>
-          <li><a href="http://localhost:5002" class="text-slate-500 hover:text-emerald-400 transition-colors no-underline">ETF Screener</a></li>
-          <li><a href="http://localhost:5003" class="text-slate-500 hover:text-orange-400 transition-colors no-underline">Crypto Screener</a></li>
-          <li><a href="http://localhost:5004" class="text-slate-500 hover:text-red-400 transition-colors no-underline">Options Scanner</a></li>
-          <li><a href="http://localhost:5005" class="text-slate-500 hover:text-cyan-400 transition-colors no-underline">Bond Dashboard</a></li>
-          <li><a href="http://localhost:5006" class="text-slate-500 hover:text-purple-400 transition-colors no-underline">REIT Screener</a></li>
-          <li><a href="http://localhost:5007" class="text-slate-500 hover:text-teal-400 transition-colors no-underline">Forex Heatmap</a></li>
-          <li><a href="http://localhost:5008" class="text-slate-500 hover:text-amber-400 transition-colors no-underline">Commodities</a></li>
-          <li><a href="http://localhost:5009" class="text-slate-500 hover:text-indigo-400 transition-colors no-underline">Earnings Calendar</a></li>
+          <li><a href="/screener/" class="text-slate-500 hover:text-indigo-400 transition-colors no-underline">Stock Screener</a></li>
+          <li><a href="/gold/" class="text-slate-500 hover:text-amber-400 transition-colors no-underline">Metals Aggregator</a></li>
+          <li><a href="/etf/" class="text-slate-500 hover:text-emerald-400 transition-colors no-underline">ETF Screener</a></li>
+          <li><a href="/crypto/" class="text-slate-500 hover:text-orange-400 transition-colors no-underline">Crypto Screener</a></li>
+          <li><a href="/options/" class="text-slate-500 hover:text-red-400 transition-colors no-underline">Options Scanner</a></li>
+          <li><a href="/bonds/" class="text-slate-500 hover:text-cyan-400 transition-colors no-underline">Bond Dashboard</a></li>
+          <li><a href="/reits/" class="text-slate-500 hover:text-purple-400 transition-colors no-underline">REIT Screener</a></li>
+          <li><a href="/forex/" class="text-slate-500 hover:text-teal-400 transition-colors no-underline">Forex Heatmap</a></li>
+          <li><a href="/commodities/" class="text-slate-500 hover:text-amber-400 transition-colors no-underline">Commodities</a></li>
+          <li><a href="/earnings/" class="text-slate-500 hover:text-indigo-400 transition-colors no-underline">Earnings Calendar</a></li>
         </ul>
       </div>
 
@@ -819,5 +855,8 @@
   </div>
 </footer>
 
+<script>
+document.addEventListener('click',function(e){var w=document.getElementById('toolsWrap');if(w&&!w.contains(e.target))w.classList.remove('open');});
+</script>
 </body>
 </html>

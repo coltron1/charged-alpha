@@ -98,6 +98,30 @@
     .holding-bar { height:20px; background:#6366f1; border-radius:4px; min-width:2px; transition:width .3s; }
     .sector-bar { height:20px; border-radius:4px; min-width:2px; transition:width .3s; }
 
+    /* ── Nav bar ── */
+    .ca-nav{background:#111827;border-bottom:1px solid #1e293b;padding:0 24px;display:flex;align-items:center;justify-content:space-between;height:56px;position:relative;z-index:100}
+    .ca-nav .nav-logo{display:flex;align-items:center;gap:10px;font-weight:800;color:white;font-size:14px;text-decoration:none}
+    .ca-nav .nav-bolt{width:36px;height:36px;background:linear-gradient(135deg,#6366f1,#8b5cf6);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:18px}
+    .ca-nav-links{display:flex;align-items:center;gap:6px}
+    .ca-nav-title{font-size:18px;color:white;font-weight:700;margin-left:16px}
+    .ca-tools-wrap{position:relative}
+    .ca-tools-btn{background:none;border:1px solid #334155;border-radius:8px;color:#94a3b8;font-size:13px;font-weight:600;padding:7px 14px;cursor:pointer;display:flex;align-items:center;gap:6px;transition:.15s}
+    .ca-tools-btn:hover{border-color:#6366f1;color:#e2e8f0}
+    .ca-tools-btn .arrow{font-size:10px;transition:transform .2s}
+    .ca-tools-wrap.open .ca-tools-btn .arrow{transform:rotate(180deg)}
+    .ca-tools-dd{display:none;position:absolute;top:calc(100% + 6px);right:0;background:#111827;border:1px solid #1e293b;border-radius:12px;padding:8px 0;min-width:220px;box-shadow:0 12px 40px rgba(0,0,0,.5)}
+    .ca-tools-wrap.open .ca-tools-dd{display:block}
+    .ca-tools-dd a{display:block;padding:8px 16px;color:#94a3b8;text-decoration:none;font-size:13px;font-weight:500;transition:.1s}
+    .ca-tools-dd a:hover{background:rgba(99,102,241,.08);color:#e2e8f0}
+    .ca-tools-dd a.active{color:#a5b4fc;background:rgba(99,102,241,.1)}
+    .ca-hamburger{display:none;background:none;border:none;color:#94a3b8;cursor:pointer;padding:4px}
+    .ca-mobile-menu{display:none;position:absolute;top:56px;left:0;right:0;background:#111827;border-bottom:1px solid #1e293b;padding:12px 24px;z-index:99}
+    .ca-mobile-menu.open{display:block}
+    .ca-mobile-menu a{display:block;padding:8px 0;color:#94a3b8;text-decoration:none;font-size:14px;font-weight:500}
+    .ca-mobile-menu a:hover{color:#e2e8f0}
+    .ca-mobile-menu a.active{color:#a5b4fc}
+    @media(max-width:768px){.ca-nav-links{display:none}.ca-hamburger{display:block}.ca-nav-title{font-size:15px}}
+
     /* ── Homepage preset cards ── */
     .preset-card { background:linear-gradient(135deg,#131b2e 0%,#1e293b 100%); border:1px solid #334155; border-radius:12px; padding:20px; cursor:pointer; transition:all .2s; text-decoration:none; color:inherit; display:block; }
     .preset-card:hover { border-color:#6366f1; transform:translateY(-2px); box-shadow:0 8px 24px rgba(0,0,0,.3); }
@@ -119,13 +143,55 @@
 <div id="tooltip"></div>
 
 <!-- ═══════════════════════════════════════════════════════
+     NAVIGATION
+     ═══════════════════════════════════════════════════════ -->
+<nav class="ca-nav">
+  <div style="display:flex;align-items:center">
+    <a href="/" class="nav-logo"><div class="nav-bolt">⚡</div>CHARGED ALPHA</a>
+    <span class="ca-nav-title">ETF Screener</span>
+  </div>
+  <div class="ca-nav-links">
+    <div class="ca-tools-wrap" id="toolsWrap">
+      <button class="ca-tools-btn" onclick="document.getElementById('toolsWrap').classList.toggle('open')">Tools <span class="arrow">&#9662;</span></button>
+      <div class="ca-tools-dd">
+        <a href="/screener/">Stock Screener</a>
+        <a href="/etf/" class="active">ETF Screener</a>
+        <a href="/crypto/">Crypto Screener</a>
+        <a href="/options/">Options Scanner</a>
+        <a href="/bonds/">Bond Dashboard</a>
+        <a href="/reits/">REIT Screener</a>
+        <a href="/forex/">Forex Heatmap</a>
+        <a href="/commodities/">Commodities</a>
+        <a href="/earnings/">Earnings Calendar</a>
+        <a href="/gold/">Precious Metals</a>
+      </div>
+    </div>
+  </div>
+  <button class="ca-hamburger" onclick="document.getElementById('mobileMenu').classList.toggle('open')">
+    <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+  </button>
+  <div class="ca-mobile-menu" id="mobileMenu">
+    <a href="/">Home</a>
+    <a href="/screener/">Stock Screener</a>
+    <a href="/etf/" class="active">ETF Screener</a>
+    <a href="/crypto/">Crypto Screener</a>
+    <a href="/options/">Options Scanner</a>
+    <a href="/bonds/">Bond Dashboard</a>
+    <a href="/reits/">REIT Screener</a>
+    <a href="/forex/">Forex Heatmap</a>
+    <a href="/commodities/">Commodities</a>
+    <a href="/earnings/">Earnings Calendar</a>
+    <a href="/gold/">Precious Metals</a>
+  </div>
+</nav>
+
+<!-- ═══════════════════════════════════════════════════════
      SCREENER PAGE
      ═══════════════════════════════════════════════════════ -->
 <div id="screener-page" class="p-6">
   <div class="max-w-7xl mx-auto mb-6">
     <div class="flex items-center justify-between">
       <div>
-        <p class="text-xs font-bold uppercase tracking-widest text-indigo-400 mb-1">Charged Alpha</p>
         <h1 class="text-2xl font-bold text-white">ETF Screener</h1>
         <p class="text-slate-400 text-sm mt-1">Screen ~200 top US ETFs against your criteria</p>
       </div>
@@ -703,7 +769,7 @@ async function submitScreen() {
 async function pollJob(job_id) {
   if(job_id!==currentJobId) return;
   try {
-    const res=await fetch(`/api/screen/${job_id}`); const data=await res.json();
+    const res=await fetch(`/etf/api/screen/${job_id}`); const data=await res.json();
     const pct=data.total>0?Math.round(data.processed/data.total*100):0;
     progressBar.style.width=pct+'%'; progressText.textContent=`${data.processed} / ${data.total}`;
     matchCountLive.textContent=`${data.matches.length} match${data.matches.length!==1?'es':''} so far`;
@@ -918,7 +984,7 @@ async function openDetail(symbol){
   destroyChart();
 
   try {
-    const res = await fetch(`/api/etf/${encodeURIComponent(symbol)}`);
+    const res = await fetch(`/etf/api/etf/${encodeURIComponent(symbol)}`);
     if(!res.ok) throw new Error(`HTTP ${res.status}`);
     detailData = await res.json();
     if(detailData.error) throw new Error(detailData.error);
@@ -1004,7 +1070,7 @@ function destroyChart(){ if(priceChart){ priceChart.destroy(); priceChart=null; 
 async function loadChart(symbol, range){
   document.getElementById('chart-overlay').classList.add('visible');
   try {
-    const res = await fetch(`/api/etf/${encodeURIComponent(symbol)}/chart?range=${range}`);
+    const res = await fetch(`/etf/api/etf/${encodeURIComponent(symbol)}/chart?range=${range}`);
     const data = await res.json();
     if(data.error) throw new Error(data.error);
     renderChart(data.labels, data.prices, range);
@@ -1113,6 +1179,7 @@ const presetParam = urlParams.get('preset');
 if(presetParam && PRESETS[presetParam]) {
   applyPreset(presetParam);
 }
+document.addEventListener('click',function(e){var w=document.getElementById('toolsWrap');if(w&&!w.contains(e.target))w.classList.remove('open');var m=document.getElementById('mobileMenu');if(m&&!e.target.closest('.ca-hamburger')&&!m.contains(e.target))m.classList.remove('open');});
 </script>
 </body>
 </html>
