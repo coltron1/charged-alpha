@@ -1,30 +1,19 @@
 #!/usr/bin/env python3
-"""Precious Metals Aggregator — pure Python stdlib server (no third-party packages)."""
+"""Precious Metals Aggregator — precious metals price data and dealer scraping."""
 
 import json
 import mimetypes
 import os
 import re
-import ssl
-import subprocess
 import time
-import urllib.request
-import urllib.error
 import urllib.parse
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from http.server import HTTPServer, BaseHTTPRequestHandler
 
-# SSL context for older Python/LibreSSL compatibility
-_SSL_CTX = ssl.create_default_context()
-_SSL_CTX.check_hostname = False
-_SSL_CTX.verify_mode = ssl.CERT_NONE
+import requests as _requests
 
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-STATIC_DIR = os.path.join(BASE_DIR, "static")
-
-# ── HTTP helpers ───────────────────────────────────────────────────────────────
-
-BROWSER_HEADERS = {
+_SESSION = _requests.Session()
+_SESSION.headers.update({
     "User-Agent": (
         "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) "
         "AppleWebKit/537.36 (KHTML, like Gecko) "
@@ -32,47 +21,32 @@ BROWSER_HEADERS = {
     ),
     "Accept-Language": "en-US,en;q=0.9",
     "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
-}
+})
 
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+STATIC_DIR = os.path.join(BASE_DIR, "static")
+
+# ── HTTP helpers ───────────────────────────────────────────────────────────────
 
 def fetch_html(url, timeout=20):
     try:
-        result = subprocess.run(
-            ["curl", "-sL", "--max-time", str(timeout), "--compressed",
-             "-H", f"User-Agent: {BROWSER_HEADERS['User-Agent']}",
-             "-H", "Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
-             "-H", "Accept-Language: en-US,en;q=0.9",
-             "-H", "Accept-Encoding: gzip, deflate, br",
-             "-H", "Sec-Fetch-Dest: document",
-             "-H", "Sec-Fetch-Mode: navigate",
-             "-H", "Sec-Fetch-Site: none",
-             url],
-            capture_output=True, text=True, timeout=timeout + 5
-        )
-        if result.returncode == 0 and len(result.stdout) > 500:
-            return result.stdout
+        resp = _SESSION.get(url, timeout=timeout)
+        resp.raise_for_status()
+        if len(resp.text) > 500:
+            return resp.text
     except Exception as e:
-        print(f"[fetch-curl] {url}: {e}")
-
-    req = urllib.request.Request(url, headers=BROWSER_HEADERS)
-    try:
-        with urllib.request.urlopen(req, timeout=timeout, context=_SSL_CTX) as resp:
-            return resp.read().decode("utf-8", errors="replace")
-    except Exception as e:
-        print(f"[fetch-urllib] {url}: {e}")
-        return None
+        print(f"[fetch_html] {url}: {e}", flush=True)
+    return None
 
 
 def fetch_json(url, timeout=10):
-    req = urllib.request.Request(url, headers={
-        "User-Agent": BROWSER_HEADERS["User-Agent"],
-        "Accept": "application/json",
-    })
     try:
-        with urllib.request.urlopen(req, timeout=timeout, context=_SSL_CTX) as resp:
-            return json.loads(resp.read().decode("utf-8", errors="replace"))
+        resp = _SESSION.get(url, timeout=timeout,
+                            headers={"Accept": "application/json"})
+        resp.raise_for_status()
+        return resp.json()
     except Exception as e:
-        print(f"[fetch_json] {url}: {e}")
+        print(f"[fetch_json] {url}: {e}", flush=True)
         return None
 
 

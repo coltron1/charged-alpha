@@ -34,6 +34,7 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 import pandas as pd
 import yfinance as yf
 from flask import Flask, render_template, request, jsonify
+from flask_compress import Compress
 
 # ── Shared utilities ────────────────────────────────────────────────────────
 from yf_utils import (TTLCache, JobStore, fetch_ticker_info, safe_float,
@@ -55,6 +56,7 @@ from gold_server import get_spot_price, fetch_ebay, fetch_sdbullion, \
 
 app = Flask(__name__)
 app.config['MAX_CONTENT_LENGTH'] = 1 * 1024 * 1024  # 1MB max request body
+Compress(app)
 
 # ── Shared job store (auto-cleans after 10 min) ────────────────────────────
 job_store = JobStore(ttl=600)
@@ -126,6 +128,14 @@ def _chart_helper(symbol, range_key, params_map=None):
     if data is None:
         return jsonify({"error": "No price data available"}), 404
     return jsonify(data)
+
+
+# ═════════════════════════════════════════════════════════════════════════════
+#  HEALTH CHECK (Railway)
+# ═════════════════════════════════════════════════════════════════════════════
+@app.route("/health")
+def health():
+    return jsonify({"status": "ok"}), 200
 
 
 # ═════════════════════════════════════════════════════════════════════════════
@@ -701,4 +711,4 @@ def gold_listings():
 # ═════════════════════════════════════════════════════════════════════════════
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))
-    app.run(host="0.0.0.0", port=port, debug=True)
+    app.run(host="0.0.0.0", port=port, debug=os.environ.get("FLASK_DEBUG", "0") == "1")
