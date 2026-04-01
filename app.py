@@ -29,9 +29,8 @@ Routes:
 import os
 import time
 import threading
-from concurrent.futures import ThreadPoolExecutor, as_completed
+from concurrent.futures import ThreadPoolExecutor
 
-import pandas as pd
 import yfinance as yf
 from flask import Flask, render_template, request, jsonify
 from flask_compress import Compress
@@ -55,6 +54,7 @@ from gold_server import get_spot_price, fetch_ebay, fetch_sdbullion, \
     fetch_craigslist, generate_facebook_links, get_purity_fraction
 
 app = Flask(__name__)
+app.url_map.strict_slashes = False
 app.config['MAX_CONTENT_LENGTH'] = 1 * 1024 * 1024  # 1MB max request body
 Compress(app)
 
@@ -95,13 +95,35 @@ def _f_body(body, key, default=None):
         return default
 
 
+def _extract_list(body, key):
+    """Extract a list filter from request body, returning None if empty."""
+    val = body.get(key)
+    if val and isinstance(val, list):
+        return [v for v in val if v] or None
+    return None
+
+
+def _cached_detail(cache_prefix, symbol, fetch_fn):
+    """Shared pattern: cache check → fetch → error check → cache set → jsonify."""
+    sym = symbol.upper()
+    cache_key = f"{cache_prefix}_{sym}"
+    cached = _detail_cache.get(cache_key)
+    if cached:
+        return jsonify(cached)
+    data = fetch_fn(sym)
+    if not data:
+        return jsonify({"error": f"Could not load {cache_prefix} data"}), 404
+    _detail_cache.set(cache_key, data)
+    return jsonify(data)
+
+
 def _start_job(fn, *args):
     job_id = job_store.create()
 
     def run():
         try:
-            def on_progress(p, t):
-                job_store.set_progress(job_id, p, t)
+            def on_progress(p, t, **kw):
+                job_store.set_progress(job_id, p, t, **kw)
 
             def on_match(m):
                 job_store.append_match(job_id, m)
@@ -232,7 +254,6 @@ def market_pulse():
 # ═════════════════════════════════════════════════════════════════════════════
 #  STOCK SCREENER  /screener/
 # ═════════════════════════════════════════════════════════════════════════════
-@app.route("/screener/")
 @app.route("/screener")
 def screener_index():
     return render_template("stock_screener.html")
@@ -250,17 +271,8 @@ def screener_start():
         if not cap_ranges:
             cap_ranges = None
 
-    sectors = body.get("sectors")
-    if sectors and isinstance(sectors, list):
-        sectors = [s for s in sectors if s] or None
-    else:
-        sectors = None
-
-    analyst_recs = body.get("analyst_recs")
-    if analyst_recs and isinstance(analyst_recs, list):
-        analyst_recs = [r for r in analyst_recs if r] or None
-    else:
-        analyst_recs = None
+    sectors = _extract_list(body, "sectors")
+    analyst_recs = _extract_list(body, "analyst_recs")
 
     criteria = {
         "pe_below_historical": bool(body.get("pe_below_historical", False)),
@@ -297,15 +309,7 @@ def screener_status(job_id):
 
 @app.route("/screener/api/stock/<symbol>")
 def screener_stock_detail(symbol):
-    sym = symbol.upper()
-    cached = _detail_cache.get(f"stock_{sym}")
-    if cached:
-        return jsonify(cached)
-    data = get_stock_detail(sym)
-    if not data:
-        return jsonify({"error": "Could not load stock data"}), 404
-    _detail_cache.set(f"stock_{sym}", data)
-    return jsonify(data)
+    return _cached_detail("stock", symbol, get_stock_detail)
 
 
 @app.route("/screener/api/stock/<symbol>/chart")
@@ -322,7 +326,6 @@ def screener_ticker_banner():
 # ═════════════════════════════════════════════════════════════════════════════
 #  ETF SCREENER  /etf/
 # ═════════════════════════════════════════════════════════════════════════════
-@app.route("/etf/")
 @app.route("/etf")
 def etf_index():
     return render_template("etf_screener.html")
@@ -333,17 +336,8 @@ def etf_start():
     body = request.get_json(force=True)
     _f = lambda k, d=None: _f_body(body, k, d)
 
-    categories = body.get("categories")
-    if categories and isinstance(categories, list):
-        categories = [c for c in categories if c] or None
-    else:
-        categories = None
-
-    asset_classes = body.get("asset_classes")
-    if asset_classes and isinstance(asset_classes, list):
-        asset_classes = [a for a in asset_classes if a] or None
-    else:
-        asset_classes = None
+    categories = _extract_list(body, "categories")
+    asset_classes = _extract_list(body, "asset_classes")
 
     criteria = {
         "max_expense_ratio": _f("max_expense_ratio"),
@@ -368,15 +362,7 @@ def etf_status(job_id):
 
 @app.route("/etf/api/etf/<symbol>")
 def etf_detail(symbol):
-    sym = symbol.upper()
-    cached = _detail_cache.get(f"etf_{sym}")
-    if cached:
-        return jsonify(cached)
-    data = get_etf_detail(sym)
-    if not data:
-        return jsonify({"error": "Could not load ETF data"}), 404
-    _detail_cache.set(f"etf_{sym}", data)
-    return jsonify(data)
+    return _cached_detail("etf", symbol, get_etf_detail)
 
 
 @app.route("/etf/api/etf/<symbol>/chart")
@@ -387,7 +373,6 @@ def etf_chart(symbol):
 # ═════════════════════════════════════════════════════════════════════════════
 #  CRYPTO SCREENER  /crypto/
 # ═════════════════════════════════════════════════════════════════════════════
-@app.route("/crypto/")
 @app.route("/crypto")
 def crypto_index():
     return render_template("crypto_screener.html")
@@ -425,7 +410,6 @@ def crypto_chart_route(coin_id):
 # ═════════════════════════════════════════════════════════════════════════════
 #  OPTIONS SCANNER  /options/
 # ═════════════════════════════════════════════════════════════════════════════
-@app.route("/options/")
 @app.route("/options")
 def options_index():
     return render_template("options_scanner.html")
@@ -463,7 +447,6 @@ def options_status(job_id):
 # ═════════════════════════════════════════════════════════════════════════════
 #  BOND DASHBOARD  /bonds/
 # ═════════════════════════════════════════════════════════════════════════════
-@app.route("/bonds/")
 @app.route("/bonds")
 def bonds_index():
     return render_template("bond_dashboard.html")
@@ -489,7 +472,6 @@ def bonds_etfs():
 # ═════════════════════════════════════════════════════════════════════════════
 #  REIT SCREENER  /reits/
 # ═════════════════════════════════════════════════════════════════════════════
-@app.route("/reits/")
 @app.route("/reits")
 def reits_index():
     return render_template("reit_screener.html")
@@ -500,11 +482,7 @@ def reits_start():
     body = request.get_json(force=True)
     _f = lambda k, d=None: _f_body(body, k, d)
 
-    sectors = body.get("sectors")
-    if sectors and isinstance(sectors, list):
-        sectors = [s for s in sectors if s] or None
-    else:
-        sectors = None
+    sectors = _extract_list(body, "sectors")
 
     criteria = {
         "min_div_yield": _f("min_div_yield"), "max_div_yield": _f("max_div_yield"),
@@ -532,7 +510,6 @@ def reits_chart(symbol):
 # ═════════════════════════════════════════════════════════════════════════════
 #  FOREX HEATMAP  /forex/
 # ═════════════════════════════════════════════════════════════════════════════
-@app.route("/forex/")
 @app.route("/forex")
 def forex_index():
     return render_template("forex_heatmap.html")
@@ -562,7 +539,6 @@ def forex_pair_chart(pair):
 # ═════════════════════════════════════════════════════════════════════════════
 #  COMMODITIES DASHBOARD  /commodities/
 # ═════════════════════════════════════════════════════════════════════════════
-@app.route("/commodities/")
 @app.route("/commodities")
 def commodities_index():
     return render_template("commodities_dashboard.html")
@@ -585,7 +561,6 @@ def commodities_chart(ticker):
 # ═════════════════════════════════════════════════════════════════════════════
 #  EARNINGS CALENDAR  /earnings/
 # ═════════════════════════════════════════════════════════════════════════════
-@app.route("/earnings/")
 @app.route("/earnings")
 def earnings_index():
     return render_template("earnings_calendar.html")
@@ -612,7 +587,6 @@ def earnings_history(symbol):
 # ═════════════════════════════════════════════════════════════════════════════
 #  PRECIOUS METALS (GOLD)  /gold/
 # ═════════════════════════════════════════════════════════════════════════════
-@app.route("/gold/")
 @app.route("/gold")
 def gold_index():
     return render_template("gold.html")
@@ -670,33 +644,37 @@ def gold_listings():
             except Exception as e:
                 print(f"[gold api] {name}: {e}")
 
-    if item_type:
-        listings = [l for l in listings if l.get("type") == item_type]
-    if min_purity_frac is not None or max_purity_frac is not None:
-        filtered = []
-        for l in listings:
-            pf = l.get("purity_fraction")
-            if pf is None:
-                continue
-            if min_purity_frac is not None and pf < min_purity_frac:
-                continue
-            if max_purity_frac is not None and pf > max_purity_frac:
-                continue
-            filtered.append(l)
-        listings = filtered
-    if min_price is not None:
-        listings = [l for l in listings if l.get("price", 0) >= min_price]
-    if max_price is not None:
-        listings = [l for l in listings if l.get("price", 0) <= max_price]
-    if min_weight is not None:
-        listings = [l for l in listings if (l.get("weight_oz") or 0) >= min_weight]
-    if max_weight is not None:
-        listings = [l for l in listings if l.get("weight_oz") and l["weight_oz"] <= max_weight]
-    if q:
-        listings = [l for l in listings if q in l.get("title", "").lower()]
+    # Apply filters in a single pass for efficiency
+    def _passes_gold_filter(l):
+        if l.get("is_search_link") or not l.get("weight_oz"):
+            return False
+        if item_type and l.get("type") != item_type:
+            return False
+        pf = l.get("purity_fraction")
+        if (min_purity_frac is not None or max_purity_frac is not None) and pf is None:
+            return False
+        if min_purity_frac is not None and pf < min_purity_frac:
+            return False
+        if max_purity_frac is not None and pf > max_purity_frac:
+            return False
+        price = l.get("price", 0)
+        if min_price is not None and price < min_price:
+            return False
+        if max_price is not None and price > max_price:
+            return False
+        wt = l.get("weight_oz") or 0
+        if min_weight is not None and wt < min_weight:
+            return False
+        if max_weight is not None and (not wt or wt > max_weight):
+            return False
+        if q and q not in l.get("title", "").lower():
+            return False
+        return True
 
-    listings = [l for l in listings if l.get("weight_oz") and not l.get("is_search_link")]
-    listings.sort(key=lambda x: x["price"])
+    listings = sorted(
+        (l for l in listings if _passes_gold_filter(l)),
+        key=lambda x: x["price"]
+    )
 
     return jsonify({
         "count": len(listings),

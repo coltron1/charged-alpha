@@ -62,12 +62,16 @@ def get_yields():
 
 
 def get_yield_history(ticker, range_key):
-    return fetch_chart(ticker, range_key, params_map={
+    result = fetch_chart(ticker, range_key, params_map={
         "1m": dict(period="1mo", interval="1d"),
         "3m": dict(period="3mo", interval="1d"),
         "1y": dict(period="1y", interval="1d"),
         "5y": dict(period="5y", interval="1wk"),
-    }, decimals=3) or {"labels": [], "values": []}
+    }, decimals=3)
+    if not result:
+        return {"labels": [], "values": []}
+    # fetch_chart returns {labels, prices} but bond template expects {labels, values}
+    return {"labels": result["labels"], "values": result.get("values", result.get("prices", []))}
 
 
 def get_bond_etfs():

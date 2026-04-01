@@ -1,12 +1,13 @@
 import time
 from datetime import datetime
 import requests
+from yf_utils import TTLCache
 
 _CG_BASE = "https://api.coingecko.com/api/v3"
 _CC_BASE = "https://api.coincap.io/v2"
 _CP_BASE = "https://api.coinpaprika.com/v1"
-_cache = {}
-_CACHE_TTL = 120
+_cache = TTLCache(default_ttl=120, max_size=100)
+_chart_cache = TTLCache(default_ttl=300, max_size=200)
 
 def _log(msg):
     print(msg, flush=True)
@@ -97,10 +98,13 @@ def _fetch_coins_coinpaprika():
     return coins
 
 
+_expired_coins_backup = None  # fallback if all APIs fail
+
 def _fetch_coins():
+    global _expired_coins_backup
     cached = _cache.get("coins")
-    if cached and (time.time() - cached[0]) < _CACHE_TTL:
-        return cached[1]
+    if cached:
+        return cached
     # Try multiple APIs in order
     sources = [
         (_fetch_coins_coingecko, "CoinGecko"),
@@ -111,14 +115,15 @@ def _fetch_coins():
         try:
             data = fetcher()
             _log(f"Crypto data loaded from {name}: {len(data)} coins")
-            _cache["coins"] = (time.time(), data)
+            _cache.set("coins", data)
+            _expired_coins_backup = data
             return data
         except Exception as e:
             _log(f"{name} fetch error: {e}")
-    # Return cached data if available, even if expired
-    if cached:
-        _log("Using expired cache for crypto data")
-        return cached[1]
+    # Return last known data if all APIs fail
+    if _expired_coins_backup:
+        _log("Using expired backup for crypto data")
+        return _expired_coins_backup
     return []
 
 def screen_cryptos(criteria, on_progress=None, on_match=None):
@@ -217,10 +222,10 @@ def _chart_coincap(coin_id, days):
 
 
 def get_crypto_chart(coin_id, days="30"):
-    cache_key = f"chart_{coin_id}_{days}"
-    cached = _cache.get(cache_key)
-    if cached and (time.time() - cached[0]) < 300:
-        return cached[1]
+    cache_key = f"{coin_id}_{days}"
+    cached = _chart_cache.get(cache_key)
+    if cached:
+        return cached
     for fetcher, name in [(_chart_coingecko, "CoinGecko"), (_chart_coincap, "CoinCap")]:
         try:
             prices = fetcher(coin_id, days)
@@ -233,7 +238,7 @@ def get_crypto_chart(coin_id, days="30"):
                 labels.append(dt.strftime("%Y-%m-%d %H:%M") if int(days) <= 1 else dt.strftime("%Y-%m-%d"))
                 values.append(round(price, 6) if price < 1 else round(price, 2))
             result = {"labels": labels, "prices": values}
-            _cache[cache_key] = (time.time(), result)
+            _chart_cache.set(cache_key, result)
             return result
         except Exception as e:
             _log(f"Chart {name} error for {coin_id}: {e}")

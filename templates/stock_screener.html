@@ -179,7 +179,9 @@
       border-bottom: 1px solid #1e293b;
       height: 36px;
       overflow: hidden;
-      position: relative;
+      position: sticky;
+      top: 0;
+      z-index: 50;
       white-space: nowrap;
     }
     .ticker-banner::before, .ticker-banner::after {
@@ -410,7 +412,6 @@
           <button class="filter-tab" data-tab="income" onclick="switchTab('income')">Income</button>
           <button class="filter-tab" data-tab="fundamentals" onclick="switchTab('fundamentals')">Fundamentals</button>
           <button class="filter-tab" data-tab="analyst" onclick="switchTab('analyst')">Analyst</button>
-          <button class="filter-tab" data-tab="options" onclick="switchTab('options')">Options</button>
         </div>
 
         <!-- Valuation tab -->
@@ -448,6 +449,17 @@
                 <input type="number" id="min_pb" placeholder="Min" min="0" step="0.1" class="input-field" />
                 <span class="text-slate-500">–</span>
                 <input type="number" id="max_pb" placeholder="Max" min="0" step="0.1" class="input-field" />
+              </div>
+            </div>
+            <div class="space-y-2">
+              <div class="flex items-center gap-2">
+                <p class="text-sm font-medium text-slate-200">Implied Vol (%)</p>
+                <span class="info-icon beginner-only" data-tip="Annualized IV of the ATM put (~30 DTE). Higher = larger premiums. Most put sellers target IV above 30–40%. Using this adds ~2–4 min to scan time.">i</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <input type="number" id="min_put_iv" placeholder="Min" min="0" step="1" class="input-field" />
+                <span class="text-slate-500">–</span>
+                <input type="number" id="max_put_iv" placeholder="Max" min="0" step="1" class="input-field" />
               </div>
             </div>
           </div>
@@ -595,30 +607,6 @@
           </div>
         </div>
 
-        <!-- Options tab -->
-        <div class="filter-tab-content" data-tab="options">
-          <div class="flex items-center gap-3 mb-4">
-            <label class="flex items-center gap-2 cursor-pointer">
-              <input type="checkbox" id="enable_options" class="w-4 h-4 rounded accent-violet-500" />
-              <span class="text-sm font-medium text-slate-200">Enable options filters</span>
-              <span class="info-icon beginner-only" data-tip="Fetches the ATM put for the nearest ~30 DTE expiration for each stock. Adds ~2–4 min to scan time.">i</span>
-            </label>
-            <span id="options-slow-warn" class="hidden text-xs text-amber-400 bg-amber-950 border border-amber-800 rounded-full px-3 py-0.5">⚠ Adds ~2–4 min to scan</span>
-          </div>
-          <div id="options-fields" class="grid grid-cols-1 md:grid-cols-2 gap-5" style="opacity:.35;pointer-events:none;">
-            <div class="space-y-2">
-              <div class="flex items-center gap-2">
-                <p class="text-sm font-medium text-slate-200">Implied Vol (%)</p>
-                <span class="info-icon beginner-only" data-tip="Annualized IV. Higher = larger premiums. Most put sellers target IV above 30–40%.">i</span>
-              </div>
-              <div class="flex items-center gap-2">
-                <input type="number" id="min_put_iv" placeholder="Min" min="0" step="1" class="input-field" disabled />
-                <span class="text-slate-500">–</span>
-                <input type="number" id="max_put_iv" placeholder="Max" min="0" step="1" class="input-field" disabled />
-              </div>
-            </div>
-          </div>
-        </div>
 
         <div class="mt-6 flex justify-end">
           <button class="btn-primary px-10" onclick="submitScreen()">Run Screen</button>
@@ -893,8 +881,6 @@ function clearAllFilters(silent) {
   document.querySelectorAll('.analyst-rec-cb').forEach(cb => cb.checked = false);
   document.querySelectorAll('.sector-cb').forEach(cb => cb.checked = false);
   updateSectorLabel();
-  document.getElementById('enable_options').checked = false;
-  toggleOptionsFields();
   if(!silent) {
     document.getElementById('preset-select').value = '';
     updateAdvCount();
@@ -934,14 +920,14 @@ function updateAdvCount() {
   document.getElementById('adv-count').textContent = count ? `(${count})` : '';
 
   // Update tab counts
-  const tabCounts = { valuation:0, income:0, fundamentals:0, analyst:0, options:0 };
+  const tabCounts = { valuation:0, income:0, fundamentals:0, analyst:0 };
   const tabMap = {
     pe_below_historical:'valuation', min_price:'valuation', max_price:'valuation', min_pb:'valuation', max_pb:'valuation',
+    min_put_iv:'valuation', max_put_iv:'valuation',
     min_div_yield:'income', max_div_yield:'income', min_div_streak:'income', max_payout_ratio:'income', ex_div_window:'income',
     min_revenue_growth:'fundamentals', min_eps_growth:'fundamentals', min_w52_perf:'fundamentals', max_w52_perf:'fundamentals',
     max_w52_dist_high:'fundamentals', max_debt_to_equity:'fundamentals', min_current_ratio:'fundamentals',
     min_fcf_yield:'fundamentals', min_operating_margin:'fundamentals',
-    min_put_iv:'options', max_put_iv:'options',
     min_analyst_count:'analyst', min_target_upside:'analyst',
   };
   fields.forEach(id => {
@@ -957,21 +943,9 @@ function updateAdvCount() {
   document.querySelectorAll('.filter-tab').forEach(t => {
     const tab = t.dataset.tab;
     const c = tabCounts[tab] || 0;
-    const base = {valuation:'Valuation',income:'Income',fundamentals:'Fundamentals',analyst:'Analyst',options:'Options'}[tab];
+    const base = {valuation:'Valuation',income:'Income',fundamentals:'Fundamentals',analyst:'Analyst'}[tab];
     t.textContent = c ? `${base} (${c})` : base;
   });
-}
-
-// Options toggle
-const enableOptions = document.getElementById('enable_options');
-enableOptions.addEventListener('change', toggleOptionsFields);
-function toggleOptionsFields() {
-  const on = enableOptions.checked;
-  const fields = document.getElementById('options-fields');
-  fields.style.opacity = on ? '1' : '.35';
-  fields.style.pointerEvents = on ? '' : 'none';
-  fields.querySelectorAll('input').forEach(i => i.disabled = !on);
-  document.getElementById('options-slow-warn').classList.toggle('hidden', !on);
 }
 
 document.getElementById('pe_below_historical').addEventListener('change', function() {
@@ -1012,7 +986,7 @@ function getActiveColumns() {
   const hasDiv = !!document.getElementById('min_div_yield').value || !!document.getElementById('max_div_yield').value || !!document.getElementById('min_div_streak').value || !!document.getElementById('max_payout_ratio').value;
   const hasGrowth = !!document.getElementById('min_revenue_growth').value || !!document.getElementById('min_eps_growth').value || !!document.getElementById('min_w52_perf').value || !!document.getElementById('max_w52_dist_high').value;
   const hasFundamentals = !!document.getElementById('max_debt_to_equity').value || !!document.getElementById('min_current_ratio').value || !!document.getElementById('min_fcf_yield').value || !!document.getElementById('min_operating_margin').value;
-  const hasOptions = document.getElementById('enable_options').checked;
+  const hasOptions = !!(document.getElementById('min_put_iv').value || document.getElementById('max_put_iv').value);
   const hasAnalyst = !!document.getElementById('min_analyst_count').value || !!document.getElementById('min_target_upside').value || document.querySelectorAll('.analyst-rec-cb:checked').length > 0;
 
   if(pe) {
@@ -1056,7 +1030,7 @@ function getActiveColumns() {
 // ════════════════════════════════════════════════
 async function submitScreen() {
   if(pollTimer) clearInterval(pollTimer);
-  const hasOpts = document.getElementById('enable_options').checked;
+  const hasOpts = !!(document.getElementById('min_put_iv').value || document.getElementById('max_put_iv').value);
   const criteria = {
     pe_below_historical: document.getElementById('pe_below_historical').checked,
     pe_min_discount_pct: document.getElementById('pe_min_discount_pct').value||0,
@@ -1078,8 +1052,8 @@ async function submitScreen() {
     min_current_ratio: document.getElementById('min_current_ratio').value||null,
     min_fcf_yield: document.getElementById('min_fcf_yield').value||null,
     min_operating_margin: document.getElementById('min_operating_margin').value||null,
-    min_put_iv: hasOpts?(document.getElementById('min_put_iv').value||null):null,
-    max_put_iv: hasOpts?(document.getElementById('max_put_iv').value||null):null,
+    min_put_iv: document.getElementById('min_put_iv').value||null,
+    max_put_iv: document.getElementById('max_put_iv').value||null,
     sectors: getSelectedSectors(),
     cap_ranges: getCapRanges(),
     analyst_recs: [...document.querySelectorAll('.analyst-rec-cb:checked')].map(c=>c.value),
@@ -1109,14 +1083,16 @@ async function pollJob(job_id) {
     const res=await fetch(`/screener/api/screen/${job_id}`); const data=await res.json();
     const pct=data.total>0?Math.round(data.processed/data.total*100):0;
     progressBar.style.width=pct+'%'; progressText.textContent=`${data.processed} / ${data.total}`;
-    matchCountLive.textContent=`${data.matches.length} match${data.matches.length!==1?'es':''} so far`;
+    const m=data.matches||[];
+    matchCountLive.textContent=`${m.length} match${m.length!==1?'es':''} so far`;
+    if(data.phase===2) progressLabel.textContent=`Phase 2: detailed analysis (${data.phase2_processed||0}/${data.phase2_total||'?'})`;
     if(data.status==='done'||data.status==='error'){
       clearInterval(pollTimer);
       document.querySelectorAll('.btn-primary').forEach(b=>b.disabled=false);
       document.getElementById('run-btn-quick').textContent='Run Screen';
       progressPanel.classList.add('hidden');
       if(data.status==='error'){alert('Screener error: '+data.error);return;}
-      allResults=data.matches; lastRun.textContent='Last run: '+new Date().toLocaleTimeString();
+      allResults=m; lastRun.textContent='Last run: '+new Date().toLocaleTimeString();
       showResults(allResults);
     }
   } catch(err){console.error('Poll error',err);}

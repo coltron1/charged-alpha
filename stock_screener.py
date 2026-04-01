@@ -244,13 +244,14 @@ def get_stock_data(symbol, fetch_options=False, hist_close=None, need_hist_pe=Tr
         else:
             dividend_yield_pct = None
 
-        # Consecutive dividend years — estimate from dividend history
+        # Consecutive dividend years — only compute if we have a yield
+        # (t.dividends is an extra API call, so skip unless div yield exists)
         div_streak = None
-        if raw_dy and raw_dy > 0:
+        if raw_dy and raw_dy > 0 and need_hist_pe:
+            # Only compute streak if in detail mode (not Phase 1 cheap screening)
             try:
                 divs = t.dividends
                 if divs is not None and not divs.empty:
-                    # Count consecutive years with at least one dividend, going backwards
                     years_with_div = sorted(set(divs.index.year), reverse=True)
                     if years_with_div:
                         streak = 0
@@ -682,7 +683,7 @@ def screen_stocks(criteria, on_progress=None, on_match=None):
                     if on_match:
                         on_match(data)
 
-    with ThreadPoolExecutor(max_workers=20) as executor:
+    with ThreadPoolExecutor(max_workers=30) as executor:
         list(executor.map(phase1, tickers))
 
     # If no expensive checks needed, we're done
@@ -721,9 +722,14 @@ def screen_stocks(criteria, on_progress=None, on_match=None):
 
     phase2_processed = 0
 
+    # Signal Phase 2 start to the job store
+    if on_progress:
+        on_progress(total, total, phase=2, phase2_total=phase2_total)
+
     def phase2(item):
         nonlocal phase2_processed
         symbol, data = item
+        passed = True
 
         # Compute historical PE if needed
         if need_hist_pe:
@@ -745,15 +751,16 @@ def screen_stocks(criteria, on_progress=None, on_match=None):
             # Check PE criteria
             if criteria.get("pe_below_historical"):
                 if data["trailing_pe"] is None or data["avg_hist_pe"] is None:
-                    return
-                if data["trailing_pe"] >= data["avg_hist_pe"]:
-                    return
-                min_discount = criteria.get("pe_min_discount_pct") or 0
-                if (data["pe_discount_pct"] or 0) < min_discount:
-                    return
+                    passed = False
+                elif data["trailing_pe"] >= data["avg_hist_pe"]:
+                    passed = False
+                else:
+                    min_discount = criteria.get("pe_min_discount_pct") or 0
+                    if (data["pe_discount_pct"] or 0) < min_discount:
+                        passed = False
 
         # Fetch options if needed
-        if need_options:
+        if passed and need_options:
             cached = _info_cache.get(symbol)
             t = cached[0] if cached else yf.Ticker(symbol)
             current_price = data["price"]
@@ -768,29 +775,32 @@ def screen_stocks(criteria, on_progress=None, on_match=None):
             min_put_vol = criteria.get("min_put_volume")
             iv = data.get("atm_put_iv")
             if min_iv is not None and (iv is None or iv < min_iv):
-                return
+                passed = False
             if max_iv is not None and (iv is None or iv > max_iv):
-                return
-            if max_spread is not None:
+                passed = False
+            if passed and max_spread is not None:
                 spread = data.get("atm_put_spread_pct")
                 if spread is None or spread > max_spread:
-                    return
-            if min_oi is not None:
+                    passed = False
+            if passed and min_oi is not None:
                 oi = data.get("atm_put_oi")
                 if oi is None or oi < min_oi:
-                    return
-            if min_put_vol is not None:
+                    passed = False
+            if passed and min_put_vol is not None:
                 vol = data.get("atm_put_volume")
                 if vol is None or vol < min_put_vol:
-                    return
+                    passed = False
 
         with lock:
             phase2_processed += 1
-            matches.append(data)
-            if on_match:
-                on_match(data)
+            if passed:
+                matches.append(data)
+                if on_match:
+                    on_match(data)
+            if on_progress:
+                on_progress(total, total, phase=2, phase2_processed=phase2_processed, phase2_total=phase2_total)
 
-    with ThreadPoolExecutor(max_workers=10) as executor:
+    with ThreadPoolExecutor(max_workers=15) as executor:
         list(executor.map(phase2, phase1_survivors))
 
     return matches

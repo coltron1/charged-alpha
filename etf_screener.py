@@ -200,12 +200,14 @@ def get_etf_data(symbol):
             return None
         current_price = float(current_price)
 
-        # Expense ratio — yfinance stores as decimal (0.0003 = 0.03%)
-        expense_ratio_raw = info.get("annualReportExpenseRatio") or info.get("expenseRatio")
+        # Expense ratio — yfinance netExpenseRatio is already in percent (e.g. 0.03 = 0.03%)
+        expense_ratio_raw = info.get("netExpenseRatio") or info.get("annualReportExpenseRatio") or info.get("expenseRatio")
         expense_ratio = None
         if expense_ratio_raw is not None:
             try:
-                expense_ratio = round(float(expense_ratio_raw) * 100, 4)
+                val = float(expense_ratio_raw)
+                # netExpenseRatio is already %, legacy fields were decimal (multiply by 100)
+                expense_ratio = round(val, 4) if info.get("netExpenseRatio") is not None else round(val * 100, 4)
             except (TypeError, ValueError):
                 pass
 

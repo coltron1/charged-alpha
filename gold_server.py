@@ -449,46 +449,53 @@ def scrape_ebay_query(query, metal="gold"):
     if not html:
         return []
 
+    # Narrow to actual results section
+    results_start = html.find("id=srp-river-results")
+    if results_start < 0:
+        results_start = html.find('id="srp-river-results"')
+    if results_start >= 0:
+        html = html[results_start:]
+
+    # eBay uses bot detection which blocks server-side requests.
+    # If we get a CAPTCHA page, return empty gracefully.
+    if "Pardon Our Interruption" in html or "srp-river-results" not in html:
+        return []
+
+    # Narrow to actual results section
+    results_start = html.find("srp-river-results")
+    html = html[results_start:]
+
+    # Extract items by finding all s-card__image img tags with title in alt
     listings = []
-    for block in re.finditer(
-        r'<li\b[^>]*\bid="item[0-9a-f]+"[^>]*>(.*?)</li>', html, re.DOTALL
+    for img_m in re.finditer(
+        r'<img\b[^>]*\bs-card__image\b[^>]*\bsrc="?([^ >"]+)[^>]*\balt="([^"]+)"',
+        html,
     ):
-        chunk = block.group(1)
-
-        tm = re.search(
-            r'<span\b[^>]*class="su-styled-text primary default"[^>]*>([\s\S]*?)</span>',
-            chunk,
-        )
-        if not tm:
-            continue
-        title = re.sub(r"<[^>]+>", "", tm.group(1)).strip()
-        title = re.sub(r"Opens in a new window.*$", "", title, flags=re.IGNORECASE).strip()
-        if not title:
+        image = img_m.group(1)
+        title = img_m.group(2).strip()
+        if not title or title.lower() in ("shop on ebay",):
             continue
 
-        pm = re.search(r'<span\b[^>]*\bs-card__price\b[^>]*>([\s\S]*?)</span>', chunk)
-        price = parse_price(re.sub(r"<[^>]+>", "", pm.group(1))) if pm else None
+        # Get surrounding context for price/url
+        chunk = html[max(0, img_m.start() - 2000):img_m.end() + 2000]
+
+        # Price from s-card__price
+        pm = re.search(r'\bs-card__price\b[^>]*>([\s\S]*?)</span>', chunk)
+        price_text = re.sub(r"<[^>]+>", "", pm.group(1)).strip() if pm else ""
+        price = parse_price(price_text) if price_text else None
         if not price:
             continue
 
+        # URL from s-card__link anchor
+        um = re.search(r'<a\b[^>]*\bs-card__link\b[^>]*\bhref="?([^ >"]+)', chunk)
+        url = um.group(1).split("?")[0] if um else None
+
+        # Seller info
         sm = re.search(
-            r'<div\b[^>]*\bsu-card-container__attributes__secondary\b[^>]*>([\s\S]*?)</div>',
+            r'su-card-container__attributes__secondary[^>]*>([\s\S]*?)</div>',
             chunk,
         )
         seller_text = re.sub(r"<[^>]+>", "", sm.group(1)).strip() if sm else ""
-        if not is_reputable(seller_text):
-            continue
-
-        um = re.search(r'<a\b[^>]*\bs-card__link\b[^>]*\bhref="([^"?]*)', chunk)
-        url = um.group(1) if um else None
-
-        img_m = re.search(
-            r'<img\b[^>]*\bs-card__image\b[^>]*(?:data-defer-load="([^"]+)"|[^>]+src="([^"]+)")',
-            chunk,
-        )
-        image = None
-        if img_m:
-            image = img_m.group(1) or img_m.group(2)
 
         listings.append(enrich_listing({
             "title": title,
@@ -500,7 +507,7 @@ def scrape_ebay_query(query, metal="gold"):
             "condition": None,
             "seller": seller_text[:80],
             "listing_type": "buy_it_now",
-            "verified_seller": True,
+            "verified_seller": bool(seller_text),
         }, metal))
 
     return listings

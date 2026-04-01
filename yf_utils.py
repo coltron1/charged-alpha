@@ -231,12 +231,14 @@ class JobStore:
             if job:
                 job["matches"].append(match)
 
-    def set_progress(self, job_id, processed, total):
+    def set_progress(self, job_id, processed, total, **kwargs):
         with self._lock:
             job = self._jobs.get(job_id)
             if job:
                 job["processed"] = processed
                 job["total"] = total
+                for k, v in kwargs.items():
+                    job[k] = v
 
     def _start_reaper(self):
         def reap():

@@ -1006,6 +1006,7 @@
     document.querySelectorAll(".tab").forEach(t => t.classList.remove("active"));
     el.classList.add("active");
     activeSource = src;
+    loadListings();
   }
 
   function toggleMiscSources() {
@@ -1148,11 +1149,14 @@
         : `<strong>${total.toLocaleString()}</strong> listing${total !== 1 ? "s" : ""} found`;
 
     if (listings.length === 0) {
+      const ebayMsg = activeSource === 'ebay'
+        ? '<p>eBay listings are temporarily unavailable due to bot detection. Try "All Sources" instead.</p>'
+        : '<p>Try different filters or search terms.</p>';
       document.getElementById("content").innerHTML = `
         <div class="state-screen">
           <div class="icon">🔍</div>
           <h2>No results</h2>
-          <p>Try different filters or search terms.</p>
+          ${ebayMsg}
         </div>`;
       return;
     }
