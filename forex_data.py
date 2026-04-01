@@ -1,10 +1,8 @@
-import time
 import yfinance as yf
-import pandas as pd
 from concurrent.futures import ThreadPoolExecutor, as_completed
+from yf_utils import TTLCache, fetch_chart
 
-_cache = {}
-_CACHE_TTL = 120
+_cache = TTLCache(default_ttl=120, max_size=50)
 
 CURRENCIES = ["USD", "EUR", "GBP", "JPY", "CHF", "AUD", "CAD", "NZD"]
 
@@ -35,8 +33,8 @@ def _get_pair_data(pair, period="5d", interval="1d"):
 def get_all_pairs(timeframe="1d"):
     cache_key = f"pairs_{timeframe}"
     cached = _cache.get(cache_key)
-    if cached and (time.time() - cached[0]) < _CACHE_TTL:
-        return cached[1]
+    if cached:
+        return cached
 
     period_map = {
         "1d": "2d", "1w": "7d", "1m": "1mo", "3m": "3mo", "ytd": "ytd", "1y": "1y",
@@ -68,7 +66,7 @@ def get_all_pairs(timeframe="1d"):
                 results.append(r)
 
     results.sort(key=lambda x: PAIRS.index(x["pair"]))
-    _cache[cache_key] = (time.time(), results)
+    _cache.set(cache_key, results)
     return results
 
 
@@ -96,33 +94,4 @@ def get_currency_strength(timeframe="1d"):
 
 
 def get_pair_chart(pair, range_key="1y"):
-    cache_key = f"chart_{pair}_{range_key}"
-    cached = _cache.get(cache_key)
-    if cached and (time.time() - cached[0]) < _CACHE_TTL:
-        return cached[1]
-
-    params = {
-        "1d": dict(period="1d", interval="5m"),
-        "1w": dict(period="5d", interval="30m"),
-        "1m": dict(period="1mo", interval="1d"),
-        "3m": dict(period="3mo", interval="1d"),
-        "1y": dict(period="1y", interval="1d"),
-        "5y": dict(period="5y", interval="1wk"),
-    }
-    p = params.get(range_key, params["1y"])
-
-    try:
-        t = yf.Ticker(_yf_ticker(pair))
-        hist = t.history(**p)
-        if hist.empty:
-            return None
-        if hist.index.tz is not None:
-            hist.index = hist.index.tz_localize(None)
-        fmt = "%Y-%m-%d %H:%M" if range_key in ("1d", "1w") else "%Y-%m-%d"
-        labels = hist.index.strftime(fmt).tolist()
-        prices = [round(float(v), 5) if pd.notna(v) else None for v in hist["Close"]]
-        data = {"labels": labels, "prices": prices}
-        _cache[cache_key] = (time.time(), data)
-        return data
-    except Exception:
-        return None
+    return fetch_chart(_yf_ticker(pair), range_key, decimals=5)

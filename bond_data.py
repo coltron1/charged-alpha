@@ -1,9 +1,10 @@
 import time
 import yfinance as yf
 import pandas as pd
+from concurrent.futures import ThreadPoolExecutor, as_completed
+from yf_utils import TTLCache, fetch_chart, normalize_div_yield
 
-_cache = {}
-_CACHE_TTL = 300
+_cache = TTLCache(default_ttl=300, max_size=50)
 
 YIELD_TICKERS = {
     "^IRX": {"name": "13-Week T-Bill", "maturity": 0.25},
@@ -16,30 +17,34 @@ BOND_ETFS = ["TLT", "IEF", "SHY", "BND", "TIP", "HYG", "LQD"]
 
 def get_yields():
     cached = _cache.get("yields")
-    if cached and (time.time() - cached[0]) < _CACHE_TTL:
-        return cached[1]
+    if cached:
+        return cached
 
-    results = []
-    for ticker, meta in YIELD_TICKERS.items():
+    def fetch_yield(item):
+        ticker, meta = item
         try:
             t = yf.Ticker(ticker)
             hist = t.history(period="5d")
             if hist.empty:
-                continue
+                return None
             current = float(hist["Close"].iloc[-1])
             prev = float(hist["Close"].iloc[-2]) if len(hist) > 1 else current
-            change = round(current - prev, 3)
-            results.append({
+            return {
                 "ticker": ticker,
                 "name": meta["name"],
                 "maturity": meta["maturity"],
                 "yield_pct": round(current, 3),
-                "change": change,
-            })
+                "change": round(current - prev, 3),
+            }
         except Exception:
-            pass
+            return None
 
-    # Calculate spreads
+    results = []
+    with ThreadPoolExecutor(max_workers=4) as pool:
+        for r in pool.map(fetch_yield, YIELD_TICKERS.items()):
+            if r:
+                results.append(r)
+
     yields_map = {r["ticker"]: r["yield_pct"] for r in results}
     ten_yr = yields_map.get("^TNX")
     three_mo = yields_map.get("^IRX")
@@ -52,47 +57,25 @@ def get_yields():
         spreads["30Y_10Y"] = round(thirty_yr - ten_yr, 3)
 
     data = {"yields": results, "spreads": spreads}
-    _cache["yields"] = (time.time(), data)
+    _cache.set("yields", data)
     return data
 
 
 def get_yield_history(ticker, range_key):
-    cache_key = f"hist_{ticker}_{range_key}"
-    cached = _cache.get(cache_key)
-    if cached and (time.time() - cached[0]) < _CACHE_TTL:
-        return cached[1]
-
-    params = {
+    return fetch_chart(ticker, range_key, params_map={
         "1m": dict(period="1mo", interval="1d"),
         "3m": dict(period="3mo", interval="1d"),
         "1y": dict(period="1y", interval="1d"),
         "5y": dict(period="5y", interval="1wk"),
-    }
-    p = params.get(range_key, params["1y"])
-
-    try:
-        t = yf.Ticker(ticker)
-        hist = t.history(**p)
-        if hist.empty:
-            return {"labels": [], "values": []}
-        if hist.index.tz is not None:
-            hist.index = hist.index.tz_localize(None)
-        labels = hist.index.strftime("%Y-%m-%d").tolist()
-        values = [round(float(v), 3) if pd.notna(v) else None for v in hist["Close"]]
-        data = {"labels": labels, "values": values}
-        _cache[cache_key] = (time.time(), data)
-        return data
-    except Exception:
-        return {"labels": [], "values": []}
+    }, decimals=3) or {"labels": [], "values": []}
 
 
 def get_bond_etfs():
     cached = _cache.get("etfs")
-    if cached and (time.time() - cached[0]) < _CACHE_TTL:
-        return cached[1]
+    if cached:
+        return cached
 
-    results = []
-    for sym in BOND_ETFS:
+    def fetch_etf(sym):
         try:
             t = yf.Ticker(sym)
             info = t.info
@@ -107,26 +90,23 @@ def get_bond_etfs():
                 last = float(hist["Close"].iloc[-1])
                 ytd_return = round((last - first) / first * 100, 2) if first else None
 
-            div_yield = info.get("dividendYield")
-            if div_yield:
-                # yfinance returns this as percentage already (e.g. 4.28 = 4.28%)
-                # but sometimes as decimal (0.0428) — normalize
-                if div_yield < 1:
-                    div_yield = round(div_yield * 100, 2)
-                else:
-                    div_yield = round(div_yield, 2)
-
-            results.append({
+            return {
                 "symbol": sym,
                 "name": info.get("shortName", sym),
                 "price": round(price, 2),
                 "day_change": day_change,
                 "ytd_return": ytd_return,
-                "div_yield": div_yield,
+                "div_yield": normalize_div_yield(info.get("dividendYield")),
                 "expense_ratio": info.get("annualReportExpenseRatio"),
-            })
+            }
         except Exception:
-            pass
+            return None
 
-    _cache["etfs"] = (time.time(), results)
+    results = []
+    with ThreadPoolExecutor(max_workers=7) as pool:
+        for r in pool.map(fetch_etf, BOND_ETFS):
+            if r:
+                results.append(r)
+
+    _cache.set("etfs", results)
     return results

@@ -31,9 +31,8 @@ _TICKER_CACHE_TTL = 3600
 # Also cache sector from Wikipedia table for pre-filtering
 _ticker_sectors: dict = {}  # symbol -> GICS sector
 
-# ── Stock info cache (avoids re-fetching .info across screens) ───────────────
-_info_cache: dict = {}  # symbol -> (timestamp, ticker_obj, info_dict)
-_INFO_CACHE_TTL = 300  # 5 minutes
+# ── Use shared ticker info cache ───────────────────────────────────────────
+from yf_utils import fetch_ticker_info as _fetch_ticker_info, safe_float as _safe_float, normalize_div_yield
 
 
 def get_sp500_tickers():
@@ -194,41 +193,6 @@ def get_options_data(ticker_obj, current_price):
         }
     except Exception:
         return {}
-
-
-def _fetch_ticker_info(symbol, max_retries=2):
-    # Check cache first
-    cached = _info_cache.get(symbol)
-    if cached and (time.time() - cached[0]) < _INFO_CACHE_TTL:
-        return cached[1], cached[2]
-
-    for attempt in range(max_retries):
-        try:
-            t = yf.Ticker(symbol)
-            info = t.info
-            if not info:
-                return None, None
-            _info_cache[symbol] = (time.time(), t, info)
-            return t, info
-        except Exception as e:
-            err = str(e)
-            if "Too Many Requests" in err or "Rate" in err or "429" in err:
-                wait = 5 * (attempt + 1)
-                print(f"[rate limit] {symbol} attempt {attempt+1}, waiting {wait}s")
-                time.sleep(wait)
-            else:
-                return None, None
-    return None, None
-
-
-def _safe_float(info, key, scale=1.0):
-    v = info.get(key)
-    if v is None:
-        return None
-    try:
-        return round(float(v) * scale, 4)
-    except (TypeError, ValueError):
-        return None
 
 
 def get_stock_data(symbol, fetch_options=False, hist_close=None, need_hist_pe=True):
@@ -665,7 +629,6 @@ def get_stock_detail(symbol):
         options_by_exp = []
         for exp_str, dte in near_exps:
             try:
-                time.sleep(0.3)
                 chain = t.option_chain(exp_str)
                 puts = chain.puts.copy()
                 if puts.empty:

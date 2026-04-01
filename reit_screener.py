@@ -1,5 +1,6 @@
 import yfinance as yf
 from concurrent.futures import ThreadPoolExecutor, as_completed
+from yf_utils import fetch_ticker_info, normalize_div_yield, fetch_chart
 
 REITS = {
     # Residential
@@ -44,19 +45,15 @@ def screen_reits(criteria, on_progress=None, on_match=None):
             return None
 
         try:
-            t = yf.Ticker(sym)
-            info = t.info
+            result = fetch_ticker_info(sym)
+            if not result or result == (None, None):
+                return None
+            t, info = result
 
             price = info.get("regularMarketPrice") or info.get("previousClose") or 0
             pe = info.get("trailingPE")
             mcap = info.get("marketCap") or 0
-            div_yield = info.get("dividendYield")
-            if div_yield:
-                # yfinance returns as percentage (4.41 = 4.41%) or decimal (0.0441)
-                if div_yield < 1:
-                    div_yield = round(div_yield * 100, 2)
-                else:
-                    div_yield = round(div_yield, 2)
+            div_yield = normalize_div_yield(info.get("dividendYield"))
             de = info.get("debtToEquity")
             if de:
                 de = round(de / 100, 2) if de > 10 else round(de, 2)
@@ -120,22 +117,4 @@ def screen_reits(criteria, on_progress=None, on_match=None):
 
 
 def get_reit_chart(symbol, range_key="1y"):
-    params = {
-        "1m": dict(period="1mo", interval="1d"),
-        "6m": dict(period="6mo", interval="1d"),
-        "1y": dict(period="1y", interval="1d"),
-        "5y": dict(period="5y", interval="1wk"),
-    }
-    p = params.get(range_key, params["1y"])
-    try:
-        t = yf.Ticker(symbol)
-        hist = t.history(**p)
-        if hist.empty:
-            return None
-        if hist.index.tz is not None:
-            hist.index = hist.index.tz_localize(None)
-        labels = hist.index.strftime("%Y-%m-%d").tolist()
-        prices = [round(float(v), 2) for v in hist["Close"]]
-        return {"labels": labels, "prices": prices}
-    except Exception:
-        return None
+    return fetch_chart(symbol, range_key)

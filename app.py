@@ -27,13 +27,17 @@ Routes:
 """
 
 import os
-import uuid
 import time
 import threading
+from concurrent.futures import ThreadPoolExecutor, as_completed
 
 import pandas as pd
 import yfinance as yf
 from flask import Flask, render_template, request, jsonify
+
+# ── Shared utilities ────────────────────────────────────────────────────────
+from yf_utils import (TTLCache, JobStore, fetch_ticker_info, safe_float,
+                       normalize_div_yield, fetch_chart, fetch_banner_tickers)
 
 # ── Import backend modules ──────────────────────────────────────────────────
 from stock_screener import (screen_stocks, get_stock_detail,
@@ -42,7 +46,7 @@ from etf_screener import screen_etfs, get_etf_detail
 from crypto_screener import screen_cryptos, get_crypto_chart
 from options_scanner import scan_options
 from bond_data import get_yields, get_yield_history, get_bond_etfs
-from reit_screener import screen_reits, get_reit_chart
+from reit_screener import screen_reits
 from forex_data import get_all_pairs, get_pair_chart, get_currency_strength
 from commodities_data import get_all_commodities, get_commodity_chart
 from earnings_data import get_earnings_week, get_stock_earnings_history
@@ -50,15 +54,14 @@ from gold_server import get_spot_price, fetch_ebay, fetch_sdbullion, \
     fetch_craigslist, generate_facebook_links, get_purity_fraction
 
 app = Flask(__name__)
+app.config['MAX_CONTENT_LENGTH'] = 1 * 1024 * 1024  # 1MB max request body
 
-# ── Shared job store ────────────────────────────────────────────────────────
-jobs: dict = {}
+# ── Shared job store (auto-cleans after 10 min) ────────────────────────────
+job_store = JobStore(ttl=600)
 
 # ── Shared caches ───────────────────────────────────────────────────────────
-_detail_cache: dict = {}
-_chart_cache: dict = {}
-_DETAIL_TTL = 300
-_CHART_TTL = 300
+_detail_cache = TTLCache(default_ttl=300, max_size=500)
+_banner_cache = TTLCache(default_ttl=120, max_size=10)
 
 # ── Market cap range definitions ────────────────────────────────────────────
 CAP_RANGES = {
@@ -68,10 +71,6 @@ CAP_RANGES = {
     "large":  (10_000_000_000, 200_000_000_000),
     "mega":   (200_000_000_000, float("inf")),
 }
-
-# ── Live ticker banner ──────────────────────────────────────────────────────
-_ticker_cache: dict = {}
-_TICKER_TTL = 120
 
 BANNER_TICKERS = [
     "AAPL", "MSFT", "NVDA", "AMZN", "META", "GOOGL", "TSLA", "BRK-B", "JPM",
@@ -95,31 +94,27 @@ def _f_body(body, key, default=None):
 
 
 def _start_job(fn, *args):
-    job_id = str(uuid.uuid4())
-    jobs[job_id] = {"status": "running", "processed": 0, "total": 0,
-                    "matches": [], "error": None}
+    job_id = job_store.create()
 
     def run():
         try:
             def on_progress(p, t):
-                jobs[job_id]["processed"] = p
-                jobs[job_id]["total"] = t
+                job_store.set_progress(job_id, p, t)
 
             def on_match(m):
-                jobs[job_id]["matches"].append(m)
+                job_store.append_match(job_id, m)
 
             fn(*args, on_progress=on_progress, on_match=on_match)
-            jobs[job_id]["status"] = "done"
+            job_store.update(job_id, status="done")
         except Exception as e:
-            jobs[job_id]["status"] = "error"
-            jobs[job_id]["error"] = str(e)
+            job_store.update(job_id, status="error", error=str(e))
 
     threading.Thread(target=run, daemon=True).start()
     return job_id
 
 
 def _get_job(job_id):
-    job = jobs.get(job_id)
+    job = job_store.get(job_id)
     if not job:
         return jsonify({"error": "Job not found"}), 404
     return jsonify(job)
@@ -127,36 +122,10 @@ def _get_job(job_id):
 
 def _chart_helper(symbol, range_key, params_map=None):
     sym = symbol.upper()
-    cache_key = (sym, range_key)
-    cached = _chart_cache.get(cache_key)
-    ttl = 60 if range_key in ("1d", "1w") else _CHART_TTL
-    if cached and (time.time() - cached[0]) < ttl:
-        return jsonify(cached[1])
-    default_params = {
-        "1d":  dict(period="1d",  interval="5m"),
-        "1w":  dict(period="5d",  interval="30m"),
-        "1m":  dict(period="1mo", interval="1d"),
-        "6m":  dict(period="6mo", interval="1d"),
-        "1y":  dict(period="1y",  interval="1d"),
-        "5y":  dict(period="5y",  interval="1wk"),
-        "10y": dict(period="10y", interval="1mo"),
-    }
-    p = (params_map or default_params).get(range_key, default_params["1y"])
-    try:
-        t = yf.Ticker(sym)
-        hist = t.history(period=p["period"], interval=p["interval"])
-        if hist.empty:
-            return jsonify({"error": "No price data available"}), 404
-        if hist.index.tz is not None:
-            hist.index = hist.index.tz_localize(None)
-        fmt = "%Y-%m-%d %H:%M" if range_key in ("1d", "1w") else "%Y-%m-%d"
-        labels = hist.index.strftime(fmt).tolist()
-        prices = [round(float(v), 2) if pd.notna(v) else None for v in hist["Close"]]
-        data = {"labels": labels, "prices": prices}
-        _chart_cache[cache_key] = (time.time(), data)
-        return jsonify(data)
-    except Exception as e:
-        return jsonify({"error": str(e)}), 500
+    data = fetch_chart(sym, range_key, params_map=params_map)
+    if data is None:
+        return jsonify({"error": "No price data available"}), 404
+    return jsonify(data)
 
 
 # ═════════════════════════════════════════════════════════════════════════════
@@ -236,13 +205,13 @@ def screener_status(job_id):
 @app.route("/screener/api/stock/<symbol>")
 def screener_stock_detail(symbol):
     sym = symbol.upper()
-    cached = _detail_cache.get(("stock", sym))
-    if cached and (time.time() - cached[0]) < _DETAIL_TTL:
-        return jsonify(cached[1])
+    cached = _detail_cache.get(f"stock_{sym}")
+    if cached:
+        return jsonify(cached)
     data = get_stock_detail(sym)
     if not data:
         return jsonify({"error": "Could not load stock data"}), 404
-    _detail_cache[("stock", sym)] = (time.time(), data)
+    _detail_cache.set(f"stock_{sym}", data)
     return jsonify(data)
 
 
@@ -253,44 +222,7 @@ def screener_stock_chart(symbol):
 
 @app.route("/screener/api/ticker-banner")
 def screener_ticker_banner():
-    cached = _ticker_cache.get("data")
-    if cached and (time.time() - _ticker_cache.get("ts", 0)) < _TICKER_TTL:
-        return jsonify(cached)
-
-    from concurrent.futures import ThreadPoolExecutor, as_completed
-    results = []
-
-    def fetch(sym):
-        try:
-            t = yf.Ticker(sym)
-            hist = t.history(period="1d", interval="5m")
-            if hist.empty or len(hist) < 2:
-                return None
-            closes = [round(float(v), 2) for v in hist["Close"] if pd.notna(v)]
-            if len(closes) < 2:
-                return None
-            current = closes[-1]
-            open_price = closes[0]
-            change_pct = round((current - open_price) / open_price * 100, 2) if open_price else 0
-            step = max(1, len(closes) // 20)
-            spark = closes[::step]
-            if spark[-1] != closes[-1]:
-                spark.append(closes[-1])
-            return {"symbol": sym, "price": current, "change_pct": change_pct, "spark": spark}
-        except Exception:
-            return None
-
-    with ThreadPoolExecutor(max_workers=15) as pool:
-        futures = {pool.submit(fetch, s): s for s in BANNER_TICKERS}
-        for f in as_completed(futures):
-            r = f.result()
-            if r:
-                results.append(r)
-
-    order = {s: i for i, s in enumerate(BANNER_TICKERS)}
-    results.sort(key=lambda x: order.get(x["symbol"], 999))
-    _ticker_cache["data"] = results
-    _ticker_cache["ts"] = time.time()
+    results = fetch_banner_tickers(BANNER_TICKERS, cache_obj=_banner_cache)
     return jsonify(results)
 
 
@@ -344,13 +276,13 @@ def etf_status(job_id):
 @app.route("/etf/api/etf/<symbol>")
 def etf_detail(symbol):
     sym = symbol.upper()
-    cached = _detail_cache.get(("etf", sym))
-    if cached and (time.time() - cached[0]) < _DETAIL_TTL:
-        return jsonify(cached[1])
+    cached = _detail_cache.get(f"etf_{sym}")
+    if cached:
+        return jsonify(cached)
     data = get_etf_detail(sym)
     if not data:
         return jsonify({"error": "Could not load ETF data"}), 404
-    _detail_cache[("etf", sym)] = (time.time(), data)
+    _detail_cache.set(f"etf_{sym}", data)
     return jsonify(data)
 
 
@@ -622,7 +554,6 @@ def gold_listings():
 
     spot = get_spot_price(metal)
 
-    from concurrent.futures import ThreadPoolExecutor
     listings = []
     with ThreadPoolExecutor(max_workers=4) as ex:
         futs = {}

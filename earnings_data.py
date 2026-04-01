@@ -1,11 +1,10 @@
-import time
 import yfinance as yf
 import pandas as pd
 from datetime import datetime, timedelta
 from concurrent.futures import ThreadPoolExecutor, as_completed
+from yf_utils import TTLCache
 
-_cache = {}
-_CACHE_TTL = 3600  # 1 hour
+_cache = TTLCache(default_ttl=3600, max_size=50)
 
 TOP_STOCKS = [
     "AAPL", "MSFT", "NVDA", "AMZN", "META", "GOOGL", "GOOG", "TSLA", "BRK-B", "JPM",
@@ -31,8 +30,8 @@ def get_earnings_week(week_str=None, sector=None):
 
     cache_key = f"week_{start.isoformat()}"
     cached = _cache.get(cache_key)
-    if cached and (time.time() - cached[0]) < _CACHE_TTL:
-        return cached[1]
+    if cached:
+        return cached
 
     end = start + timedelta(days=4)
     results = []
@@ -110,15 +109,15 @@ def get_earnings_week(week_str=None, sector=None):
         "earnings": results,
         "total": len(results),
     }
-    _cache[cache_key] = (time.time(), data)
+    _cache.set(cache_key, data)
     return data
 
 
 def get_stock_earnings_history(symbol):
     cache_key = f"hist_{symbol}"
     cached = _cache.get(cache_key)
-    if cached and (time.time() - cached[0]) < _CACHE_TTL:
-        return cached[1]
+    if cached:
+        return cached
 
     try:
         t = yf.Ticker(symbol)
@@ -154,7 +153,7 @@ def get_stock_earnings_history(symbol):
             "earnings_history": history[-8:],  # last 8 quarters
             "chart": {"labels": labels, "prices": prices},
         }
-        _cache[cache_key] = (time.time(), data)
+        _cache.set(cache_key, data)
         return data
     except Exception:
         return None

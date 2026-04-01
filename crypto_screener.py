@@ -1,4 +1,5 @@
 import time
+from datetime import datetime
 import requests
 
 _CG_BASE = "https://api.coingecko.com/api/v3"
@@ -106,7 +107,6 @@ def get_crypto_chart(coin_id, days="30"):
         labels = []
         values = []
         for ts, price in prices:
-            from datetime import datetime
             dt = datetime.utcfromtimestamp(ts / 1000)
             labels.append(dt.strftime("%Y-%m-%d %H:%M") if int(days) <= 1 else dt.strftime("%Y-%m-%d"))
             values.append(round(price, 6) if price < 1 else round(price, 2))
