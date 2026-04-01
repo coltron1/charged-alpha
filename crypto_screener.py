@@ -3,13 +3,12 @@ from datetime import datetime
 import requests
 
 _CG_BASE = "https://api.coingecko.com/api/v3"
+_CC_BASE = "https://api.coincap.io/v2"
 _cache = {}
 _CACHE_TTL = 120
 
-def _fetch_coins():
-    cached = _cache.get("coins")
-    if cached and (time.time() - cached[0]) < _CACHE_TTL:
-        return cached[1]
+def _fetch_coins_coingecko():
+    """Fetch from CoinGecko (primary source)."""
     url = f"{_CG_BASE}/coins/markets"
     params = {
         "vs_currency": "usd",
@@ -20,18 +19,65 @@ def _fetch_coins():
         "price_change_percentage": "7d",
     }
     headers = {"Accept": "application/json", "User-Agent": "Mozilla/5.0"}
-    try:
-        resp = requests.get(url, params=params, headers=headers, timeout=30)
-        resp.raise_for_status()
-        data = resp.json()
-        _cache["coins"] = (time.time(), data)
-        return data
-    except Exception as e:
-        print(f"CoinGecko fetch error: {e}")
-        # Return cached data if available, even if expired
-        if cached:
-            return cached[1]
-        return []
+    resp = requests.get(url, params=params, headers=headers, timeout=30)
+    resp.raise_for_status()
+    data = resp.json()
+    if not isinstance(data, list) or len(data) == 0:
+        raise ValueError(f"CoinGecko returned empty or invalid data: {str(data)[:200]}")
+    return data
+
+
+def _fetch_coins_coincap():
+    """Fetch from CoinCap as fallback, normalised to CoinGecko format."""
+    headers = {"Accept": "application/json", "User-Agent": "Mozilla/5.0"}
+    resp = requests.get(f"{_CC_BASE}/assets", params={"limit": 250}, headers=headers, timeout=30)
+    resp.raise_for_status()
+    raw = resp.json().get("data", [])
+    if not raw:
+        raise ValueError("CoinCap returned empty data")
+    coins = []
+    for r in raw:
+        price = float(r.get("priceUsd") or 0)
+        mcap = float(r.get("marketCapUsd") or 0)
+        vol = float(r.get("volumeUsd24Hr") or 0)
+        change_24h = float(r["changePercent24Hr"]) if r.get("changePercent24Hr") else None
+        supply = float(r.get("supply") or 0)
+        max_supply = float(r["maxSupply"]) if r.get("maxSupply") else None
+        coins.append({
+            "id": (r.get("id") or "").lower(),
+            "symbol": (r.get("symbol") or "").lower(),
+            "name": r.get("name"),
+            "image": None,
+            "current_price": price,
+            "market_cap": mcap,
+            "market_cap_rank": int(r.get("rank") or 0),
+            "total_volume": vol,
+            "price_change_percentage_24h": change_24h,
+            "price_change_percentage_7d_in_currency": None,  # CoinCap doesn't provide 7d
+            "circulating_supply": supply,
+            "total_supply": max_supply,
+        })
+    return coins
+
+
+def _fetch_coins():
+    cached = _cache.get("coins")
+    if cached and (time.time() - cached[0]) < _CACHE_TTL:
+        return cached[1]
+    # Try CoinGecko first, fall back to CoinCap
+    for fetcher, name in [(_fetch_coins_coingecko, "CoinGecko"), (_fetch_coins_coincap, "CoinCap")]:
+        try:
+            data = fetcher()
+            print(f"Crypto data loaded from {name}: {len(data)} coins")
+            _cache["coins"] = (time.time(), data)
+            return data
+        except Exception as e:
+            print(f"{name} fetch error: {e}")
+    # Return cached data if available, even if expired
+    if cached:
+        print("Using expired cache for crypto data")
+        return cached[1]
+    return []
 
 def screen_cryptos(criteria, on_progress=None, on_match=None):
     coins = _fetch_coins()
@@ -103,26 +149,50 @@ def screen_cryptos(criteria, on_progress=None, on_match=None):
         if on_progress:
             on_progress(i + 1, total)
 
+def _chart_coingecko(coin_id, days):
+    """Fetch chart from CoinGecko."""
+    url = f"{_CG_BASE}/coins/{coin_id}/market_chart"
+    params = {"vs_currency": "usd", "days": days}
+    headers = {"Accept": "application/json", "User-Agent": "Mozilla/5.0"}
+    resp = requests.get(url, params=params, headers=headers, timeout=30)
+    resp.raise_for_status()
+    return resp.json().get("prices", [])
+
+
+def _chart_coincap(coin_id, days):
+    """Fetch chart from CoinCap. coin_id must be CoinCap-compatible (lowercase name)."""
+    interval_map = {"1": "m15", "7": "h1", "30": "h6", "90": "h12", "365": "d1"}
+    interval = interval_map.get(str(days), "h6")
+    end = int(time.time() * 1000)
+    start = end - int(days) * 86400 * 1000
+    url = f"{_CC_BASE}/assets/{coin_id}/history"
+    params = {"interval": interval, "start": start, "end": end}
+    headers = {"Accept": "application/json", "User-Agent": "Mozilla/5.0"}
+    resp = requests.get(url, params=params, headers=headers, timeout=30)
+    resp.raise_for_status()
+    raw = resp.json().get("data", [])
+    return [[int(r["time"]), float(r["priceUsd"])] for r in raw if r.get("priceUsd")]
+
+
 def get_crypto_chart(coin_id, days="30"):
     cache_key = f"chart_{coin_id}_{days}"
     cached = _cache.get(cache_key)
     if cached and (time.time() - cached[0]) < 300:
         return cached[1]
-    url = f"{_CG_BASE}/coins/{coin_id}/market_chart"
-    params = {"vs_currency": "usd", "days": days}
-    try:
-        resp = requests.get(url, params=params, timeout=30)
-        resp.raise_for_status()
-        data = resp.json()
-        prices = data.get("prices", [])
-        labels = []
-        values = []
-        for ts, price in prices:
-            dt = datetime.utcfromtimestamp(ts / 1000)
-            labels.append(dt.strftime("%Y-%m-%d %H:%M") if int(days) <= 1 else dt.strftime("%Y-%m-%d"))
-            values.append(round(price, 6) if price < 1 else round(price, 2))
-        result = {"labels": labels, "prices": values}
-        _cache[cache_key] = (time.time(), result)
-        return result
-    except Exception:
-        return None
+    for fetcher, name in [(_chart_coingecko, "CoinGecko"), (_chart_coincap, "CoinCap")]:
+        try:
+            prices = fetcher(coin_id, days)
+            if not prices:
+                continue
+            labels = []
+            values = []
+            for ts, price in prices:
+                dt = datetime.utcfromtimestamp(ts / 1000)
+                labels.append(dt.strftime("%Y-%m-%d %H:%M") if int(days) <= 1 else dt.strftime("%Y-%m-%d"))
+                values.append(round(price, 6) if price < 1 else round(price, 2))
+            result = {"labels": labels, "prices": values}
+            _cache[cache_key] = (time.time(), result)
+            return result
+        except Exception as e:
+            print(f"Chart {name} error for {coin_id}: {e}")
+    return None
