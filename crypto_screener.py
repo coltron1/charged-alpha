@@ -4,8 +4,12 @@ import requests
 
 _CG_BASE = "https://api.coingecko.com/api/v3"
 _CC_BASE = "https://api.coincap.io/v2"
+_CP_BASE = "https://api.coinpaprika.com/v1"
 _cache = {}
 _CACHE_TTL = 120
+
+def _log(msg):
+    print(msg, flush=True)
 
 def _fetch_coins_coingecko():
     """Fetch from CoinGecko (primary source)."""
@@ -53,9 +57,42 @@ def _fetch_coins_coincap():
             "market_cap_rank": int(r.get("rank") or 0),
             "total_volume": vol,
             "price_change_percentage_24h": change_24h,
-            "price_change_percentage_7d_in_currency": None,  # CoinCap doesn't provide 7d
+            "price_change_percentage_7d_in_currency": None,
             "circulating_supply": supply,
             "total_supply": max_supply,
+        })
+    return coins
+
+
+def _fetch_coins_coinpaprika():
+    """Fetch from CoinPaprika as third fallback, normalised to CoinGecko format."""
+    headers = {"Accept": "application/json", "User-Agent": "Mozilla/5.0"}
+    resp = requests.get(f"{_CP_BASE}/tickers", headers=headers, timeout=30)
+    resp.raise_for_status()
+    raw = resp.json()
+    if not isinstance(raw, list) or not raw:
+        raise ValueError("CoinPaprika returned empty data")
+    coins = []
+    for r in raw[:250]:
+        quotes = r.get("quotes", {}).get("USD", {})
+        price = quotes.get("price") or 0
+        mcap = quotes.get("market_cap") or 0
+        vol = quotes.get("volume_24h") or 0
+        change_24h = quotes.get("percent_change_24h")
+        change_7d = quotes.get("percent_change_7d")
+        coins.append({
+            "id": (r.get("id") or "").lower(),
+            "symbol": (r.get("symbol") or "").lower(),
+            "name": r.get("name"),
+            "image": None,
+            "current_price": price,
+            "market_cap": mcap,
+            "market_cap_rank": r.get("rank") or 0,
+            "total_volume": vol,
+            "price_change_percentage_24h": change_24h,
+            "price_change_percentage_7d_in_currency": change_7d,
+            "circulating_supply": r.get("circulating_supply") or 0,
+            "total_supply": r.get("total_supply"),
         })
     return coins
 
@@ -64,18 +101,23 @@ def _fetch_coins():
     cached = _cache.get("coins")
     if cached and (time.time() - cached[0]) < _CACHE_TTL:
         return cached[1]
-    # Try CoinGecko first, fall back to CoinCap
-    for fetcher, name in [(_fetch_coins_coingecko, "CoinGecko"), (_fetch_coins_coincap, "CoinCap")]:
+    # Try multiple APIs in order
+    sources = [
+        (_fetch_coins_coingecko, "CoinGecko"),
+        (_fetch_coins_coincap, "CoinCap"),
+        (_fetch_coins_coinpaprika, "CoinPaprika"),
+    ]
+    for fetcher, name in sources:
         try:
             data = fetcher()
-            print(f"Crypto data loaded from {name}: {len(data)} coins")
+            _log(f"Crypto data loaded from {name}: {len(data)} coins")
             _cache["coins"] = (time.time(), data)
             return data
         except Exception as e:
-            print(f"{name} fetch error: {e}")
+            _log(f"{name} fetch error: {e}")
     # Return cached data if available, even if expired
     if cached:
-        print("Using expired cache for crypto data")
+        _log("Using expired cache for crypto data")
         return cached[1]
     return []
 
@@ -194,5 +236,5 @@ def get_crypto_chart(coin_id, days="30"):
             _cache[cache_key] = (time.time(), result)
             return result
         except Exception as e:
-            print(f"Chart {name} error for {coin_id}: {e}")
+            _log(f"Chart {name} error for {coin_id}: {e}")
     return None
