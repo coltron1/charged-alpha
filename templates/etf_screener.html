@@ -120,7 +120,24 @@
     .ca-mobile-menu a{display:block;padding:8px 0;color:#94a3b8;text-decoration:none;font-size:14px;font-weight:500}
     .ca-mobile-menu a:hover{color:#e2e8f0}
     .ca-mobile-menu a.active{color:#a5b4fc}
-    @media(max-width:768px){.ca-nav-links{display:none}.ca-hamburger{display:block}.ca-nav-title{font-size:15px}}
+    @media(max-width:768px){.ca-nav-links{display:none}.ca-hamburger{display:block}.ca-nav-title{font-size:15px}.mode-toggle.nav-mode{display:none}.ca-mobile-menu .mode-toggle{display:flex;padding:8px 0;border-bottom:1px solid #1e293b;margin-bottom:4px}}
+
+    /* ── Mode toggle ── */
+    .mode-toggle{display:flex;align-items:center;gap:8px;margin-right:12px}
+    .mode-toggle span{font-size:12px;font-weight:600;color:#64748b;transition:color .2s}
+    .mode-toggle span.active-label{color:#e2e8f0}
+    .toggle-switch{position:relative;width:44px;height:24px;cursor:pointer}
+    .toggle-switch input{display:none}
+    .toggle-track{position:absolute;inset:0;background:#334155;border-radius:12px;transition:background .2s}
+    .toggle-switch input:checked+.toggle-track{background:#6366f1}
+    .toggle-knob{position:absolute;top:2px;left:2px;width:20px;height:20px;background:white;border-radius:50%;transition:transform .2s;box-shadow:0 1px 3px rgba(0,0,0,.3)}
+    .toggle-switch input:checked~.toggle-knob{transform:translateX(20px)}
+    .edu-hide{display:none !important}
+    .edu-guidance{background:rgba(99,102,241,.06);border:1px solid rgba(99,102,241,.15);border-radius:12px;padding:16px 20px;font-size:12px;line-height:1.7;color:#94a3b8}
+    .edu-guidance h3{font-size:14px;color:#a5b4fc;margin-bottom:8px;display:flex;align-items:center;gap:6px}
+    .edu-guidance ul{margin:4px 0 0 16px}
+    .edu-guidance li{margin-bottom:4px}
+    .edu-guidance strong{color:#e2e8f0}
 
     /* ── Homepage preset cards ── */
     .preset-card { background:linear-gradient(135deg,#131b2e 0%,#1e293b 100%); border:1px solid #334155; border-radius:12px; padding:20px; cursor:pointer; transition:all .2s; text-decoration:none; color:inherit; display:block; }
@@ -150,7 +167,13 @@
     <a href="/" class="nav-logo"><div class="nav-bolt">⚡</div>CHARGED ALPHA</a>
     <span class="ca-nav-title">ETF Screener</span>
   </div>
-  <div class="ca-nav-links">
+  <div style="display:flex;align-items:center;gap:8px">
+    <div class="mode-toggle nav-mode">
+      <span class="mode-label-b active-label">Beginner</span>
+      <label class="toggle-switch"><input type="checkbox" id="modeToggle" onchange="toggleMode(this)"><div class="toggle-track"></div><div class="toggle-knob"></div></label>
+      <span class="mode-label-e">Expert</span>
+    </div>
+    <div class="ca-nav-links">
     <div class="ca-tools-wrap" id="toolsWrap">
       <button class="ca-tools-btn" onclick="document.getElementById('toolsWrap').classList.toggle('open')">Tools <span class="arrow">&#9662;</span></button>
       <div class="ca-tools-dd">
@@ -167,10 +190,12 @@
       </div>
     </div>
   </div>
+  </div>
   <button class="ca-hamburger" onclick="document.getElementById('mobileMenu').classList.toggle('open')">
     <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
   </button>
   <div class="ca-mobile-menu" id="mobileMenu">
+    <div class="mode-toggle"><span class="mode-label-b active-label">Beginner</span><label class="toggle-switch"><input type="checkbox" class="modeToggleMobile" onchange="toggleMode(this)"><div class="toggle-track"></div><div class="toggle-knob"></div></label><span class="mode-label-e">Expert</span></div>
     <a href="/">Home</a>
     <a href="/screener/">Stock Screener</a>
     <a href="/etf/" class="active">ETF Screener</a>
@@ -197,7 +222,7 @@
       </div>
       <div id="last-run" class="text-slate-500 text-xs"></div>
     </div>
-    <div class="mt-4 card p-5 border-l-4 border-indigo-500" style="background:linear-gradient(135deg,#131b2e 0%,#1e293b 100%);">
+    <div class="mt-4 card p-5 border-l-4 border-indigo-500 beginner-only" style="background:linear-gradient(135deg,#131b2e 0%,#1e293b 100%);">
       <p class="text-sm text-slate-200 font-medium mb-2">What is this tool?</p>
       <p class="text-xs text-slate-400 leading-relaxed">
         This screener scans ~200 of the most traded US ETFs in real time and filters them against your criteria — expense ratio, AUM, yield, performance, and more.
@@ -209,7 +234,7 @@
     </div>
 
     <!-- ═══ Quick Screen Cards (homepage) ═══ -->
-    <div id="quick-screen-cards" class="grid grid-cols-2 lg:grid-cols-4 gap-4 mt-6">
+    <div id="quick-screen-cards" class="grid grid-cols-2 lg:grid-cols-4 gap-4 mt-6 beginner-only">
       <a class="preset-card" href="javascript:void(0)" onclick="applyPreset('low_cost')">
         <span class="preset-icon">$</span>
         <h3>Low Cost Core</h3>
@@ -288,28 +313,28 @@
             <div class="space-y-2">
               <div class="flex items-center gap-2">
                 <p class="text-sm font-medium text-slate-200">YTD Return (min %)</p>
-                <span class="info-icon" data-tip="Year-to-date return. Positive = gained value since Jan 1.">i</span>
+                <span class="info-icon beginner-only" data-tip="Year-to-date return. Positive = gained value since Jan 1.">i</span>
               </div>
               <input type="number" id="min_ytd_return" placeholder="e.g. 5" step="1" class="input-field" />
             </div>
             <div class="space-y-2">
               <div class="flex items-center gap-2">
                 <p class="text-sm font-medium text-slate-200">1-Year Return (min %)</p>
-                <span class="info-icon" data-tip="Minimum 1-year price performance. Measures how far the ETF has risen from its 52-week low.">i</span>
+                <span class="info-icon beginner-only" data-tip="Minimum 1-year price performance. Measures how far the ETF has risen from its 52-week low.">i</span>
               </div>
               <input type="number" id="min_1y_return" placeholder="e.g. 15" step="1" class="input-field" />
             </div>
             <div class="space-y-2">
               <div class="flex items-center gap-2">
                 <p class="text-sm font-medium text-slate-200">3-Year Annualized Return (min %)</p>
-                <span class="info-icon" data-tip="Minimum 3-year annualized return. Smooths out short-term noise to show consistent performers.">i</span>
+                <span class="info-icon beginner-only" data-tip="Minimum 3-year annualized return. Smooths out short-term noise to show consistent performers.">i</span>
               </div>
               <input type="number" id="min_3y_return" placeholder="e.g. 8" step="1" class="input-field" />
             </div>
             <div class="space-y-2">
               <div class="flex items-center gap-2">
                 <p class="text-sm font-medium text-slate-200">52-Week Performance (%)</p>
-                <span class="info-icon" data-tip="Price change from 52-week low to current price.">i</span>
+                <span class="info-icon beginner-only" data-tip="Price change from 52-week low to current price.">i</span>
               </div>
               <div class="flex items-center gap-2">
                 <input type="number" id="min_w52_perf" placeholder="Min" step="1" class="input-field" />
@@ -320,7 +345,7 @@
             <div class="space-y-2">
               <div class="flex items-center gap-2">
                 <p class="text-sm font-medium text-slate-200">Distance from 52-Wk High (%)</p>
-                <span class="info-icon" data-tip="How far below the 52-week high. Under 5% = near the top (momentum). Over 20% = potentially oversold.">i</span>
+                <span class="info-icon beginner-only" data-tip="How far below the 52-week high. Under 5% = near the top (momentum). Over 20% = potentially oversold.">i</span>
               </div>
               <input type="number" id="max_w52_dist_high" placeholder="Max %" step="1" class="input-field" />
             </div>
@@ -333,14 +358,14 @@
             <div class="space-y-2">
               <div class="flex items-center gap-2">
                 <p class="text-sm font-medium text-slate-200">Max Expense Ratio (%)</p>
-                <span class="info-icon" data-tip="Annual fee charged by the fund. Under 0.1% is ultra-low cost. Under 0.5% is reasonable. Over 1% is expensive.">i</span>
+                <span class="info-icon beginner-only" data-tip="Annual fee charged by the fund. Under 0.1% is ultra-low cost. Under 0.5% is reasonable. Over 1% is expensive.">i</span>
               </div>
               <input type="number" id="max_expense_ratio" placeholder="e.g. 0.2" min="0" step="0.01" class="input-field" />
             </div>
             <div class="space-y-2">
               <div class="flex items-center gap-2">
                 <p class="text-sm font-medium text-slate-200">Min AUM ($)</p>
-                <span class="info-icon" data-tip="Minimum total assets under management. Larger funds are more liquid and less likely to close. $1B+ is considered large.">i</span>
+                <span class="info-icon beginner-only" data-tip="Minimum total assets under management. Larger funds are more liquid and less likely to close. $1B+ is considered large.">i</span>
               </div>
               <select id="min_aum" class="input-field">
                 <option value="">Any</option>
@@ -355,7 +380,7 @@
             <div class="space-y-2">
               <div class="flex items-center gap-2">
                 <p class="text-sm font-medium text-slate-200">Min Avg Daily Volume</p>
-                <span class="info-icon" data-tip="Minimum average daily trading volume. Higher volume = tighter spreads and easier entry/exit. 500K+ is liquid.">i</span>
+                <span class="info-icon beginner-only" data-tip="Minimum average daily trading volume. Higher volume = tighter spreads and easier entry/exit. 500K+ is liquid.">i</span>
               </div>
               <select id="min_avg_volume" class="input-field">
                 <option value="">Any</option>
@@ -375,7 +400,7 @@
             <div class="space-y-2">
               <div class="flex items-center gap-2">
                 <p class="text-sm font-medium text-slate-200">Dividend Yield (%)</p>
-                <span class="info-icon" data-tip="Annual distribution yield. 2-4% is moderate. Above 5% is high yield but may indicate risk.">i</span>
+                <span class="info-icon beginner-only" data-tip="Annual distribution yield. 2-4% is moderate. Above 5% is high yield but may indicate risk.">i</span>
               </div>
               <div class="flex items-center gap-2">
                 <input type="number" id="min_div_yield" placeholder="Min" min="0" step="0.1" class="input-field" />
@@ -429,6 +454,18 @@
         <p class="text-lg">No ETFs matched your criteria.</p>
         <p class="text-sm mt-1">Try relaxing the filters.</p>
       </div>
+    </div>
+
+    <!-- Beginner: Results guidance -->
+    <div class="edu-guidance beginner-only" id="eduGuidance" style="display:none">
+      <h3>📊 Understanding ETF Screening Results</h3>
+      <ul>
+        <li><strong>Expense Ratio:</strong> The annual fee you pay to hold the ETF. Under 0.1% is ultra-low cost (e.g. VOO, VTI). Over 0.5% starts to eat into returns over time.</li>
+        <li><strong>AUM (Assets Under Management):</strong> Larger funds ($1B+) have tighter bid-ask spreads and are less likely to close. Avoid very small ETFs for core holdings.</li>
+        <li><strong>Dividend Yield:</strong> The annual income you receive as a percentage of the price. 2-4% is moderate. Above 5% can signal higher risk or a declining price.</li>
+        <li><strong>52-Week Performance:</strong> Shows how much the ETF has gained from its yearly low. Near the 52-week high = strong momentum. Well below = potentially a value buy or a warning sign.</li>
+        <li><strong>Click any row</strong> to see an inline summary. <strong>Double-click</strong> for the full detail view with price charts, top holdings, and sector breakdown.</li>
+      </ul>
     </div>
 
   </div>
@@ -790,6 +827,7 @@ async function pollJob(job_id) {
 // ════════════════════════════════════════════════
 function showResults(results){
   resultsPanel.classList.remove('hidden');
+  var eg=document.getElementById('eduGuidance'); if(eg) eg.style.display='';
   resultSummary.textContent=`${results.length} ETF${results.length!==1?'s':''} matched`;
 
   const agg = [];
@@ -1179,6 +1217,28 @@ const presetParam = urlParams.get('preset');
 if(presetParam && PRESETS[presetParam]) {
   applyPreset(presetParam);
 }
+// ════════════════════════════════════════════════
+// MODE TOGGLE
+// ════════════════════════════════════════════════
+let expertMode = localStorage.getItem('ca_mode') === 'expert';
+
+function toggleMode(src) {
+  if (src) expertMode = src.checked;
+  else expertMode = document.getElementById('modeToggle').checked;
+  localStorage.setItem('ca_mode', expertMode ? 'expert' : 'beginner');
+  applyMode();
+}
+
+function applyMode() {
+  document.getElementById('modeToggle').checked = expertMode;
+  document.querySelectorAll('.modeToggleMobile').forEach(function(el){ el.checked = expertMode; });
+  document.querySelectorAll('.mode-label-b').forEach(function(el){ el.classList.toggle('active-label', !expertMode); });
+  document.querySelectorAll('.mode-label-e').forEach(function(el){ el.classList.toggle('active-label', expertMode); });
+  document.querySelectorAll('.beginner-only').forEach(function(el){ el.classList.toggle('edu-hide', expertMode); });
+}
+
+applyMode();
+
 document.addEventListener('click',function(e){var w=document.getElementById('toolsWrap');if(w&&!w.contains(e.target))w.classList.remove('open');var m=document.getElementById('mobileMenu');if(m&&!e.target.closest('.ca-hamburger')&&!m.contains(e.target))m.classList.remove('open');});
 </script>
 </body>

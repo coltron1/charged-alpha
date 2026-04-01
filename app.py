@@ -49,7 +49,7 @@ from bond_data import get_yields, get_yield_history, get_bond_etfs
 from reit_screener import screen_reits
 from forex_data import get_all_pairs, get_pair_chart, get_currency_strength
 from commodities_data import get_all_commodities, get_commodity_chart
-from earnings_data import get_earnings_week, get_stock_earnings_history
+from earnings_data import get_earnings_week, get_earnings_month, get_stock_earnings_history
 from gold_server import get_spot_price, fetch_ebay, fetch_sdbullion, \
     fetch_craigslist, generate_facebook_links, get_purity_fraction
 
@@ -134,6 +134,89 @@ def _chart_helper(symbol, range_key, params_map=None):
 @app.route("/")
 def index():
     return render_template("index.html")
+
+
+# ── Market pulse API (homepage ticker) ────────────────────────────────────
+_market_pulse_cache = TTLCache(default_ttl=120, max_size=1)
+
+@app.route("/api/market-pulse")
+def market_pulse():
+    cached = _market_pulse_cache.get("pulse")
+    if cached:
+        return jsonify(cached)
+
+    symbols = {
+        # US indices
+        "^GSPC": {"name": "S&P 500", "cat": "US"},
+        "^DJI": {"name": "Dow Jones", "cat": "US"},
+        "^IXIC": {"name": "Nasdaq", "cat": "US"},
+        "^RUT": {"name": "Russell 2000", "cat": "US"},
+        "^VIX": {"name": "VIX", "cat": "US"},
+        # International
+        "^FTSE": {"name": "FTSE 100", "cat": "Intl"},
+        "^GDAXI": {"name": "DAX", "cat": "Intl"},
+        "^N225": {"name": "Nikkei 225", "cat": "Intl"},
+        "^HSI": {"name": "Hang Seng", "cat": "Intl"},
+        "000001.SS": {"name": "Shanghai", "cat": "Intl"},
+        # Commodities
+        "GC=F": {"name": "Gold", "cat": "Cmdty"},
+        "SI=F": {"name": "Silver", "cat": "Cmdty"},
+        "CL=F": {"name": "Crude Oil", "cat": "Cmdty"},
+        "NG=F": {"name": "Natural Gas", "cat": "Cmdty"},
+        # Currencies
+        "DX-Y.NYB": {"name": "US Dollar", "cat": "FX"},
+        "EURUSD=X": {"name": "EUR/USD", "cat": "FX"},
+        "GBPUSD=X": {"name": "GBP/USD", "cat": "FX"},
+        "JPY=X": {"name": "USD/JPY", "cat": "FX"},
+        # Crypto
+        "BTC-USD": {"name": "Bitcoin", "cat": "Crypto"},
+        "ETH-USD": {"name": "Ethereum", "cat": "Crypto"},
+        # Rates
+        "^TNX": {"name": "10Y Treasury", "cat": "Rates"},
+        "^FVX": {"name": "5Y Treasury", "cat": "Rates"},
+    }
+
+    results = []
+    try:
+        tickers = yf.Tickers(" ".join(symbols.keys()))
+        for sym, meta in symbols.items():
+            try:
+                t = tickers.tickers.get(sym) or tickers.tickers.get(sym.replace(".", "-"))
+                if not t:
+                    continue
+                info = t.fast_info if hasattr(t, "fast_info") else {}
+                price = getattr(info, "last_price", None)
+                prev = getattr(info, "previous_close", None)
+                if price is None or prev is None:
+                    hist = t.history(period="2d")
+                    if len(hist) >= 1:
+                        price = price or float(hist["Close"].iloc[-1])
+                    if len(hist) >= 2:
+                        prev = prev or float(hist["Close"].iloc[-2])
+                if price is None:
+                    continue
+                change_pct = round((price - prev) / prev * 100, 2) if prev else 0
+                # Format price
+                if price >= 1000:
+                    price_fmt = f"{price:,.0f}"
+                elif price >= 1:
+                    price_fmt = f"{price:,.2f}"
+                else:
+                    price_fmt = f"{price:.4f}"
+                results.append({
+                    "symbol": sym,
+                    "name": meta["name"],
+                    "cat": meta["cat"],
+                    "price": price_fmt,
+                    "change": change_pct,
+                })
+            except Exception:
+                continue
+    except Exception as e:
+        print(f"Market pulse error: {e}")
+
+    _market_pulse_cache.set("pulse", results)
+    return jsonify(results)
 
 
 # ═════════════════════════════════════════════════════════════════════════════
@@ -505,6 +588,12 @@ def earnings_data():
     return jsonify(get_earnings_week(week, sector))
 
 
+@app.route("/earnings/api/earnings-month")
+def earnings_month_data():
+    month = request.args.get("month")
+    return jsonify(get_earnings_month(month))
+
+
 @app.route("/earnings/api/stock/<symbol>/earnings-history")
 def earnings_history(symbol):
     return jsonify(get_stock_earnings_history(symbol.upper()))
@@ -612,4 +701,4 @@ def gold_listings():
 # ═════════════════════════════════════════════════════════════════════════════
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))
-    app.run(host="0.0.0.0", port=port, debug=False)
+    app.run(host="0.0.0.0", port=port, debug=True)

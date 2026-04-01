@@ -29,16 +29,73 @@ body{background:#0a0f1e;color:#e2e8f0;min-height:100vh}
 .ca-mobile-menu a{display:block;padding:8px 0;color:#94a3b8;text-decoration:none;font-size:14px;font-weight:500}
 .ca-mobile-menu a:hover{color:#e2e8f0}
 .ca-mobile-menu a.active{color:#a5b4fc}
-@media(max-width:768px){.ca-nav-links{display:none}.ca-hamburger{display:block}.ca-nav-title{font-size:15px}}
+@media(max-width:768px){.ca-nav-links{display:none}.ca-hamburger{display:block}.ca-nav-title{font-size:15px}.mode-toggle.nav-mode{display:none}.ca-mobile-menu .mode-toggle{display:flex;padding:8px 0;border-bottom:1px solid #1e293b;margin-bottom:4px}}
+.mode-toggle{display:flex;align-items:center;gap:8px;margin-right:12px}
+.mode-toggle span{font-size:12px;font-weight:600;color:#64748b;transition:color .2s}
+.mode-toggle span.active-label{color:#e2e8f0}
+.toggle-switch{position:relative;width:44px;height:24px;cursor:pointer}
+.toggle-switch input{display:none}
+.toggle-track{position:absolute;inset:0;background:#334155;border-radius:12px;transition:background .2s}
+.toggle-switch input:checked+.toggle-track{background:#6366f1}
+.toggle-knob{position:absolute;top:2px;left:2px;width:20px;height:20px;background:white;border-radius:50%;transition:transform .2s;box-shadow:0 1px 3px rgba(0,0,0,.3)}
+.toggle-switch input:checked~.toggle-knob{transform:translateX(20px)}
+.edu-hide{display:none !important}
+.edu-intro{background:linear-gradient(135deg,rgba(99,102,241,.08),rgba(139,92,246,.05));border:1px solid rgba(99,102,241,.15);border-radius:12px;padding:20px;margin-bottom:20px}
+.edu-intro h3{color:#a5b4fc;font-size:15px;margin-bottom:8px}
+.edu-intro p{color:#94a3b8;font-size:13px;line-height:1.6}
+.edu-hint{color:#94a3b8;font-size:12px;line-height:1.5;margin-bottom:12px;padding:10px 14px;background:rgba(99,102,241,.05);border-radius:8px;border-left:3px solid rgba(99,102,241,.3)}
 h1{font-size:22px;color:white;font-weight:700}
 .container{max-width:1200px;margin:0 auto;padding:20px}
-.week-nav{display:flex;align-items:center;gap:12px;margin-bottom:24px}
-.week-btn{padding:8px 16px;border-radius:8px;border:1px solid #334155;background:transparent;color:#94a3b8;font-weight:600;font-size:13px;cursor:pointer;transition:.15s}
-.week-btn:hover{background:rgba(99,102,241,.1);border-color:#6366f1;color:#6366f1}
-.week-label{font-size:18px;font-weight:700;color:white}
-.card{background:#111827;border:1px solid #1e293b;border-radius:12px;padding:20px;margin-bottom:20px}
-.day-header{font-size:16px;font-weight:700;color:white;margin-bottom:12px;padding-bottom:8px;border-bottom:1px solid #1e293b;display:flex;justify-content:space-between;align-items:center}
-.day-count{font-size:12px;color:#94a3b8;font-weight:500}
+
+/* Month navigation */
+.month-nav{display:flex;align-items:center;gap:12px;margin-bottom:20px;flex-wrap:wrap}
+.month-btn{padding:8px 16px;border-radius:8px;border:1px solid #334155;background:transparent;color:#94a3b8;font-weight:600;font-size:13px;cursor:pointer;transition:.15s}
+.month-btn:hover{background:rgba(99,102,241,.1);border-color:#6366f1;color:#6366f1}
+.month-label{font-size:20px;font-weight:700;color:white}
+.search-wrap{margin-bottom:16px}
+.search-input{width:100%;max-width:300px;background:#0f172a;border:1px solid #334155;border-radius:8px;padding:10px 14px;color:#e2e8f0;font-size:14px}
+.search-input:focus{outline:none;border-color:#6366f1}
+.summary{display:flex;gap:12px;margin-bottom:20px;flex-wrap:wrap;font-size:13px;color:#94a3b8}
+.stat-box{background:#0f172a;border:1px solid #1e293b;border-radius:8px;padding:10px 14px;text-align:center}
+.stat-val{font-size:18px;font-weight:800;color:white}
+.stat-label{font-size:10px;color:#64748b;margin-top:2px}
+
+/* Calendar grid */
+.cal-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:1px;background:#1e293b;border:1px solid #1e293b;border-radius:12px;overflow:hidden;margin-bottom:20px}
+.cal-header{background:#111827;padding:10px 4px;text-align:center;font-size:11px;font-weight:700;color:#64748b;text-transform:uppercase;letter-spacing:.5px}
+.cal-cell{background:#0a0f1e;min-height:100px;padding:6px;position:relative;vertical-align:top}
+.cal-cell.other-month{background:#070b16;opacity:.4}
+.cal-cell.today{box-shadow:inset 0 0 0 2px #6366f1}
+.cal-date{font-size:11px;font-weight:600;color:#64748b;margin-bottom:4px}
+.cal-cell.today .cal-date{color:#a5b4fc}
+.cal-cell.has-earnings .cal-date{color:#e2e8f0}
+.cal-stocks{display:flex;flex-wrap:wrap;gap:3px}
+
+/* Ticker pills */
+.ticker-pill{display:inline-block;padding:2px 6px;border-radius:4px;font-size:10px;font-weight:700;background:rgba(99,102,241,.12);color:#a5b4fc;cursor:pointer;transition:.15s;position:relative;line-height:1.3}
+.ticker-pill:hover{background:rgba(99,102,241,.3);color:white;z-index:10}
+
+/* Tooltip on hover */
+.pill-tip{display:none;position:absolute;bottom:calc(100% + 6px);left:50%;transform:translateX(-50%);background:#1e293b;border:1px solid #334155;border-radius:8px;padding:10px 12px;min-width:200px;z-index:50;box-shadow:0 8px 24px rgba(0,0,0,.5);pointer-events:none}
+.ticker-pill:hover .pill-tip{display:block}
+.pill-tip::after{content:'';position:absolute;top:100%;left:50%;transform:translateX(-50%);border:6px solid transparent;border-top-color:#1e293b}
+.pill-tip-name{font-size:12px;font-weight:700;color:white;margin-bottom:4px;white-space:nowrap}
+.pill-tip-row{display:flex;justify-content:space-between;gap:12px;font-size:11px;color:#94a3b8;line-height:1.6}
+.pill-tip-row .label{color:#64748b}
+.pill-tip-row .val{color:#e2e8f0;font-weight:600}
+.pill-tip .sector-badge{display:inline-block;padding:1px 6px;border-radius:3px;font-size:9px;font-weight:600;background:rgba(99,102,241,.15);color:#a5b4fc;margin-top:2px}
+
+/* Overflow pill */
+.more-pill{background:rgba(148,163,184,.1);color:#64748b;font-weight:600;cursor:default}
+.more-pill:hover{background:rgba(148,163,184,.15);color:#94a3b8}
+
+/* Day detail panel */
+.day-panel{display:none;background:#111827;border:1px solid #1e293b;border-radius:12px;padding:20px;margin-bottom:20px}
+.day-panel.active{display:block}
+.day-panel-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}
+.day-panel-title{font-size:16px;font-weight:700;color:white}
+.day-panel-close{background:none;border:none;color:#94a3b8;font-size:20px;cursor:pointer}
+.day-panel-close:hover{color:white}
 table{width:100%;border-collapse:collapse;font-size:13px}
 th{background:#1e293b;color:#94a3b8;font-weight:600;text-transform:uppercase;font-size:11px;letter-spacing:.5px;padding:8px 12px;text-align:left}
 td{padding:10px 12px;border-bottom:1px solid #1e293b}
@@ -48,9 +105,8 @@ tr:hover td{background:rgba(99,102,241,.04);cursor:pointer}
 .sector-badge{display:inline-block;padding:2px 8px;border-radius:4px;font-size:10px;font-weight:600;background:rgba(99,102,241,.12);color:#a5b4fc}
 .empty-msg{color:#475569;font-size:14px;padding:20px;text-align:center}
 .loading{text-align:center;padding:40px;color:#94a3b8;font-size:14px}
-.search-wrap{margin-bottom:20px}
-.search-input{width:100%;max-width:300px;background:#0f172a;border:1px solid #334155;border-radius:8px;padding:10px 14px;color:#e2e8f0;font-size:14px}
-.search-input:focus{outline:none;border-color:#6366f1}
+
+/* Modal */
 .modal-overlay{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.7);z-index:100;align-items:center;justify-content:center}
 .modal-overlay.active{display:flex}
 .modal{background:#111827;border:1px solid #1e293b;border-radius:16px;padding:24px;width:90%;max-width:800px;max-height:90vh;overflow:auto}
@@ -62,32 +118,43 @@ tr:hover td{background:rgba(99,102,241,.04);cursor:pointer}
 .hist-eps{font-size:16px;font-weight:700}
 .hist-est{font-size:11px;color:#94a3b8}
 .hist-surprise{font-size:12px;font-weight:600;margin-top:4px}
-.summary{display:flex;gap:16px;margin-bottom:20px;flex-wrap:wrap;font-size:13px;color:#94a3b8}
-.stat-box{background:#0f172a;border:1px solid #1e293b;border-radius:8px;padding:12px 16px;text-align:center}
-.stat-val{font-size:20px;font-weight:800;color:white}
-.stat-label{font-size:11px;color:#64748b;margin-top:2px}
+
+@media(max-width:768px){
+  .cal-cell{min-height:70px;padding:4px}
+  .cal-date{font-size:10px}
+  .ticker-pill{font-size:9px;padding:1px 4px}
+  .pill-tip{min-width:160px;padding:8px}
+  .month-label{font-size:16px}
+}
 </style>
 </head>
 <body>
 <nav class="ca-nav">
   <div style="display:flex;align-items:center">
-    <a href="/" class="logo"><div class="logo-bolt">⚡</div>CHARGED ALPHA</a>
+    <a href="/" class="logo"><div class="logo-bolt">&#9889;</div>CHARGED ALPHA</a>
     <span class="ca-nav-title">Earnings Calendar</span>
   </div>
-  <div class="ca-nav-links">
-    <div class="ca-tools-wrap" id="toolsWrap">
-      <button class="ca-tools-btn" onclick="document.getElementById('toolsWrap').classList.toggle('open')">Tools <span class="arrow">&#9662;</span></button>
-      <div class="ca-tools-dd">
-        <a href="/screener/">Stock Screener</a>
-        <a href="/etf/">ETF Screener</a>
-        <a href="/crypto/">Crypto Screener</a>
-        <a href="/options/">Options Scanner</a>
-        <a href="/bonds/">Bond Dashboard</a>
-        <a href="/reits/">REIT Screener</a>
-        <a href="/forex/">Forex Heatmap</a>
-        <a href="/commodities/">Commodities</a>
-        <a href="/earnings/" class="active">Earnings Calendar</a>
-        <a href="/gold/">Precious Metals</a>
+  <div style="display:flex;align-items:center;gap:8px">
+    <div class="mode-toggle nav-mode">
+      <span class="mode-label-b active-label">Beginner</span>
+      <label class="toggle-switch"><input type="checkbox" id="modeToggle" onchange="toggleMode(this)"><div class="toggle-track"></div><div class="toggle-knob"></div></label>
+      <span class="mode-label-e">Expert</span>
+    </div>
+    <div class="ca-nav-links">
+      <div class="ca-tools-wrap" id="toolsWrap">
+        <button class="ca-tools-btn" onclick="document.getElementById('toolsWrap').classList.toggle('open')">Tools <span class="arrow">&#9662;</span></button>
+        <div class="ca-tools-dd">
+          <a href="/screener/">Stock Screener</a>
+          <a href="/etf/">ETF Screener</a>
+          <a href="/crypto/">Crypto Screener</a>
+          <a href="/options/">Options Scanner</a>
+          <a href="/bonds/">Bond Dashboard</a>
+          <a href="/reits/">REIT Screener</a>
+          <a href="/forex/">Forex Heatmap</a>
+          <a href="/commodities/">Commodities</a>
+          <a href="/earnings/" class="active">Earnings Calendar</a>
+          <a href="/gold/">Precious Metals</a>
+        </div>
       </div>
     </div>
   </div>
@@ -95,6 +162,7 @@ tr:hover td{background:rgba(99,102,241,.04);cursor:pointer}
     <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
   </button>
   <div class="ca-mobile-menu" id="mobileMenu">
+    <div class="mode-toggle"><span class="mode-label-b active-label">Beginner</span><label class="toggle-switch"><input type="checkbox" class="modeToggleMobile" onchange="toggleMode(this)"><div class="toggle-track"></div><div class="toggle-knob"></div></label><span class="mode-label-e">Expert</span></div>
     <a href="/">Home</a>
     <a href="/screener/">Stock Screener</a>
     <a href="/etf/">ETF Screener</a>
@@ -109,20 +177,33 @@ tr:hover td{background:rgba(99,102,241,.04);cursor:pointer}
   </div>
 </nav>
 <div class="container">
-  <div class="week-nav">
-    <button class="week-btn" onclick="changeWeek(-7)">&larr; Prev Week</button>
-    <button class="week-btn" onclick="resetWeek()">This Week</button>
-    <button class="week-btn" onclick="changeWeek(7)">Next Week &rarr;</button>
-    <span class="week-label" id="weekLabel"></span>
+  <div class="edu-intro beginner-only">
+    <h3>What is this tool?</h3>
+    <p>Public companies report their financial results every quarter &mdash; this is called an <strong>earnings report</strong>. The Earnings Calendar shows you which companies are reporting each month. Earnings reports can cause big price moves: if a company beats expectations, the stock often jumps; if it misses, the stock may drop. Key numbers to watch are <strong>EPS (Earnings Per Share)</strong> &mdash; the company's profit divided by shares outstanding &mdash; and <strong>Revenue</strong> &mdash; total sales. Hover over any ticker to see estimates, or click it to view its full earnings history.</p>
+  </div>
+  <div class="month-nav">
+    <button class="month-btn" onclick="changeMonth(-1)">&larr; Prev Month</button>
+    <button class="month-btn" onclick="resetMonth()">This Month</button>
+    <button class="month-btn" onclick="changeMonth(1)">Next Month &rarr;</button>
+    <span class="month-label" id="monthLabel"></span>
   </div>
 
   <div class="search-wrap">
-    <input type="text" class="search-input" id="search" placeholder="Search by ticker or company..." oninput="renderDays()">
+    <input type="text" class="search-input" id="search" placeholder="Search by ticker or company..." oninput="renderCalendar()">
   </div>
 
+  <div class="edu-hint beginner-only"><strong>Hover</strong> over any ticker to see EPS &amp; revenue estimates, market cap, and sector. <strong>Click</strong> a ticker to view its full earnings history and whether it tends to beat or miss expectations.</div>
   <div class="summary" id="summary"></div>
 
-  <div id="daysContainer"><div class="loading">Loading earnings data...</div></div>
+  <div id="calContainer"><div class="loading">Loading earnings data...</div></div>
+
+  <div class="day-panel" id="dayPanel">
+    <div class="day-panel-header">
+      <span class="day-panel-title" id="dayPanelTitle"></span>
+      <button class="day-panel-close" onclick="closeDayPanel()">&times;</button>
+    </div>
+    <div id="dayPanelContent"></div>
+  </div>
 </div>
 
 <div class="modal-overlay" id="modal">
@@ -135,29 +216,31 @@ tr:hover td{background:rgba(99,102,241,.04);cursor:pointer}
 </div>
 
 <script>
-let weekOffset=0, earningsData=null, chartInst=null;
+let monthOffset=0, earningsData=null, chartInst=null;
+const MAX_PILLS=5; // max tickers shown per day cell before "+N more"
 
-function getMonday(){
+function getMonth(){
   const d=new Date();
-  d.setDate(d.getDate()-d.getDay()+1+weekOffset);
-  return d.toISOString().split('T')[0];
+  d.setMonth(d.getMonth()+monthOffset);
+  return d.getFullYear()+'-'+(d.getMonth()+1).toString().padStart(2,'0');
 }
 
-function changeWeek(days){weekOffset+=days;loadWeek()}
-function resetWeek(){weekOffset=0;loadWeek()}
+function changeMonth(dir){monthOffset+=dir;loadMonth()}
+function resetMonth(){monthOffset=0;loadMonth()}
 
-function fmt(v){if(v==null)return'—';if(Math.abs(v)>=1e12)return'$'+(v/1e12).toFixed(1)+'T';if(Math.abs(v)>=1e9)return'$'+(v/1e9).toFixed(1)+'B';if(Math.abs(v)>=1e6)return'$'+(v/1e6).toFixed(0)+'M';return'$'+v.toLocaleString()}
+function fmt(v){if(v==null)return'\u2014';if(Math.abs(v)>=1e12)return'$'+(v/1e12).toFixed(1)+'T';if(Math.abs(v)>=1e9)return'$'+(v/1e9).toFixed(1)+'B';if(Math.abs(v)>=1e6)return'$'+(v/1e6).toFixed(0)+'M';return'$'+v.toLocaleString()}
 
-async function loadWeek(){
-  const monday=getMonday();
-  document.getElementById('daysContainer').innerHTML='<div class="loading">Loading earnings data...</div>';
-  document.getElementById('weekLabel').textContent='';
+async function loadMonth(){
+  const month=getMonth();
+  document.getElementById('calContainer').innerHTML='<div class="loading">Loading earnings data...</div>';
+  document.getElementById('monthLabel').textContent='';
+  closeDayPanel();
 
-  const d=await(await fetch('/earnings/api/earnings?week='+monday)).json();
+  const d=await(await fetch('/earnings/api/earnings-month?month='+month)).json();
   earningsData=d;
 
-  document.getElementById('weekLabel').textContent=`Week of ${d.week_start} — ${d.total} earnings`;
-  renderSummary();renderDays();
+  document.getElementById('monthLabel').textContent=d.month_name+' \u2014 '+d.total+' earnings';
+  renderSummary();renderCalendar();
 }
 
 function renderSummary(){
@@ -166,88 +249,175 @@ function renderSummary(){
   const sectors={};
   e.forEach(x=>{if(x.sector)sectors[x.sector]=(sectors[x.sector]||0)+1});
   const topSectors=Object.entries(sectors).sort((a,b)=>b[1]-a[1]).slice(0,4);
-
-  document.getElementById('summary').innerHTML=`
-    <div class="stat-box"><div class="stat-val">${e.length}</div><div class="stat-label">Earnings This Week</div></div>
-    ${topSectors.map(([s,c])=>`<div class="stat-box"><div class="stat-val">${c}</div><div class="stat-label">${s}</div></div>`).join('')}
-  `;
+  document.getElementById('summary').innerHTML=
+    '<div class="stat-box"><div class="stat-val">'+e.length+'</div><div class="stat-label">This Month</div></div>'+
+    topSectors.map(function(s){return '<div class="stat-box"><div class="stat-val">'+s[1]+'</div><div class="stat-label">'+s[0]+'</div></div>'}).join('');
 }
 
-function renderDays(){
+function renderCalendar(){
   if(!earningsData)return;
   const search=document.getElementById('search').value.toLowerCase();
-  const days=['Monday','Tuesday','Wednesday','Thursday','Friday'];
   let earnings=earningsData.earnings;
-  if(search){earnings=earnings.filter(e=>e.symbol.toLowerCase().includes(search)||e.name.toLowerCase().includes(search))}
+  if(search){earnings=earnings.filter(function(e){return e.symbol.toLowerCase().includes(search)||e.name.toLowerCase().includes(search)})}
 
-  const byDay={};
-  days.forEach(d=>byDay[d]=[]);
-  earnings.forEach(e=>{if(byDay[e.day_of_week])byDay[e.day_of_week].push(e)});
-
-  let html='';
-  days.forEach(day=>{
-    const items=byDay[day];
-    html+=`<div class="card">
-      <div class="day-header">${day}<span class="day-count">${items.length} report${items.length!==1?'s':''}</span></div>`;
-    if(!items.length){
-      html+=`<div class="empty-msg">No earnings scheduled</div>`;
-    } else {
-      html+=`<table><thead><tr><th>Symbol</th><th>Company</th><th>Sector</th><th class="right">EPS Est</th><th class="right">Rev Est</th><th class="right">Mkt Cap</th><th class="right">Price</th></tr></thead><tbody>`;
-      items.forEach(e=>{
-        html+=`<tr onclick="openDetail('${e.symbol}')">
-          <td><strong style="color:white">${e.symbol}</strong></td>
-          <td>${e.name}</td>
-          <td>${e.sector?`<span class="sector-badge">${e.sector}</span>`:''}</td>
-          <td class="right">${e.eps_estimate!=null?'$'+e.eps_estimate.toFixed(2):'—'}</td>
-          <td class="right">${e.revenue_estimate!=null?fmt(e.revenue_estimate):'—'}</td>
-          <td class="right">${fmt(e.market_cap)}</td>
-          <td class="right">${e.price!=null?'$'+e.price.toFixed(2):'—'}</td>
-        </tr>`;
-      });
-      html+=`</tbody></table>`;
-    }
-    html+=`</div>`;
+  // Group by date
+  const byDate={};
+  earnings.forEach(function(e){
+    if(!byDate[e.earnings_date])byDate[e.earnings_date]=[];
+    byDate[e.earnings_date].push(e);
   });
-  document.getElementById('daysContainer').innerHTML=html;
+
+  // Build calendar grid
+  const parts=earningsData.month.split('-');
+  const year=parseInt(parts[0]), month=parseInt(parts[1])-1;
+  const firstDay=new Date(year,month,1);
+  const lastDay=new Date(year,month+1,0);
+  const startDow=firstDay.getDay(); // 0=Sun
+  const daysInMonth=lastDay.getDate();
+
+  // Previous month days to fill
+  const prevMonthLast=new Date(year,month,0).getDate();
+
+  const today=new Date();
+  const todayStr=today.getFullYear()+'-'+(today.getMonth()+1).toString().padStart(2,'0')+'-'+today.getDate().toString().padStart(2,'0');
+
+  let html='<div class="cal-grid">';
+  // Header row
+  var dayNames=['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+  dayNames.forEach(function(d){html+='<div class="cal-header">'+d+'</div>'});
+
+  // Fill cells
+  var totalCells=Math.ceil((startDow+daysInMonth)/7)*7;
+  for(var i=0;i<totalCells;i++){
+    var dayNum=i-startDow+1;
+    var isOther=dayNum<1||dayNum>daysInMonth;
+    var displayNum=isOther?(dayNum<1?prevMonthLast+dayNum:dayNum-daysInMonth):dayNum;
+
+    var dateStr='';
+    var isToday=false;
+    if(!isOther){
+      dateStr=year+'-'+(month+1).toString().padStart(2,'0')+'-'+dayNum.toString().padStart(2,'0');
+      isToday=(dateStr===todayStr);
+    }
+
+    var dayEarnings=isOther?[]:(byDate[dateStr]||[]);
+    var cls='cal-cell';
+    if(isOther)cls+=' other-month';
+    if(isToday)cls+=' today';
+    if(dayEarnings.length)cls+=' has-earnings';
+
+    html+='<div class="'+cls+'">';
+    html+='<div class="cal-date">'+displayNum+'</div>';
+
+    if(dayEarnings.length){
+      html+='<div class="cal-stocks">';
+      var shown=dayEarnings.slice(0,MAX_PILLS);
+      shown.forEach(function(e){
+        html+='<span class="ticker-pill" onclick="openDetail(\''+e.symbol+'\')">';
+        html+=e.symbol;
+        html+='<div class="pill-tip">';
+        html+='<div class="pill-tip-name">'+e.symbol+' &mdash; '+e.name+'</div>';
+        html+='<div class="pill-tip-row"><span class="label">EPS Est</span><span class="val">'+(e.eps_estimate!=null?'$'+e.eps_estimate.toFixed(2):'\u2014')+'</span></div>';
+        html+='<div class="pill-tip-row"><span class="label">Rev Est</span><span class="val">'+(e.revenue_estimate!=null?fmt(e.revenue_estimate):'\u2014')+'</span></div>';
+        html+='<div class="pill-tip-row"><span class="label">Mkt Cap</span><span class="val">'+fmt(e.market_cap)+'</span></div>';
+        html+='<div class="pill-tip-row"><span class="label">Price</span><span class="val">'+(e.price!=null?'$'+e.price.toFixed(2):'\u2014')+'</span></div>';
+        if(e.sector)html+='<span class="sector-badge">'+e.sector+'</span>';
+        html+='</div>';
+        html+='</span>';
+      });
+      if(dayEarnings.length>MAX_PILLS){
+        html+='<span class="ticker-pill more-pill" onclick="openDayPanel(\''+dateStr+'\')">+'+(dayEarnings.length-MAX_PILLS)+' more</span>';
+      }
+      html+='</div>';
+    }
+    html+='</div>';
+  }
+  html+='</div>';
+  document.getElementById('calContainer').innerHTML=html;
+}
+
+function openDayPanel(dateStr){
+  var dayEarnings=(earningsData?earningsData.earnings:[]).filter(function(e){return e.earnings_date===dateStr});
+  if(!dayEarnings.length)return;
+
+  var d=new Date(dateStr+'T12:00:00');
+  var dayName=d.toLocaleDateString('en-US',{weekday:'long',month:'long',day:'numeric',year:'numeric'});
+
+  document.getElementById('dayPanelTitle').textContent=dayName+' \u2014 '+dayEarnings.length+' earnings';
+  var html='<table><thead><tr><th>Symbol</th><th>Company</th><th>Sector</th><th class="right">EPS Est</th><th class="right">Rev Est</th><th class="right">Mkt Cap</th><th class="right">Price</th></tr></thead><tbody>';
+  dayEarnings.forEach(function(e){
+    html+='<tr onclick="openDetail(\''+e.symbol+'\')">';
+    html+='<td><strong style="color:white">'+e.symbol+'</strong></td>';
+    html+='<td>'+e.name+'</td>';
+    html+='<td>'+(e.sector?'<span class="sector-badge">'+e.sector+'</span>':'')+'</td>';
+    html+='<td class="right">'+(e.eps_estimate!=null?'$'+e.eps_estimate.toFixed(2):'\u2014')+'</td>';
+    html+='<td class="right">'+(e.revenue_estimate!=null?fmt(e.revenue_estimate):'\u2014')+'</td>';
+    html+='<td class="right">'+fmt(e.market_cap)+'</td>';
+    html+='<td class="right">'+(e.price!=null?'$'+e.price.toFixed(2):'\u2014')+'</td>';
+    html+='</tr>';
+  });
+  html+='</tbody></table>';
+  document.getElementById('dayPanelContent').innerHTML=html;
+  document.getElementById('dayPanel').classList.add('active');
+  document.getElementById('dayPanel').scrollIntoView({behavior:'smooth',block:'nearest'});
+}
+
+function closeDayPanel(){
+  document.getElementById('dayPanel').classList.remove('active');
 }
 
 async function openDetail(sym){
   document.getElementById('modal').classList.add('active');
-  document.getElementById('modalTitle').textContent=sym+' — Earnings Detail';
+  document.getElementById('modalTitle').textContent=sym+' \u2014 Earnings Detail';
   document.getElementById('modalContent').innerHTML='<div class="loading">Loading...</div>';
 
-  const d=await(await fetch('/earnings/api/stock/'+sym+'/earnings-history')).json();
+  var d=await(await fetch('/earnings/api/stock/'+sym+'/earnings-history')).json();
   if(d.error){document.getElementById('modalContent').innerHTML='<div class="empty-msg">No data available</div>';return}
 
-  let html=`<p style="color:#94a3b8;margin-bottom:16px">${d.name} — ${d.sector||''} — ${fmt(d.market_cap)}</p>`;
+  var html='<p style="color:#94a3b8;margin-bottom:16px">'+d.name+' \u2014 '+(d.sector||'')+' \u2014 '+fmt(d.market_cap)+'</p>';
 
   if(d.earnings_history&&d.earnings_history.length){
-    html+=`<h3 style="color:white;font-size:14px;margin-bottom:12px">Recent Quarters</h3><div class="earnings-hist">`;
-    d.earnings_history.forEach(q=>{
-      const beat=q.eps_actual!=null&&q.eps_estimate!=null&&q.eps_actual>=q.eps_estimate;
-      html+=`<div class="hist-card">
-        <div class="hist-date">${q.date}</div>
-        <div class="hist-eps">${q.eps_actual!=null?'$'+q.eps_actual.toFixed(2):'—'}</div>
-        <div class="hist-est">Est: ${q.eps_estimate!=null?'$'+q.eps_estimate.toFixed(2):'—'}</div>
-        ${q.surprise_pct!=null?`<div class="hist-surprise ${beat?'green':'red'}">${q.surprise_pct>=0?'+':''}${q.surprise_pct.toFixed(1)}%</div>`:''}
-      </div>`;
+    html+='<h3 style="color:white;font-size:14px;margin-bottom:12px">Recent Quarters</h3><div class="earnings-hist">';
+    d.earnings_history.forEach(function(q){
+      var beat=q.eps_actual!=null&&q.eps_estimate!=null&&q.eps_actual>=q.eps_estimate;
+      html+='<div class="hist-card">';
+      html+='<div class="hist-date">'+q.date+'</div>';
+      html+='<div class="hist-eps">'+(q.eps_actual!=null?'$'+q.eps_actual.toFixed(2):'\u2014')+'</div>';
+      html+='<div class="hist-est">Est: '+(q.eps_estimate!=null?'$'+q.eps_estimate.toFixed(2):'\u2014')+'</div>';
+      if(q.surprise_pct!=null)html+='<div class="hist-surprise '+(beat?'green':'red')+'">'+(q.surprise_pct>=0?'+':'')+q.surprise_pct.toFixed(1)+'%</div>';
+      html+='</div>';
     });
-    html+=`</div>`;
+    html+='</div>';
   }
   document.getElementById('modalContent').innerHTML=html;
 
-  // Chart
   if(chartInst)chartInst.destroy();
   if(d.chart&&d.chart.labels&&d.chart.labels.length){
-    const ctx=document.getElementById('chartCanvas').getContext('2d');
-    chartInst=new Chart(ctx,{type:'line',data:{labels:d.chart.labels,datasets:[{label:'Price',data:d.chart.prices,borderColor:'#6366f1',backgroundColor:'rgba(99,102,241,.1)',fill:true,tension:.3,pointRadius:0}]},options:{responsive:true,plugins:{legend:{display:false}},scales:{x:{ticks:{color:'#64748b',maxTicksLimit:8},grid:{color:'#1e293b'}},y:{ticks:{color:'#64748b',callback:v=>'$'+v},grid:{color:'#1e293b'}}}}});
+    var ctx=document.getElementById('chartCanvas').getContext('2d');
+    chartInst=new Chart(ctx,{type:'line',data:{labels:d.chart.labels,datasets:[{label:'Price',data:d.chart.prices,borderColor:'#6366f1',backgroundColor:'rgba(99,102,241,.1)',fill:true,tension:.3,pointRadius:0}]},options:{responsive:true,plugins:{legend:{display:false}},scales:{x:{ticks:{color:'#64748b',maxTicksLimit:8},grid:{color:'#1e293b'}},y:{ticks:{color:'#64748b',callback:function(v){return'$'+v}},grid:{color:'#1e293b'}}}}});
   }
 }
 
 function closeModal(){document.getElementById('modal').classList.remove('active');if(chartInst)chartInst.destroy()}
 
-loadWeek();
+loadMonth();
 document.addEventListener('click',function(e){var w=document.getElementById('toolsWrap');if(w&&!w.contains(e.target))w.classList.remove('open');var m=document.getElementById('mobileMenu');if(m&&!e.target.closest('.ca-hamburger')&&!m.contains(e.target))m.classList.remove('open');});
+
+let expertMode=localStorage.getItem('ca_mode')==='expert';
+function toggleMode(src){
+  if(src) expertMode=src.checked;
+  else expertMode=document.getElementById('modeToggle').checked;
+  localStorage.setItem('ca_mode',expertMode?'expert':'beginner');
+  applyMode();
+}
+function applyMode(){
+  document.getElementById('modeToggle').checked=expertMode;
+  document.querySelectorAll('.modeToggleMobile').forEach(function(el){el.checked=expertMode});
+  document.querySelectorAll('.mode-label-b').forEach(function(el){el.classList.toggle('active-label',!expertMode)});
+  document.querySelectorAll('.mode-label-e').forEach(function(el){el.classList.toggle('active-label',expertMode)});
+  document.querySelectorAll('.beginner-only').forEach(function(el){el.classList.toggle('edu-hide',expertMode)});
+}
+applyMode();
 </script>
 </body>
 </html>

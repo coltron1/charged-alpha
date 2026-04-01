@@ -1,3 +1,4 @@
+import calendar
 import yfinance as yf
 import pandas as pd
 from datetime import datetime, timedelta
@@ -55,8 +56,8 @@ def get_earnings_week(week_str=None, sector=None):
                         earnings_date = pd.Timestamp(ed[0]).date()
                     elif hasattr(ed, 'date'):
                         earnings_date = ed.date()
-                eps_est = cal.get("EPS Estimate")
-                rev_est = cal.get("Revenue Estimate")
+                eps_est = cal.get("Earnings Average") or cal.get("EPS Estimate")
+                rev_est = cal.get("Revenue Average") or cal.get("Revenue Estimate")
             elif isinstance(cal, pd.DataFrame) and not cal.empty:
                 if "Earnings Date" in cal.index:
                     ed = cal.loc["Earnings Date"]
@@ -64,14 +65,18 @@ def get_earnings_week(week_str=None, sector=None):
                         ed = ed.iloc[0]
                     if hasattr(ed, 'date'):
                         earnings_date = ed.date()
-                if "EPS Estimate" in cal.index:
-                    eps_est = cal.loc["EPS Estimate"]
-                    if hasattr(eps_est, 'iloc'):
-                        eps_est = eps_est.iloc[0]
-                if "Revenue Estimate" in cal.index:
-                    rev_est = cal.loc["Revenue Estimate"]
-                    if hasattr(rev_est, 'iloc'):
-                        rev_est = rev_est.iloc[0]
+                for key in ["Earnings Average", "EPS Estimate"]:
+                    if key in cal.index:
+                        eps_est = cal.loc[key]
+                        if hasattr(eps_est, 'iloc'):
+                            eps_est = eps_est.iloc[0]
+                        break
+                for key in ["Revenue Average", "Revenue Estimate"]:
+                    if key in cal.index:
+                        rev_est = cal.loc[key]
+                        if hasattr(rev_est, 'iloc'):
+                            rev_est = rev_est.iloc[0]
+                        break
 
             if earnings_date is None:
                 return None
@@ -157,6 +162,62 @@ def get_stock_earnings_history(symbol):
         return data
     except Exception:
         return None
+
+
+def get_earnings_month(month_str=None):
+    """Fetch earnings for an entire month by calling get_earnings_week for each week."""
+    if month_str:
+        try:
+            first = datetime.strptime(month_str + "-01", "%Y-%m-%d").date()
+        except ValueError:
+            today = datetime.now().date()
+            first = today.replace(day=1)
+    else:
+        today = datetime.now().date()
+        first = today.replace(day=1)
+
+    cache_key = f"month_{first.isoformat()}"
+    cached = _cache.get(cache_key)
+    if cached:
+        return cached
+
+    # Find all Mondays that cover this month
+    _, days_in_month = calendar.monthrange(first.year, first.month)
+    last = first.replace(day=days_in_month)
+
+    # Start from the Monday on or before the 1st
+    start_monday = first - timedelta(days=first.weekday())
+    # End at the Monday that covers the last day
+    end_monday = last - timedelta(days=last.weekday())
+
+    mondays = []
+    current = start_monday
+    while current <= end_monday:
+        mondays.append(current)
+        current += timedelta(days=7)
+
+    # Fetch each week (may already be cached individually)
+    all_earnings = []
+    seen = set()
+    for monday in mondays:
+        week_data = get_earnings_week(monday.isoformat())
+        for e in week_data.get("earnings", []):
+            if e["symbol"] not in seen:
+                seen.add(e["symbol"])
+                all_earnings.append(e)
+
+    all_earnings.sort(key=lambda x: (x["earnings_date"], -(x.get("market_cap") or 0)))
+
+    data = {
+        "month": first.strftime("%Y-%m"),
+        "month_name": first.strftime("%B %Y"),
+        "first_day": first.isoformat(),
+        "last_day": last.isoformat(),
+        "earnings": all_earnings,
+        "total": len(all_earnings),
+    }
+    _cache.set(cache_key, data)
+    return data
 
 
 def _get_monday():

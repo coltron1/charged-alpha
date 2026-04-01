@@ -29,7 +29,21 @@ body{background:#0a0f1e;color:#e2e8f0;min-height:100vh}
 .ca-mobile-menu a{display:block;padding:8px 0;color:#94a3b8;text-decoration:none;font-size:14px;font-weight:500}
 .ca-mobile-menu a:hover{color:#e2e8f0}
 .ca-mobile-menu a.active{color:#a5b4fc}
-@media(max-width:768px){.ca-nav-links{display:none}.ca-hamburger{display:block}.ca-nav-title{font-size:15px}}
+@media(max-width:768px){.ca-nav-links{display:none}.ca-hamburger{display:block}.ca-nav-title{font-size:15px}.mode-toggle.nav-mode{display:none}.ca-mobile-menu .mode-toggle{display:flex;padding:8px 0;border-bottom:1px solid #1e293b;margin-bottom:4px}}
+.mode-toggle{display:flex;align-items:center;gap:8px;margin-right:12px}
+.mode-toggle span{font-size:12px;font-weight:600;color:#64748b;transition:color .2s}
+.mode-toggle span.active-label{color:#e2e8f0}
+.toggle-switch{position:relative;width:44px;height:24px;cursor:pointer}
+.toggle-switch input{display:none}
+.toggle-track{position:absolute;inset:0;background:#334155;border-radius:12px;transition:background .2s}
+.toggle-switch input:checked+.toggle-track{background:#6366f1}
+.toggle-knob{position:absolute;top:2px;left:2px;width:20px;height:20px;background:white;border-radius:50%;transition:transform .2s;box-shadow:0 1px 3px rgba(0,0,0,.3)}
+.toggle-switch input:checked~.toggle-knob{transform:translateX(20px)}
+.edu-hide{display:none !important}
+.edu-intro{background:linear-gradient(135deg,rgba(217,119,6,.08),rgba(99,102,241,.05));border:1px solid rgba(217,119,6,.15);border-radius:12px;padding:20px;margin-bottom:20px}
+.edu-intro h3{color:#fbbf24;font-size:15px;margin-bottom:8px}
+.edu-intro p{color:#94a3b8;font-size:13px;line-height:1.6}
+.edu-hint{color:#94a3b8;font-size:12px;line-height:1.5;margin-bottom:12px;padding:10px 14px;background:rgba(217,119,6,.05);border-radius:8px;border-left:3px solid rgba(217,119,6,.3)}
 h1{font-size:22px;color:white;font-weight:700}
 .container{max-width:1200px;margin:0 auto;padding:20px}
 .cat-btns{display:flex;gap:6px;margin-bottom:20px;flex-wrap:wrap}
@@ -69,20 +83,27 @@ tr:hover td{background:rgba(217,119,6,.04)}.right{text-align:right}
     <a href="/" class="logo"><div class="logo-bolt">⚡</div>CHARGED ALPHA</a>
     <span class="ca-nav-title">Commodities</span>
   </div>
-  <div class="ca-nav-links">
-    <div class="ca-tools-wrap" id="toolsWrap">
-      <button class="ca-tools-btn" onclick="document.getElementById('toolsWrap').classList.toggle('open')">Tools <span class="arrow">&#9662;</span></button>
-      <div class="ca-tools-dd">
-        <a href="/screener/">Stock Screener</a>
-        <a href="/etf/">ETF Screener</a>
-        <a href="/crypto/">Crypto Screener</a>
-        <a href="/options/">Options Scanner</a>
-        <a href="/bonds/">Bond Dashboard</a>
-        <a href="/reits/">REIT Screener</a>
-        <a href="/forex/">Forex Heatmap</a>
-        <a href="/commodities/" class="active">Commodities</a>
-        <a href="/earnings/">Earnings Calendar</a>
-        <a href="/gold/">Precious Metals</a>
+  <div style="display:flex;align-items:center;gap:8px">
+    <div class="mode-toggle nav-mode">
+      <span class="mode-label-b active-label">Beginner</span>
+      <label class="toggle-switch"><input type="checkbox" id="modeToggle" onchange="toggleMode(this)"><div class="toggle-track"></div><div class="toggle-knob"></div></label>
+      <span class="mode-label-e">Expert</span>
+    </div>
+    <div class="ca-nav-links">
+      <div class="ca-tools-wrap" id="toolsWrap">
+        <button class="ca-tools-btn" onclick="document.getElementById('toolsWrap').classList.toggle('open')">Tools <span class="arrow">&#9662;</span></button>
+        <div class="ca-tools-dd">
+          <a href="/screener/">Stock Screener</a>
+          <a href="/etf/">ETF Screener</a>
+          <a href="/crypto/">Crypto Screener</a>
+          <a href="/options/">Options Scanner</a>
+          <a href="/bonds/">Bond Dashboard</a>
+          <a href="/reits/">REIT Screener</a>
+          <a href="/forex/">Forex Heatmap</a>
+          <a href="/commodities/" class="active">Commodities</a>
+          <a href="/earnings/">Earnings Calendar</a>
+          <a href="/gold/">Precious Metals</a>
+        </div>
       </div>
     </div>
   </div>
@@ -90,6 +111,7 @@ tr:hover td{background:rgba(217,119,6,.04)}.right{text-align:right}
     <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
   </button>
   <div class="ca-mobile-menu" id="mobileMenu">
+    <div class="mode-toggle"><span class="mode-label-b active-label">Beginner</span><label class="toggle-switch"><input type="checkbox" class="modeToggleMobile" onchange="toggleMode(this)"><div class="toggle-track"></div><div class="toggle-knob"></div></label><span class="mode-label-e">Expert</span></div>
     <a href="/">Home</a>
     <a href="/screener/">Stock Screener</a>
     <a href="/etf/">ETF Screener</a>
@@ -104,6 +126,11 @@ tr:hover td{background:rgba(217,119,6,.04)}.right{text-align:right}
   </div>
 </nav>
 <div class="container">
+  <div class="edu-intro beginner-only">
+    <h3>What is this tool?</h3>
+    <p>Commodities are raw materials that are traded on global markets — things like oil, gold, wheat, and natural gas. Their prices affect everything from the gas you put in your car to the food on your table. This dashboard tracks real-time prices across four major categories: <strong>Energy</strong> (crude oil, natural gas), <strong>Metals</strong> (gold, silver, copper), <strong>Agriculture</strong> (corn, wheat, soybeans, coffee), and <strong>Livestock</strong> (cattle, hogs). Commodity prices are driven by supply and demand, weather, geopolitics, and the value of the US dollar. Click any commodity to see its price history.</p>
+  </div>
+  <div class="edu-hint beginner-only">Use the category buttons to focus on a specific sector. Green cards mean the price is rising; red means it's falling. Compare 1D, 1W, and 1M changes to spot trends.</div>
   <div class="cat-btns">
     <button class="cat-btn active" onclick="setCat('All',this)">All</button>
     <button class="cat-btn" onclick="setCat('Energy',this)">Energy</button>
@@ -207,12 +234,32 @@ async function loadChart(range,btn){
 }
 
 async function loadData(){
-  allData=await(await fetch('/commodities/api/commodities')).json();
-  render();
+  try{
+    const res=await fetch('/commodities/api/commodities');
+    if(!res.ok)throw new Error('Failed');
+    allData=await res.json();
+    render();
+  }catch(e){console.error('Load error:',e)}
 }
 loadData();
 setInterval(loadData,300000);
 document.addEventListener('click',function(e){var w=document.getElementById('toolsWrap');if(w&&!w.contains(e.target))w.classList.remove('open');var m=document.getElementById('mobileMenu');if(m&&!e.target.closest('.ca-hamburger')&&!m.contains(e.target))m.classList.remove('open');});
+
+let expertMode=localStorage.getItem('ca_mode')==='expert';
+function toggleMode(src){
+  if(src) expertMode=src.checked;
+  else expertMode=document.getElementById('modeToggle').checked;
+  localStorage.setItem('ca_mode',expertMode?'expert':'beginner');
+  applyMode();
+}
+function applyMode(){
+  document.getElementById('modeToggle').checked=expertMode;
+  document.querySelectorAll('.modeToggleMobile').forEach(function(el){el.checked=expertMode});
+  document.querySelectorAll('.mode-label-b').forEach(function(el){el.classList.toggle('active-label',!expertMode)});
+  document.querySelectorAll('.mode-label-e').forEach(function(el){el.classList.toggle('active-label',expertMode)});
+  document.querySelectorAll('.beginner-only').forEach(function(el){el.classList.toggle('edu-hide',expertMode)});
+}
+applyMode();
 </script>
 </body>
 </html>

@@ -97,6 +97,10 @@ def screen_cryptos(criteria, on_progress=None, on_match=None):
             on_progress(i + 1, total)
 
 def get_crypto_chart(coin_id, days="30"):
+    cache_key = f"chart_{coin_id}_{days}"
+    cached = _cache.get(cache_key)
+    if cached and (time.time() - cached[0]) < 300:
+        return cached[1]
     url = f"{_CG_BASE}/coins/{coin_id}/market_chart"
     params = {"vs_currency": "usd", "days": days}
     try:
@@ -110,6 +114,8 @@ def get_crypto_chart(coin_id, days="30"):
             dt = datetime.utcfromtimestamp(ts / 1000)
             labels.append(dt.strftime("%Y-%m-%d %H:%M") if int(days) <= 1 else dt.strftime("%Y-%m-%d"))
             values.append(round(price, 6) if price < 1 else round(price, 2))
-        return {"labels": labels, "prices": values}
+        result = {"labels": labels, "prices": values}
+        _cache[cache_key] = (time.time(), result)
+        return result
     except Exception:
         return None

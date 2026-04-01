@@ -4,7 +4,9 @@ Used by all screener/data modules to avoid duplication and share caches.
 """
 
 import time
+import uuid
 import threading
+from collections import OrderedDict
 import yfinance as yf
 import pandas as pd
 from concurrent.futures import ThreadPoolExecutor, as_completed
@@ -15,7 +17,7 @@ class TTLCache:
     """Simple thread-safe dict cache with per-key TTL and max size."""
 
     def __init__(self, default_ttl=300, max_size=2000):
-        self._data = {}
+        self._data = OrderedDict()
         self._lock = threading.Lock()
         self._ttl = default_ttl
         self._max_size = max_size
@@ -25,21 +27,19 @@ class TTLCache:
         with self._lock:
             entry = self._data.get(key)
             if entry and (time.time() - entry[0]) < ttl:
+                self._data.move_to_end(key)
                 return entry[1]
+            if entry:
+                del self._data[key]
             return None
 
     def set(self, key, value):
         with self._lock:
-            if len(self._data) >= self._max_size:
-                self._evict()
+            if key in self._data:
+                del self._data[key]
+            elif len(self._data) >= self._max_size:
+                self._data.popitem(last=False)
             self._data[key] = (time.time(), value)
-
-    def _evict(self):
-        """Remove oldest 25% of entries."""
-        items = sorted(self._data.items(), key=lambda x: x[1][0])
-        cut = max(1, len(items) // 4)
-        for k, _ in items[:cut]:
-            del self._data[k]
 
     def clear(self):
         with self._lock:
@@ -203,7 +203,6 @@ class JobStore:
         self._start_reaper()
 
     def create(self):
-        import uuid
         job_id = str(uuid.uuid4())
         with self._lock:
             self._jobs[job_id] = {

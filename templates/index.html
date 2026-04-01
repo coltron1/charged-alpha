@@ -179,6 +179,32 @@
 
     /* ââ Smooth scroll ââââââââââââââââââââââââââââââââââââââââââ */
     html { scroll-behavior: smooth; }
+
+    /* ── Market Pulse ───────────────────────────────────────── */
+    .pulse-section{background:#0d1225;border-top:1px solid #1e293b;border-bottom:1px solid #1e293b;padding:20px 0;overflow:visible}
+    .pulse-header{text-align:center;margin-bottom:16px}
+    .pulse-header h3{font-size:14px;font-weight:700;color:white;letter-spacing:.5px;text-transform:uppercase;display:inline-flex;align-items:center;gap:8px}
+    .pulse-header .dot{width:8px;height:8px;border-radius:50%;background:#10b981;animation:pulse-dot 2s ease-in-out infinite}
+    .pulse-cats{display:flex;justify-content:center;gap:6px;margin-bottom:16px;flex-wrap:wrap;padding:0 16px}
+    .pulse-cat-btn{padding:5px 14px;border-radius:20px;border:1px solid #1e293b;background:transparent;color:#64748b;font-size:11px;font-weight:700;cursor:pointer;transition:.15s;text-transform:uppercase;letter-spacing:.3px}
+    .pulse-cat-btn:hover,.pulse-cat-btn.active{border-color:#6366f1;color:#a5b4fc;background:rgba(99,102,241,.08)}
+    .pulse-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(155px,1fr));gap:8px;max-width:1200px;margin:0 auto;padding:0 20px}
+    .pulse-card{background:#111827;border:1px solid #1e293b;border-radius:10px;padding:10px 14px;transition:border-color .15s,transform .15s}
+    .pulse-card:hover{border-color:#334155;transform:translateY(-1px)}
+    .pulse-card .pc-name{font-size:11px;color:#64748b;font-weight:600;text-transform:uppercase;letter-spacing:.3px;margin-bottom:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+    .pulse-card .pc-price{font-size:16px;font-weight:800;color:white;margin-bottom:2px}
+    .pulse-card .pc-change{font-size:13px;font-weight:700}
+    .pulse-card .pc-change.up{color:#10b981}
+    .pulse-card .pc-change.down{color:#ef4444}
+    .pulse-card .pc-change.flat{color:#64748b}
+    .pulse-loading{text-align:center;padding:20px;color:#475569;font-size:13px}
+    .pulse-note{text-align:center;font-size:10px;color:#334155;margin-top:12px}
+
+    .pulse-card{position:relative}
+    .pulse-tip{display:none;position:absolute;bottom:calc(100% + 8px);left:50%;transform:translateX(-50%);background:#1e293b;border:1px solid #334155;border-radius:8px;padding:8px 12px;font-size:11px;font-weight:400;color:#cbd5e1;line-height:1.4;white-space:normal;width:200px;z-index:50;box-shadow:0 8px 24px rgba(0,0,0,.4);text-transform:none;letter-spacing:0}
+    .pulse-tip::after{content:'';position:absolute;top:100%;left:50%;transform:translateX(-50%);border:6px solid transparent;border-top-color:#1e293b}
+    .pulse-card:hover .pulse-tip{display:block}
+
   </style>
 </head>
 <body>
@@ -257,10 +283,10 @@
     </h1>
 
     <p class="text-xl md:text-2xl text-slate-400 max-w-2xl mx-auto mb-4 leading-relaxed">
-      Data-driven investing tools for investment markets.
+      Learn investing concepts while discovering your next opportunity.
     </p>
     <p class="text-base text-slate-500 max-w-xl mx-auto mb-10">
-      Free screening tools, daily stock breakdowns, and market analysis built for retail investors who want to make smarter decisions.
+      Free screening tools with built-in education, daily stock breakdowns, and market analysis. Whether you're a first-time investor or a seasoned trader, our beginner/expert modes meet you where you are.
     </p>
 
     <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -301,6 +327,28 @@
 <!-- âââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââ
      TOOLS
      âââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââ -->
+<!-- ═══ MARKET PULSE ═══ -->
+<section class="pulse-section" id="marketPulse">
+  <div class="pulse-header">
+    <h3><span class="dot"></span> Market Pulse</h3>
+  </div>
+  <div class="pulse-cats" id="pulseCats">
+    <button class="pulse-cat-btn active" onclick="filterPulse('All',this)">All</button>
+    <button class="pulse-cat-btn" onclick="filterPulse('US',this)">US Markets</button>
+    <button class="pulse-cat-btn" onclick="filterPulse('Intl',this)">International</button>
+    <button class="pulse-cat-btn" onclick="filterPulse('Cmdty',this)">Commodities</button>
+    <button class="pulse-cat-btn" onclick="filterPulse('FX',this)">Currencies</button>
+    <button class="pulse-cat-btn" onclick="filterPulse('Crypto',this)">Crypto</button>
+    <button class="pulse-cat-btn" onclick="filterPulse('Rates',this)">Rates</button>
+  </div>
+  <div class="pulse-grid" id="pulseGrid">
+    <div class="pulse-loading">Loading market data...</div>
+  </div>
+  <div class="pulse-note">Auto-refreshes every 2 minutes</div>
+</section>
+
+<div class="section-line"></div>
+
 <section id="tools" class="py-24 px-6">
   <div class="max-w-6xl mx-auto">
     <div class="text-center mb-16">
@@ -340,26 +388,26 @@
         </a>
       </div>
 
-      <!-- Precious Metals Card -->
-      <div class="card tool-card metals p-8 glow-amber">
+      <!-- ETF Screener Card -->
+      <div class="card tool-card etf p-8 glow-green">
         <div class="flex items-start gap-4 mb-6">
-          <div class="flex-shrink-0 w-14 h-14 rounded-xl flex items-center justify-center text-2xl" style="background:rgba(245,158,11,.12)">&#129689;</div>
+          <div class="flex-shrink-0 w-14 h-14 rounded-xl flex items-center justify-center text-2xl" style="background:rgba(16,185,129,.12)">&#128202;</div>
           <div>
-            <h3 class="text-2xl font-bold text-white">Precious Metals Aggregator</h3>
-            <p class="text-sm text-slate-400 mt-1">Compare prices across dealers & marketplaces</p>
+            <h3 class="text-2xl font-bold text-white">ETF Screener</h3>
+            <p class="text-sm text-slate-400 mt-1">Filter 200+ ETFs across every asset class</p>
           </div>
         </div>
         <p class="text-slate-300 leading-relaxed mb-6">
-          Find the best deals on physical gold, silver, and platinum. Aggregates listings from major dealers and peer-to-peer marketplaces with premium-over-spot calculations.
+          Screen exchange-traded funds by expense ratio, AUM, dividend yield, returns, category, and asset class. Find the right fund for any portfolio strategy.
         </p>
         <div class="grid grid-cols-2 gap-3 mb-8">
-          <div class="flex items-center gap-2 text-sm text-slate-400"><span class="text-amber-400">&#10003;</span> Live spot prices</div>
-          <div class="flex items-center gap-2 text-sm text-slate-400"><span class="text-amber-400">&#10003;</span> Gold, Silver & Platinum</div>
-          <div class="flex items-center gap-2 text-sm text-slate-400"><span class="text-amber-400">&#10003;</span> Premium-over-spot calc</div>
-          <div class="flex items-center gap-2 text-sm text-slate-400"><span class="text-amber-400">&#10003;</span> Dealer + P2P sources</div>
+          <div class="flex items-center gap-2 text-sm text-slate-400"><span class="text-emerald-400">&#10003;</span> Expense ratio & AUM</div>
+          <div class="flex items-center gap-2 text-sm text-slate-400"><span class="text-emerald-400">&#10003;</span> Dividend yield & returns</div>
+          <div class="flex items-center gap-2 text-sm text-slate-400"><span class="text-emerald-400">&#10003;</span> Category & asset class</div>
+          <div class="flex items-center gap-2 text-sm text-slate-400"><span class="text-emerald-400">&#10003;</span> Strategy presets</div>
         </div>
-        <a href="/gold/" class="btn-primary w-full justify-center" style="background:linear-gradient(135deg,#d97706,#b45309);">
-          Launch Metals Aggregator
+        <a href="/etf/" class="btn-primary w-full justify-center" style="background:linear-gradient(135deg,#10b981,#059669);">
+          Launch ETF Screener
           <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 3h8v8M13 3L5 11"/></svg>
         </a>
       </div>
@@ -369,124 +417,84 @@
     <!-- All tools â 3-column grid -->
     <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
 
-      <!-- ETF Screener -->
-      <div class="card tool-card etf p-6">
-        <div class="flex items-center gap-3 mb-4">
-          <div class="w-12 h-12 rounded-xl flex items-center justify-center text-xl" style="background:rgba(16,185,129,.12)">&#128202;</div>
-          <div>
-            <h3 class="font-bold text-white text-lg">ETF Screener</h3>
-          </div>
-        </div>
-        <p class="text-slate-400 text-sm leading-relaxed mb-5">Filter 200+ ETFs by expense ratio, AUM, dividend yield, returns, category, and asset class.</p>
-        <a href="/etf/" class="btn-primary w-full justify-center text-sm" style="padding:10px 20px;background:linear-gradient(135deg,#10b981,#059669);">
-          Launch ETF Screener
-          <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M4 2h7v7M11 2L4 9"/></svg>
-        </a>
-      </div>
-
-      <!-- Crypto Screener -->
-      <div class="card tool-card crypto p-6">
-        <div class="flex items-center gap-3 mb-4">
-          <div class="w-12 h-12 rounded-xl flex items-center justify-center text-xl" style="background:rgba(245,158,11,.12)">&#8383;</div>
-          <div>
-            <h3 class="font-bold text-white text-lg">Crypto Screener</h3>
-          </div>
-        </div>
-        <p class="text-slate-400 text-sm leading-relaxed mb-5">Screen top 250 cryptocurrencies by price, market cap, 24h/7d change, and volume via CoinGecko.</p>
-        <a href="/crypto/" class="btn-primary w-full justify-center text-sm" style="padding:10px 20px;background:linear-gradient(135deg,#f59e0b,#ea580c);">
-          Launch Crypto Screener
-          <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M4 2h7v7M11 2L4 9"/></svg>
-        </a>
-      </div>
-
       <!-- Options Flow Scanner -->
       <div class="card tool-card options p-6">
         <div class="flex items-center gap-3 mb-4">
           <div class="w-12 h-12 rounded-xl flex items-center justify-center text-xl" style="background:rgba(239,68,68,.12)">&#9889;</div>
-          <div>
-            <h3 class="font-bold text-white text-lg">Options Scanner</h3>
-          </div>
+          <div><h3 class="font-bold text-white text-lg">Options Scanner</h3></div>
         </div>
         <p class="text-slate-400 text-sm leading-relaxed mb-5">Scan options chains for unusual activity, high volume, and tight spreads across top stocks.</p>
-        <a href="/options/" class="btn-primary w-full justify-center text-sm" style="padding:10px 20px;background:linear-gradient(135deg,#ef4444,#dc2626);">
-          Launch Options Scanner
-          <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M4 2h7v7M11 2L4 9"/></svg>
-        </a>
-      </div>
-
-      <!-- Bond & Treasury Dashboard -->
-      <div class="card tool-card bonds p-6">
-        <div class="flex items-center gap-3 mb-4">
-          <div class="w-12 h-12 rounded-xl flex items-center justify-center text-xl" style="background:rgba(6,182,212,.12)">&#127974;</div>
-          <div>
-            <h3 class="font-bold text-white text-lg">Bond Dashboard</h3>
-          </div>
-        </div>
-        <p class="text-slate-400 text-sm leading-relaxed mb-5">Treasury yields, yield curve visualization, spread analysis, and bond ETF tracking in one view.</p>
-        <a href="/bonds/" class="btn-primary w-full justify-center text-sm" style="padding:10px 20px;background:linear-gradient(135deg,#06b6d4,#0891b2);">
-          Launch Bond Dashboard
-          <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M4 2h7v7M11 2L4 9"/></svg>
-        </a>
-      </div>
-
-      <!-- REIT Screener -->
-      <div class="card tool-card reit p-6">
-        <div class="flex items-center gap-3 mb-4">
-          <div class="w-12 h-12 rounded-xl flex items-center justify-center text-xl" style="background:rgba(139,92,246,.12)">&#127970;</div>
-          <div>
-            <h3 class="font-bold text-white text-lg">REIT Screener</h3>
-          </div>
-        </div>
-        <p class="text-slate-400 text-sm leading-relaxed mb-5">Screen 75+ REITs by dividend yield, sector, P/E, debt-to-equity, and 52-week performance.</p>
-        <a href="/reits/" class="btn-primary w-full justify-center text-sm" style="padding:10px 20px;background:linear-gradient(135deg,#8b5cf6,#7c3aed);">
-          Launch REIT Screener
-          <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M4 2h7v7M11 2L4 9"/></svg>
-        </a>
-      </div>
-
-      <!-- Forex Heatmap -->
-      <div class="card tool-card forex p-6">
-        <div class="flex items-center gap-3 mb-4">
-          <div class="w-12 h-12 rounded-xl flex items-center justify-center text-xl" style="background:rgba(20,184,166,.12)">&#128177;</div>
-          <div>
-            <h3 class="font-bold text-white text-lg">Forex Heatmap</h3>
-          </div>
-        </div>
-        <p class="text-slate-400 text-sm leading-relaxed mb-5">Visual heatmap of 28 currency pairs with strength index and multi-timeframe change tracking.</p>
-        <a href="/forex/" class="btn-primary w-full justify-center text-sm" style="padding:10px 20px;background:linear-gradient(135deg,#14b8a6,#0d9488);">
-          Launch Forex Heatmap
-          <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M4 2h7v7M11 2L4 9"/></svg>
-        </a>
-      </div>
-
-      <!-- Commodities Dashboard -->
-      <div class="card tool-card commodities p-6">
-        <div class="flex items-center gap-3 mb-4">
-          <div class="w-12 h-12 rounded-xl flex items-center justify-center text-xl" style="background:rgba(217,119,6,.12)">&#127805;</div>
-          <div>
-            <h3 class="font-bold text-white text-lg">Commodities</h3>
-          </div>
-        </div>
-        <p class="text-slate-400 text-sm leading-relaxed mb-5">Track energy, metals, agriculture, and livestock futures with price charts and category filters.</p>
-        <a href="/commodities/" class="btn-primary w-full justify-center text-sm" style="padding:10px 20px;background:linear-gradient(135deg,#d97706,#b45309);">
-          Launch Commodities
-          <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M4 2h7v7M11 2L4 9"/></svg>
-        </a>
+        <a href="/options/" class="btn-primary w-full justify-center text-sm" style="padding:10px 20px;background:linear-gradient(135deg,#ef4444,#dc2626);">Launch Options Scanner <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M4 2h7v7M11 2L4 9"/></svg></a>
       </div>
 
       <!-- Earnings Calendar -->
       <div class="card tool-card earnings p-6">
         <div class="flex items-center gap-3 mb-4">
           <div class="w-12 h-12 rounded-xl flex items-center justify-center text-xl" style="background:rgba(99,102,241,.12)">&#128197;</div>
-          <div>
-            <h3 class="font-bold text-white text-lg">Earnings Calendar</h3>
-          </div>
+          <div><h3 class="font-bold text-white text-lg">Earnings Calendar</h3></div>
         </div>
         <p class="text-slate-400 text-sm leading-relaxed mb-5">Upcoming earnings dates for top S&P 500 companies with estimates, history, and sector filters.</p>
-        <a href="/earnings/" class="btn-primary w-full justify-center text-sm" style="padding:10px 20px;background:linear-gradient(135deg,#6366f1,#4f46e5);">
-          Launch Earnings Calendar
-          <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M4 2h7v7M11 2L4 9"/></svg>
-        </a>
+        <a href="/earnings/" class="btn-primary w-full justify-center text-sm" style="padding:10px 20px;background:linear-gradient(135deg,#6366f1,#4f46e5);">Launch Earnings Calendar <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M4 2h7v7M11 2L4 9"/></svg></a>
+      </div>
+
+      <!-- Crypto Screener -->
+      <div class="card tool-card crypto p-6">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="w-12 h-12 rounded-xl flex items-center justify-center text-xl" style="background:rgba(245,158,11,.12)">&#8383;</div>
+          <div><h3 class="font-bold text-white text-lg">Crypto Screener</h3></div>
+        </div>
+        <p class="text-slate-400 text-sm leading-relaxed mb-5">Screen top 250 cryptocurrencies by price, market cap, 24h/7d change, and volume via CoinGecko.</p>
+        <a href="/crypto/" class="btn-primary w-full justify-center text-sm" style="padding:10px 20px;background:linear-gradient(135deg,#f59e0b,#ea580c);">Launch Crypto Screener <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M4 2h7v7M11 2L4 9"/></svg></a>
+      </div>
+
+      <!-- Bond & Treasury Dashboard -->
+      <div class="card tool-card bonds p-6">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="w-12 h-12 rounded-xl flex items-center justify-center text-xl" style="background:rgba(6,182,212,.12)">&#127974;</div>
+          <div><h3 class="font-bold text-white text-lg">Bond Dashboard</h3></div>
+        </div>
+        <p class="text-slate-400 text-sm leading-relaxed mb-5">Treasury yields, yield curve visualization, spread analysis, and bond ETF tracking in one view.</p>
+        <a href="/bonds/" class="btn-primary w-full justify-center text-sm" style="padding:10px 20px;background:linear-gradient(135deg,#06b6d4,#0891b2);">Launch Bond Dashboard <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M4 2h7v7M11 2L4 9"/></svg></a>
+      </div>
+
+      <!-- REIT Screener -->
+      <div class="card tool-card reit p-6">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="w-12 h-12 rounded-xl flex items-center justify-center text-xl" style="background:rgba(139,92,246,.12)">&#127970;</div>
+          <div><h3 class="font-bold text-white text-lg">REIT Screener</h3></div>
+        </div>
+        <p class="text-slate-400 text-sm leading-relaxed mb-5">Screen 75+ REITs by dividend yield, sector, P/E, debt-to-equity, and 52-week performance.</p>
+        <a href="/reits/" class="btn-primary w-full justify-center text-sm" style="padding:10px 20px;background:linear-gradient(135deg,#8b5cf6,#7c3aed);">Launch REIT Screener <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M4 2h7v7M11 2L4 9"/></svg></a>
+      </div>
+
+      <!-- Precious Metals Aggregator -->
+      <div class="card tool-card metals p-6">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="w-12 h-12 rounded-xl flex items-center justify-center text-xl" style="background:rgba(245,158,11,.12)">&#129689;</div>
+          <div><h3 class="font-bold text-white text-lg">Precious Metals</h3></div>
+        </div>
+        <p class="text-slate-400 text-sm leading-relaxed mb-5">Compare gold, silver, and platinum prices across major dealers and P2P marketplaces with premium-over-spot calculations.</p>
+        <a href="/gold/" class="btn-primary w-full justify-center text-sm" style="padding:10px 20px;background:linear-gradient(135deg,#d97706,#b45309);">Launch Metals Aggregator <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M4 2h7v7M11 2L4 9"/></svg></a>
+      </div>
+
+      <!-- Forex Heatmap -->
+      <div class="card tool-card forex p-6">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="w-12 h-12 rounded-xl flex items-center justify-center text-xl" style="background:rgba(20,184,166,.12)">&#128177;</div>
+          <div><h3 class="font-bold text-white text-lg">Forex Heatmap</h3></div>
+        </div>
+        <p class="text-slate-400 text-sm leading-relaxed mb-5">Visual heatmap of 28 currency pairs with strength index and multi-timeframe change tracking.</p>
+        <a href="/forex/" class="btn-primary w-full justify-center text-sm" style="padding:10px 20px;background:linear-gradient(135deg,#14b8a6,#0d9488);">Launch Forex Heatmap <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M4 2h7v7M11 2L4 9"/></svg></a>
+      </div>
+
+      <!-- Commodities Dashboard -->
+      <div class="card tool-card commodities p-6">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="w-12 h-12 rounded-xl flex items-center justify-center text-xl" style="background:rgba(217,119,6,.12)">&#127805;</div>
+          <div><h3 class="font-bold text-white text-lg">Commodities</h3></div>
+        </div>
+        <p class="text-slate-400 text-sm leading-relaxed mb-5">Track energy, metals, agriculture, and livestock futures with price charts and category filters.</p>
+        <a href="/commodities/" class="btn-primary w-full justify-center text-sm" style="padding:10px 20px;background:linear-gradient(135deg,#d97706,#b45309);">Launch Commodities <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M4 2h7v7M11 2L4 9"/></svg></a>
       </div>
 
     </div>
@@ -504,7 +512,7 @@
       <p class="text-sm font-bold text-indigo-400 uppercase tracking-widest mb-3">Listen & Learn</p>
       <h2 class="text-4xl md:text-5xl font-extrabold text-white mb-4">Charged Alpha Shows</h2>
       <p class="text-lg text-slate-400 max-w-xl mx-auto">
-        Daily picks, market breakdowns, and investing strategies â from the tools to your ears.
+        Daily deep dives on individual stocks, market breakdowns, and investing strategies â from the tools to your ears.
       </p>
     </div>
 
@@ -522,7 +530,7 @@
           </div>
         </div>
         <p class="text-slate-400 text-sm leading-relaxed mb-5">
-          One stock. Every day. Picked by running our screener filters â value, growth, momentum, and more. We break down why the numbers stand out and whether it deserves your attention.
+          One stock. Deep dive. Every day. Picked by running our screener filters â value, growth, momentum, and more. We break down why the numbers stand out and whether it deserves your attention.
         </p>
         <!-- Spotify embed placeholder -->
         <div class="embed-wrap bg-slate-800 rounded-xl p-4 text-center">
@@ -857,6 +865,67 @@
 
 <script>
 document.addEventListener('click',function(e){var w=document.getElementById('toolsWrap');if(w&&!w.contains(e.target))w.classList.remove('open');});
+
+// ── Market Pulse ──────────────────────────────────────────────
+var pulseData=[], pulseFilter='All';
+
+function filterPulse(cat,btn){
+  pulseFilter=cat;
+  document.querySelectorAll('.pulse-cat-btn').forEach(function(b){b.classList.remove('active')});
+  btn.classList.add('active');
+  renderPulse();
+}
+
+var pulseTips={
+  'S&P 500':'Tracks 500 large US companies \u2014 the most widely followed benchmark for US stock market health',
+  'Dow Jones':'Price-weighted index of 30 major US blue-chip stocks like Apple, Goldman Sachs, and UnitedHealth',
+  'Nasdaq':'Tech-heavy index of 3,000+ stocks listed on the Nasdaq exchange, dominated by growth companies',
+  'Russell 2000':'Tracks 2,000 small-cap US stocks \u2014 a gauge of domestic economic health and risk appetite',
+  'VIX':'The "fear index" \u2014 measures expected S&P 500 volatility. Higher = more uncertainty in markets',
+  'FTSE 100':'Top 100 companies on the London Stock Exchange \u2014 the UK\u2019s primary stock market benchmark',
+  'DAX':'Germany\u2019s benchmark index of 40 major companies \u2014 reflects the eurozone\u2019s largest economy',
+  'Nikkei 225':'Japan\u2019s leading stock index of 225 large companies, the most-watched Asian market benchmark',
+  'Hang Seng':'Hong Kong\u2019s benchmark tracking the largest companies listed on the HKEX',
+  'Shanghai':'China\u2019s main stock index tracking all stocks on the Shanghai Stock Exchange',
+  'Gold':'Spot gold futures price per troy ounce \u2014 a safe-haven asset and inflation hedge',
+  'Silver':'Spot silver futures price per troy ounce \u2014 both a precious and industrial metal',
+  'Crude Oil':'WTI crude oil futures \u2014 the global benchmark for energy prices and inflation expectations',
+  'Natural Gas':'Henry Hub natural gas futures \u2014 key energy commodity for heating and electricity',
+  'US Dollar':'Dollar Index (DXY) \u2014 measures USD strength against a basket of 6 major currencies',
+  'EUR/USD':'Euro vs US Dollar \u2014 the world\u2019s most traded currency pair',
+  'GBP/USD':'British Pound vs US Dollar \u2014 reflects UK economic health relative to the US',
+  'USD/JPY':'US Dollar vs Japanese Yen \u2014 sensitive to interest rate differentials between the US and Japan',
+  'Bitcoin':'The largest cryptocurrency by market cap \u2014 a barometer for the entire crypto market',
+  'Ethereum':'The second-largest crypto \u2014 powers smart contracts, DeFi, and NFT ecosystems',
+  '10Y Treasury':'10-year US Treasury yield \u2014 the benchmark for mortgage rates, corporate bonds, and risk pricing',
+  '5Y Treasury':'5-year US Treasury yield \u2014 closely watched for Fed rate expectations and mid-term borrowing costs'
+};
+
+function renderPulse(){
+  var items=pulseFilter==='All'?pulseData:pulseData.filter(function(d){return d.cat===pulseFilter});
+  if(!items.length){
+    document.getElementById('pulseGrid').innerHTML='<div class="pulse-loading">No data available</div>';
+    return;
+  }
+  document.getElementById('pulseGrid').innerHTML=items.map(function(d){
+    var cls=d.change>0?'up':d.change<0?'down':'flat';
+    var arrow=d.change>0?'+':'';
+    var tip=pulseTips[d.name]||'';
+    var tipHtml=tip?'<div class="pulse-tip">'+tip+'</div>':'';
+    return '<div class="pulse-card"><div class="pc-name">'+d.name+'</div><div class="pc-price">'+d.price+'</div><div class="pc-change '+cls+'">'+arrow+d.change+'%</div>'+tipHtml+'</div>';
+  }).join('');
+}
+
+function loadPulse(){
+  fetch('/api/market-pulse').then(function(r){return r.json()}).then(function(data){
+    pulseData=data;
+    renderPulse();
+  }).catch(function(){
+    document.getElementById('pulseGrid').innerHTML='<div class="pulse-loading">Unable to load market data</div>';
+  });
+}
+loadPulse();
+setInterval(loadPulse,120000);
 </script>
 </body>
 </html>

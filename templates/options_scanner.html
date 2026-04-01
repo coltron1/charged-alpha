@@ -28,7 +28,62 @@ body{background:#0a0f1e;color:#e2e8f0;min-height:100vh}
 .ca-mobile-menu a{display:block;padding:8px 0;color:#94a3b8;text-decoration:none;font-size:14px;font-weight:500}
 .ca-mobile-menu a:hover{color:#e2e8f0}
 .ca-mobile-menu a.active{color:#a5b4fc}
-@media(max-width:768px){.ca-nav-links{display:none}.ca-hamburger{display:block}.ca-nav-title{font-size:15px}}
+@media(max-width:768px){.ca-nav-links{display:none}.ca-hamburger{display:block}.ca-nav-title{font-size:15px}.mode-toggle.nav-mode{display:none}.ca-mobile-menu .mode-toggle{display:flex;padding:8px 0;border-bottom:1px solid #1e293b;margin-bottom:4px}}
+
+/* Mode toggle */
+.mode-toggle{display:flex;align-items:center;gap:8px;margin-right:12px}
+.mode-toggle span{font-size:12px;font-weight:600;color:#64748b;transition:color .2s}
+.mode-toggle span.active-label{color:#e2e8f0}
+.toggle-switch{position:relative;width:44px;height:24px;cursor:pointer}
+.toggle-switch input{display:none}
+.toggle-track{position:absolute;inset:0;background:#334155;border-radius:12px;transition:background .2s}
+.toggle-switch input:checked+.toggle-track{background:#6366f1}
+.toggle-knob{position:absolute;top:2px;left:2px;width:20px;height:20px;background:white;border-radius:50%;transition:transform .2s;box-shadow:0 1px 3px rgba(0,0,0,.3)}
+.toggle-switch input:checked~.toggle-knob{transform:translateX(20px)}
+
+/* Beginner educational elements */
+.edu-intro{background:linear-gradient(135deg,rgba(99,102,241,.08),rgba(139,92,246,.08));border:1px solid rgba(99,102,241,.2);border-radius:12px;padding:16px 20px;margin:20px 20px 0;font-size:13px;line-height:1.7;color:#cbd5e1}
+.edu-intro h2{font-size:16px;color:white;margin-bottom:8px;display:flex;align-items:center;gap:8px}
+.edu-intro .icon{font-size:20px}
+.edu-hide{display:none !important}
+
+/* Collapsible options guide */
+.options-guide{background:#111827;border:1px solid #1e293b;border-radius:12px;margin:16px 20px 0;overflow:hidden}
+.options-guide-toggle{width:100%;background:none;border:none;padding:14px 20px;display:flex;align-items:center;justify-content:space-between;cursor:pointer;color:white;font-size:14px;font-weight:700;font-family:inherit}
+.options-guide-toggle:hover{background:rgba(99,102,241,.04)}
+.options-guide-toggle .chevron{transition:transform .2s;color:#64748b;font-size:12px}
+.options-guide-toggle.open .chevron{transform:rotate(180deg)}
+.options-guide-body{display:none;padding:0 20px 20px;color:#94a3b8;font-size:13px;line-height:1.7}
+.options-guide-body.open{display:block}
+.opt-type{background:#0f172a;border:1px solid #1e293b;border-radius:10px;padding:16px;margin-bottom:12px}
+.opt-type h4{color:#e2e8f0;font-size:13px;margin-bottom:6px;display:flex;align-items:center;gap:8px}
+.opt-type h4 .badge-call{background:rgba(16,185,129,.15);color:#10b981;padding:2px 8px;border-radius:4px;font-size:11px}
+.opt-type h4 .badge-put{background:rgba(239,68,68,.15);color:#ef4444;padding:2px 8px;border-radius:4px;font-size:11px}
+.opt-type h4 .badge-strat{background:rgba(99,102,241,.15);color:#a5b4fc;padding:2px 8px;border-radius:4px;font-size:11px}
+.opt-type p{margin-bottom:6px}
+.opt-type .when{color:#cbd5e1;font-size:12px;padding:8px 12px;background:rgba(99,102,241,.06);border-radius:6px;border-left:3px solid rgba(99,102,241,.3)}
+
+/* Tooltips on filter labels */
+.label-with-tip{display:flex;align-items:center;gap:4px}
+.tip-icon{display:inline-flex;align-items:center;justify-content:center;width:14px;height:14px;border-radius:50%;background:#334155;color:#94a3b8;font-size:9px;font-weight:700;cursor:help;position:relative;flex-shrink:0}
+.tip-icon:hover .tip-bubble{display:block}
+.tip-bubble{display:none;position:absolute;bottom:calc(100% + 8px);left:50%;transform:translateX(-50%);background:#1e293b;border:1px solid #334155;border-radius:8px;padding:10px 12px;width:240px;font-size:12px;font-weight:400;color:#cbd5e1;line-height:1.5;text-transform:none;letter-spacing:0;box-shadow:0 8px 24px rgba(0,0,0,.4);z-index:50;cursor:default}
+.tip-bubble::after{content:'';position:absolute;top:100%;left:50%;transform:translateX(-50%);border:6px solid transparent;border-top-color:#1e293b}
+
+/* Column header tooltips */
+th .col-tip{display:none;position:absolute;bottom:calc(100% + 8px);left:50%;transform:translateX(-50%);background:#1e293b;border:1px solid #334155;border-radius:8px;padding:8px 10px;width:200px;font-size:11px;font-weight:400;color:#cbd5e1;line-height:1.4;text-transform:none;letter-spacing:0;box-shadow:0 8px 24px rgba(0,0,0,.4);z-index:50;white-space:normal}
+th .col-tip::after{content:'';position:absolute;top:100%;left:50%;transform:translateX(-50%);border:6px solid transparent;border-top-color:#1e293b}
+th{position:sticky;top:0;background:#1e293b;color:#94a3b8;font-weight:600;text-transform:uppercase;font-size:10px;letter-spacing:.5px;padding:8px 10px;text-align:left;cursor:pointer;user-select:none;white-space:nowrap;position:relative}
+th:hover{color:#e2e8f0}
+th:hover .col-tip{display:block}
+
+/* Results guidance box */
+.edu-guidance{background:rgba(16,185,129,.06);border:1px solid rgba(16,185,129,.15);border-radius:12px;padding:16px 20px;margin:12px 20px;font-size:12px;line-height:1.7;color:#94a3b8}
+.edu-guidance h3{font-size:14px;color:#10b981;margin-bottom:8px;display:flex;align-items:center;gap:6px}
+.edu-guidance ul{margin:4px 0 0 16px}
+.edu-guidance li{margin-bottom:4px}
+.edu-guidance strong{color:#e2e8f0}
+
 h1{font-size:22px;color:white;font-weight:700}
 .panel{background:#111827;border:1px solid #1e293b;border-radius:12px;padding:20px;margin:20px}
 .filters{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:12px;margin-bottom:16px}
@@ -43,8 +98,6 @@ input:focus,select:focus{outline:none;border-color:#6366f1}
 .actions{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
 .progress{font-size:13px;color:#94a3b8;margin-left:12px}
 table{width:100%;border-collapse:collapse;font-size:12px}
-th{position:sticky;top:0;background:#1e293b;color:#94a3b8;font-weight:600;text-transform:uppercase;font-size:10px;letter-spacing:.5px;padding:8px 10px;text-align:left;cursor:pointer;user-select:none;white-space:nowrap}
-th:hover{color:#e2e8f0}
 td{padding:8px 10px;border-bottom:1px solid #1e293b;white-space:nowrap}
 tr:hover td{background:rgba(99,102,241,.04)}
 tr.unusual td{background:rgba(239,68,68,.06)}
@@ -64,7 +117,17 @@ input[type=checkbox]{width:auto;accent-color:#6366f1}
     <a href="/" class="logo"><div class="logo-bolt">⚡</div>CHARGED ALPHA</a>
     <span class="ca-nav-title">Options Scanner</span>
   </div>
-  <div class="ca-nav-links">
+  <div style="display:flex;align-items:center;gap:8px">
+    <div class="mode-toggle nav-mode">
+      <span class="mode-label-b active-label">Beginner</span>
+      <label class="toggle-switch">
+        <input type="checkbox" id="modeToggle" onchange="toggleMode(this)">
+        <div class="toggle-track"></div>
+        <div class="toggle-knob"></div>
+      </label>
+      <span class="mode-label-e">Expert</span>
+    </div>
+    <div class="ca-nav-links">
     <div class="ca-tools-wrap" id="toolsWrap">
       <button class="ca-tools-btn" onclick="document.getElementById('toolsWrap').classList.toggle('open')">Tools <span class="arrow">&#9662;</span></button>
       <div class="ca-tools-dd">
@@ -81,10 +144,20 @@ input[type=checkbox]{width:auto;accent-color:#6366f1}
       </div>
     </div>
   </div>
+  </div>
   <button class="ca-hamburger" onclick="document.getElementById('mobileMenu').classList.toggle('open')">
     <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
   </button>
   <div class="ca-mobile-menu" id="mobileMenu">
+    <div class="mode-toggle">
+      <span class="mode-label-b active-label">Beginner</span>
+      <label class="toggle-switch">
+        <input type="checkbox" class="modeToggleMobile" onchange="toggleMode(this)">
+        <div class="toggle-track"></div>
+        <div class="toggle-knob"></div>
+      </label>
+      <span class="mode-label-e">Expert</span>
+    </div>
     <a href="/">Home</a>
     <a href="/screener/">Stock Screener</a>
     <a href="/etf/">ETF Screener</a>
@@ -98,17 +171,123 @@ input[type=checkbox]{width:auto;accent-color:#6366f1}
     <a href="/gold/">Precious Metals</a>
   </div>
 </nav>
+
+<!-- Beginner: Educational intro -->
+<div class="edu-intro beginner-only" id="eduIntro">
+  <h2><span class="icon">📖</span> What is Options Flow Scanning?</h2>
+  Options are contracts that give you the right to buy (<strong>calls</strong>) or sell (<strong>puts</strong>) a stock at a specific price before a certain date. This scanner helps you find <strong>unusual options activity</strong> — contracts with high trading volume relative to open interest — which can signal that large investors ("smart money") are making big bets on a stock's direction. Use the filters below to narrow down thousands of contracts to the most interesting opportunities.
+</div>
+
+<div class="options-guide beginner-only">
+  <button class="options-guide-toggle" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('open')">
+    Understanding Options Types &amp; Strategies
+    <span class="chevron">&#9662;</span>
+  </button>
+  <div class="options-guide-body">
+    <p style="margin-bottom:16px;color:#cbd5e1">Options come in two fundamental types — <strong>calls</strong> and <strong>puts</strong> — but they can be used in many different ways depending on your outlook and risk tolerance. Here's a breakdown of the most common strategies and when you might use each one.</p>
+
+    <div class="opt-type">
+      <h4>Buying Calls (Long Call) <span class="badge-call">CALL</span></h4>
+      <p>You pay a premium for the right to <strong>buy</strong> a stock at a set price (the "strike") before expiration. Your maximum loss is the premium you paid.</p>
+      <div class="when"><strong>When to use:</strong> You're bullish on a stock and think it will go up significantly. This gives you leveraged upside exposure — you control 100 shares for a fraction of the cost of buying them outright. Example: You think AAPL will rally after earnings, so you buy a call option slightly above the current price.</div>
+    </div>
+
+    <div class="opt-type">
+      <h4>Buying Puts (Long Put) <span class="badge-put">PUT</span></h4>
+      <p>You pay a premium for the right to <strong>sell</strong> a stock at a set price before expiration. Profits increase as the stock falls below your strike price.</p>
+      <div class="when"><strong>When to use:</strong> You're bearish on a stock or want to protect (hedge) shares you already own. Buying a put on a stock you hold is like buying insurance — if the stock drops, the put gains value to offset your loss. Example: You own 100 shares of TSLA and are worried about a pullback, so you buy a put as protection.</div>
+    </div>
+
+    <div class="opt-type">
+      <h4>Selling Covered Calls <span class="badge-call">CALL</span> <span class="badge-strat">INCOME</span></h4>
+      <p>You own 100 shares and sell a call against them, collecting the premium as income. If the stock rises above the strike, your shares get "called away" (sold at the strike).</p>
+      <div class="when"><strong>When to use:</strong> You own shares and want to generate extra income while you hold them. Works best on stocks you think will stay flat or rise moderately. The trade-off: you cap your upside. Example: You own 100 shares of KO at $60 and sell a $65 call for $1.50 — you collect $150 in premium, but if KO goes to $70, you sell at $65.</div>
+    </div>
+
+    <div class="opt-type">
+      <h4>Selling Cash-Secured Puts <span class="badge-put">PUT</span> <span class="badge-strat">INCOME</span></h4>
+      <p>You sell a put and set aside enough cash to buy 100 shares if the stock drops to the strike. You collect the premium upfront.</p>
+      <div class="when"><strong>When to use:</strong> You want to buy a stock at a lower price and get paid to wait. If the stock stays above your strike, you keep the premium as profit. If it drops, you buy shares at a discount (strike minus premium received). Example: NVDA is at $900 and you'd love to buy at $850 — sell an $850 put and collect premium while you wait.</div>
+    </div>
+
+    <div class="opt-type">
+      <h4>Vertical Spreads (Bull/Bear) <span class="badge-strat">STRATEGY</span></h4>
+      <p>Buy one option and sell another at a different strike (same expiration). This reduces your cost but also caps your profit. <strong>Bull call spread:</strong> buy a lower-strike call, sell a higher-strike call. <strong>Bear put spread:</strong> buy a higher-strike put, sell a lower-strike put.</p>
+      <div class="when"><strong>When to use:</strong> You have a directional view but want to reduce the cost of the trade. Spreads are cheaper than buying options outright and have defined max risk. Good for beginners because both your profit and loss are capped. Example: You think MSFT will go from $400 to $420 — buy the $400 call and sell the $420 call to lower your cost.</div>
+    </div>
+
+    <div class="opt-type">
+      <h4>Straddles &amp; Strangles <span class="badge-strat">VOLATILITY</span></h4>
+      <p><strong>Straddle:</strong> Buy a call AND a put at the same strike. <strong>Strangle:</strong> Buy a call and put at different strikes (wider apart, cheaper). Both profit from big moves in either direction.</p>
+      <div class="when"><strong>When to use:</strong> You expect a big move but don't know which direction — common before earnings, FDA decisions, or major events. You need the stock to move enough to cover the cost of both options. Example: AMZN earnings are tomorrow and you expect a big move — buy a straddle at the current price. If it jumps 8% either way, you profit.</div>
+    </div>
+
+    <div class="opt-type">
+      <h4>LEAPS (Long-Term Options) <span class="badge-strat">LONG-TERM</span></h4>
+      <p>Options with expiration dates 1-3 years out. They behave more like stock ownership but cost less. Time decay is much slower than short-dated options.</p>
+      <div class="when"><strong>When to use:</strong> You're bullish on a stock long-term but want leveraged exposure without buying 100 shares outright. LEAPS calls deep in-the-money can act like a stock substitute at ~60-70% of the cost. Example: Instead of buying 100 shares of GOOGL at $175 ($17,500), you buy a deep ITM LEAPS call for $6,000-8,000 with similar upside exposure.</div>
+    </div>
+
+    <p style="margin-top:8px;color:#64748b;font-size:12px"><strong>Important:</strong> Options involve significant risk and are not suitable for all investors. Never invest more than you can afford to lose, and consider starting with defined-risk strategies (spreads, covered calls) before moving to more complex trades.</p>
+  </div>
+</div>
+
 <div class="panel">
   <div class="filters">
-    <div><label>Symbols (comma sep)</label><input type="text" id="symbols" placeholder="AAPL,TSLA,NVDA..."></div>
-    <div><label>Type</label><select id="option_type"><option value="both">Both</option><option value="call">Calls Only</option><option value="put">Puts Only</option></select></div>
-    <div><label>Min Open Interest</label><input type="number" id="min_oi"></div>
-    <div><label>Min Volume</label><input type="number" id="min_volume"></div>
-    <div><label>Max Spread %</label><input type="number" id="max_spread_pct" step="any"></div>
-    <div><label>Min DTE</label><input type="number" id="min_dte"></div>
-    <div><label>Max DTE</label><input type="number" id="max_dte"></div>
-    <div><label>Min Vol/OI Ratio</label><input type="number" id="min_vol_oi" step="any"></div>
-    <div class="check-wrap" style="align-self:end;padding-bottom:8px"><input type="checkbox" id="unusual_only"><label style="margin:0">Unusual Only (Vol/OI ≥ 3)</label></div>
+    <div>
+      <label class="label-with-tip">Symbols (comma sep)
+        <span class="tip-icon beginner-only">?<span class="tip-bubble">Enter stock ticker symbols separated by commas. Example: AAPL, TSLA, NVDA. These are the stocks whose options chains will be scanned.</span></span>
+      </label>
+      <input type="text" id="symbols" placeholder="AAPL,TSLA,NVDA...">
+    </div>
+    <div>
+      <label class="label-with-tip">Type
+        <span class="tip-icon beginner-only">?<span class="tip-bubble"><strong>Calls</strong> profit when the stock goes UP. <strong>Puts</strong> profit when the stock goes DOWN. Select "Both" to see all activity.</span></span>
+      </label>
+      <select id="option_type"><option value="both">Both</option><option value="call">Calls Only</option><option value="put">Puts Only</option></select>
+    </div>
+    <div>
+      <label class="label-with-tip">Min Open Interest
+        <span class="tip-icon beginner-only">?<span class="tip-bubble"><strong>Open Interest (OI)</strong> is the total number of outstanding contracts. Higher OI means more liquidity — easier to buy and sell without big price swings. A minimum of 100-500 is a good starting filter.</span></span>
+      </label>
+      <input type="number" id="min_oi">
+    </div>
+    <div>
+      <label class="label-with-tip">Min Volume
+        <span class="tip-icon beginner-only">?<span class="tip-bubble"><strong>Volume</strong> is how many contracts traded today. High volume means active interest. Look for volume that's significantly higher than open interest — that's often a sign of new money flowing in.</span></span>
+      </label>
+      <input type="number" id="min_volume">
+    </div>
+    <div>
+      <label class="label-with-tip">Max Spread %
+        <span class="tip-icon beginner-only">?<span class="tip-bubble"><strong>Spread %</strong> is the gap between bid and ask prices as a percentage. Lower spread = better pricing for you. Spreads above 10-15% mean you're paying a lot to enter the trade. Aim for under 5% for liquid contracts.</span></span>
+      </label>
+      <input type="number" id="max_spread_pct" step="any">
+    </div>
+    <div>
+      <label class="label-with-tip">Min DTE
+        <span class="tip-icon beginner-only">?<span class="tip-bubble"><strong>DTE (Days to Expiration)</strong> is how many days until the option expires. Short DTE (0-7 days) = high risk, fast time decay. Longer DTE (30-90 days) gives more time for the trade to work but costs more.</span></span>
+      </label>
+      <input type="number" id="min_dte">
+    </div>
+    <div>
+      <label class="label-with-tip">Max DTE
+        <span class="tip-icon beginner-only">?<span class="tip-bubble">Set a maximum DTE to exclude long-dated options (LEAPS). If you're looking for near-term bets, try 30-60 days max.</span></span>
+      </label>
+      <input type="number" id="max_dte">
+    </div>
+    <div>
+      <label class="label-with-tip">Min Vol/OI Ratio
+        <span class="tip-icon beginner-only">?<span class="tip-bubble"><strong>Vol/OI Ratio</strong> compares today's volume to total open interest. A ratio above 1 means more contracts traded today than existed yesterday. Ratios of 3+ are flagged as <strong>"Unusual Activity"</strong> — often a signal of informed trading.</span></span>
+      </label>
+      <input type="number" id="min_vol_oi" step="any">
+    </div>
+    <div class="check-wrap" style="align-self:end;padding-bottom:8px">
+      <input type="checkbox" id="unusual_only">
+      <label class="label-with-tip" style="margin:0">Unusual Only (Vol/OI &ge; 3)
+        <span class="tip-icon beginner-only">?<span class="tip-bubble">Filters to only show contracts where volume is 3x or more than open interest. This is the most common way to spot potential "smart money" activity.</span></span>
+      </label>
+    </div>
   </div>
   <div class="actions">
     <button class="btn btn-primary" id="scanBtn" onclick="runScan()">Scan Options</button>
@@ -116,11 +295,42 @@ input[type=checkbox]{width:auto;accent-color:#6366f1}
     <span class="progress" id="progress"></span>
   </div>
 </div>
+
 <div class="panel" id="resultsPanel" style="display:none">
   <div class="table-wrap"><table><thead id="thead"></thead><tbody id="tbody"></tbody></table></div>
 </div>
+
+<!-- Beginner: Post-results guidance -->
+<div class="edu-guidance beginner-only" id="eduGuidance" style="display:none">
+  <h3>📊 How to Read These Results</h3>
+  <ul>
+    <li><strong>Unusual Activity (amber tag):</strong> Contracts with Vol/OI of 3+ may indicate informed traders making large bets. Not a guarantee, but worth investigating further.</li>
+    <li><strong>Low Spread %:</strong> Contracts with tight spreads (&lt;5%) are more liquid and cost less to trade. Avoid contracts with wide spreads — you're paying a hidden fee to enter.</li>
+    <li><strong>High IV %:</strong> Implied Volatility shows how much movement the market expects. High IV means expensive premiums — good for sellers, risky for buyers.</li>
+    <li><strong>DTE Matters:</strong> Short-dated options (under 7 DTE) lose value fast due to time decay (theta). They can be profitable but are riskier for beginners.</li>
+    <li><strong>Volume Spikes:</strong> A single contract with massive volume and low OI might be a one-time block trade. Look for patterns across multiple strikes/expirations for stronger signals.</li>
+  </ul>
+</div>
+
 <script>
 let results=[],sortKey='vol_oi',sortAsc=false;
+let expertMode = localStorage.getItem('ca_mode') === 'expert';
+
+// Column definitions with beginner tooltips
+const colTips = {
+  symbol: 'The stock ticker this option is for.',
+  type: 'Call = bullish bet (stock goes up). Put = bearish bet (stock goes down).',
+  strike: 'The price at which you can buy (call) or sell (put) the stock if you exercise the option.',
+  expiry: 'The date this option contract expires. After this date, it becomes worthless if not exercised.',
+  dte: 'Days to Expiration — how many days left before the contract expires.',
+  bid: 'The highest price a buyer is willing to pay for this contract right now.',
+  ask: 'The lowest price a seller is willing to accept for this contract right now.',
+  spread_pct: 'The bid-ask gap as a percentage. Lower is better — means more liquidity and fairer pricing.',
+  volume: 'Number of contracts traded today. High volume signals active interest.',
+  open_interest: 'Total outstanding contracts. Represents the cumulative interest in this strike/expiry.',
+  vol_oi: 'Volume divided by Open Interest. Above 3 = "unusual" — possibly informed trading.',
+  iv: 'Implied Volatility — the market\'s expectation of future price movement. Higher = pricier options.',
+};
 
 const cols=[
   {key:'symbol',label:'Symbol'},{key:'type',label:'Type'},{key:'strike',label:'Strike',align:'right'},
@@ -130,6 +340,31 @@ const cols=[
   {key:'open_interest',label:'OI',align:'right'},{key:'vol_oi',label:'Vol/OI',align:'right'},
   {key:'iv',label:'IV%',align:'right'},
 ];
+
+function toggleMode(src) {
+  // Read from whichever toggle was clicked
+  if (src) expertMode = src.checked;
+  else expertMode = document.getElementById('modeToggle').checked;
+  localStorage.setItem('ca_mode', expertMode ? 'expert' : 'beginner');
+  applyMode();
+}
+
+function applyMode() {
+  // Sync all toggles
+  document.getElementById('modeToggle').checked = expertMode;
+  document.querySelectorAll('.modeToggleMobile').forEach(el => el.checked = expertMode);
+
+  // Sync labels
+  document.querySelectorAll('.mode-label-b').forEach(el => el.classList.toggle('active-label', !expertMode));
+  document.querySelectorAll('.mode-label-e').forEach(el => el.classList.toggle('active-label', expertMode));
+
+  document.querySelectorAll('.beginner-only').forEach(el => {
+    el.classList.toggle('edu-hide', expertMode);
+  });
+
+  // Re-render table headers if results exist (to toggle column tooltips)
+  if (results.length) renderTable();
+}
 
 async function runScan(){
   const body={
@@ -155,6 +390,9 @@ async function runScan(){
       document.getElementById('scanBtn').disabled=false;
       document.getElementById('csvBtn').style.display='inline-block';
       document.getElementById('resultsPanel').style.display='block';
+      // Show beginner guidance after results
+      var g=document.getElementById('eduGuidance');
+      if(g) g.style.display='';
     }
   },800);
 }
@@ -166,9 +404,10 @@ function renderTable(){
     if(typeof av==='string')return sortAsc?av.localeCompare(bv):bv.localeCompare(av);
     return sortAsc?av-bv:bv-av;
   });
-  document.getElementById('thead').innerHTML='<tr>'+cols.map(c=>
-    `<th class="${c.align==='right'?'right':''}" onclick="doSort('${c.key}')">${c.label}${sortKey===c.key?(sortAsc?' ▲':' ▼'):''}</th>`
-  ).join('')+'</tr>';
+  document.getElementById('thead').innerHTML='<tr>'+cols.map(c=>{
+    const tip = colTips[c.key] ? `<span class="col-tip">${colTips[c.key]}</span>` : '';
+    return `<th class="${c.align==='right'?'right':''}" onclick="doSort('${c.key}')">${c.label}${sortKey===c.key?(sortAsc?' ▲':' ▼'):''}${tip}</th>`;
+  }).join('')+'</tr>';
   document.getElementById('tbody').innerHTML=sorted.map(r=>{
     const unusual=r.unusual?'unusual':'';
     return `<tr class="${unusual}">`+cols.map(c=>{
@@ -194,6 +433,10 @@ function exportCSV(){
   const blob=new Blob([csv],{type:'text/csv'});
   const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='options_scan.csv';a.click();
 }
+
+// Init mode on load
+applyMode();
+
 document.addEventListener('click',function(e){var w=document.getElementById('toolsWrap');if(w&&!w.contains(e.target))w.classList.remove('open');var m=document.getElementById('mobileMenu');if(m&&!e.target.closest('.ca-hamburger')&&!m.contains(e.target))m.classList.remove('open');});
 </script>
 </body>

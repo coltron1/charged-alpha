@@ -29,7 +29,29 @@ body{background:#0a0f1e;color:#e2e8f0;min-height:100vh}
 .ca-mobile-menu a{display:block;padding:8px 0;color:#94a3b8;text-decoration:none;font-size:14px;font-weight:500}
 .ca-mobile-menu a:hover{color:#e2e8f0}
 .ca-mobile-menu a.active{color:#a5b4fc}
-@media(max-width:768px){.ca-nav-links{display:none}.ca-hamburger{display:block}.ca-nav-title{font-size:15px}}
+@media(max-width:768px){.ca-nav-links{display:none}.ca-hamburger{display:block}.ca-nav-title{font-size:15px}.mode-toggle.nav-mode{display:none}.ca-mobile-menu .mode-toggle{display:flex;padding:8px 0;border-bottom:1px solid #1e293b;margin-bottom:4px}}
+.mode-toggle{display:flex;align-items:center;gap:8px;margin-right:12px}
+.mode-toggle span{font-size:12px;font-weight:600;color:#64748b;transition:color .2s}
+.mode-toggle span.active-label{color:#e2e8f0}
+.toggle-switch{position:relative;width:44px;height:24px;cursor:pointer}
+.toggle-switch input{display:none}
+.toggle-track{position:absolute;inset:0;background:#334155;border-radius:12px;transition:background .2s}
+.toggle-switch input:checked+.toggle-track{background:#6366f1}
+.toggle-knob{position:absolute;top:2px;left:2px;width:20px;height:20px;background:white;border-radius:50%;transition:transform .2s;box-shadow:0 1px 3px rgba(0,0,0,.3)}
+.toggle-switch input:checked~.toggle-knob{transform:translateX(20px)}
+.edu-hide{display:none !important}
+.beginner-only .tip-icon{display:inline-flex;align-items:center;justify-content:center;width:16px;height:16px;border-radius:50%;background:#334155;color:#94a3b8;font-size:10px;font-weight:700;cursor:help;margin-left:4px;position:relative}
+.beginner-only .tip-icon .tip-text{display:none;position:absolute;bottom:calc(100% + 8px);left:50%;transform:translateX(-50%);background:#1e293b;color:#cbd5e1;padding:8px 12px;border-radius:8px;font-size:12px;font-weight:400;white-space:normal;width:220px;z-index:50;line-height:1.4;border:1px solid #334155;text-transform:none;letter-spacing:0}
+.beginner-only .tip-icon:hover .tip-text{display:block}
+.edu-intro{background:linear-gradient(135deg,rgba(139,92,246,.08),rgba(99,102,241,.05));border:1px solid rgba(139,92,246,.15);border-radius:12px;padding:20px;margin:20px 20px 0}
+.edu-intro h3{color:#a78bfa;font-size:15px;margin-bottom:8px}
+.edu-intro p{color:#94a3b8;font-size:13px;line-height:1.6}
+.edu-guidance{background:linear-gradient(135deg,rgba(16,185,129,.06),rgba(139,92,246,.06));border:1px solid rgba(16,185,129,.15);border-radius:12px;padding:20px;margin:20px}
+.edu-guidance h3{color:#6ee7b7;font-size:15px;margin-bottom:12px}
+.edu-guidance ul{color:#94a3b8;font-size:13px;line-height:1.8;padding-left:20px}
+.col-tip{display:none;position:absolute;bottom:calc(100% + 6px);left:50%;transform:translateX(-50%);background:#1e293b;color:#cbd5e1;padding:6px 10px;border-radius:6px;font-size:11px;font-weight:400;white-space:nowrap;z-index:50;border:1px solid #334155;text-transform:none;letter-spacing:0}
+th{position:sticky;top:0;background:#1e293b;color:#94a3b8;font-weight:600;text-transform:uppercase;font-size:11px;letter-spacing:.5px;padding:10px 12px;text-align:left;cursor:pointer;user-select:none;position:relative}
+th:hover .col-tip{display:block}
 h1{font-size:22px;color:white;font-weight:700}
 .panel{background:#111827;border:1px solid #1e293b;border-radius:12px;padding:20px;margin:20px}
 .filters{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:12px;margin-bottom:16px}
@@ -72,20 +94,27 @@ tr:hover td{background:rgba(139,92,246,.04)}
     <a href="/" class="logo"><div class="logo-bolt">⚡</div>CHARGED ALPHA</a>
     <span class="ca-nav-title">REIT Screener</span>
   </div>
-  <div class="ca-nav-links">
-    <div class="ca-tools-wrap" id="toolsWrap">
-      <button class="ca-tools-btn" onclick="document.getElementById('toolsWrap').classList.toggle('open')">Tools <span class="arrow">&#9662;</span></button>
-      <div class="ca-tools-dd">
-        <a href="/screener/">Stock Screener</a>
-        <a href="/etf/">ETF Screener</a>
-        <a href="/crypto/">Crypto Screener</a>
-        <a href="/options/">Options Scanner</a>
-        <a href="/bonds/">Bond Dashboard</a>
-        <a href="/reits/" class="active">REIT Screener</a>
-        <a href="/forex/">Forex Heatmap</a>
-        <a href="/commodities/">Commodities</a>
-        <a href="/earnings/">Earnings Calendar</a>
-        <a href="/gold/">Precious Metals</a>
+  <div style="display:flex;align-items:center;gap:8px">
+    <div class="mode-toggle nav-mode">
+      <span class="mode-label-b active-label">Beginner</span>
+      <label class="toggle-switch"><input type="checkbox" id="modeToggle" onchange="toggleMode(this)"><div class="toggle-track"></div><div class="toggle-knob"></div></label>
+      <span class="mode-label-e">Expert</span>
+    </div>
+    <div class="ca-nav-links">
+      <div class="ca-tools-wrap" id="toolsWrap">
+        <button class="ca-tools-btn" onclick="document.getElementById('toolsWrap').classList.toggle('open')">Tools <span class="arrow">&#9662;</span></button>
+        <div class="ca-tools-dd">
+          <a href="/screener/">Stock Screener</a>
+          <a href="/etf/">ETF Screener</a>
+          <a href="/crypto/">Crypto Screener</a>
+          <a href="/options/">Options Scanner</a>
+          <a href="/bonds/">Bond Dashboard</a>
+          <a href="/reits/" class="active">REIT Screener</a>
+          <a href="/forex/">Forex Heatmap</a>
+          <a href="/commodities/">Commodities</a>
+          <a href="/earnings/">Earnings Calendar</a>
+          <a href="/gold/">Precious Metals</a>
+        </div>
       </div>
     </div>
   </div>
@@ -93,6 +122,7 @@ tr:hover td{background:rgba(139,92,246,.04)}
     <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
   </button>
   <div class="ca-mobile-menu" id="mobileMenu">
+    <div class="mode-toggle"><span class="mode-label-b active-label">Beginner</span><label class="toggle-switch"><input type="checkbox" class="modeToggleMobile" onchange="toggleMode(this)"><div class="toggle-track"></div><div class="toggle-knob"></div></label><span class="mode-label-e">Expert</span></div>
     <a href="/">Home</a>
     <a href="/screener/">Stock Screener</a>
     <a href="/etf/">ETF Screener</a>
@@ -106,25 +136,29 @@ tr:hover td{background:rgba(139,92,246,.04)}
     <a href="/gold/">Precious Metals</a>
   </div>
 </nav>
+<div class="edu-intro beginner-only">
+  <h3>What is this tool?</h3>
+  <p>REITs (Real Estate Investment Trusts) are companies that own income-producing real estate. They're required to pay out at least 90% of taxable income as dividends, making them popular for income investors. This screener helps you filter REITs by dividend yield, valuation, sector, and performance to find ones that match your investment criteria.</p>
+</div>
 <div class="panel">
-  <div class="presets">
+  <div class="presets beginner-only">
     <button class="preset-btn" onclick="applyPreset('high_yield')">High Yield (&gt;5%)</button>
     <button class="preset-btn" onclick="applyPreset('growth')">Growth (52W &gt;10%)</button>
     <button class="preset-btn" onclick="applyPreset('value')">Value (PE&lt;15, Yield&gt;3%)</button>
     <button class="preset-btn" onclick="clearFilters()">Clear All</button>
   </div>
   <div class="filters">
-    <div><label>Min Div Yield %</label><input type="number" id="min_div_yield" step="any"></div>
-    <div><label>Max Div Yield %</label><input type="number" id="max_div_yield" step="any"></div>
-    <div><label>Min Price</label><input type="number" id="min_price" step="any"></div>
-    <div><label>Max Price</label><input type="number" id="max_price" step="any"></div>
-    <div><label>Min P/E</label><input type="number" id="min_pe" step="any"></div>
-    <div><label>Max P/E</label><input type="number" id="max_pe" step="any"></div>
-    <div><label>Max Debt/Equity</label><input type="number" id="max_debt_to_equity" step="any"></div>
-    <div><label>Min Market Cap ($)</label><input type="number" id="min_market_cap" step="any"></div>
-    <div><label>Min 52W Perf %</label><input type="number" id="min_w52_perf" step="any"></div>
-    <div><label>Max 52W Perf %</label><input type="number" id="max_w52_perf" step="any"></div>
-    <div><label>Sectors (Ctrl+click)</label>
+    <div><label>Min Div Yield % <span class="beginner-only"><span class="tip-icon">?<span class="tip-text">Dividend yield = annual dividend / price. REITs with higher yields pay more income relative to their share price. 3-5% is typical; above 7% may signal risk.</span></span></span></label><input type="number" id="min_div_yield" step="any"></div>
+    <div><label>Max Div Yield % <span class="beginner-only"><span class="tip-icon">?<span class="tip-text">Very high yields can indicate the market expects a dividend cut. Cap yield to filter out potentially distressed REITs.</span></span></span></label><input type="number" id="max_div_yield" step="any"></div>
+    <div><label>Min Price <span class="beginner-only"><span class="tip-icon">?<span class="tip-text">Set a minimum share price to focus on larger, more established REITs.</span></span></span></label><input type="number" id="min_price" step="any"></div>
+    <div><label>Max Price <span class="beginner-only"><span class="tip-icon">?<span class="tip-text">Cap the price to find more affordable entry points.</span></span></span></label><input type="number" id="max_price" step="any"></div>
+    <div><label>Min P/E <span class="beginner-only"><span class="tip-icon">?<span class="tip-text">Price-to-Earnings ratio measures valuation. Note: for REITs, Funds From Operations (FFO) is a better measure, but P/E provides a useful starting point.</span></span></span></label><input type="number" id="min_pe" step="any"></div>
+    <div><label>Max P/E <span class="beginner-only"><span class="tip-icon">?<span class="tip-text">Lower P/E may indicate a value opportunity. For REITs, a P/E under 15 is generally considered attractive.</span></span></span></label><input type="number" id="max_pe" step="any"></div>
+    <div><label>Max Debt/Equity <span class="beginner-only"><span class="tip-icon">?<span class="tip-text">Measures how much debt the REIT uses. Lower is more conservative. Real estate is capital-intensive, so some debt is normal — but excessive leverage increases risk.</span></span></span></label><input type="number" id="max_debt_to_equity" step="any"></div>
+    <div><label>Min Market Cap ($) <span class="beginner-only"><span class="tip-icon">?<span class="tip-text">Larger REITs tend to be more diversified and liquid. $1B+ is mid-cap; $10B+ is large-cap for REITs.</span></span></span></label><input type="number" id="min_market_cap" step="any"></div>
+    <div><label>Min 52W Perf % <span class="beginner-only"><span class="tip-icon">?<span class="tip-text">52-week price performance shows how the REIT has performed over the past year. Positive values indicate appreciation on top of dividends.</span></span></span></label><input type="number" id="min_w52_perf" step="any"></div>
+    <div><label>Max 52W Perf % <span class="beginner-only"><span class="tip-icon">?<span class="tip-text">Cap performance to find REITs that haven't already run up significantly and may offer better entry points.</span></span></span></label><input type="number" id="max_w52_perf" step="any"></div>
+    <div><label>Sectors (Ctrl+click) <span class="beginner-only"><span class="tip-icon">?<span class="tip-text">REIT sectors: Residential (apartments), Office, Retail (malls/shopping), Industrial (warehouses), Healthcare (hospitals/senior living), Data Center, Specialty, Diversified.</span></span></span></label>
       <select id="sectors" multiple>
         <option>Residential</option><option>Office</option><option>Retail</option><option>Industrial</option>
         <option>Healthcare</option><option>Data Center</option><option>Specialty</option><option>Diversified</option>
@@ -140,6 +174,17 @@ tr:hover td{background:rgba(139,92,246,.04)}
 <div class="panel" id="resultsPanel" style="display:none">
   <div class="table-wrap"><table><thead id="thead"></thead><tbody id="tbody"></tbody></table></div>
 </div>
+<div class="edu-guidance beginner-only" id="eduGuidance" style="display:none">
+  <h3>Reading Your Results</h3>
+  <ul>
+    <li><strong>Dividend Yield</strong> — The annual income return. A 5% yield on a $100 share means $5/year in dividends. Compare yields across similar sectors for context.</li>
+    <li><strong>P/E Ratio</strong> — Lower P/E can signal a value opportunity, but compare within the same sector. Data Center REITs typically trade at higher P/E than Office REITs.</li>
+    <li><strong>Debt/Equity</strong> — REITs use debt to acquire properties. A D/E under 1.0 is conservative; above 2.0 may indicate elevated risk, especially if interest rates rise.</li>
+    <li><strong>Payout Ratio</strong> — REITs must pay 90%+ of income as dividends. A payout ratio above 100% may mean the REIT is paying from reserves, which isn't sustainable long-term.</li>
+    <li><strong>52W Performance</strong> — Shows capital appreciation. Combined with dividend yield, this gives total return. Click any row to see the price chart over time.</li>
+  </ul>
+</div>
+
 <div class="modal-overlay" id="modal">
   <div class="modal">
     <button class="modal-close" onclick="closeModal()">&times;</button>
@@ -158,11 +203,16 @@ const fields=['min_div_yield','max_div_yield','min_price','max_price','min_pe','
 let results=[],sortKey='div_yield',sortAsc=false,chartInst=null,selectedSym=null;
 
 const cols=[
-  {key:'symbol',label:'Symbol'},{key:'name',label:'Name'},{key:'sector',label:'Sector'},
-  {key:'price',label:'Price',align:'right'},{key:'div_yield',label:'Div Yield',align:'right'},
-  {key:'pe',label:'P/E',align:'right'},{key:'market_cap',label:'Mkt Cap',align:'right'},
-  {key:'debt_to_equity',label:'D/E',align:'right'},{key:'payout_ratio',label:'Payout',align:'right'},
-  {key:'w52_perf',label:'52W Perf',align:'right'},
+  {key:'symbol',label:'Symbol',tip:'Ticker symbol — click a row to see the price chart'},
+  {key:'name',label:'Name',tip:'REIT company name'},
+  {key:'sector',label:'Sector',tip:'Real estate sector the REIT operates in'},
+  {key:'price',label:'Price',align:'right',tip:'Current share price'},
+  {key:'div_yield',label:'Div Yield',align:'right',tip:'Annual dividend yield — higher means more income per dollar invested'},
+  {key:'pe',label:'P/E',align:'right',tip:'Price-to-Earnings ratio — lower may indicate better value'},
+  {key:'market_cap',label:'Mkt Cap',align:'right',tip:'Total market capitalization of the REIT'},
+  {key:'debt_to_equity',label:'D/E',align:'right',tip:'Debt-to-Equity ratio — measures financial leverage'},
+  {key:'payout_ratio',label:'Payout',align:'right',tip:'% of earnings paid as dividends — above 90% is typical for REITs'},
+  {key:'w52_perf',label:'52W Perf',align:'right',tip:'52-week price performance (capital appreciation)'},
 ];
 
 function applyPreset(p){
@@ -194,13 +244,14 @@ async function runScreen(){
       document.getElementById('screenBtn').disabled=false;
       document.getElementById('csvBtn').style.display='inline-block';
       document.getElementById('resultsPanel').style.display='block';
+      var eg=document.getElementById('eduGuidance'); if(eg) eg.style.display='';
     }
   },800);
 }
 
 function renderTable(){
   const sorted=[...results].sort((a,b)=>{let av=a[sortKey],bv=b[sortKey];if(av==null)return 1;if(bv==null)return-1;if(typeof av==='string')return sortAsc?av.localeCompare(bv):bv.localeCompare(av);return sortAsc?av-bv:bv-av});
-  document.getElementById('thead').innerHTML='<tr>'+cols.map(c=>`<th class="${c.align==='right'?'right':''}" onclick="doSort('${c.key}')">${c.label}${sortKey===c.key?(sortAsc?' ▲':' ▼'):''}</th>`).join('')+'</tr>';
+  document.getElementById('thead').innerHTML='<tr>'+cols.map(c=>`<th class="${c.align==='right'?'right':''}" onclick="doSort('${c.key}')">${c.label}${sortKey===c.key?(sortAsc?' ▲':' ▼'):''}${c.tip?'<span class="col-tip">'+c.tip+'</span>':''}</th>`).join('')+'</tr>';
   document.getElementById('tbody').innerHTML=sorted.map(r=>'<tr style="cursor:pointer" onclick="openModal(\''+r.symbol+'\',\''+r.name+'\')">'+cols.map(c=>{
     let v=r[c.key],cls=c.align==='right'?'right':'';
     if(c.key==='sector') return `<td><span class="sector-badge">${v}</span></td>`;
@@ -238,6 +289,22 @@ function exportCSV(){
   const blob=new Blob([csv],{type:'text/csv'});const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='reit_screen.csv';a.click();
 }
 document.addEventListener('click',function(e){var w=document.getElementById('toolsWrap');if(w&&!w.contains(e.target))w.classList.remove('open');var m=document.getElementById('mobileMenu');if(m&&!e.target.closest('.ca-hamburger')&&!m.contains(e.target))m.classList.remove('open');});
+
+let expertMode=localStorage.getItem('ca_mode')==='expert';
+function toggleMode(src){
+  if(src) expertMode=src.checked;
+  else expertMode=document.getElementById('modeToggle').checked;
+  localStorage.setItem('ca_mode',expertMode?'expert':'beginner');
+  applyMode();
+}
+function applyMode(){
+  document.getElementById('modeToggle').checked=expertMode;
+  document.querySelectorAll('.modeToggleMobile').forEach(function(el){el.checked=expertMode});
+  document.querySelectorAll('.mode-label-b').forEach(function(el){el.classList.toggle('active-label',!expertMode)});
+  document.querySelectorAll('.mode-label-e').forEach(function(el){el.classList.toggle('active-label',expertMode)});
+  document.querySelectorAll('.beginner-only').forEach(function(el){el.classList.toggle('edu-hide',expertMode)});
+}
+applyMode();
 </script>
 </body>
 </html>

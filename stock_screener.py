@@ -32,7 +32,7 @@ _TICKER_CACHE_TTL = 3600
 _ticker_sectors: dict = {}  # symbol -> GICS sector
 
 # ── Use shared ticker info cache ───────────────────────────────────────────
-from yf_utils import fetch_ticker_info as _fetch_ticker_info, safe_float as _safe_float, normalize_div_yield
+from yf_utils import fetch_ticker_info as _fetch_ticker_info, safe_float as _safe_float, normalize_div_yield, ticker_info_cache as _info_cache
 
 
 def get_sp500_tickers():
@@ -349,201 +349,6 @@ def get_stock_data(symbol, fetch_options=False, hist_close=None, need_hist_pe=Tr
         return result
     except Exception:
         return None
-
-
-def passes_criteria(stock, criteria):
-    # --- Sector filter (list of allowed sectors) ---
-    sectors = criteria.get("sectors")
-    if sectors:
-        if stock.get("sector", "Unknown") not in sectors:
-            return False
-
-    # --- Market cap range ---
-    cap_ranges = criteria.get("cap_ranges")  # list of [min, max] pairs
-    if cap_ranges:
-        mc = stock.get("market_cap")
-        if mc is None:
-            return False
-        if not any(lo <= mc <= hi for lo, hi in cap_ranges):
-            return False
-
-    # --- Price range ---
-    min_price = criteria.get("min_price")
-    max_price = criteria.get("max_price")
-    if min_price is not None and stock["price"] < min_price:
-        return False
-    if max_price is not None and stock["price"] > max_price:
-        return False
-
-    # --- P/E below historical average ---
-    if criteria.get("pe_below_historical"):
-        if stock["trailing_pe"] is None or stock["avg_hist_pe"] is None:
-            return False
-        if stock["trailing_pe"] >= stock["avg_hist_pe"]:
-            return False
-        min_discount = criteria.get("pe_min_discount_pct") or 0
-        if (stock["pe_discount_pct"] or 0) < min_discount:
-            return False
-
-    # --- Price to Book range ---
-    min_pb = criteria.get("min_pb")
-    max_pb = criteria.get("max_pb")
-    if min_pb is not None or max_pb is not None:
-        pb = stock.get("price_to_book")
-        if pb is None:
-            return False
-        if min_pb is not None and pb < min_pb:
-            return False
-        if max_pb is not None and pb > max_pb:
-            return False
-
-    # --- Dividend yield range ---
-    min_div = criteria.get("min_div_yield")
-    max_div = criteria.get("max_div_yield")
-    if min_div is not None or max_div is not None:
-        dy = stock.get("dividend_yield")
-        if min_div is not None and (dy is None or dy < min_div):
-            return False
-        if max_div is not None and dy is not None and dy > max_div:
-            return False
-
-    # --- Payout ratio max ---
-    max_payout = criteria.get("max_payout_ratio")
-    if max_payout is not None:
-        pr = stock.get("payout_ratio")
-        if pr is None or pr > max_payout:
-            return False
-
-    # --- Consecutive dividend years ---
-    min_streak = criteria.get("min_div_streak")
-    if min_streak is not None:
-        ds = stock.get("div_streak")
-        if ds is None or ds < min_streak:
-            return False
-
-    # --- Ex-dividend date window ---
-    ex_div_window = criteria.get("ex_div_window")
-    if ex_div_window is not None:
-        exd = stock.get("ex_div_date")
-        if not exd:
-            return False
-        try:
-            ex_date = datetime.strptime(exd, "%Y-%m-%d")
-            today = datetime.now()
-            if ex_date < today or ex_date > today + timedelta(days=ex_div_window):
-                return False
-        except ValueError:
-            return False
-
-    # --- Revenue growth min ---
-    min_rev_growth = criteria.get("min_revenue_growth")
-    if min_rev_growth is not None:
-        rg = stock.get("revenue_growth")
-        if rg is None or rg < min_rev_growth:
-            return False
-
-    # --- EPS growth min ---
-    min_eps_growth = criteria.get("min_eps_growth")
-    if min_eps_growth is not None:
-        eg = stock.get("earnings_growth")
-        if eg is None or eg < min_eps_growth:
-            return False
-
-    # --- 52-week performance range ---
-    min_w52 = criteria.get("min_w52_perf")
-    max_w52 = criteria.get("max_w52_perf")
-    if min_w52 is not None:
-        wp = stock.get("w52_perf")
-        if wp is None or wp < min_w52:
-            return False
-    if max_w52 is not None:
-        wp = stock.get("w52_perf")
-        if wp is not None and wp > max_w52:
-            return False
-
-    # --- Distance from 52-week high ---
-    max_dist_high = criteria.get("max_w52_dist_high")
-    if max_dist_high is not None:
-        dh = stock.get("w52_dist_high")
-        if dh is None or dh > max_dist_high:
-            return False
-
-    # --- Debt-to-equity max ---
-    max_de = criteria.get("max_debt_to_equity")
-    if max_de is not None:
-        de = stock.get("debt_to_equity")
-        if de is None or de > max_de:
-            return False
-
-    # --- Current ratio min ---
-    min_cr = criteria.get("min_current_ratio")
-    if min_cr is not None:
-        cr = stock.get("current_ratio")
-        if cr is None or cr < min_cr:
-            return False
-
-    # --- FCF yield min ---
-    min_fcf = criteria.get("min_fcf_yield")
-    if min_fcf is not None:
-        fy = stock.get("fcf_yield")
-        if fy is None or fy < min_fcf:
-            return False
-
-    # --- Operating margin min ---
-    min_opm = criteria.get("min_operating_margin")
-    if min_opm is not None:
-        opm = stock.get("operating_margin")
-        if opm is None or opm < min_opm:
-            return False
-
-    # --- Analyst recommendation ---
-    allowed_recs = criteria.get("analyst_recs")
-    if allowed_recs:
-        rec = stock.get("analyst_rec")
-        if not rec or rec not in allowed_recs:
-            return False
-
-    # --- Minimum analyst count ---
-    min_analysts = criteria.get("min_analyst_count")
-    if min_analysts is not None:
-        ac = stock.get("analyst_count")
-        if ac is None or ac < min_analysts:
-            return False
-
-    # --- Target upside min ---
-    min_upside = criteria.get("min_target_upside")
-    if min_upside is not None:
-        tu = stock.get("target_upside")
-        if tu is None or tu < min_upside:
-            return False
-
-    # --- Options filters (sell puts) ---
-    min_iv = criteria.get("min_put_iv")
-    max_iv = criteria.get("max_put_iv")
-    max_spread = criteria.get("max_put_spread_pct")
-    min_oi = criteria.get("min_put_oi")
-    min_put_vol = criteria.get("min_put_volume")
-
-    if any(x is not None for x in [min_iv, max_iv, max_spread, min_oi, min_put_vol]):
-        iv = stock.get("atm_put_iv")
-        if min_iv is not None and (iv is None or iv < min_iv):
-            return False
-        if max_iv is not None and (iv is None or iv > max_iv):
-            return False
-
-        spread = stock.get("atm_put_spread_pct")
-        if max_spread is not None and (spread is None or spread > max_spread):
-            return False
-
-        oi = stock.get("atm_put_oi")
-        if min_oi is not None and (oi is None or oi < min_oi):
-            return False
-
-        vol = stock.get("atm_put_volume")
-        if min_put_vol is not None and (vol is None or vol < min_put_vol):
-            return False
-
-    return True
 
 
 def get_stock_detail(symbol):
@@ -923,7 +728,7 @@ def screen_stocks(criteria, on_progress=None, on_match=None):
         # Compute historical PE if needed
         if need_hist_pe:
             cached = _info_cache.get(symbol)
-            t = cached[1] if cached else yf.Ticker(symbol)
+            t = cached[0] if cached else yf.Ticker(symbol)
             hist_close = None
             if bulk_close is not None and symbol in bulk_close.columns:
                 hist_close = bulk_close[symbol]
@@ -950,7 +755,7 @@ def screen_stocks(criteria, on_progress=None, on_match=None):
         # Fetch options if needed
         if need_options:
             cached = _info_cache.get(symbol)
-            t = cached[1] if cached else yf.Ticker(symbol)
+            t = cached[0] if cached else yf.Ticker(symbol)
             current_price = data["price"]
             opts = get_options_data(t, current_price)
             data.update(opts)

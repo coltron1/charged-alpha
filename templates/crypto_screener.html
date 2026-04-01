@@ -29,7 +29,29 @@ body{background:#0a0f1e;color:#e2e8f0;min-height:100vh}
 .ca-mobile-menu a{display:block;padding:8px 0;color:#94a3b8;text-decoration:none;font-size:14px;font-weight:500}
 .ca-mobile-menu a:hover{color:#e2e8f0}
 .ca-mobile-menu a.active{color:#a5b4fc}
-@media(max-width:768px){.ca-nav-links{display:none}.ca-hamburger{display:block}.ca-nav-title{font-size:15px}}
+@media(max-width:768px){.ca-nav-links{display:none}.ca-hamburger{display:block}.ca-nav-title{font-size:15px}.mode-toggle.nav-mode{display:none}.ca-mobile-menu .mode-toggle{display:flex;padding:8px 0;border-bottom:1px solid #1e293b;margin-bottom:4px}}
+.mode-toggle{display:flex;align-items:center;gap:8px;margin-right:12px}
+.mode-toggle span{font-size:12px;font-weight:600;color:#64748b;transition:color .2s}
+.mode-toggle span.active-label{color:#e2e8f0}
+.toggle-switch{position:relative;width:44px;height:24px;cursor:pointer}
+.toggle-switch input{display:none}
+.toggle-track{position:absolute;inset:0;background:#334155;border-radius:12px;transition:background .2s}
+.toggle-switch input:checked+.toggle-track{background:#6366f1}
+.toggle-knob{position:absolute;top:2px;left:2px;width:20px;height:20px;background:white;border-radius:50%;transition:transform .2s;box-shadow:0 1px 3px rgba(0,0,0,.3)}
+.toggle-switch input:checked~.toggle-knob{transform:translateX(20px)}
+.edu-hide{display:none !important}
+.beginner-only .tip-icon{display:inline-flex;align-items:center;justify-content:center;width:16px;height:16px;border-radius:50%;background:#334155;color:#94a3b8;font-size:10px;font-weight:700;cursor:help;margin-left:4px;position:relative}
+.beginner-only .tip-icon .tip-text{display:none;position:absolute;bottom:calc(100% + 8px);left:50%;transform:translateX(-50%);background:#1e293b;color:#cbd5e1;padding:8px 12px;border-radius:8px;font-size:12px;font-weight:400;white-space:normal;width:220px;z-index:50;line-height:1.4;border:1px solid #334155;text-transform:none;letter-spacing:0}
+.beginner-only .tip-icon:hover .tip-text{display:block}
+.edu-intro{background:linear-gradient(135deg,rgba(99,102,241,.08),rgba(139,92,246,.05));border:1px solid rgba(99,102,241,.15);border-radius:12px;padding:20px;margin:20px 20px 0}
+.edu-intro h3{color:#a5b4fc;font-size:15px;margin-bottom:8px}
+.edu-intro p{color:#94a3b8;font-size:13px;line-height:1.6}
+.edu-guidance{background:linear-gradient(135deg,rgba(16,185,129,.06),rgba(99,102,241,.06));border:1px solid rgba(16,185,129,.15);border-radius:12px;padding:20px;margin:20px}
+.edu-guidance h3{color:#6ee7b7;font-size:15px;margin-bottom:12px}
+.edu-guidance ul{color:#94a3b8;font-size:13px;line-height:1.8;padding-left:20px}
+.col-tip{display:none;position:absolute;bottom:calc(100% + 6px);left:50%;transform:translateX(-50%);background:#1e293b;color:#cbd5e1;padding:6px 10px;border-radius:6px;font-size:11px;font-weight:400;white-space:nowrap;z-index:50;border:1px solid #334155;text-transform:none;letter-spacing:0}
+th{position:sticky;top:0;background:#1e293b;color:#94a3b8;font-weight:600;text-transform:uppercase;font-size:11px;letter-spacing:.5px;padding:10px 12px;text-align:left;cursor:pointer;user-select:none;position:relative}
+th:hover .col-tip{display:block}
 h1{font-size:22px;color:white;font-weight:700}
 .panel{background:#111827;border:1px solid #1e293b;border-radius:12px;padding:20px;margin:20px}
 .filters{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:12px;margin-bottom:16px}
@@ -70,7 +92,13 @@ tr:hover td{background:rgba(99,102,241,.04)}
     <a href="/" class="logo"><div class="logo-bolt">⚡</div>CHARGED ALPHA</a>
     <span class="ca-nav-title">Crypto Screener</span>
   </div>
-  <div class="ca-nav-links">
+  <div style="display:flex;align-items:center;gap:8px">
+    <div class="mode-toggle nav-mode">
+      <span class="mode-label-b active-label">Beginner</span>
+      <label class="toggle-switch"><input type="checkbox" id="modeToggle" onchange="toggleMode(this)"><div class="toggle-track"></div><div class="toggle-knob"></div></label>
+      <span class="mode-label-e">Expert</span>
+    </div>
+    <div class="ca-nav-links">
     <div class="ca-tools-wrap" id="toolsWrap">
       <button class="ca-tools-btn" onclick="document.getElementById('toolsWrap').classList.toggle('open')">Tools <span class="arrow">&#9662;</span></button>
       <div class="ca-tools-dd">
@@ -86,11 +114,12 @@ tr:hover td{background:rgba(99,102,241,.04)}
         <a href="/gold/">Precious Metals</a>
       </div>
     </div>
-  </div>
+  </div><!-- /ca-nav-links + wrapper -->
   <button class="ca-hamburger" onclick="document.getElementById('mobileMenu').classList.toggle('open')">
     <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
   </button>
   <div class="ca-mobile-menu" id="mobileMenu">
+    <div class="mode-toggle"><span class="mode-label-b active-label">Beginner</span><label class="toggle-switch"><input type="checkbox" class="modeToggleMobile" onchange="toggleMode(this)"><div class="toggle-track"></div><div class="toggle-knob"></div></label><span class="mode-label-e">Expert</span></div>
     <a href="/">Home</a>
     <a href="/screener/">Stock Screener</a>
     <a href="/etf/">ETF Screener</a>
@@ -104,8 +133,12 @@ tr:hover td{background:rgba(99,102,241,.04)}
     <a href="/gold/">Precious Metals</a>
   </div>
 </nav>
+<div class="edu-intro beginner-only">
+  <h3>What is this tool?</h3>
+  <p>The Crypto Screener lets you filter cryptocurrencies by price, market capitalization, recent performance, and trading volume. Use the preset buttons to quickly find large-cap coins, recent gainers or losers, or high-volume tokens. Click any result row to see a price chart. This tool helps you narrow down thousands of cryptocurrencies to find ones matching your criteria.</p>
+</div>
 <div class="panel">
-  <div class="presets">
+  <div class="presets beginner-only">
     <button class="preset-btn" onclick="applyPreset('large')">Large Cap (&gt;$10B)</button>
     <button class="preset-btn" onclick="applyPreset('gainers')">24h Gainers (&gt;5%)</button>
     <button class="preset-btn" onclick="applyPreset('losers')">24h Losers (&lt;-5%)</button>
@@ -113,16 +146,16 @@ tr:hover td{background:rgba(99,102,241,.04)}
     <button class="preset-btn" onclick="clearFilters()">Clear All</button>
   </div>
   <div class="filters">
-    <div><label>Min Price ($)</label><input type="number" id="min_price" step="any"></div>
-    <div><label>Max Price ($)</label><input type="number" id="max_price" step="any"></div>
-    <div><label>Min Market Cap ($)</label><input type="number" id="min_market_cap" step="any"></div>
-    <div><label>Max Market Cap ($)</label><input type="number" id="max_market_cap" step="any"></div>
-    <div><label>Min 24h Change %</label><input type="number" id="min_change_24h" step="any"></div>
-    <div><label>Max 24h Change %</label><input type="number" id="max_change_24h" step="any"></div>
-    <div><label>Min 7d Change %</label><input type="number" id="min_change_7d" step="any"></div>
-    <div><label>Max 7d Change %</label><input type="number" id="max_change_7d" step="any"></div>
-    <div><label>Min Volume ($)</label><input type="number" id="min_volume" step="any"></div>
-    <div><label>Max Volume ($)</label><input type="number" id="max_volume" step="any"></div>
+    <div><label>Min Price ($) <span class="beginner-only"><span class="tip-icon">?<span class="tip-text">Set a minimum price to exclude very low-priced tokens (penny cryptos). Helps focus on more established coins.</span></span></span></label><input type="number" id="min_price" step="any"></div>
+    <div><label>Max Price ($) <span class="beginner-only"><span class="tip-icon">?<span class="tip-text">Cap the price to find more affordable entry points. Useful if you're looking for cheaper coins with growth potential.</span></span></span></label><input type="number" id="max_price" step="any"></div>
+    <div><label>Min Market Cap ($) <span class="beginner-only"><span class="tip-icon">?<span class="tip-text">Market cap = price x circulating supply. Higher market cap coins tend to be less volatile and more established. $10B+ is considered large cap.</span></span></span></label><input type="number" id="min_market_cap" step="any"></div>
+    <div><label>Max Market Cap ($) <span class="beginner-only"><span class="tip-icon">?<span class="tip-text">Set a ceiling to find smaller, potentially higher-growth coins. Smaller caps carry more risk but may have more upside.</span></span></span></label><input type="number" id="max_market_cap" step="any"></div>
+    <div><label>Min 24h Change % <span class="beginner-only"><span class="tip-icon">?<span class="tip-text">Filter for coins that have gained at least this much in the last 24 hours. Helps find momentum and recent breakouts.</span></span></span></label><input type="number" id="min_change_24h" step="any"></div>
+    <div><label>Max 24h Change % <span class="beginner-only"><span class="tip-icon">?<span class="tip-text">Set a negative value to find coins that have dropped recently. Useful for finding potential buy-the-dip opportunities.</span></span></span></label><input type="number" id="max_change_24h" step="any"></div>
+    <div><label>Min 7d Change % <span class="beginner-only"><span class="tip-icon">?<span class="tip-text">Weekly performance filter. A positive 7-day change shows sustained momentum rather than a single-day spike.</span></span></span></label><input type="number" id="min_change_7d" step="any"></div>
+    <div><label>Max 7d Change % <span class="beginner-only"><span class="tip-icon">?<span class="tip-text">Cap weekly performance to find coins that haven't already run up too much, potentially offering better entry points.</span></span></span></label><input type="number" id="max_change_7d" step="any"></div>
+    <div><label>Min Volume ($) <span class="beginner-only"><span class="tip-icon">?<span class="tip-text">Trading volume shows how actively a coin is being bought and sold. Higher volume means easier buying/selling and more reliable price movement.</span></span></span></label><input type="number" id="min_volume" step="any"></div>
+    <div><label>Max Volume ($) <span class="beginner-only"><span class="tip-icon">?<span class="tip-text">Cap volume to find quieter coins that may not yet be on everyone's radar.</span></span></span></label><input type="number" id="max_volume" step="any"></div>
   </div>
   <div class="actions">
     <button class="btn btn-primary" id="screenBtn" onclick="runScreen()">Screen Cryptos</button>
@@ -132,6 +165,17 @@ tr:hover td{background:rgba(99,102,241,.04)}
 </div>
 <div class="panel" id="resultsPanel" style="display:none">
   <div class="table-wrap"><table><thead id="thead"></thead><tbody id="tbody"></tbody></table></div>
+</div>
+
+<div class="edu-guidance beginner-only" id="eduGuidance" style="display:none">
+  <h3>Reading Your Results</h3>
+  <ul>
+    <li><strong>Market Cap</strong> — The total value of all circulating coins. Larger market caps generally mean more stability; smaller caps are riskier but may offer higher growth potential.</li>
+    <li><strong>24h &amp; 7d Change</strong> — Short-term momentum indicators. Green means the price is rising, red means falling. Compare both to see if a move is a brief spike or sustained trend.</li>
+    <li><strong>Volume</strong> — High trading volume confirms that price movement has real participation behind it. Low volume moves are more likely to reverse.</li>
+    <li><strong>Circ/Total %</strong> — Shows how much of the total coin supply is already in circulation. A low ratio means more coins could be released over time, potentially diluting value.</li>
+    <li><strong>Click any row</strong> to see a price chart — use the 7D/30D/90D/1Y buttons to see how the coin has performed over different timeframes.</li>
+  </ul>
 </div>
 
 <div class="modal-overlay" id="modal">
@@ -153,15 +197,15 @@ const fields=['min_price','max_price','min_market_cap','max_market_cap','min_cha
 let results=[], sortKey='rank', sortAsc=true, chartInstance=null, selectedCoin=null;
 
 const cols=[
-  {key:'rank',label:'#',align:'right'},
-  {key:'name',label:'Name'},
-  {key:'symbol',label:'Symbol'},
-  {key:'price',label:'Price',align:'right'},
-  {key:'market_cap',label:'Market Cap',align:'right'},
-  {key:'change_24h',label:'24h %',align:'right'},
-  {key:'change_7d',label:'7d %',align:'right'},
-  {key:'volume',label:'Volume',align:'right'},
-  {key:'supply_ratio',label:'Circ/Total %',align:'right'},
+  {key:'rank',label:'#',align:'right',tip:'CoinGecko ranking by market cap'},
+  {key:'name',label:'Name',tip:'Cryptocurrency name — click a row to see the price chart'},
+  {key:'symbol',label:'Symbol',tip:'Trading ticker symbol (e.g. BTC, ETH)'},
+  {key:'price',label:'Price',align:'right',tip:'Current price in US dollars'},
+  {key:'market_cap',label:'Market Cap',align:'right',tip:'Total value of all circulating coins (price × supply)'},
+  {key:'change_24h',label:'24h %',align:'right',tip:'Price change over the last 24 hours'},
+  {key:'change_7d',label:'7d %',align:'right',tip:'Price change over the last 7 days — shows weekly trend'},
+  {key:'volume',label:'Volume',align:'right',tip:'Total trading volume in the last 24 hours'},
+  {key:'supply_ratio',label:'Circ/Total %',align:'right',tip:'Circulating supply as % of total/max supply — lower means more coins could enter circulation'},
 ];
 
 function applyPreset(p){
@@ -201,6 +245,7 @@ async function runScreen(){
       document.getElementById('screenBtn').disabled=false;
       document.getElementById('csvBtn').style.display='inline-block';
       document.getElementById('resultsPanel').style.display='block';
+      var eg=document.getElementById('eduGuidance'); if(eg) eg.style.display='';
     }
   },500);
 }
@@ -213,7 +258,7 @@ function renderTable(){
     return sortAsc?av-bv:bv-av;
   });
   document.getElementById('thead').innerHTML='<tr>'+cols.map(c=>
-    `<th class="${c.align==='right'?'right':''}" onclick="doSort('${c.key}')">${c.label}${sortKey===c.key?(sortAsc?' ▲':' ▼'):''}</th>`
+    `<th class="${c.align==='right'?'right':''}" onclick="doSort('${c.key}')">${c.label}${sortKey===c.key?(sortAsc?' ▲':' ▼'):''}${c.tip?'<span class="col-tip">'+c.tip+'</span>':''}</th>`
   ).join('')+'</tr>';
   document.getElementById('tbody').innerHTML=sorted.map(r=>'<tr onclick="openModal(\''+r.id+'\',\''+r.name+'\')" style="cursor:pointer">'+cols.map(c=>{
     let v=r[c.key];
@@ -254,6 +299,22 @@ function exportCSV(){
   const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='crypto_screen.csv';a.click();
 }
 document.addEventListener('click',function(e){var w=document.getElementById('toolsWrap');if(w&&!w.contains(e.target))w.classList.remove('open');var m=document.getElementById('mobileMenu');if(m&&!e.target.closest('.ca-hamburger')&&!m.contains(e.target))m.classList.remove('open');});
+
+let expertMode=localStorage.getItem('ca_mode')==='expert';
+function toggleMode(src){
+  if(src) expertMode=src.checked;
+  else expertMode=document.getElementById('modeToggle').checked;
+  localStorage.setItem('ca_mode',expertMode?'expert':'beginner');
+  applyMode();
+}
+function applyMode(){
+  document.getElementById('modeToggle').checked=expertMode;
+  document.querySelectorAll('.modeToggleMobile').forEach(function(el){el.checked=expertMode});
+  document.querySelectorAll('.mode-label-b').forEach(function(el){el.classList.toggle('active-label',!expertMode)});
+  document.querySelectorAll('.mode-label-e').forEach(function(el){el.classList.toggle('active-label',expertMode)});
+  document.querySelectorAll('.beginner-only').forEach(function(el){el.classList.toggle('edu-hide',expertMode)});
+}
+applyMode();
 </script>
 </body>
 </html>

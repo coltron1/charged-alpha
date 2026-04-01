@@ -180,7 +180,7 @@ def get_etf_asset_class(symbol):
 
 
 # ── ETF info cache ──────────────────────────────────────────────────────────
-from yf_utils import fetch_ticker_info as _fetch_ticker_info, safe_float as _safe_float, normalize_div_yield
+from yf_utils import fetch_ticker_info as _fetch_ticker_info, safe_float as _safe_float
 
 
 def get_etf_data(symbol):

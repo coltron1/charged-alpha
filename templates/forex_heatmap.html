@@ -29,7 +29,21 @@ body{background:#0a0f1e;color:#e2e8f0;min-height:100vh}
 .ca-mobile-menu a{display:block;padding:8px 0;color:#94a3b8;text-decoration:none;font-size:14px;font-weight:500}
 .ca-mobile-menu a:hover{color:#e2e8f0}
 .ca-mobile-menu a.active{color:#a5b4fc}
-@media(max-width:768px){.ca-nav-links{display:none}.ca-hamburger{display:block}.ca-nav-title{font-size:15px}}
+@media(max-width:768px){.ca-nav-links{display:none}.ca-hamburger{display:block}.ca-nav-title{font-size:15px}.mode-toggle.nav-mode{display:none}.ca-mobile-menu .mode-toggle{display:flex;padding:8px 0;border-bottom:1px solid #1e293b;margin-bottom:4px}}
+.mode-toggle{display:flex;align-items:center;gap:8px;margin-right:12px}
+.mode-toggle span{font-size:12px;font-weight:600;color:#64748b;transition:color .2s}
+.mode-toggle span.active-label{color:#e2e8f0}
+.toggle-switch{position:relative;width:44px;height:24px;cursor:pointer}
+.toggle-switch input{display:none}
+.toggle-track{position:absolute;inset:0;background:#334155;border-radius:12px;transition:background .2s}
+.toggle-switch input:checked+.toggle-track{background:#6366f1}
+.toggle-knob{position:absolute;top:2px;left:2px;width:20px;height:20px;background:white;border-radius:50%;transition:transform .2s;box-shadow:0 1px 3px rgba(0,0,0,.3)}
+.toggle-switch input:checked~.toggle-knob{transform:translateX(20px)}
+.edu-hide{display:none !important}
+.edu-intro{background:linear-gradient(135deg,rgba(20,184,166,.08),rgba(99,102,241,.05));border:1px solid rgba(20,184,166,.15);border-radius:12px;padding:20px;margin-bottom:20px}
+.edu-intro h3{color:#5eead4;font-size:15px;margin-bottom:8px}
+.edu-intro p{color:#94a3b8;font-size:13px;line-height:1.6}
+.edu-hint{color:#94a3b8;font-size:12px;line-height:1.5;margin-bottom:12px;padding:10px 14px;background:rgba(20,184,166,.05);border-radius:8px;border-left:3px solid rgba(20,184,166,.3)}
 h1{font-size:22px;color:white;font-weight:700}
 .container{max-width:1200px;margin:0 auto;padding:20px}
 .card{background:#111827;border:1px solid #1e293b;border-radius:12px;padding:20px;margin-bottom:20px}
@@ -75,20 +89,27 @@ tr:hover td{background:rgba(20,184,166,.04)}
     <a href="/" class="logo"><div class="logo-bolt">⚡</div>CHARGED ALPHA</a>
     <span class="ca-nav-title">Forex Heatmap</span>
   </div>
-  <div class="ca-nav-links">
-    <div class="ca-tools-wrap" id="toolsWrap">
-      <button class="ca-tools-btn" onclick="document.getElementById('toolsWrap').classList.toggle('open')">Tools <span class="arrow">&#9662;</span></button>
-      <div class="ca-tools-dd">
-        <a href="/screener/">Stock Screener</a>
-        <a href="/etf/">ETF Screener</a>
-        <a href="/crypto/">Crypto Screener</a>
-        <a href="/options/">Options Scanner</a>
-        <a href="/bonds/">Bond Dashboard</a>
-        <a href="/reits/">REIT Screener</a>
-        <a href="/forex/" class="active">Forex Heatmap</a>
-        <a href="/commodities/">Commodities</a>
-        <a href="/earnings/">Earnings Calendar</a>
-        <a href="/gold/">Precious Metals</a>
+  <div style="display:flex;align-items:center;gap:8px">
+    <div class="mode-toggle nav-mode">
+      <span class="mode-label-b active-label">Beginner</span>
+      <label class="toggle-switch"><input type="checkbox" id="modeToggle" onchange="toggleMode(this)"><div class="toggle-track"></div><div class="toggle-knob"></div></label>
+      <span class="mode-label-e">Expert</span>
+    </div>
+    <div class="ca-nav-links">
+      <div class="ca-tools-wrap" id="toolsWrap">
+        <button class="ca-tools-btn" onclick="document.getElementById('toolsWrap').classList.toggle('open')">Tools <span class="arrow">&#9662;</span></button>
+        <div class="ca-tools-dd">
+          <a href="/screener/">Stock Screener</a>
+          <a href="/etf/">ETF Screener</a>
+          <a href="/crypto/">Crypto Screener</a>
+          <a href="/options/">Options Scanner</a>
+          <a href="/bonds/">Bond Dashboard</a>
+          <a href="/reits/">REIT Screener</a>
+          <a href="/forex/" class="active">Forex Heatmap</a>
+          <a href="/commodities/">Commodities</a>
+          <a href="/earnings/">Earnings Calendar</a>
+          <a href="/gold/">Precious Metals</a>
+        </div>
       </div>
     </div>
   </div>
@@ -96,6 +117,7 @@ tr:hover td{background:rgba(20,184,166,.04)}
     <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
   </button>
   <div class="ca-mobile-menu" id="mobileMenu">
+    <div class="mode-toggle"><span class="mode-label-b active-label">Beginner</span><label class="toggle-switch"><input type="checkbox" class="modeToggleMobile" onchange="toggleMode(this)"><div class="toggle-track"></div><div class="toggle-knob"></div></label><span class="mode-label-e">Expert</span></div>
     <a href="/">Home</a>
     <a href="/screener/">Stock Screener</a>
     <a href="/etf/">ETF Screener</a>
@@ -110,6 +132,10 @@ tr:hover td{background:rgba(20,184,166,.04)}
   </div>
 </nav>
 <div class="container">
+  <div class="edu-intro beginner-only">
+    <h3>What is this tool?</h3>
+    <p>The Forex (foreign exchange) Heatmap shows how major currency pairs are performing against each other. Currencies are always traded in pairs — for example, EUR/USD means you're comparing the Euro to the US Dollar. Green cells mean the first currency is strengthening against the second; red means it's weakening. The Currency Strength Index at the bottom aggregates all pairs to show which currencies are strongest and weakest overall. Use the timeframe buttons to compare short-term vs. long-term trends. Click any cell to see a detailed price chart.</p>
+  </div>
   <div class="tf-btns">
     <button class="tf-btn active" onclick="setTF('1d',this)">1D</button>
     <button class="tf-btn" onclick="setTF('1w',this)">1W</button>
@@ -124,6 +150,7 @@ tr:hover td{background:rgba(20,184,166,.04)}
     <button class="tab" onclick="showView('table',this)">Table</button>
   </div>
 
+  <div class="edu-hint beginner-only">Darker green = stronger gain, darker red = bigger loss. Click any pair to see its price chart over time.</div>
   <div class="view active" id="view-heatmap">
     <div class="heatmap" id="heatGrid"></div>
   </div>
@@ -132,6 +159,7 @@ tr:hover td{background:rgba(20,184,166,.04)}
   </div>
 
   <div class="section-title">Currency Strength Index</div>
+  <div class="edu-hint beginner-only">This index averages each currency's performance across all its pairs. A positive value means the currency is generally strengthening; negative means weakening. Useful for spotting broad trends — if USD is strong across the board, that affects stocks, commodities, and international investments too.</div>
   <div class="card" id="strengthCard"></div>
   <div class="refresh-note">Auto-refreshes every 2 minutes</div>
 </div>
@@ -174,12 +202,14 @@ function heatColor(pct){
 }
 
 async function loadData(){
-  const[pairsData,strengthData]=await Promise.all([
-    fetch('/forex/api/pairs?timeframe='+currentTF).then(r=>r.json()),
-    fetch('/forex/api/strength?timeframe='+currentTF).then(r=>r.json()),
-  ]);
-  pairs=pairsData;
-  renderHeatmap();renderTable();renderStrength(strengthData);
+  try{
+    const[pairsData,strengthData]=await Promise.all([
+      fetch('/forex/api/pairs?timeframe='+currentTF).then(r=>{if(!r.ok)throw new Error('Failed');return r.json()}),
+      fetch('/forex/api/strength?timeframe='+currentTF).then(r=>{if(!r.ok)throw new Error('Failed');return r.json()}),
+    ]);
+    pairs=pairsData;
+    renderHeatmap();renderTable();renderStrength(strengthData);
+  }catch(e){console.error('Load error:',e)}
 }
 
 function renderHeatmap(){
@@ -240,6 +270,22 @@ async function loadChart(range,btn){
 loadData();
 setInterval(loadData,120000);
 document.addEventListener('click',function(e){var w=document.getElementById('toolsWrap');if(w&&!w.contains(e.target))w.classList.remove('open');var m=document.getElementById('mobileMenu');if(m&&!e.target.closest('.ca-hamburger')&&!m.contains(e.target))m.classList.remove('open');});
+
+let expertMode=localStorage.getItem('ca_mode')==='expert';
+function toggleMode(src){
+  if(src) expertMode=src.checked;
+  else expertMode=document.getElementById('modeToggle').checked;
+  localStorage.setItem('ca_mode',expertMode?'expert':'beginner');
+  applyMode();
+}
+function applyMode(){
+  document.getElementById('modeToggle').checked=expertMode;
+  document.querySelectorAll('.modeToggleMobile').forEach(function(el){el.checked=expertMode});
+  document.querySelectorAll('.mode-label-b').forEach(function(el){el.classList.toggle('active-label',!expertMode)});
+  document.querySelectorAll('.mode-label-e').forEach(function(el){el.classList.toggle('active-label',expertMode)});
+  document.querySelectorAll('.beginner-only').forEach(function(el){el.classList.toggle('edu-hide',expertMode)});
+}
+applyMode();
 </script>
 </body>
 </html>

@@ -156,7 +156,22 @@
     .ca-mobile-menu a{display:block;padding:8px 0;color:#94a3b8;text-decoration:none;font-size:14px;font-weight:500}
     .ca-mobile-menu a:hover{color:#e2e8f0}
     .ca-mobile-menu a.active{color:#a5b4fc}
-    @media(max-width:768px){.ca-nav-links{display:none}.ca-hamburger{display:block}.ca-nav-title{font-size:15px}}
+    @media(max-width:768px){.ca-nav-links{display:none}.ca-hamburger{display:block}.ca-nav-title{font-size:15px}.mode-toggle.nav-mode{display:none}.ca-mobile-menu .mode-toggle{display:flex;padding:8px 0;border-bottom:1px solid #1e293b;margin-bottom:4px}}
+    .mode-toggle{display:flex;align-items:center;gap:8px;margin-right:12px}
+    .mode-toggle span{font-size:12px;font-weight:600;color:#64748b;transition:color .2s}
+    .mode-toggle span.active-label{color:#e2e8f0}
+    .toggle-switch{position:relative;width:44px;height:24px;cursor:pointer}
+    .toggle-switch input{display:none}
+    .toggle-track{position:absolute;inset:0;background:#334155;border-radius:12px;transition:background .2s}
+    .toggle-switch input:checked+.toggle-track{background:#6366f1}
+    .toggle-knob{position:absolute;top:2px;left:2px;width:20px;height:20px;background:white;border-radius:50%;transition:transform .2s;box-shadow:0 1px 3px rgba(0,0,0,.3)}
+    .toggle-switch input:checked~.toggle-knob{transform:translateX(20px)}
+    .edu-hide{display:none !important}
+    .edu-guidance{background:rgba(99,102,241,.06);border:1px solid rgba(99,102,241,.15);border-radius:12px;padding:16px 20px;font-size:12px;line-height:1.7;color:#94a3b8}
+    .edu-guidance h3{font-size:14px;color:#a5b4fc;margin-bottom:8px;display:flex;align-items:center;gap:6px}
+    .edu-guidance ul{margin:4px 0 0 16px}
+    .edu-guidance li{margin-bottom:4px}
+    .edu-guidance strong{color:#e2e8f0}
 
     /* ── Live Ticker Banner ── */
     .ticker-banner {
@@ -234,7 +249,13 @@
     <a href="/" class="nav-logo"><div class="nav-bolt">⚡</div>CHARGED ALPHA</a>
     <span class="ca-nav-title">Stock Screener</span>
   </div>
-  <div class="ca-nav-links">
+  <div style="display:flex;align-items:center;gap:8px">
+    <div class="mode-toggle nav-mode">
+      <span class="mode-label-b active-label">Beginner</span>
+      <label class="toggle-switch"><input type="checkbox" id="modeToggle" onchange="toggleMode(this)"><div class="toggle-track"></div><div class="toggle-knob"></div></label>
+      <span class="mode-label-e">Expert</span>
+    </div>
+    <div class="ca-nav-links">
     <div class="ca-tools-wrap" id="toolsWrap">
       <button class="ca-tools-btn" onclick="document.getElementById('toolsWrap').classList.toggle('open')">Tools <span class="arrow">&#9662;</span></button>
       <div class="ca-tools-dd">
@@ -251,10 +272,12 @@
       </div>
     </div>
   </div>
+  </div>
   <button class="ca-hamburger" onclick="document.getElementById('mobileMenu').classList.toggle('open')">
     <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
   </button>
   <div class="ca-mobile-menu" id="mobileMenu">
+    <div class="mode-toggle"><span class="mode-label-b active-label">Beginner</span><label class="toggle-switch"><input type="checkbox" class="modeToggleMobile" onchange="toggleMode(this)"><div class="toggle-track"></div><div class="toggle-knob"></div></label><span class="mode-label-e">Expert</span></div>
     <a href="/">Home</a>
     <a href="/screener/" class="active">Stock Screener</a>
     <a href="/etf/">ETF Screener</a>
@@ -293,11 +316,21 @@
       </div>
       <div id="last-run" class="text-slate-500 text-xs"></div>
     </div>
-    <div class="mt-4 card p-5 border-l-4 border-indigo-500" style="background:linear-gradient(135deg,#131b2e 0%,#1e293b 100%);">
+    <div class="mt-4 card p-5 border-l-4 border-indigo-500 beginner-only" style="background:linear-gradient(135deg,#131b2e 0%,#1e293b 100%);">
       <p class="text-sm text-slate-200 font-medium mb-2">What is this tool?</p>
       <p class="text-xs text-slate-400 leading-relaxed">
-        This screener scans all ~500 stocks in the S&amp;P 500 in real time and filters them against your criteria — valuation, income, growth, financial health, analyst sentiment, and options.
+        This screener scans all ~500 stocks in the <strong class="text-slate-300">S&amp;P 500</strong> in real time and filters them against your criteria — valuation, income, growth, financial health, analyst sentiment, and options.
         Use it to find undervalued stocks, income-generating opportunities, growth momentum plays, or put-selling candidates with attractive premiums.
+      </p>
+      <p class="text-xs text-slate-400 leading-relaxed mt-2">
+        <strong class="text-slate-300">What is the S&amp;P 500?</strong> The S&amp;P 500 is an index that tracks the 500 largest publicly traded companies in the United States — names like Apple, Microsoft, Amazon, and Johnson &amp; Johnson. It's widely considered the best single gauge of the U.S. stock market's health. When people say "the market is up," they're usually referring to the S&amp;P 500. Historically, it has returned about 10% per year on average (before inflation).
+      </p>
+      <p class="text-xs text-slate-400 leading-relaxed mt-2">
+        <strong class="text-slate-300">Key terms for beginners:</strong>
+        A <em>stock</em> is a share of ownership in a company. When you buy a stock, you own a tiny piece of that business.
+        <em>Market cap</em> is the total value of a company (share price × number of shares).
+        A <em>dividend</em> is cash a company pays to shareholders from its profits — like earning interest on your investment.
+        <em>P/E ratio</em> (price-to-earnings) tells you how much investors are paying for each dollar of profit — lower often means cheaper, but not always better.
       </p>
       <p class="text-xs text-slate-400 leading-relaxed mt-2">
         <strong class="text-slate-300">How to use:</strong> Pick a strategy preset or set your own filters, then click <em>Run Screen</em>. Click any result row to expand an inline summary or open the full detail view with charts and options chains.
@@ -305,7 +338,7 @@
     </div>
 
     <!-- ═══ Quick Screen Cards (homepage) ═══ -->
-    <div id="quick-screen-cards" class="grid grid-cols-2 lg:grid-cols-4 gap-4 mt-6">
+    <div id="quick-screen-cards" class="grid grid-cols-2 lg:grid-cols-4 gap-4 mt-6 beginner-only">
       <a class="preset-card" href="javascript:void(0)" onclick="applyPreset('value')">
         <div class="icon">📉</div>
         <h3>Value Picks</h3>
@@ -387,7 +420,7 @@
               <label class="flex items-center gap-2 cursor-pointer">
                 <input type="checkbox" id="pe_below_historical" class="w-4 h-4 rounded accent-indigo-500" />
                 <span class="text-sm font-medium text-slate-200">P/E below historical average</span>
-                <span class="info-icon" data-tip="Compares today's trailing P/E to the stock's own multi-year average. When below its norm, the stock may be cheaper than usual.">i</span>
+                <span class="info-icon beginner-only" data-tip="Compares today's trailing P/E to the stock's own multi-year average. When below its norm, the stock may be cheaper than usual.">i</span>
               </label>
               <div id="pe-discount-row" class="flex items-center gap-3 pl-6" style="opacity:0.3">
                 <span class="text-xs text-slate-400">Min discount:</span>
@@ -398,7 +431,7 @@
             <div class="space-y-2">
               <div class="flex items-center gap-2">
                 <p class="text-sm font-medium text-slate-200">Price Range ($)</p>
-                <span class="info-icon" data-tip="Filter by current share price. Useful for position sizing.">i</span>
+                <span class="info-icon beginner-only" data-tip="Filter by current share price. Useful for position sizing.">i</span>
               </div>
               <div class="flex items-center gap-2">
                 <input type="number" id="min_price" placeholder="Min" min="0" step="0.01" class="input-field" />
@@ -409,7 +442,7 @@
             <div class="space-y-2">
               <div class="flex items-center gap-2">
                 <p class="text-sm font-medium text-slate-200">Price / Book</p>
-                <span class="info-icon" data-tip="P/B compares price to net asset value. Under 1 = buying assets below book value. Value investors target P/B below 2–3.">i</span>
+                <span class="info-icon beginner-only" data-tip="P/B compares price to net asset value. Under 1 = buying assets below book value. Value investors target P/B below 2–3.">i</span>
               </div>
               <div class="flex items-center gap-2">
                 <input type="number" id="min_pb" placeholder="Min" min="0" step="0.1" class="input-field" />
@@ -426,7 +459,7 @@
             <div class="space-y-2">
               <div class="flex items-center gap-2">
                 <p class="text-sm font-medium text-slate-200">Dividend Yield (%)</p>
-                <span class="info-icon" data-tip="Annual dividend as % of share price. 2–4% is healthy. Above 6% can be a warning sign.">i</span>
+                <span class="info-icon beginner-only" data-tip="Annual dividend as % of share price. 2–4% is healthy. Above 6% can be a warning sign.">i</span>
               </div>
               <div class="flex items-center gap-2">
                 <input type="number" id="min_div_yield" placeholder="Min" min="0" step="0.1" class="input-field" />
@@ -437,21 +470,21 @@
             <div class="space-y-2">
               <div class="flex items-center gap-2">
                 <p class="text-sm font-medium text-slate-200">Max Payout Ratio (%)</p>
-                <span class="info-icon" data-tip="% of earnings paid as dividends. Under 60% is sustainable. Over 80% means most earnings go to dividends, leaving little for growth or safety.">i</span>
+                <span class="info-icon beginner-only" data-tip="% of earnings paid as dividends. Under 60% is sustainable. Over 80% means most earnings go to dividends, leaving little for growth or safety.">i</span>
               </div>
               <input type="number" id="max_payout_ratio" placeholder="e.g. 75" min="0" step="1" class="input-field" />
             </div>
             <div class="space-y-2">
               <div class="flex items-center gap-2">
                 <p class="text-sm font-medium text-slate-200">Min Dividend Streak (yrs)</p>
-                <span class="info-icon" data-tip="Minimum consecutive years the company has paid a dividend. 10+ years indicates a reliable income stock. 25+ = Dividend Aristocrat.">i</span>
+                <span class="info-icon beginner-only" data-tip="Minimum consecutive years the company has paid a dividend. 10+ years indicates a reliable income stock. 25+ = Dividend Aristocrat.">i</span>
               </div>
               <input type="number" id="min_div_streak" placeholder="e.g. 10" min="0" step="1" class="input-field" />
             </div>
             <div class="space-y-2">
               <div class="flex items-center gap-2">
                 <p class="text-sm font-medium text-slate-200">Ex-Dividend Date</p>
-                <span class="info-icon" data-tip="Filter stocks by upcoming ex-dividend date. Buy before the ex-date to receive the next dividend payment.">i</span>
+                <span class="info-icon beginner-only" data-tip="Filter stocks by upcoming ex-dividend date. Buy before the ex-date to receive the next dividend payment.">i</span>
               </div>
               <select id="ex_div_window" class="input-field">
                 <option value="">Any</option>
@@ -469,21 +502,21 @@
             <div class="space-y-2">
               <div class="flex items-center gap-2">
                 <p class="text-sm font-medium text-slate-200">Revenue Growth YoY (%)</p>
-                <span class="info-icon" data-tip="Year-over-year revenue growth. Above 10% is solid, above 20% is strong growth.">i</span>
+                <span class="info-icon beginner-only" data-tip="Year-over-year revenue growth. Above 10% is solid, above 20% is strong growth.">i</span>
               </div>
               <input type="number" id="min_revenue_growth" placeholder="Min %" step="1" class="input-field" />
             </div>
             <div class="space-y-2">
               <div class="flex items-center gap-2">
                 <p class="text-sm font-medium text-slate-200">EPS Growth (%)</p>
-                <span class="info-icon" data-tip="Earnings per share growth. Positive means growing profitability. 10%+ is strong.">i</span>
+                <span class="info-icon beginner-only" data-tip="Earnings per share growth. Positive means growing profitability. 10%+ is strong.">i</span>
               </div>
               <input type="number" id="min_eps_growth" placeholder="Min %" step="1" class="input-field" />
             </div>
             <div class="space-y-2">
               <div class="flex items-center gap-2">
                 <p class="text-sm font-medium text-slate-200">52-Week Performance (%)</p>
-                <span class="info-icon" data-tip="Price change from 52-week low to current. Shows how much the stock has gained over the past year relative to its low.">i</span>
+                <span class="info-icon beginner-only" data-tip="Price change from 52-week low to current. Shows how much the stock has gained over the past year relative to its low.">i</span>
               </div>
               <div class="flex items-center gap-2">
                 <input type="number" id="min_w52_perf" placeholder="Min" step="1" class="input-field" />
@@ -494,35 +527,35 @@
             <div class="space-y-2">
               <div class="flex items-center gap-2">
                 <p class="text-sm font-medium text-slate-200">Distance from 52-Wk High (%)</p>
-                <span class="info-icon" data-tip="How far below the 52-week high. Under 10% = near the top (momentum). Over 30% = potentially oversold.">i</span>
+                <span class="info-icon beginner-only" data-tip="How far below the 52-week high. Under 10% = near the top (momentum). Over 30% = potentially oversold.">i</span>
               </div>
               <input type="number" id="max_w52_dist_high" placeholder="Max %" step="1" class="input-field" />
             </div>
             <div class="space-y-2">
               <div class="flex items-center gap-2">
                 <p class="text-sm font-medium text-slate-200">Debt-to-Equity (max ratio)</p>
-                <span class="info-icon" data-tip="Total debt / shareholder equity. Under 1.0 = conservatively financed. Over 2.0 = highly leveraged.">i</span>
+                <span class="info-icon beginner-only" data-tip="Total debt / shareholder equity. Under 1.0 = conservatively financed. Over 2.0 = highly leveraged.">i</span>
               </div>
               <input type="number" id="max_debt_to_equity" placeholder="e.g. 1.5" min="0" step="0.1" class="input-field" />
             </div>
             <div class="space-y-2">
               <div class="flex items-center gap-2">
                 <p class="text-sm font-medium text-slate-200">Current Ratio (min)</p>
-                <span class="info-icon" data-tip="Current assets / current liabilities. Above 1.0 = can pay short-term debts. Above 1.5 = healthy liquidity.">i</span>
+                <span class="info-icon beginner-only" data-tip="Current assets / current liabilities. Above 1.0 = can pay short-term debts. Above 1.5 = healthy liquidity.">i</span>
               </div>
               <input type="number" id="min_current_ratio" placeholder="e.g. 1.5" min="0" step="0.1" class="input-field" />
             </div>
             <div class="space-y-2">
               <div class="flex items-center gap-2">
                 <p class="text-sm font-medium text-slate-200">FCF Yield (%)</p>
-                <span class="info-icon" data-tip="Free cash flow / market cap. Shows how much cash the business generates per dollar of valuation. 5%+ is attractive.">i</span>
+                <span class="info-icon beginner-only" data-tip="Free cash flow / market cap. Shows how much cash the business generates per dollar of valuation. 5%+ is attractive.">i</span>
               </div>
               <input type="number" id="min_fcf_yield" placeholder="Min %" step="0.5" class="input-field" />
             </div>
             <div class="space-y-2">
               <div class="flex items-center gap-2">
                 <p class="text-sm font-medium text-slate-200">Operating Margin (%)</p>
-                <span class="info-icon" data-tip="Operating income / revenue. Higher = more efficient. Above 15% is solid; above 25% is excellent.">i</span>
+                <span class="info-icon beginner-only" data-tip="Operating income / revenue. Higher = more efficient. Above 15% is solid; above 25% is excellent.">i</span>
               </div>
               <input type="number" id="min_operating_margin" placeholder="Min %" step="1" class="input-field" />
             </div>
@@ -535,7 +568,7 @@
             <div class="space-y-2">
               <div class="flex items-center gap-2">
                 <p class="text-sm font-medium text-slate-200">Analyst Recommendation</p>
-                <span class="info-icon" data-tip="Filter by Wall Street consensus. Select one or more rating levels.">i</span>
+                <span class="info-icon beginner-only" data-tip="Filter by Wall Street consensus. Select one or more rating levels.">i</span>
               </div>
               <div class="flex flex-wrap gap-2 mt-1">
                 <label class="flex items-center gap-1.5 cursor-pointer text-xs text-slate-300"><input type="checkbox" value="strong_buy" class="analyst-rec-cb accent-indigo-500 w-3.5 h-3.5" /> Strong Buy</label>
@@ -548,14 +581,14 @@
             <div class="space-y-2">
               <div class="flex items-center gap-2">
                 <p class="text-sm font-medium text-slate-200">Min Analyst Count</p>
-                <span class="info-icon" data-tip="Minimum number of analysts covering the stock. More coverage = more reliable consensus. 5+ is decent, 10+ is well covered.">i</span>
+                <span class="info-icon beginner-only" data-tip="Minimum number of analysts covering the stock. More coverage = more reliable consensus. 5+ is decent, 10+ is well covered.">i</span>
               </div>
               <input type="number" id="min_analyst_count" placeholder="e.g. 5" min="0" step="1" class="input-field" />
             </div>
             <div class="space-y-2">
               <div class="flex items-center gap-2">
                 <p class="text-sm font-medium text-slate-200">Min Upside to Target (%)</p>
-                <span class="info-icon" data-tip="Difference between analyst mean target price and current price. 15%+ upside means analysts think the stock has room to run.">i</span>
+                <span class="info-icon beginner-only" data-tip="Difference between analyst mean target price and current price. 15%+ upside means analysts think the stock has room to run.">i</span>
               </div>
               <input type="number" id="min_target_upside" placeholder="Min %" step="1" class="input-field" />
             </div>
@@ -568,7 +601,7 @@
             <label class="flex items-center gap-2 cursor-pointer">
               <input type="checkbox" id="enable_options" class="w-4 h-4 rounded accent-violet-500" />
               <span class="text-sm font-medium text-slate-200">Enable options filters</span>
-              <span class="info-icon" data-tip="Fetches the ATM put for the nearest ~30 DTE expiration for each stock. Adds ~2–4 min to scan time.">i</span>
+              <span class="info-icon beginner-only" data-tip="Fetches the ATM put for the nearest ~30 DTE expiration for each stock. Adds ~2–4 min to scan time.">i</span>
             </label>
             <span id="options-slow-warn" class="hidden text-xs text-amber-400 bg-amber-950 border border-amber-800 rounded-full px-3 py-0.5">⚠ Adds ~2–4 min to scan</span>
           </div>
@@ -576,7 +609,7 @@
             <div class="space-y-2">
               <div class="flex items-center gap-2">
                 <p class="text-sm font-medium text-slate-200">Implied Vol (%)</p>
-                <span class="info-icon" data-tip="Annualized IV. Higher = larger premiums. Most put sellers target IV above 30–40%.">i</span>
+                <span class="info-icon beginner-only" data-tip="Annualized IV. Higher = larger premiums. Most put sellers target IV above 30–40%.">i</span>
               </div>
               <div class="flex items-center gap-2">
                 <input type="number" id="min_put_iv" placeholder="Min" min="0" step="1" class="input-field" disabled />
@@ -630,6 +663,19 @@
         <p class="text-lg">No stocks matched your criteria.</p>
         <p class="text-sm mt-1">Try relaxing the filters.</p>
       </div>
+    </div>
+
+    <!-- Beginner: Results guidance -->
+    <div class="edu-guidance beginner-only" id="eduGuidance" style="display:none">
+      <h3>📊 Understanding Stock Screening Results</h3>
+      <ul>
+        <li><strong>P/E Ratio (Price-to-Earnings):</strong> How much you pay per dollar of earnings. Lower P/E can mean a stock is undervalued. The S&P 500 average is roughly 20-25. Below 15 is often considered "value."</li>
+        <li><strong>Dividend Yield:</strong> Annual dividend income as a percentage of the stock price. 2-4% is moderate. Above 5% is high yield but may signal risk — check the payout ratio to see if it's sustainable.</li>
+        <li><strong>52-Week Performance:</strong> How much the stock has gained from its yearly low. Near the 52-week high = strong momentum. Well below = potential value play or a warning sign.</li>
+        <li><strong>Debt-to-Equity:</strong> How much debt the company carries vs. shareholder equity. Under 1.0 is conservative. Over 2.0 means heavy leverage — riskier in downturns.</li>
+        <li><strong>Analyst Target Upside:</strong> The gap between current price and Wall Street's average target. 15%+ upside means analysts see room to grow, but targets are estimates, not guarantees.</li>
+        <li><strong>Click any row</strong> to see an inline summary. <strong>Double-click</strong> for the full detail view with price charts and options data.</li>
+      </ul>
     </div>
 
   </div>
@@ -772,9 +818,7 @@ function positionTooltip(e) {
 // SECTOR MULTI-SELECT
 // ════════════════════════════════════════════════
 const sectorDropdown = document.getElementById('sector-dropdown');
-SECTORS.forEach(s => {
-  sectorDropdown.innerHTML += `<label><input type="checkbox" value="${s}" class="sector-cb" onchange="updateSectorLabel()" /> ${s}</label>`;
-});
+sectorDropdown.innerHTML = SECTORS.map(s => `<label><input type="checkbox" value="${s}" class="sector-cb" onchange="updateSectorLabel()" /> ${s}</label>`).join('');
 
 function toggleMultiSelect(id) {
   const dd = document.querySelector(`#${id} .multi-select-dropdown`);
@@ -1083,6 +1127,7 @@ async function pollJob(job_id) {
 // ════════════════════════════════════════════════
 function showResults(results){
   resultsPanel.classList.remove('hidden');
+  var eg=document.getElementById('eduGuidance'); if(eg) eg.style.display='';
   resultSummary.textContent=`${results.length} stock${results.length!==1?'s':''} matched`;
 
   // Aggregate stats
@@ -1565,6 +1610,23 @@ if(presetParam && PRESETS[presetParam]) {
   fetchBanner();
   setInterval(fetchBanner, 120000);
 })();
+// Mode toggle
+let expertMode = localStorage.getItem('ca_mode') === 'expert';
+function toggleMode(src) {
+  if (src) expertMode = src.checked;
+  else expertMode = document.getElementById('modeToggle').checked;
+  localStorage.setItem('ca_mode', expertMode ? 'expert' : 'beginner');
+  applyMode();
+}
+function applyMode() {
+  document.getElementById('modeToggle').checked = expertMode;
+  document.querySelectorAll('.modeToggleMobile').forEach(function(el){ el.checked = expertMode; });
+  document.querySelectorAll('.mode-label-b').forEach(function(el){ el.classList.toggle('active-label', !expertMode); });
+  document.querySelectorAll('.mode-label-e').forEach(function(el){ el.classList.toggle('active-label', expertMode); });
+  document.querySelectorAll('.beginner-only').forEach(function(el){ el.classList.toggle('edu-hide', expertMode); });
+}
+applyMode();
+
 document.addEventListener('click',function(e){var w=document.getElementById('toolsWrap');if(w&&!w.contains(e.target))w.classList.remove('open');var m=document.getElementById('mobileMenu');if(m&&!e.target.closest('.ca-hamburger')&&!m.contains(e.target))m.classList.remove('open');});
 </script>
 </body>
