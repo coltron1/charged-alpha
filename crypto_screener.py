@@ -19,12 +19,19 @@ def _fetch_coins():
         "sparkline": False,
         "price_change_percentage": "7d",
     }
-    headers = {"Accept": "application/json"}
-    resp = requests.get(url, params=params, headers=headers, timeout=30)
-    resp.raise_for_status()
-    data = resp.json()
-    _cache["coins"] = (time.time(), data)
-    return data
+    headers = {"Accept": "application/json", "User-Agent": "Mozilla/5.0"}
+    try:
+        resp = requests.get(url, params=params, headers=headers, timeout=30)
+        resp.raise_for_status()
+        data = resp.json()
+        _cache["coins"] = (time.time(), data)
+        return data
+    except Exception as e:
+        print(f"CoinGecko fetch error: {e}")
+        # Return cached data if available, even if expired
+        if cached:
+            return cached[1]
+        return []
 
 def screen_cryptos(criteria, on_progress=None, on_match=None):
     coins = _fetch_coins()
