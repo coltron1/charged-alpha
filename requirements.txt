@@ -6,3 +6,4 @@ pandas>=2.0.0
 requests
 lxml
 html5lib
+supabase
