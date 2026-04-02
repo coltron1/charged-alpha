@@ -219,8 +219,12 @@ def get_etf_data(symbol):
             except (TypeError, ValueError):
                 total_assets = None
 
-        # Dividend yield — yfinance returns as decimal (0.025 = 2.5%)
-        dividend_yield = normalize_div_yield(info.get("yield") or info.get("dividendYield"))
+        # Dividend yield — prefer trailingAnnualDividendYield (always decimal)
+        raw_trailing = info.get("trailingAnnualDividendYield")
+        if raw_trailing:
+            dividend_yield = round(float(raw_trailing) * 100, 2)
+        else:
+            dividend_yield = normalize_div_yield(info.get("yield") or info.get("dividendYield"))
 
         # 52-week calculations
         w52_high = _safe_float(info, "fiftyTwoWeekHigh")
@@ -456,7 +460,11 @@ def get_etf_detail(symbol):
 
         total_assets = info.get("totalAssets")
 
-        dividend_yield = normalize_div_yield(info.get("yield") or info.get("dividendYield"))
+        raw_trailing = info.get("trailingAnnualDividendYield")
+        if raw_trailing:
+            dividend_yield = round(float(raw_trailing) * 100, 2)
+        else:
+            dividend_yield = normalize_div_yield(info.get("yield") or info.get("dividendYield"))
 
         etf_info = {
             "symbol": symbol,

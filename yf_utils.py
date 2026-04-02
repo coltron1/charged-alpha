@@ -95,11 +95,18 @@ def safe_float(info, key, scale=1.0):
 
 def normalize_div_yield(raw):
     """Normalize yfinance dividendYield — returns percentage or None.
-    yfinance always returns decimal (0.025 = 2.5%), so multiply by 100."""
+    yfinance inconsistently returns dividendYield as a percentage (2.5 = 2.5%)
+    or decimal (0.025 = 2.5%). Use trailingAnnualDividendYield (always decimal)
+    when available, or detect format from dividendYield."""
     if not raw:
         return None
     raw = float(raw)
-    return round(raw * 100, 2)
+    # Values > 1 are already percentages (e.g., 2.5 = 2.5%)
+    # Values < 0.2 are decimals (e.g., 0.025 = 2.5%) — multiply by 100
+    # Threshold of 0.2 handles even 20% yields correctly
+    if raw < 0.2:
+        return round(raw * 100, 2)
+    return round(raw, 2)
 
 
 # ── Chart fetcher (shared across all tools) ────────────────────────────────

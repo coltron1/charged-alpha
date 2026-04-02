@@ -195,7 +195,7 @@ def get_options_data(ticker_obj, current_price):
         return {}
 
 
-def get_stock_data(symbol, fetch_options=False, hist_close=None, need_hist_pe=True):
+def get_stock_data(symbol, fetch_options=False, hist_close=None, need_hist_pe=True, need_div_streak=False):
     t, info = _fetch_ticker_info(symbol)
     if t is None or info is None:
         return None
@@ -236,14 +236,18 @@ def get_stock_data(symbol, fetch_options=False, hist_close=None, need_hist_pe=Tr
             if w52_high > 0:
                 w52_dist_high = round((w52_high - current_price) / w52_high * 100, 1)
 
-        # Dividend yield — yfinance returns as decimal (0.025 = 2.5%)
-        dividend_yield_pct = normalize_div_yield(info.get("dividendYield"))
+        # Dividend yield — prefer trailingAnnualDividendYield (always decimal)
+        # Fall back to dividendYield which may already be a percentage
+        raw_trailing = info.get("trailingAnnualDividendYield")
+        if raw_trailing:
+            dividend_yield_pct = round(float(raw_trailing) * 100, 2)
+        else:
+            dividend_yield_pct = normalize_div_yield(info.get("dividendYield"))
 
-        # Consecutive dividend years — only compute if we have a yield
-        # (t.dividends is an extra API call, so skip unless div yield exists)
+        # Consecutive dividend years — compute when needed and stock pays a dividend
         div_streak = None
-        if raw_dy and raw_dy > 0 and need_hist_pe:
-            # Only compute streak if in detail mode (not Phase 1 cheap screening)
+        raw_dy = info.get("dividendYield")
+        if need_div_streak and raw_dy and float(raw_dy) > 0:
             try:
                 divs = t.dividends
                 if divs is not None and not divs.empty:
@@ -386,7 +390,7 @@ def get_stock_detail(symbol):
             "price_to_book": _safe("priceToBook"),
             "market_cap": info.get("marketCap"),
             "beta": _safe("beta"),
-            "dividend_yield": normalize_div_yield(info.get("dividendYield")),
+            "dividend_yield": round(float(info.get("trailingAnnualDividendYield")) * 100, 2) if info.get("trailingAnnualDividendYield") else normalize_div_yield(info.get("dividendYield")),
             "avg_volume": info.get("averageVolume"),
             "volume": info.get("volume") or info.get("regularMarketVolume"),
             "sector": info.get("sector"),
@@ -555,7 +559,7 @@ def _passes_cheap_criteria(stock, criteria):
     max_payout = criteria.get("max_payout_ratio")
     if max_payout is not None:
         pr = stock.get("payout_ratio")
-        if pr is None or pr > max_payout:
+        if pr is not None and pr > max_payout:
             return False
     # Consecutive dividend years
     min_streak = criteria.get("min_div_streak")
@@ -651,6 +655,7 @@ def screen_stocks(criteria, on_progress=None, on_match=None):
         for k in ["min_put_iv", "max_put_iv", "max_put_spread_pct",
                    "min_put_oi", "min_put_volume"]
     )
+    need_div_streak = criteria.get("min_div_streak") is not None
 
     total = len(tickers)
     processed = 0
@@ -665,7 +670,7 @@ def screen_stocks(criteria, on_progress=None, on_match=None):
 
     def phase1(symbol):
         nonlocal processed
-        data = get_stock_data(symbol, fetch_options=False, need_hist_pe=False)
+        data = get_stock_data(symbol, fetch_options=False, need_hist_pe=False, need_div_streak=need_div_streak)
         with lock:
             processed += 1
             if on_progress:
