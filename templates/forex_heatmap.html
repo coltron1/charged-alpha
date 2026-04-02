@@ -10,7 +10,7 @@
     gtag('config', 'G-HJ72GKBEFW');
   </script>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Forex Heatmap â Charged Alpha</title>
+<title>Forex Heatmap — Charged Alpha</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <style>
@@ -94,7 +94,7 @@ tr:hover td{background:rgba(20,184,166,.04)}
 <body>
 <nav class="ca-nav">
   <div style="display:flex;align-items:center">
-    <a href="/" class="logo"><div class="logo-bolt">â¡</div>CHARGED ALPHA</a>
+    <a href="/" class="logo"><div class="logo-bolt">⚡</div>CHARGED ALPHA</a>
     <span class="ca-nav-title">Forex Heatmap</span>
   </div>
   <div style="display:flex;align-items:center;gap:8px">
@@ -120,6 +120,8 @@ tr:hover td{background:rgba(20,184,166,.04)}
           <a href="/charts/">Stock Charts</a>
         </div>
       </div>
+    <a href="/auth/login" style="padding:6px 14px;border-radius:8px;font-size:12px;font-weight:600;color:#94a3b8;border:1px solid #334155;text-decoration:none;transition:all .15s;">Sign In</a>
+    <a href="/auth/register" style="padding:6px 14px;border-radius:8px;font-size:12px;font-weight:600;color:white;background:linear-gradient(135deg,#6366f1,#7c3aed);text-decoration:none;transition:all .15s;">Sign Up</a>
     </div>
   </div>
   <button class="ca-hamburger" onclick="document.getElementById('mobileMenu').classList.toggle('open')">
@@ -139,12 +141,15 @@ tr:hover td{background:rgba(20,184,166,.04)}
     <a href="/earnings/">Earnings Calendar</a>
     <a href="/gold/">Precious Metals</a>
           <a href="/charts/">Stock Charts</a>
+    <div style="height:1px;background:#1e293b;margin:8px 0"></div>
+    <a href="/auth/login">Sign In</a>
+    <a href="/auth/register" style="color:#a5b4fc">Sign Up</a>
   </div>
 </nav>
 <div class="container">
   <div class="edu-intro beginner-only">
     <h3>What is this tool?</h3>
-    <p>The Forex (foreign exchange) Heatmap shows how major currency pairs are performing against each other. Currencies are always traded in pairs â for example, EUR/USD means you're comparing the Euro to the US Dollar. Green cells mean the first currency is strengthening against the second; red means it's weakening. The Currency Strength Index at the bottom aggregates all pairs to show which currencies are strongest and weakest overall. Use the timeframe buttons to compare short-term vs. long-term trends. Click any cell to see a detailed price chart.</p>
+    <p>The Forex (foreign exchange) Heatmap shows how major currency pairs are performing against each other. Currencies are always traded in pairs — for example, EUR/USD means you're comparing the Euro to the US Dollar. Green cells mean the first currency is strengthening against the second; red means it's weakening. The Currency Strength Index at the bottom aggregates all pairs to show which currencies are strongest and weakest overall. Use the timeframe buttons to compare short-term vs. long-term trends. Click any cell to see a detailed price chart.</p>
   </div>
   <div class="tf-btns">
     <button class="tf-btn active" onclick="setTF('1d',this)">1D</button>
@@ -169,7 +174,7 @@ tr:hover td{background:rgba(20,184,166,.04)}
   </div>
 
   <div class="section-title">Currency Strength Index</div>
-  <div class="edu-hint beginner-only">This index averages each currency's performance across all its pairs. A positive value means the currency is generally strengthening; negative means weakening. Useful for spotting broad trends â if USD is strong across the board, that affects stocks, commodities, and international investments too.</div>
+  <div class="edu-hint beginner-only">This index averages each currency's performance across all its pairs. A positive value means the currency is generally strengthening; negative means weakening. Useful for spotting broad trends — if USD is strong across the board, that affects stocks, commodities, and international investments too.</div>
   <div class="card" id="strengthCard"></div>
   <div class="refresh-note">Auto-refreshes every 2 minutes</div>
 </div>

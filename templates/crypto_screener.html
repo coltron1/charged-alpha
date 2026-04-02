@@ -10,7 +10,7 @@
     gtag('config', 'G-HJ72GKBEFW');
   </script>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Crypto Screener â Charged Alpha</title>
+<title>Crypto Screener — Charged Alpha</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <style>
@@ -97,7 +97,7 @@ tr:hover td{background:rgba(99,102,241,.04)}
 <body>
 <nav class="ca-nav">
   <div style="display:flex;align-items:center">
-    <a href="/" class="logo"><div class="logo-bolt">â¡</div>CHARGED ALPHA</a>
+    <a href="/" class="logo"><div class="logo-bolt">⚡</div>CHARGED ALPHA</a>
     <span class="ca-nav-title">Crypto Screener</span>
   </div>
   <div style="display:flex;align-items:center;gap:8px">
@@ -123,6 +123,8 @@ tr:hover td{background:rgba(99,102,241,.04)}
           <a href="/charts/">Stock Charts</a>
       </div>
     </div>
+    <a href="/auth/login" style="padding:6px 14px;border-radius:8px;font-size:12px;font-weight:600;color:#94a3b8;border:1px solid #334155;text-decoration:none;transition:all .15s;">Sign In</a>
+    <a href="/auth/register" style="padding:6px 14px;border-radius:8px;font-size:12px;font-weight:600;color:white;background:linear-gradient(135deg,#6366f1,#7c3aed);text-decoration:none;transition:all .15s;">Sign Up</a>
   </div><!-- /ca-nav-links + wrapper -->
   <button class="ca-hamburger" onclick="document.getElementById('mobileMenu').classList.toggle('open')">
     <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
@@ -141,6 +143,9 @@ tr:hover td{background:rgba(99,102,241,.04)}
     <a href="/earnings/">Earnings Calendar</a>
     <a href="/gold/">Precious Metals</a>
           <a href="/charts/">Stock Charts</a>
+    <div style="height:1px;background:#1e293b;margin:8px 0"></div>
+    <a href="/auth/login">Sign In</a>
+    <a href="/auth/register" style="color:#a5b4fc">Sign Up</a>
   </div>
 </nav>
 <div class="edu-intro beginner-only">
@@ -180,11 +185,11 @@ tr:hover td{background:rgba(99,102,241,.04)}
 <div class="edu-guidance beginner-only" id="eduGuidance" style="display:none">
   <h3>Reading Your Results</h3>
   <ul>
-    <li><strong>Market Cap</strong> â The total value of all circulating coins. Larger market caps generally mean more stability; smaller caps are riskier but may offer higher growth potential.</li>
-    <li><strong>24h &amp; 7d Change</strong> â Short-term momentum indicators. Green means the price is rising, red means falling. Compare both to see if a move is a brief spike or sustained trend.</li>
-    <li><strong>Volume</strong> â High trading volume confirms that price movement has real participation behind it. Low volume moves are more likely to reverse.</li>
-    <li><strong>Circ/Total %</strong> â Shows how much of the total coin supply is already in circulation. A low ratio means more coins could be released over time, potentially diluting value.</li>
-    <li><strong>Click any row</strong> to see a price chart â use the 7D/30D/90D/1Y buttons to see how the coin has performed over different timeframes.</li>
+    <li><strong>Market Cap</strong> — The total value of all circulating coins. Larger market caps generally mean more stability; smaller caps are riskier but may offer higher growth potential.</li>
+    <li><strong>24h &amp; 7d Change</strong> — Short-term momentum indicators. Green means the price is rising, red means falling. Compare both to see if a move is a brief spike or sustained trend.</li>
+    <li><strong>Volume</strong> — High trading volume confirms that price movement has real participation behind it. Low volume moves are more likely to reverse.</li>
+    <li><strong>Circ/Total %</strong> — Shows how much of the total coin supply is already in circulation. A low ratio means more coins could be released over time, potentially diluting value.</li>
+    <li><strong>Click any row</strong> to see a price chart — use the 7D/30D/90D/1Y buttons to see how the coin has performed over different timeframes.</li>
   </ul>
 </div>
 
@@ -208,14 +213,14 @@ let results=[], sortKey='rank', sortAsc=true, chartInstance=null, selectedCoin=n
 
 const cols=[
   {key:'rank',label:'#',align:'right',tip:'CoinGecko ranking by market cap'},
-  {key:'name',label:'Name',tip:'Cryptocurrency name â click a row to see the price chart'},
+  {key:'name',label:'Name',tip:'Cryptocurrency name — click a row to see the price chart'},
   {key:'symbol',label:'Symbol',tip:'Trading ticker symbol (e.g. BTC, ETH)'},
   {key:'price',label:'Price',align:'right',tip:'Current price in US dollars'},
   {key:'market_cap',label:'Market Cap',align:'right',tip:'Total value of all circulating coins (price Ã supply)'},
   {key:'change_24h',label:'24h %',align:'right',tip:'Price change over the last 24 hours'},
-  {key:'change_7d',label:'7d %',align:'right',tip:'Price change over the last 7 days â shows weekly trend'},
+  {key:'change_7d',label:'7d %',align:'right',tip:'Price change over the last 7 days — shows weekly trend'},
   {key:'volume',label:'Volume',align:'right',tip:'Total trading volume in the last 24 hours'},
-  {key:'supply_ratio',label:'Circ/Total %',align:'right',tip:'Circulating supply as % of total/max supply â lower means more coins could enter circulation'},
+  {key:'supply_ratio',label:'Circ/Total %',align:'right',tip:'Circulating supply as % of total/max supply — lower means more coins could enter circulation'},
 ];
 
 function applyPreset(p){
@@ -228,14 +233,14 @@ function applyPreset(p){
 function clearFilters(){fields.forEach(f=>document.getElementById(f).value='')}
 
 function fmt(v){
-  if(v==null) return 'â';
+  if(v==null) return '—';
   if(Math.abs(v)>=1e12) return '$'+(v/1e12).toFixed(2)+'T';
   if(Math.abs(v)>=1e9) return '$'+(v/1e9).toFixed(2)+'B';
   if(Math.abs(v)>=1e6) return '$'+(v/1e6).toFixed(1)+'M';
   if(Math.abs(v)>=1e3) return '$'+(v/1e3).toFixed(1)+'K';
   return '$'+v.toLocaleString();
 }
-function pct(v){return v==null?'â':(v>=0?'+':'')+v.toFixed(2)+'%'}
+function pct(v){return v==null?'—':(v>=0?'+':'')+v.toFixed(2)+'%'}
 
 async function runScreen(){
   const body={};
@@ -247,7 +252,7 @@ async function runScreen(){
   const{job_id}=await r.json();
   const poll=setInterval(async()=>{
     const s=await(await fetch('/crypto/api/screen/'+job_id)).json();
-    document.getElementById('progress').textContent=`${s.processed}/${s.total} screened â ${s.matches.length} matches`;
+    document.getElementById('progress').textContent=`${s.processed}/${s.total} screened — ${s.matches.length} matches`;
     if(s.status==='done'||s.status==='error'){
       clearInterval(poll);
       results=s.matches;
@@ -268,7 +273,7 @@ function renderTable(){
     return sortAsc?av-bv:bv-av;
   });
   document.getElementById('thead').innerHTML='<tr>'+cols.map(c=>
-    `<th class="${c.align==='right'?'right':''}" onclick="doSort('${c.key}')">${c.label}${sortKey===c.key?(sortAsc?' â²':' â¼'):''}${c.tip?'<span class="col-tip">'+c.tip+'</span>':''}</th>`
+    `<th class="${c.align==='right'?'right':''}" onclick="doSort('${c.key}')">${c.label}${sortKey===c.key?(sortAsc?' ▲':' ▼'):''}${c.tip?'<span class="col-tip">'+c.tip+'</span>':''}</th>`
   ).join('')+'</tr>';
   document.getElementById('tbody').innerHTML=sorted.map(r=>'<tr onclick="openModal(\''+r.id+'\',\''+r.name+'\')" style="cursor:pointer">'+cols.map(c=>{
     let v=r[c.key];
@@ -276,9 +281,9 @@ function renderTable(){
     if(c.key==='name') return `<td><div class="coin-info"><img class="coin-img" src="${r.image}" alt="">${v}</div></td>`;
     if(c.key==='change_24h'||c.key==='change_7d') return `<td class="${cls} ${v>0?'green':v<0?'red':''}">${pct(v)}</td>`;
     if(c.key==='market_cap'||c.key==='volume') return `<td class="${cls}">${fmt(v)}</td>`;
-    if(c.key==='price') return `<td class="${cls}">${v!=null?'$'+v.toLocaleString():'â'}</td>`;
-    if(c.key==='supply_ratio') return `<td class="${cls}">${v!=null?v+'%':'â'}</td>`;
-    return `<td class="${cls}">${v!=null?v:'â'}</td>`;
+    if(c.key==='price') return `<td class="${cls}">${v!=null?'$'+v.toLocaleString():'—'}</td>`;
+    if(c.key==='supply_ratio') return `<td class="${cls}">${v!=null?v+'%':'—'}</td>`;
+    return `<td class="${cls}">${v!=null?v:'—'}</td>`;
   }).join('')+'</tr>').join('');
 }
 

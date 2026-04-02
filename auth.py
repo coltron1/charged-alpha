@@ -133,8 +133,8 @@ def me():
 
 @auth_bp.route("/google")
 def google_login():
-    if not oauth.google:
-        flash("Google sign-in is not configured.", "error")
+    if not hasattr(oauth, 'google') or not os.environ.get("GOOGLE_CLIENT_ID"):
+        flash("Google sign-in is not available yet.", "error")
         return redirect(url_for("auth.login"))
     redirect_uri = url_for("auth.google_callback", _external=True)
     return oauth.google.authorize_redirect(redirect_uri)
@@ -172,8 +172,8 @@ def google_callback():
 
 @auth_bp.route("/github")
 def github_login():
-    if not oauth.github:
-        flash("GitHub sign-in is not configured.", "error")
+    if not hasattr(oauth, 'github') or not os.environ.get("GITHUB_CLIENT_ID"):
+        flash("GitHub sign-in is not available yet.", "error")
         return redirect(url_for("auth.login"))
     redirect_uri = url_for("auth.github_callback", _external=True)
     return oauth.github.authorize_redirect(redirect_uri)

@@ -35,7 +35,7 @@ import threading
 from concurrent.futures import ThreadPoolExecutor
 
 import yfinance as yf
-from flask import Flask, render_template, request, jsonify
+from flask import Flask, render_template, request, jsonify, redirect
 from flask_compress import Compress
 from flask_login import LoginManager, current_user, login_required
 
@@ -87,6 +87,15 @@ app.register_blueprint(auth_bp)
 
 with app.app_context():
     db.create_all()
+
+# ── Convenience redirects for auth ────────────────────────────────────────
+@app.route("/login")
+def login_redirect():
+    return redirect("/auth/login" + ("?" + request.query_string.decode() if request.query_string else ""))
+
+@app.route("/register")
+def register_redirect():
+    return redirect("/auth/register" + ("?" + request.query_string.decode() if request.query_string else ""))
 
 # ── Shared job store (auto-cleans after 10 min) ────────────────────────────
 job_store = JobStore(ttl=600)

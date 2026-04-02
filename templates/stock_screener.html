@@ -11,7 +11,7 @@
 </script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>S&amp;P 500 Stock Screener â Charged Alpha</title>
+  <title>S&amp;P 500 Stock Screener — Charged Alpha</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"></script>
   <style>
@@ -30,8 +30,8 @@
     th { cursor: pointer; user-select: none; white-space: nowrap; }
     th[title]:not([title=""]) { text-decoration: underline dotted #4b5563; text-underline-offset: 3px; }
     th:hover { color: #a5b4fc; }
-    th.sorted-asc::after { content: ' â'; color: #6366f1; }
-    th.sorted-desc::after { content: ' â'; color: #6366f1; }
+    th.sorted-asc::after { content: ' ↑'; color: #6366f1; }
+    th.sorted-desc::after { content: ' ↓'; color: #6366f1; }
     #results-table tbody tr.data-row { border-bottom: 1px solid #1e293b; cursor: pointer; }
     #results-table tbody tr.data-row:hover td { background: rgba(99,102,241,0.08); }
     .progress-bar-inner { height: 100%; border-radius: 9999px; background: linear-gradient(90deg,#6366f1,#818cf8); transition: width 0.4s ease; }
@@ -46,7 +46,7 @@
     .info-icon:hover { background:#6366f1; color:white; }
     #tooltip { position:fixed; background:#0f172a; border:1px solid #475569; border-radius:10px; padding:10px 14px; font-size:12px; color:#94a3b8; max-width:280px; z-index:9999; pointer-events:none; line-height:1.65; box-shadow:0 8px 32px rgba(0,0,0,.6); display:none; }
 
-    /* ââ Quick Bar ââ */
+    /* ── Quick Bar ── */
     .quick-bar { background:#131b2e; border:1px solid #1e3a5f; border-radius:12px; padding:14px 20px; display:flex; flex-wrap:wrap; gap:12px; align-items:center; }
     .cap-chip { padding:6px 14px; border-radius:20px; font-size:12px; font-weight:600; cursor:pointer; border:1px solid #334155; background:transparent; color:#64748b; transition:all .15s; user-select:none; }
     .cap-chip.active { border-color:#6366f1; color:#a5b4fc; background:rgba(99,102,241,.12); }
@@ -54,7 +54,7 @@
     .preset-select { background:#0f172a; border:1px solid #475569; border-radius:8px; color:#e2e8f0; padding:8px 12px; font-size:13px; outline:none; cursor:pointer; min-width:160px; }
     .preset-select:focus { border-color:#6366f1; }
 
-    /* ââ Multi-select dropdown ââ */
+    /* ── Multi-select dropdown ── */
     .multi-select { position:relative; display:inline-block; }
     .multi-select-btn { background:#0f172a; border:1px solid #475569; border-radius:8px; color:#94a3b8; padding:8px 12px; font-size:13px; cursor:pointer; min-width:160px; text-align:left; display:flex; align-items:center; justify-content:space-between; gap:6px; }
     .multi-select-btn:hover,.multi-select-btn:focus { border-color:#6366f1; outline:none; }
@@ -65,7 +65,7 @@
     .multi-select-dropdown label:hover { background:#1e293b; }
     .multi-select-dropdown input { accent-color:#6366f1; width:14px; height:14px; }
 
-    /* ââ Advanced filters panel ââ */
+    /* ── Advanced filters panel ── */
     .adv-toggle { display:inline-flex; align-items:center; gap:6px; cursor:pointer; color:#94a3b8; font-size:13px; font-weight:500; padding:6px 0; transition:color .15s; user-select:none; }
     .adv-toggle:hover { color:#a5b4fc; }
     .adv-toggle .chevron { transition:transform .2s; font-size:10px; }
@@ -79,11 +79,11 @@
     .filter-tab-content { display:none; }
     .filter-tab-content.active { display:block; }
 
-    /* ââ Inline detail card ââ */
+    /* ── Inline detail card ── */
     .inline-detail { background:#131b2e; border-left:3px solid #6366f1; }
     .inline-detail td { padding:0 !important; }
 
-    /* ââ Detail overlay ââ */
+    /* ── Detail overlay ── */
     #detail-overlay { position:fixed; inset:0; z-index:100; background:#0f172a; overflow-y:auto; display:none; }
     #detail-overlay.visible { display:block; }
     .metric-card { background:#131f35; border:1px solid #1e3a5f; border-radius:10px; padding:14px 16px; }
@@ -135,14 +135,14 @@
       .filter-tabs { overflow-x:auto; }
     }
 
-    /* ââ Homepage preset cards ââ */
+    /* ── Homepage preset cards ── */
     .preset-card { background:linear-gradient(135deg,#131b2e 0%,#1e293b 100%); border:1px solid #334155; border-radius:12px; padding:20px; cursor:pointer; transition:all .2s; text-decoration:none; color:inherit; display:block; }
     .preset-card:hover { border-color:#6366f1; transform:translateY(-2px); box-shadow:0 8px 24px rgba(0,0,0,.3); }
     .preset-card .icon { font-size:28px; margin-bottom:8px; }
     .preset-card h3 { font-size:15px; font-weight:700; color:#e2e8f0; margin-bottom:4px; }
     .preset-card p { font-size:12px; color:#64748b; line-height:1.5; }
 
-    /* ââ Nav bar ââ */
+    /* ── Nav bar ── */
     .ca-nav{background:#111827;border-bottom:1px solid #1e293b;padding:0 24px;display:flex;align-items:center;justify-content:space-between;height:56px;position:relative;z-index:100}
     .ca-nav .nav-logo{display:flex;align-items:center;gap:10px;font-weight:800;color:white;font-size:14px;text-decoration:none}
     .ca-nav .nav-bolt{width:36px;height:36px;background:linear-gradient(135deg,#6366f1,#8b5cf6);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:18px}
@@ -181,7 +181,7 @@
     .edu-guidance li{margin-bottom:4px}
     .edu-guidance strong{color:#e2e8f0}
 
-    /* ââ Live Ticker Banner ââ */
+    /* ── Live Ticker Banner ── */
     .ticker-banner {
       background: #0b1120;
       border-bottom: 1px solid #1e293b;
@@ -251,12 +251,12 @@
 </head>
 <body class="min-h-screen">
 
-<!-- âââââââââââââââââââââââââââââââââââââââââââââââââââââââ
+<!-- ═══════════════════════════════════════════════════════
      NAVIGATION
-     âââââââââââââââââââââââââââââââââââââââââââââââââââââââ -->
+     ═══════════════════════════════════════════════════════ -->
 <nav class="ca-nav">
   <div style="display:flex;align-items:center">
-    <a href="/" class="nav-logo"><div class="nav-bolt">â¡</div>CHARGED ALPHA</a>
+    <a href="/" class="nav-logo"><div class="nav-bolt">⚡</div>CHARGED ALPHA</a>
     <span class="ca-nav-title">Stock Screener</span>
   </div>
   <div style="display:flex;align-items:center;gap:8px">
@@ -282,6 +282,8 @@
           <a href="/charts/">Stock Charts</a>
       </div>
     </div>
+    <a href="/auth/login" style="padding:6px 14px;border-radius:8px;font-size:12px;font-weight:600;color:#94a3b8;border:1px solid #334155;text-decoration:none;transition:all .15s;">Sign In</a>
+    <a href="/auth/register" style="padding:6px 14px;border-radius:8px;font-size:12px;font-weight:600;color:white;background:linear-gradient(135deg,#6366f1,#7c3aed);text-decoration:none;transition:all .15s;">Sign Up</a>
   </div>
   </div>
   <button class="ca-hamburger" onclick="document.getElementById('mobileMenu').classList.toggle('open')">
@@ -301,23 +303,26 @@
     <a href="/earnings/">Earnings Calendar</a>
     <a href="/gold/">Precious Metals</a>
           <a href="/charts/">Stock Charts</a>
+    <div style="height:1px;background:#1e293b;margin:8px 0"></div>
+    <a href="/auth/login">Sign In</a>
+    <a href="/auth/register" style="color:#a5b4fc">Sign Up</a>
   </div>
 </nav>
 
-<!-- âââââââââââââââââââââââââââââââââââââââââââââââââââââââ
+<!-- ═══════════════════════════════════════════════════════
      LIVE TICKER BANNER
-     âââââââââââââââââââââââââââââââââââââââââââââââââââââââ -->
+     ═══════════════════════════════════════════════════════ -->
 <div id="ticker-banner" class="ticker-banner">
   <div class="ticker-track" id="ticker-track">
-    <span class="ticker-loading">Loading live tickersâ¦</span>
+    <span class="ticker-loading">Loading live tickers…</span>
   </div>
 </div>
 
 <div id="tooltip"></div>
 
-<!-- âââââââââââââââââââââââââââââââââââââââââââââââââââââââ
+<!-- ═══════════════════════════════════════════════════════
      SCREENER PAGE
-     âââââââââââââââââââââââââââââââââââââââââââââââââââââââ -->
+     ═══════════════════════════════════════════════════════ -->
 <div id="screener-page" class="p-6">
   <div class="max-w-7xl mx-auto mb-6">
     <div class="flex items-center justify-between">
@@ -331,25 +336,25 @@
     <div class="mt-4 card p-5 border-l-4 border-indigo-500 beginner-only" style="background:linear-gradient(135deg,#131b2e 0%,#1e293b 100%);">
       <p class="text-sm text-slate-200 font-medium mb-2">What is this tool?</p>
       <p class="text-xs text-slate-400 leading-relaxed">
-        This screener scans all ~500 stocks in the <strong class="text-slate-300">S&amp;P 500</strong> in real time and filters them against your criteria â valuation, income, growth, financial health, analyst sentiment, and options.
+        This screener scans all ~500 stocks in the <strong class="text-slate-300">S&amp;P 500</strong> in real time and filters them against your criteria — valuation, income, growth, financial health, analyst sentiment, and options.
         Use it to find undervalued stocks, income-generating opportunities, growth momentum plays, or put-selling candidates with attractive premiums.
       </p>
       <p class="text-xs text-slate-400 leading-relaxed mt-2">
-        <strong class="text-slate-300">What is the S&amp;P 500?</strong> The S&amp;P 500 is an index that tracks the 500 largest publicly traded companies in the United States â names like Apple, Microsoft, Amazon, and Johnson &amp; Johnson. It's widely considered the best single gauge of the U.S. stock market's health. When people say "the market is up," they're usually referring to the S&amp;P 500. Historically, it has returned about 10% per year on average (before inflation).
+        <strong class="text-slate-300">What is the S&amp;P 500?</strong> The S&amp;P 500 is an index that tracks the 500 largest publicly traded companies in the United States — names like Apple, Microsoft, Amazon, and Johnson &amp; Johnson. It's widely considered the best single gauge of the U.S. stock market's health. When people say "the market is up," they're usually referring to the S&amp;P 500. Historically, it has returned about 10% per year on average (before inflation).
       </p>
       <p class="text-xs text-slate-400 leading-relaxed mt-2">
         <strong class="text-slate-300">Key terms for beginners:</strong>
         A <em>stock</em> is a share of ownership in a company. When you buy a stock, you own a tiny piece of that business.
         <em>Market cap</em> is the total value of a company (share price Ã number of shares).
-        A <em>dividend</em> is cash a company pays to shareholders from its profits â like earning interest on your investment.
-        <em>P/E ratio</em> (price-to-earnings) tells you how much investors are paying for each dollar of profit â lower often means cheaper, but not always better.
+        A <em>dividend</em> is cash a company pays to shareholders from its profits — like earning interest on your investment.
+        <em>P/E ratio</em> (price-to-earnings) tells you how much investors are paying for each dollar of profit — lower often means cheaper, but not always better.
       </p>
       <p class="text-xs text-slate-400 leading-relaxed mt-2">
         <strong class="text-slate-300">How to use:</strong> Pick a strategy preset or set your own filters, then click <em>Run Screen</em>. Click any result row to expand an inline summary or open the full detail view with charts and options chains.
       </p>
     </div>
 
-    <!-- âââ Quick Screen Cards (homepage) âââ -->
+    <!-- ═══ Quick Screen Cards (homepage) ═══ -->
     <div id="quick-screen-cards" class="grid grid-cols-2 lg:grid-cols-4 gap-4 mt-6 beginner-only">
       <a class="preset-card" href="javascript:void(0)" onclick="applyPreset('value')">
         <div class="icon">ð</div>
@@ -367,7 +372,7 @@
         <p>Yield &gt;2%, sustainable payout, reliable income</p>
       </a>
       <a class="preset-card" href="javascript:void(0)" onclick="applyPreset('momentum')">
-        <div class="icon">â¡</div>
+        <div class="icon">⚡</div>
         <h3>Momentum</h3>
         <p>Near 52-week high, strong recent performance</p>
       </a>
@@ -376,13 +381,13 @@
 
   <div class="max-w-7xl mx-auto space-y-4">
 
-    <!-- âââ ZONE 1: Quick Bar âââ -->
+    <!-- ═══ ZONE 1: Quick Bar ═══ -->
     <div class="quick-bar">
       <!-- Sector multi-select -->
       <div class="multi-select" id="sector-select">
         <button type="button" class="multi-select-btn" onclick="toggleMultiSelect('sector-select')">
           <span class="ms-label">All Sectors</span>
-          <span class="arrow">â¾</span>
+          <span class="arrow">▾</span>
         </button>
         <div class="multi-select-dropdown" id="sector-dropdown"></div>
       </div>
@@ -397,11 +402,11 @@
 
       <!-- Strategy presets -->
       <select class="preset-select" id="preset-select" onchange="applyPreset(this.value)">
-        <option value="">â¡ Strategy Preset</option>
+        <option value="">⚡ Strategy Preset</option>
         <option value="value">ð Value Picks</option>
         <option value="growth">ð Growth Movers</option>
         <option value="dividend">ð° Dividend Hunters</option>
-        <option value="momentum">â¡ Momentum</option>
+        <option value="momentum">⚡ Momentum</option>
         <option value="custom">ð§ Custom</option>
       </select>
 
@@ -409,10 +414,10 @@
       <button class="btn-primary" id="run-btn-quick" onclick="submitScreen()" style="margin-left:auto;">Run Screen</button>
     </div>
 
-    <!-- âââ ZONE 2: Advanced Filters âââ -->
+    <!-- ═══ ZONE 2: Advanced Filters ═══ -->
     <div>
       <button class="adv-toggle" id="adv-toggle" onclick="toggleAdvanced()">
-        <span class="chevron">â¼</span> Advanced Filters <span id="adv-count" class="text-indigo-400 text-xs font-bold"></span>
+        <span class="chevron">▼</span> Advanced Filters <span id="adv-count" class="text-indigo-400 text-xs font-bold"></span>
       </button>
 
       <div class="adv-panel card p-5 mt-2" id="adv-panel">
@@ -446,29 +451,29 @@
               </div>
               <div class="flex items-center gap-2">
                 <input type="number" id="min_price" placeholder="Min" min="0" step="0.01" class="input-field" />
-                <span class="text-slate-500">â</span>
+                <span class="text-slate-500">–</span>
                 <input type="number" id="max_price" placeholder="Max" min="0" step="0.01" class="input-field" />
               </div>
             </div>
             <div class="space-y-2">
               <div class="flex items-center gap-2">
                 <p class="text-sm font-medium text-slate-200">Price / Book</p>
-                <span class="info-icon beginner-only" data-tip="P/B compares price to net asset value. Under 1 = buying assets below book value. Value investors target P/B below 2â3.">i</span>
+                <span class="info-icon beginner-only" data-tip="P/B compares price to net asset value. Under 1 = buying assets below book value. Value investors target P/B below 2–3.">i</span>
               </div>
               <div class="flex items-center gap-2">
                 <input type="number" id="min_pb" placeholder="Min" min="0" step="0.1" class="input-field" />
-                <span class="text-slate-500">â</span>
+                <span class="text-slate-500">–</span>
                 <input type="number" id="max_pb" placeholder="Max" min="0" step="0.1" class="input-field" />
               </div>
             </div>
             <div class="space-y-2">
               <div class="flex items-center gap-2">
                 <p class="text-sm font-medium text-slate-200">Implied Vol (%)</p>
-                <span class="info-icon beginner-only" data-tip="Annualized IV of the ATM put (~30 DTE). Higher = larger premiums. Most put sellers target IV above 30â40%. Using this adds ~2â4 min to scan time.">i</span>
+                <span class="info-icon beginner-only" data-tip="Annualized IV of the ATM put (~30 DTE). Higher = larger premiums. Most put sellers target IV above 30–40%. Using this adds ~2–4 min to scan time.">i</span>
               </div>
               <div class="flex items-center gap-2">
                 <input type="number" id="min_put_iv" placeholder="Min" min="0" step="1" class="input-field" />
-                <span class="text-slate-500">â</span>
+                <span class="text-slate-500">–</span>
                 <input type="number" id="max_put_iv" placeholder="Max" min="0" step="1" class="input-field" />
               </div>
             </div>
@@ -481,11 +486,11 @@
             <div class="space-y-2">
               <div class="flex items-center gap-2">
                 <p class="text-sm font-medium text-slate-200">Dividend Yield (%)</p>
-                <span class="info-icon beginner-only" data-tip="Annual dividend as % of share price. 2â4% is healthy. Above 6% can be a warning sign.">i</span>
+                <span class="info-icon beginner-only" data-tip="Annual dividend as % of share price. 2–4% is healthy. Above 6% can be a warning sign.">i</span>
               </div>
               <div class="flex items-center gap-2">
                 <input type="number" id="min_div_yield" placeholder="Min" min="0" step="0.1" class="input-field" />
-                <span class="text-slate-500">â</span>
+                <span class="text-slate-500">–</span>
                 <input type="number" id="max_div_yield" placeholder="Max" min="0" step="0.1" class="input-field" />
               </div>
             </div>
@@ -542,7 +547,7 @@
               </div>
               <div class="flex items-center gap-2">
                 <input type="number" id="min_w52_perf" placeholder="Min" step="1" class="input-field" />
-                <span class="text-slate-500">â</span>
+                <span class="text-slate-500">–</span>
                 <input type="number" id="max_w52_perf" placeholder="Max" step="1" class="input-field" />
               </div>
             </div>
@@ -627,7 +632,7 @@
     <!-- Progress -->
     <div id="progress-panel" class="card p-5 hidden">
       <div class="flex items-center justify-between mb-3">
-        <p class="text-sm font-medium text-slate-300" id="progress-label">Screening S&amp;P 500 stocksâ¦</p>
+        <p class="text-sm font-medium text-slate-300" id="progress-label">Screening S&amp;P 500 stocks…</p>
         <span id="progress-text" class="text-xs text-slate-400">0 / 0</span>
       </div>
       <div class="w-full bg-slate-700 rounded-full h-2">
@@ -636,7 +641,7 @@
       <p id="match-count-live" class="text-xs text-slate-500 mt-2">0 matches so far</p>
     </div>
 
-    <!-- âââ ZONE 3: Results âââ -->
+    <!-- ═══ ZONE 3: Results ═══ -->
     <div id="results-panel" class="card hidden">
       <div class="flex items-center justify-between p-5 border-b border-slate-700 flex-wrap gap-3">
         <div>
@@ -668,9 +673,9 @@
       <h3>ð Understanding Stock Screening Results</h3>
       <ul>
         <li><strong>P/E Ratio (Price-to-Earnings):</strong> How much you pay per dollar of earnings. Lower P/E can mean a stock is undervalued. The S&P 500 average is roughly 20-25. Below 15 is often considered "value."</li>
-        <li><strong>Dividend Yield:</strong> Annual dividend income as a percentage of the stock price. 2-4% is moderate. Above 5% is high yield but may signal risk â check the payout ratio to see if it's sustainable.</li>
+        <li><strong>Dividend Yield:</strong> Annual dividend income as a percentage of the stock price. 2-4% is moderate. Above 5% is high yield but may signal risk — check the payout ratio to see if it's sustainable.</li>
         <li><strong>52-Week Performance:</strong> How much the stock has gained from its yearly low. Near the 52-week high = strong momentum. Well below = potential value play or a warning sign.</li>
-        <li><strong>Debt-to-Equity:</strong> How much debt the company carries vs. shareholder equity. Under 1.0 is conservative. Over 2.0 means heavy leverage â riskier in downturns.</li>
+        <li><strong>Debt-to-Equity:</strong> How much debt the company carries vs. shareholder equity. Under 1.0 is conservative. Over 2.0 means heavy leverage — riskier in downturns.</li>
         <li><strong>Analyst Target Upside:</strong> The gap between current price and Wall Street's average target. 15%+ upside means analysts see room to grow, but targets are estimates, not guarantees.</li>
         <li><strong>Click any row</strong> to see an inline summary. <strong>Double-click</strong> for the full detail view with price charts and options data.</li>
       </ul>
@@ -680,13 +685,13 @@
 </div><!-- /screener-page -->
 
 
-<!-- âââââââââââââââââââââââââââââââââââââââââââââââââââââââ
+<!-- ═══════════════════════════════════════════════════════
      DETAIL OVERLAY
-     âââââââââââââââââââââââââââââââââââââââââââââââââââââââ -->
+     ═══════════════════════════════════════════════════════ -->
 <div id="detail-overlay">
   <div class="sticky top-0 z-10 bg-[#0b1220] border-b border-slate-700 px-6 py-4 flex flex-wrap items-center gap-4">
     <button id="detail-back" class="flex items-center gap-2 text-slate-400 hover:text-white transition-colors text-sm font-medium shrink-0">
-      <span class="text-lg leading-none">â</span> Back
+      <span class="text-lg leading-none">←</span> Back
     </button>
     <div class="w-px h-6 bg-slate-700 hidden sm:block"></div>
     <span id="detail-symbol" class="text-xl font-bold text-indigo-400"></span>
@@ -699,8 +704,8 @@
   <div class="max-w-7xl mx-auto p-6 space-y-6">
     <div id="detail-loading" class="hidden card p-16 text-center">
       <div class="inline-block w-8 h-8 border-2 border-indigo-500 border-t-transparent rounded-full animate-spin mb-4"></div>
-      <p class="text-slate-300 text-sm font-medium">Loading stock data &amp; option chainsâ¦</p>
-      <p class="text-slate-500 text-xs mt-1">Fetching up to 6 expiration dates â may take 15â30 seconds</p>
+      <p class="text-slate-300 text-sm font-medium">Loading stock data &amp; option chains…</p>
+      <p class="text-slate-500 text-xs mt-1">Fetching up to 6 expiration dates — may take 15–30 seconds</p>
     </div>
     <div id="detail-error" class="hidden card p-12 text-center">
       <p class="text-red-400 text-lg">Failed to load data</p>
@@ -733,19 +738,19 @@
           <div class="flex items-center gap-3 ml-auto flex-wrap">
             <span class="text-xs text-slate-400 whitespace-nowrap">Strike range ($):</span>
             <input type="number" id="strike-min" placeholder="Min" step="0.50" class="input-field w-24 text-center" />
-            <span class="text-slate-500 text-sm">â</span>
+            <span class="text-slate-500 text-sm">–</span>
             <input type="number" id="strike-max" placeholder="Max" step="0.50" class="input-field w-24 text-center" />
           </div>
         </div>
         <div class="flex flex-wrap items-center gap-x-5 gap-y-1 mt-4 text-xs text-slate-500">
           <span class="font-semibold text-slate-400">Row:</span>
-          <span style="color:#4ade80">â Good</span><span class="text-slate-600">(tight spread, volâ¥10, OIâ¥100)</span>
-          <span style="color:#f87171">â Poor</span><span class="text-slate-600">(bad spread or no volume)</span>
+          <span style="color:#4ade80">▌ Good</span><span class="text-slate-600">(tight spread, vol≥10, OI≥100)</span>
+          <span style="color:#f87171">▌ Poor</span><span class="text-slate-600">(bad spread or no volume)</span>
           <span class="text-slate-700 mx-1">|</span>
           <span class="font-semibold text-slate-400">Ann. Return:</span>
           <span class="badge ret-vhigh">&gt;35%</span>
-          <span class="badge ret-high">20â35%</span>
-          <span class="badge ret-med">10â20%</span>
+          <span class="badge ret-high">20–35%</span>
+          <span class="badge ret-med">10–20%</span>
           <span class="badge ret-low">&lt;10%</span>
         </div>
       </div>
@@ -753,13 +758,13 @@
         <table id="opts-table" class="w-full text-sm">
           <thead>
             <tr class="text-xs text-slate-400 uppercase tracking-wide bg-[#131f35] border-b border-slate-700">
-              <th class="text-right p-3 pl-6" data-tip="Strike price â where you'd buy 100 shares if assigned.">Strike</th>
+              <th class="text-right p-3 pl-6" data-tip="Strike price — where you'd buy 100 shares if assigned.">Strike</th>
               <th class="text-right p-3">Bid</th>
               <th class="text-right p-3">Ask</th>
-              <th class="text-right p-3" data-tip="Midpoint between bid and ask â fair value estimate.">Mid</th>
+              <th class="text-right p-3" data-tip="Midpoint between bid and ask — fair value estimate.">Mid</th>
               <th class="text-right p-3" data-tip="Bid-ask spread %. Under 10% good, 10-20% wide, over 20% bad.">Spread</th>
               <th class="text-right p-3" data-tip="Implied Volatility. Higher = larger premium.">IV%</th>
-              <th class="text-right p-3" data-tip="Open Interest â total outstanding contracts.">OI</th>
+              <th class="text-right p-3" data-tip="Open Interest — total outstanding contracts.">OI</th>
               <th class="text-right p-3" data-tip="Contracts traded today.">Volume</th>
               <th class="text-right p-3" data-tip="Cash needed to cover assignment (strike Ã 100).">Capital Req.</th>
               <th class="text-right p-3" data-tip="Best-case annualized return if put expires worthless.">Ann. Return</th>
@@ -776,9 +781,9 @@
 
 
 <script>
-// ââââââââââââââââââââââââââââââââââââââââââââââââ
+// ════════════════════════════════════════════════
 // CONSTANTS
-// ââââââââââââââââââââââââââââââââââââââââââââââââ
+// ════════════════════════════════════════════════
 const SECTORS = [
   "Communication Services","Consumer Discretionary","Consumer Staples","Energy",
   "Financials","Health Care","Industrials","Information Technology",
@@ -792,9 +797,9 @@ const PRESETS = {
   momentum: { max_w52_dist_high:10, min_w52_perf:15, tab:'fundamentals' },
 };
 
-// ââââââââââââââââââââââââââââââââââââââââââââââââ
+// ════════════════════════════════════════════════
 // TOOLTIP
-// ââââââââââââââââââââââââââââââââââââââââââââââââ
+// ════════════════════════════════════════════════
 const tooltipEl = document.getElementById('tooltip');
 document.body.addEventListener('mouseover', e => {
   const el = e.target.closest('[data-tip]');
@@ -812,9 +817,9 @@ function positionTooltip(e) {
   tooltipEl.style.left=x+'px'; tooltipEl.style.top=y+'px';
 }
 
-// ââââââââââââââââââââââââââââââââââââââââââââââââ
+// ════════════════════════════════════════════════
 // SECTOR MULTI-SELECT
-// ââââââââââââââââââââââââââââââââââââââââââââââââ
+// ════════════════════════════════════════════════
 const sectorDropdown = document.getElementById('sector-dropdown');
 sectorDropdown.innerHTML = SECTORS.map(s => `<label><input type="checkbox" value="${s}" class="sector-cb" onchange="updateSectorLabel()" /> ${s}</label>`).join('');
 
@@ -837,9 +842,9 @@ function getSelectedSectors() {
   return checked.length ? checked : null;
 }
 
-// ââââââââââââââââââââââââââââââââââââââââââââââââ
+// ════════════════════════════════════════════════
 // MARKET CAP CHIPS
-// ââââââââââââââââââââââââââââââââââââââââââââââââ
+// ════════════════════════════════════════════════
 function toggleCap(el) {
   el.classList.toggle('active');
 }
@@ -848,9 +853,9 @@ function getCapRanges() {
   return active.length ? active : null;
 }
 
-// ââââââââââââââââââââââââââââââââââââââââââââââââ
+// ════════════════════════════════════════════════
 // PRESETS
-// ââââââââââââââââââââââââââââââââââââââââââââââââ
+// ════════════════════════════════════════════════
 function applyPreset(name) {
   clearAllFilters(true); // silent clear
   const preset = PRESETS[name];
@@ -897,9 +902,9 @@ function clearAllFilters(silent) {
   }
 }
 
-// ââââââââââââââââââââââââââââââââââââââââââââââââ
+// ════════════════════════════════════════════════
 // ADVANCED PANEL
-// ââââââââââââââââââââââââââââââââââââââââââââââââ
+// ════════════════════════════════════════════════
 function toggleAdvanced(forceOpen) {
   const toggle = document.getElementById('adv-toggle');
   const panel = document.getElementById('adv-panel');
@@ -962,9 +967,9 @@ document.getElementById('pe_below_historical').addEventListener('change', functi
   document.getElementById('pe-discount-row').style.opacity = this.checked ? '1' : '0.3';
 });
 
-// ââââââââââââââââââââââââââââââââââââââââââââââââ
-// SCREENER â STATE
-// ââââââââââââââââââââââââââââââââââââââââââââââââ
+// ════════════════════════════════════════════════
+// SCREENER — STATE
+// ════════════════════════════════════════════════
 let currentJobId=null, pollTimer=null, allResults=[];
 let sortCol='pe_discount_pct', sortDir='desc';
 let expandedRow = null; // symbol of currently expanded inline detail
@@ -980,16 +985,16 @@ const emptyState    = document.getElementById('empty-state');
 const exportBtn     = document.getElementById('export-btn');
 const lastRun       = document.getElementById('last-run');
 
-// ââââââââââââââââââââââââââââââââââââââââââââââââ
+// ════════════════════════════════════════════════
 // DETERMINE ACTIVE COLUMNS
-// ââââââââââââââââââââââââââââââââââââââââââââââââ
+// ════════════════════════════════════════════════
 function getActiveColumns() {
   const cols = [
     {key:'symbol',label:'Ticker',align:'left',always:true,tip:'Stock ticker symbol'},
     {key:'name',label:'Name',align:'left',always:true,tip:'Company name'},
     {key:'sector',label:'Sector',align:'left',always:true,tip:'GICS sector classification'},
     {key:'price',label:'Price',align:'right',always:true,tip:'Current share price ($)'},
-    {key:'change_pct',label:'Day %',align:'right',always:true,tip:'Intraday price change = (Current â Previous Close) Ã· Previous Close Ã 100'},
+    {key:'change_pct',label:'Day %',align:'right',always:true,tip:'Intraday price change = (Current − Previous Close) Ã· Previous Close Ã 100'},
   ];
   const pe = document.getElementById('pe_below_historical').checked;
   const hasPB = !!document.getElementById('min_pb').value || !!document.getElementById('max_pb').value;
@@ -1002,7 +1007,7 @@ function getActiveColumns() {
   if(pe) {
     cols.push({key:'trailing_pe',label:'P/E',align:'right',tip:'Trailing P/E = Share Price Ã· Earnings Per Share (TTM)'});
     cols.push({key:'avg_hist_pe',label:'Hist P/E',align:'right',tip:'5-year average trailing P/E ratio'});
-    cols.push({key:'pe_discount_pct',label:'PE Disc%',align:'right',tip:'P/E Discount = (Historical P/E â Current P/E) Ã· Historical P/E Ã 100. Positive = cheaper than usual'});
+    cols.push({key:'pe_discount_pct',label:'PE Disc%',align:'right',tip:'P/E Discount = (Historical P/E − Current P/E) Ã· Historical P/E Ã 100. Positive = cheaper than usual'});
   }
   if(hasPB) cols.push({key:'price_to_book',label:'P/B',align:'right',tip:'Price-to-Book = Share Price Ã· Book Value Per Share. <1 may indicate undervaluation'});
   if(hasDiv) {
@@ -1011,9 +1016,9 @@ function getActiveColumns() {
     cols.push({key:'payout_ratio',label:'Payout%',align:'right',tip:'Payout Ratio = Dividends Paid Ã· Net Income Ã 100. Lower = more sustainable'});
   }
   if(hasGrowth) {
-    cols.push({key:'revenue_growth',label:'Rev Gr%',align:'right',tip:'Revenue Growth = (Current Revenue â Prior Revenue) Ã· Prior Revenue Ã 100 (YoY)'});
-    cols.push({key:'earnings_growth',label:'EPS Gr%',align:'right',tip:'Earnings Growth = (Current EPS â Prior EPS) Ã· |Prior EPS| Ã 100 (YoY)'});
-    cols.push({key:'w52_perf',label:'52w Perf%',align:'right',tip:'52-Week Performance = (Current Price â 52w Low) Ã· 52w Low Ã 100'});
+    cols.push({key:'revenue_growth',label:'Rev Gr%',align:'right',tip:'Revenue Growth = (Current Revenue − Prior Revenue) Ã· Prior Revenue Ã 100 (YoY)'});
+    cols.push({key:'earnings_growth',label:'EPS Gr%',align:'right',tip:'Earnings Growth = (Current EPS − Prior EPS) Ã· |Prior EPS| Ã 100 (YoY)'});
+    cols.push({key:'w52_perf',label:'52w Perf%',align:'right',tip:'52-Week Performance = (Current Price − 52w Low) Ã· 52w Low Ã 100'});
   }
   if(hasFundamentals) {
     cols.push({key:'debt_to_equity',label:'D/E',align:'right',tip:'Debt-to-Equity = Total Debt Ã· Shareholder Equity. Lower = less leverage'});
@@ -1023,21 +1028,21 @@ function getActiveColumns() {
   }
   if(hasAnalyst) {
     cols.push({key:'analyst_rec',label:'Rating',align:'right',tip:'Consensus analyst recommendation (Strong Buy / Buy / Hold / Sell / Strong Sell)'});
-    cols.push({key:'target_upside',label:'Upside%',align:'right',tip:'Target Upside = (Avg Analyst Target Price â Current Price) Ã· Current Price Ã 100'});
+    cols.push({key:'target_upside',label:'Upside%',align:'right',tip:'Target Upside = (Avg Analyst Target Price − Current Price) Ã· Current Price Ã 100'});
   }
   if(hasOptions) {
     cols.push({key:'atm_put_iv',label:'Put IV%',align:'right',tip:'Implied Volatility of the nearest at-the-money put option. Higher IV = higher premiums'});
-    cols.push({key:'atm_put_spread_pct',label:'Spread%',align:'right',tip:'Bid-Ask Spread = (Ask â Bid) Ã· Mid Ã 100. Lower = more liquid'});
-    cols.push({key:'atm_put_oi',label:'Put OI',align:'right',tip:'Open Interest â number of outstanding put contracts at this strike'});
-    cols.push({key:'options_dte',label:'DTE',align:'right',tip:'Days To Expiration â trading days until the option contract expires'});
+    cols.push({key:'atm_put_spread_pct',label:'Spread%',align:'right',tip:'Bid-Ask Spread = (Ask − Bid) Ã· Mid Ã 100. Lower = more liquid'});
+    cols.push({key:'atm_put_oi',label:'Put OI',align:'right',tip:'Open Interest — number of outstanding put contracts at this strike'});
+    cols.push({key:'options_dte',label:'DTE',align:'right',tip:'Days To Expiration — trading days until the option contract expires'});
   }
   cols.push({key:'market_cap',label:'Mkt Cap',align:'right',always:true,tip:'Market Capitalization = Share Price Ã Total Shares Outstanding'});
   return cols;
 }
 
-// ââââââââââââââââââââââââââââââââââââââââââââââââ
+// ════════════════════════════════════════════════
 // SUBMIT SCREEN
-// ââââââââââââââââââââââââââââââââââââââââââââââââ
+// ════════════════════════════════════════════════
 async function submitScreen() {
   if(pollTimer) clearInterval(pollTimer);
   const hasOpts = !!(document.getElementById('min_put_iv').value || document.getElementById('max_put_iv').value);
@@ -1074,10 +1079,10 @@ async function submitScreen() {
 
   const runBtns = document.querySelectorAll('.btn-primary');
   runBtns.forEach(b=>{ b.disabled=true; });
-  document.getElementById('run-btn-quick').textContent='Runningâ¦';
+  document.getElementById('run-btn-quick').textContent='Running…';
   progressPanel.classList.remove('hidden');
   progressBar.style.width='0%'; progressText.textContent='0 / 0';
-  progressLabel.textContent = hasOpts ? 'Screening S&P 500 + options dataâ¦' : 'Screening S&P 500 stocksâ¦';
+  progressLabel.textContent = hasOpts ? 'Screening S&P 500 + options data…' : 'Screening S&P 500 stocks…';
   matchCountLive.textContent='0 matches so far';
   resultsPanel.classList.add('hidden'); resultsBody.innerHTML=''; allResults=[]; expandedRow=null;
 
@@ -1108,9 +1113,9 @@ async function pollJob(job_id) {
   } catch(err){console.error('Poll error',err);}
 }
 
-// ââââââââââââââââââââââââââââââââââââââââââââââââ
+// ════════════════════════════════════════════════
 // RENDER RESULTS
-// ââââââââââââââââââââââââââââââââââââââââââââââââ
+// ════════════════════════════════════════════════
 function showResults(results){
   resultsPanel.classList.remove('hidden');
   var eg=document.getElementById('eduGuidance'); if(eg) eg.style.display='';
@@ -1188,42 +1193,42 @@ function formatCell(key, s) {
     }
     case 'trailing_pe': case 'avg_hist_pe': case 'price_to_book':
     case 'current_ratio': case 'debt_to_equity':
-      return v!=null ? `<span class="font-mono">${v}</span>` : 'â';
+      return v!=null ? `<span class="font-mono">${v}</span>` : '—';
     case 'pe_discount_pct': {
-      if(v==null) return 'â';
+      if(v==null) return '—';
       const cls = v>=20?'tag-green':v>=10?'tag-blue':'tag-gray';
-      return `<span class="badge ${cls}">â${v}%</span>`;
+      return `<span class="badge ${cls}">−${v}%</span>`;
     }
     case 'dividend_yield': case 'payout_ratio': case 'revenue_growth':
     case 'earnings_growth': case 'w52_perf': case 'fcf_yield':
     case 'operating_margin': case 'target_upside':
-      return v!=null ? `<span class="font-mono">${v}%</span>` : 'â';
+      return v!=null ? `<span class="font-mono">${v}%</span>` : '—';
     case 'div_streak':
-      return v!=null ? `<span class="font-mono">${v} yr${v!==1?'s':''}</span>` : 'â';
+      return v!=null ? `<span class="font-mono">${v} yr${v!==1?'s':''}</span>` : '—';
     case 'analyst_rec': {
-      if(!v) return 'â';
+      if(!v) return '—';
       const label = v.replace('_',' ').replace(/\b\w/g,c=>c.toUpperCase());
       const cls = v.includes('buy')?'tag-green':v==='hold'?'tag-amber':'tag-red';
       return `<span class="badge ${cls}">${label}</span>`;
     }
-    case 'atm_put_iv': return v!=null ? `<span class="badge ${v>=50?'tag-purple':v>=30?'tag-blue':'tag-gray'}">${v}%</span>` : 'â';
-    case 'atm_put_spread_pct': return v!=null ? `<span class="badge ${v<=5?'tag-green':v<=10?'tag-amber':'tag-red'}">${v}%</span>` : 'â';
-    case 'atm_put_oi': return v!=null ? `<span class="font-mono">${v.toLocaleString()}</span>` : 'â';
-    case 'options_dte': return v!=null ? `<span class="text-slate-400 text-xs">${v}</span>` : 'â';
+    case 'atm_put_iv': return v!=null ? `<span class="badge ${v>=50?'tag-purple':v>=30?'tag-blue':'tag-gray'}">${v}%</span>` : '—';
+    case 'atm_put_spread_pct': return v!=null ? `<span class="badge ${v<=5?'tag-green':v<=10?'tag-amber':'tag-red'}">${v}%</span>` : '—';
+    case 'atm_put_oi': return v!=null ? `<span class="font-mono">${v.toLocaleString()}</span>` : '—';
+    case 'options_dte': return v!=null ? `<span class="text-slate-400 text-xs">${v}</span>` : '—';
     case 'market_cap': return `<span class="text-slate-400 text-xs">${formatCap(v)}</span>`;
-    default: return v!=null ? v : 'â';
+    default: return v!=null ? v : '—';
   }
 }
 
 function renderInlineDetail(s, colSpan) {
-  const fmt = (v,suf='') => v!=null ? `${v}${suf}` : 'â';
+  const fmt = (v,suf='') => v!=null ? `${v}${suf}` : '—';
   return `<tr class="inline-detail" data-detail="${s.symbol}"><td colspan="${colSpan}" class="p-0">
     <div class="p-4 grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-3 text-xs">
       <div><span class="text-slate-500 block">Trailing P/E</span><span class="font-mono text-slate-200">${fmt(s.trailing_pe)}</span></div>
       <div><span class="text-slate-500 block">Hist P/E</span><span class="font-mono text-slate-200">${fmt(s.avg_hist_pe)}</span></div>
       <div><span class="text-slate-500 block">P/B</span><span class="font-mono text-slate-200">${fmt(s.price_to_book)}</span></div>
       <div><span class="text-slate-500 block">Div Yield</span><span class="font-mono text-slate-200">${fmt(s.dividend_yield,'%')}</span></div>
-      <div><span class="text-slate-500 block">Div Streak</span><span class="font-mono text-slate-200">${s.div_streak!=null ? s.div_streak+' yrs' : 'â'}</span></div>
+      <div><span class="text-slate-500 block">Div Streak</span><span class="font-mono text-slate-200">${s.div_streak!=null ? s.div_streak+' yrs' : '—'}</span></div>
       <div><span class="text-slate-500 block">Payout Ratio</span><span class="font-mono text-slate-200">${fmt(s.payout_ratio,'%')}</span></div>
       <div><span class="text-slate-500 block">Rev Growth</span><span class="font-mono text-slate-200">${fmt(s.revenue_growth,'%')}</span></div>
       <div><span class="text-slate-500 block">EPS Growth</span><span class="font-mono text-slate-200">${fmt(s.earnings_growth,'%')}</span></div>
@@ -1232,25 +1237,25 @@ function renderInlineDetail(s, colSpan) {
       <div><span class="text-slate-500 block">Current Ratio</span><span class="font-mono text-slate-200">${fmt(s.current_ratio)}</span></div>
       <div><span class="text-slate-500 block">FCF Yield</span><span class="font-mono text-slate-200">${fmt(s.fcf_yield,'%')}</span></div>
       <div><span class="text-slate-500 block">Op Margin</span><span class="font-mono text-slate-200">${fmt(s.operating_margin,'%')}</span></div>
-      <div><span class="text-slate-500 block">Analyst</span><span class="font-mono text-slate-200">${s.analyst_rec ? s.analyst_rec.replace('_',' ').replace(/\b\w/g,c=>c.toUpperCase()) : 'â'}</span></div>
+      <div><span class="text-slate-500 block">Analyst</span><span class="font-mono text-slate-200">${s.analyst_rec ? s.analyst_rec.replace('_',' ').replace(/\b\w/g,c=>c.toUpperCase()) : '—'}</span></div>
       <div><span class="text-slate-500 block">Target Upside</span><span class="font-mono text-slate-200">${fmt(s.target_upside,'%')}</span></div>
       <div><span class="text-slate-500 block">Mkt Cap</span><span class="font-mono text-slate-200">${formatCap(s.market_cap)}</span></div>
       <div class="flex items-end">
-        <button class="btn-secondary text-xs py-1 px-3" onclick="event.stopPropagation();openDetail('${s.symbol}')">Full Detail â</button>
+        <button class="btn-secondary text-xs py-1 px-3" onclick="event.stopPropagation();openDetail('${s.symbol}')">Full Detail →</button>
       </div>
     </div>
   </td></tr>`;
 }
 
 function formatCap(v){
-  if(!v) return 'â';
+  if(!v) return '—';
   if(v>=1e12) return '$'+(v/1e12).toFixed(1)+'T';
   if(v>=1e9)  return '$'+(v/1e9).toFixed(1)+'B';
   if(v>=1e6)  return '$'+(v/1e6).toFixed(0)+'M';
   return '$'+v;
 }
 
-// Row click â expand inline; double-click â full detail
+// Row click → expand inline; double-click → full detail
 resultsBody.addEventListener('click', e => {
   const row = e.target.closest('tr.data-row');
   if(!row) return;
@@ -1263,7 +1268,7 @@ resultsBody.addEventListener('dblclick', e => {
   if(row) openDetail(row.dataset.symbol);
 });
 
-// CSV export â all fields
+// CSV export — all fields
 exportBtn.addEventListener('click',()=>{
   if(!allResults.length) return;
   const allCols = ['symbol','name','sector','price','change_pct','trailing_pe','avg_hist_pe','pe_discount_pct','price_to_book',
@@ -1277,9 +1282,9 @@ exportBtn.addEventListener('click',()=>{
 });
 
 
-// ââââââââââââââââââââââââââââââââââââââââââââââââ
-// DETAIL â OPEN / CLOSE
-// ââââââââââââââââââââââââââââââââââââââââââââââââ
+// ════════════════════════════════════════════════
+// DETAIL — OPEN / CLOSE
+// ════════════════════════════════════════════════
 const detailOverlay = document.getElementById('detail-overlay');
 const screenerPage  = document.getElementById('screener-page');
 let detailData = null;
@@ -1351,21 +1356,21 @@ function prefillStrikeRange(price){
   document.getElementById('strike-max').value = Math.round((price * 1.01) / step) * step;
 }
 
-// ââââââââââââââââââââââââââââââââââââââââââââââââ
-// DETAIL â METRICS GRID
-// ââââââââââââââââââââââââââââââââââââââââââââââââ
+// ════════════════════════════════════════════════
+// DETAIL — METRICS GRID
+// ════════════════════════════════════════════════
 function renderMetrics(info){
   const grid = document.getElementById('metrics-grid');
-  let wkRangeHtml = '<div class="metric-value">â</div>';
+  let wkRangeHtml = '<div class="metric-value">—</div>';
   if(info.week_52_low!=null && info.week_52_high!=null && info.price!=null){
     const pct = Math.min(100,Math.max(0,(info.price-info.week_52_low)/(info.week_52_high-info.week_52_low)*100));
-    wkRangeHtml = `<div class="text-xs text-slate-300 font-mono mt-1">$${info.week_52_low.toFixed(2)} â $${info.week_52_high.toFixed(2)}</div><div class="range-bar-wrap"><div class="range-bar-fill" style="width:${pct.toFixed(1)}%"></div><div class="range-bar-dot" style="left:${pct.toFixed(1)}%"></div></div>`;
+    wkRangeHtml = `<div class="text-xs text-slate-300 font-mono mt-1">$${info.week_52_low.toFixed(2)} – $${info.week_52_high.toFixed(2)}</div><div class="range-bar-wrap"><div class="range-bar-fill" style="width:${pct.toFixed(1)}%"></div><div class="range-bar-dot" style="left:${pct.toFixed(1)}%"></div></div>`;
   }
-  const fmt = (v, prefix='', suffix='', dec=2) => v!=null ? `${prefix}${Number(v).toFixed(dec)}${suffix}` : 'â';
-  const fmtInt = v => v!=null ? Number(v).toLocaleString() : 'â';
+  const fmt = (v, prefix='', suffix='', dec=2) => v!=null ? `${prefix}${Number(v).toFixed(dec)}${suffix}` : '—';
+  const fmtInt = v => v!=null ? Number(v).toLocaleString() : '—';
   const cards = [
     { label:'Prev Close', tip:"Yesterday's closing price.", html:`<div class="metric-value">${fmt(info.previous_close,'$')}</div>` },
-    { label:'Day Range', tip:"Today's low and high â a wide range signals volatility.", html:`<div class="metric-value text-sm">${info.day_low!=null&&info.day_high!=null?`$${info.day_low.toFixed(2)} â $${info.day_high.toFixed(2)}`:'â'}</div>` },
+    { label:'Day Range', tip:"Today's low and high — a wide range signals volatility.", html:`<div class="metric-value text-sm">${info.day_low!=null&&info.day_high!=null?`$${info.day_low.toFixed(2)} – $${info.day_high.toFixed(2)}`:'—'}</div>` },
     { label:'52-Wk Range', tip:"Where today's price sits in the past year's range.", html:wkRangeHtml },
     { label:'Volume / Avg', tip:"Today's shares traded vs 3-month average.", html:`<div class="metric-value text-sm">${fmtInt(info.volume)}</div><div class="metric-sub">Avg ${fmtInt(info.avg_volume)}</div>` },
     { label:'Trailing P/E', tip:"Price / last 12 months earnings. Under 15 = cheap, 15-25 = fair, 30+ = expensive.", html:`<div class="metric-value">${fmt(info.trailing_pe)}</div>` },
@@ -1374,13 +1379,13 @@ function renderMetrics(info){
     { label:'Market Cap', tip:"Total company value. Large >$10B = stable, small <$2B = higher risk/reward.", html:`<div class="metric-value">${formatCap(info.market_cap)}</div>` },
     { label:'Price / Book', tip:"Price vs net asset value. Under 1 = buying below book value.", html:`<div class="metric-value">${fmt(info.price_to_book)}</div>` },
     { label:'Beta', tip:"Volatility vs S&P 500. >1.5 = more volatile, <0.7 = calmer.", html:`<div class="metric-value">${fmt(info.beta)}</div>` },
-    { label:'Dividend Yield', tip:"Annual dividend as % of price. 2-4% is healthy.", html:`<div class="metric-value">${info.dividend_yield!=null?info.dividend_yield.toFixed(2)+'%':'â'}</div>` },
-    { label:'Sector', tip:"Industry group â compare metrics to sector peers.", html:`<div class="metric-value text-sm leading-tight">${info.sector||'â'}</div><div class="metric-sub">${info.industry||''}</div>` },
-    { label:'Rev Growth', tip:"Year-over-year revenue growth.", html:`<div class="metric-value">${info.revenue_growth!=null?info.revenue_growth.toFixed(1)+'%':'â'}</div>` },
-    { label:'Op Margin', tip:"Operating income / revenue. Higher = more efficient.", html:`<div class="metric-value">${info.operating_margin!=null?info.operating_margin.toFixed(1)+'%':'â'}</div>` },
-    { label:'D/E Ratio', tip:"Debt-to-equity. Under 1.0 = conservative, over 2.0 = leveraged.", html:`<div class="metric-value">${info.debt_to_equity!=null?(info.debt_to_equity/100).toFixed(2):'â'}</div>` },
-    { label:'FCF Yield', tip:"Free cash flow / market cap. 5%+ is attractive.", html:`<div class="metric-value">${info.fcf_yield!=null?info.fcf_yield.toFixed(1)+'%':'â'}</div>` },
-    { label:'Target Upside', tip:"Analyst mean target vs current price.", html:`<div class="metric-value">${info.target_upside!=null?info.target_upside.toFixed(1)+'%':'â'}</div>` },
+    { label:'Dividend Yield', tip:"Annual dividend as % of price. 2-4% is healthy.", html:`<div class="metric-value">${info.dividend_yield!=null?info.dividend_yield.toFixed(2)+'%':'—'}</div>` },
+    { label:'Sector', tip:"Industry group — compare metrics to sector peers.", html:`<div class="metric-value text-sm leading-tight">${info.sector||'—'}</div><div class="metric-sub">${info.industry||''}</div>` },
+    { label:'Rev Growth', tip:"Year-over-year revenue growth.", html:`<div class="metric-value">${info.revenue_growth!=null?info.revenue_growth.toFixed(1)+'%':'—'}</div>` },
+    { label:'Op Margin', tip:"Operating income / revenue. Higher = more efficient.", html:`<div class="metric-value">${info.operating_margin!=null?info.operating_margin.toFixed(1)+'%':'—'}</div>` },
+    { label:'D/E Ratio', tip:"Debt-to-equity. Under 1.0 = conservative, over 2.0 = leveraged.", html:`<div class="metric-value">${info.debt_to_equity!=null?(info.debt_to_equity/100).toFixed(2):'—'}</div>` },
+    { label:'FCF Yield', tip:"Free cash flow / market cap. 5%+ is attractive.", html:`<div class="metric-value">${info.fcf_yield!=null?info.fcf_yield.toFixed(1)+'%':'—'}</div>` },
+    { label:'Target Upside', tip:"Analyst mean target vs current price.", html:`<div class="metric-value">${info.target_upside!=null?info.target_upside.toFixed(1)+'%':'—'}</div>` },
   ];
 
   const recKey = (info.analyst_recommendation || '').toLowerCase().replace('_', ' ');
@@ -1396,7 +1401,7 @@ function renderMetrics(info){
       ${recCount!=null ? `<div class="text-xs text-slate-500 ml-auto">${recCount} analyst${recCount!==1?'s':''}</div>` : ''}
     </div>
     ${barPct!=null ? `<div class="mt-3"><div class="flex justify-between text-xs text-slate-500 mb-1"><span style="color:#4ade80">Strong Buy</span><span>Hold</span><span style="color:#f87171">Strong Sell</span></div><div class="range-bar-wrap" style="height:6px"><div class="range-bar-dot" style="left:${barPct}%;background:${recColor};border-color:${recColor}"></div></div></div>` : ''}
-  ` : '<div class="metric-value">â</div>';
+  ` : '<div class="metric-value">—</div>';
 
   grid.innerHTML = cards.map(c=>`<div class="metric-card" data-tip="${c.tip}"><div class="metric-label">${c.label}</div>${c.html}</div>`).join('') + `
     <div class="metric-card col-span-2 md:col-span-3 lg:col-span-4 xl:col-span-6" data-tip="Aggregate of Wall Street analyst ratings.">
@@ -1404,9 +1409,9 @@ function renderMetrics(info){
     </div>`;
 }
 
-// ââââââââââââââââââââââââââââââââââââââââââââââââ
-// DETAIL â CHART
-// ââââââââââââââââââââââââââââââââââââââââââââââââ
+// ════════════════════════════════════════════════
+// DETAIL — CHART
+// ════════════════════════════════════════════════
 let priceChart = null;
 function destroyChart(){ if(priceChart){ priceChart.destroy(); priceChart=null; } }
 
@@ -1436,7 +1441,7 @@ function renderChart(labels, prices, range){
     options: {
       responsive: true, maintainAspectRatio: false,
       interaction: { mode: 'index', intersect: false },
-      plugins: { legend: { display: false }, tooltip: { backgroundColor: '#1e293b', borderColor: '#334155', borderWidth: 1, titleColor: '#94a3b8', bodyColor: '#e2e8f0', callbacks: { title: items => labels[items[0].dataIndex], label: item => ` $${item.parsed.y != null ? item.parsed.y.toFixed(2) : 'â'}` } } },
+      plugins: { legend: { display: false }, tooltip: { backgroundColor: '#1e293b', borderColor: '#334155', borderWidth: 1, titleColor: '#94a3b8', bodyColor: '#e2e8f0', callbacks: { title: items => labels[items[0].dataIndex], label: item => ` $${item.parsed.y != null ? item.parsed.y.toFixed(2) : '—'}` } } },
       scales: { x: { grid:{color:'#1e293b'}, ticks:{color:'#475569',maxRotation:0,font:{size:10}} }, y: { position:'right', grid:{color:'#1e293b'}, ticks:{color:'#475569',font:{size:10},callback:v=>'$'+v.toFixed(0)} } }
     }
   });
@@ -1451,9 +1456,9 @@ document.querySelectorAll('.chart-range-btn').forEach(btn => {
   });
 });
 
-// ââââââââââââââââââââââââââââââââââââââââââââââââ
-// DETAIL â OPTIONS TABLE
-// ââââââââââââââââââââââââââââââââââââââââââââââââ
+// ════════════════════════════════════════════════
+// DETAIL — OPTIONS TABLE
+// ════════════════════════════════════════════════
 const collapsedExps = new Set();
 function toggleExpGroup(expDate){
   const key = expDate.replace(/-/g,'');
@@ -1484,17 +1489,17 @@ function renderOptionsTable(options){
     const label = d.toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'});
     const isCollapsed = collapsedExps.has(exp.expiration);
     const key = exp.expiration.replace(/-/g,'');
-    rows.push(`<tr><td colspan="11" style="padding:0"><div class="exp-header" onclick="toggleExpGroup('${exp.expiration}')"><span class="exp-chevron${isCollapsed?' collapsed':''}" data-exp="${exp.expiration}">â¼</span><span class="text-sm font-semibold text-slate-100">${label}</span><span class="exp-dte">${exp.dte} DTE</span><span class="exp-contract-count">${filtered.length} contract${filtered.length!==1?'s':''}</span></div></td></tr>`);
+    rows.push(`<tr><td colspan="11" style="padding:0"><div class="exp-header" onclick="toggleExpGroup('${exp.expiration}')"><span class="exp-chevron${isCollapsed?' collapsed':''}" data-exp="${exp.expiration}">▼</span><span class="text-sm font-semibold text-slate-100">${label}</span><span class="exp-dte">${exp.dte} DTE</span><span class="exp-contract-count">${filtered.length} contract${filtered.length!==1?'s':''}</span></div></td></tr>`);
     filtered.forEach(c=>{
       let spreadCell;
-      if(c.spread_flag==='bad') spreadCell=`<span class="font-mono text-slate-300">$${c.spread_dollar.toFixed(2)}</span> <span class="flag-bad">â ${c.spread_pct}%</span>`;
-      else if(c.spread_flag==='wide') spreadCell=`<span class="font-mono text-slate-300">$${c.spread_dollar.toFixed(2)}</span> <span class="flag-wide">â ${c.spread_pct}%</span>`;
-      else spreadCell=`<span class="font-mono text-slate-300">$${c.spread_dollar.toFixed(2)}</span> <span class="text-slate-500 text-xs">(${c.spread_pct??'â'}%)</span>`;
+      if(c.spread_flag==='bad') spreadCell=`<span class="font-mono text-slate-300">$${c.spread_dollar.toFixed(2)}</span> <span class="flag-bad">● ${c.spread_pct}%</span>`;
+      else if(c.spread_flag==='wide') spreadCell=`<span class="font-mono text-slate-300">$${c.spread_dollar.toFixed(2)}</span> <span class="flag-wide">● ${c.spread_pct}%</span>`;
+      else spreadCell=`<span class="font-mono text-slate-300">$${c.spread_dollar.toFixed(2)}</span> <span class="text-slate-500 text-xs">(${c.spread_pct??'—'}%)</span>`;
       let volCell;
-      if(c.vol_flag==='none') volCell=`<span class="flag-none">â 0</span>`;
-      else if(c.vol_flag==='low') volCell=`<span class="flag-low">â ${c.volume}</span>`;
+      if(c.vol_flag==='none') volCell=`<span class="flag-none">● 0</span>`;
+      else if(c.vol_flag==='low') volCell=`<span class="flag-low">● ${c.volume}</span>`;
       else volCell=`<span class="font-mono">${c.volume.toLocaleString()}</span>`;
-      let retCell='â';
+      let retCell='—';
       if(c.annual_return_pct!=null){ const cls=c.annual_return_pct>35?'ret-vhigh':c.annual_return_pct>=20?'ret-high':c.annual_return_pct>=10?'ret-med':'ret-low'; retCell=`<span class="badge ${cls} font-mono">${c.annual_return_pct.toFixed(1)}%</span>`; }
       const isBad = c.spread_flag==='bad' || c.vol_flag==='none' || c.oi===0;
       const isGood = !isBad && !c.spread_flag && c.vol_flag===null && c.oi>=100;
@@ -1505,12 +1510,12 @@ function renderOptionsTable(options){
         <td class="p-3 text-right font-mono text-slate-400">$${c.ask.toFixed(2)}</td>
         <td class="p-3 text-right font-mono font-semibold text-indigo-300">$${c.mid.toFixed(2)}</td>
         <td class="p-3 text-right whitespace-nowrap">${spreadCell}</td>
-        <td class="p-3 text-right font-mono text-slate-300">${c.iv!=null?c.iv+'%':'â'}</td>
+        <td class="p-3 text-right font-mono text-slate-300">${c.iv!=null?c.iv+'%':'—'}</td>
         <td class="p-3 text-right font-mono text-slate-300">${c.oi.toLocaleString()}</td>
         <td class="p-3 text-right whitespace-nowrap">${volCell}</td>
         <td class="p-3 text-right font-mono text-slate-400">$${c.capital.toLocaleString()}</td>
         <td class="p-3 text-right">${retCell}</td>
-        <td class="p-3 pr-6 text-right font-mono">${c.prob_itm!=null ? `<span class="${c.prob_itm<=20?'text-green-400':c.prob_itm<=35?'text-amber-400':'text-red-400'}">${c.prob_itm.toFixed(1)}%</span>` : 'â'}</td>
+        <td class="p-3 pr-6 text-right font-mono">${c.prob_itm!=null ? `<span class="${c.prob_itm<=20?'text-green-400':c.prob_itm<=35?'text-amber-400':'text-red-400'}">${c.prob_itm.toFixed(1)}%</span>` : '—'}</td>
       </tr>`);
     });
   });
@@ -1518,18 +1523,18 @@ function renderOptionsTable(options){
   else { emptyEl.classList.add('hidden'); tbody.innerHTML=rows.join(''); }
 }
 
-// ââââââââââââââââââââââââââââââââââââââââââââââââ
+// ════════════════════════════════════════════════
 // URL PRESET LOADING
-// ââââââââââââââââââââââââââââââââââââââââââââââââ
+// ════════════════════════════════════════════════
 const urlParams = new URLSearchParams(window.location.search);
 const presetParam = urlParams.get('preset');
 if(presetParam && PRESETS[presetParam]) {
   applyPreset(presetParam);
 }
 
-// ââââââââââââââââââââââââââââââââââââââââââââââââ
+// ════════════════════════════════════════════════
 //  LIVE TICKER BANNER
-// ââââââââââââââââââââââââââââââââââââââââââââââââ
+// ════════════════════════════════════════════════
 (function initTickerBanner() {
   const track = document.getElementById('ticker-track');
 
@@ -1558,7 +1563,7 @@ if(presetParam && PRESETS[presetParam]) {
       track.innerHTML = '<span class="ticker-loading">Market data unavailable</span>';
       return;
     }
-    // Build items HTML â duplicate for seamless loop
+    // Build items HTML — duplicate for seamless loop
     const buildItems = () => data.map(t => {
       const up = t.change_pct >= 0;
       const chgClass = t.change_pct > 0 ? 'up' : t.change_pct < 0 ? 'down' : 'flat';

@@ -10,7 +10,7 @@
     gtag('config', 'G-HJ72GKBEFW');
   </script>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Bond & Treasury Dashboard â Charged Alpha</title>
+<title>Bond & Treasury Dashboard — Charged Alpha</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <style>
@@ -81,7 +81,7 @@ td{padding:10px 12px;border-bottom:1px solid #1e293b}
 <body>
 <nav class="ca-nav">
   <div style="display:flex;align-items:center">
-    <a href="/" class="logo"><div class="logo-bolt">â¡</div>CHARGED ALPHA</a>
+    <a href="/" class="logo"><div class="logo-bolt">⚡</div>CHARGED ALPHA</a>
     <span class="ca-nav-title">Bond Dashboard</span>
   </div>
   <div style="display:flex;align-items:center;gap:8px">
@@ -107,6 +107,8 @@ td{padding:10px 12px;border-bottom:1px solid #1e293b}
           <a href="/charts/">Stock Charts</a>
       </div>
     </div>
+    <a href="/auth/login" style="padding:6px 14px;border-radius:8px;font-size:12px;font-weight:600;color:#94a3b8;border:1px solid #334155;text-decoration:none;transition:all .15s;">Sign In</a>
+    <a href="/auth/register" style="padding:6px 14px;border-radius:8px;font-size:12px;font-weight:600;color:white;background:linear-gradient(135deg,#6366f1,#7c3aed);text-decoration:none;transition:all .15s;">Sign Up</a>
   </div>
   </div>
   <button class="ca-hamburger" onclick="document.getElementById('mobileMenu').classList.toggle('open')">
@@ -126,6 +128,9 @@ td{padding:10px 12px;border-bottom:1px solid #1e293b}
     <a href="/earnings/">Earnings Calendar</a>
     <a href="/gold/">Precious Metals</a>
           <a href="/charts/">Stock Charts</a>
+    <div style="height:1px;background:#1e293b;margin:8px 0"></div>
+    <a href="/auth/login">Sign In</a>
+    <a href="/auth/register" style="color:#a5b4fc">Sign Up</a>
   </div>
 </nav>
 <div class="container">
@@ -138,12 +143,12 @@ td{padding:10px 12px;border-bottom:1px solid #1e293b}
     <ul style="margin:8px 0 0 20px;color:#94a3b8">
       <li><strong style="color:#e2e8f0">Federal Reserve policy:</strong> The Fed sets the federal funds rate, which directly influences short-term yields. When the Fed raises rates, short-term bond yields rise. When they cut, yields fall.</li>
       <li><strong style="color:#e2e8f0">Inflation expectations:</strong> Investors demand higher yields when they expect inflation to erode their purchasing power. Rising inflation = rising yields. This is why CPI reports move the bond market.</li>
-      <li><strong style="color:#e2e8f0">Supply and demand:</strong> When the government issues more debt (higher deficits), more supply pushes yields up. When investors flock to safety (during market crashes or geopolitical crises), demand rises and yields fall â this is the "flight to safety" effect.</li>
+      <li><strong style="color:#e2e8f0">Supply and demand:</strong> When the government issues more debt (higher deficits), more supply pushes yields up. When investors flock to safety (during market crashes or geopolitical crises), demand rises and yields fall — this is the "flight to safety" effect.</li>
       <li><strong style="color:#e2e8f0">Economic growth outlook:</strong> Strong economic data pushes yields higher (investors expect rate hikes and sell bonds). Weak data or recession fears push yields lower (investors buy bonds for safety).</li>
       <li><strong style="color:#e2e8f0">Global rates:</strong> U.S. treasuries compete with bonds worldwide. If European or Japanese yields rise, some capital flows out of U.S. bonds, pushing American yields up to stay competitive.</li>
     </ul>
     <br>
-    <strong>Why it matters:</strong> Bond yields affect everything â mortgage rates, stock valuations, and the economy. When yields rise, bond prices fall (and vice versa). The yield curve shape (normal vs. inverted) is one of the most watched recession indicators.
+    <strong>Why it matters:</strong> Bond yields affect everything — mortgage rates, stock valuations, and the economy. When yields rise, bond prices fall (and vice versa). The yield curve shape (normal vs. inverted) is one of the most watched recession indicators.
   </div>
 
   <!-- Yield Cards -->
@@ -153,10 +158,10 @@ td{padding:10px 12px;border-bottom:1px solid #1e293b}
 
   <!-- Spreads -->
   <div class="section-title">Yield Spreads</div>
-  <div class="edu-hint beginner-only">Spreads measure the difference between long-term and short-term yields. A <strong style="color:#10b981">positive spread</strong> (green) is normal â investors earn more for lending longer. A <strong style="color:#ef4444">negative spread</strong> (red, "inverted") historically signals a recession within 12-18 months.</div>
+  <div class="edu-hint beginner-only">Spreads measure the difference between long-term and short-term yields. A <strong style="color:#10b981">positive spread</strong> (green) is normal — investors earn more for lending longer. A <strong style="color:#ef4444">negative spread</strong> (red, "inverted") historically signals a recession within 12-18 months.</div>
   <div class="card spread-card" id="spreadCard">
-    <div class="spread-item"><div class="spread-val" id="spread_10_3m">â</div><div class="spread-label">10Y â 3M Spread</div></div>
-    <div class="spread-item"><div class="spread-val" id="spread_30_10">â</div><div class="spread-label">30Y â 10Y Spread</div></div>
+    <div class="spread-item"><div class="spread-val" id="spread_10_3m">—</div><div class="spread-label">10Y − 3M Spread</div></div>
+    <div class="spread-item"><div class="spread-val" id="spread_30_10">—</div><div class="spread-label">30Y − 10Y Spread</div></div>
   </div>
 
   <!-- Charts -->
@@ -240,8 +245,8 @@ async function loadETFs(){
       <td>${e.name}</td>
       <td class="right">$${e.price.toFixed(2)}</td>
       <td class="right ${e.day_change>=0?'green':'red'}">${e.day_change>=0?'+':''}${e.day_change.toFixed(2)}%</td>
-      <td class="right ${(e.ytd_return||0)>=0?'green':'red'}">${e.ytd_return!=null?(e.ytd_return>=0?'+':'')+e.ytd_return.toFixed(2)+'%':'â'}</td>
-      <td class="right">${e.div_yield!=null?e.div_yield.toFixed(2)+'%':'â'}</td>
+      <td class="right ${(e.ytd_return||0)>=0?'green':'red'}">${e.ytd_return!=null?(e.ytd_return>=0?'+':'')+e.ytd_return.toFixed(2)+'%':'—'}</td>
+      <td class="right">${e.div_yield!=null?e.div_yield.toFixed(2)+'%':'—'}</td>
     </tr>
   `).join('');
 }

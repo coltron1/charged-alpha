@@ -10,7 +10,7 @@
   gtag('config', 'G-HJ72GKBEFW');
 </script>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>REIT Screener â Charged Alpha</title>
+<title>REIT Screener — Charged Alpha</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <style>
@@ -99,7 +99,7 @@ tr:hover td{background:rgba(139,92,246,.04)}
 <body>
 <nav class="ca-nav">
   <div style="display:flex;align-items:center">
-    <a href="/" class="logo"><div class="logo-bolt">â¡</div>CHARGED ALPHA</a>
+    <a href="/" class="logo"><div class="logo-bolt">⚡</div>CHARGED ALPHA</a>
     <span class="ca-nav-title">REIT Screener</span>
   </div>
   <div style="display:flex;align-items:center;gap:8px">
@@ -125,6 +125,8 @@ tr:hover td{background:rgba(139,92,246,.04)}
           <a href="/charts/">Stock Charts</a>
         </div>
       </div>
+    <a href="/auth/login" style="padding:6px 14px;border-radius:8px;font-size:12px;font-weight:600;color:#94a3b8;border:1px solid #334155;text-decoration:none;transition:all .15s;">Sign In</a>
+    <a href="/auth/register" style="padding:6px 14px;border-radius:8px;font-size:12px;font-weight:600;color:white;background:linear-gradient(135deg,#6366f1,#7c3aed);text-decoration:none;transition:all .15s;">Sign Up</a>
     </div>
   </div>
   <button class="ca-hamburger" onclick="document.getElementById('mobileMenu').classList.toggle('open')">
@@ -144,6 +146,9 @@ tr:hover td{background:rgba(139,92,246,.04)}
     <a href="/earnings/">Earnings Calendar</a>
     <a href="/gold/">Precious Metals</a>
           <a href="/charts/">Stock Charts</a>
+    <div style="height:1px;background:#1e293b;margin:8px 0"></div>
+    <a href="/auth/login">Sign In</a>
+    <a href="/auth/register" style="color:#a5b4fc">Sign Up</a>
   </div>
 </nav>
 <div class="edu-intro beginner-only">
@@ -164,7 +169,7 @@ tr:hover td{background:rgba(139,92,246,.04)}
     <div><label>Max Price <span class="beginner-only"><span class="tip-icon">?<span class="tip-text">Cap the price to find more affordable entry points.</span></span></span></label><input type="number" id="max_price" step="any"></div>
     <div><label>Min P/E <span class="beginner-only"><span class="tip-icon">?<span class="tip-text">Price-to-Earnings ratio measures valuation. Note: for REITs, Funds From Operations (FFO) is a better measure, but P/E provides a useful starting point.</span></span></span></label><input type="number" id="min_pe" step="any"></div>
     <div><label>Max P/E <span class="beginner-only"><span class="tip-icon">?<span class="tip-text">Lower P/E may indicate a value opportunity. For REITs, a P/E under 15 is generally considered attractive.</span></span></span></label><input type="number" id="max_pe" step="any"></div>
-    <div><label>Max Debt/Equity <span class="beginner-only"><span class="tip-icon">?<span class="tip-text">Measures how much debt the REIT uses. Lower is more conservative. Real estate is capital-intensive, so some debt is normal â but excessive leverage increases risk.</span></span></span></label><input type="number" id="max_debt_to_equity" step="any"></div>
+    <div><label>Max Debt/Equity <span class="beginner-only"><span class="tip-icon">?<span class="tip-text">Measures how much debt the REIT uses. Lower is more conservative. Real estate is capital-intensive, so some debt is normal — but excessive leverage increases risk.</span></span></span></label><input type="number" id="max_debt_to_equity" step="any"></div>
     <div><label>Min Market Cap ($) <span class="beginner-only"><span class="tip-icon">?<span class="tip-text">Larger REITs tend to be more diversified and liquid. $1B+ is mid-cap; $10B+ is large-cap for REITs.</span></span></span></label><input type="number" id="min_market_cap" step="any"></div>
     <div><label>Min 52W Perf % <span class="beginner-only"><span class="tip-icon">?<span class="tip-text">52-week price performance shows how the REIT has performed over the past year. Positive values indicate appreciation on top of dividends.</span></span></span></label><input type="number" id="min_w52_perf" step="any"></div>
     <div><label>Max 52W Perf % <span class="beginner-only"><span class="tip-icon">?<span class="tip-text">Cap performance to find REITs that haven't already run up significantly and may offer better entry points.</span></span></span></label><input type="number" id="max_w52_perf" step="any"></div>
@@ -187,11 +192,11 @@ tr:hover td{background:rgba(139,92,246,.04)}
 <div class="edu-guidance beginner-only" id="eduGuidance" style="display:none">
   <h3>Reading Your Results</h3>
   <ul>
-    <li><strong>Dividend Yield</strong> â The annual income return. A 5% yield on a $100 share means $5/year in dividends. Compare yields across similar sectors for context.</li>
-    <li><strong>P/E Ratio</strong> â Lower P/E can signal a value opportunity, but compare within the same sector. Data Center REITs typically trade at higher P/E than Office REITs.</li>
-    <li><strong>Debt/Equity</strong> â REITs use debt to acquire properties. A D/E under 1.0 is conservative; above 2.0 may indicate elevated risk, especially if interest rates rise.</li>
-    <li><strong>Payout Ratio</strong> â REITs must pay 90%+ of income as dividends. A payout ratio above 100% may mean the REIT is paying from reserves, which isn't sustainable long-term.</li>
-    <li><strong>52W Performance</strong> â Shows capital appreciation. Combined with dividend yield, this gives total return. Click any row to see the price chart over time.</li>
+    <li><strong>Dividend Yield</strong> — The annual income return. A 5% yield on a $100 share means $5/year in dividends. Compare yields across similar sectors for context.</li>
+    <li><strong>P/E Ratio</strong> — Lower P/E can signal a value opportunity, but compare within the same sector. Data Center REITs typically trade at higher P/E than Office REITs.</li>
+    <li><strong>Debt/Equity</strong> — REITs use debt to acquire properties. A D/E under 1.0 is conservative; above 2.0 may indicate elevated risk, especially if interest rates rise.</li>
+    <li><strong>Payout Ratio</strong> — REITs must pay 90%+ of income as dividends. A payout ratio above 100% may mean the REIT is paying from reserves, which isn't sustainable long-term.</li>
+    <li><strong>52W Performance</strong> — Shows capital appreciation. Combined with dividend yield, this gives total return. Click any row to see the price chart over time.</li>
   </ul>
 </div>
 
@@ -213,15 +218,15 @@ const fields=['min_div_yield','max_div_yield','min_price','max_price','min_pe','
 let results=[],sortKey='div_yield',sortAsc=false,chartInst=null,selectedSym=null;
 
 const cols=[
-  {key:'symbol',label:'Symbol',tip:'Ticker symbol â click a row to see the price chart'},
+  {key:'symbol',label:'Symbol',tip:'Ticker symbol — click a row to see the price chart'},
   {key:'name',label:'Name',tip:'REIT company name'},
   {key:'sector',label:'Sector',tip:'Real estate sector the REIT operates in'},
   {key:'price',label:'Price',align:'right',tip:'Current share price'},
-  {key:'div_yield',label:'Div Yield',align:'right',tip:'Annual dividend yield â higher means more income per dollar invested'},
-  {key:'pe',label:'P/E',align:'right',tip:'Price-to-Earnings ratio â lower may indicate better value'},
+  {key:'div_yield',label:'Div Yield',align:'right',tip:'Annual dividend yield — higher means more income per dollar invested'},
+  {key:'pe',label:'P/E',align:'right',tip:'Price-to-Earnings ratio — lower may indicate better value'},
   {key:'market_cap',label:'Mkt Cap',align:'right',tip:'Total market capitalization of the REIT'},
-  {key:'debt_to_equity',label:'D/E',align:'right',tip:'Debt-to-Equity ratio â measures financial leverage'},
-  {key:'payout_ratio',label:'Payout',align:'right',tip:'% of earnings paid as dividends â above 90% is typical for REITs'},
+  {key:'debt_to_equity',label:'D/E',align:'right',tip:'Debt-to-Equity ratio — measures financial leverage'},
+  {key:'payout_ratio',label:'Payout',align:'right',tip:'% of earnings paid as dividends — above 90% is typical for REITs'},
   {key:'w52_perf',label:'52W Perf',align:'right',tip:'52-week price performance (capital appreciation)'},
 ];
 
@@ -233,7 +238,7 @@ function applyPreset(p){
 }
 function clearFilters(){fields.forEach(f=>document.getElementById(f).value='');document.getElementById('sectors').selectedIndex=-1}
 
-function fmt(v){if(v==null)return'â';if(v>=1e12)return'$'+(v/1e12).toFixed(2)+'T';if(v>=1e9)return'$'+(v/1e9).toFixed(2)+'B';if(v>=1e6)return'$'+(v/1e6).toFixed(1)+'M';return'$'+v.toLocaleString()}
+function fmt(v){if(v==null)return'—';if(v>=1e12)return'$'+(v/1e12).toFixed(2)+'T';if(v>=1e9)return'$'+(v/1e9).toFixed(2)+'B';if(v>=1e6)return'$'+(v/1e6).toFixed(1)+'M';return'$'+v.toLocaleString()}
 
 async function runScreen(){
   const body={};
@@ -248,7 +253,7 @@ async function runScreen(){
   const{job_id}=await r.json();
   const poll=setInterval(async()=>{
     const s=await(await fetch('/reits/api/screen/'+job_id)).json();
-    document.getElementById('progress').textContent=`${s.processed}/${s.total} â ${s.matches.length} matches`;
+    document.getElementById('progress').textContent=`${s.processed}/${s.total} — ${s.matches.length} matches`;
     if(s.status==='done'||s.status==='error'){
       clearInterval(poll);results=s.matches;renderTable();
       document.getElementById('screenBtn').disabled=false;
@@ -261,18 +266,18 @@ async function runScreen(){
 
 function renderTable(){
   const sorted=[...results].sort((a,b)=>{let av=a[sortKey],bv=b[sortKey];if(av==null)return 1;if(bv==null)return-1;if(typeof av==='string')return sortAsc?av.localeCompare(bv):bv.localeCompare(av);return sortAsc?av-bv:bv-av});
-  document.getElementById('thead').innerHTML='<tr>'+cols.map(c=>`<th class="${c.align==='right'?'right':''}" onclick="doSort('${c.key}')">${c.label}${sortKey===c.key?(sortAsc?' â²':' â¼'):''}${c.tip?'<span class="col-tip">'+c.tip+'</span>':''}</th>`).join('')+'</tr>';
+  document.getElementById('thead').innerHTML='<tr>'+cols.map(c=>`<th class="${c.align==='right'?'right':''}" onclick="doSort('${c.key}')">${c.label}${sortKey===c.key?(sortAsc?' ▲':' ▼'):''}${c.tip?'<span class="col-tip">'+c.tip+'</span>':''}</th>`).join('')+'</tr>';
   document.getElementById('tbody').innerHTML=sorted.map(r=>'<tr style="cursor:pointer" onclick="openModal(\''+r.symbol+'\',\''+r.name+'\')">'+cols.map(c=>{
     let v=r[c.key],cls=c.align==='right'?'right':'';
     if(c.key==='sector') return `<td><span class="sector-badge">${v}</span></td>`;
-    if(c.key==='div_yield') return `<td class="${cls}">${v!=null?v.toFixed(2)+'%':'â'}</td>`;
-    if(c.key==='pe') return `<td class="${cls}">${v!=null?v.toFixed(1):'â'}</td>`;
+    if(c.key==='div_yield') return `<td class="${cls}">${v!=null?v.toFixed(2)+'%':'—'}</td>`;
+    if(c.key==='pe') return `<td class="${cls}">${v!=null?v.toFixed(1):'—'}</td>`;
     if(c.key==='market_cap') return `<td class="${cls}">${fmt(v)}</td>`;
-    if(c.key==='debt_to_equity') return `<td class="${cls}">${v!=null?v.toFixed(2):'â'}</td>`;
-    if(c.key==='payout_ratio') return `<td class="${cls}">${v!=null?v.toFixed(1)+'%':'â'}</td>`;
-    if(c.key==='w52_perf') return `<td class="${cls} ${(v||0)>=0?'green':'red'}">${v!=null?(v>=0?'+':'')+v.toFixed(1)+'%':'â'}</td>`;
+    if(c.key==='debt_to_equity') return `<td class="${cls}">${v!=null?v.toFixed(2):'—'}</td>`;
+    if(c.key==='payout_ratio') return `<td class="${cls}">${v!=null?v.toFixed(1)+'%':'—'}</td>`;
+    if(c.key==='w52_perf') return `<td class="${cls} ${(v||0)>=0?'green':'red'}">${v!=null?(v>=0?'+':'')+v.toFixed(1)+'%':'—'}</td>`;
     if(c.key==='price') return `<td class="${cls}">$${v.toFixed(2)}</td>`;
-    return `<td class="${cls}">${v!=null?v:'â'}</td>`;
+    return `<td class="${cls}">${v!=null?v:'—'}</td>`;
   }).join('')+'</tr>').join('');
 }
 

@@ -11,7 +11,7 @@
   </script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ETF Screener â Charged Alpha</title>
+  <title>ETF Screener — Charged Alpha</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"></script>
   <style>
@@ -30,8 +30,8 @@
     th { cursor: pointer; user-select: none; white-space: nowrap; }
     th[title]:not([title=""]) { text-decoration: underline dotted #4b5563; text-underline-offset: 3px; }
     th:hover { color: #a5b4fc; }
-    th.sorted-asc::after { content: ' â'; color: #6366f1; }
-    th.sorted-desc::after { content: ' â'; color: #6366f1; }
+    th.sorted-asc::after { content: ' ↑'; color: #6366f1; }
+    th.sorted-desc::after { content: ' ↓'; color: #6366f1; }
     #results-table tbody tr.data-row { border-bottom: 1px solid #1e293b; cursor: pointer; }
     #results-table tbody tr.data-row:hover td { background: rgba(99,102,241,0.08); }
     .progress-bar-inner { height: 100%; border-radius: 9999px; background: linear-gradient(90deg,#6366f1,#818cf8); transition: width 0.4s ease; }
@@ -46,7 +46,7 @@
     .info-icon:hover { background:#6366f1; color:white; }
     #tooltip { position:fixed; background:#0f172a; border:1px solid #475569; border-radius:10px; padding:10px 14px; font-size:12px; color:#94a3b8; max-width:280px; z-index:9999; pointer-events:none; line-height:1.65; box-shadow:0 8px 32px rgba(0,0,0,.6); display:none; }
 
-    /* ââ Quick Bar ââ */
+    /* ── Quick Bar ── */
     .quick-bar { background:#131b2e; border:1px solid #1e3a5f; border-radius:12px; padding:14px 20px; display:flex; flex-wrap:wrap; gap:12px; align-items:center; }
     .cap-chip { padding:6px 14px; border-radius:20px; font-size:12px; font-weight:600; cursor:pointer; border:1px solid #334155; background:transparent; color:#64748b; transition:all .15s; user-select:none; }
     .cap-chip.active { border-color:#6366f1; color:#a5b4fc; background:rgba(99,102,241,.12); }
@@ -54,7 +54,7 @@
     .preset-select { background:#0f172a; border:1px solid #475569; border-radius:8px; color:#e2e8f0; padding:8px 12px; font-size:13px; outline:none; cursor:pointer; min-width:160px; }
     .preset-select:focus { border-color:#6366f1; }
 
-    /* ââ Multi-select dropdown ââ */
+    /* ── Multi-select dropdown ── */
     .multi-select { position:relative; display:inline-block; }
     .multi-select-btn { background:#0f172a; border:1px solid #475569; border-radius:8px; color:#94a3b8; padding:8px 12px; font-size:13px; cursor:pointer; min-width:160px; text-align:left; display:flex; align-items:center; justify-content:space-between; gap:6px; }
     .multi-select-btn:hover,.multi-select-btn:focus { border-color:#6366f1; outline:none; }
@@ -65,7 +65,7 @@
     .multi-select-dropdown label:hover { background:#1e293b; }
     .multi-select-dropdown input { accent-color:#6366f1; width:14px; height:14px; }
 
-    /* ââ Advanced filters panel ââ */
+    /* ── Advanced filters panel ── */
     .adv-toggle { display:inline-flex; align-items:center; gap:6px; cursor:pointer; color:#94a3b8; font-size:13px; font-weight:500; padding:6px 0; transition:color .15s; user-select:none; }
     .adv-toggle:hover { color:#a5b4fc; }
     .adv-toggle .chevron { transition:transform .2s; font-size:10px; }
@@ -79,11 +79,11 @@
     .filter-tab-content { display:none; }
     .filter-tab-content.active { display:block; }
 
-    /* ââ Inline detail card ââ */
+    /* ── Inline detail card ── */
     .inline-detail { background:#131b2e; border-left:3px solid #6366f1; }
     .inline-detail td { padding:0 !important; }
 
-    /* ââ Detail overlay ââ */
+    /* ── Detail overlay ── */
     #detail-overlay { position:fixed; inset:0; z-index:100; background:#0f172a; overflow-y:auto; display:none; }
     #detail-overlay.visible { display:block; }
     .metric-card { background:#131f35; border:1px solid #1e3a5f; border-radius:10px; padding:14px 16px; }
@@ -102,11 +102,11 @@
     #chart-overlay { position:absolute; inset:0; display:none; align-items:center; justify-content:center; background:rgba(15,23,42,.7); border-radius:8px; }
     #chart-overlay.visible { display:flex; }
 
-    /* ââ Holding bars ââ */
+    /* ── Holding bars ── */
     .holding-bar { height:20px; background:#6366f1; border-radius:4px; min-width:2px; transition:width .3s; }
     .sector-bar { height:20px; border-radius:4px; min-width:2px; transition:width .3s; }
 
-    /* ââ Nav bar ââ */
+    /* ── Nav bar ── */
     .ca-nav{background:#111827;border-bottom:1px solid #1e293b;padding:0 24px;display:flex;align-items:center;justify-content:space-between;height:56px;position:relative;z-index:100}
     .ca-nav .nav-logo{display:flex;align-items:center;gap:10px;font-weight:800;color:white;font-size:14px;text-decoration:none}
     .ca-nav .nav-bolt{width:36px;height:36px;background:linear-gradient(135deg,#6366f1,#8b5cf6);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:18px}
@@ -130,7 +130,7 @@
     .ca-mobile-menu a.active{color:#a5b4fc}
     @media(max-width:768px){.ca-nav-links{display:none}.ca-hamburger{display:block}.ca-nav-title{font-size:15px}.mode-toggle.nav-mode{display:none}.ca-mobile-menu .mode-toggle{display:flex;padding:8px 0;border-bottom:1px solid #1e293b;margin-bottom:4px}}
 
-    /* ââ Mode toggle ââ */
+    /* ── Mode toggle ── */
     .mode-toggle{display:flex;align-items:center;gap:8px;margin-right:12px}
     .mode-toggle span{font-size:12px;font-weight:600;color:#64748b;transition:color .2s}
     .mode-toggle span.active-label{color:#e2e8f0}
@@ -147,7 +147,7 @@
     .edu-guidance li{margin-bottom:4px}
     .edu-guidance strong{color:#e2e8f0}
 
-    /* ââ Homepage preset cards ââ */
+    /* ── Homepage preset cards ── */
     .preset-card { background:linear-gradient(135deg,#131b2e 0%,#1e293b 100%); border:1px solid #334155; border-radius:12px; padding:20px; cursor:pointer; transition:all .2s; text-decoration:none; color:inherit; display:block; }
     .preset-card:hover { border-color:#6366f1; transform:translateY(-2px); box-shadow:0 8px 24px rgba(0,0,0,.3); }
     .preset-card h3 { font-size:15px; font-weight:700; color:#e2e8f0; margin-bottom:4px; }
@@ -167,12 +167,12 @@
 
 <div id="tooltip"></div>
 
-<!-- âââââââââââââââââââââââââââââââââââââââââââââââââââââââ
+<!-- ═══════════════════════════════════════════════════════
      NAVIGATION
-     âââââââââââââââââââââââââââââââââââââââââââââââââââââââ -->
+     ═══════════════════════════════════════════════════════ -->
 <nav class="ca-nav">
   <div style="display:flex;align-items:center">
-    <a href="/" class="nav-logo"><div class="nav-bolt">â¡</div>CHARGED ALPHA</a>
+    <a href="/" class="nav-logo"><div class="nav-bolt">⚡</div>CHARGED ALPHA</a>
     <span class="ca-nav-title">ETF Screener</span>
   </div>
   <div style="display:flex;align-items:center;gap:8px">
@@ -198,6 +198,8 @@
           <a href="/charts/">Stock Charts</a>
       </div>
     </div>
+    <a href="/auth/login" style="padding:6px 14px;border-radius:8px;font-size:12px;font-weight:600;color:#94a3b8;border:1px solid #334155;text-decoration:none;transition:all .15s;">Sign In</a>
+    <a href="/auth/register" style="padding:6px 14px;border-radius:8px;font-size:12px;font-weight:600;color:white;background:linear-gradient(135deg,#6366f1,#7c3aed);text-decoration:none;transition:all .15s;">Sign Up</a>
   </div>
   </div>
   <button class="ca-hamburger" onclick="document.getElementById('mobileMenu').classList.toggle('open')">
@@ -217,12 +219,15 @@
     <a href="/earnings/">Earnings Calendar</a>
     <a href="/gold/">Precious Metals</a>
           <a href="/charts/">Stock Charts</a>
+    <div style="height:1px;background:#1e293b;margin:8px 0"></div>
+    <a href="/auth/login">Sign In</a>
+    <a href="/auth/register" style="color:#a5b4fc">Sign Up</a>
   </div>
 </nav>
 
-<!-- âââââââââââââââââââââââââââââââââââââââââââââââââââââââ
+<!-- ═══════════════════════════════════════════════════════
      SCREENER PAGE
-     âââââââââââââââââââââââââââââââââââââââââââââââââââââââ -->
+     ═══════════════════════════════════════════════════════ -->
 <div id="screener-page" class="p-6">
   <div class="max-w-7xl mx-auto mb-6">
     <div class="flex items-center justify-between">
@@ -235,7 +240,7 @@
     <div class="mt-4 card p-5 border-l-4 border-indigo-500 beginner-only" style="background:linear-gradient(135deg,#131b2e 0%,#1e293b 100%);">
       <p class="text-sm text-slate-200 font-medium mb-2">What is this tool?</p>
       <p class="text-xs text-slate-400 leading-relaxed">
-        This screener scans ~200 of the most traded US ETFs in real time and filters them against your criteria â expense ratio, AUM, yield, performance, and more.
+        This screener scans ~200 of the most traded US ETFs in real time and filters them against your criteria — expense ratio, AUM, yield, performance, and more.
         Use it to find low-cost core holdings, high-yield income ETFs, growth momentum plays, or bond safety positions.
       </p>
       <p class="text-xs text-slate-400 leading-relaxed mt-2">
@@ -243,7 +248,7 @@
       </p>
     </div>
 
-    <!-- âââ Quick Screen Cards (homepage) âââ -->
+    <!-- ═══ Quick Screen Cards (homepage) ═══ -->
     <div id="quick-screen-cards" class="grid grid-cols-2 lg:grid-cols-4 gap-4 mt-6 beginner-only">
       <a class="preset-card" href="javascript:void(0)" onclick="applyPreset('low_cost')">
         <span class="preset-icon">$</span>
@@ -270,7 +275,7 @@
 
   <div class="max-w-7xl mx-auto space-y-4">
 
-    <!-- âââ ZONE 1: Quick Bar âââ -->
+    <!-- ═══ ZONE 1: Quick Bar ═══ -->
     <div class="quick-bar">
       <!-- Category multi-select -->
       <div class="multi-select" id="category-select">
@@ -303,7 +308,7 @@
       <button class="btn-primary" id="run-btn-quick" onclick="submitScreen()" style="margin-left:auto;">Run Screen</button>
     </div>
 
-    <!-- âââ ZONE 2: Advanced Filters âââ -->
+    <!-- ═══ ZONE 2: Advanced Filters ═══ -->
     <div>
       <button class="adv-toggle" id="adv-toggle" onclick="toggleAdvanced()">
         <span class="chevron">&#9660;</span> Advanced Filters <span id="adv-count" class="text-indigo-400 text-xs font-bold"></span>
@@ -439,7 +444,7 @@
       <p id="match-count-live" class="text-xs text-slate-500 mt-2">0 matches so far</p>
     </div>
 
-    <!-- âââ ZONE 3: Results âââ -->
+    <!-- ═══ ZONE 3: Results ═══ -->
     <div id="results-panel" class="card hidden">
       <div class="flex items-center justify-between p-5 border-b border-slate-700 flex-wrap gap-3">
         <div>
@@ -482,9 +487,9 @@
 </div><!-- /screener-page -->
 
 
-<!-- âââââââââââââââââââââââââââââââââââââââââââââââââââââââ
+<!-- ═══════════════════════════════════════════════════════
      DETAIL OVERLAY
-     âââââââââââââââââââââââââââââââââââââââââââââââââââââââ -->
+     ═══════════════════════════════════════════════════════ -->
 <div id="detail-overlay">
   <div class="sticky top-0 z-10 bg-[#0b1220] border-b border-slate-700 px-6 py-4 flex flex-wrap items-center gap-4">
     <button id="detail-back" class="flex items-center gap-2 text-slate-400 hover:text-white transition-colors text-sm font-medium shrink-0">
@@ -543,9 +548,9 @@
 
 
 <script>
-// ââââââââââââââââââââââââââââââââââââââââââââââââ
+// ════════════════════════════════════════════════
 // CONSTANTS
-// ââââââââââââââââââââââââââââââââââââââââââââââââ
+// ════════════════════════════════════════════════
 const CATEGORIES = ["Equity", "Bond", "Commodity", "International", "Sector", "Thematic"];
 
 const PRESETS = {
@@ -561,9 +566,9 @@ const SECTOR_COLORS = [
   '#60a5fa','#3b82f6','#2563eb','#1d4ed8',
 ];
 
-// ââââââââââââââââââââââââââââââââââââââââââââââââ
+// ════════════════════════════════════════════════
 // TOOLTIP
-// ââââââââââââââââââââââââââââââââââââââââââââââââ
+// ════════════════════════════════════════════════
 const tooltipEl = document.getElementById('tooltip');
 document.body.addEventListener('mouseover', e => {
   const el = e.target.closest('[data-tip]');
@@ -581,9 +586,9 @@ function positionTooltip(e) {
   tooltipEl.style.left=x+'px'; tooltipEl.style.top=y+'px';
 }
 
-// ââââââââââââââââââââââââââââââââââââââââââââââââ
+// ════════════════════════════════════════════════
 // CATEGORY MULTI-SELECT
-// ââââââââââââââââââââââââââââââââââââââââââââââââ
+// ════════════════════════════════════════════════
 const categoryDropdown = document.getElementById('category-dropdown');
 CATEGORIES.forEach(s => {
   categoryDropdown.innerHTML += `<label><input type="checkbox" value="${s}" class="category-cb" onchange="updateCategoryLabel()" /> ${s}</label>`;
@@ -608,9 +613,9 @@ function getSelectedCategories() {
   return checked.length ? checked : null;
 }
 
-// ââââââââââââââââââââââââââââââââââââââââââââââââ
+// ════════════════════════════════════════════════
 // ASSET CLASS CHIPS
-// ââââââââââââââââââââââââââââââââââââââââââââââââ
+// ════════════════════════════════════════════════
 function toggleAssetClass(el) {
   el.classList.toggle('active');
 }
@@ -619,9 +624,9 @@ function getAssetClasses() {
   return active.length && active.length < 4 ? active : null;
 }
 
-// ââââââââââââââââââââââââââââââââââââââââââââââââ
+// ════════════════════════════════════════════════
 // PRESETS
-// ââââââââââââââââââââââââââââââââââââââââââââââââ
+// ════════════════════════════════════════════════
 function applyPreset(name) {
   clearAllFilters(true);
   const preset = PRESETS[name];
@@ -669,9 +674,9 @@ function clearAllFilters(silent) {
   }
 }
 
-// ââââââââââââââââââââââââââââââââââââââââââââââââ
+// ════════════════════════════════════════════════
 // ADVANCED PANEL
-// ââââââââââââââââââââââââââââââââââââââââââââââââ
+// ════════════════════════════════════════════════
 function toggleAdvanced(forceOpen) {
   const toggle = document.getElementById('adv-toggle');
   const panel = document.getElementById('adv-panel');
@@ -722,9 +727,9 @@ function updateAdvCount() {
   });
 }
 
-// ââââââââââââââââââââââââââââââââââââââââââââââââ
+// ════════════════════════════════════════════════
 // SCREENER -- STATE
-// ââââââââââââââââââââââââââââââââââââââââââââââââ
+// ════════════════════════════════════════════════
 let currentJobId=null, pollTimer=null, allResults=[];
 let sortCol='total_assets', sortDir='desc';
 let expandedRow = null;
@@ -740,9 +745,9 @@ const emptyState    = document.getElementById('empty-state');
 const exportBtn     = document.getElementById('export-btn');
 const lastRun       = document.getElementById('last-run');
 
-// ââââââââââââââââââââââââââââââââââââââââââââââââ
+// ════════════════════════════════════════════════
 // DETERMINE ACTIVE COLUMNS
-// ââââââââââââââââââââââââââââââââââââââââââââââââ
+// ════════════════════════════════════════════════
 function getActiveColumns() {
   const cols = [
     {key:'symbol',label:'Ticker',align:'left',always:true,tip:'ETF ticker symbol'},
@@ -777,9 +782,9 @@ function getActiveColumns() {
   return cols;
 }
 
-// ââââââââââââââââââââââââââââââââââââââââââââââââ
+// ════════════════════════════════════════════════
 // SUBMIT SCREEN
-// ââââââââââââââââââââââââââââââââââââââââââââââââ
+// ════════════════════════════════════════════════
 async function submitScreen() {
   if(pollTimer) clearInterval(pollTimer);
   const criteria = {
@@ -832,9 +837,9 @@ async function pollJob(job_id) {
   } catch(err){console.error('Poll error',err);}
 }
 
-// ââââââââââââââââââââââââââââââââââââââââââââââââ
+// ════════════════════════════════════════════════
 // RENDER RESULTS
-// ââââââââââââââââââââââââââââââââââââââââââââââââ
+// ════════════════════════════════════════════════
 function showResults(results){
   resultsPanel.classList.remove('hidden');
   var eg=document.getElementById('eduGuidance'); if(eg) eg.style.display='';
@@ -999,9 +1004,9 @@ exportBtn.addEventListener('click',()=>{
 });
 
 
-// ââââââââââââââââââââââââââââââââââââââââââââââââ
+// ════════════════════════════════════════════════
 // DETAIL -- OPEN / CLOSE
-// ââââââââââââââââââââââââââââââââââââââââââââââââ
+// ════════════════════════════════════════════════
 const detailOverlay = document.getElementById('detail-overlay');
 const screenerPage  = document.getElementById('screener-page');
 let detailData = null;
@@ -1074,9 +1079,9 @@ function renderDetailPage(data){
   }
 }
 
-// ââââââââââââââââââââââââââââââââââââââââââââââââ
+// ════════════════════════════════════════════════
 // DETAIL -- METRICS GRID
-// ââââââââââââââââââââââââââââââââââââââââââââââââ
+// ════════════════════════════════════════════════
 function renderMetrics(info){
   const grid = document.getElementById('metrics-grid');
   let wkRangeHtml = '<div class="metric-value">-</div>';
@@ -1109,9 +1114,9 @@ function renderMetrics(info){
   grid.innerHTML = cards.map(c=>`<div class="metric-card" data-tip="${c.tip}"><div class="metric-label">${c.label}</div>${c.html}</div>`).join('');
 }
 
-// ââââââââââââââââââââââââââââââââââââââââââââââââ
+// ════════════════════════════════════════════════
 // DETAIL -- CHART
-// ââââââââââââââââââââââââââââââââââââââââââââââââ
+// ════════════════════════════════════════════════
 let priceChart = null;
 function destroyChart(){ if(priceChart){ priceChart.destroy(); priceChart=null; } }
 
@@ -1156,9 +1161,9 @@ document.querySelectorAll('.chart-range-btn').forEach(btn => {
   });
 });
 
-// ââââââââââââââââââââââââââââââââââââââââââââââââ
+// ════════════════════════════════════════════════
 // DETAIL -- HOLDINGS
-// ââââââââââââââââââââââââââââââââââââââââââââââââ
+// ════════════════════════════════════════════════
 function renderHoldings(holdings){
   const container = document.getElementById('holdings-content');
   if(!holdings.length) {
@@ -1187,9 +1192,9 @@ function renderHoldings(holdings){
   container.innerHTML = html;
 }
 
-// ââââââââââââââââââââââââââââââââââââââââââââââââ
+// ════════════════════════════════════════════════
 // DETAIL -- SECTOR WEIGHTS
-// ââââââââââââââââââââââââââââââââââââââââââââââââ
+// ════════════════════════════════════════════════
 function renderSectorWeights(sectors){
   const container = document.getElementById('sectors-content');
   if(!sectors.length) {
@@ -1219,17 +1224,17 @@ function renderSectorWeights(sectors){
   container.innerHTML = html;
 }
 
-// ââââââââââââââââââââââââââââââââââââââââââââââââ
+// ════════════════════════════════════════════════
 // URL PRESET LOADING
-// ââââââââââââââââââââââââââââââââââââââââââââââââ
+// ════════════════════════════════════════════════
 const urlParams = new URLSearchParams(window.location.search);
 const presetParam = urlParams.get('preset');
 if(presetParam && PRESETS[presetParam]) {
   applyPreset(presetParam);
 }
-// ââââââââââââââââââââââââââââââââââââââââââââââââ
+// ════════════════════════════════════════════════
 // MODE TOGGLE
-// ââââââââââââââââââââââââââââââââââââââââââââââââ
+// ════════════════════════════════════════════════
 let expertMode = localStorage.getItem('ca_mode') === 'expert';
 
 function toggleMode(src) {

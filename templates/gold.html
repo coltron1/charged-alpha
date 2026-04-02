@@ -11,7 +11,7 @@
   </script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Precious Metals Aggregator â Charged Alpha</title>
+  <title>Precious Metals Aggregator — Charged Alpha</title>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -37,7 +37,7 @@
       min-height: 100vh;
     }
 
-    /* ââ Nav bar âââââââââââââââââââââââââââââââââââââââââââââââ */
+    /* ── Nav bar ─────────────────────────────────────────────── */
     .ca-nav{background:#111827;border-bottom:1px solid #1e293b;padding:0 24px;display:flex;align-items:center;justify-content:space-between;height:56px;position:relative;z-index:100}
     .ca-nav .nav-logo{display:flex;align-items:center;gap:10px;font-weight:800;color:white;font-size:14px;text-decoration:none}
     .ca-nav .nav-bolt{width:36px;height:36px;background:linear-gradient(135deg,#6366f1,#8b5cf6);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:18px}
@@ -61,7 +61,7 @@
     .ca-mobile-menu a.active{color:#a5b4fc}
     @media(max-width:768px){.ca-nav-links{display:none}.ca-hamburger{display:block}.ca-nav-title{font-size:15px}.mode-toggle.nav-mode{display:none}.ca-mobile-menu .mode-toggle{display:flex;padding:8px 0;border-bottom:1px solid #1e293b;margin-bottom:4px}}
 
-    /* ââ Mode toggle ââââââââââââââââââââââââââââââââââââââââââ */
+    /* ── Mode toggle ────────────────────────────────────────── */
     .mode-toggle{display:flex;align-items:center;gap:8px;margin-right:12px}
     .mode-toggle span{font-size:12px;font-weight:600;color:#64748b;transition:color .2s}
     .mode-toggle span.active-label{color:#e2e8f0}
@@ -72,7 +72,7 @@
     .toggle-knob{position:absolute;top:2px;left:2px;width:20px;height:20px;background:white;border-radius:50%;transition:transform .2s;box-shadow:0 1px 3px rgba(0,0,0,.3)}
     .toggle-switch input:checked~.toggle-knob{transform:translateX(20px)}
 
-    /* ââ Beginner educational elements ââââââââââââââââââââââââ */
+    /* ── Beginner educational elements ──────────────────────── */
     .edu-hide{display:none !important}
     .label-with-tip{display:flex;align-items:center;gap:4px}
     .tip-icon{display:inline-flex;align-items:center;justify-content:center;width:14px;height:14px;border-radius:50%;background:#334155;color:#94a3b8;font-size:9px;font-weight:700;cursor:help;position:relative;flex-shrink:0}
@@ -85,7 +85,7 @@
     .edu-guidance li{margin-bottom:4px}
     .edu-guidance strong{color:var(--text)}
 
-    /* ââ Header âââââââââââââââââââââââââââââââââââââââââââââââ */
+    /* ── Header ─────────────────────────────────────────────── */
     header {
       background: linear-gradient(135deg, #1A1500 0%, #0F0F0F 60%);
       border-bottom: 1px solid var(--gold-dark);
@@ -120,7 +120,7 @@
       margin-top: 2px;
     }
 
-    /* ââ Metal switcher ââââââââââââââââââââââââââââââââââââââââ */
+    /* ── Metal switcher ──────────────────────────────────────── */
     .metal-switcher {
       display: flex;
       gap: 8px;
@@ -155,7 +155,7 @@
       color: var(--text);
     }
 
-    /* ââ Spot price banner âââââââââââââââââââââââââââââââââââââ */
+    /* ── Spot price banner ───────────────────────────────────── */
     .spot-banner {
       margin-top: 14px;
       background: rgba(201, 168, 76, 0.06);
@@ -203,7 +203,7 @@
       padding: 24px 24px 48px;
     }
 
-    /* ââ Filter bar âââââââââââââââââââââââââââââââââââââââââââ */
+    /* ── Filter bar ─────────────────────────────────────────── */
     .filters {
       background: var(--surface);
       border: 1px solid var(--border);
@@ -323,7 +323,7 @@
       color: var(--gold);
     }
 
-    /* ââ Status bar âââââââââââââââââââââââââââââââââââââââââââ */
+    /* ── Status bar ─────────────────────────────────────────── */
     .status-bar {
       display: flex;
       align-items: center;
@@ -360,7 +360,7 @@
       outline: none;
     }
 
-    /* ââ Source tabs âââââââââââââââââââââââââââââââââââââââââââ */
+    /* ── Source tabs ─────────────────────────────────────────── */
     .source-tabs {
       display: flex;
       gap: 8px;
@@ -394,7 +394,7 @@
     .tab.misc-tab { display: none; }
     .tab.misc-tab.visible { display: inline-flex; }
 
-    /* ââ Grid âââââââââââââââââââââââââââââââââââââââââââââââââ */
+    /* ── Grid ───────────────────────────────────────────────── */
     .grid {
       display: flex;
       flex-direction: column;
@@ -599,7 +599,7 @@
       border: 1px solid var(--border);
     }
 
-    /* ââ State screens ââââââââââââââââââââââââââââââââââââââââ */
+    /* ── State screens ──────────────────────────────────────── */
     .state-screen {
       display: flex;
       flex-direction: column;
@@ -675,7 +675,7 @@
 
 <nav class="ca-nav">
   <div style="display:flex;align-items:center">
-    <a href="/" class="nav-logo"><div class="nav-bolt">â¡</div>CHARGED ALPHA</a>
+    <a href="/" class="nav-logo"><div class="nav-bolt">⚡</div>CHARGED ALPHA</a>
     <span class="ca-nav-title">Precious Metals</span>
   </div>
   <div style="display:flex;align-items:center;gap:8px">
@@ -705,6 +705,8 @@
           <a href="/charts/">Stock Charts</a>
       </div>
     </div>
+    <a href="/auth/login" style="padding:6px 14px;border-radius:8px;font-size:12px;font-weight:600;color:#94a3b8;border:1px solid #334155;text-decoration:none;transition:all .15s;">Sign In</a>
+    <a href="/auth/register" style="padding:6px 14px;border-radius:8px;font-size:12px;font-weight:600;color:white;background:linear-gradient(135deg,#6366f1,#7c3aed);text-decoration:none;transition:all .15s;">Sign Up</a>
   </div>
   </div>
   <button class="ca-hamburger" onclick="document.getElementById('mobileMenu').classList.toggle('open')">
@@ -732,6 +734,9 @@
     <a href="/earnings/">Earnings Calendar</a>
     <a href="/gold/" class="active">Precious Metals</a>
           <a href="/charts/">Stock Charts</a>
+    <div style="height:1px;background:#1e293b;margin:8px 0"></div>
+    <a href="/auth/login">Sign In</a>
+    <a href="/auth/register" style="color:#a5b4fc">Sign Up</a>
   </div>
 </nav>
 
@@ -749,7 +754,7 @@
   <div class="metal-switcher">
     <button class="metal-btn active" data-metal="gold"     onclick="switchMetal('gold')">ð¥ Gold</button>
     <button class="metal-btn"        data-metal="silver"   onclick="switchMetal('silver')">ð¥ Silver</button>
-    <button class="metal-btn"        data-metal="platinum" onclick="switchMetal('platinum')">â¬¡ Platinum</button>
+    <button class="metal-btn"        data-metal="platinum" onclick="switchMetal('platinum')">⬡ Platinum</button>
   </div>
 
   <div class="spot-banner">
@@ -768,7 +773,7 @@
     <p style="font-size:13px;font-weight:600;color:var(--text);margin-bottom:6px;">What is this tool?</p>
     <p style="font-size:12px;color:var(--text-muted);line-height:1.65;">
       This aggregator searches live listings for gold, silver, and platinum across eBay (top-rated sellers only), SD Bullion, and optionally person-to-person marketplaces like Craigslist and Facebook Marketplace.
-      Every listing is enriched with detected weight, purity, and metal content so you can instantly see how each price compares to the current spot price â helping you find the best deals on physical precious metals.
+      Every listing is enriched with detected weight, purity, and metal content so you can instantly see how each price compares to the current spot price — helping you find the best deals on physical precious metals.
     </p>
     <p style="font-size:12px;color:var(--text-muted);line-height:1.65;margin-top:8px;">
       <strong style="color:var(--text);">How to use:</strong> Choose your metal (Gold, Silver, or Platinum) using the tabs above, set any filters you want (type, purity, price range, weight range), then click <em>Search</em>.
@@ -826,7 +831,7 @@
 
     <div class="filter-group">
       <label class="label-with-tip">Price Range
-        <span class="tip-icon beginner-only">?<span class="tip-bubble">Filter by listing price in USD. Useful for staying within your budget. Note: a lower price doesn't always mean a better deal â check the <strong>premium vs. spot</strong> on each card to compare true value.</span></span>
+        <span class="tip-icon beginner-only">?<span class="tip-bubble">Filter by listing price in USD. Useful for staying within your budget. Note: a lower price doesn't always mean a better deal — check the <strong>premium vs. spot</strong> on each card to compare true value.</span></span>
       </label>
       <div class="karat-range">
         <input type="text" id="priceMin" placeholder="Min $" style="min-width:80px;width:80px;" />
@@ -851,7 +856,7 @@
       <label class="filter-check">
         <input type="checkbox" id="includeMisc" onchange="toggleMiscSources()" />
         <span>Include person-to-person marketplaces</span>
-        <span class="tip-icon beginner-only" style="margin-left:2px">?<span class="tip-bubble">Adds results from Craigslist and Facebook Marketplace. These are <strong>private sellers</strong> â prices can be lower but there's more risk. Always verify authenticity and meet in safe locations for P2P trades.</span></span>
+        <span class="tip-icon beginner-only" style="margin-left:2px">?<span class="tip-bubble">Adds results from Craigslist and Facebook Marketplace. These are <strong>private sellers</strong> — prices can be lower but there's more risk. Always verify authenticity and meet in safe locations for P2P trades.</span></span>
       </label>
     </div>
 
@@ -889,7 +894,7 @@
       <li><strong>Premium vs. Spot:</strong> The green/red indicator on each card shows how the listing price compares to the metal's melt value. <strong>Green (below spot)</strong> = potential deal. <strong>Red (above spot)</strong> = you're paying a premium. Some premium is normal for coins and small bars.</li>
       <li><strong>"Top Rated" badge:</strong> eBay sellers with this badge have a strong track record of reliable shipping and accurate descriptions.</li>
       <li><strong>Weight &amp; Purity badges:</strong> These are auto-detected from the listing title. Always verify with the seller, especially for high-value purchases.</li>
-      <li><strong>Best Deal sort:</strong> Orders by lowest premium over spot â the most efficient way to find the best value per ounce of pure metal.</li>
+      <li><strong>Best Deal sort:</strong> Orders by lowest premium over spot — the most efficient way to find the best value per ounce of pure metal.</li>
       <li><strong>P2P listings:</strong> Craigslist and Facebook results often lack verified seller ratings. Exercise extra caution and consider meeting at a bank or police station for large transactions.</li>
     </ul>
   </div>
@@ -919,7 +924,7 @@
     platinum: "Platinum Spot Price (XPT/USD)",
   };
 
-  const METAL_ICONS = { gold: "ð¥", silver: "ð¥", platinum: "â¬¡" };
+  const METAL_ICONS = { gold: "ð¥", silver: "ð¥", platinum: "⬡" };
 
   const PURITY_OPTIONS = {
     gold:     ["", "10K", "14K", "18K", "22K", "24K"],
@@ -927,7 +932,7 @@
     platinum: ["", ".850", ".900", ".950"],
   };
 
-  // ââ Mode toggle âââââââââââââââââââââââââââââââââââââââââââ
+  // ── Mode toggle ───────────────────────────────────────────
   function toggleMode(src) {
     if (src) expertMode = src.checked;
     else expertMode = document.getElementById('modeToggle').checked;
@@ -943,7 +948,7 @@
     document.querySelectorAll('.beginner-only').forEach(function(el){ el.classList.toggle('edu-hide', expertMode); });
   }
 
-  // ââ Metal switcher ââââââââââââââââââââââââââââââââââââââââ
+  // ── Metal switcher ────────────────────────────────────────
   function switchMetal(metal) {
     if (metal === activeMetal) return;
     activeMetal = metal;
@@ -988,7 +993,7 @@
       </div>`;
   }
 
-  // ââ Spot price ââââââââââââââââââââââââââââââââââââââââââââ
+  // ── Spot price ────────────────────────────────────────────
   async function loadSpotPrice() {
     try {
       const r = await fetch(`/gold/api/spot?metal=${activeMetal}`);
@@ -1011,7 +1016,7 @@
       "Updated " + now.toLocaleTimeString("en-US", { hour: "numeric", minute: "2-digit" });
   }
 
-  // ââ Source tabs âââââââââââââââââââââââââââââââââââââââââââ
+  // ── Source tabs ───────────────────────────────────────────
   function setSource(el, src) {
     document.querySelectorAll(".tab").forEach(t => t.classList.remove("active"));
     el.classList.add("active");
@@ -1029,7 +1034,7 @@
     }
   }
 
-  // ââ Filters âââââââââââââââââââââââââââââââââââââââââââââââ
+  // ── Filters ───────────────────────────────────────────────
   function clearFilters() {
     document.getElementById("searchInput").value = "";
     document.getElementById("typeFilter").value  = "";
@@ -1044,7 +1049,7 @@
     setSource(document.querySelector(".tab[data-source='']"), "");
   }
 
-  // ââ Load listings âââââââââââââââââââââââââââââââââââââââââ
+  // ── Load listings ─────────────────────────────────────────
   async function loadListings() {
     const btn = document.getElementById("searchBtn");
     btn.disabled = true;
@@ -1053,7 +1058,7 @@
     document.getElementById("content").innerHTML = `
       <div class="state-screen">
         <div class="spinner"></div>
-        <p>Fetching live listings â this may take a few seconds...</p>
+        <p>Fetching live listings — this may take a few seconds...</p>
       </div>`;
     document.getElementById("resultCount").textContent = "";
 
@@ -1108,7 +1113,7 @@
     }
   }
 
-  // ââ Sorting âââââââââââââââââââââââââââââââââââââââââââââââ
+  // ── Sorting ───────────────────────────────────────────────
   function getPremium(l) {
     if (!l.metal_content_oz || !currentSpotPrice) return Infinity;
     const melt = l.metal_content_oz * currentSpotPrice;
@@ -1125,7 +1130,7 @@
     renderListings(sorted, sorted.length);
   }
 
-  // ââ Rendering âââââââââââââââââââââââââââââââââââââââââââââ
+  // ── Rendering ─────────────────────────────────────────────
   function sourceClass(source) {
     const map = {
       "eBay":       "source-ebay",
@@ -1237,7 +1242,7 @@
 
   function copyLink(url) {
     navigator.clipboard.writeText(url).then(() => {
-      showToast("Link copied â paste it in your browser!");
+      showToast("Link copied — paste it in your browser!");
     }).catch(() => {
       const ta = document.createElement("textarea");
       ta.value = url;
@@ -1246,7 +1251,7 @@
       ta.select();
       document.execCommand("copy");
       document.body.removeChild(ta);
-      showToast("Link copied â paste it in your browser!");
+      showToast("Link copied — paste it in your browser!");
     });
   }
 

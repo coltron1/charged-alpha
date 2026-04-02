@@ -189,7 +189,7 @@
     /* Ã¢ÂÂÃ¢ÂÂ Smooth scroll Ã¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂ */
     html { scroll-behavior: smooth; }
 
-    /* ââ Market Pulse âââââââââââââââââââââââââââââââââââââââââ */
+    /* ── Market Pulse ───────────────────────────────────────── */
     .pulse-section{background:#0d1225;border-top:1px solid #1e293b;border-bottom:1px solid #1e293b;padding:20px 0;overflow:visible}
     .pulse-header{text-align:center;margin-bottom:16px}
     .pulse-header h3{font-size:14px;font-weight:700;color:white;letter-spacing:.5px;text-transform:uppercase;display:inline-flex;align-items:center;gap:8px}
@@ -251,6 +251,8 @@
       <a href="#shows" class="text-sm text-slate-300 hover:text-white transition-colors no-underline font-medium">Shows</a>
       <a href="#roadmap" class="text-sm text-slate-300 hover:text-white transition-colors no-underline font-medium">Roadmap</a>
       <a href="#about" class="text-sm text-slate-300 hover:text-white transition-colors no-underline font-medium">About</a>
+      <a href="/auth/login" style="padding:6px 14px;border-radius:8px;font-size:12px;font-weight:600;color:#94a3b8;border:1px solid #334155;text-decoration:none;transition:all .15s;">Sign In</a>
+      <a href="/auth/register" style="padding:6px 14px;border-radius:8px;font-size:12px;font-weight:600;color:white;background:linear-gradient(135deg,#6366f1,#7c3aed);text-decoration:none;transition:all .15s;">Sign Up</a>
     </nav>
     <!-- Mobile menu button -->
     <button class="md:hidden text-slate-300" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
@@ -275,6 +277,9 @@
     <a href="#shows" class="block text-sm text-slate-300 no-underline">Shows</a>
     <a href="#roadmap" class="block text-sm text-slate-300 no-underline">Roadmap</a>
     <a href="#about" class="block text-sm text-slate-300 no-underline">About</a>
+    <div style="height:1px;background:#1e293b;margin:8px 0"></div>
+    <a href="/auth/login" class="block text-sm text-slate-300 no-underline">Sign In</a>
+    <a href="/auth/register" class="block text-sm no-underline" style="color:#a5b4fc">Sign Up</a>
   </div>
 </header>
 
@@ -338,7 +343,7 @@
 <!-- Ã¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂ
      TOOLS
      Ã¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂ -->
-<!-- âââ MARKET PULSE âââ -->
+<!-- ═══ MARKET PULSE ═══ -->
 <section class="pulse-section" id="marketPulse">
   <div class="pulse-header">
     <h3><span class="dot"></span> Market Pulse</h3>
@@ -897,7 +902,7 @@
 <script>
 document.addEventListener('click',function(e){var w=document.getElementById('toolsWrap');if(w&&!w.contains(e.target))w.classList.remove('open');});
 
-// ââ Market Pulse ââââââââââââââââââââââââââââââââââââââââââââââ
+// ── Market Pulse ──────────────────────────────────────────────
 var pulseData=[], pulseFilter='All';
 
 function filterPulse(cat,btn){
@@ -968,4 +973,4 @@ setInterval(loadPulse,120000);
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
     gtag('config', 'G-HJ72GKBEFW');
-  </script>  <meta charset="UTF-8">  <meta name="viewport" content="width=device-width, initial-scale=1.0">  <title>Charged Alpha â Data-Driven Investing Tools</title>  <script src="https://cdn.tailwindcss.com"></script>  <link rel="preconnect" href="https://fonts.googleapis.com">  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">  <style>    * { font-family: 'Inter', system-ui, sans-serif; }    body { background: #0a0f1e; color: #e2e8f0; }    /* ââ Glow accents âââââââââââââââââââââââââââââââââââââââââââ */    .glow-indigo { box-shadow: 0 0 40px rgba(99,102,241,.15), 0 0 80px rgba(99,102,241,.05); }    .glow-amber  { box-shadow: 0 0 40px rgba(245,158,11,.12), 0 0 80px rgba(245,158,11,.04); }    .glow-green  { box-shadow: 0 0 40px rgba(16,185,129,.12), 0 0 80px rgba(16,185,129,.04); }    .glow-purple { box-shadow: 0 0 40px rgba(139,92,246,.12), 0 0 80px rgba(139,92,246,.04); }    /* ââ Hero gradient ââââââââââââââââââââââââââââââââââââââââââ */    .hero-bg {      background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(99,102,241,.12) 0%, transparent 60%),                  radial-gradient(ellipse 60% 40% at 80% 20%, rgba(139,92,246,.08) 0%, transparent 50%),                  #0a0f1e;    }    /* ââ Logo bolt ââââââââââââââââââââââââââââââââââââââââââââââ */    .logo-bolt {      display: inline-flex;      align-items: center;      justify-content: center;      width: 48px;      height: 48px;      background: linear-gradient(135deg, #6366f1, #8b5cf6);      border-radius: 12px;      font-size: 24px;
+  </script>  <meta charset="UTF-8">  <meta name="viewport" content="width=device-width, initial-scale=1.0">  <title>Charged Alpha — Data-Driven Investing Tools</title>  <script src="https://cdn.tailwindcss.com"></script>  <link rel="preconnect" href="https://fonts.googleapis.com">  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">  <style>    * { font-family: 'Inter', system-ui, sans-serif; }    body { background: #0a0f1e; color: #e2e8f0; }    /* ── Glow accents ─────────────────────────────────────────── */    .glow-indigo { box-shadow: 0 0 40px rgba(99,102,241,.15), 0 0 80px rgba(99,102,241,.05); }    .glow-amber  { box-shadow: 0 0 40px rgba(245,158,11,.12), 0 0 80px rgba(245,158,11,.04); }    .glow-green  { box-shadow: 0 0 40px rgba(16,185,129,.12), 0 0 80px rgba(16,185,129,.04); }    .glow-purple { box-shadow: 0 0 40px rgba(139,92,246,.12), 0 0 80px rgba(139,92,246,.04); }    /* ── Hero gradient ────────────────────────────────────────── */    .hero-bg {      background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(99,102,241,.12) 0%, transparent 60%),                  radial-gradient(ellipse 60% 40% at 80% 20%, rgba(139,92,246,.08) 0%, transparent 50%),                  #0a0f1e;    }    /* ── Logo bolt ────────────────────────────────────────────── */    .logo-bolt {      display: inline-flex;      align-items: center;      justify-content: center;      width: 48px;      height: 48px;      background: linear-gradient(135deg, #6366f1, #8b5cf6);      border-radius: 12px;      font-size: 24px;
