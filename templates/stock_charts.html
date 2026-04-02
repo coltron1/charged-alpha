@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stock Charts — Charged Alpha</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    * { font-family: 'Inter', system-ui, sans-serif; margin: 0; padding: 0; box-sizing: border-box; }
+    html, body { height: 100%; overflow: hidden; background: #0a0f1e; color: #e2e8f0; }
+
+    /* ── Nav ── */
+    .ca-nav { position:fixed; top:0; left:0; right:0; height:52px; background:#0d1225; border-bottom:1px solid #1e293b; display:flex; align-items:center; padding:0 20px; z-index:100; gap:16px; }
+    .ca-nav-logo { display:flex; align-items:center; gap:10px; text-decoration:none; flex-shrink:0; }
+    .ca-nav-bolt { display:inline-flex; align-items:center; justify-content:center; width:32px; height:32px; background:linear-gradient(135deg,#6366f1,#8b5cf6); border-radius:8px; font-size:16px; }
+    .ca-nav-title { font-size:15px; font-weight:800; color:white; letter-spacing:-.3px; white-space:nowrap; }
+    .ca-nav-sep { width:1px; height:24px; background:#1e293b; flex-shrink:0; }
+    .ca-nav-page { font-size:14px; font-weight:600; color:#94a3b8; white-space:nowrap; }
+    .ca-nav-links { display:flex; align-items:center; gap:8px; margin-left:auto; }
+
+    /* Tools dropdown */
+    .ca-tools-wrap { position:relative; display:inline-block; }
+    .ca-tools-trigger { background:none; border:none; color:#94a3b8; font-size:13px; font-weight:500; cursor:pointer; display:flex; align-items:center; gap:4px; padding:6px 12px; border-radius:8px; transition:all .15s; font-family:inherit; }
+    .ca-tools-trigger:hover { color:white; background:rgba(99,102,241,.08); }
+    .ca-tools-trigger .arrow { font-size:10px; transition:transform .2s; }
+    .ca-tools-wrap.open .ca-tools-trigger .arrow { transform:rotate(180deg); }
+    .ca-tools-dd { display:none; position:absolute; top:calc(100% + 6px); right:0; background:#111827; border:1px solid #1e293b; border-radius:12px; padding:8px 0; min-width:220px; box-shadow:0 12px 40px rgba(0,0,0,.5); z-index:200; }
+    .ca-tools-wrap.open .ca-tools-dd { display:block; }
+    .ca-tools-dd a { display:block; padding:8px 16px; color:#94a3b8; text-decoration:none; font-size:13px; font-weight:500; transition:.1s; }
+    .ca-tools-dd a:hover { background:rgba(99,102,241,.08); color:#e2e8f0; }
+    .ca-tools-dd a.active { color:#a5b4fc; background:rgba(99,102,241,.1); }
+
+    /* Auth buttons */
+    .nav-auth { display:flex; align-items:center; gap:8px; }
+    .nav-auth-btn { padding:6px 14px; border-radius:8px; font-size:12px; font-weight:600; cursor:pointer; text-decoration:none; transition:all .15s; }
+    .nav-auth-login { color:#94a3b8; background:none; border:1px solid #334155; }
+    .nav-auth-login:hover { border-color:#6366f1; color:#a5b4fc; }
+    .nav-auth-signup { color:white; background:linear-gradient(135deg,#6366f1,#7c3aed); border:none; }
+    .nav-auth-signup:hover { transform:translateY(-1px); }
+    .nav-user-name { font-size:12px; font-weight:600; color:#94a3b8; }
+    .nav-user-avatar { width:28px; height:28px; border-radius:50%; background:linear-gradient(135deg,#6366f1,#8b5cf6); display:flex; align-items:center; justify-content:center; font-size:12px; font-weight:700; color:white; }
+    .nav-logout { font-size:11px; color:#64748b; text-decoration:none; padding:4px 8px; border-radius:6px; transition:color .15s; }
+    .nav-logout:hover { color:#f87171; }
+
+    /* ── Mode Toggle ── */
+    .mode-toggle { display:flex; align-items:center; gap:8px; }
+    .mode-toggle span { font-size:12px; font-weight:600; color:#64748b; transition:color .2s; }
+    .mode-toggle span.active-label { color:#e2e8f0; }
+    .toggle-switch { position:relative; width:44px; height:24px; cursor:pointer; }
+    .toggle-switch input { display:none; }
+    .toggle-track { position:absolute; inset:0; background:#334155; border-radius:12px; transition:background .2s; }
+    .toggle-switch input:checked+.toggle-track { background:#6366f1; }
+    .toggle-knob { position:absolute; top:2px; left:2px; width:20px; height:20px; background:white; border-radius:50%; transition:transform .2s; box-shadow:0 1px 3px rgba(0,0,0,.3); }
+    .toggle-switch input:checked~.toggle-knob { transform:translateX(20px); }
+    .edu-hide { display:none !important; }
+
+    /* Save bar */
+    .save-bar { display:flex; align-items:center; gap:8px; padding:0 20px; height:36px; background:#0d1225; border-bottom:1px solid #1e293b; }
+    .save-bar-btn { padding:4px 12px; border-radius:6px; font-size:11px; font-weight:600; cursor:pointer; border:1px solid #334155; background:transparent; color:#94a3b8; transition:all .15s; }
+    .save-bar-btn:hover { border-color:#6366f1; color:#a5b4fc; }
+    .save-bar-btn.primary { background:rgba(99,102,241,.15); border-color:#6366f1; color:#a5b4fc; }
+    .save-bar-btn.primary:hover { background:rgba(99,102,241,.25); }
+    .save-bar-select { background:#0f172a; border:1px solid #334155; border-radius:6px; color:#e2e8f0; padding:4px 8px; font-size:11px; outline:none; cursor:pointer; font-family:inherit; }
+    .save-bar-select:focus { border-color:#6366f1; }
+    .save-bar-msg { font-size:11px; color:#10b981; margin-left:8px; opacity:0; transition:opacity .3s; }
+    .save-bar-msg.visible { opacity:1; }
+    .save-bar-login { font-size:11px; color:#64748b; }
+    .save-bar-login a { color:#a5b4fc; text-decoration:none; font-weight:600; }
+    .save-bar-login a:hover { text-decoration:underline; }
+
+    /* ── Chart container ── */
+    .chart-container { position:absolute; top:52px; left:0; right:0; bottom:0; transition:left .3s ease; }
+    .chart-container.with-sidebar { left:360px; }
+    .chart-container.with-sidebar-collapsed { left:44px; }
+
+    /* ── Educational Sidebar ── */
+    .edu-sidebar { position:fixed; top:52px; left:0; bottom:0; width:360px; background:#0d1225; border-right:1px solid #1e293b; display:flex; flex-direction:column; z-index:50; transition:width .3s ease; overflow:hidden; }
+    .edu-sidebar.collapsed { width:44px; }
+    .edu-sidebar.collapsed .edu-header-title,
+    .edu-sidebar.collapsed .edu-tabs,
+    .edu-sidebar.collapsed .edu-tab-content { display:none; }
+    .edu-sidebar.collapsed .edu-collapse-btn { transform:rotate(180deg); }
+
+    .edu-header { display:flex; align-items:center; gap:10px; padding:10px 14px; border-bottom:1px solid #1e293b; min-height:44px; flex-shrink:0; }
+    .edu-header-title { font-size:13px; font-weight:700; color:#a5b4fc; white-space:nowrap; }
+    .edu-collapse-btn { background:none; border:none; color:#64748b; cursor:pointer; font-size:16px; padding:4px; transition:transform .3s,color .15s; margin-left:auto; flex-shrink:0; }
+    .edu-collapse-btn:hover { color:#a5b4fc; }
+
+    .edu-tabs { display:flex; flex-wrap:wrap; gap:4px; padding:10px 12px; border-bottom:1px solid #1e293b; flex-shrink:0; }
+    .edu-tab { padding:5px 10px; border-radius:6px; border:1px solid transparent; background:transparent; color:#64748b; font-size:11px; font-weight:600; cursor:pointer; transition:all .15s; font-family:inherit; white-space:nowrap; }
+    .edu-tab:hover { color:#94a3b8; background:rgba(99,102,241,.06); }
+    .edu-tab.active { color:#a5b4fc; background:rgba(99,102,241,.12); border-color:rgba(99,102,241,.25); }
+
+    .edu-tab-content { flex:1; overflow-y:auto; padding:14px; }
+    .edu-tab-content::-webkit-scrollbar { width:5px; }
+    .edu-tab-content::-webkit-scrollbar-track { background:transparent; }
+    .edu-tab-content::-webkit-scrollbar-thumb { background:#334155; border-radius:4px; }
+
+    .edu-panel { display:none; }
+    .edu-panel.active { display:block; }
+
+    .edu-card { background:#1e293b; border:1px solid #334155; border-radius:10px; padding:14px; margin-bottom:10px; }
+    .edu-card h4 { font-size:13px; font-weight:700; color:white; margin-bottom:8px; display:flex; align-items:center; gap:6px; }
+    .edu-card p, .edu-card li { font-size:12px; line-height:1.7; color:#94a3b8; }
+    .edu-card strong { color:#e2e8f0; }
+    .edu-card ul { margin:6px 0 0 16px; }
+    .edu-card li { margin-bottom:4px; }
+    .edu-card .green { color:#10b981; }
+    .edu-card .red { color:#ef4444; }
+
+    .edu-tip { background:rgba(99,102,241,.08); border:1px solid rgba(99,102,241,.2); border-radius:8px; padding:10px 12px; margin-top:10px; font-size:11px; line-height:1.6; color:#a5b4fc; }
+    .edu-tip strong { color:#c4b5fd; }
+
+    .edu-step { display:flex; gap:10px; margin-bottom:8px; }
+    .edu-step-num { flex-shrink:0; width:22px; height:22px; border-radius:50%; background:rgba(99,102,241,.15); color:#a5b4fc; font-size:11px; font-weight:700; display:flex; align-items:center; justify-content:center; margin-top:2px; }
+    .edu-step-text { font-size:12px; line-height:1.6; color:#94a3b8; }
+    .edu-step-text strong { color:#e2e8f0; }
+
+    /* Mobile nav */
+    .ca-hamburger { display:none; background:none; border:none; color:#94a3b8; cursor:pointer; padding:4px; }
+    .ca-mobile-menu { display:none; position:fixed; top:52px; left:0; right:0; background:#111827; border-bottom:1px solid #1e293b; padding:12px 24px; z-index:99; }
+    .ca-mobile-menu.open { display:block; }
+    .ca-mobile-menu a { display:block; padding:8px 0; color:#94a3b8; text-decoration:none; font-size:14px; font-weight:500; }
+    .ca-mobile-menu a:hover { color:#e2e8f0; }
+
+    @media(max-width:768px) {
+      .ca-nav-links { display:none; }
+      .ca-hamburger { display:block; }
+      .ca-nav-title { font-size:13px; }
+      .nav-auth { display:none; }
+      .mode-toggle.nav-mode { display:none; }
+      .ca-mobile-menu .mode-toggle { display:flex; padding:8px 0; border-bottom:1px solid #1e293b; margin-bottom:4px; }
+      .edu-sidebar { top:auto; bottom:0; left:0; right:0; width:100% !important; height:55vh; border-right:none; border-top:1px solid #1e293b; border-radius:16px 16px 0 0; }
+      .edu-sidebar.collapsed { height:44px; }
+      .chart-container.with-sidebar,
+      .chart-container.with-sidebar-collapsed { left:0 !important; }
+    }
+  </style>
+</head>
+<body>
+  <!-- ── Navigation ── -->
+  <div class="ca-nav">
+    <a href="/" class="ca-nav-logo">
+      <div class="ca-nav-bolt">&#9889;</div>
+      <span class="ca-nav-title">CHARGED ALPHA</span>
+    </a>
+    <div class="ca-nav-sep"></div>
+    <span class="ca-nav-page">Stock Charts</span>
+
+    <!-- Mode Toggle (Desktop) -->
+    <div class="mode-toggle nav-mode" style="margin-left:12px;">
+      <span class="mode-label-b active-label">Beginner</span>
+      <label class="toggle-switch">
+        <input type="checkbox" id="modeToggle" onchange="toggleMode(this)">
+        <div class="toggle-track"></div>
+        <div class="toggle-knob"></div>
+      </label>
+      <span class="mode-label-e">Expert</span>
+    </div>
+
+    <div class="ca-nav-links">
+      <div class="ca-tools-wrap" id="toolsWrap">
+        <button class="ca-tools-trigger" onclick="document.getElementById('toolsWrap').classList.toggle('open')">
+          Tools <span class="arrow">&#9660;</span>
+        </button>
+        <div class="ca-tools-dd">
+          <a href="/screener/">Stock Screener</a>
+          <a href="/etf/">ETF Screener</a>
+          <a href="/crypto/">Crypto Screener</a>
+          <a href="/options/">Options Scanner</a>
+          <a href="/bonds/">Bond Dashboard</a>
+          <a href="/reits/">REIT Screener</a>
+          <a href="/forex/">Forex Heatmap</a>
+          <a href="/commodities/">Commodities</a>
+          <a href="/earnings/">Earnings Calendar</a>
+          <a href="/gold/">Precious Metals</a>
+          <a href="/charts/" class="active">Stock Charts</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Auth area -->
+    <div class="nav-auth" id="authArea"></div>
+
+    <button class="ca-hamburger" onclick="document.getElementById('mobileMenu').classList.toggle('open')">
+      <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 5h14M3 10h14M3 15h14"/></svg>
+    </button>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div class="ca-mobile-menu" id="mobileMenu">
+    <div class="mode-toggle">
+      <span class="mode-label-b active-label">Beginner</span>
+      <label class="toggle-switch">
+        <input type="checkbox" class="modeToggleMobile" onchange="toggleMode(this)">
+        <div class="toggle-track"></div>
+        <div class="toggle-knob"></div>
+      </label>
+      <span class="mode-label-e">Expert</span>
+    </div>
+    <a href="/">Home</a>
+    <a href="/screener/">Stock Screener</a>
+    <a href="/etf/">ETF Screener</a>
+    <a href="/charts/" style="color:#a5b4fc;">Stock Charts</a>
+    <a href="/crypto/">Crypto Screener</a>
+    <a href="/options/">Options Scanner</a>
+    <a href="/bonds/">Bond Dashboard</a>
+    <a href="/gold/">Precious Metals</a>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════════════════
+       EDUCATIONAL SIDEBAR (beginner-only)
+       ══════════════════════════════════════════════════════════════ -->
+  <div class="edu-sidebar beginner-only" id="eduSidebar">
+    <div class="edu-header">
+      <span style="font-size:16px;">&#128218;</span>
+      <span class="edu-header-title">Chart Learning Guide</span>
+      <button class="edu-collapse-btn" id="collapseBtn" onclick="toggleSidebar()" title="Collapse sidebar">&#10094;</button>
+    </div>
+
+    <div class="edu-tabs" id="eduTabs">
+      <button class="edu-tab active" data-tab="start">Getting Started</button>
+      <button class="edu-tab" data-tab="sr">Support &amp; Resistance</button>
+      <button class="edu-tab" data-tab="trend">Trendlines</button>
+      <button class="edu-tab" data-tab="fib">Fibonacci</button>
+      <button class="edu-tab" data-tab="candle">Candlesticks</button>
+      <button class="edu-tab" data-tab="ind">Indicators</button>
+      <button class="edu-tab" data-tab="tf">Timeframes</button>
+      <button class="edu-tab" data-tab="vol">Volume</button>
+      <button class="edu-tab" data-tab="pat">Chart Patterns</button>
+    </div>
+
+    <div class="edu-tab-content">
+
+      <!-- ── Getting Started ── -->
+      <div class="edu-panel active" id="panel-start">
+        <div class="edu-card">
+          <h4>&#127919; Reading the Chart</h4>
+          <p>Each <strong>candlestick</strong> shows four prices for one time period:</p>
+          <ul>
+            <li><strong>Open</strong> — where the price started</li>
+            <li><strong>High</strong> — the highest price reached</li>
+            <li><strong>Low</strong> — the lowest price reached</li>
+            <li><strong>Close</strong> — where the price ended</li>
+          </ul>
+          <p style="margin-top:8px;">
+            A <strong class="green">green candle</strong> means the price went <strong>up</strong> (close &gt; open).<br>
+            A <strong class="red">red candle</strong> means the price went <strong>down</strong> (close &lt; open).
+          </p>
+          <p style="margin-top:8px;">The thin lines (called <strong>wicks</strong>) show the high and low. The thick body shows open and close.</p>
+        </div>
+
+        <div class="edu-card">
+          <h4>&#128269; Navigating the Chart</h4>
+          <ul>
+            <li><strong>Scroll wheel</strong> to zoom in/out</li>
+            <li><strong>Click + drag</strong> to pan left/right</li>
+            <li><strong>Search bar</strong> (top) to look up any stock, crypto, forex pair, or index</li>
+            <li><strong>Timeframe buttons</strong> (top) to switch between 1 min, 5 min, daily, weekly, etc.</li>
+            <li><strong>Left toolbar</strong> has all drawing tools (lines, shapes, Fibonacci, etc.)</li>
+          </ul>
+        </div>
+
+        <div class="edu-tip">
+          <strong>Tip:</strong> Start with the <strong>Daily</strong> timeframe. It filters out intraday noise and shows clearer trends — ideal for learning.
+        </div>
+      </div>
+
+      <!-- ── Support & Resistance ── -->
+      <div class="edu-panel" id="panel-sr">
+        <div class="edu-card">
+          <h4>&#128737; What Are They?</h4>
+          <p><strong>Support</strong> is a price level that acts like a <strong>floor</strong> — when the stock falls to this level, buyers tend to step in and push the price back up.</p>
+          <p style="margin-top:6px;"><strong>Resistance</strong> is a price level that acts like a <strong>ceiling</strong> — when the stock rises to this level, sellers tend to step in and push the price back down.</p>
+          <p style="margin-top:6px;">These levels work because many traders place buy/sell orders at the same price zones, creating self-reinforcing barriers.</p>
+        </div>
+
+        <div class="edu-card">
+          <h4>&#9999; How to Draw Them</h4>
+          <div class="edu-tip" style="margin-bottom:10px;background:rgba(99,102,241,.1);border-color:rgba(99,102,241,.3);">
+            <strong>Drawing tools</strong> are on the <strong>left toolbar</strong> of the chart. Click any icon to select a tool, then click/drag on the chart to draw.
+          </div>
+          <div class="edu-step">
+            <div class="edu-step-num">1</div>
+            <div class="edu-step-text">Select the <strong>Horizontal Line</strong> tool from the left toolbar (or press <strong>Alt+H</strong>)</div>
+          </div>
+          <div class="edu-step">
+            <div class="edu-step-num">2</div>
+            <div class="edu-step-text">Look for price levels where the chart has <strong>bounced at least 2-3 times</strong> — more bounces = stronger level</div>
+          </div>
+          <div class="edu-step">
+            <div class="edu-step-num">3</div>
+            <div class="edu-step-text">Click at that price level to place the line. It extends across the entire chart.</div>
+          </div>
+          <div class="edu-step">
+            <div class="edu-step-num">4</div>
+            <div class="edu-step-text">When support breaks, it often becomes <strong>resistance</strong> (and vice versa) — this is called <strong>role reversal</strong></div>
+          </div>
+        </div>
+
+        <div class="edu-tip">
+          <strong>Tip:</strong> Think of support and resistance as <strong>zones</strong>, not exact prices. Price rarely hits the exact same number — it hovers around the area. Don't draw too many lines — pick only the strongest, most obvious levels.
+        </div>
+      </div>
+
+      <!-- ── Trendlines ── -->
+      <div class="edu-panel" id="panel-trend">
+        <div class="edu-card">
+          <h4>&#128200; What Are Trendlines?</h4>
+          <p>Trendlines show the <strong>direction</strong> price is moving over time.</p>
+          <ul>
+            <li><strong>Uptrend line</strong> — drawn below price, connecting <strong>swing lows</strong> (the bottom of each dip). Price makes higher lows like stairs going up.</li>
+            <li><strong>Downtrend line</strong> — drawn above price, connecting <strong>swing highs</strong> (the top of each rally). Price makes lower highs like stairs going down.</li>
+          </ul>
+        </div>
+
+        <div class="edu-card">
+          <h4>&#9999; How to Draw Them</h4>
+          <div class="edu-tip" style="margin-bottom:10px;background:rgba(99,102,241,.1);border-color:rgba(99,102,241,.3);">
+            <strong>Drawing tools</strong> are on the <strong>left toolbar</strong> of the chart. Click any icon to select a tool, then click/drag on the chart to draw.
+          </div>
+          <div class="edu-step">
+            <div class="edu-step-num">1</div>
+            <div class="edu-step-text">Select the <strong>Trend Line</strong> tool from the left toolbar</div>
+          </div>
+          <div class="edu-step">
+            <div class="edu-step-num">2</div>
+            <div class="edu-step-text">For an <strong>uptrend</strong>: click the first swing low, then click a second swing low. The line should slope upward.</div>
+          </div>
+          <div class="edu-step">
+            <div class="edu-step-num">3</div>
+            <div class="edu-step-text">For a <strong>downtrend</strong>: click the first swing high, then click a second swing high. The line should slope downward.</div>
+          </div>
+          <div class="edu-step">
+            <div class="edu-step-num">4</div>
+            <div class="edu-step-text">A valid trendline needs <strong>2 touches</strong> to draw it, but <strong>3+ touches</strong> to confirm it's reliable</div>
+          </div>
+        </div>
+
+        <div class="edu-tip">
+          <strong>Tip:</strong> Steeper trendlines break more easily. Gentler slopes tend to be more reliable. When price <strong>closes</strong> beyond the trendline (not just a wick), it may signal a trend change.
+        </div>
+      </div>
+
+      <!-- ── Fibonacci ── -->
+      <div class="edu-panel" id="panel-fib">
+        <div class="edu-card">
+          <h4>&#128290; What Is Fibonacci Retracement?</h4>
+          <p>Fibonacci retracement predicts where a stock might <strong>pause or reverse</strong> during a pullback. It draws horizontal lines at key percentage levels between a swing high and swing low.</p>
+          <ul>
+            <li><strong>23.6%</strong> — shallow pullback, very strong trend</li>
+            <li><strong>38.2%</strong> — moderate pullback, trend still healthy</li>
+            <li><strong>50.0%</strong> — halfway retracement (widely watched)</li>
+            <li><strong>61.8%</strong> — the "Golden Ratio," the most important level</li>
+            <li><strong>78.6%</strong> — deep pullback, trend may be weakening</li>
+          </ul>
+        </div>
+
+        <div class="edu-card">
+          <h4>&#9999; How to Use It</h4>
+          <div class="edu-tip" style="margin-bottom:10px;background:rgba(99,102,241,.1);border-color:rgba(99,102,241,.3);">
+            <strong>Drawing tools</strong> are on the <strong>left toolbar</strong> of the chart. Click any icon to select a tool, then click/drag on the chart to draw.
+          </div>
+          <div class="edu-step">
+            <div class="edu-step-num">1</div>
+            <div class="edu-step-text">Select the <strong>Fib Retracement</strong> tool from the left toolbar (under Fibonacci tools)</div>
+          </div>
+          <div class="edu-step">
+            <div class="edu-step-num">2</div>
+            <div class="edu-step-text">For an <strong>uptrend pullback</strong>: click the <strong>swing low</strong> first, then drag to the <strong>swing high</strong></div>
+          </div>
+          <div class="edu-step">
+            <div class="edu-step-num">3</div>
+            <div class="edu-step-text">For a <strong>downtrend bounce</strong>: click the <strong>swing high</strong> first, then drag to the <strong>swing low</strong></div>
+          </div>
+          <div class="edu-step">
+            <div class="edu-step-num">4</div>
+            <div class="edu-step-text">Watch the <strong>38.2% and 61.8%</strong> levels — these are where most reversals happen</div>
+          </div>
+        </div>
+
+        <div class="edu-tip">
+          <strong>Tip:</strong> Fibonacci levels work best when they <strong>align with other signals</strong> — like a support/resistance zone or a moving average at the same price. Never trade Fibonacci levels alone.
+        </div>
+      </div>
+
+      <!-- ── Candlestick Patterns ── -->
+      <div class="edu-panel" id="panel-candle">
+        <div class="edu-card">
+          <h4>&#128367; Key Patterns to Know</h4>
+          <p>Candlestick patterns hint at what might happen next. They're most meaningful at key <strong>support or resistance</strong> levels.</p>
+        </div>
+
+        <div class="edu-card">
+          <h4><span class="green">&#9472;</span> Doji</h4>
+          <p>The open and close are nearly identical — a tiny body with wicks above and below.</p>
+          <p style="margin-top:4px;"><strong>Meaning:</strong> Buyers and sellers fought to a tie. <strong>Indecision.</strong> Often appears at turning points.</p>
+          <p style="margin-top:4px;"><em>Wait for the next candle to confirm direction.</em></p>
+        </div>
+
+        <div class="edu-card">
+          <h4><span class="green">&#128296;</span> Hammer</h4>
+          <p>Small body near the top, <strong>long lower wick</strong> (2-3x the body). Appears at the <strong>bottom of a downtrend</strong>.</p>
+          <p style="margin-top:4px;"><strong>Meaning:</strong> Sellers pushed hard, but buyers fought back. Potential <strong>bullish reversal</strong> — price may start going up.</p>
+        </div>
+
+        <div class="edu-card">
+          <h4><span class="green">&#9650;</span><span class="red">&#9660;</span> Engulfing</h4>
+          <p>Two candles where the second <strong>completely wraps around</strong> the first:</p>
+          <ul>
+            <li><strong class="green">Bullish Engulfing:</strong> Small red candle followed by a larger green candle. Buyers took over.</li>
+            <li><strong class="red">Bearish Engulfing:</strong> Small green candle followed by a larger red candle. Sellers took over.</li>
+          </ul>
+        </div>
+
+        <div class="edu-tip">
+          <strong>Tip:</strong> Never trade a single candlestick pattern in isolation. Always <strong>wait for the next candle</strong> to confirm the signal is real. Patterns at major support/resistance levels are far more reliable than random occurrences.
+        </div>
+      </div>
+
+      <!-- ── Indicators ── -->
+      <div class="edu-panel" id="panel-ind">
+        <div class="edu-card">
+          <h4>&#128201; Moving Averages (MA)</h4>
+          <p>A moving average smooths out daily noise by showing the <strong>average closing price</strong> over a set number of days.</p>
+          <ul>
+            <li><strong>20-day MA</strong> — short-term trend</li>
+            <li><strong>50-day MA</strong> — medium-term trend</li>
+            <li><strong>200-day MA</strong> — long-term trend</li>
+          </ul>
+          <p style="margin-top:6px;">Price <strong>above</strong> the MA = uptrend. Price <strong>below</strong> the MA = downtrend. MAs can also act as support/resistance.</p>
+          <p style="margin-top:4px;font-size:11px;color:#a5b4fc;">To add: Click <strong>Indicators</strong> (top toolbar) and search for "MA" or "Moving Average"</p>
+        </div>
+
+        <div class="edu-card">
+          <h4>&#128200; RSI (Relative Strength Index)</h4>
+          <p>Measures momentum on a scale of <strong>0 to 100</strong>. Shows whether a stock has been bought or sold too much recently.</p>
+          <ul>
+            <li><strong>Above 70</strong> — <strong class="red">Overbought.</strong> Caution, a pullback may be coming.</li>
+            <li><strong>Below 30</strong> — <strong class="green">Oversold.</strong> Caution, a bounce may be coming.</li>
+            <li><strong>50 area</strong> — neutral zone</li>
+          </ul>
+          <p style="margin-top:4px;font-size:11px;color:#64748b;">RSI isn't a buy/sell signal alone — use it to <em>time</em> entries during an existing trend.</p>
+        </div>
+
+        <div class="edu-card">
+          <h4>&#128202; MACD</h4>
+          <p>Shows <strong>trend momentum</strong> — whether a trend is getting stronger or weaker.</p>
+          <ul>
+            <li><strong>MACD crosses above signal line</strong> = bullish (uptrend strengthening)</li>
+            <li><strong>MACD crosses below signal line</strong> = bearish (downtrend strengthening)</li>
+            <li>The <strong>histogram</strong> bars show the distance between the lines — taller bars = stronger momentum</li>
+          </ul>
+        </div>
+
+        <div class="edu-card">
+          <h4>&#127912; Bollinger Bands</h4>
+          <p>Three lines: a moving average in the middle, with an upper and lower band based on <strong>volatility</strong>.</p>
+          <ul>
+            <li><strong>Bands widen</strong> = volatility increasing</li>
+            <li><strong>Bands narrow</strong> ("squeeze") = low volatility, breakout may be coming</li>
+            <li>Price touching <strong>upper band</strong> may signal overbought; <strong>lower band</strong> may signal oversold</li>
+          </ul>
+        </div>
+
+        <div class="edu-tip">
+          <strong>Tip:</strong> Use <strong>MACD for trend direction</strong> and <strong>RSI for timing</strong>. Together they reduce false signals. Avoid using indicators in sideways/choppy markets — they work best in trending conditions.
+        </div>
+      </div>
+
+      <!-- ── Timeframes ── -->
+      <div class="edu-panel" id="panel-tf">
+        <div class="edu-card">
+          <h4>&#9200; Choosing Your Timeframe</h4>
+          <p>Each candlestick represents one time period. The timeframe you choose changes what each candle shows:</p>
+          <ul>
+            <li><strong>1-min, 5-min</strong> — very fast, lots of noise. For day traders only.</li>
+            <li><strong>15-min, 1-hour</strong> — intraday trends, medium detail</li>
+            <li><strong>Daily</strong> — one candle per day. Best for learning and swing trading.</li>
+            <li><strong>Weekly</strong> — one candle per week. Shows the big-picture trend.</li>
+            <li><strong>Monthly</strong> — one candle per month. Long-term investors.</li>
+          </ul>
+        </div>
+
+        <div class="edu-card">
+          <h4>&#128270; Multi-Timeframe Analysis</h4>
+          <p>Experienced traders use multiple timeframes together:</p>
+          <div class="edu-step">
+            <div class="edu-step-num">1</div>
+            <div class="edu-step-text"><strong>Weekly chart</strong> — see the big-picture trend direction</div>
+          </div>
+          <div class="edu-step">
+            <div class="edu-step-num">2</div>
+            <div class="edu-step-text"><strong>Daily chart</strong> — find zones to enter or exit</div>
+          </div>
+          <div class="edu-step">
+            <div class="edu-step-num">3</div>
+            <div class="edu-step-text"><strong>4-hour chart</strong> — fine-tune the exact timing</div>
+          </div>
+        </div>
+
+        <div class="edu-tip">
+          <strong>Tip:</strong> Start with <strong>Daily</strong>. It removes intraday noise and shows cleaner trends and patterns. Once you're comfortable, add Weekly for context and 4-Hour for precision.
+        </div>
+      </div>
+
+      <!-- ── Volume ── -->
+      <div class="edu-panel" id="panel-vol">
+        <div class="edu-card">
+          <h4>&#128202; What Volume Tells You</h4>
+          <p>Volume shows <strong>how many shares traded</strong> in a period. High volume = many participants agree on the price. Low volume = few participants, less conviction.</p>
+          <ul>
+            <li>Price <strong class="green">rising</strong> + volume <strong>rising</strong> = strong uptrend, many buyers</li>
+            <li>Price <strong class="green">rising</strong> + volume <strong>falling</strong> = weak uptrend, may reverse</li>
+            <li>Price <strong class="red">falling</strong> + volume <strong>rising</strong> = strong downtrend, heavy selling</li>
+            <li>Price <strong class="red">falling</strong> + volume <strong>falling</strong> = weak downtrend, may bounce</li>
+          </ul>
+        </div>
+
+        <div class="edu-card">
+          <h4>&#9889; Breakout Confirmation</h4>
+          <p>When price breaks through support or resistance:</p>
+          <ul>
+            <li><strong>High volume breakout</strong> = likely real, the move should continue</li>
+            <li><strong>Low volume breakout</strong> = possibly fake, may reverse back</li>
+          </ul>
+          <p style="margin-top:6px;">The volume bars appear below the price chart. Taller bars = more activity. Compare each bar to recent average volume to gauge significance.</p>
+        </div>
+
+        <div class="edu-tip">
+          <strong>Tip:</strong> A healthy uptrend should have <strong>rising volume on up days</strong> and <strong>declining volume on down days</strong>. If you see the opposite, the trend may be weakening.
+        </div>
+      </div>
+
+      <!-- ── Chart Patterns ── -->
+      <div class="edu-panel" id="panel-pat">
+        <div class="edu-card">
+          <h4>&#128204; Reversal Patterns</h4>
+          <p><strong>Head and Shoulders</strong> — Three peaks: middle is tallest (the "head"), two shorter peaks on either side (the "shoulders"). All three touch a support line (the "neckline"). Signals a <strong class="red">bearish reversal</strong> — uptrend may be ending.</p>
+          <p style="margin-top:8px;"><strong>Double Top (M shape)</strong> — Price rises to a level, pulls back, rises to the same level again, then falls. Buyers tried twice and failed. <strong class="red">Bearish.</strong></p>
+          <p style="margin-top:8px;"><strong>Double Bottom (W shape)</strong> — Price falls to a level, bounces, falls to the same level again, then rises. Sellers tried twice and failed. <strong class="green">Bullish.</strong></p>
+        </div>
+
+        <div class="edu-card">
+          <h4>&#128312; Triangle Patterns</h4>
+          <ul>
+            <li><strong>Ascending Triangle</strong> — flat upper resistance + rising lower support. Price coiling tighter. Usually breaks <strong class="green">upward</strong>.</li>
+            <li><strong>Descending Triangle</strong> — flat lower support + falling upper resistance. Usually breaks <strong class="red">downward</strong>.</li>
+            <li><strong>Symmetrical Triangle</strong> — both sides converging. Breakout direction is uncertain — watch which way it breaks.</li>
+          </ul>
+        </div>
+
+        <div class="edu-card">
+          <h4>&#127937; Continuation Patterns</h4>
+          <p><strong>Flags &amp; Pennants</strong> — After a strong move, price pauses briefly in a small rectangular (flag) or triangular (pennant) shape. This is a rest, not a reversal. The trend usually <strong>continues</strong> after the pause.</p>
+          <ul>
+            <li><strong>Bull Flag</strong> — slopes slightly down after an uptrend. Expect continuation up.</li>
+            <li><strong>Bear Flag</strong> — slopes slightly up after a downtrend. Expect continuation down.</li>
+          </ul>
+        </div>
+
+        <div class="edu-tip">
+          <strong>Tip:</strong> Patterns work best in strong trends and should <strong>always be confirmed with volume</strong>. A breakout from a pattern on high volume is far more reliable than one on low volume. Never enter based on the pattern alone.
+        </div>
+      </div>
+
+    </div><!-- /edu-tab-content -->
+  </div><!-- /edu-sidebar -->
+
+  <!-- ── TradingView Chart ── -->
+  <div class="chart-container" id="chartContainer">
+    <div class="tradingview-widget-container" style="height:100%;width:100%">
+      <div class="tradingview-widget-container__widget" style="height:100%;width:100%"></div>
+      <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
+      {
+        "autosize": true,
+        "symbol": "NASDAQ:AAPL",
+        "interval": "D",
+        "timezone": "America/New_York",
+        "theme": "dark",
+        "style": "1",
+        "locale": "en",
+        "backgroundColor": "rgba(10, 15, 30, 1)",
+        "gridColor": "rgba(30, 41, 59, 0.5)",
+        "hide_top_toolbar": false,
+        "hide_side_toolbar": false,
+        "allow_symbol_change": true,
+        "withdateranges": true,
+        "details": true,
+        "hotlist": true,
+        "calendar": true,
+        "studies": ["STD;EMA"],
+        "support_host": "https://www.tradingview.com"
+      }
+      </script>
+    </div>
+  </div>
+  <script>
+    // ── State ──
+    let currentUser = null;
+
+    // ════════════════════════════════════════════════
+    // MODE TOGGLE (Beginner/Expert)
+    // ════════════════════════════════════════════════
+    let expertMode = localStorage.getItem('ca_mode') === 'expert';
+    let sidebarCollapsed = localStorage.getItem('ca_charts_sidebar') === 'collapsed';
+
+    function toggleMode(src) {
+      if (src) expertMode = src.checked;
+      else expertMode = document.getElementById('modeToggle').checked;
+      localStorage.setItem('ca_mode', expertMode ? 'expert' : 'beginner');
+      applyMode();
+    }
+
+    function applyMode() {
+      document.getElementById('modeToggle').checked = expertMode;
+      document.querySelectorAll('.modeToggleMobile').forEach(el => { el.checked = expertMode; });
+      document.querySelectorAll('.mode-label-b').forEach(el => { el.classList.toggle('active-label', !expertMode); });
+      document.querySelectorAll('.mode-label-e').forEach(el => { el.classList.toggle('active-label', expertMode); });
+      document.querySelectorAll('.beginner-only').forEach(el => { el.classList.toggle('edu-hide', expertMode); });
+      updateChartLayout();
+    }
+
+    function toggleSidebar() {
+      sidebarCollapsed = !sidebarCollapsed;
+      localStorage.setItem('ca_charts_sidebar', sidebarCollapsed ? 'collapsed' : 'expanded');
+      const sb = document.getElementById('eduSidebar');
+      sb.classList.toggle('collapsed', sidebarCollapsed);
+      updateChartLayout();
+    }
+
+    function updateChartLayout() {
+      const ct = document.getElementById('chartContainer');
+      ct.classList.remove('with-sidebar', 'with-sidebar-collapsed');
+      if (!expertMode) {
+        ct.classList.add(sidebarCollapsed ? 'with-sidebar-collapsed' : 'with-sidebar');
+        const sb = document.getElementById('eduSidebar');
+        sb.classList.toggle('collapsed', sidebarCollapsed);
+      }
+      // Trigger TradingView resize after transition
+      setTimeout(() => { window.dispatchEvent(new Event('resize')); }, 350);
+    }
+
+    // ── Tab switching ──
+    document.getElementById('eduTabs').addEventListener('click', function(e) {
+      const tab = e.target.closest('.edu-tab');
+      if (!tab) return;
+      document.querySelectorAll('.edu-tab').forEach(t => t.classList.remove('active'));
+      tab.classList.add('active');
+      document.querySelectorAll('.edu-panel').forEach(p => p.classList.remove('active'));
+      const panel = document.getElementById('panel-' + tab.dataset.tab);
+      if (panel) panel.classList.add('active');
+    });
+
+    // ── Auth check ──
+    async function checkAuth() {
+      try {
+        const resp = await fetch('/auth/api/me');
+        const data = await resp.json();
+        const authArea = document.getElementById('authArea');
+        if (data.authenticated) {
+          currentUser = data;
+          const initial = (data.name || data.email || '?')[0].toUpperCase();
+          authArea.innerHTML = `
+            <span class="nav-user-name">${data.name || data.email}</span>
+            <div class="nav-user-avatar">${initial}</div>
+            <a href="/auth/logout" class="nav-logout">Sign out</a>
+          `;
+        } else {
+          authArea.innerHTML = `
+            <a href="/auth/login?next=/charts/" class="nav-auth-btn nav-auth-login">Sign In</a>
+            <a href="/auth/register?next=/charts/" class="nav-auth-btn nav-auth-signup">Sign Up</a>
+          `;
+        }
+      } catch(e) {
+        console.error('Auth check failed:', e);
+      }
+    }
+
+    // ── Close dropdown on outside click ──
+    document.addEventListener('click', function(e) {
+      const wrap = document.getElementById('toolsWrap');
+      if (wrap && !wrap.contains(e.target)) wrap.classList.remove('open');
+      const mm = document.getElementById('mobileMenu');
+      if (mm && !e.target.closest('.ca-hamburger') && !mm.contains(e.target)) mm.classList.remove('open');
+    });
+
+    // ── Init ──
+    checkAuth();
+    applyMode();
+  </script>
+</body>
+</html>

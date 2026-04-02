@@ -1,5 +1,9 @@
 flask>=3.0.0
 flask-compress
+flask-sqlalchemy
+flask-login
+authlib
+psycopg2-binary
 gunicorn
 yfinance>=0.2.40
 pandas>=2.0.0

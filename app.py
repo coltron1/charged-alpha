@@ -24,6 +24,9 @@ Routes:
   /earnings/api/...              → Earnings Calendar API
   /gold/                         → Precious Metals Aggregator
   /gold/api/...                  → Precious Metals API
+  /charts/                       → Stock Charts (TradingView)
+  /charts/api/...                → Chart save/load API
+  /auth/...                      → Authentication (login, register, OAuth)
 """
 
 import os
@@ -34,10 +37,14 @@ from concurrent.futures import ThreadPoolExecutor
 import yfinance as yf
 from flask import Flask, render_template, request, jsonify
 from flask_compress import Compress
+from flask_login import LoginManager, current_user, login_required
 
 # ── Shared utilities ────────────────────────────────────────────────────────
 from yf_utils import (TTLCache, JobStore, fetch_ticker_info, safe_float,
                        normalize_div_yield, fetch_chart, fetch_banner_tickers)
+from models import db, User
+from auth import auth_bp, init_oauth
+from chart_storage import save_chart_state, load_chart_state, list_user_charts, delete_chart_state
 
 # ── Import backend modules ──────────────────────────────────────────────────
 from stock_screener import (screen_stocks, get_stock_detail,
@@ -56,7 +63,30 @@ from gold_server import get_spot_price, fetch_ebay, fetch_sdbullion, \
 app = Flask(__name__)
 app.url_map.strict_slashes = False
 app.config['MAX_CONTENT_LENGTH'] = 1 * 1024 * 1024  # 1MB max request body
+app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY', 'dev-secret-change-in-production')
+app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL', 'sqlite:///charged_alpha.db')
+# Railway Postgres uses postgres:// but SQLAlchemy needs postgresql://
+if app.config['SQLALCHEMY_DATABASE_URI'].startswith('postgres://'):
+    app.config['SQLALCHEMY_DATABASE_URI'] = app.config['SQLALCHEMY_DATABASE_URI'].replace(
+        'postgres://', 'postgresql://', 1)
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 Compress(app)
+
+# ── Database + Auth ────────────────────────────────────────────────────────
+db.init_app(app)
+login_manager = LoginManager()
+login_manager.init_app(app)
+login_manager.login_view = 'auth.login'
+
+@login_manager.user_loader
+def load_user(user_id):
+    return User.query.get(int(user_id))
+
+init_oauth(app)
+app.register_blueprint(auth_bp)
+
+with app.app_context():
+    db.create_all()
 
 # ── Shared job store (auto-cleans after 10 min) ────────────────────────────
 job_store = JobStore(ttl=600)
@@ -682,6 +712,55 @@ def gold_listings():
         "metal": metal,
         "listings": listings,
     })
+
+
+# ═════════════════════════════════════════════════════════════════════════════
+#  STOCK CHARTS  /charts/
+# ═════════════════════════════════════════════════════════════════════════════
+@app.route("/charts")
+def charts_index():
+    return render_template("stock_charts.html")
+
+
+@app.route("/charts/api/save", methods=["POST"])
+@login_required
+def charts_save():
+    body = request.get_json(force=True)
+    chart_name = body.get("chart_name", "").strip()
+    symbol = body.get("symbol", "")
+    state_json = body.get("state_json", "{}")
+    if not chart_name:
+        return jsonify({"ok": False, "error": "Chart name is required"}), 400
+    save_chart_state(current_user.id, chart_name, symbol, state_json)
+    return jsonify({"ok": True})
+
+
+@app.route("/charts/api/load")
+@login_required
+def charts_load():
+    chart_name = request.args.get("chart_name", "")
+    if not chart_name:
+        return jsonify({"error": "chart_name required"}), 400
+    data = load_chart_state(current_user.id, chart_name)
+    if not data:
+        return jsonify({"error": "Not found"}), 404
+    return jsonify(data)
+
+
+@app.route("/charts/api/list")
+@login_required
+def charts_list():
+    return jsonify(list_user_charts(current_user.id))
+
+
+@app.route("/charts/api/delete", methods=["DELETE"])
+@login_required
+def charts_delete():
+    chart_name = request.args.get("chart_name", "")
+    if not chart_name:
+        return jsonify({"ok": False, "error": "chart_name required"}), 400
+    deleted = delete_chart_state(current_user.id, chart_name)
+    return jsonify({"ok": deleted})
 
 
 # ═════════════════════════════════════════════════════════════════════════════
