@@ -180,7 +180,7 @@ def get_etf_asset_class(symbol):
 
 
 # ── ETF info cache ──────────────────────────────────────────────────────────
-from yf_utils import fetch_ticker_info as _fetch_ticker_info, safe_float as _safe_float
+from yf_utils import fetch_ticker_info as _fetch_ticker_info, safe_float as _safe_float, normalize_div_yield
 
 
 def get_etf_data(symbol):
@@ -219,13 +219,8 @@ def get_etf_data(symbol):
             except (TypeError, ValueError):
                 total_assets = None
 
-        # Dividend yield — yfinance may return as percentage (1.06=1.06%) or decimal (0.0106)
-        raw_dy = info.get("yield") or info.get("dividendYield")
-        if raw_dy:
-            raw_dy = float(raw_dy)
-            dividend_yield = round(raw_dy, 2) if raw_dy >= 1 else round(raw_dy * 100, 2)
-        else:
-            dividend_yield = None
+        # Dividend yield — yfinance returns as decimal (0.025 = 2.5%)
+        dividend_yield = normalize_div_yield(info.get("yield") or info.get("dividendYield"))
 
         # 52-week calculations
         w52_high = _safe_float(info, "fiftyTwoWeekHigh")
@@ -461,12 +456,7 @@ def get_etf_detail(symbol):
 
         total_assets = info.get("totalAssets")
 
-        raw_dy = info.get("yield") or info.get("dividendYield")
-        if raw_dy:
-            raw_dy = float(raw_dy)
-            dividend_yield = round(raw_dy, 2) if raw_dy >= 1 else round(raw_dy * 100, 2)
-        else:
-            dividend_yield = None
+        dividend_yield = normalize_div_yield(info.get("yield") or info.get("dividendYield"))
 
         etf_info = {
             "symbol": symbol,

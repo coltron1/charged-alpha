@@ -48,7 +48,7 @@ def init_oauth(app):
 @auth_bp.route("/register", methods=["GET", "POST"])
 def register():
     if current_user.is_authenticated:
-        return redirect("/charts/")
+        return redirect("/")
 
     if request.method == "POST":
         name = request.form.get("name", "").strip()
@@ -80,7 +80,7 @@ def register():
         db.session.add(user)
         db.session.commit()
         login_user(user)
-        next_url = request.args.get("next", "/charts/")
+        next_url = request.args.get("next", "/")
         return redirect(next_url)
 
     return render_template("auth/register.html")
@@ -89,7 +89,7 @@ def register():
 @auth_bp.route("/login", methods=["GET", "POST"])
 def login():
     if current_user.is_authenticated:
-        return redirect("/charts/")
+        return redirect("/")
 
     if request.method == "POST":
         email = request.form.get("email", "").strip().lower()
@@ -104,7 +104,7 @@ def login():
             return render_template("auth/login.html")
 
         login_user(user)
-        next_url = request.args.get("next", "/charts/")
+        next_url = request.args.get("next", "/")
         return redirect(next_url)
 
     return render_template("auth/login.html")
@@ -165,7 +165,7 @@ def google_callback():
         db.session.add(user)
         db.session.commit()
     login_user(user)
-    return redirect("/charts/")
+    return redirect("/")
 
 
 # ── GitHub OAuth ───────────────────────────────────────────────────────────
@@ -213,4 +213,4 @@ def github_callback():
         db.session.add(user)
         db.session.commit()
     login_user(user)
-    return redirect("/charts/")
+    return redirect("/")

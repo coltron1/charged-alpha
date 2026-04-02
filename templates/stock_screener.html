@@ -345,7 +345,7 @@
       <p class="text-xs text-slate-400 leading-relaxed mt-2">
         <strong class="text-slate-300">Key terms for beginners:</strong>
         A <em>stock</em> is a share of ownership in a company. When you buy a stock, you own a tiny piece of that business.
-        <em>Market cap</em> is the total value of a company (share price Ã number of shares).
+        <em>Market cap</em> is the total value of a company (share price × number of shares).
         A <em>dividend</em> is cash a company pays to shareholders from its profits — like earning interest on your investment.
         <em>P/E ratio</em> (price-to-earnings) tells you how much investors are paying for each dollar of profit — lower often means cheaper, but not always better.
       </p>
@@ -410,8 +410,11 @@
         <option value="custom">ð§ Custom</option>
       </select>
 
-      <!-- Run button -->
-      <button class="btn-primary" id="run-btn-quick" onclick="submitScreen()" style="margin-left:auto;">Run Screen</button>
+      <!-- Buttons -->
+      <div style="margin-left:auto;display:flex;gap:8px;">
+        <button onclick="resetFilters()" style="padding:8px 16px;border-radius:8px;font-size:13px;font-weight:600;color:#94a3b8;background:transparent;border:1px solid #334155;cursor:pointer;transition:all .15s;font-family:inherit;" onmouseover="this.style.borderColor='#6366f1';this.style.color='#a5b4fc'" onmouseout="this.style.borderColor='#334155';this.style.color='#94a3b8'">Reset Filters</button>
+        <button class="btn-primary" id="run-btn-quick" onclick="submitScreen()">Run Screen</button>
+      </div>
     </div>
 
     <!-- ═══ ZONE 2: Advanced Filters ═══ -->
@@ -623,7 +626,8 @@
         </div>
 
 
-        <div class="mt-6 flex justify-end">
+        <div class="mt-6 flex justify-end gap-3">
+          <button onclick="resetFilters()" style="padding:8px 20px;border-radius:8px;font-size:13px;font-weight:600;color:#94a3b8;background:transparent;border:1px solid #334155;cursor:pointer;font-family:inherit;">Reset Filters</button>
           <button class="btn-primary px-10" onclick="submitScreen()">Run Screen</button>
         </div>
       </div>
@@ -650,7 +654,7 @@
           <p id="result-agg" class="text-xs text-slate-400 mt-1 font-mono"></p>
         </div>
         <div class="flex items-center gap-3">
-          <span class="text-xs text-slate-500 italic">Click row to expand Â· double-click for full detail</span>
+          <span class="text-xs text-slate-500 italic">Click row to expand · double-click for full detail</span>
           <button id="export-btn" class="btn-secondary">Export CSV</button>
         </div>
       </div>
@@ -733,7 +737,7 @@
         <div class="flex flex-wrap items-start gap-6">
           <div>
             <h2 class="text-sm font-semibold text-slate-200 uppercase tracking-wider">Cash-Secured Put Options</h2>
-            <p class="text-xs text-slate-500 mt-1">Max 3 months out Â· Ann. return assumes put expires worthless</p>
+            <p class="text-xs text-slate-500 mt-1">Max 3 months out · Ann. return assumes put expires worthless</p>
           </div>
           <div class="flex items-center gap-3 ml-auto flex-wrap">
             <span class="text-xs text-slate-400 whitespace-nowrap">Strike range ($):</span>
@@ -766,7 +770,7 @@
               <th class="text-right p-3" data-tip="Implied Volatility. Higher = larger premium.">IV%</th>
               <th class="text-right p-3" data-tip="Open Interest — total outstanding contracts.">OI</th>
               <th class="text-right p-3" data-tip="Contracts traded today.">Volume</th>
-              <th class="text-right p-3" data-tip="Cash needed to cover assignment (strike Ã 100).">Capital Req.</th>
+              <th class="text-right p-3" data-tip="Cash needed to cover assignment (strike × 100).">Capital Req.</th>
               <th class="text-right p-3" data-tip="Best-case annualized return if put expires worthless.">Ann. Return</th>
               <th class="text-right p-3 pr-6" data-tip="Probability put expires in-the-money (Black-Scholes).">P(ITM)</th>
             </tr>
@@ -902,6 +906,18 @@ function clearAllFilters(silent) {
   }
 }
 
+function resetFilters() {
+  clearAllFilters(false);
+  // Reset cap chips to all active
+  document.querySelectorAll('.cap-chip').forEach(c => c.classList.add('active'));
+  // Reset preset dropdown
+  document.getElementById('preset-select').value = '';
+  // Reset any fields clearAllFilters may miss
+  const extra = ['min_div_streak'];
+  extra.forEach(id => { const el=document.getElementById(id); if(el) el.value=''; });
+  updateAdvCount();
+}
+
 // ════════════════════════════════════════════════
 // ADVANCED PANEL
 // ════════════════════════════════════════════════
@@ -994,7 +1010,7 @@ function getActiveColumns() {
     {key:'name',label:'Name',align:'left',always:true,tip:'Company name'},
     {key:'sector',label:'Sector',align:'left',always:true,tip:'GICS sector classification'},
     {key:'price',label:'Price',align:'right',always:true,tip:'Current share price ($)'},
-    {key:'change_pct',label:'Day %',align:'right',always:true,tip:'Intraday price change = (Current − Previous Close) Ã· Previous Close Ã 100'},
+    {key:'change_pct',label:'Day %',align:'right',always:true,tip:'Intraday price change = (Current − Previous Close) ÷ Previous Close × 100'},
   ];
   const pe = document.getElementById('pe_below_historical').checked;
   const hasPB = !!document.getElementById('min_pb').value || !!document.getElementById('max_pb').value;
@@ -1005,38 +1021,38 @@ function getActiveColumns() {
   const hasAnalyst = !!document.getElementById('min_analyst_count').value || !!document.getElementById('min_target_upside').value || document.querySelectorAll('.analyst-rec-cb:checked').length > 0;
 
   if(pe) {
-    cols.push({key:'trailing_pe',label:'P/E',align:'right',tip:'Trailing P/E = Share Price Ã· Earnings Per Share (TTM)'});
+    cols.push({key:'trailing_pe',label:'P/E',align:'right',tip:'Trailing P/E = Share Price ÷ Earnings Per Share (TTM)'});
     cols.push({key:'avg_hist_pe',label:'Hist P/E',align:'right',tip:'5-year average trailing P/E ratio'});
-    cols.push({key:'pe_discount_pct',label:'PE Disc%',align:'right',tip:'P/E Discount = (Historical P/E − Current P/E) Ã· Historical P/E Ã 100. Positive = cheaper than usual'});
+    cols.push({key:'pe_discount_pct',label:'PE Disc%',align:'right',tip:'P/E Discount = (Historical P/E − Current P/E) ÷ Historical P/E × 100. Positive = cheaper than usual'});
   }
-  if(hasPB) cols.push({key:'price_to_book',label:'P/B',align:'right',tip:'Price-to-Book = Share Price Ã· Book Value Per Share. <1 may indicate undervaluation'});
+  if(hasPB) cols.push({key:'price_to_book',label:'P/B',align:'right',tip:'Price-to-Book = Share Price ÷ Book Value Per Share. <1 may indicate undervaluation'});
   if(hasDiv) {
-    cols.push({key:'dividend_yield',label:'Yield%',align:'right',tip:'Dividend Yield = Annual Dividends Per Share Ã· Share Price Ã 100'});
+    cols.push({key:'dividend_yield',label:'Yield%',align:'right',tip:'Dividend Yield = Annual Dividends Per Share ÷ Share Price × 100'});
     cols.push({key:'div_streak',label:'Streak',align:'right',tip:'Consecutive years paying dividends. 25+ = Dividend Aristocrat'});
-    cols.push({key:'payout_ratio',label:'Payout%',align:'right',tip:'Payout Ratio = Dividends Paid Ã· Net Income Ã 100. Lower = more sustainable'});
+    cols.push({key:'payout_ratio',label:'Payout%',align:'right',tip:'Payout Ratio = Dividends Paid ÷ Net Income × 100. Lower = more sustainable'});
   }
   if(hasGrowth) {
-    cols.push({key:'revenue_growth',label:'Rev Gr%',align:'right',tip:'Revenue Growth = (Current Revenue − Prior Revenue) Ã· Prior Revenue Ã 100 (YoY)'});
-    cols.push({key:'earnings_growth',label:'EPS Gr%',align:'right',tip:'Earnings Growth = (Current EPS − Prior EPS) Ã· |Prior EPS| Ã 100 (YoY)'});
-    cols.push({key:'w52_perf',label:'52w Perf%',align:'right',tip:'52-Week Performance = (Current Price − 52w Low) Ã· 52w Low Ã 100'});
+    cols.push({key:'revenue_growth',label:'Rev Gr%',align:'right',tip:'Revenue Growth = (Current Revenue − Prior Revenue) ÷ Prior Revenue × 100 (YoY)'});
+    cols.push({key:'earnings_growth',label:'EPS Gr%',align:'right',tip:'Earnings Growth = (Current EPS − Prior EPS) ÷ |Prior EPS| × 100 (YoY)'});
+    cols.push({key:'w52_perf',label:'52w Perf%',align:'right',tip:'52-Week Performance = (Current Price − 52w Low) ÷ 52w Low × 100'});
   }
   if(hasFundamentals) {
-    cols.push({key:'debt_to_equity',label:'D/E',align:'right',tip:'Debt-to-Equity = Total Debt Ã· Shareholder Equity. Lower = less leverage'});
-    cols.push({key:'current_ratio',label:'Curr Ratio',align:'right',tip:'Current Ratio = Current Assets Ã· Current Liabilities. >1 means more assets than short-term debts'});
-    cols.push({key:'fcf_yield',label:'FCF Yld%',align:'right',tip:'Free Cash Flow Yield = Free Cash Flow Ã· Market Cap Ã 100. Higher = more cash per dollar invested'});
-    cols.push({key:'operating_margin',label:'Op Mrgn%',align:'right',tip:'Operating Margin = Operating Income Ã· Revenue Ã 100. Higher = more efficient operations'});
+    cols.push({key:'debt_to_equity',label:'D/E',align:'right',tip:'Debt-to-Equity = Total Debt ÷ Shareholder Equity. Lower = less leverage'});
+    cols.push({key:'current_ratio',label:'Curr Ratio',align:'right',tip:'Current Ratio = Current Assets ÷ Current Liabilities. >1 means more assets than short-term debts'});
+    cols.push({key:'fcf_yield',label:'FCF Yld%',align:'right',tip:'Free Cash Flow Yield = Free Cash Flow ÷ Market Cap × 100. Higher = more cash per dollar invested'});
+    cols.push({key:'operating_margin',label:'Op Mrgn%',align:'right',tip:'Operating Margin = Operating Income ÷ Revenue × 100. Higher = more efficient operations'});
   }
   if(hasAnalyst) {
     cols.push({key:'analyst_rec',label:'Rating',align:'right',tip:'Consensus analyst recommendation (Strong Buy / Buy / Hold / Sell / Strong Sell)'});
-    cols.push({key:'target_upside',label:'Upside%',align:'right',tip:'Target Upside = (Avg Analyst Target Price − Current Price) Ã· Current Price Ã 100'});
+    cols.push({key:'target_upside',label:'Upside%',align:'right',tip:'Target Upside = (Avg Analyst Target Price − Current Price) ÷ Current Price × 100'});
   }
   if(hasOptions) {
     cols.push({key:'atm_put_iv',label:'Put IV%',align:'right',tip:'Implied Volatility of the nearest at-the-money put option. Higher IV = higher premiums'});
-    cols.push({key:'atm_put_spread_pct',label:'Spread%',align:'right',tip:'Bid-Ask Spread = (Ask − Bid) Ã· Mid Ã 100. Lower = more liquid'});
+    cols.push({key:'atm_put_spread_pct',label:'Spread%',align:'right',tip:'Bid-Ask Spread = (Ask − Bid) ÷ Mid × 100. Lower = more liquid'});
     cols.push({key:'atm_put_oi',label:'Put OI',align:'right',tip:'Open Interest — number of outstanding put contracts at this strike'});
     cols.push({key:'options_dte',label:'DTE',align:'right',tip:'Days To Expiration — trading days until the option contract expires'});
   }
-  cols.push({key:'market_cap',label:'Mkt Cap',align:'right',always:true,tip:'Market Capitalization = Share Price Ã Total Shares Outstanding'});
+  cols.push({key:'market_cap',label:'Mkt Cap',align:'right',always:true,tip:'Market Capitalization = Share Price × Total Shares Outstanding'});
   return cols;
 }
 
@@ -1131,7 +1147,7 @@ function showResults(results){
     const upStocks = results.filter(r=>r.target_upside!=null);
     if(upStocks.length) agg.push(`avg upside ${(upStocks.reduce((s,r)=>s+r.target_upside,0)/upStocks.length).toFixed(0)}%`);
   }
-  document.getElementById('result-agg').textContent = agg.join(' Â· ');
+  document.getElementById('result-agg').textContent = agg.join(' · ');
   renderTable(results);
 }
 

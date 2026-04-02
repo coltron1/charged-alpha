@@ -236,13 +236,8 @@ def get_stock_data(symbol, fetch_options=False, hist_close=None, need_hist_pe=Tr
             if w52_high > 0:
                 w52_dist_high = round((w52_high - current_price) / w52_high * 100, 1)
 
-        # Dividend yield — yfinance may return as pct (2.5=2.5%) or decimal (0.025)
-        raw_dy = info.get("dividendYield")
-        if raw_dy:
-            raw_dy = float(raw_dy)
-            dividend_yield_pct = round(raw_dy, 2) if raw_dy >= 1 else round(raw_dy * 100, 2)
-        else:
-            dividend_yield_pct = None
+        # Dividend yield — yfinance returns as decimal (0.025 = 2.5%)
+        dividend_yield_pct = normalize_div_yield(info.get("dividendYield"))
 
         # Consecutive dividend years — only compute if we have a yield
         # (t.dividends is an extra API call, so skip unless div yield exists)
@@ -391,7 +386,7 @@ def get_stock_detail(symbol):
             "price_to_book": _safe("priceToBook"),
             "market_cap": info.get("marketCap"),
             "beta": _safe("beta"),
-            "dividend_yield": _safe("dividendYield"),
+            "dividend_yield": normalize_div_yield(info.get("dividendYield")),
             "avg_volume": info.get("averageVolume"),
             "volume": info.get("volume") or info.get("regularMarketVolume"),
             "sector": info.get("sector"),

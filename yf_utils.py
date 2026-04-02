@@ -94,13 +94,12 @@ def safe_float(info, key, scale=1.0):
 # ── Dividend yield normalizer ──────────────────────────────────────────────
 
 def normalize_div_yield(raw):
-    """Normalize yfinance dividendYield — returns percentage or None."""
+    """Normalize yfinance dividendYield — returns percentage or None.
+    yfinance always returns decimal (0.025 = 2.5%), so multiply by 100."""
     if not raw:
         return None
     raw = float(raw)
-    if raw < 1:
-        return round(raw * 100, 2)
-    return round(raw, 2)
+    return round(raw * 100, 2)
 
 
 # ── Chart fetcher (shared across all tools) ────────────────────────────────
