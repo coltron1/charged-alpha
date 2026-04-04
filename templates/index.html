@@ -248,7 +248,7 @@
           <a href="/charts/">Stock Charts</a>
         </div>
       </div>
-      <a href="#shows" class="text-sm text-slate-300 hover:text-white transition-colors no-underline font-medium">Shows</a>
+      <a href="#shows" class="text-sm text-slate-300 hover:text-white transition-colors no-underline font-medium">Show</a>
       <a href="#roadmap" class="text-sm text-slate-300 hover:text-white transition-colors no-underline font-medium">Roadmap</a>
       <a href="#about" class="text-sm text-slate-300 hover:text-white transition-colors no-underline font-medium">About</a>
       <a href="/auth/login" style="padding:6px 14px;border-radius:8px;font-size:12px;font-weight:600;color:#94a3b8;border:1px solid #334155;text-decoration:none;transition:all .15s;">Sign In</a>
@@ -274,7 +274,7 @@
     <a href="/gold/" class="block text-sm text-slate-300 no-underline">Precious Metals</a>
     <a href="/charts/" class="block text-sm text-slate-300 no-underline">Stock Charts</a>
     <div style="height:1px;background:#1e293b;margin:8px 0"></div>
-    <a href="#shows" class="block text-sm text-slate-300 no-underline">Shows</a>
+    <a href="#shows" class="block text-sm text-slate-300 no-underline">Show</a>
     <a href="#roadmap" class="block text-sm text-slate-300 no-underline">Roadmap</a>
     <a href="#about" class="block text-sm text-slate-300 no-underline">About</a>
     <div style="height:1px;background:#1e293b;margin:8px 0"></div>
@@ -301,8 +301,8 @@
     <p class="text-xl md:text-2xl text-slate-400 max-w-2xl mx-auto mb-4 leading-relaxed">
       Learn investing concepts while discovering your next opportunity.
     </p>
-    <p class="text-base text-slate-500 max-w-xl mx-auto mb-10">
-      Free screening tools with built-in education, daily stock breakdowns, and market analysis. Whether you're a first-time investor or a seasoned trader, our beginner/expert modes meet you where you are.
+    <p class="text-base text-slate-500 max-w-2xl mx-auto mb-10 leading-relaxed">
+      Free screening tools, real market data, and focused stock breakdowns built from the same research workflow you can use yourself. Charged Alpha is built around a single flagship format: one stock, one thesis, one clear breakdown.
     </p>
 
     <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -311,7 +311,7 @@
         <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 4l6 5-6 5"/></svg>
       </a>
       <a href="#shows" class="btn-secondary">
-        Listen to Shows
+        See the Show Format
         <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 4v10M6 7l3-3 3 3M5 14h8"/></svg>
       </a>
     </div>
@@ -331,8 +331,8 @@
         <div class="text-xs text-slate-500 mt-1 uppercase tracking-wide">Securities Tracked</div>
       </div>
       <div class="text-center">
-        <div class="stat-num text-3xl font-extrabold">Daily</div>
-        <div class="text-xs text-slate-500 mt-1 uppercase tracking-wide">Shows & Picks</div>
+        <div class="stat-num text-3xl font-extrabold">~10 Min</div>
+        <div class="text-xs text-slate-500 mt-1 uppercase tracking-wide">Single-Stock Breakdowns</div>
       </div>
     </div>
   </div>
@@ -530,35 +530,53 @@
 <div class="section-line"></div>
 
 <!-- ═══════════════════════════════════════════════════════════════
-     SHOWS / PODCASTS
+     FLAGSHIP SHOW
      ═══════════════════════════════════════════════════════════════ -->
 <section id="shows" class="py-24 px-6">
   <div class="max-w-6xl mx-auto">
     <div class="text-center mb-16">
-      <p class="text-sm font-bold text-indigo-400 uppercase tracking-widest mb-3">Listen & Learn</p>
-      <h2 class="text-4xl md:text-5xl font-extrabold text-white mb-4">Charged Alpha Shows</h2>
-      <p class="text-lg text-slate-400 max-w-xl mx-auto">
-        Daily deep dives on individual stocks, market breakdowns, and investing strategies — from the tools to your ears.
+      <p class="text-sm font-bold text-indigo-400 uppercase tracking-widest mb-3">Flagship Show</p>
+      <h2 class="text-4xl md:text-5xl font-extrabold text-white mb-4">One Stock. One Thesis. One Clear Breakdown.</h2>
+      <p class="text-lg text-slate-400 max-w-3xl mx-auto leading-relaxed">
+        Charged Alpha is built around a single flagship episode format: focused breakdowns of one stock at a time, powered by the same screening tools and data workflow available on the site.
       </p>
     </div>
 
-    <div class="grid md:grid-cols-3 gap-8">
-
-      <!-- Show 1: Daily Stock Pick -->
-      <div class="card p-6 glow-indigo">
-        <div class="flex items-center gap-3 mb-4">
-          <div class="w-12 h-12 rounded-xl flex items-center justify-center text-xl" style="background:rgba(99,102,241,.12)">
+    <div class="grid lg:grid-cols-[1.2fr_.8fr] gap-8 items-stretch">
+      <div class="card p-8 glow-indigo">
+        <div class="flex items-center gap-4 mb-6">
+          <div class="w-14 h-14 rounded-xl flex items-center justify-center text-2xl" style="background:rgba(99,102,241,.12)">
             &#127911;
           </div>
           <div>
-            <h3 class="font-bold text-white text-lg">The Daily Alpha</h3>
-            <span class="show-badge badge-daily">Daily</span>
+            <h3 class="font-bold text-white text-2xl">The Daily Alpha</h3>
+            <div class="flex flex-wrap gap-2 mt-2">
+              <span class="show-badge badge-daily">~10 Minutes</span>
+              <span class="show-badge badge-markets">Single Stock</span>
+            </div>
           </div>
         </div>
-        <p class="text-slate-400 text-sm leading-relaxed mb-5">
-          One stock. Deep dive. Every day. Picked by running our screener filters — value, growth, momentum, and more. We break down why the numbers stand out and whether it deserves your attention.
+        <p class="text-slate-300 leading-relaxed mb-6">
+          Each episode starts with a stock surfaced through the Charged Alpha research workflow. We walk through the setup, the numbers that matter, the bull and bear case, and the core question every investor should be asking before adding it to a watchlist or taking a position.
         </p>
-        <!-- Spotify embed placeholder -->
+        <div class="grid sm:grid-cols-2 gap-4 mb-8 text-sm text-slate-400">
+          <div class="card p-4" style="background:#0f172a;border-color:#1e293b;">
+            <div class="text-indigo-300 font-semibold mb-1">Episode Format</div>
+            <div>One company, one thesis, one clean research narrative from open to close.</div>
+          </div>
+          <div class="card p-4" style="background:#0f172a;border-color:#1e293b;">
+            <div class="text-indigo-300 font-semibold mb-1">Research Backbone</div>
+            <div>Built from live screening, valuation checks, growth metrics, options context, and technical review.</div>
+          </div>
+          <div class="card p-4" style="background:#0f172a;border-color:#1e293b;">
+            <div class="text-indigo-300 font-semibold mb-1">Cadence</div>
+            <div>Flexible release schedule — publish when the setup is worth your attention, not just to fill a calendar.</div>
+          </div>
+          <div class="card p-4" style="background:#0f172a;border-color:#1e293b;">
+            <div class="text-indigo-300 font-semibold mb-1">Takeaway</div>
+            <div>Leave with a sharper view of the stock, the thesis, and the exact metrics to keep watching.</div>
+          </div>
+        </div>
         <div class="embed-wrap bg-slate-800 rounded-xl p-4 text-center">
           <div class="text-slate-500 text-sm py-6">
             <svg class="mx-auto mb-2" width="32" height="32" viewBox="0 0 24 24" fill="#1DB954"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg>
@@ -567,70 +585,42 @@
         </div>
       </div>
 
-      <!-- Show 2: International Markets -->
-      <div class="card p-6 glow-green">
-        <div class="flex items-center gap-3 mb-4">
-          <div class="w-12 h-12 rounded-xl flex items-center justify-center text-xl" style="background:rgba(16,185,129,.12)">
-            &#127758;
-          </div>
-          <div>
-            <h3 class="font-bold text-white text-lg">Global Pulse</h3>
-            <span class="show-badge badge-markets">Markets</span>
-          </div>
+      <div class="space-y-6">
+        <div class="card p-6 glow-purple">
+          <p class="text-sm font-bold text-indigo-400 uppercase tracking-widest mb-3">Typical Episode Flow</p>
+          <ol class="space-y-4 text-sm text-slate-300 leading-relaxed">
+            <li><span class="text-white font-semibold">1. Why this stock now</span><br>What surfaced it and why it earned a closer look.</li>
+            <li><span class="text-white font-semibold">2. What the numbers say</span><br>Revenue, margins, valuation, balance sheet, and analyst context.</li>
+            <li><span class="text-white font-semibold">3. Bull vs. bear case</span><br>The strongest reason to care and the biggest reason to stay cautious.</li>
+            <li><span class="text-white font-semibold">4. What to watch next</span><br>The catalysts, risks, and levels that could change the thesis.</li>
+          </ol>
         </div>
-        <p class="text-slate-400 text-sm leading-relaxed mb-5">
-          International markets, emerging opportunities, and macro trends from around the world. What's moving overseas and why it matters to your portfolio back home.
-        </p>
-        <!-- Spotify embed placeholder -->
-        <div class="embed-wrap bg-slate-800 rounded-xl p-4 text-center">
-          <div class="text-slate-500 text-sm py-6">
-            <svg class="mx-auto mb-2" width="32" height="32" viewBox="0 0 24 24" fill="#1DB954"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg>
-            Spotify embed coming soon
-          </div>
-        </div>
-      </div>
 
-      <!-- Show 3: Strategy / Education -->
-      <div class="card p-6 glow-purple">
-        <div class="flex items-center gap-3 mb-4">
-          <div class="w-12 h-12 rounded-xl flex items-center justify-center text-xl" style="background:rgba(139,92,246,.12)">
-            &#128218;
-          </div>
-          <div>
-            <h3 class="font-bold text-white text-lg">Alpha Academy</h3>
-            <span class="show-badge badge-weekly">Weekly</span>
+        <div class="card p-6 glow-green">
+          <p class="text-sm font-bold text-emerald-400 uppercase tracking-widest mb-3">Where it fits</p>
+          <p class="text-slate-300 text-sm leading-relaxed mb-4">
+            The show is not separate from the product. The tools find the ideas, the research shapes the episode, and the episode teaches people how to think through the setup themselves.
+          </p>
+          <a href="#tools" class="btn-secondary w-full justify-center">Explore the Research Workflow</a>
+        </div>
+
+        <div class="text-center">
+          <p class="text-slate-400 mb-4">Available wherever you listen</p>
+          <div class="flex flex-wrap justify-center gap-4">
+            <a href="#" class="flex items-center gap-2 px-5 py-3 rounded-xl text-sm font-semibold text-white no-underline transition-all hover:scale-105" style="background:#1DB954;">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg>
+              Spotify
+            </a>
+            <a href="#" class="flex items-center gap-2 px-5 py-3 rounded-xl text-sm font-semibold text-white no-underline transition-all hover:scale-105" style="background:linear-gradient(135deg,#9933ff,#7733bb);">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M5.34 0A5.328 5.328 0 000 5.34v13.32A5.328 5.328 0 005.34 24h13.32A5.328 5.328 0 0024 18.66V5.34A5.328 5.328 0 0018.66 0H5.34zm6.525 4.8c.6 0 1.18.06 1.56.18.48.12.84.36 1.14.66.3.3.48.66.6 1.08.12.42.18.84.18 1.32v.36c0 .48-.06.9-.24 1.32-.12.36-.36.66-.66.96-.24.18-.48.36-.84.48.48.12.84.36 1.08.72.24.36.36.84.36 1.44v1.08c0 .24 0 .48.06.72.06.18.12.3.24.42v.12h-2.1c-.06-.12-.12-.24-.12-.42-.06-.18-.06-.42-.06-.66v-1.14c0-.48-.12-.84-.3-1.02-.24-.24-.54-.36-1.02-.36h-1.68v3.6h-2.1V4.8h3.78zm-.48 1.68h-1.2v2.82h1.08c.48 0 .84-.06 1.08-.24.24-.18.36-.48.36-.96v-.36c0-.42-.06-.72-.24-.96-.18-.18-.48-.3-1.08-.3z"/></svg>
+              Apple Podcasts
+            </a>
+            <a href="#" class="flex items-center gap-2 px-5 py-3 rounded-xl text-sm font-semibold text-white no-underline transition-all hover:scale-105" style="background:#ff0000;">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+              YouTube
+            </a>
           </div>
         </div>
-        <p class="text-slate-400 text-sm leading-relaxed mb-5">
-          Deep dives into investing strategies, how to read financial data, options basics, and building a portfolio. Made for people who are learning and those sharpening their edge.
-        </p>
-        <!-- Spotify embed placeholder -->
-        <div class="embed-wrap bg-slate-800 rounded-xl p-4 text-center">
-          <div class="text-slate-500 text-sm py-6">
-            <svg class="mx-auto mb-2" width="32" height="32" viewBox="0 0 24 24" fill="#1DB954"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg>
-            Spotify embed coming soon
-          </div>
-        </div>
-      </div>
-
-    </div>
-
-    <!-- Subscribe CTA -->
-    <div class="text-center mt-12">
-      <p class="text-slate-400 mb-4">Available wherever you listen to podcasts</p>
-      <div class="flex flex-wrap justify-center gap-4">
-        <a href="#" class="flex items-center gap-2 px-5 py-3 rounded-xl text-sm font-semibold text-white no-underline transition-all hover:scale-105" style="background:#1DB954;">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg>
-          Spotify
-        </a>
-        <a href="#" class="flex items-center gap-2 px-5 py-3 rounded-xl text-sm font-semibold text-white no-underline transition-all hover:scale-105" style="background:linear-gradient(135deg,#9933ff,#7733bb);">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M5.34 0A5.328 5.328 0 000 5.34v13.32A5.328 5.328 0 005.34 24h13.32A5.328 5.328 0 0024 18.66V5.34A5.328 5.328 0 0018.66 0H5.34zm6.525 4.8c.6 0 1.18.06 1.56.18.48.12.84.36 1.14.66.3.3.48.66.6 1.08.12.42.18.84.18 1.32v.36c0 .48-.06.9-.24 1.32-.12.36-.36.66-.66.96-.24.18-.48.36-.84.48.48.12.84.36 1.08.72.24.36.36.84.36 1.44v1.08c0 .24 0 .48.06.72.06.18.12.3.24.42v.12h-2.1c-.06-.12-.12-.24-.12-.42-.06-.18-.06-.42-.06-.66v-1.14c0-.48-.12-.84-.3-1.02-.24-.24-.54-.36-1.02-.36h-1.68v3.6h-2.1V4.8h3.78zm-.48 1.68h-1.2v2.82h1.08c.48 0 .84-.06 1.08-.24.24-.18.36-.48.36-.96v-.36c0-.42-.06-.72-.24-.96-.18-.18-.48-.3-1.08-.3z"/></svg>
-          Apple Podcasts
-        </a>
-        <a href="#" class="flex items-center gap-2 px-5 py-3 rounded-xl text-sm font-semibold text-white no-underline transition-all hover:scale-105" style="background:#ff0000;">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
-          YouTube
-        </a>
       </div>
     </div>
   </div>
@@ -647,7 +637,7 @@
       <p class="text-sm font-bold text-indigo-400 uppercase tracking-widest mb-3">How It Works</p>
       <h2 class="text-4xl md:text-5xl font-extrabold text-white mb-4">The Charged Alpha Loop</h2>
       <p class="text-lg text-slate-400 max-w-xl mx-auto">
-        Our tools power our shows. Our shows teach you to use the tools better.
+        Our tools power the show, and the show teaches people how to use the tools better.
       </p>
     </div>
 
@@ -663,7 +653,7 @@
         <div class="w-16 h-16 rounded-2xl flex items-center justify-center text-3xl mx-auto mb-4" style="background:rgba(139,92,246,.1)">2</div>
         <h3 class="font-bold text-white text-lg mb-2">Analyze</h3>
         <p class="text-slate-400 text-sm leading-relaxed">
-          Dive into the detail view — charts, financials, options chains, and analyst targets. We do the same thing live on the shows.
+          Dive into the detail view — charts, financials, options chains, and analyst targets. That same workflow powers every episode.
         </p>
       </div>
       <div class="text-center">
@@ -825,10 +815,10 @@
     <div class="logo-bolt logo-bolt-lg mx-auto mb-8">&#9889;</div>
     <h2 class="text-3xl md:text-4xl font-extrabold text-white mb-6">Built for Retail Investors</h2>
     <p class="text-lg text-slate-400 leading-relaxed mb-6">
-      Charged Alpha exists because good investing data shouldn't be locked behind expensive terminals. We build free, no-signup tools that give everyday investors the same screening power the pros use — and we break it all down on our daily shows so you know exactly what to do with it.
+      Charged Alpha exists because good investing data shouldn't be locked behind expensive terminals. We build free, no-signup tools that give everyday investors the same screening power the pros use — then turn that research process into focused stock breakdowns that show exactly how the thesis comes together.
     </p>
     <p class="text-lg text-slate-400 leading-relaxed">
-      Whether you're just getting started or you've been trading for years, there's something here for you. Run a screen. Listen to a show. Make better decisions.
+      Whether you're just getting started or you've been trading for years, the goal is the same: run the screen, understand the setup, and make better decisions with real data instead of hype.
     </p>
   </div>
 </section>
@@ -848,7 +838,7 @@
           <span class="font-extrabold text-white tracking-tight">CHARGED ALPHA</span>
         </div>
         <p class="text-sm text-slate-500 leading-relaxed max-w-sm">
-          Data-driven investing tools and shows for retail investors who want to make smarter decisions in the market.
+          Data-driven investing tools and a flagship stock show for retail investors who want to make smarter decisions in the market.
         </p>
       </div>
 
