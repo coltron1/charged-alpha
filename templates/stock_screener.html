@@ -136,11 +136,10 @@
     }
 
     /* ── Homepage preset cards ── */
-    .preset-card { background:linear-gradient(135deg,#131b2e 0%,#1e293b 100%); border:1px solid #334155; border-radius:12px; padding:20px; cursor:pointer; transition:all .2s; text-decoration:none; color:inherit; display:block; }
-    .preset-card:hover { border-color:#6366f1; transform:translateY(-2px); box-shadow:0 8px 24px rgba(0,0,0,.3); }
-    .preset-card .icon { font-size:28px; margin-bottom:8px; }
-    .preset-card h3 { font-size:15px; font-weight:700; color:#e2e8f0; margin-bottom:4px; }
-    .preset-card p { font-size:12px; color:#64748b; line-height:1.5; }
+    .preset-card { background:#131b2e; border:1px solid #334155; border-radius:8px; padding:10px 16px; cursor:pointer; transition:all .2s; text-decoration:none; color:inherit; display:block; text-align:center; }
+    .preset-card:hover { border-color:#6366f1; background:#1e293b; }
+    .preset-card h3 { font-size:13px; font-weight:600; color:#e2e8f0; margin:0; }
+    .preset-card p { font-size:11px; color:#64748b; margin:3px 0 0; line-height:1.4; }
 
     /* ── Nav bar ── */
     .ca-nav{background:#111827;border-bottom:1px solid #1e293b;padding:0 24px;display:flex;align-items:center;justify-content:space-between;height:56px;position:relative;z-index:100}
@@ -357,22 +356,18 @@
     <!-- ═══ Quick Screen Cards (homepage) ═══ -->
     <div id="quick-screen-cards" class="grid grid-cols-2 lg:grid-cols-4 gap-4 mt-6 beginner-only">
       <a class="preset-card" href="javascript:void(0)" onclick="applyPreset('value')">
-        <div class="icon">ð</div>
         <h3>Value Picks</h3>
         <p>Low P/E, discounted vs history, strong book value</p>
       </a>
       <a class="preset-card" href="javascript:void(0)" onclick="applyPreset('growth')">
-        <div class="icon">ð</div>
         <h3>Growth Movers</h3>
         <p>High revenue &amp; EPS growth, strong 52-week momentum</p>
       </a>
       <a class="preset-card" href="javascript:void(0)" onclick="applyPreset('dividend')">
-        <div class="icon">ð°</div>
         <h3>Dividend Hunters</h3>
         <p>Yield &gt;2%, sustainable payout, reliable income</p>
       </a>
       <a class="preset-card" href="javascript:void(0)" onclick="applyPreset('momentum')">
-        <div class="icon">⚡</div>
         <h3>Momentum</h3>
         <p>Near 52-week high, strong recent performance</p>
       </a>
@@ -402,12 +397,12 @@
 
       <!-- Strategy presets -->
       <select class="preset-select" id="preset-select" onchange="applyPreset(this.value)">
-        <option value="">⚡ Strategy Preset</option>
-        <option value="value">ð Value Picks</option>
-        <option value="growth">ð Growth Movers</option>
-        <option value="dividend">ð° Dividend Hunters</option>
-        <option value="momentum">⚡ Momentum</option>
-        <option value="custom">ð§ Custom</option>
+        <option value="">Strategy Preset</option>
+        <option value="value">Value Picks</option>
+        <option value="growth">Growth Movers</option>
+        <option value="dividend">Dividend Hunters</option>
+        <option value="momentum">Momentum</option>
+        <option value="custom">Custom</option>
       </select>
 
       <!-- Buttons -->
