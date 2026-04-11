@@ -29,9 +29,11 @@ Routes:
   /auth/...                      → Authentication (login, register, OAuth)
 """
 
+import json
 import os
 import time
 import threading
+from pathlib import Path
 from concurrent.futures import ThreadPoolExecutor
 
 import yfinance as yf
@@ -61,6 +63,16 @@ from gold_server import get_spot_price, fetch_ebay, fetch_sdbullion, \
     fetch_craigslist, generate_facebook_links, get_purity_fraction
 
 app = Flask(__name__)
+BASE_DIR = Path(__file__).resolve().parent
+SHOWS_CATALOG_PATH = BASE_DIR / "data" / "shows_catalog.json"
+
+
+def load_shows_catalog():
+    if not SHOWS_CATALOG_PATH.exists():
+        return {"platform_links": {}, "episodes": []}
+    with SHOWS_CATALOG_PATH.open("r", encoding="utf-8") as f:
+        return json.load(f)
+
 app.url_map.strict_slashes = False
 app.config['MAX_CONTENT_LENGTH'] = 1 * 1024 * 1024  # 1MB max request body
 app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY', 'dev-secret-change-in-production')
@@ -204,7 +216,21 @@ def health():
 # ═════════════════════════════════════════════════════════════════════════════
 @app.route("/")
 def index():
-    return render_template("index.html")
+    shows_data = load_shows_catalog()
+    return render_template(
+        "index.html",
+        podcast_platforms=shows_data.get("platform_links", {}),
+    )
+
+
+@app.route("/shows")
+def shows():
+    shows_data = load_shows_catalog()
+    return render_template(
+        "shows.html",
+        shows_catalog=shows_data.get("episodes", []),
+        podcast_platforms=shows_data.get("platform_links", {}),
+    )
 
 
 @app.route("/shows")
