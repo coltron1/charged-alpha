@@ -233,11 +233,6 @@ def shows():
     )
 
 
-@app.route("/shows")
-def shows():
-    return render_template("shows.html")
-
-
 # ── Market pulse API (homepage ticker) ────────────────────────────────────
 _market_pulse_cache = TTLCache(default_ttl=120, max_size=1)
 
