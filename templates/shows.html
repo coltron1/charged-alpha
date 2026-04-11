@@ -162,6 +162,10 @@
           <svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M5.34 0A5.328 5.328 0 000 5.34v13.32A5.328 5.328 0 005.34 24h13.32A5.328 5.328 0 0024 18.66V5.34A5.328 5.328 0 0018.66 0H5.34zm6.525 4.8c.6 0 1.18.06 1.56.18.48.12.84.36 1.14.66.3.3.48.66.6 1.08.12.42.18.84.18 1.32v.36c0 .48-.06.9-.24 1.32-.12.36-.36.66-.66.96-.24.18-.48.36-.84.48.48.12.84.36 1.08.72.24.36.36.84.36 1.44v1.08c0 .24 0 .48.06.72.06.18.12.3.24.42v.12h-2.1c-.06-.12-.12-.24-.12-.42-.06-.18-.06-.42-.06-.66v-1.14c0-.48-.12-.84-.3-1.02-.24-.24-.54-.36-1.02-.36h-1.68v3.6h-2.1V4.8h3.78zm-.48 1.68h-1.2v2.82h1.08c.48 0 .84-.06 1.08-.24.24-.18.36-.48.36-.96v-.36c0-.42-.06-.72-.24-.96-.18-.18-.48-.3-1.08-.3z"/></svg>
           Apple Podcasts
         </a>
+        <a href="{{ podcast_platforms.amazon }}" target="_blank" rel="noopener noreferrer" class="platform-pill" style="background:linear-gradient(135deg,#f59e0b,#f97316);">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M6.5 8.5h11l1.6 9.5H4.9L6.5 8.5zm1.2-3h8.6l1 2H6.7l1-2zm1.1 5.2-.7 5.1h1.7l.3-2.1h3.8l.3 2.1h1.7l-.7-5.1H8.8zm1.5 1.3h2l.4 2.1H9.9l.4-2.1z"/></svg>
+          Amazon Music
+        </a>
         <a href="{{ podcast_platforms.youtube }}" target="_blank" rel="noopener noreferrer" class="platform-pill" style="background:#ff0000;">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
           YouTube
@@ -202,6 +206,7 @@ var EPISODES = {{ shows_catalog | tojson }}.map(function(show) {
     links: {
       spotify: show.spotify_url,
       apple: show.apple_url,
+      amazon: show.amazon_url,
       youtube: show.youtube_url,
       google: show.google_url,
       iheart: show.iheart_url,
@@ -268,6 +273,7 @@ function renderEpisodes() {
     var links = [];
     if (ep.links.spotify) links.push(buildLink(ep.links.spotify, 'Spotify', '#1DB954', '<svg width="12" height="12" viewBox="0 0 24 24" fill="white"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02z"/></svg>'));
     if (ep.links.apple) links.push(buildLink(ep.links.apple, 'Apple Podcasts', 'linear-gradient(135deg,#9933ff,#7733bb)', '<svg width="12" height="12" viewBox="0 0 24 24" fill="white"><path d="M5.34 0A5.328 5.328 0 000 5.34v13.32A5.328 5.328 0 005.34 24h13.32A5.328 5.328 0 0024 18.66V5.34A5.328 5.328 0 0018.66 0H5.34z"/></svg>'));
+    if (ep.links.amazon) links.push(buildLink(ep.links.amazon, 'Amazon Music', 'linear-gradient(135deg,#f59e0b,#f97316)', '<svg width="12" height="12" viewBox="0 0 24 24" fill="white"><path d="M6.5 8.5h11l1.6 9.5H4.9L6.5 8.5zm1.2-3h8.6l1 2H6.7l1-2zm1.1 5.2-.7 5.1h1.7l.3-2.1h3.8l.3 2.1h1.7l-.7-5.1H8.8zm1.5 1.3h2l.4 2.1H9.9l.4-2.1z"/></svg>'));
     if (ep.links.youtube) links.push(buildLink(ep.links.youtube, 'YouTube', '#ff0000', '<svg width="12" height="12" viewBox="0 0 24 24" fill="white"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>'));
     if (ep.links.google) links.push(buildLink(ep.links.google, 'Google Podcasts', '#0066D5', '<svg width="12" height="12" viewBox="0 0 24 24" fill="white"><circle cx="12" cy="12" r="3"/></svg>'));
     if (ep.links.iheart) links.push(buildLink(ep.links.iheart, 'iHeartRadio', '#5C67DE', '<svg width="12" height="12" viewBox="0 0 24 24" fill="white"><circle cx="12" cy="12" r="3"/></svg>'));

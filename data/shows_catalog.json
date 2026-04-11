@@ -4,7 +4,8 @@
     "spotify": "https://open.spotify.com/show/72TRXJNznbvrpM72hdVN3b",
     "apple": "https://podcasts.apple.com/us/podcast/charged-alpha-stock-encyclopedia/id1891551459",
     "google": "https://music.youtube.com/search?q=Charged+Alpha+Stock+Encyclopedia",
-    "iheart": "https://www.iheart.com/podcast/charged-alpha-stock-encyclopedia-329654680"
+    "iheart": "https://www.iheart.com/podcast/charged-alpha-stock-encyclopedia-329654680",
+    "amazon": "https://music.amazon.com/podcasts/039f5223-f4e8-4db4-bf6d-4441bdc0e81c/charged-alpha-stock-encyclopedia"
   },
   "episodes": [
     {
@@ -20,7 +21,8 @@
       "google_url": "",
       "iheart_url": "",
       "podbean_url": "",
-      "has_episode": true
+      "has_episode": true,
+      "amazon_url": "https://music.amazon.com/podcasts/039f5223-f4e8-4db4-bf6d-4441bdc0e81c/episodes/bba4be66-0e78-4c7e-bb40-3638cb735229/charged-alpha-stock-encyclopedia-apple-aapl-%E2%80%94-the-3-8t-ecosystem-machine-charged-alpha-ep-52"
     },
     {
       "ticker": "MSFT",
@@ -35,7 +37,8 @@
       "google_url": "",
       "iheart_url": "",
       "podbean_url": "",
-      "has_episode": true
+      "has_episode": true,
+      "amazon_url": "https://music.amazon.com/podcasts/039f5223-f4e8-4db4-bf6d-4441bdc0e81c/episodes/8df17307-c3d9-450a-9ef8-857d7e561862/charged-alpha-stock-encyclopedia-microsoft-msft-%E2%80%94-the-ai-enterprise-powerhouse-charged-alpha-ep-53"
     },
     {
       "ticker": "GOOGL",
@@ -50,7 +53,8 @@
       "google_url": "",
       "iheart_url": "",
       "podbean_url": "",
-      "has_episode": true
+      "has_episode": true,
+      "amazon_url": "https://music.amazon.com/podcasts/039f5223-f4e8-4db4-bf6d-4441bdc0e81c/episodes/4872eeee-f2e1-467f-b120-e7d2066df8d2/charged-alpha-stock-encyclopedia-alphabet-googl-%E2%80%94-search-dominance-meets-the-ai-inflection-charged-alpha-ep-55"
     },
     {
       "ticker": "AMZN",
@@ -65,7 +69,8 @@
       "google_url": "",
       "iheart_url": "",
       "podbean_url": "",
-      "has_episode": true
+      "has_episode": true,
+      "amazon_url": "https://music.amazon.com/podcasts/039f5223-f4e8-4db4-bf6d-4441bdc0e81c/episodes/f90f2498-2ea0-43c1-ab5c-d032d088b5a1/charged-alpha-stock-encyclopedia-amazon-amzn-%E2%80%94-the-200b-bet-on-ai-infrastructure-charged-alpha-ep-54"
     },
     {
       "ticker": "NVDA",
@@ -80,7 +85,8 @@
       "google_url": "",
       "iheart_url": "",
       "podbean_url": "",
-      "has_episode": true
+      "has_episode": true,
+      "amazon_url": "https://music.amazon.com/podcasts/039f5223-f4e8-4db4-bf6d-4441bdc0e81c/episodes/5157e5b8-bfb0-49ba-b597-34bc26da9a0c/charged-alpha-stock-encyclopedia-nvidia-nvda-%E2%80%94-the-4-trillion-ai-kingpin-charged-alpha-ep-51"
     },
     {
       "ticker": "META",
@@ -95,7 +101,8 @@
       "google_url": "",
       "iheart_url": "",
       "podbean_url": "https://chargedalpha.podbean.com/e/charged-alpha-meta-platforms-meta-sp-500-deep-dive-%e2%80%94-ep-57/",
-      "has_episode": true
+      "has_episode": true,
+      "amazon_url": "https://music.amazon.com/podcasts/039f5223-f4e8-4db4-bf6d-4441bdc0e81c/episodes/b14ff8ca-0551-47ad-b57f-909cbef937ef/charged-alpha-stock-encyclopedia-charged-alpha-meta-platforms-meta-s-p-500-deep-dive-%E2%80%94-ep-57"
     },
     {
       "ticker": "TSLA",
@@ -110,7 +117,8 @@
       "google_url": "",
       "iheart_url": "",
       "podbean_url": "",
-      "has_episode": true
+      "has_episode": true,
+      "amazon_url": "https://music.amazon.com/podcasts/039f5223-f4e8-4db4-bf6d-4441bdc0e81c/episodes/9a8c4b25-ee4c-4ccd-92c0-7d86a0ae9310/charged-alpha-stock-encyclopedia-tesla-tsla---robotaxi-25k-model-2-and-327x-earnings-charged-alpha-ep-65"
     },
     {
       "ticker": "BRK.B",
@@ -125,7 +133,8 @@
       "google_url": "",
       "iheart_url": "",
       "podbean_url": "",
-      "has_episode": false
+      "has_episode": false,
+      "amazon_url": ""
     },
     {
       "ticker": "UNH",
@@ -140,7 +149,8 @@
       "google_url": "",
       "iheart_url": "",
       "podbean_url": "https://chargedalpha.podbean.com/e/unitedhealth-group-unh-%e2%80%94-the-healthcare-colossus-at-a-crossroads-ep-85-1775707904/",
-      "has_episode": true
+      "has_episode": true,
+      "amazon_url": "https://music.amazon.com/podcasts/039f5223-f4e8-4db4-bf6d-4441bdc0e81c/episodes/7afbdd5b-b5fb-4a74-9dce-db33a8a6251b/charged-alpha-stock-encyclopedia-unitedhealth-group-unh-%E2%80%94-the-healthcare-colossus-at-a-crossroads-ep-85"
     },
     {
       "ticker": "JNJ",
@@ -155,7 +165,8 @@
       "google_url": "",
       "iheart_url": "",
       "podbean_url": "https://chargedalpha.podbean.com/e/johnson-johnson-jnj-%e2%80%94-healthcare-giant-in-transformation-ep-66/",
-      "has_episode": true
+      "has_episode": true,
+      "amazon_url": "https://music.amazon.com/podcasts/039f5223-f4e8-4db4-bf6d-4441bdc0e81c/episodes/20f2eebc-5607-4a0c-85ce-d7819527edf4/charged-alpha-stock-encyclopedia-johnson-johnson-jnj-%E2%80%94-healthcare-giant-in-transformation-ep-66"
     },
     {
       "ticker": "V",
@@ -170,7 +181,8 @@
       "google_url": "",
       "iheart_url": "",
       "podbean_url": "https://chargedalpha.podbean.com/e/visa-inc-v-%e2%80%94-the-global-payments-tollbooth-ep-65/",
-      "has_episode": true
+      "has_episode": true,
+      "amazon_url": "https://music.amazon.com/podcasts/039f5223-f4e8-4db4-bf6d-4441bdc0e81c/episodes/f29fd5ea-e09f-41cc-af97-3ffeb0799f4c/charged-alpha-stock-encyclopedia-visa-inc-v-%E2%80%94-the-global-payments-tollbooth-ep-65"
     },
     {
       "ticker": "XOM",
@@ -185,7 +197,8 @@
       "google_url": "",
       "iheart_url": "",
       "podbean_url": "",
-      "has_episode": true
+      "has_episode": true,
+      "amazon_url": "https://music.amazon.com/podcasts/039f5223-f4e8-4db4-bf6d-4441bdc0e81c/episodes/831358bb-cb60-47d4-8e94-700f540d701c/charged-alpha-stock-encyclopedia-charged-alpha-exxon-mobil-corporation-xom-s-p-500-deep-dive"
     },
     {
       "ticker": "JPM",
@@ -200,7 +213,8 @@
       "google_url": "",
       "iheart_url": "",
       "podbean_url": "",
-      "has_episode": true
+      "has_episode": true,
+      "amazon_url": "https://music.amazon.com/podcasts/039f5223-f4e8-4db4-bf6d-4441bdc0e81c/episodes/0634f298-2cf5-4536-9204-f5957b1ddb33/charged-alpha-stock-encyclopedia-charged-alpha-jpmorgan-chase-co-jpm-s-p-500-deep-dive"
     },
     {
       "ticker": "WMT",
@@ -215,7 +229,8 @@
       "google_url": "",
       "iheart_url": "",
       "podbean_url": "",
-      "has_episode": true
+      "has_episode": true,
+      "amazon_url": "https://music.amazon.com/podcasts/039f5223-f4e8-4db4-bf6d-4441bdc0e81c/episodes/2c99f054-1acb-4166-a654-c27b8a3717da/charged-alpha-stock-encyclopedia-walmart-wmt-deep-dive-%E2%80%94-retail-media-the-valuation-question-charged-alpha-ep-67"
     },
     {
       "ticker": "MA",
@@ -230,7 +245,8 @@
       "google_url": "",
       "iheart_url": "",
       "podbean_url": "https://chargedalpha.podbean.com/e/mastercard-ma-%e2%80%94-the-global-payments-toll-booth-ep-68/",
-      "has_episode": true
+      "has_episode": true,
+      "amazon_url": "https://music.amazon.com/podcasts/039f5223-f4e8-4db4-bf6d-4441bdc0e81c/episodes/65bf7b6e-157c-4235-b273-c606868c52b4/charged-alpha-stock-encyclopedia-mastercard-ma-%E2%80%94-the-global-payments-toll-booth-ep-68"
     },
     {
       "ticker": "PG",
@@ -245,7 +261,8 @@
       "google_url": "",
       "iheart_url": "",
       "podbean_url": "https://chargedalpha.podbean.com/e/procter-gamble-pg-%e2%80%94-the-189-year-old-giant-betting-on-ai-innovation-ep-79/",
-      "has_episode": true
+      "has_episode": true,
+      "amazon_url": "https://music.amazon.com/podcasts/039f5223-f4e8-4db4-bf6d-4441bdc0e81c/episodes/efb34740-7c68-48ee-877d-68a7dd39c4a0/charged-alpha-stock-encyclopedia-procter-gamble-pg-%E2%80%94-the-189-year-old-giant-betting-on-ai-innovation-ep-79"
     },
     {
       "ticker": "HD",
@@ -260,7 +277,8 @@
       "google_url": "",
       "iheart_url": "",
       "podbean_url": "https://chargedalpha.podbean.com/e/home-depot-hd-%e2%80%94-the-320b-giant-betting-on-pro-contractors-ep-80/",
-      "has_episode": true
+      "has_episode": true,
+      "amazon_url": "https://music.amazon.com/podcasts/039f5223-f4e8-4db4-bf6d-4441bdc0e81c/episodes/0788f77e-db17-4acd-b406-132ec68b198e/charged-alpha-stock-encyclopedia-home-depot-hd-%E2%80%94-the-320b-giant-betting-on-pro-contractors-ep-80"
     },
     {
       "ticker": "CVX",
@@ -275,7 +293,8 @@
       "google_url": "",
       "iheart_url": "",
       "podbean_url": "https://chargedalpha.podbean.com/e/chevron-corporation-cvx-%e2%80%94-the-energy-supermajor-betting-on-guyana-ep-72/",
-      "has_episode": true
+      "has_episode": true,
+      "amazon_url": "https://music.amazon.com/podcasts/039f5223-f4e8-4db4-bf6d-4441bdc0e81c/episodes/bd04ce2f-619f-472c-9e70-0373585bad43/charged-alpha-stock-encyclopedia-chevron-corporation-cvx-%E2%80%94-the-energy-supermajor-betting-on-guyana-ep-72"
     },
     {
       "ticker": "MRK",
@@ -290,7 +309,8 @@
       "google_url": "",
       "iheart_url": "",
       "podbean_url": "https://chargedalpha.podbean.com/e/charged-alpha-merck-co-mrk-sp-500-deep-dive-%e2%80%94-ep-83/",
-      "has_episode": true
+      "has_episode": true,
+      "amazon_url": "https://music.amazon.com/podcasts/039f5223-f4e8-4db4-bf6d-4441bdc0e81c/episodes/853d11ae-8a2e-4a76-a6ea-a04845782993/charged-alpha-stock-encyclopedia-charged-alpha-merck-co-mrk-s-p-500-deep-dive-%E2%80%94-ep-83"
     },
     {
       "ticker": "ABBV",
@@ -305,7 +325,8 @@
       "google_url": "",
       "iheart_url": "",
       "podbean_url": "https://chargedalpha.podbean.com/e/abbvie-inc-abbv-%e2%80%94-healthcare-giant-navigating-the-patent-cliff-ep-73/",
-      "has_episode": true
+      "has_episode": true,
+      "amazon_url": "https://music.amazon.com/podcasts/039f5223-f4e8-4db4-bf6d-4441bdc0e81c/episodes/221ea714-5c7e-4118-827b-d65e78867dd9/charged-alpha-stock-encyclopedia-abbvie-inc-abbv-%E2%80%94-healthcare-giant-navigating-the-patent-cliff-ep-73"
     },
     {
       "ticker": "LLY",
@@ -320,7 +341,8 @@
       "google_url": "",
       "iheart_url": "",
       "podbean_url": "",
-      "has_episode": true
+      "has_episode": true,
+      "amazon_url": "https://music.amazon.com/podcasts/039f5223-f4e8-4db4-bf6d-4441bdc0e81c/episodes/0e32b36f-4b06-4674-8f90-bcaa0976771f/charged-alpha-stock-encyclopedia-eli-lilly-lly-deep-dive-%E2%80%94-the-glp-1-revolution-charged-alpha-ep-61"
     },
     {
       "ticker": "PEP",
@@ -335,7 +357,8 @@
       "google_url": "",
       "iheart_url": "",
       "podbean_url": "",
-      "has_episode": false
+      "has_episode": false,
+      "amazon_url": ""
     },
     {
       "ticker": "KO",
@@ -350,7 +373,8 @@
       "google_url": "",
       "iheart_url": "",
       "podbean_url": "https://chargedalpha.podbean.com/e/the-coca-cola-company-ko-%e2%80%94-the-dividend-fortress-embracing-ai-ep-78/",
-      "has_episode": true
+      "has_episode": true,
+      "amazon_url": "https://music.amazon.com/podcasts/039f5223-f4e8-4db4-bf6d-4441bdc0e81c/episodes/4a4051b3-fe50-46f5-a9c2-d83541619bbc/charged-alpha-stock-encyclopedia-the-coca-cola-company-ko-%E2%80%94-the-dividend-fortress-embracing-ai-ep-78"
     },
     {
       "ticker": "COST",
@@ -365,7 +389,8 @@
       "google_url": "",
       "iheart_url": "",
       "podbean_url": "https://chargedalpha.podbean.com/e/costco-wholesale-cost-%e2%80%94-the-membership-flywheel-ep-67/",
-      "has_episode": true
+      "has_episode": true,
+      "amazon_url": "https://music.amazon.com/podcasts/039f5223-f4e8-4db4-bf6d-4441bdc0e81c/episodes/3698586a-1c5d-42bf-9081-d63e52e9d4c2/charged-alpha-stock-encyclopedia-costco-wholesale-cost-%E2%80%94-the-membership-flywheel-ep-67"
     },
     {
       "ticker": "AVGO",
@@ -380,7 +405,8 @@
       "google_url": "",
       "iheart_url": "",
       "podbean_url": "https://chargedalpha.podbean.com/e/charged-alpha-broadcom-avgo-sp-500-deep-dive-%e2%80%94-ep-56/",
-      "has_episode": true
+      "has_episode": true,
+      "amazon_url": "https://music.amazon.com/podcasts/039f5223-f4e8-4db4-bf6d-4441bdc0e81c/episodes/e7b60e4a-ae66-4e4e-b84e-3156b77ab4cd/charged-alpha-stock-encyclopedia-charged-alpha-broadcom-avgo-s-p-500-deep-dive-%E2%80%94-ep-56"
     },
     {
       "ticker": "TMO",
@@ -395,7 +421,8 @@
       "google_url": "",
       "iheart_url": "",
       "podbean_url": "",
-      "has_episode": false
+      "has_episode": false,
+      "amazon_url": ""
     },
     {
       "ticker": "CRM",
@@ -410,7 +437,8 @@
       "google_url": "",
       "iheart_url": "",
       "podbean_url": "",
-      "has_episode": false
+      "has_episode": false,
+      "amazon_url": ""
     },
     {
       "ticker": "ADBE",
@@ -425,7 +453,8 @@
       "google_url": "",
       "iheart_url": "",
       "podbean_url": "",
-      "has_episode": false
+      "has_episode": false,
+      "amazon_url": ""
     },
     {
       "ticker": "NFLX",
@@ -440,7 +469,8 @@
       "google_url": "",
       "iheart_url": "",
       "podbean_url": "https://chargedalpha.podbean.com/e/netflix-nflx-%e2%80%94-the-streaming-empire-monetizing-everything-ep-71/",
-      "has_episode": true
+      "has_episode": true,
+      "amazon_url": "https://music.amazon.com/podcasts/039f5223-f4e8-4db4-bf6d-4441bdc0e81c/episodes/64409d79-b089-46e4-bf08-3588ba1606e7/charged-alpha-stock-encyclopedia-netflix-nflx-%E2%80%94-the-streaming-empire-monetizing-everything-ep-71"
     },
     {
       "ticker": "AMD",
@@ -455,7 +485,8 @@
       "google_url": "",
       "iheart_url": "",
       "podbean_url": "https://chargedalpha.podbean.com/e/advanced-micro-devices-amd-%e2%80%94-ai-chip-challenger-taking-on-nvidia-ep-74/",
-      "has_episode": true
+      "has_episode": true,
+      "amazon_url": "https://music.amazon.com/podcasts/039f5223-f4e8-4db4-bf6d-4441bdc0e81c/episodes/b148d9f1-89ce-449e-a49f-bf43d3508cf8/charged-alpha-stock-encyclopedia-advanced-micro-devices-amd-%E2%80%94-ai-chip-challenger-taking-on-nvidia-ep-74"
     },
     {
       "ticker": "INTC",
@@ -470,7 +501,8 @@
       "google_url": "",
       "iheart_url": "",
       "podbean_url": "https://chargedalpha.podbean.com/e/charged-alpha-intel-intc-sp-500-deep-dive-%e2%80%94-ep-90/",
-      "has_episode": true
+      "has_episode": true,
+      "amazon_url": "https://music.amazon.com/podcasts/039f5223-f4e8-4db4-bf6d-4441bdc0e81c/episodes/4875fc50-73cc-4e15-9d5e-6ec1859b0926/charged-alpha-stock-encyclopedia-charged-alpha-intel-intc-s-p-500-deep-dive-%E2%80%94-ep-90"
     },
     {
       "ticker": "DIS",
@@ -485,7 +517,8 @@
       "google_url": "",
       "iheart_url": "",
       "podbean_url": "",
-      "has_episode": false
+      "has_episode": false,
+      "amazon_url": ""
     },
     {
       "ticker": "CSCO",
@@ -500,7 +533,8 @@
       "google_url": "",
       "iheart_url": "",
       "podbean_url": "https://chargedalpha.podbean.com/e/cisco-systems-csco-%e2%80%94-the-ai-infrastructure-play-hiding-in-plain-sight-ep-81/",
-      "has_episode": true
+      "has_episode": true,
+      "amazon_url": "https://music.amazon.com/podcasts/039f5223-f4e8-4db4-bf6d-4441bdc0e81c/episodes/d80e455b-b90b-4286-a778-f77ab92579f9/charged-alpha-stock-encyclopedia-cisco-systems-csco-%E2%80%94-the-ai-infrastructure-play-hiding-in-plain-sight-ep-81"
     },
     {
       "ticker": "VZ",
@@ -515,7 +549,8 @@
       "google_url": "",
       "iheart_url": "",
       "podbean_url": "",
-      "has_episode": false
+      "has_episode": false,
+      "amazon_url": ""
     },
     {
       "ticker": "T",
@@ -530,7 +565,8 @@
       "google_url": "",
       "iheart_url": "",
       "podbean_url": "",
-      "has_episode": false
+      "has_episode": false,
+      "amazon_url": ""
     },
     {
       "ticker": "BA",
@@ -545,7 +581,8 @@
       "google_url": "",
       "iheart_url": "",
       "podbean_url": "",
-      "has_episode": false
+      "has_episode": false,
+      "amazon_url": ""
     },
     {
       "ticker": "CAT",
@@ -560,7 +597,8 @@
       "google_url": "",
       "iheart_url": "",
       "podbean_url": "https://chargedalpha.podbean.com/e/caterpillar-inc-cat-%e2%80%94-the-unexpected-ai-infrastructure-giant-ep-77/",
-      "has_episode": true
+      "has_episode": true,
+      "amazon_url": "https://music.amazon.com/podcasts/039f5223-f4e8-4db4-bf6d-4441bdc0e81c/episodes/11d5821c-ae9c-430e-bda2-8b24147694fd/charged-alpha-stock-encyclopedia-caterpillar-inc-cat-%E2%80%94-the-unexpected-ai-infrastructure-giant-ep-77"
     },
     {
       "ticker": "GE",
@@ -575,7 +613,8 @@
       "google_url": "",
       "iheart_url": "",
       "podbean_url": "https://chargedalpha.podbean.com/e/charged-alpha-ge-aerospace-ge-sp-500-deep-dive-%e2%80%94-ep-82/",
-      "has_episode": true
+      "has_episode": true,
+      "amazon_url": "https://music.amazon.com/podcasts/039f5223-f4e8-4db4-bf6d-4441bdc0e81c/episodes/8a4fd879-d52e-4562-8bc2-0337072279ed/charged-alpha-stock-encyclopedia-charged-alpha-ge-aerospace-ge-s-p-500-deep-dive-%E2%80%94-ep-82"
     },
     {
       "ticker": "HON",
@@ -590,7 +629,8 @@
       "google_url": "",
       "iheart_url": "",
       "podbean_url": "",
-      "has_episode": false
+      "has_episode": false,
+      "amazon_url": ""
     },
     {
       "ticker": "UNP",
@@ -605,7 +645,8 @@
       "google_url": "",
       "iheart_url": "",
       "podbean_url": "",
-      "has_episode": false
+      "has_episode": false,
+      "amazon_url": ""
     },
     {
       "ticker": "GS",
@@ -620,7 +661,8 @@
       "google_url": "",
       "iheart_url": "",
       "podbean_url": "https://chargedalpha.podbean.com/e/charged-alpha-goldman-sachs-gs-sp-500-deep-dive-%e2%80%94-ep-89/",
-      "has_episode": true
+      "has_episode": true,
+      "amazon_url": "https://music.amazon.com/podcasts/039f5223-f4e8-4db4-bf6d-4441bdc0e81c/episodes/04ea3284-fb05-4491-8c80-3d865b33924b/charged-alpha-stock-encyclopedia-charged-alpha-goldman-sachs-gs-s-p-500-deep-dive-%E2%80%94-ep-89"
     },
     {
       "ticker": "MS",
@@ -635,7 +677,8 @@
       "google_url": "",
       "iheart_url": "",
       "podbean_url": "https://chargedalpha.podbean.com/e/charged-alpha-morgan-stanley-ms-sp-500-deep-dive-1775709044/",
-      "has_episode": true
+      "has_episode": true,
+      "amazon_url": "https://music.amazon.com/podcasts/039f5223-f4e8-4db4-bf6d-4441bdc0e81c/episodes/0ae99857-b28d-4e63-a1e8-3f5a27fa2818/charged-alpha-stock-encyclopedia-charged-alpha-morgan-stanley-ms-s-p-500-deep-dive"
     },
     {
       "ticker": "BLK",
@@ -650,7 +693,8 @@
       "google_url": "",
       "iheart_url": "",
       "podbean_url": "",
-      "has_episode": false
+      "has_episode": false,
+      "amazon_url": ""
     },
     {
       "ticker": "AXP",
@@ -665,7 +709,8 @@
       "google_url": "",
       "iheart_url": "",
       "podbean_url": "https://chargedalpha.podbean.com/e/charged-alpha-american-express-axp-sp-500-deep-dive-%e2%80%94-ep-98/",
-      "has_episode": true
+      "has_episode": true,
+      "amazon_url": "https://music.amazon.com/podcasts/039f5223-f4e8-4db4-bf6d-4441bdc0e81c/episodes/d44ef201-51a3-4f2f-ae53-e9bc3541fcad/charged-alpha-stock-encyclopedia-charged-alpha-american-express-axp-s-p-500-deep-dive-%E2%80%94-ep-98"
     },
     {
       "ticker": "NEE",
@@ -680,7 +725,8 @@
       "google_url": "",
       "iheart_url": "",
       "podbean_url": "",
-      "has_episode": false
+      "has_episode": false,
+      "amazon_url": ""
     },
     {
       "ticker": "DUK",
@@ -695,7 +741,8 @@
       "google_url": "",
       "iheart_url": "",
       "podbean_url": "",
-      "has_episode": false
+      "has_episode": false,
+      "amazon_url": ""
     },
     {
       "ticker": "SO",
@@ -710,7 +757,8 @@
       "google_url": "",
       "iheart_url": "",
       "podbean_url": "",
-      "has_episode": false
+      "has_episode": false,
+      "amazon_url": ""
     },
     {
       "ticker": "AMT",
@@ -725,7 +773,8 @@
       "google_url": "",
       "iheart_url": "",
       "podbean_url": "",
-      "has_episode": false
+      "has_episode": false,
+      "amazon_url": ""
     },
     {
       "ticker": "PLD",
@@ -740,7 +789,8 @@
       "google_url": "",
       "iheart_url": "",
       "podbean_url": "",
-      "has_episode": false
+      "has_episode": false,
+      "amazon_url": ""
     },
     {
       "ticker": "LIN",
@@ -755,7 +805,8 @@
       "google_url": "",
       "iheart_url": "",
       "podbean_url": "https://chargedalpha.podbean.com/e/charged-alpha-linde-plc-lin-sp-500-deep-dive-%e2%80%94-ep-100/",
-      "has_episode": true
+      "has_episode": true,
+      "amazon_url": "https://music.amazon.com/podcasts/039f5223-f4e8-4db4-bf6d-4441bdc0e81c/episodes/80f8fe9c-d058-44d0-a40b-d4e76e69d22d/charged-alpha-stock-encyclopedia-charged-alpha-linde-plc-lin-s-p-500-deep-dive-%E2%80%94-ep-100"
     },
     {
       "ticker": "APD",
@@ -770,7 +821,8 @@
       "google_url": "",
       "iheart_url": "",
       "podbean_url": "",
-      "has_episode": false
+      "has_episode": false,
+      "amazon_url": ""
     },
     {
       "ticker": "SHW",
@@ -785,7 +837,8 @@
       "google_url": "",
       "iheart_url": "",
       "podbean_url": "",
-      "has_episode": false
+      "has_episode": false,
+      "amazon_url": ""
     },
     {
       "ticker": "COP",
@@ -800,7 +853,8 @@
       "google_url": "",
       "iheart_url": "",
       "podbean_url": "",
-      "has_episode": false
+      "has_episode": false,
+      "amazon_url": ""
     },
     {
       "ticker": "SLB",
@@ -815,7 +869,8 @@
       "google_url": "",
       "iheart_url": "",
       "podbean_url": "",
-      "has_episode": false
+      "has_episode": false,
+      "amazon_url": ""
     },
     {
       "ticker": "EOG",
@@ -830,7 +885,8 @@
       "google_url": "",
       "iheart_url": "",
       "podbean_url": "",
-      "has_episode": false
+      "has_episode": false,
+      "amazon_url": ""
     },
     {
       "ticker": "ORCL",
@@ -845,7 +901,8 @@
       "google_url": "",
       "iheart_url": "",
       "podbean_url": "https://chargedalpha.podbean.com/e/oracle-corporation-orcl-%e2%80%94-the-ai-infrastructure-landlord-ep-70/",
-      "has_episode": true
+      "has_episode": true,
+      "amazon_url": "https://music.amazon.com/podcasts/039f5223-f4e8-4db4-bf6d-4441bdc0e81c/episodes/e3e21d17-6fb4-4697-bf1c-a560e7cf38e9/charged-alpha-stock-encyclopedia-oracle-corporation-orcl-%E2%80%94-the-ai-infrastructure-landlord-ep-70"
     },
     {
       "ticker": "NOW",
@@ -860,7 +917,8 @@
       "google_url": "",
       "iheart_url": "",
       "podbean_url": "",
-      "has_episode": false
+      "has_episode": false,
+      "amazon_url": ""
     },
     {
       "ticker": "UBER",
@@ -875,7 +933,8 @@
       "google_url": "",
       "iheart_url": "",
       "podbean_url": "",
-      "has_episode": false
+      "has_episode": false,
+      "amazon_url": ""
     },
     {
       "ticker": "LOW",
@@ -890,7 +949,8 @@
       "google_url": "",
       "iheart_url": "",
       "podbean_url": "",
-      "has_episode": false
+      "has_episode": false,
+      "amazon_url": ""
     },
     {
       "ticker": "SBUX",
@@ -905,7 +965,8 @@
       "google_url": "",
       "iheart_url": "",
       "podbean_url": "",
-      "has_episode": false
+      "has_episode": false,
+      "amazon_url": ""
     },
     {
       "ticker": "MCD",
@@ -920,7 +981,8 @@
       "google_url": "",
       "iheart_url": "",
       "podbean_url": "",
-      "has_episode": false
+      "has_episode": false,
+      "amazon_url": ""
     },
     {
       "ticker": "NKE",
@@ -935,7 +997,8 @@
       "google_url": "",
       "iheart_url": "",
       "podbean_url": "",
-      "has_episode": false
+      "has_episode": false,
+      "amazon_url": ""
     },
     {
       "ticker": "PFE",
@@ -950,7 +1013,8 @@
       "google_url": "",
       "iheart_url": "",
       "podbean_url": "",
-      "has_episode": false
+      "has_episode": false,
+      "amazon_url": ""
     },
     {
       "ticker": "BMY",
@@ -965,7 +1029,8 @@
       "google_url": "",
       "iheart_url": "",
       "podbean_url": "",
-      "has_episode": false
+      "has_episode": false,
+      "amazon_url": ""
     },
     {
       "ticker": "GILD",
@@ -980,7 +1045,8 @@
       "google_url": "",
       "iheart_url": "",
       "podbean_url": "",
-      "has_episode": false
+      "has_episode": false,
+      "amazon_url": ""
     },
     {
       "ticker": "AMGN",
@@ -995,7 +1061,8 @@
       "google_url": "",
       "iheart_url": "",
       "podbean_url": "",
-      "has_episode": false
+      "has_episode": false,
+      "amazon_url": ""
     },
     {
       "ticker": "QCOM",
@@ -1010,7 +1077,8 @@
       "google_url": "",
       "iheart_url": "",
       "podbean_url": "https://chargedalpha.podbean.com/e/charged-alpha-qualcomm-qcom-sp-500-deep-dive-%e2%80%94-ep-94/",
-      "has_episode": true
+      "has_episode": true,
+      "amazon_url": "https://music.amazon.com/podcasts/039f5223-f4e8-4db4-bf6d-4441bdc0e81c/episodes/c4f60444-66f3-42a2-8714-6efd1ff7f61a/charged-alpha-stock-encyclopedia-charged-alpha-qualcomm-qcom-s-p-500-deep-dive-%E2%80%94-ep-94"
     },
     {
       "ticker": "TXN",
@@ -1025,7 +1093,8 @@
       "google_url": "",
       "iheart_url": "",
       "podbean_url": "https://chargedalpha.podbean.com/e/charged-alpha-texas-instruments-txn-sp-500-deep-dive-%e2%80%94-ep-95/",
-      "has_episode": true
+      "has_episode": true,
+      "amazon_url": "https://music.amazon.com/podcasts/039f5223-f4e8-4db4-bf6d-4441bdc0e81c/episodes/1e04d2d7-1079-4b08-9eaf-4a1fc9fc1ee3/charged-alpha-stock-encyclopedia-charged-alpha-texas-instruments-txn-s-p-500-deep-dive-%E2%80%94-ep-95"
     },
     {
       "ticker": "AMAT",
@@ -1040,7 +1109,8 @@
       "google_url": "",
       "iheart_url": "",
       "podbean_url": "https://chargedalpha.podbean.com/e/applied-materials-amat-%e2%80%94-the-invisible-giant-powering-every-ai-chip-on-earth-ep-84/",
-      "has_episode": true
+      "has_episode": true,
+      "amazon_url": "https://music.amazon.com/podcasts/039f5223-f4e8-4db4-bf6d-4441bdc0e81c/episodes/54e9ad29-de31-4180-bdb1-a3c8d5218168/charged-alpha-stock-encyclopedia-applied-materials-amat-%E2%80%94-the-invisible-giant-powering-every-ai-chip-on-earth-ep-84"
     },
     {
       "ticker": "MU",
@@ -1055,7 +1125,8 @@
       "google_url": "",
       "iheart_url": "",
       "podbean_url": "https://chargedalpha.podbean.com/e/micron-technology-mu-%e2%80%94-the-ai-memory-gold-rush-ep-69/",
-      "has_episode": true
+      "has_episode": true,
+      "amazon_url": "https://music.amazon.com/podcasts/039f5223-f4e8-4db4-bf6d-4441bdc0e81c/episodes/6b08dc14-f348-4df3-a56b-45c4718d4d1a/charged-alpha-stock-encyclopedia-micron-technology-mu-%E2%80%94-the-ai-memory-gold-rush-ep-69"
     },
     {
       "ticker": "ISRG",
@@ -1070,7 +1141,8 @@
       "google_url": "",
       "iheart_url": "",
       "podbean_url": "",
-      "has_episode": false
+      "has_episode": false,
+      "amazon_url": ""
     },
     {
       "ticker": "SPGI",
@@ -1085,7 +1157,8 @@
       "google_url": "",
       "iheart_url": "",
       "podbean_url": "",
-      "has_episode": false
+      "has_episode": false,
+      "amazon_url": ""
     },
     {
       "ticker": "ICE",
@@ -1100,7 +1173,8 @@
       "google_url": "",
       "iheart_url": "",
       "podbean_url": "",
-      "has_episode": false
+      "has_episode": false,
+      "amazon_url": ""
     },
     {
       "ticker": "CB",
@@ -1115,7 +1189,8 @@
       "google_url": "",
       "iheart_url": "",
       "podbean_url": "",
-      "has_episode": false
+      "has_episode": false,
+      "amazon_url": ""
     },
     {
       "ticker": "MMM",
@@ -1130,7 +1205,8 @@
       "google_url": "",
       "iheart_url": "",
       "podbean_url": "",
-      "has_episode": false
+      "has_episode": false,
+      "amazon_url": ""
     },
     {
       "ticker": "RTX",
@@ -1145,7 +1221,8 @@
       "google_url": "",
       "iheart_url": "",
       "podbean_url": "https://chargedalpha.podbean.com/e/charged-alpha-rtx-corporation-rtx-sp-500-deep-dive-%e2%80%94-ep-88/",
-      "has_episode": true
+      "has_episode": true,
+      "amazon_url": "https://music.amazon.com/podcasts/039f5223-f4e8-4db4-bf6d-4441bdc0e81c/episodes/8f74dbe0-f7f2-4f6b-ad2a-43adda10f244/charged-alpha-stock-encyclopedia-charged-alpha-rtx-corporation-rtx-s-p-500-deep-dive-%E2%80%94-ep-88"
     },
     {
       "ticker": "LMT",
@@ -1160,7 +1237,8 @@
       "google_url": "",
       "iheart_url": "",
       "podbean_url": "",
-      "has_episode": false
+      "has_episode": false,
+      "amazon_url": ""
     },
     {
       "ticker": "DE",
@@ -1175,7 +1253,8 @@
       "google_url": "",
       "iheart_url": "",
       "podbean_url": "",
-      "has_episode": false
+      "has_episode": false,
+      "amazon_url": ""
     },
     {
       "ticker": "FDX",
@@ -1190,7 +1269,8 @@
       "google_url": "",
       "iheart_url": "",
       "podbean_url": "",
-      "has_episode": false
+      "has_episode": false,
+      "amazon_url": ""
     },
     {
       "ticker": "WM",
@@ -1205,7 +1285,8 @@
       "google_url": "",
       "iheart_url": "",
       "podbean_url": "",
-      "has_episode": false
+      "has_episode": false,
+      "amazon_url": ""
     }
   ]
 }
