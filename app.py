@@ -69,18 +69,187 @@ SITE_URL = os.environ.get("SITE_URL", "https://chargedalpha.com").rstrip("/")
 PUBLIC_SITEMAP_PATHS = [
     "/",
     "/shows",
-    "/screener/",
-    "/etf/",
-    "/crypto/",
-    "/options/",
-    "/bonds/",
-    "/reits/",
-    "/forex/",
-    "/commodities/",
-    "/earnings/",
-    "/gold/",
-    "/charts/",
+    "/screener",
+    "/etf",
+    "/crypto",
+    "/options",
+    "/bonds",
+    "/reits",
+    "/forex",
+    "/commodities",
+    "/earnings",
+    "/gold",
+    "/charts",
 ]
+SEO_DEFAULTS = {
+    "title": "Charged Alpha — Data-Driven Investing Tools",
+    "description": (
+        "Charged Alpha delivers data-driven investing tools, market dashboards, "
+        "and stock research workflows for faster investor decision-making."
+    ),
+    "robots": "index,follow,max-image-preview:large",
+    "og_type": "website",
+    "twitter_card": "summary",
+}
+SEO_PAGE_META = {
+    "/": {
+        "title": "Charged Alpha — Data-Driven Investing Tools",
+        "description": (
+            "Explore Charged Alpha's data-driven investing tools, stock screens, "
+            "market dashboards, and research workflows built for faster analysis."
+        ),
+    },
+    "/shows": {
+        "title": "Charged Alpha Shows — Episode Library & Stock Breakdowns",
+        "description": (
+            "Browse Charged Alpha show episodes covering one stock at a time with "
+            "fundamentals, valuation, bull and bear cases, and what to watch next."
+        ),
+    },
+    "/screener": {
+        "title": "S&P 500 Stock Screener — Charged Alpha",
+        "description": (
+            "Screen S&P 500 stocks by valuation, growth, profitability, momentum, "
+            "and sector filters inside Charged Alpha."
+        ),
+    },
+    "/etf": {
+        "title": "ETF Screener — Charged Alpha",
+        "description": (
+            "Find ETFs by expense ratio, yield, liquidity, structure, and "
+            "performance filters with the Charged Alpha ETF screener."
+        ),
+    },
+    "/crypto": {
+        "title": "Crypto Screener — Charged Alpha",
+        "description": (
+            "Screen crypto assets by market cap, volume, price action, and trend "
+            "signals with the Charged Alpha crypto screener."
+        ),
+    },
+    "/options": {
+        "title": "Options Flow Scanner — Charged Alpha",
+        "description": (
+            "Scan unusual options activity, premium, expiration, strike, and "
+            "sentiment setups with Charged Alpha's options flow scanner."
+        ),
+    },
+    "/bonds": {
+        "title": "Bond & Treasury Dashboard — Charged Alpha",
+        "description": (
+            "Track Treasury yields, curve movement, and bond ETF context in one "
+            "Charged Alpha fixed-income dashboard."
+        ),
+    },
+    "/reits": {
+        "title": "REIT Screener — Charged Alpha",
+        "description": (
+            "Screen REITs by yield, valuation, property type, leverage, and price "
+            "performance with Charged Alpha."
+        ),
+    },
+    "/forex": {
+        "title": "Forex Heatmap — Charged Alpha",
+        "description": (
+            "Monitor currency strength, pair heatmaps, and FX trend charts with "
+            "Charged Alpha's forex dashboard."
+        ),
+    },
+    "/commodities": {
+        "title": "Commodities Dashboard — Charged Alpha",
+        "description": (
+            "Track commodity prices and trend charts across metals, energy, and "
+            "other key macro-sensitive markets."
+        ),
+    },
+    "/earnings": {
+        "title": "Earnings Calendar — Charged Alpha",
+        "description": (
+            "Follow upcoming earnings dates, monthly earnings schedules, and prior "
+            "report history with Charged Alpha."
+        ),
+    },
+    "/gold": {
+        "title": "Precious Metals Aggregator — Charged Alpha",
+        "description": (
+            "Compare gold and precious metals pricing, spot moves, and marketplace "
+            "listings in the Charged Alpha metals hub."
+        ),
+    },
+    "/charts": {
+        "title": "Stock Charts — Charged Alpha",
+        "description": (
+            "Build, save, and revisit chart layouts with Charged Alpha's stock "
+            "chart workspace and TradingView-powered analysis tools."
+        ),
+    },
+    "/auth/login": {
+        "title": "Sign In — Charged Alpha",
+        "description": (
+            "Sign in to Charged Alpha to save chart layouts and access your "
+            "personalized investing workspace."
+        ),
+        "robots": "noindex,nofollow,noarchive",
+    },
+    "/auth/register": {
+        "title": "Create Account — Charged Alpha",
+        "description": (
+            "Create a Charged Alpha account to save chart layouts and personalize "
+            "your research workflow."
+        ),
+        "robots": "noindex,nofollow,noarchive",
+    },
+}
+NOINDEX_PATH_PREFIXES = (
+    "/auth/",
+    "/api/",
+    "/screener/api/",
+    "/etf/api/",
+    "/crypto/api/",
+    "/options/api/",
+    "/bonds/api/",
+    "/reits/api/",
+    "/forex/api/",
+    "/commodities/api/",
+    "/earnings/api/",
+    "/gold/api/",
+    "/charts/api/",
+)
+NOINDEX_EXACT_PATHS = {
+    "/login",
+    "/register",
+    "/health",
+}
+
+
+def _normalize_path(path):
+    if not path or path == "/":
+        return "/"
+    return "/" + path.strip("/")
+
+
+def _canonical_url(path):
+    return f"{SITE_URL}{_normalize_path(path)}"
+
+
+def _get_seo_meta(path=None):
+    current_path = _normalize_path(path or request.path)
+    page_meta = SEO_PAGE_META.get(current_path, {})
+    canonical_path = page_meta.get("canonical_path", current_path)
+    title = page_meta.get("title", SEO_DEFAULTS["title"])
+    description = page_meta.get("description", SEO_DEFAULTS["description"])
+    robots = page_meta.get("robots", SEO_DEFAULTS["robots"])
+
+    return {
+        "title": title,
+        "description": description,
+        "canonical_url": _canonical_url(canonical_path),
+        "robots": robots,
+        "og_title": page_meta.get("og_title", title),
+        "og_description": page_meta.get("og_description", description),
+        "og_type": page_meta.get("og_type", SEO_DEFAULTS["og_type"]),
+        "twitter_card": page_meta.get("twitter_card", SEO_DEFAULTS["twitter_card"]),
+    }
 
 
 def load_shows_catalog():
@@ -217,6 +386,19 @@ def _chart_helper(symbol, range_key, params_map=None):
     if data is None:
         return jsonify({"error": "No price data available"}), 404
     return jsonify(data)
+
+
+@app.context_processor
+def inject_seo_meta():
+    return {"seo_meta": _get_seo_meta()}
+
+
+@app.after_request
+def apply_seo_headers(response):
+    path = _normalize_path(request.path)
+    if path in NOINDEX_EXACT_PATHS or any(path.startswith(prefix) for prefix in NOINDEX_PATH_PREFIXES):
+        response.headers["X-Robots-Tag"] = "noindex, nofollow, noarchive"
+    return response
 
 
 # ═════════════════════════════════════════════════════════════════════════════
