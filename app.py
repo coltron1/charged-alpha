@@ -37,7 +37,7 @@ from pathlib import Path
 from concurrent.futures import ThreadPoolExecutor
 
 import yfinance as yf
-from flask import Flask, render_template, request, jsonify, redirect
+from flask import Flask, render_template, request, jsonify, redirect, Response
 from flask_compress import Compress
 from flask_login import LoginManager, current_user, login_required
 
@@ -65,6 +65,22 @@ from gold_server import get_spot_price, fetch_ebay, fetch_sdbullion, \
 app = Flask(__name__)
 BASE_DIR = Path(__file__).resolve().parent
 SHOWS_CATALOG_PATH = BASE_DIR / "data" / "shows_catalog.json"
+SITE_URL = os.environ.get("SITE_URL", "https://chargedalpha.com").rstrip("/")
+PUBLIC_SITEMAP_PATHS = [
+    "/",
+    "/shows",
+    "/screener/",
+    "/etf/",
+    "/crypto/",
+    "/options/",
+    "/bonds/",
+    "/reits/",
+    "/forex/",
+    "/commodities/",
+    "/earnings/",
+    "/gold/",
+    "/charts/",
+]
 
 
 def load_shows_catalog():
@@ -201,6 +217,54 @@ def _chart_helper(symbol, range_key, params_map=None):
     if data is None:
         return jsonify({"error": "No price data available"}), 404
     return jsonify(data)
+
+
+# ═════════════════════════════════════════════════════════════════════════════
+#  SEO DISCOVERY FILES
+# ═════════════════════════════════════════════════════════════════════════════
+@app.route("/robots.txt")
+def robots_txt():
+    lines = [
+        "User-agent: *",
+        "Allow: /",
+        "Disallow: /auth/",
+        "Disallow: /login",
+        "Disallow: /register",
+        "Disallow: /api/",
+        "Disallow: /screener/api/",
+        "Disallow: /etf/api/",
+        "Disallow: /crypto/api/",
+        "Disallow: /options/api/",
+        "Disallow: /bonds/api/",
+        "Disallow: /reits/api/",
+        "Disallow: /forex/api/",
+        "Disallow: /commodities/api/",
+        "Disallow: /earnings/api/",
+        "Disallow: /gold/api/",
+        "Disallow: /charts/api/",
+        f"Sitemap: {SITE_URL}/sitemap.xml",
+    ]
+    return Response("\n".join(lines) + "\n", mimetype="text/plain")
+
+
+@app.route("/sitemap.xml")
+def sitemap_xml():
+    url_entries = []
+    for path in PUBLIC_SITEMAP_PATHS:
+        loc = f"{SITE_URL}{path}"
+        url_entries.append(
+            "  <url>\n"
+            f"    <loc>{loc}</loc>\n"
+            "  </url>"
+        )
+
+    xml = (
+        '<?xml version="1.0" encoding="UTF-8"?>\n'
+        '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
+        f'{"\n".join(url_entries)}\n'
+        '</urlset>\n'
+    )
+    return Response(xml, mimetype="application/xml")
 
 
 # ═════════════════════════════════════════════════════════════════════════════
