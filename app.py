@@ -65,6 +65,11 @@ from gold_server import get_spot_price, fetch_ebay, fetch_sdbullion, \
 app = Flask(__name__)
 BASE_DIR = Path(__file__).resolve().parent
 SHOWS_CATALOG_PATH = BASE_DIR / "data" / "shows_catalog.json"
+
+
+@app.get("/health")
+def health_check():
+    return jsonify({"status": "ok"}), 200
 SITE_URL = os.environ.get("SITE_URL", "https://chargedalpha.com").rstrip("/")
 PUBLIC_SITEMAP_PATHS = [
     "/",
