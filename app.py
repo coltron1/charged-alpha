@@ -8,6 +8,8 @@ Routes:
   /screener/api/...              → Stock Screener API
   /etf/                          → ETF Screener
   /etf/api/...                   → ETF Screener API
+  /mutual-funds/                 → Mutual Fund Screener
+  /mutual-funds/api/...          → Mutual Fund Screener API
   /crypto/                       → Crypto Screener
   /crypto/api/...                → Crypto Screener API
   /options/                      → Options Scanner
@@ -52,6 +54,7 @@ from chart_storage import save_chart_state, load_chart_state, list_user_charts, 
 from stock_screener import (screen_stocks, get_stock_detail,
                             get_sp500_tickers, get_ticker_sector)
 from etf_screener import screen_etfs, get_etf_detail
+from mutual_fund_screener import screen_mutual_funds, get_mutual_fund_detail
 from crypto_screener import screen_cryptos, get_crypto_chart
 from options_scanner import scan_options
 from bond_data import get_yields, get_yield_history, get_bond_etfs
@@ -76,6 +79,7 @@ PUBLIC_SITEMAP_PATHS = [
     "/shows",
     "/screener",
     "/etf",
+    "/mutual-funds",
     "/crypto",
     "/options",
     "/bonds",
@@ -123,6 +127,13 @@ SEO_PAGE_META = {
         "description": (
             "Find ETFs by expense ratio, yield, liquidity, structure, and "
             "performance filters with the Charged Alpha ETF screener."
+        ),
+    },
+    "/mutual-funds": {
+        "title": "Mutual Fund Screener — Charged Alpha",
+        "description": (
+            "Screen mutual funds by expense ratio, AUM, yield, performance, "
+            "allocation style, and international exposure with Charged Alpha."
         ),
     },
     "/crypto": {
@@ -210,6 +221,7 @@ NOINDEX_PATH_PREFIXES = (
     "/api/",
     "/screener/api/",
     "/etf/api/",
+    "/mutual-funds/api/",
     "/crypto/api/",
     "/options/api/",
     "/bonds/api/",
@@ -420,6 +432,7 @@ def robots_txt():
         "Disallow: /api/",
         "Disallow: /screener/api/",
         "Disallow: /etf/api/",
+        "Disallow: /mutual-funds/api/",
         "Disallow: /crypto/api/",
         "Disallow: /options/api/",
         "Disallow: /bonds/api/",
@@ -683,6 +696,53 @@ def etf_detail(symbol):
 
 @app.route("/etf/api/etf/<symbol>/chart")
 def etf_chart(symbol):
+    return _chart_helper(symbol, request.args.get("range", "1y"))
+
+
+# ═════════════════════════════════════════════════════════════════════════════
+#  MUTUAL FUND SCREENER  /mutual-funds/
+# ═════════════════════════════════════════════════════════════════════════════
+@app.route("/mutual-funds")
+def mutual_fund_index():
+    return render_template("mutual_fund_screener.html")
+
+
+@app.route("/mutual-funds/api/screen", methods=["POST"])
+def mutual_fund_start():
+    body = request.get_json(force=True)
+    _f = lambda k, d=None: _f_body(body, k, d)
+
+    categories = _extract_list(body, "categories")
+    asset_classes = _extract_list(body, "asset_classes")
+
+    criteria = {
+        "max_expense_ratio": _f("max_expense_ratio"),
+        "min_aum": _f("min_aum"),
+        "min_div_yield": _f("min_div_yield"), "max_div_yield": _f("max_div_yield"),
+        "min_ytd_return": _f("min_ytd_return"),
+        "min_1y_return": _f("min_1y_return"),
+        "min_3y_return": _f("min_3y_return"),
+        "min_avg_volume": _f("min_avg_volume"),
+        "min_w52_perf": _f("min_w52_perf"), "max_w52_perf": _f("max_w52_perf"),
+        "max_w52_dist_high": _f("max_w52_dist_high"),
+        "categories": categories, "asset_classes": asset_classes,
+    }
+    job_id = _start_job(screen_mutual_funds, criteria)
+    return jsonify({"job_id": job_id})
+
+
+@app.route("/mutual-funds/api/screen/<job_id>")
+def mutual_fund_status(job_id):
+    return _get_job(job_id)
+
+
+@app.route("/mutual-funds/api/fund/<symbol>")
+def mutual_fund_detail(symbol):
+    return _cached_detail("mutual_fund", symbol, get_mutual_fund_detail)
+
+
+@app.route("/mutual-funds/api/fund/<symbol>/chart")
+def mutual_fund_chart(symbol):
     return _chart_helper(symbol, request.args.get("range", "1y"))
 
 
