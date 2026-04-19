@@ -49,6 +49,7 @@
 
     /* ── Quick Bar ── */
     .quick-bar { background:#131b2e; border:1px solid #1e3a5f; border-radius:12px; padding:14px 20px; display:flex; flex-wrap:wrap; gap:12px; align-items:center; }
+    .sticky-toolbar { position:sticky; top:10px; z-index:45; box-shadow:0 8px 24px rgba(0,0,0,.22); }
     .cap-chip { padding:6px 14px; border-radius:20px; font-size:12px; font-weight:600; cursor:pointer; border:1px solid #334155; background:transparent; color:#64748b; transition:all .15s; user-select:none; }
     .cap-chip.active { border-color:#6366f1; color:#a5b4fc; background:rgba(99,102,241,.12); }
     .cap-chip:hover:not(.active) { border-color:#475569; color:#94a3b8; }
@@ -74,6 +75,22 @@
     .fund-suggestion-name { color:#e2e8f0; font-size:13px; font-weight:600; }
     .fund-suggestion-meta { color:#94a3b8; font-size:11px; margin-top:2px; display:flex; gap:8px; flex-wrap:wrap; }
     .fund-search-empty { padding:12px; color:#64748b; font-size:12px; }
+    .suggestion-pill { display:inline-flex; align-items:center; border-radius:9999px; padding:1px 8px; font-size:10px; font-weight:700; }
+    .suggestion-pill.family { background:#172554; color:#93c5fd; }
+    .suggestion-pill.category { background:#312e81; color:#c4b5fd; }
+    .compare-toggle { width:18px; height:18px; accent-color:#6366f1; cursor:pointer; }
+    .compare-bar { position:sticky; bottom:12px; z-index:50; background:#111827; border:1px solid #334155; border-radius:14px; box-shadow:0 12px 30px rgba(0,0,0,.45); padding:14px 18px; display:none; }
+    .compare-bar.visible { display:block; }
+    .compare-chip { display:inline-flex; align-items:center; gap:6px; padding:6px 10px; background:#1e293b; border:1px solid #334155; border-radius:9999px; font-size:12px; color:#e2e8f0; }
+    .compare-chip button { border:none; background:none; color:#94a3b8; cursor:pointer; font-size:14px; line-height:1; }
+    .compare-chip button:hover { color:white; }
+    #compare-overlay { position:fixed; inset:0; z-index:110; background:#0f172a; overflow-y:auto; display:none; }
+    #compare-overlay.visible { display:block; }
+    .compare-metric-row.best td.compare-value { background:rgba(34,197,94,.10); }
+    .compare-metric-row.worst td.compare-value { background:rgba(239,68,68,.08); }
+    .compare-cell-best { color:#4ade80; font-weight:700; }
+    .compare-cell-worst { color:#fca5a5; }
+    .compare-table th, .compare-table td { border-bottom:1px solid #1e293b; }
 
     /* ── Advanced filters panel ── */
     .adv-toggle { display:inline-flex; align-items:center; gap:6px; cursor:pointer; color:#94a3b8; font-size:13px; font-weight:500; padding:6px 0; transition:color .15s; user-select:none; }
@@ -296,7 +313,7 @@
   <div class="max-w-7xl mx-auto space-y-4">
 
     <!-- ═══ ZONE 1: Quick Bar ═══ -->
-    <div class="quick-bar">
+    <div class="quick-bar sticky-toolbar">
       <!-- Category multi-select -->
       <div class="multi-select" id="category-select">
         <button type="button" class="multi-select-btn" onclick="toggleMultiSelect('category-select')">
@@ -347,6 +364,8 @@
         <datalist id="fund-search-list"></datalist>
         <div id="fund-search-suggestions" class="fund-search-suggestions"></div>
       </div>
+
+      <button class="btn-secondary" type="button" onclick="clearAllFilters(false)">Clear All</button>
 
       <!-- Run button -->
       <button class="btn-primary" id="run-btn-quick" onclick="submitScreen()" style="margin-left:auto;">Run Screen</button>
@@ -613,6 +632,20 @@
       </div>
     </div>
 
+    <div id="compare-bar" class="compare-bar">
+      <div class="flex items-center justify-between gap-4 flex-wrap">
+        <div>
+          <div class="text-xs uppercase tracking-wider text-slate-400 font-semibold">Compare Funds</div>
+          <div id="compare-count" class="text-sm text-slate-300 mt-1">Select up to 3 mutual funds to compare.</div>
+          <div id="compare-chips" class="flex gap-2 flex-wrap mt-3"></div>
+        </div>
+        <div class="flex gap-2">
+          <button class="btn-secondary" type="button" onclick="clearComparison()">Clear Compare</button>
+          <button class="btn-primary" id="compare-open-btn" type="button" onclick="openCompareOverlay()" disabled>Compare Selected</button>
+        </div>
+      </div>
+    </div>
+
     <!-- Beginner: Results guidance -->
     <div class="edu-guidance beginner-only" id="eduGuidance" style="display:none">
       <h3>📊 Understanding Mutual Fund Screening Results</h3>
@@ -628,6 +661,44 @@
 
   </div>
 </div><!-- /screener-page -->
+
+<div id="compare-overlay">
+  <div class="sticky top-0 z-10 bg-[#0b1220] border-b border-slate-700 px-6 py-4 flex flex-wrap items-center gap-4">
+    <button id="compare-back" class="flex items-center gap-2 text-slate-400 hover:text-white transition-colors text-sm font-medium shrink-0">
+      <span class="text-lg leading-none">&larr;</span> Back
+    </button>
+    <div class="w-px h-6 bg-slate-700 hidden sm:block"></div>
+    <span class="text-xl font-bold text-indigo-400">Fund Compare</span>
+    <span class="text-slate-400 text-sm">Head-to-head view for up to 3 mutual funds</span>
+  </div>
+  <div class="max-w-7xl mx-auto p-6 space-y-6">
+    <div id="compare-loading" class="hidden card p-16 text-center">
+      <div class="inline-block w-8 h-8 border-2 border-indigo-500 border-t-transparent rounded-full animate-spin mb-4"></div>
+      <p class="text-slate-300 text-sm font-medium">Loading comparison data...</p>
+    </div>
+    <div id="compare-error" class="hidden card p-12 text-center">
+      <p class="text-red-400 text-lg">Unable to compare funds</p>
+      <p id="compare-error-msg" class="text-slate-500 text-sm mt-1"></p>
+    </div>
+    <div id="compare-content" class="hidden space-y-6">
+      <div id="compare-cards" class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4"></div>
+      <div class="card overflow-x-auto">
+        <table class="w-full text-sm compare-table">
+          <thead><tr id="compare-header" class="text-xs text-slate-400 uppercase tracking-wide"></tr></thead>
+          <tbody id="compare-body"></tbody>
+        </table>
+      </div>
+      <div class="card p-5">
+        <h3 class="text-sm font-semibold text-slate-300 uppercase tracking-wider">How to read the highlights</h3>
+        <ul class="text-sm text-slate-400 mt-3 space-y-2 list-disc ml-5">
+          <li>Green highlights mark the strongest value on metrics that are usually preferred higher or lower.</li>
+          <li>Red highlights mark the weakest value on those same head-to-head metrics.</li>
+          <li>Not every metric has a universal “best,” so portfolio-fit fields like strategy and category are shown without forced winners.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
 
 
 <!-- ═══════════════════════════════════════════════════════
@@ -871,6 +942,8 @@ function getManagementStyles() {
 let fundCatalog = [];
 let suggestionMatches = [];
 let activeSuggestionIndex = -1;
+let compareSelection = [];
+let compareDetails = [];
 
 function normalizeSearchTerm(value) {
   return (value || '').toLowerCase().replace(/\s+/g, ' ').trim();
@@ -885,6 +958,38 @@ function escapeHtml(value) {
     .replace(/'/g, '&#39;');
 }
 
+function levenshteinDistance(a, b) {
+  const m = a.length, n = b.length;
+  if(!m) return n;
+  if(!n) return m;
+  const dp = Array.from({length: m + 1}, () => Array(n + 1).fill(0));
+  for(let i = 0; i <= m; i++) dp[i][0] = i;
+  for(let j = 0; j <= n; j++) dp[0][j] = j;
+  for(let i = 1; i <= m; i++) {
+    for(let j = 1; j <= n; j++) {
+      const cost = a[i - 1] === b[j - 1] ? 0 : 1;
+      dp[i][j] = Math.min(
+        dp[i - 1][j] + 1,
+        dp[i][j - 1] + 1,
+        dp[i - 1][j - 1] + cost
+      );
+    }
+  }
+  return dp[m][n];
+}
+
+function subsequenceScore(query, target) {
+  let qi = 0;
+  let score = 0;
+  for(let i = 0; i < target.length && qi < query.length; i++) {
+    if(target[i] === query[qi]) {
+      score += 3;
+      qi++;
+    }
+  }
+  return qi === query.length ? score : 0;
+}
+
 function rankFundMatches(query) {
   const q = normalizeSearchTerm(query);
   if(!q) return [];
@@ -892,6 +997,7 @@ function rankFundMatches(query) {
     .map(f => {
       const symbol = normalizeSearchTerm(f.symbol);
       const name = normalizeSearchTerm(f.name);
+      const family = normalizeSearchTerm(f.fund_family || '');
       const combined = normalizeSearchTerm(`${f.name} ${f.symbol}`);
       let score = 0;
       if(symbol === q) score += 120;
@@ -899,8 +1005,16 @@ function rankFundMatches(query) {
       if(combined === q) score += 105;
       if(symbol.startsWith(q)) score += 90;
       if(name.startsWith(q)) score += 80;
+      if(family && family.startsWith(q)) score += 70;
       if(name.includes(` ${q}`)) score += 65;
       if(combined.includes(q)) score += 50;
+      if(family && family.includes(q)) score += 35;
+      score += subsequenceScore(q, symbol);
+      score += Math.floor(subsequenceScore(q, name) / 2);
+      const symDistance = levenshteinDistance(q, symbol);
+      const nameDistance = levenshteinDistance(q, name.slice(0, Math.min(name.length, q.length + 4)));
+      if(symDistance <= 2) score += 40 - symDistance * 10;
+      if(nameDistance <= 2) score += 24 - nameDistance * 8;
       if(!score) return null;
       return { ...f, score };
     })
@@ -930,7 +1044,8 @@ function renderFundSuggestions(matches) {
     <div class="fund-suggestion ${idx === activeSuggestionIndex ? 'active' : ''}" data-index="${idx}" onclick="selectFundSuggestion(${idx}, true)">
       <div class="fund-suggestion-name">${escapeHtml(fund.name)} <span class="text-indigo-400">(${escapeHtml(fund.symbol)})</span></div>
       <div class="fund-suggestion-meta">
-        <span>${escapeHtml(fund.category || '')}</span>
+        ${fund.fund_family ? `<span class="suggestion-pill family">${escapeHtml(fund.fund_family)}</span>` : ''}
+        ${fund.category ? `<span class="suggestion-pill category">${escapeHtml(fund.category)}</span>` : ''}
         <span>${escapeHtml(fund.strategy_focus || '')}</span>
         <span>${escapeHtml(fund.management_style || '')}</span>
       </div>
@@ -1124,12 +1239,14 @@ function clearAllFilters(silent) {
   document.getElementById('min_aum').value = '';
   document.getElementById('min_avg_volume').value = '';
   document.getElementById('fund-search').value = '';
+  closeFundSuggestions();
   document.querySelectorAll('.category-cb').forEach(cb => cb.checked = false);
   updateCategoryLabel();
   document.querySelectorAll('[data-ac], [data-ms]').forEach(c => c.classList.add('active'));
   if(!silent) {
     document.getElementById('preset-select').value = '';
     updateAdvCount();
+    renderTable(allResults);
   }
 }
 
@@ -1215,6 +1332,58 @@ const resultSummary = document.getElementById('result-summary');
 const emptyState    = document.getElementById('empty-state');
 const exportBtn     = document.getElementById('export-btn');
 const lastRun       = document.getElementById('last-run');
+
+function isCompared(symbol) {
+  return compareSelection.includes(symbol);
+}
+
+function toggleCompare(symbol) {
+  if(isCompared(symbol)) {
+    compareSelection = compareSelection.filter(s => s !== symbol);
+  } else {
+    if(compareSelection.length >= 3) {
+      alert('You can compare up to three mutual funds at a time.');
+      return;
+    }
+    compareSelection.push(symbol);
+  }
+  renderCompareBar();
+  renderTable(allResults);
+}
+
+function clearComparison() {
+  compareSelection = [];
+  compareDetails = [];
+  compareOverlay.classList.remove('visible');
+  screenerPage.style.display = '';
+  renderCompareBar();
+  renderTable(allResults);
+}
+
+function removeComparedFund(symbol) {
+  compareSelection = compareSelection.filter(s => s !== symbol);
+  renderCompareBar();
+  renderTable(allResults);
+}
+
+function renderCompareBar() {
+  const bar = document.getElementById('compare-bar');
+  const chips = document.getElementById('compare-chips');
+  const count = document.getElementById('compare-count');
+  const openBtn = document.getElementById('compare-open-btn');
+  if(!compareSelection.length) {
+    bar.classList.remove('visible');
+    chips.innerHTML = '';
+    count.textContent = 'Select up to 3 mutual funds to compare.';
+    openBtn.disabled = true;
+    return;
+  }
+  bar.classList.add('visible');
+  const selected = compareSelection.map(symbol => allResults.find(r => r.symbol === symbol) || fundCatalog.find(f => f.symbol === symbol) || {symbol, name:symbol});
+  chips.innerHTML = selected.map(f => `<span class="compare-chip">${escapeHtml(f.name)} <span class="text-indigo-400">(${escapeHtml(f.symbol)})</span><button type="button" onclick="removeComparedFund('${escapeHtml(f.symbol)}')">×</button></span>`).join('');
+  count.textContent = `${compareSelection.length} of 3 selected`;
+  openBtn.disabled = compareSelection.length < 2;
+}
 
 // ════════════════════════════════════════════════
 // DETERMINE ACTIVE COLUMNS
@@ -1343,6 +1512,7 @@ function showResults(results){
     if(rated.length) agg.push(`avg stars ${(rated.reduce((s,r)=>s+r.morningstar_rating,0)/rated.length).toFixed(1)}`);
   }
   document.getElementById('result-agg').textContent = agg.join(' . ');
+  renderCompareBar();
   renderTable(results);
 }
 
@@ -1355,10 +1525,11 @@ function median(arr) {
 
 function renderTable(results){
   const cols = getActiveColumns();
+  const compareCols = [{key:'compare',label:'Compare',align:'center',tip:'Select up to 3 funds for head-to-head comparison'}].concat(cols);
 
   const header = document.getElementById('results-header');
-  header.innerHTML = cols.map((c,i) =>
-    `<th class="text-${c.align} p-3 ${i===0?'pl-5':''}${i===cols.length-1?' pr-5':''}" data-col="${c.key}" title="${c.tip||''}">${c.label}</th>`
+  header.innerHTML = compareCols.map((c,i) =>
+    `<th class="text-${c.align} p-3 ${i===0?'pl-5':''}${i===compareCols.length-1?' pr-5':''}" ${c.key==='compare'?'':'data-col="'+c.key+'"'} title="${c.tip||''}">${c.label}</th>`
   ).join('');
 
   header.querySelectorAll('th[data-col]').forEach(th => {
@@ -1384,12 +1555,15 @@ function renderTable(results){
   const html = [];
   sorted.forEach(s => {
     html.push(`<tr class="data-row" data-symbol="${s.symbol}">`);
+    const checked = isCompared(s.symbol);
+    const disabled = !checked && compareSelection.length >= 3;
+    html.push(`<td class="p-3 text-center"><input class="compare-toggle" type="checkbox" ${checked?'checked':''} ${disabled?'disabled':''} onclick="event.stopPropagation(); toggleCompare('${s.symbol}')"></td>`);
     cols.forEach(c => {
       html.push(`<td class="p-3 text-${c.align}">${formatCell(c.key, s)}</td>`);
     });
     html.push('</tr>');
     if(expandedRow === s.symbol) {
-      html.push(renderInlineDetail(s, cols.length));
+      html.push(renderInlineDetail(s, compareCols.length));
     }
   });
   resultsBody.innerHTML = html.join('');
@@ -1447,7 +1621,10 @@ function renderInlineDetail(s, colSpan) {
       <div><span class="text-slate-500 block">Category</span><span class="font-mono text-slate-200">${s.category||'-'}</span></div>
       <div><span class="text-slate-500 block">Asset Class</span><span class="font-mono text-slate-200">${s.asset_class||'-'}</span></div>
       <div class="flex items-end">
-        <button class="btn-secondary text-xs py-1 px-3" onclick="event.stopPropagation();openDetail('${s.symbol}')">Full Detail &rarr;</button>
+        <div class="flex gap-2">
+          <button class="btn-secondary text-xs py-1 px-3" onclick="event.stopPropagation();toggleCompare('${s.symbol}')">${isCompared(s.symbol)?'Remove Compare':'Add Compare'}</button>
+          <button class="btn-secondary text-xs py-1 px-3" onclick="event.stopPropagation();openDetail('${s.symbol}')">Full Detail &rarr;</button>
+        </div>
       </div>
     </div>
   </td></tr>`;
@@ -1815,6 +1992,117 @@ function renderSectorWeights(sectors){
 }
 
 // ════════════════════════════════════════════════
+// COMPARE OVERLAY
+// ════════════════════════════════════════════════
+const compareOverlay = document.getElementById('compare-overlay');
+document.getElementById('compare-back').addEventListener('click', () => {
+  compareOverlay.classList.remove('visible');
+  screenerPage.style.display = '';
+  window.scrollTo(0, 0);
+});
+
+function compareMetricDefinitions() {
+  return [
+    { key:'expense_ratio', label:'Expense Ratio', format:v => v!=null ? `${v.toFixed(2)}%` : '-', direction:'lower' },
+    { key:'total_assets', label:'AUM', format:v => formatAUM(v), direction:'higher' },
+    { key:'dividend_yield', label:'Yield', format:v => v!=null ? `${v.toFixed(2)}%` : '-', direction:'higher' },
+    { key:'morningstar_rating', label:'Morningstar Stars', format:v => v!=null ? '★'.repeat(v) : '-', direction:'higher' },
+    { key:'morningstar_risk', label:'Risk Rating', format:v => v!=null ? `${v}` : '-', direction:'lower' },
+    { key:'beta', label:'Beta', format:v => v!=null ? v.toFixed(2) : '-', direction:'lower' },
+    { key:'turnover_pct', label:'Turnover', format:v => v!=null ? `${v.toFixed(0)}%` : '-', direction:'lower' },
+    { key:'fund_age_years', label:'Track Record', format:v => v!=null ? `${v.toFixed(1)}y` : '-', direction:'higher' },
+    { key:'ytd_return', label:'YTD Return', format:v => v!=null ? `${v.toFixed(1)}%` : '-', direction:'higher' },
+    { key:'one_year_return', label:'1Y Return', format:v => v!=null ? `${v.toFixed(1)}%` : '-', direction:'higher' },
+    { key:'three_year_return', label:'3Y Annualized', format:v => v!=null ? `${v.toFixed(1)}%` : '-', direction:'higher' },
+    { key:'five_year_return', label:'5Y Annualized', format:v => v!=null ? `${v.toFixed(1)}%` : '-', direction:'higher' },
+    { key:'management_style', label:'Management Style', format:v => v || '-', direction:null },
+    { key:'category', label:'Category', format:v => v || '-', direction:null },
+    { key:'strategy_focus', label:'Strategy Focus', format:v => v || '-', direction:null },
+    { key:'stock_position', label:'Stock Allocation', format:v => v!=null ? `${v.toFixed(1)}%` : '-', direction:null },
+    { key:'bond_position', label:'Bond Allocation', format:v => v!=null ? `${v.toFixed(1)}%` : '-', direction:null },
+    { key:'cash_position', label:'Cash Position', format:v => v!=null ? `${v.toFixed(1)}%` : '-', direction:'lower' },
+  ];
+}
+
+function metricExtremes(details, key, direction) {
+  const vals = details.map(d => d.info[key]).filter(v => typeof v === 'number' && !Number.isNaN(v));
+  if(vals.length < 2) return { best:null, worst:null };
+  return direction === 'lower'
+    ? { best: Math.min(...vals), worst: Math.max(...vals) }
+    : { best: Math.max(...vals), worst: Math.min(...vals) };
+}
+
+function compareClass(value, extremes) {
+  if(typeof value !== 'number' || extremes.best == null || extremes.worst == null || extremes.best === extremes.worst) return '';
+  if(value === extremes.best) return 'compare-cell-best';
+  if(value === extremes.worst) return 'compare-cell-worst';
+  return '';
+}
+
+function renderCompareCards(details) {
+  const wrap = document.getElementById('compare-cards');
+  wrap.innerHTML = details.map(d => {
+    const info = d.info;
+    return `
+      <div class="card p-5 space-y-3">
+        <div>
+          <div class="text-indigo-400 font-bold text-lg">${escapeHtml(info.symbol)}</div>
+          <div class="text-slate-200 font-semibold mt-1">${escapeHtml(info.name)}</div>
+          <div class="text-slate-400 text-sm mt-1">${escapeHtml(info.fund_family || 'Unknown family')} • ${escapeHtml(info.category || 'Mutual Fund')}</div>
+        </div>
+        <div class="grid grid-cols-2 gap-3 text-sm">
+          <div class="metric-card"><div class="metric-label">Expense</div><div class="metric-value">${info.expense_ratio!=null?info.expense_ratio.toFixed(2)+'%':'-'}</div></div>
+          <div class="metric-card"><div class="metric-label">3Y Return</div><div class="metric-value">${info.three_year_return!=null?info.three_year_return.toFixed(1)+'%':'-'}</div></div>
+          <div class="metric-card"><div class="metric-label">Stars</div><div class="metric-value">${info.morningstar_rating!=null?'★'.repeat(info.morningstar_rating):'-'}</div></div>
+          <div class="metric-card"><div class="metric-label">Risk</div><div class="metric-value">${info.morningstar_risk ?? '-'}</div></div>
+        </div>
+      </div>`;
+  }).join('');
+}
+
+function renderCompareTable(details) {
+  const defs = compareMetricDefinitions();
+  document.getElementById('compare-header').innerHTML = `<th class="text-left p-4">Metric</th>${details.map(d => `<th class="text-left p-4">${escapeHtml(d.info.symbol)}</th>`).join('')}`;
+  document.getElementById('compare-body').innerHTML = defs.map(def => {
+    const extremes = def.direction ? metricExtremes(details, def.key, def.direction) : { best:null, worst:null };
+    return `<tr class="compare-metric-row">
+      <td class="p-4 text-slate-300 font-medium">${def.label}</td>
+      ${details.map(d => {
+        const value = d.info[def.key];
+        const cls = compareClass(value, extremes);
+        return `<td class="p-4 compare-value ${cls}">${def.format(value)}</td>`;
+      }).join('')}
+    </tr>`;
+  }).join('');
+}
+
+async function openCompareOverlay() {
+  if(compareSelection.length < 2) return;
+  screenerPage.style.display = 'none';
+  detailOverlay.classList.remove('visible');
+  compareOverlay.classList.add('visible');
+  window.scrollTo(0, 0);
+  document.getElementById('compare-loading').classList.remove('hidden');
+  document.getElementById('compare-error').classList.add('hidden');
+  document.getElementById('compare-content').classList.add('hidden');
+  try {
+    compareDetails = await Promise.all(compareSelection.map(async symbol => {
+      const res = await fetch(`/mutual-funds/api/fund/${encodeURIComponent(symbol)}`);
+      if(!res.ok) throw new Error(`Failed on ${symbol}`);
+      return res.json();
+    }));
+    renderCompareCards(compareDetails);
+    renderCompareTable(compareDetails);
+    document.getElementById('compare-content').classList.remove('hidden');
+  } catch (err) {
+    document.getElementById('compare-error').classList.remove('hidden');
+    document.getElementById('compare-error-msg').textContent = err.message;
+  } finally {
+    document.getElementById('compare-loading').classList.add('hidden');
+  }
+}
+
+// ════════════════════════════════════════════════
 // URL PRESET LOADING
 // ════════════════════════════════════════════════
 const urlParams = new URLSearchParams(window.location.search);
@@ -1823,6 +2111,7 @@ if(presetParam && PRESETS[presetParam]) {
   applyPreset(presetParam);
 }
 loadFundCatalog();
+renderCompareBar();
 // ════════════════════════════════════════════════
 // MODE TOGGLE
 // ════════════════════════════════════════════════

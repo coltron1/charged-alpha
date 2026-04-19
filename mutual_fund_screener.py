@@ -109,16 +109,19 @@ def get_mutual_fund_catalog_rows():
     rows = []
     for symbol in MUTUAL_FUND_UNIVERSE:
         name = symbol
+        fund_family = None
         try:
             _, info = _fetch_ticker_info(symbol)
             if info:
                 name = info.get("longName") or info.get("shortName") or symbol
+                fund_family = info.get("fundFamily")
         except Exception:
             name = symbol
         rows.append(
             {
                 "symbol": symbol,
                 "name": name,
+                "fund_family": fund_family,
                 "category": get_mutual_fund_category(symbol),
                 "asset_class": get_mutual_fund_asset_class(symbol),
                 "strategy_focus": get_mutual_fund_strategy_focus(symbol),
