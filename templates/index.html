@@ -237,6 +237,7 @@
         <button class="ca-tools-trigger" onclick="document.getElementById('toolsWrap').classList.toggle('open')">Tools <span class="arrow">&#9662;</span></button>
         <div class="ca-tools-dd">
           <a href="/screener/">Stock Screener</a>
+          <a href="/mutual-funds/">Mutual Fund Screener</a>
           <a href="/etf/">ETF Screener</a>
           <a href="/crypto/">Crypto Screener</a>
           <a href="/options/">Options Scanner</a>
@@ -250,7 +251,6 @@
         </div>
       </div>
       <a href="/shows" class="text-sm text-slate-300 hover:text-white transition-colors no-underline font-medium">Shows</a>
-      <a href="#roadmap" class="text-sm text-slate-300 hover:text-white transition-colors no-underline font-medium">Roadmap</a>
       <a href="#about" class="text-sm text-slate-300 hover:text-white transition-colors no-underline font-medium">About</a>
       <a href="/auth/login" style="padding:6px 14px;border-radius:8px;font-size:12px;font-weight:600;color:#94a3b8;border:1px solid #334155;text-decoration:none;transition:all .15s;">Sign In</a>
       <a href="/auth/register" style="padding:6px 14px;border-radius:8px;font-size:12px;font-weight:600;color:white;background:linear-gradient(135deg,#6366f1,#7c3aed);text-decoration:none;transition:all .15s;">Sign Up</a>
@@ -264,6 +264,7 @@
   <div id="mobile-menu" class="hidden md:hidden px-6 pb-4 space-y-3">
     <p class="text-xs font-bold uppercase tracking-wider text-slate-500 mt-2 mb-1">Tools</p>
     <a href="/screener/" class="block text-sm text-slate-300 no-underline">Stock Screener</a>
+    <a href="/mutual-funds/" class="block text-sm text-slate-300 no-underline">Mutual Fund Screener</a>
     <a href="/etf/" class="block text-sm text-slate-300 no-underline">ETF Screener</a>
     <a href="/crypto/" class="block text-sm text-slate-300 no-underline">Crypto Screener</a>
     <a href="/options/" class="block text-sm text-slate-300 no-underline">Options Scanner</a>
@@ -276,7 +277,6 @@
     <a href="/charts/" class="block text-sm text-slate-300 no-underline">Stock Charts</a>
     <div style="height:1px;background:#1e293b;margin:8px 0"></div>
     <a href="/shows" class="block text-sm text-slate-300 no-underline">Shows</a>
-    <a href="#roadmap" class="block text-sm text-slate-300 no-underline">Roadmap</a>
     <a href="#about" class="block text-sm text-slate-300 no-underline">About</a>
     <div style="height:1px;background:#1e293b;margin:8px 0"></div>
     <a href="/auth/login" class="block text-sm text-slate-300 no-underline">Sign In</a>
@@ -320,7 +320,7 @@
     <!-- Quick stats -->
     <div class="flex flex-wrap justify-center gap-10 mt-16">
       <div class="text-center">
-        <div class="stat-num text-3xl font-extrabold">11</div>
+        <div class="stat-num text-3xl font-extrabold">12</div>
         <div class="text-xs text-slate-500 mt-1 uppercase tracking-wide">Live Tools</div>
       </div>
       <div class="text-center">
@@ -649,144 +649,6 @@
 <div class="section-line"></div>
 
 <!-- ═══════════════════════════════════════════════════════════════
-     ROADMAP / COMING SOON
-     ═══════════════════════════════════════════════════════════════ -->
-<section id="roadmap" class="py-24 px-6">
-  <div class="max-w-4xl mx-auto">
-    <div class="text-center mb-16">
-      <p class="text-sm font-bold text-indigo-400 uppercase tracking-widest mb-3">What's Next</p>
-      <h2 class="text-4xl md:text-5xl font-extrabold text-white mb-4">On the Roadmap</h2>
-      <p class="text-lg text-slate-400 max-w-xl mx-auto">
-        We're building more tools and expanding coverage. Here's what's coming.
-      </p>
-    </div>
-
-    <div class="space-y-4">
-      <!-- Live tools -->
-      <div class="card p-5 flex items-center gap-4">
-        <div class="w-3 h-3 rounded-full bg-emerald-400 flex-shrink-0" style="box-shadow:0 0 8px rgba(16,185,129,.5);"></div>
-        <div class="flex-1">
-          <span class="font-bold text-white">S&P 500 Stock Screener</span>
-          <span class="text-slate-500 text-sm ml-2">20+ filters, strategy presets, options chains</span>
-        </div>
-        <span class="text-xs font-bold text-emerald-400 uppercase tracking-wide">Live</span>
-      </div>
-
-      <div class="card p-5 flex items-center gap-4">
-        <div class="w-3 h-3 rounded-full bg-emerald-400 flex-shrink-0" style="box-shadow:0 0 8px rgba(16,185,129,.5);"></div>
-        <div class="flex-1">
-          <span class="font-bold text-white">Precious Metals Aggregator</span>
-          <span class="text-slate-500 text-sm ml-2">Gold, silver, platinum price comparison</span>
-        </div>
-        <span class="text-xs font-bold text-emerald-400 uppercase tracking-wide">Live</span>
-      </div>
-
-      <div class="card p-5 flex items-center gap-4">
-        <div class="w-3 h-3 rounded-full bg-emerald-400 flex-shrink-0" style="box-shadow:0 0 8px rgba(16,185,129,.5);"></div>
-        <div class="flex-1">
-          <span class="font-bold text-white">ETF Screener</span>
-          <span class="text-slate-500 text-sm ml-2">200+ ETFs by expense ratio, AUM, returns, category</span>
-        </div>
-        <span class="text-xs font-bold text-emerald-400 uppercase tracking-wide">Live</span>
-      </div>
-
-      <div class="card p-5 flex items-center gap-4">
-        <div class="w-3 h-3 rounded-full bg-emerald-400 flex-shrink-0" style="box-shadow:0 0 8px rgba(16,185,129,.5);"></div>
-        <div class="flex-1">
-          <span class="font-bold text-white">Crypto Screener</span>
-          <span class="text-slate-500 text-sm ml-2">Top 250 coins by volume, market cap, momentum</span>
-        </div>
-        <span class="text-xs font-bold text-emerald-400 uppercase tracking-wide">Live</span>
-      </div>
-
-      <div class="card p-5 flex items-center gap-4">
-        <div class="w-3 h-3 rounded-full bg-emerald-400 flex-shrink-0" style="box-shadow:0 0 8px rgba(16,185,129,.5);"></div>
-        <div class="flex-1">
-          <span class="font-bold text-white">Options Flow Scanner</span>
-          <span class="text-slate-500 text-sm ml-2">Unusual activity, volume, open interest, IV</span>
-        </div>
-        <span class="text-xs font-bold text-emerald-400 uppercase tracking-wide">Live</span>
-      </div>
-
-      <div class="card p-5 flex items-center gap-4">
-        <div class="w-3 h-3 rounded-full bg-emerald-400 flex-shrink-0" style="box-shadow:0 0 8px rgba(16,185,129,.5);"></div>
-        <div class="flex-1">
-          <span class="font-bold text-white">Bond & Treasury Dashboard</span>
-          <span class="text-slate-500 text-sm ml-2">Yield curve, spreads, bond ETF tracker</span>
-        </div>
-        <span class="text-xs font-bold text-emerald-400 uppercase tracking-wide">Live</span>
-      </div>
-
-      <div class="card p-5 flex items-center gap-4">
-        <div class="w-3 h-3 rounded-full bg-emerald-400 flex-shrink-0" style="box-shadow:0 0 8px rgba(16,185,129,.5);"></div>
-        <div class="flex-1">
-          <span class="font-bold text-white">REIT Screener</span>
-          <span class="text-slate-500 text-sm ml-2">75+ REITs by yield, sector, valuation</span>
-        </div>
-        <span class="text-xs font-bold text-emerald-400 uppercase tracking-wide">Live</span>
-      </div>
-
-      <div class="card p-5 flex items-center gap-4">
-        <div class="w-3 h-3 rounded-full bg-emerald-400 flex-shrink-0" style="box-shadow:0 0 8px rgba(16,185,129,.5);"></div>
-        <div class="flex-1">
-          <span class="font-bold text-white">Forex Heatmap</span>
-          <span class="text-slate-500 text-sm ml-2">28 currency pairs, strength index, multi-timeframe</span>
-        </div>
-        <span class="text-xs font-bold text-emerald-400 uppercase tracking-wide">Live</span>
-      </div>
-
-      <div class="card p-5 flex items-center gap-4">
-        <div class="w-3 h-3 rounded-full bg-emerald-400 flex-shrink-0" style="box-shadow:0 0 8px rgba(16,185,129,.5);"></div>
-        <div class="flex-1">
-          <span class="font-bold text-white">Commodities Dashboard</span>
-          <span class="text-slate-500 text-sm ml-2">Energy, metals, agriculture & livestock futures</span>
-        </div>
-        <span class="text-xs font-bold text-emerald-400 uppercase tracking-wide">Live</span>
-      </div>
-
-      <div class="card p-5 flex items-center gap-4">
-        <div class="w-3 h-3 rounded-full bg-emerald-400 flex-shrink-0" style="box-shadow:0 0 8px rgba(16,185,129,.5);"></div>
-        <div class="flex-1">
-          <span class="font-bold text-white">Earnings Calendar</span>
-          <span class="text-slate-500 text-sm ml-2">Upcoming earnings, estimates, and history</span>
-        </div>
-        <span class="text-xs font-bold text-emerald-400 uppercase tracking-wide">Live</span>
-      </div>
-
-      <div class="card p-5 flex items-center gap-4">
-        <div class="w-3 h-3 rounded-full bg-emerald-400 flex-shrink-0" style="box-shadow:0 0 8px rgba(16,185,129,.5);"></div>
-        <div class="flex-1">
-          <span class="font-bold text-white">Stock Charts</span>
-          <span class="text-slate-500 text-sm ml-2">TradingView-powered charts with drawing tools, indicators, and global market data</span>
-        </div>
-        <span class="text-xs font-bold text-emerald-400 uppercase tracking-wide">Live</span>
-      </div>
-
-      <!-- Coming Soon -->
-      <div class="card p-5 flex items-center gap-4" style="border-color:#1e293b80;">
-        <div class="w-3 h-3 rounded-full bg-amber-400 flex-shrink-0 pulse-dot"></div>
-        <div class="flex-1">
-          <span class="font-bold text-slate-300">Portfolio Tracker</span>
-          <span class="text-slate-500 text-sm ml-2">Track your positions, see screener alerts on your holdings</span>
-        </div>
-        <span class="text-xs font-bold text-amber-400 uppercase tracking-wide">Coming Soon</span>
-      </div>
-
-      <div class="card p-5 flex items-center gap-4" style="border-color:#1e293b80;">
-        <div class="w-3 h-3 rounded-full bg-slate-600 flex-shrink-0"></div>
-        <div class="flex-1">
-          <span class="font-bold text-slate-400">International Markets Screener</span>
-          <span class="text-slate-500 text-sm ml-2">Screen stocks across global exchanges</span>
-        </div>
-        <span class="text-xs font-bold text-slate-500 uppercase tracking-wide">Planned</span>
-      </div>
-    </div>
-  </div>
-</section>
-
-<div class="section-line"></div>
-
-<!-- ═══════════════════════════════════════════════════════════════
      ABOUT
      ═══════════════════════════════════════════════════════════════ -->
 <section id="about" class="py-24 px-6">
@@ -826,6 +688,7 @@
         <h4 class="text-sm font-bold text-slate-300 uppercase tracking-wide mb-4">Tools</h4>
         <ul class="space-y-2 text-sm">
           <li><a href="/screener/" class="text-slate-500 hover:text-indigo-400 transition-colors no-underline">Stock Screener</a></li>
+          <li><a href="/mutual-funds/" class="text-slate-500 hover:text-violet-400 transition-colors no-underline">Mutual Fund Screener</a></li>
           <li><a href="/gold/" class="text-slate-500 hover:text-amber-400 transition-colors no-underline">Metals Aggregator</a></li>
           <li><a href="/etf/" class="text-slate-500 hover:text-emerald-400 transition-colors no-underline">ETF Screener</a></li>
           <li><a href="/crypto/" class="text-slate-500 hover:text-orange-400 transition-colors no-underline">Crypto Screener</a></li>
