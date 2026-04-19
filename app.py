@@ -33,6 +33,7 @@ Routes:
 
 import json
 import os
+import re
 import time
 import threading
 from pathlib import Path
@@ -109,10 +110,10 @@ SEO_PAGE_META = {
         ),
     },
     "/shows": {
-        "title": "Charged Alpha Shows — Episode Library & Stock Breakdowns",
+        "title": "Charged Alpha Stock Library — Quarterly Stock Episodes",
         "description": (
-            "Browse Charged Alpha show episodes covering one stock at a time with "
-            "fundamentals, valuation, bull and bear cases, and what to watch next."
+            "Browse Charged Alpha's stock-first library with quarterly episode coverage, "
+            "ticker and quarter filters, and detail pages for each company."
         ),
     },
     "/screener": {
@@ -274,6 +275,137 @@ def load_shows_catalog():
         return {"platform_links": {}, "episodes": []}
     with SHOWS_CATALOG_PATH.open("r", encoding="utf-8") as f:
         return json.load(f)
+
+
+def _show_slug(ticker):
+    return (ticker or "").upper().replace(".", "-").replace("/", "-").strip()
+
+
+def _quarter_sort_key(label):
+    text = (label or "").upper()
+    quarter_match = re.search(r"Q([1-4])", text)
+    year_match = re.search(r"(20\d{2})", text)
+    quarter = int(quarter_match.group(1)) if quarter_match else 0
+    year = int(year_match.group(1)) if year_match else 0
+    return (year, quarter, text)
+
+
+def _episode_has_any_link(ep):
+    return any(
+        ep.get(key)
+        for key in (
+            "youtube_url",
+            "spotify_url",
+            "apple_url",
+            "google_url",
+            "iheart_url",
+            "amazon_url",
+            "podbean_url",
+        )
+    )
+
+
+def build_show_library(episodes):
+    grouped = {}
+    quarter_set = set()
+    published_episode_count = 0
+    youtube_episode_count = 0
+    spotify_episode_count = 0
+
+    for ep in episodes or []:
+        ticker = (ep.get("ticker") or "").upper().strip()
+        if not ticker:
+            continue
+
+        slug = _show_slug(ticker)
+        quarter = (ep.get("quarter") or "Unknown").strip()
+        quarter_set.add(quarter)
+
+        has_episode = bool(ep.get("has_episode") or _episode_has_any_link(ep))
+        if has_episode:
+            published_episode_count += 1
+        if ep.get("youtube_url"):
+            youtube_episode_count += 1
+        if ep.get("spotify_url"):
+            spotify_episode_count += 1
+
+        stock = grouped.setdefault(
+            slug,
+            {
+                "slug": slug,
+                "ticker": ticker,
+                "yf_symbol": ticker.replace(".", "-"),
+                "company": ep.get("company") or ticker,
+                "sector": ep.get("sector") or "Unclassified",
+                "episodes": [],
+            },
+        )
+
+        stock["episodes"].append(
+            {
+                "ticker": ticker,
+                "quarter": quarter,
+                "episode_number": ep.get("episode_number") or "",
+                "status": ep.get("status") or ("published" if has_episode else "planned"),
+                "has_episode": has_episode,
+                "youtube_url": ep.get("youtube_url") or "",
+                "spotify_url": ep.get("spotify_url") or "",
+                "apple_url": ep.get("apple_url") or "",
+                "amazon_url": ep.get("amazon_url") or "",
+                "google_url": ep.get("google_url") or "",
+                "iheart_url": ep.get("iheart_url") or "",
+                "podbean_url": ep.get("podbean_url") or "",
+            }
+        )
+
+    stocks = []
+    for stock in grouped.values():
+        stock["episodes"].sort(
+            key=lambda ep: (_quarter_sort_key(ep["quarter"]), int(ep["episode_number"] or 0)),
+            reverse=True,
+        )
+        latest = stock["episodes"][0]
+        stock["quarter_count"] = len(stock["episodes"])
+        stock["published_count"] = sum(1 for ep in stock["episodes"] if ep["has_episode"])
+        stock["latest_quarter"] = latest["quarter"]
+        stock["latest_episode_number"] = latest["episode_number"]
+        stock["latest_status"] = latest["status"]
+        stock["quarter_labels"] = [ep["quarter"] for ep in stock["episodes"]]
+        stock["latest_links"] = {
+            "youtube": latest.get("youtube_url") or "",
+            "spotify": latest.get("spotify_url") or "",
+            "apple": latest.get("apple_url") or "",
+            "amazon": latest.get("amazon_url") or "",
+            "podbean": latest.get("podbean_url") or "",
+        }
+        stock["has_youtube"] = any(ep.get("youtube_url") for ep in stock["episodes"])
+        stock["has_spotify"] = any(ep.get("spotify_url") for ep in stock["episodes"])
+        stock["has_apple"] = any(ep.get("apple_url") for ep in stock["episodes"])
+        stock["has_amazon"] = any(ep.get("amazon_url") for ep in stock["episodes"])
+        stock["latest_quarter_sort"] = _quarter_sort_key(stock["latest_quarter"])
+        stocks.append(stock)
+
+    stocks.sort(
+        key=lambda stock: (stock["latest_quarter_sort"], int(stock["latest_episode_number"] or 0), stock["ticker"]),
+        reverse=True,
+    )
+
+    quarter_options = sorted(quarter_set, key=_quarter_sort_key, reverse=True)
+    sector_options = sorted({stock["sector"] for stock in stocks})
+
+    return {
+        "stocks": stocks,
+        "quarters": quarter_options,
+        "sectors": sector_options,
+        "stats": {
+            "stock_count": len(stocks),
+            "episode_count": len(episodes or []),
+            "published_episode_count": published_episode_count,
+            "youtube_episode_count": youtube_episode_count,
+            "spotify_episode_count": spotify_episode_count,
+            "quarter_count": len(quarter_options),
+        },
+    }
 
 app.url_map.strict_slashes = False
 app.config['MAX_CONTENT_LENGTH'] = 1 * 1024 * 1024  # 1MB max request body
@@ -458,6 +590,16 @@ def sitemap_xml():
             "  </url>"
         )
 
+    shows_data = load_shows_catalog()
+    show_library = build_show_library(shows_data.get("episodes", []))
+    for stock in show_library["stocks"]:
+        loc = f"{SITE_URL}/shows/{stock['slug']}"
+        url_entries.append(
+            "  <url>\n"
+            f"    <loc>{loc}</loc>\n"
+            "  </url>"
+        )
+
     xml = (
         '<?xml version="1.0" encoding="UTF-8"?>\n'
         '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
@@ -481,19 +623,103 @@ def health():
 @app.route("/")
 def index():
     shows_data = load_shows_catalog()
+    show_library = build_show_library(shows_data.get("episodes", []))
+    featured_stocks = [
+        stock for stock in show_library["stocks"] if stock.get("published_count")
+    ][:6]
     return render_template(
         "index.html",
         podcast_platforms=shows_data.get("platform_links", {}),
+        show_stats=show_library.get("stats", {}),
+        featured_stocks=featured_stocks,
+        show_quarters=show_library.get("quarters", []),
     )
 
 
 @app.route("/shows")
 def shows():
     shows_data = load_shows_catalog()
+    show_library = build_show_library(shows_data.get("episodes", []))
     return render_template(
         "shows.html",
-        shows_catalog=shows_data.get("episodes", []),
+        show_stocks=show_library.get("stocks", []),
+        show_stats=show_library.get("stats", {}),
+        show_quarters=show_library.get("quarters", []),
+        show_sectors=show_library.get("sectors", []),
         podcast_platforms=shows_data.get("platform_links", {}),
+    )
+
+
+@app.route("/shows/<ticker_slug>")
+def show_stock_detail_page(ticker_slug):
+    shows_data = load_shows_catalog()
+    show_library = build_show_library(shows_data.get("episodes", []))
+    requested = _show_slug(ticker_slug)
+    show_stock = next((stock for stock in show_library["stocks"] if stock["slug"] == requested), None)
+    if not show_stock:
+        return ("Stock show not found", 404)
+
+    stock_detail = get_stock_detail(show_stock["yf_symbol"]) or {
+        "symbol": show_stock["ticker"],
+        "name": show_stock["company"],
+        "sector": show_stock["sector"],
+    }
+
+    _, info = fetch_ticker_info(show_stock["yf_symbol"])
+    if info:
+        stock_detail["summary"] = info.get("longBusinessSummary") or ""
+        stock_detail["website"] = info.get("website") or ""
+        stock_detail["industry"] = stock_detail.get("industry") or info.get("industry")
+        stock_detail["country"] = info.get("country") or ""
+        stock_detail["employees"] = info.get("fullTimeEmployees")
+    else:
+        stock_detail.setdefault("summary", "")
+        stock_detail.setdefault("website", "")
+        stock_detail.setdefault("country", "")
+        stock_detail.setdefault("employees", None)
+
+    for key in (
+        "price",
+        "change",
+        "change_pct",
+        "trailing_pe",
+        "forward_pe",
+        "market_cap",
+        "volume",
+        "price_to_book",
+        "beta",
+        "week_52_low",
+        "week_52_high",
+        "eps",
+        "target_mean_price",
+        "target_upside",
+        "industry",
+    ):
+        stock_detail.setdefault(key, None)
+
+    seo_title = f"{show_stock['company']} ({show_stock['ticker']}) Stock Library — Charged Alpha"
+    seo_description = (
+        f"Track {show_stock['company']} ({show_stock['ticker']}) across quarterly Charged Alpha episodes, "
+        "with live stock metrics, price chart context, and platform links by quarter."
+    )
+    seo_meta = {
+        "title": seo_title,
+        "description": seo_description,
+        "canonical_url": _canonical_url(f"/shows/{show_stock['slug']}"),
+        "robots": SEO_DEFAULTS["robots"],
+        "og_title": seo_title,
+        "og_description": seo_description,
+        "og_type": "article",
+        "twitter_card": SEO_DEFAULTS["twitter_card"],
+    }
+
+    return render_template(
+        "show_stock_detail.html",
+        show_stock=show_stock,
+        stock_detail=stock_detail,
+        chart_symbol=show_stock["yf_symbol"],
+        podcast_platforms=shows_data.get("platform_links", {}),
+        seo_meta=seo_meta,
     )
 
 

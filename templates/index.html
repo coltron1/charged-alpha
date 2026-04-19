@@ -546,101 +546,114 @@
 <section id="shows" class="py-24 px-6">
   <div class="max-w-6xl mx-auto">
     <div class="text-center mb-16">
-      <p class="text-sm font-bold text-indigo-400 uppercase tracking-widest mb-3">The Charged Alpha Show</p>
-      <h2 class="text-4xl md:text-5xl font-extrabold text-white mb-4">A Stock Encyclopedia in Audio Form</h2>
+      <p class="text-sm font-bold text-indigo-400 uppercase tracking-widest mb-3">Charged Alpha Stock Encyclopedia</p>
+      <h2 class="text-4xl md:text-5xl font-extrabold text-white mb-4">The website now needs to think like the channel does.</h2>
       <p class="text-lg text-slate-400 max-w-3xl mx-auto leading-relaxed">
-        One dedicated episode for every publicly traded stock in the US market. Each breakdown covers fundamentals, valuation, bull and bear cases, and what to watch next — updated quarterly in sync with earnings.
+        The newer YouTube direction is a fast-moving, quarterly earnings-analysis engine. So the site is shifting from a simple episode list toward a stock-first library where you can open one company, review the market snapshot, and jump into every quarter's episode from one place.
       </p>
     </div>
 
-    <div class="grid lg:grid-cols-[1.2fr_.8fr] gap-8 items-stretch">
+    <div class="grid lg:grid-cols-[1.05fr_.95fr] gap-8 items-stretch">
       <div class="card p-8 glow-indigo">
         <div class="flex items-center gap-4 mb-6">
           <div class="w-14 h-14 rounded-xl flex items-center justify-center text-2xl" style="background:rgba(99,102,241,.12)">
-            <svg width="28" height="28" fill="none" stroke="#818cf8" stroke-width="2"><rect x="3" y="5" width="22" height="18" rx="3"/><path d="M8 2v4M16 2v4M3 10h22"/></svg>
+            <svg width="28" height="28" fill="none" stroke="#818cf8" stroke-width="2"><path d="M4 6h20M4 12h20M4 18h20"/><rect x="3" y="4" width="18" height="16" rx="3"/></svg>
           </div>
           <div>
-            <h3 class="font-bold text-white text-2xl">Quarterly Stock Breakdowns</h3>
+            <h3 class="font-bold text-white text-2xl">Quarterly Stock Library</h3>
             <div class="flex flex-wrap gap-2 mt-2">
-              <span class="show-badge badge-daily">Updated with Earnings</span>
-              <span class="show-badge badge-markets">Every US Stock</span>
+              <span class="show-badge badge-daily">Earnings-Aligned</span>
+              <span class="show-badge badge-markets">Stock-First Navigation</span>
             </div>
           </div>
         </div>
+
         <p class="text-slate-300 leading-relaxed mb-6">
-          Every episode is built from the same research workflow available on this site. We run the screener, pull the latest financials, and walk through what changed since the last quarter — so you get a complete, current picture of any stock in the market.
+          Instead of burying content in one long episode feed, the library is being organized around the way investors actually revisit research: start with the stock, then compare quarter to quarter. Each stock page can now become the permanent home for the chart, valuation snapshot, and platform links for every episode tied to that company.
         </p>
+
         <div class="grid sm:grid-cols-2 gap-4 mb-8 text-sm text-slate-400">
           <div class="card p-4" style="background:#0f172a;border-color:#1e293b;">
-            <div class="text-indigo-300 font-semibold mb-1">One Stock, One Episode</div>
-            <div>Each episode is devoted to a single company — no fluff, no filler, just a focused breakdown.</div>
+            <div class="text-indigo-300 font-semibold mb-1">{{ show_stats.stock_count or 0 }} Stocks Tracked</div>
+            <div>The library is already structured to grow toward recurring quarterly coverage, not just one-off uploads.</div>
           </div>
           <div class="card p-4" style="background:#0f172a;border-color:#1e293b;">
-            <div class="text-indigo-300 font-semibold mb-1">Earnings-Aligned</div>
-            <div>Episodes release quarterly, timed to each company's earnings so the data is always current.</div>
+            <div class="text-indigo-300 font-semibold mb-1">{{ show_stats.published_episode_count or 0 }} Published Episodes</div>
+            <div>Existing links are surfaced where investors expect them: inside each stock's detail page and by quarter.</div>
           </div>
           <div class="card p-4" style="background:#0f172a;border-color:#1e293b;">
-            <div class="text-indigo-300 font-semibold mb-1">Full US Market</div>
-            <div>Not just blue chips — every publicly traded US stock gets its own dedicated episode.</div>
+            <div class="text-indigo-300 font-semibold mb-1">Filter by Quarter</div>
+            <div>As the Russell 1000 fills out over time, the library can be narrowed by quarter, ticker, and sector.</div>
           </div>
           <div class="card p-4" style="background:#0f172a;border-color:#1e293b;">
-            <div class="text-indigo-300 font-semibold mb-1">Research You Can Use</div>
-            <div>Bull vs. bear case, key metrics, catalysts, and the levels to watch going forward.</div>
+            <div class="text-indigo-300 font-semibold mb-1">Open the Stock Detail</div>
+            <div>Price, P/E, chart context, and platform links now live together instead of being scattered across pages.</div>
           </div>
         </div>
-        <a href="/shows" class="btn-primary w-full justify-center text-sm" style="padding:12px 24px;">
-          Browse the Full Library
-          <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M4 2h7v7M11 2L4 9"/></svg>
-        </a>
+
+        <div class="flex flex-wrap gap-3">
+          <a href="/shows" class="btn-primary" style="padding:12px 24px;">
+            Browse the Stock Library
+            <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M4 2h7v7M11 2L4 9"/></svg>
+          </a>
+          <a href="{{ podcast_platforms.youtube }}" class="btn-secondary" target="_blank" rel="noopener noreferrer">
+            View the YouTube Channel
+          </a>
+        </div>
       </div>
 
       <div class="space-y-6">
         <div class="card p-6 glow-purple">
-          <p class="text-sm font-bold text-indigo-400 uppercase tracking-widest mb-3">Episode Structure</p>
-          <ol class="space-y-4 text-sm text-slate-300 leading-relaxed">
-            <li><span class="text-white font-semibold">1. Company overview</span><br>What the business does, where it sits in the market, and why it matters now.</li>
-            <li><span class="text-white font-semibold">2. Earnings and financials</span><br>Revenue, margins, EPS, balance sheet health, and how the latest quarter stacks up.</li>
-            <li><span class="text-white font-semibold">3. Bull vs. bear case</span><br>The strongest reason to be interested and the biggest risk to watch out for.</li>
-            <li><span class="text-white font-semibold">4. What to watch next</span><br>Key catalysts, upcoming events, and the metrics that will move the stock.</li>
-          </ol>
-        </div>
-
-        <div class="card p-6 glow-green">
-          <p class="text-sm font-bold text-emerald-400 uppercase tracking-widest mb-3">Available Everywhere</p>
-          <p class="text-slate-300 text-sm leading-relaxed mb-4">
-            Every episode is available on all major podcast platforms. Search any stock ticker to find its episode in the library.
-          </p>
+          <p class="text-sm font-bold text-indigo-400 uppercase tracking-widest mb-3">Library Snapshot</p>
+          <div class="grid sm:grid-cols-2 gap-4 mb-5">
+            <div class="card p-4" style="background:#0f172a;border-color:#1e293b;">
+              <div class="text-xs uppercase tracking-[.18em] text-slate-500 mb-1">Quarter sets live</div>
+              <div class="text-2xl font-extrabold text-white">{{ show_stats.quarter_count or 0 }}</div>
+            </div>
+            <div class="card p-4" style="background:#0f172a;border-color:#1e293b;">
+              <div class="text-xs uppercase tracking-[.18em] text-slate-500 mb-1">Spotify links live</div>
+              <div class="text-2xl font-extrabold text-white">{{ show_stats.spotify_episode_count or 0 }}</div>
+            </div>
+          </div>
+          <div class="text-sm text-slate-300 leading-relaxed mb-4">
+            Current live quarter coverage:
+            {% if show_quarters %}
+              <span class="text-white font-semibold">{{ show_quarters | join(', ') }}</span>
+            {% else %}
+              <span class="text-slate-500">quarter tags still being populated</span>
+            {% endif %}
+          </div>
           <div class="flex flex-wrap gap-3">
-            <a href="{{ podcast_platforms.spotify }}" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 px-4 py-2.5 rounded-lg text-xs font-semibold text-white no-underline transition-all hover:scale-105" style="background:#1DB954;">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg>
-              Spotify
-            </a>
-            <a href="{{ podcast_platforms.apple }}" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 px-4 py-2.5 rounded-lg text-xs font-semibold text-white no-underline transition-all hover:scale-105" style="background:linear-gradient(135deg,#9933ff,#7733bb);">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M5.34 0A5.328 5.328 0 000 5.34v13.32A5.328 5.328 0 005.34 24h13.32A5.328 5.328 0 0024 18.66V5.34A5.328 5.328 0 0018.66 0H5.34zm6.525 4.8c.6 0 1.18.06 1.56.18.48.12.84.36 1.14.66.3.3.48.66.6 1.08.12.42.18.84.18 1.32v.36c0 .48-.06.9-.24 1.32-.12.36-.36.66-.66.96-.24.18-.48.36-.84.48.48.12.84.36 1.08.72.24.36.36.84.36 1.44v1.08c0 .24 0 .48.06.72.06.18.12.3.24.42v.12h-2.1c-.06-.12-.12-.24-.12-.42-.06-.18-.06-.42-.06-.66v-1.14c0-.48-.12-.84-.3-1.02-.24-.24-.54-.36-1.02-.36h-1.68v3.6h-2.1V4.8h3.78zm-.48 1.68h-1.2v2.82h1.08c.48 0 .84-.06 1.08-.24.24-.18.36-.48.36-.96v-.36c0-.42-.06-.72-.24-.96-.18-.18-.48-.3-1.08-.3z"/></svg>
-              Apple
-            </a>
-            <a href="{{ podcast_platforms.youtube }}" class="flex items-center gap-2 px-4 py-2.5 rounded-lg text-xs font-semibold text-white no-underline transition-all hover:scale-105" style="background:#ff0000;" target="_blank" rel="noopener noreferrer">
+            <a href="{{ podcast_platforms.youtube }}" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 px-4 py-2.5 rounded-lg text-xs font-semibold text-white no-underline transition-all hover:scale-105" style="background:#ff0000;">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
               YouTube
             </a>
-            <a href="{{ podcast_platforms.google }}" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 px-4 py-2.5 rounded-lg text-xs font-semibold text-white no-underline transition-all hover:scale-105" style="background:#0066D5;">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M11.28 4.89c-.2-.2-.51-.2-.71 0L6.62 8.84H3.38c-.55 0-1 .45-1 1v4.32c0 .55.45 1 1 1h3.24l3.95 3.95c.2.2.51.2.71 0 .09-.1.15-.22.15-.35V5.24c0-.13-.06-.26-.15-.35z M14.98 5.57c-.31-.23-.75-.17-.98.14s-.17.75.14.98c1.77 1.32 2.83 3.41 2.83 5.63s-1.06 4.31-2.83 5.63c-.31.23-.37.67-.14.98.14.19.36.29.56.29.15 0 .29-.05.42-.14 2.12-1.58 3.39-4.08 3.39-6.76s-1.27-5.18-3.39-6.75z M17.51 2.56c-.31-.23-.75-.17-.98.14-.23.31-.17.75.14.98C19.42 5.65 21 8.65 21 12s-1.58 6.35-4.33 8.32c-.31.23-.37.67-.14.98.14.18.35.28.56.28.14 0 .29-.05.42-.14C20.62 19.29 22.5 15.83 22.5 12s-1.88-7.29-4.99-9.44z"/></svg>
-              Google
+            <a href="{{ podcast_platforms.spotify }}" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 px-4 py-2.5 rounded-lg text-xs font-semibold text-white no-underline transition-all hover:scale-105" style="background:#1DB954;">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02z"/></svg>
+              Spotify
             </a>
-            <a href="{{ podcast_platforms.iheart }}" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 px-4 py-2.5 rounded-lg text-xs font-semibold text-white no-underline transition-all hover:scale-105" style="background:#5C67DE;">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M6.09 0C2.73 0 0 2.73 0 6.09v11.82C0 21.27 2.73 24 6.09 24h11.82C21.27 24 24 21.27 24 17.91V6.09C24 2.73 21.27 0 17.91 0H6.09zm7.04 5.68h2.14c.66 0 1.2.54 1.2 1.2v2.14c0 .66-.54 1.2-1.2 1.2h-2.14c-.66 0-1.2-.54-1.2-1.2V6.88c0-.66.54-1.2 1.2-1.2zM8.87 8.5h2.14c.66 0 1.2.54 1.2 1.2v2.14c0 .66-.54 1.2-1.2 1.2H8.87c-.66 0-1.2-.54-1.2-1.2V9.7c0-.66.54-1.2 1.2-1.2zm4.27 4.27h2.14c.66 0 1.2.54 1.2 1.2v2.14c0 .66-.54 1.2-1.2 1.2h-2.14c-.66 0-1.2-.54-1.2-1.2v-2.14c0-.66.54-1.2 1.2-1.2z"/></svg>
-              iHeart
+            <a href="{{ podcast_platforms.apple }}" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 px-4 py-2.5 rounded-lg text-xs font-semibold text-white no-underline transition-all hover:scale-105" style="background:linear-gradient(135deg,#9933ff,#7733bb);">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M5.34 0A5.328 5.328 0 000 5.34v13.32A5.328 5.328 0 005.34 24h13.32A5.328 5.328 0 0024 18.66V5.34A5.328 5.328 0 0018.66 0H5.34z"/></svg>
+              Apple
             </a>
           </div>
         </div>
 
-        <a href="/shows" class="card p-6 glow-indigo block no-underline hover:scale-[1.02] transition-transform">
-          <p class="text-sm font-bold text-indigo-400 uppercase tracking-widest mb-2">Episode Library</p>
-          <p class="text-slate-300 text-sm leading-relaxed mb-3">
-            Search by ticker or company name to find any episode. The full library is searchable and organized by sector.
-          </p>
-          <span class="text-indigo-400 text-sm font-semibold">Browse All Episodes &rarr;</span>
-        </a>
+        <div class="card p-6 glow-green">
+          <p class="text-sm font-bold text-emerald-400 uppercase tracking-widest mb-3">Featured Library Entries</p>
+          <div class="space-y-3">
+            {% for stock in featured_stocks %}
+            <a href="/shows/{{ stock.slug }}" class="block no-underline card p-4" style="background:#0f172a;border-color:#1e293b;">
+              <div class="flex items-center justify-between gap-4 mb-1">
+                <div class="font-semibold text-white">{{ stock.company }}</div>
+                <div class="text-xs text-slate-500">{{ stock.ticker }}</div>
+              </div>
+              <div class="text-xs text-slate-500 mb-2">{{ stock.sector }} &middot; {{ stock.latest_quarter }}</div>
+              <div class="text-xs text-slate-400">{{ stock.published_count }}/{{ stock.quarter_count }} quarters linked{% if stock.latest_episode_number %} &middot; Ep. {{ stock.latest_episode_number }}{% endif %}</div>
+            </a>
+            {% endfor %}
+          </div>
+        </div>
       </div>
     </div>
   </div>

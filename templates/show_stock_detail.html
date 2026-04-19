@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-HJ72GKBEFW"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-HJ72GKBEFW');
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ seo_meta.title }}</title>
+  {% include "partials/seo_meta.html" %}
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    * { font-family:'Inter', system-ui, sans-serif; }
+    body { background:#0a0f1e; color:#e2e8f0; }
+    .logo-bolt {
+      display:inline-flex; align-items:center; justify-content:center;
+      width:42px; height:42px; border-radius:12px; font-size:21px;
+      background:linear-gradient(135deg,#6366f1,#8b5cf6);
+      box-shadow:0 0 24px rgba(99,102,241,.35);
+    }
+    .card { background:#111827; border:1px solid #1e293b; border-radius:18px; }
+    .pill { display:inline-flex; align-items:center; gap:6px; padding:6px 10px; border-radius:999px; font-size:11px; font-weight:700; }
+    .platform-pill {
+      display:inline-flex; align-items:center; justify-content:center; gap:6px; padding:8px 12px;
+      border-radius:10px; font-size:12px; font-weight:700; color:white; text-decoration:none;
+    }
+    .range-btn {
+      padding:8px 12px; border-radius:10px; border:1px solid #334155; background:transparent;
+      color:#cbd5e1; font-size:12px; font-weight:700; cursor:pointer; transition:.15s;
+    }
+    .range-btn:hover, .range-btn.active { border-color:#6366f1; color:white; background:rgba(99,102,241,.1); }
+    .stat-label { font-size:11px; text-transform:uppercase; letter-spacing:.18em; color:#64748b; }
+    .stat-value { font-size:1.75rem; line-height:1.1; font-weight:800; color:white; }
+    .table-row { border-top:1px solid #1e293b; }
+  </style>
+</head>
+<body class="min-h-screen">
+<header class="sticky top-0 z-50 px-6 py-4" style="background:rgba(10,15,30,.88);backdrop-filter:blur(16px);border-bottom:1px solid rgba(30,41,59,.8);">
+  <div class="max-w-7xl mx-auto flex items-center justify-between gap-6">
+    <a href="/" class="flex items-center gap-3 no-underline text-white">
+      <div class="logo-bolt">&#9889;</div>
+      <div>
+        <div class="font-extrabold tracking-tight text-lg">CHARGED ALPHA</div>
+        <div class="text-[11px] text-slate-500 uppercase tracking-[.22em]">Stock Detail</div>
+      </div>
+    </a>
+    <nav class="hidden md:flex items-center gap-6">
+      <a href="/" class="text-sm text-slate-400 hover:text-white no-underline">Home</a>
+      <a href="/shows" class="text-sm text-slate-400 hover:text-white no-underline">Stock Library</a>
+      <a href="{{ podcast_platforms.youtube }}" target="_blank" rel="noopener noreferrer" class="text-sm text-white font-semibold no-underline">YouTube</a>
+    </nav>
+  </div>
+</header>
+
+<section class="pt-16 pb-10 px-6" style="background:radial-gradient(ellipse 75% 55% at 50% 0%,rgba(99,102,241,.14) 0%,transparent 60%);">
+  <div class="max-w-7xl mx-auto">
+    <div class="text-sm text-slate-500 mb-4">
+      <a href="/shows" class="text-slate-400 hover:text-white no-underline">Stock Library</a>
+      <span class="mx-2">/</span>
+      <span>{{ show_stock.ticker }}</span>
+    </div>
+
+    <div class="grid lg:grid-cols-[1.1fr_.9fr] gap-8 items-start">
+      <div>
+        <div class="flex flex-wrap items-center gap-2 mb-4">
+          <span class="pill" style="background:rgba(99,102,241,.12);color:#a5b4fc;">{{ show_stock.ticker }}</span>
+          <span class="pill" style="background:rgba(14,165,233,.12);color:#7dd3fc;">{{ show_stock.sector }}</span>
+          {% if show_stock.latest_quarter %}
+          <span class="pill" style="background:rgba(16,185,129,.12);color:#6ee7b7;">Latest quarter: {{ show_stock.latest_quarter }}</span>
+          {% endif %}
+        </div>
+        <h1 class="text-4xl md:text-5xl font-black text-white leading-tight mb-4">{{ show_stock.company }}</h1>
+        <p class="text-lg text-slate-400 leading-relaxed max-w-3xl mb-6">
+          Open the live stock snapshot, review the price chart, and jump into the episode archive quarter by quarter across YouTube, Spotify, Apple, Amazon, and the web feed.
+        </p>
+        <div class="flex flex-wrap gap-3">
+          {% if show_stock.latest_links.youtube %}
+          <a href="{{ show_stock.latest_links.youtube }}" target="_blank" rel="noopener noreferrer" class="platform-pill" style="background:#dc2626;">Latest on YouTube</a>
+          {% endif %}
+          {% if show_stock.latest_links.spotify %}
+          <a href="{{ show_stock.latest_links.spotify }}" target="_blank" rel="noopener noreferrer" class="platform-pill" style="background:#16a34a;">Latest on Spotify</a>
+          {% endif %}
+          {% if stock_detail.website %}
+          <a href="{{ stock_detail.website }}" target="_blank" rel="noopener noreferrer" class="platform-pill" style="background:#1d4ed8;">Company Website</a>
+          {% endif %}
+          <a href="/shows" class="platform-pill" style="background:#334155;">Back to Library</a>
+        </div>
+      </div>
+
+      <div class="card p-6">
+        <p class="text-sm font-bold text-indigo-400 uppercase tracking-[.22em] mb-4">Library coverage</p>
+        <div class="grid grid-cols-2 gap-4">
+          <div class="card p-4" style="background:#0f172a;border-color:#1e293b;">
+            <div class="stat-label">Quarters tracked</div>
+            <div class="stat-value mt-2">{{ show_stock.quarter_count }}</div>
+          </div>
+          <div class="card p-4" style="background:#0f172a;border-color:#1e293b;">
+            <div class="stat-label">Quarters linked</div>
+            <div class="stat-value mt-2">{{ show_stock.published_count }}</div>
+          </div>
+          <div class="card p-4" style="background:#0f172a;border-color:#1e293b;">
+            <div class="stat-label">YouTube available</div>
+            <div class="stat-value mt-2">{{ 'Yes' if show_stock.has_youtube else 'No' }}</div>
+          </div>
+          <div class="card p-4" style="background:#0f172a;border-color:#1e293b;">
+            <div class="stat-label">Spotify available</div>
+            <div class="stat-value mt-2">{{ 'Yes' if show_stock.has_spotify else 'No' }}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="px-6 pb-6">
+  <div class="max-w-7xl mx-auto grid lg:grid-cols-[1.2fr_.8fr] gap-6">
+    <div class="grid sm:grid-cols-2 xl:grid-cols-3 gap-4">
+      <div class="card p-5">
+        <div class="stat-label">Current price</div>
+        <div class="stat-value mt-2">{{ ('$' ~ stock_detail.price) if stock_detail.price is not none else '—' }}</div>
+        <div class="text-sm mt-2 {{ 'text-emerald-400' if (stock_detail.change or 0) >= 0 else 'text-red-400' }}">
+          {% if stock_detail.change is not none and stock_detail.change_pct is not none %}
+            {{ '%+.2f'|format(stock_detail.change) }} ({{ '%+.2f'|format(stock_detail.change_pct) }}%)
+          {% else %}
+            Daily move unavailable
+          {% endif %}
+        </div>
+      </div>
+      <div class="card p-5">
+        <div class="stat-label">Trailing P/E</div>
+        <div class="stat-value mt-2">{{ stock_detail.trailing_pe if stock_detail.trailing_pe is not none else '—' }}</div>
+        <div class="text-sm text-slate-500 mt-2">Forward P/E: {{ stock_detail.forward_pe if stock_detail.forward_pe is not none else '—' }}</div>
+      </div>
+      <div class="card p-5">
+        <div class="stat-label">Market cap</div>
+        <div class="stat-value mt-2" id="marketCapValue" data-value="{{ stock_detail.market_cap or '' }}">—</div>
+        <div class="text-sm text-slate-500 mt-2">Volume: <span id="volumeValue" data-value="{{ stock_detail.volume or '' }}">—</span></div>
+      </div>
+      <div class="card p-5">
+        <div class="stat-label">Price to book</div>
+        <div class="stat-value mt-2">{{ stock_detail.price_to_book if stock_detail.price_to_book is not none else '—' }}</div>
+        <div class="text-sm text-slate-500 mt-2">Beta: {{ stock_detail.beta if stock_detail.beta is not none else '—' }}</div>
+      </div>
+      <div class="card p-5">
+        <div class="stat-label">52-week range</div>
+        <div class="text-white text-lg font-bold mt-2">
+          {% if stock_detail.week_52_low is not none and stock_detail.week_52_high is not none %}
+          ${{ stock_detail.week_52_low }} - ${{ stock_detail.week_52_high }}
+          {% else %}
+          —
+          {% endif %}
+        </div>
+        <div class="text-sm text-slate-500 mt-2">EPS: {{ stock_detail.eps if stock_detail.eps is not none else '—' }}</div>
+      </div>
+      <div class="card p-5">
+        <div class="stat-label">Analyst target</div>
+        <div class="stat-value mt-2">{{ ('$' ~ stock_detail.target_mean_price) if stock_detail.target_mean_price is not none else '—' }}</div>
+        <div class="text-sm text-slate-500 mt-2">Upside: {{ (stock_detail.target_upside ~ '%') if stock_detail.target_upside is not none else '—' }}</div>
+      </div>
+    </div>
+
+    <div class="card p-6">
+      <p class="text-sm font-bold text-indigo-400 uppercase tracking-[.22em] mb-3">Company context</p>
+      <div class="space-y-3 text-sm text-slate-300 leading-relaxed">
+        <div><span class="text-slate-500">Industry:</span> {{ stock_detail.industry or '—' }}</div>
+        <div><span class="text-slate-500">Country:</span> {{ stock_detail.country or '—' }}</div>
+        <div><span class="text-slate-500">Employees:</span> <span id="employeeValue" data-value="{{ stock_detail.employees or '' }}">—</span></div>
+        {% if stock_detail.summary %}
+        <div class="pt-2 text-slate-400">{{ stock_detail.summary }}</div>
+        {% else %}
+        <div class="pt-2 text-slate-500">Business summary unavailable right now, but the episode archive below is still live.</div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="px-6 pb-6">
+  <div class="max-w-7xl mx-auto card p-6">
+    <div class="flex flex-wrap items-center justify-between gap-4 mb-5">
+      <div>
+        <p class="text-sm font-bold text-indigo-400 uppercase tracking-[.22em] mb-1">Price chart</p>
+        <h2 class="text-2xl font-bold text-white">Market context for {{ show_stock.ticker }}</h2>
+      </div>
+      <div class="flex flex-wrap gap-2" id="rangeButtons">
+        <button class="range-btn" data-range="1m">1M</button>
+        <button class="range-btn" data-range="3m">3M</button>
+        <button class="range-btn active" data-range="1y">1Y</button>
+        <button class="range-btn" data-range="5y">5Y</button>
+      </div>
+    </div>
+    <div class="h-[360px] md:h-[420px]">
+      <canvas id="priceChart"></canvas>
+    </div>
+  </div>
+</section>
+
+<section class="px-6 pb-24">
+  <div class="max-w-7xl mx-auto card overflow-hidden">
+    <div class="p-6 md:p-8 border-b border-slate-800">
+      <p class="text-sm font-bold text-indigo-400 uppercase tracking-[.22em] mb-2">Episode timeline</p>
+      <h2 class="text-2xl font-bold text-white">Quarterly archive for {{ show_stock.ticker }}</h2>
+      <p class="text-sm text-slate-500 mt-2">Each row is one quarter. Use the platform links to jump straight into the version you want.</p>
+    </div>
+
+    <div class="divide-y divide-slate-800">
+      {% for episode in show_stock.episodes %}
+      <div class="p-6 md:p-8 grid lg:grid-cols-[180px_1fr_auto] gap-5 items-start table-row">
+        <div>
+          <div class="text-white font-bold text-lg">{{ episode.quarter }}</div>
+          <div class="text-sm text-slate-500 mt-1">
+            {% if episode.episode_number %}Ep. {{ episode.episode_number }}{% else %}Episode TBD{% endif %}
+          </div>
+        </div>
+        <div>
+          <div class="flex flex-wrap gap-2 mb-3">
+            <span class="pill" style="background:{{ 'rgba(16,185,129,.12)' if episode.has_episode else 'rgba(148,163,184,.12)' }};color:{{ '#6ee7b7' if episode.has_episode else '#cbd5e1' }};">{{ 'Published' if episode.has_episode else 'Pending link' }}</span>
+            {% if episode.status %}
+            <span class="pill" style="background:rgba(99,102,241,.12);color:#a5b4fc;">{{ episode.status.replace('_', ' ') }}</span>
+            {% endif %}
+          </div>
+          <div class="text-sm text-slate-400 leading-relaxed">Quarterly earnings-analysis entry for {{ show_stock.company }}. Open the platform links on the right to watch or listen to the archived version for this quarter.</div>
+        </div>
+        <div class="flex flex-wrap lg:justify-end gap-2">
+          {% if episode.youtube_url %}<a href="{{ episode.youtube_url }}" target="_blank" rel="noopener noreferrer" class="platform-pill" style="background:#dc2626;">YouTube</a>{% endif %}
+          {% if episode.spotify_url %}<a href="{{ episode.spotify_url }}" target="_blank" rel="noopener noreferrer" class="platform-pill" style="background:#16a34a;">Spotify</a>{% endif %}
+          {% if episode.apple_url %}<a href="{{ episode.apple_url }}" target="_blank" rel="noopener noreferrer" class="platform-pill" style="background:linear-gradient(135deg,#9333ea,#7c3aed);">Apple</a>{% endif %}
+          {% if episode.amazon_url %}<a href="{{ episode.amazon_url }}" target="_blank" rel="noopener noreferrer" class="platform-pill" style="background:linear-gradient(135deg,#f59e0b,#ea580c);">Amazon</a>{% endif %}
+          {% if episode.podbean_url %}<a href="{{ episode.podbean_url }}" target="_blank" rel="noopener noreferrer" class="platform-pill" style="background:#0284c7;">Web</a>{% endif %}
+          {% if episode.google_url %}<a href="{{ episode.google_url }}" target="_blank" rel="noopener noreferrer" class="platform-pill" style="background:#2563eb;">Google</a>{% endif %}
+          {% if episode.iheart_url %}<a href="{{ episode.iheart_url }}" target="_blank" rel="noopener noreferrer" class="platform-pill" style="background:#5b21b6;">iHeart</a>{% endif %}
+          {% if not episode.youtube_url and not episode.spotify_url and not episode.apple_url and not episode.amazon_url and not episode.podbean_url and not episode.google_url and not episode.iheart_url %}
+          <span class="text-sm text-slate-500">No verified link yet</span>
+          {% endif %}
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<script>
+function formatCompact(value) {
+  const num = Number(value);
+  if (!Number.isFinite(num)) return '—';
+  return new Intl.NumberFormat('en-US', { notation:'compact', maximumFractionDigits:1 }).format(num);
+}
+
+document.getElementById('marketCapValue').textContent = formatCompact(document.getElementById('marketCapValue').dataset.value);
+document.getElementById('volumeValue').textContent = formatCompact(document.getElementById('volumeValue').dataset.value);
+document.getElementById('employeeValue').textContent = formatCompact(document.getElementById('employeeValue').dataset.value);
+
+const ctx = document.getElementById('priceChart').getContext('2d');
+let chart;
+async function loadChart(rangeKey) {
+  document.querySelectorAll('.range-btn').forEach(btn => btn.classList.toggle('active', btn.dataset.range === rangeKey));
+  const res = await fetch(`/screener/api/stock/{{ chart_symbol }}/chart?range=${rangeKey}`);
+  const data = await res.json();
+  const labels = data.labels || [];
+  const prices = data.prices || [];
+  if (chart) chart.destroy();
+  chart = new Chart(ctx, {
+    type: 'line',
+    data: {
+      labels,
+      datasets: [{
+        label: '{{ show_stock.ticker }}',
+        data: prices,
+        borderColor: '#818cf8',
+        borderWidth: 2,
+        tension: .2,
+        fill: true,
+        backgroundColor: 'rgba(99,102,241,.12)',
+        pointRadius: 0,
+      }]
+    },
+    options: {
+      maintainAspectRatio: false,
+      responsive: true,
+      plugins: { legend: { display:false } },
+      scales: {
+        x: { ticks: { color:'#64748b', maxTicksLimit: 8 }, grid: { color:'rgba(30,41,59,.35)' } },
+        y: { ticks: { color:'#64748b' }, grid: { color:'rgba(30,41,59,.35)' } }
+      }
+    }
+  });
+}
+
+document.querySelectorAll('.range-btn').forEach(btn => {
+  btn.addEventListener('click', () => loadChart(btn.dataset.range));
+});
+
+loadChart('1y');
+</script>
+</body>
+</html>

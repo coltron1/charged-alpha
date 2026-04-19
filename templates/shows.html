@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-HJ72GKBEFW"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -18,301 +17,344 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <style>
     * { font-family: 'Inter', system-ui, sans-serif; }
-    body { background: #0a0f1e; color: #e2e8f0; }
-
+    body { background:#0a0f1e; color:#e2e8f0; }
     .logo-bolt {
-      display: inline-flex; align-items: center; justify-content: center;
-      width: 48px; height: 48px;
-      background: linear-gradient(135deg, #6366f1, #8b5cf6);
-      border-radius: 12px; font-size: 24px;
-      box-shadow: 0 0 24px rgba(99,102,241,.35);
+      display:inline-flex; align-items:center; justify-content:center;
+      width:44px; height:44px; border-radius:12px; font-size:22px;
+      background:linear-gradient(135deg,#6366f1,#8b5cf6);
+      box-shadow:0 0 24px rgba(99,102,241,.35);
     }
-
     .card {
-      background: #111827; border: 1px solid #1e293b; border-radius: 16px;
-      transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+      background:#111827; border:1px solid #1e293b; border-radius:18px;
+      transition:transform .18s ease, border-color .18s ease, box-shadow .18s ease;
     }
-    .card:hover { transform: translateY(-2px); border-color: #334155; }
-
-    .search-input {
-      background: #111827; border: 1px solid #1e293b; border-radius: 12px;
-      padding: 14px 20px 14px 48px; width: 100%; color: #e2e8f0;
-      font-size: 16px; outline: none; transition: border-color .2s;
+    .card:hover { transform:translateY(-2px); border-color:#334155; }
+    .pill {
+      display:inline-flex; align-items:center; gap:6px; padding:6px 10px; border-radius:999px;
+      font-size:11px; font-weight:700; letter-spacing:.02em;
     }
-    .search-input:focus { border-color: #6366f1; }
-    .search-input::placeholder { color: #475569; }
-
-    .platform-pill {
-      display: inline-flex; align-items: center; gap: 6px;
-      padding: 6px 12px; border-radius: 8px; font-size: 11px;
-      font-weight: 600; color: white; text-decoration: none;
-      transition: transform .15s, opacity .15s;
+    .input-shell, .select-shell {
+      background:#0f172a; border:1px solid #1e293b; color:#e2e8f0; border-radius:12px;
+      outline:none; transition:border-color .15s ease, box-shadow .15s ease;
     }
-    .platform-pill:hover { transform: scale(1.05); opacity: .9; }
-
-    .sector-btn {
-      padding: 6px 14px; border-radius: 8px; font-size: 12px;
-      font-weight: 600; border: 1px solid #1e293b; color: #94a3b8;
-      background: transparent; cursor: pointer; transition: all .15s;
+    .input-shell:focus, .select-shell:focus { border-color:#6366f1; box-shadow:0 0 0 3px rgba(99,102,241,.12); }
+    .btn-primary {
+      display:inline-flex; align-items:center; justify-content:center; gap:8px; text-decoration:none;
+      padding:12px 18px; border-radius:12px; font-weight:700; color:white;
+      background:linear-gradient(135deg,#6366f1,#7c3aed); transition:transform .15s ease, box-shadow .15s ease;
     }
-    .sector-btn:hover, .sector-btn.active {
-      background: rgba(99,102,241,.12); border-color: #6366f1; color: #a5b4fc;
+    .btn-primary:hover { transform:translateY(-1px); box-shadow:0 10px 24px rgba(99,102,241,.25); }
+    .btn-secondary {
+      display:inline-flex; align-items:center; justify-content:center; gap:8px; text-decoration:none;
+      padding:12px 18px; border-radius:12px; font-weight:600; color:#cbd5e1;
+      border:1px solid #334155; background:transparent;
     }
-
-    .episode-card { cursor: default; }
-    .episode-card .platform-links { opacity: 0; transition: opacity .2s; }
-    .episode-card:hover .platform-links { opacity: 1; }
-
-    .empty-state { display: none; text-align: center; padding: 60px 20px; color: #475569; }
-
-    @media (max-width: 640px) {
-      .episode-card .platform-links { opacity: 1; }
+    .btn-secondary:hover { border-color:#6366f1; color:white; background:rgba(99,102,241,.08); }
+    .stock-card { position:relative; overflow:hidden; }
+    .stock-card::before {
+      content:''; position:absolute; left:0; right:0; top:0; height:3px;
+      background:linear-gradient(90deg,#6366f1,#8b5cf6,#14b8a6);
     }
+    .platform-chip {
+      display:inline-flex; align-items:center; gap:6px; padding:6px 10px; border-radius:10px;
+      font-size:11px; font-weight:700; color:white; text-decoration:none;
+    }
+    .quarter-chip {
+      display:inline-flex; align-items:center; padding:4px 8px; border-radius:999px;
+      font-size:11px; font-weight:600; color:#cbd5e1; background:#162033; border:1px solid #273449;
+    }
+    .empty-state { display:none; }
   </style>
 </head>
 <body class="min-h-screen">
 
-<!-- ── Header ──────────────────────────────────────────────────── -->
-<header class="sticky top-0 z-50 px-6 py-4" style="background:rgba(10,15,30,.85);backdrop-filter:blur(12px);border-bottom:1px solid #1e293b;">
-  <div class="max-w-6xl mx-auto flex items-center justify-between">
-    <a href="/" class="flex items-center gap-3 no-underline">
-      <div class="logo-bolt" style="width:36px;height:36px;font-size:18px;border-radius:8px;">&#9889;</div>
-      <span class="font-extrabold text-white tracking-tight text-lg">CHARGED ALPHA</span>
+<header class="sticky top-0 z-50 px-6 py-4" style="background:rgba(10,15,30,.88);backdrop-filter:blur(16px);border-bottom:1px solid rgba(30,41,59,.8);">
+  <div class="max-w-7xl mx-auto flex items-center justify-between gap-6">
+    <a href="/" class="flex items-center gap-3 no-underline text-white">
+      <div class="logo-bolt">&#9889;</div>
+      <div>
+        <div class="font-extrabold tracking-tight text-lg">CHARGED ALPHA</div>
+        <div class="text-[11px] text-slate-500 uppercase tracking-[.22em]">Stock Library</div>
+      </div>
     </a>
     <nav class="hidden md:flex items-center gap-6">
-      <a href="/" class="text-sm text-slate-400 hover:text-white transition-colors no-underline">Home</a>
-      <a href="/#tools" class="text-sm text-slate-400 hover:text-white transition-colors no-underline">Tools</a>
+      <a href="/" class="text-sm text-slate-400 hover:text-white no-underline">Home</a>
+      <a href="/#tools" class="text-sm text-slate-400 hover:text-white no-underline">Tools</a>
       <a href="/shows" class="text-sm text-white font-semibold no-underline">Shows</a>
+      <a href="{{ podcast_platforms.youtube }}" target="_blank" rel="noopener noreferrer" class="btn-secondary text-sm" style="padding:10px 14px;">YouTube Channel</a>
     </nav>
   </div>
 </header>
 
-<!-- ── Hero ─────────────────────────────────────────────────────── -->
-<section class="pt-20 pb-12 px-6" style="background:radial-gradient(ellipse 80% 50% at 50% 0%,rgba(99,102,241,.1) 0%,transparent 60%);">
-  <div class="max-w-4xl mx-auto text-center">
-    <p class="text-sm font-bold text-indigo-400 uppercase tracking-widest mb-3">Episode Library</p>
-    <h1 class="text-4xl md:text-5xl font-black text-white mb-4">Every US Stock. One Episode Each.</h1>
-    <p class="text-lg text-slate-400 max-w-2xl mx-auto leading-relaxed">
-      Search by ticker or company name to find any episode. Each breakdown covers fundamentals, valuation, the bull and bear case, and what to watch next — updated quarterly with earnings.
-    </p>
-  </div>
-</section>
-
-<!-- ── Search & Filters ────────────────────────────────────────── -->
-<section class="px-6 pb-6">
-  <div class="max-w-4xl mx-auto">
-    <div class="relative mb-6">
-      <svg class="absolute left-4 top-1/2 -translate-y-1/2 text-slate-500" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="9" r="7"/><path d="M15 15l4 4"/></svg>
-      <input id="searchInput" type="text" class="search-input" placeholder="Search by ticker or company name (e.g. AAPL, Tesla, NVDA)..." autofocus>
-    </div>
-    <div class="flex flex-wrap gap-2 mb-2" id="sectorFilters">
-      <button class="sector-btn active" onclick="filterSector('All',this)">All</button>
-      <button class="sector-btn" onclick="filterSector('Technology',this)">Technology</button>
-      <button class="sector-btn" onclick="filterSector('Healthcare',this)">Healthcare</button>
-      <button class="sector-btn" onclick="filterSector('Financials',this)">Financials</button>
-      <button class="sector-btn" onclick="filterSector('Consumer',this)">Consumer</button>
-      <button class="sector-btn" onclick="filterSector('Energy',this)">Energy</button>
-      <button class="sector-btn" onclick="filterSector('Industrials',this)">Industrials</button>
-      <button class="sector-btn" onclick="filterSector('Communication',this)">Communication</button>
-      <button class="sector-btn" onclick="filterSector('Utilities',this)">Utilities</button>
-      <button class="sector-btn" onclick="filterSector('Real Estate',this)">Real Estate</button>
-      <button class="sector-btn" onclick="filterSector('Materials',this)">Materials</button>
-    </div>
-  </div>
-</section>
-
-<!-- ── Episode Grid ────────────────────────────────────────────── -->
-<section class="px-6 pb-24">
-  <div class="max-w-4xl mx-auto">
-    <div class="flex items-center justify-between mb-6">
-      <p class="text-sm text-slate-500" id="resultCount">0 episodes</p>
-      <select id="sortSelect" onchange="renderEpisodes()" class="text-sm bg-transparent border border-slate-700 rounded-lg px-3 py-2 text-slate-300 outline-none cursor-pointer">
-        <option value="ticker">Sort by Ticker</option>
-        <option value="name">Sort by Name</option>
-        <option value="sector">Sort by Sector</option>
-      </select>
+<section class="pt-20 pb-10 px-6" style="background:radial-gradient(ellipse 80% 55% at 50% 0%,rgba(99,102,241,.14) 0%,transparent 60%);">
+  <div class="max-w-7xl mx-auto grid lg:grid-cols-[1.2fr_.8fr] gap-8 items-start">
+    <div>
+      <p class="text-sm font-bold text-indigo-400 uppercase tracking-[.24em] mb-4">Charged Alpha Stock Encyclopedia</p>
+      <h1 class="text-4xl md:text-6xl font-black text-white leading-tight mb-5">A stock-first library built for quarterly earnings coverage.</h1>
+      <p class="text-lg text-slate-400 leading-relaxed max-w-3xl mb-7">
+        The channel has shifted into a faster, higher-volume earnings-analysis format. This library is organized the same way it needs to scale: start with the stock, then open every quarter's episode, chart context, and platform links from one detail page.
+      </p>
+      <div class="flex flex-wrap gap-3 mb-8">
+        <a href="#library" class="btn-primary">Browse Stock Library</a>
+        <a href="{{ podcast_platforms.youtube }}" target="_blank" rel="noopener noreferrer" class="btn-secondary">Watch on YouTube</a>
+        <a href="{{ podcast_platforms.spotify }}" target="_blank" rel="noopener noreferrer" class="btn-secondary">Listen on Spotify</a>
+      </div>
+      <div class="grid sm:grid-cols-2 xl:grid-cols-4 gap-4">
+        <div class="card p-5">
+          <div class="text-3xl font-black text-white">{{ show_stats.stock_count or 0 }}</div>
+          <div class="text-xs uppercase tracking-[.18em] text-slate-500 mt-1">Stocks tracked</div>
+        </div>
+        <div class="card p-5">
+          <div class="text-3xl font-black text-white">{{ show_stats.published_episode_count or 0 }}</div>
+          <div class="text-xs uppercase tracking-[.18em] text-slate-500 mt-1">Published episodes</div>
+        </div>
+        <div class="card p-5">
+          <div class="text-3xl font-black text-white">{{ show_stats.quarter_count or 0 }}</div>
+          <div class="text-xs uppercase tracking-[.18em] text-slate-500 mt-1">Quarter sets live</div>
+        </div>
+        <div class="card p-5">
+          <div class="text-3xl font-black text-white">{{ show_stats.youtube_episode_count or 0 }}</div>
+          <div class="text-xs uppercase tracking-[.18em] text-slate-500 mt-1">YouTube links live</div>
+        </div>
+      </div>
     </div>
 
-    <div id="episodeGrid" class="space-y-3"></div>
-
-    <div id="emptyState" class="empty-state">
-      <svg class="mx-auto mb-4" width="48" height="48" fill="none" stroke="#334155" stroke-width="1.5"><circle cx="20" cy="20" r="16"/><path d="M32 32l10 10"/></svg>
-      <p class="text-lg font-semibold text-slate-400 mb-2">No episodes found</p>
-      <p class="text-sm text-slate-500">Try a different search term or clear the filter.</p>
-    </div>
-
-    <div id="loadMore" class="text-center mt-8" style="display:none;">
-      <button onclick="showMore()" class="px-6 py-3 rounded-xl text-sm font-semibold text-indigo-400 border border-indigo-500/30 hover:bg-indigo-500/10 transition-all">
-        Show More Episodes
-      </button>
-    </div>
-  </div>
-</section>
-
-<!-- ── Platform Legend ──────────────────────────────────────────── -->
-<section class="px-6 pb-20">
-  <div class="max-w-4xl mx-auto">
-    <div class="card p-6 text-center">
-      <p class="text-sm font-bold text-slate-400 uppercase tracking-widest mb-4">Available On</p>
-      <div class="flex flex-wrap justify-center gap-3">
-        <a href="{{ podcast_platforms.spotify }}" target="_blank" rel="noopener noreferrer" class="platform-pill" style="background:#1DB954;">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg>
-          Spotify
-        </a>
-        <a href="{{ podcast_platforms.apple }}" target="_blank" rel="noopener noreferrer" class="platform-pill" style="background:linear-gradient(135deg,#9933ff,#7733bb);">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M5.34 0A5.328 5.328 0 000 5.34v13.32A5.328 5.328 0 005.34 24h13.32A5.328 5.328 0 0024 18.66V5.34A5.328 5.328 0 0018.66 0H5.34zm6.525 4.8c.6 0 1.18.06 1.56.18.48.12.84.36 1.14.66.3.3.48.66.6 1.08.12.42.18.84.18 1.32v.36c0 .48-.06.9-.24 1.32-.12.36-.36.66-.66.96-.24.18-.48.36-.84.48.48.12.84.36 1.08.72.24.36.36.84.36 1.44v1.08c0 .24 0 .48.06.72.06.18.12.3.24.42v.12h-2.1c-.06-.12-.12-.24-.12-.42-.06-.18-.06-.42-.06-.66v-1.14c0-.48-.12-.84-.3-1.02-.24-.24-.54-.36-1.02-.36h-1.68v3.6h-2.1V4.8h3.78zm-.48 1.68h-1.2v2.82h1.08c.48 0 .84-.06 1.08-.24.24-.18.36-.48.36-.96v-.36c0-.42-.06-.72-.24-.96-.18-.18-.48-.3-1.08-.3z"/></svg>
-          Apple Podcasts
-        </a>
-        <a href="{{ podcast_platforms.amazon }}" target="_blank" rel="noopener noreferrer" class="platform-pill" style="background:linear-gradient(135deg,#f59e0b,#f97316);">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M6.5 8.5h11l1.6 9.5H4.9L6.5 8.5zm1.2-3h8.6l1 2H6.7l1-2zm1.1 5.2-.7 5.1h1.7l.3-2.1h3.8l.3 2.1h1.7l-.7-5.1H8.8zm1.5 1.3h2l.4 2.1H9.9l.4-2.1z"/></svg>
-          Amazon Music
-        </a>
-        <a href="{{ podcast_platforms.youtube }}" target="_blank" rel="noopener noreferrer" class="platform-pill" style="background:#ff0000;">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
-          YouTube
-        </a>
-        <a href="{{ podcast_platforms.google }}" target="_blank" rel="noopener noreferrer" class="platform-pill" style="background:#0066D5;">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M11.28 4.89c-.2-.2-.51-.2-.71 0L6.62 8.84H3.38c-.55 0-1 .45-1 1v4.32c0 .55.45 1 1 1h3.24l3.95 3.95c.2.2.51.2.71 0 .09-.1.15-.22.15-.35V5.24c0-.13-.06-.26-.15-.35z M14.98 5.57c-.31-.23-.75-.17-.98.14s-.17.75.14.98c1.77 1.32 2.83 3.41 2.83 5.63s-1.06 4.31-2.83 5.63c-.31.23-.37.67-.14.98.14.19.36.29.56.29.15 0 .29-.05.42-.14 2.12-1.58 3.39-4.08 3.39-6.76s-1.27-5.18-3.39-6.75z"/></svg>
-          Google Podcasts
-        </a>
-        <a href="{{ podcast_platforms.iheart }}" target="_blank" rel="noopener noreferrer" class="platform-pill" style="background:#5C67DE;">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M6.09 0C2.73 0 0 2.73 0 6.09v11.82C0 21.27 2.73 24 6.09 24h11.82C21.27 24 24 21.27 24 17.91V6.09C24 2.73 21.27 0 17.91 0H6.09zm7.04 5.68h2.14c.66 0 1.2.54 1.2 1.2v2.14c0 .66-.54 1.2-1.2 1.2h-2.14c-.66 0-1.2-.54-1.2-1.2V6.88c0-.66.54-1.2 1.2-1.2z"/></svg>
-          iHeartRadio
-        </a>
+    <div class="card p-6">
+      <p class="text-sm font-bold text-indigo-400 uppercase tracking-[.24em] mb-4">Built for volume</p>
+      <div class="space-y-4 text-sm text-slate-300 leading-relaxed">
+        <div class="card p-4" style="background:#0f172a;border-color:#1e293b;">
+          <div class="font-semibold text-white mb-1">Filter by ticker, quarter, and sector</div>
+          <div>When the Russell 1000 fills out quarter by quarter, the library still stays navigable.</div>
+        </div>
+        <div class="card p-4" style="background:#0f172a;border-color:#1e293b;">
+          <div class="font-semibold text-white mb-1">Open one stock, see the whole archive</div>
+          <div>Every stock detail page now brings together live valuation data, price chart context, and the quarterly episode timeline.</div>
+        </div>
+        <div class="card p-4" style="background:#0f172a;border-color:#1e293b;">
+          <div class="font-semibold text-white mb-1">Match the channel direction</div>
+          <div>The structure now reflects the YouTube cadence: recurring quarterly earnings analysis, not a one-off episode list.</div>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ── Footer ──────────────────────────────────────────────────── -->
-<footer class="py-12 px-6" style="border-top:1px solid #1e293b;">
-  <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
-    <div class="flex items-center gap-3">
-      <div class="logo-bolt" style="width:28px;height:28px;font-size:14px;border-radius:6px;">&#9889;</div>
-      <span class="font-bold text-slate-400 text-sm">CHARGED ALPHA</span>
+<section id="library" class="px-6 pb-8">
+  <div class="max-w-7xl mx-auto card p-5 md:p-6">
+    <div class="grid lg:grid-cols-[1.5fr_repeat(4,minmax(0,1fr))] gap-4">
+      <div class="relative">
+        <svg class="absolute left-4 top-1/2 -translate-y-1/2 text-slate-500" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="9" r="7"/><path d="M15 15l4 4"/></svg>
+        <input id="searchInput" type="text" class="input-shell w-full pl-12 pr-4 py-3.5 text-sm" placeholder="Search by ticker or company name...">
+      </div>
+      <select id="quarterFilter" class="select-shell px-4 py-3.5 text-sm">
+        <option value="All">All quarters</option>
+        {% for quarter in show_quarters %}
+        <option value="{{ quarter }}">{{ quarter }}</option>
+        {% endfor %}
+      </select>
+      <select id="sectorFilter" class="select-shell px-4 py-3.5 text-sm">
+        <option value="All">All sectors</option>
+        {% for sector in show_sectors %}
+        <option value="{{ sector }}">{{ sector }}</option>
+        {% endfor %}
+      </select>
+      <select id="availabilityFilter" class="select-shell px-4 py-3.5 text-sm">
+        <option value="all">All stocks</option>
+        <option value="published">Published only</option>
+        <option value="youtube">Has YouTube</option>
+        <option value="spotify">Has Spotify</option>
+        <option value="planned">Needs episode link</option>
+      </select>
+      <select id="sortSelect" class="select-shell px-4 py-3.5 text-sm">
+        <option value="newest">Newest quarter / episode</option>
+        <option value="ticker">Ticker</option>
+        <option value="name">Company name</option>
+        <option value="sector">Sector</option>
+        <option value="completion">Most complete</option>
+      </select>
     </div>
-    <p class="text-xs text-slate-600">Not financial advice. Tools and content are for educational purposes only.</p>
+    <div class="flex flex-wrap items-center justify-between gap-3 mt-4">
+      <p id="resultCount" class="text-sm text-slate-500">0 stocks</p>
+      <button id="clearBtn" class="text-sm font-semibold text-indigo-300 hover:text-white transition-colors">Clear filters</button>
+    </div>
+  </div>
+</section>
+
+<section class="px-6 pb-24">
+  <div class="max-w-7xl mx-auto">
+    <div id="stockGrid" class="grid md:grid-cols-2 xl:grid-cols-3 gap-5"></div>
+
+    <div id="emptyState" class="empty-state card p-10 text-center mt-6">
+      <div class="text-2xl font-bold text-white mb-2">No stocks matched those filters.</div>
+      <p class="text-slate-500">Try another ticker, sector, or quarter selection.</p>
+    </div>
+
+    <div id="loadMoreWrap" class="text-center mt-10" style="display:none;">
+      <button id="loadMoreBtn" class="btn-secondary">Show More Stocks</button>
+    </div>
+  </div>
+</section>
+
+<footer class="py-12 px-6" style="border-top:1px solid #1e293b;">
+  <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
+    <div class="flex items-center gap-3">
+      <div class="logo-bolt" style="width:28px;height:28px;font-size:14px;border-radius:8px;">&#9889;</div>
+      <span class="text-sm font-bold text-slate-400">CHARGED ALPHA</span>
+    </div>
+    <div class="flex flex-wrap items-center justify-center gap-3 text-xs text-slate-500">
+      <a href="{{ podcast_platforms.youtube }}" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-white no-underline">YouTube</a>
+      <a href="{{ podcast_platforms.spotify }}" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-white no-underline">Spotify</a>
+      <a href="{{ podcast_platforms.apple }}" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-white no-underline">Apple Podcasts</a>
+      <span>Not financial advice. Educational content only.</span>
+    </div>
   </div>
 </footer>
 
 <script>
-var EPISODES = {{ shows_catalog | tojson }}.map(function(show) {
-  return {
-    t: show.ticker,
-    n: show.company,
-    s: show.sector,
-    q: show.quarter,
-    e: show.episode_number,
-    hasEpisode: !!show.has_episode,
-    links: {
-      spotify: show.spotify_url,
-      apple: show.apple_url,
-      amazon: show.amazon_url,
-      youtube: show.youtube_url,
-      google: show.google_url,
-      iheart: show.iheart_url,
-      podcast: show.podbean_url
-    }
-  };
-});
+const STOCKS = {{ show_stocks | tojson }};
+const PAGE_SIZE = 24;
+let visibleCount = PAGE_SIZE;
 
-var PAGE_SIZE = 30;
-var currentPage = 1;
-var activeSector = 'All';
-var searchTerm = '';
-
-function filterSector(sector, btn) {
-  activeSector = sector;
-  currentPage = 1;
-  document.querySelectorAll('.sector-btn').forEach(function(b){b.classList.remove('active')});
-  btn.classList.add('active');
-  renderEpisodes();
+function latestEpisodeNumber(stock) {
+  return parseInt(stock.latest_episode_number || '0', 10) || 0;
 }
 
-function getFiltered() {
-  var q = searchTerm.toLowerCase();
-  var sort = document.getElementById('sortSelect').value;
-  var filtered = EPISODES.filter(function(ep) {
-    if (activeSector !== 'All' && ep.s !== activeSector) return false;
-    if (q && ep.t.toLowerCase().indexOf(q) === -1 && ep.n.toLowerCase().indexOf(q) === -1) return false;
-    return true;
+function quarterSortValue(stock) {
+  const parts = Array.isArray(stock.latest_quarter_sort) ? stock.latest_quarter_sort : [0, 0, ''];
+  return ((Number(parts[0]) || 0) * 10) + (Number(parts[1]) || 0);
+}
+
+function matchesFilters(stock) {
+  const search = document.getElementById('searchInput').value.trim().toLowerCase();
+  const quarter = document.getElementById('quarterFilter').value;
+  const sector = document.getElementById('sectorFilter').value;
+  const availability = document.getElementById('availabilityFilter').value;
+
+  if (search) {
+    const hay = `${stock.ticker} ${stock.company}`.toLowerCase();
+    if (!hay.includes(search)) return false;
+  }
+  if (quarter !== 'All' && !stock.quarter_labels.includes(quarter)) return false;
+  if (sector !== 'All' && stock.sector !== sector) return false;
+  if (availability === 'published' && !(stock.published_count > 0)) return false;
+  if (availability === 'youtube' && !stock.has_youtube) return false;
+  if (availability === 'spotify' && !stock.has_spotify) return false;
+  if (availability === 'planned' && stock.published_count > 0) return false;
+  return true;
+}
+
+function sortStocks(stocks) {
+  const sort = document.getElementById('sortSelect').value;
+  const items = [...stocks];
+  items.sort((a, b) => {
+    if (sort === 'ticker') return a.ticker.localeCompare(b.ticker);
+    if (sort === 'name') return a.company.localeCompare(b.company);
+    if (sort === 'sector') return a.sector.localeCompare(b.sector) || a.ticker.localeCompare(b.ticker);
+    if (sort === 'completion') return (b.published_count - a.published_count) || latestEpisodeNumber(b) - latestEpisodeNumber(a);
+    return quarterSortValue(b) - quarterSortValue(a) || latestEpisodeNumber(b) - latestEpisodeNumber(a) || a.ticker.localeCompare(b.ticker);
   });
-  filtered.sort(function(a, b) {
-    if (sort === 'name') return a.n.localeCompare(b.n);
-    if (sort === 'sector') return a.s.localeCompare(b.s) || a.t.localeCompare(b.t);
-    return a.t.localeCompare(b.t);
-  });
-  return filtered;
+  return items;
 }
 
-function buildLink(href, label, bg, icon) {
-  return '<a href="' + href + '" target="_blank" rel="noopener noreferrer" class="platform-pill" style="background:' + bg + ';font-size:10px;padding:4px 8px;" title="' + label + '">' + icon + '</a>';
+function platformChip(href, label, bg) {
+  if (!href) return '';
+  return `<a href="${href}" target="_blank" rel="noopener noreferrer" class="platform-chip" style="background:${bg};">${label}</a>`;
 }
 
-function renderEpisodes() {
-  var filtered = getFiltered();
-  var visible = filtered.slice(0, currentPage * PAGE_SIZE);
-  var grid = document.getElementById('episodeGrid');
-  var empty = document.getElementById('emptyState');
-  var loadMore = document.getElementById('loadMore');
-  var countEl = document.getElementById('resultCount');
+function renderCard(stock) {
+  const latestQuarter = stock.latest_quarter || 'Quarter TBD';
+  const latestEpisode = stock.latest_episode_number ? `Ep. ${stock.latest_episode_number}` : 'Episode pending';
+  const progressText = `${stock.published_count}/${stock.quarter_count} quarters linked`;
+  const quarterPreview = stock.quarter_labels.slice(0, 4).map(q => `<span class="quarter-chip">${q}</span>`).join('');
+  const chips = [
+    platformChip(stock.latest_links.youtube, 'YouTube', '#dc2626'),
+    platformChip(stock.latest_links.spotify, 'Spotify', '#16a34a'),
+    platformChip(stock.latest_links.apple, 'Apple', 'linear-gradient(135deg,#9333ea,#7c3aed)'),
+    platformChip(stock.latest_links.amazon, 'Amazon', 'linear-gradient(135deg,#f59e0b,#ea580c)'),
+    platformChip(stock.latest_links.podbean, 'Web', '#0284c7')
+  ].join('');
 
-  countEl.textContent = filtered.length + ' stock' + (filtered.length === 1 ? '' : 's');
+  return `
+    <article class="card stock-card p-6 flex flex-col gap-5">
+      <div class="flex items-start justify-between gap-4">
+        <div>
+          <div class="flex items-center gap-2 mb-2">
+            <span class="pill" style="background:rgba(99,102,241,.12);color:#a5b4fc;">${latestQuarter}</span>
+            <span class="pill" style="background:${stock.published_count ? 'rgba(16,185,129,.12)' : 'rgba(148,163,184,.12)'};color:${stock.published_count ? '#6ee7b7' : '#cbd5e1'};">${progressText}</span>
+          </div>
+          <h3 class="text-xl font-bold text-white leading-tight mb-1">${stock.company}</h3>
+          <div class="text-sm text-slate-400">${stock.ticker} &middot; ${stock.sector}</div>
+        </div>
+        <div class="text-right">
+          <div class="text-xs uppercase tracking-[.18em] text-slate-500">Latest</div>
+          <div class="text-sm font-semibold text-white mt-1">${latestEpisode}</div>
+        </div>
+      </div>
 
+      <div>
+        <div class="text-xs uppercase tracking-[.18em] text-slate-500 mb-2">Quarter coverage</div>
+        <div class="flex flex-wrap gap-2">${quarterPreview || '<span class="text-sm text-slate-500">No quarter history yet</span>'}</div>
+      </div>
+
+      <div>
+        <div class="text-xs uppercase tracking-[.18em] text-slate-500 mb-2">Latest quarter links</div>
+        <div class="flex flex-wrap gap-2">${chips || '<span class="text-sm text-slate-500">No verified platform links yet</span>'}</div>
+      </div>
+
+      <div class="mt-auto flex flex-wrap gap-3">
+        <a href="/shows/${stock.slug}" class="btn-primary flex-1">Open Stock Detail</a>
+        ${stock.latest_links.youtube ? `<a href="${stock.latest_links.youtube}" target="_blank" rel="noopener noreferrer" class="btn-secondary">Latest on YouTube</a>` : ''}
+      </div>
+    </article>
+  `;
+}
+
+function render() {
+  const filtered = sortStocks(STOCKS.filter(matchesFilters));
+  const visible = filtered.slice(0, visibleCount);
+  const grid = document.getElementById('stockGrid');
+  const empty = document.getElementById('emptyState');
+  const count = document.getElementById('resultCount');
+  const loadMoreWrap = document.getElementById('loadMoreWrap');
+
+  count.textContent = `${filtered.length} stock${filtered.length === 1 ? '' : 's'}`;
   if (!filtered.length) {
     grid.innerHTML = '';
     empty.style.display = 'block';
-    loadMore.style.display = 'none';
+    loadMoreWrap.style.display = 'none';
     return;
   }
 
   empty.style.display = 'none';
-  loadMore.style.display = visible.length < filtered.length ? 'block' : 'none';
-
-  grid.innerHTML = visible.map(function(ep) {
-    var meta = ep.s + ' &middot; ' + ep.q + (ep.e ? ' &middot; Ep. ' + ep.e : '');
-    var links = [];
-    if (ep.links.spotify) links.push(buildLink(ep.links.spotify, 'Spotify', '#1DB954', '<svg width="12" height="12" viewBox="0 0 24 24" fill="white"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02z"/></svg>'));
-    if (ep.links.apple) links.push(buildLink(ep.links.apple, 'Apple Podcasts', 'linear-gradient(135deg,#9933ff,#7733bb)', '<svg width="12" height="12" viewBox="0 0 24 24" fill="white"><path d="M5.34 0A5.328 5.328 0 000 5.34v13.32A5.328 5.328 0 005.34 24h13.32A5.328 5.328 0 0024 18.66V5.34A5.328 5.328 0 0018.66 0H5.34z"/></svg>'));
-    if (ep.links.amazon) links.push(buildLink(ep.links.amazon, 'Amazon Music', 'linear-gradient(135deg,#f59e0b,#f97316)', '<svg width="12" height="12" viewBox="0 0 24 24" fill="white"><path d="M6.5 8.5h11l1.6 9.5H4.9L6.5 8.5zm1.2-3h8.6l1 2H6.7l1-2zm1.1 5.2-.7 5.1h1.7l.3-2.1h3.8l.3 2.1h1.7l-.7-5.1H8.8zm1.5 1.3h2l.4 2.1H9.9l.4-2.1z"/></svg>'));
-    if (ep.links.youtube) links.push(buildLink(ep.links.youtube, 'YouTube', '#ff0000', '<svg width="12" height="12" viewBox="0 0 24 24" fill="white"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>'));
-    if (ep.links.google) links.push(buildLink(ep.links.google, 'Google Podcasts', '#0066D5', '<svg width="12" height="12" viewBox="0 0 24 24" fill="white"><circle cx="12" cy="12" r="3"/></svg>'));
-    if (ep.links.iheart) links.push(buildLink(ep.links.iheart, 'iHeartRadio', '#5C67DE', '<svg width="12" height="12" viewBox="0 0 24 24" fill="white"><circle cx="12" cy="12" r="3"/></svg>'));
-    if (ep.links.podcast) links.push(buildLink(ep.links.podcast, 'Podcast Web', '#0ea5e9', '<svg width="12" height="12" viewBox="0 0 24 24" fill="white"><path d="M12 3a9 9 0 0 0-3 17.49v-3.02a6 6 0 1 1 6 0v3.02A9 9 0 0 0 12 3zm0 6.5A2.5 2.5 0 1 0 12 14.5 2.5 2.5 0 0 0 12 9.5z"/></svg>'));
-
-    var linksHtml = links.length
-      ? links.join('')
-      : '<span class="text-xs text-slate-500">No verified episode link yet</span>';
-
-    return '<div class="episode-card card p-4 flex flex-col sm:flex-row sm:items-center gap-3">' +
-      '<div class="flex items-center gap-3 flex-1 min-w-0">' +
-        '<div class="w-12 h-12 rounded-xl flex items-center justify-center text-sm font-bold ' + (ep.hasEpisode ? 'text-emerald-300' : 'text-indigo-300') + ' flex-shrink-0" style="background:' + (ep.hasEpisode ? 'rgba(16,185,129,.12)' : 'rgba(99,102,241,.1)') + '">' + ep.t + '</div>' +
-        '<div class="min-w-0">' +
-          '<div class="font-bold text-white text-sm truncate">' + ep.n + '</div>' +
-          '<div class="text-xs text-slate-500">' + meta + '</div>' +
-        '</div>' +
-      '</div>' +
-      '<div class="platform-links flex flex-wrap gap-2 flex-shrink-0">' + linksHtml + '</div>' +
-    '</div>';
-  }).join('');
+  grid.innerHTML = visible.map(renderCard).join('');
+  loadMoreWrap.style.display = visible.length < filtered.length ? 'block' : 'none';
 }
 
-function showMore() {
-  currentPage++;
-  renderEpisodes();
+function resetAndRender() {
+  visibleCount = PAGE_SIZE;
+  render();
 }
 
-var searchTimer;
-document.getElementById('searchInput').addEventListener('input', function(e) {
-  clearTimeout(searchTimer);
-  searchTimer = setTimeout(function() {
-    searchTerm = e.target.value.trim();
-    currentPage = 1;
-    renderEpisodes();
-  }, 200);
+['searchInput','quarterFilter','sectorFilter','availabilityFilter','sortSelect'].forEach(id => {
+  document.getElementById(id).addEventListener('input', resetAndRender);
+  document.getElementById(id).addEventListener('change', resetAndRender);
 });
 
-renderEpisodes();
+document.getElementById('clearBtn').addEventListener('click', () => {
+  document.getElementById('searchInput').value = '';
+  document.getElementById('quarterFilter').value = 'All';
+  document.getElementById('sectorFilter').value = 'All';
+  document.getElementById('availabilityFilter').value = 'all';
+  document.getElementById('sortSelect').value = 'newest';
+  resetAndRender();
+});
+
+document.getElementById('loadMoreBtn').addEventListener('click', () => {
+  visibleCount += PAGE_SIZE;
+  render();
+});
+
+render();
 </script>
 </body>
 </html>
