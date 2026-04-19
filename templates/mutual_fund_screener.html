@@ -65,6 +65,15 @@
     .multi-select-dropdown label { display:flex; align-items:center; gap:8px; padding:6px 12px; cursor:pointer; font-size:12px; color:#94a3b8; transition:background .1s; }
     .multi-select-dropdown label:hover { background:#1e293b; }
     .multi-select-dropdown input { accent-color:#6366f1; width:14px; height:14px; }
+    .fund-search-wrap { position:relative; }
+    .fund-search-suggestions { position:absolute; top:calc(100% + 6px); left:0; right:0; background:#0f172a; border:1px solid #475569; border-radius:10px; box-shadow:0 12px 32px rgba(0,0,0,.45); max-height:320px; overflow-y:auto; z-index:60; display:none; }
+    .fund-search-suggestions.open { display:block; }
+    .fund-suggestion { padding:10px 12px; cursor:pointer; border-bottom:1px solid #1e293b; }
+    .fund-suggestion:last-child { border-bottom:none; }
+    .fund-suggestion:hover, .fund-suggestion.active { background:rgba(99,102,241,.12); }
+    .fund-suggestion-name { color:#e2e8f0; font-size:13px; font-weight:600; }
+    .fund-suggestion-meta { color:#94a3b8; font-size:11px; margin-top:2px; display:flex; gap:8px; flex-wrap:wrap; }
+    .fund-search-empty { padding:12px; color:#64748b; font-size:12px; }
 
     /* ── Advanced filters panel ── */
     .adv-toggle { display:inline-flex; align-items:center; gap:6px; cursor:pointer; color:#94a3b8; font-size:13px; font-weight:500; padding:6px 0; transition:color .15s; user-select:none; }
@@ -323,7 +332,7 @@
         <option value="custom">Custom</option>
       </select>
 
-      <div class="flex-1 min-w-[280px]">
+      <div class="flex-1 min-w-[280px] fund-search-wrap" id="fund-search-wrap">
         <div class="flex gap-2 items-center">
           <input
             id="fund-search"
@@ -331,11 +340,12 @@
             type="text"
             list="fund-search-list"
             placeholder="Find a mutual fund by name or ticker..."
-            onkeydown="if(event.key === 'Enter'){ event.preventDefault(); openSearchFund(); }"
+            autocomplete="off"
           />
           <button class="btn-secondary shrink-0" type="button" onclick="openSearchFund()">Open Fund</button>
         </div>
         <datalist id="fund-search-list"></datalist>
+        <div id="fund-search-suggestions" class="fund-search-suggestions"></div>
       </div>
 
       <!-- Run button -->
@@ -859,6 +869,8 @@ function getManagementStyles() {
 }
 
 let fundCatalog = [];
+let suggestionMatches = [];
+let activeSuggestionIndex = -1;
 
 function normalizeSearchTerm(value) {
   return (value || '').toLowerCase().replace(/\s+/g, ' ').trim();
@@ -871,6 +883,87 @@ function escapeHtml(value) {
     .replace(/>/g, '&gt;')
     .replace(/"/g, '&quot;')
     .replace(/'/g, '&#39;');
+}
+
+function rankFundMatches(query) {
+  const q = normalizeSearchTerm(query);
+  if(!q) return [];
+  return fundCatalog
+    .map(f => {
+      const symbol = normalizeSearchTerm(f.symbol);
+      const name = normalizeSearchTerm(f.name);
+      const combined = normalizeSearchTerm(`${f.name} ${f.symbol}`);
+      let score = 0;
+      if(symbol === q) score += 120;
+      if(name === q) score += 110;
+      if(combined === q) score += 105;
+      if(symbol.startsWith(q)) score += 90;
+      if(name.startsWith(q)) score += 80;
+      if(name.includes(` ${q}`)) score += 65;
+      if(combined.includes(q)) score += 50;
+      if(!score) return null;
+      return { ...f, score };
+    })
+    .filter(Boolean)
+    .sort((a, b) => b.score - a.score || a.name.localeCompare(b.name))
+    .slice(0, 8);
+}
+
+function closeFundSuggestions() {
+  const box = document.getElementById('fund-search-suggestions');
+  box.classList.remove('open');
+  box.innerHTML = '';
+  suggestionMatches = [];
+  activeSuggestionIndex = -1;
+}
+
+function renderFundSuggestions(matches) {
+  const box = document.getElementById('fund-search-suggestions');
+  suggestionMatches = matches;
+  activeSuggestionIndex = matches.length ? 0 : -1;
+  if(!matches.length) {
+    box.innerHTML = '<div class="fund-search-empty">No matching mutual funds in the current universe.</div>';
+    box.classList.add('open');
+    return;
+  }
+  box.innerHTML = matches.map((fund, idx) => `
+    <div class="fund-suggestion ${idx === activeSuggestionIndex ? 'active' : ''}" data-index="${idx}" onclick="selectFundSuggestion(${idx}, true)">
+      <div class="fund-suggestion-name">${escapeHtml(fund.name)} <span class="text-indigo-400">(${escapeHtml(fund.symbol)})</span></div>
+      <div class="fund-suggestion-meta">
+        <span>${escapeHtml(fund.category || '')}</span>
+        <span>${escapeHtml(fund.strategy_focus || '')}</span>
+        <span>${escapeHtml(fund.management_style || '')}</span>
+      </div>
+    </div>
+  `).join('');
+  box.classList.add('open');
+}
+
+function refreshSuggestionHighlight() {
+  const items = [...document.querySelectorAll('.fund-suggestion')];
+  items.forEach((item, idx) => item.classList.toggle('active', idx === activeSuggestionIndex));
+  if(activeSuggestionIndex >= 0 && items[activeSuggestionIndex]) {
+    items[activeSuggestionIndex].scrollIntoView({ block: 'nearest' });
+  }
+}
+
+function selectFundSuggestion(index, openAfterSelect=false) {
+  const fund = suggestionMatches[index];
+  if(!fund) return;
+  document.getElementById('fund-search').value = `${fund.name} (${fund.symbol})`;
+  activeSuggestionIndex = index;
+  refreshSuggestionHighlight();
+  closeFundSuggestions();
+  if(openAfterSelect) openDetail(fund.symbol);
+}
+
+function updateFundSuggestions() {
+  const query = document.getElementById('fund-search').value.trim();
+  if(!query) {
+    closeFundSuggestions();
+    return;
+  }
+  renderFundSuggestions(rankFundMatches(query));
 }
 
 async function loadFundCatalog() {
@@ -891,40 +984,87 @@ async function loadFundCatalog() {
 function findFundMatches(query) {
   const q = normalizeSearchTerm(query);
   if(!q) return [];
-  const exact = fundCatalog.filter(f => {
+  const exact = rankFundMatches(query).filter(f => {
     const symbol = normalizeSearchTerm(f.symbol);
     const name = normalizeSearchTerm(f.name);
     const combined = normalizeSearchTerm(`${f.name} (${f.symbol})`);
     return q === symbol || q === name || q === combined;
   });
   if(exact.length) return exact;
-  return fundCatalog.filter(f => {
-    const symbol = normalizeSearchTerm(f.symbol);
-    const name = normalizeSearchTerm(f.name);
-    const combined = normalizeSearchTerm(`${f.name} ${f.symbol}`);
-    return symbol.includes(q) || name.includes(q) || combined.includes(q);
-  });
+  return rankFundMatches(query);
 }
 
 function openSearchFund() {
   const searchBox = document.getElementById('fund-search');
   const query = searchBox.value.trim();
   if(!query) {
+    closeFundSuggestions();
     submitScreen();
     return;
+  }
+  if(activeSuggestionIndex >= 0 && suggestionMatches[activeSuggestionIndex]) {
+    const activeFund = suggestionMatches[activeSuggestionIndex];
+    const activeLabel = `${activeFund.name} (${activeFund.symbol})`;
+    if(normalizeSearchTerm(query) !== normalizeSearchTerm(activeLabel)) {
+      searchBox.value = activeLabel;
+    }
   }
   const matches = findFundMatches(query);
   if(matches.length === 1) {
     searchBox.value = `${matches[0].name} (${matches[0].symbol})`;
+    closeFundSuggestions();
     openDetail(matches[0].symbol);
     return;
   }
   if(matches.length === 0) {
+    closeFundSuggestions();
     alert('No mutual fund in the current universe matched that name or ticker.');
     return;
   }
+  closeFundSuggestions();
   submitScreen();
 }
+
+const fundSearchInput = document.getElementById('fund-search');
+fundSearchInput.addEventListener('input', updateFundSuggestions);
+fundSearchInput.addEventListener('focus', () => {
+  if(fundSearchInput.value.trim()) updateFundSuggestions();
+});
+fundSearchInput.addEventListener('keydown', (event) => {
+  if(!suggestionMatches.length && event.key === 'Enter') {
+    event.preventDefault();
+    openSearchFund();
+    return;
+  }
+  if(event.key === 'ArrowDown') {
+    event.preventDefault();
+    if(!suggestionMatches.length) {
+      updateFundSuggestions();
+      return;
+    }
+    activeSuggestionIndex = Math.min(activeSuggestionIndex + 1, suggestionMatches.length - 1);
+    refreshSuggestionHighlight();
+  } else if(event.key === 'ArrowUp') {
+    event.preventDefault();
+    if(!suggestionMatches.length) return;
+    activeSuggestionIndex = Math.max(activeSuggestionIndex - 1, 0);
+    refreshSuggestionHighlight();
+  } else if(event.key === 'Enter') {
+    event.preventDefault();
+    if(activeSuggestionIndex >= 0 && suggestionMatches[activeSuggestionIndex]) {
+      selectFundSuggestion(activeSuggestionIndex, true);
+    } else {
+      openSearchFund();
+    }
+  } else if(event.key === 'Escape') {
+    closeFundSuggestions();
+  }
+});
+
+document.addEventListener('click', (event) => {
+  const wrap = document.getElementById('fund-search-wrap');
+  if(wrap && !wrap.contains(event.target)) closeFundSuggestions();
+});
 
 // ════════════════════════════════════════════════
 // PRESETS
