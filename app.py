@@ -714,6 +714,7 @@ def mutual_fund_start():
 
     categories = _extract_list(body, "categories")
     asset_classes = _extract_list(body, "asset_classes")
+    management_styles = _extract_list(body, "management_styles")
 
     criteria = {
         "max_expense_ratio": _f("max_expense_ratio"),
@@ -725,7 +726,17 @@ def mutual_fund_start():
         "min_avg_volume": _f("min_avg_volume"),
         "min_w52_perf": _f("min_w52_perf"), "max_w52_perf": _f("max_w52_perf"),
         "max_w52_dist_high": _f("max_w52_dist_high"),
-        "categories": categories, "asset_classes": asset_classes,
+        "min_morningstar_rating": _f("min_morningstar_rating"),
+        "max_morningstar_risk": _f("max_morningstar_risk"),
+        "max_beta": _f("max_beta"),
+        "max_turnover_pct": _f("max_turnover_pct"),
+        "min_years_history": _f("min_years_history"),
+        "min_stock_position": _f("min_stock_position"),
+        "min_bond_position": _f("min_bond_position"),
+        "max_cash_position": _f("max_cash_position"),
+        "categories": categories,
+        "asset_classes": asset_classes,
+        "management_styles": management_styles,
     }
     job_id = _start_job(screen_mutual_funds, criteria)
     return jsonify({"job_id": job_id})

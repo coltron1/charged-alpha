@@ -250,26 +250,36 @@
     </div>
 
     <!-- ═══ Quick Screen Cards (homepage) ═══ -->
-    <div id="quick-screen-cards" class="grid grid-cols-2 lg:grid-cols-4 gap-4 mt-6 beginner-only">
+    <div id="quick-screen-cards" class="grid grid-cols-2 lg:grid-cols-6 gap-4 mt-6 beginner-only">
       <a class="preset-card" href="javascript:void(0)" onclick="applyPreset('low_cost')">
         <span class="preset-icon">$</span>
         <h3>Low Cost Core</h3>
-        <p>Expense ratio under 0.1%, AUM over $10B</p>
-      </a>
-      <a class="preset-card" href="javascript:void(0)" onclick="applyPreset('high_yield')">
-        <span class="preset-icon">%</span>
-        <h3>High Yield</h3>
-        <p>Dividend yield above 3% for income generation</p>
+        <p>Cheap, seasoned core funds with strong scale.</p>
       </a>
       <a class="preset-card" href="javascript:void(0)" onclick="applyPreset('international')">
         <span class="preset-icon">&#127760;</span>
         <h3>International Core</h3>
-        <p>Developed and emerging-market mutual funds with low fees</p>
+        <p>Broader non-US exposure with low fees and larger fund bases.</p>
+      </a>
+      <a class="preset-card" href="javascript:void(0)" onclick="applyPreset('high_yield')">
+        <span class="preset-icon">%</span>
+        <h3>Income</h3>
+        <p>Funds leaning toward higher distributions and steadier income.</p>
       </a>
       <a class="preset-card" href="javascript:void(0)" onclick="applyPreset('balanced')">
         <span class="preset-icon">&#9878;</span>
-        <h3>Balanced Funds</h3>
-        <p>Allocation funds that blend stocks and bonds in one holding</p>
+        <h3>Balanced</h3>
+        <p>One-ticket allocation funds with built-in stock/bond mix.</p>
+      </a>
+      <a class="preset-card" href="javascript:void(0)" onclick="applyPreset('active_growth')">
+        <span class="preset-icon">&#128640;</span>
+        <h3>Active Growth</h3>
+        <p>Actively managed equity funds with stronger recent records.</p>
+      </a>
+      <a class="preset-card" href="javascript:void(0)" onclick="applyPreset('bond_defense')">
+        <span class="preset-icon">&#128737;</span>
+        <h3>Bond Defense</h3>
+        <p>Defensive, income-oriented funds with meaningful bond exposure.</p>
       </a>
     </div>
   </div>
@@ -294,13 +304,22 @@
         <button class="cap-chip active" data-ac="Mixed" onclick="toggleAssetClass(this)">Mixed</button>
       </div>
 
+      <!-- Management style quick filter -->
+      <div class="flex gap-2 flex-wrap">
+        <button class="cap-chip active" data-ms="Index" onclick="toggleManagementStyle(this)">Index</button>
+        <button class="cap-chip active" data-ms="Active" onclick="toggleManagementStyle(this)">Active</button>
+      </div>
+
       <!-- Strategy presets -->
       <select class="preset-select" id="preset-select" onchange="applyPreset(this.value)">
         <option value="">Strategy Preset</option>
         <option value="low_cost">$ Low Cost Core</option>
-        <option value="high_yield">% High Yield</option>
         <option value="international">&#127760; International Core</option>
-        <option value="balanced">&#9878; Balanced Funds</option>
+        <option value="high_yield">% Income Focus</option>
+        <option value="balanced">&#9878; Balanced / Allocation</option>
+        <option value="active_growth">&#128640; Active Growth</option>
+        <option value="bond_defense">&#128737; Bond Defense</option>
+        <option value="seasoned">&#9201; Long Track Record</option>
         <option value="custom">Custom</option>
       </select>
 
@@ -319,6 +338,8 @@
         <div class="filter-tabs" id="filter-tabs">
           <button class="filter-tab active" data-tab="performance" onclick="switchTab('performance')">Performance</button>
           <button class="filter-tab" data-tab="cost_size" onclick="switchTab('cost_size')">Cost & Size</button>
+          <button class="filter-tab" data-tab="quality_risk" onclick="switchTab('quality_risk')">Quality & Risk</button>
+          <button class="filter-tab" data-tab="portfolio_fit" onclick="switchTab('portfolio_fit')">Portfolio Fit</button>
           <button class="filter-tab" data-tab="income" onclick="switchTab('income')">Income</button>
         </div>
 
@@ -349,7 +370,7 @@
             <div class="space-y-2">
               <div class="flex items-center gap-2">
                 <p class="text-sm font-medium text-slate-200">52-Week Performance (%)</p>
-                <span class="info-icon beginner-only" data-tip="Price change from 52-week low to current price.">i</span>
+                <span class="info-icon beginner-only" data-tip="Price change from the 52-week low to the current price.">i</span>
               </div>
               <div class="flex items-center gap-2">
                 <input type="number" id="min_w52_perf" placeholder="Min" step="1" class="input-field" />
@@ -360,7 +381,7 @@
             <div class="space-y-2">
               <div class="flex items-center gap-2">
                 <p class="text-sm font-medium text-slate-200">Distance from 52-Wk High (%)</p>
-                <span class="info-icon beginner-only" data-tip="How far below the 52-week high. Under 5% = near the top (momentum). Over 20% = potentially oversold.">i</span>
+                <span class="info-icon beginner-only" data-tip="How far below the 52-week high. Lower values often signal stronger momentum.">i</span>
               </div>
               <input type="number" id="max_w52_dist_high" placeholder="Max %" step="1" class="input-field" />
             </div>
@@ -373,14 +394,14 @@
             <div class="space-y-2">
               <div class="flex items-center gap-2">
                 <p class="text-sm font-medium text-slate-200">Max Expense Ratio (%)</p>
-                <span class="info-icon beginner-only" data-tip="Annual fee charged by the fund. Under 0.1% is ultra-low cost. Under 0.5% is reasonable. Over 1% is expensive.">i</span>
+                <span class="info-icon beginner-only" data-tip="Annual fee charged by the fund. Lower is usually better unless an active strategy is proving its worth.">i</span>
               </div>
-              <input type="number" id="max_expense_ratio" placeholder="e.g. 0.2" min="0" step="0.01" class="input-field" />
+              <input type="number" id="max_expense_ratio" placeholder="e.g. 0.20" min="0" step="0.01" class="input-field" />
             </div>
             <div class="space-y-2">
               <div class="flex items-center gap-2">
                 <p class="text-sm font-medium text-slate-200">Min AUM ($)</p>
-                <span class="info-icon beginner-only" data-tip="Minimum total assets under management. Larger funds are more liquid and less likely to close. $1B+ is considered large.">i</span>
+                <span class="info-icon beginner-only" data-tip="Larger asset bases often mean stronger adoption and a lower chance the fund gets shut down.">i</span>
               </div>
               <select id="min_aum" class="input-field">
                 <option value="">Any</option>
@@ -395,7 +416,7 @@
             <div class="space-y-2">
               <div class="flex items-center gap-2">
                 <p class="text-sm font-medium text-slate-200">Min Avg Daily Volume</p>
-                <span class="info-icon beginner-only" data-tip="Minimum average daily trading volume. Higher volume = tighter spreads and easier entry/exit. 500K+ is liquid.">i</span>
+                <span class="info-icon beginner-only" data-tip="Higher volume generally means easier entries/exits and tighter spreads.">i</span>
               </div>
               <select id="min_avg_volume" class="input-field">
                 <option value="">Any</option>
@@ -406,6 +427,102 @@
                 <option value="10000000">10M+</option>
               </select>
             </div>
+            <div class="space-y-2">
+              <div class="flex items-center gap-2">
+                <p class="text-sm font-medium text-slate-200">Min Years Since Inception</p>
+                <span class="info-icon beginner-only" data-tip="A longer live record makes it easier to judge how the strategy held up across cycles.">i</span>
+              </div>
+              <select id="min_years_history" class="input-field">
+                <option value="">Any</option>
+                <option value="3">3+ years</option>
+                <option value="5">5+ years</option>
+                <option value="10">10+ years</option>
+                <option value="15">15+ years</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <!-- Quality & Risk tab -->
+        <div class="filter-tab-content" data-tab="quality_risk">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="space-y-2">
+              <div class="flex items-center gap-2">
+                <p class="text-sm font-medium text-slate-200">Min Morningstar Rating</p>
+                <span class="info-icon beginner-only" data-tip="A quick way to surface stronger historical risk-adjusted performers inside a category.">i</span>
+              </div>
+              <select id="min_morningstar_rating" class="input-field">
+                <option value="">Any</option>
+                <option value="3">3 stars+</option>
+                <option value="4">4 stars+</option>
+                <option value="5">5 stars only</option>
+              </select>
+            </div>
+            <div class="space-y-2">
+              <div class="flex items-center gap-2">
+                <p class="text-sm font-medium text-slate-200">Max Morningstar Risk Rating</p>
+                <span class="info-icon beginner-only" data-tip="Lower values can help surface smoother funds for conservative investors.">i</span>
+              </div>
+              <select id="max_morningstar_risk" class="input-field">
+                <option value="">Any</option>
+                <option value="5">5 or lower</option>
+                <option value="4">4 or lower</option>
+                <option value="3">3 or lower</option>
+                <option value="2">2 or lower</option>
+              </select>
+            </div>
+            <div class="space-y-2">
+              <div class="flex items-center gap-2">
+                <p class="text-sm font-medium text-slate-200">Max Beta</p>
+                <span class="info-icon beginner-only" data-tip="Beta below 1 usually means less sensitivity than the broad market. Helpful for defensive screens.">i</span>
+              </div>
+              <input type="number" id="max_beta" placeholder="e.g. 1.00" min="0" step="0.05" class="input-field" />
+            </div>
+            <div class="space-y-2">
+              <div class="flex items-center gap-2">
+                <p class="text-sm font-medium text-slate-200">Max Turnover (%)</p>
+                <span class="info-icon beginner-only" data-tip="Lower turnover often points to a steadier process and potentially lower hidden trading costs.">i</span>
+              </div>
+              <input type="number" id="max_turnover_pct" placeholder="e.g. 40" min="0" step="1" class="input-field" />
+            </div>
+          </div>
+        </div>
+
+        <!-- Portfolio Fit tab -->
+        <div class="filter-tab-content" data-tab="portfolio_fit">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="space-y-2">
+              <div class="flex items-center gap-2">
+                <p class="text-sm font-medium text-slate-200">Management Style</p>
+                <span class="info-icon beginner-only" data-tip="Index funds usually target broad exposure at low cost. Active funds lean on manager skill and tend to cost more.">i</span>
+              </div>
+              <select id="management_style" class="input-field">
+                <option value="">Any</option>
+                <option value="Index">Index</option>
+                <option value="Active">Active</option>
+              </select>
+            </div>
+            <div class="space-y-2">
+              <div class="flex items-center gap-2">
+                <p class="text-sm font-medium text-slate-200">Min Stock Allocation (%)</p>
+                <span class="info-icon beginner-only" data-tip="Useful when you want true equity-heavy funds rather than balanced funds or bond funds.">i</span>
+              </div>
+              <input type="number" id="min_stock_position" placeholder="e.g. 80" min="0" max="100" step="1" class="input-field" />
+            </div>
+            <div class="space-y-2">
+              <div class="flex items-center gap-2">
+                <p class="text-sm font-medium text-slate-200">Min Bond Allocation (%)</p>
+                <span class="info-icon beginner-only" data-tip="Useful when screening for income or defensive funds with real bond exposure.">i</span>
+              </div>
+              <input type="number" id="min_bond_position" placeholder="e.g. 50" min="0" max="100" step="1" class="input-field" />
+            </div>
+            <div class="space-y-2">
+              <div class="flex items-center gap-2">
+                <p class="text-sm font-medium text-slate-200">Max Cash Position (%)</p>
+                <span class="info-icon beginner-only" data-tip="Helps you avoid funds carrying unusually high cash balances if you want tighter exposure.">i</span>
+              </div>
+              <input type="number" id="max_cash_position" placeholder="e.g. 10" min="0" max="100" step="1" class="input-field" />
+            </div>
           </div>
         </div>
 
@@ -415,7 +532,7 @@
             <div class="space-y-2">
               <div class="flex items-center gap-2">
                 <p class="text-sm font-medium text-slate-200">Dividend Yield (%)</p>
-                <span class="info-icon beginner-only" data-tip="Annual distribution yield. 2-4% is moderate. Above 5% is high yield but may indicate risk.">i</span>
+                <span class="info-icon beginner-only" data-tip="Annual distribution yield. Higher can help income investors, but very high yields deserve deeper risk review.">i</span>
               </div>
               <div class="flex items-center gap-2">
                 <input type="number" id="min_div_yield" placeholder="Min" min="0" step="0.1" class="input-field" />
@@ -475,11 +592,12 @@
     <div class="edu-guidance beginner-only" id="eduGuidance" style="display:none">
       <h3>📊 Understanding Mutual Fund Screening Results</h3>
       <ul>
-        <li><strong>Expense Ratio:</strong> The annual fee you pay to hold the fund. Under 0.10% is ultra-low cost for index mutual funds. Above 0.50% deserves a closer look unless the strategy is intentionally active.</li>
-        <li><strong>AUM (Assets Under Management):</strong> Larger funds often signal broader adoption and more staying power. For core holdings, bigger and more established funds are usually easier to trust.</li>
-        <li><strong>Dividend Yield:</strong> The annual income you receive as a percentage of the price. 2-4% is moderate. Above 5% can signal higher risk or a declining price.</li>
-        <li><strong>52-Week Performance:</strong> Shows how much the fund has gained from its yearly low. Strong recent performance can reflect momentum, while weaker performance may point to value, risk, or a different asset mix.</li>
-        <li><strong>Click any row</strong> to see an inline summary. <strong>Double-click</strong> for the full detail view with price charts, top holdings, and sector breakdown.</li>
+        <li><strong>Expense Ratio:</strong> Lower ongoing costs leave more of the return in your pocket. This matters most for core long-term holdings.</li>
+        <li><strong>Morningstar Rating + Risk:</strong> A star rating can help surface stronger past risk-adjusted funds, while the risk rating helps you avoid strategies that may swing harder than you want.</li>
+        <li><strong>Turnover:</strong> Higher turnover means the manager trades more often. That can be fine for active strategies, but lower turnover often points to a steadier process.</li>
+        <li><strong>Track Record:</strong> Funds with 5-10+ years of live history are easier to judge through multiple market environments.</li>
+        <li><strong>Portfolio Fit:</strong> Stock/bond/cash allocation helps you see whether a fund really matches the role you want it to play in a portfolio.</li>
+        <li><strong>Open the detail view</strong> for the full breakdown: description, style, ratings, asset mix, holdings, sectors, and bond credit exposure where available.</li>
       </ul>
     </div>
 
@@ -513,6 +631,16 @@
       <p class="text-red-400 text-lg">Failed to load data</p>
       <p id="detail-error-msg" class="text-slate-500 text-sm mt-1"></p>
     </div>
+    <div id="detail-summary-section" class="hidden card">
+      <div class="p-5 border-b border-slate-700 flex items-center justify-between flex-wrap gap-3">
+        <h2 class="text-sm font-semibold text-slate-200 uppercase tracking-wider">Fund Summary</h2>
+        <span id="detail-style-badge" class="badge tag-blue"></span>
+      </div>
+      <div class="p-5 space-y-4">
+        <div id="detail-summary-grid" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3"></div>
+        <div id="description-content" class="text-sm text-slate-300 leading-7"></div>
+      </div>
+    </div>
     <div id="detail-metrics" class="hidden">
       <p class="section-label">Key Metrics</p>
       <div id="metrics-grid" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-3"></div>
@@ -528,6 +656,24 @@
         </div>
       </div>
       <div class="p-4"><div id="chart-wrap"><canvas id="price-chart"></canvas><div id="chart-overlay" class="visible"><div class="w-6 h-6 border-2 border-indigo-500 border-t-transparent rounded-full animate-spin"></div></div></div></div>
+    </div>
+    <div id="detail-asset-mix-section" class="hidden card">
+      <div class="p-5 border-b border-slate-700">
+        <h2 class="text-sm font-semibold text-slate-200 uppercase tracking-wider">Asset Mix</h2>
+      </div>
+      <div class="p-5" id="asset-mix-content"></div>
+    </div>
+    <div id="detail-bond-section" class="hidden card">
+      <div class="p-5 border-b border-slate-700">
+        <h2 class="text-sm font-semibold text-slate-200 uppercase tracking-wider">Bond Profile</h2>
+      </div>
+      <div class="p-5" id="bond-stats-content"></div>
+    </div>
+    <div id="detail-credit-section" class="hidden card">
+      <div class="p-5 border-b border-slate-700">
+        <h2 class="text-sm font-semibold text-slate-200 uppercase tracking-wider">Bond Credit Exposure</h2>
+      </div>
+      <div class="p-5" id="credit-ratings-content"></div>
     </div>
     <!-- Holdings -->
     <div id="detail-holdings-section" class="hidden card">
@@ -554,10 +700,56 @@
 const CATEGORIES = ["US Equity", "International Equity", "Bond", "International Bond", "Allocation"];
 
 const PRESETS = {
-  low_cost:      { max_expense_ratio: 0.1, min_aum: 10000000000, tab: 'cost_size' },
-  high_yield:    { min_div_yield: 2.5, tab: 'income' },
-  international: { categories: ['International Equity'], max_expense_ratio: 0.15, min_aum: 5000000000, tab: 'cost_size' },
-  balanced:      { categories: ['Allocation'], max_expense_ratio: 0.4, tab: 'cost_size' },
+  low_cost: {
+    max_expense_ratio: 0.10,
+    min_aum: 10000000000,
+    min_years_history: 5,
+    min_morningstar_rating: 3,
+    management_styles: ['Index'],
+    tab: 'cost_size'
+  },
+  international: {
+    categories: ['International Equity'],
+    max_expense_ratio: 0.20,
+    min_aum: 1000000000,
+    min_years_history: 5,
+    tab: 'cost_size'
+  },
+  high_yield: {
+    min_div_yield: 2.5,
+    max_morningstar_risk: 4,
+    tab: 'income'
+  },
+  balanced: {
+    categories: ['Allocation'],
+    max_expense_ratio: 0.60,
+    max_beta: 1.0,
+    min_years_history: 5,
+    tab: 'portfolio_fit'
+  },
+  active_growth: {
+    categories: ['US Equity'],
+    management_styles: ['Active'],
+    min_3y_return: 8,
+    min_morningstar_rating: 3,
+    max_expense_ratio: 0.90,
+    min_stock_position: 80,
+    tab: 'quality_risk'
+  },
+  bond_defense: {
+    asset_classes: ['Bonds'],
+    min_bond_position: 70,
+    max_beta: 0.80,
+    min_div_yield: 2.0,
+    min_years_history: 5,
+    tab: 'portfolio_fit'
+  },
+  seasoned: {
+    min_years_history: 10,
+    min_morningstar_rating: 3,
+    min_aum: 1000000000,
+    tab: 'quality_risk'
+  },
 };
 
 const SECTOR_COLORS = [
@@ -620,8 +812,27 @@ function toggleAssetClass(el) {
   el.classList.toggle('active');
 }
 function getAssetClasses() {
-  const active = [...document.querySelectorAll('.cap-chip.active')].map(c=>c.dataset.ac);
+  const active = [...document.querySelectorAll('[data-ac].active')].map(c=>c.dataset.ac);
   return active.length && active.length < 3 ? active : null;
+}
+
+function toggleManagementStyle(el) {
+  el.classList.toggle('active');
+  const active = [...document.querySelectorAll('[data-ms].active')];
+  if(active.length === 1) {
+    const val = active[0].dataset.ms;
+    const select = document.getElementById('management_style');
+    if(select) select.value = val;
+  } else {
+    const select = document.getElementById('management_style');
+    if(select) select.value = '';
+  }
+}
+function getManagementStyles() {
+  const manual = document.getElementById('management_style')?.value;
+  if(manual) return [manual];
+  const active = [...document.querySelectorAll('[data-ms].active')].map(c=>c.dataset.ms);
+  return active.length && active.length < 2 ? active : null;
 }
 
 // ════════════════════════════════════════════════
@@ -637,19 +848,35 @@ function applyPreset(name) {
   }
   document.getElementById('preset-select').value = name;
 
-  if(preset.max_expense_ratio != null) document.getElementById('max_expense_ratio').value = preset.max_expense_ratio;
-  if(preset.min_aum != null) document.getElementById('min_aum').value = preset.min_aum;
-  if(preset.min_div_yield != null) document.getElementById('min_div_yield').value = preset.min_div_yield;
-  if(preset.min_1y_return != null) document.getElementById('min_1y_return').value = preset.min_1y_return;
-  if(preset.min_ytd_return != null) document.getElementById('min_ytd_return').value = preset.min_ytd_return;
-  if(preset.min_3y_return != null) document.getElementById('min_3y_return').value = preset.min_3y_return;
+  [
+    'max_expense_ratio','min_aum','min_div_yield','max_div_yield','min_1y_return','min_ytd_return','min_3y_return',
+    'min_morningstar_rating','max_morningstar_risk','max_beta','max_turnover_pct','min_years_history',
+    'min_stock_position','min_bond_position','max_cash_position'
+  ].forEach(id => {
+    if(preset[id] != null && document.getElementById(id)) {
+      document.getElementById(id).value = preset[id];
+    }
+  });
 
-  // Category preset
   if(preset.categories) {
     document.querySelectorAll('.category-cb').forEach(cb => {
       cb.checked = preset.categories.includes(cb.value);
     });
     updateCategoryLabel();
+  }
+
+  if(preset.asset_classes) {
+    document.querySelectorAll('[data-ac]').forEach(btn => {
+      btn.classList.toggle('active', preset.asset_classes.includes(btn.dataset.ac));
+    });
+  }
+
+  if(preset.management_styles) {
+    document.querySelectorAll('[data-ms]').forEach(btn => {
+      btn.classList.toggle('active', preset.management_styles.includes(btn.dataset.ms));
+    });
+    const styleSelect = document.getElementById('management_style');
+    if(styleSelect && preset.management_styles.length === 1) styleSelect.value = preset.management_styles[0];
   }
 
   toggleAdvanced(true);
@@ -658,16 +885,16 @@ function applyPreset(name) {
 }
 
 function clearAllFilters(silent) {
-  ['max_expense_ratio','min_div_yield','max_div_yield',
-   'min_ytd_return','min_1y_return','min_3y_return',
-   'min_w52_perf','max_w52_perf','max_w52_dist_high'
+  [
+    'max_expense_ratio','min_div_yield','max_div_yield','min_ytd_return','min_1y_return','min_3y_return',
+    'min_w52_perf','max_w52_perf','max_w52_dist_high','min_morningstar_rating','max_morningstar_risk',
+    'max_beta','max_turnover_pct','min_years_history','management_style','min_stock_position','min_bond_position','max_cash_position'
   ].forEach(id => { const el=document.getElementById(id); if(el) el.value=''; });
   document.getElementById('min_aum').value = '';
   document.getElementById('min_avg_volume').value = '';
   document.querySelectorAll('.category-cb').forEach(cb => cb.checked = false);
   updateCategoryLabel();
-  // Reset asset class chips to all active
-  document.querySelectorAll('.cap-chip').forEach(c => c.classList.add('active'));
+  document.querySelectorAll('[data-ac], [data-ms]').forEach(c => c.classList.add('active'));
   if(!silent) {
     document.getElementById('preset-select').value = '';
     updateAdvCount();
@@ -691,10 +918,12 @@ function switchTab(name) {
 }
 
 function updateAdvCount() {
-  const fields = ['max_expense_ratio','min_aum','min_avg_volume',
-    'min_div_yield','max_div_yield',
-    'min_ytd_return','min_1y_return','min_3y_return',
-    'min_w52_perf','max_w52_perf','max_w52_dist_high'];
+  const fields = [
+    'max_expense_ratio','min_aum','min_avg_volume','min_years_history',
+    'min_div_yield','max_div_yield','min_ytd_return','min_1y_return','min_3y_return',
+    'min_w52_perf','max_w52_perf','max_w52_dist_high','min_morningstar_rating','max_morningstar_risk',
+    'max_beta','max_turnover_pct','management_style','min_stock_position','min_bond_position','max_cash_position'
+  ];
   let count = 0;
   fields.forEach(id => {
     const el = document.getElementById(id);
@@ -702,13 +931,17 @@ function updateAdvCount() {
     if(el.value && el.value !== '') count++;
   });
   if(document.querySelectorAll('.category-cb:checked').length) count++;
+  if(getAssetClasses()) count++;
+  if(getManagementStyles()) count++;
   document.getElementById('adv-count').textContent = count ? `(${count})` : '';
 
-  const tabCounts = { performance:0, cost_size:0, income:0 };
+  const tabCounts = { performance:0, cost_size:0, quality_risk:0, portfolio_fit:0, income:0 };
   const tabMap = {
     min_ytd_return:'performance', min_1y_return:'performance', min_3y_return:'performance',
     min_w52_perf:'performance', max_w52_perf:'performance', max_w52_dist_high:'performance',
-    max_expense_ratio:'cost_size', min_aum:'cost_size', min_avg_volume:'cost_size',
+    max_expense_ratio:'cost_size', min_aum:'cost_size', min_avg_volume:'cost_size', min_years_history:'cost_size',
+    min_morningstar_rating:'quality_risk', max_morningstar_risk:'quality_risk', max_beta:'quality_risk', max_turnover_pct:'quality_risk',
+    management_style:'portfolio_fit', min_stock_position:'portfolio_fit', min_bond_position:'portfolio_fit', max_cash_position:'portfolio_fit',
     min_div_yield:'income', max_div_yield:'income',
   };
   fields.forEach(id => {
@@ -722,7 +955,13 @@ function updateAdvCount() {
   document.querySelectorAll('.filter-tab').forEach(t => {
     const tab = t.dataset.tab;
     const c = tabCounts[tab] || 0;
-    const base = {performance:'Performance',cost_size:'Cost & Size',income:'Income'}[tab];
+    const base = {
+      performance:'Performance',
+      cost_size:'Cost & Size',
+      quality_risk:'Quality & Risk',
+      portfolio_fit:'Portfolio Fit',
+      income:'Income'
+    }[tab];
     t.textContent = c ? `${base} (${c})` : base;
   });
 }
@@ -757,26 +996,31 @@ function getActiveColumns() {
     {key:'change_pct',label:'Day %',align:'right',always:true,tip:'Intraday price change %'},
   ];
 
-  const hasExpense = !!document.getElementById('max_expense_ratio').value;
-  const hasAUM = !!document.getElementById('min_aum').value;
-  const hasDiv = !!document.getElementById('min_div_yield').value || !!document.getElementById('max_div_yield').value;
   const hasPerf = !!document.getElementById('min_ytd_return').value || !!document.getElementById('min_1y_return').value || !!document.getElementById('min_3y_return').value || !!document.getElementById('min_w52_perf').value || !!document.getElementById('max_w52_dist_high').value;
   const hasVol = !!document.getElementById('min_avg_volume').value;
+  const hasQuality = !!document.getElementById('min_morningstar_rating').value || !!document.getElementById('max_morningstar_risk').value || !!document.getElementById('max_beta').value || !!document.getElementById('max_turnover_pct').value;
+  const hasStyle = !!document.getElementById('management_style').value || !!getManagementStyles();
 
-  // Always show expense ratio and AUM
   cols.push({key:'expense_ratio',label:'Exp. Ratio',align:'right',tip:'Annual expense ratio (%)'});
   cols.push({key:'total_assets',label:'AUM',align:'right',tip:'Total assets under management'});
+  cols.push({key:'dividend_yield',label:'Yield %',align:'right',tip:'Annual distribution yield (%)'});
 
-  if(hasDiv || true) {
-    cols.push({key:'dividend_yield',label:'Yield %',align:'right',tip:'Annual distribution yield (%)'});
-  }
   if(hasPerf) {
     if(document.getElementById('min_ytd_return').value) cols.push({key:'ytd_return',label:'YTD %',align:'right',tip:'Year-to-date return (%)'});
-    if(document.getElementById('min_1y_return').value || document.getElementById('min_w52_perf').value) cols.push({key:'one_year_return',label:'1Y %',align:'right',tip:'1-year return from 52-week low (%)'});
+    if(document.getElementById('min_1y_return').value || document.getElementById('min_w52_perf').value) cols.push({key:'one_year_return',label:'1Y %',align:'right',tip:'Approximate 1-year price return (%)'});
     if(document.getElementById('min_3y_return').value) cols.push({key:'three_year_return',label:'3Y Ann %',align:'right',tip:'3-year annualized return (%)'});
+  }
+  if(hasQuality) {
+    if(document.getElementById('min_morningstar_rating').value) cols.push({key:'morningstar_rating',label:'Stars',align:'right',tip:'Morningstar overall rating'});
+    if(document.getElementById('max_morningstar_risk').value) cols.push({key:'morningstar_risk',label:'Risk',align:'right',tip:'Morningstar risk rating'});
+    if(document.getElementById('max_beta').value) cols.push({key:'beta',label:'Beta',align:'right',tip:'3-year beta vs market'});
+    if(document.getElementById('max_turnover_pct').value) cols.push({key:'turnover_pct',label:'Turnover',align:'right',tip:'Annual holdings turnover (%)'});
   }
   if(hasVol) {
     cols.push({key:'avg_volume',label:'Avg Vol',align:'right',tip:'Average daily trading volume'});
+  }
+  if(hasStyle) {
+    cols.push({key:'management_style',label:'Style',align:'left',tip:'Index or active management'});
   }
   cols.push({key:'asset_class',label:'Asset Class',align:'left',tip:'Primary asset class (Stocks, Bonds, Mixed)'});
   return cols;
@@ -799,8 +1043,17 @@ async function submitScreen() {
     min_w52_perf: document.getElementById('min_w52_perf').value||null,
     max_w52_perf: document.getElementById('max_w52_perf').value||null,
     max_w52_dist_high: document.getElementById('max_w52_dist_high').value||null,
+    min_morningstar_rating: document.getElementById('min_morningstar_rating').value||null,
+    max_morningstar_risk: document.getElementById('max_morningstar_risk').value||null,
+    max_beta: document.getElementById('max_beta').value||null,
+    max_turnover_pct: document.getElementById('max_turnover_pct').value||null,
+    min_years_history: document.getElementById('min_years_history').value||null,
+    min_stock_position: document.getElementById('min_stock_position').value||null,
+    min_bond_position: document.getElementById('min_bond_position').value||null,
+    max_cash_position: document.getElementById('max_cash_position').value||null,
     categories: getSelectedCategories(),
     asset_classes: getAssetClasses(),
+    management_styles: getManagementStyles(),
   };
 
   const runBtns = document.querySelectorAll('.btn-primary');
@@ -853,6 +1106,8 @@ function showResults(results){
     if(divStocks.length) agg.push(`avg yield ${(divStocks.reduce((s,r)=>s+r.dividend_yield,0)/divStocks.length).toFixed(2)}%`);
     const aumStocks = results.filter(r=>r.total_assets);
     if(aumStocks.length) agg.push(`median AUM ${formatAUM(median(aumStocks.map(r=>r.total_assets)))}`);
+    const rated = results.filter(r=>r.morningstar_rating!=null);
+    if(rated.length) agg.push(`avg stars ${(rated.reduce((s,r)=>s+r.morningstar_rating,0)/rated.length).toFixed(1)}`);
   }
   document.getElementById('result-agg').textContent = agg.join(' . ');
   renderTable(results);
@@ -917,9 +1172,10 @@ function formatCell(key, s) {
       return `<span class="badge ${cls}">${v}</span>`;
     }
     case 'asset_class': {
-      const cls = {Stocks:'tag-blue',Bonds:'tag-green',Commodities:'tag-amber',Mixed:'tag-gray'}[v]||'tag-gray';
+      const cls = {Stocks:'tag-blue',Bonds:'tag-green',Mixed:'tag-gray'}[v]||'tag-gray';
       return `<span class="badge ${cls}">${v}</span>`;
     }
+    case 'management_style': return v ? `<span class="badge ${v==='Index'?'tag-blue':'tag-purple'}">${v}</span>` : '-';
     case 'price': return `<span class="font-mono">$${s.price.toFixed(2)}</span>`;
     case 'change_pct': {
       if(v==null) return '-';
@@ -930,33 +1186,33 @@ function formatCell(key, s) {
       if(v==null) return '-';
       return `<span class="font-mono ${v<=0.1?'text-green-400':v<=0.5?'text-slate-300':'text-amber-400'}">${v.toFixed(2)}%</span>`;
     case 'total_assets': return `<span class="text-slate-400 text-xs">${formatAUM(v)}</span>`;
-    case 'dividend_yield':
-      return v!=null ? `<span class="font-mono">${v.toFixed(2)}%</span>` : '-';
+    case 'dividend_yield': return v!=null ? `<span class="font-mono">${v.toFixed(2)}%</span>` : '-';
     case 'ytd_return': case 'one_year_return': case 'three_year_return':
       if(v==null) return '-';
       return `<span class="font-mono ${v>=0?'text-green-400':'text-red-400'}">${v>=0?'+':''}${v.toFixed(1)}%</span>`;
-    case 'avg_volume':
-      if(!v) return '-';
-      return `<span class="text-slate-400 text-xs">${formatVolume(v)}</span>`;
+    case 'avg_volume': return v ? `<span class="text-slate-400 text-xs">${formatVolume(v)}</span>` : '-';
+    case 'beta': return v!=null ? `<span class="font-mono">${v.toFixed(2)}</span>` : '-';
+    case 'turnover_pct': return v!=null ? `<span class="font-mono">${v.toFixed(0)}%</span>` : '-';
+    case 'morningstar_rating': return v!=null ? `<span class="font-mono text-amber-300">${'★'.repeat(v)}</span>` : '-';
+    case 'morningstar_risk': return v!=null ? `<span class="font-mono">${v}</span>` : '-';
     default: return v!=null ? v : '-';
   }
 }
 
 function renderInlineDetail(s, colSpan) {
-  const fmt = (v,suf='') => v!=null ? `${typeof v==='number'?v.toFixed(2):''}${suf}` : '-';
   return `<tr class="inline-detail" data-detail="${s.symbol}"><td colspan="${colSpan}" class="p-0">
     <div class="p-4 grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-3 text-xs">
       <div><span class="text-slate-500 block">Expense Ratio</span><span class="font-mono text-slate-200">${s.expense_ratio!=null?s.expense_ratio.toFixed(2)+'%':'-'}</span></div>
       <div><span class="text-slate-500 block">AUM</span><span class="font-mono text-slate-200">${formatAUM(s.total_assets)}</span></div>
-      <div><span class="text-slate-500 block">Div Yield</span><span class="font-mono text-slate-200">${s.dividend_yield!=null?s.dividend_yield.toFixed(2)+'%':'-'}</span></div>
-      <div><span class="text-slate-500 block">YTD Return</span><span class="font-mono text-slate-200">${s.ytd_return!=null?s.ytd_return.toFixed(1)+'%':'-'}</span></div>
-      <div><span class="text-slate-500 block">1Y Return</span><span class="font-mono text-slate-200">${s.one_year_return!=null?s.one_year_return.toFixed(1)+'%':'-'}</span></div>
-      <div><span class="text-slate-500 block">3Y Ann Return</span><span class="font-mono text-slate-200">${s.three_year_return!=null?s.three_year_return.toFixed(1)+'%':'-'}</span></div>
+      <div><span class="text-slate-500 block">Yield</span><span class="font-mono text-slate-200">${s.dividend_yield!=null?s.dividend_yield.toFixed(2)+'%':'-'}</span></div>
+      <div><span class="text-slate-500 block">Morningstar</span><span class="font-mono text-slate-200">${s.morningstar_rating!=null?'★'.repeat(s.morningstar_rating):'-'}</span></div>
+      <div><span class="text-slate-500 block">Risk</span><span class="font-mono text-slate-200">${s.morningstar_risk??'-'}</span></div>
+      <div><span class="text-slate-500 block">Turnover</span><span class="font-mono text-slate-200">${s.turnover_pct!=null?s.turnover_pct.toFixed(0)+'%':'-'}</span></div>
       <div><span class="text-slate-500 block">Beta</span><span class="font-mono text-slate-200">${s.beta!=null?s.beta.toFixed(2):'-'}</span></div>
+      <div><span class="text-slate-500 block">Management</span><span class="font-mono text-slate-200">${s.management_style||'-'}</span></div>
+      <div><span class="text-slate-500 block">Track Record</span><span class="font-mono text-slate-200">${s.fund_age_years!=null?s.fund_age_years.toFixed(1)+'y':'-'}</span></div>
       <div><span class="text-slate-500 block">Category</span><span class="font-mono text-slate-200">${s.category||'-'}</span></div>
       <div><span class="text-slate-500 block">Asset Class</span><span class="font-mono text-slate-200">${s.asset_class||'-'}</span></div>
-      <div><span class="text-slate-500 block">52w High</span><span class="font-mono text-slate-200">${s.w52_high!=null?'$'+s.w52_high.toFixed(2):'-'}</span></div>
-      <div><span class="text-slate-500 block">52w Low</span><span class="font-mono text-slate-200">${s.w52_low!=null?'$'+s.w52_low.toFixed(2):'-'}</span></div>
       <div class="flex items-end">
         <button class="btn-secondary text-xs py-1 px-3" onclick="event.stopPropagation();openDetail('${s.symbol}')">Full Detail &rarr;</button>
       </div>
@@ -995,12 +1251,12 @@ resultsBody.addEventListener('dblclick', e => {
 // CSV export
 exportBtn.addEventListener('click',()=>{
   if(!allResults.length) return;
-  const allCols = ['symbol','name','category','asset_class','price','change_pct','expense_ratio','total_assets',
-    'dividend_yield','ytd_return','one_year_return','three_year_return',
+  const allCols = ['symbol','name','category','asset_class','management_style','strategy_focus','region_focus','price','change_pct','expense_ratio','total_assets',
+    'dividend_yield','ytd_return','one_year_return','three_year_return','five_year_return','morningstar_rating','morningstar_risk','turnover_pct','fund_age_years',
     'volume','avg_volume','w52_high','w52_low','w52_perf','w52_dist_high','beta'];
   const csv=[allCols.join(','),...allResults.map(r=>allCols.map(c=>JSON.stringify(r[c]??'')).join(','))].join('\n');
   const a=document.createElement('a'); a.href=URL.createObjectURL(new Blob([csv],{type:'text/csv'}));
-  a.download=`etf-screen-${new Date().toISOString().slice(0,10)}.csv`; a.click();
+  a.download=`mutual-fund-screen-${new Date().toISOString().slice(0,10)}.csv`; a.click();
 });
 
 
@@ -1029,10 +1285,9 @@ async function openDetail(symbol){
   document.getElementById('detail-change').className = 'badge';
   document.getElementById('detail-loading').classList.remove('hidden');
   document.getElementById('detail-error').classList.add('hidden');
-  document.getElementById('detail-metrics').classList.add('hidden');
-  document.getElementById('detail-chart-section').classList.add('hidden');
-  document.getElementById('detail-holdings-section').classList.add('hidden');
-  document.getElementById('detail-sectors-section').classList.add('hidden');
+  ['detail-summary-section','detail-metrics','detail-chart-section','detail-asset-mix-section','detail-bond-section','detail-credit-section','detail-holdings-section','detail-sectors-section'].forEach(id => {
+    document.getElementById(id).classList.add('hidden');
+  });
   detailData = null;
   destroyChart();
 
@@ -1061,18 +1316,30 @@ function renderDetailPage(data){
     chgEl.textContent = `${up?'+':''}${info.change_pct.toFixed(2)}%`;
     chgEl.className = 'badge ' + (up?'tag-green':'tag-red');
   }
+
+  renderSummary(info, data.description);
   renderMetrics(info);
+  document.getElementById('detail-summary-section').classList.remove('hidden');
   document.getElementById('detail-metrics').classList.remove('hidden');
   document.getElementById('detail-chart-section').classList.remove('hidden');
   loadChart(info.symbol, '1y');
 
-  // Holdings
+  if(data.asset_mix && data.asset_mix.some(item => item.weight != null && item.weight > 0)) {
+    renderAssetMix(data.asset_mix);
+    document.getElementById('detail-asset-mix-section').classList.remove('hidden');
+  }
+  if(data.bond_stats && data.bond_stats.length) {
+    renderBondStats(data.bond_stats);
+    document.getElementById('detail-bond-section').classList.remove('hidden');
+  }
+  if(data.bond_ratings && data.bond_ratings.length) {
+    renderCreditRatings(data.bond_ratings);
+    document.getElementById('detail-credit-section').classList.remove('hidden');
+  }
   if(data.holdings && data.holdings.length) {
     renderHoldings(data.holdings);
     document.getElementById('detail-holdings-section').classList.remove('hidden');
   }
-
-  // Sector weights
   if(data.sector_weights && data.sector_weights.length) {
     renderSectorWeights(data.sector_weights);
     document.getElementById('detail-sectors-section').classList.remove('hidden');
@@ -1080,8 +1347,91 @@ function renderDetailPage(data){
 }
 
 // ════════════════════════════════════════════════
-// DETAIL -- METRICS GRID
+// DETAIL -- SUMMARY / MIX / METRICS
 // ════════════════════════════════════════════════
+function renderSummary(info, description){
+  const badge = document.getElementById('detail-style-badge');
+  badge.textContent = info.management_style || 'Mutual Fund';
+  badge.className = 'badge ' + ((info.management_style || '') === 'Index' ? 'tag-blue' : 'tag-purple');
+
+  const items = [
+    ['Morningstar Category', info.morningstar_category || '-'],
+    ['Broad Category', info.category || '-'],
+    ['Strategy Focus', info.strategy_focus || '-'],
+    ['Region', info.region_focus || '-'],
+    ['Fund Family', info.fund_family || '-'],
+    ['Track Record', info.fund_age_years!=null ? `${info.fund_age_years.toFixed(1)} years` : '-'],
+  ];
+  document.getElementById('detail-summary-grid').innerHTML = items.map(([label, value]) => `
+    <div class="metric-card">
+      <div class="metric-label">${label}</div>
+      <div class="metric-value text-sm leading-tight">${value}</div>
+    </div>
+  `).join('');
+  document.getElementById('description-content').textContent = description || 'No description available from the data source.';
+}
+
+function renderAssetMix(items){
+  const container = document.getElementById('asset-mix-content');
+  const filtered = items.filter(item => item.weight != null && item.weight > 0);
+  if(!filtered.length) {
+    container.innerHTML = '<p class="text-slate-500 text-sm">No asset mix data available.</p>';
+    return;
+  }
+  const maxWeight = Math.max(...filtered.map(item => item.weight));
+  container.innerHTML = '<div class="space-y-3">' + filtered.map(item => {
+    const pct = maxWeight > 0 ? (item.weight / maxWeight * 100) : 0;
+    return `
+      <div>
+        <div class="flex items-center justify-between mb-1">
+          <span class="text-sm text-slate-200">${item.label}</span>
+          <span class="text-xs font-mono text-indigo-400">${item.weight.toFixed(2)}%</span>
+        </div>
+        <div class="w-full bg-slate-700 rounded h-1.5">
+          <div class="holding-bar" style="width:${pct.toFixed(1)}%"></div>
+        </div>
+      </div>`;
+  }).join('') + '</div>';
+}
+
+function renderBondStats(rows){
+  const container = document.getElementById('bond-stats-content');
+  if(!rows.length) {
+    container.innerHTML = '<p class="text-slate-500 text-sm">No bond profile available.</p>';
+    return;
+  }
+  container.innerHTML = '<div class="grid grid-cols-1 md:grid-cols-3 gap-3">' + rows.map(row => `
+    <div class="metric-card">
+      <div class="metric-label">${row.label}</div>
+      <div class="metric-value">${row.fund != null ? row.fund : '-'}</div>
+      <div class="metric-sub">Category avg: ${row.category_avg != null ? row.category_avg : '-'}</div>
+    </div>
+  `).join('') + '</div>';
+}
+
+function renderCreditRatings(rows){
+  const container = document.getElementById('credit-ratings-content');
+  if(!rows.length) {
+    container.innerHTML = '<p class="text-slate-500 text-sm">No credit data available.</p>';
+    return;
+  }
+  const maxWeight = Math.max(...rows.map(r => r.weight));
+  container.innerHTML = '<div class="space-y-3">' + rows.map((row, i) => {
+    const pct = maxWeight > 0 ? (row.weight / maxWeight * 100) : 0;
+    const color = SECTOR_COLORS[i % SECTOR_COLORS.length];
+    return `
+      <div>
+        <div class="flex items-center justify-between mb-1">
+          <span class="text-sm text-slate-200">${row.label}</span>
+          <span class="text-xs font-mono text-slate-400">${row.weight.toFixed(2)}%</span>
+        </div>
+        <div class="w-full bg-slate-700 rounded h-1.5">
+          <div class="sector-bar" style="width:${pct.toFixed(1)}%;background:${color}"></div>
+        </div>
+      </div>`;
+  }).join('') + '</div>';
+}
+
 function renderMetrics(info){
   const grid = document.getElementById('metrics-grid');
   let wkRangeHtml = '<div class="metric-value">-</div>';
@@ -1100,15 +1450,18 @@ function renderMetrics(info){
     { label:'AUM', tip:"Total assets under management.", html:`<div class="metric-value">${formatAUM(info.total_assets)}</div>` },
     { label:'Dividend Yield', tip:"Annual distribution yield.", html:`<div class="metric-value">${info.dividend_yield!=null?info.dividend_yield.toFixed(2)+'%':'-'}</div>` },
     { label:'NAV', tip:"Net Asset Value per share.", html:`<div class="metric-value">${info.nav_price!=null?'$'+info.nav_price.toFixed(2):'-'}</div>` },
+    { label:'Morningstar', tip:"Morningstar overall rating within the category.", html:`<div class="metric-value">${info.morningstar_rating!=null?'★'.repeat(info.morningstar_rating):'-'}</div>` },
+    { label:'Risk Rating', tip:"Morningstar risk rating. Lower can indicate a smoother ride vs category peers.", html:`<div class="metric-value">${info.morningstar_risk!=null?info.morningstar_risk:'-'}</div>` },
+    { label:'Turnover', tip:"Annual portfolio turnover. Lower often means a steadier process.", html:`<div class="metric-value">${info.turnover_pct!=null?info.turnover_pct.toFixed(0)+'%':'-'}</div>` },
     { label:'Beta', tip:"Volatility vs market. >1 = more volatile, <1 = less volatile.", html:`<div class="metric-value">${fmt(info.beta)}</div>` },
     { label:'YTD Return', tip:"Year-to-date return.", html:`<div class="metric-value">${info.ytd_return!=null?info.ytd_return.toFixed(1)+'%':'-'}</div>` },
-    { label:'1Y Return', tip:"1-year return from 52-week low.", html:`<div class="metric-value">${info.one_year_return!=null?info.one_year_return.toFixed(1)+'%':'-'}</div>` },
+    { label:'1Y Return', tip:"Approximate 1-year price return.", html:`<div class="metric-value">${info.one_year_return!=null?info.one_year_return.toFixed(1)+'%':'-'}</div>` },
     { label:'3Y Ann Return', tip:"3-year annualized return.", html:`<div class="metric-value">${info.three_year_return!=null?info.three_year_return.toFixed(1)+'%':'-'}</div>` },
     { label:'5Y Ann Return', tip:"5-year annualized return.", html:`<div class="metric-value">${info.five_year_return!=null?info.five_year_return.toFixed(1)+'%':'-'}</div>` },
     { label:'Category', tip:"Mutual fund category classification.", html:`<div class="metric-value text-sm">${info.category||'-'}</div>` },
     { label:'Asset Class', tip:"Primary asset class.", html:`<div class="metric-value text-sm">${info.asset_class||'-'}</div>` },
     { label:'Fund Family', tip:"Fund family / issuer.", html:`<div class="metric-value text-sm leading-tight">${info.fund_family||'-'}</div>` },
-    { label:'Inception', tip:"Fund inception date.", html:`<div class="metric-value text-sm">${info.inception_date||'-'}</div>` },
+    { label:'Inception', tip:"Fund inception date.", html:`<div class="metric-value text-sm">${info.inception_date||'-'}</div><div class="metric-sub">${info.fund_age_years!=null?info.fund_age_years.toFixed(1)+' years old':'-'}</div>` },
   ];
 
   grid.innerHTML = cards.map(c=>`<div class="metric-card" data-tip="${c.tip}"><div class="metric-label">${c.label}</div>${c.html}</div>`).join('');
@@ -1258,12 +1611,3 @@ document.addEventListener('click',function(e){var w=document.getElementById('too
 </script>
 </body>
 </html>
-<!DOCTYPE html><html lang="en"><head>
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-HJ72GKBEFW"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-HJ72GKBEFW');
-  </script>  <meta charset="UTF-8" />  <meta name="viewport" content="width=device-width, initial-scale=1.0" />  <title>Mutual Fund Screener — Charged Alpha</title>  <script src="https://cdn.tailwindcss.com"></script>  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"></script>  <style>    body { background: #0f172a; color: #e2e8f0; font-family: 'Inter', system-ui, sans-serif; }    .card { background: #1e293b; border: 1px solid #334155; border-radius: 12px; }    .section-divider { border-top: 1px solid #334155; margin: 20px 0; }    .section-label { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: #64748b; margin-bottom: 16px; }    .input-field { background: #0f172a; border: 1px solid #475569; border-radius: 8px; color: #e2e8f0; padding: 8px 12px; width: 100%; font-size: 14px; transition: border-color 0.15s; }    .input-field:focus { outline: none; border-color: #6366f1; }    .input-field:disabled { opacity: 0.4; cursor: not-allowed; }    .btn-primary { background: #6366f1; color: white; border-radius: 8px; padding: 10px 24px; font-weight: 600; font-size: 14px; transition: background 0.15s; cursor: pointer; border: none; }    .btn-primary:hover { background: #4f46e5; }    .btn-primary:disabled { background: #334155; color: #64748b; cursor: not-allowed; }    .btn-secondary { background: #1e293b; color: #94a3b8; border: 1px solid #334155; border-radius: 8px; padding: 8px 16px; font-size: 13px; cursor: pointer; transition: all 0.15s; }    .btn-secondary:hover { border-color: #6366f1; color: #e2e8f0; }    th { cursor: pointer; user-select: none; white-space: nowrap; }    th[title]:not([title=""]) { text-decoration: underline dotted #4b5563; text-underline-offset: 3px; }    th:hover { color: #a5b4fc; }    th.sorted-asc::after { content: ' ↑'; color: #6366f1; }    th.sorted-desc::after { content: ' ↓'; color: #6366f1; }    #results-table tbody tr.data-row { border-bottom: 1px solid #1e293b; cursor: pointer; }    #results-table tbody tr.data-row:hover td { background: rgba(99,102,241,0.08); }    .progress-bar-inner { height: 100%; border-radius: 9999px; background: linear-gradient(90deg,#6366f1,#818cf8); transition: width 0.4s ease; }    .badge { display: inline-block; border-radius: 9999px; padding: 2px 8px; font-size: 11px; font-weight: 600; }    .tag-green  { background:#14532d; color:#4ade80; }    .tag-red    { background:#450a0a; color:#f87171; }    .tag-blue   { background:#1e3a5f; color:#60a5fa; }    .tag-purple { background:#2e1065; color:#c4b5fd; }    .tag-amber  { background:#451a03; color:#fbbf24; }    .tag-gray   { background:#1e293b; color:#94a3b8; border:1px solid #334155; }
