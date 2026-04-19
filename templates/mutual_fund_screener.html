@@ -323,6 +323,21 @@
         <option value="custom">Custom</option>
       </select>
 
+      <div class="flex-1 min-w-[280px]">
+        <div class="flex gap-2 items-center">
+          <input
+            id="fund-search"
+            class="input-field"
+            type="text"
+            list="fund-search-list"
+            placeholder="Find a mutual fund by name or ticker..."
+            onkeydown="if(event.key === 'Enter'){ event.preventDefault(); openSearchFund(); }"
+          />
+          <button class="btn-secondary shrink-0" type="button" onclick="openSearchFund()">Open Fund</button>
+        </div>
+        <datalist id="fund-search-list"></datalist>
+      </div>
+
       <!-- Run button -->
       <button class="btn-primary" id="run-btn-quick" onclick="submitScreen()" style="margin-left:auto;">Run Screen</button>
     </div>
@@ -638,7 +653,15 @@
       </div>
       <div class="p-5 space-y-4">
         <div id="detail-summary-grid" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3"></div>
-        <div id="description-content" class="text-sm text-slate-300 leading-7"></div>
+        <div>
+          <div class="metric-label mb-2">What the fund says it does</div>
+          <div id="description-content" class="text-sm text-slate-300 leading-7"></div>
+          <div id="description-source" class="metric-sub mt-2"></div>
+        </div>
+        <div>
+          <div class="metric-label mb-2">How the fund operates</div>
+          <div id="operation-content" class="text-sm text-slate-300 leading-7"></div>
+        </div>
       </div>
     </div>
     <div id="detail-metrics" class="hidden">
@@ -835,6 +858,74 @@ function getManagementStyles() {
   return active.length && active.length < 2 ? active : null;
 }
 
+let fundCatalog = [];
+
+function normalizeSearchTerm(value) {
+  return (value || '').toLowerCase().replace(/\s+/g, ' ').trim();
+}
+
+function escapeHtml(value) {
+  return String(value ?? '')
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;');
+}
+
+async function loadFundCatalog() {
+  try {
+    const res = await fetch('/mutual-funds/api/catalog');
+    const data = await res.json();
+    fundCatalog = (data.funds || []).sort((a, b) => a.name.localeCompare(b.name));
+    const list = document.getElementById('fund-search-list');
+    list.innerHTML = fundCatalog.map(f => {
+      const label = `${f.name} (${f.symbol})`;
+      return `<option value="${escapeHtml(label)}"></option>`;
+    }).join('');
+  } catch (err) {
+    console.error('Catalog load failed', err);
+  }
+}
+
+function findFundMatches(query) {
+  const q = normalizeSearchTerm(query);
+  if(!q) return [];
+  const exact = fundCatalog.filter(f => {
+    const symbol = normalizeSearchTerm(f.symbol);
+    const name = normalizeSearchTerm(f.name);
+    const combined = normalizeSearchTerm(`${f.name} (${f.symbol})`);
+    return q === symbol || q === name || q === combined;
+  });
+  if(exact.length) return exact;
+  return fundCatalog.filter(f => {
+    const symbol = normalizeSearchTerm(f.symbol);
+    const name = normalizeSearchTerm(f.name);
+    const combined = normalizeSearchTerm(`${f.name} ${f.symbol}`);
+    return symbol.includes(q) || name.includes(q) || combined.includes(q);
+  });
+}
+
+function openSearchFund() {
+  const searchBox = document.getElementById('fund-search');
+  const query = searchBox.value.trim();
+  if(!query) {
+    submitScreen();
+    return;
+  }
+  const matches = findFundMatches(query);
+  if(matches.length === 1) {
+    searchBox.value = `${matches[0].name} (${matches[0].symbol})`;
+    openDetail(matches[0].symbol);
+    return;
+  }
+  if(matches.length === 0) {
+    alert('No mutual fund in the current universe matched that name or ticker.');
+    return;
+  }
+  submitScreen();
+}
+
 // ════════════════════════════════════════════════
 // PRESETS
 // ════════════════════════════════════════════════
@@ -892,6 +983,7 @@ function clearAllFilters(silent) {
   ].forEach(id => { const el=document.getElementById(id); if(el) el.value=''; });
   document.getElementById('min_aum').value = '';
   document.getElementById('min_avg_volume').value = '';
+  document.getElementById('fund-search').value = '';
   document.querySelectorAll('.category-cb').forEach(cb => cb.checked = false);
   updateCategoryLabel();
   document.querySelectorAll('[data-ac], [data-ms]').forEach(c => c.classList.add('active'));
@@ -1032,6 +1124,7 @@ function getActiveColumns() {
 async function submitScreen() {
   if(pollTimer) clearInterval(pollTimer);
   const criteria = {
+    query: document.getElementById('fund-search').value.trim() || null,
     max_expense_ratio: document.getElementById('max_expense_ratio').value||null,
     min_aum: document.getElementById('min_aum').value||null,
     min_div_yield: document.getElementById('min_div_yield').value||null,
@@ -1317,7 +1410,7 @@ function renderDetailPage(data){
     chgEl.className = 'badge ' + (up?'tag-green':'tag-red');
   }
 
-  renderSummary(info, data.description);
+  renderSummary(info, data.description, data.description_source, data.operation_highlights || []);
   renderMetrics(info);
   document.getElementById('detail-summary-section').classList.remove('hidden');
   document.getElementById('detail-metrics').classList.remove('hidden');
@@ -1349,7 +1442,7 @@ function renderDetailPage(data){
 // ════════════════════════════════════════════════
 // DETAIL -- SUMMARY / MIX / METRICS
 // ════════════════════════════════════════════════
-function renderSummary(info, description){
+function renderSummary(info, description, descriptionSource, operationHighlights){
   const badge = document.getElementById('detail-style-badge');
   badge.textContent = info.management_style || 'Mutual Fund';
   badge.className = 'badge ' + ((info.management_style || '') === 'Index' ? 'tag-blue' : 'tag-purple');
@@ -1368,7 +1461,11 @@ function renderSummary(info, description){
       <div class="metric-value text-sm leading-tight">${value}</div>
     </div>
   `).join('');
-  document.getElementById('description-content').textContent = description || 'No description available from the data source.';
+  document.getElementById('description-content').innerHTML = `<p>${escapeHtml(description || 'No description available from the current data source.')}</p>`;
+  document.getElementById('description-source').textContent = descriptionSource || '';
+  document.getElementById('operation-content').innerHTML = (operationHighlights && operationHighlights.length)
+    ? `<ul class="list-disc ml-5 space-y-2">${operationHighlights.map(item => `<li>${escapeHtml(item)}</li>`).join('')}</ul>`
+    : '<p>No additional operating notes were available for this fund.</p>';
 }
 
 function renderAssetMix(items){
@@ -1585,6 +1682,7 @@ const presetParam = urlParams.get('preset');
 if(presetParam && PRESETS[presetParam]) {
   applyPreset(presetParam);
 }
+loadFundCatalog();
 // ════════════════════════════════════════════════
 // MODE TOGGLE
 // ════════════════════════════════════════════════

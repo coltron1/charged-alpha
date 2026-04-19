@@ -54,7 +54,7 @@ from chart_storage import save_chart_state, load_chart_state, list_user_charts, 
 from stock_screener import (screen_stocks, get_stock_detail,
                             get_sp500_tickers, get_ticker_sector)
 from etf_screener import screen_etfs, get_etf_detail
-from mutual_fund_screener import screen_mutual_funds, get_mutual_fund_detail
+from mutual_fund_screener import screen_mutual_funds, get_mutual_fund_detail, get_mutual_fund_catalog_rows
 from crypto_screener import screen_cryptos, get_crypto_chart
 from options_scanner import scan_options
 from bond_data import get_yields, get_yield_history, get_bond_etfs
@@ -734,12 +734,18 @@ def mutual_fund_start():
         "min_stock_position": _f("min_stock_position"),
         "min_bond_position": _f("min_bond_position"),
         "max_cash_position": _f("max_cash_position"),
+        "query": (body.get("query") or "").strip() or None,
         "categories": categories,
         "asset_classes": asset_classes,
         "management_styles": management_styles,
     }
     job_id = _start_job(screen_mutual_funds, criteria)
     return jsonify({"job_id": job_id})
+
+
+@app.route("/mutual-funds/api/catalog")
+def mutual_fund_catalog():
+    return jsonify({"funds": get_mutual_fund_catalog_rows()})
 
 
 @app.route("/mutual-funds/api/screen/<job_id>")

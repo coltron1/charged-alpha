@@ -105,6 +105,108 @@ def get_mutual_fund_region_focus(symbol):
     return FUND_CATALOG.get(symbol, {}).get("region_focus", "US")
 
 
+def get_mutual_fund_catalog_rows():
+    rows = []
+    for symbol in MUTUAL_FUND_UNIVERSE:
+        name = symbol
+        try:
+            _, info = _fetch_ticker_info(symbol)
+            if info:
+                name = info.get("longName") or info.get("shortName") or symbol
+        except Exception:
+            name = symbol
+        rows.append(
+            {
+                "symbol": symbol,
+                "name": name,
+                "category": get_mutual_fund_category(symbol),
+                "asset_class": get_mutual_fund_asset_class(symbol),
+                "strategy_focus": get_mutual_fund_strategy_focus(symbol),
+                "region_focus": get_mutual_fund_region_focus(symbol),
+                "management_style": FUND_CATALOG.get(symbol, {}).get("management_style"),
+            }
+        )
+    return rows
+
+
+def _normalize_query(value):
+    return " ".join((value or "").lower().split())
+
+
+def _query_matches(symbol, name, query):
+    q = _normalize_query(query)
+    if not q:
+        return True
+    haystacks = [
+        _normalize_query(symbol),
+        _normalize_query(name),
+        _normalize_query(f"{symbol} {name or ''}"),
+    ]
+    return any(q in hay for hay in haystacks)
+
+
+def _clean_description(text):
+    if not text:
+        return None
+    cleaned = " ".join(str(text).split())
+    return cleaned or None
+
+
+def _build_operation_highlights(info, description, asset_mix):
+    highlights = []
+    strategy_focus = get_mutual_fund_strategy_focus(info.get("symbol"))
+    morningstar_category = info.get("morningstar_category")
+    region_focus = get_mutual_fund_region_focus(info.get("symbol"))
+    management_style = info.get("management_style")
+
+    if strategy_focus or morningstar_category:
+        if morningstar_category and strategy_focus and morningstar_category != strategy_focus:
+            highlights.append(
+                f"Coverage: focuses on {strategy_focus.lower()} exposure and currently sits in the {morningstar_category} Morningstar category."
+            )
+        else:
+            highlights.append(
+                f"Coverage: focused on {((morningstar_category or strategy_focus) or 'its stated target market').lower()} exposure."
+            )
+
+    if management_style == "Index":
+        highlights.append(
+            f"Approach: uses an index-based process aimed at broad {region_focus.lower()} market exposure rather than manager stock picking."
+        )
+    elif management_style == "Active":
+        highlights.append(
+            "Approach: actively managed, so portfolio construction depends more on manager decisions, security selection, and trading discipline."
+        )
+
+    stock_position = asset_mix.get("stock_position")
+    bond_position = asset_mix.get("bond_position")
+    cash_position = asset_mix.get("cash_position")
+    asset_parts = []
+    if stock_position is not None and stock_position > 0:
+        asset_parts.append(f"{stock_position:.1f}% stocks")
+    if bond_position is not None and bond_position > 0:
+        asset_parts.append(f"{bond_position:.1f}% bonds")
+    if cash_position is not None and cash_position > 0:
+        asset_parts.append(f"{cash_position:.1f}% cash")
+    if asset_parts:
+        highlights.append(f"Current mix: {' / '.join(asset_parts)}.")
+
+    turnover = info.get("turnover_pct")
+    if turnover is not None:
+        if turnover <= 25:
+            turnover_note = "fairly low turnover, which usually suggests a steadier long-term process"
+        elif turnover <= 75:
+            turnover_note = "moderate turnover, which suggests some active repositioning but not constant reshuffling"
+        else:
+            turnover_note = "high turnover, which suggests a more active trading approach and potentially higher hidden trading costs"
+        highlights.append(f"Trading style: {turnover:.0f}% annual turnover, implying {turnover_note}.")
+
+    if description and "index" in description.lower() and management_style != "Index":
+        highlights.append("Fund text references index tracking language, even though the broader metadata did not cleanly classify it as passive.")
+
+    return highlights
+
+
 def _extract_morningstar_rating(info):
     for key in ("morningStarOverallRating", "fundFamilyRating"):
         value = info.get(key)
@@ -539,6 +641,8 @@ def _passes_criteria(fund, criteria):
 def screen_mutual_funds(criteria, on_progress=None, on_match=None):
     tickers = list(MUTUAL_FUND_UNIVERSE)
 
+    query = criteria.get("query")
+
     categories = criteria.get("categories")
     if categories:
         tickers = [symbol for symbol in tickers if _CATEGORY_MAP.get(symbol) in categories]
@@ -572,7 +676,7 @@ def screen_mutual_funds(criteria, on_progress=None, on_match=None):
             processed += 1
             if on_progress:
                 on_progress(processed, total)
-            if data and _passes_criteria(data, criteria):
+            if data and _query_matches(symbol, data.get("name"), query) and _passes_criteria(data, criteria):
                 matches.append(data)
                 if on_match:
                     on_match(data)
@@ -633,7 +737,7 @@ def get_mutual_fund_detail(symbol):
             except Exception:
                 overview = {}
             try:
-                description = getattr(funds_data, "description", None)
+                description = _clean_description(getattr(funds_data, "description", None))
             except Exception:
                 description = None
 
@@ -695,9 +799,13 @@ def get_mutual_fund_detail(symbol):
             except Exception:
                 bond_stats = []
 
+        operation_highlights = _build_operation_highlights(fund_info, description, asset_mix)
+
         return {
             "info": fund_info,
             "description": description,
+            "description_source": "Yahoo Finance fund profile / fund-provided text when available",
+            "operation_highlights": operation_highlights,
             "holdings": _extract_holdings(funds_data, limit=10),
             "sector_weights": _extract_sector_weights(funds_data),
             "bond_stats": bond_stats,
