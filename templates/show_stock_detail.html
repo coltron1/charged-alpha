@@ -39,6 +39,10 @@
     .stat-label { font-size:11px; text-transform:uppercase; letter-spacing:.18em; color:#64748b; }
     .stat-value { font-size:1.75rem; line-height:1.1; font-weight:800; color:white; }
     .table-row { border-top:1px solid #1e293b; }
+    .status-best { background:rgba(16,185,129,.10); border-color:rgba(16,185,129,.28); color:#bbf7d0; }
+    .status-middle { background:rgba(99,102,241,.08); border-color:rgba(99,102,241,.18); color:#dbeafe; }
+    .status-worst { background:rgba(239,68,68,.10); border-color:rgba(239,68,68,.26); color:#fecaca; }
+    .status-neutral { background:#0f172a; border-color:#1e293b; color:#e2e8f0; }
   </style>
 </head>
 <body class="min-h-screen">
@@ -72,20 +76,17 @@
         <div class="flex flex-wrap items-center gap-2 mb-4">
           <span class="pill" style="background:rgba(99,102,241,.12);color:#a5b4fc;">{{ show_stock.ticker }}</span>
           <span class="pill" style="background:rgba(14,165,233,.12);color:#7dd3fc;">{{ show_stock.sector }}</span>
-          {% if show_stock.latest_quarter %}
-          <span class="pill" style="background:rgba(16,185,129,.12);color:#6ee7b7;">Latest quarter: {{ show_stock.latest_quarter }}</span>
+          {% if show_stock.latest_video_quarter %}
+          <span class="pill" style="background:rgba(16,185,129,.12);color:#6ee7b7;">Latest YouTube: {{ show_stock.latest_video_quarter }}</span>
           {% endif %}
         </div>
         <h1 class="text-4xl md:text-5xl font-black text-white leading-tight mb-4">{{ show_stock.company }}</h1>
         <p class="text-lg text-slate-400 leading-relaxed max-w-3xl mb-6">
-          Open the live stock snapshot, review the price chart, and jump into the episode archive quarter by quarter across YouTube, Spotify, Apple, Amazon, and the web feed.
+          Live stock metrics, chart context, a quarter-by-quarter YouTube archive, and a deeper competitor comparison so this page behaves more like an investor workspace than a flat episode link page.
         </p>
         <div class="flex flex-wrap gap-3">
-          {% if show_stock.latest_links.youtube %}
-          <a href="{{ show_stock.latest_links.youtube }}" target="_blank" rel="noopener noreferrer" class="platform-pill" style="background:#dc2626;">Latest on YouTube</a>
-          {% endif %}
-          {% if show_stock.latest_links.spotify %}
-          <a href="{{ show_stock.latest_links.spotify }}" target="_blank" rel="noopener noreferrer" class="platform-pill" style="background:#16a34a;">Latest on Spotify</a>
+          {% if show_stock.latest_youtube_url %}
+          <a href="{{ show_stock.latest_youtube_url }}" target="_blank" rel="noopener noreferrer" class="platform-pill" style="background:#dc2626;">Latest on YouTube</a>
           {% endif %}
           {% if stock_detail.website %}
           <a href="{{ stock_detail.website }}" target="_blank" rel="noopener noreferrer" class="platform-pill" style="background:#1d4ed8;">Company Website</a>
@@ -102,16 +103,16 @@
             <div class="stat-value mt-2">{{ show_stock.quarter_count }}</div>
           </div>
           <div class="card p-4" style="background:#0f172a;border-color:#1e293b;">
-            <div class="stat-label">Quarters linked</div>
+            <div class="stat-label">YouTube quarters live</div>
             <div class="stat-value mt-2">{{ show_stock.published_count }}</div>
+          </div>
+          <div class="card p-4" style="background:#0f172a;border-color:#1e293b;">
+            <div class="stat-label">Latest video</div>
+            <div class="text-white text-lg font-bold mt-2">{{ show_stock.latest_video_quarter or 'Pending' }}</div>
           </div>
           <div class="card p-4" style="background:#0f172a;border-color:#1e293b;">
             <div class="stat-label">YouTube available</div>
             <div class="stat-value mt-2">{{ 'Yes' if show_stock.has_youtube else 'No' }}</div>
-          </div>
-          <div class="card p-4" style="background:#0f172a;border-color:#1e293b;">
-            <div class="stat-label">Spotify available</div>
-            <div class="stat-value mt-2">{{ 'Yes' if show_stock.has_spotify else 'No' }}</div>
           </div>
         </div>
       </div>
@@ -120,11 +121,11 @@
 </section>
 
 <section class="px-6 pb-6">
-  <div class="max-w-7xl mx-auto grid lg:grid-cols-[1.2fr_.8fr] gap-6">
+  <div class="max-w-7xl mx-auto grid lg:grid-cols-[1.3fr_.7fr] gap-6">
     <div class="grid sm:grid-cols-2 xl:grid-cols-3 gap-4">
       <div class="card p-5">
         <div class="stat-label">Current price</div>
-        <div class="stat-value mt-2">{{ ('$' ~ stock_detail.price) if stock_detail.price is not none else '—' }}</div>
+        <div class="stat-value mt-2">{{ ('$' ~ ('%.2f'|format(stock_detail.price))) if stock_detail.price is not none else '—' }}</div>
         <div class="text-sm mt-2 {{ 'text-emerald-400' if (stock_detail.change or 0) >= 0 else 'text-red-400' }}">
           {% if stock_detail.change is not none and stock_detail.change_pct is not none %}
             {{ '%+.2f'|format(stock_detail.change) }} ({{ '%+.2f'|format(stock_detail.change_pct) }}%)
@@ -134,35 +135,50 @@
         </div>
       </div>
       <div class="card p-5">
-        <div class="stat-label">Trailing P/E</div>
-        <div class="stat-value mt-2">{{ stock_detail.trailing_pe if stock_detail.trailing_pe is not none else '—' }}</div>
-        <div class="text-sm text-slate-500 mt-2">Forward P/E: {{ stock_detail.forward_pe if stock_detail.forward_pe is not none else '—' }}</div>
+        <div class="stat-label">Trailing / Forward P/E</div>
+        <div class="text-white text-2xl font-extrabold mt-2">{{ ('%.2f'|format(stock_detail.trailing_pe) ~ 'x') if stock_detail.trailing_pe is not none else '—' }}</div>
+        <div class="text-sm text-slate-500 mt-2">Forward: {{ ('%.2f'|format(stock_detail.forward_pe) ~ 'x') if stock_detail.forward_pe is not none else '—' }}</div>
       </div>
       <div class="card p-5">
-        <div class="stat-label">Market cap</div>
+        <div class="stat-label">Market cap / Volume</div>
         <div class="stat-value mt-2" id="marketCapValue" data-value="{{ stock_detail.market_cap or '' }}">—</div>
         <div class="text-sm text-slate-500 mt-2">Volume: <span id="volumeValue" data-value="{{ stock_detail.volume or '' }}">—</span></div>
       </div>
       <div class="card p-5">
-        <div class="stat-label">Price to book</div>
-        <div class="stat-value mt-2">{{ stock_detail.price_to_book if stock_detail.price_to_book is not none else '—' }}</div>
-        <div class="text-sm text-slate-500 mt-2">Beta: {{ stock_detail.beta if stock_detail.beta is not none else '—' }}</div>
+        <div class="stat-label">Revenue / Earnings Growth</div>
+        <div class="text-white text-xl font-bold mt-2">{{ ('%.1f'|format(stock_detail.revenue_growth) ~ '%') if stock_detail.revenue_growth is not none else '—' }}</div>
+        <div class="text-sm text-slate-500 mt-2">Earnings: {{ ('%.1f'|format(stock_detail.earnings_growth) ~ '%') if stock_detail.earnings_growth is not none else '—' }}</div>
       </div>
       <div class="card p-5">
-        <div class="stat-label">52-week range</div>
+        <div class="stat-label">Margins</div>
+        <div class="text-white text-xl font-bold mt-2">{{ ('%.1f'|format(stock_detail.operating_margin) ~ '% op') if stock_detail.operating_margin is not none else '—' }}</div>
+        <div class="text-sm text-slate-500 mt-2">Gross: {{ ('%.1f'|format(stock_detail.gross_margin) ~ '%') if stock_detail.gross_margin is not none else '—' }} &middot; Net: {{ ('%.1f'|format(stock_detail.profit_margin) ~ '%') if stock_detail.profit_margin is not none else '—' }}</div>
+      </div>
+      <div class="card p-5">
+        <div class="stat-label">Balance sheet</div>
+        <div class="text-white text-xl font-bold mt-2">{{ ('%.2f'|format(stock_detail.current_ratio) ~ 'x current') if stock_detail.current_ratio is not none else '—' }}</div>
+        <div class="text-sm text-slate-500 mt-2">Debt / Equity: {{ ('%.1f'|format(stock_detail.debt_to_equity)) if stock_detail.debt_to_equity is not none else '—' }}</div>
+      </div>
+      <div class="card p-5">
+        <div class="stat-label">52-week range / Beta</div>
         <div class="text-white text-lg font-bold mt-2">
           {% if stock_detail.week_52_low is not none and stock_detail.week_52_high is not none %}
-          ${{ stock_detail.week_52_low }} - ${{ stock_detail.week_52_high }}
+          ${{ '%.2f'|format(stock_detail.week_52_low) }} - ${{ '%.2f'|format(stock_detail.week_52_high) }}
           {% else %}
           —
           {% endif %}
         </div>
-        <div class="text-sm text-slate-500 mt-2">EPS: {{ stock_detail.eps if stock_detail.eps is not none else '—' }}</div>
+        <div class="text-sm text-slate-500 mt-2">Beta: {{ ('%.2f'|format(stock_detail.beta)) if stock_detail.beta is not none else '—' }}</div>
       </div>
       <div class="card p-5">
         <div class="stat-label">Analyst target</div>
-        <div class="stat-value mt-2">{{ ('$' ~ stock_detail.target_mean_price) if stock_detail.target_mean_price is not none else '—' }}</div>
-        <div class="text-sm text-slate-500 mt-2">Upside: {{ (stock_detail.target_upside ~ '%') if stock_detail.target_upside is not none else '—' }}</div>
+        <div class="stat-value mt-2">{{ ('$' ~ ('%.2f'|format(stock_detail.target_mean_price))) if stock_detail.target_mean_price is not none else '—' }}</div>
+        <div class="text-sm text-slate-500 mt-2">Upside: {{ ('%.1f'|format(stock_detail.target_upside) ~ '%') if stock_detail.target_upside is not none else '—' }}</div>
+      </div>
+      <div class="card p-5">
+        <div class="stat-label">Cash / shareholder return</div>
+        <div class="text-white text-xl font-bold mt-2">{{ ('%.2f'|format(stock_detail.fcf_yield) ~ '% FCF yield') if stock_detail.fcf_yield is not none else '—' }}</div>
+        <div class="text-sm text-slate-500 mt-2">Dividend yield: {{ ('%.2f'|format(stock_detail.dividend_yield) ~ '%') if stock_detail.dividend_yield is not none else '—' }}</div>
       </div>
     </div>
 
@@ -172,10 +188,12 @@
         <div><span class="text-slate-500">Industry:</span> {{ stock_detail.industry or '—' }}</div>
         <div><span class="text-slate-500">Country:</span> {{ stock_detail.country or '—' }}</div>
         <div><span class="text-slate-500">Employees:</span> <span id="employeeValue" data-value="{{ stock_detail.employees or '' }}">—</span></div>
+        <div><span class="text-slate-500">Price to book:</span> {{ ('%.2f'|format(stock_detail.price_to_book) ~ 'x') if stock_detail.price_to_book is not none else '—' }}</div>
+        <div><span class="text-slate-500">Return on equity:</span> {{ ('%.1f'|format(stock_detail.return_on_equity) ~ '%') if stock_detail.return_on_equity is not none else '—' }}</div>
         {% if stock_detail.summary %}
         <div class="pt-2 text-slate-400">{{ stock_detail.summary }}</div>
         {% else %}
-        <div class="pt-2 text-slate-500">Business summary unavailable right now, but the episode archive below is still live.</div>
+        <div class="pt-2 text-slate-500">Business summary unavailable right now, but the market metrics and video archive below are still live.</div>
         {% endif %}
       </div>
     </div>
@@ -202,12 +220,68 @@
   </div>
 </section>
 
+<section class="px-6 pb-6">
+  <div class="max-w-7xl mx-auto card overflow-hidden">
+    <div class="p-6 md:p-8 border-b border-slate-800">
+      <p class="text-sm font-bold text-indigo-400 uppercase tracking-[.22em] mb-2">Competitive view</p>
+      <h2 class="text-2xl font-bold text-white">{{ show_stock.ticker }} vs. two close competitors</h2>
+      <p class="text-sm text-slate-500 mt-2">This section compares the current company against two nearby peers on valuation, growth, margins, balance-sheet strength, and investment setup. Green generally marks the strongest relative figure for that row, while red marks the weakest.</p>
+      {% for note in competitor_analysis.notes %}
+      <p class="text-xs text-amber-300 mt-3">{{ note }}</p>
+      {% endfor %}
+    </div>
+
+    <div class="p-6 md:p-8 grid lg:grid-cols-3 gap-4 border-b border-slate-800">
+      {% for stock in competitor_analysis.stocks %}
+      <div class="card p-5" style="background:#0f172a;border-color:#1e293b;">
+        <div class="flex items-center justify-between gap-3 mb-3">
+          <div>
+            <div class="text-lg font-bold text-white">{{ stock.company }}</div>
+            <div class="text-xs text-slate-500">{{ stock.ticker }}</div>
+          </div>
+          {% if stock.latest_youtube_url %}
+          <a href="{{ stock.latest_youtube_url }}" target="_blank" rel="noopener noreferrer" class="platform-pill" style="background:#dc2626; padding:6px 10px; font-size:11px;">YouTube</a>
+          {% endif %}
+        </div>
+        <div class="text-xs uppercase tracking-[.18em] text-slate-500 mb-3">Latest video</div>
+        <div class="text-sm font-semibold text-white mb-4">{{ stock.latest_video_quarter }}</div>
+        <div class="space-y-3 text-sm text-slate-300 leading-relaxed">
+          {% for insight in stock.insights %}
+          <div class="p-3 rounded-xl border border-slate-800 bg-slate-950/30">{{ insight }}</div>
+          {% endfor %}
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+
+    <div class="divide-y divide-slate-800">
+      {% for row in competitor_analysis.rows %}
+      <div class="p-6 md:p-8 table-row">
+        <div class="mb-4">
+          <div class="text-white font-semibold text-lg">{{ row.label }}</div>
+          <div class="text-sm text-slate-500 mt-1">{{ row.why }}</div>
+        </div>
+        <div class="grid md:grid-cols-3 gap-3">
+          {% for entry in row.entries %}
+          <div class="card p-4 status-{{ entry.status }}">
+            <div class="text-xs uppercase tracking-[.18em] opacity-75 mb-2">{{ entry.ticker }}</div>
+            <div class="text-lg font-bold">{{ entry.display }}</div>
+            <div class="text-xs opacity-75 mt-2">{{ entry.company }}</div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
 <section class="px-6 pb-24">
   <div class="max-w-7xl mx-auto card overflow-hidden">
     <div class="p-6 md:p-8 border-b border-slate-800">
-      <p class="text-sm font-bold text-indigo-400 uppercase tracking-[.22em] mb-2">Episode timeline</p>
+      <p class="text-sm font-bold text-indigo-400 uppercase tracking-[.22em] mb-2">YouTube timeline</p>
       <h2 class="text-2xl font-bold text-white">Quarterly archive for {{ show_stock.ticker }}</h2>
-      <p class="text-sm text-slate-500 mt-2">Each row is one quarter. Use the platform links to jump straight into the version you want.</p>
+      <p class="text-sm text-slate-500 mt-2">Each row is one quarter. Only the YouTube link is shown here for now.</p>
     </div>
 
     <div class="divide-y divide-slate-800">
@@ -215,29 +289,22 @@
       <div class="p-6 md:p-8 grid lg:grid-cols-[180px_1fr_auto] gap-5 items-start table-row">
         <div>
           <div class="text-white font-bold text-lg">{{ episode.quarter }}</div>
-          <div class="text-sm text-slate-500 mt-1">
-            {% if episode.episode_number %}Ep. {{ episode.episode_number }}{% else %}Episode TBD{% endif %}
-          </div>
+          <div class="text-sm text-slate-500 mt-1">{{ 'Video live' if episode.youtube_url else 'Video pending' }}</div>
         </div>
         <div>
           <div class="flex flex-wrap gap-2 mb-3">
-            <span class="pill" style="background:{{ 'rgba(16,185,129,.12)' if episode.has_episode else 'rgba(148,163,184,.12)' }};color:{{ '#6ee7b7' if episode.has_episode else '#cbd5e1' }};">{{ 'Published' if episode.has_episode else 'Pending link' }}</span>
+            <span class="pill" style="background:{{ 'rgba(16,185,129,.12)' if episode.youtube_url else 'rgba(148,163,184,.12)' }};color:{{ '#6ee7b7' if episode.youtube_url else '#cbd5e1' }};">{{ 'Published' if episode.youtube_url else 'Pending link' }}</span>
             {% if episode.status %}
             <span class="pill" style="background:rgba(99,102,241,.12);color:#a5b4fc;">{{ episode.status.replace('_', ' ') }}</span>
             {% endif %}
           </div>
-          <div class="text-sm text-slate-400 leading-relaxed">Quarterly earnings-analysis entry for {{ show_stock.company }}. Open the platform links on the right to watch or listen to the archived version for this quarter.</div>
+          <div class="text-sm text-slate-400 leading-relaxed">Quarterly earnings-analysis entry for {{ show_stock.company }}. Use the YouTube link on the right to jump straight into that quarter's video when it is live.</div>
         </div>
         <div class="flex flex-wrap lg:justify-end gap-2">
-          {% if episode.youtube_url %}<a href="{{ episode.youtube_url }}" target="_blank" rel="noopener noreferrer" class="platform-pill" style="background:#dc2626;">YouTube</a>{% endif %}
-          {% if episode.spotify_url %}<a href="{{ episode.spotify_url }}" target="_blank" rel="noopener noreferrer" class="platform-pill" style="background:#16a34a;">Spotify</a>{% endif %}
-          {% if episode.apple_url %}<a href="{{ episode.apple_url }}" target="_blank" rel="noopener noreferrer" class="platform-pill" style="background:linear-gradient(135deg,#9333ea,#7c3aed);">Apple</a>{% endif %}
-          {% if episode.amazon_url %}<a href="{{ episode.amazon_url }}" target="_blank" rel="noopener noreferrer" class="platform-pill" style="background:linear-gradient(135deg,#f59e0b,#ea580c);">Amazon</a>{% endif %}
-          {% if episode.podbean_url %}<a href="{{ episode.podbean_url }}" target="_blank" rel="noopener noreferrer" class="platform-pill" style="background:#0284c7;">Web</a>{% endif %}
-          {% if episode.google_url %}<a href="{{ episode.google_url }}" target="_blank" rel="noopener noreferrer" class="platform-pill" style="background:#2563eb;">Google</a>{% endif %}
-          {% if episode.iheart_url %}<a href="{{ episode.iheart_url }}" target="_blank" rel="noopener noreferrer" class="platform-pill" style="background:#5b21b6;">iHeart</a>{% endif %}
-          {% if not episode.youtube_url and not episode.spotify_url and not episode.apple_url and not episode.amazon_url and not episode.podbean_url and not episode.google_url and not episode.iheart_url %}
-          <span class="text-sm text-slate-500">No verified link yet</span>
+          {% if episode.youtube_url %}
+          <a href="{{ episode.youtube_url }}" target="_blank" rel="noopener noreferrer" class="platform-pill" style="background:#dc2626;">YouTube</a>
+          {% else %}
+          <span class="text-sm text-slate-500">No verified YouTube link yet</span>
           {% endif %}
         </div>
       </div>
@@ -253,9 +320,12 @@ function formatCompact(value) {
   return new Intl.NumberFormat('en-US', { notation:'compact', maximumFractionDigits:1 }).format(num);
 }
 
-document.getElementById('marketCapValue').textContent = formatCompact(document.getElementById('marketCapValue').dataset.value);
-document.getElementById('volumeValue').textContent = formatCompact(document.getElementById('volumeValue').dataset.value);
-document.getElementById('employeeValue').textContent = formatCompact(document.getElementById('employeeValue').dataset.value);
+const marketCapEl = document.getElementById('marketCapValue');
+const volumeEl = document.getElementById('volumeValue');
+const employeeEl = document.getElementById('employeeValue');
+if (marketCapEl) marketCapEl.textContent = formatCompact(marketCapEl.dataset.value);
+if (volumeEl) volumeEl.textContent = formatCompact(volumeEl.dataset.value);
+if (employeeEl) employeeEl.textContent = formatCompact(employeeEl.dataset.value);
 
 const ctx = document.getElementById('priceChart').getContext('2d');
 let chart;

@@ -310,7 +310,6 @@ def build_show_library(episodes):
     quarter_set = set()
     published_episode_count = 0
     youtube_episode_count = 0
-    spotify_episode_count = 0
 
     for ep in episodes or []:
         ticker = (ep.get("ticker") or "").upper().strip()
@@ -320,14 +319,12 @@ def build_show_library(episodes):
         slug = _show_slug(ticker)
         quarter = (ep.get("quarter") or "Unknown").strip()
         quarter_set.add(quarter)
+        has_youtube = bool(ep.get("youtube_url"))
+        has_any_link = bool(ep.get("has_episode") or _episode_has_any_link(ep))
 
-        has_episode = bool(ep.get("has_episode") or _episode_has_any_link(ep))
-        if has_episode:
+        if has_youtube:
             published_episode_count += 1
-        if ep.get("youtube_url"):
             youtube_episode_count += 1
-        if ep.get("spotify_url"):
-            spotify_episode_count += 1
 
         stock = grouped.setdefault(
             slug,
@@ -345,48 +342,35 @@ def build_show_library(episodes):
             {
                 "ticker": ticker,
                 "quarter": quarter,
-                "episode_number": ep.get("episode_number") or "",
-                "status": ep.get("status") or ("published" if has_episode else "planned"),
-                "has_episode": has_episode,
+                "status": ep.get("status") or ("youtube_live" if has_youtube else ("linked_elsewhere" if has_any_link else "planned")),
+                "has_episode": has_youtube,
+                "has_any_link": has_any_link,
                 "youtube_url": ep.get("youtube_url") or "",
-                "spotify_url": ep.get("spotify_url") or "",
-                "apple_url": ep.get("apple_url") or "",
-                "amazon_url": ep.get("amazon_url") or "",
-                "google_url": ep.get("google_url") or "",
-                "iheart_url": ep.get("iheart_url") or "",
-                "podbean_url": ep.get("podbean_url") or "",
             }
         )
 
     stocks = []
     for stock in grouped.values():
-        stock["episodes"].sort(
-            key=lambda ep: (_quarter_sort_key(ep["quarter"]), int(ep["episode_number"] or 0)),
-            reverse=True,
-        )
+        stock["episodes"].sort(key=lambda ep: _quarter_sort_key(ep["quarter"]), reverse=True)
         latest = stock["episodes"][0]
+        latest_youtube = next((ep for ep in stock["episodes"] if ep.get("youtube_url")), None)
+
         stock["quarter_count"] = len(stock["episodes"])
-        stock["published_count"] = sum(1 for ep in stock["episodes"] if ep["has_episode"])
+        stock["published_count"] = sum(1 for ep in stock["episodes"] if ep.get("youtube_url"))
         stock["latest_quarter"] = latest["quarter"]
-        stock["latest_episode_number"] = latest["episode_number"]
-        stock["latest_status"] = latest["status"]
+        stock["latest_video_quarter"] = latest_youtube["quarter"] if latest_youtube else None
+        stock["latest_status"] = latest_youtube["status"] if latest_youtube else latest["status"]
         stock["quarter_labels"] = [ep["quarter"] for ep in stock["episodes"]]
         stock["latest_links"] = {
-            "youtube": latest.get("youtube_url") or "",
-            "spotify": latest.get("spotify_url") or "",
-            "apple": latest.get("apple_url") or "",
-            "amazon": latest.get("amazon_url") or "",
-            "podbean": latest.get("podbean_url") or "",
+            "youtube": latest_youtube.get("youtube_url") if latest_youtube else "",
         }
-        stock["has_youtube"] = any(ep.get("youtube_url") for ep in stock["episodes"])
-        stock["has_spotify"] = any(ep.get("spotify_url") for ep in stock["episodes"])
-        stock["has_apple"] = any(ep.get("apple_url") for ep in stock["episodes"])
-        stock["has_amazon"] = any(ep.get("amazon_url") for ep in stock["episodes"])
-        stock["latest_quarter_sort"] = _quarter_sort_key(stock["latest_quarter"])
+        stock["latest_youtube_url"] = latest_youtube.get("youtube_url") if latest_youtube else ""
+        stock["has_youtube"] = bool(latest_youtube)
+        stock["latest_quarter_sort"] = _quarter_sort_key(stock["latest_video_quarter"] or stock["latest_quarter"])
         stocks.append(stock)
 
     stocks.sort(
-        key=lambda stock: (stock["latest_quarter_sort"], int(stock["latest_episode_number"] or 0), stock["ticker"]),
+        key=lambda stock: (stock["latest_quarter_sort"], stock["published_count"], stock["ticker"]),
         reverse=True,
     )
 
@@ -402,9 +386,243 @@ def build_show_library(episodes):
             "episode_count": len(episodes or []),
             "published_episode_count": published_episode_count,
             "youtube_episode_count": youtube_episode_count,
-            "spotify_episode_count": spotify_episode_count,
             "quarter_count": len(quarter_options),
         },
+    }
+
+
+SHOW_COMPETITOR_MAP = {
+    "AAPL": ["MSFT", "GOOGL"],
+    "MSFT": ["AAPL", "GOOGL"],
+    "GOOGL": ["META", "MSFT"],
+    "AMZN": ["WMT", "COST"],
+    "NVDA": ["AMD", "AVGO"],
+    "META": ["GOOGL", "NFLX"],
+    "TSLA": ["GM", "F"],
+    "BRK.B": ["JPM", "GS"],
+    "JPM": ["BAC", "GS"],
+    "BAC": ["JPM", "C"],
+    "C": ["JPM", "BAC"],
+    "V": ["MA", "AXP"],
+    "MA": ["V", "AXP"],
+    "XOM": ["CVX", "CAT"],
+    "CVX": ["XOM", "CAT"],
+    "JNJ": ["MRK", "ABBV"],
+    "MRK": ["JNJ", "ABBV"],
+    "ABBV": ["JNJ", "MRK"],
+    "WMT": ["COST", "AMZN"],
+    "COST": ["WMT", "HD"],
+    "PG": ["KO", "PEP"],
+    "KO": ["PEP", "PG"],
+    "PEP": ["KO", "PG"],
+    "HD": ["WMT", "COST"],
+    "AVGO": ["NVDA", "AMD"],
+    "ORCL": ["MSFT", "CSCO"],
+    "INTC": ["AMD", "NVDA"],
+    "QCOM": ["AMD", "AVGO"],
+    "GS": ["JPM", "MS"],
+    "MS": ["JPM", "GS"],
+    "CAT": ["DE", "GE"],
+    "DE": ["CAT", "GE"],
+    "NFLX": ["GOOGL", "META"],
+    "AMD": ["NVDA", "INTC"],
+    "F": ["GM", "TSLA"],
+    "GM": ["F", "TSLA"],
+}
+
+
+COMPARE_METRICS = [
+    {"key": "market_cap", "label": "Market Cap", "format": "compact_currency", "prefer": "higher", "why": "More scale can mean deeper resources and resilience, although bigger does not automatically mean better upside."},
+    {"key": "trailing_pe", "label": "Trailing P/E", "format": "multiple", "prefer": "lower", "why": "Lower trailing P/E can indicate a cheaper valuation relative to trailing earnings, but it may also reflect slower growth or higher perceived risk."},
+    {"key": "forward_pe", "label": "Forward P/E", "format": "multiple", "prefer": "lower", "why": "Forward P/E is often a better read on what investors are paying for the next year of earnings power."},
+    {"key": "revenue_growth", "label": "Revenue Growth", "format": "percent", "prefer": "higher", "why": "Higher revenue growth usually signals stronger demand, market share gains, or a business still in expansion mode."},
+    {"key": "earnings_growth", "label": "Earnings Growth", "format": "percent", "prefer": "higher", "why": "Faster earnings growth matters because it shows management is converting sales momentum into shareholder value."},
+    {"key": "operating_margin", "label": "Operating Margin", "format": "percent", "prefer": "higher", "why": "Higher operating margin suggests better operating discipline, pricing power, or a structurally stronger business model."},
+    {"key": "gross_margin", "label": "Gross Margin", "format": "percent", "prefer": "higher", "why": "Gross margin helps show how much product-level pricing power and unit economics a company has before overhead."},
+    {"key": "profit_margin", "label": "Net Margin", "format": "percent", "prefer": "higher", "why": "Higher net margin means more of each dollar of revenue reaches the bottom line after all costs."},
+    {"key": "return_on_equity", "label": "Return on Equity", "format": "percent", "prefer": "higher", "why": "ROE shows how efficiently management turns shareholder capital into profits, though leverage can inflate it."},
+    {"key": "fcf_yield", "label": "Free Cash Flow Yield", "format": "percent", "prefer": "higher", "why": "Higher free cash flow yield can indicate a stronger cash return relative to the stock's market value."},
+    {"key": "debt_to_equity", "label": "Debt to Equity", "format": "ratio", "prefer": "lower", "why": "Lower leverage usually means less balance-sheet risk, though capital-intensive sectors naturally run higher debt loads."},
+    {"key": "current_ratio", "label": "Current Ratio", "format": "ratio", "prefer": "higher", "why": "A stronger current ratio usually signals better short-term liquidity and more room to absorb shocks."},
+    {"key": "beta", "label": "Beta", "format": "number", "prefer": "lower", "why": "Lower beta often means lower volatility versus the market, while higher beta usually brings a rougher ride."},
+    {"key": "dividend_yield", "label": "Dividend Yield", "format": "percent", "prefer": "higher", "why": "Dividend yield matters for income-focused investors, but a high yield can also reflect a stressed stock price."},
+    {"key": "target_upside", "label": "Analyst Upside", "format": "percent", "prefer": "higher", "why": "Higher analyst upside suggests the Street still sees room between current price and consensus fair value."},
+]
+
+
+def _format_compare_value(value, fmt):
+    if value is None:
+        return "—"
+    if fmt == "currency":
+        return f"${value:,.2f}"
+    if fmt == "compact_currency":
+        abs_value = abs(float(value))
+        if abs_value >= 1_000_000_000_000:
+            return f"${value / 1_000_000_000_000:.2f}T"
+        if abs_value >= 1_000_000_000:
+            return f"${value / 1_000_000_000:.2f}B"
+        if abs_value >= 1_000_000:
+            return f"${value / 1_000_000:.2f}M"
+        return f"${value:,.0f}"
+    if fmt == "multiple":
+        return f"{value:.1f}x"
+    if fmt == "ratio":
+        return f"{value:.2f}x"
+    if fmt == "percent":
+        return f"{value:.1f}%"
+    if fmt == "int":
+        return f"{int(round(value)):,}"
+    return f"{value:.2f}" if isinstance(value, float) else str(value)
+
+
+def _comparison_insights(snapshot):
+    growth = snapshot.get("revenue_growth")
+    earnings = snapshot.get("earnings_growth")
+    margin = snapshot.get("operating_margin")
+    forward_pe = snapshot.get("forward_pe")
+    debt = snapshot.get("debt_to_equity")
+    upside = snapshot.get("target_upside")
+    beta = snapshot.get("beta")
+    fcf_yield = snapshot.get("fcf_yield")
+
+    points = []
+    if growth is not None or earnings is not None:
+        if (growth or 0) >= 20 or (earnings or 0) >= 20:
+            points.append("Growth profile looks strong right now, with above-average top-line and/or earnings momentum.")
+        elif (growth or 0) < 5 and (earnings or 0) < 5:
+            points.append("Growth profile looks mature or currently muted, which can cap multiple expansion unless execution improves.")
+        else:
+            points.append("Growth is positive but not explosive, which usually supports a steadier compounding case than a hyper-growth story.")
+
+    if margin is not None or fcf_yield is not None:
+        if (margin or 0) >= 30:
+            points.append("Profitability is a real strength here, with healthy operating margins helping support resilience through weaker cycles.")
+        elif fcf_yield is not None and fcf_yield > 3:
+            points.append("Cash generation stands out versus market value, which helps the stock absorb valuation pressure better than weaker cash converters.")
+        else:
+            points.append("Profitability is serviceable, but it does not obviously dominate peers on margin or cash conversion alone.")
+
+    if forward_pe is not None or upside is not None:
+        if forward_pe is not None and forward_pe >= 30:
+            points.append("Valuation already asks investors to pay up, so the upside case depends on continued execution staying strong.")
+        elif forward_pe is not None and forward_pe <= 18:
+            points.append("Valuation looks more grounded than many growth names, which can improve the risk/reward if fundamentals hold up.")
+        elif upside is not None and upside >= 20:
+            points.append("Consensus analyst targets still imply meaningful upside, suggesting the Street thinks the current price leaves room for appreciation.")
+        else:
+            points.append("Valuation sits in a middle zone where future upside likely depends more on quarterly execution than on multiple re-rating alone.")
+
+    if debt is not None or beta is not None:
+        if debt is not None and debt > 100:
+            points.append("Balance-sheet leverage is elevated, so investors should watch refinancing costs and how much flexibility management really has.")
+        elif beta is not None and beta >= 1.5:
+            points.append("Expect a more volatile ride than the market average; that can amplify upside, but drawdowns can come fast too.")
+        else:
+            points.append("Risk profile looks relatively manageable compared with many peers, especially if operating execution remains stable.")
+
+    return points[:4]
+
+
+def _pick_competitor_stocks(show_stock, all_stocks):
+    stock_by_ticker = {stock["ticker"]: stock for stock in all_stocks}
+    picks = []
+    for ticker in SHOW_COMPETITOR_MAP.get(show_stock["ticker"], []) + SHOW_COMPETITOR_MAP.get(show_stock["ticker"].replace("-", "."), []):
+        normalized = ticker.replace(".", "-")
+        stock = stock_by_ticker.get(ticker) or stock_by_ticker.get(normalized)
+        if stock and stock["ticker"] != show_stock["ticker"] and stock not in picks:
+            picks.append(stock)
+        if len(picks) == 2:
+            return picks
+
+    sector_peers = [
+        stock for stock in all_stocks
+        if stock["ticker"] != show_stock["ticker"] and stock.get("sector") == show_stock.get("sector")
+    ]
+    sector_peers.sort(key=lambda stock: (stock.get("published_count", 0), stock.get("latest_quarter_sort", (0, 0, "")), stock.get("ticker")), reverse=True)
+    for stock in sector_peers:
+        if stock not in picks:
+            picks.append(stock)
+        if len(picks) == 2:
+            break
+    return picks[:2]
+
+
+def build_stock_competitor_analysis(show_stock, primary_snapshot, all_stocks):
+    competitor_stocks = _pick_competitor_stocks(show_stock, all_stocks)
+    snapshots = []
+
+    primary = dict(primary_snapshot or {})
+    primary.update({
+        "ticker": show_stock["ticker"],
+        "company": show_stock["company"],
+        "latest_video_quarter": show_stock.get("latest_video_quarter"),
+        "latest_youtube_url": show_stock.get("latest_youtube_url"),
+    })
+    snapshots.append(primary)
+
+    for comp_stock in competitor_stocks:
+        comp_bundle = get_stock_detail(comp_stock["yf_symbol"], include_options=False) or {}
+        comp_info = dict(comp_bundle.get("info") or {})
+        comp_info.update({
+            "ticker": comp_stock["ticker"],
+            "company": comp_stock["company"],
+            "latest_video_quarter": comp_stock.get("latest_video_quarter"),
+            "latest_youtube_url": comp_stock.get("latest_youtube_url"),
+        })
+        snapshots.append(comp_info)
+
+    rows = []
+    for metric in COMPARE_METRICS:
+        values = [snap.get(metric["key"]) for snap in snapshots]
+        numeric_values = [float(v) for v in values if isinstance(v, (int, float))]
+        best_value = worst_value = None
+        if len(numeric_values) >= 2 and metric["prefer"] in ("higher", "lower"):
+            best_value = max(numeric_values) if metric["prefer"] == "higher" else min(numeric_values)
+            worst_value = min(numeric_values) if metric["prefer"] == "higher" else max(numeric_values)
+
+        entries = []
+        for snap in snapshots:
+            value = snap.get(metric["key"])
+            status = "neutral"
+            if isinstance(value, (int, float)) and best_value is not None and worst_value is not None:
+                if abs(float(value) - best_value) < 1e-9:
+                    status = "best"
+                elif abs(float(value) - worst_value) < 1e-9:
+                    status = "worst"
+                else:
+                    status = "middle"
+            entries.append({
+                "ticker": snap.get("ticker"),
+                "company": snap.get("company"),
+                "value": value,
+                "display": _format_compare_value(value, metric["format"]),
+                "status": status,
+            })
+
+        rows.append({
+            "label": metric["label"],
+            "why": metric["why"],
+            "entries": entries,
+        })
+
+    cards = []
+    for snap in snapshots:
+        cards.append({
+            "ticker": snap.get("ticker"),
+            "company": snap.get("company"),
+            "latest_video_quarter": snap.get("latest_video_quarter") or "YouTube link pending",
+            "latest_youtube_url": snap.get("latest_youtube_url") or "",
+            "insights": _comparison_insights(snap),
+        })
+
+    notes = []
+    if show_stock.get("sector") == "Financials":
+        notes.append("Financial companies often look unusual on debt and liquidity ratios, so compare those rows more carefully than you would for non-financial businesses.")
+
+    return {
+        "stocks": cards,
+        "rows": rows,
+        "notes": notes,
     }
 
 app.url_map.strict_slashes = False
@@ -659,11 +877,14 @@ def show_stock_detail_page(ticker_slug):
     if not show_stock:
         return ("Stock show not found", 404)
 
-    stock_detail = get_stock_detail(show_stock["yf_symbol"]) or {
-        "symbol": show_stock["ticker"],
-        "name": show_stock["company"],
-        "sector": show_stock["sector"],
-    }
+    detail_bundle = get_stock_detail(show_stock["yf_symbol"], include_options=False) or {}
+    stock_detail = dict(detail_bundle.get("info") or {})
+    if not stock_detail:
+        stock_detail = {
+            "symbol": show_stock["ticker"],
+            "name": show_stock["company"],
+            "sector": show_stock["sector"],
+        }
 
     _, info = fetch_ticker_info(show_stock["yf_symbol"])
     if info:
@@ -694,13 +915,25 @@ def show_stock_detail_page(ticker_slug):
         "target_mean_price",
         "target_upside",
         "industry",
+        "revenue_growth",
+        "earnings_growth",
+        "operating_margin",
+        "gross_margin",
+        "profit_margin",
+        "return_on_equity",
+        "debt_to_equity",
+        "current_ratio",
+        "dividend_yield",
+        "fcf_yield",
     ):
         stock_detail.setdefault(key, None)
 
+    competitor_analysis = build_stock_competitor_analysis(show_stock, stock_detail, show_library["stocks"])
+
     seo_title = f"{show_stock['company']} ({show_stock['ticker']}) Stock Library — Charged Alpha"
     seo_description = (
-        f"Track {show_stock['company']} ({show_stock['ticker']}) across quarterly Charged Alpha episodes, "
-        "with live stock metrics, price chart context, and platform links by quarter."
+        f"Track {show_stock['company']} ({show_stock['ticker']}) across quarterly Charged Alpha YouTube coverage, "
+        "with live stock metrics, price chart context, competitor comparisons, and video links by quarter."
     )
     seo_meta = {
         "title": seo_title,
@@ -717,6 +950,7 @@ def show_stock_detail_page(ticker_slug):
         "show_stock_detail.html",
         show_stock=show_stock,
         stock_detail=stock_detail,
+        competitor_analysis=competitor_analysis,
         chart_symbol=show_stock["yf_symbol"],
         podcast_platforms=shows_data.get("platform_links", {}),
         seo_meta=seo_meta,

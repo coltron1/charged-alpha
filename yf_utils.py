@@ -55,7 +55,11 @@ chart_cache = TTLCache(default_ttl=300, max_size=500)
 # ── Ticker info fetcher (shared across stock, ETF, REIT screeners) ─────────
 
 def fetch_ticker_info(symbol, max_retries=2):
-    """Fetch yfinance Ticker and .info with caching and rate-limit retry."""
+    """Fetch yfinance Ticker and info dict with caching and rate-limit retry.
+
+    Prefer `get_info()` because `.info` has recently become much less reliable for
+    quote/valuation fields in this environment.
+    """
     cached = ticker_info_cache.get(symbol)
     if cached:
         return cached
@@ -63,7 +67,16 @@ def fetch_ticker_info(symbol, max_retries=2):
     for attempt in range(max_retries):
         try:
             t = yf.Ticker(symbol)
-            info = t.info
+            info = None
+            try:
+                info = t.get_info()
+            except Exception:
+                info = None
+            if not info:
+                try:
+                    info = t.info
+                except Exception:
+                    info = None
             if not info:
                 return None, None
             result = (t, info)

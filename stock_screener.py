@@ -351,163 +351,340 @@ def get_stock_data(symbol, fetch_options=False, hist_close=None, need_hist_pe=Tr
         return None
 
 
-def get_stock_detail(symbol):
+def get_stock_detail(symbol, include_options=True):
     t, info = _fetch_ticker_info(symbol)
     if t is None or info is None:
         return None
 
     try:
-        def _safe(key, scale=1, decimals=2):
-            v = info.get(key)
-            if v is None:
+        try:
+            fast = t.fast_info or {}
+        except Exception:
+            fast = {}
+
+        try:
+            targets = t.analyst_price_targets or {}
+        except Exception:
+            targets = {}
+
+        try:
+            rec_summary = t.recommendations_summary
+        except Exception:
+            rec_summary = None
+
+        try:
+            quarterly_income = t.quarterly_income_stmt
+        except Exception:
+            quarterly_income = pd.DataFrame()
+
+        try:
+            quarterly_cashflow = t.quarterly_cashflow
+        except Exception:
+            quarterly_cashflow = pd.DataFrame()
+
+        try:
+            balance_sheet = t.balance_sheet
+        except Exception:
+            balance_sheet = pd.DataFrame()
+
+        def _to_float(value):
+            if value in (None, ""):
                 return None
             try:
-                return round(float(v) * scale, decimals)
+                if pd.isna(value):
+                    return None
+            except Exception:
+                pass
+            try:
+                return float(value)
             except (TypeError, ValueError):
                 return None
 
-        current_price = (
-            info.get("currentPrice")
-            or info.get("regularMarketPrice")
-            or info.get("previousClose")
+        def _pick(*values, decimals=2, scale=1.0, as_int=False):
+            for value in values:
+                num = _to_float(value)
+                if num is None:
+                    continue
+                num *= scale
+                if as_int:
+                    return int(round(num))
+                return round(num, decimals)
+            return None
+
+        def _pick_raw(*values):
+            for value in values:
+                num = _to_float(value)
+                if num is not None:
+                    return num
+            return None
+
+        def _series_values(df, labels):
+            if df is None or getattr(df, "empty", True):
+                return []
+            for label in labels:
+                if label in df.index:
+                    vals = pd.to_numeric(df.loc[label], errors="coerce").dropna().tolist()
+                    if vals:
+                        return [float(v) for v in vals]
+            return []
+
+        def _yoy_growth(values):
+            if len(values) >= 5:
+                current = values[0]
+                prior = values[4]
+            elif len(values) >= 2:
+                current = values[0]
+                prior = values[1]
+            else:
+                return None
+            if prior in (None, 0):
+                return None
+            return round((current - prior) / abs(prior) * 100, 1)
+
+        def _sum_recent(values, count=4):
+            clean = [v for v in values[:count] if v is not None]
+            return sum(clean) if clean else None
+
+        price = _pick(
+            getattr(fast, "get", lambda *_: None)("lastPrice"),
+            info.get("currentPrice"),
+            info.get("regularMarketPrice"),
+            info.get("previousClose"),
         )
+        previous_close = _pick(
+            getattr(fast, "get", lambda *_: None)("previousClose"),
+            info.get("previousClose"),
+            info.get("regularMarketPreviousClose"),
+        )
+        open_price = _pick(
+            getattr(fast, "get", lambda *_: None)("open"),
+            info.get("regularMarketOpen"),
+        )
+        day_high = _pick(
+            getattr(fast, "get", lambda *_: None)("dayHigh"),
+            info.get("dayHigh"),
+            info.get("regularMarketDayHigh"),
+        )
+        day_low = _pick(
+            getattr(fast, "get", lambda *_: None)("dayLow"),
+            info.get("dayLow"),
+            info.get("regularMarketDayLow"),
+        )
+        market_cap = _pick_raw(
+            getattr(fast, "get", lambda *_: None)("marketCap"),
+            info.get("marketCap"),
+        )
+        week_52_high = _pick(
+            getattr(fast, "get", lambda *_: None)("yearHigh"),
+            info.get("fiftyTwoWeekHigh"),
+        )
+        week_52_low = _pick(
+            getattr(fast, "get", lambda *_: None)("yearLow"),
+            info.get("fiftyTwoWeekLow"),
+        )
+        volume = _pick(
+            getattr(fast, "get", lambda *_: None)("lastVolume"),
+            info.get("volume"),
+            info.get("regularMarketVolume"),
+            as_int=True,
+        )
+        avg_volume = _pick(
+            getattr(fast, "get", lambda *_: None)("threeMonthAverageVolume"),
+            info.get("averageVolume"),
+            as_int=True,
+        )
+
+        change = None
+        change_pct = None
+        if price is not None and previous_close not in (None, 0):
+            change = round(price - previous_close, 2)
+            change_pct = round((price - previous_close) / previous_close * 100, 2)
+
+        revenue_values = _series_values(quarterly_income, ["Total Revenue", "Operating Revenue"])
+        net_income_values = _series_values(quarterly_income, ["Net Income", "Net Income Common Stockholders"])
+        operating_income_values = _series_values(quarterly_income, ["Operating Income"])
+        free_cashflow_values = _series_values(quarterly_cashflow, ["Free Cash Flow"])
+        if not free_cashflow_values:
+            ocf_values = _series_values(quarterly_cashflow, ["Operating Cash Flow", "Cash Flow From Continuing Operating Activities"])
+            capex_values = _series_values(quarterly_cashflow, ["Capital Expenditure", "Capital Expenditures"])
+            if ocf_values:
+                free_cashflow_values = []
+                for idx, ocf in enumerate(ocf_values):
+                    capex = capex_values[idx] if idx < len(capex_values) else 0
+                    free_cashflow_values.append(float(ocf) + float(capex or 0))
+
+        equity_values = _series_values(balance_sheet, ["Stockholders Equity", "Common Stock Equity", "Total Equity Gross Minority Interest"])
+        current_assets_values = _series_values(balance_sheet, ["Current Assets", "Total Current Assets"])
+        current_liabilities_values = _series_values(balance_sheet, ["Current Liabilities", "Total Current Liabilities"])
+        debt_values = _series_values(balance_sheet, ["Total Debt"])
+
+        revenue_growth = _pick(info.get("revenueGrowth"), scale=100)
+        if revenue_growth is None:
+            revenue_growth = _yoy_growth(revenue_values)
+
+        earnings_growth = _pick(info.get("earningsGrowth"), scale=100)
+        if earnings_growth is None:
+            earnings_growth = _yoy_growth(net_income_values)
+
+        operating_margin = _pick(info.get("operatingMargins"), scale=100)
+        if operating_margin is None and operating_income_values and revenue_values:
+            ttm_operating = _sum_recent(operating_income_values)
+            ttm_revenue = _sum_recent(revenue_values)
+            if ttm_operating not in (None, 0) and ttm_revenue not in (None, 0):
+                operating_margin = round(ttm_operating / ttm_revenue * 100, 1)
+
+        debt_to_equity = _pick(info.get("debtToEquity"))
+        if debt_to_equity is None and debt_values and equity_values and equity_values[0] not in (None, 0):
+            debt_to_equity = round(debt_values[0] / equity_values[0] * 100, 1)
+
+        current_ratio = _pick(info.get("currentRatio"))
+        if current_ratio is None and current_assets_values and current_liabilities_values and current_liabilities_values[0] not in (None, 0):
+            current_ratio = round(current_assets_values[0] / current_liabilities_values[0], 2)
+
+        free_cashflow = _pick_raw(info.get("freeCashflow"), _sum_recent(free_cashflow_values))
+        fcf_yield = round(free_cashflow / market_cap * 100, 2) if free_cashflow and market_cap and market_cap > 0 else None
+
+        target_mean_price = _pick(targets.get("mean"), info.get("targetMeanPrice"))
+        analyst_count = _pick(info.get("numberOfAnalystOpinions"), as_int=True)
+        if analyst_count is None and rec_summary is not None and not getattr(rec_summary, "empty", True):
+            try:
+                latest_row = rec_summary.iloc[0]
+                analyst_count = int(sum(int(latest_row.get(col) or 0) for col in ["strongBuy", "buy", "hold", "sell", "strongSell"]))
+            except Exception:
+                analyst_count = None
+
+        price_to_book = _pick(info.get("priceToBook"))
+        if (price_to_book is None or price_to_book <= 0.05) and market_cap and equity_values and equity_values[0] not in (None, 0):
+            price_to_book = round(market_cap / equity_values[0], 2)
 
         stock_info = {
             "symbol": symbol,
             "name": info.get("longName") or info.get("shortName", symbol),
-            "price": _safe("currentPrice") or _safe("regularMarketPrice") or _safe("previousClose"),
-            "previous_close": _safe("previousClose"),
-            "open": _safe("regularMarketOpen"),
-            "day_high": _safe("dayHigh") or _safe("regularMarketDayHigh"),
-            "day_low": _safe("dayLow") or _safe("regularMarketDayLow"),
-            "change": _safe("regularMarketChange"),
-            "change_pct": _safe("regularMarketChangePercent"),
-            "week_52_high": _safe("fiftyTwoWeekHigh"),
-            "week_52_low": _safe("fiftyTwoWeekLow"),
-            "trailing_pe": _safe("trailingPE"),
-            "forward_pe": _safe("forwardPE"),
-            "eps": _safe("trailingEps"),
-            "price_to_book": _safe("priceToBook"),
-            "market_cap": info.get("marketCap"),
-            "beta": _safe("beta"),
+            "price": price,
+            "previous_close": previous_close,
+            "open": open_price,
+            "day_high": day_high,
+            "day_low": day_low,
+            "change": change,
+            "change_pct": change_pct,
+            "week_52_high": week_52_high,
+            "week_52_low": week_52_low,
+            "trailing_pe": _pick(info.get("trailingPE")),
+            "forward_pe": _pick(info.get("forwardPE")),
+            "eps": _pick(info.get("trailingEps")),
+            "price_to_book": price_to_book,
+            "market_cap": market_cap,
+            "beta": _pick(info.get("beta"), getattr(fast, "get", lambda *_: None)("beta")),
             "dividend_yield": round(float(info.get("trailingAnnualDividendYield")) * 100, 2) if info.get("trailingAnnualDividendYield") else normalize_div_yield(info.get("dividendYield")),
-            "avg_volume": info.get("averageVolume"),
-            "volume": info.get("volume") or info.get("regularMarketVolume"),
+            "avg_volume": avg_volume,
+            "volume": volume,
             "sector": info.get("sector"),
             "industry": info.get("industry"),
-            "short_ratio": _safe("shortRatio"),
-            "target_mean_price": _safe("targetMeanPrice"),
+            "short_ratio": _pick(info.get("shortRatio")),
+            "target_mean_price": target_mean_price,
             "analyst_recommendation": info.get("recommendationKey"),
-            "analyst_mean_score": _safe("recommendationMean"),
-            "analyst_count": info.get("numberOfAnalystOpinions"),
-            # Extra fields for detail view
-            "revenue_growth": _safe("revenueGrowth", 100),
-            "earnings_growth": _safe("earningsGrowth", 100),
-            "debt_to_equity": _safe("debtToEquity"),
-            "current_ratio": _safe("currentRatio"),
-            "operating_margin": _safe("operatingMargins", 100),
-            "payout_ratio": _safe("payoutRatio", 100),
-            "free_cashflow": info.get("freeCashflow"),
+            "analyst_mean_score": _pick(info.get("recommendationMean")),
+            "analyst_count": analyst_count,
+            "revenue_growth": revenue_growth,
+            "earnings_growth": earnings_growth,
+            "debt_to_equity": debt_to_equity,
+            "current_ratio": current_ratio,
+            "operating_margin": operating_margin,
+            "payout_ratio": _pick(info.get("payoutRatio"), scale=100),
+            "free_cashflow": free_cashflow,
+            "fcf_yield": fcf_yield,
+            "gross_margin": _pick(info.get("grossMargins"), scale=100),
+            "profit_margin": _pick(info.get("profitMargins"), scale=100),
+            "return_on_equity": _pick(info.get("returnOnEquity"), scale=100),
             "target_upside": None,
         }
 
-        # Calculate target upside
         tp = stock_info.get("target_mean_price")
         p = stock_info.get("price")
         if tp and p and p > 0:
             stock_info["target_upside"] = round((tp - p) / p * 100, 1)
 
-        # FCF yield
-        fcf = info.get("freeCashflow")
-        mc = info.get("marketCap")
-        stock_info["fcf_yield"] = round(float(fcf) / float(mc) * 100, 2) if fcf and mc and mc > 0 else None
-
-        # Fetch put chains for all expirations within ~92 days (3 months)
-        today = pd.Timestamp.now().normalize()
-        all_exps = t.options or []
-        near_exps = sorted(
-            [(e, (pd.Timestamp(e) - today).days) for e in all_exps
-             if 0 < (pd.Timestamp(e) - today).days <= 92],
-            key=lambda x: x[1],
-        )
-
         options_by_exp = []
-        for exp_str, dte in near_exps:
-            try:
-                chain = t.option_chain(exp_str)
-                puts = chain.puts.copy()
-                if puts.empty:
-                    continue
+        if include_options and p:
+            today = pd.Timestamp.now().normalize()
+            all_exps = t.options or []
+            near_exps = sorted(
+                [(e, (pd.Timestamp(e) - today).days) for e in all_exps
+                 if 0 < (pd.Timestamp(e) - today).days <= 92],
+                key=lambda x: x[1],
+            )
 
-                contracts = []
-                for _, row in puts.iterrows():
-                    strike = float(row["strike"])
-                    bid = float(row.get("bid") or 0)
-                    ask = float(row.get("ask") or 0)
-
-                    if ask == 0:
+            for exp_str, dte in near_exps:
+                try:
+                    chain = t.option_chain(exp_str)
+                    puts = chain.puts.copy()
+                    if puts.empty:
                         continue
 
-                    mid = round((bid + ask) / 2, 2)
-                    spread_dollar = round(ask - bid, 2)
-                    spread_pct = round((ask - bid) / mid * 100, 1) if mid > 0 else None
+                    contracts = []
+                    for _, row in puts.iterrows():
+                        strike = float(row["strike"])
+                        bid = float(row.get("bid") or 0)
+                        ask = float(row.get("ask") or 0)
+                        if ask == 0:
+                            continue
 
-                    iv_raw = row.get("impliedVolatility")
-                    iv = round(float(iv_raw) * 100, 1) if iv_raw and not pd.isna(iv_raw) else None
+                        mid = round((bid + ask) / 2, 2)
+                        spread_dollar = round(ask - bid, 2)
+                        spread_pct = round((ask - bid) / mid * 100, 1) if mid > 0 else None
+                        iv_raw = row.get("impliedVolatility")
+                        iv = round(float(iv_raw) * 100, 1) if iv_raw and not pd.isna(iv_raw) else None
+                        oi_raw = row.get("openInterest")
+                        oi = int(oi_raw) if oi_raw and not pd.isna(oi_raw) else 0
+                        vol_raw = row.get("volume")
+                        vol = int(vol_raw) if vol_raw and not pd.isna(vol_raw) else 0
+                        capital = round(strike * 100, 2)
+                        annual_return = round((mid / strike) * (365 / dte) * 100, 1) if dte > 0 and strike > 0 else None
 
-                    oi_raw = row.get("openInterest")
-                    oi = int(oi_raw) if oi_raw and not pd.isna(oi_raw) else 0
+                        if spread_pct is None:
+                            spread_flag = None
+                        elif spread_pct > 20:
+                            spread_flag = "bad"
+                        elif spread_pct > 10:
+                            spread_flag = "wide"
+                        else:
+                            spread_flag = None
 
-                    vol_raw = row.get("volume")
-                    volume = int(vol_raw) if vol_raw and not pd.isna(vol_raw) else 0
+                        if vol == 0:
+                            vol_flag = "none"
+                        elif vol < 10:
+                            vol_flag = "low"
+                        else:
+                            vol_flag = None
 
-                    capital = round(strike * 100, 2)
-                    annual_return = round((mid / strike) * (365 / dte) * 100, 1) if dte > 0 and strike > 0 else None
+                        sigma = float(iv_raw) if iv_raw and not pd.isna(iv_raw) else None
+                        prob_itm = _prob_itm_put(p, strike, sigma, dte) if sigma else None
 
-                    if spread_pct is None:
-                        spread_flag = None
-                    elif spread_pct > 20:
-                        spread_flag = "bad"
-                    elif spread_pct > 10:
-                        spread_flag = "wide"
-                    else:
-                        spread_flag = None
+                        contracts.append({
+                            "strike": strike,
+                            "bid": round(bid, 2),
+                            "ask": round(ask, 2),
+                            "mid": mid,
+                            "spread_dollar": spread_dollar,
+                            "spread_pct": spread_pct,
+                            "iv": iv,
+                            "oi": oi,
+                            "volume": vol,
+                            "capital": capital,
+                            "annual_return_pct": annual_return,
+                            "prob_itm": prob_itm,
+                            "spread_flag": spread_flag,
+                            "vol_flag": vol_flag,
+                        })
 
-                    if volume == 0:
-                        vol_flag = "none"
-                    elif volume < 10:
-                        vol_flag = "low"
-                    else:
-                        vol_flag = None
-
-                    sigma = float(iv_raw) if iv_raw and not pd.isna(iv_raw) else None
-                    prob_itm = _prob_itm_put(current_price, strike, sigma, dte) if sigma else None
-
-                    contracts.append({
-                        "strike": strike,
-                        "bid": round(bid, 2),
-                        "ask": round(ask, 2),
-                        "mid": mid,
-                        "spread_dollar": spread_dollar,
-                        "spread_pct": spread_pct,
-                        "iv": iv,
-                        "oi": oi,
-                        "volume": volume,
-                        "capital": capital,
-                        "annual_return_pct": annual_return,
-                        "prob_itm": prob_itm,
-                        "spread_flag": spread_flag,
-                        "vol_flag": vol_flag,
-                    })
-
-                if contracts:
-                    options_by_exp.append({
-                        "expiration": exp_str,
-                        "dte": dte,
-                        "contracts": sorted(contracts, key=lambda c: c["strike"]),
-                    })
-            except Exception:
-                continue
+                    if contracts:
+                        options_by_exp.append({
+                            "expiration": exp_str,
+                            "dte": dte,
+                            "contracts": sorted(contracts, key=lambda c: c["strike"]),
+                        })
+                except Exception:
+                    continue
 
         return {"info": stock_info, "options": options_by_exp}
 

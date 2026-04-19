@@ -97,7 +97,6 @@
       <div class="flex flex-wrap gap-3 mb-8">
         <a href="#library" class="btn-primary">Browse Stock Library</a>
         <a href="{{ podcast_platforms.youtube }}" target="_blank" rel="noopener noreferrer" class="btn-secondary">Watch on YouTube</a>
-        <a href="{{ podcast_platforms.spotify }}" target="_blank" rel="noopener noreferrer" class="btn-secondary">Listen on Spotify</a>
       </div>
       <div class="grid sm:grid-cols-2 xl:grid-cols-4 gap-4">
         <div class="card p-5">
@@ -162,8 +161,7 @@
         <option value="all">All stocks</option>
         <option value="published">Published only</option>
         <option value="youtube">Has YouTube</option>
-        <option value="spotify">Has Spotify</option>
-        <option value="planned">Needs episode link</option>
+        <option value="planned">Needs YouTube link</option>
       </select>
       <select id="sortSelect" class="select-shell px-4 py-3.5 text-sm">
         <option value="newest">Newest quarter / episode</option>
@@ -203,8 +201,6 @@
     </div>
     <div class="flex flex-wrap items-center justify-center gap-3 text-xs text-slate-500">
       <a href="{{ podcast_platforms.youtube }}" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-white no-underline">YouTube</a>
-      <a href="{{ podcast_platforms.spotify }}" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-white no-underline">Spotify</a>
-      <a href="{{ podcast_platforms.apple }}" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-white no-underline">Apple Podcasts</a>
       <span>Not financial advice. Educational content only.</span>
     </div>
   </div>
@@ -215,8 +211,8 @@ const STOCKS = {{ show_stocks | tojson }};
 const PAGE_SIZE = 24;
 let visibleCount = PAGE_SIZE;
 
-function latestEpisodeNumber(stock) {
-  return parseInt(stock.latest_episode_number || '0', 10) || 0;
+function youtubeCoverage(stock) {
+  return parseInt(stock.published_count || '0', 10) || 0;
 }
 
 function quarterSortValue(stock) {
@@ -238,7 +234,6 @@ function matchesFilters(stock) {
   if (sector !== 'All' && stock.sector !== sector) return false;
   if (availability === 'published' && !(stock.published_count > 0)) return false;
   if (availability === 'youtube' && !stock.has_youtube) return false;
-  if (availability === 'spotify' && !stock.has_spotify) return false;
   if (availability === 'planned' && stock.published_count > 0) return false;
   return true;
 }
@@ -250,8 +245,8 @@ function sortStocks(stocks) {
     if (sort === 'ticker') return a.ticker.localeCompare(b.ticker);
     if (sort === 'name') return a.company.localeCompare(b.company);
     if (sort === 'sector') return a.sector.localeCompare(b.sector) || a.ticker.localeCompare(b.ticker);
-    if (sort === 'completion') return (b.published_count - a.published_count) || latestEpisodeNumber(b) - latestEpisodeNumber(a);
-    return quarterSortValue(b) - quarterSortValue(a) || latestEpisodeNumber(b) - latestEpisodeNumber(a) || a.ticker.localeCompare(b.ticker);
+    if (sort === 'completion') return (b.published_count - a.published_count) || quarterSortValue(b) - quarterSortValue(a);
+    return quarterSortValue(b) - quarterSortValue(a) || youtubeCoverage(b) - youtubeCoverage(a) || a.ticker.localeCompare(b.ticker);
   });
   return items;
 }
@@ -263,15 +258,11 @@ function platformChip(href, label, bg) {
 
 function renderCard(stock) {
   const latestQuarter = stock.latest_quarter || 'Quarter TBD';
-  const latestEpisode = stock.latest_episode_number ? `Ep. ${stock.latest_episode_number}` : 'Episode pending';
-  const progressText = `${stock.published_count}/${stock.quarter_count} quarters linked`;
+  const latestVideoQuarter = stock.latest_video_quarter || 'No YouTube yet';
+  const progressText = `${stock.published_count}/${stock.quarter_count} quarters on YouTube`;
   const quarterPreview = stock.quarter_labels.slice(0, 4).map(q => `<span class="quarter-chip">${q}</span>`).join('');
   const chips = [
-    platformChip(stock.latest_links.youtube, 'YouTube', '#dc2626'),
-    platformChip(stock.latest_links.spotify, 'Spotify', '#16a34a'),
-    platformChip(stock.latest_links.apple, 'Apple', 'linear-gradient(135deg,#9333ea,#7c3aed)'),
-    platformChip(stock.latest_links.amazon, 'Amazon', 'linear-gradient(135deg,#f59e0b,#ea580c)'),
-    platformChip(stock.latest_links.podbean, 'Web', '#0284c7')
+    platformChip(stock.latest_links.youtube, 'YouTube', '#dc2626')
   ].join('');
 
   return `
@@ -286,8 +277,8 @@ function renderCard(stock) {
           <div class="text-sm text-slate-400">${stock.ticker} &middot; ${stock.sector}</div>
         </div>
         <div class="text-right">
-          <div class="text-xs uppercase tracking-[.18em] text-slate-500">Latest</div>
-          <div class="text-sm font-semibold text-white mt-1">${latestEpisode}</div>
+          <div class="text-xs uppercase tracking-[.18em] text-slate-500">Latest video</div>
+          <div class="text-sm font-semibold text-white mt-1">${latestVideoQuarter}</div>
         </div>
       </div>
 
@@ -297,8 +288,8 @@ function renderCard(stock) {
       </div>
 
       <div>
-        <div class="text-xs uppercase tracking-[.18em] text-slate-500 mb-2">Latest quarter links</div>
-        <div class="flex flex-wrap gap-2">${chips || '<span class="text-sm text-slate-500">No verified platform links yet</span>'}</div>
+        <div class="text-xs uppercase tracking-[.18em] text-slate-500 mb-2">Latest YouTube link</div>
+        <div class="flex flex-wrap gap-2">${chips || '<span class="text-sm text-slate-500">No verified YouTube link yet</span>'}</div>
       </div>
 
       <div class="mt-auto flex flex-wrap gap-3">
