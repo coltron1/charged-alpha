@@ -681,6 +681,17 @@
       <p id="compare-error-msg" class="text-slate-500 text-sm mt-1"></p>
     </div>
     <div id="compare-content" class="hidden space-y-6">
+      <div id="compare-winner-summary" class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4"></div>
+      <div class="grid grid-cols-1 xl:grid-cols-2 gap-4">
+        <div class="card p-5">
+          <div class="text-sm font-semibold text-slate-300 uppercase tracking-wider mb-4">Return Snapshot</div>
+          <div style="height:260px"><canvas id="compare-return-chart"></canvas></div>
+        </div>
+        <div class="card p-5">
+          <div class="text-sm font-semibold text-slate-300 uppercase tracking-wider mb-4">Cost / Risk Snapshot</div>
+          <div style="height:260px"><canvas id="compare-quality-chart"></canvas></div>
+        </div>
+      </div>
       <div id="compare-cards" class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4"></div>
       <div class="card overflow-x-auto">
         <table class="w-full text-sm compare-table">
@@ -713,6 +724,7 @@
     <span id="detail-symbol" class="text-xl font-bold text-indigo-400"></span>
     <span id="detail-name" class="text-slate-300 text-sm truncate min-w-0"></span>
     <div class="ml-auto flex items-center gap-3">
+      <button id="detail-compare-btn" class="btn-secondary" type="button">Add to Compare</button>
       <span id="detail-price" class="text-2xl font-bold text-white font-mono"></span>
       <span id="detail-change" class="badge text-sm"></span>
     </div>
@@ -1356,6 +1368,7 @@ function clearComparison() {
   compareDetails = [];
   compareOverlay.classList.remove('visible');
   screenerPage.style.display = '';
+  detailOverlay.classList.remove('visible');
   renderCompareBar();
   renderTable(allResults);
 }
@@ -1408,7 +1421,7 @@ function getActiveColumns() {
 
   if(hasPerf) {
     if(document.getElementById('min_ytd_return').value) cols.push({key:'ytd_return',label:'YTD %',align:'right',tip:'Year-to-date return (%)'});
-    if(document.getElementById('min_1y_return').value || document.getElementById('min_w52_perf').value) cols.push({key:'one_year_return',label:'1Y %',align:'right',tip:'Approximate 1-year price return (%)'});
+    if(document.getElementById('min_1y_return').value || document.getElementById('min_w52_perf').value) cols.push({key:'one_year_return',label:'1Y %',align:'right',tip:'1-year adjusted return (%)'});
     if(document.getElementById('min_3y_return').value) cols.push({key:'three_year_return',label:'3Y Ann %',align:'right',tip:'3-year annualized return (%)'});
   }
   if(hasQuality) {
@@ -1676,6 +1689,8 @@ exportBtn.addEventListener('click',()=>{
 const detailOverlay = document.getElementById('detail-overlay');
 const screenerPage  = document.getElementById('screener-page');
 let detailData = null;
+let compareReturnChart = null;
+let compareQualityChart = null;
 
 document.getElementById('detail-back').addEventListener('click', () => {
   detailOverlay.classList.remove('visible');
@@ -1726,6 +1741,12 @@ function renderDetailPage(data){
     chgEl.textContent = `${up?'+':''}${info.change_pct.toFixed(2)}%`;
     chgEl.className = 'badge ' + (up?'tag-green':'tag-red');
   }
+  const detailCompareBtn = document.getElementById('detail-compare-btn');
+  detailCompareBtn.textContent = isCompared(info.symbol) ? 'Remove from Compare' : 'Add to Compare';
+  detailCompareBtn.onclick = () => {
+    toggleCompare(info.symbol);
+    detailCompareBtn.textContent = isCompared(info.symbol) ? 'Remove from Compare' : 'Add to Compare';
+  };
 
   renderSummary(info, data.description, data.description_source, data.operation_highlights || []);
   renderMetrics(info);
@@ -1868,10 +1889,10 @@ function renderMetrics(info){
     { label:'Risk Rating', tip:"Morningstar risk rating. Lower can indicate a smoother ride vs category peers.", html:`<div class="metric-value">${info.morningstar_risk!=null?info.morningstar_risk:'-'}</div>` },
     { label:'Turnover', tip:"Annual portfolio turnover. Lower often means a steadier process.", html:`<div class="metric-value">${info.turnover_pct!=null?info.turnover_pct.toFixed(0)+'%':'-'}</div>` },
     { label:'Beta', tip:"Volatility vs market. >1 = more volatile, <1 = less volatile.", html:`<div class="metric-value">${fmt(info.beta)}</div>` },
-    { label:'YTD Return', tip:"Year-to-date return.", html:`<div class="metric-value">${info.ytd_return!=null?info.ytd_return.toFixed(1)+'%':'-'}</div>` },
-    { label:'1Y Return', tip:"Approximate 1-year price return.", html:`<div class="metric-value">${info.one_year_return!=null?info.one_year_return.toFixed(1)+'%':'-'}</div>` },
-    { label:'3Y Ann Return', tip:"3-year annualized return.", html:`<div class="metric-value">${info.three_year_return!=null?info.three_year_return.toFixed(1)+'%':'-'}</div>` },
-    { label:'5Y Ann Return', tip:"5-year annualized return.", html:`<div class="metric-value">${info.five_year_return!=null?info.five_year_return.toFixed(1)+'%':'-'}</div>` },
+    { label:'YTD Return', tip:"Year-to-date adjusted return based on fund price history.", html:`<div class="metric-value">${info.ytd_return!=null?info.ytd_return.toFixed(1)+'%':'-'}</div>` },
+    { label:'1Y Return', tip:"1-year adjusted return based on fund price history.", html:`<div class="metric-value">${info.one_year_return!=null?info.one_year_return.toFixed(1)+'%':'-'}</div>` },
+    { label:'3Y Ann Return', tip:"3-year annualized adjusted return based on fund price history.", html:`<div class="metric-value">${info.three_year_return!=null?info.three_year_return.toFixed(1)+'%':'-'}</div>` },
+    { label:'5Y Ann Return', tip:"5-year annualized adjusted return based on fund price history.", html:`<div class="metric-value">${info.five_year_return!=null?info.five_year_return.toFixed(1)+'%':'-'}</div>` },
     { label:'Category', tip:"Mutual fund category classification.", html:`<div class="metric-value text-sm">${info.category||'-'}</div>` },
     { label:'Asset Class', tip:"Primary asset class.", html:`<div class="metric-value text-sm">${info.asset_class||'-'}</div>` },
     { label:'Fund Family', tip:"Fund family / issuer.", html:`<div class="metric-value text-sm leading-tight">${info.fund_family||'-'}</div>` },
@@ -2060,6 +2081,85 @@ function renderCompareCards(details) {
   }).join('');
 }
 
+function renderWinnerSummary(details) {
+  const defs = compareMetricDefinitions().filter(def => def.direction);
+  const wins = Object.fromEntries(details.map(d => [d.info.symbol, 0]));
+  defs.forEach(def => {
+    const extremes = metricExtremes(details, def.key, def.direction);
+    details.forEach(d => {
+      const value = d.info[def.key];
+      if(typeof value === 'number' && extremes.best != null && value === extremes.best) {
+        wins[d.info.symbol] += 1;
+      }
+    });
+  });
+  const wrap = document.getElementById('compare-winner-summary');
+  wrap.innerHTML = details.map(d => {
+    const info = d.info;
+    const summary = wins[info.symbol];
+    return `
+      <div class="card p-5">
+        <div class="text-indigo-400 font-bold text-sm uppercase tracking-wider">${escapeHtml(info.symbol)}</div>
+        <div class="text-slate-200 font-semibold mt-2">${escapeHtml(info.name)}</div>
+        <div class="text-3xl font-bold mt-4 ${summary > 0 ? 'text-green-400' : 'text-slate-300'}">${summary}</div>
+        <div class="text-slate-400 text-sm mt-1">head-to-head metric win${summary !== 1 ? 's' : ''}</div>
+      </div>`;
+  }).join('');
+}
+
+function destroyCompareCharts() {
+  if(compareReturnChart) { compareReturnChart.destroy(); compareReturnChart = null; }
+  if(compareQualityChart) { compareQualityChart.destroy(); compareQualityChart = null; }
+}
+
+function renderCompareCharts(details) {
+  destroyCompareCharts();
+  const labels = details.map(d => d.info.symbol);
+  const palette = ['#6366f1', '#22c55e', '#f59e0b'];
+  const returnCtx = document.getElementById('compare-return-chart').getContext('2d');
+  compareReturnChart = new Chart(returnCtx, {
+    type: 'bar',
+    data: {
+      labels,
+      datasets: [
+        { label:'1Y %', data: details.map(d => d.info.one_year_return), backgroundColor: palette[0] },
+        { label:'3Y Ann %', data: details.map(d => d.info.three_year_return), backgroundColor: palette[1] },
+        { label:'5Y Ann %', data: details.map(d => d.info.five_year_return), backgroundColor: palette[2] },
+      ]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: { legend: { labels: { color:'#94a3b8' } } },
+      scales: {
+        x: { ticks: { color:'#94a3b8' }, grid:{ color:'#1e293b' } },
+        y: { ticks: { color:'#94a3b8', callback:v => `${v}%` }, grid:{ color:'#1e293b' } },
+      }
+    }
+  });
+  const qualityCtx = document.getElementById('compare-quality-chart').getContext('2d');
+  compareQualityChart = new Chart(qualityCtx, {
+    type: 'bar',
+    data: {
+      labels,
+      datasets: [
+        { label:'Expense %', data: details.map(d => d.info.expense_ratio), backgroundColor:'#38bdf8' },
+        { label:'Beta', data: details.map(d => d.info.beta), backgroundColor:'#fb7185' },
+        { label:'Turnover %', data: details.map(d => d.info.turnover_pct), backgroundColor:'#a78bfa' },
+      ]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: { legend: { labels: { color:'#94a3b8' } } },
+      scales: {
+        x: { ticks: { color:'#94a3b8' }, grid:{ color:'#1e293b' } },
+        y: { ticks: { color:'#94a3b8' }, grid:{ color:'#1e293b' } },
+      }
+    }
+  });
+}
+
 function renderCompareTable(details) {
   const defs = compareMetricDefinitions();
   document.getElementById('compare-header').innerHTML = `<th class="text-left p-4">Metric</th>${details.map(d => `<th class="text-left p-4">${escapeHtml(d.info.symbol)}</th>`).join('')}`;
@@ -2091,6 +2191,8 @@ async function openCompareOverlay() {
       if(!res.ok) throw new Error(`Failed on ${symbol}`);
       return res.json();
     }));
+    renderWinnerSummary(compareDetails);
+    renderCompareCharts(compareDetails);
     renderCompareCards(compareDetails);
     renderCompareTable(compareDetails);
     document.getElementById('compare-content').classList.remove('hidden');

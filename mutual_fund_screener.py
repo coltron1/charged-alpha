@@ -1,6 +1,6 @@
 import threading
 from concurrent.futures import ThreadPoolExecutor
-from datetime import datetime
+from datetime import datetime, timedelta
 
 from yf_utils import (
     fetch_ticker_info as _fetch_ticker_info,
@@ -403,6 +403,112 @@ def _get_funds_data(ticker):
         return None
 
 
+def _safe_history(ticker, start_date=None, period=None):
+    try:
+        kwargs = {"interval": "1d", "auto_adjust": True}
+        if start_date is not None:
+            kwargs["start"] = start_date
+        elif period is not None:
+            kwargs["period"] = period
+        hist = ticker.history(**kwargs)
+        if hist is None or hist.empty:
+            return None
+        try:
+            hist = hist.copy()
+            hist.index = hist.index.tz_localize(None)
+        except Exception:
+            pass
+        return hist
+    except Exception:
+        return None
+
+
+def _calc_period_return(hist, years=None, since=None):
+    if hist is None or hist.empty:
+        return None
+    try:
+        end_close = float(hist["Close"].iloc[-1])
+        end_date = hist.index[-1].to_pydatetime().replace(tzinfo=None)
+
+        if since is not None:
+            subset = hist.loc[hist.index >= since]
+            if subset.empty:
+                return None
+            start_close = float(subset["Close"].iloc[0])
+            if start_close <= 0:
+                return None
+            return round((end_close / start_close - 1) * 100, 2)
+
+        if years is not None:
+            target = end_date - timedelta(days=int(365.25 * years))
+            subset = hist.loc[hist.index >= target]
+            if subset.empty:
+                return None
+            start_close = float(subset["Close"].iloc[0])
+            start_date = subset.index[0].to_pydatetime().replace(tzinfo=None)
+            elapsed_years = max((end_date - start_date).days / 365.25, 0.01)
+            if start_close <= 0:
+                return None
+            return round(((end_close / start_close) ** (1 / elapsed_years) - 1) * 100, 2)
+    except Exception:
+        return None
+    return None
+
+
+def _calc_one_year_return(hist):
+    if hist is None or hist.empty:
+        return None
+    try:
+        end_close = float(hist["Close"].iloc[-1])
+        end_date = hist.index[-1].to_pydatetime().replace(tzinfo=None)
+        target = end_date - timedelta(days=365)
+        subset = hist.loc[hist.index >= target]
+        if subset.empty:
+            return None
+        start_close = float(subset["Close"].iloc[0])
+        if start_close <= 0:
+            return None
+        return round((end_close / start_close - 1) * 100, 2)
+    except Exception:
+        return None
+
+
+def _calc_ytd_return(hist):
+    if hist is None or hist.empty:
+        return None
+    try:
+        end_close = float(hist["Close"].iloc[-1])
+        end_dt = hist.index[-1].to_pydatetime().replace(tzinfo=None)
+        jan1 = datetime(end_dt.year, 1, 1)
+        subset = hist.loc[hist.index >= jan1]
+        if subset.empty:
+            return None
+        start_close = float(subset["Close"].iloc[0])
+        if start_close <= 0:
+            return None
+        return round((end_close / start_close - 1) * 100, 2)
+    except Exception:
+        return None
+
+
+def _extract_return_metrics(ticker):
+    start_date = (datetime.now() - timedelta(days=int(365.25 * 6) + 10)).date().isoformat()
+    hist = _safe_history(ticker, start_date=start_date)
+    if hist is None:
+        return {
+            "ytd_return": None,
+            "one_year_return": None,
+            "three_year_return": None,
+            "five_year_return": None,
+        }
+    return {
+        "ytd_return": _calc_ytd_return(hist),
+        "one_year_return": _calc_one_year_return(hist),
+        "three_year_return": _calc_period_return(hist, years=3),
+        "five_year_return": _calc_period_return(hist, years=5),
+    }
+
+
 def get_mutual_fund_data(symbol, include_portfolio=False):
     """Fetch mutual fund data for screener rows."""
     ticker, info = _fetch_ticker_info(symbol)
@@ -419,6 +525,8 @@ def get_mutual_fund_data(symbol, include_portfolio=False):
         if current_price is None:
             return None
         current_price = float(current_price)
+
+        return_metrics = _extract_return_metrics(ticker)
 
         expense_ratio_raw = (
             info.get("netExpenseRatio")
@@ -477,10 +585,10 @@ def get_mutual_fund_data(symbol, include_portfolio=False):
             "expense_ratio": expense_ratio,
             "total_assets": total_assets,
             "dividend_yield": dividend_yield,
-            "ytd_return": _safe_float(info, "ytdReturn", 100),
-            "one_year_return": w52_perf,
-            "three_year_return": _safe_float(info, "threeYearAverageReturn", 100),
-            "five_year_return": _safe_float(info, "fiveYearAverageReturn", 100),
+            "ytd_return": return_metrics.get("ytd_return"),
+            "one_year_return": return_metrics.get("one_year_return"),
+            "three_year_return": return_metrics.get("three_year_return"),
+            "five_year_return": return_metrics.get("five_year_return"),
             "category": get_mutual_fund_category(symbol),
             "asset_class": get_mutual_fund_asset_class(symbol),
             "strategy_focus": get_mutual_fund_strategy_focus(symbol),
@@ -712,6 +820,8 @@ def get_mutual_fund_detail(symbol):
             or info.get("navPrice")
         )
 
+        return_metrics = _extract_return_metrics(ticker)
+
         expense_ratio_raw = (
             info.get("netExpenseRatio")
             or info.get("annualReportExpenseRatio")
@@ -762,9 +872,9 @@ def get_mutual_fund_detail(symbol):
             "expense_ratio": expense_ratio,
             "total_assets": info.get("totalAssets"),
             "dividend_yield": dividend_yield,
-            "ytd_return": _safe("ytdReturn", 100),
-            "three_year_return": _safe("threeYearAverageReturn", 100),
-            "five_year_return": _safe("fiveYearAverageReturn", 100),
+            "ytd_return": return_metrics.get("ytd_return"),
+            "three_year_return": return_metrics.get("three_year_return"),
+            "five_year_return": return_metrics.get("five_year_return"),
             "beta": _safe("beta3Year") or _safe("beta"),
             "volume": info.get("volume") or info.get("regularMarketVolume"),
             "avg_volume": info.get("averageVolume") or info.get("averageDailyVolume10Day"),
@@ -786,11 +896,7 @@ def get_mutual_fund_detail(symbol):
             **asset_mix,
         }
 
-        w52_low = _safe("fiftyTwoWeekLow")
-        if w52_low and current_price and w52_low > 0:
-            fund_info["one_year_return"] = round((float(current_price) - w52_low) / w52_low * 100, 1)
-        else:
-            fund_info["one_year_return"] = None
+        fund_info["one_year_return"] = return_metrics.get("one_year_return")
 
         bond_stats = []
         if funds_data is not None:
