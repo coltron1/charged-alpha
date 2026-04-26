@@ -546,10 +546,10 @@
 <section id="shows" class="py-24 px-6">
   <div class="max-w-6xl mx-auto">
     <div class="text-center mb-16">
-      <p class="text-sm font-bold text-indigo-400 uppercase tracking-widest mb-3">Charged Alpha Stock Encyclopedia</p>
-      <h2 class="text-4xl md:text-5xl font-extrabold text-white mb-4">The website now needs to think like the channel does.</h2>
+      <p class="text-sm font-bold text-indigo-400 uppercase tracking-widest mb-3">Stock Encyclopedia</p>
+      <h2 class="text-4xl md:text-5xl font-extrabold text-white mb-4">Every Russell 1000 Stock. Every Quarter.</h2>
       <p class="text-lg text-slate-400 max-w-3xl mx-auto leading-relaxed">
-        The newer YouTube direction is a fast-moving, quarterly earnings-analysis engine. So the site is shifting from a simple episode list toward a stock-first library where you can open one company, review the market snapshot, and jump into every quarter's episode from one place.
+        A growing library where every company we cover has its own page — chart, valuation snapshot, segments, and every quarter's episode in one place. Built to be revisited as the story evolves.
       </p>
     </div>
 
@@ -569,25 +569,25 @@
         </div>
 
         <p class="text-slate-300 leading-relaxed mb-6">
-          Instead of burying content in one long episode feed, the library is being organized around the way investors actually revisit research: start with the stock, then compare quarter to quarter. Each stock page can now become the permanent home for the chart, valuation snapshot, and platform links for every episode tied to that company.
+          Open a company's page and see the full quarterly arc — price, P/E, segments, and every episode tied to the ticker, all in one view. One stock, one page, every quarter we've covered.
         </p>
 
         <div class="grid sm:grid-cols-2 gap-4 mb-8 text-sm text-slate-400">
           <div class="card p-4" style="background:#0f172a;border-color:#1e293b;">
             <div class="text-indigo-300 font-semibold mb-1">{{ show_stats.stock_count or 0 }} Stocks Tracked</div>
-            <div>The library is already structured to grow toward recurring quarterly coverage, not just one-off uploads.</div>
+            <div>Coverage expands every earnings season, building toward full Russell 1000 depth over time.</div>
           </div>
           <div class="card p-4" style="background:#0f172a;border-color:#1e293b;">
             <div class="text-indigo-300 font-semibold mb-1">{{ show_stats.published_episode_count or 0 }} Published Episodes</div>
-            <div>Existing links are surfaced where investors expect them: inside each stock's detail page and by quarter.</div>
+            <div>Every breakdown lives on its stock's page — research stays organized as quarters add up.</div>
           </div>
           <div class="card p-4" style="background:#0f172a;border-color:#1e293b;">
             <div class="text-indigo-300 font-semibold mb-1">Filter by Quarter</div>
-            <div>As the Russell 1000 fills out over time, the library can be narrowed by quarter, ticker, and sector.</div>
+            <div>Compare the same company across quarters, or scan a sector to see who reported what.</div>
           </div>
           <div class="card p-4" style="background:#0f172a;border-color:#1e293b;">
             <div class="text-indigo-300 font-semibold mb-1">Open the Stock Detail</div>
-            <div>Price, P/E, chart context, and platform links now live together instead of being scattered across pages.</div>
+            <div>Price, P/E, chart context, and platform links in one place — no more digging.</div>
           </div>
         </div>
 
@@ -620,7 +620,7 @@
             {% if show_quarters %}
               <span class="text-white font-semibold">{{ show_quarters | join(', ') }}</span>
             {% else %}
-              <span class="text-slate-500">quarter tags still being populated</span>
+              <span class="text-slate-500">no quarters yet</span>
             {% endif %}
           </div>
           <div class="flex flex-wrap gap-3">
