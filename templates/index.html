@@ -52,6 +52,32 @@
       font-size: 36px;
       box-shadow: 0 0 40px rgba(99,102,241,.4);
     }
+    .brand-logo {
+      width: 48px;
+      height: 48px;
+      object-fit: cover;
+      border-radius: 12px;
+      border: 1px solid rgba(52,211,255,.35);
+      box-shadow: 0 0 24px rgba(52,211,255,.16);
+    }
+    .brand-logo-lg {
+      width: 128px;
+      height: 128px;
+      object-fit: cover;
+      border-radius: 24px;
+      border: 1px solid rgba(52,211,255,.35);
+      box-shadow: 0 0 45px rgba(52,211,255,.18);
+    }
+    .media-card {
+      background: linear-gradient(180deg, rgba(17,24,39,.96), rgba(15,23,42,.96));
+      border: 1px solid #1e293b;
+      border-radius: 14px;
+      transition: transform .2s ease, border-color .2s ease;
+    }
+    .media-card:hover {
+      transform: translateY(-3px);
+      border-color: #334155;
+    }
 
     /* ── Cards ─────────────────────────────────────────────────── */
     .card {
@@ -139,6 +165,7 @@
     .badge-daily   { background: rgba(99,102,241,.15); color: #a5b4fc; }
     .badge-weekly  { background: rgba(16,185,129,.15); color: #6ee7b7; }
     .badge-markets { background: rgba(245,158,11,.15); color: #fcd34d; }
+    .badge-youtube { background: rgba(239,68,68,.15); color: #fca5a5; }
 
     /* ── Coming soon pulse ────────────────────────────────────── */
     @keyframes pulse-dot { 0%,100% { opacity: .4; } 50% { opacity: 1; } }
@@ -226,9 +253,10 @@
   <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
     <!-- Logo -->
     <a href="/" class="flex items-center gap-3 text-white no-underline">
-      <div class="logo-bolt">&#9889;</div>
+      <img src="/static/assets/charged-alpha-logo.png" alt="Charged Alpha logo" class="brand-logo">
       <div>
         <span class="font-extrabold text-lg tracking-tight">CHARGED ALPHA</span>
+        <div class="text-[10px] font-bold tracking-[.18em] text-cyan-300 uppercase">Financial Media</div>
       </div>
     </a>
     <!-- Nav links -->
@@ -250,7 +278,10 @@
           <a href="/charts/">Stock Charts</a>
         </div>
       </div>
-      <a href="/shows" class="text-sm text-slate-300 hover:text-white transition-colors no-underline font-medium">Shows</a>
+      <a href="#media" class="text-sm text-slate-300 hover:text-white transition-colors no-underline font-medium">Media</a>
+      <a href="/shows" class="text-sm text-slate-300 hover:text-white transition-colors no-underline font-medium">Stock Encyclopedia</a>
+      <a href="https://www.youtube.com/@ChargedAlpha" target="_blank" rel="noopener" class="text-sm text-slate-300 hover:text-white transition-colors no-underline font-medium">YouTube</a>
+      <a href="#roadmap" class="text-sm text-slate-300 hover:text-white transition-colors no-underline font-medium">Coverage</a>
       <a href="#about" class="text-sm text-slate-300 hover:text-white transition-colors no-underline font-medium">About</a>
       <a href="/auth/login" style="padding:6px 14px;border-radius:8px;font-size:12px;font-weight:600;color:#94a3b8;border:1px solid #334155;text-decoration:none;transition:all .15s;">Sign In</a>
       <a href="/auth/register" style="padding:6px 14px;border-radius:8px;font-size:12px;font-weight:600;color:white;background:linear-gradient(135deg,#6366f1,#7c3aed);text-decoration:none;transition:all .15s;">Sign Up</a>
@@ -276,7 +307,10 @@
     <a href="/gold/" class="block text-sm text-slate-300 no-underline">Precious Metals</a>
     <a href="/charts/" class="block text-sm text-slate-300 no-underline">Stock Charts</a>
     <div style="height:1px;background:#1e293b;margin:8px 0"></div>
-    <a href="/shows" class="block text-sm text-slate-300 no-underline">Shows</a>
+    <a href="#media" class="block text-sm text-slate-300 no-underline">Media</a>
+    <a href="/shows" class="block text-sm text-slate-300 no-underline">Stock Encyclopedia</a>
+    <a href="https://www.youtube.com/@ChargedAlpha" class="block text-sm text-slate-300 no-underline">YouTube</a>
+    <a href="#roadmap" class="block text-sm text-slate-300 no-underline">Coverage</a>
     <a href="#about" class="block text-sm text-slate-300 no-underline">About</a>
     <div style="height:1px;background:#1e293b;margin:8px 0"></div>
     <a href="/auth/login" class="block text-sm text-slate-300 no-underline">Sign In</a>
@@ -291,49 +325,53 @@
   <div class="max-w-5xl mx-auto text-center">
     <!-- Logo mark large -->
     <div class="flex justify-center mb-8">
-      <div class="logo-bolt logo-bolt-lg">&#9889;</div>
+      <img src="/static/assets/charged-alpha-logo.png" alt="Charged Alpha Financial Media logo" class="brand-logo-lg">
     </div>
 
     <h1 class="text-5xl md:text-7xl font-black tracking-tight text-white leading-tight mb-6">
-      Invest with<br>
-      <span style="background:linear-gradient(135deg,#6366f1,#a78bfa,#8b5cf6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">an Edge</span>
+      Charged Alpha<br>
+      <span style="background:linear-gradient(135deg,#34d5ff,#22d3ee,#fcd34d);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">Financial Media</span>
     </h1>
 
     <p class="text-xl md:text-2xl text-slate-400 max-w-2xl mx-auto mb-4 leading-relaxed">
-      Learn investing concepts while discovering your next opportunity.
+      Investing education, stock research, and AI-powered market media built for people who want to understand the business behind the ticker.
     </p>
-    <p class="text-base text-slate-500 max-w-2xl mx-auto mb-10 leading-relaxed">
-      Free screening tools, real market data, and focused stock breakdowns built from the same research workflow you can use yourself. Charged Alpha is built around a single flagship format: one stock, one thesis, one clear breakdown.
+    <p class="text-base text-slate-500 max-w-3xl mx-auto mb-10 leading-relaxed">
+      Watch short investing lessons, stock comparison videos, and a growing stock encyclopedia covering earnings-driven breakdowns across the Russell 1000 and beyond. The research tools power the media; the media makes the research easier to use.
     </p>
 
     <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-      <a href="#tools" class="btn-primary">
-        Explore Tools
+      <a href="https://www.youtube.com/@ChargedAlpha" target="_blank" rel="noopener" class="btn-primary" style="background:linear-gradient(135deg,#ef4444,#dc2626);">
+        Watch on YouTube
         <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 4l6 5-6 5"/></svg>
       </a>
       <a href="/shows" class="btn-secondary">
-        Browse the Show Library
+        Browse the Stock Encyclopedia
         <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 4v10M6 7l3-3 3 3M5 14h8"/></svg>
+      </a>
+      <a href="#tools" class="btn-secondary">
+        Use the Research Tools
+        <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h8M9 8l4 4-4 4"/></svg>
       </a>
     </div>
 
     <!-- Quick stats -->
     <div class="flex flex-wrap justify-center gap-10 mt-16">
       <div class="text-center">
-        <div class="stat-num text-3xl font-extrabold">12</div>
-        <div class="text-xs text-slate-500 mt-1 uppercase tracking-wide">Live Tools</div>
-      </div>
-      <div class="text-center">
-        <div class="stat-num text-3xl font-extrabold">7</div>
-        <div class="text-xs text-slate-500 mt-1 uppercase tracking-wide">Asset Classes</div>
+        <div class="stat-num text-3xl font-extrabold">Shorts</div>
+        <div class="text-xs text-slate-500 mt-1 uppercase tracking-wide">Investing Concepts</div>
       </div>
       <div class="text-center">
         <div class="stat-num text-3xl font-extrabold">1000+</div>
-        <div class="text-xs text-slate-500 mt-1 uppercase tracking-wide">Securities Tracked</div>
+        <div class="text-xs text-slate-500 mt-1 uppercase tracking-wide">Russell 1000 Coverage Goal</div>
       </div>
       <div class="text-center">
-        <div class="stat-num text-3xl font-extrabold">~10 Min</div>
-        <div class="text-xs text-slate-500 mt-1 uppercase tracking-wide">Single-Stock Breakdowns</div>
+        <div class="stat-num text-3xl font-extrabold">Quarterly</div>
+        <div class="text-xs text-slate-500 mt-1 uppercase tracking-wide">Earnings Deep Dives</div>
+      </div>
+      <div class="text-center">
+        <div class="stat-num text-3xl font-extrabold">12</div>
+        <div class="text-xs text-slate-500 mt-1 uppercase tracking-wide">Research Tools</div>
       </div>
     </div>
   </div>
@@ -366,13 +404,94 @@
 
 <div class="section-line"></div>
 
+<!-- ═══════════════════════════════════════════════════════════════
+     MEDIA CHANNELS
+     ═══════════════════════════════════════════════════════════════ -->
+<section id="media" class="py-24 px-6">
+  <div class="max-w-6xl mx-auto">
+    <div class="text-center mb-14">
+      <p class="text-sm font-bold text-red-400 uppercase tracking-widest mb-3">Media First</p>
+      <h2 class="text-4xl md:text-5xl font-extrabold text-white mb-4">Watch the Research Become a Story</h2>
+      <p class="text-lg text-slate-400 max-w-3xl mx-auto leading-relaxed">
+        Charged Alpha turns live market data into educational videos: bite-sized investing concepts, stock-vs-stock comparisons, quarterly earnings deep dives, and searchable company breakdowns.
+      </p>
+    </div>
+
+    <div class="grid lg:grid-cols-[1fr_1.1fr] gap-8 items-stretch mb-8">
+      <div class="media-card p-8 glow-indigo">
+        <div class="flex items-center gap-4 mb-6">
+          <img src="/static/assets/charged-alpha-logo.png" alt="Charged Alpha logo" class="brand-logo">
+          <div>
+            <p class="text-xs font-bold text-red-400 uppercase tracking-widest mb-1">Primary Channel</p>
+            <h3 class="text-2xl font-bold text-white">YouTube Shorts and Stock Research Videos</h3>
+          </div>
+        </div>
+        <p class="text-slate-300 leading-relaxed mb-6">
+          The YouTube channel is the front door: fast investing lessons for discovery, then deeper stock videos for people researching a company before they invest.
+        </p>
+        <div class="grid sm:grid-cols-2 gap-3 mb-8 text-sm">
+          <div class="card p-4" style="background:#0f172a;border-color:#1e293b;">
+            <div class="text-red-300 font-semibold mb-1">Educational Shorts</div>
+            <div class="text-slate-400">Clear lessons on concepts like stock splits, P/E ratio, revenue vs. profit, options, and market cap.</div>
+          </div>
+          <div class="card p-4" style="background:#0f172a;border-color:#1e293b;">
+            <div class="text-cyan-300 font-semibold mb-1">Stock Comparisons</div>
+            <div class="text-slate-400">Side-by-side videos that make valuation, growth, margins, and expectations easier to see.</div>
+          </div>
+          <div class="card p-4" style="background:#0f172a;border-color:#1e293b;">
+            <div class="text-amber-300 font-semibold mb-1">Earnings Deep Dives</div>
+            <div class="text-slate-400">Quarterly coverage built from the latest revenue, EPS, guidance, risks, and catalysts.</div>
+          </div>
+          <div class="card p-4" style="background:#0f172a;border-color:#1e293b;">
+            <div class="text-emerald-300 font-semibold mb-1">Stock Encyclopedia</div>
+            <div class="text-slate-400">A growing library designed to cover the Russell 1000 and expand across the US market.</div>
+          </div>
+        </div>
+        <a href="https://www.youtube.com/@ChargedAlpha" target="_blank" rel="noopener" class="btn-primary w-full justify-center" style="background:linear-gradient(135deg,#ef4444,#dc2626);">
+          Visit Charged Alpha on YouTube
+          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 3h8v8M13 3L5 11"/></svg>
+        </a>
+      </div>
+
+      <div class="grid sm:grid-cols-2 gap-6">
+        <a href="https://youtube.com/shorts/z54nPQok9_M" target="_blank" rel="noopener" class="media-card p-6 no-underline block">
+          <span class="show-badge badge-youtube mb-4">Short</span>
+          <h3 class="text-xl font-bold text-white mb-3">NVDA Stock Split Explained</h3>
+          <p class="text-sm text-slate-400 leading-relaxed mb-5">A real NVIDIA 10-for-1 split example showing why more shares does not mean more company.</p>
+          <span class="text-red-300 text-sm font-semibold">Watch the Short &rarr;</span>
+        </a>
+        <a href="https://youtube.com/shorts/kSVGc-2POio" target="_blank" rel="noopener" class="media-card p-6 no-underline block">
+          <span class="show-badge badge-youtube mb-4">Short</span>
+          <h3 class="text-xl font-bold text-white mb-3">MSFT vs TSLA P/E Ratio</h3>
+          <p class="text-sm text-slate-400 leading-relaxed mb-5">Two near-$400 stocks, two very different earnings profiles, one visual valuation lesson.</p>
+          <span class="text-red-300 text-sm font-semibold">Watch the Short &rarr;</span>
+        </a>
+        <a href="https://www.youtube.com/playlist?list=PLluUSxxoYlcUzkL4Yy0ZOb1QupFhUPioI" target="_blank" rel="noopener" class="media-card p-6 no-underline block">
+          <span class="show-badge badge-weekly mb-4">Playlist</span>
+          <h3 class="text-xl font-bold text-white mb-3">Educational Shorts</h3>
+          <p class="text-sm text-slate-400 leading-relaxed mb-5">A growing playlist of compact investing lessons built for repeatable learning.</p>
+          <span class="text-emerald-300 text-sm font-semibold">Open Playlist &rarr;</span>
+        </a>
+        <a href="/shows" class="media-card p-6 no-underline block">
+          <span class="show-badge badge-markets mb-4">Library</span>
+          <h3 class="text-xl font-bold text-white mb-3">Stock Encyclopedia</h3>
+          <p class="text-sm text-slate-400 leading-relaxed mb-5">Searchable company research built to grow with each earnings season.</p>
+          <span class="text-amber-300 text-sm font-semibold">Browse Library &rarr;</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="section-line"></div>
+
 <section id="tools" class="py-24 px-6">
   <div class="max-w-6xl mx-auto">
     <div class="text-center mb-16">
-      <p class="text-sm font-bold text-indigo-400 uppercase tracking-widest mb-3">Free Tools</p>
-      <h2 class="text-4xl md:text-5xl font-extrabold text-white mb-4">Your Market Toolkit</h2>
+      <p class="text-sm font-bold text-indigo-400 uppercase tracking-widest mb-3">Research Engine</p>
+      <h2 class="text-4xl md:text-5xl font-extrabold text-white mb-4">The Tools Behind the Media</h2>
       <p class="text-lg text-slate-400 max-w-xl mx-auto">
-        Powerful screening tools that run real-time data so you don't have to dig through spreadsheets.
+        The same screeners, calendars, charts, and market dashboards that power Charged Alpha videos are available here for your own research.
       </p>
     </div>
 
@@ -658,13 +777,13 @@
      ═══════════════════════════════════════════════════════════════ -->
 <section id="about" class="py-24 px-6">
   <div class="max-w-3xl mx-auto text-center">
-    <div class="logo-bolt logo-bolt-lg mx-auto mb-8">&#9889;</div>
-    <h2 class="text-3xl md:text-4xl font-extrabold text-white mb-6">Built for Retail Investors</h2>
+    <img src="/static/assets/charged-alpha-logo.png" alt="Charged Alpha logo" class="brand-logo-lg mx-auto mb-8">
+    <h2 class="text-3xl md:text-4xl font-extrabold text-white mb-6">Built for Investors Who Research</h2>
     <p class="text-lg text-slate-400 leading-relaxed mb-6">
-      Charged Alpha exists because good investing data shouldn't be locked behind expensive terminals. We build free, no-signup tools that give everyday investors the same screening power the pros use — then turn that research process into focused stock breakdowns that show exactly how the thesis comes together.
+      Charged Alpha Financial Media exists to make stock research easier to watch, search, and understand. We combine AI-assisted production, current market data, and repeatable research templates to create investing videos at a scale traditional finance media cannot match.
     </p>
     <p class="text-lg text-slate-400 leading-relaxed">
-      Whether you're just getting started or you've been trading for years, the goal is the same: run the screen, understand the setup, and make better decisions with real data instead of hype.
+      The goal is simple: teach the concepts, compare the companies, cover earnings, and build a useful encyclopedia for anyone researching a stock.
     </p>
   </div>
 </section>
@@ -680,11 +799,11 @@
       <!-- Brand -->
       <div class="md:col-span-2">
         <div class="flex items-center gap-3 mb-4">
-          <div class="logo-bolt" style="width:36px;height:36px;font-size:18px;border-radius:8px;">&#9889;</div>
+          <img src="/static/assets/charged-alpha-logo.png" alt="Charged Alpha logo" class="brand-logo" style="width:42px;height:42px;border-radius:10px;">
           <span class="font-extrabold text-white tracking-tight">CHARGED ALPHA</span>
         </div>
         <p class="text-sm text-slate-500 leading-relaxed max-w-sm">
-          Data-driven investing tools and a stock encyclopedia podcast covering every US-listed company, updated quarterly with earnings.
+          Financial investment media for educational investing videos, stock comparisons, earnings breakdowns, and research tools.
         </p>
       </div>
 
@@ -791,12 +910,3 @@ setInterval(loadPulse,120000);
 </script>
 </body>
 </html>
-<!DOCTYPE html><html lang="en"><head>
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-HJ72GKBEFW"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-HJ72GKBEFW');
-  </script>  <meta charset="UTF-8">  <meta name="viewport" content="width=device-width, initial-scale=1.0">  <title>Charged Alpha — Data-Driven Investing Tools</title>  <script src="https://cdn.tailwindcss.com"></script>  <link rel="preconnect" href="https://fonts.googleapis.com">  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">  <style>    * { font-family: 'Inter', system-ui, sans-serif; }    body { background: #0a0f1e; color: #e2e8f0; }    /* ── Glow accents ─────────────────────────────────────────── */    .glow-indigo { box-shadow: 0 0 40px rgba(99,102,241,.15), 0 0 80px rgba(99,102,241,.05); }    .glow-amber  { box-shadow: 0 0 40px rgba(245,158,11,.12), 0 0 80px rgba(245,158,11,.04); }    .glow-green  { box-shadow: 0 0 40px rgba(16,185,129,.12), 0 0 80px rgba(16,185,129,.04); }    .glow-purple { box-shadow: 0 0 40px rgba(139,92,246,.12), 0 0 80px rgba(139,92,246,.04); }    /* ── Hero gradient ────────────────────────────────────────── */    .hero-bg {      background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(99,102,241,.12) 0%, transparent 60%),                  radial-gradient(ellipse 60% 40% at 80% 20%, rgba(139,92,246,.08) 0%, transparent 50%),                  #0a0f1e;    }    /* ── Logo bolt ────────────────────────────────────────────── */    .logo-bolt {      display: inline-flex;      align-items: center;      justify-content: center;      width: 48px;      height: 48px;      background: linear-gradient(135deg, #6366f1, #8b5cf6);      border-radius: 12px;      font-size: 24px;

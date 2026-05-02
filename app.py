@@ -92,10 +92,10 @@ PUBLIC_SITEMAP_PATHS = [
     "/charts",
 ]
 SEO_DEFAULTS = {
-    "title": "Charged Alpha — Data-Driven Investing Tools",
+    "title": "Charged Alpha Financial Media — Investing Videos, Stock Research & Market Tools",
     "description": (
-        "Charged Alpha delivers data-driven investing tools, market dashboards, "
-        "and stock research workflows for faster investor decision-making."
+        "Charged Alpha Financial Media creates investing education, stock "
+        "comparison videos, earnings-driven company research, and market tools."
     ),
     "robots": "index,follow,max-image-preview:large",
     "og_type": "website",
@@ -103,10 +103,10 @@ SEO_DEFAULTS = {
 }
 SEO_PAGE_META = {
     "/": {
-        "title": "Charged Alpha — Data-Driven Investing Tools",
+        "title": "Charged Alpha Financial Media — Investing Videos, Stock Research & Market Tools",
         "description": (
-            "Explore Charged Alpha's data-driven investing tools, stock screens, "
-            "market dashboards, and research workflows built for faster analysis."
+            "Watch investing education, stock comparison videos, and a growing "
+            "stock encyclopedia powered by Charged Alpha's market research tools."
         ),
     },
     "/shows": {
@@ -818,10 +818,11 @@ def sitemap_xml():
             "  </url>"
         )
 
+    joined_url_entries = "\n".join(url_entries)
     xml = (
         '<?xml version="1.0" encoding="UTF-8"?>\n'
         '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
-        f'{"\n".join(url_entries)}\n'
+        f'{joined_url_entries}\n'
         '</urlset>\n'
     )
     return Response(xml, mimetype="application/xml")
