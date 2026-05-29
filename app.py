@@ -494,6 +494,24 @@ def _serialize_game_score(score):
     }
 
 
+def _ranked_game_scores(game, limit=None):
+    query = (
+        GameScore.query.filter_by(game_slug=game["slug"])
+        .order_by(GameScore.score.desc(), GameScore.created_at.asc())
+    )
+    if limit:
+        query = query.limit(limit)
+
+    entries = []
+    for rank, score in enumerate(query.all(), start=1):
+        entry = _serialize_game_score(score)
+        entry["rank"] = rank
+        entry["gameSlug"] = game["slug"]
+        entry["gameTitle"] = game["title"]
+        entries.append(entry)
+    return entries
+
+
 def _coerce_int(value, default=0):
     try:
         return int(float(value))
@@ -1166,21 +1184,23 @@ def index():
 @app.route("/games")
 def games_index():
     games = _hydrate_game_catalog(current_user)
-    leaderboard_preview = {
-        game["slug"]: [
-            _serialize_game_score(score)
-            for score in GameScore.query.filter_by(game_slug=game["slug"])
-            .order_by(GameScore.score.desc(), GameScore.created_at.asc())
-            .limit(5)
-            .all()
-        ]
-        for game in games
-        if game["is_playable"]
+    playable_games = [game for game in games if game["is_playable"]]
+    leaderboard_full = {
+        game["slug"]: _ranked_game_scores(game)
+        for game in playable_games
     }
+    leaderboard_feature_game = playable_games[0] if playable_games else None
+    leaderboard_ticker = (
+        leaderboard_full.get(leaderboard_feature_game["slug"], [])[:10]
+        if leaderboard_feature_game
+        else []
+    )
     return render_template(
         "games.html",
         games=games,
-        leaderboard_preview=leaderboard_preview,
+        leaderboard_feature_game=leaderboard_feature_game,
+        leaderboard_ticker=leaderboard_ticker,
+        leaderboard_full=leaderboard_full,
     )
 
 

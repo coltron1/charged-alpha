@@ -19,6 +19,24 @@
     .gold-button:hover { transform:translateY(-1px); box-shadow:0 14px 34px rgba(184,137,55,.22); }
     .nav-link { color:#cbd5e1; text-decoration:none; font-size:14px; font-weight:600; }
     .nav-link:hover { color:white; }
+    .leaderboard-strip { border-bottom:1px solid rgba(216,181,109,.26); background:linear-gradient(90deg,rgba(7,10,18,.96),rgba(23,18,10,.96),rgba(7,10,18,.96)); }
+    .leaderboard-window { min-width:0; overflow:hidden; -webkit-mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent); mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent); }
+    .leaderboard-track { display:flex; width:max-content; gap:.75rem; animation:leaderboard-scroll 34s linear infinite; }
+    .leaderboard-window:hover .leaderboard-track { animation-play-state:paused; }
+    .leaderboard-pill { display:flex; min-width:max-content; align-items:center; gap:.65rem; border:1px solid rgba(216,181,109,.32); border-radius:999px; background:rgba(15,23,42,.78); padding:.45rem .8rem .45rem .45rem; box-shadow:0 10px 30px rgba(0,0,0,.18); }
+    .leaderboard-rank { display:grid; height:1.85rem; min-width:1.85rem; place-items:center; border-radius:999px; background:linear-gradient(135deg,#f8d987,#b78937); color:#141009; font-size:.78rem; font-weight:900; }
+    .leaderboard-score-row { display:grid; grid-template-columns:auto 1fr auto; gap:.85rem; align-items:center; }
+    @media (min-width:768px) {
+      .leaderboard-score-row { grid-template-columns:auto 1.1fr .8fr auto; }
+    }
+    @keyframes leaderboard-scroll {
+      from { transform:translateX(0); }
+      to { transform:translateX(-50%); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .leaderboard-track { animation:none; flex-wrap:wrap; width:auto; }
+      .leaderboard-window { -webkit-mask-image:none; mask-image:none; }
+    }
   </style>
 </head>
 <body>
@@ -42,13 +60,47 @@
   </header>
 
   <main>
+    <section class="leaderboard-strip px-6 py-3" aria-label="Top game scores">
+      <div class="mx-auto flex max-w-7xl flex-col gap-3 md:flex-row md:items-center">
+        <div class="flex shrink-0 items-center gap-3">
+          <span class="rounded-full border border-amber-300/35 bg-amber-300/10 px-3 py-1 text-[11px] font-black uppercase tracking-[.2em] text-amber-200">Leaderboard</span>
+          <strong class="text-sm text-white">{{ leaderboard_feature_game.title if leaderboard_feature_game else "Game Scores" }}</strong>
+        </div>
+        {% if leaderboard_ticker %}
+          <ol class="sr-only">
+            {% for score in leaderboard_ticker %}
+            <li>{{ score.rank }}. {{ score.name }} with ${{ "{:,.0f}".format(score.score) }}</li>
+            {% endfor %}
+          </ol>
+          <div class="leaderboard-window flex-1" aria-hidden="true">
+            <div class="leaderboard-track">
+              {% for copy in range(2) %}
+                {% for score in leaderboard_ticker %}
+                <div class="leaderboard-pill">
+                  <span class="leaderboard-rank">{{ score.rank }}</span>
+                  <span class="text-sm font-black text-slate-100">{{ score.name }}</span>
+                  <span class="text-sm font-black text-amber-200">${{ "{:,.0f}".format(score.score) }}</span>
+                  <span class="hidden text-xs font-bold text-slate-500 sm:inline">{{ "{:+.1f}%".format(score.returnPercent) }}</span>
+                </div>
+                {% endfor %}
+              {% endfor %}
+            </div>
+          </div>
+        {% else %}
+          <p class="text-sm font-semibold text-slate-400">
+            No public scores yet. Finish a signed-in run to claim the first spot.
+          </p>
+        {% endif %}
+      </div>
+    </section>
+
     <section class="px-6 pb-12 pt-16 md:pt-20">
       <div class="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[.9fr_1.1fr] lg:items-center">
         <div>
           <p class="mb-4 text-xs font-black uppercase tracking-[.28em] text-amber-300">Interactive investing games</p>
           <h1 class="serif mb-5 text-4xl leading-tight text-white md:text-6xl">Play the market's turning points.</h1>
           <p class="mb-7 max-w-2xl text-lg leading-8 text-slate-300">
-            Start with Front Page Fortune, where Jonah knows tomorrow's front page but still has to decide how markets will react.
+            Start with Front Page Fortune, where Jonah knows the headlines of the future and must decide how to invest to beat the market.
             Each chapter turns a different investing lesson into a story you can play.
           </p>
           <div class="flex flex-wrap gap-3">
@@ -142,17 +194,30 @@
         </div>
 
         <aside class="panel p-6 md:p-7">
-          <h3 class="mb-4 text-xl font-black text-white">Leaderboard Preview</h3>
+          <div class="mb-5 flex flex-col justify-between gap-3 sm:flex-row sm:items-end">
+            <div>
+              <p class="mb-2 text-xs font-black uppercase tracking-[.24em] text-amber-300">Public scores</p>
+              <h3 class="text-2xl font-black text-white">Full Leaderboard</h3>
+            </div>
+            <a href="{{ hero_game.route }}" class="text-sm font-black text-amber-200 no-underline hover:text-amber-100">Play for a spot &rarr;</a>
+          </div>
           {% for game in games if game.is_playable %}
-            {% set scores = leaderboard_preview.get(game.slug, []) %}
+            {% set scores = leaderboard_full.get(game.slug, []) %}
             <div class="mb-5">
               <div class="mb-3 text-sm font-bold text-slate-300">{{ game.title }}</div>
               {% if scores %}
                 <div class="space-y-2">
                   {% for score in scores %}
-                  <div class="flex items-center justify-between rounded-lg border border-slate-800 bg-slate-950/55 px-3 py-2 text-sm">
-                    <span class="text-slate-300">{{ loop.index }}. {{ score.name }}</span>
-                    <strong class="text-amber-200">${{ "{:,.0f}".format(score.score) }}</strong>
+                  <div class="leaderboard-score-row rounded-lg border border-slate-800 bg-slate-950/55 px-3 py-3 text-sm">
+                    <span class="leaderboard-rank">{{ score.rank }}</span>
+                    <div>
+                      <div class="font-black text-slate-100">{{ score.name }}</div>
+                      <div class="text-xs text-slate-500">{{ score.moves }} moves &middot; {{ score.reallocations }} reallocations</div>
+                    </div>
+                    <div class="hidden text-xs font-bold text-slate-500 md:block">
+                      {{ "{:+.1f}%".format(score.returnPercent) }} &middot; ${{ "{:,.0f}".format(score.taxPaid) }} tax
+                    </div>
+                    <strong class="text-right text-base text-amber-200">${{ "{:,.0f}".format(score.score) }}</strong>
                   </div>
                   {% endfor %}
                 </div>
