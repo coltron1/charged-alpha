@@ -292,6 +292,7 @@
           <a href="/charts/">Stock Charts</a>
         </div>
       </div>
+      <a href="/games" class="text-sm text-slate-300 hover:text-white transition-colors no-underline font-medium">Games</a>
       <a href="#media" class="text-sm text-slate-300 hover:text-white transition-colors no-underline font-medium">Media</a>
       <a href="/shows" class="text-sm text-slate-300 hover:text-white transition-colors no-underline font-medium">Stock Encyclopedia</a>
       <a href="https://www.youtube.com/@ChargedAlpha" target="_blank" rel="noopener" class="text-sm text-slate-300 hover:text-white transition-colors no-underline font-medium">YouTube</a>
@@ -321,6 +322,7 @@
     <a href="/gold/" class="block text-sm text-slate-300 no-underline">Precious Metals</a>
     <a href="/charts/" class="block text-sm text-slate-300 no-underline">Stock Charts</a>
     <div style="height:1px;background:#1e293b;margin:8px 0"></div>
+    <a href="/games" class="block text-sm text-slate-300 no-underline">Games</a>
     <a href="#media" class="block text-sm text-slate-300 no-underline">Media</a>
     <a href="/shows" class="block text-sm text-slate-300 no-underline">Stock Encyclopedia</a>
     <a href="https://www.youtube.com/@ChargedAlpha" class="block text-sm text-slate-300 no-underline">YouTube</a>
@@ -370,6 +372,10 @@
       </a>
       <a href="#tools" class="btn-secondary">
         Use the Research Tools
+        <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h8M9 8l4 4-4 4"/></svg>
+      </a>
+      <a href="/games" class="btn-secondary" style="border-color:rgba(245,158,11,.45);color:#fcd34d;">
+        Play the Games
         <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h8M9 8l4 4-4 4"/></svg>
       </a>
     </div>
@@ -447,6 +453,57 @@
     <div class="pulse-loading">Loading market data...</div>
   </div>
   <div class="pulse-note">Auto-refreshes every 2 minutes</div>
+</section>
+
+<div class="section-line"></div>
+
+<!-- ═══════════════════════════════════════════════════════════════
+     INTERACTIVE GAMES
+     ═══════════════════════════════════════════════════════════════ -->
+<section id="games" class="py-24 px-6" style="background:linear-gradient(180deg,#0a0f1e,#0b101d 48%,#0a0f1e);">
+  <div class="max-w-6xl mx-auto">
+    <div class="grid lg:grid-cols-[.9fr_1.1fr] gap-8 items-stretch">
+      <div class="card p-8 glow-amber" style="background:linear-gradient(180deg,rgba(24,20,14,.96),rgba(15,23,42,.96));border-color:rgba(245,158,11,.24);">
+        <p class="text-sm font-bold text-amber-300 uppercase tracking-widest mb-3">Interactive Games</p>
+        <h2 class="text-4xl md:text-5xl font-extrabold text-white mb-5">Play Through Investing History</h2>
+        <p class="text-slate-300 leading-relaxed mb-6">
+          Charged Alpha games teach market concepts through decisions instead of lectures. Front Page Fortune starts the shelf with a historical twist:
+          you know the future headline, but you still have to predict how stocks, bonds, and gold respond.
+        </p>
+        <div class="grid sm:grid-cols-2 gap-3 mb-8 text-sm">
+          <div class="card p-4" style="background:#0f172a;border-color:#1e293b;">
+            <div class="text-amber-300 font-semibold mb-1">Historical Lens</div>
+            <div class="text-slate-400">Move through real front-page moments and see how markets priced the news.</div>
+          </div>
+          <div class="card p-4" style="background:#0f172a;border-color:#1e293b;">
+            <div class="text-cyan-300 font-semibold mb-1">Scores and Unlocks</div>
+            <div class="text-slate-400">Signed-in players can connect high scores and future chapter unlocks back to their Charged Alpha account.</div>
+          </div>
+        </div>
+        <div class="flex flex-wrap gap-3">
+          <a href="/games/front-page-fortune" class="btn-primary" style="background:linear-gradient(135deg,#fcd34d,#b45309);color:#111827;">
+            Play Front Page Fortune
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 3h8v8M13 3L5 11"/></svg>
+          </a>
+          <a href="/games" class="btn-secondary" style="color:#fcd34d;border-color:rgba(245,158,11,.35);">
+            View Game Shelf
+          </a>
+        </div>
+      </div>
+
+      {% for game in games[:1] %}
+      <a href="{{ game.route }}" class="media-card no-underline block overflow-hidden glow-amber" style="border-color:rgba(245,158,11,.24);">
+        <img src="{{ game.image }}" alt="{{ game.title }} dashboard preview" style="width:100%;height:330px;object-fit:cover;object-position:top;">
+        <div class="p-6">
+          <span class="show-badge badge-markets mb-4">{{ game.status }}</span>
+          <h3 class="text-2xl font-bold text-white mb-3">{{ game.title }}</h3>
+          <p class="text-sm text-slate-400 leading-relaxed mb-5">{{ game.tagline }}</p>
+          <span class="text-amber-300 text-sm font-semibold">Launch the alpha &rarr;</span>
+        </div>
+      </a>
+      {% endfor %}
+    </div>
+  </div>
 </section>
 
 <div class="section-line"></div>
@@ -870,6 +927,7 @@
           <li><a href="/commodities/" class="text-slate-500 hover:text-amber-400 transition-colors no-underline">Commodities</a></li>
           <li><a href="/earnings/" class="text-slate-500 hover:text-indigo-400 transition-colors no-underline">Earnings Calendar</a></li>
           <li><a href="/charts/" class="text-slate-500 hover:text-green-400 transition-colors no-underline">Stock Charts</a></li>
+          <li><a href="/games" class="text-slate-500 hover:text-amber-400 transition-colors no-underline">Interactive Games</a></li>
         </ul>
       </div>
 

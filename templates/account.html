@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ seo_meta.title }}</title>
+  {% include "partials/seo_meta.html" %}
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body { background:#0a0f1e; color:#e2e8f0; font-family:Inter,system-ui,sans-serif; }
+    .panel { background:#111827; border:1px solid #1e293b; border-radius:12px; }
+    .nav-link { color:#cbd5e1; text-decoration:none; font-size:14px; font-weight:600; }
+    .nav-link:hover { color:white; }
+  </style>
+</head>
+<body>
+  <header class="border-b border-slate-800 bg-slate-950/85">
+    <div class="mx-auto flex h-16 max-w-6xl items-center justify-between px-6">
+      <a href="/" class="flex items-center gap-3 text-white no-underline">
+        <img src="/static/assets/charged-alpha-logo.png" alt="Charged Alpha logo" class="h-10 w-10 rounded-lg border border-cyan-300/30">
+        <span class="font-black">CHARGED ALPHA</span>
+      </a>
+      <nav class="flex items-center gap-5">
+        <a href="/games" class="nav-link">Games</a>
+        <a href="/charts/" class="nav-link">Charts</a>
+        <a href="/auth/logout" class="nav-link">Sign Out</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="mx-auto max-w-6xl px-6 py-12">
+    <div class="mb-10">
+      <p class="mb-2 text-xs font-black uppercase tracking-[.24em] text-cyan-300">Account</p>
+      <h1 class="text-4xl font-black text-white">Welcome, {{ current_user.name or current_user.email }}</h1>
+      <p class="mt-3 text-slate-400">Your saved charts and game scores now live behind the same Charged Alpha account.</p>
+    </div>
+
+    <div class="grid gap-6 lg:grid-cols-[1.1fr_.9fr]">
+      <section class="panel p-6">
+        <div class="mb-5 flex items-center justify-between gap-4">
+          <div>
+            <h2 class="text-2xl font-black text-white">Game Scores</h2>
+            <p class="mt-1 text-sm text-slate-500">Public leaderboard submissions tied to this account.</p>
+          </div>
+          <a href="/games/front-page-fortune" class="rounded-lg bg-amber-300 px-4 py-2 text-sm font-black text-slate-950 no-underline">Play</a>
+        </div>
+        {% if game_scores %}
+        <div class="space-y-3">
+          {% for score in game_scores %}
+          <article class="rounded-lg border border-slate-800 bg-slate-950/60 p-4">
+            <div class="flex flex-wrap items-center justify-between gap-3">
+              <div>
+                <div class="font-bold text-white">{{ score.gameTitle }}</div>
+                <div class="text-xs text-slate-500">{{ score.moves }} moves &middot; {{ score.reallocations }} reallocations</div>
+              </div>
+              <div class="text-right">
+                <div class="text-lg font-black text-amber-200">${{ "{:,.0f}".format(score.score) }}</div>
+                <div class="text-xs text-slate-500">{{ "{:+.1f}%".format(score.returnPercent) }}</div>
+              </div>
+            </div>
+          </article>
+          {% endfor %}
+        </div>
+        {% else %}
+        <div class="rounded-lg border border-dashed border-slate-700 p-8 text-center text-slate-500">
+          No game scores yet. Finish Front Page Fortune while signed in to post your first result.
+        </div>
+        {% endif %}
+      </section>
+
+      <section class="panel p-6">
+        <div class="mb-5">
+          <h2 class="text-2xl font-black text-white">Saved Charts</h2>
+          <p class="mt-1 text-sm text-slate-500">TradingView chart layouts saved from the chart workspace.</p>
+        </div>
+        {% if saved_charts %}
+        <div class="space-y-3">
+          {% for chart in saved_charts %}
+          <a href="/charts/" class="block rounded-lg border border-slate-800 bg-slate-950/60 p-4 no-underline hover:border-slate-600">
+            <div class="font-bold text-white">{{ chart.chart_name }}</div>
+            <div class="mt-1 text-xs text-slate-500">{{ chart.symbol or "No symbol" }}</div>
+          </a>
+          {% endfor %}
+        </div>
+        {% else %}
+        <div class="rounded-lg border border-dashed border-slate-700 p-8 text-center text-slate-500">
+          No saved charts yet.
+        </div>
+        {% endif %}
+      </section>
+    </div>
+
+    <section class="mt-8">
+      <div class="mb-5">
+        <h2 class="text-2xl font-black text-white">Game Path</h2>
+        <p class="mt-1 text-sm text-slate-500">Sequential game unlocks based on completed signed-in runs.</p>
+      </div>
+      <div class="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+        {% for game in games %}
+        <article class="panel p-5">
+          <div class="mb-2 text-xs font-black uppercase tracking-[.18em] text-slate-500">{{ game.sequence_label }}</div>
+          <h3 class="mb-3 text-lg font-black text-white">{{ game.title }}</h3>
+          {% if game.has_completion %}
+          <div class="text-sm font-bold text-emerald-300">Completed</div>
+          {% elif game.is_playable and game.is_unlocked %}
+          <a href="{{ game.route }}" class="text-sm font-bold text-amber-300 no-underline">Unlocked. Play now &rarr;</a>
+          {% elif not game.is_unlocked %}
+          <div class="text-sm leading-6 text-slate-500">{{ game.locked_reason }}</div>
+          {% else %}
+          <div class="text-sm leading-6 text-cyan-300">{{ game.locked_reason }}</div>
+          {% endif %}
+        </article>
+        {% endfor %}
+      </div>
+    </section>
+  </main>
+</body>
+</html>

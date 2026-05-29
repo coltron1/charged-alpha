@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ seo_meta.title }}</title>
+  {% include "partials/seo_meta.html" %}
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Libre+Baskerville:wght@700&display=swap" rel="stylesheet">
+  <style>
+    body { background:#080b12; color:#e2e8f0; font-family:'Inter',system-ui,sans-serif; }
+    .serif { font-family:'Libre Baskerville',Georgia,serif; }
+    .panel { background:linear-gradient(180deg,rgba(18,24,35,.98),rgba(10,15,25,.98)); border:1px solid #263244; border-radius:12px; }
+    .gold-button { background:linear-gradient(135deg,#e7c67b,#b78937); color:#161109; }
+    .nav-link { color:#cbd5e1; text-decoration:none; font-size:14px; font-weight:600; }
+    .nav-link:hover { color:white; }
+  </style>
+</head>
+<body>
+  <header class="border-b border-slate-800/80 bg-[#080b12]/90">
+    <div class="mx-auto flex h-16 max-w-6xl items-center justify-between px-6">
+      <a href="/" class="flex items-center gap-3 text-white no-underline">
+        <img src="/static/assets/charged-alpha-logo.png" alt="Charged Alpha logo" class="h-10 w-10 rounded-lg border border-cyan-300/30">
+        <span class="font-black">CHARGED ALPHA</span>
+      </a>
+      <nav class="flex items-center gap-5">
+        <a href="/games" class="nav-link">Games</a>
+        <a href="/account" class="nav-link">Account</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="mx-auto max-w-6xl px-6 py-14">
+    <section class="panel p-7 md:p-10">
+      <div class="mb-5 flex flex-wrap items-center gap-3">
+        <span class="rounded-full border border-slate-600 px-3 py-1 text-xs font-black uppercase tracking-widest text-slate-300">{{ game.sequence_label }}</span>
+        <span class="rounded-full border border-amber-300/30 bg-amber-300/10 px-3 py-1 text-xs font-black uppercase tracking-widest text-amber-200">{{ game.status }}</span>
+      </div>
+      <h1 class="serif mb-4 text-4xl leading-tight text-white md:text-6xl">{{ game.title }}</h1>
+      <p class="mb-6 max-w-3xl text-lg leading-8 text-slate-300">{{ game.tagline }}</p>
+      <p class="mb-8 max-w-3xl text-sm leading-6 text-slate-400">{{ game.description }}</p>
+
+      <div class="grid gap-5 md:grid-cols-2">
+        <div class="rounded-xl border border-slate-800 bg-slate-950/55 p-5">
+          <div class="mb-2 text-xs font-black uppercase tracking-[.22em] text-amber-300">
+            {% if not game.is_unlocked %}Locked chapter{% else %}In development{% endif %}
+          </div>
+          <p class="text-sm leading-6 text-slate-400">{{ game.locked_reason }}</p>
+        </div>
+        <div class="rounded-xl border border-slate-800 bg-slate-950/55 p-5">
+          <div class="mb-2 text-xs font-black uppercase tracking-[.22em] text-cyan-300">Unlock signal</div>
+          <p class="text-sm leading-6 text-slate-400">
+            {% if game.prerequisite_title %}
+              The site checks for a completed signed-in score from {{ game.prerequisite_title }} before opening this chapter.
+            {% else %}
+              This is the opening chapter and does not require a previous unlock.
+            {% endif %}
+          </p>
+        </div>
+      </div>
+
+      <div class="mt-8 flex flex-wrap gap-3">
+        {% if not current_user.is_authenticated and game.prerequisite_title %}
+        <a href="/auth/login?next={{ game.route }}" class="gold-button rounded-lg px-5 py-3 text-sm font-black no-underline">Sign In To Save Progress</a>
+        {% endif %}
+        {% if game.prerequisite_title %}
+        <a href="{{ game.prerequisite_route }}" class="rounded-lg border border-slate-700 px-5 py-3 text-sm font-bold text-slate-200 no-underline">Open {{ game.prerequisite_title }}</a>
+        {% endif %}
+        <a href="/games" class="rounded-lg border border-slate-700 px-5 py-3 text-sm font-bold text-slate-200 no-underline">Back To Game Shelf</a>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

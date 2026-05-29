@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ seo_meta.title }}</title>
+  {% include "partials/seo_meta.html" %}
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Libre+Baskerville:wght@700&display=swap" rel="stylesheet">
+  <style>
+    body { background:#080b12; color:#e2e8f0; font-family:'Inter',system-ui,sans-serif; }
+    .serif { font-family:'Libre Baskerville',Georgia,serif; }
+    .panel { background:linear-gradient(180deg,rgba(18,24,35,.98),rgba(10,15,25,.98)); border:1px solid #263244; border-radius:12px; }
+    .game-card { background:linear-gradient(180deg,rgba(18,24,35,.98),rgba(10,15,25,.98)); border:1px solid #263244; border-radius:12px; }
+    .game-card.locked { border-style:dashed; opacity:.78; }
+    .gold-line { height:1px; background:linear-gradient(90deg,transparent,#d8b56d,transparent); opacity:.45; }
+    .gold-button { background:linear-gradient(135deg,#e7c67b,#b78937); color:#161109; }
+    .gold-button:hover { transform:translateY(-1px); box-shadow:0 14px 34px rgba(184,137,55,.22); }
+    .nav-link { color:#cbd5e1; text-decoration:none; font-size:14px; font-weight:600; }
+    .nav-link:hover { color:white; }
+  </style>
+</head>
+<body>
+  {% set hero_game = games[0] %}
+  <header class="sticky top-0 z-40 border-b border-slate-800/80 bg-[#080b12]/90 backdrop-blur">
+    <div class="mx-auto flex h-16 max-w-7xl items-center justify-between px-6">
+      <a href="/" class="flex items-center gap-3 text-white no-underline">
+        <img src="/static/assets/charged-alpha-logo.png" alt="Charged Alpha logo" class="h-10 w-10 rounded-lg border border-cyan-300/30">
+        <div>
+          <div class="text-sm font-black tracking-wide">CHARGED ALPHA</div>
+          <div class="text-[10px] font-bold uppercase tracking-[.18em] text-cyan-300">Interactive</div>
+        </div>
+      </a>
+      <nav class="hidden items-center gap-6 md:flex">
+        <a href="/games" class="nav-link text-amber-200">Games</a>
+        <a href="/shows" class="nav-link">Stock Encyclopedia</a>
+        <a href="/charts/" class="nav-link">Charts</a>
+        <a href="/account" class="nav-link">Account</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="px-6 pb-12 pt-16 md:pt-20">
+      <div class="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[.9fr_1.1fr] lg:items-center">
+        <div>
+          <p class="mb-4 text-xs font-black uppercase tracking-[.28em] text-amber-300">Interactive investing games</p>
+          <h1 class="serif mb-5 text-4xl leading-tight text-white md:text-6xl">A connected game shelf, one standalone game at a time.</h1>
+          <p class="mb-7 max-w-2xl text-lg leading-8 text-slate-300">
+            Front Page Fortune launches first on Charged Alpha, while each game remains portable enough to become its own app later.
+            Scores and future chapter unlocks stay tied to the Charged Alpha account layer.
+          </p>
+          <div class="flex flex-wrap gap-3">
+            <a href="{{ hero_game.route }}" class="gold-button inline-flex items-center gap-2 rounded-lg px-5 py-3 text-sm font-black no-underline transition">
+              Play {{ hero_game.title }}
+              <span aria-hidden="true">&rarr;</span>
+            </a>
+            <a href="/account" class="inline-flex items-center gap-2 rounded-lg border border-slate-700 px-5 py-3 text-sm font-bold text-slate-200 no-underline transition hover:border-slate-500">
+              View My Progress
+            </a>
+          </div>
+        </div>
+
+        <a href="{{ hero_game.route }}" class="panel block overflow-hidden no-underline shadow-2xl shadow-black/40">
+          <img src="{{ hero_game.image }}" alt="{{ hero_game.title }} dashboard preview" class="h-72 w-full object-cover object-top md:h-96">
+          <div class="p-6 md:p-7">
+            <div class="mb-3 flex flex-wrap items-center gap-3">
+              <span class="rounded-full border border-amber-300/35 bg-amber-300/10 px-3 py-1 text-xs font-black uppercase tracking-widest text-amber-200">{{ hero_game.status }}</span>
+              <span class="text-xs font-bold uppercase tracking-widest text-slate-500">{{ hero_game.sequence_label }}</span>
+            </div>
+            <h2 class="serif mb-2 text-3xl text-white">{{ hero_game.title }}</h2>
+            <p class="mb-4 text-base leading-7 text-slate-300">{{ hero_game.tagline }}</p>
+            <p class="text-sm leading-6 text-slate-400">{{ hero_game.description }}</p>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <div class="gold-line"></div>
+
+    <section class="px-6 py-14">
+      <div class="mx-auto max-w-7xl">
+        <div class="mb-8 flex flex-col justify-between gap-4 md:flex-row md:items-end">
+          <div>
+            <p class="mb-2 text-xs font-black uppercase tracking-[.24em] text-amber-300">Game path</p>
+            <h2 class="text-3xl font-black text-white">Sequential by design</h2>
+          </div>
+          <p class="max-w-2xl text-sm leading-6 text-slate-400">
+            A completed signed-in run becomes the unlock signal for the next chapter. If a game moves to a separate app, it can still call the same progress and score APIs.
+          </p>
+        </div>
+
+        <div class="grid gap-5 md:grid-cols-2 xl:grid-cols-4">
+          {% for game in games %}
+          <article class="game-card {% if not game.is_unlocked %}locked{% endif %} p-6">
+            <div class="mb-5 flex items-start justify-between gap-3">
+              <div>
+                <div class="mb-2 text-xs font-black uppercase tracking-[.22em] text-slate-500">{{ game.sequence_label }}</div>
+                <h3 class="serif text-2xl text-white">{{ game.title }}</h3>
+              </div>
+              {% if game.has_completion %}
+              <span class="rounded-md border border-emerald-300/30 px-3 py-1 text-xs font-bold uppercase tracking-wider text-emerald-200">Completed</span>
+              {% elif game.is_playable and game.is_unlocked %}
+              <span class="rounded-md border border-amber-300/30 px-3 py-1 text-xs font-bold uppercase tracking-wider text-amber-200">Unlocked</span>
+              {% elif not game.is_unlocked %}
+              <span class="rounded-md border border-slate-600 px-3 py-1 text-xs font-bold uppercase tracking-wider text-slate-400">Locked</span>
+              {% else %}
+              <span class="rounded-md border border-cyan-300/20 px-3 py-1 text-xs font-bold uppercase tracking-wider text-cyan-200">Building</span>
+              {% endif %}
+            </div>
+            <p class="mb-3 text-sm font-bold text-amber-200">{{ game.lesson }}</p>
+            <p class="mb-5 text-sm leading-6 text-slate-400">{{ game.description }}</p>
+            {% if game.locked_reason %}
+            <p class="mb-5 rounded-lg border border-slate-800 bg-slate-950/60 px-4 py-3 text-xs leading-5 text-slate-400">{{ game.locked_reason }}</p>
+            {% endif %}
+            {% if game.is_playable and game.is_unlocked %}
+            <a href="{{ game.route }}" class="gold-button inline-flex items-center gap-2 rounded-lg px-4 py-2.5 text-sm font-black no-underline transition">
+              Launch Game
+              <span aria-hidden="true">&rarr;</span>
+            </a>
+            {% else %}
+            <a href="{{ game.route }}" class="inline-flex items-center gap-2 rounded-lg border border-slate-700 px-4 py-2.5 text-sm font-bold text-slate-300 no-underline transition hover:border-slate-500">
+              View Chapter
+              <span aria-hidden="true">&rarr;</span>
+            </a>
+            {% endif %}
+          </article>
+          {% endfor %}
+        </div>
+      </div>
+    </section>
+
+    <section class="px-6 pb-20">
+      <div class="mx-auto grid max-w-7xl gap-6 lg:grid-cols-[.9fr_1.1fr]">
+        <div class="panel p-6 md:p-7">
+          <p class="mb-2 text-xs font-black uppercase tracking-[.24em] text-cyan-300">Portable release model</p>
+          <h2 class="mb-4 text-3xl font-black text-white">Website hosts progress. Games stay movable.</h2>
+          <p class="text-sm leading-6 text-slate-400">
+            The React game bundle can run here, on localhost, or inside a future standalone site. Charged Alpha owns the account, leaderboard, and unlock rules, so prototypes can launch quickly without trapping the game code inside the main Flask app.
+          </p>
+        </div>
+
+        <aside class="panel p-6 md:p-7">
+          <h3 class="mb-4 text-xl font-black text-white">Leaderboard Preview</h3>
+          {% for game in games if game.is_playable %}
+            {% set scores = leaderboard_preview.get(game.slug, []) %}
+            <div class="mb-5">
+              <div class="mb-3 text-sm font-bold text-slate-300">{{ game.title }}</div>
+              {% if scores %}
+                <div class="space-y-2">
+                  {% for score in scores %}
+                  <div class="flex items-center justify-between rounded-lg border border-slate-800 bg-slate-950/55 px-3 py-2 text-sm">
+                    <span class="text-slate-300">{{ loop.index }}. {{ score.name }}</span>
+                    <strong class="text-amber-200">${{ "{:,.0f}".format(score.score) }}</strong>
+                  </div>
+                  {% endfor %}
+                </div>
+              {% else %}
+                <p class="rounded-lg border border-dashed border-slate-700 px-4 py-5 text-sm text-slate-500">
+                  No public scores yet. The first signed-in run will set the board.
+                </p>
+              {% endif %}
+            </div>
+          {% endfor %}
+        </aside>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

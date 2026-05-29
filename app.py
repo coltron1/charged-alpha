@@ -28,6 +28,8 @@ Routes:
   /gold/api/...                  → Precious Metals API
   /charts/                       → Stock Charts (TradingView)
   /charts/api/...                → Chart save/load API
+  /games/                        → Interactive investing games
+  /games/api/...                 → Game leaderboards and score API
   /auth/...                      → Authentication (login, register, OAuth)
 """
 
@@ -47,7 +49,7 @@ from flask_login import LoginManager, current_user, login_required
 # ── Shared utilities ────────────────────────────────────────────────────────
 from yf_utils import (TTLCache, JobStore, fetch_ticker_info, safe_float,
                        normalize_div_yield, fetch_chart, fetch_banner_tickers)
-from models import db, User
+from models import db, User, GameScore
 from auth import auth_bp, init_oauth
 from chart_storage import save_chart_state, load_chart_state, list_user_charts, delete_chart_state
 
@@ -69,6 +71,70 @@ from gold_server import get_spot_price, fetch_ebay, fetch_sdbullion, \
 app = Flask(__name__)
 BASE_DIR = Path(__file__).resolve().parent
 SHOWS_CATALOG_PATH = BASE_DIR / "data" / "shows_catalog.json"
+INTERACTIVE_GAME_BUILD_PATH = BASE_DIR / "static" / "games" / "interactive"
+INTERACTIVE_GAME_MANIFEST_PATH = INTERACTIVE_GAME_BUILD_PATH / ".vite" / "manifest.json"
+
+GAME_CATALOG = [
+    {
+        "slug": "front-page-fortune",
+        "app_slug": "front-page-fortune",
+        "title": "Front Page Fortune",
+        "status": "Playable alpha",
+        "playable": True,
+        "unlock_after": None,
+        "tagline": "Know the front page. Still call the market.",
+        "description": (
+            "Jonah inherits $100,000 and Grandpa Silas's briefcase of future "
+            "newspaper front pages. Use the headlines, choose stocks, gold, "
+            "bonds, or a custom mix, then see how history actually priced the news."
+        ),
+        "lesson": "Future information is not the same thing as market prediction.",
+        "image": "/static/games/interactive/games/headline-market/how-to-dashboard-desktop.png",
+        "route": "/games/front-page-fortune",
+    },
+    {
+        "slug": "harvest-ledger",
+        "app_slug": "harvest-ledger",
+        "title": "Harvest Ledger",
+        "status": "Next chapter",
+        "playable": False,
+        "unlock_after": "front-page-fortune",
+        "tagline": "Manage the crop, the futures tape, and the cost of being early.",
+        "description": (
+            "A commodities and futures story game about inventory, timing, risk "
+            "management, and how real-world supply shocks move through prices."
+        ),
+        "lesson": "Risk management matters most when the signal looks obvious.",
+        "image": None,
+        "route": "/games/harvest-ledger",
+    },
+    {
+        "slug": "sector-oracle",
+        "app_slug": "sector-oracle",
+        "title": "Sector Oracle",
+        "status": "Planned chapter",
+        "playable": False,
+        "unlock_after": "harvest-ledger",
+        "tagline": "Read the macro clue, then decide which sector deserves the next dollar.",
+        "description": "A sector rotation game about second-order effects, valuation, and narrative traps.",
+        "lesson": "The headline can be right while the winning sector is somewhere else.",
+        "image": None,
+        "route": "/games/sector-oracle",
+    },
+    {
+        "slug": "expiration-date",
+        "app_slug": "expiration-date",
+        "title": "Expiration Date",
+        "status": "Planned chapter",
+        "playable": False,
+        "unlock_after": "sector-oracle",
+        "tagline": "Trade the catalyst without letting time decay become the real story.",
+        "description": "An options education game focused on time decay, catalysts, and position sizing.",
+        "lesson": "Direction is only one part of an options trade.",
+        "image": None,
+        "route": "/games/expiration-date",
+    },
+]
 
 
 @app.get("/health")
@@ -90,6 +156,8 @@ PUBLIC_SITEMAP_PATHS = [
     "/earnings",
     "/gold",
     "/charts",
+    "/games",
+    "/games/front-page-fortune",
 ]
 SEO_DEFAULTS = {
     "title": "Charged Alpha Frontier AI Financial Media — Stock Encyclopedia & Investing Videos",
@@ -203,6 +271,52 @@ SEO_PAGE_META = {
             "chart workspace and TradingView-powered analysis tools."
         ),
     },
+    "/games": {
+        "title": "Interactive Investing Games — Charged Alpha",
+        "description": (
+            "Play Charged Alpha's investing story games, starting with Front Page "
+            "Fortune, where historical front pages become portfolio decisions."
+        ),
+    },
+    "/games/front-page-fortune": {
+        "title": "Front Page Fortune — Historical Market Prediction Game",
+        "description": (
+            "Play Front Page Fortune, a historical investing game where Jonah knows "
+            "future newspaper headlines but still has to decide how stocks, gold, "
+            "and bonds will react."
+        ),
+    },
+    "/games/harvest-ledger": {
+        "title": "Harvest Ledger — Charged Alpha Game",
+        "description": (
+            "Harvest Ledger is the next planned Charged Alpha investing story game, "
+            "focused on commodities, futures, inventory, and risk management."
+        ),
+        "robots": "noindex,nofollow,noarchive",
+    },
+    "/games/sector-oracle": {
+        "title": "Sector Oracle — Charged Alpha Game",
+        "description": (
+            "Sector Oracle is a planned Charged Alpha investing game about macro "
+            "headlines, sector rotation, valuation, and second-order effects."
+        ),
+        "robots": "noindex,nofollow,noarchive",
+    },
+    "/games/expiration-date": {
+        "title": "Expiration Date — Charged Alpha Game",
+        "description": (
+            "Expiration Date is a planned Charged Alpha options education game about "
+            "time decay, catalysts, and position sizing."
+        ),
+        "robots": "noindex,nofollow,noarchive",
+    },
+    "/account": {
+        "title": "Account — Charged Alpha",
+        "description": (
+            "View your Charged Alpha saved charts and interactive investing game scores."
+        ),
+        "robots": "noindex,nofollow,noarchive",
+    },
     "/auth/login": {
         "title": "Sign In — Charged Alpha",
         "description": (
@@ -235,11 +349,16 @@ NOINDEX_PATH_PREFIXES = (
     "/earnings/api/",
     "/gold/api/",
     "/charts/api/",
+    "/games/api/",
 )
 NOINDEX_EXACT_PATHS = {
     "/login",
     "/register",
     "/health",
+    "/account",
+    "/games/harvest-ledger",
+    "/games/sector-oracle",
+    "/games/expiration-date",
 }
 
 
@@ -271,6 +390,116 @@ def _get_seo_meta(path=None):
         "og_type": page_meta.get("og_type", SEO_DEFAULTS["og_type"]),
         "twitter_card": page_meta.get("twitter_card", SEO_DEFAULTS["twitter_card"]),
     }
+
+
+def _normalize_game_slug(slug):
+    return (slug or "").strip().strip("/").lower()
+
+
+def _get_game(game_slug):
+    normalized = _normalize_game_slug(game_slug)
+    return next((game for game in GAME_CATALOG if game["slug"] == normalized), None)
+
+
+def _completed_game_slugs_for_user(user=None):
+    if not getattr(user, "is_authenticated", False):
+        return set()
+
+    completed_rows = (
+        db.session.query(GameScore.game_slug)
+        .filter_by(user_id=user.id)
+        .distinct()
+        .all()
+    )
+    return {row[0] for row in completed_rows}
+
+
+def _hydrate_game_catalog(user=None):
+    completed_slugs = _completed_game_slugs_for_user(user)
+    hydrated_games = []
+
+    for index, game in enumerate(GAME_CATALOG):
+        item = dict(game)
+        prerequisite_slug = item.get("unlock_after")
+        prerequisite = _get_game(prerequisite_slug)
+        is_unlocked = prerequisite_slug is None or prerequisite_slug in completed_slugs
+
+        item["sequence"] = index + 1
+        item["sequence_label"] = f"Chapter {index + 1}"
+        item["prerequisite_title"] = prerequisite["title"] if prerequisite else ""
+        item["prerequisite_route"] = prerequisite["route"] if prerequisite else ""
+        item["has_completion"] = item["slug"] in completed_slugs
+        item["is_playable"] = bool(item.get("playable"))
+        item["is_unlocked"] = is_unlocked
+
+        if not is_unlocked:
+            if getattr(user, "is_authenticated", False):
+                item["locked_reason"] = f"Finish {item['prerequisite_title']} to unlock this chapter."
+            else:
+                item["locked_reason"] = f"Sign in and finish {item['prerequisite_title']} to save this unlock."
+        elif not item["is_playable"]:
+            item["locked_reason"] = "In development. This route is reserved for the next standalone game build."
+        else:
+            item["locked_reason"] = ""
+
+        hydrated_games.append(item)
+
+    return hydrated_games
+
+
+def _hydrate_game(game_slug, user=None):
+    normalized = _normalize_game_slug(game_slug)
+    return next((game for game in _hydrate_game_catalog(user) if game["slug"] == normalized), None)
+
+
+def _load_interactive_manifest():
+    if not INTERACTIVE_GAME_MANIFEST_PATH.exists():
+        return None
+    with INTERACTIVE_GAME_MANIFEST_PATH.open("r", encoding="utf-8") as f:
+        return json.load(f)
+
+
+def _get_interactive_entry():
+    manifest = _load_interactive_manifest()
+    if not manifest:
+        return None
+
+    entry = manifest.get("index.html")
+    if not entry or not entry.get("file"):
+        return None
+
+    return {
+        "script": f"/static/games/interactive/{entry['file']}",
+        "css": [f"/static/games/interactive/{path}" for path in entry.get("css", [])],
+    }
+
+
+def _serialize_game_score(score):
+    return {
+        "id": f"score-{score.id}",
+        "createdAt": score.created_at.isoformat() + "Z" if score.created_at else "",
+        "email": "",
+        "name": score.display_name,
+        "score": int(score.score or 0),
+        "returnPercent": float(score.return_percent or 0),
+        "moves": int(score.moves or 0),
+        "reallocations": int(score.reallocations or 0),
+        "taxPaid": float(score.tax_paid or 0),
+    }
+
+
+def _coerce_int(value, default=0):
+    try:
+        return int(float(value))
+    except (TypeError, ValueError):
+        return default
+
+
+def _coerce_float(value, default=0.0):
+    try:
+        return float(value)
+    except (TypeError, ValueError):
+        return default
 
 
 def load_shows_catalog():
@@ -834,6 +1063,7 @@ def robots_txt():
         "Disallow: /earnings/api/",
         "Disallow: /gold/api/",
         "Disallow: /charts/api/",
+        "Disallow: /games/api/",
         f"Sitemap: {SITE_URL}/sitemap.xml",
     ]
     return Response("\n".join(lines) + "\n", mimetype="text/plain")
@@ -896,8 +1126,151 @@ def index():
         show_stats=show_library.get("stats", {}),
         featured_stocks=featured_stocks,
         featured_videos=featured_videos,
+        games=_hydrate_game_catalog(current_user),
         video_sections=video_sections,
         show_quarters=show_library.get("quarters", []),
+    )
+
+
+@app.route("/games")
+def games_index():
+    games = _hydrate_game_catalog(current_user)
+    leaderboard_preview = {
+        game["slug"]: [
+            _serialize_game_score(score)
+            for score in GameScore.query.filter_by(game_slug=game["slug"])
+            .order_by(GameScore.score.desc(), GameScore.created_at.asc())
+            .limit(5)
+            .all()
+        ]
+        for game in games
+        if game["is_playable"]
+    }
+    return render_template(
+        "games.html",
+        games=games,
+        leaderboard_preview=leaderboard_preview,
+    )
+
+
+@app.route("/games/<game_slug>")
+def game_detail(game_slug):
+    game = _hydrate_game(game_slug, current_user)
+    if not game:
+        return ("Game not found", 404)
+
+    if not game["is_unlocked"] or not game["is_playable"]:
+        return render_template(
+            "game_locked.html",
+            game=game,
+            games=_hydrate_game_catalog(current_user),
+            seo_meta=_get_seo_meta(game["route"]),
+        )
+
+    interactive_entry = _get_interactive_entry()
+    return render_template(
+        "game_app.html",
+        game=game,
+        interactive_entry=interactive_entry,
+        seo_meta=_get_seo_meta(game["route"]),
+    )
+
+
+@app.route("/games/api/leaderboard/<game_slug>")
+def games_leaderboard(game_slug):
+    game = _get_game(game_slug)
+    if not game:
+        return jsonify({"error": "Game not found"}), 404
+
+    scores = (
+        GameScore.query.filter_by(game_slug=game["slug"])
+        .order_by(GameScore.score.desc(), GameScore.created_at.asc())
+        .limit(25)
+        .all()
+    )
+    return jsonify({"entries": [_serialize_game_score(score) for score in scores]})
+
+
+@app.route("/games/api/scores", methods=["POST"])
+@login_required
+def games_save_score():
+    body = request.get_json(force=True, silent=True) or {}
+    game = _hydrate_game(body.get("game_slug"), current_user)
+    if not game:
+        return jsonify({"ok": False, "error": "Game not found"}), 404
+    if not game["is_playable"]:
+        return jsonify({"ok": False, "error": "Game is not accepting scores yet"}), 400
+    if not game["is_unlocked"]:
+        return jsonify({"ok": False, "error": game["locked_reason"]}), 403
+
+    score_value = _coerce_int(body.get("score"))
+    if score_value <= 0:
+        return jsonify({"ok": False, "error": "Score is required"}), 400
+
+    display_name = (body.get("display_name") or current_user.name or current_user.email.split("@")[0]).strip()
+    display_name = re.sub(r"\s+", " ", display_name)[:80] or "Player"
+    metadata = body.get("metadata") if isinstance(body.get("metadata"), dict) else {}
+
+    score = GameScore(
+        user_id=current_user.id,
+        game_slug=game["slug"],
+        display_name=display_name,
+        score=score_value,
+        return_percent=_coerce_float(body.get("return_percent")),
+        moves=_coerce_int(body.get("moves")),
+        reallocations=_coerce_int(body.get("reallocations")),
+        tax_paid=_coerce_float(body.get("tax_paid")),
+        metadata_json=json.dumps(metadata),
+    )
+    db.session.add(score)
+    db.session.commit()
+
+    return jsonify({"ok": True, "entry": _serialize_game_score(score)})
+
+
+@app.route("/games/api/progress")
+def games_progress():
+    games = _hydrate_game_catalog(current_user)
+    completed_slugs = _completed_game_slugs_for_user(current_user)
+    return jsonify({
+        "authenticated": bool(current_user.is_authenticated),
+        "completed": sorted(completed_slugs),
+        "games": [
+            {
+                "slug": game["slug"],
+                "title": game["title"],
+                "sequence": game["sequence"],
+                "playable": game["is_playable"],
+                "unlocked": game["is_unlocked"],
+                "completed": game["has_completion"],
+                "unlockAfter": game.get("unlock_after"),
+                "route": game["route"],
+            }
+            for game in games
+        ],
+    })
+
+
+@app.route("/account")
+@login_required
+def account():
+    scores = (
+        GameScore.query.filter_by(user_id=current_user.id)
+        .order_by(GameScore.created_at.desc())
+        .limit(50)
+        .all()
+    )
+    game_scores = []
+    for score in scores:
+        serialized = _serialize_game_score(score)
+        serialized["gameTitle"] = (_get_game(score.game_slug) or {}).get("title", score.game_slug)
+        game_scores.append(serialized)
+
+    return render_template(
+        "account.html",
+        game_scores=game_scores,
+        games=_hydrate_game_catalog(current_user),
+        saved_charts=list_user_charts(current_user.id),
     )
 
 

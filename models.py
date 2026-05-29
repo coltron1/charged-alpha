@@ -23,6 +23,8 @@ class User(UserMixin, db.Model):
 
     charts = db.relationship("SavedChart", backref="user", lazy="dynamic",
                              cascade="all, delete-orphan")
+    game_scores = db.relationship("GameScore", backref="user", lazy="dynamic",
+                                  cascade="all, delete-orphan")
 
     def __repr__(self):
         return f"<User {self.email}>"
@@ -46,3 +48,26 @@ class SavedChart(db.Model):
 
     def __repr__(self):
         return f"<SavedChart {self.chart_name} ({self.symbol})>"
+
+
+class GameScore(db.Model):
+    __tablename__ = "game_scores"
+
+    id = db.Column(db.Integer, primary_key=True)
+    user_id = db.Column(db.Integer, db.ForeignKey("users.id"), nullable=False, index=True)
+    game_slug = db.Column(db.String(80), nullable=False, index=True)
+    display_name = db.Column(db.String(80), nullable=False)
+    score = db.Column(db.Integer, nullable=False, index=True)
+    return_percent = db.Column(db.Float, nullable=True)
+    moves = db.Column(db.Integer, nullable=True)
+    reallocations = db.Column(db.Integer, nullable=True)
+    tax_paid = db.Column(db.Float, nullable=True)
+    metadata_json = db.Column(db.Text, nullable=True)
+    created_at = db.Column(db.DateTime, default=datetime.datetime.utcnow, index=True)
+
+    __table_args__ = (
+        db.Index("ix_game_scores_game_score", "game_slug", "score"),
+    )
+
+    def __repr__(self):
+        return f"<GameScore {self.game_slug} {self.score}>"
