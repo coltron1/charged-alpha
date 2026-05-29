@@ -3,6 +3,10 @@ Authentication blueprint — email/password + Google/GitHub OAuth.
 """
 
 import os
+import re
+import secrets
+from urllib.parse import urlparse
+
 from flask import Blueprint, render_template, request, redirect, url_for, flash, jsonify, session
 from flask_login import login_user, logout_user, login_required, current_user
 from werkzeug.security import generate_password_hash, check_password_hash
@@ -14,6 +18,124 @@ auth_bp = Blueprint("auth", __name__, url_prefix="/auth")
 
 # ── OAuth setup (initialized in init_oauth) ────────────────────────────────
 oauth = OAuth()
+
+PUBLIC_NAME_BLOCKLIST = {
+    "admin",
+    "administrator",
+    "asshole",
+    "bitch",
+    "chargedalpha",
+    "cunt",
+    "dick",
+    "fuck",
+    "hitler",
+    "moderator",
+    "nazi",
+    "shit",
+    "support",
+}
+COMMON_PASSWORDS = {"password", "password1", "qwerty123", "chargedalpha", "letmein123"}
+PUBLIC_NAME_RE = re.compile(r"^[A-Za-z][A-Za-z0-9 .'-]{1,39}$")
+EMAIL_RE = re.compile(r"^[^\s@]+@[^\s@]+\.[^\s@]+$")
+
+
+def safe_next_url(raw_next, default="/"):
+    """Return a same-site path for post-auth redirects."""
+    if not raw_next:
+        return default
+
+    parsed = urlparse(raw_next)
+    if parsed.scheme or parsed.netloc:
+        if parsed.netloc != request.host:
+            return default
+        path = parsed.path or default
+        if parsed.query:
+            path += f"?{parsed.query}"
+        if parsed.fragment:
+            path += f"#{parsed.fragment}"
+    else:
+        path = raw_next
+
+    if not path.startswith("/") or path.startswith("//"):
+        return default
+
+    parsed_path = urlparse(path)
+    next_url = parsed_path.path or default
+    if parsed_path.query:
+        next_url += f"?{parsed_path.query}"
+    if parsed_path.fragment:
+        next_url += f"#{parsed_path.fragment}"
+    return next_url
+
+
+def _csrf_token():
+    token = session.get("_csrf_token")
+    if not token:
+        token = secrets.token_urlsafe(32)
+        session["_csrf_token"] = token
+    return token
+
+
+@auth_bp.app_context_processor
+def inject_auth_helpers():
+    return {"csrf_token": _csrf_token}
+
+
+def _validate_csrf_token():
+    token = session.get("_csrf_token")
+    submitted = request.form.get("csrf_token", "")
+    return bool(token and submitted and secrets.compare_digest(token, submitted))
+
+
+def normalize_public_name(value, fallback=""):
+    cleaned = re.sub(r"[\x00-\x1f\x7f-\x9f]", "", value or "")
+    cleaned = re.sub(r"\s+", " ", cleaned).strip()
+    return cleaned[:40] or fallback
+
+
+def _contains_blocked_name_token(value):
+    compact = re.sub(r"[^a-z0-9]", "", (value or "").lower())
+    tokens = re.findall(r"[a-z0-9]+", (value or "").lower())
+    return compact in PUBLIC_NAME_BLOCKLIST or any(token in PUBLIC_NAME_BLOCKLIST for token in tokens)
+
+
+def validate_account_name(value):
+    name = normalize_public_name(value)
+    if len(name) < 2:
+        return None, "Enter your first name."
+    if "@" in name or "http" in name.lower() or "www." in name.lower():
+        return None, "Use a real first name, not an email address or link."
+    if not PUBLIC_NAME_RE.match(name):
+        return None, "Names can use letters, numbers, spaces, apostrophes, periods, and hyphens."
+    if _contains_blocked_name_token(name):
+        return None, "Choose a different display name."
+    return name, None
+
+
+def get_public_first_name(user):
+    candidates = []
+    if getattr(user, "name", None):
+        candidates.append(str(user.name).split()[0])
+    if getattr(user, "email", None):
+        candidates.append(str(user.email).split("@")[0].replace(".", " ").replace("_", " ").split()[0])
+
+    for candidate in candidates:
+        first_name = normalize_public_name(candidate)
+        if PUBLIC_NAME_RE.match(first_name) and not _contains_blocked_name_token(first_name):
+            return first_name[:24]
+    return "Player"
+
+
+def _validate_password(password, email):
+    if len(password) < 10:
+        return "Password must be at least 10 characters."
+    if not re.search(r"[A-Za-z]", password) or not re.search(r"\d", password):
+        return "Password must include at least one letter and one number."
+    lowered = password.lower()
+    email_prefix = (email or "").split("@")[0].lower()
+    if lowered in COMMON_PASSWORDS or (email_prefix and email_prefix in lowered):
+        return "Choose a less predictable password."
+    return None
 
 
 def init_oauth(app):
@@ -48,22 +170,34 @@ def init_oauth(app):
 @auth_bp.route("/register", methods=["GET", "POST"])
 def register():
     if current_user.is_authenticated:
-        return redirect("/")
+        return redirect(safe_next_url(request.args.get("next"), "/"))
 
     if request.method == "POST":
+        if not _validate_csrf_token():
+            flash("Your session expired. Please try again.", "error")
+            return render_template("auth/register.html")
+
         name = request.form.get("name", "").strip()
         email = request.form.get("email", "").strip().lower()
         password = request.form.get("password", "")
         confirm = request.form.get("confirm", "")
 
+        clean_name, name_error = validate_account_name(name)
+        if name_error:
+            flash(name_error, "error")
+            return render_template("auth/register.html")
         if not email or not password:
             flash("Email and password are required.", "error")
+            return render_template("auth/register.html")
+        if not EMAIL_RE.match(email):
+            flash("Enter a valid email address.", "error")
             return render_template("auth/register.html")
         if password != confirm:
             flash("Passwords do not match.", "error")
             return render_template("auth/register.html")
-        if len(password) < 8:
-            flash("Password must be at least 8 characters.", "error")
+        password_error = _validate_password(password, email)
+        if password_error:
+            flash(password_error, "error")
             return render_template("auth/register.html")
 
         existing = User.query.filter_by(email=email).first()
@@ -73,14 +207,14 @@ def register():
 
         user = User(
             email=email,
-            name=name or email.split("@")[0],
+            name=clean_name,
             password_hash=generate_password_hash(password, method="pbkdf2:sha256"),
             provider="local",
         )
         db.session.add(user)
         db.session.commit()
         login_user(user)
-        next_url = request.args.get("next", "/")
+        next_url = safe_next_url(request.args.get("next"), "/")
         return redirect(next_url)
 
     return render_template("auth/register.html")
@@ -89,9 +223,13 @@ def register():
 @auth_bp.route("/login", methods=["GET", "POST"])
 def login():
     if current_user.is_authenticated:
-        return redirect("/")
+        return redirect(safe_next_url(request.args.get("next"), "/"))
 
     if request.method == "POST":
+        if not _validate_csrf_token():
+            flash("Your session expired. Please try again.", "error")
+            return render_template("auth/login.html")
+
         email = request.form.get("email", "").strip().lower()
         password = request.form.get("password", "")
 
@@ -104,7 +242,7 @@ def login():
             return render_template("auth/login.html")
 
         login_user(user)
-        next_url = request.args.get("next", "/")
+        next_url = safe_next_url(request.args.get("next"), "/")
         return redirect(next_url)
 
     return render_template("auth/login.html")
@@ -120,13 +258,20 @@ def logout():
 
 @auth_bp.route("/api/me")
 def me():
+    next_url = safe_next_url(request.args.get("next") or request.referrer, "/")
     if current_user.is_authenticated:
+        first_name = get_public_first_name(current_user)
         return jsonify({
             "authenticated": True,
             "name": current_user.name,
             "email": current_user.email,
+            "firstName": first_name,
         })
-    return jsonify({"authenticated": False})
+    return jsonify({
+        "authenticated": False,
+        "loginUrl": url_for("auth.login", next=next_url),
+        "registerUrl": url_for("auth.register", next=next_url),
+    })
 
 
 # ── Google OAuth ───────────────────────────────────────────────────────────
@@ -136,6 +281,7 @@ def google_login():
     if not hasattr(oauth, 'google') or not os.environ.get("GOOGLE_CLIENT_ID"):
         flash("Google sign-in is not available yet.", "error")
         return redirect(url_for("auth.login"))
+    session["auth_next"] = safe_next_url(request.args.get("next"), "/")
     redirect_uri = url_for("auth.google_callback", _external=True)
     return oauth.google.authorize_redirect(redirect_uri)
 
@@ -156,16 +302,19 @@ def google_callback():
 
     user = User.query.filter_by(email=email).first()
     if not user:
+        profile_name = userinfo.get("given_name") or userinfo.get("name") or email.split("@")[0]
+        profile_parts = normalize_public_name(str(profile_name)).split()
+        clean_name, _ = validate_account_name(profile_parts[0] if profile_parts else email.split("@")[0])
         user = User(
             email=email,
-            name=userinfo.get("name", email.split("@")[0]),
+            name=clean_name or "Player",
             provider="google",
             provider_id=userinfo.get("sub"),
         )
         db.session.add(user)
         db.session.commit()
     login_user(user)
-    return redirect("/")
+    return redirect(session.pop("auth_next", "/"))
 
 
 # ── GitHub OAuth ───────────────────────────────────────────────────────────
@@ -175,6 +324,7 @@ def github_login():
     if not hasattr(oauth, 'github') or not os.environ.get("GITHUB_CLIENT_ID"):
         flash("GitHub sign-in is not available yet.", "error")
         return redirect(url_for("auth.login"))
+    session["auth_next"] = safe_next_url(request.args.get("next"), "/")
     redirect_uri = url_for("auth.github_callback", _external=True)
     return oauth.github.authorize_redirect(redirect_uri)
 
@@ -204,13 +354,16 @@ def github_callback():
     email = email.lower()
     user = User.query.filter_by(email=email).first()
     if not user:
+        profile_name = profile.get("name") or profile.get("login") or email.split("@")[0]
+        profile_parts = normalize_public_name(str(profile_name)).split()
+        clean_name, _ = validate_account_name(profile_parts[0] if profile_parts else email.split("@")[0])
         user = User(
             email=email,
-            name=profile.get("name") or profile.get("login", email.split("@")[0]),
+            name=clean_name or "Player",
             provider="github",
             provider_id=str(profile.get("id")),
         )
         db.session.add(user)
         db.session.commit()
     login_user(user)
-    return redirect("/")
+    return redirect(session.pop("auth_next", "/"))

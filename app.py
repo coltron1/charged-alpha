@@ -42,7 +42,7 @@ from pathlib import Path
 from concurrent.futures import ThreadPoolExecutor
 
 import yfinance as yf
-from flask import Flask, render_template, request, jsonify, redirect, Response
+from flask import Flask, render_template, request, jsonify, redirect, Response, url_for
 from flask_compress import Compress
 from flask_login import LoginManager, current_user, login_required
 
@@ -50,7 +50,7 @@ from flask_login import LoginManager, current_user, login_required
 from yf_utils import (TTLCache, JobStore, fetch_ticker_info, safe_float,
                        normalize_div_yield, fetch_chart, fetch_banner_tickers)
 from models import db, User, GameScore
-from auth import auth_bp, init_oauth
+from auth import auth_bp, get_public_first_name, init_oauth
 from chart_storage import save_chart_state, load_chart_state, list_user_charts, delete_chart_state
 
 # ── Import backend modules ──────────────────────────────────────────────────
@@ -902,6 +902,17 @@ if app.config['SQLALCHEMY_DATABASE_URI'].startswith('postgres://'):
     app.config['SQLALCHEMY_DATABASE_URI'] = app.config['SQLALCHEMY_DATABASE_URI'].replace(
         'postgres://', 'postgresql://', 1)
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+app.config.update(
+    SESSION_COOKIE_HTTPONLY=True,
+    SESSION_COOKIE_SAMESITE="Lax",
+    REMEMBER_COOKIE_HTTPONLY=True,
+    REMEMBER_COOKIE_SAMESITE="Lax",
+)
+if os.environ.get("RAILWAY_ENVIRONMENT") or os.environ.get("FLASK_ENV") == "production":
+    app.config.update(
+        SESSION_COOKIE_SECURE=True,
+        REMEMBER_COOKIE_SECURE=True,
+    )
 Compress(app)
 
 # ── Database + Auth ────────────────────────────────────────────────────────
@@ -913,6 +924,19 @@ login_manager.login_view = 'auth.login'
 @login_manager.user_loader
 def load_user(user_id):
     return User.query.get(int(user_id))
+
+
+@login_manager.unauthorized_handler
+def unauthorized():
+    if request.path.startswith("/games/api/"):
+        next_url = request.referrer or "/games/front-page-fortune"
+        return jsonify({
+            "ok": False,
+            "error": "Sign in or create a free Charged Alpha account to post public scores.",
+            "login_url": url_for("auth.login", next=next_url),
+            "register_url": url_for("auth.register", next=next_url),
+        }), 401
+    return redirect(url_for("auth.login", next=request.full_path if request.query_string else request.path))
 
 init_oauth(app)
 app.register_blueprint(auth_bp)
@@ -1189,12 +1213,18 @@ def games_leaderboard(game_slug):
 
 
 @app.route("/games/api/scores", methods=["POST"])
-@login_required
 def games_save_score():
     body = request.get_json(force=True, silent=True) or {}
     game = _hydrate_game(body.get("game_slug"), current_user)
     if not game:
         return jsonify({"ok": False, "error": "Game not found"}), 404
+    if not current_user.is_authenticated:
+        return jsonify({
+            "ok": False,
+            "error": "Sign in or create a free Charged Alpha account to post public scores.",
+            "login_url": url_for("auth.login", next=game["route"]),
+            "register_url": url_for("auth.register", next=game["route"]),
+        }), 401
     if not game["is_playable"]:
         return jsonify({"ok": False, "error": "Game is not accepting scores yet"}), 400
     if not game["is_unlocked"]:
@@ -1204,8 +1234,7 @@ def games_save_score():
     if score_value <= 0:
         return jsonify({"ok": False, "error": "Score is required"}), 400
 
-    display_name = (body.get("display_name") or current_user.name or current_user.email.split("@")[0]).strip()
-    display_name = re.sub(r"\s+", " ", display_name)[:80] or "Player"
+    display_name = get_public_first_name(current_user)
     metadata = body.get("metadata") if isinstance(body.get("metadata"), dict) else {}
 
     score = GameScore(
