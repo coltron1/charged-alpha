@@ -46,10 +46,10 @@
       <div class="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[.9fr_1.1fr] lg:items-center">
         <div>
           <p class="mb-4 text-xs font-black uppercase tracking-[.28em] text-amber-300">Interactive investing games</p>
-          <h1 class="serif mb-5 text-4xl leading-tight text-white md:text-6xl">A connected game shelf, one standalone game at a time.</h1>
+          <h1 class="serif mb-5 text-4xl leading-tight text-white md:text-6xl">Play the market's turning points.</h1>
           <p class="mb-7 max-w-2xl text-lg leading-8 text-slate-300">
-            Front Page Fortune launches first on Charged Alpha, while each game remains portable enough to become its own app later.
-            Scores and future chapter unlocks stay tied to the Charged Alpha account layer.
+            Start with Front Page Fortune, where Jonah knows tomorrow's front page but still has to decide how markets will react.
+            Each chapter turns a different investing lesson into a story you can play.
           </p>
           <div class="flex flex-wrap gap-3">
             <a href="{{ hero_game.route }}" class="gold-button inline-flex items-center gap-2 rounded-lg px-5 py-3 text-sm font-black no-underline transition">
@@ -83,11 +83,11 @@
       <div class="mx-auto max-w-7xl">
         <div class="mb-8 flex flex-col justify-between gap-4 md:flex-row md:items-end">
           <div>
-            <p class="mb-2 text-xs font-black uppercase tracking-[.24em] text-amber-300">Game path</p>
-            <h2 class="text-3xl font-black text-white">Sequential by design</h2>
+            <p class="mb-2 text-xs font-black uppercase tracking-[.24em] text-amber-300">Chapter path</p>
+            <h2 class="text-3xl font-black text-white">Finish one story. Open the next.</h2>
           </div>
           <p class="max-w-2xl text-sm leading-6 text-slate-400">
-            A completed signed-in run becomes the unlock signal for the next chapter. If a game moves to a separate app, it can still call the same progress and score APIs.
+            Play through the series in order, building from headline reactions to commodities, sectors, and options. Sign in to keep your scores and chapter progress.
           </p>
         </div>
 
@@ -134,10 +134,10 @@
     <section class="px-6 pb-20">
       <div class="mx-auto grid max-w-7xl gap-6 lg:grid-cols-[.9fr_1.1fr]">
         <div class="panel p-6 md:p-7">
-          <p class="mb-2 text-xs font-black uppercase tracking-[.24em] text-cyan-300">Portable release model</p>
-          <h2 class="mb-4 text-3xl font-black text-white">Website hosts progress. Games stay movable.</h2>
+          <p class="mb-2 text-xs font-black uppercase tracking-[.24em] text-cyan-300">What you practice</p>
+          <h2 class="mb-4 text-3xl font-black text-white">Headlines are clues, not answers.</h2>
           <p class="text-sm leading-6 text-slate-400">
-            The React game bundle can run here, on localhost, or inside a future standalone site. Charged Alpha owns the account, leaderboard, and unlock rules, so prototypes can launch quickly without trapping the game code inside the main Flask app.
+            The games are built around practical investing ideas: time in the market, tax friction, diversification, position sizing, and the gap between knowing the news and predicting the price.
           </p>
         </div>
 
@@ -158,7 +158,7 @@
                 </div>
               {% else %}
                 <p class="rounded-lg border border-dashed border-slate-700 px-4 py-5 text-sm text-slate-500">
-                  No public scores yet. The first signed-in run will set the board.
+                  No public scores yet. Finish a signed-in run to set the first mark.
                 </p>
               {% endif %}
             </div>

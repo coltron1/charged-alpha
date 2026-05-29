@@ -433,12 +433,9 @@ def _hydrate_game_catalog(user=None):
         item["is_unlocked"] = is_unlocked
 
         if not is_unlocked:
-            if getattr(user, "is_authenticated", False):
-                item["locked_reason"] = f"Finish {item['prerequisite_title']} to unlock this chapter."
-            else:
-                item["locked_reason"] = f"Sign in and finish {item['prerequisite_title']} to save this unlock."
+            item["locked_reason"] = f"Finish {item['prerequisite_title']} to unlock this chapter."
         elif not item["is_playable"]:
-            item["locked_reason"] = "In development. This route is reserved for the next standalone game build."
+            item["locked_reason"] = "Coming soon. This chapter will open when it is ready."
         else:
             item["locked_reason"] = ""
 

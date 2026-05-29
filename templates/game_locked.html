@@ -44,17 +44,17 @@
       <div class="grid gap-5 md:grid-cols-2">
         <div class="rounded-xl border border-slate-800 bg-slate-950/55 p-5">
           <div class="mb-2 text-xs font-black uppercase tracking-[.22em] text-amber-300">
-            {% if not game.is_unlocked %}Locked chapter{% else %}In development{% endif %}
+            {% if not game.is_unlocked %}Locked chapter{% else %}Coming soon{% endif %}
           </div>
           <p class="text-sm leading-6 text-slate-400">{{ game.locked_reason }}</p>
         </div>
         <div class="rounded-xl border border-slate-800 bg-slate-950/55 p-5">
-          <div class="mb-2 text-xs font-black uppercase tracking-[.22em] text-cyan-300">Unlock signal</div>
+          <div class="mb-2 text-xs font-black uppercase tracking-[.22em] text-cyan-300">How to continue</div>
           <p class="text-sm leading-6 text-slate-400">
             {% if game.prerequisite_title %}
-              The site checks for a completed signed-in score from {{ game.prerequisite_title }} before opening this chapter.
+              Complete {{ game.prerequisite_title }} first, then return to the chapter path for the next story.
             {% else %}
-              This is the opening chapter and does not require a previous unlock.
+              This is the opening chapter and is available now.
             {% endif %}
           </p>
         </div>
