@@ -45,6 +45,14 @@ import yfinance as yf
 from flask import Flask, render_template, request, jsonify, redirect, Response, url_for
 from flask_compress import Compress
 from flask_login import LoginManager, current_user, login_required
+from werkzeug.middleware.proxy_fix import ProxyFix
+
+try:
+    from dotenv import load_dotenv
+
+    load_dotenv()
+except ImportError:
+    pass
 
 # ── Shared utilities ────────────────────────────────────────────────────────
 from yf_utils import (TTLCache, JobStore, fetch_ticker_info, safe_float,
@@ -69,6 +77,7 @@ from gold_server import get_spot_price, fetch_ebay, fetch_sdbullion, \
     fetch_craigslist, generate_facebook_links, get_purity_fraction
 
 app = Flask(__name__)
+app.wsgi_app = ProxyFix(app.wsgi_app, x_for=1, x_proto=1, x_host=1, x_port=1)
 BASE_DIR = Path(__file__).resolve().parent
 SHOWS_CATALOG_PATH = BASE_DIR / "data" / "shows_catalog.json"
 INTERACTIVE_GAME_BUILD_PATH = BASE_DIR / "static" / "games" / "interactive"
@@ -897,6 +906,7 @@ app.url_map.strict_slashes = False
 app.config['MAX_CONTENT_LENGTH'] = 1 * 1024 * 1024  # 1MB max request body
 app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY', 'dev-secret-change-in-production')
 app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL', 'sqlite:///charged_alpha.db')
+app.config['PREFERRED_URL_SCHEME'] = "https" if SITE_URL.startswith("https://") else "http"
 # Railway Postgres uses postgres:// but SQLAlchemy needs postgresql://
 if app.config['SQLALCHEMY_DATABASE_URI'].startswith('postgres://'):
     app.config['SQLALCHEMY_DATABASE_URI'] = app.config['SQLALCHEMY_DATABASE_URI'].replace(

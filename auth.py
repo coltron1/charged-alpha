@@ -7,7 +7,7 @@ import re
 import secrets
 from urllib.parse import urlparse
 
-from flask import Blueprint, render_template, request, redirect, url_for, flash, jsonify, session
+from flask import Blueprint, current_app, render_template, request, redirect, url_for, flash, jsonify, session
 from flask_login import login_user, logout_user, login_required, current_user
 from werkzeug.security import generate_password_hash, check_password_hash
 from authlib.integrations.flask_client import OAuth
@@ -37,6 +37,25 @@ PUBLIC_NAME_BLOCKLIST = {
 COMMON_PASSWORDS = {"password", "password1", "qwerty123", "chargedalpha", "letmein123"}
 PUBLIC_NAME_RE = re.compile(r"^[A-Za-z][A-Za-z0-9 .'-]{1,39}$")
 EMAIL_RE = re.compile(r"^[^\s@]+@[^\s@]+\.[^\s@]+$")
+
+
+def _env_is_set(name):
+    return bool(os.environ.get(name, "").strip())
+
+
+def google_oauth_available():
+    return _env_is_set("GOOGLE_CLIENT_ID") and _env_is_set("GOOGLE_CLIENT_SECRET")
+
+
+def github_oauth_available():
+    return os.environ.get("ENABLE_GITHUB_AUTH", "").strip().lower() in {"1", "true", "yes"} and _env_is_set("GITHUB_CLIENT_ID") and _env_is_set("GITHUB_CLIENT_SECRET")
+
+
+def _oauth_redirect_uri(provider):
+    configured = os.environ.get(f"{provider.upper()}_REDIRECT_URI", "").strip()
+    if configured:
+        return configured
+    return url_for(f"auth.{provider}_callback", _external=True)
 
 
 def safe_next_url(raw_next, default="/"):
@@ -78,7 +97,11 @@ def _csrf_token():
 
 @auth_bp.app_context_processor
 def inject_auth_helpers():
-    return {"csrf_token": _csrf_token}
+    return {
+        "csrf_token": _csrf_token,
+        "google_oauth_available": google_oauth_available,
+        "github_oauth_available": github_oauth_available,
+    }
 
 
 def _validate_csrf_token():
@@ -143,17 +166,18 @@ def init_oauth(app):
     oauth.init_app(app)
 
     # Google
-    if os.environ.get("GOOGLE_CLIENT_ID"):
+    if google_oauth_available():
         oauth.register(
             name="google",
             client_id=os.environ["GOOGLE_CLIENT_ID"],
             client_secret=os.environ["GOOGLE_CLIENT_SECRET"],
             server_metadata_url="https://accounts.google.com/.well-known/openid-configuration",
+            api_base_url="https://openidconnect.googleapis.com/v1/",
             client_kwargs={"scope": "openid email profile"},
         )
 
     # GitHub
-    if os.environ.get("GITHUB_CLIENT_ID"):
+    if github_oauth_available():
         oauth.register(
             name="github",
             client_id=os.environ["GITHUB_CLIENT_ID"],
@@ -278,20 +302,25 @@ def me():
 
 @auth_bp.route("/google")
 def google_login():
-    if not hasattr(oauth, 'google') or not os.environ.get("GOOGLE_CLIENT_ID"):
-        flash("Google sign-in is not available yet.", "error")
-        return redirect(url_for("auth.login"))
+    next_url = safe_next_url(request.args.get("next"), "/")
+    if not hasattr(oauth, 'google') or not google_oauth_available():
+        flash("Google sign-in is not configured yet. Use email sign-in for now.", "error")
+        return redirect(url_for("auth.login", next=next_url))
     session["auth_next"] = safe_next_url(request.args.get("next"), "/")
-    redirect_uri = url_for("auth.google_callback", _external=True)
-    return oauth.google.authorize_redirect(redirect_uri)
+    redirect_uri = _oauth_redirect_uri("google")
+    return oauth.google.authorize_redirect(redirect_uri, prompt="select_account")
 
 
 @auth_bp.route("/google/callback")
 def google_callback():
     try:
         token = oauth.google.authorize_access_token()
-        userinfo = token.get("userinfo") or oauth.google.userinfo()
+        userinfo = token.get("userinfo")
+        if not userinfo:
+            userinfo_response = oauth.google.get("userinfo", token=token)
+            userinfo = userinfo_response.json()
     except Exception:
+        current_app.logger.exception("Google sign-in failed")
         flash("Google sign-in failed. Please try again.", "error")
         return redirect(url_for("auth.login"))
 
@@ -321,11 +350,12 @@ def google_callback():
 
 @auth_bp.route("/github")
 def github_login():
-    if not hasattr(oauth, 'github') or not os.environ.get("GITHUB_CLIENT_ID"):
+    next_url = safe_next_url(request.args.get("next"), "/")
+    if not hasattr(oauth, 'github') or not github_oauth_available():
         flash("GitHub sign-in is not available yet.", "error")
-        return redirect(url_for("auth.login"))
+        return redirect(url_for("auth.login", next=next_url))
     session["auth_next"] = safe_next_url(request.args.get("next"), "/")
-    redirect_uri = url_for("auth.github_callback", _external=True)
+    redirect_uri = _oauth_redirect_uri("github")
     return oauth.github.authorize_redirect(redirect_uri)
 
 
