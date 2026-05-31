@@ -11,6 +11,9 @@
     .panel { background:#111827; border:1px solid #1e293b; border-radius:12px; }
     .nav-link { color:#cbd5e1; text-decoration:none; font-size:14px; font-weight:600; }
     .nav-link:hover { color:white; }
+    .flash { border-radius:10px; padding:12px 14px; margin-bottom:16px; font-size:13px; }
+    .flash.success { border:1px solid rgba(52,211,153,.28); background:rgba(5,150,105,.12); color:#a7f3d0; }
+    .flash.error { border:1px solid rgba(248,113,113,.3); background:rgba(239,68,68,.1); color:#fecaca; }
   </style>
 </head>
 <body>
@@ -34,6 +37,12 @@
       <h1 class="text-4xl font-black text-white">Welcome, {{ current_user.name or current_user.email }}</h1>
       <p class="mt-3 text-slate-400">Your saved charts and game scores now live behind the same Charged Alpha account.</p>
     </div>
+
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% for category, message in messages %}
+        <div class="flash {{ category }}">{{ message }}</div>
+      {% endfor %}
+    {% endwith %}
 
     <div class="grid gap-6 lg:grid-cols-[1.1fr_.9fr]">
       <section class="panel p-6">
@@ -87,6 +96,34 @@
           No saved charts yet.
         </div>
         {% endif %}
+      </section>
+
+      <section class="panel p-6">
+        <div class="mb-5">
+          <h2 class="text-2xl font-black text-white">Email Updates</h2>
+          <p class="mt-1 text-sm text-slate-500">Use your account name and email for future Charged Alpha newsletters, game launches, score challenges, and market-learning updates.</p>
+        </div>
+        <div class="rounded-lg border border-slate-800 bg-slate-950/60 p-4">
+          <div class="text-sm font-bold text-white">{{ current_user.name or "Player" }}</div>
+          <div class="mt-1 text-xs text-slate-500">{{ current_user.email }}</div>
+          {% if email_updates_subscription and email_updates_subscription.subscribed %}
+          <div class="mt-3 text-sm font-bold text-emerald-300">Subscribed</div>
+          <p class="mt-1 text-xs leading-5 text-slate-500">You can turn this off anytime.</p>
+          <form method="POST" action="/auth/email-updates" class="mt-4">
+            <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+            <input type="hidden" name="action" value="unsubscribe">
+            <button class="rounded-lg border border-slate-700 px-4 py-2 text-sm font-bold text-slate-200" type="submit">Turn Off Updates</button>
+          </form>
+          {% else %}
+          <div class="mt-3 text-sm font-bold text-slate-300">Not subscribed</div>
+          <p class="mt-1 text-xs leading-5 text-slate-500">Opt in before we use this email for newsletters or marketing updates.</p>
+          <form method="POST" action="/auth/email-updates" class="mt-4">
+            <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+            <input type="hidden" name="action" value="subscribe">
+            <button class="rounded-lg bg-amber-300 px-4 py-2 text-sm font-black text-slate-950" type="submit">Subscribe For Updates</button>
+          </form>
+          {% endif %}
+        </div>
       </section>
     </div>
 

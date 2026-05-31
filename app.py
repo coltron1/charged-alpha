@@ -58,7 +58,7 @@ except ImportError:
 from yf_utils import (TTLCache, JobStore, fetch_ticker_info, safe_float,
                        normalize_div_yield, fetch_chart, fetch_banner_tickers)
 from models import db, User, GameScore
-from auth import auth_bp, get_public_first_name, init_oauth
+from auth import auth_bp, get_email_updates_subscription, get_public_first_name, init_oauth
 from chart_storage import save_chart_state, load_chart_state, list_user_charts, delete_chart_state
 
 # ── Import backend modules ──────────────────────────────────────────────────
@@ -1324,6 +1324,7 @@ def account():
 
     return render_template(
         "account.html",
+        email_updates_subscription=get_email_updates_subscription(current_user),
         game_scores=game_scores,
         games=_hydrate_game_catalog(current_user),
         saved_charts=list_user_charts(current_user.id),

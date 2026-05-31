@@ -25,6 +25,8 @@ class User(UserMixin, db.Model):
                              cascade="all, delete-orphan")
     game_scores = db.relationship("GameScore", backref="user", lazy="dynamic",
                                   cascade="all, delete-orphan")
+    email_subscriptions = db.relationship("EmailSubscriber", backref="user", lazy="dynamic",
+                                          cascade="all, delete-orphan")
 
     def __repr__(self):
         return f"<User {self.email}>"
@@ -71,3 +73,26 @@ class GameScore(db.Model):
 
     def __repr__(self):
         return f"<GameScore {self.game_slug} {self.score}>"
+
+
+class EmailSubscriber(db.Model):
+    __tablename__ = "email_subscribers"
+
+    id = db.Column(db.Integer, primary_key=True)
+    user_id = db.Column(db.Integer, db.ForeignKey("users.id"), nullable=True, index=True)
+    email = db.Column(db.String(255), nullable=False, unique=True, index=True)
+    name = db.Column(db.String(255), nullable=True)
+    subscribed = db.Column(db.Boolean, nullable=False, default=True, index=True)
+    consent_source = db.Column(db.String(80), nullable=True)
+    subscribed_at = db.Column(db.DateTime, default=datetime.datetime.utcnow)
+    unsubscribed_at = db.Column(db.DateTime, nullable=True)
+    created_at = db.Column(db.DateTime, default=datetime.datetime.utcnow)
+    updated_at = db.Column(
+        db.DateTime,
+        default=datetime.datetime.utcnow,
+        onupdate=datetime.datetime.utcnow,
+    )
+
+    def __repr__(self):
+        status = "subscribed" if self.subscribed else "unsubscribed"
+        return f"<EmailSubscriber {self.email} {status}>"

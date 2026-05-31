@@ -5,6 +5,7 @@ Authentication blueprint — email/password + Google/GitHub OAuth.
 import os
 import re
 import secrets
+import datetime
 from urllib.parse import urlparse
 
 from flask import Blueprint, current_app, render_template, request, redirect, url_for, flash, jsonify, session
@@ -12,7 +13,7 @@ from flask_login import login_user, logout_user, login_required, current_user
 from werkzeug.security import generate_password_hash, check_password_hash
 from authlib.integrations.flask_client import OAuth
 
-from models import db, User
+from models import db, EmailSubscriber, User
 
 auth_bp = Blueprint("auth", __name__, url_prefix="/auth")
 
@@ -37,10 +38,15 @@ PUBLIC_NAME_BLOCKLIST = {
 COMMON_PASSWORDS = {"password", "password1", "qwerty123", "chargedalpha", "letmein123"}
 PUBLIC_NAME_RE = re.compile(r"^[A-Za-z][A-Za-z0-9 .'-]{1,39}$")
 EMAIL_RE = re.compile(r"^[^\s@]+@[^\s@]+\.[^\s@]+$")
+TRUTHY_VALUES = {"1", "true", "yes", "on"}
 
 
 def _env_is_set(name):
     return bool(os.environ.get(name, "").strip())
+
+
+def _form_is_truthy(name):
+    return request.values.get(name, "").strip().lower() in TRUTHY_VALUES
 
 
 def google_oauth_available():
@@ -149,6 +155,37 @@ def get_public_first_name(user):
     return "Player"
 
 
+def get_email_updates_subscription(user):
+    if not getattr(user, "is_authenticated", False):
+        return None
+    return EmailSubscriber.query.filter_by(email=(user.email or "").strip().lower()).first()
+
+
+def set_email_updates_subscription(user, subscribed=True, source="account"):
+    email = (getattr(user, "email", "") or "").strip().lower()
+    if not email or not EMAIL_RE.match(email):
+        return None
+
+    now = datetime.datetime.utcnow()
+    subscription = EmailSubscriber.query.filter_by(email=email).first()
+    if not subscription:
+        subscription = EmailSubscriber(email=email, created_at=now)
+        db.session.add(subscription)
+
+    subscription.user_id = getattr(user, "id", None)
+    subscription.name = normalize_public_name(getattr(user, "name", "") or get_public_first_name(user))
+    subscription.subscribed = bool(subscribed)
+    subscription.consent_source = source
+    subscription.updated_at = now
+    if subscribed:
+        subscription.subscribed_at = now
+        subscription.unsubscribed_at = None
+    else:
+        subscription.unsubscribed_at = now
+    db.session.commit()
+    return subscription
+
+
 def _validate_password(password, email):
     if len(password) < 10:
         return "Password must be at least 10 characters."
@@ -205,6 +242,7 @@ def register():
         email = request.form.get("email", "").strip().lower()
         password = request.form.get("password", "")
         confirm = request.form.get("confirm", "")
+        wants_email_updates = _form_is_truthy("email_updates")
 
         clean_name, name_error = validate_account_name(name)
         if name_error:
@@ -237,6 +275,8 @@ def register():
         )
         db.session.add(user)
         db.session.commit()
+        if wants_email_updates:
+            set_email_updates_subscription(user, True, "register-email")
         login_user(user)
         next_url = safe_next_url(request.args.get("next"), "/")
         return redirect(next_url)
@@ -307,12 +347,17 @@ def google_login():
         flash("Google sign-in is not configured yet. Use email sign-in for now.", "error")
         return redirect(url_for("auth.login", next=next_url))
     session["auth_next"] = safe_next_url(request.args.get("next"), "/")
+    session["email_updates_opt_in"] = _form_is_truthy("email_updates")
     redirect_uri = _oauth_redirect_uri("google")
     return oauth.google.authorize_redirect(redirect_uri, prompt="select_account")
 
 
 @auth_bp.route("/google/callback")
 def google_callback():
+    if not hasattr(oauth, 'google') or not google_oauth_available():
+        flash("Google sign-in is not configured yet. Use email sign-in for now.", "error")
+        return redirect(url_for("auth.login"))
+
     try:
         token = oauth.google.authorize_access_token()
         userinfo = token.get("userinfo")
@@ -342,8 +387,27 @@ def google_callback():
         )
         db.session.add(user)
         db.session.commit()
+    if session.pop("email_updates_opt_in", False):
+        set_email_updates_subscription(user, True, "register-google")
     login_user(user)
     return redirect(session.pop("auth_next", "/"))
+
+
+@auth_bp.route("/email-updates", methods=["POST"])
+@login_required
+def email_updates():
+    if not _validate_csrf_token():
+        flash("Your session expired. Please try again.", "error")
+        return redirect(url_for("account"))
+
+    action = request.form.get("action", "subscribe")
+    if action == "unsubscribe":
+        set_email_updates_subscription(current_user, False, "account-unsubscribe")
+        flash("Email updates are turned off.", "success")
+    else:
+        set_email_updates_subscription(current_user, True, "account")
+        flash("You're on the Charged Alpha email updates list.", "success")
+    return redirect(url_for("account"))
 
 
 # ── GitHub OAuth ───────────────────────────────────────────────────────────
