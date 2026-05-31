@@ -108,6 +108,7 @@ GAME_CATALOG = [
         "status": "Playable alpha",
         "playable": True,
         "unlock_after": "front-page-fortune",
+        "alpha_access": True,
         "tagline": "Manage the crop, the futures tape, and the cost of being early.",
         "description": (
             "A commodities and futures story game about inventory, timing, risk "
@@ -124,6 +125,7 @@ GAME_CATALOG = [
         "status": "Playable alpha",
         "playable": True,
         "unlock_after": "harvest-ledger",
+        "alpha_access": True,
         "tagline": "Read the macro clue, then decide which sector deserves the next dollar.",
         "description": "A sector rotation game about second-order effects, valuation, and narrative traps.",
         "lesson": "The headline can be right while the winning sector is somewhere else.",
@@ -431,7 +433,7 @@ def _hydrate_game_catalog(user=None):
         item = dict(game)
         prerequisite_slug = item.get("unlock_after")
         prerequisite = _get_game(prerequisite_slug)
-        is_unlocked = prerequisite_slug is None or prerequisite_slug in completed_slugs
+        is_unlocked = prerequisite_slug is None or prerequisite_slug in completed_slugs or bool(item.get("alpha_access"))
 
         item["sequence"] = index + 1
         item["sequence_label"] = f"Chapter {index + 1}"
