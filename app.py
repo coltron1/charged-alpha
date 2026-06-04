@@ -99,7 +99,8 @@ GAME_CATALOG = [
         "tagline": "Buy the option. Beat the clock. Make the market move enough.",
         "description": (
             "Trade simulated SPX options through real historical market shocks. "
-            "Use future knowledge to buy calls, puts, straddles, or T-bills, then "
+            "Use future knowledge to buy calls, puts, straddles, or sit in the "
+            "safety of Treasury bills waiting for the right event, then "
             "see whether the actual S&P 500 move beat premium, volatility, and time decay."
         ),
         "lesson": "Options are paid tickets: direction matters, but size and timing decide the payout.",
@@ -119,7 +120,8 @@ GAME_CATALOG = [
         "tagline": "Know the event. Still call the market.",
         "description": (
             "Play a portfolio across real historical events using S&P 500 stocks, "
-            "gold, bonds, or a custom mix. You know what happened next, but the "
+            "gold, a custom mix, or sit in the safety of Treasury bills waiting "
+            "for the right event. You know what happened next, but the "
             "actual market data decides whether your allocation was genius or a trap."
         ),
         "lesson": "Future knowledge is powerful, but markets price fear, relief, taxes, and timing.",
@@ -138,8 +140,9 @@ GAME_CATALOG = [
         "unlock_after": None,
         "tagline": "Trade the crop shock before the futures tape settles.",
         "description": (
-            "Speculate on real grain-market history with corn, soybean, wheat, and "
-            "T-bill choices. Droughts, floods, crop reports, and trade shocks can "
+            "Speculate on real grain-market history with corn, soybean, wheat, or "
+            "sit in the safety of Treasury bills waiting for the right event. "
+            "Droughts, floods, crop reports, and trade shocks can "
             "make futures contracts surge, but one wrong harvest call can drain the ledger."
         ),
         "lesson": "Futures magnify commodity moves, so contract size and risk control matter.",
@@ -159,7 +162,8 @@ GAME_CATALOG = [
         "tagline": "Pick the sector that wins after the obvious story breaks.",
         "description": (
             "Rotate through real market eras using a balanced mix, tech, energy, "
-            "banks, health care, staples, or bonds. The historical event is known; "
+            "banks, health care, staples, or sit in the safety of Treasury bills "
+            "waiting for the right event. The historical event is known; "
             "the game is spotting which investment actually benefits when prices move."
         ),
         "lesson": "A true event can still point to the wrong sector if the market already priced it in.",
