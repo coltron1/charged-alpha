@@ -38,8 +38,13 @@ import os
 import re
 import time
 import threading
+import datetime
 from pathlib import Path
 from concurrent.futures import ThreadPoolExecutor
+try:
+    from zoneinfo import ZoneInfo
+except ImportError:
+    ZoneInfo = None
 
 import yfinance as yf
 from flask import Flask, render_template, request, jsonify, redirect, Response, url_for
@@ -93,12 +98,13 @@ GAME_CATALOG = [
         "unlock_after": None,
         "tagline": "Know the front page. Still call the market.",
         "description": (
-            "Jonah inherits $100,000 and Grandpa Silas's briefcase of future "
-            "newspaper front pages. Use the headlines, choose stocks, gold, "
-            "bonds, or a custom mix, then see how history actually priced the news."
+            "Read real future headlines, choose stocks, gold, bonds, or a custom "
+            "mix, and find out whether knowing the news is enough to beat history."
         ),
         "lesson": "Future information is not the same thing as market prediction.",
+        "challenge": "Can you turn $100,000 into the biggest final fortune?",
         "image": "/static/games/interactive/games/headline-market/how-to-dashboard-desktop.png",
+        "preview_gif": "/static/games/interactive/games/previews/front-page-fortune-preview.gif",
         "route": "/games/front-page-fortune",
     },
     {
@@ -107,15 +113,16 @@ GAME_CATALOG = [
         "title": "Harvest Ledger",
         "status": "Playable alpha",
         "playable": True,
-        "unlock_after": "front-page-fortune",
-        "alpha_access": True,
+        "unlock_after": None,
         "tagline": "Manage the crop, the futures tape, and the cost of being early.",
         "description": (
-            "A commodities and futures story game about inventory, timing, risk "
-            "management, and how real-world supply shocks move through prices."
+            "Trade crop futures through droughts, floods, crop reports, and trade "
+            "shocks. Big contract wins are possible, but one bad harvest can bite."
         ),
         "lesson": "Risk management matters most when the signal looks obvious.",
+        "challenge": "Can you outgrow corn, soybeans, wheat, and the perfect tape?",
         "image": "/static/games/interactive/games/futures-fortune/grain-ledger-prologue.webp",
+        "preview_gif": "/static/games/interactive/games/previews/harvest-ledger-preview.gif",
         "route": "/games/harvest-ledger",
     },
     {
@@ -124,28 +131,56 @@ GAME_CATALOG = [
         "title": "Sector Oracle",
         "status": "Playable alpha",
         "playable": True,
-        "unlock_after": "harvest-ledger",
-        "alpha_access": True,
+        "unlock_after": None,
         "tagline": "Read the macro clue, then decide which sector deserves the next dollar.",
-        "description": "A sector rotation game about second-order effects, valuation, and narrative traps.",
+        "description": (
+            "Rotate between sectors as the economy changes. The obvious winner is "
+            "not always the best trade when valuation and crowding are already loud."
+        ),
         "lesson": "The headline can be right while the winning sector is somewhere else.",
+        "challenge": "Can you beat the index by finding the second-order winner?",
         "image": "/static/games/interactive/games/sector-oracle/oracle-of-sectors-chapter-1.webp",
+        "preview_gif": "/static/games/interactive/games/previews/sector-oracle-preview.gif",
         "route": "/games/sector-oracle",
     },
     {
         "slug": "expiration-date",
         "app_slug": "expiration-date",
         "title": "Expiration Date",
-        "status": "Planned chapter",
-        "playable": False,
-        "unlock_after": "sector-oracle",
+        "status": "Playable alpha",
+        "playable": True,
+        "unlock_after": None,
         "tagline": "Trade the catalyst without letting time decay become the real story.",
-        "description": "An options education game focused on time decay, catalysts, and position sizing.",
+        "description": (
+            "Buy calls, puts, straddles, or T-bills with future headline knowledge. "
+            "A correct direction still has to beat premium, volatility, and time."
+        ),
         "lesson": "Direction is only one part of an options trade.",
-        "image": None,
+        "challenge": "Can you time the close and make Mara rich before expiration?",
+        "image": "/static/games/interactive/games/options-fortune/expiration-date-game-image-1.webp",
+        "preview_gif": "/static/games/interactive/games/previews/expiration-date-preview.gif",
         "route": "/games/expiration-date",
     },
 ]
+
+GAME_SCORE_RESET_EPOCH_UTC = datetime.datetime(2026, 6, 4, 5, 1, 0)
+GAME_SCORE_RESET_TZ = ZoneInfo("America/Chicago") if ZoneInfo else datetime.timezone.utc
+GAME_SCORE_NAME_BLOCKLIST = {
+    "admin",
+    "administrator",
+    "asshole",
+    "bitch",
+    "chargedalpha",
+    "cunt",
+    "dick",
+    "fuck",
+    "hitler",
+    "moderator",
+    "nazi",
+    "shit",
+    "support",
+}
+GAME_SCORE_NAME_RE = re.compile(r"^[A-Za-z][A-Za-z0-9 .'-]{1,23}$")
 
 
 @app.get("/health")
@@ -169,6 +204,9 @@ PUBLIC_SITEMAP_PATHS = [
     "/charts",
     "/games",
     "/games/front-page-fortune",
+    "/games/harvest-ledger",
+    "/games/sector-oracle",
+    "/games/expiration-date",
 ]
 SEO_DEFAULTS = {
     "title": "Charged Alpha Frontier AI Financial Media — Stock Encyclopedia & Investing Videos",
@@ -285,8 +323,9 @@ SEO_PAGE_META = {
     "/games": {
         "title": "Interactive Investing Games — Charged Alpha",
         "description": (
-            "Play Charged Alpha's investing story games, starting with Front Page "
-            "Fortune, where historical front pages become portfolio decisions."
+            "Play Charged Alpha's open investing story games, chase weekly high "
+            "scores, and test market decisions across headlines, crops, sectors, "
+            "and options."
         ),
     },
     "/games/front-page-fortune": {
@@ -300,26 +339,23 @@ SEO_PAGE_META = {
     "/games/harvest-ledger": {
         "title": "Harvest Ledger — Charged Alpha Game",
         "description": (
-            "Harvest Ledger is the next planned Charged Alpha investing story game, "
-            "focused on commodities, futures, inventory, and risk management."
+            "Play Harvest Ledger, a Charged Alpha investing story game focused on "
+            "commodities, futures, inventory, and risk management."
         ),
-        "robots": "noindex,nofollow,noarchive",
     },
     "/games/sector-oracle": {
         "title": "Sector Oracle — Charged Alpha Game",
         "description": (
-            "Sector Oracle is a planned Charged Alpha investing game about macro "
+            "Play Sector Oracle, a Charged Alpha investing game about macro "
             "headlines, sector rotation, valuation, and second-order effects."
         ),
-        "robots": "noindex,nofollow,noarchive",
     },
     "/games/expiration-date": {
         "title": "Expiration Date — Charged Alpha Game",
         "description": (
-            "Expiration Date is a planned Charged Alpha options education game about "
-            "time decay, catalysts, and position sizing."
+            "Play Expiration Date, a Charged Alpha options education game about "
+            "option premium, time decay, catalysts, and position sizing."
         ),
-        "robots": "noindex,nofollow,noarchive",
     },
     "/account": {
         "title": "Account — Charged Alpha",
@@ -433,20 +469,18 @@ def _hydrate_game_catalog(user=None):
         item = dict(game)
         prerequisite_slug = item.get("unlock_after")
         prerequisite = _get_game(prerequisite_slug)
-        is_unlocked = prerequisite_slug is None or prerequisite_slug in completed_slugs or bool(item.get("alpha_access"))
+        is_playable = bool(item.get("playable"))
 
         item["sequence"] = index + 1
-        item["sequence_label"] = f"Chapter {index + 1}"
+        item["sequence_label"] = f"Game {index + 1}"
         item["prerequisite_title"] = prerequisite["title"] if prerequisite else ""
         item["prerequisite_route"] = prerequisite["route"] if prerequisite else ""
         item["has_completion"] = item["slug"] in completed_slugs
-        item["is_playable"] = bool(item.get("playable"))
-        item["is_unlocked"] = is_unlocked
+        item["is_playable"] = is_playable
+        item["is_unlocked"] = is_playable
 
-        if not is_unlocked:
-            item["locked_reason"] = f"Finish {item['prerequisite_title']} to unlock this chapter."
-        elif not item["is_playable"]:
-            item["locked_reason"] = "Coming soon. This chapter will open when it is ready."
+        if not item["is_playable"]:
+            item["locked_reason"] = "Coming soon. This game will open when it is ready."
         else:
             item["locked_reason"] = ""
 
@@ -496,9 +530,77 @@ def _serialize_game_score(score):
     }
 
 
+def _leaderboard_week_start_utc(now=None):
+    current_utc = now or datetime.datetime.utcnow()
+    if current_utc.tzinfo is None:
+        current_utc = current_utc.replace(tzinfo=datetime.timezone.utc)
+    local_now = current_utc.astimezone(GAME_SCORE_RESET_TZ)
+    reset_local = (local_now - datetime.timedelta(days=local_now.weekday())).replace(
+        hour=0,
+        minute=1,
+        second=0,
+        microsecond=0,
+    )
+    if local_now < reset_local:
+        reset_local -= datetime.timedelta(days=7)
+    return reset_local.astimezone(datetime.timezone.utc).replace(tzinfo=None)
+
+
+def _leaderboard_cutoff_utc():
+    return max(_leaderboard_week_start_utc(), GAME_SCORE_RESET_EPOCH_UTC)
+
+
+def _prune_old_game_scores():
+    cutoff = _leaderboard_cutoff_utc()
+    deleted = GameScore.query.filter(GameScore.created_at < cutoff).delete(synchronize_session=False)
+    if deleted:
+        db.session.commit()
+    return cutoff
+
+
+def _normalize_score_display_name(value):
+    cleaned = re.sub(r"[\x00-\x1f\x7f-\x9f]", "", value or "")
+    cleaned = re.sub(r"\s+", " ", cleaned).strip()
+    return cleaned[:24]
+
+
+def _score_name_has_blocked_token(value):
+    compact = re.sub(r"[^a-z0-9]", "", (value or "").lower())
+    tokens = re.findall(r"[a-z0-9]+", (value or "").lower())
+    return any(compact == word or word in tokens for word in GAME_SCORE_NAME_BLOCKLIST)
+
+
+def _validate_score_display_name(value):
+    name = _normalize_score_display_name(value)
+    if len(name) < 2:
+        return None, "Enter a display name."
+    if re.search(r"@|https?:|www\.", name, re.I):
+        return None, "Use a display name, not an email or link."
+    if not GAME_SCORE_NAME_RE.match(name):
+        return None, "Names can use letters, numbers, spaces, apostrophes, periods, and hyphens."
+    if _score_name_has_blocked_token(name):
+        return None, "Choose a different display name."
+    return name, None
+
+
+def _anonymous_score_user_id():
+    user = User.query.filter_by(email="weekly-scores@chargedalpha.local").first()
+    if not user:
+        user = User(
+            email="weekly-scores@chargedalpha.local",
+            name="Weekly Scores",
+            provider="system",
+        )
+        db.session.add(user)
+        db.session.flush()
+    return user.id
+
+
 def _ranked_game_scores(game, limit=None):
+    cutoff = _prune_old_game_scores()
     query = (
         GameScore.query.filter_by(game_slug=game["slug"])
+        .filter(GameScore.created_at >= cutoff)
         .order_by(GameScore.score.desc(), GameScore.created_at.asc())
     )
     if limit:
@@ -1188,21 +1290,19 @@ def games_index():
     games = _hydrate_game_catalog(current_user)
     playable_games = [game for game in games if game["is_playable"]]
     leaderboard_full = {
-        game["slug"]: _ranked_game_scores(game)
+        game["slug"]: _ranked_game_scores(game, limit=10)
         for game in playable_games
     }
-    leaderboard_feature_game = playable_games[0] if playable_games else None
-    leaderboard_ticker = (
-        leaderboard_full.get(leaderboard_feature_game["slug"], [])[:10]
-        if leaderboard_feature_game
-        else []
-    )
+    leaderboard_ticker = sorted(
+        [entry for entries in leaderboard_full.values() for entry in entries],
+        key=lambda entry: (-entry["score"], entry["createdAt"]),
+    )[:16]
     return render_template(
         "games.html",
         games=games,
-        leaderboard_feature_game=leaderboard_feature_game,
         leaderboard_ticker=leaderboard_ticker,
         leaderboard_full=leaderboard_full,
+        leaderboard_period_start=_leaderboard_cutoff_utc(),
     )
 
 
@@ -1235,13 +1335,19 @@ def games_leaderboard(game_slug):
     if not game:
         return jsonify({"error": "Game not found"}), 404
 
+    cutoff = _prune_old_game_scores()
     scores = (
         GameScore.query.filter_by(game_slug=game["slug"])
+        .filter(GameScore.created_at >= cutoff)
         .order_by(GameScore.score.desc(), GameScore.created_at.asc())
         .limit(25)
         .all()
     )
-    return jsonify({"entries": [_serialize_game_score(score) for score in scores]})
+    return jsonify({
+        "entries": [_serialize_game_score(score) for score in scores],
+        "periodStart": cutoff.isoformat() + "Z",
+        "resets": "weekly",
+    })
 
 
 @app.route("/games/api/scores", methods=["POST"])
@@ -1250,13 +1356,6 @@ def games_save_score():
     game = _hydrate_game(body.get("game_slug"), current_user)
     if not game:
         return jsonify({"ok": False, "error": "Game not found"}), 404
-    if not current_user.is_authenticated:
-        return jsonify({
-            "ok": False,
-            "error": "Sign in or create a free Charged Alpha account to post public scores.",
-            "login_url": url_for("auth.login", next=game["route"]),
-            "register_url": url_for("auth.register", next=game["route"]),
-        }), 401
     if not game["is_playable"]:
         return jsonify({"ok": False, "error": "Game is not accepting scores yet"}), 400
     if not game["is_unlocked"]:
@@ -1266,11 +1365,17 @@ def games_save_score():
     if score_value <= 0:
         return jsonify({"ok": False, "error": "Score is required"}), 400
 
-    display_name = get_public_first_name(current_user)
-    metadata = body.get("metadata") if isinstance(body.get("metadata"), dict) else {}
+    fallback_name = get_public_first_name(current_user) if current_user.is_authenticated else ""
+    display_name, name_error = _validate_score_display_name(body.get("display_name") or fallback_name)
+    if name_error:
+        return jsonify({"ok": False, "error": name_error}), 400
 
+    metadata = body.get("metadata") if isinstance(body.get("metadata"), dict) else {}
+    user_id = current_user.id if current_user.is_authenticated else _anonymous_score_user_id()
+
+    _prune_old_game_scores()
     score = GameScore(
-        user_id=current_user.id,
+        user_id=user_id,
         game_slug=game["slug"],
         display_name=display_name,
         score=score_value,

@@ -26,7 +26,7 @@
       </a>
       <nav class="flex items-center gap-5">
         <a href="/games" class="nav-link">Games</a>
-        <a href="/account" class="nav-link">Account</a>
+        <a href="/" class="nav-link">Main Site</a>
       </nav>
     </div>
   </header>
@@ -44,30 +44,21 @@
       <div class="grid gap-5 md:grid-cols-2">
         <div class="rounded-xl border border-slate-800 bg-slate-950/55 p-5">
           <div class="mb-2 text-xs font-black uppercase tracking-[.22em] text-amber-300">
-            {% if not game.is_unlocked %}Locked chapter{% else %}Coming soon{% endif %}
+            Coming soon
           </div>
           <p class="text-sm leading-6 text-slate-400">{{ game.locked_reason }}</p>
         </div>
         <div class="rounded-xl border border-slate-800 bg-slate-950/55 p-5">
           <div class="mb-2 text-xs font-black uppercase tracking-[.22em] text-cyan-300">How to continue</div>
           <p class="text-sm leading-6 text-slate-400">
-            {% if game.prerequisite_title %}
-              Complete {{ game.prerequisite_title }} first, then return to the chapter path for the next story.
-            {% else %}
-              This is the opening chapter and is available now.
-            {% endif %}
+            No sign in or chapter order is required for playable games. Pick any open game from the shelf while this one is being finished.
           </p>
         </div>
       </div>
 
       <div class="mt-8 flex flex-wrap gap-3">
-        {% if not current_user.is_authenticated and game.prerequisite_title %}
-        <a href="/auth/login?next={{ game.route }}" class="gold-button rounded-lg px-5 py-3 text-sm font-black no-underline">Sign In To Save Progress</a>
-        {% endif %}
-        {% if game.prerequisite_title %}
-        <a href="{{ game.prerequisite_route }}" class="rounded-lg border border-slate-700 px-5 py-3 text-sm font-bold text-slate-200 no-underline">Open {{ game.prerequisite_title }}</a>
-        {% endif %}
         <a href="/games" class="rounded-lg border border-slate-700 px-5 py-3 text-sm font-bold text-slate-200 no-underline">Back To Game Shelf</a>
+        <a href="/" class="rounded-lg border border-slate-700 px-5 py-3 text-sm font-bold text-slate-200 no-underline">Main Charged Alpha Site</a>
       </div>
     </section>
   </main>

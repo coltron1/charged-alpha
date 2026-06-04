@@ -12,6 +12,38 @@
   {% endif %}
   <style>
     html, body { margin:0; min-height:100%; background:#090704; }
+    .game-site-nav {
+      position:fixed;
+      top:10px;
+      right:10px;
+      z-index:100000;
+      display:flex;
+      gap:6px;
+      padding:5px;
+      border:1px solid rgba(248,217,135,.28);
+      border-radius:999px;
+      background:rgba(5,8,12,.72);
+      box-shadow:0 10px 30px rgba(0,0,0,.24);
+      backdrop-filter:blur(8px);
+      font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+    }
+    .game-site-nav a {
+      border-radius:999px;
+      padding:6px 9px;
+      color:#fde68a;
+      text-decoration:none;
+      font-size:11px;
+      font-weight:900;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      line-height:1;
+    }
+    .game-site-nav a:hover,
+    .game-site-nav a:focus-visible {
+      background:rgba(248,217,135,.16);
+      color:#fff7d6;
+      outline:none;
+    }
     .missing-build {
       min-height:100vh;
       display:grid;
@@ -31,9 +63,21 @@
     .missing-build h1 { margin:0 0 10px; font-size:24px; }
     .missing-build p { margin:0 0 20px; color:#94a3b8; line-height:1.6; }
     .missing-build a { color:#f6d58a; font-weight:700; }
+    @media (max-width:640px) {
+      .game-site-nav {
+        top:8px;
+        right:8px;
+        transform:scale(.9);
+        transform-origin:top right;
+      }
+    }
   </style>
 </head>
 <body>
+  <nav class="game-site-nav" aria-label="Game site navigation">
+    <a href="/">Main Site</a>
+    <a href="/games">All Games</a>
+  </nav>
   {% if interactive_entry %}
     <div id="root"></div>
     <script>
