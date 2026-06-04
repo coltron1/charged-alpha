@@ -17,15 +17,15 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <style>
     * { font-family: 'Inter', system-ui, sans-serif; }
-    body { background:#0a0f1e; color:#e2e8f0; }
+    body { background:#070b12; color:#e2e8f0; }
     .logo-bolt {
       display:inline-flex; align-items:center; justify-content:center;
-      width:44px; height:44px; border-radius:12px; font-size:22px;
-      background:linear-gradient(135deg,#6366f1,#8b5cf6);
-      box-shadow:0 0 24px rgba(99,102,241,.35);
+      width:44px; height:44px; border-radius:8px; font-size:22px;
+      background:linear-gradient(135deg,#22c55e,#38bdf8);
+      box-shadow:0 0 24px rgba(34,197,94,.25);
     }
     .card {
-      background:#111827; border:1px solid #1e293b; border-radius:18px;
+      background:#101722; border:1px solid #253142; border-radius:8px;
       transition:transform .18s ease, border-color .18s ease, box-shadow .18s ease;
     }
     .card:hover { transform:translateY(-2px); border-color:#334155; }
@@ -34,29 +34,77 @@
       font-size:11px; font-weight:700; letter-spacing:.02em;
     }
     .input-shell, .select-shell {
-      background:#0f172a; border:1px solid #1e293b; color:#e2e8f0; border-radius:12px;
+      background:#0b1220; border:1px solid #283548; color:#e2e8f0; border-radius:8px;
       outline:none; transition:border-color .15s ease, box-shadow .15s ease;
     }
-    .input-shell:focus, .select-shell:focus { border-color:#6366f1; box-shadow:0 0 0 3px rgba(99,102,241,.12); }
+    .input-shell:focus, .select-shell:focus { border-color:#38bdf8; box-shadow:0 0 0 3px rgba(56,189,248,.14); }
     .btn-primary {
       display:inline-flex; align-items:center; justify-content:center; gap:8px; text-decoration:none;
-      padding:12px 18px; border-radius:12px; font-weight:700; color:white;
-      background:linear-gradient(135deg,#6366f1,#7c3aed); transition:transform .15s ease, box-shadow .15s ease;
+      padding:12px 18px; border-radius:8px; font-weight:700; color:#04111d;
+      background:linear-gradient(135deg,#5eead4,#22c55e); transition:transform .15s ease, box-shadow .15s ease;
     }
-    .btn-primary:hover { transform:translateY(-1px); box-shadow:0 10px 24px rgba(99,102,241,.25); }
+    .btn-primary:hover { transform:translateY(-1px); box-shadow:0 10px 24px rgba(34,197,94,.22); }
     .btn-secondary {
       display:inline-flex; align-items:center; justify-content:center; gap:8px; text-decoration:none;
-      padding:12px 18px; border-radius:12px; font-weight:600; color:#cbd5e1;
+      padding:12px 18px; border-radius:8px; font-weight:600; color:#cbd5e1;
       border:1px solid #334155; background:transparent;
     }
-    .btn-secondary:hover { border-color:#6366f1; color:white; background:rgba(99,102,241,.08); }
+    .btn-secondary:hover { border-color:#38bdf8; color:white; background:rgba(56,189,248,.08); }
+    .library-hero {
+      background:linear-gradient(180deg,#0b111d 0%,#070b12 100%);
+      border-bottom:1px solid #172033;
+    }
+    .eyebrow {
+      color:#67e8f9; font-size:12px; font-weight:800; letter-spacing:.22em;
+      text-transform:uppercase;
+    }
+    .library-stack {
+      display:grid; grid-template-columns:1.15fr .85fr; grid-template-areas:"intro metrics" "search search";
+      gap:32px; align-items:end;
+    }
+    .library-intro { grid-area:intro; }
+    .metric-strip {
+      grid-area:metrics;
+      display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:1px;
+      overflow:hidden; border:1px solid #253142; border-radius:8px; background:#253142;
+    }
+    .metric-item { background:#0b1220; padding:16px; }
+    .metric-item strong { display:block; color:#fff; font-size:28px; line-height:1; font-weight:900; }
+    .metric-item span { display:block; margin-top:7px; color:#94a3b8; font-size:11px; text-transform:uppercase; letter-spacing:.14em; }
+    .search-panel {
+      grid-area:search;
+      background:linear-gradient(180deg,rgba(16,23,34,.98),rgba(8,13,22,.98));
+      border:1px solid #2c3a4f; border-radius:8px; box-shadow:0 24px 80px rgba(0,0,0,.34);
+    }
+    .search-field-wrap { position:relative; }
+    .search-field-wrap svg {
+      position:absolute; left:20px; top:50%; transform:translateY(-50%); color:#67e8f9;
+      width:24px; height:24px; pointer-events:none;
+    }
+    .library-search {
+      min-height:66px; padding-left:58px; padding-right:18px; font-size:18px; font-weight:800;
+      border-color:rgba(56,189,248,.5); background:#020617;
+      box-shadow:inset 0 1px 0 rgba(255,255,255,.03), 0 0 0 1px rgba(20,184,166,.08);
+    }
+    .library-search::placeholder { color:#64748b; font-weight:700; }
+    .toolbar-grid { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:12px; }
+    .section-heading { border-top:1px solid #172033; padding-top:32px; }
+    @media (max-width: 900px) {
+      .library-stack { grid-template-columns:1fr; grid-template-areas:"intro" "search" "metrics"; gap:22px; }
+      .toolbar-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }
+    }
+    @media (max-width: 640px) {
+      .library-hero { padding-top:24px; }
+      .metric-strip, .toolbar-grid { grid-template-columns:1fr; }
+      .library-search { font-size:16px; min-height:60px; }
+    }
     .stock-card { position:relative; overflow:hidden; }
     .stock-card::before {
       content:''; position:absolute; left:0; right:0; top:0; height:3px;
-      background:linear-gradient(90deg,#6366f1,#8b5cf6,#14b8a6);
+      background:linear-gradient(90deg,#22c55e,#38bdf8,#f59e0b);
     }
     .platform-chip {
-      display:inline-flex; align-items:center; gap:6px; padding:6px 10px; border-radius:10px;
+      display:inline-flex; align-items:center; gap:6px; padding:6px 10px; border-radius:8px;
       font-size:11px; font-weight:700; color:white; text-decoration:none;
     }
     .quarter-chip {
@@ -64,7 +112,7 @@
       font-size:11px; font-weight:600; color:#cbd5e1; background:#162033; border:1px solid #273449;
     }
     .video-card {
-      position:relative; overflow:hidden; background:#0f172a; border:1px solid #1e293b; border-radius:16px;
+      position:relative; overflow:hidden; background:#0b1220; border:1px solid #253142; border-radius:8px;
       text-decoration:none; color:inherit; transition:transform .18s ease, border-color .18s ease;
     }
     .video-card:hover { transform:translateY(-2px); border-color:#334155; }
@@ -95,70 +143,107 @@
   </div>
 </header>
 
-<section class="pt-20 pb-10 px-6" style="background:radial-gradient(ellipse 80% 55% at 50% 0%,rgba(99,102,241,.14) 0%,transparent 60%);">
-  <div class="max-w-7xl mx-auto grid lg:grid-cols-[1.2fr_.8fr] gap-8 items-start">
-    <div>
-      <p class="text-sm font-bold text-indigo-400 uppercase tracking-[.24em] mb-4">Frontier AI Stock Encyclopedia</p>
-      <h1 class="text-4xl md:text-6xl font-black text-white leading-tight mb-5">Frontier AI models analyzing fresh stock earnings data.</h1>
-      <p class="text-lg text-slate-400 leading-relaxed max-w-3xl mb-7">
-        Charged Alpha is building a stock encyclopedia with frontier AI financial media workflows: start with the stock, then open every quarter's earnings episode, chart context, valuation data, competitor comparisons, and platform links from one detail page.
-      </p>
-      <div class="flex flex-wrap gap-3 mb-8">
-        <a href="#library" class="btn-primary">Browse Stock Library</a>
-        <a href="{{ podcast_platforms.youtube }}" target="_blank" rel="noopener noreferrer" class="btn-secondary">Watch on YouTube</a>
+<main>
+<section id="library" class="library-hero px-6 pt-12 pb-8">
+  <div class="max-w-7xl mx-auto">
+    <div class="library-stack">
+      <div class="library-intro">
+        <p class="eyebrow mb-4">Earnings Video Library</p>
+        <h1 class="text-4xl md:text-5xl font-black text-white leading-tight mb-4">Search every Charged Alpha stock earnings episode.</h1>
+        <p class="text-base md:text-lg text-slate-400 leading-relaxed max-w-3xl">
+          Find a ticker, company, quarter, or episode title, then jump straight to the stock page, YouTube video, Spotify episode, or podcast page.
+        </p>
       </div>
-      <div class="grid sm:grid-cols-2 xl:grid-cols-5 gap-4">
-        <div class="card p-5">
-          <div class="text-3xl font-black text-white">{{ show_stats.stock_count or 0 }}</div>
-          <div class="text-xs uppercase tracking-[.18em] text-slate-500 mt-1">Stocks tracked</div>
+      <div class="metric-strip">
+        <div class="metric-item">
+          <strong>{{ show_stats.stock_count or 0 }}</strong>
+          <span>Stocks tracked</span>
         </div>
-        <div class="card p-5">
-          <div class="text-3xl font-black text-white">{{ show_stats.published_episode_count or 0 }}</div>
-          <div class="text-xs uppercase tracking-[.18em] text-slate-500 mt-1">Published episodes</div>
+        <div class="metric-item">
+          <strong>{{ show_stats.published_episode_count or 0 }}</strong>
+          <span>Episodes linked</span>
         </div>
-        <div class="card p-5">
-          <div class="text-3xl font-black text-white">{{ show_stats.quarter_count or 0 }}</div>
-          <div class="text-xs uppercase tracking-[.18em] text-slate-500 mt-1">Quarter sets live</div>
+        <div class="metric-item">
+          <strong>{{ show_stats.youtube_episode_count or 0 }}</strong>
+          <span>YouTube videos</span>
         </div>
-        <div class="card p-5">
-          <div class="text-3xl font-black text-white">{{ show_stats.youtube_episode_count or 0 }}</div>
-          <div class="text-xs uppercase tracking-[.18em] text-slate-500 mt-1">YouTube links live</div>
-        </div>
-        <div class="card p-5">
-          <div class="text-3xl font-black text-white">{{ show_stats.podcast_episode_count or 0 }}</div>
-          <div class="text-xs uppercase tracking-[.18em] text-slate-500 mt-1">Podcast links live</div>
+        <div class="metric-item">
+          <strong>{{ show_stats.podcast_episode_count or 0 }}</strong>
+          <span>Podcast links</span>
         </div>
       </div>
-    </div>
 
-    <div class="card p-6">
-      <p class="text-sm font-bold text-indigo-400 uppercase tracking-[.24em] mb-4">Built for frontier AI scale</p>
-      <div class="space-y-4 text-sm text-slate-300 leading-relaxed">
-        <div class="card p-4" style="background:#0f172a;border-color:#1e293b;">
-          <div class="font-semibold text-white mb-1">Filter by ticker, quarter, and sector</div>
-          <div>As frontier AI earnings coverage expands across the Russell 1000, the library still stays navigable.</div>
+      <div class="search-panel p-4 md:p-5">
+      <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-3 mb-4">
+        <label for="searchInput" class="text-sm font-black text-white uppercase tracking-[.18em]">Find an earnings video</label>
+        <p id="resultCount" class="text-sm text-slate-400">0 stocks</p>
+      </div>
+      <div class="search-field-wrap">
+        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M16.5 16.5 21 21"/></svg>
+        <input id="searchInput" type="text" class="input-shell library-search w-full" placeholder="Search ticker, company, title...">
+      </div>
+      <div class="toolbar-grid mt-4">
+        <select id="quarterFilter" class="select-shell px-4 py-3.5 text-sm">
+          <option value="All">All quarters</option>
+          {% for quarter in show_quarters %}
+          <option value="{{ quarter }}">{{ quarter }}</option>
+          {% endfor %}
+        </select>
+        <select id="sectorFilter" class="select-shell px-4 py-3.5 text-sm">
+          <option value="All">All sectors</option>
+          {% for sector in show_sectors %}
+          <option value="{{ sector }}">{{ sector }}</option>
+          {% endfor %}
+        </select>
+        <select id="availabilityFilter" class="select-shell px-4 py-3.5 text-sm">
+          <option value="all">All stocks</option>
+          <option value="published">Published only</option>
+          <option value="youtube">Has YouTube</option>
+          <option value="planned">Needs YouTube link</option>
+        </select>
+        <select id="sortSelect" class="select-shell px-4 py-3.5 text-sm">
+          <option value="newest">Newest quarter / episode</option>
+          <option value="ticker">Ticker</option>
+          <option value="name">Company name</option>
+          <option value="sector">Sector</option>
+          <option value="completion">Most complete</option>
+        </select>
+      </div>
+      <div class="flex flex-wrap items-center justify-between gap-3 mt-4">
+        <div class="flex flex-wrap gap-2">
+          <a href="{{ podcast_platforms.youtube }}" target="_blank" rel="noopener noreferrer" class="btn-secondary text-sm" style="padding:9px 12px;">YouTube Channel</a>
+          <a href="{{ podcast_platforms.spotify }}" target="_blank" rel="noopener noreferrer" class="btn-secondary text-sm" style="padding:9px 12px;">Spotify Show</a>
         </div>
-        <div class="card p-4" style="background:#0f172a;border-color:#1e293b;">
-          <div class="font-semibold text-white mb-1">Open one stock, see the whole archive</div>
-          <div>Every stock detail page brings together fresh valuation data, price chart context, competitor comparisons, and the quarterly episode timeline.</div>
-        </div>
-        <div class="card p-4" style="background:#0f172a;border-color:#1e293b;">
-          <div class="font-semibold text-white mb-1">Match the channel direction</div>
-          <div>The structure reflects the frontier AI media cadence: recurring earnings analysis, weekly stock stories, and searchable company research.</div>
-        </div>
+        <button id="clearBtn" class="text-sm font-semibold text-cyan-300 hover:text-white transition-colors">Clear filters</button>
+      </div>
       </div>
     </div>
   </div>
 </section>
 
-{% if video_sections %}
-<section class="px-6 pb-12">
+<section class="px-6 py-10">
   <div class="max-w-7xl mx-auto">
+    <div id="stockGrid" class="grid md:grid-cols-2 xl:grid-cols-3 gap-5"></div>
+
+    <div id="emptyState" class="empty-state card p-10 text-center mt-6">
+      <div class="text-2xl font-bold text-white mb-2">No stocks matched those filters.</div>
+      <p class="text-slate-500">Try another ticker, sector, or quarter selection.</p>
+    </div>
+
+    <div id="loadMoreWrap" class="text-center mt-10" style="display:none;">
+      <button id="loadMoreBtn" class="btn-secondary">Show More Stocks</button>
+    </div>
+  </div>
+</section>
+
+{% if video_sections %}
+<section class="px-6 pb-24">
+  <div class="max-w-7xl mx-auto section-heading">
     <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-6">
       <div>
-        <p class="text-sm font-bold text-cyan-400 uppercase tracking-[.24em] mb-2">Beyond the earnings tape</p>
+        <p class="eyebrow mb-2">Beyond earnings</p>
         <h2 class="text-3xl font-black text-white">Research videos, explainers, and shorts</h2>
-        <p class="text-sm text-slate-500 mt-2 max-w-3xl">Special-topic Charged Alpha videos now live in their own sections, separate from the quarterly stock encyclopedia rows.</p>
+        <p class="text-sm text-slate-500 mt-2 max-w-3xl">Special-topic Charged Alpha videos live here, separate from the quarterly earnings rows.</p>
       </div>
       <a href="{{ podcast_platforms.youtube }}" target="_blank" rel="noopener noreferrer" class="btn-secondary">Open YouTube Channel</a>
     </div>
@@ -208,61 +293,7 @@
   </div>
 </section>
 {% endif %}
-
-<section id="library" class="px-6 pb-8">
-  <div class="max-w-7xl mx-auto card p-5 md:p-6">
-    <div class="grid lg:grid-cols-[1.5fr_repeat(4,minmax(0,1fr))] gap-4">
-      <div class="relative">
-        <svg class="absolute left-4 top-1/2 -translate-y-1/2 text-slate-500" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="9" r="7"/><path d="M15 15l4 4"/></svg>
-        <input id="searchInput" type="text" class="input-shell w-full pl-12 pr-4 py-3.5 text-sm" placeholder="Search by ticker or company name...">
-      </div>
-      <select id="quarterFilter" class="select-shell px-4 py-3.5 text-sm">
-        <option value="All">All quarters</option>
-        {% for quarter in show_quarters %}
-        <option value="{{ quarter }}">{{ quarter }}</option>
-        {% endfor %}
-      </select>
-      <select id="sectorFilter" class="select-shell px-4 py-3.5 text-sm">
-        <option value="All">All sectors</option>
-        {% for sector in show_sectors %}
-        <option value="{{ sector }}">{{ sector }}</option>
-        {% endfor %}
-      </select>
-      <select id="availabilityFilter" class="select-shell px-4 py-3.5 text-sm">
-        <option value="all">All stocks</option>
-        <option value="published">Published only</option>
-        <option value="youtube">Has YouTube</option>
-        <option value="planned">Needs YouTube link</option>
-      </select>
-      <select id="sortSelect" class="select-shell px-4 py-3.5 text-sm">
-        <option value="newest">Newest quarter / episode</option>
-        <option value="ticker">Ticker</option>
-        <option value="name">Company name</option>
-        <option value="sector">Sector</option>
-        <option value="completion">Most complete</option>
-      </select>
-    </div>
-    <div class="flex flex-wrap items-center justify-between gap-3 mt-4">
-      <p id="resultCount" class="text-sm text-slate-500">0 stocks</p>
-      <button id="clearBtn" class="text-sm font-semibold text-indigo-300 hover:text-white transition-colors">Clear filters</button>
-    </div>
-  </div>
-</section>
-
-<section class="px-6 pb-24">
-  <div class="max-w-7xl mx-auto">
-    <div id="stockGrid" class="grid md:grid-cols-2 xl:grid-cols-3 gap-5"></div>
-
-    <div id="emptyState" class="empty-state card p-10 text-center mt-6">
-      <div class="text-2xl font-bold text-white mb-2">No stocks matched those filters.</div>
-      <p class="text-slate-500">Try another ticker, sector, or quarter selection.</p>
-    </div>
-
-    <div id="loadMoreWrap" class="text-center mt-10" style="display:none;">
-      <button id="loadMoreBtn" class="btn-secondary">Show More Stocks</button>
-    </div>
-  </div>
-</section>
+</main>
 
 <footer class="py-12 px-6" style="border-top:1px solid #1e293b;">
   <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
@@ -280,6 +311,7 @@
 <script>
 const STOCKS = {{ show_stocks | tojson }};
 const PAGE_SIZE = 24;
+const EXACT_TICKERS = new Set(STOCKS.map(stock => String(stock.ticker || '').toLowerCase()));
 let visibleCount = PAGE_SIZE;
 
 function youtubeCoverage(stock) {
@@ -291,6 +323,16 @@ function quarterSortValue(stock) {
   return ((Number(parts[0]) || 0) * 10) + (Number(parts[1]) || 0);
 }
 
+function escapeRegExp(value) {
+  return value.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+}
+
+function tokenMatchesStock(stock, hay, token) {
+  const ticker = String(stock.ticker || '').toLowerCase();
+  if (ticker === token) return true;
+  return new RegExp(`(^|[^a-z0-9])${escapeRegExp(token)}`, 'i').test(hay);
+}
+
 function matchesFilters(stock) {
   const search = document.getElementById('searchInput').value.trim().toLowerCase();
   const quarter = document.getElementById('quarterFilter').value;
@@ -298,8 +340,16 @@ function matchesFilters(stock) {
   const availability = document.getElementById('availabilityFilter').value;
 
   if (search) {
-    const hay = `${stock.ticker} ${stock.company}`.toLowerCase();
-    if (!hay.includes(search)) return false;
+    const episodeHay = Array.isArray(stock.episodes)
+      ? stock.episodes.map(ep => `${ep.title || ''} ${ep.quarter || ''}`).join(' ')
+      : '';
+    const hay = `${stock.ticker} ${stock.company} ${stock.sector} ${episodeHay}`.toLowerCase();
+    const tokens = search.split(/\s+/).filter(Boolean);
+    if (tokens.length === 1 && EXACT_TICKERS.has(tokens[0])) {
+      if (String(stock.ticker || '').toLowerCase() !== tokens[0]) return false;
+    } else if (!tokens.every(token => tokenMatchesStock(stock, hay, token))) {
+      return false;
+    }
   }
   if (quarter !== 'All' && !stock.quarter_labels.includes(quarter)) return false;
   if (sector !== 'All' && stock.sector !== sector) return false;
@@ -382,7 +432,7 @@ function render() {
   const count = document.getElementById('resultCount');
   const loadMoreWrap = document.getElementById('loadMoreWrap');
 
-  count.textContent = `${filtered.length} stock${filtered.length === 1 ? '' : 's'}`;
+  count.textContent = `${filtered.length} stock page${filtered.length === 1 ? '' : 's'}`;
   if (!filtered.length) {
     grid.innerHTML = '';
     empty.style.display = 'block';
