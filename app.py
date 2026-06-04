@@ -38,6 +38,7 @@ import os
 import re
 import time
 import threading
+import datetime
 from pathlib import Path
 from concurrent.futures import ThreadPoolExecutor
 
@@ -136,16 +137,35 @@ GAME_CATALOG = [
         "slug": "expiration-date",
         "app_slug": "expiration-date",
         "title": "Expiration Date",
-        "status": "Planned chapter",
-        "playable": False,
+        "status": "Playable alpha",
+        "playable": True,
         "unlock_after": "sector-oracle",
+        "alpha_access": True,
         "tagline": "Trade the catalyst without letting time decay become the real story.",
         "description": "An options education game focused on time decay, catalysts, and position sizing.",
         "lesson": "Direction is only one part of an options trade.",
-        "image": None,
+        "image": "/static/games/interactive/games/options-fortune/expiration-date-game-image-1.webp",
         "route": "/games/expiration-date",
     },
 ]
+
+GAME_SCORE_RESET_EPOCH_UTC = datetime.datetime(2026, 6, 4, 0, 0, 0)
+GAME_SCORE_NAME_BLOCKLIST = {
+    "admin",
+    "administrator",
+    "asshole",
+    "bitch",
+    "chargedalpha",
+    "cunt",
+    "dick",
+    "fuck",
+    "hitler",
+    "moderator",
+    "nazi",
+    "shit",
+    "support",
+}
+GAME_SCORE_NAME_RE = re.compile(r"^[A-Za-z][A-Za-z0-9 .'-]{1,23}$")
 
 
 @app.get("/health")
@@ -169,6 +189,9 @@ PUBLIC_SITEMAP_PATHS = [
     "/charts",
     "/games",
     "/games/front-page-fortune",
+    "/games/harvest-ledger",
+    "/games/sector-oracle",
+    "/games/expiration-date",
 ]
 SEO_DEFAULTS = {
     "title": "Charged Alpha Frontier AI Financial Media — Stock Encyclopedia & Investing Videos",
@@ -300,26 +323,23 @@ SEO_PAGE_META = {
     "/games/harvest-ledger": {
         "title": "Harvest Ledger — Charged Alpha Game",
         "description": (
-            "Harvest Ledger is the next planned Charged Alpha investing story game, "
-            "focused on commodities, futures, inventory, and risk management."
+            "Play Harvest Ledger, a Charged Alpha investing story game focused on "
+            "commodities, futures, inventory, and risk management."
         ),
-        "robots": "noindex,nofollow,noarchive",
     },
     "/games/sector-oracle": {
         "title": "Sector Oracle — Charged Alpha Game",
         "description": (
-            "Sector Oracle is a planned Charged Alpha investing game about macro "
+            "Play Sector Oracle, a Charged Alpha investing game about macro "
             "headlines, sector rotation, valuation, and second-order effects."
         ),
-        "robots": "noindex,nofollow,noarchive",
     },
     "/games/expiration-date": {
         "title": "Expiration Date — Charged Alpha Game",
         "description": (
-            "Expiration Date is a planned Charged Alpha options education game about "
-            "time decay, catalysts, and position sizing."
+            "Play Expiration Date, a Charged Alpha options education game about "
+            "option premium, time decay, catalysts, and position sizing."
         ),
-        "robots": "noindex,nofollow,noarchive",
     },
     "/account": {
         "title": "Account — Charged Alpha",
@@ -496,9 +516,67 @@ def _serialize_game_score(score):
     }
 
 
+def _leaderboard_week_start_utc(now=None):
+    current = now or datetime.datetime.utcnow()
+    current = current.replace(hour=0, minute=0, second=0, microsecond=0)
+    return current - datetime.timedelta(days=current.weekday())
+
+
+def _leaderboard_cutoff_utc():
+    return max(_leaderboard_week_start_utc(), GAME_SCORE_RESET_EPOCH_UTC)
+
+
+def _prune_old_game_scores():
+    cutoff = _leaderboard_cutoff_utc()
+    deleted = GameScore.query.filter(GameScore.created_at < cutoff).delete(synchronize_session=False)
+    if deleted:
+        db.session.commit()
+    return cutoff
+
+
+def _normalize_score_display_name(value):
+    cleaned = re.sub(r"[\x00-\x1f\x7f-\x9f]", "", value or "")
+    cleaned = re.sub(r"\s+", " ", cleaned).strip()
+    return cleaned[:24]
+
+
+def _score_name_has_blocked_token(value):
+    compact = re.sub(r"[^a-z0-9]", "", (value or "").lower())
+    tokens = re.findall(r"[a-z0-9]+", (value or "").lower())
+    return any(compact == word or word in tokens for word in GAME_SCORE_NAME_BLOCKLIST)
+
+
+def _validate_score_display_name(value):
+    name = _normalize_score_display_name(value)
+    if len(name) < 2:
+        return None, "Enter a display name."
+    if re.search(r"@|https?:|www\.", name, re.I):
+        return None, "Use a display name, not an email or link."
+    if not GAME_SCORE_NAME_RE.match(name):
+        return None, "Names can use letters, numbers, spaces, apostrophes, periods, and hyphens."
+    if _score_name_has_blocked_token(name):
+        return None, "Choose a different display name."
+    return name, None
+
+
+def _anonymous_score_user_id():
+    user = User.query.filter_by(email="weekly-scores@chargedalpha.local").first()
+    if not user:
+        user = User(
+            email="weekly-scores@chargedalpha.local",
+            name="Weekly Scores",
+            provider="system",
+        )
+        db.session.add(user)
+        db.session.flush()
+    return user.id
+
+
 def _ranked_game_scores(game, limit=None):
+    cutoff = _prune_old_game_scores()
     query = (
         GameScore.query.filter_by(game_slug=game["slug"])
+        .filter(GameScore.created_at >= cutoff)
         .order_by(GameScore.score.desc(), GameScore.created_at.asc())
     )
     if limit:
@@ -1188,21 +1266,19 @@ def games_index():
     games = _hydrate_game_catalog(current_user)
     playable_games = [game for game in games if game["is_playable"]]
     leaderboard_full = {
-        game["slug"]: _ranked_game_scores(game)
+        game["slug"]: _ranked_game_scores(game, limit=10)
         for game in playable_games
     }
-    leaderboard_feature_game = playable_games[0] if playable_games else None
-    leaderboard_ticker = (
-        leaderboard_full.get(leaderboard_feature_game["slug"], [])[:10]
-        if leaderboard_feature_game
-        else []
-    )
+    leaderboard_ticker = sorted(
+        [entry for entries in leaderboard_full.values() for entry in entries],
+        key=lambda entry: (-entry["score"], entry["createdAt"]),
+    )[:16]
     return render_template(
         "games.html",
         games=games,
-        leaderboard_feature_game=leaderboard_feature_game,
         leaderboard_ticker=leaderboard_ticker,
         leaderboard_full=leaderboard_full,
+        leaderboard_period_start=_leaderboard_cutoff_utc(),
     )
 
 
@@ -1235,13 +1311,19 @@ def games_leaderboard(game_slug):
     if not game:
         return jsonify({"error": "Game not found"}), 404
 
+    cutoff = _prune_old_game_scores()
     scores = (
         GameScore.query.filter_by(game_slug=game["slug"])
+        .filter(GameScore.created_at >= cutoff)
         .order_by(GameScore.score.desc(), GameScore.created_at.asc())
         .limit(25)
         .all()
     )
-    return jsonify({"entries": [_serialize_game_score(score) for score in scores]})
+    return jsonify({
+        "entries": [_serialize_game_score(score) for score in scores],
+        "periodStart": cutoff.isoformat() + "Z",
+        "resets": "weekly",
+    })
 
 
 @app.route("/games/api/scores", methods=["POST"])
@@ -1250,13 +1332,6 @@ def games_save_score():
     game = _hydrate_game(body.get("game_slug"), current_user)
     if not game:
         return jsonify({"ok": False, "error": "Game not found"}), 404
-    if not current_user.is_authenticated:
-        return jsonify({
-            "ok": False,
-            "error": "Sign in or create a free Charged Alpha account to post public scores.",
-            "login_url": url_for("auth.login", next=game["route"]),
-            "register_url": url_for("auth.register", next=game["route"]),
-        }), 401
     if not game["is_playable"]:
         return jsonify({"ok": False, "error": "Game is not accepting scores yet"}), 400
     if not game["is_unlocked"]:
@@ -1266,11 +1341,17 @@ def games_save_score():
     if score_value <= 0:
         return jsonify({"ok": False, "error": "Score is required"}), 400
 
-    display_name = get_public_first_name(current_user)
-    metadata = body.get("metadata") if isinstance(body.get("metadata"), dict) else {}
+    fallback_name = get_public_first_name(current_user) if current_user.is_authenticated else ""
+    display_name, name_error = _validate_score_display_name(body.get("display_name") or fallback_name)
+    if name_error:
+        return jsonify({"ok": False, "error": name_error}), 400
 
+    metadata = body.get("metadata") if isinstance(body.get("metadata"), dict) else {}
+    user_id = current_user.id if current_user.is_authenticated else _anonymous_score_user_id()
+
+    _prune_old_game_scores()
     score = GameScore(
-        user_id=current_user.id,
+        user_id=user_id,
         game_slug=game["slug"],
         display_name=display_name,
         score=score_value,

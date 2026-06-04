@@ -25,6 +25,7 @@
     .leaderboard-window:hover .leaderboard-track { animation-play-state:paused; }
     .leaderboard-pill { display:flex; min-width:max-content; align-items:center; gap:.65rem; border:1px solid rgba(216,181,109,.32); border-radius:999px; background:rgba(15,23,42,.78); padding:.45rem .8rem .45rem .45rem; box-shadow:0 10px 30px rgba(0,0,0,.18); }
     .leaderboard-rank { display:grid; height:1.85rem; min-width:1.85rem; place-items:center; border-radius:999px; background:linear-gradient(135deg,#f8d987,#b78937); color:#141009; font-size:.78rem; font-weight:900; }
+    .leaderboard-game-tag { border:1px solid rgba(34,211,238,.22); border-radius:999px; padding:.18rem .45rem; color:#a5f3fc; font-size:.62rem; font-weight:900; text-transform:uppercase; letter-spacing:.12em; }
     .leaderboard-score-row { display:grid; grid-template-columns:auto 1fr auto; gap:.85rem; align-items:center; }
     @media (min-width:768px) {
       .leaderboard-score-row { grid-template-columns:auto 1.1fr .8fr auto; }
@@ -60,16 +61,17 @@
   </header>
 
   <main>
-    <section class="leaderboard-strip px-6 py-3" aria-label="Top game scores">
+    <section class="leaderboard-strip px-6 py-3" aria-label="Weekly top game scores">
       <div class="mx-auto flex max-w-7xl flex-col gap-3 md:flex-row md:items-center">
         <div class="flex shrink-0 items-center gap-3">
-          <span class="rounded-full border border-amber-300/35 bg-amber-300/10 px-3 py-1 text-[11px] font-black uppercase tracking-[.2em] text-amber-200">Leaderboard</span>
-          <strong class="text-sm text-white">{{ leaderboard_feature_game.title if leaderboard_feature_game else "Game Scores" }}</strong>
+          <span class="rounded-full border border-amber-300/35 bg-amber-300/10 px-3 py-1 text-[11px] font-black uppercase tracking-[.2em] text-amber-200">Weekly leaderboard</span>
+          <strong class="text-sm text-white">All games</strong>
+          <span class="hidden text-xs font-bold text-slate-500 sm:inline">No login needed · resets weekly</span>
         </div>
         {% if leaderboard_ticker %}
           <ol class="sr-only">
             {% for score in leaderboard_ticker %}
-            <li>{{ score.rank }}. {{ score.name }} with ${{ "{:,.0f}".format(score.score) }}</li>
+            <li>{{ score.rank }}. {{ score.name }} in {{ score.gameTitle }} with ${{ "{:,.0f}".format(score.score) }}</li>
             {% endfor %}
           </ol>
           <div class="leaderboard-window flex-1" aria-hidden="true">
@@ -78,6 +80,7 @@
                 {% for score in leaderboard_ticker %}
                 <div class="leaderboard-pill">
                   <span class="leaderboard-rank">{{ score.rank }}</span>
+                  <span class="leaderboard-game-tag">{{ score.gameTitle }}</span>
                   <span class="text-sm font-black text-slate-100">{{ score.name }}</span>
                   <span class="text-sm font-black text-amber-200">${{ "{:,.0f}".format(score.score) }}</span>
                   <span class="hidden text-xs font-bold text-slate-500 sm:inline">{{ "{:+.1f}%".format(score.returnPercent) }}</span>
@@ -88,7 +91,7 @@
           </div>
         {% else %}
           <p class="text-sm font-semibold text-slate-400">
-            No public scores yet. Finish a signed-in run to claim the first spot.
+            No public scores yet. Finish any game and add a clean display name to claim the first weekly spot.
           </p>
         {% endif %}
       </div>
@@ -139,7 +142,7 @@
             <h2 class="text-3xl font-black text-white">Finish one story. Open the next.</h2>
           </div>
           <p class="max-w-2xl text-sm leading-6 text-slate-400">
-            Play the alpha chapters in order, or jump into any open chapter while the library grows. Sign in to keep your scores and chapter progress.
+            Play the alpha chapters in order, then use the next-game button at the end of each story to keep the run going.
           </p>
         </div>
 
@@ -197,7 +200,8 @@
           <div class="mb-5 flex flex-col justify-between gap-3 sm:flex-row sm:items-end">
             <div>
               <p class="mb-2 text-xs font-black uppercase tracking-[.24em] text-amber-300">Public scores</p>
-              <h3 class="text-2xl font-black text-white">Full Leaderboard</h3>
+              <h3 class="text-2xl font-black text-white">Weekly High Scores</h3>
+              <p class="mt-1 text-xs font-bold text-slate-500">Clean display names only. Boards reset weekly.</p>
             </div>
             <a href="{{ hero_game.route }}" class="text-sm font-black text-amber-200 no-underline hover:text-amber-100">Play for a spot &rarr;</a>
           </div>
@@ -223,7 +227,7 @@
                 </div>
               {% else %}
                 <p class="rounded-lg border border-dashed border-slate-700 px-4 py-5 text-sm text-slate-500">
-                  No public scores yet. Finish a signed-in run to set the first mark.
+                  No public scores yet. Finish this game and add your name to set the first weekly mark.
                 </p>
               {% endif %}
             </div>
