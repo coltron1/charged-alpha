@@ -41,6 +41,10 @@ import threading
 import datetime
 from pathlib import Path
 from concurrent.futures import ThreadPoolExecutor
+try:
+    from zoneinfo import ZoneInfo
+except ImportError:
+    ZoneInfo = None
 
 import yfinance as yf
 from flask import Flask, render_template, request, jsonify, redirect, Response, url_for
@@ -94,12 +98,13 @@ GAME_CATALOG = [
         "unlock_after": None,
         "tagline": "Know the front page. Still call the market.",
         "description": (
-            "Jonah inherits $100,000 and Grandpa Silas's briefcase of future "
-            "newspaper front pages. Use the headlines, choose stocks, gold, "
-            "bonds, or a custom mix, then see how history actually priced the news."
+            "Read real future headlines, choose stocks, gold, bonds, or a custom "
+            "mix, and find out whether knowing the news is enough to beat history."
         ),
         "lesson": "Future information is not the same thing as market prediction.",
+        "challenge": "Can you turn $100,000 into the biggest final fortune?",
         "image": "/static/games/interactive/games/headline-market/how-to-dashboard-desktop.png",
+        "preview_gif": "/static/games/interactive/games/previews/front-page-fortune-preview.gif",
         "route": "/games/front-page-fortune",
     },
     {
@@ -108,15 +113,16 @@ GAME_CATALOG = [
         "title": "Harvest Ledger",
         "status": "Playable alpha",
         "playable": True,
-        "unlock_after": "front-page-fortune",
-        "alpha_access": True,
+        "unlock_after": None,
         "tagline": "Manage the crop, the futures tape, and the cost of being early.",
         "description": (
-            "A commodities and futures story game about inventory, timing, risk "
-            "management, and how real-world supply shocks move through prices."
+            "Trade crop futures through droughts, floods, crop reports, and trade "
+            "shocks. Big contract wins are possible, but one bad harvest can bite."
         ),
         "lesson": "Risk management matters most when the signal looks obvious.",
+        "challenge": "Can you outgrow corn, soybeans, wheat, and the perfect tape?",
         "image": "/static/games/interactive/games/futures-fortune/grain-ledger-prologue.webp",
+        "preview_gif": "/static/games/interactive/games/previews/harvest-ledger-preview.gif",
         "route": "/games/harvest-ledger",
     },
     {
@@ -125,12 +131,16 @@ GAME_CATALOG = [
         "title": "Sector Oracle",
         "status": "Playable alpha",
         "playable": True,
-        "unlock_after": "harvest-ledger",
-        "alpha_access": True,
+        "unlock_after": None,
         "tagline": "Read the macro clue, then decide which sector deserves the next dollar.",
-        "description": "A sector rotation game about second-order effects, valuation, and narrative traps.",
+        "description": (
+            "Rotate between sectors as the economy changes. The obvious winner is "
+            "not always the best trade when valuation and crowding are already loud."
+        ),
         "lesson": "The headline can be right while the winning sector is somewhere else.",
+        "challenge": "Can you beat the index by finding the second-order winner?",
         "image": "/static/games/interactive/games/sector-oracle/oracle-of-sectors-chapter-1.webp",
+        "preview_gif": "/static/games/interactive/games/previews/sector-oracle-preview.gif",
         "route": "/games/sector-oracle",
     },
     {
@@ -139,17 +149,22 @@ GAME_CATALOG = [
         "title": "Expiration Date",
         "status": "Playable alpha",
         "playable": True,
-        "unlock_after": "sector-oracle",
-        "alpha_access": True,
+        "unlock_after": None,
         "tagline": "Trade the catalyst without letting time decay become the real story.",
-        "description": "An options education game focused on time decay, catalysts, and position sizing.",
+        "description": (
+            "Buy calls, puts, straddles, or T-bills with future headline knowledge. "
+            "A correct direction still has to beat premium, volatility, and time."
+        ),
         "lesson": "Direction is only one part of an options trade.",
+        "challenge": "Can you time the close and make Mara rich before expiration?",
         "image": "/static/games/interactive/games/options-fortune/expiration-date-game-image-1.webp",
+        "preview_gif": "/static/games/interactive/games/previews/expiration-date-preview.gif",
         "route": "/games/expiration-date",
     },
 ]
 
-GAME_SCORE_RESET_EPOCH_UTC = datetime.datetime(2026, 6, 4, 0, 0, 0)
+GAME_SCORE_RESET_EPOCH_UTC = datetime.datetime(2026, 6, 4, 5, 1, 0)
+GAME_SCORE_RESET_TZ = ZoneInfo("America/Chicago") if ZoneInfo else datetime.timezone.utc
 GAME_SCORE_NAME_BLOCKLIST = {
     "admin",
     "administrator",
@@ -308,8 +323,9 @@ SEO_PAGE_META = {
     "/games": {
         "title": "Interactive Investing Games — Charged Alpha",
         "description": (
-            "Play Charged Alpha's investing story games, starting with Front Page "
-            "Fortune, where historical front pages become portfolio decisions."
+            "Play Charged Alpha's open investing story games, chase weekly high "
+            "scores, and test market decisions across headlines, crops, sectors, "
+            "and options."
         ),
     },
     "/games/front-page-fortune": {
@@ -453,20 +469,18 @@ def _hydrate_game_catalog(user=None):
         item = dict(game)
         prerequisite_slug = item.get("unlock_after")
         prerequisite = _get_game(prerequisite_slug)
-        is_unlocked = prerequisite_slug is None or prerequisite_slug in completed_slugs or bool(item.get("alpha_access"))
+        is_playable = bool(item.get("playable"))
 
         item["sequence"] = index + 1
-        item["sequence_label"] = f"Chapter {index + 1}"
+        item["sequence_label"] = f"Game {index + 1}"
         item["prerequisite_title"] = prerequisite["title"] if prerequisite else ""
         item["prerequisite_route"] = prerequisite["route"] if prerequisite else ""
         item["has_completion"] = item["slug"] in completed_slugs
-        item["is_playable"] = bool(item.get("playable"))
-        item["is_unlocked"] = is_unlocked
+        item["is_playable"] = is_playable
+        item["is_unlocked"] = is_playable
 
-        if not is_unlocked:
-            item["locked_reason"] = f"Finish {item['prerequisite_title']} to unlock this chapter."
-        elif not item["is_playable"]:
-            item["locked_reason"] = "Coming soon. This chapter will open when it is ready."
+        if not item["is_playable"]:
+            item["locked_reason"] = "Coming soon. This game will open when it is ready."
         else:
             item["locked_reason"] = ""
 
@@ -517,9 +531,19 @@ def _serialize_game_score(score):
 
 
 def _leaderboard_week_start_utc(now=None):
-    current = now or datetime.datetime.utcnow()
-    current = current.replace(hour=0, minute=0, second=0, microsecond=0)
-    return current - datetime.timedelta(days=current.weekday())
+    current_utc = now or datetime.datetime.utcnow()
+    if current_utc.tzinfo is None:
+        current_utc = current_utc.replace(tzinfo=datetime.timezone.utc)
+    local_now = current_utc.astimezone(GAME_SCORE_RESET_TZ)
+    reset_local = (local_now - datetime.timedelta(days=local_now.weekday())).replace(
+        hour=0,
+        minute=1,
+        second=0,
+        microsecond=0,
+    )
+    if local_now < reset_local:
+        reset_local -= datetime.timedelta(days=7)
+    return reset_local.astimezone(datetime.timezone.utc).replace(tzinfo=None)
 
 
 def _leaderboard_cutoff_utc():

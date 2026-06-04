@@ -12,8 +12,11 @@
     body { background:#080b12; color:#e2e8f0; font-family:'Inter',system-ui,sans-serif; }
     .serif { font-family:'Libre Baskerville',Georgia,serif; }
     .panel { background:linear-gradient(180deg,rgba(18,24,35,.98),rgba(10,15,25,.98)); border:1px solid #263244; border-radius:12px; }
-    .game-card { background:linear-gradient(180deg,rgba(18,24,35,.98),rgba(10,15,25,.98)); border:1px solid #263244; border-radius:12px; }
+    .game-card { overflow:hidden; background:linear-gradient(180deg,rgba(18,24,35,.98),rgba(10,15,25,.98)); border:1px solid #263244; border-radius:12px; box-shadow:0 18px 46px rgba(0,0,0,.24); }
     .game-card.locked { border-style:dashed; opacity:.78; }
+    .game-card-media { position:relative; margin:-1.5rem -1.5rem 1.25rem; border-bottom:1px solid rgba(216,181,109,.22); background:#020617; }
+    .game-card-media img { display:block; width:100%; aspect-ratio:16/9; object-fit:cover; }
+    .game-card-media span { position:absolute; left:.85rem; bottom:.75rem; border:1px solid rgba(248,217,135,.38); border-radius:999px; background:rgba(8,11,18,.78); padding:.32rem .58rem; color:#fde68a; font-size:.62rem; font-weight:900; letter-spacing:.14em; text-transform:uppercase; }
     .gold-line { height:1px; background:linear-gradient(90deg,transparent,#d8b56d,transparent); opacity:.45; }
     .gold-button { background:linear-gradient(135deg,#e7c67b,#b78937); color:#161109; }
     .gold-button:hover { transform:translateY(-1px); box-shadow:0 14px 34px rgba(184,137,55,.22); }
@@ -27,6 +30,17 @@
     .leaderboard-rank { display:grid; height:1.85rem; min-width:1.85rem; place-items:center; border-radius:999px; background:linear-gradient(135deg,#f8d987,#b78937); color:#141009; font-size:.78rem; font-weight:900; }
     .leaderboard-game-tag { border:1px solid rgba(34,211,238,.22); border-radius:999px; padding:.18rem .45rem; color:#a5f3fc; font-size:.62rem; font-weight:900; text-transform:uppercase; letter-spacing:.12em; }
     .leaderboard-score-row { display:grid; grid-template-columns:auto 1fr auto; gap:.85rem; align-items:center; }
+    .leaderboard-arena { position:relative; overflow:hidden; padding:1.4rem; box-shadow:0 28px 70px rgba(0,0,0,.34); }
+    .leaderboard-arena:before { content:""; position:absolute; inset:0; pointer-events:none; background:radial-gradient(circle at 18% 0%,rgba(34,211,238,.16),transparent 30%),radial-gradient(circle at 82% 12%,rgba(248,217,135,.18),transparent 36%); }
+    .leaderboard-arena > * { position:relative; }
+    .leaderboard-champion { display:grid; gap:.4rem; margin:1rem 0; border:1px solid rgba(248,217,135,.34); border-radius:14px; padding:1rem; background:linear-gradient(135deg,rgba(248,217,135,.15),rgba(34,211,238,.08)); }
+    .leaderboard-champion strong { color:#fde68a; font-size:clamp(2rem,5vw,4.3rem); line-height:.95; }
+    .leaderboard-champion em { color:#e2e8f0; font-style:normal; font-weight:900; }
+    .leaderboard-podium { display:grid; gap:.65rem; }
+    .leaderboard-podium article { display:grid; grid-template-columns:auto minmax(0,1fr) auto; gap:.8rem; align-items:center; border:1px solid rgba(148,163,184,.16); border-radius:12px; padding:.75rem; background:rgba(2,6,23,.58); }
+    .leaderboard-podium b { color:#fde68a; }
+    .leaderboard-empty { border:1px dashed rgba(248,217,135,.34); border-radius:14px; padding:1.2rem; background:rgba(2,6,23,.5); }
+    .challenge-copy { color:#fde68a; font-weight:900; }
     @media (min-width:768px) {
       .leaderboard-score-row { grid-template-columns:auto 1.1fr .8fr auto; }
     }
@@ -51,11 +65,11 @@
           <div class="text-[10px] font-bold uppercase tracking-[.18em] text-cyan-300">Interactive</div>
         </div>
       </a>
-      <nav class="hidden items-center gap-6 md:flex">
+      <nav class="flex items-center gap-4 md:gap-6">
         <a href="/games" class="nav-link text-amber-200">Games</a>
-        <a href="/shows" class="nav-link">Stock Encyclopedia</a>
-        <a href="/charts/" class="nav-link">Charts</a>
-        <a href="/account" class="nav-link">Account</a>
+        <a href="/" class="nav-link">Main Site</a>
+        <a href="/shows" class="nav-link hidden md:inline">Stock Encyclopedia</a>
+        <a href="/charts/" class="nav-link hidden md:inline">Charts</a>
       </nav>
     </div>
   </header>
@@ -66,7 +80,7 @@
         <div class="flex shrink-0 items-center gap-3">
           <span class="rounded-full border border-amber-300/35 bg-amber-300/10 px-3 py-1 text-[11px] font-black uppercase tracking-[.2em] text-amber-200">Weekly leaderboard</span>
           <strong class="text-sm text-white">All games</strong>
-          <span class="hidden text-xs font-bold text-slate-500 sm:inline">No login needed · resets weekly</span>
+          <span class="hidden text-xs font-bold text-slate-500 sm:inline">No login needed · refreshed Mondays at 12:01 AM</span>
         </div>
         {% if leaderboard_ticker %}
           <ol class="sr-only">
@@ -91,7 +105,7 @@
           </div>
         {% else %}
           <p class="text-sm font-semibold text-slate-400">
-            No public scores yet. Finish any game and add a clean display name to claim the first weekly spot.
+            Fresh board. Finish any game and add a clean display name to claim the first weekly spot.
           </p>
         {% endif %}
       </div>
@@ -100,35 +114,57 @@
     <section class="px-6 pb-12 pt-16 md:pt-20">
       <div class="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[.9fr_1.1fr] lg:items-center">
         <div>
-          <p class="mb-4 text-xs font-black uppercase tracking-[.28em] text-amber-300">Interactive investing games</p>
-          <h1 class="serif mb-5 text-4xl leading-tight text-white md:text-6xl">Play the market's turning points.</h1>
+          <p class="mb-4 text-xs font-black uppercase tracking-[.28em] text-amber-300">Open investing games</p>
+          <h1 class="serif mb-5 text-4xl leading-tight text-white md:text-6xl">Pick any game. Chase the weekly crown.</h1>
           <p class="mb-7 max-w-2xl text-lg leading-8 text-slate-300">
-            Start with Front Page Fortune, where Jonah knows the headlines of the future and must decide how to invest to beat the market.
-            Each chapter turns a different investing lesson into a story you can play.
+            No sign in and no chapter order. Play any available market story, post a clean display name, and try to finish Monday's board with the highest account value.
           </p>
           <div class="flex flex-wrap gap-3">
-            <a href="{{ hero_game.route }}" class="gold-button inline-flex items-center gap-2 rounded-lg px-5 py-3 text-sm font-black no-underline transition">
-              Play {{ hero_game.title }}
+            <a href="#game-cards" class="gold-button inline-flex items-center gap-2 rounded-lg px-5 py-3 text-sm font-black no-underline transition">
+              Choose a Game
               <span aria-hidden="true">&rarr;</span>
             </a>
-            <a href="/account" class="inline-flex items-center gap-2 rounded-lg border border-slate-700 px-5 py-3 text-sm font-bold text-slate-200 no-underline transition hover:border-slate-500">
-              View My Progress
+            <a href="/" class="inline-flex items-center gap-2 rounded-lg border border-slate-700 px-5 py-3 text-sm font-bold text-slate-200 no-underline transition hover:border-slate-500">
+              Main Charged Alpha Site
             </a>
           </div>
         </div>
 
-        <a href="{{ hero_game.route }}" class="panel block overflow-hidden no-underline shadow-2xl shadow-black/40">
-          <img src="{{ hero_game.image }}" alt="{{ hero_game.title }} dashboard preview" class="h-72 w-full object-cover object-top md:h-96">
-          <div class="p-6 md:p-7">
-            <div class="mb-3 flex flex-wrap items-center gap-3">
-              <span class="rounded-full border border-amber-300/35 bg-amber-300/10 px-3 py-1 text-xs font-black uppercase tracking-widest text-amber-200">{{ hero_game.status }}</span>
-              <span class="text-xs font-bold uppercase tracking-widest text-slate-500">{{ hero_game.sequence_label }}</span>
+        <aside class="leaderboard-arena panel" aria-label="Weekly leaderboard challenge">
+          <header class="flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
+            <div>
+              <p class="mb-2 text-xs font-black uppercase tracking-[.24em] text-cyan-300">Leaderboard challenge</p>
+              <h2 class="text-3xl font-black text-white">Highest ending account wins the week.</h2>
             </div>
-            <h2 class="serif mb-2 text-3xl text-white">{{ hero_game.title }}</h2>
-            <p class="mb-4 text-base leading-7 text-slate-300">{{ hero_game.tagline }}</p>
-            <p class="text-sm leading-6 text-slate-400">{{ hero_game.description }}</p>
-          </div>
-        </a>
+            <span class="rounded-full border border-amber-300/35 bg-amber-300/10 px-3 py-1 text-xs font-black uppercase tracking-widest text-amber-200">Monday 12:01 AM reset</span>
+          </header>
+          {% if leaderboard_ticker %}
+            {% set champion = leaderboard_ticker[0] %}
+            <article class="leaderboard-champion">
+              <span class="text-xs font-black uppercase tracking-[.22em] text-cyan-200">Current champion · {{ champion.gameTitle }}</span>
+              <strong>${{ "{:,.0f}".format(champion.score) }}</strong>
+              <em>{{ champion.name }} is the score to beat.</em>
+            </article>
+            <div class="leaderboard-podium">
+              {% for score in leaderboard_ticker[:6] %}
+              <article>
+                <span class="leaderboard-rank">{{ loop.index }}</span>
+                <div>
+                  <strong class="block text-slate-100">{{ score.name }}</strong>
+                  <small class="font-bold text-slate-500">{{ score.gameTitle }} · {{ "{:+.1f}%".format(score.returnPercent) }}</small>
+                </div>
+                <b>${{ "{:,.0f}".format(score.score) }}</b>
+              </article>
+              {% endfor %}
+            </div>
+          {% else %}
+            <div class="leaderboard-empty mt-5">
+              <span class="text-xs font-black uppercase tracking-[.22em] text-cyan-200">Fresh board</span>
+              <h3 class="mt-2 text-2xl font-black text-white">No champions yet.</h3>
+              <p class="mt-2 text-sm leading-6 text-slate-400">Finish any available game to plant the first score. The leaderboard refreshes every Monday at 12:01 AM.</p>
+            </div>
+          {% endif %}
+        </aside>
       </div>
     </section>
 
@@ -138,17 +174,21 @@
       <div class="mx-auto max-w-7xl">
         <div class="mb-8 flex flex-col justify-between gap-4 md:flex-row md:items-end">
           <div>
-            <p class="mb-2 text-xs font-black uppercase tracking-[.24em] text-amber-300">Chapter path</p>
-            <h2 class="text-3xl font-black text-white">Finish one story. Open the next.</h2>
+            <p class="mb-2 text-xs font-black uppercase tracking-[.24em] text-amber-300">Game shelf</p>
+            <h2 class="text-3xl font-black text-white">Every available game is open.</h2>
           </div>
           <p class="max-w-2xl text-sm leading-6 text-slate-400">
-            Play the alpha chapters in order, then use the next-game button at the end of each story to keep the run going.
+            Choose the market lesson you want, play for score, then jump to another game whenever you like.
           </p>
         </div>
 
-        <div class="grid gap-5 md:grid-cols-2 xl:grid-cols-4">
+        <div id="game-cards" class="grid gap-5 md:grid-cols-2 xl:grid-cols-4">
           {% for game in games %}
           <article class="game-card {% if not game.is_unlocked %}locked{% endif %} p-6">
+            <figure class="game-card-media">
+              <img src="{{ game.preview_gif or game.image }}" alt="{{ game.title }} animated gameplay preview" loading="lazy">
+              <span>Live preview</span>
+            </figure>
             <div class="mb-5 flex items-start justify-between gap-3">
               <div>
                 <div class="mb-2 text-xs font-black uppercase tracking-[.22em] text-slate-500">{{ game.sequence_label }}</div>
@@ -157,7 +197,7 @@
               {% if game.has_completion %}
               <span class="rounded-md border border-emerald-300/30 px-3 py-1 text-xs font-bold uppercase tracking-wider text-emerald-200">Completed</span>
               {% elif game.is_playable and game.is_unlocked %}
-              <span class="rounded-md border border-amber-300/30 px-3 py-1 text-xs font-bold uppercase tracking-wider text-amber-200">Unlocked</span>
+              <span class="rounded-md border border-amber-300/30 px-3 py-1 text-xs font-bold uppercase tracking-wider text-amber-200">Open</span>
               {% elif not game.is_unlocked %}
               <span class="rounded-md border border-slate-600 px-3 py-1 text-xs font-bold uppercase tracking-wider text-slate-400">Locked</span>
               {% else %}
@@ -166,6 +206,7 @@
             </div>
             <p class="mb-3 text-sm font-bold text-amber-200">{{ game.lesson }}</p>
             <p class="mb-5 text-sm leading-6 text-slate-400">{{ game.description }}</p>
+            <p class="challenge-copy mb-5 text-sm leading-6">{{ game.challenge }}</p>
             {% if game.locked_reason %}
             <p class="mb-5 rounded-lg border border-slate-800 bg-slate-950/60 px-4 py-3 text-xs leading-5 text-slate-400">{{ game.locked_reason }}</p>
             {% endif %}
@@ -201,7 +242,7 @@
             <div>
               <p class="mb-2 text-xs font-black uppercase tracking-[.24em] text-amber-300">Public scores</p>
               <h3 class="text-2xl font-black text-white">Weekly High Scores</h3>
-              <p class="mt-1 text-xs font-bold text-slate-500">Clean display names only. Boards reset weekly.</p>
+              <p class="mt-1 text-xs font-bold text-slate-500">Clean display names only. Refreshed each Monday at 12:01 AM.</p>
             </div>
             <a href="{{ hero_game.route }}" class="text-sm font-black text-amber-200 no-underline hover:text-amber-100">Play for a spot &rarr;</a>
           </div>
@@ -227,7 +268,7 @@
                 </div>
               {% else %}
                 <p class="rounded-lg border border-dashed border-slate-700 px-4 py-5 text-sm text-slate-500">
-                  No public scores yet. Finish this game and add your name to set the first weekly mark.
+                  Fresh board. Finish this game and add your name to set the first weekly mark.
                 </p>
               {% endif %}
             </div>
