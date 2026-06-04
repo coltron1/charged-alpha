@@ -90,21 +90,43 @@ INTERACTIVE_GAME_MANIFEST_PATH = INTERACTIVE_GAME_BUILD_PATH / ".vite" / "manife
 
 GAME_CATALOG = [
     {
+        "slug": "expiration-date",
+        "app_slug": "expiration-date",
+        "title": "Expiration Date",
+        "status": "Playable alpha",
+        "playable": True,
+        "unlock_after": None,
+        "tagline": "Buy the option. Beat the clock. Make the market move enough.",
+        "description": (
+            "Trade simulated SPX options through real historical market shocks. "
+            "Use future knowledge to buy calls, puts, straddles, or T-bills, then "
+            "see whether the actual S&P 500 move beat premium, volatility, and time decay."
+        ),
+        "lesson": "Options are paid tickets: direction matters, but size and timing decide the payout.",
+        "challenge": "Can you turn future knowledge into a top score before expiration eats the trade?",
+        "image": "/static/games/interactive/games/options-fortune/expiration-date-game-image-1.webp",
+        "preview_dashboard": "/static/games/interactive/games/previews/expiration-date-dashboard.jpg",
+        "preview_action": "/static/games/interactive/games/previews/expiration-date-play.jpg",
+        "route": "/games/expiration-date",
+    },
+    {
         "slug": "front-page-fortune",
         "app_slug": "front-page-fortune",
         "title": "Front Page Fortune",
         "status": "Playable alpha",
         "playable": True,
         "unlock_after": None,
-        "tagline": "Know the front page. Still call the market.",
+        "tagline": "Know the event. Still call the market.",
         "description": (
-            "Read real future headlines, choose stocks, gold, bonds, or a custom "
-            "mix, and find out whether knowing the news is enough to beat history."
+            "Play a portfolio across real historical events using S&P 500 stocks, "
+            "gold, bonds, or a custom mix. You know what happened next, but the "
+            "actual market data decides whether your allocation was genius or a trap."
         ),
-        "lesson": "Future information is not the same thing as market prediction.",
-        "challenge": "Can you turn $100,000 into the biggest final fortune?",
+        "lesson": "Future knowledge is powerful, but markets price fear, relief, taxes, and timing.",
+        "challenge": "Can you turn $100,000 into the biggest fortune without being fooled by the obvious trade?",
         "image": "/static/games/interactive/games/headline-market/how-to-dashboard-desktop.png",
-        "preview_gif": "/static/games/interactive/games/previews/front-page-fortune-preview.gif",
+        "preview_dashboard": "/static/games/interactive/games/previews/front-page-fortune-dashboard.jpg",
+        "preview_action": "/static/games/interactive/games/previews/front-page-fortune-play.jpg",
         "route": "/games/front-page-fortune",
     },
     {
@@ -114,15 +136,17 @@ GAME_CATALOG = [
         "status": "Playable alpha",
         "playable": True,
         "unlock_after": None,
-        "tagline": "Manage the crop, the futures tape, and the cost of being early.",
+        "tagline": "Trade the crop shock before the futures tape settles.",
         "description": (
-            "Trade crop futures through droughts, floods, crop reports, and trade "
-            "shocks. Big contract wins are possible, but one bad harvest can bite."
+            "Speculate on real grain-market history with corn, soybean, wheat, and "
+            "T-bill choices. Droughts, floods, crop reports, and trade shocks can "
+            "make futures contracts surge, but one wrong harvest call can drain the ledger."
         ),
-        "lesson": "Risk management matters most when the signal looks obvious.",
-        "challenge": "Can you outgrow corn, soybeans, wheat, and the perfect tape?",
+        "lesson": "Futures magnify commodity moves, so contract size and risk control matter.",
+        "challenge": "Can you read the crop tape, choose the right contract, and harvest the weekly high score?",
         "image": "/static/games/interactive/games/futures-fortune/grain-ledger-prologue.webp",
-        "preview_gif": "/static/games/interactive/games/previews/harvest-ledger-preview.gif",
+        "preview_dashboard": "/static/games/interactive/games/previews/harvest-ledger-dashboard.jpg",
+        "preview_action": "/static/games/interactive/games/previews/harvest-ledger-play.jpg",
         "route": "/games/harvest-ledger",
     },
     {
@@ -132,34 +156,18 @@ GAME_CATALOG = [
         "status": "Playable alpha",
         "playable": True,
         "unlock_after": None,
-        "tagline": "Read the macro clue, then decide which sector deserves the next dollar.",
+        "tagline": "Pick the sector that wins after the obvious story breaks.",
         "description": (
-            "Rotate between sectors as the economy changes. The obvious winner is "
-            "not always the best trade when valuation and crowding are already loud."
+            "Rotate through real market eras using a balanced mix, tech, energy, "
+            "banks, health care, staples, or bonds. The historical event is known; "
+            "the game is spotting which investment actually benefits when prices move."
         ),
-        "lesson": "The headline can be right while the winning sector is somewhere else.",
-        "challenge": "Can you beat the index by finding the second-order winner?",
+        "lesson": "A true event can still point to the wrong sector if the market already priced it in.",
+        "challenge": "Can you beat the index by finding the second-order winner before everyone else?",
         "image": "/static/games/interactive/games/sector-oracle/oracle-of-sectors-chapter-1.webp",
-        "preview_gif": "/static/games/interactive/games/previews/sector-oracle-preview.gif",
+        "preview_dashboard": "/static/games/interactive/games/previews/sector-oracle-dashboard.jpg",
+        "preview_action": "/static/games/interactive/games/previews/sector-oracle-play.jpg",
         "route": "/games/sector-oracle",
-    },
-    {
-        "slug": "expiration-date",
-        "app_slug": "expiration-date",
-        "title": "Expiration Date",
-        "status": "Playable alpha",
-        "playable": True,
-        "unlock_after": None,
-        "tagline": "Trade the catalyst without letting time decay become the real story.",
-        "description": (
-            "Buy calls, puts, straddles, or T-bills with future headline knowledge. "
-            "A correct direction still has to beat premium, volatility, and time."
-        ),
-        "lesson": "Direction is only one part of an options trade.",
-        "challenge": "Can you time the close and make Mara rich before expiration?",
-        "image": "/static/games/interactive/games/options-fortune/expiration-date-game-image-1.webp",
-        "preview_gif": "/static/games/interactive/games/previews/expiration-date-preview.gif",
-        "route": "/games/expiration-date",
     },
 ]
 

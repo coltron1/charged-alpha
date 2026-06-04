@@ -14,9 +14,13 @@
     .panel { background:linear-gradient(180deg,rgba(18,24,35,.98),rgba(10,15,25,.98)); border:1px solid #263244; border-radius:12px; }
     .game-card { overflow:hidden; background:linear-gradient(180deg,rgba(18,24,35,.98),rgba(10,15,25,.98)); border:1px solid #263244; border-radius:12px; box-shadow:0 18px 46px rgba(0,0,0,.24); }
     .game-card.locked { border-style:dashed; opacity:.78; }
-    .game-card-media { position:relative; margin:-1.5rem -1.5rem 1.25rem; border-bottom:1px solid rgba(216,181,109,.22); background:#020617; }
-    .game-card-media img { display:block; width:100%; aspect-ratio:16/9; object-fit:cover; }
-    .game-card-media span { position:absolute; left:.85rem; bottom:.75rem; border:1px solid rgba(248,217,135,.38); border-radius:999px; background:rgba(8,11,18,.78); padding:.32rem .58rem; color:#fde68a; font-size:.62rem; font-weight:900; letter-spacing:.14em; text-transform:uppercase; }
+    .game-card-media { display:grid; gap:1px; position:relative; margin:-1.5rem -1.5rem 1.25rem; border-bottom:1px solid rgba(216,181,109,.22); background:rgba(216,181,109,.24); }
+    .game-card-shot { position:relative; overflow:hidden; background:#020617; }
+    .game-card-shot.dashboard { aspect-ratio:16/9; }
+    .game-card-shot.action { aspect-ratio:16/7; }
+    .game-card-shot img { display:block; width:100%; height:100%; object-fit:cover; }
+    .game-card-shot.action img { filter:saturate(1.08) contrast(1.05); }
+    .game-card-shot span { position:absolute; left:.85rem; bottom:.75rem; border:1px solid rgba(248,217,135,.38); border-radius:999px; background:rgba(8,11,18,.78); padding:.32rem .58rem; color:#fde68a; font-size:.62rem; font-weight:900; letter-spacing:.14em; text-transform:uppercase; }
     .gold-line { height:1px; background:linear-gradient(90deg,transparent,#d8b56d,transparent); opacity:.45; }
     .gold-button { background:linear-gradient(135deg,#e7c67b,#b78937); color:#161109; }
     .gold-button:hover { transform:translateY(-1px); box-shadow:0 14px 34px rgba(184,137,55,.22); }
@@ -117,7 +121,7 @@
           <p class="mb-4 text-xs font-black uppercase tracking-[.28em] text-amber-300">Open investing games</p>
           <h1 class="serif mb-5 text-4xl leading-tight text-white md:text-6xl">Pick any game. Chase the weekly crown.</h1>
           <p class="mb-7 max-w-2xl text-lg leading-8 text-slate-300">
-            No sign in and no chapter order. Play any available market story, post a clean display name, and try to finish Monday's board with the highest account value.
+            No sign in and no chapter order. Play historical investing games built on real market data, post a clean display name, and try to finish Monday's board with the highest account value.
           </p>
           <div class="flex flex-wrap gap-3">
             <a href="#game-cards" class="gold-button inline-flex items-center gap-2 rounded-lg px-5 py-3 text-sm font-black no-underline transition">
@@ -178,7 +182,7 @@
             <h2 class="text-3xl font-black text-white">Every available game is open.</h2>
           </div>
           <p class="max-w-2xl text-sm leading-6 text-slate-400">
-            Choose the market lesson you want, play for score, then jump to another game whenever you like.
+            Choose the market you want to attack, play for score, then jump to another game whenever you like.
           </p>
         </div>
 
@@ -186,8 +190,14 @@
           {% for game in games %}
           <article class="game-card {% if not game.is_unlocked %}locked{% endif %} p-6">
             <figure class="game-card-media">
-              <img src="{{ game.preview_gif or game.image }}" alt="{{ game.title }} animated gameplay preview" loading="lazy">
-              <span>Live preview</span>
+              <div class="game-card-shot dashboard">
+                <img src="{{ game.preview_dashboard or game.image }}" alt="{{ game.title }} playable dashboard screenshot" loading="lazy">
+                <span>Dashboard</span>
+              </div>
+              <div class="game-card-shot action">
+                <img src="{{ game.preview_action or game.image }}" alt="{{ game.title }} play animation screenshot" loading="lazy">
+                <span>After Play</span>
+              </div>
             </figure>
             <div class="mb-5 flex items-start justify-between gap-3">
               <div>
@@ -233,7 +243,7 @@
           <p class="mb-2 text-xs font-black uppercase tracking-[.24em] text-cyan-300">What you practice</p>
           <h2 class="mb-4 text-3xl font-black text-white">Headlines are clues, not answers.</h2>
           <p class="text-sm leading-6 text-slate-400">
-            The games are built around practical investing ideas: time in the market, tax friction, diversification, position sizing, and the gap between knowing the news and predicting the price.
+            The games turn real historical events and real market data into score challenges: options timing, stock/gold/bond allocation, grain futures, sector rotation, tax friction, diversification, and position sizing.
           </p>
         </div>
 
