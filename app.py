@@ -244,7 +244,7 @@ SEO_PAGE_META = {
         "title": "Charged Alpha Stock Encyclopedia — Earnings Videos & Stock Research",
         "description": (
             "Browse Charged Alpha's frontier AI stock encyclopedia with quarterly "
-            "earnings videos, ticker filters, stock detail pages, and frontier "
+            "earnings videos, ticker filters, stock analysis pages, and frontier "
             "AI company research organized by quarter."
         ),
     },
@@ -958,6 +958,65 @@ def _pick_competitor_stocks(show_stock, all_stocks):
     return picks[:2]
 
 
+def _compact_stock_snapshot(show_stock):
+    _, info = fetch_ticker_info(show_stock["yf_symbol"])
+    info = info or {}
+
+    def pick(key, scale=1.0):
+        return safe_float(info, key, scale=scale)
+
+    market_cap = info.get("marketCap")
+    free_cashflow = info.get("freeCashflow")
+    price = info.get("currentPrice") or info.get("regularMarketPrice") or info.get("previousClose")
+    target_mean_price = info.get("targetMeanPrice")
+    fcf_yield = None
+    target_upside = None
+
+    try:
+        market_cap = float(market_cap) if market_cap is not None else None
+    except (TypeError, ValueError):
+        market_cap = None
+    try:
+        free_cashflow = float(free_cashflow) if free_cashflow is not None else None
+    except (TypeError, ValueError):
+        free_cashflow = None
+    try:
+        price = float(price) if price is not None else None
+    except (TypeError, ValueError):
+        price = None
+    try:
+        target_mean_price = float(target_mean_price) if target_mean_price is not None else None
+    except (TypeError, ValueError):
+        target_mean_price = None
+
+    if free_cashflow and market_cap and market_cap > 0:
+        fcf_yield = round(free_cashflow / market_cap * 100, 2)
+    if target_mean_price and price and price > 0:
+        target_upside = round((target_mean_price - price) / price * 100, 1)
+
+    return {
+        "ticker": show_stock["ticker"],
+        "company": show_stock["company"],
+        "latest_video_quarter": show_stock.get("latest_video_quarter"),
+        "latest_youtube_url": show_stock.get("latest_youtube_url"),
+        "market_cap": market_cap,
+        "trailing_pe": pick("trailingPE"),
+        "forward_pe": pick("forwardPE"),
+        "revenue_growth": pick("revenueGrowth", scale=100),
+        "earnings_growth": pick("earningsGrowth", scale=100),
+        "operating_margin": pick("operatingMargins", scale=100),
+        "gross_margin": pick("grossMargins", scale=100),
+        "profit_margin": pick("profitMargins", scale=100),
+        "return_on_equity": pick("returnOnEquity", scale=100),
+        "fcf_yield": fcf_yield,
+        "debt_to_equity": pick("debtToEquity"),
+        "current_ratio": pick("currentRatio"),
+        "beta": pick("beta"),
+        "dividend_yield": normalize_div_yield(info.get("trailingAnnualDividendYield") or info.get("dividendYield")),
+        "target_upside": target_upside,
+    }
+
+
 def build_stock_competitor_analysis(show_stock, primary_snapshot, all_stocks):
     competitor_stocks = _pick_competitor_stocks(show_stock, all_stocks)
     snapshots = []
@@ -972,15 +1031,7 @@ def build_stock_competitor_analysis(show_stock, primary_snapshot, all_stocks):
     snapshots.append(primary)
 
     for comp_stock in competitor_stocks:
-        comp_bundle = get_stock_detail(comp_stock["yf_symbol"], include_options=False) or {}
-        comp_info = dict(comp_bundle.get("info") or {})
-        comp_info.update({
-            "ticker": comp_stock["ticker"],
-            "company": comp_stock["company"],
-            "latest_video_quarter": comp_stock.get("latest_video_quarter"),
-            "latest_youtube_url": comp_stock.get("latest_youtube_url"),
-        })
-        snapshots.append(comp_info)
+        snapshots.append(_compact_stock_snapshot(comp_stock))
 
     rows = []
     for metric in COMPARE_METRICS:
@@ -1103,6 +1154,7 @@ job_store = JobStore(ttl=600)
 # ── Shared caches ───────────────────────────────────────────────────────────
 _detail_cache = TTLCache(default_ttl=300, max_size=500)
 _banner_cache = TTLCache(default_ttl=120, max_size=10)
+_shows_cache = TTLCache(default_ttl=300, max_size=5)
 
 # ── Market cap range definitions ────────────────────────────────────────────
 CAP_RANGES = {
@@ -1154,6 +1206,33 @@ def _cached_detail(cache_prefix, symbol, fetch_fn):
         return jsonify({"error": f"Could not load {cache_prefix} data"}), 404
     _detail_cache.set(cache_key, data)
     return jsonify(data)
+
+
+def _shows_context():
+    cached = _shows_cache.get("shows_context")
+    if cached:
+        return cached
+
+    shows_data = load_shows_catalog()
+    show_library = build_show_library(shows_data.get("episodes", []))
+    context = {
+        "shows_data": shows_data,
+        "show_library": show_library,
+    }
+    _shows_cache.set("shows_context", context)
+    return context
+
+
+def _cached_show_stock_detail(symbol):
+    sym = symbol.upper()
+    cache_key = f"show_stock_detail_{sym}"
+    cached = _detail_cache.get(cache_key, ttl=900)
+    if cached is not None:
+        return cached
+
+    data = get_stock_detail(sym, include_options=False) or {}
+    _detail_cache.set(cache_key, data)
+    return data
 
 
 def _start_job(fn, *args):
@@ -1452,8 +1531,9 @@ def account():
 
 @app.route("/shows")
 def shows():
-    shows_data = load_shows_catalog()
-    show_library = build_show_library(shows_data.get("episodes", []))
+    context = _shows_context()
+    shows_data = context["shows_data"]
+    show_library = context["show_library"]
     return render_template(
         "shows.html",
         show_stocks=show_library.get("stocks", []),
@@ -1467,14 +1547,15 @@ def shows():
 
 @app.route("/shows/<ticker_slug>")
 def show_stock_detail_page(ticker_slug):
-    shows_data = load_shows_catalog()
-    show_library = build_show_library(shows_data.get("episodes", []))
+    context = _shows_context()
+    shows_data = context["shows_data"]
+    show_library = context["show_library"]
     requested = _show_slug(ticker_slug)
     show_stock = next((stock for stock in show_library["stocks"] if stock["slug"] == requested), None)
     if not show_stock:
         return ("Stock show not found", 404)
 
-    detail_bundle = get_stock_detail(show_stock["yf_symbol"], include_options=False) or {}
+    detail_bundle = _cached_show_stock_detail(show_stock["yf_symbol"])
     stock_detail = dict(detail_bundle.get("info") or {})
     if not stock_detail:
         stock_detail = {

@@ -416,7 +416,7 @@ function renderCard(stock) {
       </div>
 
       <div class="mt-auto flex flex-wrap gap-3">
-        <a href="/shows/${stock.slug}" class="btn-primary flex-1">Open Stock Detail</a>
+        <a href="/shows/${stock.slug}" class="btn-primary flex-1">Stock Analysis</a>
         ${stock.latest_links.youtube ? `<a href="${stock.latest_links.youtube}" target="_blank" rel="noopener noreferrer" class="btn-secondary">Latest on YouTube</a>` : ''}
         ${!stock.latest_links.youtube && stock.latest_links.podcast ? `<a href="${stock.latest_links.podcast}" target="_blank" rel="noopener noreferrer" class="btn-secondary">Latest Podcast</a>` : ''}
       </div>
