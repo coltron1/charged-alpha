@@ -62,7 +62,7 @@
       text-transform:uppercase;
     }
     .library-stack {
-      display:grid; grid-template-columns:1.15fr .85fr; grid-template-areas:"intro metrics" "search search";
+      display:grid; grid-template-columns:1fr; grid-template-areas:"intro" "search";
       gap:32px; align-items:end;
     }
     .library-intro { grid-area:intro; }
@@ -83,14 +83,6 @@
     .youtube-subscribe-button {
       min-width:176px; min-height:28px; display:flex; align-items:center; justify-content:center;
     }
-    .metric-strip {
-      grid-area:metrics;
-      display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:1px;
-      overflow:hidden; border:1px solid #253142; border-radius:8px; background:#253142;
-    }
-    .metric-item { background:#0b1220; padding:16px; }
-    .metric-item strong { display:block; color:#fff; font-size:28px; line-height:1; font-weight:900; }
-    .metric-item span { display:block; margin-top:7px; color:#94a3b8; font-size:11px; text-transform:uppercase; letter-spacing:.14em; }
     .search-panel {
       grid-area:search;
       background:linear-gradient(180deg,rgba(16,23,34,.98),rgba(8,13,22,.98));
@@ -107,28 +99,12 @@
       box-shadow:inset 0 1px 0 rgba(255,255,255,.03), 0 0 0 1px rgba(20,184,166,.08);
     }
     .library-search::placeholder { color:#64748b; font-weight:700; }
-    .filter-details {
-      border:1px solid #253142; border-radius:8px; background:rgba(2,6,23,.32); overflow:hidden;
-    }
-    .filter-summary {
-      display:flex; align-items:center; justify-content:space-between; gap:14px; padding:13px 14px;
-      cursor:pointer; color:#fff; list-style:none; user-select:none;
-    }
-    .filter-summary::-webkit-details-marker { display:none; }
-    .filter-summary strong { display:block; font-size:13px; font-weight:900; letter-spacing:.14em; text-transform:uppercase; }
-    .filter-summary span { display:block; margin-top:3px; color:#94a3b8; font-size:12px; }
-    .filter-summary svg { flex:0 0 auto; color:#67e8f9; transition:transform .16s ease; }
-    .filter-details[open] .filter-summary svg { transform:rotate(180deg); }
-    .filter-body { padding:0 14px 14px; }
-    .toolbar-grid { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:12px; }
     .section-heading { border-top:1px solid #172033; padding-top:32px; }
     @media (max-width: 900px) {
-      .library-stack { grid-template-columns:1fr; grid-template-areas:"intro" "search" "metrics"; gap:22px; }
-      .toolbar-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }
+      .library-stack { gap:22px; }
     }
     @media (max-width: 640px) {
       .library-hero { padding-top:24px; }
-      .metric-strip, .toolbar-grid { grid-template-columns:1fr; }
       .library-search { font-size:16px; min-height:60px; }
       .youtube-subscribe-card { align-items:flex-start; flex-direction:column; width:100%; }
       .youtube-subscribe-actions { align-items:flex-start; flex-direction:column; width:100%; }
@@ -260,20 +236,6 @@
         </div>
         {% endif %}
       </div>
-      <div class="metric-strip">
-        <div class="metric-item">
-          <strong>{{ show_stats.published_episode_count or 0 }}</strong>
-          <span>Episodes linked</span>
-        </div>
-        <div class="metric-item">
-          <strong>{{ show_stats.youtube_episode_count or 0 }}</strong>
-          <span>YouTube videos</span>
-        </div>
-        <div class="metric-item">
-          <strong>{{ show_stats.podcast_episode_count or 0 }}</strong>
-          <span>Podcast links</span>
-        </div>
-      </div>
 
       <div class="search-panel p-4 md:p-5">
       <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-3 mb-4">
@@ -283,51 +245,6 @@
         <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M16.5 16.5 21 21"/></svg>
         <input id="searchInput" type="text" class="input-shell library-search w-full" placeholder="Search ticker, company, title...">
       </div>
-      <details class="filter-details mt-4">
-        <summary class="filter-summary">
-          <div>
-            <strong>Filters</strong>
-            <span>Quarter, sector, availability, and sort</span>
-          </div>
-          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 6 8 10 12 6"/></svg>
-        </summary>
-        <div class="filter-body">
-          <div class="toolbar-grid">
-            <select id="quarterFilter" class="select-shell px-4 py-3.5 text-sm">
-              <option value="All">All quarters</option>
-              {% for quarter in show_quarters %}
-              <option value="{{ quarter }}">{{ quarter }}</option>
-              {% endfor %}
-            </select>
-            <select id="sectorFilter" class="select-shell px-4 py-3.5 text-sm">
-              <option value="All">All sectors</option>
-              {% for sector in show_sectors %}
-              <option value="{{ sector }}">{{ sector }}</option>
-              {% endfor %}
-            </select>
-            <select id="availabilityFilter" class="select-shell px-4 py-3.5 text-sm">
-              <option value="all">All stocks</option>
-              <option value="published">Published only</option>
-              <option value="youtube">Has YouTube</option>
-              <option value="planned">Needs YouTube link</option>
-            </select>
-            <select id="sortSelect" class="select-shell px-4 py-3.5 text-sm">
-              <option value="newest">Newest quarter / episode</option>
-              <option value="ticker">Ticker</option>
-              <option value="name">Company name</option>
-              <option value="sector">Sector</option>
-              <option value="completion">Most complete</option>
-            </select>
-          </div>
-          <div class="flex flex-wrap items-center justify-between gap-3 mt-4">
-            <div class="flex flex-wrap gap-2">
-              <a href="{{ podcast_platforms.youtube }}" target="_blank" rel="noopener noreferrer" class="btn-secondary text-sm" style="padding:9px 12px;">YouTube Channel</a>
-              <a href="{{ podcast_platforms.spotify }}" target="_blank" rel="noopener noreferrer" class="btn-secondary text-sm" style="padding:9px 12px;">Spotify Show</a>
-            </div>
-            <button id="clearBtn" class="text-sm font-semibold text-cyan-300 hover:text-white transition-colors">Clear filters</button>
-          </div>
-        </div>
-      </details>
       </div>
     </div>
   </div>
@@ -338,8 +255,8 @@
     <div id="stockGrid" class="grid md:grid-cols-2 xl:grid-cols-3 gap-5"></div>
 
     <div id="emptyState" class="empty-state card p-10 text-center mt-6">
-      <div class="text-2xl font-bold text-white mb-2">No stocks matched those filters.</div>
-      <p class="text-slate-500">Try another ticker, sector, or quarter selection.</p>
+      <div class="text-2xl font-bold text-white mb-2">No stocks matched that search.</div>
+      <p class="text-slate-500">Try another ticker, company, quarter, or episode title.</p>
     </div>
 
     <div id="loadMoreWrap" class="text-center mt-10" style="display:none;">
@@ -447,9 +364,6 @@ function tokenMatchesStock(stock, hay, token) {
 
 function matchesFilters(stock) {
   const search = document.getElementById('searchInput').value.trim().toLowerCase();
-  const quarter = document.getElementById('quarterFilter').value;
-  const sector = document.getElementById('sectorFilter').value;
-  const availability = document.getElementById('availabilityFilter').value;
 
   if (search) {
     const episodeHay = Array.isArray(stock.episodes)
@@ -463,22 +377,12 @@ function matchesFilters(stock) {
       return false;
     }
   }
-  if (quarter !== 'All' && !stock.quarter_labels.includes(quarter)) return false;
-  if (sector !== 'All' && stock.sector !== sector) return false;
-  if (availability === 'published' && !(stock.published_count > 0)) return false;
-  if (availability === 'youtube' && !stock.has_youtube) return false;
-  if (availability === 'planned' && stock.published_count > 0) return false;
   return true;
 }
 
 function sortStocks(stocks) {
-  const sort = document.getElementById('sortSelect').value;
   const items = [...stocks];
   items.sort((a, b) => {
-    if (sort === 'ticker') return a.ticker.localeCompare(b.ticker);
-    if (sort === 'name') return a.company.localeCompare(b.company);
-    if (sort === 'sector') return a.sector.localeCompare(b.sector) || a.ticker.localeCompare(b.ticker);
-    if (sort === 'completion') return (b.published_count - a.published_count) || quarterSortValue(b) - quarterSortValue(a);
     return quarterSortValue(b) - quarterSortValue(a) || youtubeCoverage(b) - youtubeCoverage(a) || a.ticker.localeCompare(b.ticker);
   });
   return items;
@@ -560,19 +464,7 @@ function resetAndRender() {
   render();
 }
 
-['searchInput','quarterFilter','sectorFilter','availabilityFilter','sortSelect'].forEach(id => {
-  document.getElementById(id).addEventListener('input', resetAndRender);
-  document.getElementById(id).addEventListener('change', resetAndRender);
-});
-
-document.getElementById('clearBtn').addEventListener('click', () => {
-  document.getElementById('searchInput').value = '';
-  document.getElementById('quarterFilter').value = 'All';
-  document.getElementById('sectorFilter').value = 'All';
-  document.getElementById('availabilityFilter').value = 'all';
-  document.getElementById('sortSelect').value = 'newest';
-  resetAndRender();
-});
+document.getElementById('searchInput').addEventListener('input', resetAndRender);
 
 document.getElementById('loadMoreBtn').addEventListener('click', () => {
   visibleCount += PAGE_SIZE;
