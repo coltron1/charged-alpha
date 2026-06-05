@@ -1008,6 +1008,15 @@ def _number_or_none(value):
         return None
 
 
+def _youtube_thumbnail_url(url):
+    if not url:
+        return ""
+    match = re.search(r"(?:v=|youtu\.be/|embed/|shorts/)([A-Za-z0-9_-]{11})", url)
+    if not match:
+        return ""
+    return f"https://i.ytimg.com/vi/{match.group(1)}/hqdefault.jpg"
+
+
 def _build_fast_show_stock_detail(symbol):
     t, info = fetch_ticker_info(symbol)
     if not info:
@@ -1137,6 +1146,8 @@ def _compact_stock_snapshot(show_stock, allow_fetch=False):
         "company": show_stock["company"],
         "latest_video_quarter": show_stock.get("latest_video_quarter"),
         "latest_youtube_url": show_stock.get("latest_youtube_url"),
+        "latest_spotify_url": show_stock.get("latest_spotify_url"),
+        "youtube_thumbnail_url": _youtube_thumbnail_url(show_stock.get("latest_youtube_url")),
         "market_cap": market_cap,
         "trailing_pe": pick("trailing_pe"),
         "forward_pe": pick("forward_pe"),
@@ -1165,6 +1176,8 @@ def build_stock_competitor_analysis(show_stock, primary_snapshot, all_stocks):
         "company": show_stock["company"],
         "latest_video_quarter": show_stock.get("latest_video_quarter"),
         "latest_youtube_url": show_stock.get("latest_youtube_url"),
+        "latest_spotify_url": show_stock.get("latest_spotify_url"),
+        "youtube_thumbnail_url": _youtube_thumbnail_url(show_stock.get("latest_youtube_url")),
     })
     snapshots.append(primary)
 
@@ -1213,6 +1226,8 @@ def build_stock_competitor_analysis(show_stock, primary_snapshot, all_stocks):
             "company": snap.get("company"),
             "latest_video_quarter": snap.get("latest_video_quarter") or "YouTube link pending",
             "latest_youtube_url": snap.get("latest_youtube_url") or "",
+            "latest_spotify_url": snap.get("latest_spotify_url") or "",
+            "youtube_thumbnail_url": snap.get("youtube_thumbnail_url") or _youtube_thumbnail_url(snap.get("latest_youtube_url")),
             "insights": _comparison_insights(snap),
         })
 

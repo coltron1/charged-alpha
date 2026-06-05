@@ -52,6 +52,17 @@
       content:''; position:absolute; left:0; right:0; top:0; height:3px;
       background:linear-gradient(90deg,#ef4444,#14b8a6,#6366f1);
     }
+    .competitor-thumb {
+      display:block; position:relative; overflow:hidden; aspect-ratio:16/9; border-radius:12px;
+      border:1px solid #1e293b; background:#020617; margin-bottom:16px; text-decoration:none;
+    }
+    .competitor-thumb img { width:100%; height:100%; object-fit:cover; display:block; transition:transform .18s ease, opacity .18s ease; }
+    .competitor-thumb:hover img { transform:scale(1.03); opacity:.86; }
+    .competitor-thumb span {
+      position:absolute; left:10px; bottom:10px; display:inline-flex; align-items:center; gap:6px;
+      padding:6px 9px; border-radius:8px; background:rgba(220,38,38,.92); color:#fff;
+      font-size:11px; font-weight:800;
+    }
   </style>
 </head>
 <body class="min-h-screen">
@@ -249,14 +260,25 @@
     <div class="p-6 md:p-8 grid lg:grid-cols-3 gap-4 border-b border-slate-800">
       {% for stock in competitor_analysis.stocks %}
       <div class="card p-5" style="background:#0f172a;border-color:#1e293b;">
+        {% if stock.youtube_thumbnail_url and stock.latest_youtube_url %}
+        <a href="{{ stock.latest_youtube_url }}" target="_blank" rel="noopener noreferrer" class="competitor-thumb" aria-label="Open {{ stock.company }} video on YouTube">
+          <img src="{{ stock.youtube_thumbnail_url }}" alt="{{ stock.company }} latest YouTube video thumbnail" loading="lazy">
+          <span>YouTube</span>
+        </a>
+        {% endif %}
         <div class="flex items-center justify-between gap-3 mb-3">
           <div>
             <div class="text-lg font-bold text-white">{{ stock.company }}</div>
             <div class="text-xs text-slate-500">{{ stock.ticker }}</div>
           </div>
-          {% if stock.latest_youtube_url %}
-          <a href="{{ stock.latest_youtube_url }}" target="_blank" rel="noopener noreferrer" class="platform-pill" style="background:#dc2626; padding:6px 10px; font-size:11px;">YouTube</a>
-          {% endif %}
+          <div class="flex flex-wrap justify-end gap-2">
+            {% if stock.latest_youtube_url %}
+            <a href="{{ stock.latest_youtube_url }}" target="_blank" rel="noopener noreferrer" class="platform-pill" style="background:#dc2626; padding:6px 10px; font-size:11px;">YouTube</a>
+            {% endif %}
+            {% if stock.latest_spotify_url %}
+            <a href="{{ stock.latest_spotify_url }}" target="_blank" rel="noopener noreferrer" class="platform-pill" style="background:#16a34a; padding:6px 10px; font-size:11px;">Spotify</a>
+            {% endif %}
+          </div>
         </div>
         <div class="text-xs uppercase tracking-[.18em] text-slate-500 mb-3">Latest video</div>
         <div class="text-sm font-semibold text-white mb-4">{{ stock.latest_video_quarter }}</div>
