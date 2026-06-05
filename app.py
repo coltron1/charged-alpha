@@ -1357,22 +1357,17 @@ def health():
 # ═════════════════════════════════════════════════════════════════════════════
 @app.route("/")
 def index():
-    shows_data = load_shows_catalog()
-    show_library = build_show_library(shows_data.get("episodes", []))
-    video_sections = shows_data.get("video_sections", [])
-    featured_videos = flatten_video_sections(video_sections)[:6]
-    featured_stocks = [
-        stock for stock in show_library["stocks"] if stock.get("published_count")
-    ][:6]
+    context = _shows_context()
+    shows_data = context["shows_data"]
+    show_library = context["show_library"]
     return render_template(
-        "index.html",
-        podcast_platforms=shows_data.get("platform_links", {}),
+        "shows.html",
+        show_stocks=show_library.get("stocks", []),
         show_stats=show_library.get("stats", {}),
-        featured_stocks=featured_stocks,
-        featured_videos=featured_videos,
-        games=_hydrate_game_catalog(current_user),
-        video_sections=video_sections,
         show_quarters=show_library.get("quarters", []),
+        show_sectors=show_library.get("sectors", []),
+        video_sections=shows_data.get("video_sections", []),
+        podcast_platforms=shows_data.get("platform_links", {}),
     )
 
 

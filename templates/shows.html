@@ -135,9 +135,9 @@
       </div>
     </a>
     <nav class="hidden md:flex items-center gap-6">
-      <a href="/" class="text-sm text-slate-400 hover:text-white no-underline">Home</a>
-      <a href="/#tools" class="text-sm text-slate-400 hover:text-white no-underline">Tools</a>
-      <a href="/shows" class="text-sm text-white font-semibold no-underline">Shows</a>
+      <a href="/" class="text-sm {% if request.path == '/' %}text-white font-semibold{% else %}text-slate-400 hover:text-white{% endif %} no-underline">Home</a>
+      <a href="/screener/" class="text-sm text-slate-400 hover:text-white no-underline">Tools</a>
+      <a href="/shows" class="text-sm {% if request.path == '/shows' %}text-white font-semibold{% else %}text-slate-400 hover:text-white{% endif %} no-underline">Shows</a>
       <a href="{{ podcast_platforms.youtube }}" target="_blank" rel="noopener noreferrer" class="btn-secondary text-sm" style="padding:10px 14px;">YouTube Channel</a>
     </nav>
   </div>
