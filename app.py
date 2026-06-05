@@ -791,6 +791,47 @@ def build_show_library(episodes):
     }
 
 
+def build_show_client_stocks(stocks):
+    client_stocks = []
+    for stock in stocks or []:
+        search_text = " ".join(
+            [
+                stock.get("ticker") or "",
+                stock.get("company") or "",
+                stock.get("sector") or "",
+                " ".join(
+                    f"{episode.get('title') or ''} {episode.get('quarter') or ''}"
+                    for episode in stock.get("episodes", [])
+                ),
+            ]
+        )
+        client_stocks.append(
+            {
+                "slug": stock.get("slug"),
+                "ticker": stock.get("ticker"),
+                "company": stock.get("company"),
+                "sector": stock.get("sector"),
+                "quarter_count": stock.get("quarter_count", 0),
+                "published_count": stock.get("published_count", 0),
+                "youtube_count": stock.get("youtube_count", 0),
+                "podcast_count": stock.get("podcast_count", 0),
+                "latest_quarter": stock.get("latest_quarter"),
+                "latest_video_quarter": stock.get("latest_video_quarter"),
+                "latest_status": stock.get("latest_status"),
+                "quarter_labels": stock.get("quarter_labels", []),
+                "latest_links": stock.get("latest_links", {}),
+                "latest_youtube_url": stock.get("latest_youtube_url"),
+                "latest_spotify_url": stock.get("latest_spotify_url"),
+                "latest_podcast_url": stock.get("latest_podcast_url"),
+                "has_youtube": stock.get("has_youtube", False),
+                "has_podcast": stock.get("has_podcast", False),
+                "latest_quarter_sort": stock.get("latest_quarter_sort", (0, 0, "")),
+                "search_text": search_text,
+            }
+        )
+    return client_stocks
+
+
 def flatten_video_sections(video_sections):
     videos = []
     for section in video_sections or []:
@@ -958,17 +999,114 @@ def _pick_competitor_stocks(show_stock, all_stocks):
     return picks[:2]
 
 
-def _compact_stock_snapshot(show_stock):
-    _, info = fetch_ticker_info(show_stock["yf_symbol"])
+def _number_or_none(value):
+    if value in (None, ""):
+        return None
+    try:
+        return float(value)
+    except (TypeError, ValueError):
+        return None
+
+
+def _build_fast_show_stock_detail(symbol):
+    t, info = fetch_ticker_info(symbol)
+    if not info:
+        return {}
+
+    try:
+        fast = t.fast_info or {}
+    except Exception:
+        fast = {}
+
+    def fast_get(key):
+        try:
+            return fast.get(key)
+        except Exception:
+            return None
+
+    def pick_number(*values, decimals=2, scale=1.0, as_int=False):
+        for value in values:
+            num = _number_or_none(value)
+            if num is None:
+                continue
+            num *= scale
+            if as_int:
+                return int(round(num))
+            return round(num, decimals)
+        return None
+
+    price = pick_number(fast_get("lastPrice"), info.get("currentPrice"), info.get("regularMarketPrice"), info.get("previousClose"))
+    previous_close = pick_number(fast_get("previousClose"), info.get("previousClose"), info.get("regularMarketPreviousClose"))
+    market_cap = pick_number(fast_get("marketCap"), info.get("marketCap"), decimals=0)
+    volume = pick_number(fast_get("lastVolume"), info.get("volume"), info.get("regularMarketVolume"), as_int=True)
+    target_mean_price = pick_number(info.get("targetMeanPrice"))
+    free_cashflow = pick_number(info.get("freeCashflow"), decimals=0)
+
+    change = change_pct = target_upside = fcf_yield = None
+    if price is not None and previous_close not in (None, 0):
+        change = round(price - previous_close, 2)
+        change_pct = round((price - previous_close) / previous_close * 100, 2)
+    if target_mean_price and price and price > 0:
+        target_upside = round((target_mean_price - price) / price * 100, 1)
+    if free_cashflow and market_cap and market_cap > 0:
+        fcf_yield = round(free_cashflow / market_cap * 100, 2)
+
+    return {
+        "symbol": symbol,
+        "name": info.get("longName") or info.get("shortName") or symbol,
+        "price": price,
+        "previous_close": previous_close,
+        "change": change,
+        "change_pct": change_pct,
+        "week_52_high": pick_number(fast_get("yearHigh"), info.get("fiftyTwoWeekHigh")),
+        "week_52_low": pick_number(fast_get("yearLow"), info.get("fiftyTwoWeekLow")),
+        "trailing_pe": pick_number(info.get("trailingPE")),
+        "forward_pe": pick_number(info.get("forwardPE")),
+        "eps": pick_number(info.get("trailingEps")),
+        "price_to_book": pick_number(info.get("priceToBook")),
+        "market_cap": market_cap,
+        "beta": pick_number(info.get("beta")),
+        "dividend_yield": normalize_div_yield(info.get("trailingAnnualDividendYield") or info.get("dividendYield")),
+        "volume": volume,
+        "sector": info.get("sector"),
+        "industry": info.get("industry"),
+        "target_mean_price": target_mean_price,
+        "revenue_growth": safe_float(info, "revenueGrowth", scale=100),
+        "earnings_growth": safe_float(info, "earningsGrowth", scale=100),
+        "debt_to_equity": pick_number(info.get("debtToEquity")),
+        "current_ratio": pick_number(info.get("currentRatio")),
+        "operating_margin": safe_float(info, "operatingMargins", scale=100),
+        "gross_margin": safe_float(info, "grossMargins", scale=100),
+        "profit_margin": safe_float(info, "profitMargins", scale=100),
+        "return_on_equity": safe_float(info, "returnOnEquity", scale=100),
+        "free_cashflow": free_cashflow,
+        "fcf_yield": fcf_yield,
+        "target_upside": target_upside,
+        "summary": info.get("longBusinessSummary") or "",
+        "website": info.get("website") or "",
+        "country": info.get("country") or "",
+        "employees": info.get("fullTimeEmployees"),
+    }
+
+
+def _compact_stock_snapshot(show_stock, allow_fetch=False):
+    detail_bundle = _cached_show_stock_detail(show_stock["yf_symbol"], allow_fetch=allow_fetch)
+    info = detail_bundle.get("info") if detail_bundle else {}
     info = info or {}
 
     def pick(key, scale=1.0):
-        return safe_float(info, key, scale=scale)
+        value = info.get(key)
+        if value is None:
+            return None
+        try:
+            return round(float(value) * scale, 4)
+        except (TypeError, ValueError):
+            return None
 
-    market_cap = info.get("marketCap")
-    free_cashflow = info.get("freeCashflow")
-    price = info.get("currentPrice") or info.get("regularMarketPrice") or info.get("previousClose")
-    target_mean_price = info.get("targetMeanPrice")
+    market_cap = info.get("market_cap")
+    free_cashflow = info.get("free_cashflow")
+    price = info.get("price")
+    target_mean_price = info.get("target_mean_price")
     fcf_yield = None
     target_upside = None
 
@@ -1000,19 +1138,19 @@ def _compact_stock_snapshot(show_stock):
         "latest_video_quarter": show_stock.get("latest_video_quarter"),
         "latest_youtube_url": show_stock.get("latest_youtube_url"),
         "market_cap": market_cap,
-        "trailing_pe": pick("trailingPE"),
-        "forward_pe": pick("forwardPE"),
-        "revenue_growth": pick("revenueGrowth", scale=100),
-        "earnings_growth": pick("earningsGrowth", scale=100),
-        "operating_margin": pick("operatingMargins", scale=100),
-        "gross_margin": pick("grossMargins", scale=100),
-        "profit_margin": pick("profitMargins", scale=100),
-        "return_on_equity": pick("returnOnEquity", scale=100),
+        "trailing_pe": pick("trailing_pe"),
+        "forward_pe": pick("forward_pe"),
+        "revenue_growth": pick("revenue_growth"),
+        "earnings_growth": pick("earnings_growth"),
+        "operating_margin": pick("operating_margin"),
+        "gross_margin": pick("gross_margin"),
+        "profit_margin": pick("profit_margin"),
+        "return_on_equity": pick("return_on_equity"),
         "fcf_yield": fcf_yield,
-        "debt_to_equity": pick("debtToEquity"),
-        "current_ratio": pick("currentRatio"),
+        "debt_to_equity": pick("debt_to_equity"),
+        "current_ratio": pick("current_ratio"),
         "beta": pick("beta"),
-        "dividend_yield": normalize_div_yield(info.get("trailingAnnualDividendYield") or info.get("dividendYield")),
+        "dividend_yield": pick("dividend_yield"),
         "target_upside": target_upside,
     }
 
@@ -1030,8 +1168,9 @@ def build_stock_competitor_analysis(show_stock, primary_snapshot, all_stocks):
     })
     snapshots.append(primary)
 
-    for comp_stock in competitor_stocks:
-        snapshots.append(_compact_stock_snapshot(comp_stock))
+    if competitor_stocks:
+        with ThreadPoolExecutor(max_workers=min(2, len(competitor_stocks))) as ex:
+            snapshots.extend(ex.map(lambda stock: _compact_stock_snapshot(stock, allow_fetch=True), competitor_stocks))
 
     rows = []
     for metric in COMPARE_METRICS:
@@ -1218,19 +1357,22 @@ def _shows_context():
     context = {
         "shows_data": shows_data,
         "show_library": show_library,
+        "show_client_stocks": build_show_client_stocks(show_library.get("stocks", [])),
     }
     _shows_cache.set("shows_context", context)
     return context
 
 
-def _cached_show_stock_detail(symbol):
+def _cached_show_stock_detail(symbol, allow_fetch=True):
     sym = symbol.upper()
     cache_key = f"show_stock_detail_{sym}"
     cached = _detail_cache.get(cache_key, ttl=900)
     if cached is not None:
         return cached
+    if not allow_fetch:
+        return {}
 
-    data = get_stock_detail(sym, include_options=False) or {}
+    data = {"info": _build_fast_show_stock_detail(sym), "options": []}
     _detail_cache.set(cache_key, data)
     return data
 
@@ -1362,7 +1504,7 @@ def index():
     show_library = context["show_library"]
     return render_template(
         "shows.html",
-        show_stocks=show_library.get("stocks", []),
+        show_stocks=context.get("show_client_stocks", []),
         show_stats=show_library.get("stats", {}),
         show_quarters=show_library.get("quarters", []),
         show_sectors=show_library.get("sectors", []),
@@ -1531,7 +1673,7 @@ def shows():
     show_library = context["show_library"]
     return render_template(
         "shows.html",
-        show_stocks=show_library.get("stocks", []),
+        show_stocks=context.get("show_client_stocks", []),
         show_stats=show_library.get("stats", {}),
         show_quarters=show_library.get("quarters", []),
         show_sectors=show_library.get("sectors", []),
@@ -1550,6 +1692,10 @@ def show_stock_detail_page(ticker_slug):
     if not show_stock:
         return ("Stock show not found", 404)
 
+    prefetch_stocks = [show_stock] + _pick_competitor_stocks(show_stock, show_library["stocks"])
+    with ThreadPoolExecutor(max_workers=min(3, len(prefetch_stocks))) as ex:
+        list(ex.map(lambda stock: _cached_show_stock_detail(stock["yf_symbol"]), prefetch_stocks))
+
     detail_bundle = _cached_show_stock_detail(show_stock["yf_symbol"])
     stock_detail = dict(detail_bundle.get("info") or {})
     if not stock_detail:
@@ -1559,18 +1705,10 @@ def show_stock_detail_page(ticker_slug):
             "sector": show_stock["sector"],
         }
 
-    _, info = fetch_ticker_info(show_stock["yf_symbol"])
-    if info:
-        stock_detail["summary"] = info.get("longBusinessSummary") or ""
-        stock_detail["website"] = info.get("website") or ""
-        stock_detail["industry"] = stock_detail.get("industry") or info.get("industry")
-        stock_detail["country"] = info.get("country") or ""
-        stock_detail["employees"] = info.get("fullTimeEmployees")
-    else:
-        stock_detail.setdefault("summary", "")
-        stock_detail.setdefault("website", "")
-        stock_detail.setdefault("country", "")
-        stock_detail.setdefault("employees", None)
+    stock_detail.setdefault("summary", "")
+    stock_detail.setdefault("website", "")
+    stock_detail.setdefault("country", "")
+    stock_detail.setdefault("employees", None)
 
     for key in (
         "price",

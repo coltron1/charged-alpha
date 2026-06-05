@@ -13,7 +13,7 @@
   <title>{{ seo_meta.title }}</title>
   {% include "partials/seo_meta.html" %}
   <script src="https://cdn.tailwindcss.com"></script>
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js" defer></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <style>
@@ -397,7 +397,16 @@ if (employeeEl) employeeEl.textContent = formatCompact(employeeEl.dataset.value)
 
 const ctx = document.getElementById('priceChart').getContext('2d');
 let chart;
+async function waitForChartLibrary() {
+  for (let attempt = 0; attempt < 40; attempt += 1) {
+    if (window.Chart) return true;
+    await new Promise(resolve => setTimeout(resolve, 50));
+  }
+  return false;
+}
+
 async function loadChart(rangeKey) {
+  if (!await waitForChartLibrary()) return;
   document.querySelectorAll('.range-btn').forEach(btn => btn.classList.toggle('active', btn.dataset.range === rangeKey));
   const res = await fetch(`/screener/api/stock/{{ chart_symbol }}/chart?range=${rangeKey}`);
   const data = await res.json();
@@ -435,7 +444,7 @@ document.querySelectorAll('.range-btn').forEach(btn => {
   btn.addEventListener('click', () => loadChart(btn.dataset.range));
 });
 
-loadChart('1y');
+window.addEventListener('DOMContentLoaded', () => loadChart('1y'));
 </script>
 </body>
 </html>

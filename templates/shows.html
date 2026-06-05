@@ -47,6 +47,12 @@
       background:linear-gradient(135deg,#5eead4,#22c55e); transition:transform .15s ease, box-shadow .15s ease;
     }
     .btn-primary:hover { transform:translateY(-1px); box-shadow:0 10px 24px rgba(34,197,94,.22); }
+    .btn-primary.is-loading { pointer-events:none; opacity:.86; }
+    .btn-primary.is-loading::before {
+      content:''; width:14px; height:14px; border-radius:999px; border:2px solid rgba(4,17,29,.28);
+      border-top-color:#04111d; animation:spin .7s linear infinite;
+    }
+    @keyframes spin { to { transform:rotate(360deg); } }
     .btn-secondary {
       display:inline-flex; align-items:center; justify-content:center; gap:8px; text-decoration:none;
       padding:12px 18px; border-radius:8px; font-weight:600; color:#cbd5e1;
@@ -366,10 +372,7 @@ function matchesFilters(stock) {
   const search = document.getElementById('searchInput').value.trim().toLowerCase();
 
   if (search) {
-    const episodeHay = Array.isArray(stock.episodes)
-      ? stock.episodes.map(ep => `${ep.title || ''} ${ep.quarter || ''}`).join(' ')
-      : '';
-    const hay = `${stock.ticker} ${stock.company} ${stock.sector} ${episodeHay}`.toLowerCase();
+    const hay = String(stock.search_text || `${stock.ticker} ${stock.company} ${stock.sector}`).toLowerCase();
     const tokens = search.split(/\s+/).filter(Boolean);
     if (tokens.length === 1 && EXACT_TICKERS.has(tokens[0])) {
       if (String(stock.ticker || '').toLowerCase() !== tokens[0]) return false;
@@ -432,7 +435,7 @@ function renderCard(stock) {
       </div>
 
       <div class="mt-auto flex flex-wrap gap-3">
-        <a href="/shows/${stock.slug}" class="btn-primary flex-1">Stock Analysis</a>
+        <a href="/shows/${stock.slug}" class="btn-primary flex-1" data-analysis-link>Stock Analysis</a>
         ${stock.latest_links.youtube ? `<a href="${stock.latest_links.youtube}" target="_blank" rel="noopener noreferrer" class="btn-secondary">Latest on YouTube</a>` : ''}
         ${!stock.latest_links.youtube && stock.latest_links.podcast ? `<a href="${stock.latest_links.podcast}" target="_blank" rel="noopener noreferrer" class="btn-secondary">Latest Podcast</a>` : ''}
       </div>
@@ -469,6 +472,20 @@ document.getElementById('searchInput').addEventListener('input', resetAndRender)
 document.getElementById('loadMoreBtn').addEventListener('click', () => {
   visibleCount += PAGE_SIZE;
   render();
+});
+
+document.addEventListener('click', event => {
+  const link = event.target.closest('[data-analysis-link]');
+  if (!link) return;
+  link.classList.add('is-loading');
+  link.textContent = 'Opening analysis...';
+});
+
+window.addEventListener('pageshow', () => {
+  document.querySelectorAll('[data-analysis-link].is-loading').forEach(link => {
+    link.classList.remove('is-loading');
+    link.textContent = 'Stock Analysis';
+  });
 });
 
 render();
