@@ -15,6 +15,9 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  {% if request.path == '/' %}
+  <script src="https://apis.google.com/js/platform.js" async defer></script>
+  {% endif %}
   <style>
     * { font-family: 'Inter', system-ui, sans-serif; }
     body { background:#070b12; color:#e2e8f0; }
@@ -63,6 +66,23 @@
       gap:32px; align-items:end;
     }
     .library-intro { grid-area:intro; }
+    .youtube-subscribe-card {
+      display:inline-flex; align-items:center; gap:16px; margin-top:22px; padding:12px 14px;
+      border:1px solid rgba(239,68,68,.32); border-radius:8px; background:rgba(239,68,68,.08);
+      box-shadow:0 16px 46px rgba(0,0,0,.22);
+    }
+    .youtube-subscribe-card strong { display:block; color:#fff; font-size:13px; line-height:1.2; }
+    .youtube-subscribe-card span { display:block; margin-top:3px; color:#fca5a5; font-size:12px; }
+    .youtube-subscribe-actions { display:flex; align-items:center; gap:10px; }
+    .youtube-subscribe-fallback {
+      display:inline-flex; align-items:center; justify-content:center; min-height:40px; padding:0 14px;
+      border-radius:8px; background:#dc2626; color:#fff; text-decoration:none; font-size:13px; font-weight:800;
+      box-shadow:0 12px 26px rgba(220,38,38,.18); transition:background .15s ease, transform .15s ease;
+    }
+    .youtube-subscribe-fallback:hover { background:#ef4444; transform:translateY(-1px); }
+    .youtube-subscribe-button {
+      min-width:176px; min-height:28px; display:flex; align-items:center; justify-content:center;
+    }
     .metric-strip {
       grid-area:metrics;
       display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:1px;
@@ -97,6 +117,10 @@
       .library-hero { padding-top:24px; }
       .metric-strip, .toolbar-grid { grid-template-columns:1fr; }
       .library-search { font-size:16px; min-height:60px; }
+      .youtube-subscribe-card { align-items:flex-start; flex-direction:column; width:100%; }
+      .youtube-subscribe-actions { align-items:flex-start; flex-direction:column; width:100%; }
+      .youtube-subscribe-fallback { width:100%; }
+      .youtube-subscribe-button { width:100%; justify-content:flex-start; }
     }
     .stock-card { position:relative; overflow:hidden; }
     .stock-card::before {
@@ -208,6 +232,20 @@
         <p class="text-base md:text-lg text-slate-400 leading-relaxed max-w-3xl">
           Find a ticker, company, quarter, or episode title, then jump straight to the stock page, YouTube video, Spotify episode, or podcast page.
         </p>
+        {% if request.path == '/' %}
+        <div class="youtube-subscribe-card">
+          <div>
+            <strong>Subscribe to Charged Alpha on YouTube</strong>
+            <span>Catch new stock research videos as they go live.</span>
+          </div>
+          <div class="youtube-subscribe-actions">
+            <a href="https://www.youtube.com/channel/UC4ZDZpC0OvoN4cCGoUSofuA?sub_confirmation=1" target="_blank" rel="noopener noreferrer" class="youtube-subscribe-fallback">Subscribe</a>
+            <div class="youtube-subscribe-button">
+              <div class="g-ytsubscribe" data-channelid="UC4ZDZpC0OvoN4cCGoUSofuA" data-layout="full" data-count="default"></div>
+            </div>
+          </div>
+        </div>
+        {% endif %}
       </div>
       <div class="metric-strip">
         <div class="metric-item">
