@@ -120,6 +120,41 @@
       content:''; position:absolute; left:0; right:0; top:0; height:3px;
       background:linear-gradient(90deg,#ef4444,#14b8a6,#6366f1);
     }
+    .nav-link {
+      color:#94a3b8; font-size:14px; font-weight:500; text-decoration:none;
+      transition:color .15s ease;
+    }
+    .nav-link:hover { color:#fff; }
+    .nav-link.active { color:#fff; font-weight:700; }
+    .tools-menu { position:relative; }
+    .tools-trigger {
+      display:inline-flex; align-items:center; gap:5px; color:#94a3b8; font-size:14px; font-weight:500;
+      background:transparent; border:0; padding:0; cursor:pointer; font-family:inherit;
+      transition:color .15s ease;
+    }
+    .tools-trigger:hover, .tools-menu:focus-within .tools-trigger, .tools-menu:hover .tools-trigger { color:#fff; }
+    .tools-trigger svg { transition:transform .15s ease; }
+    .tools-menu:focus-within .tools-trigger svg, .tools-menu:hover .tools-trigger svg { transform:rotate(180deg); }
+    .tools-panel {
+      display:none; position:absolute; top:calc(100% + 14px); left:50%; transform:translateX(-50%);
+      width:520px; max-width:calc(100vw - 48px); padding:10px; border:1px solid #253142;
+      border-radius:8px; background:#0b1220; box-shadow:0 22px 70px rgba(0,0,0,.42); z-index:80;
+      grid-template-columns:repeat(2,minmax(0,1fr)); gap:4px;
+    }
+    .tools-menu:focus-within .tools-panel, .tools-menu:hover .tools-panel { display:grid; }
+    .tools-panel::before {
+      content:''; position:absolute; left:0; right:0; top:-14px; height:14px;
+    }
+    .tool-link {
+      display:flex; align-items:center; justify-content:space-between; gap:10px; padding:10px 12px;
+      border-radius:8px; color:#cbd5e1; text-decoration:none; font-size:13px; font-weight:650;
+      transition:background .15s ease,color .15s ease;
+    }
+    .tool-link:hover { background:rgba(56,189,248,.08); color:#fff; }
+    .tool-link span { color:#64748b; font-size:11px; font-weight:800; text-transform:uppercase; letter-spacing:.08em; }
+    @media (max-width: 900px) {
+      .tools-panel { width:360px; grid-template-columns:1fr; }
+    }
     .empty-state { display:none; }
   </style>
 </head>
@@ -135,9 +170,29 @@
       </div>
     </a>
     <nav class="hidden md:flex items-center gap-6">
-      <a href="/" class="text-sm {% if request.path == '/' %}text-white font-semibold{% else %}text-slate-400 hover:text-white{% endif %} no-underline">Home</a>
-      <a href="/screener/" class="text-sm text-slate-400 hover:text-white no-underline">Tools</a>
-      <a href="/shows" class="text-sm {% if request.path == '/shows' %}text-white font-semibold{% else %}text-slate-400 hover:text-white{% endif %} no-underline">Shows</a>
+      <a href="/" class="nav-link {% if request.path == '/' %}active{% endif %}">Home</a>
+      <div class="tools-menu">
+        <button type="button" class="tools-trigger" aria-haspopup="true">
+          Tools
+          <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 12 12" aria-hidden="true"><path d="M3 4.5 6 7.5 9 4.5"/></svg>
+        </button>
+        <div class="tools-panel" role="menu">
+          <a href="/screener/" class="tool-link" role="menuitem">Stock Screener <span>Stocks</span></a>
+          <a href="/mutual-funds/" class="tool-link" role="menuitem">Mutual Fund Screener <span>Funds</span></a>
+          <a href="/etf/" class="tool-link" role="menuitem">ETF Screener <span>ETFs</span></a>
+          <a href="/crypto/" class="tool-link" role="menuitem">Crypto Screener <span>Crypto</span></a>
+          <a href="/options/" class="tool-link" role="menuitem">Options Scanner <span>Options</span></a>
+          <a href="/bonds/" class="tool-link" role="menuitem">Bond Dashboard <span>Rates</span></a>
+          <a href="/reits/" class="tool-link" role="menuitem">REIT Screener <span>REITs</span></a>
+          <a href="/forex/" class="tool-link" role="menuitem">Forex Heatmap <span>FX</span></a>
+          <a href="/commodities/" class="tool-link" role="menuitem">Commodities Dashboard <span>Futures</span></a>
+          <a href="/earnings/" class="tool-link" role="menuitem">Earnings Calendar <span>Reports</span></a>
+          <a href="/gold/" class="tool-link" role="menuitem">Precious Metals <span>Metals</span></a>
+          <a href="/charts/" class="tool-link" role="menuitem">Stock Charts <span>Charts</span></a>
+        </div>
+      </div>
+      <a href="/shows" class="nav-link {% if request.path == '/shows' %}active{% endif %}">Shows</a>
+      <a href="/games" class="nav-link {% if request.path.startswith('/games') %}active{% endif %}">Games</a>
       <a href="{{ podcast_platforms.youtube }}" target="_blank" rel="noopener noreferrer" class="btn-secondary text-sm" style="padding:10px 14px;">YouTube Channel</a>
     </nav>
   </div>
