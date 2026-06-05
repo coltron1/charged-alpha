@@ -85,7 +85,7 @@
     }
     .metric-strip {
       grid-area:metrics;
-      display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:1px;
+      display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:1px;
       overflow:hidden; border:1px solid #253142; border-radius:8px; background:#253142;
     }
     .metric-item { background:#0b1220; padding:16px; }
@@ -107,6 +107,19 @@
       box-shadow:inset 0 1px 0 rgba(255,255,255,.03), 0 0 0 1px rgba(20,184,166,.08);
     }
     .library-search::placeholder { color:#64748b; font-weight:700; }
+    .filter-details {
+      border:1px solid #253142; border-radius:8px; background:rgba(2,6,23,.32); overflow:hidden;
+    }
+    .filter-summary {
+      display:flex; align-items:center; justify-content:space-between; gap:14px; padding:13px 14px;
+      cursor:pointer; color:#fff; list-style:none; user-select:none;
+    }
+    .filter-summary::-webkit-details-marker { display:none; }
+    .filter-summary strong { display:block; font-size:13px; font-weight:900; letter-spacing:.14em; text-transform:uppercase; }
+    .filter-summary span { display:block; margin-top:3px; color:#94a3b8; font-size:12px; }
+    .filter-summary svg { flex:0 0 auto; color:#67e8f9; transition:transform .16s ease; }
+    .filter-details[open] .filter-summary svg { transform:rotate(180deg); }
+    .filter-body { padding:0 14px 14px; }
     .toolbar-grid { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:12px; }
     .section-heading { border-top:1px solid #172033; padding-top:32px; }
     @media (max-width: 900px) {
@@ -249,10 +262,6 @@
       </div>
       <div class="metric-strip">
         <div class="metric-item">
-          <strong>{{ show_stats.stock_count or 0 }}</strong>
-          <span>Stocks tracked</span>
-        </div>
-        <div class="metric-item">
           <strong>{{ show_stats.published_episode_count or 0 }}</strong>
           <span>Episodes linked</span>
         </div>
@@ -269,46 +278,56 @@
       <div class="search-panel p-4 md:p-5">
       <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-3 mb-4">
         <label for="searchInput" class="text-sm font-black text-white uppercase tracking-[.18em]">Find an earnings video</label>
-        <p id="resultCount" class="text-sm text-slate-400">0 stocks</p>
       </div>
       <div class="search-field-wrap">
         <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M16.5 16.5 21 21"/></svg>
         <input id="searchInput" type="text" class="input-shell library-search w-full" placeholder="Search ticker, company, title...">
       </div>
-      <div class="toolbar-grid mt-4">
-        <select id="quarterFilter" class="select-shell px-4 py-3.5 text-sm">
-          <option value="All">All quarters</option>
-          {% for quarter in show_quarters %}
-          <option value="{{ quarter }}">{{ quarter }}</option>
-          {% endfor %}
-        </select>
-        <select id="sectorFilter" class="select-shell px-4 py-3.5 text-sm">
-          <option value="All">All sectors</option>
-          {% for sector in show_sectors %}
-          <option value="{{ sector }}">{{ sector }}</option>
-          {% endfor %}
-        </select>
-        <select id="availabilityFilter" class="select-shell px-4 py-3.5 text-sm">
-          <option value="all">All stocks</option>
-          <option value="published">Published only</option>
-          <option value="youtube">Has YouTube</option>
-          <option value="planned">Needs YouTube link</option>
-        </select>
-        <select id="sortSelect" class="select-shell px-4 py-3.5 text-sm">
-          <option value="newest">Newest quarter / episode</option>
-          <option value="ticker">Ticker</option>
-          <option value="name">Company name</option>
-          <option value="sector">Sector</option>
-          <option value="completion">Most complete</option>
-        </select>
-      </div>
-      <div class="flex flex-wrap items-center justify-between gap-3 mt-4">
-        <div class="flex flex-wrap gap-2">
-          <a href="{{ podcast_platforms.youtube }}" target="_blank" rel="noopener noreferrer" class="btn-secondary text-sm" style="padding:9px 12px;">YouTube Channel</a>
-          <a href="{{ podcast_platforms.spotify }}" target="_blank" rel="noopener noreferrer" class="btn-secondary text-sm" style="padding:9px 12px;">Spotify Show</a>
+      <details class="filter-details mt-4">
+        <summary class="filter-summary">
+          <div>
+            <strong>Filters</strong>
+            <span>Quarter, sector, availability, and sort</span>
+          </div>
+          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 6 8 10 12 6"/></svg>
+        </summary>
+        <div class="filter-body">
+          <div class="toolbar-grid">
+            <select id="quarterFilter" class="select-shell px-4 py-3.5 text-sm">
+              <option value="All">All quarters</option>
+              {% for quarter in show_quarters %}
+              <option value="{{ quarter }}">{{ quarter }}</option>
+              {% endfor %}
+            </select>
+            <select id="sectorFilter" class="select-shell px-4 py-3.5 text-sm">
+              <option value="All">All sectors</option>
+              {% for sector in show_sectors %}
+              <option value="{{ sector }}">{{ sector }}</option>
+              {% endfor %}
+            </select>
+            <select id="availabilityFilter" class="select-shell px-4 py-3.5 text-sm">
+              <option value="all">All stocks</option>
+              <option value="published">Published only</option>
+              <option value="youtube">Has YouTube</option>
+              <option value="planned">Needs YouTube link</option>
+            </select>
+            <select id="sortSelect" class="select-shell px-4 py-3.5 text-sm">
+              <option value="newest">Newest quarter / episode</option>
+              <option value="ticker">Ticker</option>
+              <option value="name">Company name</option>
+              <option value="sector">Sector</option>
+              <option value="completion">Most complete</option>
+            </select>
+          </div>
+          <div class="flex flex-wrap items-center justify-between gap-3 mt-4">
+            <div class="flex flex-wrap gap-2">
+              <a href="{{ podcast_platforms.youtube }}" target="_blank" rel="noopener noreferrer" class="btn-secondary text-sm" style="padding:9px 12px;">YouTube Channel</a>
+              <a href="{{ podcast_platforms.spotify }}" target="_blank" rel="noopener noreferrer" class="btn-secondary text-sm" style="padding:9px 12px;">Spotify Show</a>
+            </div>
+            <button id="clearBtn" class="text-sm font-semibold text-cyan-300 hover:text-white transition-colors">Clear filters</button>
+          </div>
         </div>
-        <button id="clearBtn" class="text-sm font-semibold text-cyan-300 hover:text-white transition-colors">Clear filters</button>
-      </div>
+      </details>
       </div>
     </div>
   </div>
@@ -522,10 +541,8 @@ function render() {
   const visible = filtered.slice(0, visibleCount);
   const grid = document.getElementById('stockGrid');
   const empty = document.getElementById('emptyState');
-  const count = document.getElementById('resultCount');
   const loadMoreWrap = document.getElementById('loadMoreWrap');
 
-  count.textContent = `${filtered.length} stock page${filtered.length === 1 ? '' : 's'}`;
   if (!filtered.length) {
     grid.innerHTML = '';
     empty.style.display = 'block';
