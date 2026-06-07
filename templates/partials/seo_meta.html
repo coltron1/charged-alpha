@@ -7,6 +7,12 @@
 <meta property="og:title" content="{{ seo_meta.og_title }}">
 <meta property="og:description" content="{{ seo_meta.og_description }}">
 <meta property="og:url" content="{{ seo_meta.canonical_url }}">
+{% if seo_meta.og_image %}
+<meta property="og:image" content="{{ seo_meta.og_image }}">
+{% endif %}
 <meta name="twitter:card" content="{{ seo_meta.twitter_card }}">
 <meta name="twitter:title" content="{{ seo_meta.og_title }}">
 <meta name="twitter:description" content="{{ seo_meta.og_description }}">
+{% if seo_meta.twitter_image %}
+<meta name="twitter:image" content="{{ seo_meta.twitter_image }}">
+{% endif %}

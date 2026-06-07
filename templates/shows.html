@@ -12,6 +12,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{{ seo_meta.title }}</title>
   {% include "partials/seo_meta.html" %}
+  {% for item in structured_data or [] %}
+  <script type="application/ld+json">{{ item | tojson }}</script>
+  {% endfor %}
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -344,10 +347,15 @@
 </footer>
 
 <script>
-const STOCKS = {{ show_stocks | tojson }};
+let STOCKS = {{ show_stocks | tojson }};
 const PAGE_SIZE = 24;
-const EXACT_TICKERS = new Set(STOCKS.map(stock => String(stock.ticker || '').toLowerCase()));
+const SEARCH_API_URL = '/api/shows/stocks';
+let EXACT_TICKERS = new Set();
 let visibleCount = PAGE_SIZE;
+
+function refreshTickerSet() {
+  EXACT_TICKERS = new Set(STOCKS.map(stock => String(stock.ticker || '').toLowerCase()));
+}
 
 function youtubeCoverage(stock) {
   return parseInt(stock.published_count || '0', 10) || 0;
@@ -467,7 +475,11 @@ function resetAndRender() {
   render();
 }
 
-document.getElementById('searchInput').addEventListener('input', resetAndRender);
+const searchInput = document.getElementById('searchInput');
+const initialSearch = new URLSearchParams(window.location.search).get('search') || new URLSearchParams(window.location.search).get('q') || '';
+if (initialSearch) searchInput.value = initialSearch;
+
+searchInput.addEventListener('input', resetAndRender);
 
 document.getElementById('loadMoreBtn').addEventListener('click', () => {
   visibleCount += PAGE_SIZE;
@@ -488,7 +500,23 @@ window.addEventListener('pageshow', () => {
   });
 });
 
+async function loadFullLibrary() {
+  try {
+    const response = await fetch(SEARCH_API_URL);
+    if (!response.ok) return;
+    const data = await response.json();
+    if (!Array.isArray(data.stocks) || !data.stocks.length) return;
+    STOCKS = data.stocks;
+    refreshTickerSet();
+    render();
+  } catch (error) {
+    return;
+  }
+}
+
+refreshTickerSet();
 render();
+loadFullLibrary();
 </script>
 </body>
 </html>

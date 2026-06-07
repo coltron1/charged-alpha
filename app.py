@@ -41,6 +41,8 @@ import threading
 import datetime
 from pathlib import Path
 from concurrent.futures import ThreadPoolExecutor
+from urllib.parse import parse_qs, urlparse
+from xml.sax.saxutils import escape as xml_escape
 try:
     from zoneinfo import ZoneInfo
 except ImportError:
@@ -199,6 +201,9 @@ GAME_SCORE_NAME_RE = re.compile(r"^[A-Za-z][A-Za-z0-9 .'-]{1,23}$")
 def health_check():
     return jsonify({"status": "ok"}), 200
 SITE_URL = os.environ.get("SITE_URL", "https://chargedalpha.com").rstrip("/")
+DEFAULT_SOCIAL_IMAGE_PATH = "/static/assets/charged-alpha-logo.png"
+DEFAULT_SOCIAL_IMAGE_URL = f"{SITE_URL}{DEFAULT_SOCIAL_IMAGE_PATH}"
+SHOWS_INITIAL_STOCK_COUNT = 24
 PUBLIC_SITEMAP_PATHS = [
     "/",
     "/shows",
@@ -216,9 +221,6 @@ PUBLIC_SITEMAP_PATHS = [
     "/charts",
     "/games",
     "/games/front-page-fortune",
-    "/games/harvest-ledger",
-    "/games/sector-oracle",
-    "/games/expiration-date",
 ]
 SEO_DEFAULTS = {
     "title": "Charged Alpha Frontier AI Financial Media — Stock Encyclopedia & Investing Videos",
@@ -230,6 +232,7 @@ SEO_DEFAULTS = {
     "robots": "index,follow,max-image-preview:large",
     "og_type": "website",
     "twitter_card": "summary",
+    "og_image": DEFAULT_SOCIAL_IMAGE_URL,
 }
 SEO_PAGE_META = {
     "/": {
@@ -421,6 +424,11 @@ NOINDEX_EXACT_PATHS = {
 }
 
 
+def _is_noindex_path(path):
+    normalized = _normalize_path(path)
+    return normalized in NOINDEX_EXACT_PATHS or any(normalized.startswith(prefix) for prefix in NOINDEX_PATH_PREFIXES)
+
+
 def _normalize_path(path):
     if not path or path == "/":
         return "/"
@@ -429,6 +437,61 @@ def _normalize_path(path):
 
 def _canonical_url(path):
     return f"{SITE_URL}{_normalize_path(path)}"
+
+
+def _parse_datetime(value):
+    if not value:
+        return None
+    text = str(value).strip()
+    try:
+        parsed = datetime.datetime.fromisoformat(text.replace("Z", "+00:00"))
+        if parsed.tzinfo is None:
+            parsed = parsed.replace(tzinfo=datetime.timezone.utc)
+        return parsed
+    except ValueError:
+        return None
+
+
+def _date_for_sitemap(value):
+    parsed = _parse_datetime(value)
+    if parsed:
+        return parsed.date().isoformat()
+    return ""
+
+
+def _youtube_video_id(url):
+    parsed = urlparse(url or "")
+    if parsed.netloc.endswith("youtu.be"):
+        return parsed.path.strip("/").split("/")[0]
+    if "youtube.com" in parsed.netloc:
+        query_id = parse_qs(parsed.query).get("v", [""])[0]
+        if query_id:
+            return query_id
+        parts = [part for part in parsed.path.split("/") if part]
+        if "embed" in parts:
+            idx = parts.index("embed")
+            return parts[idx + 1] if idx + 1 < len(parts) else ""
+        if "shorts" in parts:
+            idx = parts.index("shorts")
+            return parts[idx + 1] if idx + 1 < len(parts) else ""
+    return ""
+
+
+def _youtube_embed_url(url):
+    video_id = _youtube_video_id(url)
+    return f"https://www.youtube.com/embed/{video_id}" if video_id else ""
+
+
+def _latest_catalog_timestamp(shows_data):
+    timestamps = [
+        ep.get("published_at")
+        for ep in shows_data.get("episodes", [])
+        if ep.get("published_at")
+    ]
+    parsed = [ts for ts in timestamps if _parse_datetime(ts)]
+    if parsed:
+        return max(parsed, key=lambda ts: _parse_datetime(ts))
+    return shows_data.get("last_synced_at", "")
 
 
 def _get_seo_meta(path=None):
@@ -448,6 +511,8 @@ def _get_seo_meta(path=None):
         "og_description": page_meta.get("og_description", description),
         "og_type": page_meta.get("og_type", SEO_DEFAULTS["og_type"]),
         "twitter_card": page_meta.get("twitter_card", SEO_DEFAULTS["twitter_card"]),
+        "og_image": page_meta.get("og_image", SEO_DEFAULTS["og_image"]),
+        "twitter_image": page_meta.get("twitter_image", page_meta.get("og_image", SEO_DEFAULTS["og_image"])),
     }
 
 
@@ -746,13 +811,23 @@ def build_show_library(episodes):
         latest_youtube = next((ep for ep in stock["episodes"] if ep.get("youtube_url")), None)
         latest_spotify = next((ep for ep in stock["episodes"] if ep.get("spotify_url")), None)
         latest_podcast = next((ep for ep in stock["episodes"] if ep.get("podbean_url")), None)
+        dated_episodes = [ep for ep in stock["episodes"] if _parse_datetime(ep.get("published_at"))]
+        latest_published = max(
+            dated_episodes,
+            key=lambda ep: _parse_datetime(ep.get("published_at")),
+            default=latest,
+        )
 
         stock["quarter_count"] = len(stock["episodes"])
         stock["published_count"] = sum(1 for ep in stock["episodes"] if ep.get("has_any_link"))
         stock["youtube_count"] = sum(1 for ep in stock["episodes"] if ep.get("youtube_url"))
         stock["podcast_count"] = sum(1 for ep in stock["episodes"] if ep.get("podbean_url") or ep.get("spotify_url"))
         stock["latest_quarter"] = latest["quarter"]
+        stock["latest_published_at"] = latest_published.get("published_at") or latest.get("published_at") or ""
         stock["latest_video_quarter"] = latest_youtube["quarter"] if latest_youtube else None
+        stock["latest_video_title"] = latest_youtube["title"] if latest_youtube else ""
+        stock["latest_video_published_at"] = latest_youtube["published_at"] if latest_youtube else ""
+        stock["latest_video_thumbnail"] = _youtube_thumbnail_url(latest_youtube.get("youtube_url")) if latest_youtube else DEFAULT_SOCIAL_IMAGE_URL
         stock["latest_status"] = latest_youtube["status"] if latest_youtube else latest["status"]
         stock["quarter_labels"] = [ep["quarter"] for ep in stock["episodes"]]
         stock["latest_links"] = {
@@ -816,7 +891,11 @@ def build_show_client_stocks(stocks):
                 "youtube_count": stock.get("youtube_count", 0),
                 "podcast_count": stock.get("podcast_count", 0),
                 "latest_quarter": stock.get("latest_quarter"),
+                "latest_published_at": stock.get("latest_published_at"),
                 "latest_video_quarter": stock.get("latest_video_quarter"),
+                "latest_video_title": stock.get("latest_video_title"),
+                "latest_video_published_at": stock.get("latest_video_published_at"),
+                "latest_video_thumbnail": stock.get("latest_video_thumbnail"),
                 "latest_status": stock.get("latest_status"),
                 "quarter_labels": stock.get("quarter_labels", []),
                 "latest_links": stock.get("latest_links", {}),
@@ -841,6 +920,144 @@ def flatten_video_sections(video_sections):
             item["section_title"] = section_title
             videos.append(item)
     return videos
+
+
+def _video_object_schema(title, youtube_url, published_at="", description="", thumbnail_url=""):
+    if not youtube_url:
+        return None
+    schema = {
+        "@context": "https://schema.org",
+        "@type": "VideoObject",
+        "name": title,
+        "description": description or title,
+        "thumbnailUrl": [thumbnail_url or _youtube_thumbnail_url(youtube_url)],
+        "url": youtube_url,
+    }
+    embed_url = _youtube_embed_url(youtube_url)
+    if embed_url:
+        schema["embedUrl"] = embed_url
+    if published_at:
+        schema["uploadDate"] = published_at
+    return schema
+
+
+def _website_schema():
+    return {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Charged Alpha",
+        "url": SITE_URL,
+        "potentialAction": {
+            "@type": "SearchAction",
+            "target": f"{SITE_URL}/shows?search={{search_term_string}}",
+            "query-input": "required name=search_term_string",
+        },
+    }
+
+
+def _shows_collection_schema(path, show_library):
+    page_url = _canonical_url(path)
+    stocks = show_library.get("stocks", [])[:24]
+    return {
+        "@context": "https://schema.org",
+        "@type": "CollectionPage",
+        "name": "Charged Alpha Stock Earnings Video Library" if path == "/" else "Charged Alpha Shows",
+        "description": _get_seo_meta(path)["description"],
+        "url": page_url,
+        "isPartOf": {
+            "@type": "WebSite",
+            "name": "Charged Alpha",
+            "url": SITE_URL,
+        },
+        "mainEntity": {
+            "@type": "ItemList",
+            "numberOfItems": show_library.get("stats", {}).get("stock_count", len(stocks)),
+            "itemListElement": [
+                {
+                    "@type": "ListItem",
+                    "position": index + 1,
+                    "url": _canonical_url(f"/shows/{stock['slug']}"),
+                    "name": f"{stock['company']} ({stock['ticker']})",
+                }
+                for index, stock in enumerate(stocks)
+            ],
+        },
+    }
+
+
+def _shows_video_schemas(show_library, limit=12):
+    schemas = []
+    for stock in show_library.get("stocks", []):
+        youtube_url = stock.get("latest_youtube_url")
+        if not youtube_url:
+            continue
+        schema = _video_object_schema(
+            stock.get("latest_video_title") or f"{stock.get('ticker')} earnings analysis",
+            youtube_url,
+            stock.get("latest_video_published_at") or stock.get("latest_published_at"),
+            f"Charged Alpha earnings analysis video for {stock.get('company')} ({stock.get('ticker')}).",
+            stock.get("latest_video_thumbnail"),
+        )
+        if schema:
+            schemas.append(schema)
+        if len(schemas) >= limit:
+            break
+    return schemas
+
+
+def _shows_page_structured_data(path, show_library):
+    return [
+        _website_schema(),
+        _shows_collection_schema(path, show_library),
+        *_shows_video_schemas(show_library),
+    ]
+
+
+def _stock_page_structured_data(show_stock, seo_meta):
+    schemas = [
+        {
+            "@context": "https://schema.org",
+            "@type": "CollectionPage",
+            "name": seo_meta["title"],
+            "description": seo_meta["description"],
+            "url": seo_meta["canonical_url"],
+            "isPartOf": {
+                "@type": "WebSite",
+                "name": "Charged Alpha",
+                "url": SITE_URL,
+            },
+            "about": {
+                "@type": "Organization",
+                "name": show_stock["company"],
+                "tickerSymbol": show_stock["ticker"],
+            },
+            "mainEntity": {
+                "@type": "ItemList",
+                "numberOfItems": len(show_stock.get("episodes", [])),
+                "itemListElement": [
+                    {
+                        "@type": "ListItem",
+                        "position": index + 1,
+                        "name": episode.get("title"),
+                        "url": episode.get("youtube_url") or episode.get("spotify_url") or episode.get("podbean_url") or seo_meta["canonical_url"],
+                    }
+                    for index, episode in enumerate(show_stock.get("episodes", [])[:24])
+                ],
+            },
+        }
+    ]
+    for episode in show_stock.get("episodes", [])[:12]:
+        if not episode.get("youtube_url"):
+            continue
+        schema = _video_object_schema(
+            episode.get("title"),
+            episode.get("youtube_url"),
+            episode.get("published_at"),
+            f"Charged Alpha earnings analysis for {show_stock['company']} ({show_stock['ticker']}) covering {episode.get('quarter')}.",
+        )
+        if schema:
+            schemas.append(schema)
+    return schemas
 
 
 SHOW_COMPETITOR_MAP = {
@@ -1009,12 +1226,10 @@ def _number_or_none(value):
 
 
 def _youtube_thumbnail_url(url):
-    if not url:
-        return ""
-    match = re.search(r"(?:v=|youtu\.be/|embed/|shorts/)([A-Za-z0-9_-]{11})", url)
-    if not match:
-        return ""
-    return f"https://i.ytimg.com/vi/{match.group(1)}/hqdefault.jpg"
+    video_id = _youtube_video_id(url)
+    if not video_id:
+        return DEFAULT_SOCIAL_IMAGE_URL
+    return f"https://i.ytimg.com/vi/{video_id}/maxresdefault.jpg"
 
 
 def _build_fast_show_stock_detail(symbol):
@@ -1434,8 +1649,7 @@ def inject_seo_meta():
 
 @app.after_request
 def apply_seo_headers(response):
-    path = _normalize_path(request.path)
-    if path in NOINDEX_EXACT_PATHS or any(path.startswith(prefix) for prefix in NOINDEX_PATH_PREFIXES):
+    if _is_noindex_path(request.path):
         response.headers["X-Robots-Tag"] = "noindex, nofollow, noarchive"
     return response
 
@@ -1472,23 +1686,41 @@ def robots_txt():
 
 @app.route("/sitemap.xml")
 def sitemap_xml():
-    url_entries = []
-    for path in PUBLIC_SITEMAP_PATHS:
-        loc = f"{SITE_URL}{path}"
-        url_entries.append(
-            "  <url>\n"
-            f"    <loc>{loc}</loc>\n"
-            "  </url>"
-        )
-
     shows_data = load_shows_catalog()
     show_library = build_show_library(shows_data.get("episodes", []))
-    for stock in show_library["stocks"]:
+    latest_catalog_date = _date_for_sitemap(_latest_catalog_timestamp(shows_data))
+
+    def url_entry(loc, lastmod=""):
+        lines = [
+            "  <url>",
+            f"    <loc>{xml_escape(loc)}</loc>",
+        ]
+        if lastmod:
+            lines.append(f"    <lastmod>{xml_escape(lastmod)}</lastmod>")
+        lines.append("  </url>")
+        return "\n".join(lines)
+
+    url_entries = []
+    for path in ("/", "/shows"):
+        if not _is_noindex_path(path):
+            url_entries.append(url_entry(f"{SITE_URL}{path}", latest_catalog_date))
+
+    sorted_stocks = sorted(
+        show_library["stocks"],
+        key=lambda stock: _parse_datetime(stock.get("latest_published_at")) or datetime.datetime.min.replace(tzinfo=datetime.timezone.utc),
+        reverse=True,
+    )
+    for stock in sorted_stocks:
         loc = f"{SITE_URL}/shows/{stock['slug']}"
+        lastmod = _date_for_sitemap(stock.get("latest_published_at"))
+        url_entries.append(url_entry(loc, lastmod))
+
+    for path in PUBLIC_SITEMAP_PATHS:
+        if path in ("/", "/shows") or _is_noindex_path(path):
+            continue
+        loc = f"{SITE_URL}{path}"
         url_entries.append(
-            "  <url>\n"
-            f"    <loc>{loc}</loc>\n"
-            "  </url>"
+            url_entry(loc)
         )
 
     joined_url_entries = "\n".join(url_entries)
@@ -1517,14 +1749,16 @@ def index():
     context = _shows_context()
     shows_data = context["shows_data"]
     show_library = context["show_library"]
+    show_stocks = context.get("show_client_stocks", [])
     return render_template(
         "shows.html",
-        show_stocks=context.get("show_client_stocks", []),
+        show_stocks=show_stocks[:SHOWS_INITIAL_STOCK_COUNT],
         show_stats=show_library.get("stats", {}),
         show_quarters=show_library.get("quarters", []),
         show_sectors=show_library.get("sectors", []),
         video_sections=shows_data.get("video_sections", []),
         podcast_platforms=shows_data.get("platform_links", {}),
+        structured_data=_shows_page_structured_data("/", show_library),
     )
 
 
@@ -1686,15 +1920,26 @@ def shows():
     context = _shows_context()
     shows_data = context["shows_data"]
     show_library = context["show_library"]
+    show_stocks = context.get("show_client_stocks", [])
     return render_template(
         "shows.html",
-        show_stocks=context.get("show_client_stocks", []),
+        show_stocks=show_stocks[:SHOWS_INITIAL_STOCK_COUNT],
         show_stats=show_library.get("stats", {}),
         show_quarters=show_library.get("quarters", []),
         show_sectors=show_library.get("sectors", []),
         video_sections=shows_data.get("video_sections", []),
         podcast_platforms=shows_data.get("platform_links", {}),
+        structured_data=_shows_page_structured_data("/shows", show_library),
     )
+
+
+@app.route("/api/shows/stocks")
+def shows_stocks_api():
+    context = _shows_context()
+    return jsonify({
+        "stocks": context.get("show_client_stocks", []),
+        "stats": context.get("show_library", {}).get("stats", {}),
+    })
 
 
 @app.route("/shows/<ticker_slug>")
@@ -1775,6 +2020,8 @@ def show_stock_detail_page(ticker_slug):
         "og_description": seo_description,
         "og_type": "article",
         "twitter_card": SEO_DEFAULTS["twitter_card"],
+        "og_image": show_stock.get("latest_video_thumbnail") or DEFAULT_SOCIAL_IMAGE_URL,
+        "twitter_image": show_stock.get("latest_video_thumbnail") or DEFAULT_SOCIAL_IMAGE_URL,
     }
 
     return render_template(
@@ -1786,6 +2033,7 @@ def show_stock_detail_page(ticker_slug):
         chart_symbol=show_stock["yf_symbol"],
         podcast_platforms=shows_data.get("platform_links", {}),
         seo_meta=seo_meta,
+        structured_data=_stock_page_structured_data(show_stock, seo_meta),
     )
 
 
