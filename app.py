@@ -223,11 +223,10 @@ PUBLIC_SITEMAP_PATHS = [
     "/games/front-page-fortune",
 ]
 SEO_DEFAULTS = {
-    "title": "Charged Alpha Frontier AI Financial Media — Stock Encyclopedia & Investing Videos",
+    "title": "Charged Alpha Stock Earnings Videos & Research Tools",
     "description": (
-        "Charged Alpha uses frontier AI models to analyze fresh stock earnings "
-        "data, building a frontier AI stock encyclopedia with investing education, "
-        "stock comparison videos, and market research tools."
+        "Search Charged Alpha earnings videos by ticker, quarter, YouTube episode, "
+        "Spotify podcast, and stock analysis page, plus free investing research tools."
     ),
     "robots": "index,follow,max-image-preview:large",
     "og_type": "website",
@@ -236,19 +235,18 @@ SEO_DEFAULTS = {
 }
 SEO_PAGE_META = {
     "/": {
-        "title": "Charged Alpha Frontier AI Financial Media — Stock Encyclopedia & Investing Videos",
+        "title": "Charged Alpha Stock Earnings Videos & Research Tools",
         "description": (
-            "A stock encyclopedia built with frontier AI financial media workflows. "
-            "Frontier AI models analyze fresh stock earnings data for current-data "
-            "investing education, stock comparisons, and market research videos."
+            "Search Charged Alpha earnings videos by ticker, quarter, YouTube "
+            "episode, Spotify podcast, and stock analysis page, plus free "
+            "investing research tools."
         ),
     },
     "/shows": {
-        "title": "Charged Alpha Stock Encyclopedia — Earnings Videos & Stock Research",
+        "title": "Stock Earnings Video Library — Charged Alpha",
         "description": (
-            "Browse Charged Alpha's frontier AI stock encyclopedia with quarterly "
-            "earnings videos, ticker filters, stock analysis pages, and frontier "
-            "AI company research organized by quarter."
+            "Browse Charged Alpha earnings videos and podcast episodes by ticker, "
+            "company, quarter, and stock analysis page."
         ),
     },
     "/screener": {
