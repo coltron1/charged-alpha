@@ -174,8 +174,34 @@
     }
     .tool-link:hover { background:rgba(56,189,248,.08); color:#fff; }
     .tool-link span { color:#64748b; font-size:11px; font-weight:800; text-transform:uppercase; letter-spacing:.08em; }
+    .mobile-menu-btn {
+      display:none; align-items:center; justify-content:center; width:42px; height:42px; border-radius:8px;
+      border:1px solid #283548; background:#0b1220; color:#e2e8f0; cursor:pointer;
+    }
+    .mobile-menu-btn:hover { border-color:#38bdf8; color:#fff; background:rgba(56,189,248,.08); }
+    .mobile-site-menu {
+      display:none; margin-top:16px; padding-top:16px; border-top:1px solid #1e293b;
+    }
+    .mobile-site-menu.open { display:block; }
+    .mobile-menu-section { margin-top:14px; }
+    .mobile-menu-label {
+      display:block; margin-bottom:8px; color:#67e8f9; font-size:11px; font-weight:900;
+      letter-spacing:.18em; text-transform:uppercase;
+    }
+    .mobile-menu-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:8px; }
+    .mobile-site-menu a {
+      display:flex; align-items:center; justify-content:space-between; min-height:40px; padding:10px 12px;
+      border:1px solid #253142; border-radius:8px; background:#0b1220; color:#cbd5e1;
+      text-decoration:none; font-size:13px; font-weight:700;
+    }
+    .mobile-site-menu a:hover, .mobile-site-menu a.active { border-color:#38bdf8; color:#fff; background:rgba(56,189,248,.08); }
+    .mobile-site-menu a span { color:#64748b; font-size:10px; font-weight:900; text-transform:uppercase; letter-spacing:.08em; }
     @media (max-width: 900px) {
       .tools-panel { width:360px; grid-template-columns:1fr; }
+    }
+    @media (max-width: 767px) {
+      .mobile-menu-btn { display:inline-flex; }
+      .mobile-menu-grid { grid-template-columns:1fr; }
     }
     .empty-state { display:none; }
   </style>
@@ -217,6 +243,34 @@
       <a href="/games" class="nav-link {% if request.path.startswith('/games') %}active{% endif %}">Games</a>
       <a href="{{ podcast_platforms.youtube }}" target="_blank" rel="noopener noreferrer" class="btn-secondary text-sm" style="padding:10px 14px;">YouTube Channel</a>
     </nav>
+    <button id="mobileMenuBtn" type="button" class="mobile-menu-btn" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobileSiteMenu">
+      <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+    </button>
+  </div>
+  <div id="mobileSiteMenu" class="mobile-site-menu md:hidden">
+    <div class="mobile-menu-grid">
+      <a href="/" class="{% if request.path == '/' %}active{% endif %}">Home</a>
+      <a href="/shows" class="{% if request.path == '/shows' %}active{% endif %}">Shows</a>
+      <a href="/games" class="{% if request.path.startswith('/games') %}active{% endif %}">Games</a>
+      <a href="{{ podcast_platforms.youtube }}" target="_blank" rel="noopener noreferrer">YouTube</a>
+    </div>
+    <div class="mobile-menu-section">
+      <span class="mobile-menu-label">Tools</span>
+      <div class="mobile-menu-grid">
+        <a href="/screener/">Stock Screener <span>Stocks</span></a>
+        <a href="/mutual-funds/">Mutual Funds <span>Funds</span></a>
+        <a href="/etf/">ETF Screener <span>ETFs</span></a>
+        <a href="/crypto/">Crypto Screener <span>Crypto</span></a>
+        <a href="/options/">Options Scanner <span>Options</span></a>
+        <a href="/bonds/">Bond Dashboard <span>Rates</span></a>
+        <a href="/reits/">REIT Screener <span>REITs</span></a>
+        <a href="/forex/">Forex Heatmap <span>FX</span></a>
+        <a href="/commodities/">Commodities <span>Futures</span></a>
+        <a href="/earnings/">Earnings Calendar <span>Reports</span></a>
+        <a href="/gold/">Precious Metals <span>Metals</span></a>
+        <a href="/charts/">Stock Charts <span>Charts</span></a>
+      </div>
+    </div>
   </div>
 </header>
 
@@ -485,6 +539,21 @@ document.getElementById('loadMoreBtn').addEventListener('click', () => {
   visibleCount += PAGE_SIZE;
   render();
 });
+
+const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+const mobileSiteMenu = document.getElementById('mobileSiteMenu');
+if (mobileMenuBtn && mobileSiteMenu) {
+  mobileMenuBtn.addEventListener('click', () => {
+    const isOpen = mobileSiteMenu.classList.toggle('open');
+    mobileMenuBtn.setAttribute('aria-expanded', String(isOpen));
+  });
+
+  document.addEventListener('click', event => {
+    if (mobileSiteMenu.contains(event.target) || mobileMenuBtn.contains(event.target)) return;
+    mobileSiteMenu.classList.remove('open');
+    mobileMenuBtn.setAttribute('aria-expanded', 'false');
+  });
+}
 
 document.addEventListener('click', event => {
   const link = event.target.closest('[data-analysis-link]');
