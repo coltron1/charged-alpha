@@ -9,6 +9,330 @@
   },
   "episodes": [
     {
+      "ticker": "LEN",
+      "company": "LEN",
+      "sector": "Unclassified",
+      "quarter": "Q2 FY2026",
+      "episode_number": "",
+      "title": "LEN Stock: Buffett Owns 4%, Margins at Decade Lows — Who Blinks? Q2 FY2026",
+      "published_at": "2026-06-11T22:19:26+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=XCIJsCFEh4c",
+      "spotify_url": "",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/len-stock-buffett-owns-4-margins-at-decade-lows-%e2%80%94-who-blinks-q2-fy2026/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "RH",
+      "company": "RH",
+      "sector": "Unclassified",
+      "quarter": "Q1 FY2026",
+      "episode_number": "",
+      "title": "RH Stock: The $2 Loss Head Fake — Guide Raised, Shorts Squeezed Q1 FY2026",
+      "published_at": "2026-06-11T21:57:05+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=XjOK5ENCJ-Q",
+      "spotify_url": "",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/rh-stock-the-2-loss-head-fake-%e2%80%94-guide-raised-shorts-squeezed-q1-fy2026/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "ADBE",
+      "company": "ADBE",
+      "sector": "Unclassified",
+      "quarter": "Q2 FY2026",
+      "episode_number": "",
+      "title": "ADBE Stock: Record Quarter, Raised Guide, Stock Dumps 11% Q2 FY2026",
+      "published_at": "2026-06-11T21:36:12+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=BPfKMXpzGQY",
+      "spotify_url": "",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/adbe-stock-record-quarter-raised-guide-stock-dumps-11-q2-fy2026/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "UEC",
+      "company": "UEC",
+      "sector": "Unclassified",
+      "quarter": "Q3 FY2026",
+      "episode_number": "",
+      "title": "UEC Stock: America’s Biggest New Uranium Mine vs a 25% Crash Q3 FY2026",
+      "published_at": "2026-06-11T01:15:22+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=N70HIJXCCmM",
+      "spotify_url": "",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/uec-stock-america-s-biggest-new-uranium-mine-vs-a-25-crash-q3-fy2026/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "NAVN",
+      "company": "NAVN",
+      "sector": "Unclassified",
+      "quarter": "Q1 FY2027",
+      "episode_number": "",
+      "title": "NAVN Stock: $3.1B Bookings, Guide Raised to 30% Q1 FY2027",
+      "published_at": "2026-06-10T21:31:56+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=qjU6EOAHYgw",
+      "spotify_url": "",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/navn-stock-31b-bookings-guide-raised-to-30-q1-fy2027/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "ORCL",
+      "company": "Oracle Corp.",
+      "sector": "Technology",
+      "quarter": "Q4 FY2026",
+      "episode_number": "",
+      "title": "ORCL Stock: Oracle’s $638B AI Backlog Explodes But the Stock Falls Q4 FY2026",
+      "published_at": "2026-06-10T21:05:58+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=_fMnjHund5g",
+      "spotify_url": "",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/orcl-stock-oracle-s-638b-ai-backlog-explodes-but-the-stock-falls-q4-fy2026/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "CHWY",
+      "company": "CHWY",
+      "sector": "Unclassified",
+      "quarter": "Q1 FY2026",
+      "episode_number": "",
+      "title": "CHWY Stock: The 23-Cent EPS That Wasn’t a Miss Q1 FY2026",
+      "published_at": "2026-06-10T16:21:12+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=8dKVRDfiJRs",
+      "spotify_url": "",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/chwy-stock-the-23-cent-eps-that-wasn-t-a-miss-q1-fy2026/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "CBRL",
+      "company": "CBRL",
+      "sector": "Unclassified",
+      "quarter": "Q3 FY2026",
+      "episode_number": "",
+      "title": "CBRL Stock: Negative Comps but the Stock Pops 27% Q3 FY2026",
+      "published_at": "2026-06-10T15:50:32+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=FvIy2YK1t-4",
+      "spotify_url": "",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/cbrl-stock-negative-comps-but-the-stock-pops-27-q3-fy2026/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "CNM",
+      "company": "CNM",
+      "sector": "Unclassified",
+      "quarter": "Q1 FY2026",
+      "episode_number": "",
+      "title": "CNM Stock: Earnings +10% but the Stock Drops 4% Q1 FY2026",
+      "published_at": "2026-06-10T15:34:42+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=5bEk_7Ap1H8",
+      "spotify_url": "",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/cnm-stock-earnings-10-but-the-stock-drops-4-q1-fy2026/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "DBI",
+      "company": "DBI",
+      "sector": "Unclassified",
+      "quarter": "Q1 FY2026",
+      "episode_number": "",
+      "title": "DBI Stock: Beats Profit, Crashes 24% - The Guide Nobody Touched Q1 FY2026",
+      "published_at": "2026-06-10T15:13:55+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=8gztyOBSoNk",
+      "spotify_url": "",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/dbi-stock-beats-profit-crashes-24-the-guide-nobody-touched-q1-fy2026/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "CASY",
+      "company": "CASY",
+      "sector": "Unclassified",
+      "quarter": "Q4 FY2026",
+      "episode_number": "",
+      "title": "CASY Stock: A Gas-Station Pizza Chain Just Beat by 30% Q4 FY2026",
+      "published_at": "2026-06-10T14:32:38+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=2_WBK7zKKGg",
+      "spotify_url": "",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/casy-stock-a-gas-station-pizza-chain-just-beat-by-30-q4-fy2026/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "SAIL",
+      "company": "SAIL",
+      "sector": "Unclassified",
+      "quarter": "Q1 FY2027",
+      "episode_number": "",
+      "title": "SAIL Stock: ARR Up 26% but Stock Drops 12% Q1 FY2027",
+      "published_at": "2026-06-10T14:09:19+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=2mhBJmJY6Ds",
+      "spotify_url": "",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/sail-stock-arr-up-26-but-stock-drops-12-q1-fy2027/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "UNFI",
+      "company": "UNFI",
+      "sector": "Unclassified",
+      "quarter": "Q3 FY2026",
+      "episode_number": "",
+      "title": "UNFI Stock: Profit Jumps 75% but Stock Drops 12% Q3 FY2026",
+      "published_at": "2026-06-09T16:52:09+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=M2Waz4ui988",
+      "spotify_url": "",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/unfi-stock-profit-jumps-75-but-stock-drops-12-q3-fy2026/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "ASO",
+      "company": "ASO",
+      "sector": "Unclassified",
+      "quarter": "Q1 FY2026",
+      "episode_number": "",
+      "title": "ASO Stock: First Positive Comp in 2 Years at 8x Earnings Q1 FY2026",
+      "published_at": "2026-06-09T16:37:35+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=zU0zwpAyYIw",
+      "spotify_url": "",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/aso-stock-first-positive-comp-in-2-years-at-8x-earnings-q1-fy2026/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "SJM",
+      "company": "SJM",
+      "sector": "Unclassified",
+      "quarter": "Q4 FY2026",
+      "episode_number": "",
+      "title": "SJM Stock: The +20% Beat That Came With a Shrinking Year Q4 FY2026",
+      "published_at": "2026-06-09T16:22:05+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=vz4gPs6IBMY",
+      "spotify_url": "",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/sjm-stock-the-20-beat-that-came-with-a-shrinking-year-q4-fy2026/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "MTN",
+      "company": "MTN",
+      "sector": "Unclassified",
+      "quarter": "Q3 FY2026",
+      "episode_number": "",
+      "title": "MTN Stock: Worst Snow in 50 Years, 6.6% Yield — Trap or Floor? Q3 FY2026",
+      "published_at": "2026-06-08T22:13:49+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=1Q8s-5UR-10",
+      "spotify_url": "",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/mtn-stock-worst-snow-in-50-years-66-yield-%e2%80%94-trap-or-floor-q3-fy2026/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "VFS",
+      "company": "VFS",
+      "sector": "Unclassified",
+      "quarter": "Q1 2026",
+      "episode_number": "",
+      "title": "VFS Stock: Deliveries Up 61% but the Cash Keeps Burning Q1 2026",
+      "published_at": "2026-06-08T21:17:56+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=EodaqPv-tq4",
+      "spotify_url": "",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/vfs-stock-deliveries-up-61-but-the-cash-keeps-burning-q1-2026-1780953477/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "CPB",
+      "company": "CPB",
+      "sector": "Unclassified",
+      "quarter": "Q3 FY2026",
+      "episode_number": "",
+      "title": "CPB Stock: Profit Falls 32% Yet Still Beats — A 5% Yield Trap? Q3 FY2026",
+      "published_at": "2026-06-08T21:17:33+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=Xu8Op8L-fF4",
+      "spotify_url": "",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/cpb-stock-profit-falls-32-yet-still-beats-%e2%80%94-a-5-yield-trap-q3-fy2026-1780953453/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
       "ticker": "NX",
       "company": "NX",
       "sector": "Unclassified",
@@ -20871,6 +21195,22 @@
       "description": "Theme videos, comparisons, and multi-stock frameworks for broader research.",
       "videos": [
         {
+          "title": "5 Consumer Earnings, 1 Verdict: CASY vs CHWY vs LEN vs TCOM vs VFS",
+          "youtube_url": "https://www.youtube.com/watch?v=QBXpdXwT1Zg",
+          "podbean_url": "https://chargedalpha.podbean.com/e/5-consumer-earnings-1-verdict-casy-vs-chwy-vs-len-vs-tcom-vs-vfs/",
+          "spotify_url": "",
+          "published_at": "2026-06-12T13:11:07+00:00",
+          "section": "Market and Sector Explainers",
+          "tickers": [
+            "CASY",
+            "CHWY",
+            "LEN",
+            "TCOM",
+            "VFS"
+          ],
+          "summary": "A multi-stock earnings theme comparing five fresh consumer prints across retail, housing, travel, pets, and EVs."
+        },
+        {
           "title": "The AI Cable War: CRDO vs Marvell, Broadcom, Astera & Arista",
           "youtube_url": "https://www.youtube.com/watch?v=_jw-dMG30ck",
           "spotify_url": "",
@@ -20965,6 +21305,468 @@
       "description": "Fast clips that point viewers into full research videos and stock pages.",
       "videos": [
         {
+          "title": "RETAIL-W24 5 PRINTS — ONE CONSUMER, FIVE VERDICTS #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/uDNcbBrHbTc",
+          "spotify_url": "",
+          "podbean_url": "",
+          "published_at": "2026-06-12T13:17:19+00:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "CASY",
+            "CHWY",
+            "LEN",
+            "TCOM",
+            "VFS"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "RETAIL-W24 Stock: Week 24 2026 in 60 Seconds #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/Tgrh5nLva3c",
+          "spotify_url": "",
+          "podbean_url": "",
+          "published_at": "2026-06-12T13:17:10+00:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "CASY",
+            "CHWY",
+            "LEN",
+            "TCOM",
+            "VFS"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "LEN Stock: Q2 FY2026 in 60 Seconds #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/GBbEB9kksPs",
+          "spotify_url": "",
+          "podbean_url": "",
+          "published_at": "2026-06-11T22:20:53+00:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "LEN"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "LEN 15.6% — BUFFETT VS DECADE-LOW MARGINS #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/2hkmWcWgu3s",
+          "spotify_url": "",
+          "podbean_url": "",
+          "published_at": "2026-06-11T22:20:51+00:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "LEN"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "RH Stock: Q1 FY2026 in 60 Seconds #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/29FBcCbbDug",
+          "spotify_url": "",
+          "podbean_url": "",
+          "published_at": "2026-06-11T21:58:45+00:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "RH"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "RH +7.5% — THE $2 LOSS HEAD FAKE #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/s0KiLtOX6WQ",
+          "spotify_url": "",
+          "podbean_url": "",
+          "published_at": "2026-06-11T21:58:37+00:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "RH"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "ADBE -11% — RECORD QUARTER, -11% ANYWAY #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/qCf6ob9Exas",
+          "spotify_url": "",
+          "podbean_url": "",
+          "published_at": "2026-06-11T21:37:53+00:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "ADBE"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "ADBE Stock: Q2 FY2026 in 60 Seconds #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/fIakQCPPtGo",
+          "spotify_url": "",
+          "podbean_url": "",
+          "published_at": "2026-06-11T21:37:42+00:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "ADBE"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "UEC -25% — FIRST URANIUM, 25% CRASH #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/ixhn2CopiWY",
+          "spotify_url": "",
+          "podbean_url": "",
+          "published_at": "2026-06-11T01:17:47+00:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "UEC"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "UEC Stock: Q3 FY2026 in 60 Seconds #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/l8-d45a2ScM",
+          "spotify_url": "",
+          "podbean_url": "",
+          "published_at": "2026-06-11T01:17:39+00:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "UEC"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "NAVN Stock: Q1 FY2027 in 60 Seconds #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/D--WZXeY0WI",
+          "spotify_url": "",
+          "podbean_url": "",
+          "published_at": "2026-06-10T21:31:56+00:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "NAVN"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "NAVN +40% — RECORD $3.1B BOOKINGS #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/3GnUXjbPSSo",
+          "spotify_url": "",
+          "podbean_url": "",
+          "published_at": "2026-06-10T21:31:56+00:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "NAVN"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "ORCL $638B — RECORD BACKLOG, STOCK FALLS #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/NC2XAlvRmfE",
+          "spotify_url": "",
+          "podbean_url": "",
+          "published_at": "",
+          "section": "Shorts and Clips",
+          "tickers": [],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "ORCL Stock: Q4 FY2026 in 60 Seconds #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/J1oP7Lv6-tM",
+          "spotify_url": "",
+          "podbean_url": "",
+          "published_at": "2026-06-10T21:05:58+00:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "ORCL"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "CHWY Stock: Q1 FY2026 in 60 Seconds #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/YBaJTp3bbgc",
+          "spotify_url": "",
+          "podbean_url": "",
+          "published_at": "2026-06-10T16:21:12+00:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "CHWY"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "CHWY +7.7% — GAAP $0.23 vs ADJ $0.43 #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/S-YZcFph_eY",
+          "spotify_url": "",
+          "podbean_url": "",
+          "published_at": "2026-06-10T16:21:12+00:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "CHWY"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "CBRL Stock: Q3 FY2026 in 60 Seconds #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/9Um01iW3DwQ",
+          "spotify_url": "",
+          "podbean_url": "",
+          "published_at": "2026-06-10T15:50:32+00:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "CBRL"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "CBRL +27% — COMPS STILL NEGATIVE #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/gunMxfacwuQ",
+          "spotify_url": "",
+          "podbean_url": "",
+          "published_at": "2026-06-10T15:50:32+00:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "CBRL"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "CNM Stock: Q1 FY2026 in 60 Seconds #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/5f0jTq6fGQQ",
+          "spotify_url": "",
+          "podbean_url": "",
+          "published_at": "2026-06-10T15:34:42+00:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "CNM"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "CNM +9.6% — EPS UP, STOCK DOWN #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/gyItGl3lNyQ",
+          "spotify_url": "",
+          "podbean_url": "",
+          "published_at": "2026-06-10T15:34:42+00:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "CNM"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "DBI Stock: Q1 FY2026 in 60 Seconds #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/xFHqNAMCpvU",
+          "spotify_url": "",
+          "podbean_url": "",
+          "published_at": "2026-06-10T15:13:55+00:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "DBI"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "DBI -24% — BEAT PROFIT, STILL CRASHED #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/jiTLBu6CPSE",
+          "spotify_url": "",
+          "podbean_url": "",
+          "published_at": "2026-06-10T15:13:55+00:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "DBI"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "CASY Stock: Q4 FY2026 in 60 Seconds #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/NAKqZRr_XUU",
+          "spotify_url": "",
+          "podbean_url": "",
+          "published_at": "2026-06-10T14:32:38+00:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "CASY"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "CASY +66.2% — EPS BEAT BY 30% #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/o3TFe7_VmCw",
+          "spotify_url": "",
+          "podbean_url": "",
+          "published_at": "2026-06-10T14:32:38+00:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "CASY"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "SAIL +26% — ARR SURGES, STOCK SINKS #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/aI3CpSgdq2c",
+          "spotify_url": "",
+          "podbean_url": "",
+          "published_at": "2026-06-10T14:09:19+00:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "SAIL"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "SAIL Stock: Q1 FY2027 in 60 Seconds #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/Rev3bM3iaXI",
+          "spotify_url": "",
+          "podbean_url": "",
+          "published_at": "2026-06-10T14:09:19+00:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "SAIL"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "UNFI Stock: Q3 FY2026 in 60 Seconds #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/nVCe8HZupRA",
+          "spotify_url": "",
+          "podbean_url": "",
+          "published_at": "2026-06-09T16:52:09+00:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "UNFI"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "UNFI +75% — PROFIT UP, STOCK DOWN 12% #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/tBQTfNmQTsA",
+          "spotify_url": "",
+          "podbean_url": "",
+          "published_at": "2026-06-09T16:52:09+00:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "UNFI"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "ASO Stock: Q1 FY2026 in 60 Seconds #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/Cqm1O6ADWQs",
+          "spotify_url": "",
+          "podbean_url": "",
+          "published_at": "2026-06-09T16:37:35+00:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "ASO"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "ASO +2.9% — FIRST POSITIVE COMP IN 2 YEARS #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/mZghX9YnrCE",
+          "spotify_url": "",
+          "podbean_url": "",
+          "published_at": "2026-06-09T16:37:35+00:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "ASO"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "SJM Stock: Q4 FY2026 in 60 Seconds #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/XBCEfsn1O5s",
+          "spotify_url": "",
+          "podbean_url": "",
+          "published_at": "2026-06-09T16:22:05+00:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "SJM"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "SJM +20% — BEAT BUT SALES TO FALL #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/zSYYjxZ7tLE",
+          "spotify_url": "",
+          "podbean_url": "",
+          "published_at": "2026-06-09T16:22:05+00:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "SJM"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "MTN Stock: Q3 FY2026 in 60 Seconds #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/b2nrHWhoH7A",
+          "spotify_url": "",
+          "podbean_url": "",
+          "published_at": "2026-06-08T22:13:49+00:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "MTN"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "MTN -14.9% — WORST SNOW IN 50 YEARS #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/an79uHWfvd4",
+          "spotify_url": "",
+          "podbean_url": "",
+          "published_at": "2026-06-08T22:13:49+00:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "MTN"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "VFS Stock: Q1 2026 in 60 Seconds #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/3dSQiFRGwSo",
+          "spotify_url": "",
+          "podbean_url": "",
+          "published_at": "2026-06-08T21:17:56+00:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "VFS"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "VFS +61% — GROWTH SOARS, CASH BURNS #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/up_hDgsUB1c",
+          "spotify_url": "",
+          "podbean_url": "",
+          "published_at": "2026-06-08T21:17:56+00:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "VFS"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "CPB -32% — PROFIT FALLS BUT BEATS #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/ghlB250isl8",
+          "spotify_url": "",
+          "podbean_url": "",
+          "published_at": "2026-06-08T21:17:33+00:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "CPB"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "CPB Stock: Q3 FY2026 in 60 Seconds #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/iGZ4HOEVmJU",
+          "spotify_url": "",
+          "podbean_url": "",
+          "published_at": "2026-06-08T21:17:33+00:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "CPB"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
           "title": "VST Stock: AI's Power Bill Explained #Shorts",
           "youtube_url": "https://www.youtube.com/shorts/v5lmIj36KGs",
           "spotify_url": "",
@@ -20979,5 +21781,5 @@
       ]
     }
   ],
-  "last_synced_at": "2026-06-06T19:08:19-05:00"
+  "last_synced_at": "2026-06-12T13:39:31-05:00"
 }
