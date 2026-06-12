@@ -39,6 +39,7 @@ import re
 import time
 import threading
 import datetime
+import hashlib
 from pathlib import Path
 from concurrent.futures import ThreadPoolExecutor
 from urllib.parse import parse_qs, urlparse
@@ -195,6 +196,32 @@ GAME_SCORE_NAME_BLOCKLIST = {
     "support",
 }
 GAME_SCORE_NAME_RE = re.compile(r"^[A-Za-z][A-Za-z0-9 .'-]{1,23}$")
+GAME_SEEDED_SCORE_NAMES = [
+    "Maya",
+    "Cal",
+    "Avery",
+    "Riley",
+    "Jordan",
+    "Sam",
+    "Nora",
+    "Theo",
+    "Quinn",
+    "Casey",
+    "Morgan",
+    "Elliot",
+    "Reese",
+    "Logan",
+    "Taylor",
+    "Parker",
+]
+GAME_SEEDED_SCORE_RANGES = {
+    "expiration-date": (145_000, 225_000),
+    "front-page-fortune": (135_000, 190_000),
+    "harvest-ledger": (125_000, 180_000),
+    "sector-oracle": (130_000, 185_000),
+}
+GAME_SEEDED_SCORE_BASE = 100_000
+GAME_SEEDED_SCORE_STEP = 500
 
 
 @app.get("/health")
@@ -605,6 +632,51 @@ def _serialize_game_score(score):
     }
 
 
+def _weekly_seed_int(*parts):
+    payload = "|".join(str(part) for part in parts).encode("utf-8")
+    return int(hashlib.sha256(payload).hexdigest()[:12], 16)
+
+
+def _seeded_range_value(game_slug, week_key, label, low, high):
+    return low + (_weekly_seed_int(game_slug, week_key, label) % (high - low + 1))
+
+
+def _round_seed_score(value):
+    return int(round(value / GAME_SEEDED_SCORE_STEP) * GAME_SEEDED_SCORE_STEP)
+
+
+def _seeded_weekly_game_score(game, cutoff):
+    game_slug = game["slug"]
+    week_key = cutoff.strftime("%Y-%m-%dT%H:%M:%S")
+    score_min, score_max = GAME_SEEDED_SCORE_RANGES.get(game_slug, (125_000, 175_000))
+    raw_score = _seeded_range_value(game_slug, week_key, "score", score_min, score_max)
+    score = _round_seed_score(raw_score)
+    name = GAME_SEEDED_SCORE_NAMES[
+        _weekly_seed_int(game_slug, week_key, "name") % len(GAME_SEEDED_SCORE_NAMES)
+    ]
+    created_at = cutoff + datetime.timedelta(
+        minutes=_seeded_range_value(game_slug, week_key, "minute", 8, 360)
+    )
+    tax_paid = _seeded_range_value(game_slug, week_key, "tax", 0, 7_500)
+    moves = _seeded_range_value(game_slug, week_key, "moves", 4, 14)
+    reallocations = _seeded_range_value(game_slug, week_key, "reallocations", 2, 9)
+
+    return {
+        "id": f"seed-{game_slug}-{cutoff.strftime('%Y%m%d')}",
+        "createdAt": created_at.isoformat() + "Z",
+        "email": "",
+        "name": name,
+        "score": score,
+        "returnPercent": ((score - GAME_SEEDED_SCORE_BASE) / GAME_SEEDED_SCORE_BASE) * 100,
+        "moves": moves,
+        "reallocations": reallocations,
+        "taxPaid": float(tax_paid),
+        "seeded": True,
+        "gameSlug": game_slug,
+        "gameTitle": game["title"],
+    }
+
+
 def _leaderboard_week_start_utc(now=None):
     current_utc = now or datetime.datetime.utcnow()
     if current_utc.tzinfo is None:
@@ -671,8 +743,8 @@ def _anonymous_score_user_id():
     return user.id
 
 
-def _ranked_game_scores(game, limit=None):
-    cutoff = _prune_old_game_scores()
+def _ranked_game_scores(game, limit=None, cutoff=None):
+    cutoff = cutoff or _prune_old_game_scores()
     query = (
         GameScore.query.filter_by(game_slug=game["slug"])
         .filter(GameScore.created_at >= cutoff)
@@ -682,12 +754,18 @@ def _ranked_game_scores(game, limit=None):
         query = query.limit(limit)
 
     entries = []
-    for rank, score in enumerate(query.all(), start=1):
+    for score in query.all():
         entry = _serialize_game_score(score)
-        entry["rank"] = rank
         entry["gameSlug"] = game["slug"]
         entry["gameTitle"] = game["title"]
         entries.append(entry)
+
+    entries.append(_seeded_weekly_game_score(game, cutoff))
+    entries.sort(key=lambda entry: (-entry["score"], entry["createdAt"]))
+    if limit:
+        entries = entries[:limit]
+    for rank, entry in enumerate(entries, start=1):
+        entry["rank"] = rank
     return entries
 
 
@@ -1811,15 +1889,8 @@ def games_leaderboard(game_slug):
         return jsonify({"error": "Game not found"}), 404
 
     cutoff = _prune_old_game_scores()
-    scores = (
-        GameScore.query.filter_by(game_slug=game["slug"])
-        .filter(GameScore.created_at >= cutoff)
-        .order_by(GameScore.score.desc(), GameScore.created_at.asc())
-        .limit(25)
-        .all()
-    )
     return jsonify({
-        "entries": [_serialize_game_score(score) for score in scores],
+        "entries": _ranked_game_scores(game, limit=25, cutoff=cutoff),
         "periodStart": cutoff.isoformat() + "Z",
         "resets": "weekly",
     })
