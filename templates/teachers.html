@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-HJ72GKBEFW"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-HJ72GKBEFW');
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ seo_meta.title }}</title>
+  {% include "partials/seo_meta.html" %}
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    * { font-family:'Inter', system-ui, sans-serif; }
+    body { background:#070b12; color:#e2e8f0; }
+    .logo-bolt {
+      display:inline-flex; align-items:center; justify-content:center;
+      width:44px; height:44px; border-radius:8px; font-size:22px;
+      background:linear-gradient(135deg,#22c55e,#38bdf8);
+      box-shadow:0 0 24px rgba(34,197,94,.25);
+    }
+    .nav-link {
+      color:#94a3b8; font-size:14px; font-weight:600; text-decoration:none;
+      transition:color .15s ease;
+    }
+    .nav-link:hover, .nav-link.active { color:#fff; }
+    .btn-primary {
+      display:inline-flex; align-items:center; justify-content:center; gap:8px;
+      padding:12px 18px; border-radius:8px; font-weight:800; color:#04111d;
+      background:linear-gradient(135deg,#5eead4,#22c55e); text-decoration:none;
+      transition:transform .15s ease, box-shadow .15s ease;
+    }
+    .btn-primary:hover { transform:translateY(-1px); box-shadow:0 10px 24px rgba(34,197,94,.22); }
+    .btn-secondary {
+      display:inline-flex; align-items:center; justify-content:center; gap:8px;
+      padding:12px 18px; border-radius:8px; font-weight:700; color:#cbd5e1;
+      border:1px solid #334155; background:transparent; text-decoration:none;
+      transition:border-color .15s ease, color .15s ease, background .15s ease;
+    }
+    .btn-secondary:hover { border-color:#38bdf8; color:white; background:rgba(56,189,248,.08); }
+    .eyebrow {
+      color:#67e8f9; font-size:12px; font-weight:900; letter-spacing:.22em;
+      text-transform:uppercase;
+    }
+    .hero {
+      background:linear-gradient(180deg,#0b111d 0%,#070b12 100%);
+      border-bottom:1px solid #172033;
+    }
+    .hero-grid { display:grid; gap:36px; align-items:center; }
+    .panel {
+      background:linear-gradient(180deg,rgba(16,23,34,.98),rgba(8,13,22,.98));
+      border:1px solid #253142; border-radius:8px; box-shadow:0 24px 80px rgba(0,0,0,.28);
+    }
+    .resource-card {
+      background:#0b1220; border:1px solid #253142; border-radius:8px; overflow:hidden;
+      transition:transform .18s ease, border-color .18s ease;
+    }
+    .resource-card:hover { transform:translateY(-2px); border-color:#334155; }
+    .resource-card img { width:100%; height:190px; object-fit:cover; background:#020617; border-bottom:1px solid #253142; }
+    .activity-row {
+      display:grid; gap:18px; padding:22px; border:1px solid #253142; border-radius:8px;
+      background:#0b1220;
+    }
+    .activity-number {
+      display:grid; place-items:center; width:38px; height:38px; border-radius:8px;
+      background:rgba(56,189,248,.12); color:#67e8f9; border:1px solid rgba(56,189,248,.24);
+      font-size:14px; font-weight:900;
+    }
+    .check-list li { position:relative; padding-left:22px; }
+    .check-list li:before {
+      content:""; position:absolute; left:0; top:.48rem; width:9px; height:9px; border-radius:999px;
+      background:#22c55e; box-shadow:0 0 0 3px rgba(34,197,94,.14);
+    }
+    .note {
+      border:1px solid rgba(251,191,36,.26); border-radius:8px; background:rgba(251,191,36,.08);
+    }
+    @media (min-width: 960px) {
+      .hero-grid { grid-template-columns:.95fr 1.05fr; }
+      .activity-row { grid-template-columns:auto 1fr auto; align-items:center; }
+    }
+  </style>
+</head>
+<body class="min-h-screen">
+  <header class="sticky top-0 z-50 px-6 py-4" style="background:rgba(10,15,30,.88);backdrop-filter:blur(16px);border-bottom:1px solid rgba(30,41,59,.8);">
+    <div class="mx-auto flex max-w-7xl items-center justify-between gap-6">
+      <a href="/" class="flex items-center gap-3 text-white no-underline">
+        <div class="logo-bolt">&#9889;</div>
+        <div>
+          <div class="text-lg font-extrabold tracking-tight">CHARGED ALPHA</div>
+          <div class="text-[11px] uppercase tracking-[.22em] text-slate-500">Teacher Resources</div>
+        </div>
+      </a>
+      <nav class="hidden items-center gap-6 md:flex">
+        <a href="/" class="nav-link">Home</a>
+        <a href="/games" class="nav-link">Games</a>
+        <a href="/shows" class="nav-link">Stock Library</a>
+        <a href="/teachers" class="nav-link active">Teachers</a>
+        <a href="/about" class="nav-link">About Colton</a>
+        <a href="https://www.youtube.com/channel/UC4ZDZpC0OvoN4cCGoUSofuA?sub_confirmation=1" target="_blank" rel="noopener noreferrer" class="btn-secondary text-sm" style="padding:10px 14px;">YouTube Channel</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero px-6 py-12 md:py-16">
+      <div class="hero-grid mx-auto max-w-7xl">
+        <div>
+          <p class="eyebrow mb-4">Free classroom investing resources</p>
+          <h1 class="mb-5 max-w-3xl text-4xl font-black leading-tight text-white md:text-6xl">Market-history games for personal finance and economics classes.</h1>
+          <p class="mb-7 max-w-2xl text-lg leading-8 text-slate-300">
+            Charged Alpha turns real historical market events into short investing games teachers can use for warmups, club challenges, and discussion-based lessons. No subscription required.
+          </p>
+          <div class="flex flex-wrap gap-3">
+            <a href="/games" class="btn-primary">Open Games</a>
+            <a href="/static/assets/charged-alpha-teacher-one-pager.pdf" class="btn-secondary" download>Download One-Pager</a>
+            <a href="#activities" class="btn-secondary">View Class Activities</a>
+            <a href="/about" class="btn-secondary">About Colton</a>
+            <a href="mailto:hello@chargedalpha.com?subject=Charged%20Alpha%20teacher%20resources" class="btn-secondary">Email Colton</a>
+          </div>
+        </div>
+
+        <div class="panel p-4 md:p-5">
+          <div class="grid gap-1 overflow-hidden rounded-lg border border-slate-700 bg-slate-950">
+            <img src="/static/games/interactive/games/previews/front-page-fortune-dashboard.jpg" alt="Front Page Fortune classroom investing game dashboard" class="h-auto w-full">
+            <div class="grid gap-1 md:grid-cols-2">
+              <img src="/static/games/interactive/games/previews/sector-oracle-dashboard.jpg" alt="Sector Oracle investing game dashboard" class="h-44 w-full object-cover">
+              <img src="/static/games/interactive/games/previews/harvest-ledger-dashboard.jpg" alt="Harvest Ledger commodities game dashboard" class="h-44 w-full object-cover">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="px-6 py-12">
+      <div class="mx-auto max-w-7xl">
+        <div class="mb-8 flex flex-col justify-between gap-4 md:flex-row md:items-end">
+          <div>
+            <p class="eyebrow mb-2">Start here</p>
+            <h2 class="text-3xl font-black text-white">Three classroom-ready entry points</h2>
+          </div>
+          <p class="max-w-2xl text-sm leading-6 text-slate-400">
+            Use one game as a bell ringer, a full-period decision lab, or a recurring investing club challenge.
+          </p>
+        </div>
+
+        <div class="grid gap-5 md:grid-cols-3">
+          <article class="resource-card">
+            <img src="/static/games/interactive/games/previews/front-page-fortune-play.jpg" alt="Front Page Fortune market decision game">
+            <div class="p-5">
+              <p class="eyebrow mb-2">15 minutes</p>
+              <h3 class="mb-3 text-xl font-black text-white">Headline Warmup</h3>
+              <p class="text-sm leading-6 text-slate-400">Students see a real historical event, predict how markets reacted, then compare intuition against actual data.</p>
+            </div>
+          </article>
+          <article class="resource-card">
+            <img src="/static/games/interactive/games/previews/sector-oracle-play.jpg" alt="Sector Oracle sector rotation game">
+            <div class="p-5">
+              <p class="eyebrow mb-2">45 minutes</p>
+              <h3 class="mb-3 text-xl font-black text-white">Market Reaction Lab</h3>
+              <p class="text-sm leading-6 text-slate-400">Run a full class period around risk, second-order effects, sector rotation, and why the obvious trade can fail.</p>
+            </div>
+          </article>
+          <article class="resource-card">
+            <img src="/static/games/interactive/games/previews/expiration-date-play.jpg" alt="Expiration Date options timing game">
+            <div class="p-5">
+              <p class="eyebrow mb-2">Weekly</p>
+              <h3 class="mb-3 text-xl font-black text-white">Investing Club Challenge</h3>
+              <p class="text-sm leading-6 text-slate-400">Let students compete for the best ending account value while discussing risk, position sizing, and trade-offs.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="activities" class="px-6 pb-12">
+      <div class="mx-auto max-w-7xl">
+        <div class="mb-6">
+          <p class="eyebrow mb-2">Class activities</p>
+          <h2 class="text-3xl font-black text-white">Pick the format that fits today's lesson.</h2>
+        </div>
+        <div class="space-y-4">
+          <article class="activity-row">
+            <span class="activity-number">1</span>
+            <div>
+              <h3 class="text-xl font-black text-white">Front Page Fortune: headline to allocation</h3>
+              <p class="mt-2 text-sm leading-6 text-slate-400">Ask students what they would buy after the headline, then compare their choice with the real S&P 500, gold, bond, and custom portfolio outcomes.</p>
+            </div>
+            <a href="/games/front-page-fortune" class="btn-secondary">Launch</a>
+          </article>
+          <article class="activity-row">
+            <span class="activity-number">2</span>
+            <div>
+              <h3 class="text-xl font-black text-white">Sector Oracle: first-order vs. second-order thinking</h3>
+              <p class="mt-2 text-sm leading-6 text-slate-400">Have students defend which sector should benefit from a macro event, then inspect how historical market pricing actually moved.</p>
+            </div>
+            <a href="/games/sector-oracle" class="btn-secondary">Launch</a>
+          </article>
+          <article class="activity-row">
+            <span class="activity-number">3</span>
+            <div>
+              <h3 class="text-xl font-black text-white">Harvest Ledger: commodities, futures, and risk</h3>
+              <p class="mt-2 text-sm leading-6 text-slate-400">Use crop shocks to discuss supply, demand, contract size, volatility, and why leverage changes the meaning of a correct prediction.</p>
+            </div>
+            <a href="/games/harvest-ledger" class="btn-secondary">Launch</a>
+          </article>
+          <article class="activity-row">
+            <span class="activity-number">4</span>
+            <div>
+              <h3 class="text-xl font-black text-white">Stock Library: research extension</h3>
+              <p class="mt-2 text-sm leading-6 text-slate-400">For advanced students, investing clubs, and project work, the stock library links companies to Charged Alpha earnings videos, podcast episodes, and competitor comparisons.</p>
+            </div>
+            <a href="/shows" class="btn-secondary">Browse</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="px-6 pb-14">
+      <div class="mx-auto grid max-w-7xl gap-6 lg:grid-cols-[1.05fr_.95fr]">
+        <div class="panel p-6 md:p-7">
+          <p class="eyebrow mb-2">Teacher fit</p>
+          <h2 class="mb-5 text-3xl font-black text-white">Built for fast adoption.</h2>
+          <ul class="check-list space-y-3 text-sm leading-6 text-slate-400">
+            <li>Free to use with no subscription required.</li>
+            <li>Games can be played without creating a Charged Alpha account.</li>
+            <li>Lessons use historical market data and simulated portfolios, not real trading.</li>
+            <li>Works for personal finance, economics, business, investing clubs, DECA, FBLA, and homeschool groups.</li>
+            <li>Educational content only. Charged Alpha does not provide personal financial advice.</li>
+          </ul>
+        </div>
+        <aside class="panel p-6 md:p-7">
+          <p class="eyebrow mb-2">Classroom note</p>
+          <h2 class="mb-5 text-3xl font-black text-white">Use clean display names.</h2>
+          <p class="mb-4 text-sm leading-6 text-slate-400">
+            Some games let players post a weekly score. For class use, students should use initials, first-name-only handles, or teacher-approved pseudonyms.
+          </p>
+          <div class="note p-4 text-sm leading-6 text-amber-100">
+            For learners under 13, the simplest setup is teacher-led screen share unless your school or platform has approved direct student browser use.
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="px-6 pb-20">
+      <div class="mx-auto max-w-7xl">
+        <div class="panel flex flex-col justify-between gap-5 p-6 md:flex-row md:items-center md:p-7">
+          <div>
+            <p class="eyebrow mb-2">Questions or classroom feedback?</p>
+            <h2 class="text-2xl font-black text-white">Reach Colton and the Charged Alpha team.</h2>
+            <p class="mt-2 max-w-2xl text-sm leading-6 text-slate-400">Tell us what you teach, the age range, and what would make the resource easier to use in class.</p>
+          </div>
+          <div class="flex flex-wrap gap-3">
+            <a href="/static/assets/charged-alpha-teacher-one-pager.pdf" class="btn-secondary" download>Download One-Pager</a>
+            <a href="mailto:hello@chargedalpha.com?subject=Charged%20Alpha%20teacher%20resources" class="btn-primary">hello@chargedalpha.com</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="px-6 py-12" style="border-top:1px solid #1e293b;">
+    <div class="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 md:flex-row">
+      <div class="flex items-center gap-3">
+        <div class="logo-bolt" style="width:28px;height:28px;font-size:14px;border-radius:8px;">&#9889;</div>
+        <span class="text-sm font-bold text-slate-400">CHARGED ALPHA</span>
+      </div>
+      <div class="flex flex-wrap items-center justify-center gap-3 text-xs text-slate-500">
+        <a href="/games" class="text-slate-400 no-underline hover:text-white">Games</a>
+        <a href="/shows" class="text-slate-400 no-underline hover:text-white">Stock Library</a>
+        <a href="/about" class="text-slate-400 no-underline hover:text-white">About Colton</a>
+        <a href="/unsubscribe" class="text-slate-400 no-underline hover:text-white">Email Preferences</a>
+        <a href="https://www.youtube.com/channel/UC4ZDZpC0OvoN4cCGoUSofuA?sub_confirmation=1" target="_blank" rel="noopener noreferrer" class="text-slate-400 no-underline hover:text-white">YouTube</a>
+        <span>Educational content only. Not financial advice.</span>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

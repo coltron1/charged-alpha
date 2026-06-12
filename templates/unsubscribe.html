@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-HJ72GKBEFW"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-HJ72GKBEFW');
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ seo_meta.title }}</title>
+  {% include "partials/seo_meta.html" %}
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    * { font-family:'Inter', system-ui, sans-serif; }
+    body { background:#070b12; color:#e2e8f0; }
+    .logo-bolt {
+      display:inline-flex; align-items:center; justify-content:center;
+      width:44px; height:44px; border-radius:8px; font-size:22px;
+      background:linear-gradient(135deg,#22c55e,#38bdf8);
+      box-shadow:0 0 24px rgba(34,197,94,.25);
+    }
+    .nav-link {
+      color:#94a3b8; font-size:14px; font-weight:600; text-decoration:none;
+      transition:color .15s ease;
+    }
+    .nav-link:hover { color:#fff; }
+    .btn-primary {
+      display:inline-flex; align-items:center; justify-content:center; gap:8px;
+      padding:12px 18px; border-radius:8px; font-weight:800; color:#04111d;
+      background:linear-gradient(135deg,#5eead4,#22c55e); text-decoration:none;
+      transition:transform .15s ease, box-shadow .15s ease;
+    }
+    .btn-primary:hover { transform:translateY(-1px); box-shadow:0 10px 24px rgba(34,197,94,.22); }
+    .btn-secondary {
+      display:inline-flex; align-items:center; justify-content:center; gap:8px;
+      padding:12px 18px; border-radius:8px; font-weight:700; color:#cbd5e1;
+      border:1px solid #334155; background:transparent; text-decoration:none;
+      transition:border-color .15s ease, color .15s ease, background .15s ease;
+    }
+    .btn-secondary:hover { border-color:#38bdf8; color:white; background:rgba(56,189,248,.08); }
+    .eyebrow {
+      color:#67e8f9; font-size:12px; font-weight:900; letter-spacing:.22em;
+      text-transform:uppercase;
+    }
+    .hero {
+      background:linear-gradient(180deg,#0b111d 0%,#070b12 100%);
+      border-bottom:1px solid #172033;
+    }
+    .panel {
+      background:linear-gradient(180deg,rgba(16,23,34,.98),rgba(8,13,22,.98));
+      border:1px solid #253142; border-radius:8px; box-shadow:0 24px 80px rgba(0,0,0,.28);
+    }
+    .step-card {
+      border:1px solid #253142; border-radius:8px; background:#0b1220; padding:20px;
+    }
+    .step-number {
+      display:grid; place-items:center; width:36px; height:36px; border-radius:8px;
+      background:rgba(56,189,248,.12); color:#67e8f9; border:1px solid rgba(56,189,248,.24);
+      font-size:14px; font-weight:900;
+    }
+    .note {
+      border:1px solid rgba(251,191,36,.26); border-radius:8px; background:rgba(251,191,36,.08);
+    }
+  </style>
+</head>
+<body class="min-h-screen">
+  <header class="sticky top-0 z-50 px-6 py-4" style="background:rgba(10,15,30,.88);backdrop-filter:blur(16px);border-bottom:1px solid rgba(30,41,59,.8);">
+    <div class="mx-auto flex max-w-7xl items-center justify-between gap-6">
+      <a href="/" class="flex items-center gap-3 text-white no-underline">
+        <div class="logo-bolt">&#9889;</div>
+        <div>
+          <div class="text-lg font-extrabold tracking-tight">CHARGED ALPHA</div>
+          <div class="text-[11px] uppercase tracking-[.22em] text-slate-500">Email Preferences</div>
+        </div>
+      </a>
+      <nav class="hidden items-center gap-6 md:flex">
+        <a href="/" class="nav-link">Home</a>
+        <a href="/games" class="nav-link">Games</a>
+        <a href="/shows" class="nav-link">Stock Library</a>
+        <a href="/teachers" class="nav-link">Teachers</a>
+        <a href="/about" class="nav-link">About Colton</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero px-6 py-12 md:py-16">
+      <div class="mx-auto grid max-w-7xl gap-8 lg:grid-cols-[1fr_.9fr] lg:items-center">
+        <div>
+          <p class="eyebrow mb-4">Email preferences</p>
+          <h1 class="mb-5 max-w-3xl text-4xl font-black leading-tight text-white md:text-6xl">Opt out of Charged Alpha outreach.</h1>
+          <p class="mb-7 max-w-2xl text-lg leading-8 text-slate-300">
+            If you received a Charged Alpha marketing email and do not want future outreach, send a quick opt-out request and we will add your address to the suppression log.
+          </p>
+          <div class="flex flex-wrap gap-3">
+            <a href="mailto:hello@chargedalpha.com?subject=Opt%20out%20of%20Charged%20Alpha%20emails&body=Please%20remove%20this%20email%20address%20from%20Charged%20Alpha%20marketing%20outreach." class="btn-primary">Email Opt-Out Request</a>
+            <a href="/teachers" class="btn-secondary">Teacher Resources</a>
+          </div>
+        </div>
+
+        <aside class="panel p-6 md:p-7">
+          <p class="eyebrow mb-3">Send to</p>
+          <p class="mb-5 break-words text-2xl font-black text-white">hello@chargedalpha.com</p>
+          <div class="space-y-4 text-sm leading-7 text-slate-400">
+            <p>
+              Use the subject line <strong class="text-slate-200">Opt out</strong>. If the email address you want removed is different from the one you send from, include that address in the message.
+            </p>
+            <p>
+              You can also reply directly to any Charged Alpha outreach email with <strong class="text-slate-200">opt out</strong>.
+            </p>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="px-6 py-12">
+      <div class="mx-auto max-w-7xl">
+        <div class="mb-6">
+          <p class="eyebrow mb-2">What happens next</p>
+          <h2 class="text-3xl font-black text-white">Simple, manual, and trackable.</h2>
+        </div>
+        <div class="grid gap-5 md:grid-cols-3">
+          <article class="step-card">
+            <span class="step-number mb-4">1</span>
+            <h3 class="mb-3 text-xl font-black text-white">We receive your request</h3>
+            <p class="text-sm leading-6 text-slate-400">Your opt-out email goes to the Charged Alpha inbox for review.</p>
+          </article>
+          <article class="step-card">
+            <span class="step-number mb-4">2</span>
+            <h3 class="mb-3 text-xl font-black text-white">We update the suppression log</h3>
+            <p class="text-sm leading-6 text-slate-400">The requested address is marked so it is excluded from future marketing outreach.</p>
+          </article>
+          <article class="step-card">
+            <span class="step-number mb-4">3</span>
+            <h3 class="mb-3 text-xl font-black text-white">Future outreach stops</h3>
+            <p class="text-sm leading-6 text-slate-400">Opt-out requests are processed within 10 business days.</p>
+          </article>
+        </div>
+
+        <div class="note mt-6 p-5">
+          <p class="text-sm leading-6 text-amber-100">
+            This page covers Charged Alpha marketing outreach. It does not remove access to free public resources, and it does not affect required account or transactional messages if you use account features.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="px-6 py-12" style="border-top:1px solid #1e293b;">
+    <div class="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 md:flex-row">
+      <div class="flex items-center gap-3">
+        <div class="logo-bolt" style="width:28px;height:28px;font-size:14px;border-radius:8px;">&#9889;</div>
+        <span class="text-sm font-bold text-slate-400">CHARGED ALPHA</span>
+      </div>
+      <div class="flex flex-wrap items-center justify-center gap-3 text-xs text-slate-500">
+        <a href="/teachers" class="text-slate-400 no-underline hover:text-white">Teachers</a>
+        <a href="/games" class="text-slate-400 no-underline hover:text-white">Games</a>
+        <a href="/shows" class="text-slate-400 no-underline hover:text-white">Stock Library</a>
+        <a href="/about" class="text-slate-400 no-underline hover:text-white">About Colton</a>
+        <span>Educational content only. Not financial advice.</span>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

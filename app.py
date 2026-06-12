@@ -247,6 +247,8 @@ PUBLIC_SITEMAP_PATHS = [
     "/gold",
     "/charts",
     "/games",
+    "/teachers",
+    "/about",
     "/games/front-page-fortune",
 ]
 SEO_DEFAULTS = {
@@ -368,6 +370,30 @@ SEO_PAGE_META = {
             "and options."
         ),
     },
+    "/teachers": {
+        "title": "Free Investing Games for Teachers — Charged Alpha",
+        "description": (
+            "Use Charged Alpha's free classroom investing games, historical market "
+            "scenarios, and stock research library for personal finance, economics, "
+            "business, and investing lessons."
+        ),
+    },
+    "/about": {
+        "title": "About Colton Thomas — Charged Alpha",
+        "description": (
+            "Meet Colton Thomas, creator of Charged Alpha and the investing "
+            "education content, earnings-analysis videos, and free market games "
+            "behind the platform."
+        ),
+    },
+    "/unsubscribe": {
+        "title": "Email Preferences — Charged Alpha",
+        "description": (
+            "Opt out of Charged Alpha marketing outreach or contact Colton with "
+            "email preference questions."
+        ),
+        "robots": "noindex,nofollow,noarchive",
+    },
     "/games/front-page-fortune": {
         "title": "Front Page Fortune — Historical Market Prediction Game",
         "description": (
@@ -443,6 +469,7 @@ NOINDEX_EXACT_PATHS = {
     "/register",
     "/health",
     "/account",
+    "/unsubscribe",
     "/games/harvest-ledger",
     "/games/sector-oracle",
     "/games/expiration-date",
@@ -1857,6 +1884,21 @@ def games_index():
         leaderboard_full=leaderboard_full,
         leaderboard_period_start=_leaderboard_cutoff_utc(),
     )
+
+
+@app.route("/teachers")
+def teachers():
+    return render_template("teachers.html")
+
+
+@app.route("/about")
+def about():
+    return render_template("about.html")
+
+
+@app.route("/unsubscribe")
+def unsubscribe():
+    return render_template("unsubscribe.html")
 
 
 @app.route("/games/<game_slug>")

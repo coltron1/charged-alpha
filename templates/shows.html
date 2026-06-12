@@ -241,6 +241,8 @@
       </div>
       <a href="/shows" class="nav-link {% if request.path == '/shows' %}active{% endif %}">Shows</a>
       <a href="/games" class="nav-link {% if request.path.startswith('/games') %}active{% endif %}">Games</a>
+      <a href="/teachers" class="nav-link {% if request.path == '/teachers' %}active{% endif %}">Teachers</a>
+      <a href="/about" class="nav-link {% if request.path == '/about' %}active{% endif %}">About</a>
       <a href="{{ podcast_platforms.youtube }}" target="_blank" rel="noopener noreferrer" class="btn-secondary text-sm" style="padding:10px 14px;">YouTube Channel</a>
     </nav>
     <button id="mobileMenuBtn" type="button" class="mobile-menu-btn" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobileSiteMenu">
