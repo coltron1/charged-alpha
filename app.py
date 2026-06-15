@@ -248,7 +248,6 @@ PUBLIC_SITEMAP_PATHS = [
     "/gold",
     "/charts",
     "/games",
-    "/teachers",
     "/about",
 ]
 PUBLIC_ROBOTS_DISALLOW_PATHS = [
@@ -384,14 +383,6 @@ SEO_PAGE_META = {
             "Play Charged Alpha's open investing story games, chase weekly high "
             "scores, and test market decisions across headlines, crops, sectors, "
             "and options."
-        ),
-    },
-    "/teachers": {
-        "title": "Free Investing Games for Teachers — Charged Alpha",
-        "description": (
-            "Use Charged Alpha's free classroom investing games, historical market "
-            "scenarios, and stock research library for personal finance, economics, "
-            "business, and investing lessons."
         ),
     },
     "/about": {
@@ -1897,11 +1888,6 @@ def games_index():
         leaderboard_full=leaderboard_full,
         leaderboard_period_start=_leaderboard_cutoff_utc(),
     )
-
-
-@app.route("/teachers")
-def teachers():
-    return render_template("teachers.html")
 
 
 @app.route("/about")
