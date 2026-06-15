@@ -249,7 +249,22 @@ PUBLIC_SITEMAP_PATHS = [
     "/games",
     "/teachers",
     "/about",
-    "/games/front-page-fortune",
+]
+PUBLIC_ROBOTS_DISALLOW_PATHS = [
+    "/api/",
+    "/screener/api/",
+    "/etf/api/",
+    "/mutual-funds/api/",
+    "/crypto/api/",
+    "/options/api/",
+    "/bonds/api/",
+    "/reits/api/",
+    "/forex/api/",
+    "/commodities/api/",
+    "/earnings/api/",
+    "/gold/api/",
+    "/charts/api/",
+    "/games/api/",
 ]
 SEO_DEFAULTS = {
     "title": "Charged Alpha Stock Earnings Videos & Research Tools",
@@ -470,9 +485,6 @@ NOINDEX_EXACT_PATHS = {
     "/health",
     "/account",
     "/unsubscribe",
-    "/games/harvest-ledger",
-    "/games/sector-oracle",
-    "/games/expiration-date",
 }
 
 
@@ -1765,23 +1777,7 @@ def robots_txt():
     lines = [
         "User-agent: *",
         "Allow: /",
-        "Disallow: /auth/",
-        "Disallow: /login",
-        "Disallow: /register",
-        "Disallow: /api/",
-        "Disallow: /screener/api/",
-        "Disallow: /etf/api/",
-        "Disallow: /mutual-funds/api/",
-        "Disallow: /crypto/api/",
-        "Disallow: /options/api/",
-        "Disallow: /bonds/api/",
-        "Disallow: /reits/api/",
-        "Disallow: /forex/api/",
-        "Disallow: /commodities/api/",
-        "Disallow: /earnings/api/",
-        "Disallow: /gold/api/",
-        "Disallow: /charts/api/",
-        "Disallow: /games/api/",
+        *(f"Disallow: {path}" for path in PUBLIC_ROBOTS_DISALLOW_PATHS),
         f"Sitemap: {SITE_URL}/sitemap.xml",
     ]
     return Response("\n".join(lines) + "\n", mimetype="text/plain")
@@ -1825,6 +1821,14 @@ def sitemap_xml():
         url_entries.append(
             url_entry(loc)
         )
+
+    for game in GAME_CATALOG:
+        path = game.get("route")
+        if not path or not game.get("playable") or _is_noindex_path(path):
+            continue
+        loc = f"{SITE_URL}{_normalize_path(path)}"
+        if not any(f"<loc>{xml_escape(loc)}</loc>" in entry for entry in url_entries):
+            url_entries.append(url_entry(loc))
 
     joined_url_entries = "\n".join(url_entries)
     xml = (
