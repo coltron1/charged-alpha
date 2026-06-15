@@ -88,6 +88,7 @@ app = Flask(__name__)
 app.wsgi_app = ProxyFix(app.wsgi_app, x_for=1, x_proto=1, x_host=1, x_port=1)
 BASE_DIR = Path(__file__).resolve().parent
 SHOWS_CATALOG_PATH = BASE_DIR / "data" / "shows_catalog.json"
+GOOGLE_SITE_VERIFICATION_FILENAME = "google8b17550efa5dc3e4.html"
 INTERACTIVE_GAME_BUILD_PATH = BASE_DIR / "static" / "games" / "interactive"
 INTERACTIVE_GAME_MANIFEST_PATH = INTERACTIVE_GAME_BUILD_PATH / ".vite" / "manifest.json"
 
@@ -1781,6 +1782,14 @@ def robots_txt():
         f"Sitemap: {SITE_URL}/sitemap.xml",
     ]
     return Response("\n".join(lines) + "\n", mimetype="text/plain")
+
+
+@app.route(f"/{GOOGLE_SITE_VERIFICATION_FILENAME}")
+def google_site_verification():
+    verification_path = BASE_DIR / GOOGLE_SITE_VERIFICATION_FILENAME
+    if not verification_path.exists():
+        return Response(status=404)
+    return Response(verification_path.read_text(encoding="utf-8"), mimetype="text/html")
 
 
 @app.route("/sitemap.xml")
