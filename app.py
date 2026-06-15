@@ -229,6 +229,10 @@ GAME_SEEDED_SCORE_STEP = 500
 def health_check():
     return jsonify({"status": "ok"}), 200
 SITE_URL = os.environ.get("SITE_URL", "https://chargedalpha.com").rstrip("/")
+SITE_URL_PARTS = urlparse(SITE_URL)
+SITE_SCHEME = SITE_URL_PARTS.scheme or "https"
+CANONICAL_HOST = (SITE_URL_PARTS.netloc or SITE_URL_PARTS.path).lower().strip("/")
+WWW_CANONICAL_HOST = f"www.{CANONICAL_HOST}"
 DEFAULT_SOCIAL_IMAGE_PATH = "/static/assets/charged-alpha-logo.png"
 DEFAULT_SOCIAL_IMAGE_URL = f"{SITE_URL}{DEFAULT_SOCIAL_IMAGE_PATH}"
 SHOWS_INITIAL_STOCK_COUNT = 24
@@ -1752,6 +1756,16 @@ def _chart_helper(symbol, range_key, params_map=None):
 @app.context_processor
 def inject_seo_meta():
     return {"seo_meta": _get_seo_meta()}
+
+
+@app.before_request
+def enforce_canonical_host():
+    request_host = request.host.split(":", 1)[0].lower().rstrip(".")
+    if request_host != WWW_CANONICAL_HOST:
+        return None
+
+    target_path = request.full_path if request.query_string else request.path
+    return redirect(f"{SITE_SCHEME}://{CANONICAL_HOST}{target_path}", code=301)
 
 
 @app.after_request
