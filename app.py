@@ -233,6 +233,7 @@ SITE_URL_PARTS = urlparse(SITE_URL)
 SITE_SCHEME = SITE_URL_PARTS.scheme or "https"
 CANONICAL_HOST = (SITE_URL_PARTS.netloc or SITE_URL_PARTS.path).lower().strip("/")
 WWW_CANONICAL_HOST = f"www.{CANONICAL_HOST}"
+GOOGLE_ANALYTICS_ID = os.environ.get("GOOGLE_ANALYTICS_ID", "G-HJ72GKBEFW").strip()
 DEFAULT_SOCIAL_IMAGE_PATH = "/static/assets/charged-alpha-logo.png"
 DEFAULT_SOCIAL_IMAGE_URL = f"{SITE_URL}{DEFAULT_SOCIAL_IMAGE_PATH}"
 SHOWS_INITIAL_STOCK_COUNT = 24
@@ -1755,7 +1756,10 @@ def _chart_helper(symbol, range_key, params_map=None):
 
 @app.context_processor
 def inject_seo_meta():
-    return {"seo_meta": _get_seo_meta()}
+    return {
+        "seo_meta": _get_seo_meta(),
+        "google_analytics_id": GOOGLE_ANALYTICS_ID,
+    }
 
 
 @app.before_request
