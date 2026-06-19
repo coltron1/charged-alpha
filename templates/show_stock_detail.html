@@ -27,6 +27,13 @@
       display:inline-flex; align-items:center; justify-content:center; gap:6px; padding:8px 12px;
       border-radius:10px; font-size:12px; font-weight:700; color:white; text-decoration:none;
     }
+    .primary-video-shell {
+      overflow:hidden; background:#020617; border:1px solid #1e293b; border-radius:18px;
+      box-shadow:0 24px 70px rgba(2,6,23,.38);
+    }
+    .primary-video-frame { width:100%; aspect-ratio:16/9; background:#020617; }
+    .primary-video-frame iframe { display:block; width:100%; height:100%; border:0; }
+    .primary-video-meta { padding:18px; border-top:1px solid #1e293b; background:#0f172a; }
     .range-btn {
       padding:8px 12px; border-radius:10px; border:1px solid #334155; background:transparent;
       color:#cbd5e1; font-size:12px; font-weight:700; cursor:pointer; transition:.15s;
@@ -171,24 +178,51 @@
         </div>
       </div>
 
-      <div class="card p-6">
-        <p class="text-sm font-bold text-indigo-400 uppercase tracking-[.22em] mb-4">Library coverage</p>
-        <div class="grid grid-cols-2 gap-4">
-          <div class="card p-4" style="background:#0f172a;border-color:#1e293b;">
-            <div class="stat-label">Episodes tracked</div>
-            <div class="stat-value mt-2">{{ show_stock.quarter_count }}</div>
+      <div class="space-y-4">
+        {% if show_stock.latest_youtube_embed_url %}
+        <section class="primary-video-shell" aria-label="Latest {{ show_stock.ticker }} earnings video">
+          <div class="primary-video-frame">
+            <iframe
+              src="{{ show_stock.latest_youtube_embed_url }}"
+              title="{{ show_stock.latest_video_title or (show_stock.company ~ ' earnings video') }}"
+              loading="lazy"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen></iframe>
           </div>
-          <div class="card p-4" style="background:#0f172a;border-color:#1e293b;">
-            <div class="stat-label">Episodes linked</div>
-            <div class="stat-value mt-2">{{ show_stock.published_count }}</div>
+          <div class="primary-video-meta">
+            <p class="stat-label mb-2">Latest earnings video</p>
+            <h2 class="text-lg font-extrabold text-white leading-snug">{{ show_stock.latest_video_title or (show_stock.company ~ ' earnings analysis') }}</h2>
+            <div class="flex flex-wrap gap-2 mt-4">
+              {% if show_stock.latest_youtube_url %}
+              <a href="{{ show_stock.latest_youtube_url }}" target="_blank" rel="noopener noreferrer" class="platform-pill" style="background:#dc2626;">Open YouTube</a>
+              {% endif %}
+              {% if show_stock.latest_spotify_url %}
+              <a href="{{ show_stock.latest_spotify_url }}" target="_blank" rel="noopener noreferrer" class="platform-pill" style="background:#16a34a;">Open Spotify</a>
+              {% endif %}
+            </div>
           </div>
-          <div class="card p-4" style="background:#0f172a;border-color:#1e293b;">
-            <div class="stat-label">Latest video</div>
-            <div class="text-white text-lg font-bold mt-2">{{ show_stock.latest_video_quarter or 'Pending' }}</div>
-          </div>
-          <div class="card p-4" style="background:#0f172a;border-color:#1e293b;">
-            <div class="stat-label">Podcast available</div>
-            <div class="stat-value mt-2">{{ 'Yes' if show_stock.has_podcast else 'No' }}</div>
+        </section>
+        {% endif %}
+        <div class="card p-6">
+          <p class="text-sm font-bold text-indigo-400 uppercase tracking-[.22em] mb-4">Library coverage</p>
+          <div class="grid grid-cols-2 gap-4">
+            <div>
+              <div class="stat-label">Episodes tracked</div>
+              <div class="stat-value mt-2">{{ show_stock.quarter_count }}</div>
+            </div>
+            <div>
+              <div class="stat-label">Episodes linked</div>
+              <div class="stat-value mt-2">{{ show_stock.published_count }}</div>
+            </div>
+            <div>
+              <div class="stat-label">Latest video</div>
+              <div class="text-white text-lg font-bold mt-2">{{ show_stock.latest_video_quarter or 'Pending' }}</div>
+            </div>
+            <div>
+              <div class="stat-label">Podcast available</div>
+              <div class="stat-value mt-2">{{ 'Yes' if show_stock.has_podcast else 'No' }}</div>
+            </div>
           </div>
         </div>
       </div>

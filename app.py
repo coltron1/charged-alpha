@@ -543,6 +543,11 @@ def _youtube_embed_url(url):
     return f"https://www.youtube.com/embed/{video_id}" if video_id else ""
 
 
+def _video_upload_date(value):
+    parsed = _parse_datetime(value)
+    return parsed.isoformat() if parsed else ""
+
+
 def _latest_catalog_timestamp(shows_data):
     timestamps = [
         ep.get("published_at")
@@ -940,6 +945,7 @@ def build_show_library(episodes):
         stock["latest_video_title"] = latest_youtube["title"] if latest_youtube else ""
         stock["latest_video_published_at"] = latest_youtube["published_at"] if latest_youtube else ""
         stock["latest_video_thumbnail"] = _youtube_thumbnail_url(latest_youtube.get("youtube_url")) if latest_youtube else DEFAULT_SOCIAL_IMAGE_URL
+        stock["latest_youtube_embed_url"] = _youtube_embed_url(latest_youtube.get("youtube_url")) if latest_youtube else ""
         stock["latest_status"] = latest_youtube["status"] if latest_youtube else latest["status"]
         stock["quarter_labels"] = [ep["quarter"] for ep in stock["episodes"]]
         stock["latest_links"] = {
@@ -1008,6 +1014,7 @@ def build_show_client_stocks(stocks):
                 "latest_video_title": stock.get("latest_video_title"),
                 "latest_video_published_at": stock.get("latest_video_published_at"),
                 "latest_video_thumbnail": stock.get("latest_video_thumbnail"),
+                "latest_youtube_embed_url": stock.get("latest_youtube_embed_url"),
                 "latest_status": stock.get("latest_status"),
                 "quarter_labels": stock.get("quarter_labels", []),
                 "latest_links": stock.get("latest_links", {}),
@@ -1034,8 +1041,9 @@ def flatten_video_sections(video_sections):
     return videos
 
 
-def _video_object_schema(title, youtube_url, published_at="", description="", thumbnail_url=""):
-    if not youtube_url:
+def _video_object_schema(title, youtube_url, published_at="", description="", thumbnail_url="", page_url=""):
+    upload_date = _video_upload_date(published_at)
+    if not youtube_url or not upload_date:
         return None
     schema = {
         "@context": "https://schema.org",
@@ -1043,13 +1051,22 @@ def _video_object_schema(title, youtube_url, published_at="", description="", th
         "name": title,
         "description": description or title,
         "thumbnailUrl": [thumbnail_url or _youtube_thumbnail_url(youtube_url)],
-        "url": youtube_url,
+        "uploadDate": upload_date,
+        "contentUrl": youtube_url,
+        "url": page_url or youtube_url,
+        "publisher": {
+            "@type": "Organization",
+            "name": "Charged Alpha",
+            "url": SITE_URL,
+            "logo": {
+                "@type": "ImageObject",
+                "url": DEFAULT_SOCIAL_IMAGE_URL,
+            },
+        },
     }
     embed_url = _youtube_embed_url(youtube_url)
     if embed_url:
         schema["embedUrl"] = embed_url
-    if published_at:
-        schema["uploadDate"] = published_at
     return schema
 
 
@@ -1097,31 +1114,10 @@ def _shows_collection_schema(path, show_library):
     }
 
 
-def _shows_video_schemas(show_library, limit=12):
-    schemas = []
-    for stock in show_library.get("stocks", []):
-        youtube_url = stock.get("latest_youtube_url")
-        if not youtube_url:
-            continue
-        schema = _video_object_schema(
-            stock.get("latest_video_title") or f"{stock.get('ticker')} earnings analysis",
-            youtube_url,
-            stock.get("latest_video_published_at") or stock.get("latest_published_at"),
-            f"Charged Alpha earnings analysis video for {stock.get('company')} ({stock.get('ticker')}).",
-            stock.get("latest_video_thumbnail"),
-        )
-        if schema:
-            schemas.append(schema)
-        if len(schemas) >= limit:
-            break
-    return schemas
-
-
 def _shows_page_structured_data(path, show_library):
     return [
         _website_schema(),
         _shows_collection_schema(path, show_library),
-        *_shows_video_schemas(show_library),
     ]
 
 
@@ -1158,14 +1154,22 @@ def _stock_page_structured_data(show_stock, seo_meta):
             },
         }
     ]
-    for episode in show_stock.get("episodes", [])[:12]:
-        if not episode.get("youtube_url"):
-            continue
+    latest_video = next(
+        (
+            episode
+            for episode in show_stock.get("episodes", [])
+            if episode.get("youtube_url") and _video_upload_date(episode.get("published_at"))
+        ),
+        None,
+    )
+    if latest_video:
         schema = _video_object_schema(
-            episode.get("title"),
-            episode.get("youtube_url"),
-            episode.get("published_at"),
-            f"Charged Alpha earnings analysis for {show_stock['company']} ({show_stock['ticker']}) covering {episode.get('quarter')}.",
+            latest_video.get("title"),
+            latest_video.get("youtube_url"),
+            latest_video.get("published_at"),
+            f"Charged Alpha earnings analysis for {show_stock['company']} ({show_stock['ticker']}) covering {latest_video.get('quarter')}.",
+            _youtube_thumbnail_url(latest_video.get("youtube_url")),
+            seo_meta["canonical_url"],
         )
         if schema:
             schemas.append(schema)
@@ -1341,7 +1345,7 @@ def _youtube_thumbnail_url(url):
     video_id = _youtube_video_id(url)
     if not video_id:
         return DEFAULT_SOCIAL_IMAGE_URL
-    return f"https://i.ytimg.com/vi/{video_id}/maxresdefault.jpg"
+    return f"https://i.ytimg.com/vi/{video_id}/hqdefault.jpg"
 
 
 def _build_fast_show_stock_detail(symbol):
@@ -1473,6 +1477,7 @@ def _compact_stock_snapshot(show_stock, allow_fetch=False):
         "company": show_stock["company"],
         "latest_video_quarter": show_stock.get("latest_video_quarter"),
         "latest_youtube_url": show_stock.get("latest_youtube_url"),
+        "latest_youtube_embed_url": show_stock.get("latest_youtube_embed_url"),
         "latest_spotify_url": show_stock.get("latest_spotify_url"),
         "youtube_thumbnail_url": _youtube_thumbnail_url(show_stock.get("latest_youtube_url")),
         "market_cap": market_cap,
@@ -1503,6 +1508,7 @@ def build_stock_competitor_analysis(show_stock, primary_snapshot, all_stocks):
         "company": show_stock["company"],
         "latest_video_quarter": show_stock.get("latest_video_quarter"),
         "latest_youtube_url": show_stock.get("latest_youtube_url"),
+        "latest_youtube_embed_url": show_stock.get("latest_youtube_embed_url"),
         "latest_spotify_url": show_stock.get("latest_spotify_url"),
         "youtube_thumbnail_url": _youtube_thumbnail_url(show_stock.get("latest_youtube_url")),
     })
@@ -1553,6 +1559,7 @@ def build_stock_competitor_analysis(show_stock, primary_snapshot, all_stocks):
             "company": snap.get("company"),
             "latest_video_quarter": snap.get("latest_video_quarter") or "YouTube link pending",
             "latest_youtube_url": snap.get("latest_youtube_url") or "",
+            "latest_youtube_embed_url": snap.get("latest_youtube_embed_url") or "",
             "latest_spotify_url": snap.get("latest_spotify_url") or "",
             "youtube_thumbnail_url": snap.get("youtube_thumbnail_url") or _youtube_thumbnail_url(snap.get("latest_youtube_url")),
             "insights": _comparison_insights(snap),
