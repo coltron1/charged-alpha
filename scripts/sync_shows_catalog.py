@@ -132,6 +132,55 @@ def parse_youtube_rss_dates(feed_xml: str) -> dict[str, str]:
     return dates
 
 
+def parse_ytdlp_upload_date(timestamp: str, upload_date: str) -> str:
+    if timestamp and timestamp != "NA":
+        try:
+            return datetime.fromtimestamp(int(float(timestamp)), tz=timezone.utc).isoformat()
+        except (TypeError, ValueError):
+            pass
+    if upload_date and upload_date != "NA":
+        try:
+            return datetime.strptime(upload_date, "%Y%m%d").replace(tzinfo=timezone.utc).isoformat()
+        except (TypeError, ValueError):
+            pass
+    return ""
+
+
+def run_ytdlp_dates(rows: list[VideoRow]) -> dict[str, str]:
+    missing_rows = [row for row in rows if row.url]
+    if not missing_rows:
+        return {}
+
+    command = [
+        sys.executable,
+        "-m",
+        "yt_dlp",
+        "--skip-download",
+        "--ignore-errors",
+        "--no-warnings",
+        "--print",
+        "%(id)s\t%(timestamp)s\t%(upload_date)s",
+        *[row.url for row in missing_rows],
+    ]
+    result = subprocess.run(
+        command,
+        capture_output=True,
+        text=True,
+        timeout=600,
+    )
+
+    dates: dict[str, str] = {}
+    for line in result.stdout.splitlines():
+        parts = line.split("\t")
+        if len(parts) != 3:
+            continue
+        video_id, timestamp, upload_date = parts
+        parsed = parse_ytdlp_upload_date(timestamp, upload_date)
+        if video_id and parsed:
+            dates[video_id] = parsed
+    return dates
+
+
 def parse_stock_title(title: str) -> tuple[str, str] | None:
     match = STOCK_TITLE_RE.match(title.strip())
     if not match:
@@ -250,6 +299,44 @@ def build_stock_episode(
     }
 
 
+def enrich_new_episode_metadata(episodes: list[dict]) -> None:
+    tickers = sorted(
+        {
+            (episode.get("ticker") or "").upper()
+            for episode in episodes
+            if episode.get("ticker")
+            and (
+                episode.get("company") == episode.get("ticker")
+                or episode.get("sector") == "Unclassified"
+            )
+        }
+    )
+    if not tickers:
+        return
+
+    try:
+        from yf_utils import fetch_ticker_info
+    except Exception:
+        return
+
+    print("Fetching company metadata for new tickers...")
+    metadata: dict[str, dict] = {}
+    for ticker in tickers:
+        _ticker_obj, info = fetch_ticker_info(ticker, max_retries=1)
+        if info:
+            metadata[ticker] = info
+
+    for episode in episodes:
+        ticker = (episode.get("ticker") or "").upper()
+        info = metadata.get(ticker) or {}
+        company = info.get("longName") or info.get("shortName")
+        sector = info.get("sector")
+        if company and episode.get("company") == ticker:
+            episode["company"] = company
+        if sector and episode.get("sector") == "Unclassified":
+            episode["sector"] = sector
+
+
 def build_extra_video(
     row: VideoRow,
     section: str,
@@ -287,6 +374,17 @@ def sync_catalog(args: argparse.Namespace) -> dict:
 
     pending_videos = newest_unlinked(videos, existing_urls, args.scan_all)
     pending_shorts = newest_unlinked(shorts, existing_urls, args.scan_all)
+    pending_without_rss_dates = [
+        row
+        for row in [*pending_videos, *pending_shorts]
+        if not youtube_dates.get(row.url)
+    ]
+    if pending_without_rss_dates:
+        print("Fetching upload dates for pending YouTube rows...")
+        metadata_dates = run_ytdlp_dates(pending_without_rss_dates)
+        for row in pending_without_rss_dates:
+            if metadata_dates.get(row.video_id):
+                youtube_dates[row.url] = metadata_dates[row.video_id]
 
     new_episodes: list[dict] = []
     new_explainers: list[dict] = []
@@ -323,6 +421,7 @@ def sync_catalog(args: argparse.Namespace) -> dict:
     ]
 
     new_episodes.sort(key=lambda episode: episode.get("published_at") or "", reverse=True)
+    enrich_new_episode_metadata(new_episodes)
     catalog["episodes"] = new_episodes + catalog.get("episodes", [])
 
     explainer_section = find_section(catalog, "Market and Sector Explainers")

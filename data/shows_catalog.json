@@ -9,6 +9,168 @@
   },
   "episodes": [
     {
+      "ticker": "KR",
+      "company": "The Kroger Co.",
+      "sector": "Consumer Defensive",
+      "quarter": "Q1 FY2026",
+      "episode_number": "",
+      "title": "KR Stock: Kroger’s New Walmart CEO Is Cutting Prices On Purpose - And The Stock Fell Q1 FY2026",
+      "published_at": "2026-06-18T13:47:15+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=Uf_BiwAApfw",
+      "spotify_url": "",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/kr-stock-kroger-s-new-walmart-ceo-is-cutting-prices-on-purpose-and-the-stock-fell-q1-fy2026/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "ACN",
+      "company": "Accenture plc",
+      "sector": "Technology",
+      "quarter": "Q3 FY2026",
+      "episode_number": "",
+      "title": "ACN Stock: Accenture Beat Earnings - And Crashed To A Decade-Low 12x On AI Fears Q3 FY2026",
+      "published_at": "2026-06-18T13:27:50+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=DVFS2rTkWMw",
+      "spotify_url": "",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/acn-stock-accenture-beat-earnings-and-crashed-to-a-decade-low-12x-on-ai-fears-q3-fy2026/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "KMX",
+      "company": "CarMax, Inc.",
+      "sector": "Consumer Cyclical",
+      "quarter": "Q1 FY2027",
+      "episode_number": "",
+      "title": "KMX Stock: CarMax Beat Earnings 39% - And The Stock Crashed 8%. Here’s Why Q1 FY2027",
+      "published_at": "2026-06-17T23:10:35+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=OOOAGmwaYhE",
+      "spotify_url": "",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/kmx-stock-carmax-beat-earnings-39-and-the-stock-crashed-8-here-s-why-q1-fy2027/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "JBL",
+      "company": "Jabil Inc.",
+      "sector": "Technology",
+      "quarter": "Q3 FY2026",
+      "episode_number": "",
+      "title": "JBL Stock: Jabil’s $13B AI Engine Nearly Doubled Its Valuation - Is The Upside Gone? Q3 FY2026",
+      "published_at": "2026-06-17T15:20:34+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=QS0FHZE57XI",
+      "spotify_url": "",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/jbl-stock-jabil-s-13b-ai-engine-nearly-doubled-its-valuation-is-the-upside-gone-q3-fy2026/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "WW",
+      "company": "WW International, Inc.",
+      "sector": "Healthcare",
+      "quarter": "Q1 FY2026",
+      "episode_number": "",
+      "title": "WW Stock: WeightWatchers Lost $5.20 a Share, 113% Worse Than Feared Q1 FY2026",
+      "published_at": "2026-06-16T14:30:18+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=tAUH1sIbNPE",
+      "spotify_url": "",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/ww-stock-weightwatchers-lost-520-a-share-113-worse-than-feared-q1-fy2026/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "LZB",
+      "company": "La-Z-Boy Incorporated",
+      "sector": "Consumer Cyclical",
+      "quarter": "Q4 FY2026",
+      "episode_number": "",
+      "title": "LZB Stock: Dividend Raised 10% in the Worst Housing Market in 30 Years Q4 FY2026",
+      "published_at": "2026-06-16T14:21:56+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=2iR5cKBvCRQ",
+      "spotify_url": "",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/lzb-stock-dividend-raised-10-in-the-worst-housing-market-in-30-years-q4-fy2026/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "WLY",
+      "company": "John Wiley & Sons, Inc.",
+      "sector": "Communication Services",
+      "quarter": "Q4 FY2026",
+      "episode_number": "",
+      "title": "WLY Stock: Wiley’s 50M Dollar AI Licensing Engine Hiding in a 218-Year-Old Publisher Q4 FY2026",
+      "published_at": "2026-06-16T14:13:56+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=yEacNl6ANfY",
+      "spotify_url": "",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/wly-stock-wiley-s-50m-dollar-ai-licensing-engine-hiding-in-a-218-year-old-publisher-q4-fy2026/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "NCLTY",
+      "company": "Nitori Holdings Co., Ltd.",
+      "sector": "Consumer Cyclical",
+      "quarter": "Q4 FY2026",
+      "episode_number": "",
+      "title": "NCLTY Stock: The $46B Japan Furniture King Most Americans Have Never Heard Of Q4 FY2026",
+      "published_at": "2026-06-16T13:57:08+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=bFJU4lccBcA",
+      "spotify_url": "",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/nclty-stock-the-46b-japan-furniture-king-most-americans-have-never-heard-of-q4-fy2026/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "PLAY",
+      "company": "Dave & Buster's Entertainment, Inc.",
+      "sector": "Communication Services",
+      "quarter": "Q1 FY2027",
+      "episode_number": "",
+      "title": "PLAY Stock: 16 Cents vs 60 Cents - The Family Entertainment Wipeout Q1 FY2027",
+      "published_at": "2026-06-16T13:40:45+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=z2Aujv_s4Lk",
+      "spotify_url": "",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/play-stock-16-cents-vs-60-cents-the-family-entertainment-wipeout-q1-fy2027/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
       "ticker": "LEN",
       "company": "LEN",
       "sector": "Unclassified",
@@ -21305,6 +21467,204 @@
       "description": "Fast clips that point viewers into full research videos and stock pages.",
       "videos": [
         {
+          "title": "KR +1.0% — CHEAP, BUT COMPS SLOWING #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/_WVMdcRVtNY",
+          "spotify_url": "",
+          "podbean_url": "",
+          "published_at": "2026-06-18T13:48:09+00:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "KR",
+            "CHEAP",
+            "BUT",
+            "COMPS"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "ACN 12x — DECADE-LOW, ON A BEAT #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/OHoUkT777C8",
+          "spotify_url": "",
+          "podbean_url": "",
+          "published_at": "2026-06-18T13:29:00+00:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "ACN",
+            "DECADE",
+            "LOW",
+            "ON",
+            "BEAT"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "KMX -7.6% — 39% BEAT, STOCK CRASHED #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/hOYR5c9pPok",
+          "spotify_url": "",
+          "podbean_url": "",
+          "published_at": "2026-06-17T23:11:35+00:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "KMX",
+            "BEAT",
+            "STOCK"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "JBL $13B — AI ENGINE, FULL VALUATION #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/EqaqS2hqahQ",
+          "spotify_url": "",
+          "podbean_url": "",
+          "published_at": "2026-06-17T15:21:14+00:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "JBL",
+            "ENGINE",
+            "FULL"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "WW -$5.20 — MISS BY 113% #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/c2d76i9wHnw",
+          "spotify_url": "",
+          "podbean_url": "",
+          "published_at": "2026-06-16T14:31:58+00:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "WW",
+            "MISS",
+            "BY"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "WW Stock: Q1 FY2026 in 60 Seconds #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/lRHEfDoqZtY",
+          "spotify_url": "",
+          "podbean_url": "",
+          "published_at": "2026-06-16T14:31:57+00:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "WW",
+            "FY2026"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "LZB 99 YRS — WORST HOUSING MARKET IN 30 YEARS #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/gd5NyPmxIGc",
+          "spotify_url": "",
+          "podbean_url": "",
+          "published_at": "2026-06-16T14:24:04+00:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "LZB",
+            "YRS",
+            "WORST",
+            "MARKET",
+            "IN",
+            "YEARS"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "LZB Stock: Q4 FY2026 in 60 Seconds #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/ZLooOIZaa8E",
+          "spotify_url": "",
+          "podbean_url": "",
+          "published_at": "2026-06-16T14:23:48+00:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "LZB",
+            "FY2026"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "WLY Stock: Q4 FY2026 in 60 Seconds #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/gFq56GJSfZU",
+          "spotify_url": "",
+          "podbean_url": "",
+          "published_at": "2026-06-16T14:17:00+00:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "WLY",
+            "FY2026"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "WLY $50M — 218-YEAR-OLD AI PLAY #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/MfYEY72nyro",
+          "spotify_url": "",
+          "podbean_url": "",
+          "published_at": "2026-06-16T14:16:48+00:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "WLY",
+            "YEAR",
+            "OLD",
+            "PLAY"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "NCLTY +1000% — JAPAN'S IKEA #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/iklUh8w_03I",
+          "spotify_url": "",
+          "podbean_url": "",
+          "published_at": "2026-06-16T13:59:36+00:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "NCLTY",
+            "JAPAN",
+            "IKEA"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "NCLTY Stock: Q4 FY2026 in 60 Seconds #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/dvZxO3ZSdDM",
+          "spotify_url": "",
+          "podbean_url": "",
+          "published_at": "2026-06-16T13:59:30+00:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "NCLTY",
+            "FY2026"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "PLAY 73% — 16 CENTS VS 60 CENTS EXPECTED #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/vV-DLuPK30I",
+          "spotify_url": "",
+          "podbean_url": "",
+          "published_at": "2026-06-16T13:46:37+00:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "PLAY",
+            "CENTS",
+            "VS"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "PLAY Stock: Q1 FY2027 in 60 Seconds #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/NFS-h1zQPII",
+          "spotify_url": "",
+          "podbean_url": "",
+          "published_at": "2026-06-16T13:46:36+00:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "PLAY",
+            "FY2027"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
           "title": "RETAIL-W24 5 PRINTS — ONE CONSUMER, FIVE VERDICTS #Shorts",
           "youtube_url": "https://www.youtube.com/shorts/uDNcbBrHbTc",
           "spotify_url": "",
@@ -21781,5 +22141,5 @@
       ]
     }
   ],
-  "last_synced_at": "2026-06-12T13:39:31-05:00"
+  "last_synced_at": "2026-06-22T14:25:15-05:00"
 }
