@@ -8,7 +8,7 @@ import secrets
 import datetime
 from urllib.parse import urlparse
 
-from flask import Blueprint, current_app, render_template, request, redirect, url_for, flash, jsonify, session
+from flask import Blueprint, abort, current_app, render_template, request, redirect, url_for, flash, jsonify, session
 from flask_login import login_user, logout_user, login_required, current_user
 from werkzeug.security import generate_password_hash, check_password_hash
 from authlib.integrations.flask_client import OAuth
@@ -55,6 +55,10 @@ def google_oauth_available():
 
 def github_oauth_available():
     return os.environ.get("ENABLE_GITHUB_AUTH", "").strip().lower() in {"1", "true", "yes"} and _env_is_set("GITHUB_CLIENT_ID") and _env_is_set("GITHUB_CLIENT_SECRET")
+
+
+def public_auth_enabled():
+    return os.environ.get("ENABLE_PUBLIC_AUTH", "").strip().lower() in TRUTHY_VALUES
 
 
 def _oauth_redirect_uri(provider):
@@ -105,6 +109,7 @@ def _csrf_token():
 def inject_auth_helpers():
     return {
         "csrf_token": _csrf_token,
+        "auth_public_enabled": public_auth_enabled,
         "google_oauth_available": google_oauth_available,
         "github_oauth_available": github_oauth_available,
     }
@@ -230,6 +235,8 @@ def init_oauth(app):
 
 @auth_bp.route("/register", methods=["GET", "POST"])
 def register():
+    if not public_auth_enabled():
+        abort(404)
     if current_user.is_authenticated:
         return redirect(safe_next_url(request.args.get("next"), "/"))
 
@@ -286,6 +293,8 @@ def register():
 
 @auth_bp.route("/login", methods=["GET", "POST"])
 def login():
+    if not public_auth_enabled():
+        abort(404)
     if current_user.is_authenticated:
         return redirect(safe_next_url(request.args.get("next"), "/"))
 
@@ -327,14 +336,16 @@ def me():
         first_name = get_public_first_name(current_user)
         return jsonify({
             "authenticated": True,
+            "authEnabled": public_auth_enabled(),
             "name": current_user.name,
             "email": current_user.email,
             "firstName": first_name,
         })
     return jsonify({
         "authenticated": False,
-        "loginUrl": url_for("auth.login", next=next_url),
-        "registerUrl": url_for("auth.register", next=next_url),
+        "authEnabled": public_auth_enabled(),
+        "loginUrl": url_for("auth.login", next=next_url) if public_auth_enabled() else "",
+        "registerUrl": url_for("auth.register", next=next_url) if public_auth_enabled() else "",
     })
 
 
@@ -342,6 +353,8 @@ def me():
 
 @auth_bp.route("/google")
 def google_login():
+    if not public_auth_enabled():
+        abort(404)
     next_url = safe_next_url(request.args.get("next"), "/")
     if not hasattr(oauth, 'google') or not google_oauth_available():
         flash("Google sign-in is not configured yet. Use email sign-in for now.", "error")
@@ -354,6 +367,8 @@ def google_login():
 
 @auth_bp.route("/google/callback")
 def google_callback():
+    if not public_auth_enabled():
+        abort(404)
     if not hasattr(oauth, 'google') or not google_oauth_available():
         flash("Google sign-in is not configured yet. Use email sign-in for now.", "error")
         return redirect(url_for("auth.login"))
@@ -414,6 +429,8 @@ def email_updates():
 
 @auth_bp.route("/github")
 def github_login():
+    if not public_auth_enabled():
+        abort(404)
     next_url = safe_next_url(request.args.get("next"), "/")
     if not hasattr(oauth, 'github') or not github_oauth_available():
         flash("GitHub sign-in is not available yet.", "error")
@@ -425,6 +442,8 @@ def github_login():
 
 @auth_bp.route("/github/callback")
 def github_callback():
+    if not public_auth_enabled():
+        abort(404)
     try:
         token = oauth.github.authorize_access_token()
         resp = oauth.github.get("user", token=token)

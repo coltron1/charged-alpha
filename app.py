@@ -50,7 +50,7 @@ except ImportError:
     ZoneInfo = None
 
 import yfinance as yf
-from flask import Flask, render_template, request, jsonify, redirect, Response, url_for
+from flask import Flask, abort, render_template, request, jsonify, redirect, Response, url_for
 from flask_compress import Compress
 from flask_login import LoginManager, current_user, login_required
 from werkzeug.middleware.proxy_fix import ProxyFix
@@ -66,7 +66,7 @@ except ImportError:
 from yf_utils import (TTLCache, JobStore, fetch_ticker_info, safe_float,
                        normalize_div_yield, fetch_chart, fetch_banner_tickers)
 from models import db, User, GameScore
-from auth import auth_bp, get_email_updates_subscription, get_public_first_name, init_oauth
+from auth import auth_bp, get_email_updates_subscription, get_public_first_name, init_oauth, public_auth_enabled
 from chart_storage import save_chart_state, load_chart_state, list_user_charts, delete_chart_state
 
 # ── Import backend modules ──────────────────────────────────────────────────
@@ -254,8 +254,12 @@ PUBLIC_SITEMAP_PATHS = [
     "/charts",
     "/games",
     "/about",
+    "/privacy",
 ]
 PUBLIC_ROBOTS_DISALLOW_PATHS = [
+    "/auth/",
+    "/login",
+    "/register",
     "/api/",
     "/screener/api/",
     "/etf/api/",
@@ -405,6 +409,13 @@ SEO_PAGE_META = {
             "email preference questions."
         ),
         "robots": "noindex,nofollow,noarchive",
+    },
+    "/privacy": {
+        "title": "Privacy Policy — Charged Alpha Academy",
+        "description": (
+            "Privacy Policy for Charged Alpha Academy, an offline investing-education "
+            "app by Crown Creek Capital LLC d/b/a Charged Alpha."
+        ),
     },
     "/games/front-page-fortune": {
         "title": "Front Page Fortune — Historical Market Prediction Game",
@@ -1615,10 +1626,13 @@ def unauthorized():
         next_url = request.referrer or "/games/front-page-fortune"
         return jsonify({
             "ok": False,
-            "error": "Sign in or create a free Charged Alpha account to post public scores.",
-            "login_url": url_for("auth.login", next=next_url),
-            "register_url": url_for("auth.register", next=next_url),
+            "error": "Public score posting is temporarily paused.",
+            "auth_enabled": public_auth_enabled(),
+            "login_url": url_for("auth.login", next=next_url) if public_auth_enabled() else "",
+            "register_url": url_for("auth.register", next=next_url) if public_auth_enabled() else "",
         }), 401
+    if not public_auth_enabled():
+        abort(404)
     return redirect(url_for("auth.login", next=request.full_path if request.query_string else request.path))
 
 init_oauth(app)
@@ -1630,10 +1644,14 @@ with app.app_context():
 # ── Convenience redirects for auth ────────────────────────────────────────
 @app.route("/login")
 def login_redirect():
+    if not public_auth_enabled():
+        abort(404)
     return redirect("/auth/login" + ("?" + request.query_string.decode() if request.query_string else ""))
 
 @app.route("/register")
 def register_redirect():
+    if not public_auth_enabled():
+        abort(404)
     return redirect("/auth/register" + ("?" + request.query_string.decode() if request.query_string else ""))
 
 # ── Shared job store (auto-cleans after 10 min) ────────────────────────────
@@ -1766,6 +1784,7 @@ def inject_seo_meta():
     return {
         "seo_meta": _get_seo_meta(),
         "google_analytics_id": GOOGLE_ANALYTICS_ID,
+        "auth_public_enabled": public_auth_enabled,
     }
 
 
@@ -1920,6 +1939,11 @@ def about():
     return render_template("about.html")
 
 
+@app.route("/privacy")
+def privacy():
+    return render_template("privacy.html")
+
+
 @app.route("/unsubscribe")
 def unsubscribe():
     return render_template("unsubscribe.html")
@@ -2029,6 +2053,8 @@ def games_progress():
 @app.route("/account")
 @login_required
 def account():
+    if not public_auth_enabled():
+        abort(404)
     scores = (
         GameScore.query.filter_by(user_id=current_user.id)
         .order_by(GameScore.created_at.desc())

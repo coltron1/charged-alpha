@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ seo_meta.title }}</title>
+  {% include "partials/seo_meta.html" %}
+  <style>
+    :root { --bg:#0e0e10; --card:#161618; --text:#e8e6e1; --muted:#a5a29a; --gold:#C9A84C; --line:#2a2a2e; }
+    * { box-sizing:border-box; }
+    body {
+      margin:0; background:var(--bg); color:var(--text);
+      font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+      line-height:1.6;
+    }
+    .wrap { max-width:760px; margin:0 auto; padding:48px 22px 80px; }
+    header { border-bottom:1px solid var(--line); padding-bottom:22px; margin-bottom:30px; }
+    .brand { color:var(--gold); font-weight:700; letter-spacing:.06em; text-transform:uppercase; font-size:13px; }
+    .home-link { display:inline-block; margin-bottom:18px; color:var(--muted); text-decoration:none; font-size:14px; }
+    .home-link:hover { color:var(--gold); }
+    h1 { font-size:30px; margin:10px 0 6px; }
+    .updated { color:var(--muted); font-size:14px; }
+    h2 { color:var(--gold); font-size:19px; margin:34px 0 10px; }
+    p, li { color:var(--text); }
+    a { color:var(--gold); }
+    .lead {
+      font-size:18px; color:var(--text); background:var(--card); border:1px solid var(--line);
+      border-left:3px solid var(--gold); border-radius:8px; padding:16px 18px;
+    }
+    ul { padding-left:20px; }
+    li { margin:6px 0; }
+    footer { margin-top:48px; padding-top:20px; border-top:1px solid var(--line); color:var(--muted); font-size:14px; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <a class="home-link" href="/">Back to Charged Alpha</a>
+    <header>
+      <div class="brand">Charged Alpha</div>
+      <h1>Privacy Policy</h1>
+      <div class="updated">Charged Alpha Academy &middot; Last updated: June 23, 2026</div>
+    </header>
+
+    <p class="lead"><strong>The short version:</strong> Charged Alpha Academy collects no personal data. There are no accounts and no sign-up. Everything you do in the app stays on your device.</p>
+
+    <p>This app is published by <strong>Crown Creek Capital LLC</strong>, doing business as <strong>Charged Alpha</strong> ("we," "us," or "our"). This policy explains how the Charged Alpha Academy mobile app (the "App") handles information.</p>
+
+    <h2>Information we collect</h2>
+    <p>None. The App does not require an account, login, or sign-up. We do not collect, request, or receive your name, email address, phone number, location, contacts, photos, or device identifiers, and we do not use third-party analytics or tracking.</p>
+
+    <h2>Information stored on your device</h2>
+    <p>Your learning data - lesson progress, quiz results, and spaced-repetition review state - is saved <strong>locally on your device</strong> using the App's on-device storage. This information never leaves your device, is not transmitted to us or any third party, and is not accessible to us.</p>
+
+    <h2>No advertising or tracking</h2>
+    <p>The App contains no advertising, no third-party advertising or analytics SDKs, and no tracking technologies. We do not build profiles of you and we do not sell or share any information, because we do not collect any.</p>
+
+    <h2>Audio and offline use</h2>
+    <p>Lesson narration audio is bundled inside the App and plays directly from your device. The App is designed to work fully offline and does not require an internet connection to use.</p>
+
+    <h2>Permissions</h2>
+    <p>The App does not request access to your camera, microphone, location, contacts, or photo library.</p>
+
+    <h2>Children's privacy</h2>
+    <p>The App is suitable for a general audience and is educational in nature. Because the App collects no personal information from anyone, it does not knowingly collect personal information from children under 13 (or under the relevant age in your jurisdiction).</p>
+
+    <h2>Data retention and deletion</h2>
+    <p>Because your data is stored only on your device, you remain in control of it. You can clear your progress at any time using any in-app reset option, or by uninstalling the App, which removes all locally stored data.</p>
+
+    <h2>Educational use only - not investment advice</h2>
+    <p>Charged Alpha Academy is an educational product. Its lessons provide general financial education only. They are not individualized investment advice and are not an offer, solicitation, or recommendation to buy or sell any security. Always do your own research or consult a licensed professional before making investment decisions.</p>
+
+    <h2>Changes to this policy</h2>
+    <p>We may update this policy from time to time. Any changes will be posted on this page with an updated "Last updated" date.</p>
+
+    <h2>Contact us</h2>
+    <p>Questions about this policy? Contact Crown Creek Capital LLC d/b/a Charged Alpha at <a href="mailto:hello@chargedalpha.com">hello@chargedalpha.com</a>.</p>
+
+    <footer>
+      Charged Alpha is a brand of Crown Creek Capital LLC, a Minnesota limited liability company. Governing law: State of Minnesota, USA.
+    </footer>
+  </div>
+</body>
+</html>

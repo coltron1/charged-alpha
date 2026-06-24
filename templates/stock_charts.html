@@ -661,7 +661,7 @@
         const resp = await fetch('/auth/api/me');
         const data = await resp.json();
         const authArea = document.getElementById('authArea');
-        if (data.authenticated) {
+        if (data.authenticated && data.authEnabled) {
           currentUser = data;
           const initial = (data.name || data.email || '?')[0].toUpperCase();
           authArea.innerHTML = `
@@ -669,11 +669,17 @@
             <div class="nav-user-avatar">${initial}</div>
             <a href="/auth/logout" class="nav-logout">Sign out</a>
           `;
-        } else {
+        } else if (data.authEnabled) {
+          {% if auth_public_enabled() %}
           authArea.innerHTML = `
             <a href="/auth/login?next=/charts/" class="nav-auth-btn nav-auth-login">Sign In</a>
             <a href="/auth/register?next=/charts/" class="nav-auth-btn nav-auth-signup">Sign Up</a>
           `;
+          {% else %}
+          authArea.innerHTML = '';
+          {% endif %}
+        } else {
+          authArea.innerHTML = '';
         }
       } catch(e) {
         console.error('Auth check failed:', e);
