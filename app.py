@@ -254,7 +254,7 @@ PUBLIC_SITEMAP_PATHS = [
     "/charts",
     "/games",
     "/about",
-    "/privacypolicy",
+    "/privacy",
 ]
 PUBLIC_ROBOTS_DISALLOW_PATHS = [
     "/auth/",
@@ -410,7 +410,7 @@ SEO_PAGE_META = {
         ),
         "robots": "noindex,nofollow,noarchive",
     },
-    "/privacypolicy": {
+    "/privacy": {
         "title": "Privacy Policy — Charged Alpha Academy",
         "description": (
             "Privacy Policy for Charged Alpha Academy, an offline investing-education "
@@ -1940,13 +1940,13 @@ def about():
 
 
 @app.route("/privacy")
-def privacy_redirect():
-    return redirect("/privacypolicy", code=301)
+def privacy_policy():
+    return render_template("privacy.html")
 
 
 @app.route("/privacypolicy")
-def privacy_policy():
-    return render_template("privacy.html")
+def privacypolicy_redirect():
+    return redirect("/privacy", code=301)
 
 
 @app.route("/unsubscribe")
