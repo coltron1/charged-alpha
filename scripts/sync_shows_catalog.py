@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Sync Charged Alpha show links from YouTube and Podbean.
+"""Sync Charged Alpha show links from YouTube, Podbean, and Spotify.
 
 This is a maintenance script, not app runtime code. It keeps the stock episode
 catalog current by comparing the public channel/feed exports against the local
@@ -9,6 +9,7 @@ JSON catalog and prepending only missing content.
 from __future__ import annotations
 
 import argparse
+import html
 import json
 import re
 import subprocess
@@ -25,10 +26,16 @@ DEFAULT_CATALOG = Path("data/shows_catalog.json")
 DEFAULT_YOUTUBE_CHANNEL = "https://www.youtube.com/@ChargedAlpha"
 DEFAULT_YOUTUBE_RSS = "https://www.youtube.com/feeds/videos.xml?channel_id=UC4ZDZpC0OvoN4cCGoUSofuA"
 DEFAULT_PODBEAN_FEED = "https://feed.podbean.com/chargedalpha/feed.xml"
+DEFAULT_SPOTIFY_SHOW = "https://open.spotify.com/show/72TRXJNznbvrpM72hdVN3b"
 
-STOCK_TITLE_RE = re.compile(
-    r"^([A-Z][A-Z0-9.\-]{0,12}) Stock:\s+.+?\s+(Q[1-4]\s+(?:FY)?\d{4})$",
-    re.IGNORECASE,
+STOCK_TITLE_RE = re.compile(r"^([A-Z][A-Z0-9.\-]{0,12}) Stock:\s+(.+)$", re.IGNORECASE)
+QUARTER_RE = re.compile(r"\(?\b(Q[1-4]\s+(?:FY)?\d{4})\b\)?", re.IGNORECASE)
+SPOTIFY_EPISODE_RE = re.compile(
+    r'<a href="(/episode/[^"]+)"><h4[^>]*data-testid="episodeTitle"[^>]*>(.*?)</h4>',
+    re.DOTALL,
+)
+YOUTUBE_PAGE_DATE_RE = re.compile(
+    r'"(?:publishDate|uploadDate|datePublished)":"([^"]+)"'
 )
 TICKER_RE = re.compile(r"\b[A-Z][A-Z0-9.]{1,5}\b")
 TICKER_STOPWORDS = {
@@ -146,6 +153,19 @@ def parse_ytdlp_upload_date(timestamp: str, upload_date: str) -> str:
     return ""
 
 
+def parse_youtube_page_date(value: str) -> str:
+    if not value:
+        return ""
+    try:
+        return datetime.fromisoformat(value.replace("Z", "+00:00")).isoformat()
+    except ValueError:
+        pass
+    try:
+        return datetime.strptime(value, "%Y-%m-%d").replace(tzinfo=timezone.utc).isoformat()
+    except ValueError:
+        return ""
+
+
 def run_ytdlp_dates(rows: list[VideoRow]) -> dict[str, str]:
     missing_rows = [row for row in rows if row.url]
     if not missing_rows:
@@ -181,12 +201,41 @@ def run_ytdlp_dates(rows: list[VideoRow]) -> dict[str, str]:
     return dates
 
 
+def scrape_youtube_page_dates(rows: list[VideoRow]) -> dict[str, str]:
+    dates: dict[str, str] = {}
+    for row in rows:
+        if not row.url:
+            continue
+        try:
+            request = urllib.request.Request(
+                row.url,
+                headers={"User-Agent": "Mozilla/5.0"},
+            )
+            page = urllib.request.urlopen(request, timeout=30).read().decode("utf-8", "ignore")
+        except Exception:
+            continue
+
+        for raw_date in YOUTUBE_PAGE_DATE_RE.findall(page):
+            parsed = parse_youtube_page_date(raw_date)
+            if parsed:
+                dates[row.url] = parsed
+                break
+    return dates
+
+
 def parse_stock_title(title: str) -> tuple[str, str] | None:
     match = STOCK_TITLE_RE.match(title.strip())
     if not match:
         return None
-    quarter = re.sub(r"\s+", " ", match.group(2)).strip()
+    quarter_match = QUARTER_RE.search(match.group(2))
+    if not quarter_match:
+        return None
+    quarter = re.sub(r"\s+", " ", quarter_match.group(1)).strip()
     return match.group(1).upper(), quarter
+
+
+def normalize_title(title: str) -> str:
+    return re.sub(r"[^a-z0-9]+", " ", title.lower()).strip()
 
 
 def parse_podbean_items(feed_xml: str) -> tuple[dict[tuple[str, str], PodcastItem], dict[str, PodcastItem]]:
@@ -209,6 +258,26 @@ def parse_podbean_items(feed_xml: str) -> tuple[dict[tuple[str, str], PodcastIte
         parsed = parse_stock_title(title)
         if parsed:
             stock_items.setdefault(parsed, podcast)
+    return stock_items, titled_items
+
+
+def parse_spotify_items(show_html: str) -> tuple[dict[tuple[str, str], PodcastItem], dict[str, PodcastItem]]:
+    stock_items: dict[tuple[str, str], PodcastItem] = {}
+    titled_items: dict[str, PodcastItem] = {}
+
+    for href, raw_title in SPOTIFY_EPISODE_RE.findall(show_html):
+        title = re.sub(r"<[^>]+>", "", raw_title)
+        title = html.unescape(title).strip()
+        if not title:
+            continue
+
+        url = f"https://open.spotify.com{href}"
+        podcast = PodcastItem(title=title, url=url, published_at="")
+        titled_items.setdefault(title, podcast)
+        parsed = parse_stock_title(title)
+        if parsed:
+            stock_items.setdefault(parsed, podcast)
+
     return stock_items, titled_items
 
 
@@ -272,28 +341,53 @@ def find_section(catalog: dict, title: str) -> dict | None:
 def build_stock_episode(
     row: VideoRow,
     key: tuple[str, str],
-    podcast_items: dict[tuple[str, str], PodcastItem],
+    podbean_items: dict[tuple[str, str], PodcastItem],
+    spotify_items: dict[tuple[str, str], PodcastItem],
     youtube_dates: dict[str, str],
     companies: dict[str, str],
     sectors: dict[str, str],
+    duplicate_stock_keys: set[tuple[str, str]],
+    used_podbean_urls: set[str],
+    used_spotify_urls: set[str],
 ) -> dict:
     ticker, quarter = key
-    podcast = podcast_items.get(key)
+    podbean = podbean_items.get(key)
+    spotify = spotify_items.get(key)
+
+    if key in duplicate_stock_keys:
+        row_title = normalize_title(row.title)
+        if podbean and row_title != normalize_title(podbean.title):
+            podbean = None
+        if spotify and row_title != normalize_title(spotify.title):
+            spotify = None
+
+    if podbean and podbean.url in used_podbean_urls:
+        podbean = None
+    if spotify and spotify.url in used_spotify_urls:
+        spotify = None
+
+    if podbean:
+        used_podbean_urls.add(podbean.url)
+    if spotify:
+        used_spotify_urls.add(spotify.url)
+
+    podcast_title = podbean.title if podbean else spotify.title if spotify else row.title
+    podcast_date = podbean.published_at if podbean else ""
     return {
         "ticker": ticker,
         "company": companies.get(ticker, ticker),
         "sector": sectors.get(ticker, "Unclassified"),
         "quarter": quarter,
         "episode_number": "",
-        "title": podcast.title if podcast else row.title,
-        "published_at": (podcast.published_at if podcast else "") or youtube_dates.get(row.url, ""),
-        "status": "youtube_podcast_complete" if podcast else "youtube_complete",
+        "title": podcast_title,
+        "published_at": podcast_date or youtube_dates.get(row.url, ""),
+        "status": "youtube_podcast_complete" if podbean or spotify else "youtube_complete",
         "youtube_url": row.url,
-        "spotify_url": "",
+        "spotify_url": spotify.url if spotify else "",
         "apple_url": "",
         "google_url": "",
         "iheart_url": "",
-        "podbean_url": podcast.url if podcast else "",
+        "podbean_url": podbean.url if podbean else "",
         "has_episode": True,
         "amazon_url": "",
     }
@@ -342,13 +436,15 @@ def build_extra_video(
     section: str,
     youtube_dates: dict[str, str],
     titled_podcasts: dict[str, PodcastItem],
+    titled_spotify: dict[str, PodcastItem],
     summary: str,
 ) -> dict:
     podcast = titled_podcasts.get(row.title)
+    spotify = titled_spotify.get(row.title)
     return {
         "title": row.title,
         "youtube_url": row.url,
-        "spotify_url": "",
+        "spotify_url": spotify.url if spotify else "",
         "podbean_url": podcast.url if podcast else "",
         "published_at": (podcast.published_at if podcast else "") or youtube_dates.get(row.url, ""),
         "section": section,
@@ -371,6 +467,12 @@ def sync_catalog(args: argparse.Namespace) -> dict:
     youtube_dates = parse_youtube_rss_dates(fetch_text(args.youtube_rss))
     print("Fetching Podbean feed...")
     podcast_items, titled_podcasts = parse_podbean_items(fetch_text(args.podbean_feed))
+    print("Fetching Spotify show page...")
+    try:
+        spotify_items, titled_spotify = parse_spotify_items(fetch_text(args.spotify_show))
+    except Exception as exc:
+        print(f"Warning: unable to read Spotify show page: {exc}", file=sys.stderr)
+        spotify_items, titled_spotify = {}, {}
 
     pending_videos = newest_unlinked(videos, existing_urls, args.scan_all)
     pending_shorts = newest_unlinked(shorts, existing_urls, args.scan_all)
@@ -385,18 +487,46 @@ def sync_catalog(args: argparse.Namespace) -> dict:
         for row in pending_without_rss_dates:
             if metadata_dates.get(row.video_id):
                 youtube_dates[row.url] = metadata_dates[row.video_id]
+        still_missing_dates = [
+            row
+            for row in pending_without_rss_dates
+            if not youtube_dates.get(row.url)
+        ]
+        if still_missing_dates:
+            print("Scraping YouTube pages for remaining upload dates...")
+            page_dates = scrape_youtube_page_dates(still_missing_dates)
+            youtube_dates.update(page_dates)
 
     new_episodes: list[dict] = []
     new_explainers: list[dict] = []
-    seen_stock_keys: set[tuple[str, str]] = set()
+    pending_stock_keys = [
+        parsed
+        for row in pending_videos
+        if (parsed := parse_stock_title(row.title)) is not None
+    ]
+    duplicate_stock_keys = {
+        key
+        for key in pending_stock_keys
+        if pending_stock_keys.count(key) > 1
+    }
+    used_podbean_urls = set(existing_urls)
+    used_spotify_urls = set(existing_urls)
     for row in pending_videos:
         parsed = parse_stock_title(row.title)
         if parsed:
-            if parsed in seen_stock_keys:
-                continue
-            seen_stock_keys.add(parsed)
             new_episodes.append(
-                build_stock_episode(row, parsed, podcast_items, youtube_dates, companies, sectors)
+                build_stock_episode(
+                    row,
+                    parsed,
+                    podcast_items,
+                    spotify_items,
+                    youtube_dates,
+                    companies,
+                    sectors,
+                    duplicate_stock_keys,
+                    used_podbean_urls,
+                    used_spotify_urls,
+                )
             )
         else:
             new_explainers.append(
@@ -405,6 +535,7 @@ def sync_catalog(args: argparse.Namespace) -> dict:
                     "Market and Sector Explainers",
                     youtube_dates,
                     titled_podcasts,
+                    titled_spotify,
                     "A special-topic Charged Alpha video connected to current stock and earnings research.",
                 )
             )
@@ -415,6 +546,7 @@ def sync_catalog(args: argparse.Namespace) -> dict:
             "Shorts and Clips",
             youtube_dates,
             titled_podcasts,
+            titled_spotify,
             "A fast Charged Alpha clip pointing viewers into the latest earnings coverage.",
         )
         for row in pending_shorts
@@ -459,6 +591,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--youtube-channel", default=DEFAULT_YOUTUBE_CHANNEL)
     parser.add_argument("--youtube-rss", default=DEFAULT_YOUTUBE_RSS)
     parser.add_argument("--podbean-feed", default=DEFAULT_PODBEAN_FEED)
+    parser.add_argument("--spotify-show", default=DEFAULT_SPOTIFY_SHOW)
     parser.add_argument(
         "--scan-all",
         action="store_true",
