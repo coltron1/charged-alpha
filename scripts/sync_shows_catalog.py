@@ -28,8 +28,15 @@ DEFAULT_YOUTUBE_RSS = "https://www.youtube.com/feeds/videos.xml?channel_id=UC4ZD
 DEFAULT_PODBEAN_FEED = "https://feed.podbean.com/chargedalpha/feed.xml"
 DEFAULT_SPOTIFY_SHOW = "https://open.spotify.com/show/72TRXJNznbvrpM72hdVN3b"
 
-STOCK_TITLE_RE = re.compile(r"^([A-Z][A-Z0-9.\-]{0,12}) Stock:\s+(.+)$", re.IGNORECASE)
-QUARTER_RE = re.compile(r"\(?\b(Q[1-4]\s+(?:FY)?\d{4})\b\)?", re.IGNORECASE)
+TICKER_STOCK_TITLE_RE = re.compile(r"^([A-Z][A-Z0-9.\-]{0,12}) Stock:\s+(.+)$")
+COMPANY_TICKER_STOCK_TITLE_RE = re.compile(
+    r"^.+? Stock \(([A-Z][A-Z0-9.\-]{0,12})\):\s+(.+)$"
+)
+PERIOD_RE = re.compile(r"\b(Q[1-4]\s+(?:FY)?\d{4}|FY\s?\d{4})\b", re.IGNORECASE)
+PODCAST_IDENTITY_RE = re.compile(
+    r"\(([A-Z][A-Z0-9.\-]{0,12})\)\s+"
+    r"(Q[1-4]\s+(?:FY)?\d{4}|FY\s?\d{4})\b"
+)
 SPOTIFY_EPISODE_RE = re.compile(
     r'<a href="(/episode/[^"]+)"><h4[^>]*data-testid="episodeTitle"[^>]*>(.*?)</h4>',
     re.DOTALL,
@@ -69,6 +76,8 @@ class PodcastItem:
     title: str
     url: str
     published_at: str
+    ticker: str = ""
+    quarter: str = ""
 
 
 def fetch_text(url: str) -> str:
@@ -223,19 +232,52 @@ def scrape_youtube_page_dates(rows: list[VideoRow]) -> dict[str, str]:
     return dates
 
 
-def parse_stock_title(title: str) -> tuple[str, str] | None:
-    match = STOCK_TITLE_RE.match(title.strip())
-    if not match:
+def normalize_period(value: str) -> str:
+    return re.sub(r"\s+", " ", value).strip().upper()
+
+
+def parse_stock_title(title: str, fallback_text: str = "") -> tuple[str, str] | None:
+    clean_title = title.strip()
+    ticker = ""
+
+    ticker_match = TICKER_STOCK_TITLE_RE.match(clean_title)
+    if ticker_match:
+        ticker = ticker_match.group(1)
+    else:
+        company_ticker_match = COMPANY_TICKER_STOCK_TITLE_RE.match(clean_title)
+        if company_ticker_match:
+            ticker = company_ticker_match.group(1)
+
+    period_match = PERIOD_RE.search(clean_title)
+    period = normalize_period(period_match.group(1)) if period_match else ""
+
+    metadata_match = PODCAST_IDENTITY_RE.search(fallback_text)
+    if metadata_match:
+        ticker = ticker or metadata_match.group(1)
+        period = period or normalize_period(metadata_match.group(2))
+
+    if not ticker:
         return None
-    quarter_match = QUARTER_RE.search(match.group(2))
-    if not quarter_match:
-        return None
-    quarter = re.sub(r"\s+", " ", quarter_match.group(1)).strip()
-    return match.group(1).upper(), quarter
+    return ticker.upper(), period
 
 
 def normalize_title(title: str) -> str:
     return re.sub(r"[^a-z0-9]+", " ", title.lower()).strip()
+
+
+def resolve_stock_key(
+    title: str,
+    titled_podcasts: dict[str, PodcastItem],
+) -> tuple[str, str] | None:
+    parsed = parse_stock_title(title)
+    podcast = titled_podcasts.get(normalize_title(title))
+
+    if podcast and podcast.ticker:
+        parsed_period = parsed[1] if parsed else ""
+        return podcast.ticker, podcast.quarter or parsed_period or "Current"
+    if parsed:
+        return parsed[0], parsed[1] or "Current"
+    return None
 
 
 def parse_podbean_items(feed_xml: str) -> tuple[dict[tuple[str, str], PodcastItem], dict[str, PodcastItem]]:
@@ -253,9 +295,18 @@ def parse_podbean_items(feed_xml: str) -> tuple[dict[tuple[str, str], PodcastIte
         if not title or not url:
             continue
 
-        podcast = PodcastItem(title=title, url=url, published_at=published_at)
-        titled_items.setdefault(title, podcast)
-        parsed = parse_stock_title(title)
+        description = html.unescape(
+            re.sub(r"<[^>]+>", " ", item.findtext("description") or "")
+        )
+        parsed = parse_stock_title(title, description)
+        podcast = PodcastItem(
+            title=title,
+            url=url,
+            published_at=published_at,
+            ticker=parsed[0] if parsed else "",
+            quarter=parsed[1] if parsed else "",
+        )
+        titled_items.setdefault(normalize_title(title), podcast)
         if parsed:
             stock_items.setdefault(parsed, podcast)
     return stock_items, titled_items
@@ -272,9 +323,15 @@ def parse_spotify_items(show_html: str) -> tuple[dict[tuple[str, str], PodcastIt
             continue
 
         url = f"https://open.spotify.com{href}"
-        podcast = PodcastItem(title=title, url=url, published_at="")
-        titled_items.setdefault(title, podcast)
         parsed = parse_stock_title(title)
+        podcast = PodcastItem(
+            title=title,
+            url=url,
+            published_at="",
+            ticker=parsed[0] if parsed else "",
+            quarter=parsed[1] if parsed else "",
+        )
+        titled_items.setdefault(normalize_title(title), podcast)
         if parsed:
             stock_items.setdefault(parsed, podcast)
 
@@ -343,6 +400,8 @@ def build_stock_episode(
     key: tuple[str, str],
     podbean_items: dict[tuple[str, str], PodcastItem],
     spotify_items: dict[tuple[str, str], PodcastItem],
+    titled_podcasts: dict[str, PodcastItem],
+    titled_spotify: dict[str, PodcastItem],
     youtube_dates: dict[str, str],
     companies: dict[str, str],
     sectors: dict[str, str],
@@ -351,8 +410,9 @@ def build_stock_episode(
     used_spotify_urls: set[str],
 ) -> dict:
     ticker, quarter = key
-    podbean = podbean_items.get(key)
-    spotify = spotify_items.get(key)
+    normalized_row_title = normalize_title(row.title)
+    podbean = titled_podcasts.get(normalized_row_title) or podbean_items.get(key)
+    spotify = titled_spotify.get(normalized_row_title) or spotify_items.get(key)
 
     if key in duplicate_stock_keys:
         row_title = normalize_title(row.title)
@@ -439,8 +499,9 @@ def build_extra_video(
     titled_spotify: dict[str, PodcastItem],
     summary: str,
 ) -> dict:
-    podcast = titled_podcasts.get(row.title)
-    spotify = titled_spotify.get(row.title)
+    normalized_row_title = normalize_title(row.title)
+    podcast = titled_podcasts.get(normalized_row_title)
+    spotify = titled_spotify.get(normalized_row_title)
     return {
         "title": row.title,
         "youtube_url": row.url,
@@ -502,7 +563,7 @@ def sync_catalog(args: argparse.Namespace) -> dict:
     pending_stock_keys = [
         parsed
         for row in pending_videos
-        if (parsed := parse_stock_title(row.title)) is not None
+        if (parsed := resolve_stock_key(row.title, titled_podcasts)) is not None
     ]
     duplicate_stock_keys = {
         key
@@ -512,7 +573,7 @@ def sync_catalog(args: argparse.Namespace) -> dict:
     used_podbean_urls = set(existing_urls)
     used_spotify_urls = set(existing_urls)
     for row in pending_videos:
-        parsed = parse_stock_title(row.title)
+        parsed = resolve_stock_key(row.title, titled_podcasts)
         if parsed:
             new_episodes.append(
                 build_stock_episode(
@@ -520,6 +581,8 @@ def sync_catalog(args: argparse.Namespace) -> dict:
                     parsed,
                     podcast_items,
                     spotify_items,
+                    titled_podcasts,
+                    titled_spotify,
                     youtube_dates,
                     companies,
                     sectors,

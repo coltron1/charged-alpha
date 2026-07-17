@@ -9,6 +9,762 @@
   },
   "episodes": [
     {
+      "ticker": "MAN",
+      "company": "ManpowerGroup Inc",
+      "sector": "Unclassified",
+      "quarter": "Q2 2026",
+      "episode_number": "",
+      "title": "ManpowerGroup Stock (MAN): It Already DOUBLED — Is the Easy Money Gone? | Q2 2026 Earnings",
+      "published_at": "2026-07-17T19:19:16+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=GlX41wh_XJk",
+      "spotify_url": "https://open.spotify.com/episode/0d7Jiq60DxhF4lk75ldG7b",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/manpowergroup-stock-man-it-already-doubled-%e2%80%94-is-the-easy-money-gone-q2-2026-earnings/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "AA",
+      "company": "Alcoa Corporation",
+      "sector": "Unclassified",
+      "quarter": "Q2 2026",
+      "episode_number": "",
+      "title": "Alcoa Stock: AA Posted a RECORD Q2 2026 — So Why Is It Down 46%? (Bargain or Value Trap?)",
+      "published_at": "2026-07-17T18:26:24+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=MKQLFQJdcAI",
+      "spotify_url": "https://open.spotify.com/episode/0ppIOV99egTjaTFTyVvqfa",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/alcoa-stock-aa-posted-a-record-q2-2026-%e2%80%94-so-why-is-it-down-46-bargain-or-value-trap/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "ISRG",
+      "company": "Intuitive Surgical",
+      "sector": "Healthcare",
+      "quarter": "Q2 2026",
+      "episode_number": "",
+      "title": "ISRG Stock: Intuitive Surgical BEAT Q2 2026 — So Why Did It Crash 12%? (Cheap at Last, or Value Trap?)",
+      "published_at": "2026-07-17T17:40:44+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=rTPwjwcxTOw",
+      "spotify_url": "https://open.spotify.com/episode/5ioxw2h5fc6FS182VhK3zW",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/isrg-stock-intuitive-surgical-beat-q2-2026-%e2%80%94-so-why-did-it-crash-12-cheap-at-last-or-value-trap/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "ABT",
+      "company": "Abbott Laboratories",
+      "sector": "Unclassified",
+      "quarter": "Q2 2026",
+      "episode_number": "",
+      "title": "ABT Stock: Abbott Beat AND Raised — So Why Is It Still Down 27%? (Bargain or Value Trap?)",
+      "published_at": "2026-07-17T16:45:17+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=DCSTQxINIbM",
+      "spotify_url": "https://open.spotify.com/episode/1rbv2U4Y33CmmsloFBKyca",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/abt-stock-abbott-beat-and-raised-%e2%80%94-so-why-is-it-still-down-27-bargain-or-value-trap/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "GE",
+      "company": "GE Aerospace",
+      "sector": "Industrials",
+      "quarter": "Q2 2026",
+      "episode_number": "",
+      "title": "GE Aerospace Stock: It Beat Earnings and RAISED Guidance Again — So Why We Say HOLD",
+      "published_at": "2026-07-17T15:59:04+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=93RsBNRxN_I",
+      "spotify_url": "https://open.spotify.com/episode/5qpMMKpUtUQhRVCHogz7wO",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/ge-aerospace-stock-it-beat-earnings-and-raised-guidance-again-%e2%80%94-so-why-we-say-hold/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "UNH",
+      "company": "UnitedHealth Group",
+      "sector": "Healthcare",
+      "quarter": "Q2 2026",
+      "episode_number": "",
+      "title": "UNH Stock: UnitedHealth Crushed Earnings and Raised Guidance — Is the Crisis Over?",
+      "published_at": "2026-07-17T15:10:12+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=Uf2-kai0Oq0",
+      "spotify_url": "https://open.spotify.com/episode/4oCxfAFYXV0UHAXQjADRyz",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/unh-stock-unitedhealth-crushed-earnings-and-raised-guidance-%e2%80%94-is-the-crisis-over/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "TSM",
+      "company": "TSM",
+      "sector": "Unclassified",
+      "quarter": "Q2 2026",
+      "episode_number": "",
+      "title": "TSM Stock: It Makes 90% of the World’s AI Chips — And It’s Cheap",
+      "published_at": "2026-07-17T13:07:36+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=5LhJ3DnSw9E",
+      "spotify_url": "https://open.spotify.com/episode/0uQeoxde19d4jUItNQG5DL",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/tsm-stock-it-makes-90-of-the-world-s-ai-chips-%e2%80%94-and-it-s-cheap/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "NFLX",
+      "company": "Netflix",
+      "sector": "Communication",
+      "quarter": "Q2 2026",
+      "episode_number": "",
+      "title": "NFLX Stock: The Streaming King Fell 42% — Time to Buy Netflix?",
+      "published_at": "2026-07-17T12:46:29+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=iOCn6vxARRw",
+      "spotify_url": "https://open.spotify.com/episode/6rb2MUbdtEPooryTkrHtsJ",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/nflx-stock-the-streaming-king-fell-42-%e2%80%94-time-to-buy-netflix/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "JBHT",
+      "company": "JBHT",
+      "sector": "Industrials",
+      "quarter": "Q2 2026",
+      "episode_number": "",
+      "title": "JBHT Stock: J.B. Hunt Doubled on the Freight Turn — Too Late to Buy?",
+      "published_at": "2026-07-17T00:33:00+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=SfFqvtb66_c",
+      "spotify_url": "https://open.spotify.com/episode/39bbEs5onjyxmYWijtCKck",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/jbht-stock-jb-hunt-doubled-on-the-freight-turn-%e2%80%94-too-late-to-buy/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "UAL",
+      "company": "United Airlines Holdings",
+      "sector": "Unclassified",
+      "quarter": "Q2 2026",
+      "episode_number": "",
+      "title": "UAL Stock: United Raised Guidance Through a $6B Fuel Hit — Buy It?",
+      "published_at": "2026-07-17T00:11:43+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=uEvgk3WRg3s",
+      "spotify_url": "https://open.spotify.com/episode/7dzcWHs3lKKYA37xqZrlVO",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/ual-stock-united-raised-guidance-through-a-6b-fuel-hit-%e2%80%94-buy-it/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "CTAS",
+      "company": "CTAS",
+      "sector": "Unclassified",
+      "quarter": "Q4 FY2026",
+      "episode_number": "",
+      "title": "CTAS Stock: Cintas Popped 7% on Earnings — But It’s ~40x. Buy It?",
+      "published_at": "2026-07-16T23:52:39+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=dKht726o-kg",
+      "spotify_url": "https://open.spotify.com/episode/7bl5mFcRHiTUNkK9K1S52h",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/ctas-stock-cintas-popped-7-on-earnings-%e2%80%94-but-it-s-40x-buy-it/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "ELV",
+      "company": "Elevance Health Inc",
+      "sector": "Unclassified",
+      "quarter": "Q2 2026",
+      "episode_number": "",
+      "title": "ELV Stock: Elevance Beat AND Raised Guidance — So Why Did It Fall?",
+      "published_at": "2026-07-16T23:35:19+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=mEhbg4NLQck",
+      "spotify_url": "https://open.spotify.com/episode/28DKJ2mICsPovxibkZRXG6",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/elv-stock-elevance-beat-and-raised-guidance-%e2%80%94-so-why-did-it-fall/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "JNJ",
+      "company": "Johnson & Johnson",
+      "sector": "Healthcare",
+      "quarter": "Q2 2026",
+      "episode_number": "",
+      "title": "JNJ Stock: A $100 Billion Milestone — But Is the Fortress Fully Priced?",
+      "published_at": "2026-07-16T23:16:06+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=9DUUslVdWPk",
+      "spotify_url": "",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/jnj-stock-a-100-billion-milestone-%e2%80%94-but-is-the-fortress-fully-priced/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "ASML",
+      "company": "ASML",
+      "sector": "Unclassified",
+      "quarter": "Q2 2026",
+      "episode_number": "",
+      "title": "ASML Stock: It Beat, It Raised — And the Stock Fell. Buy the Monopoly?",
+      "published_at": "2026-07-16T22:54:52+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=vl1nz6Amf2s",
+      "spotify_url": "",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/asml-stock-it-beat-it-raised-%e2%80%94-and-the-stock-fell-buy-the-monopoly/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "CAG",
+      "company": "CAG",
+      "sector": "Unclassified",
+      "quarter": "Q4 FY2026",
+      "episode_number": "",
+      "title": "CAG Stock: Conagra Just Cut Its Dividend in Half — Buy the Reset?",
+      "published_at": "2026-07-16T22:33:27+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=nQJI6oH8qWU",
+      "spotify_url": "",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/cag-stock-conagra-just-cut-its-dividend-in-half-%e2%80%94-buy-the-reset/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "SIFY",
+      "company": "SIFY",
+      "sector": "Unclassified",
+      "quarter": "Q1 FY2027",
+      "episode_number": "",
+      "title": "SIFY Stock: India’s Data-Center Boom — But Deep in Debt",
+      "published_at": "2026-07-16T22:12:45+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=H8wNjfdi3LY",
+      "spotify_url": "",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/sify-stock-india-s-data-center-boom-%e2%80%94-but-deep-in-debt/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "WINA",
+      "company": "WINA",
+      "sector": "Unclassified",
+      "quarter": "Q2 2026",
+      "episode_number": "",
+      "title": "WINA Stock: A 62%-Margin Compounder — But Is It Too Expensive?",
+      "published_at": "2026-07-16T21:52:45+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=DpRS3zL1bjA",
+      "spotify_url": "",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/wina-stock-a-62-margin-compounder-%e2%80%94-but-is-it-too-expensive/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "FEIM",
+      "company": "FEIM",
+      "sector": "Unclassified",
+      "quarter": "Q4 FY2026",
+      "episode_number": "",
+      "title": "FEIM Stock: A Record Backlog and an Ugly Quarter — Buy the Dip?",
+      "published_at": "2026-07-16T14:30:09+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=7guXX5PCFPo",
+      "spotify_url": "",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/feim-stock-a-record-backlog-and-an-ugly-quarter-%e2%80%94-buy-the-dip/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "BMNR",
+      "company": "BMNR",
+      "sector": "Unclassified",
+      "quarter": "Q3 FY2026",
+      "episode_number": "",
+      "title": "BMNR Stock: A Dollar of Ethereum for 87 Cents — Bargain or Trap?",
+      "published_at": "2026-07-16T14:04:12+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=iqX6QNCaCsY",
+      "spotify_url": "",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/bmnr-stock-a-dollar-of-ethereum-for-87-cents-%e2%80%94-bargain-or-trap/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "PAC",
+      "company": "PAC",
+      "sector": "Unclassified",
+      "quarter": "Q2 2026",
+      "episode_number": "",
+      "title": "PAC Stock: This Airport Grew Profit While Traffic Fell — Here’s How",
+      "published_at": "2026-07-15T18:29:42+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=9N_zej2RwV0",
+      "spotify_url": "",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/pac-stock-this-airport-grew-profit-while-traffic-fell-%e2%80%94-here-s-how/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "ANGO",
+      "company": "ANGO",
+      "sector": "Unclassified",
+      "quarter": "Q4 FY2026",
+      "episode_number": "",
+      "title": "ANGO Stock: AngioDynamics Jumped 11% — Because Medicare Said Yes",
+      "published_at": "2026-07-15T16:01:33+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=O-lJ1AXjVVg",
+      "spotify_url": "",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/ango-stock-angiodynamics-jumped-11-%e2%80%94-because-medicare-said-yes/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "PXED",
+      "company": "PXED",
+      "sector": "Unclassified",
+      "quarter": "Q3 FY2026",
+      "episode_number": "",
+      "title": "PXED Stock: University of Phoenix Trades at 7x Earnings — and Fears One Number",
+      "published_at": "2026-07-15T15:43:53+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=W9sbb22S_I0",
+      "spotify_url": "",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/pxed-stock-university-of-phoenix-trades-at-7x-earnings-%e2%80%94-and-fears-one-number/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "ERIC",
+      "company": "ERIC",
+      "sector": "Unclassified",
+      "quarter": "Q2 2026",
+      "episode_number": "",
+      "title": "ERIC Stock: Ericsson Beat on Profit and Fell 13% — Blame AI",
+      "published_at": "2026-07-15T15:23:40+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=vN7vmJbvfnY",
+      "spotify_url": "",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/eric-stock-ericsson-beat-on-profit-and-fell-13-%e2%80%94-blame-ai/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "FAST",
+      "company": "FAST",
+      "sector": "Industrials",
+      "quarter": "Q2 2026",
+      "episode_number": "",
+      "title": "FAST Stock: Fastenal Is a Wonderful Business — But Is It a Buy at This Price?",
+      "published_at": "2026-07-15T14:51:46+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=YLAZ2mi9sFg",
+      "spotify_url": "",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/fast-stock-fastenal-is-a-wonderful-business-%e2%80%94-but-is-it-a-buy-at-this-price/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "KMTS",
+      "company": "KMTS",
+      "sector": "Unclassified",
+      "quarter": "Q4 FY2026",
+      "episode_number": "",
+      "title": "KMTS Stock: This Medtech Grew 66% and Fell 8% — Here’s Why",
+      "published_at": "2026-07-15T14:28:15+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=_uSDvndHaLM",
+      "spotify_url": "",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/kmts-stock-this-medtech-grew-66-and-fell-8-%e2%80%94-here-s-why/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "AEHR",
+      "company": "AEHR",
+      "sector": "Unclassified",
+      "quarter": "Q4 FY2026",
+      "episode_number": "",
+      "title": "AEHR Stock: The AI Burn-In Company Just Guided to Triple — Is It a Buy?",
+      "published_at": "2026-07-15T13:45:29+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=bG2MBbxGpK8",
+      "spotify_url": "",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/aehr-stock-the-ai-burn-in-company-just-guided-to-triple-%e2%80%94-is-it-a-buy/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "AERO",
+      "company": "AERO",
+      "sector": "Unclassified",
+      "quarter": "Q2 2026",
+      "episode_number": "",
+      "title": "AERO Stock: Aeroméxico Posted Record Revenue — and Still Lost $58 Million",
+      "published_at": "2026-07-13T23:24:46+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=yASx7dG96oM",
+      "spotify_url": "",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/aero-stock-aeromexico-posted-record-revenue-%e2%80%94-and-still-lost-58-million/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "DAL",
+      "company": "DAL",
+      "sector": "Industrials",
+      "quarter": "Q2 2026",
+      "episode_number": "",
+      "title": "DAL Stock: Delta Posted Record Revenue and Beat — So Why Did It Fall?",
+      "published_at": "2026-07-10T15:43:30+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=bqBN6xuRS3E",
+      "spotify_url": "",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/dal-stock-delta-posted-record-revenue-and-beat-%e2%80%94-so-why-did-it-fall/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "NRIX",
+      "company": "NRIX",
+      "sector": "Unclassified",
+      "quarter": "Q2 FY2026",
+      "episode_number": "",
+      "title": "NRIX Stock: Nurix Tripled After a $700M Roche Deal — Is the Good News Already Priced In?",
+      "published_at": "2026-07-10T13:34:39+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=XlmPb_VIZsU",
+      "spotify_url": "",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/nrix-stock-nurix-tripled-after-a-700m-roche-deal-%e2%80%94-is-the-good-news-already-priced-in/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "WDFC",
+      "company": "WDFC",
+      "sector": "Unclassified",
+      "quarter": "Q3 FY2026",
+      "episode_number": "",
+      "title": "WDFC Stock: WD-40 Crushed Earnings and Popped 15% — But Is a Cult Brand Worth 40x?",
+      "published_at": "2026-07-10T13:14:06+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=lB7K6Vu7vFI",
+      "spotify_url": "",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/wdfc-stock-wd-40-crushed-earnings-and-popped-15-%e2%80%94-but-is-a-cult-brand-worth-40x/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "SMPL",
+      "company": "SMPL",
+      "sector": "Unclassified",
+      "quarter": "Q3 FY2026",
+      "episode_number": "",
+      "title": "SMPL Stock: Simply Good Foods Beat Earnings but Sales Fell — Cheap Turnaround or Value Trap?",
+      "published_at": "2026-07-09T19:15:45+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=iiclB3bkMMo",
+      "spotify_url": "",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/smpl-stock-simply-good-foods-beat-earnings-but-sales-fell-%e2%80%94-cheap-turnaround-or-value-trap/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "AZZ",
+      "company": "AZZ",
+      "sector": "Unclassified",
+      "quarter": "Q1 FY2027",
+      "episode_number": "",
+      "title": "AZZ Stock: The Boring Industrial That Beat, Raised Guidance, and Jumped 7%",
+      "published_at": "2026-07-09T02:42:54+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=iYEab0IwNN8",
+      "spotify_url": "",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/azz-stock-the-boring-industrial-that-beat-raised-guidance-and-jumped-7/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "PSMT",
+      "company": "PSMT",
+      "sector": "Unclassified",
+      "quarter": "Q3 FY2026",
+      "episode_number": "",
+      "title": "PSMT Stock: The ’Costco of Latin America’ Keeps Compounding — But Is It Too Expensive?",
+      "published_at": "2026-07-09T02:16:30+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=n9eayyOCClI",
+      "spotify_url": "",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/psmt-stock-the-costco-of-latin-america-keeps-compounding-%e2%80%94-but-is-it-too-expensive/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "LEVI",
+      "company": "LEVI",
+      "sector": "Unclassified",
+      "quarter": "Q2 FY2026",
+      "episode_number": "",
+      "title": "LEVI Stock: Levi Strauss Beat and Raised Guidance — So Why Did It Drop 5%?",
+      "published_at": "2026-07-09T01:45:52+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=jSToQai1e94",
+      "spotify_url": "",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/levi-stock-levi-strauss-beat-and-raised-guidance-%e2%80%94-so-why-did-it-drop-5/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "HELE",
+      "company": "HELE",
+      "sector": "Unclassified",
+      "quarter": "Q1 FY2027",
+      "episode_number": "",
+      "title": "HELE Stock: Helen of Troy Fell 80% and Beat Earnings — So Why Did It Drop 10%?",
+      "published_at": "2026-07-09T01:25:30+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=206NxBKiLbg",
+      "spotify_url": "",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/hele-stock-helen-of-troy-fell-80-and-beat-earnings-%e2%80%94-so-why-did-it-drop-10/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "GIS",
+      "company": "GIS",
+      "sector": "Unclassified",
+      "quarter": "Q4 FY2026",
+      "episode_number": "",
+      "title": "GIS Stock: General Mills Yields 6.6% After a 30% Drop — Value Buy or Value Trap?",
+      "published_at": "2026-07-08T07:34:33+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=xhRN0G2vwY0",
+      "spotify_url": "",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/gis-stock-general-mills-yields-66-after-a-30-drop-%e2%80%94-value-buy-or-value-trap/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "FDS",
+      "company": "FDS",
+      "sector": "Unclassified",
+      "quarter": "Q3 FY2026",
+      "episode_number": "",
+      "title": "FDS Stock: FactSet Got Cut in Half on AI Fears — Is This Wide-Moat Compounder a Buy?",
+      "published_at": "2026-07-08T04:02:00+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=aBzE7l_eVR8",
+      "spotify_url": "",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/fds-stock-factset-got-cut-in-half-on-ai-fears-%e2%80%94-is-this-wide-moat-compounder-a-buy/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "MSM",
+      "company": "MSM",
+      "sector": "Unclassified",
+      "quarter": "Q3 FY2026",
+      "episode_number": "",
+      "title": "MSM Stock: MSC Industrial Ripped 40% on a Real Recovery — But Is It Too Late to Buy?",
+      "published_at": "2026-07-08T03:46:11+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=2Y6HSJCpnOc",
+      "spotify_url": "",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/msm-stock-msc-industrial-ripped-40-on-a-real-recovery-%e2%80%94-but-is-it-too-late-to-buy/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "UNF",
+      "company": "UNF",
+      "sector": "Unclassified",
+      "quarter": "Q3 FY2026",
+      "episode_number": "",
+      "title": "UNF Stock: UniFirst Is Being Bought by Cintas — Is the 8% Merger Spread Worth the FTC Risk?",
+      "published_at": "2026-07-08T02:54:00+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=zPIeMSVEv7A",
+      "spotify_url": "",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/unf-stock-unifirst-is-being-bought-by-cintas-%e2%80%94-is-the-8-merger-spread-worth-the-ftc-risk/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "LNN",
+      "company": "LNN",
+      "sector": "Unclassified",
+      "quarter": "Q3 FY2026",
+      "episode_number": "",
+      "title": "LNN Stock: Lindsay Is a Quality Compounder in a Farm Slump — But Is It Too Expensive?",
+      "published_at": "2026-07-08T02:53:51+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=qSSr_i3mvWY",
+      "spotify_url": "",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/lnn-stock-lindsay-is-a-quality-compounder-in-a-farm-slump-%e2%80%94-but-is-it-too-expensive/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "GBX",
+      "company": "GBX",
+      "sector": "Unclassified",
+      "quarter": "Q3 FY2026",
+      "episode_number": "",
+      "title": "GBX Stock: Greenbrier’s Earnings Cratered and Wall Street Says Sell — Is the Bottom a Buy?",
+      "published_at": "2026-07-08T02:50:35+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=pATyAadTbBE",
+      "spotify_url": "",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/gbx-stock-greenbrier-s-earnings-cratered-and-wall-street-says-sell-%e2%80%94-is-the-bottom-a-buy/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "FIZZ",
+      "company": "FIZZ",
+      "sector": "Unclassified",
+      "quarter": "FY2026",
+      "episode_number": "",
+      "title": "FIZZ Stock: The LaCroix Company Just Paid a Huge Special Dividend — Is It a Buy? (FY2026)",
+      "published_at": "2026-07-08T02:50:27+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=8v_U7O0KIGc",
+      "spotify_url": "",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/fizz-stock-the-lacroix-company-just-paid-a-huge-special-dividend-%e2%80%94-is-it-a-buy-fy2026/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
       "ticker": "DIS",
       "company": "Walt Disney Co.",
       "sector": "Technology",
@@ -21863,6 +22619,522 @@
       "description": "Fast clips that point viewers into full research videos and stock pages.",
       "videos": [
         {
+          "title": "ManpowerGroup Already DOUBLED — Is the Easy Money Gone? #MAN #stocks #investing #staffing",
+          "youtube_url": "https://www.youtube.com/shorts/7cpoX7AlwbA",
+          "spotify_url": "",
+          "podbean_url": "",
+          "published_at": "2026-07-17T19:20:28+00:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "MAN"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "Alcoa's RECORD Quarter — Bargain or Value Trap? #AA #Alcoa #aluminum #stocks",
+          "youtube_url": "https://www.youtube.com/shorts/eo2VUUNDAlE",
+          "spotify_url": "",
+          "podbean_url": "",
+          "published_at": "2026-07-17T18:27:33+00:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "RECORD",
+            "AA"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "Intuitive Surgical BEAT — Then Crashed 12%?! #ISRG #stocks #investing #stockmarket",
+          "youtube_url": "https://www.youtube.com/shorts/wCa_m42KuPY",
+          "spotify_url": "",
+          "podbean_url": "",
+          "published_at": "2026-07-17T17:41:45+00:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "BEAT",
+            "ISRG"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "Abbott Beat, Raised — Still Down 27%. Buy? #ABT #stocks #investing #dividendstocks #healthcare",
+          "youtube_url": "https://www.youtube.com/shorts/_4LIdkNWUUA",
+          "spotify_url": "",
+          "podbean_url": "",
+          "published_at": "2026-07-17T16:46:25+00:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "ABT"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "GE Stock: It Beat & RAISED Guidance — So Why HOLD? #GE #stocks #investing #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/19c8tMQOXrY",
+          "spotify_url": "",
+          "podbean_url": "",
+          "published_at": "2026-07-17T16:00:37+00:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "GE",
+            "RAISED",
+            "HOLD"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "UnitedHealth's Comeback Quarter: Buy the Turnaround? #UNH #Shorts #stocks #investing",
+          "youtube_url": "https://www.youtube.com/shorts/F2Nl7rkCZNg",
+          "spotify_url": "",
+          "podbean_url": "",
+          "published_at": "2026-07-17T15:11:39+00:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "UNH"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "It Makes 90% of the World's AI Chips — And It's Cheap #TSM #AI #semiconductors",
+          "youtube_url": "https://www.youtube.com/shorts/0oBURUNl8Zw",
+          "spotify_url": "",
+          "podbean_url": "",
+          "published_at": "2026-07-17T13:08:28+00:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "TSM"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "The Streaming King Fell 42% — Buy Netflix? #NFLX #Netflix #stocks",
+          "youtube_url": "https://www.youtube.com/shorts/CYQpbw7DlkA",
+          "spotify_url": "",
+          "podbean_url": "",
+          "published_at": "2026-07-17T05:47:06-07:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "NFLX"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "J.B. Hunt Doubled on the Freight Turn — Too Late? #JBHT #stocks #freight",
+          "youtube_url": "https://www.youtube.com/shorts/KNOg8S7ndXc",
+          "spotify_url": "",
+          "podbean_url": "",
+          "published_at": "2026-07-16T17:33:36-07:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "J.B",
+            "JBHT"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "United Raised Guidance Through a $6B Fuel Hit #UAL #airlines #stocks",
+          "youtube_url": "https://www.youtube.com/shorts/ovDLxC1YMWs",
+          "spotify_url": "",
+          "podbean_url": "",
+          "published_at": "2026-07-16T17:12:24-07:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "UAL"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "One of the Best Stocks in Decades — But Too Pricey? #CTAS #stocks #investing",
+          "youtube_url": "https://www.youtube.com/shorts/pTid9Ww8OIk",
+          "spotify_url": "",
+          "podbean_url": "",
+          "published_at": "2026-07-16T16:53:20-07:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "CTAS"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "It Beat AND Raised Guidance — So Why Did It Fall? #ELV #healthcare #stocks",
+          "youtube_url": "https://www.youtube.com/shorts/aaD0GLghM08",
+          "spotify_url": "",
+          "podbean_url": "",
+          "published_at": "2026-07-16T16:36:10-07:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "AND",
+            "ELV"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "J&J Crossed $100B For the First Time in 140 Years #JNJ #dividendstocks #healthcare",
+          "youtube_url": "https://www.youtube.com/shorts/KosM0BwUV6Q",
+          "spotify_url": "",
+          "podbean_url": "",
+          "published_at": "2026-07-16T16:16:39-07:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "JNJ"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "It Beat, It Raised — And the Stock Fell #ASML #AI #semiconductors",
+          "youtube_url": "https://www.youtube.com/shorts/g7vjCIKlZZE",
+          "spotify_url": "",
+          "podbean_url": "",
+          "published_at": "2026-07-16T15:55:46-07:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "ASML"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "Conagra Cut Its Dividend in Half — And the Stock Rose #CAG #dividendstocks #investing",
+          "youtube_url": "https://www.youtube.com/shorts/oXD-hkDAGrU",
+          "spotify_url": "",
+          "podbean_url": "",
+          "published_at": "2026-07-16T15:34:04-07:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "CAG"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "India's Data-Center Boom, But Deep in Debt #SIFY #AI #datacenters",
+          "youtube_url": "https://www.youtube.com/shorts/18Ym2O7RQ2E",
+          "spotify_url": "",
+          "podbean_url": "",
+          "published_at": "2026-07-16T15:13:22-07:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "SIFY"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "A 62% Margin on Used Clothes? #WINA #stocks #investing",
+          "youtube_url": "https://www.youtube.com/shorts/38qvpJq4edE",
+          "spotify_url": "",
+          "podbean_url": "",
+          "published_at": "2026-07-16T14:53:29-07:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "WINA"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "A 1% Margin AND a Record Backlog? #FEIM #defensestocks #stocks",
+          "youtube_url": "https://www.youtube.com/shorts/KU6BpOoH_IY",
+          "spotify_url": "",
+          "podbean_url": "",
+          "published_at": "2026-07-16T07:30:51-07:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "AND",
+            "FEIM"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "A Dollar of Ethereum for 87 Cents? #BMNR #Ethereum #crypto",
+          "youtube_url": "https://www.youtube.com/shorts/KQeucHjI1Pc",
+          "spotify_url": "",
+          "podbean_url": "",
+          "published_at": "2026-07-16T07:05:06-07:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "BMNR"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "This airport grew profit while traffic FELL. Toll road for the sky. #PAC #stocks #investing",
+          "youtube_url": "https://www.youtube.com/shorts/7bQrHozgrxA",
+          "spotify_url": "",
+          "podbean_url": "",
+          "published_at": "2026-07-15T11:30:47-07:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "FELL",
+            "PAC"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "This device kills prostate tumors with electricity — and Medicare just said yes. #ANGO #stocks #inve",
+          "youtube_url": "https://www.youtube.com/shorts/wIMgX_dmeh0",
+          "spotify_url": "",
+          "podbean_url": "",
+          "published_at": "2026-07-15T09:02:24-07:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "ANGO"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "University of Phoenix at 7x earnings — and terrified of one number. #PXED #stocks #investing",
+          "youtube_url": "https://www.youtube.com/shorts/9Kdpo4-Vnnc",
+          "spotify_url": "",
+          "podbean_url": "",
+          "published_at": "2026-07-15T08:44:45-07:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "PXED"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "Beat on profit, fell 13% — blame AI. #ERIC #Ericsson #stocks #investing",
+          "youtube_url": "https://www.youtube.com/shorts/kGW0dLQCYeE",
+          "spotify_url": "",
+          "podbean_url": "",
+          "published_at": "2026-07-15T08:24:32-07:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "ERIC"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "A 31% ROIC compounder you'd never short. But would you pay 34x? #FAST #stocks #investing",
+          "youtube_url": "https://www.youtube.com/shorts/qzAIOiBoSDw",
+          "spotify_url": "",
+          "podbean_url": "",
+          "published_at": "2026-07-15T07:52:58-07:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "ROIC",
+            "FAST"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "Grew 66%, fell 8%. The medtech nobody covers. #KMTS #stocks #investing #medtech",
+          "youtube_url": "https://www.youtube.com/shorts/yjDqvuzY-KM",
+          "spotify_url": "",
+          "podbean_url": "",
+          "published_at": "2026-07-15T07:29:31-07:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "KMTS"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "AI burn-in play just guided to TRIPLE. Buy at 84x? #AEHR #stocks #AI #investing",
+          "youtube_url": "https://www.youtube.com/shorts/RvyHTsHFdqc",
+          "spotify_url": "",
+          "podbean_url": "",
+          "published_at": "2026-07-15T06:46:42-07:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "TRIPLE",
+            "AEHR"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "Record revenue. $58M loss. Zero fuel hedged. #AERO #stocks #investing",
+          "youtube_url": "https://www.youtube.com/shorts/5WODssScd6g",
+          "spotify_url": "",
+          "podbean_url": "",
+          "published_at": "2026-07-13T16:25:52-07:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "AERO"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "DAL: Delta posted record revenue and beat — so why did it fall? #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/6n-gXTd69es",
+          "spotify_url": "",
+          "podbean_url": "",
+          "published_at": "2026-07-10T08:44:34-07:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "DAL"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "NRIX: Nurix tripled after a $700M Roche deal — is the good news priced in? #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/QDMsc7S-xOs",
+          "spotify_url": "",
+          "podbean_url": "",
+          "published_at": "2026-07-10T06:35:36-07:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "NRIX"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "WDFC: WD-40 crushed earnings and popped 15% — but is a cult brand worth 40x? #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/h-Zln9PMqgM",
+          "spotify_url": "",
+          "podbean_url": "",
+          "published_at": "2026-07-10T06:15:10-07:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "WDFC",
+            "WD"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "SMPL: Simply Good Foods beat earnings but sales fell — cheap turnaround or trap? #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/O63b-RENGtQ",
+          "spotify_url": "",
+          "podbean_url": "",
+          "published_at": "2026-07-09T12:16:24-07:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "SMPL"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "AZZ: The boring industrial that beat, raised guidance, and jumped 7% #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/ENV_vvMZ6SY",
+          "spotify_url": "",
+          "podbean_url": "",
+          "published_at": "2026-07-08T19:43:45-07:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "AZZ"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "PSMT: The 'Costco of Latin America' keeps compounding — but is it too expensive? #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/AKwBv3sWCbc",
+          "spotify_url": "",
+          "podbean_url": "",
+          "published_at": "2026-07-08T19:17:24-07:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "PSMT"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "HELE: Helen of Troy down 80% — bargain or value trap? #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/iyurHtYVvqY",
+          "spotify_url": "",
+          "podbean_url": "",
+          "published_at": "2026-07-08T18:59:45-07:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "HELE"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "LEVI: Levi Strauss beat and raised guidance — so why the 5% drop? #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/AO2dP6IZVc4",
+          "spotify_url": "",
+          "podbean_url": "",
+          "published_at": "2026-07-08T18:46:40-07:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "LEVI"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "GIS: General Mills yields 6.6% after a 30% drop — buy or trap? #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/mPla8bmzrtI",
+          "spotify_url": "",
+          "podbean_url": "",
+          "published_at": "2026-07-08T05:44:56-07:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "GIS"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "FDS Stock: FactSet Got Cut in Half on AI Fears — Is It a Buy? #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/Pf1F9NJkris",
+          "spotify_url": "",
+          "podbean_url": "",
+          "published_at": "2026-07-07T21:03:00-07:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "FDS"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "MSM Stock: MSC Industrial Ripped 40% on a Real Recovery — Too Late? #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/UQBiZklYogg",
+          "spotify_url": "",
+          "podbean_url": "",
+          "published_at": "2026-07-07T20:47:32-07:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "MSM",
+            "MSC"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "GBX Stock: Earnings Cratered, Wall Street Says Sell — Buy the Bottom? #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/ciLoYj3fFrY",
+          "spotify_url": "",
+          "podbean_url": "",
+          "published_at": "2026-07-07T20:16:32-07:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "GBX"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "LNN Stock: A Quality Compounder in a Farm Slump — Buy? #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/sVqd92Vtq9k",
+          "spotify_url": "",
+          "podbean_url": "",
+          "published_at": "2026-07-07T20:16:24-07:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "LNN"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "UNF Stock: Cintas Is Buying It — Is the 8% Merger Spread Worth the Risk? #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/B_hqY2C4_is",
+          "spotify_url": "",
+          "podbean_url": "",
+          "published_at": "2026-07-07T20:16:24-07:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "UNF"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "FIZZ Stock: A $3.25 Special Dividend — Buy the LaCroix Maker? #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/pEGEVDMce2A",
+          "spotify_url": "",
+          "podbean_url": "",
+          "published_at": "2026-07-07T20:15:56-07:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "FIZZ"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
           "title": "STZ -14% — Modelo & Corona shrinking #Shorts",
           "youtube_url": "https://www.youtube.com/shorts/ERvhryfZbg8",
           "spotify_url": "",
@@ -22800,5 +24072,5 @@
       ]
     }
   ],
-  "last_synced_at": "2026-07-03T13:32:06-05:00"
+  "last_synced_at": "2026-07-17T16:08:26-05:00"
 }
