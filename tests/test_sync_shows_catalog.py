@@ -47,6 +47,24 @@ class StockTitleParsingTests(unittest.TestCase):
 
         self.assertEqual(resolve_stock_key(youtube_title, podcasts), ("GE", "Q2 2026"))
 
+    def test_resolves_truncated_youtube_title_from_podcast_prefix(self):
+        youtube_title = "Knight-Swift Stock: The Freight Recession Looks Over"
+        podcast_title = (
+            "Knight-Swift Stock: The Freight Recession Looks Over - Why We Say HOLD "
+            "(KNX Q2 2026)"
+        )
+        podcasts = {
+            normalize_title(podcast_title): PodcastItem(
+                title=podcast_title,
+                url="https://example.com/knx",
+                published_at="2026-07-23T00:00:00+00:00",
+                ticker="KNX",
+                quarter="Q2 2026",
+            )
+        }
+
+        self.assertEqual(resolve_stock_key(youtube_title, podcasts), ("KNX", "Q2 2026"))
+
     def test_parses_full_year_period(self):
         self.assertEqual(
             parse_stock_title("FIZZ Stock: The LaCroix Company (FY2026)"),

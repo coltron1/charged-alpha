@@ -265,12 +265,33 @@ def normalize_title(title: str) -> str:
     return re.sub(r"[^a-z0-9]+", " ", title.lower()).strip()
 
 
+def find_titled_match(
+    title: str,
+    titled_items: dict[str, PodcastItem],
+) -> PodcastItem | None:
+    normalized = normalize_title(title)
+    exact = titled_items.get(normalized)
+    if exact:
+        return exact
+    if len(normalized) < 36:
+        return None
+
+    prefix_matches = [
+        (candidate_title, item)
+        for candidate_title, item in titled_items.items()
+        if candidate_title.startswith(normalized)
+    ]
+    if not prefix_matches:
+        return None
+    return min(prefix_matches, key=lambda match: len(match[0]))[1]
+
+
 def resolve_stock_key(
     title: str,
     titled_podcasts: dict[str, PodcastItem],
 ) -> tuple[str, str] | None:
     parsed = parse_stock_title(title)
-    podcast = titled_podcasts.get(normalize_title(title))
+    podcast = find_titled_match(title, titled_podcasts)
 
     if podcast and podcast.ticker:
         parsed_period = parsed[1] if parsed else ""
@@ -410,15 +431,14 @@ def build_stock_episode(
     used_spotify_urls: set[str],
 ) -> dict:
     ticker, quarter = key
-    normalized_row_title = normalize_title(row.title)
-    podbean = titled_podcasts.get(normalized_row_title) or podbean_items.get(key)
-    spotify = titled_spotify.get(normalized_row_title) or spotify_items.get(key)
+    podbean = find_titled_match(row.title, titled_podcasts) or podbean_items.get(key)
+    spotify = find_titled_match(row.title, titled_spotify) or spotify_items.get(key)
 
     if key in duplicate_stock_keys:
         row_title = normalize_title(row.title)
-        if podbean and row_title != normalize_title(podbean.title):
+        if podbean and not normalize_title(podbean.title).startswith(row_title):
             podbean = None
-        if spotify and row_title != normalize_title(spotify.title):
+        if spotify and not normalize_title(spotify.title).startswith(row_title):
             spotify = None
 
     if podbean and podbean.url in used_podbean_urls:
@@ -499,9 +519,8 @@ def build_extra_video(
     titled_spotify: dict[str, PodcastItem],
     summary: str,
 ) -> dict:
-    normalized_row_title = normalize_title(row.title)
-    podcast = titled_podcasts.get(normalized_row_title)
-    spotify = titled_spotify.get(normalized_row_title)
+    podcast = find_titled_match(row.title, titled_podcasts)
+    spotify = find_titled_match(row.title, titled_spotify)
     return {
         "title": row.title,
         "youtube_url": row.url,
