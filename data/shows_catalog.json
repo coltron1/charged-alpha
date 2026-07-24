@@ -9,6 +9,330 @@
   },
   "episodes": [
     {
+      "ticker": "CNI",
+      "company": "CNI",
+      "sector": "Unclassified",
+      "quarter": "Q2 2026",
+      "episode_number": "",
+      "title": "Canadian National Railway Stock: It Beat and Raised Guidance — Why We Still Say HOLD (CNI Q2 2026)",
+      "published_at": "2026-07-24T21:13:10+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=GCIM63zIFUs",
+      "spotify_url": "https://open.spotify.com/episode/2HbpPWSyTblJSJ7GjFuFmF",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/canadian-national-railway-stock-it-beat-and-raised-guidance-%e2%80%94-why-we-still-say-hold-cni-q2-2026/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "WKC",
+      "company": "WKC",
+      "sector": "Unclassified",
+      "quarter": "Q2 2026",
+      "episode_number": "",
+      "title": "World Kinect Stock: A Record 72% Beat Sent It Soaring — Why We Say HOLD (WKC)",
+      "published_at": "2026-07-24T20:25:17+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=ox_z-2eXxa4",
+      "spotify_url": "https://open.spotify.com/episode/05acodfd12KibcGMcJHlOp",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/world-kinect-stock-a-record-72-beat-sent-it-soaring-%e2%80%94-why-we-say-hold-wkc/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "VZ",
+      "company": "Verizon Communications",
+      "sector": "Communication",
+      "quarter": "Q2 2026",
+      "episode_number": "",
+      "title": "Verizon Stock: Beat, RAISED Guidance, 6% Yield — Why We Say BUY While Wall Street Waits (VZ)",
+      "published_at": "2026-07-24T19:47:30+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=L5PE0SLcL1M",
+      "spotify_url": "https://open.spotify.com/episode/3UA1rud1NsDXWPs526WIlH",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/verizon-stock-beat-raised-guidance-6-yield-%e2%80%94-why-we-say-buy-while-wall-street-waits-vz/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "NEE",
+      "company": "NextEra Energy Inc.",
+      "sector": "Utilities",
+      "quarter": "Q2 2026",
+      "episode_number": "",
+      "title": "NextEra Energy Stock: It Beat Earnings and Is Buying Dominion — So Why We Say HOLD (NEE Q2 2026)",
+      "published_at": "2026-07-24T19:06:07+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=RIowHp7NiRI",
+      "spotify_url": "https://open.spotify.com/episode/2wRM1cgHn5G7ASxvBHrkqQ",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/nextera-energy-stock-it-beat-earnings-and-is-buying-dominion-%e2%80%94-so-why-we-say-hold-nee-q2-2026/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "COCO",
+      "company": "COCO",
+      "sector": "Unclassified",
+      "quarter": "Q2 2026",
+      "episode_number": "",
+      "title": "Vita Coco Stock: It CRUSHED Earnings and RAISED Guidance — So Why We Say HOLD",
+      "published_at": "2026-07-24T13:50:44+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=aRjTZS-Un10",
+      "spotify_url": "https://open.spotify.com/episode/3PprRoCIX7UNO3NuOgeq7V",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/vita-coco-stock-it-crushed-earnings-and-raised-guidance-%e2%80%94-so-why-we-say-hold/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "DGX",
+      "company": "Quest Diagnostics Incorporated",
+      "sector": "Unclassified",
+      "quarter": "Q2 2026",
+      "episode_number": "",
+      "title": "Quest Diagnostics Stock (DGX): It Beat, RAISED Guidance, and Broke Out — Why We Say BUY",
+      "published_at": "2026-07-24T12:35:09+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=4BpiP7qBTcI",
+      "spotify_url": "https://open.spotify.com/episode/7xl8LnKXpZpDBDnaolgnST",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/quest-diagnostics-stock-dgx-it-beat-raised-guidance-and-broke-out-%e2%80%94-why-we-say-buy/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "HCA",
+      "company": "HCA",
+      "sector": "Unclassified",
+      "quarter": "Q2 2026",
+      "episode_number": "",
+      "title": "HCA Healthcare Stock: It Beat Q2 but CUT Its Guidance — So Why We Say BUY",
+      "published_at": "2026-07-24T11:41:24+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=NWRFQrK6UE8",
+      "spotify_url": "https://open.spotify.com/episode/7EWL5U7zaUn15M4btURXCq",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/hca-healthcare-stock-it-beat-q2-but-cut-its-guidance-%e2%80%94-so-why-we-say-buy/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "TTE",
+      "company": "TTE",
+      "sector": "Unclassified",
+      "quarter": "Q2 2026",
+      "episode_number": "",
+      "title": "TotalEnergies Stock: $6B Profit, 7.5% Yield, ~9x Earnings — So Why We Say BUY",
+      "published_at": "2026-07-24T10:17:48+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=5k6ocZHVFFw",
+      "spotify_url": "https://open.spotify.com/episode/2JOs76ojVxEhidkjOUvqBq",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/totalenergies-stock-6b-profit-75-yield-9x-earnings-%e2%80%94-so-why-we-say-buy/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "URI",
+      "company": "United Rentals",
+      "sector": "Unclassified",
+      "quarter": "Q2 2026",
+      "episode_number": "",
+      "title": "United Rentals Stock: A Record Beat-and-Raise to an All-Time High — So Why We Say HOLD",
+      "published_at": "2026-07-24T09:32:44+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=ibgmCyloKOM",
+      "spotify_url": "https://open.spotify.com/episode/15I8axE3xgJ436SwpZzDP4",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/united-rentals-stock-a-record-beat-and-raise-to-an-all-time-high-%e2%80%94-so-why-we-say-hold/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "TMUS",
+      "company": "TMUS",
+      "sector": "Unclassified",
+      "quarter": "Q2 2026",
+      "episode_number": "",
+      "title": "T-Mobile Stock: It Beat and RAISED Cash Guidance — Then Crashed 11%. So Why We Say BUY",
+      "published_at": "2026-07-24T08:44:15+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=buMRbqrl-MI",
+      "spotify_url": "https://open.spotify.com/episode/18VmvAOIS3fluD9CFz9dHa",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/t-mobile-stock-it-beat-and-raised-cash-guidance-%e2%80%94-then-crashed-11-so-why-we-say-buy/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "NEM",
+      "company": "Newmont Corp",
+      "sector": "Unclassified",
+      "quarter": "Q2 2026",
+      "episode_number": "",
+      "title": "Newmont Stock: Record Gold, Record Cash, a Falling Stock — Why We’re a Cautious BUY (NEM Q2 2026)",
+      "published_at": "2026-07-24T07:13:53+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=1hS3wtqghdw",
+      "spotify_url": "https://open.spotify.com/episode/5fQfRKDUszCsnW6vfnrDj4",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/newmont-stock-record-gold-record-cash-a-falling-stock-%e2%80%94-why-we-re-a-cautious-buy-nem-q2-2026/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "NSC",
+      "company": "Norfolk Southern Corporation",
+      "sector": "Unclassified",
+      "quarter": "Q2 2026",
+      "episode_number": "",
+      "title": "Norfolk Southern Stock: A Record Quarter and a $393 Buyout — Here’s Why We Say HOLD (NSC Q2 2026)",
+      "published_at": "2026-07-24T06:33:59+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=P6AKf5Os51o",
+      "spotify_url": "https://open.spotify.com/episode/2MtQStTiGG2ECKS9fCONfQ",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/norfolk-southern-stock-a-record-quarter-and-a-393-buyout-%e2%80%94-here-s-why-we-say-hold-nsc-q2-2026/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "APPF",
+      "company": "AppFolio Inc.",
+      "sector": "Unclassified",
+      "quarter": "Q2 2026",
+      "episode_number": "",
+      "title": "AppFolio: Beat, Raised, Crossed $1B — Yet Near 52-Week Lows; Our Call: BUY (APPF Q2 2026)",
+      "published_at": "2026-07-24T05:53:42+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=k6zNCZM6Bkk",
+      "spotify_url": "",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/appfolio-beat-raised-crossed-1b-%e2%80%94-yet-near-52-week-lows-our-call-buy-appf-q2-2026/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "THRM",
+      "company": "THRM",
+      "sector": "Unclassified",
+      "quarter": "Q2 2026",
+      "episode_number": "",
+      "title": "Gentherm Stock: It CRUSHED Earnings and Popped 26% — So Why We Say HOLD (THRM Q2 2026)",
+      "published_at": "2026-07-24T04:16:17+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=EpZpPuChVw0",
+      "spotify_url": "",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/gentherm-stock-it-crushed-earnings-and-popped-26-%e2%80%94-so-why-we-say-hold-thrm-q2-2026/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "VRSN",
+      "company": "VRSN",
+      "sector": "Unclassified",
+      "quarter": "Q2 2026",
+      "episode_number": "",
+      "title": "VeriSign Stock (VRSN): The .com Monopoly Is Growing AGAIN and RAISED Guidance — So Why We Say HOLD",
+      "published_at": "2026-07-24T03:37:52+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=5WuC-PsHRiM",
+      "spotify_url": "",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/verisign-stock-vrsn-the-com-monopoly-is-growing-again-and-raised-guidance-%e2%80%94-so-why-we-say-hold/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "MXL",
+      "company": "MXL",
+      "sector": "Unclassified",
+      "quarter": "Q2 2026",
+      "episode_number": "",
+      "title": "MaxLinear Stock (MXL): Up 7x on the AI-Optical Boom, It Beat Earnings — So Why We Say HOLD",
+      "published_at": "2026-07-24T02:52:01+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=HD26mma4WO0",
+      "spotify_url": "",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/maxlinear-stock-mxl-up-7x-on-the-ai-optical-boom-it-beat-earnings-%e2%80%94-so-why-we-say-hold/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "SAP",
+      "company": "SAP",
+      "sector": "Unclassified",
+      "quarter": "Q2 2026",
+      "episode_number": "",
+      "title": "SAP Stock Just Hit a 52-Week Low — With Cloud Backlog Up 27%. Why We Say BUY",
+      "published_at": "2026-07-23T23:01:55+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=Tf5LJoA_K7s",
+      "spotify_url": "",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/sap-stock-just-hit-a-52-week-low-%e2%80%94-with-cloud-backlog-up-27-why-we-say-buy/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "FIX",
+      "company": "Comfort Systems USA Inc.",
+      "sector": "Unclassified",
+      "quarter": "Q2 2026",
+      "episode_number": "",
+      "title": "Comfort Systems Stock (FIX): +92% EPS and a Record $14B Backlog — So Why We Say HOLD",
+      "published_at": "2026-07-23T22:13:28+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=Xc9MMD94EJs",
+      "spotify_url": "",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/comfort-systems-stock-fix-92-eps-and-a-record-14b-backlog-%e2%80%94-so-why-we-say-hold/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
       "ticker": "INTC",
       "company": "Intel Corporation",
       "sector": "Technology",
@@ -23573,6 +23897,230 @@
       "description": "Fast clips that point viewers into full research videos and stock pages.",
       "videos": [
         {
+          "title": "CNI Stock: It Beat + Raised Guidance — Why We Say HOLD #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/EzLkATICa58",
+          "spotify_url": "",
+          "podbean_url": "",
+          "published_at": "2026-07-24T21:14:12+00:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "CNI",
+            "HOLD"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "World Kinect Stock: Record Beat, Why We Say HOLD #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/TEljTzOfRp4",
+          "spotify_url": "",
+          "podbean_url": "",
+          "published_at": "2026-07-24T20:26:40+00:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "HOLD"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "Verizon (VZ): 6% Yield + a Beat-and-Raise — Finally a BUY? #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/mo5OkTEdvro",
+          "spotify_url": "",
+          "podbean_url": "",
+          "published_at": "2026-07-24T19:50:59+00:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "VZ",
+            "BUY"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "NextEra Beat Earnings — So Why We Say HOLD? (NEE) #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/yS4S2HP1SH4",
+          "spotify_url": "",
+          "podbean_url": "",
+          "published_at": "2026-07-24T19:10:36+00:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "HOLD",
+            "NEE"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "Vita Coco Beat Big & Raised Guidance — Then Fell 7% #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/bAEZTvsY6-o",
+          "spotify_url": "",
+          "podbean_url": "",
+          "published_at": "2026-07-24T13:52:18+00:00",
+          "section": "Shorts and Clips",
+          "tickers": [],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "Quest Diagnostics (DGX): The 'Sleepy' Lab Just Broke Out on 10% Organic Growth — BUY? #shorts",
+          "youtube_url": "https://www.youtube.com/shorts/hyNVRJ8N0kA",
+          "spotify_url": "",
+          "podbean_url": "",
+          "published_at": "2026-07-24T12:36:30+00:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "DGX",
+            "BUY"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "HCA Beat Q2, Then CUT Guidance — Buy or Value Trap? #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/PbQCPKCw3tA",
+          "spotify_url": "",
+          "podbean_url": "",
+          "published_at": "2026-07-24T11:47:33+00:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "HCA",
+            "CUT"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "TotalEnergies Stock: $6B Profit, 7.5% Yield — BUY or Peak? #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/URrOge8JMSg",
+          "spotify_url": "",
+          "podbean_url": "",
+          "published_at": "2026-07-24T10:19:54+00:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "BUY"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "United Rentals Stock: All-Time High, So Why HOLD? #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/YHTZ8KzDWYc",
+          "spotify_url": "",
+          "podbean_url": "",
+          "published_at": "2026-07-24T02:38:01-07:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "HOLD"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "T-Mobile Beat, Then Crashed 11% — A Gift at $170? #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/eZbho6lhUfY",
+          "spotify_url": "",
+          "podbean_url": "",
+          "published_at": "2026-07-24T01:47:59-07:00",
+          "section": "Shorts and Clips",
+          "tickers": [],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "Newmont: Record Gold, Record Cash — So Why Is NEM Falling? #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/7jBI4xrY14U",
+          "spotify_url": "",
+          "podbean_url": "",
+          "published_at": "2026-07-24T00:16:15-07:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "NEM"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "Norfolk Southern: A $393 Buyout Bet — Why We Say HOLD (NSC) #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/cD1xPD9M5NI",
+          "spotify_url": "",
+          "podbean_url": "",
+          "published_at": "2026-07-23T23:36:10-07:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "HOLD",
+            "NSC"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "AppFolio Beat & Raised — But It's Near 52-Week Lows; Our Call: BUY #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/1tvnzzQRQyg",
+          "spotify_url": "",
+          "podbean_url": "",
+          "published_at": "2026-07-23T22:55:08-07:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "BUY"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "Gentherm Beat & Popped 26% — Why We Say HOLD | THRM #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/Wz_T2YLLPec",
+          "spotify_url": "",
+          "podbean_url": "",
+          "published_at": "2026-07-23T21:18:16-07:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "HOLD",
+            "THRM"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "VeriSign's .com Monopoly Is Growing AGAIN — Still a HOLD? #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/92adUsE_6Nk",
+          "spotify_url": "",
+          "podbean_url": "",
+          "published_at": "2026-07-23T20:41:01-07:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "AGAIN",
+            "HOLD"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "MaxLinear (MXL): Up 7x, Then It FELL on a 55% Beat — HOLD #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/4qWPMZpxHBg",
+          "spotify_url": "",
+          "podbean_url": "",
+          "published_at": "2026-07-23T19:54:57-07:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "MXL",
+            "FELL",
+            "HOLD"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "SAP Stock: Cut in Half, Cloud Backlog +27% — We Say BUY #shorts",
+          "youtube_url": "https://www.youtube.com/shorts/Yq1lmoqRsVA",
+          "spotify_url": "",
+          "podbean_url": "",
+          "published_at": "2026-07-23T16:05:25-07:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "SAP",
+            "BUY"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "Comfort Systems (FIX): +92% EPS & a $14B Backlog — Why We Say HOLD #shorts",
+          "youtube_url": "https://www.youtube.com/shorts/aivAxoXcRGA",
+          "spotify_url": "",
+          "podbean_url": "",
+          "published_at": "2026-07-23T15:16:05-07:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "FIX",
+            "HOLD"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
           "title": "Intel 'Lost' $11B — In Its BEST Quarter in 15 Years. We Say HOLD #INTC #Shorts",
           "youtube_url": "https://www.youtube.com/shorts/os1LEqhc_Tk",
           "spotify_url": "",
@@ -25704,5 +26252,5 @@
       ]
     }
   ],
-  "last_synced_at": "2026-07-23T16:38:16-05:00"
+  "last_synced_at": "2026-07-24T16:44:56-05:00"
 }
