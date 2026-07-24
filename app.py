@@ -411,10 +411,10 @@ SEO_PAGE_META = {
         "robots": "noindex,nofollow,noarchive",
     },
     "/privacy": {
-        "title": "Privacy Policy — Charged Alpha Academy",
+        "title": "Privacy Policy — Charged Alpha",
         "description": (
-            "Privacy Policy for Charged Alpha Academy, an offline investing-education "
-            "app by Crown Creek Capital LLC d/b/a Charged Alpha."
+            "Privacy Policy for the Charged Alpha mobile app and chargedalpha.com website, "
+            "including Premium subscriptions, optional email updates, analytics, and cookies."
         ),
     },
     "/games/front-page-fortune": {
