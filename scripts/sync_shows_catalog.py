@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Sync Charged Alpha show links from YouTube, Podbean, and Spotify.
+"""Sync Charged Alpha show links from YouTube, Podbean, Spotify, and Apple Podcasts.
 
 This is a maintenance script, not app runtime code. It keeps the stock episode
 catalog current by comparing the public channel/feed exports against the local
@@ -27,6 +27,7 @@ DEFAULT_YOUTUBE_CHANNEL = "https://www.youtube.com/@ChargedAlpha"
 DEFAULT_YOUTUBE_RSS = "https://www.youtube.com/feeds/videos.xml?channel_id=UC4ZDZpC0OvoN4cCGoUSofuA"
 DEFAULT_PODBEAN_FEED = "https://feed.podbean.com/chargedalpha/feed.xml"
 DEFAULT_SPOTIFY_SHOW = "https://open.spotify.com/show/72TRXJNznbvrpM72hdVN3b"
+DEFAULT_APPLE_LOOKUP = "https://itunes.apple.com/lookup?id=1891551459&entity=podcastEpisode&limit=200&country=us"
 
 TICKER_STOCK_TITLE_RE = re.compile(r"^([A-Z][A-Z0-9.\-]{0,12}) Stock:\s+(.+)$")
 COMPANY_TICKER_STOCK_TITLE_RE = re.compile(
@@ -78,6 +79,7 @@ class PodcastItem:
     published_at: str
     ticker: str = ""
     quarter: str = ""
+    guid: str = ""
 
 
 def fetch_text(url: str) -> str:
@@ -326,11 +328,46 @@ def parse_podbean_items(feed_xml: str) -> tuple[dict[tuple[str, str], PodcastIte
             published_at=published_at,
             ticker=parsed[0] if parsed else "",
             quarter=parsed[1] if parsed else "",
+            guid=(item.findtext("guid") or "").strip(),
         )
         titled_items.setdefault(normalize_title(title), podcast)
         if parsed:
             stock_items.setdefault(parsed, podcast)
     return stock_items, titled_items
+
+
+def parse_apple_items(payload: str) -> tuple[dict[str, PodcastItem], dict[str, PodcastItem]]:
+    """Return Apple Podcast episodes keyed by RSS GUID and normalized title."""
+    try:
+        results = json.loads(payload).get("results", [])
+    except json.JSONDecodeError:
+        return {}, {}
+
+    guid_items: dict[str, PodcastItem] = {}
+    titled_items: dict[str, PodcastItem] = {}
+    for item in results:
+        if item.get("kind") != "podcast-episode":
+            continue
+
+        title = (item.get("trackName") or "").strip()
+        url = (item.get("trackViewUrl") or "").strip()
+        if not title or not url:
+            continue
+
+        parsed = parse_stock_title(title)
+        podcast = PodcastItem(
+            title=title,
+            url=url,
+            published_at=(item.get("releaseDate") or "").strip(),
+            ticker=parsed[0] if parsed else "",
+            quarter=parsed[1] if parsed else "",
+            guid=(item.get("episodeGuid") or "").strip(),
+        )
+        titled_items.setdefault(normalize_title(title), podcast)
+        if podcast.guid:
+            guid_items.setdefault(podcast.guid, podcast)
+
+    return guid_items, titled_items
 
 
 def parse_spotify_items(show_html: str) -> tuple[dict[tuple[str, str], PodcastItem], dict[str, PodcastItem]]:
@@ -423,6 +460,8 @@ def build_stock_episode(
     spotify_items: dict[tuple[str, str], PodcastItem],
     titled_podcasts: dict[str, PodcastItem],
     titled_spotify: dict[str, PodcastItem],
+    apple_items_by_guid: dict[str, PodcastItem],
+    titled_apple: dict[str, PodcastItem],
     youtube_dates: dict[str, str],
     companies: dict[str, str],
     sectors: dict[str, str],
@@ -451,6 +490,12 @@ def build_stock_episode(
     if spotify:
         used_spotify_urls.add(spotify.url)
 
+    apple = (
+        apple_items_by_guid.get(podbean.guid)
+        if podbean and podbean.guid
+        else find_titled_match(row.title, titled_apple)
+    )
+
     podcast_title = podbean.title if podbean else spotify.title if spotify else row.title
     podcast_date = podbean.published_at if podbean else ""
     return {
@@ -464,7 +509,7 @@ def build_stock_episode(
         "status": "youtube_podcast_complete" if podbean or spotify else "youtube_complete",
         "youtube_url": row.url,
         "spotify_url": spotify.url if spotify else "",
-        "apple_url": "",
+        "apple_url": apple.url if apple else "",
         "google_url": "",
         "iheart_url": "",
         "podbean_url": podbean.url if podbean else "",
@@ -517,20 +562,93 @@ def build_extra_video(
     youtube_dates: dict[str, str],
     titled_podcasts: dict[str, PodcastItem],
     titled_spotify: dict[str, PodcastItem],
+    apple_items_by_guid: dict[str, PodcastItem],
+    titled_apple: dict[str, PodcastItem],
     summary: str,
 ) -> dict:
     podcast = find_titled_match(row.title, titled_podcasts)
     spotify = find_titled_match(row.title, titled_spotify)
+    apple = (
+        apple_items_by_guid.get(podcast.guid)
+        if podcast and podcast.guid
+        else find_titled_match(row.title, titled_apple)
+    )
     return {
         "title": row.title,
         "youtube_url": row.url,
         "spotify_url": spotify.url if spotify else "",
         "podbean_url": podcast.url if podcast else "",
+        "apple_url": apple.url if apple else "",
         "published_at": (podcast.published_at if podcast else "") or youtube_dates.get(row.url, ""),
         "section": section,
         "tickers": extract_tickers(row.title),
         "summary": summary,
     }
+
+
+def backfill_catalog_platform_links(
+    catalog: dict,
+    titled_podcasts: dict[str, PodcastItem],
+    titled_spotify: dict[str, PodcastItem],
+    apple_items_by_guid: dict[str, PodcastItem],
+    titled_apple: dict[str, PodcastItem],
+) -> dict[str, int]:
+    """Fill only links confirmed by the public platform feeds already in use."""
+    podbean_by_url = {item.url: item for item in titled_podcasts.values()}
+    updated = {"podbean": 0, "spotify": 0, "apple": 0}
+
+    for episode in catalog.get("episodes", []):
+        title = episode.get("title") or ""
+        podbean = podbean_by_url.get(episode.get("podbean_url") or "")
+        if not podbean:
+            podbean = find_titled_match(title, titled_podcasts)
+            if podbean and not episode.get("podbean_url"):
+                episode["podbean_url"] = podbean.url
+                updated["podbean"] += 1
+
+        if not episode.get("spotify_url"):
+            spotify = find_titled_match(title, titled_spotify)
+            if spotify:
+                episode["spotify_url"] = spotify.url
+                updated["spotify"] += 1
+
+        if not episode.get("apple_url"):
+            apple = (
+                apple_items_by_guid.get(podbean.guid)
+                if podbean and podbean.guid
+                else find_titled_match(title, titled_apple)
+            )
+            if apple:
+                episode["apple_url"] = apple.url
+                updated["apple"] += 1
+
+    for section in catalog.get("video_sections", []) or []:
+        for video in section.get("videos", []) or []:
+            title = video.get("title") or ""
+            podbean = podbean_by_url.get(video.get("podbean_url") or "")
+            if not podbean:
+                podbean = find_titled_match(title, titled_podcasts)
+                if podbean and not video.get("podbean_url"):
+                    video["podbean_url"] = podbean.url
+                    updated["podbean"] += 1
+
+            if not video.get("spotify_url"):
+                spotify = find_titled_match(title, titled_spotify)
+                if spotify:
+                    video["spotify_url"] = spotify.url
+                    updated["spotify"] += 1
+
+            if not video.get("apple_url"):
+                apple = (
+                    apple_items_by_guid.get(podbean.guid)
+                    if podbean and podbean.guid
+                    else find_titled_match(title, titled_apple)
+                )
+                if apple:
+                    video["apple_url"] = apple.url
+                    updated["apple"] += 1
+
+    return updated
 
 
 def sync_catalog(args: argparse.Namespace) -> dict:
@@ -553,6 +671,12 @@ def sync_catalog(args: argparse.Namespace) -> dict:
     except Exception as exc:
         print(f"Warning: unable to read Spotify show page: {exc}", file=sys.stderr)
         spotify_items, titled_spotify = {}, {}
+    print("Fetching Apple Podcasts episode links...")
+    try:
+        apple_items_by_guid, titled_apple = parse_apple_items(fetch_text(args.apple_lookup))
+    except Exception as exc:
+        print(f"Warning: unable to read Apple Podcasts: {exc}", file=sys.stderr)
+        apple_items_by_guid, titled_apple = {}, {}
 
     pending_videos = newest_unlinked(videos, existing_urls, args.scan_all)
     pending_shorts = newest_unlinked(shorts, existing_urls, args.scan_all)
@@ -602,6 +726,8 @@ def sync_catalog(args: argparse.Namespace) -> dict:
                     spotify_items,
                     titled_podcasts,
                     titled_spotify,
+                    apple_items_by_guid,
+                    titled_apple,
                     youtube_dates,
                     companies,
                     sectors,
@@ -618,6 +744,8 @@ def sync_catalog(args: argparse.Namespace) -> dict:
                     youtube_dates,
                     titled_podcasts,
                     titled_spotify,
+                    apple_items_by_guid,
+                    titled_apple,
                     "A special-topic Charged Alpha video connected to current stock and earnings research.",
                 )
             )
@@ -629,6 +757,8 @@ def sync_catalog(args: argparse.Namespace) -> dict:
             youtube_dates,
             titled_podcasts,
             titled_spotify,
+            apple_items_by_guid,
+            titled_apple,
             "A fast Charged Alpha clip pointing viewers into the latest earnings coverage.",
         )
         for row in pending_shorts
@@ -648,6 +778,14 @@ def sync_catalog(args: argparse.Namespace) -> dict:
         shorts_section.setdefault("videos", [])
         shorts_section["videos"] = new_shorts + shorts_section["videos"]
 
+    backfilled_links = backfill_catalog_platform_links(
+        catalog,
+        titled_podcasts,
+        titled_spotify,
+        apple_items_by_guid,
+        titled_apple,
+    )
+
     catalog["last_synced_at"] = datetime.now().astimezone().isoformat(timespec="seconds")
 
     summary = {
@@ -655,6 +793,7 @@ def sync_catalog(args: argparse.Namespace) -> dict:
         "explainers": len(new_explainers),
         "shorts": len(new_shorts),
         "stock_tickers": [episode["ticker"] for episode in new_episodes],
+        "backfilled_links": backfilled_links,
         "catalog_path": str(catalog_path),
     }
 
@@ -674,6 +813,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--youtube-rss", default=DEFAULT_YOUTUBE_RSS)
     parser.add_argument("--podbean-feed", default=DEFAULT_PODBEAN_FEED)
     parser.add_argument("--spotify-show", default=DEFAULT_SPOTIFY_SHOW)
+    parser.add_argument("--apple-lookup", default=DEFAULT_APPLE_LOOKUP)
     parser.add_argument(
         "--scan-all",
         action="store_true",

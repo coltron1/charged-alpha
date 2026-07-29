@@ -860,6 +860,9 @@
                 <div class="text-xs text-slate-500">{{ stock.ticker }}</div>
               </div>
               <div class="text-xs text-slate-500 mb-2">{{ stock.sector }} &middot; {{ stock.latest_video_quarter or stock.latest_quarter }}</div>
+              {% if stock.latest_video_published_at or stock.latest_published_at %}
+              <div class="text-xs text-slate-400 mb-1">Latest episode: {{ (stock.latest_video_published_at or stock.latest_published_at)[:10] }}</div>
+              {% endif %}
               <div class="text-xs text-slate-400">{{ stock.published_count }}/{{ stock.quarter_count }} quarters on YouTube</div>
             </a>
             {% endfor %}

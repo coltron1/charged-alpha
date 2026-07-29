@@ -1,8 +1,10 @@
 import unittest
+import json
 
 from scripts.sync_shows_catalog import (
     PodcastItem,
     normalize_title,
+    parse_apple_items,
     parse_stock_title,
     resolve_stock_key,
 )
@@ -70,6 +72,21 @@ class StockTitleParsingTests(unittest.TestCase):
             parse_stock_title("FIZZ Stock: The LaCroix Company (FY2026)"),
             ("FIZZ", "FY2026"),
         )
+
+    def test_indexes_apple_episode_by_rss_guid(self):
+        guid_items, titled_items = parse_apple_items(json.dumps({
+            "results": [{
+                "kind": "podcast-episode",
+                "trackName": "Example Stock: Earnings Review (EXM Q2 2026)",
+                "trackViewUrl": "https://podcasts.apple.com/us/podcast/example/id1?i=2",
+                "episodeGuid": "chargedalpha.podbean.com/example-guid",
+                "releaseDate": "2026-07-28T12:00:00Z",
+            }]
+        }))
+
+        episode = guid_items["chargedalpha.podbean.com/example-guid"]
+        self.assertEqual(episode.url, "https://podcasts.apple.com/us/podcast/example/id1?i=2")
+        self.assertEqual(titled_items[normalize_title(episode.title)], episode)
 
 
 if __name__ == "__main__":

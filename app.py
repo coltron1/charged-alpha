@@ -937,8 +937,7 @@ def build_show_library(episodes):
         stock["episodes"].sort(key=_episode_sort_key, reverse=True)
         latest = stock["episodes"][0]
         latest_youtube = next((ep for ep in stock["episodes"] if ep.get("youtube_url")), None)
-        latest_spotify = next((ep for ep in stock["episodes"] if ep.get("spotify_url")), None)
-        latest_podcast = next((ep for ep in stock["episodes"] if ep.get("podbean_url")), None)
+        latest_episode = latest_youtube or latest
         dated_episodes = [ep for ep in stock["episodes"] if _parse_datetime(ep.get("published_at"))]
         latest_published = max(
             dated_episodes,
@@ -949,7 +948,11 @@ def build_show_library(episodes):
         stock["quarter_count"] = len(stock["episodes"])
         stock["published_count"] = sum(1 for ep in stock["episodes"] if ep.get("has_any_link"))
         stock["youtube_count"] = sum(1 for ep in stock["episodes"] if ep.get("youtube_url"))
-        stock["podcast_count"] = sum(1 for ep in stock["episodes"] if ep.get("podbean_url") or ep.get("spotify_url"))
+        stock["podcast_count"] = sum(
+            1
+            for ep in stock["episodes"]
+            if ep.get("podbean_url") or ep.get("spotify_url") or ep.get("apple_url") or ep.get("amazon_url")
+        )
         stock["latest_quarter"] = latest["quarter"]
         stock["latest_published_at"] = latest_published.get("published_at") or latest.get("published_at") or ""
         stock["latest_video_quarter"] = latest_youtube["quarter"] if latest_youtube else None
@@ -960,15 +963,26 @@ def build_show_library(episodes):
         stock["latest_status"] = latest_youtube["status"] if latest_youtube else latest["status"]
         stock["quarter_labels"] = [ep["quarter"] for ep in stock["episodes"]]
         stock["latest_links"] = {
-            "youtube": latest_youtube.get("youtube_url") if latest_youtube else "",
-            "spotify": latest_spotify.get("spotify_url") if latest_spotify else "",
-            "podcast": latest_podcast.get("podbean_url") if latest_podcast else "",
+            "youtube": latest_episode.get("youtube_url") or "",
+            "spotify": latest_episode.get("spotify_url") or "",
+            "podcast": latest_episode.get("podbean_url") or "",
+            "apple": latest_episode.get("apple_url") or "",
+            "amazon": latest_episode.get("amazon_url") or "",
+            "iheart": latest_episode.get("iheart_url") or "",
+            "google": latest_episode.get("google_url") or "",
         }
         stock["latest_youtube_url"] = latest_youtube.get("youtube_url") if latest_youtube else ""
-        stock["latest_spotify_url"] = latest_spotify.get("spotify_url") if latest_spotify else ""
-        stock["latest_podcast_url"] = latest_podcast.get("podbean_url") if latest_podcast else ""
+        stock["latest_spotify_url"] = latest_episode.get("spotify_url") or ""
+        stock["latest_podcast_url"] = latest_episode.get("podbean_url") or ""
+        stock["latest_apple_url"] = latest_episode.get("apple_url") or ""
+        stock["latest_amazon_url"] = latest_episode.get("amazon_url") or ""
+        stock["latest_iheart_url"] = latest_episode.get("iheart_url") or ""
+        stock["latest_google_url"] = latest_episode.get("google_url") or ""
         stock["has_youtube"] = bool(latest_youtube)
-        stock["has_podcast"] = bool(latest_spotify or latest_podcast)
+        stock["has_podcast"] = any(
+            ep.get("spotify_url") or ep.get("podbean_url") or ep.get("apple_url") or ep.get("amazon_url")
+            for ep in stock["episodes"]
+        )
         stock["latest_quarter_sort"] = _quarter_sort_key(stock["latest_video_quarter"] or stock["latest_quarter"])
         stocks.append(stock)
 
@@ -1032,6 +1046,10 @@ def build_show_client_stocks(stocks):
                 "latest_youtube_url": stock.get("latest_youtube_url"),
                 "latest_spotify_url": stock.get("latest_spotify_url"),
                 "latest_podcast_url": stock.get("latest_podcast_url"),
+                "latest_apple_url": stock.get("latest_apple_url"),
+                "latest_amazon_url": stock.get("latest_amazon_url"),
+                "latest_iheart_url": stock.get("latest_iheart_url"),
+                "latest_google_url": stock.get("latest_google_url"),
                 "has_youtube": stock.get("has_youtube", False),
                 "has_podcast": stock.get("has_podcast", False),
                 "latest_quarter_sort": stock.get("latest_quarter_sort", (0, 0, "")),
@@ -1490,6 +1508,8 @@ def _compact_stock_snapshot(show_stock, allow_fetch=False):
         "latest_youtube_url": show_stock.get("latest_youtube_url"),
         "latest_youtube_embed_url": show_stock.get("latest_youtube_embed_url"),
         "latest_spotify_url": show_stock.get("latest_spotify_url"),
+        "latest_podcast_url": show_stock.get("latest_podcast_url"),
+        "latest_apple_url": show_stock.get("latest_apple_url"),
         "youtube_thumbnail_url": _youtube_thumbnail_url(show_stock.get("latest_youtube_url")),
         "market_cap": market_cap,
         "trailing_pe": pick("trailing_pe"),
@@ -1521,6 +1541,8 @@ def build_stock_competitor_analysis(show_stock, primary_snapshot, all_stocks):
         "latest_youtube_url": show_stock.get("latest_youtube_url"),
         "latest_youtube_embed_url": show_stock.get("latest_youtube_embed_url"),
         "latest_spotify_url": show_stock.get("latest_spotify_url"),
+        "latest_podcast_url": show_stock.get("latest_podcast_url"),
+        "latest_apple_url": show_stock.get("latest_apple_url"),
         "youtube_thumbnail_url": _youtube_thumbnail_url(show_stock.get("latest_youtube_url")),
     })
     snapshots.append(primary)
@@ -1572,6 +1594,8 @@ def build_stock_competitor_analysis(show_stock, primary_snapshot, all_stocks):
             "latest_youtube_url": snap.get("latest_youtube_url") or "",
             "latest_youtube_embed_url": snap.get("latest_youtube_embed_url") or "",
             "latest_spotify_url": snap.get("latest_spotify_url") or "",
+            "latest_podcast_url": snap.get("latest_podcast_url") or "",
+            "latest_apple_url": snap.get("latest_apple_url") or "",
             "youtube_thumbnail_url": snap.get("youtube_thumbnail_url") or _youtube_thumbnail_url(snap.get("latest_youtube_url")),
             "insights": _comparison_insights(snap),
         })

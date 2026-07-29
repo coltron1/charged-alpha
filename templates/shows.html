@@ -369,6 +369,9 @@
               {% if video.podbean_url %}
               <a href="{{ video.podbean_url }}" target="_blank" rel="noopener noreferrer" class="platform-chip" style="background:#7c3aed;">Podcast</a>
               {% endif %}
+              {% if video.apple_url %}
+              <a href="{{ video.apple_url }}" target="_blank" rel="noopener noreferrer" class="platform-chip" style="background:#64748b;">Apple</a>
+              {% endif %}
             </div>
           </article>
           {% endfor %}
@@ -453,15 +456,22 @@ function platformChip(href, label, bg) {
   return `<a href="${href}" target="_blank" rel="noopener noreferrer" class="platform-chip" style="background:${bg};">${label}</a>`;
 }
 
+function episodeDate(value) {
+  const match = String(value || '').match(/^\d{4}-\d{2}-\d{2}/);
+  return match ? match[0] : '';
+}
+
 function renderCard(stock) {
   const latestQuarter = stock.latest_quarter || 'Quarter TBD';
   const latestVideoQuarter = stock.latest_video_quarter || 'No YouTube yet';
+  const latestDate = episodeDate(stock.latest_video_published_at || stock.latest_published_at);
   const progressText = `${stock.published_count}/${stock.quarter_count} episodes linked`;
   const quarterPreview = stock.quarter_labels.slice(0, 4).map(q => `<span class="quarter-chip">${q}</span>`).join('');
   const chips = [
     platformChip(stock.latest_links.youtube, 'YouTube', '#dc2626'),
     platformChip(stock.latest_links.spotify, 'Spotify', '#16a34a'),
-    platformChip(stock.latest_links.podcast, 'Podcast', '#7c3aed')
+    platformChip(stock.latest_links.podcast, 'Podcast', '#7c3aed'),
+    platformChip(stock.latest_links.apple, 'Apple', '#64748b')
   ].join('');
 
   return `
@@ -478,6 +488,7 @@ function renderCard(stock) {
         <div class="text-right">
           <div class="text-xs uppercase tracking-[.18em] text-slate-500">Latest video</div>
           <div class="text-sm font-semibold text-white mt-1">${latestVideoQuarter}</div>
+          ${latestDate ? `<div class="text-xs text-slate-500 mt-1">${latestDate}</div>` : ''}
         </div>
       </div>
 

@@ -156,6 +156,9 @@
           {% if show_stock.latest_video_quarter %}
           <span class="pill" style="background:rgba(16,185,129,.12);color:#6ee7b7;">Latest YouTube: {{ show_stock.latest_video_quarter }}</span>
           {% endif %}
+          {% if show_stock.latest_video_published_at %}
+          <span class="pill" style="background:rgba(148,163,184,.12);color:#cbd5e1;">Published {{ show_stock.latest_video_published_at[:10] }}</span>
+          {% endif %}
         </div>
         <h1 class="text-4xl md:text-5xl font-black text-white leading-tight mb-4">{{ show_stock.company }}</h1>
         <p class="text-lg text-slate-400 leading-relaxed max-w-3xl mb-6">
@@ -169,7 +172,23 @@
           <a href="{{ show_stock.latest_spotify_url }}" target="_blank" rel="noopener noreferrer" class="platform-pill" style="background:#16a34a;">Latest on Spotify</a>
           {% endif %}
           {% if show_stock.latest_podcast_url %}
-          <a href="{{ show_stock.latest_podcast_url }}" target="_blank" rel="noopener noreferrer" class="platform-pill" style="background:#7c3aed;">Latest Podcast</a>
+          <a href="{{ show_stock.latest_podcast_url }}" target="_blank" rel="noopener noreferrer" class="platform-pill" style="background:#7c3aed;">Latest on Podbean</a>
+          {% elif podcast_platforms.podbean %}
+          <a href="{{ podcast_platforms.podbean }}" target="_blank" rel="noopener noreferrer" class="platform-pill" style="background:#7c3aed;">Podbean Show</a>
+          {% endif %}
+          {% if show_stock.latest_apple_url %}
+          <a href="{{ show_stock.latest_apple_url }}" target="_blank" rel="noopener noreferrer" class="platform-pill" style="background:#64748b;">Latest on Apple</a>
+          {% elif podcast_platforms.apple %}
+          <a href="{{ podcast_platforms.apple }}" target="_blank" rel="noopener noreferrer" class="platform-pill" style="background:#64748b;">Apple Podcasts</a>
+          {% endif %}
+          {% if podcast_platforms.amazon %}
+          <a href="{{ podcast_platforms.amazon }}" target="_blank" rel="noopener noreferrer" class="platform-pill" style="background:#0f766e;">Amazon Music</a>
+          {% endif %}
+          {% if podcast_platforms.iheart %}
+          <a href="{{ podcast_platforms.iheart }}" target="_blank" rel="noopener noreferrer" class="platform-pill" style="background:#be123c;">iHeartRadio</a>
+          {% endif %}
+          {% if podcast_platforms.google %}
+          <a href="{{ podcast_platforms.google }}" target="_blank" rel="noopener noreferrer" class="platform-pill" style="background:#2563eb;">YouTube Music</a>
           {% endif %}
           {% if stock_detail.website %}
           <a href="{{ stock_detail.website }}" target="_blank" rel="noopener noreferrer" class="platform-pill" style="background:#1d4ed8;">Company Website</a>
@@ -193,12 +212,27 @@
           <div class="primary-video-meta">
             <p class="stat-label mb-2">Latest earnings video</p>
             <h2 class="text-lg font-extrabold text-white leading-snug">{{ show_stock.latest_video_title or (show_stock.company ~ ' earnings analysis') }}</h2>
+            {% if show_stock.latest_video_published_at %}
+            <p class="text-sm text-slate-400 mt-2">Published {{ show_stock.latest_video_published_at[:10] }}</p>
+            {% endif %}
             <div class="flex flex-wrap gap-2 mt-4">
               {% if show_stock.latest_youtube_url %}
               <a href="{{ show_stock.latest_youtube_url }}" target="_blank" rel="noopener noreferrer" class="platform-pill" style="background:#dc2626;">Open YouTube</a>
               {% endif %}
               {% if show_stock.latest_spotify_url %}
               <a href="{{ show_stock.latest_spotify_url }}" target="_blank" rel="noopener noreferrer" class="platform-pill" style="background:#16a34a;">Open Spotify</a>
+              {% elif podcast_platforms.spotify %}
+              <a href="{{ podcast_platforms.spotify }}" target="_blank" rel="noopener noreferrer" class="platform-pill" style="background:#16a34a;">Spotify Show</a>
+              {% endif %}
+              {% if show_stock.latest_podcast_url %}
+              <a href="{{ show_stock.latest_podcast_url }}" target="_blank" rel="noopener noreferrer" class="platform-pill" style="background:#7c3aed;">Open Podbean</a>
+              {% elif podcast_platforms.podbean %}
+              <a href="{{ podcast_platforms.podbean }}" target="_blank" rel="noopener noreferrer" class="platform-pill" style="background:#7c3aed;">Podbean Show</a>
+              {% endif %}
+              {% if show_stock.latest_apple_url %}
+              <a href="{{ show_stock.latest_apple_url }}" target="_blank" rel="noopener noreferrer" class="platform-pill" style="background:#64748b;">Open Apple</a>
+              {% elif podcast_platforms.apple %}
+              <a href="{{ podcast_platforms.apple }}" target="_blank" rel="noopener noreferrer" class="platform-pill" style="background:#64748b;">Apple Podcasts</a>
               {% endif %}
             </div>
           </div>
@@ -218,6 +252,9 @@
             <div>
               <div class="stat-label">Latest video</div>
               <div class="text-white text-lg font-bold mt-2">{{ show_stock.latest_video_quarter or 'Pending' }}</div>
+              {% if show_stock.latest_video_published_at %}
+              <div class="text-xs text-slate-500 mt-1">{{ show_stock.latest_video_published_at[:10] }}</div>
+              {% endif %}
             </div>
             <div>
               <div class="stat-label">Podcast available</div>
@@ -362,6 +399,12 @@
             {% if stock.latest_spotify_url %}
             <a href="{{ stock.latest_spotify_url }}" target="_blank" rel="noopener noreferrer" class="platform-pill" style="background:#16a34a; padding:6px 10px; font-size:11px;">Spotify</a>
             {% endif %}
+            {% if stock.latest_podcast_url %}
+            <a href="{{ stock.latest_podcast_url }}" target="_blank" rel="noopener noreferrer" class="platform-pill" style="background:#7c3aed; padding:6px 10px; font-size:11px;">Podbean</a>
+            {% endif %}
+            {% if stock.latest_apple_url %}
+            <a href="{{ stock.latest_apple_url }}" target="_blank" rel="noopener noreferrer" class="platform-pill" style="background:#64748b; padding:6px 10px; font-size:11px;">Apple</a>
+            {% endif %}
           </div>
         </div>
         <div class="text-xs uppercase tracking-[.18em] text-slate-500 mb-3">Latest video</div>
@@ -431,6 +474,9 @@
           {% if video.podbean_url %}
           <a href="{{ video.podbean_url }}" target="_blank" rel="noopener noreferrer" class="platform-pill" style="background:#7c3aed;">Podcast</a>
           {% endif %}
+          {% if video.apple_url %}
+          <a href="{{ video.apple_url }}" target="_blank" rel="noopener noreferrer" class="platform-pill" style="background:#64748b;">Apple</a>
+          {% endif %}
         </div>
       </article>
       {% endfor %}
@@ -453,6 +499,9 @@
         <div>
           <div class="text-white font-bold text-lg">{{ episode.quarter }}</div>
           <div class="text-sm text-slate-500 mt-1">{{ 'Episode live' if episode.has_any_link else 'Episode pending' }}</div>
+          {% if episode.published_at %}
+          <div class="text-xs text-slate-500 mt-1">{{ episode.published_at[:10] }}</div>
+          {% endif %}
         </div>
         <div>
           <div class="flex flex-wrap gap-2 mb-3">
@@ -470,12 +519,33 @@
           {% endif %}
           {% if episode.spotify_url %}
           <a href="{{ episode.spotify_url }}" target="_blank" rel="noopener noreferrer" class="platform-pill" style="background:#16a34a;">Spotify</a>
+          {% elif episode.has_any_link and podcast_platforms.spotify %}
+          <a href="{{ podcast_platforms.spotify }}" target="_blank" rel="noopener noreferrer" class="platform-pill" style="background:#16a34a;">Spotify Show</a>
           {% endif %}
           {% if episode.podbean_url %}
           <a href="{{ episode.podbean_url }}" target="_blank" rel="noopener noreferrer" class="platform-pill" style="background:#7c3aed;">Podcast</a>
+          {% elif episode.has_any_link and podcast_platforms.podbean %}
+          <a href="{{ podcast_platforms.podbean }}" target="_blank" rel="noopener noreferrer" class="platform-pill" style="background:#7c3aed;">Podbean Show</a>
           {% endif %}
           {% if episode.apple_url %}
           <a href="{{ episode.apple_url }}" target="_blank" rel="noopener noreferrer" class="platform-pill" style="background:#64748b;">Apple</a>
+          {% elif episode.has_any_link and podcast_platforms.apple %}
+          <a href="{{ podcast_platforms.apple }}" target="_blank" rel="noopener noreferrer" class="platform-pill" style="background:#64748b;">Apple Podcasts</a>
+          {% endif %}
+          {% if episode.amazon_url %}
+          <a href="{{ episode.amazon_url }}" target="_blank" rel="noopener noreferrer" class="platform-pill" style="background:#0f766e;">Amazon Music</a>
+          {% elif episode.has_any_link and podcast_platforms.amazon %}
+          <a href="{{ podcast_platforms.amazon }}" target="_blank" rel="noopener noreferrer" class="platform-pill" style="background:#0f766e;">Amazon Show</a>
+          {% endif %}
+          {% if episode.iheart_url %}
+          <a href="{{ episode.iheart_url }}" target="_blank" rel="noopener noreferrer" class="platform-pill" style="background:#be123c;">iHeartRadio</a>
+          {% elif episode.has_any_link and podcast_platforms.iheart %}
+          <a href="{{ podcast_platforms.iheart }}" target="_blank" rel="noopener noreferrer" class="platform-pill" style="background:#be123c;">iHeart Show</a>
+          {% endif %}
+          {% if episode.google_url %}
+          <a href="{{ episode.google_url }}" target="_blank" rel="noopener noreferrer" class="platform-pill" style="background:#2563eb;">YouTube Music</a>
+          {% elif episode.has_any_link and podcast_platforms.google %}
+          <a href="{{ podcast_platforms.google }}" target="_blank" rel="noopener noreferrer" class="platform-pill" style="background:#2563eb;">YouTube Music</a>
           {% endif %}
           {% if not episode.has_any_link %}
           <span class="text-sm text-slate-500">No verified episode link yet</span>

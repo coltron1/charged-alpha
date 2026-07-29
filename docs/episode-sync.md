@@ -1,6 +1,6 @@
 # Charged Alpha Episode Sync
 
-Use this when new YouTube videos, Shorts, or Podbean podcast episodes need to be linked on the site.
+Use this when new YouTube videos, Shorts, or podcast episodes need to be linked on the site.
 
 ## One-command weekly sync
 
@@ -34,7 +34,9 @@ python3 scripts/sync_shows_catalog.py --scan-all
 ## What the sync does
 
 - Adds new full stock earnings videos to `episodes`.
-- Links matching Podbean podcast episodes by ticker and quarter.
+- Links matching Podbean episodes and uses their RSS GUIDs to add matching Apple Podcasts episode URLs.
+- Adds Spotify episode URLs when they are published on the public Spotify show page.
+- Keeps platform-show links available in the stock pages when Spotify, Apple Podcasts, or another service has not yet exposed a verifiable episode-specific URL.
 - Adds non-standard full videos to `Market and Sector Explainers`.
 - Adds new YouTube Shorts to `Shorts and Clips`.
 - Dedupes duplicate full uploads for the same ticker and quarter during each run.
