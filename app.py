@@ -2010,7 +2010,7 @@ def app_download():
         "app_download.html",
         ios_url=_add_query_params(APP_STORE_URL, tracking_params),
         android_url=_add_query_params(GOOGLE_PLAY_URL, tracking_params),
-        tracking_source=tracking_params["utm_source"],
+        tracking_params=tracking_params,
         app_schema={
             "@context": "https://schema.org",
             "@type": "MobileApplication",

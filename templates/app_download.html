@@ -172,10 +172,10 @@
           <p>Short narrated lessons turn charts, valuation, earnings, and market mechanics into interactive decisions you can understand and remember.</p>
           <p class="cta-lead">Start learning free.</p>
           <div class="download-actions" aria-label="Download Charged Alpha">
-            <a href="{{ ios_url }}" data-app-download data-platform="ios" data-source="{{ tracking_source }}" target="_blank" rel="noopener noreferrer" class="store-link">
+            <a href="{{ ios_url }}" data-app-download data-platform="ios" data-source="{{ tracking_params.utm_source }}" data-medium="{{ tracking_params.utm_medium }}" data-campaign="{{ tracking_params.utm_campaign }}" data-content="{{ tracking_params.utm_content }}" target="_blank" rel="noopener noreferrer" class="store-link">
               <span class="store-icon" aria-hidden="true">iOS</span><span><small>Download on the</small>App Store</span>
             </a>
-            <a href="{{ android_url }}" data-app-download data-platform="android" data-source="{{ tracking_source }}" target="_blank" rel="noopener noreferrer" class="store-link google">
+            <a href="{{ android_url }}" data-app-download data-platform="android" data-source="{{ tracking_params.utm_source }}" data-medium="{{ tracking_params.utm_medium }}" data-campaign="{{ tracking_params.utm_campaign }}" data-content="{{ tracking_params.utm_content }}" target="_blank" rel="noopener noreferrer" class="store-link google">
               <span class="store-icon" aria-hidden="true">A</span><span><small>Get it on</small>Google Play</span>
             </a>
           </div>
@@ -258,8 +258,8 @@
       <div class="app-final-inner">
         <div><h2 id="finalDownloadTitle">Your next smart decision starts here.</h2><p>Download Charged Alpha free on iPhone or Android and begin with a lesson that moves.</p></div>
         <div class="download-actions" aria-label="Download Charged Alpha again">
-          <a href="{{ ios_url }}" data-app-download data-platform="ios" data-source="{{ tracking_source }}" target="_blank" rel="noopener noreferrer" class="store-link"><span class="store-icon" aria-hidden="true">iOS</span><span><small>Download on the</small>App Store</span></a>
-          <a href="{{ android_url }}" data-app-download data-platform="android" data-source="{{ tracking_source }}" target="_blank" rel="noopener noreferrer" class="store-link google"><span class="store-icon" aria-hidden="true">A</span><span><small>Get it on</small>Google Play</span></a>
+          <a href="{{ ios_url }}" data-app-download data-platform="ios" data-source="{{ tracking_params.utm_source }}" data-medium="{{ tracking_params.utm_medium }}" data-campaign="{{ tracking_params.utm_campaign }}" data-content="{{ tracking_params.utm_content }}" target="_blank" rel="noopener noreferrer" class="store-link"><span class="store-icon" aria-hidden="true">iOS</span><span><small>Download on the</small>App Store</span></a>
+          <a href="{{ android_url }}" data-app-download data-platform="android" data-source="{{ tracking_params.utm_source }}" data-medium="{{ tracking_params.utm_medium }}" data-campaign="{{ tracking_params.utm_campaign }}" data-content="{{ tracking_params.utm_content }}" target="_blank" rel="noopener noreferrer" class="store-link google"><span class="store-icon" aria-hidden="true">A</span><span><small>Get it on</small>Google Play</span></a>
         </div>
       </div>
     </section>
@@ -268,11 +268,29 @@
   <footer><span>&copy; Charged Alpha</span><span><a href="/privacy">Privacy</a> &middot; <a href="/">Stock Library</a></span></footer>
 
   <script>
+    var landingEventData = {
+      source: '{{ tracking_params.utm_source }}',
+      medium: '{{ tracking_params.utm_medium }}',
+      campaign: '{{ tracking_params.utm_campaign }}',
+      content: '{{ tracking_params.utm_content }}',
+      page_location: window.location.href
+    };
+
+    if (typeof window.gtag === 'function') {
+      window.gtag('event', 'app_landing_view', landingEventData);
+    } else {
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push(Object.assign({ event: 'app_landing_view' }, landingEventData));
+    }
+
     document.querySelectorAll('[data-app-download]').forEach(function (link) {
       link.addEventListener('click', function () {
         var eventData = {
           platform: link.dataset.platform,
           source: link.dataset.source || 'chargedalpha',
+          medium: link.dataset.medium || 'referral',
+          campaign: link.dataset.campaign || 'app_download',
+          content: link.dataset.content || '',
           page_location: window.location.href
         };
         if (typeof window.gtag === 'function') {
