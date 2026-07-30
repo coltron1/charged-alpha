@@ -29,6 +29,7 @@ Routes:
   /charts/                       → Stock Charts (TradingView)
   /charts/api/...                → Chart save/load API
   /games/                        → Interactive investing games
+  /app/                          → Charged Alpha mobile app downloads
   /games/api/...                 → Game leaderboards and score API
   /auth/...                      → Authentication (login, register, OAuth)
 """
@@ -42,7 +43,7 @@ import datetime
 import hashlib
 from pathlib import Path
 from concurrent.futures import ThreadPoolExecutor
-from urllib.parse import parse_qs, urlparse
+from urllib.parse import parse_qs, parse_qsl, urlencode, urlparse, urlsplit, urlunsplit
 from xml.sax.saxutils import escape as xml_escape
 try:
     from zoneinfo import ZoneInfo
@@ -240,6 +241,7 @@ SHOWS_INITIAL_STOCK_COUNT = 24
 PUBLIC_SITEMAP_PATHS = [
     "/",
     "/shows",
+    "/app",
     "/screener",
     "/etf",
     "/mutual-funds",
@@ -300,6 +302,13 @@ SEO_PAGE_META = {
         "description": (
             "Browse Charged Alpha earnings videos and podcast episodes by ticker, "
             "company, quarter, and stock analysis page."
+        ),
+    },
+    "/app": {
+        "title": "Charged Alpha App — Learn Investing on iPhone & Android",
+        "description": (
+            "Download the Charged Alpha app for iPhone or Android and learn investing "
+            "through interactive lessons, valuation labs, options strategies, and Storm Chaser."
         ),
     },
     "/screener": {
@@ -509,6 +518,63 @@ def _normalize_path(path):
 
 def _canonical_url(path):
     return f"{SITE_URL}{_normalize_path(path)}"
+
+
+APP_STORE_URL = "https://apps.apple.com/us/app/charged-alpha/id6789744882"
+GOOGLE_PLAY_URL = "https://play.google.com/store/apps/details?id=com.chargedalpha.academy"
+APP_TRACKING_DEFAULTS = {
+    "utm_source": "chargedalpha",
+    "utm_medium": "website",
+    "utm_campaign": "app_download",
+}
+
+
+def _clean_tracking_value(value, fallback=""):
+    cleaned = str(value or "").strip()
+    return cleaned[:120] or fallback
+
+
+def _app_tracking_params():
+    source = _clean_tracking_value(
+        request.args.get("utm_source") or request.args.get("source"),
+        APP_TRACKING_DEFAULTS["utm_source"],
+    )
+    medium = _clean_tracking_value(
+        request.args.get("utm_medium"),
+        "referral" if source != APP_TRACKING_DEFAULTS["utm_source"] else APP_TRACKING_DEFAULTS["utm_medium"],
+    )
+    campaign = _clean_tracking_value(
+        request.args.get("utm_campaign"),
+        APP_TRACKING_DEFAULTS["utm_campaign"],
+    )
+    content = _clean_tracking_value(
+        request.args.get("utm_content") or request.args.get("ref"),
+    )
+    term = _clean_tracking_value(request.args.get("utm_term"))
+
+    params = {
+        "utm_source": source,
+        "utm_medium": medium,
+        "utm_campaign": campaign,
+    }
+    if content:
+        params["utm_content"] = content
+    if term:
+        params["utm_term"] = term
+    return params
+
+
+def _add_query_params(base_url, params):
+    parsed = urlsplit(base_url)
+    existing = [
+        (key, value)
+        for key, value in parse_qsl(parsed.query, keep_blank_values=True)
+        if key not in params
+    ]
+    existing.extend(params.items())
+    return urlunsplit(
+        (parsed.scheme, parsed.netloc, parsed.path, urlencode(existing), parsed.fragment)
+    )
 
 
 def _parse_datetime(value):
@@ -1934,6 +2000,28 @@ def index():
         video_sections=shows_data.get("video_sections", []),
         podcast_platforms=shows_data.get("platform_links", {}),
         structured_data=_shows_page_structured_data("/", show_library),
+    )
+
+
+@app.route("/app")
+def app_download():
+    tracking_params = _app_tracking_params()
+    return render_template(
+        "app_download.html",
+        ios_url=_add_query_params(APP_STORE_URL, tracking_params),
+        android_url=_add_query_params(GOOGLE_PLAY_URL, tracking_params),
+        tracking_source=tracking_params["utm_source"],
+        app_schema={
+            "@context": "https://schema.org",
+            "@type": "MobileApplication",
+            "name": "Charged Alpha",
+            "operatingSystem": "iOS, Android",
+            "applicationCategory": "EducationalApplication",
+            "description": SEO_PAGE_META["/app"]["description"],
+            "image": f"{SITE_URL}/static/assets/charged-alpha-logo.png",
+            "downloadUrl": [APP_STORE_URL, GOOGLE_PLAY_URL],
+            "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+        },
     )
 
 

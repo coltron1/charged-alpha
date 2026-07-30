@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ seo_meta.title }}</title>
+  {% include "partials/seo_meta.html" %}
+  <script type="application/ld+json">{{ app_schema | tojson }}</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink:#f8fafc;
+      --muted:#a8b6c9;
+      --cyan:#67e8f9;
+      --gold:#f6c963;
+      --green:#6ee7b7;
+      --line:#26384c;
+      --page:#070b12;
+    }
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body { margin:0; background:var(--page); color:var(--ink); font-family:'Inter',system-ui,sans-serif; }
+    a { color:inherit; }
+    .app-header {
+      position:relative; z-index:2; display:flex; align-items:center; justify-content:space-between; gap:24px;
+      max-width:1240px; margin:0 auto; padding:20px 28px;
+    }
+    .brand { display:flex; align-items:center; gap:12px; text-decoration:none; }
+    .brand img { width:46px; height:46px; border:1px solid rgba(246,201,99,.42); border-radius:12px; object-fit:cover; box-shadow:0 0 24px rgba(246,201,99,.14); }
+    .brand-copy strong { display:block; font-size:15px; letter-spacing:.04em; }
+    .brand-copy span { display:block; margin-top:4px; color:#64748b; font-size:10px; font-weight:800; letter-spacing:.2em; text-transform:uppercase; }
+    .app-nav { display:flex; align-items:center; gap:22px; color:#a8b6c9; font-size:13px; font-weight:700; }
+    .app-nav a { text-decoration:none; }
+    .app-nav a:hover { color:#fff; }
+    .app-nav .nav-cta { padding:9px 13px; border:1px solid rgba(103,232,249,.36); border-radius:7px; color:#cffafe; background:rgba(8,47,73,.36); }
+    .app-hero {
+      position:relative; display:flex; align-items:center; min-height:650px; overflow:hidden;
+      background-color:#0b1522; background-image:url('/static/assets/mobile-app/charged-alpha-lessons-demo-poster.jpg');
+      background-position:center right; background-size:cover;
+      border-top:1px solid rgba(38,56,76,.72); border-bottom:1px solid rgba(38,56,76,.72);
+    }
+    .app-hero::before { content:''; position:absolute; inset:0; background:rgba(4,8,17,.73); }
+    .app-hero::after { content:''; position:absolute; inset:0; background:linear-gradient(90deg,rgba(4,8,17,.95) 0%,rgba(4,8,17,.78) 42%,rgba(4,8,17,.26) 100%); }
+    .hero-inner { position:relative; z-index:1; width:min(1240px,100%); margin:0 auto; padding:70px 28px 82px; }
+    .hero-copy { max-width:700px; text-shadow:0 2px 18px rgba(0,0,0,.35); }
+    .eyebrow { color:var(--cyan); font-size:12px; font-weight:900; letter-spacing:.24em; text-transform:uppercase; }
+    h1 { max-width:720px; margin:18px 0 20px; color:#fff; font-size:clamp(42px,6vw,78px); line-height:.98; letter-spacing:-.025em; }
+    .hero-copy > p { max-width:650px; margin:0; color:#c2cfdf; font-size:18px; line-height:1.7; }
+    .hero-brand { display:flex; align-items:center; gap:13px; margin-bottom:26px; }
+    .hero-brand img { width:62px; height:62px; border:1px solid rgba(103,232,249,.48); border-radius:16px; object-fit:cover; box-shadow:0 12px 30px rgba(8,145,178,.2); }
+    .hero-brand strong { display:block; font-size:18px; line-height:1.2; }
+    .hero-brand span { display:block; margin-top:5px; color:var(--cyan); font-size:11px; font-weight:900; letter-spacing:.16em; }
+    .download-actions { display:grid; grid-template-columns:repeat(2,minmax(0,250px)); gap:12px; margin-top:30px; max-width:520px; }
+    .cta-lead { margin:26px 0 -18px !important; color:#fff !important; font-size:13px !important; font-weight:900; letter-spacing:.08em; text-transform:uppercase; }
+    .store-link {
+      --electric-color:var(--gold); --electric-glow:rgba(246,201,99,.72); --store-surface:linear-gradient(180deg,#1b1d21,#090b0e);
+      position:relative; isolation:isolate; display:flex; align-items:center; justify-content:center; gap:9px; min-height:62px; overflow:hidden;
+      padding:11px 16px; border:1px solid rgba(246,201,99,.48); border-radius:9px; color:#fff0c2; background:transparent;
+      box-shadow:inset 0 1px 0 rgba(255,255,255,.1),inset 0 -12px 24px rgba(0,0,0,.2),0 15px 32px rgba(0,0,0,.3);
+      text-decoration:none; font-size:13px; font-weight:900; transition:transform .15s ease,border-color .15s ease,filter .15s ease;
+    }
+    .store-link span { position:relative; z-index:1; }
+    .store-link small { display:block; color:#94a3b8; font-size:9px; font-weight:800; letter-spacing:.1em; text-transform:uppercase; }
+    .store-link::before {
+      content:''; position:absolute; z-index:-2; inset:-120%; pointer-events:none;
+      background:conic-gradient(from 0deg,transparent 0 76%,var(--electric-color) 83%,#fff8d8 86%,var(--electric-color) 89%,transparent 96%);
+      filter:drop-shadow(0 0 5px var(--electric-glow)); animation:store-electric-orbit 5s linear infinite;
+    }
+    .store-link::after { content:''; position:absolute; z-index:-1; inset:2px; border-radius:6px; pointer-events:none; background:var(--store-surface); box-shadow:inset 0 1px 0 rgba(255,255,255,.08),inset 0 -12px 24px rgba(0,0,0,.2); }
+    .store-link:hover { transform:translateY(-2px); border-color:var(--electric-color); filter:brightness(1.1); }
+    .store-link.google { --electric-color:var(--green); --electric-glow:rgba(110,231,183,.7); --store-surface:linear-gradient(180deg,#14251f,#08100d); border-color:rgba(110,231,183,.44); color:#d8ffec; }
+    .store-icon { display:grid; width:26px; height:26px; place-items:center; border:1px solid currentColor; border-radius:7px; font-size:10px; font-weight:900; }
+    @keyframes store-electric-orbit { 0% { transform:rotate(0deg); opacity:0; } 8%,22% { opacity:1; } 32%,100% { transform:rotate(360deg); opacity:0; } }
+    .hero-note { margin-top:14px; color:#8fa0b5; font-size:12px; font-weight:600; }
+    .hero-proof { display:flex; flex-wrap:wrap; gap:8px; margin-top:22px; }
+    .hero-proof span { padding:7px 10px; border:1px solid rgba(103,232,249,.32); border-radius:999px; color:#cffafe; background:rgba(8,47,73,.34); font-size:11px; font-weight:800; }
+    .hero-preview { position:absolute; z-index:1; top:54px; right:7%; width:min(390px,31vw); transform:rotate(3deg); filter:drop-shadow(0 28px 40px rgba(0,0,0,.52)); }
+    .hero-preview-main { display:block; width:100%; border:1px solid rgba(103,232,249,.48); border-radius:16px; background:#0d1622; box-shadow:0 0 0 7px rgba(7,11,18,.48),0 0 0 8px rgba(103,232,249,.1); }
+    .hero-preview-secondary { position:absolute; right:-92px; bottom:-74px; width:53%; border:1px solid rgba(246,201,99,.58); border-radius:14px; box-shadow:0 18px 35px rgba(0,0,0,.48); transform:rotate(7deg); }
+    .hero-preview-label { position:absolute; left:-16px; top:20px; z-index:2; padding:7px 10px; border:1px solid rgba(103,232,249,.44); border-radius:999px; color:#cffafe; background:#071622; font-size:10px; font-weight:900; letter-spacing:.14em; text-transform:uppercase; }
+    .experience-section { padding:78px 28px 84px; border-bottom:1px solid #172033; background:#0a101a; }
+    .experience-inner { max-width:1240px; margin:0 auto; }
+    .experience-heading { max-width:760px; }
+    .experience-heading h2 { max-width:760px; margin:12px 0; color:#fff; font-size:clamp(32px,4.7vw,58px); line-height:1.02; }
+    .experience-heading p { max-width:700px; margin:0; color:var(--muted); font-size:16px; line-height:1.7; }
+    .experience-video-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:18px; margin-top:34px; }
+    .experience-video { overflow:hidden; margin:0; border:1px solid var(--line); border-radius:8px; background:#0d1622; box-shadow:0 24px 55px rgba(0,0,0,.25); }
+    .experience-video-media { position:relative; aspect-ratio:16/9; overflow:hidden; background:#020617; }
+    .experience-video video { display:block; width:100%; height:100%; object-fit:cover; }
+    .experience-video .video-label { position:absolute; left:14px; top:14px; padding:7px 10px; border:1px solid rgba(103,232,249,.44); border-radius:999px; color:#cffafe; background:rgba(4,8,17,.82); font-size:10px; font-weight:900; letter-spacing:.14em; text-transform:uppercase; }
+    .experience-video.storm .video-label { border-color:rgba(246,201,99,.55); color:#fff0c2; }
+    .experience-video figcaption { padding:18px 18px 20px; }
+    .experience-video strong { display:block; color:#fff; font-size:16px; }
+    .experience-video span { display:block; margin-top:7px; color:#8fa0b5; font-size:13px; line-height:1.55; }
+    .feature-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:12px; margin-top:18px; }
+    .feature-item { padding:20px; border:1px solid #26384c; border-radius:8px; background:#0d1622; }
+    .feature-item b { display:block; color:#fff; font-size:14px; }
+    .feature-item p { margin:7px 0 0; color:#8fa0b5; font-size:12px; line-height:1.55; }
+    .feature-mark { display:grid; width:28px; height:28px; margin-bottom:14px; place-items:center; border:1px solid rgba(103,232,249,.48); border-radius:8px; color:#67e8f9; background:rgba(8,47,73,.35); font-size:11px; font-weight:900; }
+    .feature-item:nth-child(2) .feature-mark { border-color:rgba(246,201,99,.55); color:#f6c963; background:rgba(73,50,9,.28); }
+    .feature-item:nth-child(3) .feature-mark { border-color:rgba(110,231,183,.5); color:#6ee7b7; background:rgba(9,70,47,.26); }
+    .feature-item:nth-child(4) .feature-mark { border-color:rgba(244,114,182,.46); color:#f9a8d4; background:rgba(80,20,54,.25); }
+    .feature-item:nth-child(5) .feature-mark { border-color:rgba(165,180,252,.46); color:#c7d2fe; background:rgba(30,41,100,.25); }
+    .feature-item:nth-child(6) .feature-mark { border-color:rgba(251,146,60,.46); color:#fdba74; background:rgba(80,38,9,.25); }
+    .proof-section { max-width:1240px; margin:0 auto; padding:76px 28px 86px; }
+    .section-heading { max-width:700px; }
+    .section-heading h2 { margin:12px 0 12px; color:#fff; font-size:clamp(30px,4vw,48px); line-height:1.05; }
+    .section-heading p { margin:0; color:var(--muted); font-size:16px; line-height:1.7; }
+    .app-media-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:16px; margin-top:34px; }
+    .app-shot { overflow:hidden; margin:0; border:1px solid var(--line); border-radius:8px; background:#0d1622; box-shadow:0 24px 55px rgba(0,0,0,.25); }
+    .app-shot img { display:block; width:100%; aspect-ratio:1.1/1; object-fit:cover; object-position:top; }
+    .app-shot figcaption { padding:16px 17px 18px; }
+    .app-shot strong { display:block; color:#fff; font-size:14px; }
+    .app-shot span { display:block; margin-top:6px; color:#8fa0b5; font-size:12px; line-height:1.5; }
+    .app-final { border-top:1px solid #172033; background:#0a101a; }
+    .app-final-inner { display:flex; align-items:center; justify-content:space-between; gap:28px; max-width:1240px; margin:0 auto; padding:44px 28px; }
+    .app-final h2 { margin:0 0 8px; color:#fff; font-size:26px; }
+    .app-final p { margin:0; color:#8fa0b5; font-size:14px; line-height:1.6; }
+    .app-final .download-actions { flex:0 0 min(520px,48%); margin-top:0; }
+    footer { display:flex; justify-content:space-between; gap:16px; max-width:1240px; margin:0 auto; padding:22px 28px 28px; color:#64748b; font-size:12px; }
+    footer a { color:#94a3b8; text-decoration:none; }
+    footer a:hover { color:#fff; }
+    @media (max-width:760px) {
+      .app-header { padding:16px 18px; }
+      .app-nav { gap:11px; font-size:11px; }
+      .app-nav a:not(.nav-cta) { display:none; }
+      .app-nav .nav-cta { padding:8px 10px; }
+      .app-hero { min-height:690px; background-position:64% center; }
+      .app-hero::after { background:rgba(4,8,17,.66); }
+      .hero-inner { padding:54px 20px 58px; }
+      .hero-preview { display:none; }
+      .hero-brand { margin-bottom:20px; }
+      h1 { font-size:clamp(39px,12vw,58px); }
+      .hero-copy > p { font-size:16px; line-height:1.6; }
+      .download-actions, .app-final .download-actions { grid-template-columns:1fr; max-width:none; flex-basis:auto; width:100%; }
+      .proof-section { padding:56px 20px 64px; }
+      .experience-section { padding:58px 20px 64px; }
+      .experience-video-grid, .feature-grid { grid-template-columns:1fr; }
+      .app-media-grid { grid-template-columns:1fr; }
+      .app-shot img { aspect-ratio:1.5/1; }
+      .app-final-inner { align-items:flex-start; flex-direction:column; padding:36px 20px 42px; }
+      footer { align-items:flex-start; flex-direction:column; padding:20px; }
+    }
+    @media (prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } .store-link::before { animation:none; opacity:.6; } }
+  </style>
+</head>
+<body>
+  <header class="app-header">
+    <a href="/" class="brand" aria-label="Charged Alpha home">
+      <img src="/static/assets/charged-alpha-logo.png" alt="Charged Alpha logo">
+      <span class="brand-copy"><strong>CHARGED ALPHA</strong><span>Stock Library</span></span>
+    </a>
+    <nav class="app-nav" aria-label="App page navigation">
+      <a href="/shows">Stock Encyclopedia</a>
+      <a href="/about">About</a>
+      <a href="#download" class="nav-cta">Get the app</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="app-hero" id="download" aria-labelledby="appTitle">
+      <div class="hero-inner">
+        <div class="hero-copy">
+          <div class="hero-brand">
+            <img src="/static/assets/mobile-app/charged-alpha-app-icon.jpg" alt="Charged Alpha app icon">
+            <div><strong>Charged Alpha</strong><span>Now on iPhone and Android</span></div>
+          </div>
+          <div class="eyebrow">Learn by doing</div>
+          <h1 id="appTitle">Build stock-market confidence from your phone.</h1>
+          <p>Short narrated lessons turn charts, valuation, earnings, and market mechanics into interactive decisions you can understand and remember.</p>
+          <p class="cta-lead">Start learning free.</p>
+          <div class="download-actions" aria-label="Download Charged Alpha">
+            <a href="{{ ios_url }}" data-app-download data-platform="ios" data-source="{{ tracking_source }}" target="_blank" rel="noopener noreferrer" class="store-link">
+              <span class="store-icon" aria-hidden="true">iOS</span><span><small>Download on the</small>App Store</span>
+            </a>
+            <a href="{{ android_url }}" data-app-download data-platform="android" data-source="{{ tracking_source }}" target="_blank" rel="noopener noreferrer" class="store-link google">
+              <span class="store-icon" aria-hidden="true">A</span><span><small>Get it on</small>Google Play</span>
+            </a>
+          </div>
+          <p class="hero-note">Foundations lessons and Storm Chaser are free. No account required.</p>
+          <div class="hero-proof" aria-label="Charged Alpha app highlights">
+            <span>Interactive lessons</span>
+            <span>Options strategies</span>
+            <span>Works offline</span>
+          </div>
+        </div>
+      </div>
+      <div class="hero-preview" aria-label="Charged Alpha app screenshots">
+        <span class="hero-preview-label">Inside the app</span>
+        <img class="hero-preview-main" src="/static/assets/mobile-app/charged-alpha-lessons.webp" alt="Charged Alpha interactive lesson map and search">
+        <img class="hero-preview-secondary" src="/static/assets/mobile-app/charged-alpha-valuation-lab.webp" alt="Charged Alpha interactive valuation lab">
+      </div>
+    </section>
+
+    <section class="experience-section" aria-labelledby="experienceTitle">
+      <div class="experience-inner">
+        <div class="experience-heading">
+          <div class="eyebrow">See it in action</div>
+          <h2 id="experienceTitle">Turn market concepts into decisions you can practice.</h2>
+          <p>Charged Alpha combines short explanations with hands-on moments. Learn the idea, change the inputs, and see what happens before you put the lesson to work in the real market.</p>
+        </div>
+        <div class="experience-video-grid">
+          <figure class="experience-video">
+            <div class="experience-video-media">
+              <span class="video-label">Lesson walkthrough</span>
+              <video autoplay muted loop playsinline preload="metadata" poster="/static/assets/mobile-app/charged-alpha-lessons-demo-poster.jpg" aria-label="Charged Alpha lesson map and interactive lab walkthrough">
+                <source src="/static/assets/mobile-app/charged-alpha-lessons-demo.mp4" type="video/mp4">
+              </video>
+            </div>
+            <figcaption><strong>Follow a path, then try the idea.</strong><span>Move through the lesson map and open interactive labs that make the mechanics easier to remember.</span></figcaption>
+          </figure>
+          <figure class="experience-video storm">
+            <div class="experience-video-media">
+              <span class="video-label">Storm Chaser</span>
+              <video autoplay muted loop playsinline preload="metadata" poster="/static/assets/mobile-app/charged-alpha-storm-chaser-poster.jpg" aria-label="Storm Chaser gameplay inside the Charged Alpha app">
+                <source src="/static/assets/mobile-app/charged-alpha-storm-chaser-demo.mp4" type="video/mp4">
+              </video>
+            </div>
+            <figcaption><strong>Feel the pressure of a market crisis.</strong><span>Make a call, watch the story change, and build better instincts through replayable decisions.</span></figcaption>
+          </figure>
+        </div>
+        <div class="feature-grid" aria-label="Charged Alpha features">
+          <article class="feature-item"><span class="feature-mark">01</span><b>Interactive lessons</b><p>Short, narrated explanations turn intimidating terms into usable mental models.</p></article>
+          <article class="feature-item"><span class="feature-mark">02</span><b>Valuation labs</b><p>Adjust assumptions and connect the numbers to the business you are studying.</p></article>
+          <article class="feature-item"><span class="feature-mark">03</span><b>Options strategies</b><p>Learn how risk, time, and payoff shape an options decision before you trade it.</p></article>
+          <article class="feature-item"><span class="feature-mark">04</span><b>Daily review</b><p>Return to the ideas you have seen and keep the fundamentals in reach.</p></article>
+          <article class="feature-item"><span class="feature-mark">05</span><b>Works offline</b><p>Keep learning when you are away from a signal or have a few quiet minutes.</p></article>
+          <article class="feature-item"><span class="feature-mark">06</span><b>Free to start</b><p>Foundations lessons and Storm Chaser are ready to play with no account required.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="proof-section" aria-labelledby="insideAppTitle">
+      <div class="section-heading">
+        <div class="eyebrow">Inside the app</div>
+        <h2 id="insideAppTitle">Keep the whole learning loop in your pocket.</h2>
+        <p>Explore the map, work through a lab, and come back to the screens that help a new idea stick.</p>
+      </div>
+      <div class="app-media-grid">
+        <figure class="app-shot">
+          <img src="/static/assets/mobile-app/charged-alpha-lessons.webp" alt="Charged Alpha interactive lesson map and search" loading="lazy">
+          <figcaption><strong>Interactive lessons</strong><span>Explore a guided library of investing fundamentals at your own pace.</span></figcaption>
+        </figure>
+        <figure class="app-shot">
+          <img src="/static/assets/mobile-app/charged-alpha-valuation-lab.webp" alt="Charged Alpha valuation lab with adjustable inputs" loading="lazy">
+          <figcaption><strong>Valuation labs</strong><span>Change the inputs and see how a company story affects the numbers.</span></figcaption>
+        </figure>
+        <figure class="app-shot">
+          <img src="/static/assets/mobile-app/charged-alpha-storm-chaser-poster.jpg" alt="Charged Alpha Storm Chaser market-crisis game" loading="lazy">
+          <figcaption><strong>Storm Chaser</strong><span>Test your decisions through a market-crisis game built to be played again.</span></figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="app-final" aria-labelledby="finalDownloadTitle">
+      <div class="app-final-inner">
+        <div><h2 id="finalDownloadTitle">Your next smart decision starts here.</h2><p>Download Charged Alpha free on iPhone or Android and begin with a lesson that moves.</p></div>
+        <div class="download-actions" aria-label="Download Charged Alpha again">
+          <a href="{{ ios_url }}" data-app-download data-platform="ios" data-source="{{ tracking_source }}" target="_blank" rel="noopener noreferrer" class="store-link"><span class="store-icon" aria-hidden="true">iOS</span><span><small>Download on the</small>App Store</span></a>
+          <a href="{{ android_url }}" data-app-download data-platform="android" data-source="{{ tracking_source }}" target="_blank" rel="noopener noreferrer" class="store-link google"><span class="store-icon" aria-hidden="true">A</span><span><small>Get it on</small>Google Play</span></a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer><span>&copy; Charged Alpha</span><span><a href="/privacy">Privacy</a> &middot; <a href="/">Stock Library</a></span></footer>
+
+  <script>
+    document.querySelectorAll('[data-app-download]').forEach(function (link) {
+      link.addEventListener('click', function () {
+        var eventData = {
+          platform: link.dataset.platform,
+          source: link.dataset.source || 'chargedalpha',
+          page_location: window.location.href
+        };
+        if (typeof window.gtag === 'function') {
+          window.gtag('event', 'app_store_click', eventData);
+        } else {
+          window.dataLayer = window.dataLayer || [];
+          window.dataLayer.push({ event: 'app_store_click', app_platform: eventData.platform, app_source: eventData.source });
+        }
+      });
+    });
+  </script>
+</body>
+</html>
