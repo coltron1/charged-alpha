@@ -54,6 +54,7 @@ import yfinance as yf
 from flask import Flask, abort, render_template, request, jsonify, redirect, Response, url_for
 from flask_compress import Compress
 from flask_login import LoginManager, current_user, login_required
+from sqlalchemy.exc import SQLAlchemyError
 from werkzeug.middleware.proxy_fix import ProxyFix
 
 try:
@@ -67,7 +68,15 @@ except ImportError:
 from yf_utils import (TTLCache, JobStore, fetch_ticker_info, safe_float,
                        normalize_div_yield, fetch_chart, fetch_banner_tickers)
 from models import db, User, GameScore
-from auth import auth_bp, get_email_updates_subscription, get_public_first_name, init_oauth, public_auth_enabled
+from auth import (
+    auth_bp,
+    get_email_updates_subscription,
+    get_public_first_name,
+    init_oauth,
+    normalize_email_updates_address,
+    public_auth_enabled,
+    set_email_updates_address,
+)
 from chart_storage import save_chart_state, load_chart_state, list_user_charts, delete_chart_state
 
 # ── Import backend modules ──────────────────────────────────────────────────
@@ -527,6 +536,69 @@ APP_TRACKING_DEFAULTS = {
     "utm_medium": "website",
     "utm_campaign": "app_download",
 }
+
+NEWSLETTER_API_ALLOWED_ORIGINS = frozenset({
+    "capacitor://localhost",
+    "https://localhost",
+    "http://localhost",
+    "http://localhost:5173",
+    "http://127.0.0.1:5173",
+    "http://localhost:5175",
+    "http://127.0.0.1:5175",
+    "http://localhost:5180",
+    "http://127.0.0.1:5180",
+    "https://chargedalpha.com",
+    "https://www.chargedalpha.com",
+})
+NEWSLETTER_API_ALLOWED_PLATFORMS = frozenset({"android", "ios", "web"})
+NEWSLETTER_API_MAX_BODY_BYTES = 2 * 1024
+NEWSLETTER_API_RATE_LIMIT = 60
+NEWSLETTER_API_RATE_WINDOW_SECONDS = 60
+_newsletter_rate_hits = {}
+_newsletter_rate_lock = threading.Lock()
+
+
+def _newsletter_api_origin():
+    return (request.headers.get("Origin") or "").strip().lower()
+
+
+def _newsletter_api_response(payload=None, status=200):
+    response = Response(status=status) if payload is None else jsonify(payload)
+    origin = _newsletter_api_origin()
+    if origin in NEWSLETTER_API_ALLOWED_ORIGINS:
+        response.headers["Access-Control-Allow-Origin"] = origin
+        response.headers["Access-Control-Allow-Methods"] = "POST, OPTIONS"
+        response.headers["Access-Control-Allow-Headers"] = "Accept, Content-Type"
+        response.headers["Access-Control-Max-Age"] = "600"
+        response.headers.add("Vary", "Origin")
+    response.headers["Cache-Control"] = "no-store"
+    return response, status
+
+
+def _newsletter_api_rate_limited(action):
+    # ProxyFix normalizes Railway's trusted X-Forwarded-For hop into
+    # request.remote_addr. Keep subscribe and unsubscribe in separate buckets
+    # so a burst of signups can never prevent someone from opting out.
+    client_key = f"{request.remote_addr or 'unknown'}:{action}"
+    now = time.monotonic()
+    cutoff = now - NEWSLETTER_API_RATE_WINDOW_SECONDS
+
+    with _newsletter_rate_lock:
+        if len(_newsletter_rate_hits) > 4096:
+            stale_keys = [
+                key for key, hits in _newsletter_rate_hits.items()
+                if not hits or hits[-1] < cutoff
+            ]
+            for key in stale_keys:
+                _newsletter_rate_hits.pop(key, None)
+
+        hits = [hit for hit in _newsletter_rate_hits.get(client_key, []) if hit >= cutoff]
+        if len(hits) >= NEWSLETTER_API_RATE_LIMIT:
+            _newsletter_rate_hits[client_key] = hits
+            return True
+        hits.append(now)
+        _newsletter_rate_hits[client_key] = hits
+        return False
 
 
 def _clean_tracking_value(value, fallback=""):
@@ -1980,6 +2052,64 @@ def sitemap_xml():
 @app.route("/health")
 def health():
     return jsonify({"status": "ok"}), 200
+
+
+@app.route("/api/newsletter/subscribe", defaults={"action": "subscribe"}, methods=["POST", "OPTIONS"])
+@app.route("/api/newsletter/unsubscribe", defaults={"action": "unsubscribe"}, methods=["POST", "OPTIONS"])
+def newsletter_api(action):
+    """Record an explicit, anonymous email-updates preference from the app."""
+    if _newsletter_api_origin() not in NEWSLETTER_API_ALLOWED_ORIGINS:
+        return _newsletter_api_response({"ok": False, "error": "Invalid request"}, 403)
+
+    if request.method == "OPTIONS":
+        return _newsletter_api_response(status=204)
+
+    if _newsletter_api_rate_limited(action):
+        return _newsletter_api_response({"ok": False, "error": "Try again later"}, 429)
+
+    if request.content_length is not None and request.content_length > NEWSLETTER_API_MAX_BODY_BYTES:
+        return _newsletter_api_response({"ok": False, "error": "Invalid request"}, 400)
+    if not request.is_json:
+        return _newsletter_api_response({"ok": False, "error": "Invalid request"}, 400)
+
+    body = request.get_json(silent=True)
+    if not isinstance(body, dict):
+        return _newsletter_api_response({"ok": False, "error": "Invalid request"}, 400)
+
+    # A harmless optional honeypot lets future clients reject basic form spam
+    # without changing this API. Bots receive the same generic success shape.
+    if body.get("website"):
+        return _newsletter_api_response({"ok": True})
+
+    email = normalize_email_updates_address(body.get("email"))
+    source = body.get("source")
+    platform = body.get("platform")
+    app_name = body.get("app")
+    if (
+        email is None
+        or not isinstance(source, str)
+        or not isinstance(app_name, str)
+        or app_name != "charged-alpha"
+        or not isinstance(platform, str)
+        or platform not in NEWSLETTER_API_ALLOWED_PLATFORMS
+        or source != f"app-{platform}"
+    ):
+        return _newsletter_api_response({"ok": False, "error": "Invalid request"}, 400)
+
+    try:
+        set_email_updates_address(
+            email,
+            subscribed=action == "subscribe",
+            source=source,
+        )
+    except SQLAlchemyError:
+        db.session.rollback()
+        app.logger.exception("Could not update an app newsletter preference")
+        return _newsletter_api_response({"ok": False, "error": "Temporarily unavailable"}, 503)
+
+    # Never reveal whether an address was new, already subscribed, or already
+    # suppressed. The same idempotent response is safe for retries.
+    return _newsletter_api_response({"ok": True})
 
 
 # ═════════════════════════════════════════════════════════════════════════════

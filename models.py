@@ -84,7 +84,9 @@ class EmailSubscriber(db.Model):
     name = db.Column(db.String(255), nullable=True)
     subscribed = db.Column(db.Boolean, nullable=False, default=True, index=True)
     consent_source = db.Column(db.String(80), nullable=True)
-    subscribed_at = db.Column(db.DateTime, default=datetime.datetime.utcnow)
+    # Set only when an explicit opt-in occurs. A suppression row created by an
+    # unsubscribe request must never look like it was previously subscribed.
+    subscribed_at = db.Column(db.DateTime, nullable=True)
     unsubscribed_at = db.Column(db.DateTime, nullable=True)
     created_at = db.Column(db.DateTime, default=datetime.datetime.utcnow)
     updated_at = db.Column(

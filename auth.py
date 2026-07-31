@@ -10,6 +10,7 @@ from urllib.parse import urlparse
 
 from flask import Blueprint, abort, current_app, render_template, request, redirect, url_for, flash, jsonify, session
 from flask_login import login_user, logout_user, login_required, current_user
+from sqlalchemy.exc import IntegrityError
 from werkzeug.security import generate_password_hash, check_password_hash
 from authlib.integrations.flask_client import OAuth
 
@@ -166,29 +167,76 @@ def get_email_updates_subscription(user):
     return EmailSubscriber.query.filter_by(email=(user.email or "").strip().lower()).first()
 
 
-def set_email_updates_subscription(user, subscribed=True, source="account"):
-    email = (getattr(user, "email", "") or "").strip().lower()
-    if not email or not EMAIL_RE.match(email):
+def normalize_email_updates_address(value):
+    """Return a conservative normalized email address, or ``None``."""
+    if not isinstance(value, str):
+        return None
+    email = value.strip().lower()
+    if not email or len(email) > 254 or not EMAIL_RE.fullmatch(email):
+        return None
+    return email
+
+
+def set_email_updates_address(email, subscribed=True, source="app", user=None):
+    """Idempotently apply an email-updates preference to an address.
+
+    ``user`` is optional so the mobile app can record an explicit opt-in before
+    a learner creates a website account. Existing account linkage is preserved
+    when an anonymous app request uses the same address.
+    """
+    email = normalize_email_updates_address(email)
+    if not email:
         return None
 
     now = datetime.datetime.utcnow()
     subscription = EmailSubscriber.query.filter_by(email=email).first()
     if not subscription:
-        subscription = EmailSubscriber(email=email, created_at=now)
+        subscription = EmailSubscriber(email=email, subscribed=False, created_at=now)
         db.session.add(subscription)
 
-    subscription.user_id = getattr(user, "id", None)
-    subscription.name = normalize_public_name(getattr(user, "name", "") or get_public_first_name(user))
-    subscription.subscribed = bool(subscribed)
-    subscription.consent_source = source
-    subscription.updated_at = now
-    if subscribed:
-        subscription.subscribed_at = now
-        subscription.unsubscribed_at = None
-    else:
-        subscription.unsubscribed_at = now
-    db.session.commit()
+    normalized_source = re.sub(r"[^a-z0-9:_-]", "", str(source or "").strip().lower())[:80] or "unknown"
+
+    def apply_preference(record):
+        was_subscribed = record.subscribed is True
+        linked_user_id = getattr(user, "id", None)
+        if linked_user_id is not None:
+            record.user_id = linked_user_id
+            record.name = normalize_public_name(
+                getattr(user, "name", "") or get_public_first_name(user)
+            )
+        record.subscribed = bool(subscribed)
+        record.updated_at = now
+        if subscribed:
+            record.consent_source = normalized_source
+            if not was_subscribed or record.subscribed_at is None:
+                record.subscribed_at = now
+            record.unsubscribed_at = None
+        else:
+            record.unsubscribed_at = now
+
+    apply_preference(subscription)
+    try:
+        db.session.commit()
+    except IntegrityError:
+        # Gunicorn runs threaded. Two first-time requests for the same address
+        # can race the unique index; converge on the winner instead of leaking
+        # a transient database error to either client.
+        db.session.rollback()
+        subscription = EmailSubscriber.query.filter_by(email=email).first()
+        if subscription is None:
+            raise
+        apply_preference(subscription)
+        db.session.commit()
     return subscription
+
+
+def set_email_updates_subscription(user, subscribed=True, source="account"):
+    return set_email_updates_address(
+        getattr(user, "email", "") or "",
+        subscribed=subscribed,
+        source=source,
+        user=user,
+    )
 
 
 def _validate_password(password, email):
