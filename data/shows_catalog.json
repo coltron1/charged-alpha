@@ -10,6 +10,636 @@
   },
   "episodes": [
     {
+      "ticker": "SONY",
+      "company": "SONY",
+      "sector": "Unclassified",
+      "quarter": "Q1 FY2026",
+      "episode_number": "",
+      "title": "Sony (SONY): Record Quarter, Raised Guidance — And an Earthquake That Isn’t In It",
+      "published_at": "2026-07-31T20:26:28+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=uJhYJlvc4YI",
+      "spotify_url": "https://open.spotify.com/episode/1RVh3F54HEWVlkeuRusZLt",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/sony-sony-record-quarter-raised-guidance-%e2%80%94-and-an-earthquake-that-isn-t-in-it/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "ABBV",
+      "company": "AbbVie Inc.",
+      "sector": "Healthcare",
+      "quarter": "Q2 2026",
+      "episode_number": "",
+      "title": "AbbVie (ABBV): Double Beat, Guidance Cut — Is It Still Worth Buying?",
+      "published_at": "2026-07-31T19:43:39+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=G4bmlqePT9Y",
+      "spotify_url": "https://open.spotify.com/episode/19YX0qRRfI7gpYCXfoCEvz",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/abbvie-abbv-double-beat-guidance-cut-%e2%80%94-is-it-still-worth-buying/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "BTSG",
+      "company": "BTSG",
+      "sector": "Unclassified",
+      "quarter": "Q2 2026",
+      "episode_number": "",
+      "title": "BrightSpring (BTSG): Adj EBITDA +44%, Stock FELL 15% | Q2 2026",
+      "published_at": "2026-07-31T15:08:34+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=AhyTUG23ECY",
+      "spotify_url": "https://open.spotify.com/episode/078JEMJjnB6zI9XZIPHdzB",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/brightspring-btsg-adj-ebitda-44-stock-fell-15-q2-2026/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "TYL",
+      "company": "Tyler Technologies",
+      "sector": "Unclassified",
+      "quarter": "Q2 2026",
+      "episode_number": "",
+      "title": "Tyler Technologies (TYL): SaaS +21.7%, But Operating Profit FELL | Q2 2026",
+      "published_at": "2026-07-31T14:19:28+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=QOD6agrMZ2g",
+      "spotify_url": "https://open.spotify.com/episode/08HVcxDOWPkCsbDPI5jjqu",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/tyler-technologies-tyl-saas-217-but-operating-profit-fell-q2-2026/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "CVX",
+      "company": "Chevron Corp.",
+      "sector": "Energy",
+      "quarter": "Q2 2026",
+      "episode_number": "",
+      "title": "Chevron (CVX): Record $12.1B Quarter, EPS $6.11 — But Brent Was $104 | Q2 2026",
+      "published_at": "2026-07-31T13:38:41+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=CiUfOkJho4c",
+      "spotify_url": "https://open.spotify.com/episode/06GKsR9Cvs6n2pREkcmJpZ",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/chevron-cvx-record-121b-quarter-eps-611-%e2%80%94-but-brent-was-104-q2-2026/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "SBUX",
+      "company": "Starbucks Corp.",
+      "sector": "Consumer",
+      "quarter": "Q3 FY2026",
+      "episode_number": "",
+      "title": "Starbucks (SBUX): Comps +7.9%, EPS Beat 29% — But a Third Was Tax and Tariffs | Q3 FY2026",
+      "published_at": "2026-07-31T12:43:24+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=imjQ4n0ynAg",
+      "spotify_url": "https://open.spotify.com/episode/7cEvm1IirhcAyOnv8HnsqQ",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/starbucks-sbux-comps-79-eps-beat-29-%e2%80%94-but-a-third-was-tax-and-tariffs-q3-fy2026/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "BUD",
+      "company": "BUD",
+      "sector": "Unclassified",
+      "quarter": "Q2 2026",
+      "episode_number": "",
+      "title": "AB InBev (BUD): Reported EPS $1.90, Real EPS $1.21 — Half the Growth Was the Dollar | Q2 2026",
+      "published_at": "2026-07-31T12:04:06+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=pEQoEVgX4Og",
+      "spotify_url": "https://open.spotify.com/episode/1LMQiPv4Y6yAlKoxnFZL2X",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/ab-inbev-bud-reported-eps-190-real-eps-121-%e2%80%94-half-the-growth-was-the-dollar-q2-2026/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "GSK",
+      "company": "GSK",
+      "sector": "Unclassified",
+      "quarter": "Q2 2026",
+      "episode_number": "",
+      "title": "GSK (GSK): Profit Fell 75%, Core Earnings Rose 9% — Both Are True | Q2 2026",
+      "published_at": "2026-07-31T11:06:23+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=JjuKnxkmyoE",
+      "spotify_url": "https://open.spotify.com/episode/0ERiCWvy54KIPdpolTj6bQ",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/gsk-gsk-profit-fell-75-core-earnings-rose-9-%e2%80%94-both-are-true-q2-2026/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "ILMN",
+      "company": "ILMN",
+      "sector": "Unclassified",
+      "quarter": "Q2 2026",
+      "episode_number": "",
+      "title": "Illumina (ILMN): A Beat, a Raise, and a Stock That Already Doubled | Q2 2026",
+      "published_at": "2026-07-31T10:03:36+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=dvHxhYRdGnY",
+      "spotify_url": "https://open.spotify.com/episode/4lxF9NLuJGXQwXvlaTvkfC",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/illumina-ilmn-a-beat-a-raise-and-a-stock-that-already-doubled-q2-2026/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "CVNA",
+      "company": "CVNA",
+      "sector": "Unclassified",
+      "quarter": "Q2 2026",
+      "episode_number": "",
+      "title": "Carvana (CVNA): A Record Quarter the Market Hated | Q2 2026",
+      "published_at": "2026-07-31T09:04:16+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=e6X_8cqeE4A",
+      "spotify_url": "https://open.spotify.com/episode/6On0PS7X68ddqmqxI4CB8Z",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/carvana-cvna-a-record-quarter-the-market-hated-q2-2026/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "BMY",
+      "company": "Bristol-Myers Squibb",
+      "sector": "Healthcare",
+      "quarter": "Q2 2026",
+      "episode_number": "",
+      "title": "Bristol Myers Squibb (BMY): The Best Quarter Before the Cliff | Q2 2026",
+      "published_at": "2026-07-31T08:27:16+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=yQu81ws6rBo",
+      "spotify_url": "https://open.spotify.com/episode/3VhZlot1TETnts0AlWxXez",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/bristol-myers-squibb-bmy-the-best-quarter-before-the-cliff-q2-2026/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "BFLY",
+      "company": "BFLY",
+      "sector": "Unclassified",
+      "quarter": "Q2 2026",
+      "episode_number": "",
+      "title": "Butterfly Network (BFLY): Revenue +39%, the Core Business +2% | Q2 2026",
+      "published_at": "2026-07-31T07:46:57+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=J8SdfANi-bk",
+      "spotify_url": "https://open.spotify.com/episode/5Uhv6sXWSXJW56el1KIWNW",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/butterfly-network-bfly-revenue-39-the-core-business-2-q2-2026/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "BBAI",
+      "company": "BBAI",
+      "sector": "Unclassified",
+      "quarter": "Q2 2026",
+      "episode_number": "",
+      "title": "BigBear.ai (BBAI): Revenue +13%, Margins +781bps — and Revenue Per Share −77% | Q2 2026",
+      "published_at": "2026-07-31T07:09:54+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=s4hHiDPGyZE",
+      "spotify_url": "",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/bigbearai-bbai-revenue-13-margins-781bps-%e2%80%94-and-revenue-per-share-%e2%88%9277-q2-2026/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "ADP",
+      "company": "ADP",
+      "sector": "Unclassified",
+      "quarter": "Q4 FY2026",
+      "episode_number": "",
+      "title": "Automatic Data Processing (ADP): 24% of Profit Is Interest — Q4 FY2026",
+      "published_at": "2026-07-31T06:27:44+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=VwSmMJnOtV4",
+      "spotify_url": "",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/automatic-data-processing-adp-24-of-profit-is-interest-%e2%80%94-q4-fy2026/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "FTAI",
+      "company": "FTAI",
+      "sector": "Unclassified",
+      "quarter": "Q2 2026",
+      "episode_number": "",
+      "title": "FTAI Aviation (FTAI): Revenue +41%, EPS −28% — Q2 2026",
+      "published_at": "2026-07-31T05:43:45+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=K5wDSdkI8Ew",
+      "spotify_url": "",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/ftai-aviation-ftai-revenue-41-eps-%e2%88%9228-%e2%80%94-q2-2026/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "RBLX",
+      "company": "RBLX",
+      "sector": "Unclassified",
+      "quarter": "Q2 2026",
+      "episode_number": "",
+      "title": "Roblox (RBLX): Revenue +36%, Bookings +8% — Q2 2026",
+      "published_at": "2026-07-31T05:13:30+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=89JM1ZCqfeY",
+      "spotify_url": "",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/roblox-rblx-revenue-36-bookings-8-%e2%80%94-q2-2026/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "BSX",
+      "company": "Boston Scientific Corporation",
+      "sector": "Unclassified",
+      "quarter": "Q2 2026",
+      "episode_number": "",
+      "title": "Boston Scientific (BSX): Down 57% While Revenue Grew — Q2 2026",
+      "published_at": "2026-07-31T04:39:58+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=PezqaSd2xZs",
+      "spotify_url": "",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/boston-scientific-bsx-down-57-while-revenue-grew-%e2%80%94-q2-2026/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "COHU",
+      "company": "COHU",
+      "sector": "Unclassified",
+      "quarter": "Q2 2026",
+      "episode_number": "",
+      "title": "Cohu (COHU): The $170M Guide That Broke Wall Street’s Model — Q2 2026",
+      "published_at": "2026-07-31T03:54:09+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=M6C8sauBnTc",
+      "spotify_url": "",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/cohu-cohu-the-170m-guide-that-broke-wall-street-s-model-%e2%80%94-q2-2026/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "AXTI",
+      "company": "AXTI",
+      "sector": "Unclassified",
+      "quarter": "Q2 2026",
+      "episode_number": "",
+      "title": "AXT (AXTI): Record Quarter, 45% Margin — and a Price That Already Knows",
+      "published_at": "2026-07-31T03:20:07+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=nmHHsYNpJzM",
+      "spotify_url": "",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/axt-axti-record-quarter-45-margin-%e2%80%94-and-a-price-that-already-knows/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "AMZN",
+      "company": "Amazon.com Inc.",
+      "sector": "Consumer",
+      "quarter": "Q2 2026",
+      "episode_number": "",
+      "title": "Amazon (AMZN): The Biggest Beat Ever — and $53B of It Wasn’t Real",
+      "published_at": "2026-07-31T02:46:48+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=5kF43xQGJ54",
+      "spotify_url": "",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/amazon-amzn-the-biggest-beat-ever-%e2%80%94-and-53b-of-it-wasn-t-real/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "RDDT",
+      "company": "RDDT",
+      "sector": "Unclassified",
+      "quarter": "Q2 2026",
+      "episode_number": "",
+      "title": "Reddit (RDDT): Revenue +61%, Profit Doubled — and the Stock Fell 12%",
+      "published_at": "2026-07-31T00:43:40+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=Gtx1ggubhFc",
+      "spotify_url": "",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/reddit-rddt-revenue-61-profit-doubled-%e2%80%94-and-the-stock-fell-12/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "MPWR",
+      "company": "MPWR",
+      "sector": "Unclassified",
+      "quarter": "Q2 2026",
+      "episode_number": "",
+      "title": "Monolithic Power (MPWR): Record Quarter, +164% AI Revenue — and Cash Flow Went Backwards",
+      "published_at": "2026-07-31T00:12:31+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=2mGJvTnAJPM",
+      "spotify_url": "",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/monolithic-power-mpwr-record-quarter-164-ai-revenue-%e2%80%94-and-cash-flow-went-backwards/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "AAPL",
+      "company": "Apple Inc.",
+      "sector": "Technology",
+      "quarter": "Q3 FY2026",
+      "episode_number": "",
+      "title": "Apple (AAPL): Best June Quarter Ever, Stock Down 6% — Tim Cook Called It a ”100-Year Flood”",
+      "published_at": "2026-07-30T23:43:37+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=6ZWJ3euaCBY",
+      "spotify_url": "",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/apple-aapl-best-june-quarter-ever-stock-down-6-%e2%80%94-tim-cook-called-it-a-100-year-flood/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "FORM",
+      "company": "FORM",
+      "sector": "Unclassified",
+      "quarter": "Q2 2026",
+      "episode_number": "",
+      "title": "FormFactor (FORM): The HBM Toll Booth Just Beat by 34% — And Its Own CFO Told You the Margin Isn’t Real",
+      "published_at": "2026-07-30T21:45:23+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=xMdMQfaxQjU",
+      "spotify_url": "",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/formfactor-form-the-hbm-toll-booth-just-beat-by-34-%e2%80%94-and-its-own-cfo-told-you-the-margin-isn-t-real/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "BE",
+      "company": "BE",
+      "sector": "Unclassified",
+      "quarter": "Q2 2026",
+      "episode_number": "",
+      "title": "Bloom Energy (BE): The Short Sellers Were Wrong — And It’s Still 2x Too Expensive",
+      "published_at": "2026-07-30T21:06:53+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=Ucu0fDufYJc",
+      "spotify_url": "",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/bloom-energy-be-the-short-sellers-were-wrong-%e2%80%94-and-it-s-still-2x-too-expensive/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "VRT",
+      "company": "Vertiv Holdings",
+      "sector": "Unclassified",
+      "quarter": "Q2 2026",
+      "episode_number": "",
+      "title": "Vertiv (VRT): It Beat, It Raised, It Fell 17% — And Nobody Asked Where the Backlog Went",
+      "published_at": "2026-07-30T20:32:32+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=GVWBLRzdT-U",
+      "spotify_url": "",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/vertiv-vrt-it-beat-it-raised-it-fell-17-%e2%80%94-and-nobody-asked-where-the-backlog-went/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "ECL",
+      "company": "ECL",
+      "sector": "Unclassified",
+      "quarter": "Q2 2026",
+      "episode_number": "",
+      "title": "Ecolab (ECL): The Water Company Became an AI Stock — At 34x Earnings",
+      "published_at": "2026-07-30T18:42:06+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=-ekDDY0jxTI",
+      "spotify_url": "",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/ecolab-ecl-the-water-company-became-an-ai-stock-%e2%80%94-at-34x-earnings/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "GEHC",
+      "company": "GEHC",
+      "sector": "Unclassified",
+      "quarter": "Q2 2026",
+      "episode_number": "",
+      "title": "GE HealthCare (GEHC): Record Orders, Record Backlog — And The Margin Still Went DOWN",
+      "published_at": "2026-07-30T18:11:49+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=vnTWDyEP1aQ",
+      "spotify_url": "",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/ge-healthcare-gehc-record-orders-record-backlog-%e2%80%94-and-the-margin-still-went-down/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "AMRX",
+      "company": "AMRX",
+      "sector": "Unclassified",
+      "quarter": "Q2 2026",
+      "episode_number": "",
+      "title": "Amneal (AMRX): Beat, Raised Guidance Twice — And Fell 5%. First-Half Cash Flow Was NEGATIVE $48M",
+      "published_at": "2026-07-30T17:32:37+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=WGZyZDFTG9E",
+      "spotify_url": "",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/amneal-amrx-beat-raised-guidance-twice-%e2%80%94-and-fell-5-first-half-cash-flow-was-negative-48m/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "TAK",
+      "company": "TAK",
+      "sector": "Unclassified",
+      "quarter": "Q1 FY2026",
+      "episode_number": "",
+      "title": "Takeda (TAK): 11.6x Core Earnings or 52.8x Reported? The 740 Billion Yen Gap",
+      "published_at": "2026-07-30T16:39:29+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=-zbsS7WGcNI",
+      "spotify_url": "",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/takeda-tak-116x-core-earnings-or-528x-reported-the-740-billion-yen-gap/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "SIMO",
+      "company": "SIMO",
+      "sector": "Unclassified",
+      "quarter": "Q2 2026",
+      "episode_number": "",
+      "title": "Silicon Motion (SIMO): Up 21% on a Record Quarter — So Why Was Cash Flow NEGATIVE?",
+      "published_at": "2026-07-30T15:58:19+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=8TNef1FmXBU",
+      "spotify_url": "",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/silicon-motion-simo-up-21-on-a-record-quarter-%e2%80%94-so-why-was-cash-flow-negative/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "ALGM",
+      "company": "ALGM",
+      "sector": "Unclassified",
+      "quarter": "Q1 FY2027",
+      "episode_number": "",
+      "title": "Allegro MicroSystems (ALGM): It Beat AND Raised — So Why Is the Stock Down 42%?",
+      "published_at": "2026-07-30T15:15:45+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=l7Rx2PowAu4",
+      "spotify_url": "",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/allegro-microsystems-algm-it-beat-and-raised-%e2%80%94-so-why-is-the-stock-down-42/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "VRSK",
+      "company": "VRSK",
+      "sector": "Unclassified",
+      "quarter": "Q2 2026",
+      "episode_number": "",
+      "title": "Verisk (VRSK): Adjusted EPS Rose 5.3% — But Profits Actually Fell 1.9%. Is 28x Justified?",
+      "published_at": "2026-07-30T15:08:42+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=z16TO4OwjDM",
+      "spotify_url": "",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/verisk-vrsk-adjusted-eps-rose-53-%e2%80%94-but-profits-actually-fell-19-is-28x-justified/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "AUR",
+      "company": "AUR",
+      "sector": "Unclassified",
+      "quarter": "Q2 2026",
+      "episode_number": "",
+      "title": "Aurora Innovation (AUR): 200 Driverless Trucks — And It Needs 6,000 To Break Even",
+      "published_at": "2026-07-30T14:33:21+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=CFCCYLWckaM",
+      "spotify_url": "",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/aurora-innovation-aur-200-driverless-trucks-%e2%80%94-and-it-needs-6000-to-break-even/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "PG",
+      "company": "Procter & Gamble Co.",
+      "sector": "Consumer",
+      "quarter": "Q4 FY2026",
+      "episode_number": "",
+      "title": "Procter & Gamble (PG): Organic Volume Was 0% — Is the Safest Stock on Earth Now the Wrong Price?",
+      "published_at": "2026-07-30T14:19:49+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=R4c3aZuoM0w",
+      "spotify_url": "",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/procter-gamble-pg-organic-volume-was-0-%e2%80%94-is-the-safest-stock-on-earth-now-the-wrong-price/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
       "ticker": "ASX",
       "company": "ASX",
       "sector": "Unclassified",
@@ -24934,6 +25564,489 @@
       "description": "Fast clips that point viewers into full research videos and stock pages.",
       "videos": [
         {
+          "title": "Sony's Record Quarter — And the Earthquake Not In the Guidance #SONY #investing",
+          "youtube_url": "https://www.youtube.com/shorts/Lj73D5YuxLk",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-07-31T20:28:26+00:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "SONY"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "AbbVie beat on both lines — then cut guidance #ABBV #shorts",
+          "youtube_url": "https://www.youtube.com/shorts/7gSvQdnyrNY",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-07-31T19:44:51+00:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "ABBV"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "BrightSpring (BTSG) Beat AND Raised Guidance - Then Fell 15% #shorts #stocks",
+          "youtube_url": "https://www.youtube.com/shorts/VqbGRkoeKnQ",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-07-31T15:10:21+00:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "BTSG",
+            "AND"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "Tyler Tech: SaaS +21.7%, But Operating Profit FELL #TYL #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/V5PxOXP5s-0",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-07-31T14:21:06+00:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "FELL",
+            "TYL"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "Chevron's Record $12.1B Quarter — And Why We Still Say AVOID | CVX Q2 2026",
+          "youtube_url": "https://www.youtube.com/shorts/eYMCfVUvdOQ",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-07-31T13:40:12+00:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "AVOID",
+            "CVX"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "Starbucks comps +7.9% — so why is this a 40x stock? #SBUX #Starbucks #investing",
+          "youtube_url": "https://www.youtube.com/shorts/204yLyghp0w",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-07-31T12:44:33+00:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "SBUX"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "AB InBev's REAL earnings were $1.21, not $1.90 #BUD #stocks",
+          "youtube_url": "https://www.youtube.com/shorts/x5vHGLnTjqw",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-07-31T12:05:05+00:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "AB",
+            "REAL",
+            "BUD"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "GSK Profit Fell 75% — But Core Earnings Rose 9%. Both Are True. #GSK #stocks",
+          "youtube_url": "https://www.youtube.com/shorts/ceaxJIDvXFM",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-07-31T11:08:18+00:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "GSK"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "Illumina Beat AND Raised. We Still Say AVOID. $ILMN Q2 2026 #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/wLO1MsIrF1E",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-07-31T03:04:46-07:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "AND",
+            "AVOID",
+            "ILMN"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "Carvana Broke Every Record. The Stock Fell 7.4%. #CVNA",
+          "youtube_url": "https://www.youtube.com/shorts/GupF-BGhdMw",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-07-31T02:05:46-07:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "CVNA"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "BMY: The Best Quarter Before the Cliff #shorts",
+          "youtube_url": "https://www.youtube.com/shorts/ogPhQ19-PNM",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-07-31T01:28:32-07:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "BMY"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "BFLY revenue +39%. The ultrasound business? +2%. #BFLY #stocks #investing",
+          "youtube_url": "https://www.youtube.com/shorts/O6VIE9yJxH8",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-07-31T00:48:30-07:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "BFLY"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "BigBear.ai (BBAI): Margins Up 781bps, Ownership Down 77% #shorts",
+          "youtube_url": "https://www.youtube.com/shorts/tGmvfLE1e2Y",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-07-31T00:09:27-07:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "BBAI"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "ADP: 24% of Its Profit Is Interest on Other People's Money #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/dEZieFQzvlA",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-07-30T23:30:09-07:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "ADP"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "FTAI Aviation: Revenue +41%, EPS −28% #FTAI #stocks #investing",
+          "youtube_url": "https://www.youtube.com/shorts/NhuCFIcQvAQ",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-07-30T22:44:46-07:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "FTAI"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "Roblox guided bookings DOWN 16% — the first decline ever #RBLX",
+          "youtube_url": "https://www.youtube.com/shorts/arssLWgE9gM",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-07-30T22:14:38-07:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "DOWN",
+            "RBLX"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "Boston Scientific is down 57% — while revenue GREW #BSX #stocks",
+          "youtube_url": "https://www.youtube.com/shorts/SiEh1_EEDR4",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-07-30T21:41:11-07:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "GREW",
+            "BSX"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "COHU: The $170M Guide That Broke Wall Street's Model #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/AXs1URI649M",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-07-30T20:55:26-07:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "COHU"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "AXTI: Record Quarter, 45% Margin — Still a HOLD #shorts",
+          "youtube_url": "https://www.youtube.com/shorts/F7HYoO3ZBjY",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-07-30T20:21:59-07:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "AXTI",
+            "HOLD"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "Amazon's $5.75 EPS: $53B Of It Wasn't Real #AMZN",
+          "youtube_url": "https://www.youtube.com/shorts/LSXA6LhnwiU",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-07-30T19:48:47-07:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "AMZN"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "Reddit revenue +61% — stock −12%. Here's why. #RDDT #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/K65LycHMy-M",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-07-30T17:44:48-07:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "RDDT"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "MPWR: Record Quarter, +164% AI Revenue — and Cash Flow Went Backwards #shorts",
+          "youtube_url": "https://www.youtube.com/shorts/LJiF54dc704",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-07-30T17:13:38-07:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "MPWR"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "Apple's best June quarter ever — and the stock fell 6% #AAPL",
+          "youtube_url": "https://www.youtube.com/shorts/hhuVu3l3PZg",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-07-30T16:44:54-07:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "AAPL"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "FormFactor (FORM) +26% in a Day — But Its Own CFO Says the Margin Isn't Real #shorts",
+          "youtube_url": "https://www.youtube.com/shorts/wBQsC8KNosA",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-07-30T14:46:17-07:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "FORM",
+            "CFO"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "Bloom Energy's First $1B Quarter — The Short Sellers Were Wrong #BE #stocks",
+          "youtube_url": "https://www.youtube.com/shorts/9YP6ngb6BHw",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-07-30T14:07:57-07:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "BE"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "Vertiv beat, raised guidance — and fell 17%. Where did the backlog go? #VRT #stocks",
+          "youtube_url": "https://www.youtube.com/shorts/wLr0GxOXeK4",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-07-30T13:35:28-07:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "VRT"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "Ecolab (ECL): A $4.75B AI Bet And A Two-Cent Raise #ECL #investing #stocks",
+          "youtube_url": "https://www.youtube.com/shorts/wkgtd7cPYA4",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-07-30T11:43:06-07:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "ECL"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "GEHC: Record Orders, Shrinking Margin",
+          "youtube_url": "https://www.youtube.com/shorts/uZszO6rOb5k",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-07-30T11:12:49-07:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "GEHC"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "AMRX beat and raised guidance twice — and the stock fell 5% #shorts",
+          "youtube_url": "https://www.youtube.com/shorts/hAGSZnP0Pzg",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-07-30T10:39:23-07:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "AMRX"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "Takeda (TAK): 11.6x Core or 52.8x Reported? #shorts",
+          "youtube_url": "https://www.youtube.com/shorts/kYDLvNpM7sQ",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-07-30T09:41:17-07:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "TAK"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "SIMO jumped 21% on a record quarter — so why was cash flow NEGATIVE? #shorts",
+          "youtube_url": "https://www.youtube.com/shorts/cRBwrSbZyJk",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-07-30T09:00:19-07:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "SIMO"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "ALGM beat AND raised — so why is it down 42%? #shorts",
+          "youtube_url": "https://www.youtube.com/shorts/2zOPFu-C13w",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-07-30T08:19:47-07:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "ALGM",
+            "AND"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "Verisk's adjusted EPS rose 5.3% - profits actually FELL #VRSK #investing",
+          "youtube_url": "https://www.youtube.com/shorts/4WuBPv9Z03E",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-07-30T08:09:57-07:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "FELL",
+            "VRSK"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "AUR: $11.9B for 440,000 Driverless Miles? #shorts",
+          "youtube_url": "https://www.youtube.com/shorts/n1VDuea0dfE",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-07-30T07:37:52-07:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "AUR"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "P&G organic VOLUME was 0% — and 100% of growth was price #PG #dividendstocks",
+          "youtube_url": "https://www.youtube.com/shorts/jWsqPQp2FtQ",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-07-30T07:21:18-07:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "VOLUME",
+            "PG"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "ASE Technology (ASX): Best Quarter Ever, Still Too Expensive? #shorts",
+          "youtube_url": "https://www.youtube.com/shorts/9zdZ5XftZNw",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-07-30T06:43:35-07:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "ASE",
+            "ASX"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
           "title": "Meta's free cash flow fell 91% while revenue grew 28% #META",
           "youtube_url": "https://www.youtube.com/shorts/QpElmP8gRh0",
           "spotify_url": "",
@@ -28070,5 +29183,5 @@
       ]
     }
   ],
-  "last_synced_at": "2026-07-30T08:44:38-05:00"
+  "last_synced_at": "2026-07-31T15:44:55-05:00"
 }

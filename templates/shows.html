@@ -418,6 +418,7 @@
 </section>
 
 {% if request.path == '/' %}
+<div id="mobileAppHomeSlot" aria-hidden="true"></div>
 <section id="mobile-app" class="mobile-app-section px-6 py-8" aria-labelledby="mobileAppTitle">
   <div class="max-w-7xl mx-auto">
     <div class="mobile-app-panel">
@@ -496,6 +497,10 @@
     </div>
   </div>
 </section>
+
+{% if request.path == '/' %}
+<div id="mobileAppSearchSlot" aria-hidden="true"></div>
+{% endif %}
 
 {% if video_sections %}
 <section class="px-6 pb-24">
@@ -693,6 +698,8 @@ function render() {
   const empty = document.getElementById('emptyState');
   const loadMoreWrap = document.getElementById('loadMoreWrap');
 
+  moveMobileAppForSearch();
+
   if (!filtered.length) {
     grid.innerHTML = '';
     empty.style.display = 'block';
@@ -703,6 +710,20 @@ function render() {
   empty.style.display = 'none';
   grid.innerHTML = visible.map(renderCard).join('');
   loadMoreWrap.style.display = visible.length < filtered.length ? 'block' : 'none';
+}
+
+function moveMobileAppForSearch() {
+  const appPromo = document.getElementById('mobile-app');
+  const homeSlot = document.getElementById('mobileAppHomeSlot');
+  const searchSlot = document.getElementById('mobileAppSearchSlot');
+  const searchValue = document.getElementById('searchInput').value.trim();
+
+  if (!appPromo || !homeSlot || !searchSlot) return;
+
+  const targetSlot = searchValue ? searchSlot : homeSlot;
+  if (appPromo.previousElementSibling !== targetSlot) {
+    targetSlot.after(appPromo);
+  }
 }
 
 function resetAndRender() {
