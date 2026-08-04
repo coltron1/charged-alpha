@@ -266,6 +266,8 @@ PUBLIC_SITEMAP_PATHS = [
     "/games",
     "/about",
     "/privacy",
+    "/charged-physics-lab/privacy",
+    "/charged-physics-lab/support",
 ]
 PUBLIC_ROBOTS_DISALLOW_PATHS = [
     "/auth/",
@@ -433,6 +435,20 @@ SEO_PAGE_META = {
         "description": (
             "Privacy Policy for the Charged Alpha mobile app and chargedalpha.com website, "
             "including Premium subscriptions, optional email updates, analytics, and cookies."
+        ),
+    },
+    "/charged-physics-lab/privacy": {
+        "title": "Privacy Policy — Charged Physics Lab",
+        "description": (
+            "Privacy Policy for the Charged Physics Lab mobile app, including "
+            "local formula progress, device motion, narration, and backups."
+        ),
+    },
+    "/charged-physics-lab/support": {
+        "title": "Charged Physics Lab Support",
+        "description": (
+            "Support, contact information, and troubleshooting for the Charged "
+            "Physics Lab mobile app."
         ),
     },
     "/games/front-page-fortune": {
@@ -2189,6 +2205,16 @@ def privacy_policy():
 @app.route("/privacypolicy")
 def privacypolicy_redirect():
     return redirect("/privacy", code=301)
+
+
+@app.route("/charged-physics-lab/privacy")
+def charged_physics_lab_privacy():
+    return render_template("charged_physics_lab_privacy.html")
+
+
+@app.route("/charged-physics-lab/support")
+def charged_physics_lab_support():
+    return render_template("charged_physics_lab_support.html")
 
 
 @app.route("/unsubscribe")

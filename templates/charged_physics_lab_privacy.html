@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ seo_meta.title }}</title>
+  {% include "partials/seo_meta.html" %}
+  <style>
+    :root { --bg:#07111f; --card:#0d2030; --text:#e7f7f5; --muted:#a8c5c7; --mint:#67e9cf; --cyan:#36c9f2; --gold:#ffc462; --line:#1d4855; }
+    * { box-sizing:border-box; }
+    body { margin:0; background:radial-gradient(circle at top,#102d41 0,var(--bg) 48%); color:var(--text); font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif; line-height:1.65; }
+    .wrap { max-width:780px; margin:0 auto; padding:48px 22px 80px; }
+    header { border-bottom:1px solid var(--line); padding-bottom:22px; margin-bottom:30px; }
+    .brand { color:var(--mint); font-weight:800; letter-spacing:.08em; text-transform:uppercase; font-size:13px; }
+    .home-link { display:inline-block; margin-bottom:18px; color:var(--muted); text-decoration:none; font-size:14px; }
+    .home-link:hover, a { color:var(--mint); }
+    h1 { font-size:clamp(30px,7vw,46px); line-height:1.08; margin:10px 0 8px; }
+    h2 { color:var(--mint); font-size:20px; margin:34px 0 10px; }
+    .updated, footer { color:var(--muted); font-size:14px; }
+    .lead { font-size:18px; background:rgba(13,32,48,.86); border:1px solid var(--line); border-left:3px solid var(--cyan); border-radius:12px; padding:17px 19px; }
+    footer { margin-top:48px; padding-top:20px; border-top:1px solid var(--line); }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <a class="home-link" href="/">Back to Charged Alpha</a>
+    <header>
+      <div class="brand">Charged Physics Lab</div>
+      <h1>Privacy Policy</h1>
+      <div class="updated">Effective August 4, 2026</div>
+    </header>
+
+    <p class="lead">Charged Physics Lab does not require an account, does not include advertising or analytics, and does not send your formula work or learning progress to us.</p>
+
+    <p>This policy is published by <strong>Crown Creek Capital LLC</strong>, doing business as <strong>Charged Alpha</strong> ("we," "us," "our"), and covers the Charged Physics Lab mobile app (the "App"). The separate chargedalpha.com website is covered by the <a href="/privacy">Charged Alpha website and app privacy policy</a>.</p>
+
+    <h2>Information kept on your device</h2>
+    <p>The App stores formula cards, entered values, results, linked formula steps, visited-formula progress, narration resume state, and preferences such as subtitles, tilt, haptics, and sound in platform-managed local app storage. A bounded local reliability log records app lifecycle, navigation, narration, and error events so failures can be diagnosed on that device. The current App contains no mechanism that uploads this information to us or a third party.</p>
+
+    <h2>Device features</h2>
+    <p>If you allow motion access, the App reads device motion or orientation to create a visual tilt effect. Those readings are processed transiently on the device and are not saved or transmitted. Denying motion access does not prevent formula search, calculations, diagrams, or narration. The App also uses device audio output and may use haptic feedback for interface cues.</p>
+
+    <h2>Network use and service providers</h2>
+    <p>Core formulas, worked examples, ElevenLabs-generated narration, sound effects, and fonts are packaged with the App. The current production build has no account, advertising, analytics, social-login, speech-service, or application-service endpoint. Apple and Google may process store downloads, operating-system diagnostics, and backups under their own policies; we do not receive your formula work from those platform services.</p>
+
+    <h2>Backups, retention, and deletion</h2>
+    <p>Depending on your device and platform-account settings, local app data may be included in an operating-system backup or device-to-device transfer. We do not receive or control that backup. Local data remains until it is replaced, cleared through device controls, or removed when the App is uninstalled, subject to platform backup retention. Because the App has no account or server-side learner profile, there is no remote profile for us to delete.</p>
+
+    <h2>Collection, sharing, and sale</h2>
+    <p>Based on the current production App, we do not collect, share, sell, or use personal data for tracking or targeted advertising.</p>
+
+    <h2>Children's privacy</h2>
+    <p>Charged Physics Lab is a general educational tool intended for learners age 13 and older and is not directed to children under 13. The App does not knowingly collect personal information from children or other users.</p>
+
+    <h2>Security and changes</h2>
+    <p>The App limits its learning state to platform-managed local storage, but no storage method is guaranteed to be completely secure. If the App's data practices change, this policy and its effective date will be updated before that version is released.</p>
+
+    <h2>Contact</h2>
+    <p>Questions about this policy may be sent to <a href="mailto:hello@chargedalpha.com?subject=Charged%20Physics%20Lab%20Privacy">hello@chargedalpha.com</a> or Crown Creek Capital LLC d/b/a Charged Alpha, 9626 Lakeside Trl, Champlin, MN 55316-2649, United States.</p>
+
+    <footer>Charged Physics Lab is a Charged Alpha brand. Charged Alpha is a brand of Crown Creek Capital LLC, a Minnesota limited liability company.</footer>
+  </main>
+</body>
+</html>

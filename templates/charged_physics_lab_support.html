@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ seo_meta.title }}</title>
+  {% include "partials/seo_meta.html" %}
+  <style>
+    :root { --bg:#07111f; --card:#0d2030; --text:#e7f7f5; --muted:#a8c5c7; --mint:#67e9cf; --cyan:#36c9f2; --gold:#ffc462; --line:#1d4855; }
+    * { box-sizing:border-box; }
+    body { margin:0; background:radial-gradient(circle at top,#102d41 0,var(--bg) 48%); color:var(--text); font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif; line-height:1.6; }
+    .wrap { max-width:780px; margin:0 auto; padding:48px 22px 80px; }
+    .home-link { color:var(--muted); text-decoration:none; font-size:14px; }
+    .brand { margin-top:24px; color:var(--mint); font-weight:800; letter-spacing:.08em; text-transform:uppercase; font-size:13px; }
+    h1 { font-size:clamp(34px,8vw,52px); line-height:1.05; margin:10px 0 12px; }
+    h2 { color:var(--mint); font-size:20px; margin:0 0 8px; }
+    .lead { color:var(--muted); font-size:18px; max-width:650px; }
+    .contact { display:inline-block; margin:16px 0 34px; padding:13px 18px; border-radius:11px; background:var(--mint); color:#06211f; text-decoration:none; font-weight:800; }
+    .grid { display:grid; gap:14px; }
+    .card { background:rgba(13,32,48,.88); border:1px solid var(--line); border-radius:14px; padding:19px; }
+    p { margin:7px 0; }
+    a { color:var(--mint); }
+    footer { margin-top:40px; padding-top:20px; border-top:1px solid var(--line); color:var(--muted); font-size:14px; }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <a class="home-link" href="/">Back to Charged Alpha</a>
+    <div class="brand">Charged Physics Lab</div>
+    <h1>App support</h1>
+    <p class="lead">Help with the interactive Physics I and Physics II formula solver, diagrams, algebra gestures, and narrated worked examples.</p>
+    <a class="contact" href="mailto:hello@chargedalpha.com?subject=Charged%20Physics%20Lab%20Support">Email support</a>
+
+    <section class="grid" aria-label="Frequently asked questions">
+      <article class="card">
+        <h2>Narration will not play</h2>
+        <p>Use the Play control in the bottom navigation after opening a worked example. Check the device's media volume and disconnect an unintended Bluetooth output. Narration is packaged with the App and does not require a network connection.</p>
+      </article>
+      <article class="card">
+        <h2>Edit or isolate a variable</h2>
+        <p>Tap a variable tile once to edit its number. Hold the tile still for one second, then release, to isolate that variable automatically. The question-mark control opens the complete animated guide.</p>
+      </article>
+      <article class="card">
+        <h2>Answers or progress look stale</h2>
+        <p>Use Clear on the current physics problem to start a fresh formula chain. If a problem persists, fully close and reopen the App; your local progress should remain available.</p>
+      </article>
+      <article class="card">
+        <h2>Contact and privacy</h2>
+        <p>Email <a href="mailto:hello@chargedalpha.com">hello@chargedalpha.com</a> or call <a href="tel:+17633886236">+1 763-388-6236</a>. Review the <a href="/charged-physics-lab/privacy">Charged Physics Lab Privacy Policy</a>.</p>
+      </article>
+    </section>
+
+    <footer>Charged Physics Lab is a Charged Alpha brand, published by Crown Creek Capital LLC.</footer>
+  </main>
+</body>
+</html>
