@@ -654,6 +654,11 @@ def backfill_catalog_platform_links(
 def sync_catalog(args: argparse.Namespace) -> dict:
     catalog_path = Path(args.catalog)
     catalog = json.loads(catalog_path.read_text())
+    catalog_content_before = json.dumps(
+        {key: value for key, value in catalog.items() if key != "last_synced_at"},
+        sort_keys=True,
+        ensure_ascii=False,
+    )
     existing_urls = collect_existing_urls(catalog)
     companies, sectors = collect_stock_metadata(catalog)
 
@@ -786,7 +791,13 @@ def sync_catalog(args: argparse.Namespace) -> dict:
         titled_apple,
     )
 
-    catalog["last_synced_at"] = datetime.now().astimezone().isoformat(timespec="seconds")
+    catalog_content_changed = json.dumps(
+        {key: value for key, value in catalog.items() if key != "last_synced_at"},
+        sort_keys=True,
+        ensure_ascii=False,
+    ) != catalog_content_before
+    if catalog_content_changed:
+        catalog["last_synced_at"] = datetime.now().astimezone().isoformat(timespec="seconds")
 
     summary = {
         "stock_episodes": len(new_episodes),
@@ -794,6 +805,7 @@ def sync_catalog(args: argparse.Namespace) -> dict:
         "shorts": len(new_shorts),
         "stock_tickers": [episode["ticker"] for episode in new_episodes],
         "backfilled_links": backfilled_links,
+        "catalog_changed": catalog_content_changed,
         "catalog_path": str(catalog_path),
     }
 
