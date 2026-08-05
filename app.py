@@ -415,11 +415,11 @@ SEO_PAGE_META = {
         ),
     },
     "/about": {
-        "title": "About Colton Thomas — Charged Alpha",
+        "title": "About Colton — Charged Alpha",
         "description": (
-            "Meet Colton Thomas, creator of Charged Alpha and the investing "
-            "education content, mobile app, earnings-analysis videos, and free "
-            "market games behind the platform."
+            "Meet Colton, the mechanical engineer and app builder behind "
+            "Charged Alpha stock research, investing education, Charged Physics "
+            "Lab, and Today Was."
         ),
     },
     "/unsubscribe": {

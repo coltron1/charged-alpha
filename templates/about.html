@@ -9,8 +9,8 @@
   {
     "@context": "https://schema.org",
     "@type": "Person",
-    "name": "Colton Thomas",
-    "jobTitle": "Builder of Charged Alpha",
+    "name": "Colton",
+    "jobTitle": "Mechanical engineer and app builder",
     "image": "https://chargedalpha.com/static/assets/colton-headshot.jpeg",
     "worksFor": {
       "@type": "Organization",
@@ -66,10 +66,6 @@
       border-bottom:1px solid #172033;
     }
     .hero-grid { display:grid; gap:36px; align-items:start; }
-    .panel {
-      background:linear-gradient(180deg,rgba(16,23,34,.98),rgba(8,13,22,.98));
-      border:1px solid #253142; border-radius:8px; box-shadow:0 24px 80px rgba(0,0,0,.28);
-    }
     .profile-shell {
       position:relative; overflow:hidden; border:1px solid #253142; border-radius:8px;
       background:
@@ -84,31 +80,26 @@
     }
     .profile-shell > * { position:relative; }
     .portrait-mark {
-      display:grid; place-items:center; width:112px; height:112px; border-radius:8px;
+      display:grid; flex:0 0 112px; place-items:center; width:112px; min-width:112px; height:112px; border-radius:8px;
       border:1px solid rgba(94,234,212,.32); background:rgba(2,6,23,.62);
       box-shadow:0 18px 60px rgba(0,0,0,.26);
       overflow:hidden;
     }
     .portrait-mark img { width:100%; height:100%; object-fit:cover; }
     .personal-photo {
-      width:100%; aspect-ratio:16/9; object-fit:cover; border-radius:8px;
+      display:block; width:min(100%, 440px); aspect-ratio:4/3; max-height:300px;
+      object-fit:cover; object-position:center; border-radius:8px;
       border:1px solid rgba(148,163,184,.18); box-shadow:0 18px 50px rgba(0,0,0,.28);
     }
-    .bio-copy p { color:#cbd5e1; font-size:15px; line-height:1.8; }
-    .stat-card {
-      border:1px solid #253142; border-radius:8px; background:#0b1220; padding:18px;
+    .bio-copy p { color:#cbd5e1; font-size:15px; line-height:1.75; }
+    .career-strip { display:flex; flex-wrap:wrap; gap:8px; margin-top:18px; }
+    .career-pill {
+      border:1px solid rgba(103,232,249,.26); border-radius:999px; padding:7px 10px;
+      color:#bae6fd; background:rgba(8,47,73,.24); font-size:12px; font-weight:800;
     }
-    .timeline-item {
-      display:grid; gap:12px; border:1px solid #253142; border-radius:8px;
-      background:#0b1220; padding:20px;
-    }
-    .commitment li { position:relative; padding-left:24px; }
-    .commitment li:before {
-      content:""; position:absolute; left:0; top:.55rem; width:9px; height:9px; border-radius:999px;
-      background:#22c55e; box-shadow:0 0 0 3px rgba(34,197,94,.14);
-    }
-    .quote-card {
-      border:1px solid rgba(103,232,249,.24); border-radius:8px; background:rgba(8,47,73,.18);
+    .profile-note {
+      margin-top:18px; border-left:3px solid #22c55e; padding-left:14px;
+      color:#94a3b8; font-size:13px; line-height:1.65;
     }
     .apps-section {
       border-top:1px solid #172033;
@@ -147,7 +138,7 @@
     }
     .app-roadmap-card .app-status:before { background:#f59e0b; box-shadow:0 0 0 4px rgba(245,158,11,.14); }
     .app-feature-copy h3, .app-roadmap-card h3 { margin:5px 0 0; color:#fff; font-size:clamp(24px,3vw,34px); line-height:1.08; font-weight:900; }
-    .app-feature-copy > p, .app-roadmap-card > p { color:#cbd5e1; font-size:15px; line-height:1.75; }
+    .app-feature-copy > p, .roadmap-copy > p { color:#cbd5e1; font-size:15px; line-height:1.75; }
     .app-chip-row { display:flex; flex-wrap:wrap; gap:8px; margin:18px 0 22px; }
     .app-chip {
       border:1px solid rgba(103,232,249,.28); border-radius:999px; padding:7px 10px;
@@ -165,24 +156,25 @@
     .app-store-link .store-mark { font-size:18px; line-height:1; }
     .app-store-link small { display:block; font-size:10px; font-weight:700; line-height:1.1; opacity:.75; }
     .app-feature-footer { display:flex; flex-wrap:wrap; align-items:center; gap:15px; margin-top:15px; }
-    .app-feature-footer .fine-print { color:#64748b; font-size:12px; }
+    .fine-print { color:#64748b; font-size:12px; line-height:1.5; }
     .roadmap-heading { margin:36px 0 16px; }
     .app-future-grid { display:grid; gap:18px; }
-    .app-roadmap-card { display:grid; gap:18px; padding:18px; }
-    .roadmap-media { display:grid; grid-template-columns:78px minmax(0,1fr); gap:12px; align-items:stretch; }
+    .app-roadmap-card { display:flex; flex-direction:column; gap:18px; padding:18px; scroll-margin-top:96px; }
+    .roadmap-gallery { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:10px; }
     .roadmap-icon { width:78px; height:78px; border-radius:18px; }
-    .roadmap-shot { width:100%; height:100%; min-height:210px; object-fit:cover; object-position:top; border:1px solid rgba(148,163,184,.2); border-radius:8px; }
-    .roadmap-shot.today { object-position:center; }
+    .roadmap-shot {
+      width:100%; aspect-ratio:9/16; object-fit:cover; object-position:top;
+      border:1px solid rgba(148,163,184,.2); border-radius:8px; background:#050914;
+    }
+    .roadmap-copy { flex:1; }
     .roadmap-points { display:flex; flex-wrap:wrap; gap:8px; margin:0; padding:0; list-style:none; }
     .roadmap-points li { color:#94a3b8; font-size:12px; line-height:1.4; }
     .roadmap-points li:not(:last-child):after { content:" / "; color:#475569; margin-left:8px; }
     .roadmap-actions { display:flex; flex-wrap:wrap; gap:10px; margin-top:2px; }
     @media (min-width: 980px) {
       .hero-grid { grid-template-columns:.96fr 1.04fr; }
-      .timeline-item { grid-template-columns:190px 1fr; }
       .app-featured { grid-template-columns:1.05fr .95fr; padding:22px; }
       .app-future-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }
-      .app-roadmap-card { grid-template-rows:auto 1fr auto; }
     }
     @media (max-width: 640px) {
       .nav-tight { display:none; }
@@ -214,52 +206,43 @@
       <div class="hero-grid mx-auto max-w-7xl">
         <div>
           <p class="eyebrow mb-4">About the founder</p>
-          <h1 class="mb-5 max-w-3xl text-4xl font-black leading-tight text-white md:text-6xl">Hello, my name is Colton.</h1>
+          <h1 class="mb-5 max-w-3xl text-4xl font-black leading-tight text-white md:text-6xl">Hi, I’m Colton.</h1>
           <div class="bio-copy mb-7 max-w-2xl space-y-4">
             <p>
-              I am the creator of Charged Alpha and all of its content. I originally built Charged Alpha with the goal of creating earnings breakdowns for every stock, so I could listen to earnings analysis during my day instead of having to read through reports one by one.
+              I built Charged Alpha to produce highly detailed, consistent stock analysis that I believe can stand beside Wall Street research. I use frontier AI models to turn that work into engaging video presentations and podcast-style episodes.
             </p>
             <p>
-              Since then, Charged Alpha has expanded into a video-first presentation platform for stock earnings reports, investing analysis, and financial education.
+              Viewer feedback showed that the material could be dense when the underlying metrics were unfamiliar, so I built the Charged Alpha app. Its narrated lessons and interactive labs let people work with real company metrics and hear how changing an input changes the analysis.
+            </p>
+            <p>
+              I’m a mechanical engineer and design engineer by background. That same mix of analysis and hands-on problem solving now extends to Charged Physics Lab and Today Was, with more apps on the way. They are free to download, and I appreciate every piece of feedback.
             </p>
           </div>
           <div class="flex flex-wrap gap-3">
-            <a href="/shows" class="btn-primary">Stock Library</a>
+            <a href="#apps" class="btn-primary">Explore the apps</a>
+            <a href="/shows" class="btn-secondary">Stock Library</a>
             <a href="https://www.linkedin.com/in/colton-thomas-622b22113/" target="_blank" rel="noopener noreferrer" class="btn-secondary">LinkedIn Profile</a>
-            <a href="mailto:hello@chargedalpha.com?subject=Charged%20Alpha" class="btn-secondary">Email Colton</a>
           </div>
         </div>
 
         <aside class="profile-shell p-6 md:p-8">
           <div class="mb-8 flex flex-col gap-5 sm:flex-row sm:items-center">
             <div class="portrait-mark">
-              <img src="/static/assets/colton-headshot.jpeg" alt="Colton Thomas, creator of Charged Alpha">
+              <img src="/static/assets/colton-about.webp" alt="Colton, creator of Charged Alpha">
             </div>
             <div>
-              <p class="eyebrow mb-2">Colton Thomas</p>
-              <h2 class="text-3xl font-black text-white">Builder of Charged Alpha.</h2>
-              <p class="mt-3 text-sm leading-6 text-slate-400">Focused on free market education tools, earnings-analysis videos, investing games, and digestible stock research.</p>
+              <p class="eyebrow mb-2">Colton</p>
+              <h2 class="text-3xl font-black text-white">Engineer, analyst, and app builder.</h2>
+              <p class="mt-3 text-sm leading-6 text-slate-400">Mechanical engineer by training and a design engineer by profession, now building research, education, and practical daily-use apps.</p>
             </div>
           </div>
-          <img src="/static/assets/colton-outdoors.jpeg" alt="Colton outdoors in the mountains" class="personal-photo mb-5">
-          <div class="grid gap-4 sm:grid-cols-2">
-            <div class="stat-card">
-              <div class="text-sm font-black uppercase tracking-[.18em] text-cyan-200">Main Focus</div>
-              <p class="mt-2 text-sm leading-6 text-slate-400">Video-first earnings analysis and investing education.</p>
-            </div>
-            <div class="stat-card">
-              <div class="text-sm font-black uppercase tracking-[.18em] text-cyan-200">Goal</div>
-              <p class="mt-2 text-sm leading-6 text-slate-400">Release 1,000+ stock earnings video presentations and build interactive market investing apps centered around education.</p>
-            </div>
-            <div class="stat-card">
-              <div class="text-sm font-black uppercase tracking-[.18em] text-cyan-200">I Build With</div>
-              <p class="mt-2 text-sm leading-6 text-slate-400">Frontier AI models for coding and building repeatable research processes and presentations.</p>
-            </div>
-            <div class="stat-card">
-              <div class="text-sm font-black uppercase tracking-[.18em] text-cyan-200">Contact</div>
-              <p class="mt-2 text-sm leading-6 text-slate-400">hello@chargedalpha.com</p>
-            </div>
+          <img src="/static/assets/colton-about.webp" alt="Colton" class="personal-photo mb-5">
+          <div class="career-strip" aria-label="Professional background">
+            <span class="career-pill">Mechanical engineering</span>
+            <span class="career-pill">Design engineering</span>
+            <span class="career-pill">AI-assisted product development</span>
           </div>
+          <p class="profile-note">I bring an engineer’s preference for repeatable methods, measurable inputs, and tools people can actually use.</p>
         </aside>
       </div>
     </section>
@@ -268,8 +251,8 @@
       <div class="mx-auto max-w-7xl">
         <div class="apps-heading mb-7">
           <p class="eyebrow mb-2">Charged Alpha apps</p>
-          <h2 id="appsTitle" class="text-3xl font-black text-white md:text-4xl">Learn it. Work it. Keep it.</h2>
-          <p class="mt-3 text-base leading-7 text-slate-400">The Charged Alpha family is growing around practical learning: investing decisions today, physics problem-solving next, and a quieter way to remember the days that matter.</p>
+          <h2 id="appsTitle" class="text-3xl font-black text-white md:text-4xl">Three apps. One practical approach.</h2>
+          <p class="mt-3 text-base leading-7 text-slate-400">Charged Alpha turns dense investing ideas into decisions you can practice. Charged Physics Lab applies that approach to equations, while Today Was helps preserve the details of days and fieldwork worth remembering.</p>
         </div>
 
         <article class="app-featured">
@@ -285,10 +268,11 @@
                 <h3>Charged Alpha</h3>
               </div>
             </div>
-            <p class="mt-5">Build stock-market confidence by actually making decisions. Charged Alpha turns investing fundamentals, valuation, earnings, options, and market crises into short lessons, interactive labs, quizzes, and hands-on play.</p>
+            <p class="mt-5">Charged Alpha turns investing fundamentals, valuation, earnings, options, and market crises into short narrated lessons, quizzes, and hands-on labs. Work with real company metrics, move the inputs, and hear how each change affects the analysis.</p>
             <div class="app-chip-row" aria-label="Charged Alpha app features">
               <span class="app-chip">Interactive lessons</span>
-              <span class="app-chip">Valuation labs</span>
+              <span class="app-chip">Real company metrics</span>
+              <span class="app-chip">Audio feedback</span>
               <span class="app-chip">Option strategies</span>
               <span class="app-chip">Storm Chaser</span>
               <span class="app-chip">Works offline</span>
@@ -312,130 +296,56 @@
 
         <div class="roadmap-heading">
           <p class="eyebrow mb-2">More apps in the lab</p>
-          <h2 class="text-2xl font-black text-white md:text-3xl">Two new directions are taking shape.</h2>
+          <h2 class="text-2xl font-black text-white md:text-3xl">The next two releases are already taking shape.</h2>
         </div>
         <div class="app-future-grid">
           <article id="charged-physics-lab" class="app-roadmap-card">
-            <div class="roadmap-media">
+            <div class="roadmap-brandline">
               <img src="/static/assets/apps/charged-physics-lab-icon.png" alt="Charged Physics Lab app icon" class="roadmap-icon">
-              <img src="/static/assets/apps/charged-physics-lab-map.jpg" alt="Charged Physics Lab course map with interactive lessons" class="roadmap-shot" loading="lazy">
+              <div>
+                <span class="app-status">Coming soon</span>
+                <h3>Charged Physics Lab</h3>
+              </div>
             </div>
-            <div>
-              <span class="app-status">Coming soon</span>
-              <h3>Charged Physics Lab</h3>
-              <p class="mt-3">A visual Physics I and Physics II formula lab. Search 200 equations, enter values directly into the algebra, isolate variables, follow diagrams, and carry a solved result into the next step.</p>
+            <div class="roadmap-gallery" aria-label="Charged Physics Lab screenshots">
+              <img src="/static/assets/apps/charged-physics-lab-formula-map.webp" alt="Charged Physics Lab Formula Map organizing 200 Physics I and II equations" class="roadmap-shot" loading="lazy">
+              <img src="/static/assets/apps/charged-physics-lab-live-algebra.webp" alt="Charged Physics Lab interactive Ohm's law equation with live values and diagram" class="roadmap-shot" loading="lazy">
+            </div>
+            <div class="roadmap-copy">
+              <p>Charged Physics Lab turns 200 Physics I and Physics II equations into a visual problem-solving workspace. Search with plain English, symbols, or quantities; enter values directly into the equation; isolate a variable automatically or one algebra move at a time; and carry a result into a related formula. Dynamic diagrams and narrated, teacher-style worked examples connect the calculation to the physics.</p>
               <ul class="roadmap-points mt-4" aria-label="Charged Physics Lab features">
-                <li>200 formulas</li><li>Interactive algebra</li><li>Worked examples</li><li>Offline learning</li>
+                <li>200 formulas</li><li>Plain-English search</li><li>Live algebra</li><li>Formula chains</li><li>Narrated examples</li><li>Works offline</li>
               </ul>
             </div>
             <div class="roadmap-actions">
               <a href="/charged-physics-lab/support" class="btn-secondary">Physics Lab details</a>
-              <span class="fine-print">iPhone and Android release in progress.</span>
+              <span class="fine-print">Free iPhone and Android release in progress.</span>
             </div>
           </article>
 
           <article id="today-was" class="app-roadmap-card">
-            <div class="roadmap-media">
+            <div class="roadmap-brandline">
               <img src="/static/assets/apps/today-was-icon.png" alt="Today Was app icon" class="roadmap-icon">
-              <img src="/static/assets/apps/today-was-preview.png" alt="Today Was private voice journal artwork" class="roadmap-shot today" loading="lazy">
+              <div>
+                <span class="app-status">Coming soon</span>
+                <h3>Today Was</h3>
+              </div>
             </div>
-            <div>
-              <span class="app-status">Coming soon on iPhone</span>
-              <h3>Today Was</h3>
-              <p class="mt-3">A private, voice-first journal for saying what happened, keeping the original words, and shaping a day into a memory worth rereading. Today Was is a separate, quieter product in the Charged Alpha family.</p>
+            <div class="roadmap-gallery" aria-label="Today Was screenshots">
+              <img src="/static/assets/apps/today-was-logbook-templates.webp" alt="Today Was Practical Notebook settings with ten reusable logbook templates" class="roadmap-shot" loading="lazy">
+              <img src="/static/assets/apps/today-was-weather-location.webp" alt="Today Was saved daily log with exact location and detailed weather statistics" class="roadmap-shot" loading="lazy">
+            </div>
+            <div class="roadmap-copy">
+              <p>Today Was works as both a voice-first journal and a structured daily log. It preserves what you said, can privately polish it for readability, and offers 10 reusable templates for hunting, fishing, hiking, gardening, work, photography, health, travel, and field notes. With permission, a day can include photos, moon phase, an exact location pin, satellite preview, and a complete daily and hourly weather snapshot. Journal content is encrypted and kept on the device, making it useful for personal memories, fieldwork, maple-syrup runs, hunting conditions, fishing patterns, and any record where the setting matters.</p>
               <ul class="roadmap-points mt-4" aria-label="Today Was features">
-                <li>Voice-first journaling</li><li>Original transcript preserved</li><li>Encrypted device vault</li>
+                <li>Voice-first journal</li><li>10 log templates</li><li>Exact location pins</li><li>24-hour weather detail</li><li>Satellite preview</li><li>Encrypted on device</li>
               </ul>
             </div>
             <div class="roadmap-actions">
-              <a href="https://daymoire.chargedalpha.com/" target="_blank" rel="noopener noreferrer" class="btn-secondary">Preview Today Was</a>
-              <span class="fine-print">The iPhone app is coming next.</span>
+              <a href="https://daymoire.chargedalpha.com/" target="_blank" rel="noopener noreferrer" class="btn-secondary">Explore Today Was</a>
+              <span class="fine-print">The current web preview is available while app-store releases are prepared.</span>
             </div>
           </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="px-6 py-12">
-      <div class="mx-auto grid max-w-7xl gap-6 lg:grid-cols-[1.05fr_.95fr]">
-        <div class="panel p-6 md:p-7">
-          <p class="eyebrow mb-2">Why Charged Alpha exists</p>
-          <h2 class="mb-5 text-3xl font-black text-white">I wanted better earnings analysis I could actually keep up with.</h2>
-          <div class="space-y-4 text-sm leading-7 text-slate-400">
-            <p>
-              I use frontier AI analysis to create standardized video presentations reviewing more than 1,000 stocks every quarter. The goal is to make earnings reports easier to follow, compare, and revisit without requiring people to spend their whole day reading filings and transcripts.
-            </p>
-            <p>
-              As I dug deeper into the tools of AI and coding, I started building out the rest of the Charged Alpha platform around investing analysis and education.
-            </p>
-            <p>
-              That eventually led to the free investing games: interactive market-history challenges that teach investing principles and concepts in a more engaging way than a static lesson.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="px-6 pb-12">
-      <div class="mx-auto max-w-7xl">
-        <div class="mb-6">
-          <p class="eyebrow mb-2">Professional context</p>
-          <h2 class="text-3xl font-black text-white">What I am building.</h2>
-        </div>
-        <div class="space-y-4">
-          <article class="timeline-item">
-            <div>
-              <p class="text-xs font-black uppercase tracking-[.2em] text-cyan-200">Stock Library</p>
-            </div>
-            <div>
-              <h3 class="text-xl font-black text-white">Standardized earnings breakdowns</h3>
-              <p class="mt-2 text-sm leading-6 text-slate-400">The long-term goal is to make it easy to search a stock, open its page, and find digestible earnings analysis, video coverage, podcast formats, and comparison context.</p>
-            </div>
-          </article>
-          <article class="timeline-item">
-            <div>
-              <p class="text-xs font-black uppercase tracking-[.2em] text-cyan-200">AI Workflow</p>
-            </div>
-            <div>
-              <h3 class="text-xl font-black text-white">Frontier AI analysis at scale</h3>
-              <p class="mt-2 text-sm leading-6 text-slate-400">Charged Alpha uses AI-assisted research and presentation workflows to create consistent analysis formats across a large stock universe.</p>
-            </div>
-          </article>
-          <article class="timeline-item">
-            <div>
-              <p class="text-xs font-black uppercase tracking-[.2em] text-cyan-200">Interactive Market Education Apps</p>
-            </div>
-            <div>
-              <h3 class="text-xl font-black text-white">Interactive apps for learning market decisions</h3>
-              <p class="mt-2 text-sm leading-6 text-slate-400">I am creating interactive apps that teach investing fundamentals and advanced market strategies through game-based decisions, historical context, and practical market scenarios.</p>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="px-6 pb-14">
-      <div class="mx-auto grid max-w-7xl gap-6 lg:grid-cols-[.95fr_1.05fr]">
-        <div class="panel p-6 md:p-7">
-          <p class="eyebrow mb-2">How I think about education</p>
-          <h2 class="mb-5 text-3xl font-black text-white">Good market lessons should slow down the obvious answer.</h2>
-          <ul class="commitment space-y-3 text-sm leading-6 text-slate-400">
-            <li>Start with evidence and historical context.</li>
-            <li>Show the trade-off, not just the outcome.</li>
-            <li>Make risk, timing, and position sizing visible.</li>
-            <li>Keep educational resources useful without a paid gate.</li>
-            <li>All Charged Alpha content is educational only and is not financial advice.</li>
-          </ul>
-        </div>
-        <div class="panel p-6 md:p-7">
-          <p class="eyebrow mb-2">For educators and partners</p>
-          <h2 class="mb-5 text-3xl font-black text-white">Reach out if Charged Alpha can help your class.</h2>
-          <p class="mb-5 text-sm leading-7 text-slate-400">
-            I am especially interested in hearing from personal finance educators, economics teachers, business departments, DECA and FBLA advisors, homeschool groups, and investing club sponsors.
-          </p>
-          <div class="flex flex-wrap gap-3">
-            <a href="mailto:hello@chargedalpha.com?subject=Charged%20Alpha%20educator%20resources" class="btn-primary">Email Colton</a>
-          </div>
         </div>
       </div>
     </section>
