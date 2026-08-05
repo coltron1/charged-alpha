@@ -418,8 +418,8 @@ SEO_PAGE_META = {
         "title": "About Colton Thomas — Charged Alpha",
         "description": (
             "Meet Colton Thomas, creator of Charged Alpha and the investing "
-            "education content, earnings-analysis videos, and free market games "
-            "behind the platform."
+            "education content, mobile app, earnings-analysis videos, and free "
+            "market games behind the platform."
         ),
     },
     "/unsubscribe": {
@@ -2194,7 +2194,12 @@ def games_index():
 
 @app.route("/about")
 def about():
-    return render_template("about.html")
+    tracking_params = _app_tracking_params()
+    return render_template(
+        "about.html",
+        ios_url=_add_query_params(APP_STORE_URL, tracking_params),
+        android_url=_add_query_params(GOOGLE_PLAY_URL, tracking_params),
+    )
 
 
 @app.route("/privacy")
