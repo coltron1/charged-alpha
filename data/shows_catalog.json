@@ -10,6 +10,114 @@
   },
   "episodes": [
     {
+      "ticker": "NTRA",
+      "company": "NTRA",
+      "sector": "Unclassified",
+      "quarter": "Q2 2026",
+      "episode_number": "",
+      "title": "Natera (NTRA): A 13.6% Revenue Beat - And That Is The Base Rate",
+      "published_at": "2026-08-07T01:33:18+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=nK1P6QMeDCs",
+      "spotify_url": "https://open.spotify.com/episode/5l0QsLfBMLOV3nZ82bfuOj",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/natera-ntra-a-136-revenue-beat-and-that-is-the-base-rate/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "TTD",
+      "company": "TTD",
+      "sector": "Unclassified",
+      "quarter": "Q2 2026",
+      "episode_number": "",
+      "title": "The Trade Desk (TTD): They Missed Their Own Floor - And Guided To A Decline",
+      "published_at": "2026-08-07T00:43:54+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=kHQqme83AN8",
+      "spotify_url": "https://open.spotify.com/episode/5K4Ne8FBqRZLH9dzVqfg6J",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/the-trade-desk-ttd-they-missed-their-own-floor-and-guided-to-a-decline/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "ABNB",
+      "company": "ABNB",
+      "sector": "Unclassified",
+      "quarter": "Q2 2026",
+      "episode_number": "",
+      "title": "Airbnb (ABNB): The 12-Cent Beat Was $77M Of Last Year’s Tax",
+      "published_at": "2026-08-06T23:54:44+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=4F23QzMr_mo",
+      "spotify_url": "https://open.spotify.com/episode/5fdQ9hpbgealn2CD4XOjnD",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/airbnb-abnb-the-12-cent-beat-was-77m-of-last-year-s-tax/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "DUK",
+      "company": "Duke Energy Corp.",
+      "sector": "Utilities",
+      "quarter": "Q2 2026",
+      "episode_number": "",
+      "title": "Duke Energy (DUK): A 10% Beat - And The Stock Moved One Cent",
+      "published_at": "2026-08-06T23:06:11+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=3glYBL2GSAo",
+      "spotify_url": "https://open.spotify.com/episode/6dNG6zoxataneaesxE7Vaf",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/duke-energy-duk-a-10-beat-and-the-stock-moved-one-cent/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "FIG",
+      "company": "FIG",
+      "sector": "Unclassified",
+      "quarter": "Q2 2026",
+      "episode_number": "",
+      "title": "Figma (FIG): A Beat, A Raise - And The Stock Fell 15%",
+      "published_at": "2026-08-06T22:33:56+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=nRV4j3GKwUg",
+      "spotify_url": "https://open.spotify.com/episode/5LQvhavH9ZnyykBrnWyk5j",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/figma-fig-a-beat-a-raise-and-the-stock-fell-15/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "SITM",
+      "company": "SITM",
+      "sector": "Unclassified",
+      "quarter": "Q2 2026",
+      "episode_number": "",
+      "title": "SiTime (SITM): Revenue +127%, Stock +27% - And We Still Say HOLD",
+      "published_at": "2026-08-06T21:58:08+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=HU7xebBKkdk",
+      "spotify_url": "https://open.spotify.com/episode/0Jd8MrFGdBTslTJiPyA3Zr",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/sitime-sitm-revenue-127-stock-27-and-we-still-say-hold/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
       "ticker": "ETSY",
       "company": "ETSY",
       "sector": "Unclassified",
@@ -27809,6 +27917,89 @@
       "description": "Fast clips that point viewers into full research videos and stock pages.",
       "videos": [
         {
+          "title": "Natera's 13.6% Beat IS Its Median | NTRA Q2 2026 #shorts",
+          "youtube_url": "https://www.youtube.com/shorts/Z6RUE9r_xkg",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-08-07T01:35:00+00:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "IS",
+            "NTRA"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "TTD Guided To Its First EVER Revenue Decline #shorts",
+          "youtube_url": "https://www.youtube.com/shorts/k2MK7ZkDTc0",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-08-07T00:46:19+00:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "TTD",
+            "EVER"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "Airbnb Beat By 12 Cents - All Of It Was Tax #ABNB #shorts",
+          "youtube_url": "https://www.youtube.com/shorts/SEGew0t0hTQ",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-08-07T00:08:47+00:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "ABNB"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "Duke Energy Beat By 10% - The Stock Moved One Cent #DUK #shorts",
+          "youtube_url": "https://www.youtube.com/shorts/BdEYqOtwOGc",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-08-06T23:07:55+00:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "DUK"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "Figma (FIG) Beat AND Raised - And The Stock Fell 15%",
+          "youtube_url": "https://www.youtube.com/shorts/6JlJm2ro-g8",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-08-06T22:35:13+00:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "FIG",
+            "AND"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "SITM revenue +127% and we STILL say HOLD #SITM #shorts",
+          "youtube_url": "https://www.youtube.com/shorts/c-ftD6GrK_g",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-08-06T22:00:37+00:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "SITM",
+            "STILL",
+            "HOLD"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
           "title": "Etsy's $1.11 'Miss' Was Never A Miss #ETSY",
           "youtube_url": "https://www.youtube.com/shorts/BgavkYWUlLI",
           "spotify_url": "",
@@ -33091,5 +33282,5 @@
       ]
     }
   ],
-  "last_synced_at": "2026-08-06T16:32:07-05:00"
+  "last_synced_at": "2026-08-06T21:01:08-05:00"
 }
