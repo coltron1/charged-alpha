@@ -137,6 +137,7 @@
       box-shadow:0 0 0 4px rgba(34,197,94,.14);
     }
     .app-roadmap-card .app-status:before { background:#f59e0b; box-shadow:0 0 0 4px rgba(245,158,11,.14); }
+    .app-roadmap-card .app-status.available:before { background:#22c55e; box-shadow:0 0 0 4px rgba(34,197,94,.14); }
     .app-feature-copy h3, .app-roadmap-card h3 { margin:5px 0 0; color:#fff; font-size:clamp(24px,3vw,34px); line-height:1.08; font-weight:900; }
     .app-feature-copy > p, .roadmap-copy > p { color:#cbd5e1; font-size:15px; line-height:1.75; }
     .app-chip-row { display:flex; flex-wrap:wrap; gap:8px; margin:18px 0 22px; }
@@ -171,6 +172,7 @@
     .roadmap-points li { color:#94a3b8; font-size:12px; line-height:1.4; }
     .roadmap-points li:not(:last-child):after { content:" / "; color:#475569; margin-left:8px; }
     .roadmap-actions { display:flex; flex-wrap:wrap; gap:10px; margin-top:2px; }
+    .roadmap-actions .fine-print { flex-basis:100%; }
     @media (min-width: 980px) {
       .hero-grid { grid-template-columns:.96fr 1.04fr; }
       .app-featured { grid-template-columns:1.05fr .95fr; padding:22px; }
@@ -295,15 +297,15 @@
         </article>
 
         <div class="roadmap-heading">
-          <p class="eyebrow mb-2">More apps in the lab</p>
-          <h2 class="text-2xl font-black text-white md:text-3xl">The next two releases are already taking shape.</h2>
+          <p class="eyebrow mb-2">More apps from the lab</p>
+          <h2 class="text-2xl font-black text-white md:text-3xl">Charged Physics Lab is now available on Android.</h2>
         </div>
         <div class="app-future-grid">
           <article id="charged-physics-lab" class="app-roadmap-card">
             <div class="roadmap-brandline">
               <img src="/static/assets/apps/charged-physics-lab-icon.png" alt="Charged Physics Lab app icon" class="roadmap-icon">
               <div>
-                <span class="app-status">Coming soon</span>
+                <span class="app-status available">Available now on Android</span>
                 <h3>Charged Physics Lab</h3>
               </div>
             </div>
@@ -318,8 +320,12 @@
               </ul>
             </div>
             <div class="roadmap-actions">
+              <a href="https://play.google.com/store/apps/details?id=com.chargedacademy.app&amp;referrer=utm_source%3Dchargedalpha%26utm_medium%3Dreferral%26utm_campaign%3Dcharged_physics_lab_launch%26utm_content%3Dabout_apps" target="_blank" rel="noopener noreferrer" class="app-store-link google" aria-label="Get Charged Physics Lab on Google Play">
+                <span class="store-mark" aria-hidden="true">&#9654;</span>
+                <span><small>Get it on</small>Google Play</span>
+              </a>
               <a href="/charged-physics-lab/support" class="btn-secondary">Physics Lab details</a>
-              <span class="fine-print">Free iPhone and Android release in progress.</span>
+              <span class="fine-print">Available now on Android. The iPhone release is pending App Store review.</span>
             </div>
           </article>
 
