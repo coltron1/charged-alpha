@@ -54,7 +54,7 @@ import yfinance as yf
 from flask import Flask, abort, render_template, request, jsonify, redirect, Response, url_for
 from flask_compress import Compress
 from flask_login import LoginManager, current_user, login_required
-from sqlalchemy.exc import SQLAlchemyError
+from sqlalchemy.exc import IntegrityError, SQLAlchemyError
 from werkzeug.middleware.proxy_fix import ProxyFix
 
 try:
@@ -67,7 +67,7 @@ except ImportError:
 # ── Shared utilities ────────────────────────────────────────────────────────
 from yf_utils import (TTLCache, JobStore, fetch_ticker_info, safe_float,
                        normalize_div_yield, fetch_chart, fetch_banner_tickers)
-from models import db, User, GameScore
+from models import AppAnalyticsEvent, db, User, GameScore
 from auth import (
     auth_bp,
     get_email_updates_subscription,
@@ -573,6 +573,110 @@ NEWSLETTER_API_RATE_WINDOW_SECONDS = 60
 _newsletter_rate_hits = {}
 _newsletter_rate_lock = threading.Lock()
 
+APP_ANALYTICS_ALLOWED_EVENT_NAMES = frozenset({
+    "app_open",
+    "first_open",
+    "welcome_choice",
+    "first_useful_action",
+    "learning_completed",
+    "locked_content_tap",
+    "products_loaded",
+    "paywall_view",
+    "paywall_dismissed",
+    "plan_selected",
+    "purchase_started",
+    "store_result",
+    "entitlement_active",
+    "restore_started",
+    "premium_bridge_view",
+    "premium_bridge_action",
+})
+APP_ANALYTICS_ALLOWED_EVENT_KEYS = frozenset({
+    "event_id",
+    "install_id",
+    "session_id",
+    "name",
+    "app",
+    "platform",
+    "app_version",
+    "app_build",
+    "occurred_at",
+    "schema_version",
+    "properties",
+})
+APP_ANALYTICS_ALLOWED_PROPERTY_KEYS = frozenset({
+    "source",
+    "destination",
+    "page_id",
+    "product_id",
+    "package_type",
+    "result",
+    "status",
+    "error_code",
+    "duration_ms",
+    "product_count",
+    "has_entitlement",
+    "action",
+    "is_first_session",
+    "trial_days",
+    "trial_eligible",
+})
+APP_ANALYTICS_PROPERTY_ENUMS = {
+    "source": frozenset({
+        "app-open", "first-launch", "map", "search", "resume", "page-turn",
+        "deep-link", "settings", "review", "locked-content", "completion",
+        "foundations-complete", "storm-chaser-complete",
+        "lightning-strike-complete", "unknown",
+    }),
+    "destination": frozenset({
+        "map", "search", "check", "lesson", "storm-chaser",
+        "lightning-strike", "premium",
+    }),
+    "package_type": frozenset({"monthly", "annual", "lifetime", "unknown"}),
+    "result": frozenset({
+        "success", "cancelled", "error", "unavailable", "restored", "empty",
+    }),
+    "status": frozenset({"success", "error", "partial", "unavailable"}),
+    "error_code": frozenset({
+        "unknown", "purchase_cancelled", "store_problem",
+        "purchase_not_allowed", "purchase_invalid", "product_unavailable",
+        "already_purchased", "receipt_conflict", "invalid_receipt",
+        "missing_receipt", "network", "invalid_credentials",
+        "backend_response", "invalid_app_user_id", "operation_in_progress",
+        "backend_unknown", "invalid_subscription_key", "ineligible",
+        "insufficient_permissions", "payment_pending", "invalid_attributes",
+        "configuration", "unsupported", "customer_info", "system_info",
+        "refund_request", "product_timeout", "api_blocked",
+        "invalid_promo_offer", "offline", "test_store",
+    }),
+    "action": frozenset({
+        "lesson_started", "lesson_completed", "checkpoint_completed",
+        "storm_chaser_started", "storm_chaser_completed",
+        "lightning_strike_started", "lightning_strike_completed",
+        "search_result_opened", "view_premium", "keep_learning", "retry", "restore",
+    }),
+}
+APP_ANALYTICS_SCHEMA_VERSION = 1
+APP_ANALYTICS_MAX_BODY_BYTES = 64 * 1024
+APP_ANALYTICS_MAX_BATCH_SIZE = 25
+APP_ANALYTICS_RATE_LIMIT = 20
+APP_ANALYTICS_RATE_WINDOW_SECONDS = 60
+APP_ANALYTICS_RETENTION_DAYS = 400
+APP_ANALYTICS_MAX_EVENT_AGE_DAYS = 31
+APP_ANALYTICS_MAX_FUTURE_SECONDS = 24 * 60 * 60
+APP_ANALYTICS_UUID_RE = re.compile(
+    r"^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$"
+)
+APP_ANALYTICS_METADATA_RE = re.compile(r"^[A-Za-z0-9][A-Za-z0-9._+-]{0,39}$")
+APP_ANALYTICS_PAGE_ID_RE = re.compile(
+    r"^(?:\d{1,3}(?:\.\d{1,3}[a-z]?)?|(?:SC|LS)\.\d{1,3})$"
+)
+APP_ANALYTICS_PRODUCT_ID_RE = re.compile(r"^[A-Za-z0-9][A-Za-z0-9._-]{0,119}$")
+_app_analytics_rate_hits = {}
+_app_analytics_rate_lock = threading.Lock()
+_app_analytics_prune_lock = threading.Lock()
+_app_analytics_last_prune = 0.0
+
 
 def _newsletter_api_origin():
     return (request.headers.get("Origin") or "").strip().lower()
@@ -615,6 +719,156 @@ def _newsletter_api_rate_limited(action):
         hits.append(now)
         _newsletter_rate_hits[client_key] = hits
         return False
+
+
+def _app_analytics_response(payload=None, status=200):
+    response = Response(status=status) if payload is None else jsonify(payload)
+    origin = _newsletter_api_origin()
+    if origin in NEWSLETTER_API_ALLOWED_ORIGINS:
+        response.headers["Access-Control-Allow-Origin"] = origin
+        response.headers["Access-Control-Allow-Methods"] = "POST, OPTIONS"
+        response.headers["Access-Control-Allow-Headers"] = "Accept, Content-Type"
+        response.headers["Access-Control-Max-Age"] = "600"
+        response.headers.add("Vary", "Origin")
+    response.headers["Cache-Control"] = "no-store"
+    return response, status
+
+
+def _app_analytics_rate_limited():
+    # The remote address is used only in this short-lived in-memory throttle;
+    # it is never written into an analytics event or database column.
+    client_key = request.remote_addr or "unknown"
+    now = time.monotonic()
+    cutoff = now - APP_ANALYTICS_RATE_WINDOW_SECONDS
+    with _app_analytics_rate_lock:
+        if len(_app_analytics_rate_hits) > 4096:
+            stale_keys = [
+                key for key, hits in _app_analytics_rate_hits.items()
+                if not hits or hits[-1] < cutoff
+            ]
+            for key in stale_keys:
+                _app_analytics_rate_hits.pop(key, None)
+        hits = [hit for hit in _app_analytics_rate_hits.get(client_key, []) if hit >= cutoff]
+        if len(hits) >= APP_ANALYTICS_RATE_LIMIT:
+            _app_analytics_rate_hits[client_key] = hits
+            return True
+        hits.append(now)
+        _app_analytics_rate_hits[client_key] = hits
+        return False
+
+
+def _parse_app_analytics_timestamp(value):
+    if not isinstance(value, str) or len(value) > 40:
+        return None
+    try:
+        parsed = datetime.datetime.fromisoformat(value.replace("Z", "+00:00"))
+    except ValueError:
+        return None
+    if parsed.tzinfo is None:
+        return None
+    parsed_utc = parsed.astimezone(datetime.timezone.utc).replace(tzinfo=None)
+    now = datetime.datetime.utcnow()
+    if parsed_utc < now - datetime.timedelta(days=APP_ANALYTICS_MAX_EVENT_AGE_DAYS):
+        return None
+    if parsed_utc > now + datetime.timedelta(seconds=APP_ANALYTICS_MAX_FUTURE_SECONDS):
+        return None
+    return parsed_utc
+
+
+def _validate_app_analytics_properties(value):
+    if not isinstance(value, dict) or len(value) > len(APP_ANALYTICS_ALLOWED_PROPERTY_KEYS):
+        return None
+    if not set(value).issubset(APP_ANALYTICS_ALLOWED_PROPERTY_KEYS):
+        return None
+
+    validated = {}
+    for key, item in value.items():
+        if key in APP_ANALYTICS_PROPERTY_ENUMS:
+            if not isinstance(item, str) or item not in APP_ANALYTICS_PROPERTY_ENUMS[key]:
+                return None
+        elif key == "page_id":
+            if not isinstance(item, str) or not APP_ANALYTICS_PAGE_ID_RE.fullmatch(item):
+                return None
+        elif key == "product_id":
+            if not isinstance(item, str) or not APP_ANALYTICS_PRODUCT_ID_RE.fullmatch(item):
+                return None
+        elif key == "duration_ms":
+            if isinstance(item, bool) or not isinstance(item, int) or not 0 <= item <= 120_000:
+                return None
+        elif key == "product_count":
+            if isinstance(item, bool) or not isinstance(item, int) or not 0 <= item <= 10:
+                return None
+        elif key == "trial_days":
+            if isinstance(item, bool) or not isinstance(item, int) or not 0 <= item <= 60:
+                return None
+        elif key in {"has_entitlement", "is_first_session", "trial_eligible"}:
+            if not isinstance(item, bool):
+                return None
+        validated[key] = item
+    return validated
+
+
+def _validate_app_analytics_event(value):
+    if not isinstance(value, dict) or set(value) != APP_ANALYTICS_ALLOWED_EVENT_KEYS:
+        return None
+    event_id = value.get("event_id")
+    install_id = value.get("install_id")
+    session_id = value.get("session_id")
+    if not all(
+        isinstance(item, str) and APP_ANALYTICS_UUID_RE.fullmatch(item)
+        for item in (event_id, install_id, session_id)
+    ):
+        return None
+    name = value.get("name")
+    platform = value.get("platform")
+    app_version = value.get("app_version")
+    app_build = value.get("app_build")
+    if name not in APP_ANALYTICS_ALLOWED_EVENT_NAMES:
+        return None
+    if value.get("app") != "charged-alpha":
+        return None
+    if platform not in NEWSLETTER_API_ALLOWED_PLATFORMS:
+        return None
+    if not isinstance(app_version, str) or not APP_ANALYTICS_METADATA_RE.fullmatch(app_version):
+        return None
+    if not isinstance(app_build, str) or not APP_ANALYTICS_METADATA_RE.fullmatch(app_build):
+        return None
+    if value.get("schema_version") != APP_ANALYTICS_SCHEMA_VERSION:
+        return None
+    occurred_at = _parse_app_analytics_timestamp(value.get("occurred_at"))
+    properties = _validate_app_analytics_properties(value.get("properties"))
+    if occurred_at is None or properties is None:
+        return None
+    return {
+        "event_id": event_id,
+        "install_id": install_id,
+        "session_id": session_id,
+        "event_name": name,
+        "platform": platform,
+        "app_version": app_version,
+        "app_build": app_build,
+        "schema_version": APP_ANALYTICS_SCHEMA_VERSION,
+        "occurred_at": occurred_at,
+        "properties_json": json.dumps(properties, separators=(",", ":"), sort_keys=True),
+    }
+
+
+def _prune_old_app_analytics_events_if_due():
+    global _app_analytics_last_prune
+    now = time.monotonic()
+    with _app_analytics_prune_lock:
+        if now - _app_analytics_last_prune < 24 * 60 * 60:
+            return
+        _app_analytics_last_prune = now
+    cutoff = datetime.datetime.utcnow() - datetime.timedelta(days=APP_ANALYTICS_RETENTION_DAYS)
+    try:
+        AppAnalyticsEvent.query.filter(AppAnalyticsEvent.received_at < cutoff).delete(
+            synchronize_session=False
+        )
+        db.session.commit()
+    except SQLAlchemyError:
+        db.session.rollback()
+        app.logger.exception("Could not prune expired app analytics events")
 
 
 def _clean_tracking_value(value, fallback=""):
@@ -2126,6 +2380,106 @@ def newsletter_api(action):
     # Never reveal whether an address was new, already subscribed, or already
     # suppressed. The same idempotent response is safe for retries.
     return _newsletter_api_response({"ok": True})
+
+
+@app.route("/api/app-analytics/events", methods=["POST", "OPTIONS"])
+def app_analytics_events_api():
+    """Ingest a small, allowlisted batch of pseudonymous mobile-app events."""
+    if _newsletter_api_origin() not in NEWSLETTER_API_ALLOWED_ORIGINS:
+        return _app_analytics_response({"ok": False, "error": "Invalid request"}, 403)
+
+    if request.method == "OPTIONS":
+        return _app_analytics_response(status=204)
+
+    if _app_analytics_rate_limited():
+        return _app_analytics_response({"ok": False, "error": "Try again later"}, 429)
+    if request.content_length is not None and request.content_length > APP_ANALYTICS_MAX_BODY_BYTES:
+        return _app_analytics_response({"ok": False, "error": "Invalid request"}, 400)
+    if not request.is_json:
+        return _app_analytics_response({"ok": False, "error": "Invalid request"}, 400)
+
+    body = request.get_json(silent=True)
+    if not isinstance(body, dict) or set(body) != {"events"}:
+        return _app_analytics_response({"ok": False, "error": "Invalid request"}, 400)
+    raw_events = body.get("events")
+    if (
+        not isinstance(raw_events, list)
+        or not raw_events
+        or len(raw_events) > APP_ANALYTICS_MAX_BATCH_SIZE
+    ):
+        return _app_analytics_response({"ok": False, "error": "Invalid request"}, 400)
+
+    validated_events = []
+    for raw_event in raw_events:
+        validated = _validate_app_analytics_event(raw_event)
+        if validated is None:
+            return _app_analytics_response({"ok": False, "error": "Invalid request"}, 400)
+        validated_events.append(validated)
+
+    # Event IDs make the client's offline retry idempotent. Also collapse a
+    # duplicate repeated inside one request before touching the database.
+    unique_events = {}
+    duplicate_count = 0
+    for event in validated_events:
+        if event["event_id"] in unique_events:
+            duplicate_count += 1
+        else:
+            unique_events[event["event_id"]] = event
+    event_ids = list(unique_events)
+    existing_ids = {
+        row[0]
+        for row in db.session.query(AppAnalyticsEvent.event_id)
+        .filter(AppAnalyticsEvent.event_id.in_(event_ids))
+        .all()
+    }
+    duplicate_count += len(existing_ids)
+    new_events = [
+        AppAnalyticsEvent(**event)
+        for event_id, event in unique_events.items()
+        if event_id not in existing_ids
+    ]
+
+    try:
+        db.session.add_all(new_events)
+        db.session.commit()
+    except IntegrityError:
+        # Two concurrent retries may race between the existence check and the
+        # unique insert. Treat the winning request as delivery, then insert any
+        # genuinely missing events from this batch once more.
+        db.session.rollback()
+        now_existing_ids = {
+            row[0]
+            for row in db.session.query(AppAnalyticsEvent.event_id)
+            .filter(AppAnalyticsEvent.event_id.in_(event_ids))
+            .all()
+        }
+        retry_events = [
+            AppAnalyticsEvent(**event)
+            for event_id, event in unique_events.items()
+            if event_id not in now_existing_ids
+        ]
+        try:
+            db.session.add_all(retry_events)
+            db.session.commit()
+        except SQLAlchemyError:
+            db.session.rollback()
+            app.logger.exception("Could not record app analytics events")
+            return _app_analytics_response(
+                {"ok": False, "error": "Temporarily unavailable"}, 503
+            )
+        duplicate_count += len(now_existing_ids - existing_ids)
+        new_events = retry_events
+    except SQLAlchemyError:
+        db.session.rollback()
+        app.logger.exception("Could not record app analytics events")
+        return _app_analytics_response({"ok": False, "error": "Temporarily unavailable"}, 503)
+
+    _prune_old_app_analytics_events_if_due()
+    return _app_analytics_response({
+        "ok": True,
+        "accepted": len(new_events),
+        "duplicates": duplicate_count,
+    })
 
 
 # ═════════════════════════════════════════════════════════════════════════════

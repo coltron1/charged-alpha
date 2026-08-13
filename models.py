@@ -98,3 +98,35 @@ class EmailSubscriber(db.Model):
     def __repr__(self):
         status = "subscribed" if self.subscribed else "unsubscribed"
         return f"<EmailSubscriber {self.email} {status}>"
+
+
+class AppAnalyticsEvent(db.Model):
+    """Privacy-safe product event from the Charged Alpha mobile app.
+
+    ``install_id`` is generated randomly by the app and is not derived from a
+    device, advertising, account, email, or store identifier. Event payloads
+    are validated against a small allowlist before reaching this table.
+    """
+
+    __tablename__ = "app_analytics_events"
+
+    id = db.Column(db.Integer, primary_key=True)
+    event_id = db.Column(db.String(36), nullable=False, unique=True, index=True)
+    install_id = db.Column(db.String(36), nullable=False, index=True)
+    session_id = db.Column(db.String(36), nullable=False, index=True)
+    event_name = db.Column(db.String(64), nullable=False, index=True)
+    platform = db.Column(db.String(16), nullable=False, index=True)
+    app_version = db.Column(db.String(40), nullable=False, index=True)
+    app_build = db.Column(db.String(40), nullable=False)
+    schema_version = db.Column(db.Integer, nullable=False)
+    occurred_at = db.Column(db.DateTime, nullable=False, index=True)
+    properties_json = db.Column(db.Text, nullable=False, default="{}")
+    received_at = db.Column(db.DateTime, default=datetime.datetime.utcnow, nullable=False, index=True)
+
+    __table_args__ = (
+        db.Index("ix_app_analytics_name_occurred", "event_name", "occurred_at"),
+        db.Index("ix_app_analytics_install_occurred", "install_id", "occurred_at"),
+    )
+
+    def __repr__(self):
+        return f"<AppAnalyticsEvent {self.event_name} {self.event_id}>"
