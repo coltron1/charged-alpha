@@ -10,6 +10,312 @@
   },
   "episodes": [
     {
+      "ticker": "FERG",
+      "company": "FERG",
+      "sector": "Unclassified",
+      "quarter": "Q2 2026",
+      "episode_number": "",
+      "title": "Ferguson Enterprises (FERG): Beat, Raised, And The Bill Two Days Later",
+      "published_at": "2026-08-13T01:20:24+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=x3s3lTzenhw",
+      "spotify_url": "https://open.spotify.com/episode/3AdBvQhTV3CRerKwKxUfbd",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/ferguson-enterprises-ferg-beat-raised-and-the-bill-two-days-later/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "CAVA",
+      "company": "CAVA",
+      "sector": "Unclassified",
+      "quarter": "Q2 2026",
+      "episode_number": "",
+      "title": "CAVA Group (CAVA): The 14% Rally And The Sentence In The Footnote",
+      "published_at": "2026-08-13T00:25:48+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=rlRN5jGS4E8",
+      "spotify_url": "https://open.spotify.com/episode/18GAUDdmCuBCMQstkvh9Se",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/cava-group-cava-the-14-rally-and-the-sentence-in-the-footnote/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "LITE",
+      "company": "LITE",
+      "sector": "Unclassified",
+      "quarter": "Q4 FY2026",
+      "episode_number": "",
+      "title": "Lumentum (LITE) Q4 FY2026 Earnings: The $7.8 Billion Receipt",
+      "published_at": "2026-08-12T23:33:42+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=wgkVmcSq1XI",
+      "spotify_url": "https://open.spotify.com/episode/7sbHpnyFFrEmIgfQ8R3fZG",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/lumentum-lite-q4-fy2026-earnings-the-78-billion-receipt/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "FRVO",
+      "company": "FRVO",
+      "sector": "Unclassified",
+      "quarter": "Q2 2026",
+      "episode_number": "",
+      "title": "Fervo Energy (FRVO) Q2 2026 Earnings: The Backlog Is Ahead Of The Rock",
+      "published_at": "2026-08-12T22:33:25+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=wopBvrcOQS8",
+      "spotify_url": "https://open.spotify.com/episode/45vxM9s414XG9SIOck3wvd",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/fervo-energy-frvo-q2-2026-earnings-the-backlog-is-ahead-of-the-rock/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "WYFI",
+      "company": "WYFI",
+      "sector": "Unclassified",
+      "quarter": "Q2 2026",
+      "episode_number": "",
+      "title": "WhiteFiber (WYFI) Q2 2026 Earnings: The Growth Was A Breakup Fee",
+      "published_at": "2026-08-12T21:53:35+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=Wn2e66Vne0Y",
+      "spotify_url": "https://open.spotify.com/episode/0DP6M1SA4dMWSkWwc7hvTK",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/whitefiber-wyfi-q2-2026-earnings-the-growth-was-a-breakup-fee/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "AADX",
+      "company": "AADX",
+      "sector": "Unclassified",
+      "quarter": "Q2 2026",
+      "episode_number": "",
+      "title": "Applied Aerospace & Defense (AADX) Q2 2026 Earnings: Record EBITDA, Minus $103.7M Cash",
+      "published_at": "2026-08-12T21:15:43+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=uS4KaY8K38g",
+      "spotify_url": "https://open.spotify.com/episode/3imQMy4G8LjRnBM75CQggy",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/applied-aerospace-defense-aadx-q2-2026-earnings-record-ebitda-minus-1037m-cash/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "AAON",
+      "company": "AAON",
+      "sector": "Unclassified",
+      "quarter": "Q2 2026",
+      "episode_number": "",
+      "title": "AAON (AAON): Sales Doubled, the Guide Rose — and the Stock Fell 6%. Is AAON a Buy?",
+      "published_at": "2026-08-12T20:14:40+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=28yWcjF740g",
+      "spotify_url": "https://open.spotify.com/episode/1oZCipvYIElsLqgFDkrnBB",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/aaon-aaon-sales-doubled-the-guide-rose-%e2%80%94-and-the-stock-fell-6-is-aaon-a-buy/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "HIMS",
+      "company": "HIMS",
+      "sector": "Unclassified",
+      "quarter": "Q2 2026",
+      "episode_number": "",
+      "title": "Hims & Hers (HIMS) Q2 2026 Earnings: 31 Cents On The Dollar",
+      "published_at": "2026-08-12T20:02:02+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=SDufAgD4S1Y",
+      "spotify_url": "https://open.spotify.com/episode/4vQilKnZIZ90gaGMC5ulrG",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/hims-hers-hims-q2-2026-earnings-31-cents-on-the-dollar/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "LQDA",
+      "company": "LQDA",
+      "sector": "Unclassified",
+      "quarter": "Q2 2026",
+      "episode_number": "",
+      "title": "Liquidia (LQDA) Q2 2026 Earnings: The Same $40 Million, Three Quarters Running",
+      "published_at": "2026-08-12T14:56:58+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=8C2zCRm668Y",
+      "spotify_url": "https://open.spotify.com/episode/5ZFGUs5mpcFKjQ7w0aNkv4",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/liquidia-lqda-q2-2026-earnings-the-same-40-million-three-quarters-running/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "CAH",
+      "company": "CAH",
+      "sector": "Unclassified",
+      "quarter": "Q4 FY2026",
+      "episode_number": "",
+      "title": "Cardinal Health (CAH) Q4 FY2026 Earnings: EPS Guided Up, Cash Guided Down",
+      "published_at": "2026-08-12T14:03:30+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=wXqsiXu2ids",
+      "spotify_url": "https://open.spotify.com/episode/3myt8eAu1POjoBtuDOEmHa",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/cardinal-health-cah-q4-fy2026-earnings-eps-guided-up-cash-guided-down/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "CRWV",
+      "company": "CRWV",
+      "sector": "Unclassified",
+      "quarter": "Q2 2026",
+      "episode_number": "",
+      "title": "CoreWeave (CRWV) Q2 2026 Earnings: The $104B Backlog Only Lasts 2.6 Years",
+      "published_at": "2026-08-12T13:01:04+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=SfyUnbyh5GY",
+      "spotify_url": "",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/coreweave-crwv-q2-2026-earnings-the-104b-backlog-only-lasts-26-years/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "ONON",
+      "company": "ONON",
+      "sector": "Unclassified",
+      "quarter": "Q2 2026",
+      "episode_number": "",
+      "title": "On Holding (ONON) Q2 2026 Earnings: Down 20% On A Record 65.4% Gross Margin",
+      "published_at": "2026-08-12T12:52:20+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=nAoAN0Dq9Pg",
+      "spotify_url": "",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/on-holding-onon-q2-2026-earnings-down-20-on-a-record-654-gross-margin/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "CAMT",
+      "company": "CAMT",
+      "sector": "Unclassified",
+      "quarter": "Q2 2026",
+      "episode_number": "",
+      "title": "Camtek (CAMT) Q2 2026 Earnings: Record Revenue, ZERO Extra Operating Profit",
+      "published_at": "2026-08-12T10:46:25+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=x3v09Bwo_rE",
+      "spotify_url": "",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/camtek-camt-q2-2026-earnings-record-revenue-zero-extra-operating-profit/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "IMOS",
+      "company": "IMOS",
+      "sector": "Unclassified",
+      "quarter": "Q2 2026",
+      "episode_number": "",
+      "title": "ChipMOS (IMOS) Q2 2026 Earnings: Record Since 2014 - The Beat Was PRICE, Not Volume",
+      "published_at": "2026-08-12T09:44:48+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=Lg-uPPRSqU4",
+      "spotify_url": "",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/chipmos-imos-q2-2026-earnings-record-since-2014-the-beat-was-price-not-volume/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "SMCI",
+      "company": "Super Micro Computer",
+      "sector": "Technology",
+      "quarter": "Q4 FY2026",
+      "episode_number": "",
+      "title": "Super Micro (SMCI) Q4 FY2026 Earnings: $2.2B Profit, $6.8B Of Cash GONE",
+      "published_at": "2026-08-12T08:22:53+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=YEbuV92rAZQ",
+      "spotify_url": "",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/super-micro-smci-q4-fy2026-earnings-22b-profit-68b-of-cash-gone/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "QUBT",
+      "company": "QUBT",
+      "sector": "Unclassified",
+      "quarter": "Q2 2026",
+      "episode_number": "",
+      "title": "Quantum Computing (QUBT) Q2 2026 Earnings: Revenue Up 91x, Like-For-Like It FELL 42%",
+      "published_at": "2026-08-12T07:09:41+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=pkXiacWPGQg",
+      "spotify_url": "",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/quantum-computing-qubt-q2-2026-earnings-revenue-up-91x-like-for-like-it-fell-42/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "AMBQ",
+      "company": "AMBQ",
+      "sector": "Unclassified",
+      "quarter": "Q2 2026",
+      "episode_number": "",
+      "title": "Ambiq Micro (AMBQ) Q2 2026 Earnings: 90% Growth, And A Guide That Doubles The Loss",
+      "published_at": "2026-08-12T06:11:21+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=oQOu_5WXXxc",
+      "spotify_url": "",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/ambiq-micro-ambq-q2-2026-earnings-90-growth-and-a-guide-that-doubles-the-loss/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
       "ticker": "AEVA",
       "company": "AEVA",
       "sector": "Unclassified",
@@ -29393,6 +29699,232 @@
       "description": "Fast clips that point viewers into full research videos and stock pages.",
       "videos": [
         {
+          "title": "FERG Stock: Ferguson Enterprises Q2 2026 Earnings - Beat, Raised, Then -7% #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/gzwfu28il1A",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-08-13T01:21:09+00:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "FERG"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "CAVA Stock: CAVA Group Q2 2026 Earnings - The 14% Rally And The Footnote #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/IfL-MN9STVQ",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-08-13T00:26:27+00:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "CAVA"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "LITE Stock: Lumentum Q4 FY2026 Earnings - A $7.8B Charge And 42% More Shares",
+          "youtube_url": "https://www.youtube.com/shorts/wcHV--IkeOM",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-08-12T23:34:14+00:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "LITE",
+            "FY2026"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "FRVO Stock: Fervo Energy Q2 2026 Earnings - 658 MW Sold, Zero Online",
+          "youtube_url": "https://www.youtube.com/shorts/cJFRwjIrHzo",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-08-12T22:34:01+00:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "FRVO",
+            "MW"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "WYFI Stock: WhiteFiber Q2 2026 Earnings - The Growth Was A Breakup Fee",
+          "youtube_url": "https://www.youtube.com/shorts/eHjRZD6qqCo",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-08-12T21:54:16+00:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "WYFI"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "AADX Stock: Applied Aerospace & Defense Q2 2026 Earnings - Record EBITDA, No Cash",
+          "youtube_url": "https://www.youtube.com/shorts/UGmRQepLXjE",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-08-12T21:16:16+00:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "AADX",
+            "EBITDA"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "AAON Stock: AAON Inc Q2 2026 Earnings - Sales Doubled, Stock Fell 6%",
+          "youtube_url": "https://www.youtube.com/shorts/xOmX8hjcBfg",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-08-12T20:15:11+00:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "AAON"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "HIMS Stock: Hims & Hers Q2 2026 Earnings - 31 Cents On The Dollar",
+          "youtube_url": "https://www.youtube.com/shorts/Ht9cF5uvjTQ",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-08-12T20:02:38+00:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "HIMS"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "LQDA Stock: Liquidia Q2 2026 Earnings - The Same $40M, Three Quarters",
+          "youtube_url": "https://www.youtube.com/shorts/w0ZrBUOFLrk",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-08-12T08:04:14-07:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "LQDA"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "CAH Stock: Cardinal Health Q4 FY2026 Earnings - EPS Up, Cash Down",
+          "youtube_url": "https://www.youtube.com/shorts/C6_AYrIFuXg",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-08-12T07:04:00-07:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "CAH",
+            "FY2026"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "CRWV Stock: CoreWeave Q2 2026 Earnings - The $104B Backlog Only Lasts 2.6 Years",
+          "youtube_url": "https://www.youtube.com/shorts/skm4gJJzOjE",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-08-12T06:06:15-07:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "CRWV"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "ONON Stock: On Holding Q2 2026 Earnings - Down 20% On A Record 65.4% Margin",
+          "youtube_url": "https://www.youtube.com/shorts/j4lN5hVon4o",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-08-12T06:00:11-07:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "ONON"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "CAMT Stock: Camtek Q2 2026 Earnings - Record Revenue, Zero Extra Operating Profit",
+          "youtube_url": "https://www.youtube.com/shorts/EHuW8V-WBuw",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-08-12T03:52:10-07:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "CAMT"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "IMOS Stock: ChipMOS Q2 2026 Earnings - Best Quarter Since 2014, Cash Went Negative",
+          "youtube_url": "https://www.youtube.com/shorts/E5Zb0tH1l3M",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-08-12T02:44:56-07:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "IMOS"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "SMCI Stock: Super Micro Computer Q4 FY2026 Earnings - $2.2B Profit, $6.8B Cash Gone",
+          "youtube_url": "https://www.youtube.com/shorts/ikK5BnwKtA4",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-08-12T01:23:18-07:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "SMCI",
+            "FY2026"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "QUBT Stock: Quantum Computing Inc Q2 2026 Earnings - The Ramp Was Bought",
+          "youtube_url": "https://www.youtube.com/shorts/T8ukRWxgmvU",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-08-12T00:10:03-07:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "QUBT"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "AMBQ Stock: Ambiq Micro Q2 2026 Earnings - The Guide Doubles The Loss",
+          "youtube_url": "https://www.youtube.com/shorts/uhqRbN4_AbQ",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-08-11T23:12:22-07:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "AMBQ"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
           "title": "AEVA Stock: Aeva Technologies Q2 2026 Earnings - The Product Line Fell 39%",
           "youtube_url": "https://www.youtube.com/shorts/3Fnl8Y6gWmA",
           "spotify_url": "",
@@ -35859,5 +36391,5 @@
       ]
     }
   ],
-  "last_synced_at": "2026-08-10T21:04:04-05:00"
+  "last_synced_at": "2026-08-12T21:03:17-05:00"
 }
