@@ -2020,7 +2020,39 @@ def build_stock_competitor_analysis(show_stock, primary_snapshot, all_stocks):
 
 app.url_map.strict_slashes = False
 app.config['MAX_CONTENT_LENGTH'] = 1 * 1024 * 1024  # 1MB max request body
-app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY', 'dev-secret-change-in-production')
+DEFAULT_DEV_SECRET_KEY = "dev-secret-change-in-production"
+RAILWAY_RUNTIME_MARKERS = (
+    # ``RAILWAY_ENVIRONMENT`` is retained for compatibility with older/user
+    # configurations; the ID/deployment/service variables are injected by
+    # current Railway runtimes.
+    "RAILWAY_ENVIRONMENT",
+    "RAILWAY_ENVIRONMENT_ID",
+    "RAILWAY_DEPLOYMENT_ID",
+    "RAILWAY_SERVICE_ID",
+)
+
+
+def _resolve_secret_key():
+    configured = os.environ.get("SECRET_KEY")
+    configured_trimmed = (configured or "").strip()
+    on_railway = any(
+        (os.environ.get(marker) or "").strip()
+        for marker in RAILWAY_RUNTIME_MARKERS
+    )
+    production = on_railway or (
+        (os.environ.get("FLASK_ENV") or "").strip().lower() == "production"
+    )
+    if production and (
+        not configured_trimmed
+        or configured_trimmed == DEFAULT_DEV_SECRET_KEY
+    ):
+        raise RuntimeError(
+            "SECRET_KEY must be set to a non-default value in production."
+        )
+    return configured if configured_trimmed else DEFAULT_DEV_SECRET_KEY
+
+
+app.config['SECRET_KEY'] = _resolve_secret_key()
 app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL', 'sqlite:///charged_alpha.db')
 app.config['PREFERRED_URL_SCHEME'] = "https" if SITE_URL.startswith("https://") else "http"
 # Railway Postgres uses postgres:// but SQLAlchemy needs postgresql://
@@ -2034,7 +2066,9 @@ app.config.update(
     REMEMBER_COOKIE_HTTPONLY=True,
     REMEMBER_COOKIE_SAMESITE="Lax",
 )
-if os.environ.get("RAILWAY_ENVIRONMENT") or os.environ.get("FLASK_ENV") == "production":
+if any((os.environ.get(marker) or "").strip() for marker in RAILWAY_RUNTIME_MARKERS) or (
+    (os.environ.get("FLASK_ENV") or "").strip().lower() == "production"
+):
     app.config.update(
         SESSION_COOKIE_SECURE=True,
         REMEMBER_COOKIE_SECURE=True,
