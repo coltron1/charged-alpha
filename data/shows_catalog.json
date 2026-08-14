@@ -10,6 +10,150 @@
   },
   "episodes": [
     {
+      "ticker": "ERAS",
+      "company": "ERAS",
+      "sector": "Unclassified",
+      "quarter": "Q2 2026",
+      "episode_number": "",
+      "title": "Erasca (ERAS) Q2 2026: Positive Data. The Stock Fell 48%.",
+      "published_at": "2026-08-13T08:49:48+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=gK2Ti8t3S-M",
+      "spotify_url": "https://open.spotify.com/episode/5xgkrXvqUuw0B1rDvculGJ",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/erasca-eras-q2-2026-positive-data-the-stock-fell-48/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "SLS",
+      "company": "SLS",
+      "sector": "Unclassified",
+      "quarter": "Q2 2026",
+      "episode_number": "",
+      "title": "SELLAS (SLS) Q2 2026: EPS Improved 29%. The Loss Got 46% Worse.",
+      "published_at": "2026-08-13T08:03:59+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=2mVgFQH9w54",
+      "spotify_url": "https://open.spotify.com/episode/3yHjeQcWj4a4IErfRlvEQ7",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/sellas-sls-q2-2026-eps-improved-29-the-loss-got-46-worse/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "AXSM",
+      "company": "Axsome Therapeutics",
+      "sector": "Healthcare",
+      "quarter": "Q2 2026",
+      "episode_number": "",
+      "title": "Axsome (AXSM) Q2 2026: 96 Cents Of Selling Cost Per Dollar Sold",
+      "published_at": "2026-08-13T06:59:57+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=KbIom9I8M-Y",
+      "spotify_url": "https://open.spotify.com/episode/4QBp8w4AtRQnVfSRtm3IgT",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/axsome-axsm-q2-2026-96-cents-of-selling-cost-per-dollar-sold/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "ALC",
+      "company": "ALC",
+      "sector": "Unclassified",
+      "quarter": "Q2 2026",
+      "episode_number": "",
+      "title": "Alcon (ALC) Q2 2026: A $402M Write-Off And A Lens Line Growing 1%",
+      "published_at": "2026-08-13T06:06:26+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=KMDPbN8cKoI",
+      "spotify_url": "https://open.spotify.com/episode/6Ap6AMrG6itxyZPWP0PC6i",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/alcon-alc-q2-2026-a-402m-write-off-and-a-lens-line-growing-1/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "FNV",
+      "company": "FNV",
+      "sector": "Unclassified",
+      "quarter": "Q2 2026",
+      "episode_number": "",
+      "title": "Franco-Nevada (FNV) Q2 2026: A 14-Cent Miss And A $42M Bullion Gain",
+      "published_at": "2026-08-13T05:17:30+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=18RVlOpZhGM",
+      "spotify_url": "https://open.spotify.com/episode/3wpONLbZHzLADOcAl6hJtc",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/franco-nevada-fnv-q2-2026-a-14-cent-miss-and-a-42m-bullion-gain/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "SPG",
+      "company": "SPG",
+      "sector": "Unclassified",
+      "quarter": "Q2 2026",
+      "episode_number": "",
+      "title": "Simon Property (SPG) Q2 2026: A 15-Cent EPS Miss, And A 1-Cent Move",
+      "published_at": "2026-08-13T04:21:48+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=-V-espReifc",
+      "spotify_url": "https://open.spotify.com/episode/1ve1EEoglNxZ2DD5lWpqK2",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/simon-property-spg-q2-2026-a-15-cent-eps-miss-and-a-1-cent-move/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "BBIO",
+      "company": "BBIO",
+      "sector": "Unclassified",
+      "quarter": "Q2 2026",
+      "episode_number": "",
+      "title": "BridgeBio (BBIO) Q2 2026: Attruby Up 211%, And The $934M Preferred",
+      "published_at": "2026-08-13T03:30:27+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=I0IKjoarPhM",
+      "spotify_url": "https://open.spotify.com/episode/3GpaGH0aDzlEPCbzvuwLEK",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/bridgebio-bbio-q2-2026-attruby-up-211-and-the-934m-preferred/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "TRMB",
+      "company": "TRMB",
+      "sector": "Unclassified",
+      "quarter": "Q2 2026",
+      "episode_number": "",
+      "title": "Trimble (TRMB) Q2 2026: A Beat, A Raise, And A $562M Write-Down",
+      "published_at": "2026-08-13T02:12:15+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=r56XVJh6dX0",
+      "spotify_url": "https://open.spotify.com/episode/3LjZ9e1K0CJR87bkPB8wU3",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/trimble-trmb-q2-2026-a-beat-a-raise-and-a-562m-write-down/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
       "ticker": "FERG",
       "company": "FERG",
       "sector": "Unclassified",
@@ -29699,6 +29843,98 @@
       "description": "Fast clips that point viewers into full research videos and stock pages.",
       "videos": [
         {
+          "title": "SLS Stock: SELLAS Life Sciences Q2 2026 Earnings - EPS Improved, The Loss Got Worse",
+          "youtube_url": "https://www.youtube.com/shorts/sEBw1wViG5E",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-08-13T08:07:01+00:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "SLS",
+            "SELLAS"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "AXSM Stock: Axsome Therapeutics Q2 2026 Earnings - It Missed Twice And Went Up",
+          "youtube_url": "https://www.youtube.com/shorts/rej1n5RdbtA",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-08-13T07:00:32+00:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "AXSM"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "ALC Stock: Alcon Q2 2026 Earnings - The Growth Came From The Wrong Line",
+          "youtube_url": "https://www.youtube.com/shorts/F8p18V29tpk",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-08-13T06:07:01+00:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "ALC"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "FNV Stock: Franco-Nevada Q2 2026 Earnings - The 14-Cent Miss Explained",
+          "youtube_url": "https://www.youtube.com/shorts/WZ0p27_DxcE",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-08-13T05:17:56+00:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "FNV"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "SPG Stock: Simon Property Q2 2026 Earnings - The EPS Miss That Was Not One",
+          "youtube_url": "https://www.youtube.com/shorts/6MqU5Aci7F4",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-08-13T04:22:23+00:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "SPG"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "BBIO Stock: BridgeBio Q2 2026 Earnings - Attruby Up 211%, Still A $152M Loss",
+          "youtube_url": "https://www.youtube.com/shorts/tGzC4DDVokc",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-08-13T03:31:01+00:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "BBIO"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "TRMB Stock: Trimble Q2 2026 Earnings - A Beat, A Raise, A $562M Write-Down #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/8lqxulASPws",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-08-13T02:12:57+00:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "TRMB"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
           "title": "FERG Stock: Ferguson Enterprises Q2 2026 Earnings - Beat, Raised, Then -7% #Shorts",
           "youtube_url": "https://www.youtube.com/shorts/gzwfu28il1A",
           "spotify_url": "",
@@ -36391,5 +36627,4021 @@
       ]
     }
   ],
-  "last_synced_at": "2026-08-12T21:03:17-05:00"
+  "last_synced_at": "2026-08-13T13:16:15-05:00",
+  "stock_metadata": {
+    "A": {
+      "company": "Agilent Technologies, Inc.",
+      "sector": "Healthcare"
+    },
+    "AA": {
+      "company": "Alcoa Corporation",
+      "sector": "Basic Materials"
+    },
+    "AADX": {
+      "company": "Applied Aerospace & Defense, Inc.",
+      "sector": "Industrials"
+    },
+    "AAL": {
+      "company": "American Airlines Group Inc.",
+      "sector": "Industrials"
+    },
+    "AAOI": {
+      "company": "Applied Optoelectronics, Inc.",
+      "sector": "Technology"
+    },
+    "AAON": {
+      "company": "AAON, Inc.",
+      "sector": "Industrials"
+    },
+    "AAP": {
+      "company": "Advance Auto Parts Inc.",
+      "sector": "Consumer Cyclical"
+    },
+    "AAPL": {
+      "company": "Apple Inc.",
+      "sector": "Technology"
+    },
+    "ABBV": {
+      "company": "AbbVie Inc.",
+      "sector": "Healthcare"
+    },
+    "ABM": {
+      "company": "ABM Industries Incorporated",
+      "sector": "Industrials"
+    },
+    "ABNB": {
+      "company": "Airbnb, Inc.",
+      "sector": "Consumer Cyclical"
+    },
+    "ABT": {
+      "company": "Abbott Laboratories",
+      "sector": "Healthcare"
+    },
+    "ACGL": {
+      "company": "Arch Capital Group Ltd.",
+      "sector": "Financial Services"
+    },
+    "ACHR": {
+      "company": "Archer Aviation Inc.",
+      "sector": "Industrials"
+    },
+    "ACI": {
+      "company": "Albertsons Companies, Inc.",
+      "sector": "Consumer Defensive"
+    },
+    "ACM": {
+      "company": "AECOM",
+      "sector": "Industrials"
+    },
+    "ACMR": {
+      "company": "ACM Research, Inc.",
+      "sector": "Technology"
+    },
+    "ACN": {
+      "company": "Accenture plc",
+      "sector": "Technology"
+    },
+    "ADBE": {
+      "company": "Adobe Inc.",
+      "sector": "Technology"
+    },
+    "ADC": {
+      "company": "Agree Realty Corporation",
+      "sector": "Real Estate"
+    },
+    "ADI": {
+      "company": "Analog Devices, Inc.",
+      "sector": "Technology"
+    },
+    "ADM": {
+      "company": "Archer-Daniels-Midland Company",
+      "sector": "Consumer Defensive"
+    },
+    "ADP": {
+      "company": "Automatic Data Processing, Inc.",
+      "sector": "Technology"
+    },
+    "ADSK": {
+      "company": "Autodesk, Inc.",
+      "sector": "Technology"
+    },
+    "AEE": {
+      "company": "Ameren Corporation",
+      "sector": "Utilities"
+    },
+    "AEHR": {
+      "company": "Aehr Test Systems, Inc.",
+      "sector": "Technology"
+    },
+    "AEIS": {
+      "company": "Advanced Energy Industries, Inc.",
+      "sector": "Industrials"
+    },
+    "AEO": {
+      "company": "American Eagle Outfitters, Inc.",
+      "sector": "Consumer Cyclical"
+    },
+    "AEP": {
+      "company": "American Electric Power Company, Inc.",
+      "sector": "Utilities"
+    },
+    "AERO": {
+      "company": "Grupo Aeromexico, S.A.B. de C.V",
+      "sector": "Industrials"
+    },
+    "AEVA": {
+      "company": "Aeva Technologies, Inc.",
+      "sector": "Technology"
+    },
+    "AFL": {
+      "company": "AFLAC Incorporated",
+      "sector": "Financial Services"
+    },
+    "AFRM": {
+      "company": "Affirm Holdings, Inc.",
+      "sector": "Financial Services"
+    },
+    "AGNC": {
+      "company": "AGNC Investment Corp.",
+      "sector": "Real Estate"
+    },
+    "AGX": {
+      "company": "Argan, Inc.",
+      "sector": "Industrials"
+    },
+    "AI": {
+      "company": "C3.ai, Inc.",
+      "sector": "Technology"
+    },
+    "AIG": {
+      "company": "American International Group, I",
+      "sector": "Financial Services"
+    },
+    "AIP": {
+      "company": "Arteris, Inc.",
+      "sector": "Technology"
+    },
+    "AIR": {
+      "company": "AAR Corp.",
+      "sector": "Industrials"
+    },
+    "AJG": {
+      "company": "Arthur J. Gallagher & Co.",
+      "sector": "Financial Services"
+    },
+    "AKAM": {
+      "company": "Akamai Technologies, Inc.",
+      "sector": "Technology"
+    },
+    "ALAB": {
+      "company": "Astera Labs, Inc.",
+      "sector": "Technology"
+    },
+    "ALB": {
+      "sector": "Basic Materials",
+      "company": "Albemarle Corporation"
+    },
+    "ALC": {
+      "company": "Alcon Inc.",
+      "sector": "Healthcare"
+    },
+    "ALGM": {
+      "company": "Allegro MicroSystems, Inc.",
+      "sector": "Technology"
+    },
+    "ALGN": {
+      "company": "Align Technology, Inc.",
+      "sector": "Healthcare"
+    },
+    "ALK": {
+      "company": "Alaska Air Group Inc",
+      "sector": "Industrials"
+    },
+    "ALL": {
+      "company": "The Allstate Corporation",
+      "sector": "Financial Services"
+    },
+    "ALLE": {
+      "company": "Allegion plc",
+      "sector": "Industrials"
+    },
+    "ALLY": {
+      "company": "Ally Financial Inc.",
+      "sector": "Financials"
+    },
+    "ALV": {
+      "company": "Autoliv, Inc.",
+      "sector": "Consumer Cyclical"
+    },
+    "AMAT": {
+      "company": "Applied Materials",
+      "sector": "Technology"
+    },
+    "AMBA": {
+      "company": "Ambarella, Inc.",
+      "sector": "Technology"
+    },
+    "AMBQ": {
+      "company": "Ambiq Micro, Inc.",
+      "sector": "Technology"
+    },
+    "AMD": {
+      "company": "Advanced Micro Devices",
+      "sector": "Technology"
+    },
+    "AME": {
+      "company": "AMETEK, Inc.",
+      "sector": "Industrials"
+    },
+    "AMGN": {
+      "company": "Amgen Inc.",
+      "sector": "Healthcare"
+    },
+    "AMKR": {
+      "company": "Amkor Technology, Inc.",
+      "sector": "Technology"
+    },
+    "AMP": {
+      "company": "Ameriprise Financial, Inc.",
+      "sector": "Financial Services"
+    },
+    "AMRX": {
+      "company": "Amneal Pharmaceuticals, Inc.",
+      "sector": "Healthcare"
+    },
+    "AMRZ": {
+      "company": "Amrize Ltd",
+      "sector": "Basic Materials"
+    },
+    "AMT": {
+      "company": "American Tower Corp.",
+      "sector": "Real Estate"
+    },
+    "AMTM": {
+      "company": "Amentum Holdings, Inc.",
+      "sector": "Industrials"
+    },
+    "AMZN": {
+      "company": "Amazon.com Inc.",
+      "sector": "Consumer"
+    },
+    "AN": {
+      "company": "AutoNation, Inc.",
+      "sector": "Consumer Cyclical"
+    },
+    "ANET": {
+      "company": "Arista Networks",
+      "sector": "Technology"
+    },
+    "ANF": {
+      "company": "Abercrombie & Fitch Co.",
+      "sector": "Consumer Cyclical"
+    },
+    "ANGO": {
+      "company": "AngioDynamics, Inc.",
+      "sector": "Healthcare"
+    },
+    "ANTA": {
+      "company": "Antalpha Platform Holding Compa",
+      "sector": "Financial Services"
+    },
+    "ANTOF": {
+      "company": "Iida Group Holdings Co., Ltd.",
+      "sector": "Consumer Cyclical"
+    },
+    "AON": {
+      "company": "Aon plc",
+      "sector": "Financial Services"
+    },
+    "AOS": {
+      "company": "A. O. Smith Corporation",
+      "sector": "Industrials"
+    },
+    "APD": {
+      "company": "Air Products & Chemicals",
+      "sector": "Materials"
+    },
+    "APH": {
+      "sector": "Technology",
+      "company": "Amphenol Corporation"
+    },
+    "APLD": {
+      "company": "Applied Digital Corporation",
+      "sector": "Technology"
+    },
+    "APO": {
+      "company": "Apollo Global Management, Inc.",
+      "sector": "Financial Services"
+    },
+    "APP": {
+      "company": "AppLovin Corporation",
+      "sector": "Communication Services"
+    },
+    "APPF": {
+      "company": "AppFolio, Inc.",
+      "sector": "Technology"
+    },
+    "ARCO": {
+      "company": "Arcos Dorados Holdings Inc.",
+      "sector": "Consumer Cyclical"
+    },
+    "ARES": {
+      "company": "Ares Management Corporation",
+      "sector": "Financial Services"
+    },
+    "ARGX": {
+      "company": "argenx SE",
+      "sector": "Healthcare"
+    },
+    "ARLP": {
+      "company": "Alliance Resource Partners, L.P.",
+      "sector": "Energy"
+    },
+    "ARM": {
+      "company": "Arm Holdings plc",
+      "sector": "Technology"
+    },
+    "ARMK": {
+      "company": "Aramark",
+      "sector": "Industrials"
+    },
+    "ARWR": {
+      "company": "Arrowhead Pharmaceuticals, Inc.",
+      "sector": "Healthcare"
+    },
+    "ARXS": {
+      "company": "Arxis, Inc.",
+      "sector": "Industrials"
+    },
+    "AS": {
+      "company": "Amer Sports, Inc.",
+      "sector": "Consumer Cyclical"
+    },
+    "ASAN": {
+      "company": "Asana, Inc.",
+      "sector": "Technology"
+    },
+    "ASML": {
+      "company": "ASML Holding N.V.",
+      "sector": "Technology"
+    },
+    "ASO": {
+      "company": "Academy Sports and Outdoors, Inc.",
+      "sector": "Consumer Cyclical"
+    },
+    "ASR": {
+      "company": "Grupo Aeroportuario del Sureste",
+      "sector": "Industrials"
+    },
+    "ASX": {
+      "company": "ASE Technology Holding Co., Ltd.",
+      "sector": "Technology"
+    },
+    "ATAI": {
+      "company": "AtaiBeckley Inc.",
+      "sector": "Healthcare"
+    },
+    "ATAT": {
+      "company": "Atour Lifestyle Holdings Limited",
+      "sector": "Consumer Cyclical"
+    },
+    "ATKR": {
+      "company": "Atkore Inc.",
+      "sector": "Industrials"
+    },
+    "ATS": {
+      "company": "ATS Corporation",
+      "sector": "Industrials"
+    },
+    "AUNA": {
+      "company": "Auna SA",
+      "sector": "Healthcare"
+    },
+    "AUR": {
+      "company": "Aurora Innovation, Inc.",
+      "sector": "Consumer Cyclical"
+    },
+    "AVAV": {
+      "company": "AeroVironment, Inc.",
+      "sector": "Industrials"
+    },
+    "AVGO": {
+      "company": "Broadcom Inc.",
+      "sector": "Technology"
+    },
+    "AVY": {
+      "company": "Avery Dennison Corporation",
+      "sector": "Consumer Cyclical"
+    },
+    "AWK": {
+      "company": "American Water Works",
+      "sector": "Utilities"
+    },
+    "AXON": {
+      "company": "Axon Enterprise, Inc.",
+      "sector": "Industrials"
+    },
+    "AXP": {
+      "company": "American Express",
+      "sector": "Financials"
+    },
+    "AXSM": {
+      "company": "Axsome Therapeutics",
+      "sector": "Healthcare"
+    },
+    "AXTI": {
+      "company": "AXT, Inc.",
+      "sector": "Technology"
+    },
+    "AYI": {
+      "company": "Acuity Inc.",
+      "sector": "Industrials"
+    },
+    "AZN": {
+      "company": "AstraZeneca PLC",
+      "sector": "Healthcare"
+    },
+    "AZO": {
+      "company": "AutoZone, Inc.",
+      "sector": "Consumer Cyclical"
+    },
+    "AZZ": {
+      "company": "AZZ Inc.",
+      "sector": "Industrials"
+    },
+    "BA": {
+      "company": "The Boeing Company",
+      "sector": "Industrials"
+    },
+    "BABA": {
+      "company": "Alibaba Group Holding Limited",
+      "sector": "Consumer Cyclical"
+    },
+    "BAC": {
+      "company": "Bank of America Corporation",
+      "sector": "Financial Services"
+    },
+    "BAH": {
+      "company": "Booz Allen Hamilton Holding Cor",
+      "sector": "Industrials"
+    },
+    "BAM": {
+      "company": "Brookfield Asset Management Ltd.",
+      "sector": "Financial Services"
+    },
+    "BAND": {
+      "company": "Bandwidth Inc.",
+      "sector": "Technology"
+    },
+    "BAP": {
+      "company": "Credicorp Ltd.",
+      "sector": "Financial Services"
+    },
+    "BAX": {
+      "company": "Baxter International Inc.",
+      "sector": "Healthcare"
+    },
+    "BBAI": {
+      "company": "BigBear.ai Holdings, Inc.",
+      "sector": "Technology"
+    },
+    "BBIO": {
+      "company": "BridgeBio Pharma, Inc.",
+      "sector": "Healthcare"
+    },
+    "BBWI": {
+      "company": "Bath & Body Works, Inc.",
+      "sector": "Consumer Cyclical"
+    },
+    "BBY": {
+      "company": "Best Buy Co., Inc.",
+      "sector": "Consumer Cyclical"
+    },
+    "BDX": {
+      "company": "Becton, Dickinson and Company",
+      "sector": "Healthcare"
+    },
+    "BE": {
+      "company": "Bloom Energy Corporation",
+      "sector": "Industrials"
+    },
+    "BEKE": {
+      "company": "KE Holdings Inc.",
+      "sector": "Real Estate"
+    },
+    "BEN": {
+      "company": "Franklin Resources, Inc.",
+      "sector": "Financial Services"
+    },
+    "BFLY": {
+      "company": "Butterfly Network, Inc.",
+      "sector": "Healthcare"
+    },
+    "BG": {
+      "company": "Bunge Limited",
+      "sector": "Consumer Defensive"
+    },
+    "BIDU": {
+      "company": "Baidu, Inc.",
+      "sector": "Communication Services"
+    },
+    "BIIB": {
+      "company": "Biogen Inc.",
+      "sector": "Healthcare"
+    },
+    "BILI": {
+      "company": "Bilibili Inc.",
+      "sector": "Communication Services"
+    },
+    "BIP": {
+      "company": "Brookfield Infrastructure Partn",
+      "sector": "Utilities"
+    },
+    "BIRK": {
+      "company": "Birkenstock Holding plc",
+      "sector": "Consumer Cyclical"
+    },
+    "BJ": {
+      "company": "BJ's Wholesale Club Holdings, Inc.",
+      "sector": "Consumer Defensive"
+    },
+    "BK": {
+      "company": "The Bank of New York Mellon Corporation",
+      "sector": "Financial Services"
+    },
+    "BKE": {
+      "company": "Buckle, Inc. (The)",
+      "sector": "Consumer Cyclical"
+    },
+    "BKNG": {
+      "company": "Booking Holdings Inc.",
+      "sector": "Consumer Cyclical"
+    },
+    "BLDR": {
+      "company": "Builders FirstSource, Inc.",
+      "sector": "Industrials"
+    },
+    "BLK": {
+      "company": "BlackRock Inc.",
+      "sector": "Financials"
+    },
+    "BMI": {
+      "company": "Badger Meter, Inc.",
+      "sector": "Technology"
+    },
+    "BMNR": {
+      "company": "Bitmine Immersion Technologies, Inc.",
+      "sector": "Financial Services"
+    },
+    "BMO": {
+      "company": "Bank of Montreal",
+      "sector": "Financial Services"
+    },
+    "BMRN": {
+      "company": "BioMarin Pharmaceutical Inc.",
+      "sector": "Healthcare"
+    },
+    "BMY": {
+      "company": "Bristol-Myers Squibb",
+      "sector": "Healthcare"
+    },
+    "BN": {
+      "company": "Brookfield Corporation",
+      "sector": "Financial Services"
+    },
+    "BNS": {
+      "company": "Bank Nova Scotia Halifax Pfd 3",
+      "sector": "Financial Services"
+    },
+    "BNTX": {
+      "company": "BioNTech SE",
+      "sector": "Healthcare"
+    },
+    "BOKF": {
+      "company": "BOK Financial Corporation",
+      "sector": "Financials"
+    },
+    "BOOT": {
+      "company": "Boot Barn Holdings, Inc.",
+      "sector": "Consumer Cyclical"
+    },
+    "BOX": {
+      "company": "Box, Inc.",
+      "sector": "Technology"
+    },
+    "BR": {
+      "company": "technology",
+      "sector": "Technology"
+    },
+    "BRC": {
+      "company": "Brady Corporation",
+      "sector": "Industrials"
+    },
+    "BRK.B": {
+      "company": "Berkshire Hathaway",
+      "sector": "Financials"
+    },
+    "BRO": {
+      "company": "Brown & Brown, Inc.",
+      "sector": "Financial Services"
+    },
+    "BROS": {
+      "sector": "Consumer Cyclical",
+      "company": "Dutch Bros Inc."
+    },
+    "BRZE": {
+      "company": "Braze, Inc.",
+      "sector": "Technology"
+    },
+    "BSX": {
+      "company": "Boston Scientific Corporation",
+      "sector": "Healthcare"
+    },
+    "BTSG": {
+      "company": "BrightSpring Health Services, Inc.",
+      "sector": "Healthcare"
+    },
+    "BUD": {
+      "company": "Anheuser-Busch InBev SA/NV",
+      "sector": "Consumer Defensive"
+    },
+    "BURL": {
+      "company": "Burlington Stores, Inc.",
+      "sector": "Consumer Cyclical"
+    },
+    "BWLP": {
+      "company": "BW LPG Limited",
+      "sector": "Energy"
+    },
+    "BWXT": {
+      "company": "BWX Technologies",
+      "sector": "Industrials"
+    },
+    "BYND": {
+      "sector": "Consumer Defensive",
+      "company": "Beyond Meat, Inc."
+    },
+    "C": {
+      "company": "Citigroup Inc.",
+      "sector": "Financial Services"
+    },
+    "CACI": {
+      "company": "CACI International Inc",
+      "sector": "Technology"
+    },
+    "CAG": {
+      "company": "ConAgra Brands, Inc.",
+      "sector": "Consumer Defensive"
+    },
+    "CAH": {
+      "company": "Cardinal Health, Inc.",
+      "sector": "Healthcare"
+    },
+    "CAL": {
+      "company": "Caleres, Inc.",
+      "sector": "Consumer Cyclical"
+    },
+    "CALX": {
+      "company": "Calix, Inc.",
+      "sector": "Technology"
+    },
+    "CAMT": {
+      "company": "Camtek Ltd.",
+      "sector": "Technology"
+    },
+    "CAN": {
+      "company": "Canaan Inc.",
+      "sector": "Technology"
+    },
+    "CARR": {
+      "company": "Carrier Global Corporation",
+      "sector": "Industrials"
+    },
+    "CART": {
+      "company": "Maplebear Inc.",
+      "sector": "Consumer Cyclical"
+    },
+    "CASY": {
+      "company": "Casey's General Stores, Inc.",
+      "sector": "Consumer Cyclical"
+    },
+    "CAT": {
+      "company": "Caterpillar Inc.",
+      "sector": "Industrials"
+    },
+    "CAVA": {
+      "company": "CAVA Group, Inc.",
+      "sector": "Consumer Cyclical"
+    },
+    "CB": {
+      "company": "Chubb Limited",
+      "sector": "Financials"
+    },
+    "CBOE": {
+      "company": "Cboe Global Markets, Inc.",
+      "sector": "Financial Services"
+    },
+    "CBRE": {
+      "company": "CBRE Group, Inc.",
+      "sector": "Real Estate"
+    },
+    "CBRL": {
+      "company": "Cracker Barrel Old Country Store, Inc.",
+      "sector": "Consumer Cyclical"
+    },
+    "CBRS": {
+      "company": "Cerebras Systems Inc.",
+      "sector": "Technology"
+    },
+    "CBSH": {
+      "company": "Commerce Bancshares, Inc.",
+      "sector": "Financial Services"
+    },
+    "CCI": {
+      "company": "Crown Castle Inc",
+      "sector": "Real Estate"
+    },
+    "CCJ": {
+      "company": "Cameco Corporation",
+      "sector": "Energy"
+    },
+    "CCK": {
+      "company": "Crown Holdings, Inc.",
+      "sector": "Consumer Cyclical"
+    },
+    "CCL": {
+      "company": "Carnival Corporation Ltd.",
+      "sector": "Consumer Cyclical"
+    },
+    "CDE": {
+      "company": "Coeur Mining, Inc.",
+      "sector": "Basic Materials"
+    },
+    "CDNS": {
+      "company": "Cadence Design Systems, Inc.",
+      "sector": "Technology"
+    },
+    "CDW": {
+      "company": "CDW Corporation",
+      "sector": "Technology"
+    },
+    "CEG": {
+      "company": "Constellation Energy Corporation",
+      "sector": "Utilities"
+    },
+    "CELH": {
+      "sector": "Consumer Defensive",
+      "company": "Celsius Holdings, Inc."
+    },
+    "CFG": {
+      "company": "Citizens Financial Group, Inc.",
+      "sector": "Financial Services"
+    },
+    "CGNT": {
+      "company": "Cognyte Software Ltd.",
+      "sector": "Technology"
+    },
+    "CGNX": {
+      "company": "Cognex Corporation",
+      "sector": "Technology"
+    },
+    "CHA": {
+      "company": "Chagee Holdings Limited",
+      "sector": "Consumer Cyclical"
+    },
+    "CHD": {
+      "company": "Church & Dwight Company, Inc.",
+      "sector": "Consumer Defensive"
+    },
+    "CHDN": {
+      "company": "Churchill Downs Incorporated",
+      "sector": "Consumer Cyclical"
+    },
+    "CHE": {
+      "company": "Chemed Corporation",
+      "sector": "Healthcare"
+    },
+    "CHPT": {
+      "company": "ChargePoint Holdings, Inc.",
+      "sector": "Consumer Cyclical"
+    },
+    "CHRD": {
+      "company": "Chord Energy Corporation",
+      "sector": "Energy"
+    },
+    "CHRW": {
+      "company": "C.H. Robinson Worldwide, Inc.",
+      "sector": "Industrials"
+    },
+    "CHTR": {
+      "company": "Charter Communications Inc.",
+      "sector": "Communication"
+    },
+    "CHWY": {
+      "company": "Chewy, Inc.",
+      "sector": "Consumer Cyclical"
+    },
+    "CI": {
+      "company": "The Cigna Group",
+      "sector": "Healthcare"
+    },
+    "CIEN": {
+      "company": "Ciena Corporation",
+      "sector": "Technology"
+    },
+    "CINF": {
+      "company": "Cincinnati Financial Corporation",
+      "sector": "Financial Services"
+    },
+    "CL": {
+      "company": "Colgate-Palmolive Company",
+      "sector": "Consumer Defensive"
+    },
+    "CLF": {
+      "company": "Cleveland-Cliffs Inc.",
+      "sector": "Basic Materials"
+    },
+    "CLS": {
+      "company": "Celestica, Inc.",
+      "sector": "Technology"
+    },
+    "CLX": {
+      "company": "Clorox Company (The)",
+      "sector": "Consumer Defensive"
+    },
+    "CM": {
+      "company": "Canadian Imperial Bank of Commerce",
+      "sector": "Financial Services"
+    },
+    "CMBT": {
+      "company": "Cmb.Tech NV",
+      "sector": "Energy"
+    },
+    "CMCSA": {
+      "company": "Comcast Corporation",
+      "sector": "Communication Services"
+    },
+    "CME": {
+      "company": "CME Group Inc.",
+      "sector": "Financial Services"
+    },
+    "CMG": {
+      "company": "Chipotle Mexican Grill, Inc.",
+      "sector": "Consumer Cyclical"
+    },
+    "CMI": {
+      "company": "Cummins Inc.",
+      "sector": "Industrials"
+    },
+    "CMRE": {
+      "company": "Costamare Inc.",
+      "sector": "Industrials"
+    },
+    "CMS": {
+      "company": "CMS Energy Corporation",
+      "sector": "Utilities"
+    },
+    "CNC": {
+      "company": "Centene Corporation",
+      "sector": "Healthcare"
+    },
+    "CNH": {
+      "company": "CNH Industrial N.V.",
+      "sector": "Industrials"
+    },
+    "CNI": {
+      "company": "Canadian National Railway Compa",
+      "sector": "Industrials"
+    },
+    "CNM": {
+      "company": "Core & Main, Inc.",
+      "sector": "Industrials"
+    },
+    "CNP": {
+      "company": "CenterPoint Energy, Inc.",
+      "sector": "Utilities"
+    },
+    "CNXC": {
+      "company": "Concentrix Corporation",
+      "sector": "Technology"
+    },
+    "COCO": {
+      "company": "The Vita Coco Company, Inc.",
+      "sector": "Consumer Defensive"
+    },
+    "COF": {
+      "company": "Capital One Financial Corporation",
+      "sector": "Financial Services"
+    },
+    "COHU": {
+      "company": "Cohu, Inc.",
+      "sector": "Technology"
+    },
+    "COIN": {
+      "company": "Coinbase Global, Inc.",
+      "sector": "Financial Services"
+    },
+    "COLB": {
+      "company": "Columbia Banking System, Inc.",
+      "sector": "Financial Services"
+    },
+    "COO": {
+      "company": "The Cooper Companies, Inc.",
+      "sector": "Healthcare"
+    },
+    "COP": {
+      "company": "ConocoPhillips",
+      "sector": "Energy"
+    },
+    "CORT": {
+      "company": "Corcept Therapeutics Incorporated",
+      "sector": "Healthcare"
+    },
+    "CORZ": {
+      "company": "Core Scientific, Inc.",
+      "sector": "Technology"
+    },
+    "COST": {
+      "company": "Costco Wholesale",
+      "sector": "Consumer"
+    },
+    "CPA": {
+      "company": "Copa Holdings, S.A.",
+      "sector": "Industrials"
+    },
+    "CPAY": {
+      "company": "Corpay, Inc.",
+      "sector": "Technology"
+    },
+    "CPB": {
+      "company": "The Campbell's Company",
+      "sector": "Consumer Defensive"
+    },
+    "CPNG": {
+      "company": "Coupang, Inc.",
+      "sector": "Consumer Cyclical"
+    },
+    "CPRI": {
+      "company": "Capri Holdings Limited",
+      "sector": "Consumer Cyclical"
+    },
+    "CR": {
+      "company": "Crane Company",
+      "sector": "Industrials"
+    },
+    "CRCL": {
+      "company": "Circle Internet Group",
+      "sector": "Financial Services"
+    },
+    "CRDO": {
+      "company": "Credo Technology Group Holding Ltd",
+      "sector": "Technology"
+    },
+    "CRH": {
+      "company": "CRH PLC",
+      "sector": "Basic Materials"
+    },
+    "CRL": {
+      "company": "Charles River Laboratories Inte",
+      "sector": "Healthcare"
+    },
+    "CRM": {
+      "company": "Salesforce",
+      "sector": "Technology"
+    },
+    "CRNT": {
+      "company": "Ceragon Networks Ltd.",
+      "sector": "Technology"
+    },
+    "CRS": {
+      "company": "Carpenter Technology Corporatio",
+      "sector": "Industrials"
+    },
+    "CRUS": {
+      "company": "Cirrus Logic, Inc.",
+      "sector": "Technology"
+    },
+    "CRWD": {
+      "company": "CrowdStrike Holdings, Inc.",
+      "sector": "Technology"
+    },
+    "CRWV": {
+      "company": "CoreWeave, Inc.",
+      "sector": "Technology"
+    },
+    "CSCO": {
+      "company": "Cisco Systems",
+      "sector": "Technology"
+    },
+    "CSL": {
+      "company": "Carlisle Companies Incorporated",
+      "sector": "Industrials"
+    },
+    "CSX": {
+      "company": "CSX Corporation",
+      "sector": "Industrials"
+    },
+    "CTAS": {
+      "company": "Cintas Corporation",
+      "sector": "Industrials"
+    },
+    "CTSH": {
+      "company": "Cognizant Technology Solutions Corporation",
+      "sector": "Technology"
+    },
+    "CTVA": {
+      "company": "Corteva, Inc.",
+      "sector": "Basic Materials"
+    },
+    "CURV": {
+      "company": "Torrid Holdings Inc.",
+      "sector": "Consumer Cyclical"
+    },
+    "CVNA": {
+      "company": "Carvana Co.",
+      "sector": "Consumer Cyclical"
+    },
+    "CVS": {
+      "company": "CVS Health Corporation",
+      "sector": "Healthcare"
+    },
+    "CVX": {
+      "company": "Chevron Corp.",
+      "sector": "Energy"
+    },
+    "CXM": {
+      "company": "Sprinklr, Inc.",
+      "sector": "Technology"
+    },
+    "CYTK": {
+      "company": "Cytokinetics, Incorporated",
+      "sector": "Healthcare"
+    },
+    "D": {
+      "company": "Dominion Energy, Inc.",
+      "sector": "Utilities"
+    },
+    "DAKT": {
+      "company": "Daktronics, Inc.",
+      "sector": "Technology"
+    },
+    "DAL": {
+      "sector": "Industrials",
+      "company": "Delta Air Lines, Inc."
+    },
+    "DAR": {
+      "company": "Darling Ingredients Inc.",
+      "sector": "Consumer Defensive"
+    },
+    "DASH": {
+      "sector": "Consumer Cyclical",
+      "company": "DoorDash, Inc."
+    },
+    "DBI": {
+      "company": "Designer Brands Inc.",
+      "sector": "Consumer Cyclical"
+    },
+    "DBX": {
+      "company": "Dropbox, Inc.",
+      "sector": "Technology"
+    },
+    "DCI": {
+      "company": "Donaldson Company, Inc.",
+      "sector": "Industrials"
+    },
+    "DD": {
+      "company": "DuPont de Nemours, Inc.",
+      "sector": "Basic Materials"
+    },
+    "DDOG": {
+      "company": "Datadog, Inc.",
+      "sector": "Technology"
+    },
+    "DE": {
+      "company": "Deere & Company",
+      "sector": "Industrials"
+    },
+    "DECK": {
+      "company": "Deckers Outdoor Corporation",
+      "sector": "Consumer Cyclical"
+    },
+    "DG": {
+      "company": "Dollar General Corporation",
+      "sector": "Consumer Defensive"
+    },
+    "DGX": {
+      "company": "Quest Diagnostics Incorporated",
+      "sector": "Healthcare"
+    },
+    "DHI": {
+      "company": "D.R. Horton, Inc.",
+      "sector": "Consumer Cyclical"
+    },
+    "DHR": {
+      "company": "Danaher Corporation",
+      "sector": "Healthcare"
+    },
+    "DIS": {
+      "company": "Walt Disney Co.",
+      "sector": "Technology"
+    },
+    "DKNG": {
+      "company": "DraftKings Inc.",
+      "sector": "Consumer Cyclical"
+    },
+    "DKS": {
+      "company": "DICK'S Sporting Goods, Inc.",
+      "sector": "Consumer Cyclical"
+    },
+    "DLR": {
+      "company": "Digital Realty Trust, Inc.",
+      "sector": "Real Estate"
+    },
+    "DLTR": {
+      "company": "Dollar Tree, Inc.",
+      "sector": "Consumer Defensive"
+    },
+    "DOCN": {
+      "company": "DigitalOcean Holdings, Inc.",
+      "sector": "Technology"
+    },
+    "DOCS": {
+      "company": "Doximity, Inc.",
+      "sector": "Healthcare"
+    },
+    "DOCU": {
+      "company": "DocuSign, Inc.",
+      "sector": "Technology"
+    },
+    "DOO": {
+      "company": "BRP Inc.",
+      "sector": "Consumer Cyclical"
+    },
+    "DOV": {
+      "company": "Dover Corporation",
+      "sector": "Industrials"
+    },
+    "DOW": {
+      "company": "Dow Inc.",
+      "sector": "Basic Materials"
+    },
+    "DOX": {
+      "company": "Amdocs Limited",
+      "sector": "Technology"
+    },
+    "DPZ": {
+      "company": "Domino's Pizza Inc",
+      "sector": "Consumer Cyclical"
+    },
+    "DRI": {
+      "company": "Darden Restaurants, Inc.",
+      "sector": "Consumer Cyclical"
+    },
+    "DRS": {
+      "company": "Leonardo DRS, Inc.",
+      "sector": "Industrials"
+    },
+    "DRVN": {
+      "company": "Driven Brands Holdings Inc.",
+      "sector": "Consumer Cyclical"
+    },
+    "DSGX": {
+      "company": "The Descartes Systems Group Inc.",
+      "sector": "Technology"
+    },
+    "DT": {
+      "company": "Dynatrace, Inc.",
+      "sector": "Technology"
+    },
+    "DTE": {
+      "company": "DTE Energy Company",
+      "sector": "Utilities"
+    },
+    "DUK": {
+      "company": "Duke Energy Corp.",
+      "sector": "Utilities"
+    },
+    "DUOL": {
+      "company": "technology",
+      "sector": "Technology"
+    },
+    "DVA": {
+      "company": "DaVita Inc.",
+      "sector": "Healthcare"
+    },
+    "DVN": {
+      "company": "Devon Energy",
+      "sector": "Energy"
+    },
+    "DXCM": {
+      "company": "DexCom, Inc.",
+      "sector": "Healthcare"
+    },
+    "DY": {
+      "company": "Dycom Industries, Inc.",
+      "sector": "Industrials"
+    },
+    "EA": {
+      "company": "Electronic Arts",
+      "sector": "Communication"
+    },
+    "EBAY": {
+      "company": "eBay Inc.",
+      "sector": "Consumer Cyclical"
+    },
+    "ECG": {
+      "company": "Everus Construction Group, Inc.",
+      "sector": "Industrials"
+    },
+    "ECHO": {
+      "company": "EchoStar Corporation",
+      "sector": "Communication Services"
+    },
+    "ECL": {
+      "company": "Ecolab Inc.",
+      "sector": "Basic Materials"
+    },
+    "ECX": {
+      "company": "ECARX Holdings Inc.",
+      "sector": "Consumer Cyclical"
+    },
+    "EEFT": {
+      "company": "Euronet Worldwide Inc",
+      "sector": "Technology"
+    },
+    "EFX": {
+      "company": "Equifax Inc.",
+      "sector": "Industrials"
+    },
+    "EG": {
+      "company": "Everest Group, Ltd.",
+      "sector": "Financial Services"
+    },
+    "EGHT": {
+      "company": "8x8, Inc.",
+      "sector": "Technology"
+    },
+    "EGP": {
+      "company": "EastGroup Properties Inc",
+      "sector": "Real Estate"
+    },
+    "EIX": {
+      "company": "Edison International",
+      "sector": "Utilities"
+    },
+    "EL": {
+      "company": "Estee Lauder Companies, Inc. (T",
+      "sector": "Consumer Defensive"
+    },
+    "ELAN": {
+      "company": "Elanco Animal Health Incorporated",
+      "sector": "Healthcare"
+    },
+    "ELF": {
+      "company": "e.l.f. Beauty, Inc.",
+      "sector": "Consumer Defensive"
+    },
+    "ELV": {
+      "company": "Elevance Health Inc",
+      "sector": "Healthcare"
+    },
+    "EMA": {
+      "company": "Emera Incorporated",
+      "sector": "Utilities"
+    },
+    "EME": {
+      "company": "EMCOR Group, Inc.",
+      "sector": "Industrials"
+    },
+    "EMR": {
+      "company": "Emerson Electric",
+      "sector": "Industrials"
+    },
+    "ENB": {
+      "company": "Enbridge Inc",
+      "sector": "Energy"
+    },
+    "ENS": {
+      "company": "EnerSys",
+      "sector": "Industrials"
+    },
+    "ENSG": {
+      "company": "The Ensign Group, Inc.",
+      "sector": "Healthcare"
+    },
+    "ENTG": {
+      "company": "Entegris, Inc.",
+      "sector": "Technology"
+    },
+    "EOG": {
+      "company": "EOG Resources",
+      "sector": "Energy"
+    },
+    "EOSE": {
+      "company": "Eos Energy Enterprises, Inc.",
+      "sector": "Industrials"
+    },
+    "EQNR": {
+      "company": "Equinor ASA",
+      "sector": "Energy"
+    },
+    "EQT": {
+      "company": "EQT Corp",
+      "sector": "Energy"
+    },
+    "ERAS": {
+      "company": "Erasca, Inc.",
+      "sector": "Healthcare"
+    },
+    "ERIC": {
+      "company": "Telefonaktiebolaget LM Ericsson (publ)",
+      "sector": "Technology"
+    },
+    "ESI": {
+      "company": "Element Solutions Inc.",
+      "sector": "Basic Materials"
+    },
+    "ESLT": {
+      "company": "Elbit Systems Ltd.",
+      "sector": "Industrials"
+    },
+    "ESTC": {
+      "company": "Elastic N.V.",
+      "sector": "Technology"
+    },
+    "ETN": {
+      "sector": "Industrials",
+      "company": "Eaton Corporation, PLC"
+    },
+    "ETR": {
+      "company": "Entergy Corporation",
+      "sector": "Utilities"
+    },
+    "ETSY": {
+      "company": "Etsy, Inc.",
+      "sector": "Consumer Cyclical"
+    },
+    "EVR": {
+      "company": "Evercore Inc.",
+      "sector": "Financial Services"
+    },
+    "EVRG": {
+      "company": "Evergy, Inc.",
+      "sector": "Utilities"
+    },
+    "EW": {
+      "company": "Edwards Lifesciences Corporation",
+      "sector": "Healthcare"
+    },
+    "EWBC": {
+      "company": "East West Bancorp, Inc.",
+      "sector": "Financial Services"
+    },
+    "EXE": {
+      "company": "Expand Energy Corporation",
+      "sector": "Energy"
+    },
+    "EXP": {
+      "company": "Eagle Materials Inc.",
+      "sector": "Basic Materials"
+    },
+    "EXPD": {
+      "company": "Expeditors International of Washington, Inc.",
+      "sector": "Industrials"
+    },
+    "EXPE": {
+      "company": "Expedia Group, Inc.",
+      "sector": "Consumer Cyclical"
+    },
+    "F": {
+      "company": "Ford Motor Company",
+      "sector": "Consumer Cyclical"
+    },
+    "FAF": {
+      "company": "First American Corporation (New",
+      "sector": "Financial Services"
+    },
+    "FANG": {
+      "company": "Diamondback Energy",
+      "sector": "Energy"
+    },
+    "FAST": {
+      "sector": "Industrials",
+      "company": "Fastenal Company"
+    },
+    "FCX": {
+      "company": "Freeport-McMoRan, Inc.",
+      "sector": "Basic Materials"
+    },
+    "FDS": {
+      "company": "FactSet Research Systems Inc.",
+      "sector": "Financial Services"
+    },
+    "FDX": {
+      "company": "FedEx Corp.",
+      "sector": "Industrials"
+    },
+    "FE": {
+      "company": "FirstEnergy Corp.",
+      "sector": "Utilities"
+    },
+    "FEIM": {
+      "company": "Frequency Electronics, Inc.",
+      "sector": "Technology"
+    },
+    "FERG": {
+      "company": "Ferguson Enterprises Inc.",
+      "sector": "Industrials"
+    },
+    "FFIV": {
+      "company": "F5, Inc.",
+      "sector": "Technology"
+    },
+    "FHB": {
+      "company": "First Hawaiian, Inc.",
+      "sector": "Financial Services"
+    },
+    "FHN": {
+      "company": "First Horizon Corporation",
+      "sector": "Financial Services"
+    },
+    "FICO": {
+      "company": "Fair Isaac Corporation",
+      "sector": "Technology"
+    },
+    "FIG": {
+      "company": "Figma, Inc.",
+      "sector": "Technology"
+    },
+    "FISV": {
+      "company": "Fiserv, Inc.",
+      "sector": "Financial Services"
+    },
+    "FITB": {
+      "company": "Fifth Third Bancorp",
+      "sector": "Financial Services"
+    },
+    "FIVE": {
+      "company": "Five Below, Inc.",
+      "sector": "Consumer Cyclical"
+    },
+    "FIX": {
+      "company": "Comfort Systems USA, Inc.",
+      "sector": "Industrials"
+    },
+    "FIZZ": {
+      "company": "National Beverage Corp.",
+      "sector": "Consumer Defensive"
+    },
+    "FLUT": {
+      "sector": "Consumer Cyclical",
+      "company": "Flutter Entertainment plc"
+    },
+    "FNB": {
+      "company": "F.N.B. Corporation",
+      "sector": "Financial Services"
+    },
+    "FNF": {
+      "company": "Fidelity National Financial, Inc.",
+      "sector": "Financial Services"
+    },
+    "FNV": {
+      "company": "Franco-Nevada Corporation",
+      "sector": "Basic Materials"
+    },
+    "FORM": {
+      "company": "FormFactor, Inc.",
+      "sector": "Technology"
+    },
+    "FOXA": {
+      "company": "Fox Corporation",
+      "sector": "Communication Services"
+    },
+    "FR": {
+      "company": "First Industrial Realty Trust, Inc.",
+      "sector": "Real Estate"
+    },
+    "FROG": {
+      "company": "JFrog Ltd.",
+      "sector": "Technology"
+    },
+    "FRVO": {
+      "company": "Fervo Energy Company",
+      "sector": "Utilities"
+    },
+    "FSLR": {
+      "company": "First Solar, Inc.",
+      "sector": "Technology"
+    },
+    "FTAI": {
+      "company": "FTAI Aviation Ltd.",
+      "sector": "Industrials"
+    },
+    "FTNT": {
+      "company": "Fortinet, Inc.",
+      "sector": "Technology"
+    },
+    "FTRE": {
+      "company": "Fortrea Holdings Inc.",
+      "sector": "Healthcare"
+    },
+    "FTV": {
+      "company": "Fortive Corporation",
+      "sector": "Industrials"
+    },
+    "FUTU": {
+      "company": "Futu Holdings Limited",
+      "sector": "Financial Services"
+    },
+    "GAP": {
+      "company": "Gap, Inc. (The)",
+      "sector": "Consumer Cyclical"
+    },
+    "GBX": {
+      "company": "The Greenbrier Companies, Inc.",
+      "sector": "Industrials"
+    },
+    "GD": {
+      "company": "General Dynamics Corporation",
+      "sector": "Industrials"
+    },
+    "GDDY": {
+      "company": "GoDaddy",
+      "sector": "Technology"
+    },
+    "GDS": {
+      "company": "GDS Holdings Limited",
+      "sector": "Technology"
+    },
+    "GE": {
+      "company": "GE Aerospace",
+      "sector": "Industrials"
+    },
+    "GEHC": {
+      "company": "GE HealthCare Technologies Inc.",
+      "sector": "Healthcare"
+    },
+    "GEN": {
+      "company": "Gen Digital Inc.",
+      "sector": "Technology"
+    },
+    "GEV": {
+      "company": "GE Vernova Inc.",
+      "sector": "Industrials"
+    },
+    "GFS": {
+      "company": "GLOBALFOUNDRIES Inc.",
+      "sector": "Technology"
+    },
+    "GGG": {
+      "company": "Graco Inc.",
+      "sector": "Industrials"
+    },
+    "GH": {
+      "company": "Guardant Health, Inc.",
+      "sector": "Healthcare"
+    },
+    "GIII": {
+      "company": "G-III Apparel Group, Ltd.",
+      "sector": "Consumer Cyclical"
+    },
+    "GILD": {
+      "company": "Gilead Sciences",
+      "sector": "Healthcare"
+    },
+    "GIS": {
+      "company": "General Mills, Inc.",
+      "sector": "Consumer Defensive"
+    },
+    "GL": {
+      "company": "Globe Life Inc.",
+      "sector": "Financial Services"
+    },
+    "GLBE": {
+      "company": "Global-E Online Ltd.",
+      "sector": "Consumer Cyclical"
+    },
+    "GLPI": {
+      "company": "Gaming and Leisure Properties, Inc.",
+      "sector": "Real Estate"
+    },
+    "GLW": {
+      "sector": "Technology",
+      "company": "Corning Incorporated"
+    },
+    "GM": {
+      "company": "General Motors Company",
+      "sector": "Consumer Cyclical"
+    },
+    "GNRC": {
+      "company": "Generac Holdings Inc.",
+      "sector": "Industrials"
+    },
+    "GO": {
+      "company": "Grocery Outlet Holding Corp.",
+      "sector": "Consumer Defensive"
+    },
+    "GOOGL": {
+      "company": "Alphabet Inc.",
+      "sector": "Communication"
+    },
+    "GPC": {
+      "company": "Genuine Parts Company",
+      "sector": "Consumer Cyclical"
+    },
+    "GPN": {
+      "company": "Global Payments Inc.",
+      "sector": "Industrials"
+    },
+    "GRAB": {
+      "company": "Grab Holdings Limited",
+      "sector": "Technology"
+    },
+    "GRAL": {
+      "company": "GRAIL, Inc.",
+      "sector": "Healthcare"
+    },
+    "GRMN": {
+      "company": "Garmin Ltd.",
+      "sector": "Technology"
+    },
+    "GS": {
+      "company": "Goldman Sachs",
+      "sector": "Financials"
+    },
+    "GSK": {
+      "company": "GSK plc",
+      "sector": "Healthcare"
+    },
+    "GTLB": {
+      "company": "GitLab Inc.",
+      "sector": "Technology"
+    },
+    "GTX": {
+      "company": "Garrett Motion Inc.",
+      "sector": "Consumer Cyclical"
+    },
+    "GWRE": {
+      "company": "Guidewire Software, Inc.",
+      "sector": "Technology"
+    },
+    "GWW": {
+      "company": "W.W. Grainger, Inc.",
+      "sector": "Industrials"
+    },
+    "GXO": {
+      "company": "GXO Logistics, Inc.",
+      "sector": "Industrials"
+    },
+    "HAL": {
+      "company": "Halliburton Company",
+      "sector": "Energy"
+    },
+    "HALO": {
+      "company": "Halozyme Therapeutics, Inc.",
+      "sector": "Healthcare"
+    },
+    "HCA": {
+      "company": "HCA Healthcare, Inc.",
+      "sector": "Healthcare"
+    },
+    "HCM": {
+      "company": "HUTCHMED (China) Limited",
+      "sector": "Healthcare"
+    },
+    "HD": {
+      "company": "Home Depot Inc.",
+      "sector": "Consumer"
+    },
+    "HE": {
+      "company": "Hawaiian Electric Industries, I",
+      "sector": "Utilities"
+    },
+    "HEI": {
+      "company": "Heico Corporation",
+      "sector": "Industrials"
+    },
+    "HELE": {
+      "company": "Helen of Troy Limited",
+      "sector": "Consumer Defensive"
+    },
+    "HIG": {
+      "company": "The Hartford Insurance Group, Inc.",
+      "sector": "Financial Services"
+    },
+    "HII": {
+      "company": "Huntington Ingalls Industries, ",
+      "sector": "Industrials"
+    },
+    "HIMS": {
+      "company": "Hims & Hers Health, Inc.",
+      "sector": "Healthcare"
+    },
+    "HITI": {
+      "company": "High Tide Inc.",
+      "sector": "Healthcare"
+    },
+    "HIVE": {
+      "company": "HIVE Digital Technologies Ltd.",
+      "sector": "Financial Services"
+    },
+    "HLT": {
+      "company": "Hilton Worldwide Holdings Inc.",
+      "sector": "Consumer Cyclical"
+    },
+    "HMC": {
+      "company": "Honda Motor Company, Ltd.",
+      "sector": "Consumer Cyclical"
+    },
+    "HNGE": {
+      "company": "Hinge Health, Inc.",
+      "sector": "Healthcare"
+    },
+    "HON": {
+      "company": "Honeywell International Inc.",
+      "sector": "Industrials"
+    },
+    "HOOD": {
+      "company": "Robinhood Markets, Inc.",
+      "sector": "Financial Services"
+    },
+    "HPE": {
+      "company": "Hewlett Packard Enterprise Company",
+      "sector": "Technology"
+    },
+    "HPQ": {
+      "company": "HP Inc.",
+      "sector": "Technology"
+    },
+    "HQ": {
+      "company": "Horizon Quantum Holdings Ltd.",
+      "sector": "Technology"
+    },
+    "HQY": {
+      "company": "HealthEquity, Inc.",
+      "sector": "Healthcare"
+    },
+    "HRL": {
+      "company": "Hormel Foods Corporation",
+      "sector": "Consumer Defensive"
+    },
+    "HSAI": {
+      "company": "Hesai Group",
+      "sector": "Consumer Cyclical"
+    },
+    "HSY": {
+      "company": "The Hershey Company",
+      "sector": "Consumer Defensive"
+    },
+    "HTHT": {
+      "company": "H World Group Limited",
+      "sector": "Consumer Cyclical"
+    },
+    "HUBB": {
+      "company": "Hubbell Incorporated",
+      "sector": "Industrials"
+    },
+    "HUBS": {
+      "company": "HubSpot, Inc.",
+      "sector": "Technology"
+    },
+    "HUM": {
+      "company": "Humana Inc.",
+      "sector": "Healthcare"
+    },
+    "HWM": {
+      "company": "Howmet Aerospace Inc.",
+      "sector": "Industrials"
+    },
+    "HXL": {
+      "company": "Hexcel Corporation",
+      "sector": "Industrials"
+    },
+    "IBKR": {
+      "company": "Interactive Brokers Group, Inc.",
+      "sector": "Financial Services"
+    },
+    "IBM": {
+      "company": "International Business Machines Corporation",
+      "sector": "Technology"
+    },
+    "ICE": {
+      "company": "Intercontinental Exchange",
+      "sector": "Financials"
+    },
+    "ICLR": {
+      "company": "ICON Public Limited Company",
+      "sector": "Healthcare"
+    },
+    "IDCC": {
+      "company": "InterDigital, Inc.",
+      "sector": "Technology"
+    },
+    "IDXX": {
+      "company": "IDEXX Laboratories, Inc.",
+      "sector": "Healthcare"
+    },
+    "IESC": {
+      "company": "IES Holdings, Inc.",
+      "sector": "Industrials"
+    },
+    "IEX": {
+      "company": "IDEX Corporation",
+      "sector": "Industrials"
+    },
+    "IIIN": {
+      "company": "Insteel Industries Inc.",
+      "sector": "Industrials"
+    },
+    "ILMN": {
+      "company": "Illumina, Inc.",
+      "sector": "Healthcare"
+    },
+    "IMO": {
+      "company": "Imperial Oil Limited",
+      "sector": "Energy"
+    },
+    "IMOS": {
+      "company": "ChipMOS TECHNOLOGIES INC.",
+      "sector": "Technology"
+    },
+    "INCY": {
+      "company": "Incyte Corporation",
+      "sector": "Healthcare"
+    },
+    "INFY": {
+      "company": "Infosys Limited",
+      "sector": "Technology"
+    },
+    "INGM": {
+      "company": "Ingram Micro Holding Corporation",
+      "sector": "Technology"
+    },
+    "INSM": {
+      "company": "Insmed Incorporated",
+      "sector": "Healthcare"
+    },
+    "INTC": {
+      "company": "Intel Corporation",
+      "sector": "Technology"
+    },
+    "INTU": {
+      "company": "Intuit Inc.",
+      "sector": "Technology"
+    },
+    "IONQ": {
+      "company": "IonQ, Inc.",
+      "sector": "Technology"
+    },
+    "IOT": {
+      "company": "Samsara Inc.",
+      "sector": "Technology"
+    },
+    "IP": {
+      "company": "International Paper Company",
+      "sector": "Consumer Cyclical"
+    },
+    "IQ": {
+      "company": "iQIYI, Inc.",
+      "sector": "Communication Services"
+    },
+    "IQV": {
+      "company": "IQVIA Holdings Inc.",
+      "sector": "Healthcare"
+    },
+    "IR": {
+      "company": "Ingersoll Rand Inc.",
+      "sector": "Industrials"
+    },
+    "IRDM": {
+      "company": "Iridium Communications Inc.",
+      "sector": "Communication Services"
+    },
+    "IRM": {
+      "company": "Iron Mountain Incorporated",
+      "sector": "Real Estate"
+    },
+    "IRON": {
+      "company": "Disc Medicine, Inc.",
+      "sector": "Healthcare"
+    },
+    "ISRG": {
+      "company": "Intuitive Surgical",
+      "sector": "Healthcare"
+    },
+    "IT": {
+      "company": "Gartner, Inc.",
+      "sector": "Technology"
+    },
+    "ITW": {
+      "company": "Illinois Tool Works Inc.",
+      "sector": "Industrials"
+    },
+    "IVZ": {
+      "company": "Invesco Ltd.",
+      "sector": "Financial Services"
+    },
+    "JAZZ": {
+      "company": "Jazz Pharmaceuticals plc",
+      "sector": "Healthcare"
+    },
+    "JBHT": {
+      "sector": "Industrials",
+      "company": "J.B. Hunt Transport Services, Inc."
+    },
+    "JBL": {
+      "company": "Jabil Inc.",
+      "sector": "Technology"
+    },
+    "JCI": {
+      "sector": "Industrials",
+      "company": "Johnson Controls International "
+    },
+    "JD": {
+      "company": "JD.com, Inc.",
+      "sector": "Consumer Cyclical"
+    },
+    "JEF": {
+      "company": "Jefferies Financial Group Inc.",
+      "sector": "Financial Services"
+    },
+    "JHX": {
+      "company": "James Hardie Industries plc",
+      "sector": "Basic Materials"
+    },
+    "JNJ": {
+      "company": "Johnson & Johnson",
+      "sector": "Healthcare"
+    },
+    "JOBY": {
+      "company": "Joby Aviation, Inc.",
+      "sector": "Industrials"
+    },
+    "JPM": {
+      "company": "JPMorgan Chase",
+      "sector": "Financials"
+    },
+    "KC": {
+      "company": "Kingsoft Cloud Holdings Limited",
+      "sector": "Technology"
+    },
+    "KDP": {
+      "company": "Keurig Dr Pepper Inc.",
+      "sector": "Consumer"
+    },
+    "KEEL": {
+      "company": "Keel Infrastructure Corp.",
+      "sector": "Technology"
+    },
+    "KEY": {
+      "company": "KeyCorp",
+      "sector": "Financial Services"
+    },
+    "KEYS": {
+      "company": "Keysight Technologies, Inc.",
+      "sector": "Technology"
+    },
+    "KHC": {
+      "company": "The Kraft Heinz Company",
+      "sector": "Consumer Defensive"
+    },
+    "KKR": {
+      "company": "KKR & Co. Inc.",
+      "sector": "Financial Services"
+    },
+    "KLAC": {
+      "company": "KLA Corporation",
+      "sector": "Technology"
+    },
+    "KLIC": {
+      "company": "Kulicke and Soffa Industries, Inc.",
+      "sector": "Technology"
+    },
+    "KMB": {
+      "company": "Kimberly-Clark Corporation",
+      "sector": "Consumer Defensive"
+    },
+    "KMI": {
+      "company": "Kinder Morgan",
+      "sector": "Energy"
+    },
+    "KMTS": {
+      "company": "Kestra Medical Technologies, Ltd.",
+      "sector": "Healthcare"
+    },
+    "KMX": {
+      "company": "CarMax, Inc.",
+      "sector": "Consumer Cyclical"
+    },
+    "KNSL": {
+      "company": "Kinsale Capital Group, Inc.",
+      "sector": "Financial Services"
+    },
+    "KNX": {
+      "company": "Knight-Swift Transportation Holdings",
+      "sector": "Industrials"
+    },
+    "KO": {
+      "company": "Coca-Cola Co.",
+      "sector": "Consumer"
+    },
+    "KOF": {
+      "company": "Coca Cola Femsa S.A.B. de C.V.",
+      "sector": "Consumer Defensive"
+    },
+    "KR": {
+      "company": "The Kroger Co.",
+      "sector": "Consumer Defensive"
+    },
+    "KRMN": {
+      "company": "Karman Holdings Inc.",
+      "sector": "Industrials"
+    },
+    "KRYS": {
+      "company": "healthcare",
+      "sector": "Healthcare"
+    },
+    "KSS": {
+      "company": "Kohl's Corporation",
+      "sector": "Consumer Cyclical"
+    },
+    "KTOS": {
+      "company": "Kratos Defense & Security Solutions, Inc.",
+      "sector": "Industrials"
+    },
+    "KVUE": {
+      "company": "Kenvue Inc.",
+      "sector": "Consumer Defensive"
+    },
+    "KVYO": {
+      "company": "Klaviyo, Inc.",
+      "sector": "Technology"
+    },
+    "L": {
+      "company": "Loews Corporation",
+      "sector": "Financial Services"
+    },
+    "LAD": {
+      "company": "Lithia Motors, Inc.",
+      "sector": "Consumer Cyclical"
+    },
+    "LDOS": {
+      "company": "Leidos Holdings, Inc.",
+      "sector": "Technology"
+    },
+    "LEA": {
+      "company": "Lear Corporation",
+      "sector": "Consumer Cyclical"
+    },
+    "LEN": {
+      "company": "Lennar Corporation",
+      "sector": "Consumer Cyclical"
+    },
+    "LEVI": {
+      "company": "Levi Strauss & Co.",
+      "sector": "Consumer Cyclical"
+    },
+    "LH": {
+      "company": "Labcorp",
+      "sector": "Healthcare"
+    },
+    "LHX": {
+      "company": "L3Harris Technologies, Inc.",
+      "sector": "Industrials"
+    },
+    "LI": {
+      "company": "Li Auto Inc.",
+      "sector": "Consumer Cyclical"
+    },
+    "LII": {
+      "company": "Lennox International, Inc.",
+      "sector": "Industrials"
+    },
+    "LIN": {
+      "company": "Linde PLC",
+      "sector": "Materials"
+    },
+    "LITE": {
+      "company": "Lumentum Holdings Inc.",
+      "sector": "Technology"
+    },
+    "LLY": {
+      "company": "Eli Lilly & Co.",
+      "sector": "Healthcare"
+    },
+    "LMT": {
+      "company": "Lockheed Martin Corporation",
+      "sector": "Industrials"
+    },
+    "LNG": {
+      "company": "Cheniere Energy, Inc.",
+      "sector": "Energy"
+    },
+    "LNN": {
+      "company": "Lindsay Corporation",
+      "sector": "Industrials"
+    },
+    "LNT": {
+      "company": "Alliant Energy",
+      "sector": "Utilities"
+    },
+    "LOW": {
+      "company": "Lowe's Companies",
+      "sector": "Consumer"
+    },
+    "LPL": {
+      "company": "LG Display Co., Ltd.",
+      "sector": "Technology"
+    },
+    "LQDA": {
+      "company": "Liquidia Corporation",
+      "sector": "Healthcare"
+    },
+    "LRCX": {
+      "company": "Lam Research",
+      "sector": "Technology"
+    },
+    "LRN": {
+      "company": "Stride, Inc.",
+      "sector": "Consumer Defensive"
+    },
+    "LSCC": {
+      "company": "Lattice Semiconductor Corporation",
+      "sector": "Technology"
+    },
+    "LULU": {
+      "company": "lululemon athletica inc.",
+      "sector": "Consumer Cyclical"
+    },
+    "LUMN": {
+      "company": "Lumen Technologies, Inc.",
+      "sector": "Communication Services"
+    },
+    "LUNR": {
+      "company": "Intuitive Machines, Inc.",
+      "sector": "Industrials"
+    },
+    "LUV": {
+      "company": "Southwest Airlines Co.",
+      "sector": "Industrials"
+    },
+    "LVS": {
+      "company": "Las Vegas Sands Corp.",
+      "sector": "Consumer Cyclical"
+    },
+    "LW": {
+      "company": "Lamb Weston Holdings, Inc.",
+      "sector": "Consumer Defensive"
+    },
+    "LYB": {
+      "company": "LyondellBasell Industries NV",
+      "sector": "Basic Materials"
+    },
+    "LYFT": {
+      "company": "Lyft, Inc.",
+      "sector": "Technology"
+    },
+    "LYV": {
+      "company": "Live Nation",
+      "sector": "Communication"
+    },
+    "LZB": {
+      "company": "La-Z-Boy Incorporated",
+      "sector": "Consumer Cyclical"
+    },
+    "M": {
+      "company": "Macy's, Inc.",
+      "sector": "Consumer Cyclical"
+    },
+    "MA": {
+      "company": "Mastercard Inc.",
+      "sector": "Financials"
+    },
+    "MAIR": {
+      "company": "Madison Air Solutions Corporation",
+      "sector": "Industrials"
+    },
+    "MAN": {
+      "company": "ManpowerGroup Inc",
+      "sector": "Industrials"
+    },
+    "MANH": {
+      "company": "Manhattan Associates",
+      "sector": "Technology"
+    },
+    "MAR": {
+      "company": "Marriott International",
+      "sector": "Consumer Cyclical"
+    },
+    "MAS": {
+      "company": "Masco Corporation",
+      "sector": "Industrials"
+    },
+    "MBLY": {
+      "company": "Mobileye Global Inc.",
+      "sector": "Consumer Cyclical"
+    },
+    "MCD": {
+      "company": "McDonald's Corp.",
+      "sector": "Consumer"
+    },
+    "MCHP": {
+      "company": "Microchip Technology Incorporated",
+      "sector": "Technology"
+    },
+    "MCK": {
+      "company": "McKesson Corporation",
+      "sector": "Healthcare"
+    },
+    "MCO": {
+      "company": "Moody's Corporation",
+      "sector": "Financial Services"
+    },
+    "MDB": {
+      "company": "MongoDB, Inc.",
+      "sector": "Technology"
+    },
+    "MDGL": {
+      "company": "Madrigal Pharmaceuticals, Inc.",
+      "sector": "Healthcare"
+    },
+    "MDLN": {
+      "company": "Medline Inc.",
+      "sector": "Healthcare"
+    },
+    "MDLZ": {
+      "company": "Mondelez International, Inc.",
+      "sector": "Consumer Defensive"
+    },
+    "MDT": {
+      "company": "Medtronic plc.",
+      "sector": "Healthcare"
+    },
+    "MEDP": {
+      "company": "Medpace Holdings, Inc.",
+      "sector": "Healthcare"
+    },
+    "MELI": {
+      "company": "MercadoLibre, Inc.",
+      "sector": "Consumer Cyclical"
+    },
+    "META": {
+      "company": "Meta Platforms Inc.",
+      "sector": "Communication"
+    },
+    "MFC": {
+      "company": "Manulife Financial Corporation",
+      "sector": "Financial Services"
+    },
+    "MFG": {
+      "company": "Mizuho Financial Group, Inc.",
+      "sector": "Financial Services"
+    },
+    "MGA": {
+      "company": "Magna International Inc.",
+      "sector": "Consumer Cyclical"
+    },
+    "MGM": {
+      "company": "MGM Resorts International",
+      "sector": "Consumer Cyclical"
+    },
+    "MH": {
+      "company": "McGraw Hill, Inc.",
+      "sector": "Consumer Defensive"
+    },
+    "MKSI": {
+      "company": "MKS Inc.",
+      "sector": "Technology"
+    },
+    "MLI": {
+      "company": "Mueller Industries, Inc.",
+      "sector": "Industrials"
+    },
+    "MLM": {
+      "company": "Martin Marietta Materials, Inc.",
+      "sector": "Basic Materials"
+    },
+    "MMM": {
+      "company": "3M Company",
+      "sector": "Industrials"
+    },
+    "MMYT": {
+      "company": "MakeMyTrip Limited",
+      "sector": "Consumer Cyclical"
+    },
+    "MNDY": {
+      "company": "monday.com Ltd.",
+      "sector": "Technology"
+    },
+    "MNSO": {
+      "company": "MINISO Group Holding Limited",
+      "sector": "Consumer Cyclical"
+    },
+    "MNST": {
+      "sector": "Consumer Defensive",
+      "company": "Monster Beverage Corporation"
+    },
+    "MO": {
+      "company": "Altria Group, Inc.",
+      "sector": "Consumer Defensive"
+    },
+    "MOD": {
+      "company": "Modine Manufacturing Company",
+      "sector": "Consumer Cyclical"
+    },
+    "MOH": {
+      "company": "Molina Healthcare, Inc.",
+      "sector": "Healthcare"
+    },
+    "MOMO": {
+      "company": "Hello Group Inc.",
+      "sector": "Communication Services"
+    },
+    "MPC": {
+      "company": "Marathon Petroleum Corporation",
+      "sector": "Energy"
+    },
+    "MPLX": {
+      "company": "MPLX LP",
+      "sector": "Energy"
+    },
+    "MPWR": {
+      "company": "Monolithic Power Systems, Inc.",
+      "sector": "Technology"
+    },
+    "MRK": {
+      "company": "Merck & Co.",
+      "sector": "Healthcare"
+    },
+    "MRNA": {
+      "company": "Moderna, Inc.",
+      "sector": "Healthcare"
+    },
+    "MRSH": {
+      "company": "Marsh & McLennan Companies, Inc.",
+      "sector": "Financial Services"
+    },
+    "MRVL": {
+      "company": "Marvell Technology, Inc.",
+      "sector": "Technology"
+    },
+    "MS": {
+      "company": "Morgan Stanley",
+      "sector": "Financials"
+    },
+    "MSCI": {
+      "company": "MSCI Inc.",
+      "sector": "Financial Services"
+    },
+    "MSFT": {
+      "company": "Microsoft Corp.",
+      "sector": "Technology"
+    },
+    "MSGS": {
+      "company": "Madison Square Garden Sports Corp.",
+      "sector": "Communication Services"
+    },
+    "MSI": {
+      "company": "Motorola Solutions, Inc.",
+      "sector": "Technology"
+    },
+    "MSM": {
+      "company": "MSC Industrial Direct Company, ",
+      "sector": "Industrials"
+    },
+    "MTB": {
+      "company": "M&T Bank Corporation",
+      "sector": "Financial Services"
+    },
+    "MTD": {
+      "company": "Mettler-Toledo International, I",
+      "sector": "Healthcare"
+    },
+    "MTN": {
+      "company": "Vail Resorts, Inc.",
+      "sector": "Consumer Cyclical"
+    },
+    "MTSI": {
+      "company": "MACOM Technology Solutions Holdings, Inc.",
+      "sector": "Technology"
+    },
+    "MU": {
+      "company": "Micron Technology",
+      "sector": "Technology"
+    },
+    "MUFG": {
+      "company": "Mitsubishi UFJ Financial Group, Inc.",
+      "sector": "Financial Services"
+    },
+    "MXL": {
+      "company": "MaxLinear, Inc.",
+      "sector": "Technology"
+    },
+    "NAVN": {
+      "company": "Navan, Inc.",
+      "sector": "Technology"
+    },
+    "NBIS": {
+      "company": "Nebius Group N.V.",
+      "sector": "Communication Services"
+    },
+    "NCLH": {
+      "company": "Norwegian Cruise Line Holdings",
+      "sector": "Consumer"
+    },
+    "NCLTY": {
+      "company": "Nitori Holdings Co., Ltd.",
+      "sector": "Consumer Cyclical"
+    },
+    "NCNO": {
+      "company": "nCino, Inc.",
+      "sector": "Technology"
+    },
+    "NDAQ": {
+      "company": "Nasdaq, Inc.",
+      "sector": "Financial Services"
+    },
+    "NEE": {
+      "company": "NextEra Energy Inc.",
+      "sector": "Utilities"
+    },
+    "NEGG": {
+      "company": "Newegg Commerce, Inc.",
+      "sector": "Consumer Cyclical"
+    },
+    "NEM": {
+      "company": "Newmont Corporation",
+      "sector": "Basic Materials"
+    },
+    "NEOG": {
+      "company": "Neogen Corporation",
+      "sector": "Healthcare"
+    },
+    "NET": {
+      "company": "Cloudflare, Inc.",
+      "sector": "Technology"
+    },
+    "NEU": {
+      "company": "NewMarket Corporation",
+      "sector": "Basic Materials"
+    },
+    "NFLX": {
+      "company": "Netflix",
+      "sector": "Communication"
+    },
+    "NGL": {
+      "company": "NGL ENERGY PARTNERS LP",
+      "sector": "Energy"
+    },
+    "NIO": {
+      "company": "NIO Inc.",
+      "sector": "Consumer Cyclical"
+    },
+    "NISTF": {
+      "company": "Nippon Steel Corporation",
+      "sector": "Basic Materials"
+    },
+    "NKE": {
+      "company": "Nike Inc.",
+      "sector": "Consumer"
+    },
+    "NLY": {
+      "company": "Annaly Capital Management",
+      "sector": "Real Estate"
+    },
+    "NOC": {
+      "company": "Northrop Grumman Corporation",
+      "sector": "Industrials"
+    },
+    "NOG": {
+      "company": "Northern Oil and Gas, Inc.",
+      "sector": "Energy"
+    },
+    "NOK": {
+      "company": "Nokia Corporation Sponsored",
+      "sector": "Technology"
+    },
+    "NOV": {
+      "company": "NOV Inc.",
+      "sector": "Energy"
+    },
+    "NOW": {
+      "company": "ServiceNow Inc.",
+      "sector": "Technology"
+    },
+    "NRG": {
+      "sector": "Utilities",
+      "company": "NRG Energy, Inc."
+    },
+    "NRIX": {
+      "company": "Nurix Therapeutics, Inc.",
+      "sector": "Healthcare"
+    },
+    "NSC": {
+      "company": "Norfolk Southern Corporation",
+      "sector": "Industrials"
+    },
+    "NTAP": {
+      "company": "NetApp, Inc.",
+      "sector": "Technology"
+    },
+    "NTES": {
+      "company": "NetEase, Inc.",
+      "sector": "Communication Services"
+    },
+    "NTNX": {
+      "company": "Nutanix, Inc.",
+      "sector": "Technology"
+    },
+    "NTRA": {
+      "company": "Natera, Inc.",
+      "sector": "Healthcare"
+    },
+    "NTRS": {
+      "company": "Northern Trust Corporation",
+      "sector": "Financial Services"
+    },
+    "NTSK": {
+      "company": "Netskope, Inc.",
+      "sector": "Technology"
+    },
+    "NU": {
+      "company": "Nu Holdings Ltd.",
+      "sector": "Financial Services"
+    },
+    "NUE": {
+      "company": "Nucor Corporation",
+      "sector": "Basic Materials"
+    },
+    "NVCR": {
+      "company": "NovoCure Limited",
+      "sector": "Healthcare"
+    },
+    "NVDA": {
+      "company": "NVIDIA Corp.",
+      "sector": "Technology"
+    },
+    "NVMI": {
+      "company": "Nova Ltd.",
+      "sector": "Technology"
+    },
+    "NVO": {
+      "company": "Novo Nordisk A/S",
+      "sector": "Healthcare"
+    },
+    "NVS": {
+      "company": "Novartis AG",
+      "sector": "Healthcare"
+    },
+    "NVT": {
+      "company": "nVent Electric plc",
+      "sector": "Industrials"
+    },
+    "NVTS": {
+      "company": "Navitas Semiconductor Corporation",
+      "sector": "Technology"
+    },
+    "NWSA": {
+      "company": "News Corporation",
+      "sector": "Communication Services"
+    },
+    "NX": {
+      "company": "Quanex Building Products Corporation",
+      "sector": "Industrials"
+    },
+    "NXPI": {
+      "company": "NXP Semiconductors N.V.",
+      "sector": "Technology"
+    },
+    "NYT": {
+      "sector": "Communication Services",
+      "company": "New York Times Company (The)"
+    },
+    "ODD": {
+      "company": "Oddity Tech Ltd.",
+      "sector": "Consumer Defensive"
+    },
+    "ODFL": {
+      "company": "Old Dominion Freight Line, Inc.",
+      "sector": "Industrials"
+    },
+    "OGN": {
+      "company": "Organon & Co.",
+      "sector": "Healthcare"
+    },
+    "OKE": {
+      "company": "ONEOK, Inc.",
+      "sector": "Energy"
+    },
+    "OKLO": {
+      "company": "Oklo Inc.",
+      "sector": "Utilities"
+    },
+    "OKTA": {
+      "company": "Okta, Inc.",
+      "sector": "Technology"
+    },
+    "OLLI": {
+      "company": "Ollie's Bargain Outlet Holdings, Inc.",
+      "sector": "Consumer Defensive"
+    },
+    "OMC": {
+      "company": "Omnicom Group",
+      "sector": "Communication"
+    },
+    "ON": {
+      "company": "technology",
+      "sector": "Technology"
+    },
+    "ONON": {
+      "company": "On Holding AG",
+      "sector": "Consumer Cyclical"
+    },
+    "ONTO": {
+      "company": "Onto Innovation Inc.",
+      "sector": "Technology"
+    },
+    "ORCL": {
+      "company": "Oracle Corp.",
+      "sector": "Technology"
+    },
+    "ORLY": {
+      "company": "O'Reilly Automotive, Inc.",
+      "sector": "Consumer Cyclical"
+    },
+    "OSCR": {
+      "company": "Oscar Health, Inc.",
+      "sector": "Healthcare"
+    },
+    "OSK": {
+      "company": "Oshkosh Corporation",
+      "sector": "Industrials"
+    },
+    "OTIS": {
+      "company": "Otis Worldwide Corporation",
+      "sector": "Industrials"
+    },
+    "OUST": {
+      "company": "Ouster, Inc.",
+      "sector": "Technology"
+    },
+    "OVV": {
+      "company": "Ovintiv Inc.",
+      "sector": "Energy"
+    },
+    "OXY": {
+      "company": "Occidental Petroleum",
+      "sector": "Energy"
+    },
+    "OZK": {
+      "company": "Bank OZK",
+      "sector": "Financials"
+    },
+    "PAC": {
+      "company": "Grupo Aeroportuario del Pacífico, S.A.B. de C.V.",
+      "sector": "Industrials"
+    },
+    "PACS": {
+      "company": "PACS Group, Inc.",
+      "sector": "Healthcare"
+    },
+    "PAGS": {
+      "company": "PagSeguro Digital Ltd.",
+      "sector": "Technology"
+    },
+    "PANW": {
+      "company": "Palo Alto Networks, Inc.",
+      "sector": "Technology"
+    },
+    "PATH": {
+      "company": "UiPath, Inc.",
+      "sector": "Technology"
+    },
+    "PAYC": {
+      "company": "Paycom Software, Inc.",
+      "sector": "Technology"
+    },
+    "PAYX": {
+      "company": "Paychex, Inc.",
+      "sector": "Technology"
+    },
+    "PCAR": {
+      "company": "PACCAR Inc",
+      "sector": "Industrials"
+    },
+    "PCG": {
+      "company": "PG&E Corporation",
+      "sector": "Utilities"
+    },
+    "PCOR": {
+      "company": "Procore Technologies, Inc.",
+      "sector": "Technology"
+    },
+    "PDD": {
+      "company": "PDD Holdings Inc.",
+      "sector": "Consumer Cyclical"
+    },
+    "PEG": {
+      "company": "Public Service Enterprise Group Incorporated",
+      "sector": "Utilities"
+    },
+    "PEGA": {
+      "company": "Pegasystems",
+      "sector": "Technology"
+    },
+    "PEN": {
+      "company": "Penumbra, Inc.",
+      "sector": "Healthcare"
+    },
+    "PEP": {
+      "company": "PepsiCo",
+      "sector": "Consumer"
+    },
+    "PFE": {
+      "company": "Pfizer Inc.",
+      "sector": "Healthcare"
+    },
+    "PG": {
+      "company": "Procter & Gamble Co.",
+      "sector": "Consumer"
+    },
+    "PGR": {
+      "company": "The Progressive Corporation",
+      "sector": "Financial Services"
+    },
+    "PH": {
+      "company": "Parker-Hannifin Corporation",
+      "sector": "Industrials"
+    },
+    "PHM": {
+      "company": "PulteGroup, Inc.",
+      "sector": "Consumer Cyclical"
+    },
+    "PI": {
+      "company": "Impinj, Inc.",
+      "sector": "Technology"
+    },
+    "PICS": {
+      "company": "PicS N.V.",
+      "sector": "Technology"
+    },
+    "PINS": {
+      "company": "Pinterest",
+      "sector": "Communication"
+    },
+    "PKG": {
+      "company": "Packaging Corporation of America",
+      "sector": "Consumer Cyclical"
+    },
+    "PL": {
+      "company": "Planet Labs PBC",
+      "sector": "Industrials"
+    },
+    "PLAB": {
+      "company": "Photronics, Inc.",
+      "sector": "Technology"
+    },
+    "PLAY": {
+      "company": "Dave & Buster's Entertainment, Inc.",
+      "sector": "Communication Services"
+    },
+    "PLD": {
+      "company": "Prologis Inc",
+      "sector": "Real Estate"
+    },
+    "PLTR": {
+      "company": "Palantir Technologies Inc.",
+      "sector": "Technology"
+    },
+    "PLUS": {
+      "company": "ePlus inc.",
+      "sector": "Technology"
+    },
+    "PM": {
+      "company": "Philip Morris International Inc",
+      "sector": "Consumer Defensive"
+    },
+    "PNC": {
+      "company": "The PNC Financial Services Group, Inc.",
+      "sector": "Financial Services"
+    },
+    "PNFP": {
+      "company": "Pinnacle Financial Partners, Inc.",
+      "sector": "Financial Services"
+    },
+    "PNR": {
+      "company": "Pentair plc",
+      "sector": "Industrials"
+    },
+    "PODD": {
+      "company": "Insulet Corporation",
+      "sector": "Healthcare"
+    },
+    "POET": {
+      "company": "POET Technologies Inc.",
+      "sector": "Technology"
+    },
+    "PONY": {
+      "company": "Pony AI Inc.",
+      "sector": "Technology"
+    },
+    "POST": {
+      "company": "Post Holdings, Inc.",
+      "sector": "Consumer Defensive"
+    },
+    "POWL": {
+      "company": "Powell Industries, Inc.",
+      "sector": "Industrials"
+    },
+    "PPG": {
+      "company": "PPG Industries, Inc.",
+      "sector": "Basic Materials"
+    },
+    "PRGS": {
+      "company": "Progress Software Corporation",
+      "sector": "Technology"
+    },
+    "PRU": {
+      "company": "Prudential Financial, Inc.",
+      "sector": "Financial Services"
+    },
+    "PSKY": {
+      "company": "Paramount Skydance Corporation",
+      "sector": "Communication Services"
+    },
+    "PSMT": {
+      "company": "PriceSmart, Inc.",
+      "sector": "Consumer Defensive"
+    },
+    "PSX": {
+      "company": "Phillips 66",
+      "sector": "Energy"
+    },
+    "PTC": {
+      "company": "PTC Inc.",
+      "sector": "Technology"
+    },
+    "PTON": {
+      "company": "Peloton Interactive, Inc.",
+      "sector": "Consumer Cyclical"
+    },
+    "PVH": {
+      "company": "PVH Corp.",
+      "sector": "Consumer Cyclical"
+    },
+    "PWR": {
+      "company": "Quanta Services, Inc.",
+      "sector": "Industrials"
+    },
+    "PXED": {
+      "company": "Phoenix Education Partners, Inc.",
+      "sector": "Consumer Defensive"
+    },
+    "PYPL": {
+      "company": "PayPal Holdings, Inc.",
+      "sector": "Financial Services"
+    },
+    "QBTS": {
+      "company": "D-Wave Quantum Inc.",
+      "sector": "Technology"
+    },
+    "QCOM": {
+      "company": "Qualcomm Inc.",
+      "sector": "Technology"
+    },
+    "QFIN": {
+      "company": "Qfin Holdings, Inc.",
+      "sector": "Financial Services"
+    },
+    "QRVO": {
+      "company": "Qorvo, Inc.",
+      "sector": "Technology"
+    },
+    "QS": {
+      "company": "QuantumScape Corporation",
+      "sector": "Consumer Cyclical"
+    },
+    "QSR": {
+      "sector": "Consumer Cyclical",
+      "company": "Restaurant Brands International"
+    },
+    "QUBT": {
+      "company": "Quantum Computing Inc.",
+      "sector": "Technology"
+    },
+    "R": {
+      "company": "Ryder System, Inc.",
+      "sector": "Industrials"
+    },
+    "RACE": {
+      "company": "Ferrari N.V.",
+      "sector": "Consumer Cyclical"
+    },
+    "RBC": {
+      "company": "RBC Bearings Incorporated",
+      "sector": "Industrials"
+    },
+    "RBLX": {
+      "company": "Roblox Corporation",
+      "sector": "Communication Services"
+    },
+    "RBRK": {
+      "company": "Rubrik, Inc.",
+      "sector": "Technology"
+    },
+    "RCL": {
+      "company": "Royal Caribbean Cruises Ltd.",
+      "sector": "Consumer Cyclical"
+    },
+    "RDDT": {
+      "company": "Reddit, Inc.",
+      "sector": "Communication Services"
+    },
+    "RDW": {
+      "company": "Redwire Corporation",
+      "sector": "Industrials"
+    },
+    "RDY": {
+      "company": "Dr. Reddy's Laboratories Limited",
+      "sector": "Healthcare"
+    },
+    "REGN": {
+      "company": "Regeneron Pharmaceuticals, Inc.",
+      "sector": "Healthcare"
+    },
+    "RELX": {
+      "company": "RELX PLC",
+      "sector": "Industrials"
+    },
+    "REX": {
+      "company": "REX American Resources Corporation",
+      "sector": "Basic Materials"
+    },
+    "REZI": {
+      "company": "Resideo Technologies, Inc.",
+      "sector": "Industrials"
+    },
+    "RF": {
+      "company": "Regions Financial Corporation",
+      "sector": "Financials"
+    },
+    "RGLD": {
+      "company": "Royal Gold, Inc.",
+      "sector": "Basic Materials"
+    },
+    "RGTI": {
+      "company": "Rigetti Computing, Inc.",
+      "sector": "Technology"
+    },
+    "RH": {
+      "company": "RH",
+      "company_is_ticker": true,
+      "sector": "Consumer Cyclical"
+    },
+    "RHI": {
+      "company": "Robert Half Inc.",
+      "sector": "Industrials"
+    },
+    "RIVN": {
+      "company": "Rivian Automotive, Inc.",
+      "sector": "Consumer Cyclical"
+    },
+    "RJET": {
+      "company": "Republic Airways Holdings Inc.",
+      "sector": "Industrials"
+    },
+    "RJF": {
+      "company": "Raymond James Financial, Inc.",
+      "sector": "Financial Services"
+    },
+    "RKLB": {
+      "company": "Rocket Lab",
+      "sector": "Industrials"
+    },
+    "RL": {
+      "company": "Ralph Lauren Corporation",
+      "sector": "Consumer Cyclical"
+    },
+    "RLI": {
+      "company": "RLI Corp.",
+      "sector": "Financial Services"
+    },
+    "RMBS": {
+      "company": "Rambus Inc.",
+      "sector": "Technology"
+    },
+    "RMD": {
+      "company": "ResMed",
+      "sector": "Healthcare"
+    },
+    "RNG": {
+      "company": "RingCentral, Inc.",
+      "sector": "Technology"
+    },
+    "RNW": {
+      "company": "ReNew Energy Global Plc",
+      "sector": "Utilities"
+    },
+    "ROIV": {
+      "company": "Roivant Sciences Ltd.",
+      "sector": "Healthcare"
+    },
+    "ROK": {
+      "company": "Rockwell Automation, Inc.",
+      "sector": "Industrials"
+    },
+    "ROKU": {
+      "company": "Roku, Inc.",
+      "sector": "Communication Services"
+    },
+    "ROL": {
+      "company": "Rollins, Inc.",
+      "sector": "Consumer Cyclical"
+    },
+    "ROP": {
+      "company": "Roper Technologies, Inc.",
+      "sector": "Technology"
+    },
+    "ROST": {
+      "company": "Ross Stores, Inc.",
+      "sector": "Consumer Cyclical"
+    },
+    "RPRX": {
+      "company": "Royalty Pharma plc",
+      "sector": "Healthcare"
+    },
+    "RRC": {
+      "company": "Range Resources",
+      "sector": "Energy"
+    },
+    "RS": {
+      "company": "Reliance, Inc.",
+      "sector": "Basic Materials"
+    },
+    "RSG": {
+      "company": "Republic Services, Inc.",
+      "sector": "Industrials"
+    },
+    "RTX": {
+      "company": "RTX Corporation",
+      "sector": "Industrials"
+    },
+    "RUM": {
+      "company": "RUM Group Inc.",
+      "sector": "Communication Services"
+    },
+    "RVMD": {
+      "company": "Revolution Medicines, Inc.",
+      "sector": "Healthcare"
+    },
+    "RVTY": {
+      "company": "Revvity, Inc.",
+      "sector": "Healthcare"
+    },
+    "RY": {
+      "company": "Royal Bank of Canada",
+      "sector": "Financial Services"
+    },
+    "RYAAY": {
+      "company": "Ryanair Holdings plc",
+      "sector": "Industrials"
+    },
+    "S": {
+      "company": "SentinelOne, Inc.",
+      "sector": "Technology"
+    },
+    "SAIC": {
+      "company": "Science Applications International Corporation",
+      "sector": "Technology"
+    },
+    "SAIL": {
+      "company": "SailPoint, Inc.",
+      "sector": "Technology"
+    },
+    "SAP": {
+      "company": "SAP SE",
+      "sector": "Technology"
+    },
+    "SBUX": {
+      "company": "Starbucks Corp.",
+      "sector": "Consumer"
+    },
+    "SCHW": {
+      "company": "The Charles Schwab Corporation",
+      "sector": "Financial Services"
+    },
+    "SE": {
+      "company": "Sea Limited",
+      "sector": "Consumer Cyclical"
+    },
+    "SEDG": {
+      "company": "SolarEdge Technologies, Inc.",
+      "sector": "Technology"
+    },
+    "SEIC": {
+      "company": "SEI Investments Company",
+      "sector": "Financial Services"
+    },
+    "SF": {
+      "company": "Stifel Financial Corporation",
+      "sector": "Financial Services"
+    },
+    "SFD": {
+      "company": "Smithfield Foods, Inc.",
+      "sector": "Consumer Defensive"
+    },
+    "SFM": {
+      "company": "Sprouts Farmers Market, Inc.",
+      "sector": "Consumer Defensive"
+    },
+    "SFTBY": {
+      "company": "SoftBank Group Corp.",
+      "sector": "Communication Services"
+    },
+    "SHOP": {
+      "company": "Shopify Inc.",
+      "sector": "Technology"
+    },
+    "SHW": {
+      "company": "Sherwin-Williams Co.",
+      "sector": "Materials"
+    },
+    "SID": {
+      "company": "Companhia Siderurgica Nacional ",
+      "sector": "Basic Materials"
+    },
+    "SIFY": {
+      "company": "Sify Technologies Limited",
+      "sector": "Communication Services"
+    },
+    "SIG": {
+      "company": "Signet Jewelers Limited",
+      "sector": "Consumer Cyclical"
+    },
+    "SIMO": {
+      "company": "Silicon Motion Technology Corporation",
+      "sector": "Technology"
+    },
+    "SITM": {
+      "company": "SiTime Corporation",
+      "sector": "Technology"
+    },
+    "SJM": {
+      "company": "The J. M. Smucker Company",
+      "sector": "Consumer Defensive"
+    },
+    "SKHY": {
+      "company": "SK hynix Inc.",
+      "sector": "Technology"
+    },
+    "SKY": {
+      "company": "Champion Homes, Inc.",
+      "sector": "Consumer Cyclical"
+    },
+    "SKYW": {
+      "company": "SkyWest, Inc.",
+      "sector": "Industrials"
+    },
+    "SLB": {
+      "company": "Schlumberger Ltd.",
+      "sector": "Energy"
+    },
+    "SLS": {
+      "company": "SELLAS Life Sciences Group, Inc.",
+      "sector": "Healthcare"
+    },
+    "SMCI": {
+      "company": "Super Micro Computer",
+      "sector": "Technology"
+    },
+    "SMMT": {
+      "company": "Summit Therapeutics Inc.",
+      "sector": "Healthcare"
+    },
+    "SMPL": {
+      "company": "The Simply Good Foods Company",
+      "sector": "Consumer Defensive"
+    },
+    "SMR": {
+      "company": "NuScale Power Corporation",
+      "sector": "Industrials"
+    },
+    "SMTC": {
+      "company": "Semtech Corporation",
+      "sector": "Technology"
+    },
+    "SNA": {
+      "company": "Snap-On Incorporated",
+      "sector": "Industrials"
+    },
+    "SNAP": {
+      "sector": "Communication Services",
+      "company": "Snap Inc."
+    },
+    "SNDK": {
+      "company": "Sandisk Corporation",
+      "sector": "Technology"
+    },
+    "SNOW": {
+      "company": "Snowflake Inc.",
+      "sector": "Technology"
+    },
+    "SNPS": {
+      "sector": "Technology",
+      "company": "Synopsys, Inc."
+    },
+    "SNX": {
+      "company": "TD SYNNEX Corporation",
+      "sector": "Technology"
+    },
+    "SNY": {
+      "company": "Sanofi",
+      "sector": "Healthcare"
+    },
+    "SO": {
+      "company": "Southern Company",
+      "sector": "Utilities"
+    },
+    "SOLV": {
+      "company": "Solventum Corporation",
+      "sector": "Healthcare"
+    },
+    "SON": {
+      "company": "Sonoco Products",
+      "sector": "Materials"
+    },
+    "SONO": {
+      "company": "Sonos, Inc.",
+      "sector": "Technology"
+    },
+    "SONY": {
+      "company": "Sony Group Corporation",
+      "sector": "Technology"
+    },
+    "SPB": {
+      "company": "Spectrum Brands Holdings, Inc.",
+      "sector": "Consumer Defensive"
+    },
+    "SPCX": {
+      "company": "Space Exploration Technologies Corp.",
+      "sector": "Industrials"
+    },
+    "SPG": {
+      "company": "Simon Property Group, Inc.",
+      "sector": "Real Estate"
+    },
+    "SPGI": {
+      "company": "S&P Global Inc.",
+      "sector": "Financials"
+    },
+    "SPOT": {
+      "company": "Spotify Technology S.A.",
+      "sector": "Communication Services"
+    },
+    "SQM": {
+      "company": "Sociedad Química y Minera de Chile S.A.",
+      "sector": "Basic Materials"
+    },
+    "SRE": {
+      "company": "DBA Sempra",
+      "sector": "Utilities"
+    },
+    "SRPT": {
+      "company": "Sarepta Therapeutics, Inc.",
+      "sector": "Healthcare"
+    },
+    "SSD": {
+      "company": "Simpson Manufacturing Company, ",
+      "sector": "Basic Materials"
+    },
+    "SSNC": {
+      "company": "SS&C Technologies Holdings, Inc.",
+      "sector": "Technology"
+    },
+    "STE": {
+      "company": "STERIS plc",
+      "sector": "Healthcare"
+    },
+    "STLD": {
+      "company": "Steel Dynamics, Inc.",
+      "sector": "Basic Materials"
+    },
+    "STM": {
+      "company": "STMicroelectronics N.V.",
+      "sector": "Technology"
+    },
+    "STN": {
+      "company": "Stantec Inc.",
+      "sector": "Industrials"
+    },
+    "STRL": {
+      "company": "Sterling Infrastructure",
+      "sector": "Industrials"
+    },
+    "STT": {
+      "company": "State Street Corporation",
+      "sector": "Financial Services"
+    },
+    "STX": {
+      "company": "Seagate Technology Holdings PLC",
+      "sector": "Technology"
+    },
+    "STZ": {
+      "company": "Constellation Brands, Inc.",
+      "sector": "Consumer Defensive"
+    },
+    "SUNB": {
+      "company": "Sunbelt Rentals Holdings, Inc.",
+      "sector": "Industrials"
+    },
+    "SW": {
+      "company": "Smurfit Westrock Plc",
+      "sector": "Consumer Cyclical"
+    },
+    "SWK": {
+      "company": "Stanley Black & Decker, Inc.",
+      "sector": "Industrials"
+    },
+    "SWKS": {
+      "company": "Skyworks Solutions",
+      "sector": "Technology"
+    },
+    "SYF": {
+      "company": "Synchrony Financial",
+      "sector": "Financial Services"
+    },
+    "SYK": {
+      "sector": "Healthcare",
+      "company": "Stryker Corporation"
+    },
+    "SYM": {
+      "sector": "Industrials",
+      "company": "Symbotic Inc."
+    },
+    "SYRE": {
+      "company": "Spyre Therapeutics, Inc.",
+      "sector": "Healthcare"
+    },
+    "SYY": {
+      "company": "Sysco Corporation",
+      "sector": "Consumer Defensive"
+    },
+    "T": {
+      "company": "AT&T",
+      "sector": "Communication"
+    },
+    "TAK": {
+      "company": "Takeda Pharmaceutical Company Limited",
+      "sector": "Healthcare"
+    },
+    "TAP": {
+      "company": "Molson Coors Beverage Company",
+      "sector": "Consumer Defensive"
+    },
+    "TCEHY": {
+      "company": "Tencent Holdings Limited",
+      "sector": "Communication Services"
+    },
+    "TCOM": {
+      "company": "Trip.com Group Limited",
+      "sector": "Consumer Cyclical"
+    },
+    "TD": {
+      "company": "The Toronto-Dominion Bank",
+      "sector": "Financial Services"
+    },
+    "TDG": {
+      "company": "Transdigm Group Incorporated",
+      "sector": "Industrials"
+    },
+    "TDY": {
+      "company": "Teledyne Technologies Incorpora",
+      "sector": "Technology"
+    },
+    "TEAM": {
+      "company": "Atlassian Corporation",
+      "sector": "Technology"
+    },
+    "TECH": {
+      "sector": "Healthcare",
+      "company": "Bio-Techne Corporation"
+    },
+    "TECK": {
+      "company": "Teck Resources Limited",
+      "sector": "Basic Materials"
+    },
+    "TEL": {
+      "company": "TE Connectivity plc",
+      "sector": "Technology"
+    },
+    "TEM": {
+      "company": "Tempus AI, Inc.",
+      "sector": "Healthcare"
+    },
+    "TER": {
+      "company": "Teradyne, Inc.",
+      "sector": "Technology"
+    },
+    "TFC": {
+      "company": "Truist Financial Corporation",
+      "sector": "Financials"
+    },
+    "TGT": {
+      "company": "Target Corporation",
+      "sector": "Consumer Defensive"
+    },
+    "TGTX": {
+      "company": "TG Therapeutics, Inc.",
+      "sector": "Healthcare"
+    },
+    "THC": {
+      "company": "Tenet Healthcare Corporation",
+      "sector": "Healthcare"
+    },
+    "THO": {
+      "company": "THOR Industries, Inc.",
+      "sector": "Consumer Cyclical"
+    },
+    "THR": {
+      "company": "Thermon Group Holdings, Inc.",
+      "sector": "Industrials",
+      "market_data_note": "Thermon was acquired by CECO Environmental on June 1, 2026. Current standalone THR market metrics are no longer available; this page preserves the historical episode archive."
+    },
+    "THRM": {
+      "company": "Gentherm Incorporated",
+      "sector": "Consumer Cyclical"
+    },
+    "TIGR": {
+      "company": "UP Fintech Holding Limited",
+      "sector": "Financial Services"
+    },
+    "TJX": {
+      "company": "The TJX Companies, Inc.",
+      "sector": "Consumer Cyclical"
+    },
+    "TKO": {
+      "company": "TKO Group Holdings, Inc.",
+      "sector": "Communication Services"
+    },
+    "TLN": {
+      "company": "Talen Energy Corporation",
+      "sector": "Utilities"
+    },
+    "TME": {
+      "company": "Tencent Music Entertainment Group",
+      "sector": "Communication Services"
+    },
+    "TMO": {
+      "company": "Thermo Fisher Scientific",
+      "sector": "Healthcare"
+    },
+    "TMUS": {
+      "company": "T-Mobile US, Inc.",
+      "sector": "Communication Services"
+    },
+    "TNL": {
+      "company": "Travel + Leisure Co.",
+      "sector": "Consumer Cyclical"
+    },
+    "TOL": {
+      "company": "Toll Brothers, Inc.",
+      "sector": "Consumer Cyclical"
+    },
+    "TOST": {
+      "company": "Toast, Inc.",
+      "sector": "Technology"
+    },
+    "TPG": {
+      "company": "TPG Inc.",
+      "sector": "Financial Services"
+    },
+    "TPL": {
+      "company": "Texas Pacific Land Corporation",
+      "sector": "Energy"
+    },
+    "TR": {
+      "company": "Tootsie Roll Industries, Inc.",
+      "sector": "Consumer Defensive"
+    },
+    "TRMB": {
+      "company": "Trimble Inc.",
+      "sector": "Technology"
+    },
+    "TROW": {
+      "company": "T. Rowe Price Group, Inc.",
+      "sector": "Financial Services"
+    },
+    "TRU": {
+      "company": "TransUnion",
+      "sector": "Financial Services"
+    },
+    "TRUMY": {
+      "company": "Terumo Corporation",
+      "sector": "Healthcare"
+    },
+    "TRV": {
+      "company": "The Travelers Companies, Inc.",
+      "sector": "Financial Services"
+    },
+    "TSCO": {
+      "company": "Tractor Supply Company",
+      "sector": "Consumer Cyclical"
+    },
+    "TSEM": {
+      "company": "Tower Semiconductor Ltd.",
+      "sector": "Technology"
+    },
+    "TSLA": {
+      "company": "Tesla Inc.",
+      "sector": "Consumer"
+    },
+    "TSM": {
+      "company": "Taiwan Semiconductor Manufacturing Company Limited",
+      "sector": "Technology"
+    },
+    "TSN": {
+      "company": "Tyson Foods",
+      "sector": "Consumer"
+    },
+    "TT": {
+      "company": "Trane Technologies plc",
+      "sector": "Industrials"
+    },
+    "TTAN": {
+      "company": "ServiceTitan, Inc.",
+      "sector": "Technology"
+    },
+    "TTC": {
+      "company": "Toro Company (The)",
+      "sector": "Industrials"
+    },
+    "TTD": {
+      "company": "The Trade Desk, Inc.",
+      "sector": "Communication Services"
+    },
+    "TTE": {
+      "company": "TotalEnergies SE",
+      "sector": "Energy"
+    },
+    "TTMI": {
+      "company": "TTM Technologies, Inc.",
+      "sector": "Technology"
+    },
+    "TTWO": {
+      "company": "Take-Two Interactive Software, Inc.",
+      "sector": "Communication Services"
+    },
+    "TU": {
+      "company": "TELUS Corporation",
+      "sector": "Communication Services"
+    },
+    "TWLO": {
+      "company": "Twilio Inc.",
+      "sector": "Technology"
+    },
+    "TWST": {
+      "company": "Twist Bioscience Corporation",
+      "sector": "Healthcare"
+    },
+    "TXN": {
+      "company": "Texas Instruments",
+      "sector": "Technology"
+    },
+    "TXRH": {
+      "company": "Texas Roadhouse, Inc.",
+      "sector": "Consumer Cyclical"
+    },
+    "TXT": {
+      "company": "Textron Inc.",
+      "sector": "Industrials"
+    },
+    "TYL": {
+      "company": "Tyler Technologies, Inc.",
+      "sector": "Technology"
+    },
+    "U": {
+      "company": "Unity Software Inc.",
+      "sector": "Technology"
+    },
+    "UAL": {
+      "company": "United Airlines Holdings",
+      "sector": "Industrials"
+    },
+    "UBER": {
+      "company": "Uber Technologies",
+      "sector": "Industrials"
+    },
+    "UCTT": {
+      "company": "Ultra Clean Holdings, Inc.",
+      "sector": "Technology"
+    },
+    "UEC": {
+      "company": "Uranium Energy Corp.",
+      "sector": "Energy"
+    },
+    "UHAL": {
+      "company": "U-Haul Holding Company",
+      "sector": "Industrials"
+    },
+    "UHS": {
+      "company": "Universal Health Services, Inc.",
+      "sector": "Healthcare"
+    },
+    "UI": {
+      "company": "Ubiquiti Inc.",
+      "sector": "Technology"
+    },
+    "ULTA": {
+      "company": "Ulta Beauty, Inc.",
+      "sector": "Consumer Cyclical"
+    },
+    "UMC": {
+      "company": "United Microelectronics Corporation",
+      "sector": "Technology"
+    },
+    "UNF": {
+      "company": "UniFirst Corporation",
+      "sector": "Industrials"
+    },
+    "UNFI": {
+      "company": "United Natural Foods, Inc.",
+      "sector": "Consumer Defensive"
+    },
+    "UNH": {
+      "company": "UnitedHealth Group",
+      "sector": "Healthcare"
+    },
+    "UNP": {
+      "company": "Union Pacific Corporation",
+      "sector": "Industrials"
+    },
+    "UPS": {
+      "company": "United Parcel Service, Inc.",
+      "sector": "Industrials"
+    },
+    "URBN": {
+      "company": "Urban Outfitters, Inc.",
+      "sector": "Consumer Cyclical"
+    },
+    "URI": {
+      "company": "United Rentals, Inc.",
+      "sector": "Industrials"
+    },
+    "USB": {
+      "company": "U.S. Bancorp",
+      "sector": "Financial Services"
+    },
+    "USFD": {
+      "company": "US Foods Holding Corp.",
+      "sector": "Consumer Defensive"
+    },
+    "UTHR": {
+      "company": "United Therapeutics Corporation",
+      "sector": "Healthcare"
+    },
+    "UVV": {
+      "company": "Universal Corporation",
+      "sector": "Consumer Defensive"
+    },
+    "V": {
+      "company": "Visa Inc.",
+      "sector": "Financials"
+    },
+    "VEEV": {
+      "company": "Veeva Systems Inc.",
+      "sector": "Healthcare"
+    },
+    "VFC": {
+      "company": "V.F. Corporation",
+      "sector": "Consumer Cyclical"
+    },
+    "VFS": {
+      "company": "VinFast Auto Ltd.",
+      "sector": "Consumer Cyclical"
+    },
+    "VICR": {
+      "company": "Vicor Corporation",
+      "sector": "Technology"
+    },
+    "VIPS": {
+      "company": "Vipshop Holdings Limited",
+      "sector": "Consumer Cyclical"
+    },
+    "VIST": {
+      "company": "Vista Energy, S.A.B. de C.V.",
+      "sector": "Energy"
+    },
+    "VKTX": {
+      "company": "Viking Therapeutics, Inc.",
+      "sector": "Healthcare"
+    },
+    "VLO": {
+      "company": "Valero Energy Corporation",
+      "sector": "Energy"
+    },
+    "VLTO": {
+      "company": "Veralto Corporation",
+      "sector": "Industrials"
+    },
+    "VMC": {
+      "company": "Vulcan Materials Company",
+      "sector": "Basic Materials"
+    },
+    "VMI": {
+      "company": "Valmont Industries",
+      "sector": "Industrials"
+    },
+    "VOYG": {
+      "company": "Voyager Technologies, Inc.",
+      "sector": "Industrials"
+    },
+    "VRSK": {
+      "company": "Verisk Analytics, Inc.",
+      "sector": "Industrials"
+    },
+    "VRSN": {
+      "company": "VeriSign, Inc.",
+      "sector": "Technology"
+    },
+    "VRT": {
+      "company": "Vertiv Holdings Co",
+      "sector": "Industrials"
+    },
+    "VRTX": {
+      "company": "Vertex Pharmaceuticals",
+      "sector": "Healthcare"
+    },
+    "VSAT": {
+      "company": "Viasat, Inc.",
+      "sector": "Technology"
+    },
+    "VSCO": {
+      "company": "Victoria's Secret & Co.",
+      "sector": "Consumer Cyclical"
+    },
+    "VSH": {
+      "company": "Vishay Intertechnology, Inc.",
+      "sector": "Technology"
+    },
+    "VST": {
+      "sector": "Utilities",
+      "company": "Vistra Corp."
+    },
+    "VTRS": {
+      "company": "Viatris Inc.",
+      "sector": "Healthcare"
+    },
+    "VZ": {
+      "company": "Verizon Communications",
+      "sector": "Communication"
+    },
+    "W": {
+      "company": "Wayfair Inc.",
+      "sector": "Consumer Cyclical"
+    },
+    "WAB": {
+      "company": "Westinghouse Air Brake Technolo",
+      "sector": "Industrials"
+    },
+    "WAL": {
+      "company": "Western Alliance Bancorporation",
+      "sector": "Financial Services"
+    },
+    "WB": {
+      "company": "Weibo Corporation",
+      "sector": "Communication Services"
+    },
+    "WBD": {
+      "company": "Warner Bros. Discovery, Inc.",
+      "sector": "Communication Services"
+    },
+    "WBS": {
+      "company": "Webster Financial Corporation",
+      "sector": "Financial Services"
+    },
+    "WDAY": {
+      "company": "Workday, Inc.",
+      "sector": "Technology"
+    },
+    "WDC": {
+      "company": "Western Digital Corporation",
+      "sector": "Technology"
+    },
+    "WDFC": {
+      "company": "WD-40 Company",
+      "sector": "Basic Materials"
+    },
+    "WEC": {
+      "company": "WEC Energy Group, Inc.",
+      "sector": "Utilities"
+    },
+    "WELL": {
+      "sector": "Real Estate",
+      "company": "Welltower Inc."
+    },
+    "WEX": {
+      "company": "WEX Inc.",
+      "sector": "Technology"
+    },
+    "WFC": {
+      "company": "Wells Fargo",
+      "sector": "Financials"
+    },
+    "WFRD": {
+      "company": "Weatherford International",
+      "sector": "Energy"
+    },
+    "WHR": {
+      "company": "Whirlpool Corporation",
+      "sector": "Consumer Cyclical"
+    },
+    "WINA": {
+      "company": "Winmark Corporation",
+      "sector": "Consumer Cyclical"
+    },
+    "WIT": {
+      "company": "Wipro Limited",
+      "sector": "Technology"
+    },
+    "WIX": {
+      "company": "Wix.com Ltd.",
+      "sector": "Technology"
+    },
+    "WKC": {
+      "company": "World Kinect Corporation",
+      "sector": "Energy"
+    },
+    "WLY": {
+      "company": "John Wiley & Sons, Inc.",
+      "sector": "Communication Services"
+    },
+    "WM": {
+      "company": "Waste Management",
+      "sector": "Industrials"
+    },
+    "WMB": {
+      "company": "The Williams Companies, Inc.",
+      "sector": "Energy"
+    },
+    "WMG": {
+      "company": "Warner Music Group Corp.",
+      "sector": "Communication Services"
+    },
+    "WMT": {
+      "company": "Walmart Inc.",
+      "sector": "Consumer"
+    },
+    "WOOF": {
+      "company": "Petco Health and Wellness Company, Inc.",
+      "sector": "Consumer Cyclical"
+    },
+    "WOR": {
+      "company": "Worthington Enterprises, Inc.",
+      "sector": "Industrials"
+    },
+    "WRB": {
+      "company": "W.R. Berkley Corporation",
+      "sector": "Financial Services"
+    },
+    "WRD": {
+      "company": "WeRide Inc.",
+      "sector": "Technology"
+    },
+    "WS": {
+      "company": "Worthington Steel, Inc.",
+      "sector": "Basic Materials"
+    },
+    "WSM": {
+      "company": "Williams-Sonoma, Inc.",
+      "sector": "Consumer Cyclical"
+    },
+    "WST": {
+      "company": "West Pharmaceutical Services, Inc.",
+      "sector": "Healthcare"
+    },
+    "WTFC": {
+      "company": "Wintrust Financial Corporation",
+      "sector": "Financial Services"
+    },
+    "WTW": {
+      "company": "Willis Towers Watson Public Limited Company",
+      "sector": "Financial Services"
+    },
+    "WU": {
+      "company": "The Western Union Company",
+      "sector": "Financial Services"
+    },
+    "WULF": {
+      "company": "TeraWulf Inc.",
+      "sector": "Financial Services"
+    },
+    "WW": {
+      "company": "WW International, Inc.",
+      "sector": "Healthcare"
+    },
+    "WWD": {
+      "company": "Woodward, Inc.",
+      "sector": "Industrials"
+    },
+    "WYFI": {
+      "company": "WhiteFiber, Inc.",
+      "sector": "Technology"
+    },
+    "WYNN": {
+      "company": "Wynn Resorts, Limited",
+      "sector": "Consumer Cyclical"
+    },
+    "XE": {
+      "company": "X-Energy, Inc.",
+      "sector": "Industrials"
+    },
+    "XEL": {
+      "company": "Xcel Energy",
+      "sector": "Utilities"
+    },
+    "XOM": {
+      "company": "Exxon Mobil Corp.",
+      "sector": "Energy"
+    },
+    "XPEV": {
+      "company": "XPeng Inc.",
+      "sector": "Consumer Cyclical"
+    },
+    "XPO": {
+      "company": "XPO, Inc.",
+      "sector": "Industrials"
+    },
+    "XYL": {
+      "company": "Xylem Inc.",
+      "sector": "Industrials"
+    },
+    "XYZ": {
+      "company": "Block, Inc.",
+      "sector": "Technology"
+    },
+    "YAMHF": {
+      "company": "Yamaha Motor Co., Ltd.",
+      "sector": "Consumer Cyclical"
+    },
+    "YETI": {
+      "company": "YETI Holdings, Inc.",
+      "sector": "Consumer Cyclical"
+    },
+    "YEXT": {
+      "company": "Yext, Inc.",
+      "sector": "Technology"
+    },
+    "YPF": {
+      "company": "YPF Sociedad Anónima",
+      "sector": "Energy"
+    },
+    "YUM": {
+      "company": "Yum! Brands, Inc.",
+      "sector": "Consumer Cyclical"
+    },
+    "YUMC": {
+      "company": "Yum China Holdings, Inc.",
+      "sector": "Consumer Cyclical"
+    },
+    "Z": {
+      "company": "Zillow Group, Inc.",
+      "sector": "Communication Services"
+    },
+    "ZBH": {
+      "company": "Zimmer Biomet Holdings, Inc.",
+      "sector": "Healthcare"
+    },
+    "ZBRA": {
+      "company": "Zebra Technologies Corporation",
+      "sector": "Technology"
+    },
+    "ZIM": {
+      "company": "ZIM Integrated Shipping Services Ltd.",
+      "sector": "Industrials"
+    },
+    "ZION": {
+      "company": "Zions Bancorporation",
+      "sector": "Financials"
+    },
+    "ZM": {
+      "company": "Zoom Communications, Inc.",
+      "sector": "Technology"
+    },
+    "ZS": {
+      "company": "Zscaler, Inc.",
+      "sector": "Technology"
+    },
+    "ZTO": {
+      "company": "ZTO Express (Cayman) Inc.",
+      "sector": "Industrials"
+    },
+    "ZTS": {
+      "company": "Zoetis Inc.",
+      "sector": "Healthcare"
+    },
+    "ZUMZ": {
+      "company": "Zumiez Inc.",
+      "sector": "Consumer Cyclical"
+    }
+  }
 }
