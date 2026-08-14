@@ -50,9 +50,31 @@ class TTLCache:
 
 ticker_info_cache = TTLCache(default_ttl=300, max_size=1000)
 chart_cache = TTLCache(default_ttl=300, max_size=500)
+quote_snapshot_cache = TTLCache(default_ttl=120, max_size=500)
 
 
 # ── Ticker info fetcher (shared across stock, ETF, REIT screeners) ─────────
+
+def _has_usable_ticker_info(info):
+    """Reject Yahoo's occasional shell payloads that contain no stock data."""
+    if not isinstance(info, dict):
+        return False
+    return any(
+        info.get(key) not in (None, "")
+        for key in (
+            "longName",
+            "shortName",
+            "currentPrice",
+            "regularMarketPrice",
+            "previousClose",
+            "marketCap",
+            "fiftyTwoWeekHigh",
+            "sector",
+            "industry",
+            "website",
+            "longBusinessSummary",
+        )
+    )
 
 def fetch_ticker_info(symbol, max_retries=2):
     """Fetch yfinance Ticker and info dict with caching and rate-limit retry.
@@ -64,7 +86,9 @@ def fetch_ticker_info(symbol, max_retries=2):
     if cached:
         return cached
 
-    for attempt in range(max_retries):
+    attempts = max(1, int(max_retries or 1))
+    for attempt in range(attempts):
+        retry_delay = 0.5 * (attempt + 1)
         try:
             t = yf.Ticker(symbol)
             info = None
@@ -77,18 +101,122 @@ def fetch_ticker_info(symbol, max_retries=2):
                     info = t.info
                 except Exception:
                     info = None
-            if not info:
-                return None, None
-            result = (t, info)
-            ticker_info_cache.set(symbol, result)
-            return result
+            if _has_usable_ticker_info(info):
+                result = (t, info)
+                ticker_info_cache.set(symbol, result)
+                return result
         except Exception as e:
             err = str(e)
             if "Too Many Requests" in err or "Rate" in err or "429" in err:
-                time.sleep(5 * (attempt + 1))
-            else:
-                return None, None
+                retry_delay = 5 * (attempt + 1)
+
+        # Yahoo occasionally returns an empty payload without raising. Treat it
+        # as a transient failure instead of poisoning downstream pages with an
+        # immediate empty result.
+        if attempt < attempts - 1:
+            time.sleep(retry_delay)
     return None, None
+
+
+def fetch_quote_snapshot(symbol):
+    """Return resilient quote-level data from Yahoo's chart endpoint.
+
+    ``Ticker.get_info`` is richer but can fail independently of historical
+    prices. This deliberately small fallback lets detail pages retain a current
+    price, range, volume, and issuer name when fundamentals are temporarily
+    unavailable. It is not used as a substitute for financial-statement data.
+    """
+    sym = (symbol or "").upper()
+    if not sym:
+        return {}
+    cached = quote_snapshot_cache.get(sym)
+    if cached:
+        return cached
+
+    try:
+        ticker = yf.Ticker(sym)
+        history = ticker.history(period="5d", interval="1h")
+        try:
+            metadata = ticker.history_metadata or {}
+        except Exception:
+            metadata = {}
+        try:
+            fast = ticker.fast_info or {}
+        except Exception:
+            fast = {}
+
+        def _number(value):
+            try:
+                if pd.isna(value):
+                    return None
+            except Exception:
+                pass
+            try:
+                return float(value)
+            except (TypeError, ValueError):
+                return None
+
+        def _pick(*values):
+            for value in values:
+                number = _number(value)
+                if number is not None:
+                    return number
+            return None
+
+        closes = []
+        try:
+            closes = [
+                float(value)
+                for value in history.get("Close", pd.Series(dtype=float)).dropna().tolist()
+            ]
+        except Exception:
+            closes = []
+
+        def _fast_get(key):
+            try:
+                return fast.get(key)
+            except Exception:
+                return None
+
+        price = _pick(metadata.get("regularMarketPrice"), _fast_get("lastPrice"), closes[-1] if closes else None)
+        previous_close = _pick(
+            metadata.get("previousClose"),
+            _fast_get("previousClose"),
+            closes[-2] if len(closes) >= 2 else None,
+        )
+        market_cap = _pick(_fast_get("marketCap"))
+        shares = _pick(_fast_get("shares"))
+        if market_cap is None and price is not None and shares is not None:
+            market_cap = price * shares
+
+        snapshot = {
+            "symbol": sym,
+            "name": metadata.get("longName") or metadata.get("shortName") or "",
+            "price": round(price, 2) if price is not None else None,
+            "previous_close": round(previous_close, 2) if previous_close is not None else None,
+            "market_cap": round(market_cap) if market_cap is not None else None,
+            "volume": round(_pick(metadata.get("regularMarketVolume"), _fast_get("lastVolume")) or 0) or None,
+            "week_52_high": _pick(metadata.get("fiftyTwoWeekHigh"), _fast_get("yearHigh")),
+            "week_52_low": _pick(metadata.get("fiftyTwoWeekLow"), _fast_get("yearLow")),
+        }
+        if snapshot["price"] is not None and snapshot["previous_close"] not in (None, 0):
+            snapshot["change"] = round(snapshot["price"] - snapshot["previous_close"], 2)
+            snapshot["change_pct"] = round(
+                (snapshot["price"] - snapshot["previous_close"])
+                / snapshot["previous_close"]
+                * 100,
+                2,
+            )
+        else:
+            snapshot["change"] = None
+            snapshot["change_pct"] = None
+
+        if any(snapshot.get(key) is not None for key in ("price", "market_cap", "volume")):
+            quote_snapshot_cache.set(sym, snapshot)
+            return snapshot
+    except Exception:
+        pass
+    return {}
 
 
 # ── Safe float extractor ───────────────────────────────────────────────────

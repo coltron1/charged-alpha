@@ -22,6 +22,11 @@ from email.utils import parsedate_to_datetime
 from pathlib import Path
 
 
+PROJECT_ROOT = Path(__file__).resolve().parents[1]
+if str(PROJECT_ROOT) not in sys.path:
+    sys.path.insert(0, str(PROJECT_ROOT))
+
+
 DEFAULT_CATALOG = Path("data/shows_catalog.json")
 DEFAULT_YOUTUBE_CHANNEL = "https://www.youtube.com/@ChargedAlpha"
 DEFAULT_YOUTUBE_RSS = "https://www.youtube.com/feeds/videos.xml?channel_id=UC4ZDZpC0OvoN4cCGoUSofuA"
@@ -410,15 +415,106 @@ def collect_existing_urls(catalog: dict) -> set[str]:
     return urls
 
 
+def is_placeholder_company(value: object, ticker: str, allow_ticker_name: bool = False) -> bool:
+    text = str(value or "").strip()
+    return not text or (not allow_ticker_name and text.upper() == ticker.upper())
+
+
+def is_placeholder_sector(value: object) -> bool:
+    return not str(value or "").strip() or str(value).strip().lower() == "unclassified"
+
+
+def normalized_stock_metadata(catalog: dict) -> dict[str, dict]:
+    profiles = catalog.get("stock_metadata") or {}
+    if not isinstance(profiles, dict):
+        return {}
+    return {
+        str(ticker).upper(): dict(profile)
+        for ticker, profile in profiles.items()
+        if isinstance(profile, dict) and str(ticker).strip()
+    }
+
+
+def _set_stock_profile_value(profiles: dict[str, dict], ticker: str, key: str, value: object) -> bool:
+    if value in (None, ""):
+        return False
+    profile = dict(profiles.get(ticker) or {})
+    if profile.get(key) == value:
+        return False
+    profile[key] = value
+    profiles[ticker] = profile
+    return True
+
+
+def profile_has_resolved_company(profile: dict, ticker: str) -> bool:
+    return not is_placeholder_company(
+        profile.get("company"),
+        ticker,
+        bool(profile.get("company_is_ticker")),
+    )
+
+
+def metadata_published_at(value: object) -> datetime:
+    """Normalize catalog dates before choosing the newest historical metadata."""
+    text = str(value or "").strip()
+    if not text:
+        return datetime.min.replace(tzinfo=timezone.utc)
+    try:
+        parsed = datetime.fromisoformat(text.replace("Z", "+00:00"))
+    except ValueError:
+        return datetime.min.replace(tzinfo=timezone.utc)
+    if parsed.tzinfo is None:
+        parsed = parsed.replace(tzinfo=timezone.utc)
+    return parsed.astimezone(timezone.utc)
+
+
 def collect_stock_metadata(catalog: dict) -> tuple[dict[str, str], dict[str, str]]:
+    """Resolve stable identity from explicit profiles, then valid episode history.
+
+    The catalog is prepended on every sync, so ``setdefault`` made a newly added
+    placeholder overwrite richer historical metadata. Profiles are canonical;
+    otherwise prefer the newest non-placeholder episode field.
+    """
+    profiles = normalized_stock_metadata(catalog)
     companies: dict[str, str] = {}
     sectors: dict[str, str] = {}
+    company_dates: dict[str, datetime] = {}
+    sector_dates: dict[str, datetime] = {}
+
+    for ticker, profile in profiles.items():
+        company = profile.get("company")
+        sector = profile.get("sector")
+        if profile_has_resolved_company(profile, ticker):
+            companies[ticker] = str(company).strip()
+        if not is_placeholder_sector(sector):
+            sectors[ticker] = str(sector).strip()
+
     for episode in catalog.get("episodes", []):
         ticker = (episode.get("ticker") or "").upper().strip()
         if not ticker:
             continue
-        companies.setdefault(ticker, episode.get("company") or ticker)
-        sectors.setdefault(ticker, episode.get("sector") or "Unclassified")
+        published_at = metadata_published_at(episode.get("published_at"))
+        company = episode.get("company")
+        sector = episode.get("sector")
+        if (
+            not is_placeholder_company(company, ticker)
+            and (
+                ticker not in companies
+                or published_at > company_dates.get(ticker, datetime.min.replace(tzinfo=timezone.utc))
+            )
+        ):
+            companies[ticker] = str(company).strip()
+            company_dates[ticker] = published_at
+        if (
+            not is_placeholder_sector(sector)
+            and (
+                ticker not in sectors
+                or published_at > sector_dates.get(ticker, datetime.min.replace(tzinfo=timezone.utc))
+            )
+        ):
+            sectors[ticker] = str(sector).strip()
+            sector_dates[ticker] = published_at
+
     return companies, sectors
 
 
@@ -518,42 +614,126 @@ def build_stock_episode(
     }
 
 
-def enrich_new_episode_metadata(episodes: list[dict]) -> None:
+def enrich_new_episode_metadata(
+    episodes: list[dict],
+    stock_metadata: dict[str, dict] | None = None,
+) -> dict[str, int]:
+    stock_metadata = stock_metadata if stock_metadata is not None else {}
     tickers = sorted(
         {
             (episode.get("ticker") or "").upper()
             for episode in episodes
             if episode.get("ticker")
             and (
-                episode.get("company") == episode.get("ticker")
-                or episode.get("sector") == "Unclassified"
+                is_placeholder_company(episode.get("company"), episode.get("ticker") or "")
+                or is_placeholder_sector(episode.get("sector"))
             )
         }
     )
     if not tickers:
-        return
+        return {"lookups": 0, "profiles_updated": 0}
 
     try:
         from yf_utils import fetch_ticker_info
     except Exception:
-        return
+        return {"lookups": 0, "profiles_updated": 0}
 
     print("Fetching company metadata for new tickers...")
     metadata: dict[str, dict] = {}
     for ticker in tickers:
-        _ticker_obj, info = fetch_ticker_info(ticker, max_retries=1)
+        _ticker_obj, info = fetch_ticker_info(ticker, max_retries=2)
         if info:
             metadata[ticker] = info
 
+    profiles_updated = 0
     for episode in episodes:
         ticker = (episode.get("ticker") or "").upper()
         info = metadata.get(ticker) or {}
         company = info.get("longName") or info.get("shortName")
         sector = info.get("sector")
-        if company and episode.get("company") == ticker:
+        if company and is_placeholder_company(episode.get("company"), ticker):
             episode["company"] = company
-        if sector and episode.get("sector") == "Unclassified":
+        if sector and is_placeholder_sector(episode.get("sector")):
             episode["sector"] = sector
+        if company and not is_placeholder_company(company, ticker):
+            profiles_updated += int(_set_stock_profile_value(stock_metadata, ticker, "company", company))
+        if sector and not is_placeholder_sector(sector):
+            profiles_updated += int(_set_stock_profile_value(stock_metadata, ticker, "sector", sector))
+
+    return {"lookups": len(tickers), "profiles_updated": profiles_updated}
+
+
+def refresh_catalog_stock_metadata(catalog: dict, metadata_limit: int = 0) -> dict[str, int]:
+    """Persist canonical company/sector identity for existing catalog pages.
+
+    This is intentionally opt-in because a first repair can require many Yahoo
+    lookups. Once profiles are stored, future nightly syncs only fetch metadata
+    for truly new tickers.
+    """
+    profiles = normalized_stock_metadata(catalog)
+    companies, sectors = collect_stock_metadata(catalog)
+    tickers = sorted(
+        {
+            (episode.get("ticker") or "").upper().strip()
+            for episode in catalog.get("episodes", [])
+            if (episode.get("ticker") or "").strip()
+        }
+    )
+
+    updated = 0
+    for ticker in tickers:
+        company = companies.get(ticker)
+        sector = sectors.get(ticker)
+        if company and not is_placeholder_company(company, ticker):
+            updated += int(_set_stock_profile_value(profiles, ticker, "company", company))
+        if sector and not is_placeholder_sector(sector):
+            updated += int(_set_stock_profile_value(profiles, ticker, "sector", sector))
+
+    unresolved = [
+        ticker
+        for ticker in tickers
+        if not profile_has_resolved_company(profiles.get(ticker) or {}, ticker)
+        or is_placeholder_sector((profiles.get(ticker) or {}).get("sector"))
+    ]
+    selected = unresolved[:metadata_limit] if metadata_limit > 0 else unresolved
+
+    lookups = 0
+    if selected:
+        try:
+            from yf_utils import fetch_ticker_info
+        except Exception:
+            fetch_ticker_info = None
+
+        if fetch_ticker_info is not None:
+            print(f"Refreshing company metadata for {len(selected)} existing ticker(s)...")
+            for index, ticker in enumerate(selected, start=1):
+                _ticker_obj, info = fetch_ticker_info(ticker, max_retries=1)
+                lookups += 1
+                info = info or {}
+                company = info.get("longName") or info.get("shortName")
+                sector = info.get("sector")
+                if company and not is_placeholder_company(company, ticker):
+                    updated += int(_set_stock_profile_value(profiles, ticker, "company", company))
+                if sector and not is_placeholder_sector(sector):
+                    updated += int(_set_stock_profile_value(profiles, ticker, "sector", sector))
+                if index % 25 == 0 or index == len(selected):
+                    print(f"  Metadata checked: {index}/{len(selected)}")
+
+    if profiles:
+        catalog["stock_metadata"] = dict(sorted(profiles.items()))
+
+    unresolved_after = sum(
+        1
+        for ticker in tickers
+        if not profile_has_resolved_company(profiles.get(ticker) or {}, ticker)
+        or is_placeholder_sector((profiles.get(ticker) or {}).get("sector"))
+    )
+    return {
+        "profiles": len(profiles),
+        "lookups": lookups,
+        "updated": updated,
+        "unresolved": unresolved_after,
+    }
 
 
 def build_extra_video(
@@ -660,6 +840,7 @@ def sync_catalog(args: argparse.Namespace) -> dict:
         ensure_ascii=False,
     )
     existing_urls = collect_existing_urls(catalog)
+    stock_metadata = normalized_stock_metadata(catalog)
     companies, sectors = collect_stock_metadata(catalog)
 
     print("Fetching YouTube videos...")
@@ -770,8 +951,10 @@ def sync_catalog(args: argparse.Namespace) -> dict:
     ]
 
     new_episodes.sort(key=lambda episode: episode.get("published_at") or "", reverse=True)
-    enrich_new_episode_metadata(new_episodes)
+    new_metadata_summary = enrich_new_episode_metadata(new_episodes, stock_metadata)
     catalog["episodes"] = new_episodes + catalog.get("episodes", [])
+    if stock_metadata:
+        catalog["stock_metadata"] = dict(sorted(stock_metadata.items()))
 
     explainer_section = find_section(catalog, "Market and Sector Explainers")
     if explainer_section is not None:
@@ -790,6 +973,17 @@ def sync_catalog(args: argparse.Namespace) -> dict:
         apple_items_by_guid,
         titled_apple,
     )
+    metadata_summary = {
+        "profiles": len(stock_metadata),
+        "lookups": new_metadata_summary["lookups"],
+        "updated": new_metadata_summary["profiles_updated"],
+        "unresolved": None,
+    }
+    if args.refresh_stock_metadata:
+        metadata_summary = refresh_catalog_stock_metadata(
+            catalog,
+            metadata_limit=args.metadata_limit,
+        )
 
     catalog_content_changed = json.dumps(
         {key: value for key, value in catalog.items() if key != "last_synced_at"},
@@ -805,6 +999,7 @@ def sync_catalog(args: argparse.Namespace) -> dict:
         "shorts": len(new_shorts),
         "stock_tickers": [episode["ticker"] for episode in new_episodes],
         "backfilled_links": backfilled_links,
+        "metadata": metadata_summary,
         "catalog_changed": catalog_content_changed,
         "catalog_path": str(catalog_path),
     }
@@ -830,6 +1025,17 @@ def parse_args() -> argparse.Namespace:
         "--scan-all",
         action="store_true",
         help="Scan the whole YouTube tab instead of stopping at the first already-linked upload.",
+    )
+    parser.add_argument(
+        "--refresh-stock-metadata",
+        action="store_true",
+        help="Backfill canonical company and sector profiles for existing stock pages.",
+    )
+    parser.add_argument(
+        "--metadata-limit",
+        type=int,
+        default=0,
+        help="Maximum existing ticker profiles to query during --refresh-stock-metadata (0 means all).",
     )
     parser.add_argument("--dry-run", action="store_true", help="Print additions without writing the catalog.")
     return parser.parse_args()

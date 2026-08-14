@@ -65,8 +65,9 @@ except ImportError:
     pass
 
 # ── Shared utilities ────────────────────────────────────────────────────────
-from yf_utils import (TTLCache, JobStore, fetch_ticker_info, safe_float,
-                       normalize_div_yield, fetch_chart, fetch_banner_tickers)
+from yf_utils import (TTLCache, JobStore, fetch_ticker_info, fetch_quote_snapshot,
+                       safe_float, normalize_div_yield, fetch_chart,
+                       fetch_banner_tickers)
 from models import AppAnalyticsEvent, db, User, GameScore
 from auth import (
     auth_bp,
@@ -1267,6 +1268,14 @@ def _episode_sort_key(ep):
     return (*_quarter_sort_key(ep.get("quarter")), ep.get("published_at") or "")
 
 
+def _episode_published_sort_key(ep):
+    return (
+        _parse_datetime(ep.get("published_at"))
+        or datetime.datetime.min.replace(tzinfo=datetime.timezone.utc),
+        _episode_sort_key(ep),
+    )
+
+
 def _episode_has_any_link(ep):
     return any(
         ep.get(key)
@@ -1282,8 +1291,72 @@ def _episode_has_any_link(ep):
     )
 
 
-def build_show_library(episodes):
+def _is_placeholder_show_company(value, ticker, allow_ticker_name=False):
+    text = (value or "").strip()
+    return not text or (
+        not allow_ticker_name and text.upper() == (ticker or "").upper()
+    )
+
+
+def _is_placeholder_show_sector(value):
+    return not (value or "").strip() or (value or "").strip().lower() == "unclassified"
+
+
+def _show_metadata_by_slug(stock_metadata):
+    normalized = {}
+    for ticker, profile in (stock_metadata or {}).items():
+        if not isinstance(profile, dict):
+            continue
+        slug = _show_slug(ticker)
+        if slug:
+            normalized[slug] = profile
+    return normalized
+
+
+def _resolved_show_metadata(stock, profile):
+    ticker = stock["ticker"]
+    episodes = stock.get("episodes", [])
+    profile = profile or {}
+    company_is_ticker = bool(profile.get("company_is_ticker")) if isinstance(profile, dict) else False
+
+    company = profile.get("company") if isinstance(profile, dict) else ""
+    if _is_placeholder_show_company(company, ticker, company_is_ticker):
+        company = next(
+            (
+                episode.get("company")
+                for episode in episodes
+                if not _is_placeholder_show_company(episode.get("company"), ticker)
+            ),
+            ticker,
+        )
+
+    sector = profile.get("sector") if isinstance(profile, dict) else ""
+    if _is_placeholder_show_sector(sector):
+        sector = next(
+            (
+                episode.get("sector")
+                for episode in episodes
+                if not _is_placeholder_show_sector(episode.get("sector"))
+            ),
+            "Unclassified",
+        )
+
+    yf_symbol = profile.get("yf_symbol") if isinstance(profile, dict) else ""
+    if not isinstance(yf_symbol, str) or not yf_symbol.strip():
+        yf_symbol = ticker.replace(".", "-")
+
+    return {
+        "company": company.strip() if isinstance(company, str) else ticker,
+        "sector": sector.strip() if isinstance(sector, str) else "Unclassified",
+        "yf_symbol": yf_symbol.strip().upper(),
+        "company_is_ticker": company_is_ticker,
+        "market_data_note": profile.get("market_data_note", "") if isinstance(profile, dict) else "",
+    }
+
+
+def build_show_library(episodes, stock_metadata=None):
     grouped = {}
+    metadata_by_slug = _show_metadata_by_slug(stock_metadata)
     quarter_set = set()
     published_episode_count = 0
     youtube_episode_count = 0
@@ -1314,8 +1387,8 @@ def build_show_library(episodes):
                 "slug": slug,
                 "ticker": ticker,
                 "yf_symbol": ticker.replace(".", "-"),
-                "company": ep.get("company") or ticker,
-                "sector": ep.get("sector") or "Unclassified",
+                "company": ticker,
+                "sector": "Unclassified",
                 "episodes": [],
             },
         )
@@ -1323,6 +1396,8 @@ def build_show_library(episodes):
         stock["episodes"].append(
             {
                 "ticker": ticker,
+                "company": ep.get("company") or ticker,
+                "sector": ep.get("sector") or "Unclassified",
                 "quarter": quarter,
                 "title": ep.get("title") or ep.get("episode_title") or f"{ticker} {quarter} earnings analysis",
                 "episode_number": ep.get("episode_number") or "",
@@ -1342,10 +1417,10 @@ def build_show_library(episodes):
 
     stocks = []
     for stock in grouped.values():
-        stock["episodes"].sort(key=_episode_sort_key, reverse=True)
+        stock["episodes"].sort(key=_episode_published_sort_key, reverse=True)
+        stock.update(_resolved_show_metadata(stock, metadata_by_slug.get(stock["slug"])))
         latest = stock["episodes"][0]
         latest_youtube = next((ep for ep in stock["episodes"] if ep.get("youtube_url")), None)
-        latest_episode = latest_youtube or latest
         dated_episodes = [ep for ep in stock["episodes"] if _parse_datetime(ep.get("published_at"))]
         latest_published = max(
             dated_episodes,
@@ -1370,32 +1445,39 @@ def build_show_library(episodes):
         stock["latest_youtube_embed_url"] = _youtube_embed_url(latest_youtube.get("youtube_url")) if latest_youtube else ""
         stock["latest_status"] = latest_youtube["status"] if latest_youtube else latest["status"]
         stock["quarter_labels"] = [ep["quarter"] for ep in stock["episodes"]]
+        latest_spotify = next((ep for ep in stock["episodes"] if ep.get("spotify_url")), None)
+        latest_podcast = next((ep for ep in stock["episodes"] if ep.get("podbean_url")), None)
+        latest_apple = next((ep for ep in stock["episodes"] if ep.get("apple_url")), None)
+        latest_amazon = next((ep for ep in stock["episodes"] if ep.get("amazon_url")), None)
+        latest_iheart = next((ep for ep in stock["episodes"] if ep.get("iheart_url")), None)
+        latest_google = next((ep for ep in stock["episodes"] if ep.get("google_url")), None)
         stock["latest_links"] = {
-            "youtube": latest_episode.get("youtube_url") or "",
-            "spotify": latest_episode.get("spotify_url") or "",
-            "podcast": latest_episode.get("podbean_url") or "",
-            "apple": latest_episode.get("apple_url") or "",
-            "amazon": latest_episode.get("amazon_url") or "",
-            "iheart": latest_episode.get("iheart_url") or "",
-            "google": latest_episode.get("google_url") or "",
+            "youtube": latest_youtube.get("youtube_url") if latest_youtube else "",
+            "spotify": latest_spotify.get("spotify_url") if latest_spotify else "",
+            "podcast": latest_podcast.get("podbean_url") if latest_podcast else "",
+            "apple": latest_apple.get("apple_url") if latest_apple else "",
+            "amazon": latest_amazon.get("amazon_url") if latest_amazon else "",
+            "iheart": latest_iheart.get("iheart_url") if latest_iheart else "",
+            "google": latest_google.get("google_url") if latest_google else "",
         }
         stock["latest_youtube_url"] = latest_youtube.get("youtube_url") if latest_youtube else ""
-        stock["latest_spotify_url"] = latest_episode.get("spotify_url") or ""
-        stock["latest_podcast_url"] = latest_episode.get("podbean_url") or ""
-        stock["latest_apple_url"] = latest_episode.get("apple_url") or ""
-        stock["latest_amazon_url"] = latest_episode.get("amazon_url") or ""
-        stock["latest_iheart_url"] = latest_episode.get("iheart_url") or ""
-        stock["latest_google_url"] = latest_episode.get("google_url") or ""
+        stock["latest_spotify_url"] = latest_spotify.get("spotify_url") if latest_spotify else ""
+        stock["latest_podcast_url"] = latest_podcast.get("podbean_url") if latest_podcast else ""
+        stock["latest_apple_url"] = latest_apple.get("apple_url") if latest_apple else ""
+        stock["latest_amazon_url"] = latest_amazon.get("amazon_url") if latest_amazon else ""
+        stock["latest_iheart_url"] = latest_iheart.get("iheart_url") if latest_iheart else ""
+        stock["latest_google_url"] = latest_google.get("google_url") if latest_google else ""
         stock["has_youtube"] = bool(latest_youtube)
         stock["has_podcast"] = any(
             ep.get("spotify_url") or ep.get("podbean_url") or ep.get("apple_url") or ep.get("amazon_url")
             for ep in stock["episodes"]
         )
         stock["latest_quarter_sort"] = _quarter_sort_key(stock["latest_video_quarter"] or stock["latest_quarter"])
+        stock["latest_published_sort"] = _episode_published_sort_key(latest_youtube or latest)
         stocks.append(stock)
 
     stocks.sort(
-        key=lambda stock: (stock["latest_quarter_sort"], stock["published_count"], stock["ticker"]),
+        key=lambda stock: (stock["latest_published_sort"], stock["published_count"], stock["ticker"]),
         reverse=True,
     )
 
@@ -1756,6 +1838,9 @@ def _pick_competitor_stocks(show_stock, all_stocks):
         if len(picks) == 2:
             return picks
 
+    if _is_placeholder_show_sector(show_stock.get("sector")):
+        return picks
+
     sector_peers = [
         stock for stock in all_stocks
         if stock["ticker"] != show_stock["ticker"] and stock.get("sector") == show_stock.get("sector")
@@ -1863,7 +1948,31 @@ def _build_fast_show_stock_detail(symbol):
         "website": info.get("website") or "",
         "country": info.get("country") or "",
         "employees": info.get("fullTimeEmployees"),
+        "market_data_source": "live",
     }
+
+
+def _build_show_quote_fallback(symbol):
+    snapshot = fetch_quote_snapshot(symbol)
+    if not snapshot:
+        return {}
+    snapshot["market_data_source"] = "quote_fallback"
+    return snapshot
+
+
+def _has_usable_show_stock_detail(info):
+    if not isinstance(info, dict):
+        return False
+    return any(
+        info.get(key) is not None
+        for key in (
+            "price",
+            "market_cap",
+            "volume",
+            "week_52_high",
+            "week_52_low",
+        )
+    )
 
 
 def _compact_stock_snapshot(show_stock, allow_fetch=False):
@@ -2012,10 +2121,28 @@ def build_stock_competitor_analysis(show_stock, primary_snapshot, all_stocks):
     if show_stock.get("sector") == "Financials":
         notes.append("Financial companies often look unusual on debt and liquidity ratios, so compare those rows more carefully than you would for non-financial businesses.")
 
+    comparison_keys = (
+        "forward_pe",
+        "revenue_growth",
+        "operating_margin",
+        "profit_margin",
+        "return_on_equity",
+        "fcf_yield",
+        "debt_to_equity",
+        "current_ratio",
+        "target_upside",
+    )
+    comparable_stocks = sum(
+        1
+        for snapshot in snapshots
+        if any(snapshot.get(key) is not None for key in comparison_keys)
+    )
+
     return {
         "stocks": cards,
         "rows": rows,
         "notes": notes,
+        "has_meaningful_data": comparable_stocks >= 2,
     }
 
 app.url_map.strict_slashes = False
@@ -2186,7 +2313,10 @@ def _shows_context():
         return cached
 
     shows_data = load_shows_catalog()
-    show_library = build_show_library(shows_data.get("episodes", []))
+    show_library = build_show_library(
+        shows_data.get("episodes", []),
+        shows_data.get("stock_metadata", {}),
+    )
     context = {
         "shows_data": shows_data,
         "show_library": show_library,
@@ -2199,15 +2329,49 @@ def _shows_context():
 def _cached_show_stock_detail(symbol, allow_fetch=True):
     sym = symbol.upper()
     cache_key = f"show_stock_detail_{sym}"
-    cached = _detail_cache.get(cache_key, ttl=900)
-    if cached is not None:
+    cached = _detail_cache.get(cache_key, ttl=300)
+    if cached is not None and _has_usable_show_stock_detail(cached.get("info")):
         return cached
     if not allow_fetch:
         return {}
 
-    data = {"info": _build_fast_show_stock_detail(sym), "options": []}
-    _detail_cache.set(cache_key, data)
-    return data
+    info = _build_fast_show_stock_detail(sym)
+    if not _has_usable_show_stock_detail(info):
+        fallback_bundle = get_stock_detail(sym, include_options=False) or {}
+        fallback_info = fallback_bundle.get("info") if isinstance(fallback_bundle, dict) else {}
+        if _has_usable_show_stock_detail(fallback_info):
+            info = dict(fallback_info)
+            info.setdefault("market_data_source", "live")
+
+    if not _has_usable_show_stock_detail(info):
+        info = _build_show_quote_fallback(sym)
+
+    if _has_usable_show_stock_detail(info):
+        data = {"info": info, "options": []}
+        _detail_cache.set(cache_key, data)
+        return data
+
+    # Do not cache an empty upstream response. A subsequent page load gets a
+    # fresh chance to recover instead of displaying a blank dashboard for 15m.
+    return {"info": {}, "options": []}
+
+
+def _hydrate_show_stock_identity(show_stock, stock_detail):
+    hydrated = dict(show_stock)
+    ticker = hydrated.get("ticker") or ""
+    if _is_placeholder_show_company(
+        hydrated.get("company"),
+        ticker,
+        hydrated.get("company_is_ticker", False),
+    ):
+        name = (stock_detail or {}).get("name")
+        if not _is_placeholder_show_company(name, ticker):
+            hydrated["company"] = name
+    if _is_placeholder_show_sector(hydrated.get("sector")):
+        sector = (stock_detail or {}).get("sector")
+        if not _is_placeholder_show_sector(sector):
+            hydrated["sector"] = sector
+    return hydrated
 
 
 def _start_job(fn, *args):
@@ -2296,7 +2460,10 @@ def google_site_verification():
 @app.route("/sitemap.xml")
 def sitemap_xml():
     shows_data = load_shows_catalog()
-    show_library = build_show_library(shows_data.get("episodes", []))
+    show_library = build_show_library(
+        shows_data.get("episodes", []),
+        shows_data.get("stock_metadata", {}),
+    )
     latest_catalog_date = _date_for_sitemap(_latest_catalog_timestamp(shows_data))
 
     def url_entry(loc, lastmod=""):
@@ -2779,10 +2946,6 @@ def show_stock_detail_page(ticker_slug):
     if not show_stock:
         return ("Stock show not found", 404)
 
-    prefetch_stocks = [show_stock] + _pick_competitor_stocks(show_stock, show_library["stocks"])
-    with ThreadPoolExecutor(max_workers=min(3, len(prefetch_stocks))) as ex:
-        list(ex.map(lambda stock: _cached_show_stock_detail(stock["yf_symbol"]), prefetch_stocks))
-
     detail_bundle = _cached_show_stock_detail(show_stock["yf_symbol"])
     stock_detail = dict(detail_bundle.get("info") or {})
     if not stock_detail:
@@ -2796,6 +2959,7 @@ def show_stock_detail_page(ticker_slug):
     stock_detail.setdefault("website", "")
     stock_detail.setdefault("country", "")
     stock_detail.setdefault("employees", None)
+    stock_detail.setdefault("market_data_source", "unavailable")
 
     for key in (
         "price",
@@ -2826,41 +2990,51 @@ def show_stock_detail_page(ticker_slug):
     ):
         stock_detail.setdefault(key, None)
 
-    competitor_analysis = build_stock_competitor_analysis(show_stock, stock_detail, show_library["stocks"])
+    page_show_stock = _hydrate_show_stock_identity(show_stock, stock_detail)
+    competitor_stocks = _pick_competitor_stocks(page_show_stock, show_library["stocks"])
+    if competitor_stocks:
+        with ThreadPoolExecutor(max_workers=min(2, len(competitor_stocks))) as ex:
+            list(ex.map(lambda stock: _cached_show_stock_detail(stock["yf_symbol"]), competitor_stocks))
+
+    competitor_analysis = build_stock_competitor_analysis(
+        page_show_stock,
+        stock_detail,
+        show_library["stocks"],
+    )
     related_videos = [
         video
         for video in flatten_video_sections(shows_data.get("video_sections", []))
-        if show_stock["ticker"] in [ticker.upper() for ticker in video.get("tickers", [])]
+        if page_show_stock["ticker"] in [ticker.upper() for ticker in video.get("tickers", [])]
     ][:6]
 
-    seo_title = f"{show_stock['company']} ({show_stock['ticker']}) Stock Library — Charged Alpha"
+    seo_title = f"{page_show_stock['company']} ({page_show_stock['ticker']}) Stock Library — Charged Alpha"
     seo_description = (
-        f"Track {show_stock['company']} ({show_stock['ticker']}) across Charged Alpha earnings episodes, "
+        f"Track {page_show_stock['company']} ({page_show_stock['ticker']}) across Charged Alpha earnings episodes, "
         "with YouTube, podcast, stock metrics, chart context, and competitor comparisons."
     )
     seo_meta = {
         "title": seo_title,
         "description": seo_description,
-        "canonical_url": _canonical_url(f"/shows/{show_stock['slug']}"),
+        "canonical_url": _canonical_url(f"/shows/{page_show_stock['slug']}"),
         "robots": SEO_DEFAULTS["robots"],
         "og_title": seo_title,
         "og_description": seo_description,
         "og_type": "article",
         "twitter_card": SEO_DEFAULTS["twitter_card"],
-        "og_image": show_stock.get("latest_video_thumbnail") or DEFAULT_SOCIAL_IMAGE_URL,
-        "twitter_image": show_stock.get("latest_video_thumbnail") or DEFAULT_SOCIAL_IMAGE_URL,
+        "og_image": page_show_stock.get("latest_video_thumbnail") or DEFAULT_SOCIAL_IMAGE_URL,
+        "twitter_image": page_show_stock.get("latest_video_thumbnail") or DEFAULT_SOCIAL_IMAGE_URL,
     }
 
     return render_template(
         "show_stock_detail.html",
-        show_stock=show_stock,
+        show_stock=page_show_stock,
         stock_detail=stock_detail,
         competitor_analysis=competitor_analysis,
         related_videos=related_videos,
-        chart_symbol=show_stock["yf_symbol"],
+        chart_symbol=page_show_stock["yf_symbol"],
         podcast_platforms=shows_data.get("platform_links", {}),
         seo_meta=seo_meta,
-        structured_data=_stock_page_structured_data(show_stock, seo_meta),
+        structured_data=_stock_page_structured_data(page_show_stock, seo_meta),
     )
 
 

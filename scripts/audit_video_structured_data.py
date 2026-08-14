@@ -59,7 +59,10 @@ def main() -> int:
     args = parser.parse_args()
 
     shows_data = load_shows_catalog()
-    show_library = build_show_library(shows_data.get("episodes", []))
+    show_library = build_show_library(
+        shows_data.get("episodes", []),
+        shows_data.get("stock_metadata", {}),
+    )
     errors = []
 
     if _video_object_schema("Missing date", "https://www.youtube.com/watch?v=dQw4w9WgXcQ", "") is not None:
