@@ -10,6 +10,204 @@
   },
   "episodes": [
     {
+      "ticker": "ACM",
+      "company": "AECOM",
+      "sector": "Industrials",
+      "quarter": "Q3 FY2026",
+      "episode_number": "",
+      "title": "ACM Stock Q3 FY2026: A $337M Charge, Three EPS Numbers, And A 17% Two-Day Drop",
+      "published_at": "2026-08-15T01:18:40+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=qB8PqsBFuvo",
+      "spotify_url": "https://open.spotify.com/episode/66FO8XY1J0qlupkN3MnSqR",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/acm-stock-q3-fy2026-a-337m-charge-three-eps-numbers-and-a-17-two-day-drop/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "MSGS",
+      "company": "Madison Square Garden Sports Corp.",
+      "sector": "Communication Services",
+      "quarter": "Q4 FY2026",
+      "episode_number": "",
+      "title": "MSGS Stock Q4 FY2026: Knicks Title, 83% EPS Beat, $9.8B For $7.8M Profit",
+      "published_at": "2026-08-15T00:24:51+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=4e6oQDQB0FQ",
+      "spotify_url": "https://open.spotify.com/episode/6FZ7xFSuqoVmtRf42Lek26",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/msgs-stock-q4-fy2026-knicks-title-83-eps-beat-98b-for-78m-profit/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "JBS",
+      "company": "JBS N.V.",
+      "sector": "Consumer Defensive",
+      "quarter": "Q2 2026",
+      "episode_number": "",
+      "title": "JBS Stock Q2 2026: Record $23.9B Sales And A $102M Net Loss",
+      "published_at": "2026-08-14T23:25:36+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=FO-8uM_LPrA",
+      "spotify_url": "https://open.spotify.com/episode/7oJLhYNqBVYm12Z6GlQ1KT",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/jbs-stock-q2-2026-record-239b-sales-and-a-102m-net-loss/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "GLBE",
+      "company": "Global-E Online Ltd.",
+      "sector": "Consumer Cyclical",
+      "quarter": "Q2 2026",
+      "episode_number": "",
+      "title": "Global-e (GLBE) Q2 2026: A 52-Week High At 10am, And Red By The Close",
+      "published_at": "2026-08-14T22:00:34+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=Rpx49EWWwMA",
+      "spotify_url": "https://open.spotify.com/episode/6loJWfHcEWv044YEcy38au",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/global-e-glbe-q2-2026-a-52-week-high-at-10am-and-red-by-the-close/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "DDS",
+      "company": "Dillard's, Inc.",
+      "sector": "Consumer Cyclical",
+      "quarter": "Q2 FY2026",
+      "episode_number": "",
+      "title": "Dillard’s (DDS) Q2 FY2026: A $1.59 Beat, And One Cent Of It Was The Business",
+      "published_at": "2026-08-14T21:03:23+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=9iWB128-FBY",
+      "spotify_url": "https://open.spotify.com/episode/4ODd6JDIebOr18S4uAVowP",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/dillard-s-dds-q2-fy2026-a-159-beat-and-one-cent-of-it-was-the-business/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "ARMK",
+      "company": "Aramark",
+      "sector": "Industrials",
+      "quarter": "Q3 FY2026",
+      "episode_number": "",
+      "title": "Aramark (ARMK) Q3 FY2026: They Raised The Guide That Doesn’t Pay You",
+      "published_at": "2026-08-14T20:01:24+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=VARopZ6Lhnk",
+      "spotify_url": "https://open.spotify.com/episode/4E4uVGbmwwGfPb0t53JZVj",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/aramark-armk-q3-fy2026-they-raised-the-guide-that-doesn-t-pay-you/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "ASND",
+      "company": "Ascendis Pharma A/S",
+      "sector": "Healthcare",
+      "quarter": "Q2 2026",
+      "episode_number": "",
+      "title": "Ascendis Pharma (ASND) Q2 2026: EUR 2.83 Headline, EUR 0.90 Reality",
+      "published_at": "2026-08-14T19:12:19+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=wCTPC5jyiIU",
+      "spotify_url": "https://open.spotify.com/episode/6KFA474FPU7isRknEmbkKf",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/ascendis-pharma-asnd-q2-2026-eur-283-headline-eur-090-reality/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "BIRK",
+      "company": "Birkenstock Holding plc",
+      "sector": "Consumer Cyclical",
+      "quarter": "Q3 FY2026",
+      "episode_number": "",
+      "title": "Birkenstock (BIRK) Q3 FY2026: They Raised Guidance, Then Sold $1 Billion Of Stock",
+      "published_at": "2026-08-14T18:25:20+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=gjUE_E-TI1Y",
+      "spotify_url": "https://open.spotify.com/episode/1jI47mO8lR85zkYlU8jZuV",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/birkenstock-birk-q3-fy2026-they-raised-guidance-then-sold-1-billion-of-stock/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "PFGC",
+      "company": "Performance Food Group Company",
+      "sector": "Consumer Defensive",
+      "quarter": "Q4 FY2026",
+      "episode_number": "",
+      "title": "Performance Food Group (PFGC) Q4 FY2026: The Mix Shift Worked, The Shareholder Didn’t",
+      "published_at": "2026-08-14T17:40:00+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=zrGd39fuoM8",
+      "spotify_url": "https://open.spotify.com/episode/3VuWa99U5YcNZpZrpVpTep",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/performance-food-group-pfgc-q4-fy2026-the-mix-shift-worked-the-shareholder-didn-t/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "AMCR",
+      "company": "Amcor plc",
+      "sector": "Consumer Cyclical",
+      "quarter": "Q4 FY2026",
+      "episode_number": "",
+      "title": "Amcor (AMCR) Q4 FY2026: The Growth Was Bought, Not Earned",
+      "published_at": "2026-08-14T14:11:24+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=duNKirTxRBU",
+      "spotify_url": "https://open.spotify.com/episode/2W6I0QhfWpkHV12F2bV9xj",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/amcor-amcr-q4-fy2026-the-growth-was-bought-not-earned/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "PAAS",
+      "company": "Pan American Silver Corp.",
+      "sector": "Basic Materials",
+      "quarter": "Q2 2026",
+      "episode_number": "",
+      "title": "Pan American Silver (PAAS) Q2 2026: The Miss Was A Tax Bill",
+      "published_at": "2026-08-14T02:06:47+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=E8qhvKTfhYk",
+      "spotify_url": "https://open.spotify.com/episode/1fzeILuTnKfFY5BHlgvvYi",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/pan-american-silver-paas-q2-2026-the-miss-was-a-tax-bill/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
       "ticker": "ERAS",
       "company": "ERAS",
       "sector": "Unclassified",
@@ -29843,6 +30041,161 @@
       "description": "Fast clips that point viewers into full research videos and stock pages.",
       "videos": [
         {
+          "title": "ACM Stock: AECOM Q3 FY2026 Earnings - A $337M Charge, Three EPS Numbers #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/_U9xpyeW1nY",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-08-15T01:19:19+00:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "ACM",
+            "AECOM",
+            "FY2026"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "MSGS Stock: MSG Sports Q4 FY2026 Earnings - Knicks Title, 83% Beat #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/rqvkQROW9jY",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-08-15T00:25:37+00:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "MSGS",
+            "MSG",
+            "FY2026"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "JBS Stock: JBS N.V. Q2 2026 Earnings - Record Sales, Net Loss",
+          "youtube_url": "https://www.youtube.com/shorts/EfjLymVwFm4",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-08-14T23:25:42+00:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "JBS",
+            "N.V"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "GLBE Stock: Global-e Q2 2026 Earnings - A 52-Week High, Then Red",
+          "youtube_url": "https://www.youtube.com/shorts/D74QMBr8D1c",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-08-14T22:00:58+00:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "GLBE"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "DDS Stock: Dillard's Q2 FY2026 Earnings - One Cent Was The Business",
+          "youtube_url": "https://www.youtube.com/shorts/2_aAZV2NdoQ",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-08-14T21:03:58+00:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "DDS",
+            "FY2026"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "ARMK Stock: Aramark Q3 FY2026 Earnings - The Guide They Didn't Raise",
+          "youtube_url": "https://www.youtube.com/shorts/pEgPQXhQLEE",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-08-14T20:01:55+00:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "ARMK",
+            "FY2026"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "ASND Stock: Ascendis Pharma Q2 2026 Earnings - EUR 2.83 Was Really EUR 0.90",
+          "youtube_url": "https://www.youtube.com/shorts/CEcdDmvHp88",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-08-14T19:12:49+00:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "ASND",
+            "EUR"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "BIRK Stock: Birkenstock Q3 FY2026 Earnings - Guidance Raised, Then A $1B Block",
+          "youtube_url": "https://www.youtube.com/shorts/7aR10ZvipCA",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-08-14T11:25:41-07:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "BIRK",
+            "FY2026"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "PFGC Stock: Performance Food Group Q4 FY2026 Earnings - EBITDA +9%, EPS +1.6%",
+          "youtube_url": "https://www.youtube.com/shorts/xl1Apk8g4JU",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-08-14T10:39:58-07:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "PFGC",
+            "FY2026",
+            "EBITDA"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "AMCR Stock: Amcor Q4 FY2026 Earnings - The Growth Was Bought, Not Earned",
+          "youtube_url": "https://www.youtube.com/shorts/Mhx85QZz9ec",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-08-14T07:11:09-07:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "AMCR",
+            "FY2026"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "PAAS Stock: Pan American Silver Q2 2026 Earnings - The Miss Was A Tax Bill",
+          "youtube_url": "https://www.youtube.com/shorts/ssddiQTJY9k",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-08-14T07:07:40-07:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "PAAS"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
           "title": "SLS Stock: SELLAS Life Sciences Q2 2026 Earnings - EPS Improved, The Loss Got Worse",
           "youtube_url": "https://www.youtube.com/shorts/sEBw1wViG5E",
           "spotify_url": "",
@@ -36627,7 +36980,7 @@
       ]
     }
   ],
-  "last_synced_at": "2026-08-13T13:16:15-05:00",
+  "last_synced_at": "2026-08-14T21:03:39-05:00",
   "stock_metadata": {
     "A": {
       "company": "Agilent Technologies, Inc.",
@@ -36845,6 +37198,10 @@
       "company": "Ambiq Micro, Inc.",
       "sector": "Technology"
     },
+    "AMCR": {
+      "company": "Amcor plc",
+      "sector": "Consumer Cyclical"
+    },
     "AMD": {
       "company": "Advanced Micro Devices",
       "sector": "Technology"
@@ -36984,6 +37341,10 @@
     "ASML": {
       "company": "ASML Holding N.V.",
       "sector": "Technology"
+    },
+    "ASND": {
+      "company": "Ascendis Pharma A/S",
+      "sector": "Healthcare"
     },
     "ASO": {
       "company": "Academy Sports and Outdoors, Inc.",
@@ -37716,6 +38077,10 @@
     "DDOG": {
       "company": "Datadog, Inc.",
       "sector": "Technology"
+    },
+    "DDS": {
+      "company": "Dillard's, Inc.",
+      "sector": "Consumer Cyclical"
     },
     "DE": {
       "company": "Deere & Company",
@@ -38553,6 +38918,10 @@
       "company": "Jabil Inc.",
       "sector": "Technology"
     },
+    "JBS": {
+      "company": "JBS N.V.",
+      "sector": "Consumer Defensive"
+    },
     "JCI": {
       "sector": "Industrials",
       "company": "Johnson Controls International "
@@ -39297,6 +39666,10 @@
       "company": "Bank OZK",
       "sector": "Financials"
     },
+    "PAAS": {
+      "company": "Pan American Silver Corp.",
+      "sector": "Basic Materials"
+    },
     "PAC": {
       "company": "Grupo Aeroportuario del Pacífico, S.A.B. de C.V.",
       "sector": "Industrials"
@@ -39360,6 +39733,10 @@
     "PFE": {
       "company": "Pfizer Inc.",
       "sector": "Healthcare"
+    },
+    "PFGC": {
+      "company": "Performance Food Group Company",
+      "sector": "Consumer Defensive"
     },
     "PG": {
       "company": "Procter & Gamble Co.",
