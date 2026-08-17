@@ -10,6 +10,582 @@
   },
   "episodes": [
     {
+      "ticker": "ORKA",
+      "company": "Oruka Therapeutics, Inc.",
+      "sector": "Healthcare",
+      "quarter": "Q2 2026",
+      "episode_number": "",
+      "title": "ORKA Stock Q2 2026: Oruka Therapeutics Earnings - A $7.4B Bet On One Drug",
+      "published_at": "2026-08-17T01:54:54+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=C_BGx83_7m0",
+      "spotify_url": "https://open.spotify.com/episode/0xKOrNiWw4KFJoRl6lMJVP",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/orka-stock-q2-2026-oruka-therapeutics-earnings-a-74b-bet-on-one-drug/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "EMBJ",
+      "company": "Embraer S.A.",
+      "sector": "Industrials",
+      "quarter": "Q2 2026",
+      "episode_number": "",
+      "title": "EMBJ Stock Q2 2026: Embraer Earnings - A $110M Raise With $4M Of Business",
+      "published_at": "2026-08-17T01:04:09+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=qDwQSDpO-lY",
+      "spotify_url": "https://open.spotify.com/episode/6PfuWPQiaXn06AB7tW5QbQ",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/embj-stock-q2-2026-embraer-earnings-a-110m-raise-with-4m-of-business/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "LEGN",
+      "company": "Legend Biotech Corporation",
+      "sector": "Healthcare",
+      "quarter": "Q2 2026",
+      "episode_number": "",
+      "title": "LEGN Stock Q2 2026: Legend Biotech Earnings - $657M Of Drug, No Profit",
+      "published_at": "2026-08-16T23:59:53+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=TMh27ofwITQ",
+      "spotify_url": "https://open.spotify.com/episode/1Ju6VCxq02LS4119bTFEuS",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/legn-stock-q2-2026-legend-biotech-earnings-657m-of-drug-no-profit/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "GLNG",
+      "company": "Golar LNG Limited",
+      "sector": "Energy",
+      "quarter": "Q2 2026",
+      "episode_number": "",
+      "title": "GLNG Stock Q2 2026: Golar LNG Earnings - A $2.45B Ship With No Charter",
+      "published_at": "2026-08-16T22:57:57+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=ptb5k4TX4Mk",
+      "spotify_url": "https://open.spotify.com/episode/7whIh56sArED9i9TzYohWT",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/glng-stock-q2-2026-golar-lng-earnings-a-245b-ship-with-no-charter/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "MNDY",
+      "company": "monday.com Ltd.",
+      "sector": "Technology",
+      "quarter": "Q2 2026",
+      "episode_number": "",
+      "title": "MNDY Stock Q2 2026: monday.com Earnings - The Buyback Is Finished",
+      "published_at": "2026-08-16T21:55:25+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=mctJl6nzVMo",
+      "spotify_url": "https://open.spotify.com/episode/20Mqle6HCOKnXE3Ggm4c0F",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/mndy-stock-q2-2026-mondaycom-earnings-the-buyback-is-finished/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "CBRS",
+      "company": "Cerebras Systems Inc.",
+      "sector": "Technology",
+      "quarter": "Q2 2026",
+      "episode_number": "",
+      "title": "CBRS Stock Q2 2026: Cerebras Earnings - The Beat That Isn’t",
+      "published_at": "2026-08-16T14:52:45+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=ESMnDauviXw",
+      "spotify_url": "https://open.spotify.com/episode/5JNxj7ai7yYmgQRo778GIK",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/cbrs-stock-q2-2026-cerebras-earnings-the-beat-that-isn-t/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "MSGE",
+      "company": "Madison Square Garden Entertainment Corp.",
+      "sector": "Communication Services",
+      "quarter": "Q4 FY2026",
+      "episode_number": "",
+      "title": "MSGE Stock Q4 FY2026: MSG Entertainment Earnings - There Is No Second Garden",
+      "published_at": "2026-08-16T01:33:09+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=FkabjiDTckE",
+      "spotify_url": "https://open.spotify.com/episode/6a0tpE1Q0gRY1c9c8iNPf5",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/msge-stock-q4-fy2026-msg-entertainment-earnings-there-is-no-second-garden/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "INSW",
+      "company": "International Seaways, Inc.",
+      "sector": "Energy",
+      "quarter": "Q2 2026",
+      "episode_number": "",
+      "title": "INSW Stock Q2 2026: International Seaways Earnings - A Record Quarter, And A Red Day",
+      "published_at": "2026-08-16T00:30:35+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=oclGOU_YRx0",
+      "spotify_url": "https://open.spotify.com/episode/3qLfxTYfJ4huHR2DX1pDyq",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/insw-stock-q2-2026-international-seaways-earnings-a-record-quarter-and-a-red-day/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "REZI",
+      "company": "Resideo Technologies, Inc.",
+      "sector": "Industrials",
+      "quarter": "Q2 2026",
+      "episode_number": "",
+      "title": "REZI Stock Q2 2026: Resideo Earnings - The 20% Drop That Wasn’t A Guidance Cut",
+      "published_at": "2026-08-15T23:41:40+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=uKQfmCBMIGw",
+      "spotify_url": "https://open.spotify.com/episode/3GJtNEshoYh2EmjCtyQqwI",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/rezi-stock-q2-2026-resideo-earnings-the-20-drop-that-wasn-t-a-guidance-cut/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "EQPT",
+      "company": "EquipmentShare.com Inc.",
+      "sector": "Industrials",
+      "quarter": "Q2 2026",
+      "episode_number": "",
+      "title": "EQPT Stock Q2 2026: EquipmentShare Earnings - 56% Of The Fleet Isn’t Theirs",
+      "published_at": "2026-08-15T22:40:46+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=2b9SnG5xxFw",
+      "spotify_url": "https://open.spotify.com/episode/6iC5NFdoTV4ATTjse60jG9",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/eqpt-stock-q2-2026-equipmentshare-earnings-56-of-the-fleet-isn-t-theirs/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "GDS",
+      "company": "GDS Holdings Limited",
+      "sector": "Technology",
+      "quarter": "Q2 2026",
+      "episode_number": "",
+      "title": "GDS Stock Q2 2026: GDS Holdings Earnings - A Beat Made Of One Line",
+      "published_at": "2026-08-15T21:40:38+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=SgsTo7gY1D4",
+      "spotify_url": "https://open.spotify.com/episode/5Xr4NjtflGR5gasROt50nj",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/gds-stock-q2-2026-gds-holdings-earnings-a-beat-made-of-one-line/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "ATRO",
+      "company": "Astronics Corporation",
+      "sector": "Industrials",
+      "quarter": "Q2 2026",
+      "episode_number": "",
+      "title": "ATRO Stock Q2 2026: Astronics Earnings - Record Backlog, Shorter Runway",
+      "published_at": "2026-08-15T20:02:23+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=Q0azsLC-Uew",
+      "spotify_url": "",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/atro-stock-q2-2026-astronics-earnings-record-backlog-shorter-runway/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "LFTO",
+      "company": "Liftoff Mobile, Inc.",
+      "sector": "Communication Services",
+      "quarter": "Q2 2026",
+      "episode_number": "",
+      "title": "LFTO Stock Q2 2026: Liftoff Mobile Earnings - A 42-Cent Beat, And A 20 Percent Drop",
+      "published_at": "2026-08-15T19:09:29+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=dPttbnWhzPY",
+      "spotify_url": "",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/lfto-stock-q2-2026-liftoff-mobile-earnings-a-42-cent-beat-and-a-20-percent-drop/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "ONDS",
+      "company": "Ondas Inc.",
+      "sector": "Technology",
+      "quarter": "Q2 2026",
+      "episode_number": "",
+      "title": "ONDS Stock Q2 2026: Ondas Earnings - Revenue 13x, But 38 Percent Of It Was Bought",
+      "published_at": "2026-08-15T18:18:49+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=pBrP2WZ-6-A",
+      "spotify_url": "",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/onds-stock-q2-2026-ondas-earnings-revenue-13x-but-38-percent-of-it-was-bought/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "LUNR",
+      "company": "Intuitive Machines, Inc.",
+      "sector": "Industrials",
+      "quarter": "Q2 2026",
+      "episode_number": "",
+      "title": "LUNR Stock Q2 2026: Intuitive Machines Earnings - Revenue 4x, But The Moon Business Loses Money",
+      "published_at": "2026-08-15T17:12:41+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=j-Yrk4yUgVI",
+      "spotify_url": "",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/lunr-stock-q2-2026-intuitive-machines-earnings-revenue-4x-but-the-moon-business-loses-money/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "KEEL",
+      "company": "Keel Infrastructure Corp.",
+      "sector": "Technology",
+      "quarter": "Q2 2026",
+      "episode_number": "",
+      "title": "KEEL Stock Q2 2026: Keel Infrastructure Earnings - 985 Megawatts Priced, Zero Signed",
+      "published_at": "2026-08-15T16:27:06+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=6grR5dNIWpE",
+      "spotify_url": "",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/keel-stock-q2-2026-keel-infrastructure-earnings-985-megawatts-priced-zero-signed/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "BRUN",
+      "company": "Boost Run, Inc.",
+      "sector": "Technology",
+      "quarter": "Q2 2026",
+      "episode_number": "",
+      "title": "BRUN Stock Q2 2026: Boost Run Earnings - The Loss Is An Artifact, The Capex Is Not",
+      "published_at": "2026-08-15T15:39:58+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=B5iq9ILWgYQ",
+      "spotify_url": "",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/brun-stock-q2-2026-boost-run-earnings-the-loss-is-an-artifact-the-capex-is-not/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "COGT",
+      "company": "Cogent Biosciences, Inc.",
+      "sector": "Healthcare",
+      "quarter": "Q2 2026",
+      "episode_number": "",
+      "title": "COGT Stock Q2 2026: Cogent Biosciences Earnings - The Science Won, The Price Already Paid",
+      "published_at": "2026-08-15T14:46:11+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=tCz7_ovH8eQ",
+      "spotify_url": "",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/cogt-stock-q2-2026-cogent-biosciences-earnings-the-science-won-the-price-already-paid/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "TME",
+      "company": "Tencent Music Entertainment Group",
+      "sector": "Communication Services",
+      "quarter": "Q2 2026",
+      "episode_number": "",
+      "title": "TME Stock Q2 2026: Tencent Music Beat Twice And Fell 12% - The Growth Was Bought",
+      "published_at": "2026-08-15T13:55:36+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=wkKSSvMwZW0",
+      "spotify_url": "",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/tme-stock-q2-2026-tencent-music-beat-twice-and-fell-12-the-growth-was-bought/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "CRC",
+      "company": "California Resources Corporation",
+      "sector": "Energy",
+      "quarter": "Q2 2026",
+      "episode_number": "",
+      "title": "CRC Stock Q2 2026: EPS Missed 27% And The Stock Rose - The Hedge Book Explains Both",
+      "published_at": "2026-08-15T13:00:56+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=KVDQ3bBtgjI",
+      "spotify_url": "",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/crc-stock-q2-2026-eps-missed-27-and-the-stock-rose-the-hedge-book-explains-both/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "YETI",
+      "company": "YETI Holdings, Inc.",
+      "sector": "Consumer Cyclical",
+      "quarter": "Q2 2026",
+      "episode_number": "",
+      "title": "YETI Stock Q2 2026: EPS Up 54%, Stock Down 11% - The Tariff Refund Behind The Beat",
+      "published_at": "2026-08-15T12:05:20+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=xG31iqavrUg",
+      "spotify_url": "",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/yeti-stock-q2-2026-eps-up-54-stock-down-11-the-tariff-refund-behind-the-beat/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "HTFL",
+      "company": "Heartflow, Inc.",
+      "sector": "Healthcare",
+      "quarter": "Q2 2026",
+      "episode_number": "",
+      "title": "HTFL Stock Q2 2026: Heartflow Jumped 36% On A Guide That Says The Ramp Stops",
+      "published_at": "2026-08-15T11:18:41+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=6BW9UXD8PGA",
+      "spotify_url": "",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/htfl-stock-q2-2026-heartflow-jumped-36-on-a-guide-that-says-the-ramp-stops/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "HRB",
+      "company": "H&R Block, Inc.",
+      "sector": "Consumer Cyclical",
+      "quarter": "Q4 FY2026",
+      "episode_number": "",
+      "title": "HRB Stock Q4 FY2026: H&R Block Grew Revenue 5% With Zero New Customers",
+      "published_at": "2026-08-15T10:23:20+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=HvgufMuZUn0",
+      "spotify_url": "",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/hrb-stock-q4-fy2026-hr-block-grew-revenue-5-with-zero-new-customers/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "STUB",
+      "company": "StubHub Holdings, Inc.",
+      "sector": "Communication Services",
+      "quarter": "Q2 2026",
+      "episode_number": "",
+      "title": "STUB Stock Q2 2026: StubHub Raised Volume Guidance And Not A Dollar Of Profit",
+      "published_at": "2026-08-15T09:18:54+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=Ka9Iuynq_h4",
+      "spotify_url": "",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/stub-stock-q2-2026-stubhub-raised-volume-guidance-and-not-a-dollar-of-profit/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "KOPN",
+      "company": "Kopin Corporation",
+      "sector": "Technology",
+      "quarter": "Q2 2026",
+      "episode_number": "",
+      "title": "KOPN Stock Q2 2026: Kopin’s First Profit Came From Below The Line",
+      "published_at": "2026-08-15T08:25:27+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=Ab7-4tFQQGM",
+      "spotify_url": "",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/kopn-stock-q2-2026-kopin-s-first-profit-came-from-below-the-line/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "YSS",
+      "company": "York Space Systems, Inc.",
+      "sector": "Industrials",
+      "quarter": "Q2 2026",
+      "episode_number": "",
+      "title": "YSS Stock Q2 2026: York Space Systems Cuts Guidance 32% After Reaffirming It",
+      "published_at": "2026-08-15T07:35:19+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=rfB2lOkkE98",
+      "spotify_url": "",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/yss-stock-q2-2026-york-space-systems-cuts-guidance-32-after-reaffirming-it/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "LGN",
+      "company": "Legence Corp.",
+      "sector": "Industrials",
+      "quarter": "Q2 2026",
+      "episode_number": "",
+      "title": "LGN Stock Q2 2026: Legence Doubled Revenue And Wrote Off Its Green Business",
+      "published_at": "2026-08-15T06:29:28+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=3_tackSK3tk",
+      "spotify_url": "",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/lgn-stock-q2-2026-legence-doubled-revenue-and-wrote-off-its-green-business/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "CELC",
+      "company": "Celcuity Inc.",
+      "sector": "Healthcare",
+      "quarter": "Q2 2026",
+      "episode_number": "",
+      "title": "CELC Stock Q2 2026: R&D Fell, Selling Costs Quintupled - Celcuity Just Changed Shape",
+      "published_at": "2026-08-15T05:45:50+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=JcMkZKwMsCo",
+      "spotify_url": "",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/celc-stock-q2-2026-rd-fell-selling-costs-quintupled-celcuity-just-changed-shape/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "BSP",
+      "company": "Bending Spoons S.p.A.",
+      "sector": "Technology",
+      "quarter": "Q2 2026",
+      "episode_number": "",
+      "title": "BSP Stock Q2 2026: 126% Revenue Growth, And Only 3% Of It Was Organic",
+      "published_at": "2026-08-15T04:59:46+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=7KyW4zAqPGo",
+      "spotify_url": "",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/bsp-stock-q2-2026-126-revenue-growth-and-only-3-of-it-was-organic/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "AMTM",
+      "company": "Amentum Holdings, Inc.",
+      "sector": "Industrials",
+      "quarter": "Q3 FY2026",
+      "episode_number": "",
+      "title": "AMTM Stock Q3 FY2026: A Record $48B Backlog, And Revenue Still Fell",
+      "published_at": "2026-08-15T04:02:03+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=s7_254TizC4",
+      "spotify_url": "",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/amtm-stock-q3-fy2026-a-record-48b-backlog-and-revenue-still-fell/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "MIDD",
+      "company": "The Middleby Corporation",
+      "sector": "Industrials",
+      "quarter": "Q2 2026",
+      "episode_number": "",
+      "title": "MIDD Stock Q2 2026: The 17% Miss That Never Happened",
+      "published_at": "2026-08-15T03:12:48+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=IuyHL5gKEdE",
+      "spotify_url": "",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/midd-stock-q2-2026-the-17-miss-that-never-happened/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "SFD",
+      "company": "Smithfield Foods, Inc.",
+      "sector": "Consumer Defensive",
+      "quarter": "Q2 2026",
+      "episode_number": "",
+      "title": "SFD Stock Q2 2026: A 2-Cent Beat, A $100M Guide Cut, And The Hogs Did It",
+      "published_at": "2026-08-15T02:25:51+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=w8PI_svBIyk",
+      "spotify_url": "",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/sfd-stock-q2-2026-a-2-cent-beat-a-100m-guide-cut-and-the-hogs-did-it/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
       "ticker": "ACM",
       "company": "AECOM",
       "sector": "Industrials",
@@ -29890,6 +30466,20 @@
       "description": "Theme videos, comparisons, and multi-stock frameworks for broader research.",
       "videos": [
         {
+          "title": "IHG Stock H1 2026: InterContinental Hotels Earnings - The Buyback, Counted Twice",
+          "youtube_url": "https://www.youtube.com/watch?v=xqlXEZHPfsw",
+          "spotify_url": "https://open.spotify.com/episode/2J5R9tRZBjTyoZKJScxN2z",
+          "podbean_url": "https://chargedalpha.podbean.com/e/ihg-stock-h1-2026-intercontinental-hotels-earnings-the-buyback-counted-twice/",
+          "apple_url": "",
+          "published_at": "2026-08-15T20:52:23+00:00",
+          "section": "Market and Sector Explainers",
+          "tickers": [
+            "IHG",
+            "H1"
+          ],
+          "summary": "A special-topic Charged Alpha video connected to current stock and earnings research."
+        },
+        {
           "title": "Haleon (HLN): Margins Up, Buyback Done — And Growth That Missed Its Own Target Again",
           "youtube_url": "https://www.youtube.com/watch?v=cdsKDSTn_q0",
           "spotify_url": "",
@@ -30040,6 +30630,440 @@
       "title": "Shorts and Clips",
       "description": "Fast clips that point viewers into full research videos and stock pages.",
       "videos": [
+        {
+          "title": "ORKA Stock: Oruka Therapeutics Q2 2026 Earnings - The Price Needs An $11.7B Drug",
+          "youtube_url": "https://www.youtube.com/shorts/9YuEhLkGiEQ",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-08-17T01:55:29+00:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "ORKA"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "EMBJ Stock: Embraer Q2 2026 Earnings - A $110M Raise With $4M Of Business",
+          "youtube_url": "https://www.youtube.com/shorts/_tRTp9L8KqI",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-08-17T01:04:44+00:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "EMBJ"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "LEGN Stock: Legend Biotech Q2 2026 Earnings - A $657M Drug With No Profit",
+          "youtube_url": "https://www.youtube.com/shorts/GuuoKrVkSms",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-08-17T00:00:23+00:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "LEGN"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "GLNG Stock: Golar LNG Q2 2026 Earnings - A $2.45B Ship With No Charter",
+          "youtube_url": "https://www.youtube.com/shorts/62REockcbA4",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-08-16T22:58:21+00:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "GLNG",
+            "LNG"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "MNDY Stock: monday.com Q2 2026 Earnings - The Buyback Is Finished",
+          "youtube_url": "https://www.youtube.com/shorts/jUMZTiEd-WA",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-08-16T21:56:05+00:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "MNDY"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "CBRS Stock: Cerebras Q2 2026 Earnings - The Beat That Isn't",
+          "youtube_url": "https://www.youtube.com/shorts/et5nyPzt8RE",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-08-16T14:53:33+00:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "CBRS"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "MSGE Stock: MSG Entertainment Q4 FY2026 Earnings - No Second Garden",
+          "youtube_url": "https://www.youtube.com/shorts/cOOXJJWelvI",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-08-16T01:33:40+00:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "MSGE",
+            "MSG",
+            "FY2026"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "INSW Stock: International Seaways Q2 2026 Earnings - Record Quarter, Red Day",
+          "youtube_url": "https://www.youtube.com/shorts/8op7lDN8qgM",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-08-15T17:31:08-07:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "INSW"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "REZI Stock: Resideo Q2 2026 Earnings - Why A Record Quarter Fell 20%",
+          "youtube_url": "https://www.youtube.com/shorts/iEIXwwjxevo",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-08-15T16:42:08-07:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "REZI"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "EQPT Stock: EquipmentShare Q2 2026 Earnings - 56% Of The Fleet Isn't Theirs",
+          "youtube_url": "https://www.youtube.com/shorts/Go4S22BI9h4",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-08-15T15:41:12-07:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "EQPT"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "GDS Stock: GDS Holdings Q2 2026 Earnings - A Beat Made Of One Line",
+          "youtube_url": "https://www.youtube.com/shorts/s-389fisptI",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-08-15T14:41:15-07:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "GDS"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "IHG Stock: InterContinental Hotels H1 2026 Earnings - The Buyback, Counted Twice",
+          "youtube_url": "https://www.youtube.com/shorts/WVyI_O71RO0",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-08-15T13:52:48-07:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "IHG",
+            "H1"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "ATRO Stock: Astronics Q2 2026 Earnings - Record Backlog, Shorter Runway",
+          "youtube_url": "https://www.youtube.com/shorts/tNfcdRU-iIQ",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-08-15T13:02:51-07:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "ATRO"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "LFTO Stock: Liftoff Mobile Q2 2026 Earnings - A 42-Cent Beat, And A 20 Percent Drop",
+          "youtube_url": "https://www.youtube.com/shorts/aO-qkU6XRfo",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-08-15T12:09:57-07:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "LFTO"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "ONDS Stock: Ondas Q2 2026 Earnings - Revenue 13x, And The Stock Fell",
+          "youtube_url": "https://www.youtube.com/shorts/CysRiV5kgW8",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-08-15T11:19:28-07:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "ONDS"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "LUNR Stock: Intuitive Machines Q2 2026 Earnings - Revenue 4x, But They Bought It",
+          "youtube_url": "https://www.youtube.com/shorts/y68tsTrxbMw",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-08-15T10:12:52-07:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "LUNR"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "KEEL Stock: Keel Infrastructure Q2 2026 Earnings - 985 Megawatts Priced, Zero Signed",
+          "youtube_url": "https://www.youtube.com/shorts/dKNM7252DGg",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-08-15T09:27:20-07:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "KEEL"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "BRUN Stock: Boost Run Q2 2026 Earnings - The Loss Is Fake, The Capex Is Real",
+          "youtube_url": "https://www.youtube.com/shorts/M5NPJQUFwIU",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-08-15T08:40:40-07:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "BRUN"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "COGT Stock: Cogent Biosciences Q2 2026 Earnings - The Financing Moved It, Not The Print",
+          "youtube_url": "https://www.youtube.com/shorts/efU0sccXFPE",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-08-15T07:46:35-07:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "COGT"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "TME Stock: Tencent Music Q2 2026 Earnings - 83% Of The Growth Was Bought",
+          "youtube_url": "https://www.youtube.com/shorts/zSVy2Ih5u5s",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-08-15T06:56:05-07:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "TME"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "CRC Stock: California Resources Q2 2026 Earnings - A 27% EPS Miss The Market Bought",
+          "youtube_url": "https://www.youtube.com/shorts/rYQC6VQ1QcE",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-08-15T06:01:37-07:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "CRC"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "YETI Stock: YETI Holdings Q2 2026 Earnings - EPS Up 54%, Stock Down 11%",
+          "youtube_url": "https://www.youtube.com/shorts/UGef_a0xpgQ",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-08-15T05:06:05-07:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "YETI"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "HTFL Stock: Heartflow Q2 2026 Earnings - A 36% Gap On A Guide That Stalls",
+          "youtube_url": "https://www.youtube.com/shorts/TiDAGngHfAs",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-08-15T04:19:09-07:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "HTFL"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "HRB Stock: H&R Block Q4 FY2026 Earnings - 5% Growth, Zero New Customers",
+          "youtube_url": "https://www.youtube.com/shorts/g18AFRFcY8Y",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-08-15T03:23:48-07:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "HRB",
+            "FY2026"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "STUB Stock: StubHub Q2 2026 Earnings - A 34% Quarter Guided To 2%",
+          "youtube_url": "https://www.youtube.com/shorts/r1ZoNJd0-XU",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-08-15T02:19:24-07:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "STUB"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "KOPN Stock: Kopin Q2 2026 Earnings - The Profit Was Not Operating",
+          "youtube_url": "https://www.youtube.com/shorts/TIgU5kn5R4o",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-08-15T01:25:54-07:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "KOPN"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "YSS Stock: York Space Systems Q2 2026 Earnings - Guidance Cut 32%",
+          "youtube_url": "https://www.youtube.com/shorts/SCisqxeZ0sI",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-08-15T00:35:47-07:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "YSS"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "LGN Stock: Legence Q2 2026 Earnings - Revenue Doubled, Margin Fell #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/95VuTzZl03M",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-08-14T23:30:03-07:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "LGN"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "CELC Stock: Celcuity Q2 2026 Earnings - R&D Fell, Selling Costs Quintupled #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/_ecPlX52Kk4",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-08-14T22:46:13-07:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "CELC"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "BSP Stock: Bending Spoons Q2 2026 Earnings - 126% Growth, 3% Organic #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/1ZZXdBR-tXc",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-08-14T22:00:24-07:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "BSP"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "AMTM Stock: Amentum Q3 2026 Earnings - Record Backlog, Falling Revenue #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/W6wxYJT3E1Y",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-08-14T21:02:38-07:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "AMTM"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "MIDD Stock: Middleby Q2 2026 Earnings - The 17% Miss That Never Happened #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/D2qfh1s7FMU",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-08-14T20:13:29-07:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "MIDD"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "SFD Stock: Smithfield Foods Q2 2026 Earnings - The Beat Came From The Hogs #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/bv8b1pahfuw",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-08-14T19:27:41-07:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "SFD"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
         {
           "title": "ACM Stock: AECOM Q3 FY2026 Earnings - A $337M Charge, Three EPS Numbers #Shorts",
           "youtube_url": "https://www.youtube.com/shorts/_U9xpyeW1nY",
@@ -36980,7 +38004,7 @@
       ]
     }
   ],
-  "last_synced_at": "2026-08-14T21:03:39-05:00",
+  "last_synced_at": "2026-08-16T21:13:41-05:00",
   "stock_metadata": {
     "A": {
       "company": "Agilent Technologies, Inc.",
@@ -37370,6 +38394,10 @@
       "company": "Atkore Inc.",
       "sector": "Industrials"
     },
+    "ATRO": {
+      "company": "Astronics Corporation",
+      "sector": "Industrials"
+    },
     "ATS": {
       "company": "ATS Corporation",
       "sector": "Industrials"
@@ -37610,8 +38638,16 @@
       "sector": "Consumer Cyclical",
       "company": "Dutch Bros Inc."
     },
+    "BRUN": {
+      "company": "Boost Run, Inc.",
+      "sector": "Technology"
+    },
     "BRZE": {
       "company": "Braze, Inc.",
+      "sector": "Technology"
+    },
+    "BSP": {
+      "company": "Bending Spoons S.p.A.",
       "sector": "Technology"
     },
     "BSX": {
@@ -37749,6 +38785,10 @@
     "CEG": {
       "company": "Constellation Energy Corporation",
       "sector": "Utilities"
+    },
+    "CELC": {
+      "company": "Celcuity Inc.",
+      "sector": "Healthcare"
     },
     "CELH": {
       "sector": "Consumer Defensive",
@@ -37894,6 +38934,10 @@
       "company": "Capital One Financial Corporation",
       "sector": "Financial Services"
     },
+    "COGT": {
+      "company": "Cogent Biosciences, Inc.",
+      "sector": "Healthcare"
+    },
     "COHU": {
       "company": "Cohu, Inc.",
       "sector": "Technology"
@@ -37949,6 +38993,10 @@
     "CR": {
       "company": "Crane Company",
       "sector": "Industrials"
+    },
+    "CRC": {
+      "company": "California Resources Corporation",
+      "sector": "Energy"
     },
     "CRCL": {
       "company": "Circle Internet Group",
@@ -38274,6 +39322,10 @@
       "company": "Emera Incorporated",
       "sector": "Utilities"
     },
+    "EMBJ": {
+      "company": "Embraer S.A.",
+      "sector": "Industrials"
+    },
     "EME": {
       "company": "EMCOR Group, Inc.",
       "sector": "Industrials"
@@ -38309,6 +39361,10 @@
     "EQNR": {
       "company": "Equinor ASA",
       "sector": "Energy"
+    },
+    "EQPT": {
+      "company": "EquipmentShare.com Inc.",
+      "sector": "Industrials"
     },
     "EQT": {
       "company": "EQT Corp",
@@ -38586,6 +39642,10 @@
       "company": "Global-E Online Ltd.",
       "sector": "Consumer Cyclical"
     },
+    "GLNG": {
+      "company": "Golar LNG Limited",
+      "sector": "Energy"
+    },
     "GLPI": {
       "company": "Gaming and Leisure Properties, Inc.",
       "sector": "Real Estate"
@@ -38746,6 +39806,10 @@
       "company": "HealthEquity, Inc.",
       "sector": "Healthcare"
     },
+    "HRB": {
+      "company": "H&R Block, Inc.",
+      "sector": "Consumer Cyclical"
+    },
     "HRL": {
       "company": "Hormel Foods Corporation",
       "sector": "Consumer Defensive"
@@ -38757,6 +39821,10 @@
     "HSY": {
       "company": "The Hershey Company",
       "sector": "Consumer Defensive"
+    },
+    "HTFL": {
+      "company": "Heartflow, Inc.",
+      "sector": "Healthcare"
     },
     "HTHT": {
       "company": "H World Group Limited",
@@ -38845,6 +39913,10 @@
     "INSM": {
       "company": "Insmed Incorporated",
       "sector": "Healthcare"
+    },
+    "INSW": {
+      "company": "International Seaways, Inc.",
+      "sector": "Energy"
     },
     "INTC": {
       "company": "Intel Corporation",
@@ -39018,6 +40090,10 @@
       "company": "Coca Cola Femsa S.A.B. de C.V.",
       "sector": "Consumer Defensive"
     },
+    "KOPN": {
+      "company": "Kopin Corporation",
+      "sector": "Technology"
+    },
     "KR": {
       "company": "The Kroger Co.",
       "sector": "Consumer Defensive"
@@ -39062,6 +40138,10 @@
       "company": "Lear Corporation",
       "sector": "Consumer Cyclical"
     },
+    "LEGN": {
+      "company": "Legend Biotech Corporation",
+      "sector": "Healthcare"
+    },
     "LEN": {
       "company": "Lennar Corporation",
       "sector": "Consumer Cyclical"
@@ -39069,6 +40149,14 @@
     "LEVI": {
       "company": "Levi Strauss & Co.",
       "sector": "Consumer Cyclical"
+    },
+    "LFTO": {
+      "company": "Liftoff Mobile, Inc.",
+      "sector": "Communication Services"
+    },
+    "LGN": {
+      "company": "Legence Corp.",
+      "sector": "Industrials"
     },
     "LH": {
       "company": "Labcorp",
@@ -39278,6 +40366,10 @@
       "company": "McGraw Hill, Inc.",
       "sector": "Consumer Defensive"
     },
+    "MIDD": {
+      "company": "The Middleby Corporation",
+      "sector": "Industrials"
+    },
     "MKSI": {
       "company": "MKS Inc.",
       "sector": "Technology"
@@ -39365,6 +40457,10 @@
     "MSFT": {
       "company": "Microsoft Corp.",
       "sector": "Technology"
+    },
+    "MSGE": {
+      "company": "Madison Square Garden Entertainment Corp.",
+      "sector": "Communication Services"
     },
     "MSGS": {
       "company": "Madison Square Garden Sports Corp.",
@@ -39622,6 +40718,10 @@
       "company": "technology",
       "sector": "Technology"
     },
+    "ONDS": {
+      "company": "Ondas Inc.",
+      "sector": "Technology"
+    },
     "ONON": {
       "company": "On Holding AG",
       "sector": "Consumer Cyclical"
@@ -39633,6 +40733,10 @@
     "ORCL": {
       "company": "Oracle Corp.",
       "sector": "Technology"
+    },
+    "ORKA": {
+      "company": "Oruka Therapeutics, Inc.",
+      "sector": "Healthcare"
     },
     "ORLY": {
       "company": "O'Reilly Automotive, Inc.",
@@ -40319,6 +41423,10 @@
       "company": "State Street Corporation",
       "sector": "Financial Services"
     },
+    "STUB": {
+      "company": "StubHub Holdings, Inc.",
+      "sector": "Communication Services"
+    },
     "STX": {
       "company": "Seagate Technology Holdings PLC",
       "sector": "Technology"
@@ -40971,6 +42079,10 @@
     "YPF": {
       "company": "YPF Sociedad Anónima",
       "sector": "Energy"
+    },
+    "YSS": {
+      "company": "York Space Systems, Inc.",
+      "sector": "Industrials"
     },
     "YUM": {
       "company": "Yum! Brands, Inc.",
