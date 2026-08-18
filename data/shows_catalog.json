@@ -10,6 +10,348 @@
   },
   "episodes": [
     {
+      "ticker": "OCTV",
+      "company": "Octave Intelligence plc",
+      "sector": "Technology",
+      "quarter": "Q2 2026",
+      "episode_number": "",
+      "title": "OCTV Stock Q2 2026: Octave Intelligence - The $2.1B Write-Down Its Own Stock Caused",
+      "published_at": "2026-08-18T01:44:30+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=58XGY9uE0pM",
+      "spotify_url": "https://open.spotify.com/episode/6cFekuipWmgZlMTo9njME6",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/octv-stock-q2-2026-octave-intelligence-the-21b-write-down-its-own-stock-caused/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "CLBT",
+      "company": "Cellebrite DI Ltd.",
+      "sector": "Technology",
+      "quarter": "Q2 2026",
+      "episode_number": "",
+      "title": "CLBT Stock Q2 2026: Cellebrite Earnings - $15M Of ARR, $1.1B Of Market Value",
+      "published_at": "2026-08-18T00:54:32+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=B7SxAe7rd-c",
+      "spotify_url": "https://open.spotify.com/episode/1IpMoKrhuwYfWSPfda0U5W",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/clbt-stock-q2-2026-cellebrite-earnings-15m-of-arr-11b-of-market-value/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "SEPN",
+      "company": "Septerna, Inc.",
+      "sector": "Healthcare",
+      "quarter": "Q2 2026",
+      "episode_number": "",
+      "title": "SEPN Stock Q2 2026: Septerna Earnings - The Market Paid 23 pct For A Half-Life",
+      "published_at": "2026-08-18T00:47:23+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=1TIGjD_Rg_A",
+      "spotify_url": "https://open.spotify.com/episode/4Y1vEoFucne5COlvhKBJ6a",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/sepn-stock-q2-2026-septerna-earnings-the-market-paid-23-pct-for-a-half-life/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "QNT",
+      "company": "Quantinuum Inc.",
+      "sector": "Technology",
+      "quarter": "Q2 2026",
+      "episode_number": "",
+      "title": "QNT Stock Q2 2026: Quantinuum Earnings - The Bull Case Is Already The Price",
+      "published_at": "2026-08-17T23:54:28+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=iF6Pd3zg8-o",
+      "spotify_url": "https://open.spotify.com/episode/5XZ4j5DENFpRk6oA0cE8gR",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/qnt-stock-q2-2026-quantinuum-earnings-the-bull-case-is-already-the-price/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "WRD",
+      "company": "WeRide Inc.",
+      "sector": "Technology",
+      "quarter": "Q2 2026",
+      "episode_number": "",
+      "title": "WRD Stock Q2 2026: WeRide Earnings - Revenue Doubled, The Loss Did Not",
+      "published_at": "2026-08-17T22:50:29+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=mHUCrXOPb_w",
+      "spotify_url": "https://open.spotify.com/episode/0WRtc5tFk0H0MQQsQlpaS2",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/wrd-stock-q2-2026-weride-earnings-revenue-doubled-the-loss-did-not/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "HAWK",
+      "company": "HawkEye 360, Inc.",
+      "sector": "Industrials",
+      "quarter": "Q2 2026",
+      "episode_number": "",
+      "title": "HAWK Stock Q2 2026: HawkEye 360 Earnings - The EPS Beat Was An IPO Artifact",
+      "published_at": "2026-08-17T21:20:40+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=_hQJMc-bFcQ",
+      "spotify_url": "https://open.spotify.com/episode/0qJZLpeogrer9WY4BmIwPI",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/hawk-stock-q2-2026-hawkeye-360-earnings-the-eps-beat-was-an-ipo-artifact/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "HTHT",
+      "company": "H World Group Limited",
+      "sector": "Consumer Cyclical",
+      "quarter": "Q2 2026",
+      "episode_number": "",
+      "title": "HTHT Stock Q2 2026: H World Group Earnings - Fees Up 25 Pct, Same-Hotel RevPAR Down 3 Pct",
+      "published_at": "2026-08-17T20:22:58+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=k0cv4Djlx7c",
+      "spotify_url": "https://open.spotify.com/episode/5drQQb0WvXG0ACqOz3vnUM",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/htht-stock-q2-2026-h-world-group-earnings-fees-up-25-pct-same-hotel-revpar-down-3-pct/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "FLY",
+      "company": "Firefly Aerospace Inc.",
+      "sector": "Industrials",
+      "quarter": "Q2 2026",
+      "episode_number": "",
+      "title": "FLY Stock Q2 2026: Firefly Aerospace Earnings - Record Revenue, $9.4M From Launch",
+      "published_at": "2026-08-17T13:19:20+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=oznJVbso3Ik",
+      "spotify_url": "https://open.spotify.com/episode/3uGtILD4Ycyn267TTAikdN",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/fly-stock-q2-2026-firefly-aerospace-earnings-record-revenue-94m-from-launch/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "ESLT",
+      "company": "Elbit Systems Ltd.",
+      "sector": "Industrials",
+      "quarter": "Q2 2026",
+      "episode_number": "",
+      "title": "ESLT Stock Q2 2026: Elbit Systems Earnings - Record $32B Backlog, Stock Fell 8.3%",
+      "published_at": "2026-08-17T12:16:22+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=kEq7IBRv0ms",
+      "spotify_url": "https://open.spotify.com/episode/7gWvruC2vjW0YRme1sgySj",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/eslt-stock-q2-2026-elbit-systems-earnings-record-32b-backlog-stock-fell-83/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "TBBB",
+      "company": "BBB Foods Inc.",
+      "sector": "Consumer Defensive",
+      "quarter": "Q2 2026",
+      "episode_number": "",
+      "title": "TBBB Stock Q2 2026: BBB Foods Earnings - EBITDA Grew 13.8%, Or 43.8%",
+      "published_at": "2026-08-17T11:06:38+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=oTbuHb8BqPw",
+      "spotify_url": "https://open.spotify.com/episode/5BS27aGj9GWzHEz32OE7c5",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/tbbb-stock-q2-2026-bbb-foods-earnings-ebitda-grew-138-or-438/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "EROC",
+      "company": "ERock, Inc.",
+      "sector": "Industrials",
+      "quarter": "Q2 2026",
+      "episode_number": "",
+      "title": "EROC Stock Q2 2026: ERock Earnings - Revenue Fell 42%, Backlog Rose 10x",
+      "published_at": "2026-08-17T10:12:43+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=wj0n7BIvS9Q",
+      "spotify_url": "https://open.spotify.com/episode/1puLMRL9Je9Gh7OBXbuzCZ",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/eroc-stock-q2-2026-erock-earnings-revenue-fell-42-backlog-rose-10x/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "DPC",
+      "company": "DPC Holdings PLC",
+      "sector": "Industrials",
+      "quarter": "Q2 2026",
+      "episode_number": "",
+      "title": "DPC Stock Q2 2026: DPC Holdings Earnings - Record Revenue, And The Margin Fell",
+      "published_at": "2026-08-17T09:22:25+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=zKF1HiGhlXk",
+      "spotify_url": "https://open.spotify.com/episode/498KionGaaFglLBhwl8FeQ",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/dpc-stock-q2-2026-dpc-holdings-earnings-record-revenue-and-the-margin-fell/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "BLTE",
+      "company": "Belite Bio, Inc",
+      "sector": "Healthcare",
+      "quarter": "Q2 2026",
+      "episode_number": "",
+      "title": "BLTE Stock Q2 2026: Belite Bio Earnings - The FDA Said Yes And The Stock Fell 7%",
+      "published_at": "2026-08-17T08:20:48+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=MFACr1n6MTo",
+      "spotify_url": "",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/blte-stock-q2-2026-belite-bio-earnings-the-fda-said-yes-and-the-stock-fell-7/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "STN",
+      "company": "Stantec Inc.",
+      "sector": "Industrials",
+      "quarter": "Q2 2026",
+      "episode_number": "",
+      "title": "STN Stock Q2 2026: Stantec Earnings - The Quarter One Business Line Paid For",
+      "published_at": "2026-08-17T07:31:39+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=dBUogVYqGKg",
+      "spotify_url": "",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/stn-stock-q2-2026-stantec-earnings-the-quarter-one-business-line-paid-for/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "SBS",
+      "company": "Companhia de Saneamento Básico do Estado de São Paulo - SABESP",
+      "sector": "Utilities",
+      "quarter": "Q2 2026",
+      "episode_number": "",
+      "title": "SBS Stock Q2 2026: SABESP Earnings - The Interest Bill Ate The Tariff",
+      "published_at": "2026-08-17T06:28:13+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=ZQ4-1k3LujQ",
+      "spotify_url": "",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/sbs-stock-q2-2026-sabesp-earnings-the-interest-bill-ate-the-tariff/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "ALH",
+      "company": "Alliance Laundry Holdings Inc.",
+      "sector": "Consumer Cyclical",
+      "quarter": "Q2 2026",
+      "episode_number": "",
+      "title": "ALH Stock Q2 2026: Alliance Laundry Earnings - Only A Quarter Of The Beat Was The Business",
+      "published_at": "2026-08-17T05:29:05+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=TWQpssMMfbM",
+      "spotify_url": "",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/alh-stock-q2-2026-alliance-laundry-earnings-only-a-quarter-of-the-beat-was-the-business/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "RIOT",
+      "company": "Riot Platforms, Inc.",
+      "sector": "Financial Services",
+      "quarter": "Q2 2026",
+      "episode_number": "",
+      "title": "RIOT Stock Q2 2026: Riot Platforms Earnings - The $9.1B AI Lease Paid For In Bitcoin",
+      "published_at": "2026-08-17T04:34:41+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=QMpHTaqBBys",
+      "spotify_url": "",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/riot-stock-q2-2026-riot-platforms-earnings-the-91b-ai-lease-paid-for-in-bitcoin/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "SUZ",
+      "company": "Suzano S.A.",
+      "sector": "Basic Materials",
+      "quarter": "Q2 2026",
+      "episode_number": "",
+      "title": "SUZ Stock Q2 2026: Suzano Earnings - The Pulp Price Rose And Profit Fell 64%",
+      "published_at": "2026-08-17T03:39:51+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=mVfHycnRudI",
+      "spotify_url": "",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/suz-stock-q2-2026-suzano-earnings-the-pulp-price-rose-and-profit-fell-64/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "BKD",
+      "company": "Brookdale Senior Living Inc.",
+      "sector": "Healthcare",
+      "quarter": "Q2 2026",
+      "episode_number": "",
+      "title": "BKD Stock Q2 2026: Brookdale Senior Living Earnings - The Margin That Never Moved",
+      "published_at": "2026-08-17T02:41:12+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=LqjHks5zJWo",
+      "spotify_url": "",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/bkd-stock-q2-2026-brookdale-senior-living-earnings-the-margin-that-never-moved/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
       "ticker": "ORKA",
       "company": "Oruka Therapeutics, Inc.",
       "sector": "Healthcare",
@@ -30631,6 +30973,259 @@
       "description": "Fast clips that point viewers into full research videos and stock pages.",
       "videos": [
         {
+          "title": "OCTV Stock: Octave Intelligence Q2 2026 - A $2.1B Write-Down Its Stock Caused #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/vmO9xVuS8GE",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-08-18T01:45:09+00:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "OCTV"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "CLBT Stock: Cellebrite Q2 2026 Earnings - $15M Of ARR, $1.1B Of Value #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/HXZaQUnFC6M",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-08-18T00:55:05+00:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "CLBT"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "SEPN Stock: Septerna Q2 2026 Earnings - The Market Paid 23% For A Half-Life",
+          "youtube_url": "https://www.youtube.com/shorts/7Qd7ggeuyQc",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-08-18T00:47:41+00:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "SEPN"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "QNT Stock: Quantinuum Q2 2026 Earnings - $17B On $8M Of Sales #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/N3TssTeeDkc",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-08-17T23:56:06+00:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "QNT"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "WRD Stock Q2 2026 Earnings: WeRide Revenue Doubled, Loss Did Not",
+          "youtube_url": "https://www.youtube.com/shorts/VEMHTPyoiRE",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-08-17T22:51:02+00:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "WRD"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "HAWK Stock Q2 2026 Earnings: HawkEye 360 EPS Beat Explained",
+          "youtube_url": "https://www.youtube.com/shorts/HlowytCPLFg",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-08-17T21:21:00+00:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "HAWK"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "HTHT Stock: H World Group Q2 2026 Earnings - Fees Up 25 Pct, RevPAR Down 3 Pct",
+          "youtube_url": "https://www.youtube.com/shorts/JXIPDRaIaGc",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-08-17T20:24:14+00:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "HTHT"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "FLY Stock: Firefly Aerospace Q2 2026 Earnings - Record Revenue, $9.4M From Launch",
+          "youtube_url": "https://www.youtube.com/shorts/8frn5XBgRSQ",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-08-17T06:19:16-07:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "FLY"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "ESLT Stock: Elbit Systems Q2 2026 Earnings - Record $32B Backlog, Shares Fell 8%",
+          "youtube_url": "https://www.youtube.com/shorts/pCiywmEdbjU",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-08-17T05:16:57-07:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "ESLT"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "TBBB Stock: BBB Foods Q2 2026 Earnings - EBITDA Grew 13.8%, Or 43.8%",
+          "youtube_url": "https://www.youtube.com/shorts/WmVuLQueIcE",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-08-17T04:06:38-07:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "TBBB",
+            "BBB",
+            "EBITDA"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "EROC Stock: ERock Q2 2026 Earnings - Revenue Fell 42%, Backlog Rose 10x",
+          "youtube_url": "https://www.youtube.com/shorts/fbNtdXUJ1iU",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-08-17T03:12:51-07:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "EROC"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "DPC Stock: DPC Holdings Q2 2026 Earnings - Record Revenue, Falling Margin",
+          "youtube_url": "https://www.youtube.com/shorts/uCSPgpXk06A",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-08-17T02:22:34-07:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "DPC"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "BLTE Stock: Belite Bio Q2 2026 Earnings - FDA Said Yes, Stock Fell 7%",
+          "youtube_url": "https://www.youtube.com/shorts/fxnlRiC5wWU",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-08-17T01:21:12-07:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "BLTE",
+            "FDA"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "STN Stock: Stantec Q2 2026 Earnings - A Record Quarter With Zero US Growth",
+          "youtube_url": "https://www.youtube.com/shorts/4es0685D9ck",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-08-17T00:32:08-07:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "STN",
+            "US"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "SBS Stock: SABESP Q2 2026 Earnings - EBITDA Fell 3 pct, Profit Fell 41 pct",
+          "youtube_url": "https://www.youtube.com/shorts/CWE02VjV1vE",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-08-16T23:28:26-07:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "SBS",
+            "SABESP",
+            "EBITDA"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "ALH Stock: Alliance Laundry Q2 2026 Earnings - Only A Quarter Of The Beat Was The Business",
+          "youtube_url": "https://www.youtube.com/shorts/5811sN7WqNU",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-08-16T22:29:41-07:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "ALH"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "RIOT Stock: Riot Platforms Q2 2026 Earnings - The AI Lease Paid For In Bitcoin",
+          "youtube_url": "https://www.youtube.com/shorts/_KfRIR9l_9Y",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-08-16T21:35:05-07:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "RIOT"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "SUZ Stock: Suzano Q2 2026 Earnings - The Pulp Price Rose, Profit Fell 64%",
+          "youtube_url": "https://www.youtube.com/shorts/pw3pjp6VJfw",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-08-16T20:40:26-07:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "SUZ"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "BKD Stock: Brookdale Senior Living Q2 2026 Earnings - Occupancy Rose, Margin Did Not",
+          "youtube_url": "https://www.youtube.com/shorts/fkyiVIrhBjE",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-08-16T19:41:51-07:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "BKD"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
           "title": "ORKA Stock: Oruka Therapeutics Q2 2026 Earnings - The Price Needs An $11.7B Drug",
           "youtube_url": "https://www.youtube.com/shorts/9YuEhLkGiEQ",
           "spotify_url": "",
@@ -38004,7 +38599,7 @@
       ]
     }
   ],
-  "last_synced_at": "2026-08-16T21:13:41-05:00",
+  "last_synced_at": "2026-08-17T21:08:23-05:00",
   "stock_metadata": {
     "A": {
       "company": "Agilent Technologies, Inc.",
@@ -38189,6 +38784,10 @@
     "ALGN": {
       "company": "Align Technology, Inc.",
       "sector": "Healthcare"
+    },
+    "ALH": {
+      "company": "Alliance Laundry Holdings Inc.",
+      "sector": "Consumer Cyclical"
     },
     "ALK": {
       "company": "Alaska Air Group Inc",
@@ -38558,6 +39157,10 @@
       "company": "The Bank of New York Mellon Corporation",
       "sector": "Financial Services"
     },
+    "BKD": {
+      "company": "Brookdale Senior Living Inc.",
+      "sector": "Healthcare"
+    },
     "BKE": {
       "company": "Buckle, Inc. (The)",
       "sector": "Consumer Cyclical"
@@ -38573,6 +39176,10 @@
     "BLK": {
       "company": "BlackRock Inc.",
       "sector": "Financials"
+    },
+    "BLTE": {
+      "company": "Belite Bio, Inc",
+      "sector": "Healthcare"
     },
     "BMI": {
       "company": "Badger Meter, Inc.",
@@ -38857,6 +39464,10 @@
     "CL": {
       "company": "Colgate-Palmolive Company",
       "sector": "Consumer Defensive"
+    },
+    "CLBT": {
+      "company": "Cellebrite DI Ltd.",
+      "sector": "Technology"
     },
     "CLF": {
       "company": "Cleveland-Cliffs Inc.",
@@ -39202,6 +39813,10 @@
       "company": "Amdocs Limited",
       "sector": "Technology"
     },
+    "DPC": {
+      "company": "DPC Holdings PLC",
+      "sector": "Industrials"
+    },
     "DPZ": {
       "company": "Domino's Pizza Inc",
       "sector": "Consumer Cyclical"
@@ -39378,6 +39993,10 @@
       "company": "Telefonaktiebolaget LM Ericsson (publ)",
       "sector": "Technology"
     },
+    "EROC": {
+      "company": "ERock, Inc.",
+      "sector": "Industrials"
+    },
     "ESI": {
       "company": "Element Solutions Inc.",
       "sector": "Basic Materials"
@@ -39517,6 +40136,10 @@
     "FLUT": {
       "sector": "Consumer Cyclical",
       "company": "Flutter Entertainment plc"
+    },
+    "FLY": {
+      "company": "Firefly Aerospace Inc.",
+      "sector": "Industrials"
     },
     "FNB": {
       "company": "F.N.B. Corporation",
@@ -39725,6 +40348,10 @@
     "HALO": {
       "company": "Halozyme Therapeutics, Inc.",
       "sector": "Healthcare"
+    },
+    "HAWK": {
+      "company": "HawkEye 360, Inc.",
+      "sector": "Industrials"
     },
     "HCA": {
       "company": "HCA Healthcare, Inc.",
@@ -40682,6 +41309,10 @@
       "sector": "Communication Services",
       "company": "New York Times Company (The)"
     },
+    "OCTV": {
+      "company": "Octave Intelligence plc",
+      "sector": "Technology"
+    },
     "ODD": {
       "company": "Oddity Tech Ltd.",
       "sector": "Consumer Defensive"
@@ -40994,6 +41625,10 @@
       "company": "Qfin Holdings, Inc.",
       "sector": "Financial Services"
     },
+    "QNT": {
+      "company": "Quantinuum Inc.",
+      "sector": "Technology"
+    },
     "QRVO": {
       "company": "Qorvo, Inc.",
       "sector": "Technology"
@@ -41082,6 +41717,10 @@
     "RHI": {
       "company": "Robert Half Inc.",
       "sector": "Industrials"
+    },
+    "RIOT": {
+      "company": "Riot Platforms, Inc.",
+      "sector": "Financial Services"
     },
     "RIVN": {
       "company": "Rivian Automotive, Inc.",
@@ -41203,6 +41842,10 @@
       "company": "SAP SE",
       "sector": "Technology"
     },
+    "SBS": {
+      "company": "Companhia de Saneamento Básico do Estado de São Paulo - SABESP",
+      "sector": "Utilities"
+    },
     "SBUX": {
       "company": "Starbucks Corp.",
       "sector": "Consumer"
@@ -41222,6 +41865,10 @@
     "SEIC": {
       "company": "SEI Investments Company",
       "sector": "Financial Services"
+    },
+    "SEPN": {
+      "company": "Septerna, Inc.",
+      "sector": "Healthcare"
     },
     "SF": {
       "company": "Stifel Financial Corporation",
@@ -41439,6 +42086,10 @@
       "company": "Sunbelt Rentals Holdings, Inc.",
       "sector": "Industrials"
     },
+    "SUZ": {
+      "company": "Suzano S.A.",
+      "sector": "Basic Materials"
+    },
     "SW": {
       "company": "Smurfit Westrock Plc",
       "sector": "Consumer Cyclical"
@@ -41481,6 +42132,10 @@
     },
     "TAP": {
       "company": "Molson Coors Beverage Company",
+      "sector": "Consumer Defensive"
+    },
+    "TBBB": {
+      "company": "BBB Foods Inc.",
       "sector": "Consumer Defensive"
     },
     "TCEHY": {
