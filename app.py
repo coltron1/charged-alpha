@@ -252,6 +252,7 @@ PUBLIC_SITEMAP_PATHS = [
     "/",
     "/shows",
     "/app",
+    "/studio",
     "/screener",
     "/etf",
     "/mutual-funds",
@@ -321,6 +322,13 @@ SEO_PAGE_META = {
         "description": (
             "Download the Charged Alpha app for iPhone or Android and learn investing "
             "through interactive lessons, valuation labs, options strategies, and Storm Chaser."
+        ),
+    },
+    "/studio": {
+        "title": "The Studio — Apps for Learning & Fieldwork | Charged Alpha",
+        "description": (
+            "Explore independent apps by Colton: Charged Alpha investing education, "
+            "Charged Physics Lab, Today Was daily logging, and Plotava field documentation."
         ),
     },
     "/screener": {
@@ -420,7 +428,7 @@ SEO_PAGE_META = {
         "description": (
             "Meet Colton, the mechanical engineer and app builder behind "
             "Charged Alpha stock research, investing education, Charged Physics "
-            "Lab, and Today Was."
+            "Lab, Today Was, and Plotava."
         ),
     },
     "/unsubscribe": {
@@ -548,6 +556,10 @@ def _canonical_url(path):
 
 APP_STORE_URL = "https://apps.apple.com/us/app/charged-alpha/id6789744882"
 GOOGLE_PLAY_URL = "https://play.google.com/store/apps/details?id=com.chargedalpha.academy"
+PHYSICS_LAB_APP_STORE_URL = "https://apps.apple.com/us/app/charged-physics-lab/id6794717292"
+PHYSICS_LAB_GOOGLE_PLAY_URL = "https://play.google.com/store/apps/details?id=com.chargedacademy.app"
+PLOTAVA_GOOGLE_PLAY_URL = "https://play.google.com/store/apps/details?id=com.plotava.app"
+TODAY_WAS_URL = "https://daymoire.chargedalpha.com/"
 APP_TRACKING_DEFAULTS = {
     "utm_source": "chargedalpha",
     "utm_medium": "website",
@@ -2722,6 +2734,73 @@ def app_download():
             "image": f"{SITE_URL}/static/assets/charged-alpha-logo.png",
             "downloadUrl": [APP_STORE_URL, GOOGLE_PLAY_URL],
             "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+        },
+    )
+
+
+@app.route("/studio")
+def studio():
+    tracking_params = _app_tracking_params()
+    if not (request.args.get("utm_campaign") or "").strip():
+        tracking_params["utm_campaign"] = "studio"
+
+    return render_template(
+        "studio.html",
+        charged_alpha_ios_url=_add_query_params(APP_STORE_URL, tracking_params),
+        charged_alpha_android_url=_add_query_params(GOOGLE_PLAY_URL, tracking_params),
+        physics_ios_url=_add_query_params(PHYSICS_LAB_APP_STORE_URL, tracking_params),
+        physics_android_url=_add_query_params(PHYSICS_LAB_GOOGLE_PLAY_URL, tracking_params),
+        plotava_android_url=_add_query_params(PLOTAVA_GOOGLE_PLAY_URL, tracking_params),
+        today_was_url=_add_query_params(TODAY_WAS_URL, tracking_params),
+        tracking_params=tracking_params,
+        studio_schema={
+            "@context": "https://schema.org",
+            "@graph": [
+                {
+                    "@type": "CollectionPage",
+                    "@id": f"{SITE_URL}/studio#webpage",
+                    "name": "The Studio by Colton",
+                    "description": SEO_PAGE_META["/studio"]["description"],
+                    "url": f"{SITE_URL}/studio",
+                    "mainEntity": {
+                        "@type": "ItemList",
+                        "numberOfItems": 4,
+                        "itemListElement": [
+                            {"@type": "ListItem", "position": 1, "name": "Charged Alpha"},
+                            {"@type": "ListItem", "position": 2, "name": "Charged Physics Lab"},
+                            {"@type": "ListItem", "position": 3, "name": "Today Was"},
+                            {"@type": "ListItem", "position": 4, "name": "Plotava"},
+                        ],
+                    },
+                },
+                {
+                    "@type": "MobileApplication",
+                    "name": "Charged Alpha",
+                    "operatingSystem": "iOS, Android",
+                    "applicationCategory": "EducationalApplication",
+                    "downloadUrl": [APP_STORE_URL, GOOGLE_PLAY_URL],
+                },
+                {
+                    "@type": "MobileApplication",
+                    "name": "Charged Physics Lab",
+                    "operatingSystem": "iOS, Android",
+                    "applicationCategory": "EducationalApplication",
+                    "downloadUrl": [PHYSICS_LAB_APP_STORE_URL, PHYSICS_LAB_GOOGLE_PLAY_URL],
+                },
+                {
+                    "@type": "WebApplication",
+                    "name": "Today Was",
+                    "applicationCategory": "LifestyleApplication",
+                    "url": TODAY_WAS_URL,
+                },
+                {
+                    "@type": "MobileApplication",
+                    "name": "Plotava",
+                    "operatingSystem": "Android",
+                    "applicationCategory": "BusinessApplication",
+                    "downloadUrl": PLOTAVA_GOOGLE_PLAY_URL,
+                },
+            ],
         },
     )
 

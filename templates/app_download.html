@@ -125,7 +125,7 @@
     @media (max-width:760px) {
       .app-header { padding:16px 18px; }
       .app-nav { gap:11px; font-size:11px; }
-      .app-nav a:not(.nav-cta) { display:none; }
+      .app-nav a:not(.nav-cta):not(.studio-link) { display:none; }
       .app-nav .nav-cta { padding:8px 10px; }
       .app-hero { min-height:690px; background-position:64% center; }
       .app-hero::after { background:rgba(4,8,17,.66); }
@@ -154,6 +154,7 @@
     </a>
     <nav class="app-nav" aria-label="App page navigation">
       <a href="/shows">Stock Encyclopedia</a>
+      <a href="/studio" class="studio-link">Studio</a>
       <a href="/about">About</a>
       <a href="#download" class="nav-cta">Get the app</a>
     </nav>
@@ -265,7 +266,7 @@
     </section>
   </main>
 
-  <footer><span>&copy; Charged Alpha</span><span><a href="/privacy">Privacy</a> &middot; <a href="/">Stock Library</a></span></footer>
+  <footer><span>&copy; Charged Alpha</span><span><a href="/studio">Studio</a> &middot; <a href="/privacy">Privacy</a> &middot; <a href="/">Stock Library</a></span></footer>
 
   <script>
     var landingEventData = {

@@ -342,7 +342,7 @@
       </div>
       <a href="/shows" class="nav-link {% if request.path == '/shows' %}active{% endif %}">Shows</a>
       <a href="/games" class="nav-link {% if request.path.startswith('/games') %}active{% endif %}">Games</a>
-      <a href="/#mobile-app" class="nav-link">Mobile App</a>
+      <a href="/studio" class="nav-link {% if request.path == '/studio' %}active{% endif %}">Studio</a>
       <a href="/about" class="nav-link {% if request.path == '/about' %}active{% endif %}">About</a>
       <a href="{{ podcast_platforms.youtube }}" target="_blank" rel="noopener noreferrer" class="btn-secondary text-sm" style="padding:10px 14px;">YouTube Channel</a>
     </nav>
@@ -355,7 +355,7 @@
       <a href="/" class="{% if request.path == '/' %}active{% endif %}">Home</a>
       <a href="/shows" class="{% if request.path == '/shows' %}active{% endif %}">Shows</a>
       <a href="/games" class="{% if request.path.startswith('/games') %}active{% endif %}">Games</a>
-      <a href="/#mobile-app">Mobile App</a>
+      <a href="/studio">Studio</a>
       <a href="{{ podcast_platforms.youtube }}" target="_blank" rel="noopener noreferrer">YouTube</a>
     </div>
     <div class="mobile-menu-section">

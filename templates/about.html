@@ -192,6 +192,18 @@
     .roadmap-points li:not(:last-child):after { content:" / "; color:#475569; margin-left:8px; }
     .roadmap-actions { display:flex; flex-wrap:wrap; gap:10px; margin-top:2px; }
     .roadmap-actions .fine-print { flex-basis:100%; }
+    .about-menu-btn {
+      display:none; align-items:center; justify-content:center; width:42px; height:42px; padding:0;
+      border:1px solid #334155; border-radius:8px; color:#e2e8f0; background:#0f172a; cursor:pointer;
+    }
+    .about-mobile-menu { display:none; margin-top:14px; padding-top:14px; border-top:1px solid #1e293b; }
+    .about-mobile-menu.open { display:block; }
+    .about-mobile-menu-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:8px; }
+    .about-mobile-menu a {
+      display:flex; align-items:center; min-height:40px; padding:10px 12px; border:1px solid #1e293b; border-radius:8px;
+      color:#cbd5e1; background:#0f172a; font-size:13px; font-weight:700; text-decoration:none;
+    }
+    .about-mobile-menu a:hover, .about-mobile-menu a.active { border-color:#38bdf8; color:#fff; background:rgba(56,189,248,.08); }
     @media (min-width: 980px) {
       .hero-grid { grid-template-columns:.96fr 1.04fr; }
       .app-featured { grid-template-columns:1.05fr .95fr; padding:22px; }
@@ -200,6 +212,10 @@
     }
     @media (max-width: 640px) {
       .nav-tight { display:none; }
+    }
+    @media (max-width: 767px) {
+      .about-menu-btn { display:inline-flex; }
+      .about-mobile-menu-grid { grid-template-columns:1fr; }
     }
   </style>
 </head>
@@ -217,10 +233,23 @@
         <a href="/" class="nav-link">Home</a>
         <a href="/games" class="nav-link">Games</a>
         <a href="/shows" class="nav-link">Stock Library</a>
+        <a href="/studio" class="nav-link">Studio</a>
         <a href="/about" class="nav-link active">About</a>
         <a href="https://www.youtube.com/channel/UC4ZDZpC0OvoN4cCGoUSofuA?sub_confirmation=1" target="_blank" rel="noopener noreferrer" class="btn-secondary text-sm" style="padding:10px 14px;">YouTube Channel</a>
       </nav>
+      <button id="aboutMenuButton" type="button" class="about-menu-btn" aria-label="Open navigation menu" aria-expanded="false" aria-controls="aboutMobileMenu">
+        <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
     </div>
+    <nav id="aboutMobileMenu" class="about-mobile-menu md:hidden" aria-label="Mobile navigation">
+      <div class="about-mobile-menu-grid">
+        <a href="/">Home</a>
+        <a href="/shows">Stock Library</a>
+        <a href="/games">Games</a>
+        <a href="/studio">Studio</a>
+        <a href="/about" class="active" aria-current="page">About</a>
+      </div>
+    </nav>
   </header>
 
   <main>
@@ -241,7 +270,7 @@
             </p>
           </div>
           <div class="flex flex-wrap gap-3">
-            <a href="#apps" class="btn-primary">Explore the apps</a>
+            <a href="/studio" class="btn-primary">Explore the Studio</a>
             <a href="/shows" class="btn-secondary">Stock Library</a>
             <a href="https://www.linkedin.com/in/colton-thomas-622b22113/" target="_blank" rel="noopener noreferrer" class="btn-secondary">LinkedIn Profile</a>
           </div>
@@ -438,11 +467,22 @@
       <div class="flex flex-wrap items-center justify-center gap-3 text-xs text-slate-500">
         <a href="/games" class="text-slate-400 no-underline hover:text-white">Games</a>
         <a href="/shows" class="text-slate-400 no-underline hover:text-white">Stock Library</a>
+        <a href="/studio" class="text-slate-400 no-underline hover:text-white">Studio</a>
         <a href="/unsubscribe" class="text-slate-400 no-underline hover:text-white">Email Preferences</a>
         <a href="https://www.linkedin.com/in/colton-thomas-622b22113/" target="_blank" rel="noopener noreferrer" class="text-slate-400 no-underline hover:text-white">LinkedIn</a>
         <span>Educational content only. Not financial advice.</span>
       </div>
     </div>
   </footer>
+  <script>
+    const aboutMenuButton = document.getElementById('aboutMenuButton');
+    const aboutMobileMenu = document.getElementById('aboutMobileMenu');
+    if (aboutMenuButton && aboutMobileMenu) {
+      aboutMenuButton.addEventListener('click', function () {
+        const isOpen = aboutMobileMenu.classList.toggle('open');
+        aboutMenuButton.setAttribute('aria-expanded', String(isOpen));
+      });
+    }
+  </script>
 </body>
 </html>

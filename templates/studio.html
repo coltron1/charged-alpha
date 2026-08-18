@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ seo_meta.title }}</title>
+  {% include "partials/seo_meta.html" %}
+  <script type="application/ld+json">{{ studio_schema | tojson }}</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --page:#060a11;
+      --surface:#0c1420;
+      --surface-raised:#101b29;
+      --ink:#f8fafc;
+      --muted:#9dacbf;
+      --line:#26384c;
+      --cyan:#67e8f9;
+      --gold:#f6c963;
+      --green:#6ee7b7;
+      --rose:#fda4af;
+    }
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body { margin:0; min-width:320px; background:var(--page); color:var(--ink); font-family:'Inter',system-ui,sans-serif; }
+    a { color:inherit; }
+    .studio-header { position:sticky; top:0; z-index:20; border-bottom:1px solid rgba(38,56,76,.82); background:rgba(6,10,17,.94); backdrop-filter:blur(18px); }
+    .header-inner { display:flex; align-items:center; justify-content:space-between; gap:22px; width:min(1240px,100%); min-height:76px; margin:0 auto; padding:14px 28px; }
+    .brand { display:flex; align-items:center; gap:12px; color:#fff; text-decoration:none; }
+    .brand img { width:42px; height:42px; border:1px solid rgba(246,201,99,.48); border-radius:10px; object-fit:cover; box-shadow:0 0 24px rgba(246,201,99,.16); }
+    .brand strong { display:block; font-size:15px; letter-spacing:.035em; }
+    .brand span { display:block; margin-top:3px; color:#718198; font-size:10px; font-weight:900; letter-spacing:.18em; text-transform:uppercase; }
+    .studio-nav { display:flex; align-items:center; gap:20px; }
+    .studio-nav a { color:#a8b6c9; font-size:13px; font-weight:800; text-decoration:none; }
+    .studio-nav a:hover, .studio-nav a.active { color:#fff; }
+    .studio-nav .nav-cta { padding:9px 12px; border:1px solid rgba(103,232,249,.4); border-radius:7px; color:#cffafe; background:#082f49; }
+    .mobile-menu-button { display:none; width:42px; height:42px; padding:0; border:1px solid #31445b; border-radius:8px; color:#d8e5f3; background:#0c1420; cursor:pointer; }
+    .mobile-menu { display:none; border-top:1px solid #26384c; background:#09111c; }
+    .mobile-menu.open { display:block; }
+    .mobile-menu-inner { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:1px; width:min(1240px,100%); margin:0 auto; background:#26384c; }
+    .mobile-menu a { padding:14px 18px; color:#c4d1df; background:#09111c; font-size:13px; font-weight:800; text-decoration:none; }
+    .mobile-menu a.active { color:#cffafe; background:#0b2335; }
+    .hero { border-bottom:1px solid #1b2a3c; background:#08111d; }
+    .hero-inner { display:grid; grid-template-columns:minmax(0,1fr) minmax(360px,.8fr); gap:58px; align-items:center; width:min(1240px,100%); margin:0 auto; padding:84px 28px 78px; }
+    .eyebrow { color:var(--cyan); font-size:11px; font-weight:900; letter-spacing:.22em; text-transform:uppercase; }
+    h1 { max-width:720px; margin:17px 0 18px; color:#fff; font-size:clamp(42px,5.4vw,70px); line-height:1; letter-spacing:0; }
+    .hero-copy > p { max-width:650px; margin:0; color:#bfccdb; font-size:18px; line-height:1.65; }
+    .hero-actions { display:flex; flex-wrap:wrap; gap:12px; margin-top:28px; }
+    .button { display:inline-flex; align-items:center; justify-content:center; min-height:48px; padding:11px 16px; border:1px solid #3e5974; border-radius:7px; color:#e5edf7; background:#101d2c; font-size:13px; font-weight:900; text-decoration:none; transition:transform .15s ease, border-color .15s ease, background .15s ease; }
+    .button:hover { transform:translateY(-1px); border-color:#67e8f9; background:#0c2a3d; }
+    .button.primary { border-color:#67e8f9; color:#06202a; background:#67e8f9; }
+    .button.primary:hover { background:#a5f3fc; }
+    .hero-note { display:flex; flex-wrap:wrap; gap:10px; margin-top:24px; }
+    .hero-note span { padding:7px 9px; border:1px solid #2a4561; border-radius:999px; color:#a9c7de; background:#091b2b; font-size:11px; font-weight:800; }
+    .mosaic { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:11px; }
+    .mosaic-figure { position:relative; min-height:182px; margin:0; overflow:hidden; border:1px solid #2d435c; border-radius:8px; background:#0b1420; }
+    .mosaic-figure:nth-child(2) { transform:translateY(18px); border-color:rgba(103,232,249,.55); }
+    .mosaic-figure:nth-child(3) { transform:translateY(-10px); border-color:rgba(253,164,175,.5); }
+    .mosaic-figure:nth-child(4) { transform:translateY(8px); border-color:rgba(110,231,183,.52); }
+    .mosaic-figure img { display:block; width:100%; height:100%; min-height:182px; object-fit:cover; object-position:top; }
+    .mosaic-figure figcaption { position:absolute; right:9px; bottom:9px; left:9px; padding:7px 9px; border:1px solid rgba(255,255,255,.13); border-radius:6px; color:#f8fafc; background:rgba(5,9,15,.83); font-size:10px; font-weight:900; letter-spacing:.09em; text-transform:uppercase; }
+    .directory-nav { border-bottom:1px solid #1b2a3c; background:#070d16; }
+    .directory-nav-inner { display:flex; align-items:center; justify-content:space-between; gap:18px; width:min(1240px,100%); margin:0 auto; padding:19px 28px; }
+    .directory-nav strong { color:#dce8f6; font-size:13px; }
+    .directory-nav-links { display:flex; flex-wrap:wrap; gap:9px; }
+    .directory-nav-links a { padding:8px 11px; border:1px solid #2a3f56; border-radius:999px; color:#a9b8ca; font-size:11px; font-weight:800; text-decoration:none; }
+    .directory-nav-links a:hover { border-color:#67e8f9; color:#cffafe; }
+    .collection-section { padding:82px 28px; border-bottom:1px solid #1b2a3c; }
+    .collection-section.capture { background:#081019; }
+    .section-inner { width:min(1240px,100%); margin:0 auto; }
+    .section-heading { display:flex; align-items:end; justify-content:space-between; gap:30px; margin-bottom:28px; }
+    .section-heading h2 { margin:10px 0 0; color:#fff; font-size:clamp(30px,3.8vw,48px); line-height:1.04; letter-spacing:0; }
+    .section-heading p { max-width:470px; margin:0; color:var(--muted); font-size:15px; line-height:1.65; }
+    .app-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:18px; }
+    .app-card { --accent:var(--cyan); --accent-ink:#06212a; display:flex; flex-direction:column; overflow:hidden; min-height:100%; border:1px solid #2a4057; border-top:3px solid var(--accent); border-radius:8px; background:var(--surface); }
+    .app-card.physics { --accent:var(--gold); --accent-ink:#251a03; }
+    .app-card.today { --accent:var(--rose); --accent-ink:#300e16; }
+    .app-card.plotava { --accent:var(--green); --accent-ink:#042116; }
+    .app-media { position:relative; aspect-ratio:16/8.7; overflow:hidden; background:#050a11; }
+    .app-media img { display:block; width:100%; height:100%; object-fit:cover; object-position:top; transition:transform .35s ease; }
+    .app-card:hover .app-media img { transform:scale(1.025); }
+    .media-label { position:absolute; top:13px; left:13px; padding:7px 9px; border:1px solid color-mix(in srgb, var(--accent) 62%, transparent); border-radius:999px; color:var(--accent); background:rgba(5,10,17,.88); font-size:10px; font-weight:900; letter-spacing:.12em; text-transform:uppercase; }
+    .app-body { display:flex; flex:1; flex-direction:column; padding:22px; }
+    .app-brandline { display:flex; align-items:center; gap:12px; }
+    .app-icon { width:52px; height:52px; flex:0 0 auto; overflow:hidden; border:1px solid color-mix(in srgb, var(--accent) 64%, transparent); border-radius:12px; background:#0a111b; object-fit:cover; }
+    .app-status { display:flex; align-items:center; gap:7px; color:#b6c5d5; font-size:10px; font-weight:900; letter-spacing:.1em; text-transform:uppercase; }
+    .app-status::before { content:''; width:7px; height:7px; flex:0 0 auto; border-radius:999px; background:var(--accent); box-shadow:0 0 0 4px color-mix(in srgb, var(--accent) 16%, transparent); }
+    .app-status.coming::before { background:#fbbf24; box-shadow:0 0 0 4px rgba(251,191,36,.14); }
+    .app-card h3 { margin:5px 0 0; color:#fff; font-size:27px; line-height:1.08; letter-spacing:0; }
+    .app-description { margin:20px 0 0; color:#c3cfdd; font-size:14px; line-height:1.7; }
+    .app-tags { display:flex; flex-wrap:wrap; gap:7px; margin:18px 0 21px; }
+    .app-tags span { padding:6px 8px; border:1px solid #2c465d; border-radius:999px; color:#b9c9d8; background:#0a1826; font-size:10px; font-weight:800; }
+    .app-actions { display:flex; flex-wrap:wrap; gap:9px; margin-top:auto; }
+    .store-link { --store-bg:#e2e8f0; --store-ink:#0f172a; position:relative; isolation:isolate; display:inline-flex; align-items:center; gap:9px; min-height:50px; overflow:hidden; padding:8px 12px; border:1px solid color-mix(in srgb, var(--accent) 72%, transparent); border-radius:7px; color:var(--store-ink); background:var(--store-bg); font-size:12px; font-weight:900; text-decoration:none; box-shadow:0 8px 22px rgba(0,0,0,.16); }
+    .store-link > span { position:relative; z-index:1; }
+    .store-link::before { content:''; position:absolute; inset:1px; z-index:0; border:1px solid var(--accent); border-radius:5px; opacity:0; animation:store-signal 6s ease-in-out infinite; }
+    .store-link:hover { border-color:var(--accent); }
+    .store-link.google { --store-bg:#126b3b; --store-ink:#f0fff7; }
+    .store-link.web { --store-bg:#14283c; --store-ink:#cffafe; }
+    .store-link small { display:block; color:currentColor; font-size:9px; font-weight:800; line-height:1.1; opacity:.72; text-transform:uppercase; }
+    .store-mark { display:grid; width:25px; height:25px; place-items:center; border:1px solid currentColor; border-radius:6px; font-size:10px; font-weight:900; }
+    .coming-store { display:inline-flex; align-items:center; gap:9px; min-height:50px; padding:8px 12px; border:1px dashed #566577; border-radius:7px; color:#9cabbc; background:#0a111b; font-size:12px; font-weight:900; }
+    .coming-store small { display:block; color:#728194; font-size:9px; font-weight:800; line-height:1.1; text-transform:uppercase; }
+    .text-link { display:inline-flex; align-items:center; min-height:48px; color:#c5d8e9; font-size:12px; font-weight:900; text-decoration:none; }
+    .text-link:hover { color:#fff; text-decoration:underline; text-underline-offset:4px; }
+    .studio-note { display:grid; grid-template-columns:1.25fr .75fr; gap:32px; align-items:center; width:min(1240px,100%); margin:0 auto; padding:68px 28px; }
+    .studio-note h2 { margin:12px 0; color:#fff; font-size:clamp(30px,3.9vw,47px); line-height:1.06; letter-spacing:0; }
+    .studio-note p { max-width:710px; margin:0; color:#aebdd0; font-size:15px; line-height:1.7; }
+    .studio-note-links { display:grid; gap:10px; }
+    .studio-note-links a { display:flex; align-items:center; justify-content:space-between; gap:16px; padding:14px 15px; border:1px solid #2b425b; border-radius:7px; color:#d8e7f6; background:#0c1623; font-size:13px; font-weight:900; text-decoration:none; }
+    .studio-note-links a:hover { border-color:#67e8f9; color:#fff; }
+    footer { border-top:1px solid #1b2a3c; background:#05080e; }
+    .footer-inner { display:flex; align-items:center; justify-content:space-between; gap:20px; width:min(1240px,100%); margin:0 auto; padding:28px; color:#77889b; font-size:12px; }
+    .footer-brand { display:flex; align-items:center; gap:10px; color:#a9b8c7; font-weight:900; }
+    .footer-brand img { width:28px; height:28px; border:1px solid #3a4e64; border-radius:7px; }
+    .footer-links { display:flex; flex-wrap:wrap; gap:15px; }
+    .footer-links a { color:#a8b8ca; text-decoration:none; }
+    .footer-links a:hover { color:#fff; }
+    @keyframes store-signal { 0%,78%,100% { opacity:0; transform:scale(.96); } 82%,91% { opacity:.9; transform:scale(1); } }
+    @media (max-width:980px) {
+      .hero-inner { grid-template-columns:1fr; gap:36px; padding-top:65px; }
+      .mosaic { max-width:650px; }
+      .mosaic-figure { min-height:160px; }
+      .mosaic-figure img { min-height:160px; }
+    }
+    @media (max-width:760px) {
+      .header-inner { min-height:70px; padding:13px 18px; }
+      .studio-nav { display:none; }
+      .mobile-menu-button { display:grid; place-items:center; }
+      .hero-inner, .collection-section { padding-right:20px; padding-left:20px; }
+      .hero-inner { padding-top:51px; padding-bottom:52px; }
+      h1 { font-size:42px; }
+      .hero-copy > p { font-size:16px; }
+      .mosaic { gap:8px; }
+      .mosaic-figure, .mosaic-figure img { min-height:130px; }
+      .mosaic-figure:nth-child(2) { transform:translateY(9px); }
+      .mosaic-figure:nth-child(3) { transform:translateY(-5px); }
+      .mosaic-figure:nth-child(4) { transform:translateY(4px); }
+      .directory-nav-inner { align-items:flex-start; flex-direction:column; padding:17px 20px; }
+      .section-heading { align-items:flex-start; flex-direction:column; gap:12px; }
+      .app-grid { grid-template-columns:1fr; }
+      .studio-note { grid-template-columns:1fr; gap:28px; padding:55px 20px; }
+      .footer-inner { align-items:flex-start; flex-direction:column; padding:24px 20px; }
+    }
+    @media (max-width:460px) {
+      .brand strong { font-size:13px; }
+      .brand span { font-size:9px; }
+      .mobile-menu-inner { grid-template-columns:1fr; }
+      .hero-actions, .app-actions { flex-direction:column; align-items:stretch; }
+      .button, .store-link, .coming-store, .text-link { width:100%; }
+      .text-link { justify-content:center; }
+      .mosaic-figure, .mosaic-figure img { min-height:112px; }
+      .app-body { padding:19px; }
+    }
+    @media (prefers-reduced-motion:reduce) {
+      html { scroll-behavior:auto; }
+      .app-card:hover .app-media img { transform:none; }
+      .store-link::before { animation:none; }
+    }
+  </style>
+</head>
+<body>
+  <header class="studio-header">
+    <div class="header-inner">
+      <a href="/" class="brand" aria-label="Charged Alpha home">
+        <img src="/static/assets/charged-alpha-logo.png" alt="Charged Alpha logo">
+        <span><strong>CHARGED ALPHA</strong><span>The Studio</span></span>
+      </a>
+      <nav class="studio-nav" aria-label="Primary navigation">
+        <a href="/">Home</a>
+        <a href="/shows">Stock Library</a>
+        <a href="/screener/">Research Tools</a>
+        <a href="/games">Games</a>
+        <a href="/studio" class="active" aria-current="page">Studio</a>
+        <a href="/about">About</a>
+        <a href="/app" class="nav-cta">Charged Alpha App</a>
+      </nav>
+      <button id="mobileMenuButton" type="button" class="mobile-menu-button" aria-expanded="false" aria-controls="mobileMenu" aria-label="Open navigation menu">
+        <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+    </div>
+    <nav id="mobileMenu" class="mobile-menu" aria-label="Mobile navigation">
+      <div class="mobile-menu-inner">
+        <a href="/">Home</a>
+        <a href="/shows">Stock Library</a>
+        <a href="/screener/">Research Tools</a>
+        <a href="/games">Games</a>
+        <a href="/studio" class="active" aria-current="page">Studio</a>
+        <a href="/about">About</a>
+        <a href="/app">Charged Alpha App</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" aria-labelledby="studioTitle">
+      <div class="hero-inner">
+        <div class="hero-copy">
+          <p class="eyebrow">Independent products by Colton</p>
+          <h1 id="studioTitle">Useful apps for learning, fieldwork, and the work in between.</h1>
+          <p>Each product starts with a practical question: How can this be clearer, more interactive, or easier to carry into real life? Explore the growing collection and download the one that fits what you are doing today.</p>
+          <div class="hero-actions">
+            <a href="#learn" class="button primary">Explore the collection</a>
+            <a href="/about" class="button">Meet the builder</a>
+          </div>
+          <div class="hero-note" aria-label="Studio product categories">
+            <span>Learning &amp; practice</span>
+            <span>Journaling &amp; fieldwork</span>
+            <span>iPhone &amp; Android</span>
+          </div>
+        </div>
+        <div class="mosaic" aria-label="Studio app previews">
+          <figure class="mosaic-figure"><img src="/static/assets/mobile-app/charged-alpha-valuation-lab.webp" alt="Charged Alpha valuation lab" fetchpriority="high"><figcaption>Charged Alpha</figcaption></figure>
+          <figure class="mosaic-figure"><img src="/static/assets/apps/charged-physics-lab-live-algebra.webp" alt="Charged Physics Lab live algebra workspace" fetchpriority="high"><figcaption>Physics Lab</figcaption></figure>
+          <figure class="mosaic-figure"><img src="/static/assets/apps/today-was-weather-location.webp" alt="Today Was daily journal with detailed weather and saved location" fetchpriority="high"><figcaption>Today Was</figcaption></figure>
+          <figure class="mosaic-figure"><img src="/static/assets/apps/plotava-plan-detail.webp" alt="Plotava plan point with notes, photos, and measurement" fetchpriority="high"><figcaption>Plotava</figcaption></figure>
+        </div>
+      </div>
+    </section>
+
+    <nav class="directory-nav" aria-label="Studio collection navigation">
+      <div class="directory-nav-inner">
+        <strong>4 products in the Studio</strong>
+        <div class="directory-nav-links">
+          <a href="#learn">Learn &amp; practice</a>
+          <a href="#fieldwork">Capture &amp; fieldwork</a>
+        </div>
+      </div>
+    </nav>
+
+    <section id="learn" class="collection-section" aria-labelledby="learnTitle">
+      <div class="section-inner">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Learn &amp; practice</p>
+            <h2 id="learnTitle">Take the subject out of the textbook.</h2>
+          </div>
+          <p>Interactive tools that make a concept tangible: change an input, follow the result, and build an intuition you can use again.</p>
+        </div>
+        <div class="app-grid">
+          <article id="charged-alpha" class="app-card">
+            <div class="app-media">
+              <img src="/static/assets/mobile-app/charged-alpha-valuation-lab.webp" alt="Charged Alpha interactive valuation lab with adjustable inputs" loading="lazy">
+              <span class="media-label">Investing education</span>
+            </div>
+            <div class="app-body">
+              <div class="app-brandline">
+                <img src="/static/assets/mobile-app/charged-alpha-app-icon.jpg" alt="Charged Alpha app icon" class="app-icon">
+                <div><span class="app-status">Available on iPhone &amp; Android</span><h3>Charged Alpha</h3></div>
+              </div>
+              <p class="app-description">Learn the mechanics behind stocks, valuation, earnings, and options through short narrated lessons, hands-on labs, daily review, and Storm Chaser, a replayable market-crisis game.</p>
+              <div class="app-tags" aria-label="Charged Alpha features"><span>Interactive lessons</span><span>Valuation labs</span><span>Options strategies</span><span>Works offline</span></div>
+              <div class="app-actions" aria-label="Charged Alpha links">
+                <a href="{{ charged_alpha_ios_url }}" data-studio-download data-app-name="charged_alpha" data-platform="ios" target="_blank" rel="noopener noreferrer" class="store-link"><span class="store-mark" aria-hidden="true">iOS</span><span><small>Download on the</small>App Store</span></a>
+                <a href="{{ charged_alpha_android_url }}" data-studio-download data-app-name="charged_alpha" data-platform="android" target="_blank" rel="noopener noreferrer" class="store-link google"><span class="store-mark" aria-hidden="true">A</span><span><small>Get it on</small>Google Play</span></a>
+                <a href="/app" class="text-link">See Charged Alpha in action &rarr;</a>
+              </div>
+            </div>
+          </article>
+
+          <article id="charged-physics-lab" class="app-card physics">
+            <div class="app-media">
+              <img src="/static/assets/apps/charged-physics-lab-live-algebra.webp" alt="Charged Physics Lab live equation workspace with values and diagram" loading="lazy">
+              <span class="media-label">Physics I &amp; II</span>
+            </div>
+            <div class="app-body">
+              <div class="app-brandline">
+                <img src="/static/assets/apps/charged-physics-lab-icon.png" alt="Charged Physics Lab app icon" class="app-icon">
+                <div><span class="app-status">Available on iPhone &amp; Android</span><h3>Charged Physics Lab</h3></div>
+              </div>
+              <p class="app-description">Turn a formula sheet into a visual workspace. Search 200 Physics I and II equations, set values inside the formula, isolate a variable, and carry the result into the next step.</p>
+              <div class="app-tags" aria-label="Charged Physics Lab features"><span>200 formulas</span><span>Live algebra</span><span>Formula chains</span><span>Narrated examples</span></div>
+              <div class="app-actions" aria-label="Charged Physics Lab links">
+                <a href="{{ physics_ios_url }}" data-studio-download data-app-name="charged_physics_lab" data-platform="ios" target="_blank" rel="noopener noreferrer" class="store-link"><span class="store-mark" aria-hidden="true">iOS</span><span><small>Download on the</small>App Store</span></a>
+                <a href="{{ physics_android_url }}" data-studio-download data-app-name="charged_physics_lab" data-platform="android" target="_blank" rel="noopener noreferrer" class="store-link google"><span class="store-mark" aria-hidden="true">A</span><span><small>Get it on</small>Google Play</span></a>
+                <a href="/charged-physics-lab/support" class="text-link">Physics Lab details &rarr;</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="fieldwork" class="collection-section capture" aria-labelledby="fieldworkTitle">
+      <div class="section-inner">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Capture &amp; fieldwork</p>
+            <h2 id="fieldworkTitle">Keep the details that matter connected.</h2>
+          </div>
+          <p>From an ordinary day to a site walk, these tools hold onto the details most likely to get lost between the moment and the handoff.</p>
+        </div>
+        <div class="app-grid">
+          <article id="today-was" class="app-card today">
+            <div class="app-media">
+              <img src="/static/assets/apps/today-was-weather-location.webp" alt="Today Was daily log with weather data and saved exact location" loading="lazy">
+              <span class="media-label">Daily journal &amp; log</span>
+            </div>
+            <div class="app-body">
+              <div class="app-brandline">
+                <img src="/static/assets/apps/today-was-icon.png" alt="Today Was app icon" class="app-icon">
+                <div><span class="app-status coming">Web preview available</span><h3>Today Was</h3></div>
+              </div>
+              <p class="app-description">A voice-first journal and structured daily log for the details worth saving. Build entries with reusable templates, photos, exact location pins, weather statistics, and the context behind a day in the field.</p>
+              <div class="app-tags" aria-label="Today Was features"><span>Voice-first entries</span><span>10 log templates</span><span>Weather detail</span><span>Location pins</span></div>
+              <div class="app-actions" aria-label="Today Was links">
+                <a href="{{ today_was_url }}" data-studio-download data-app-name="today_was" data-platform="web" target="_blank" rel="noopener noreferrer" class="store-link web"><span class="store-mark" aria-hidden="true">WEB</span><span><small>Open the</small>Today Was preview</span></a>
+                <span class="coming-store" aria-label="Today Was store releases are in preparation"><span class="store-mark" aria-hidden="true">iOS</span><span><small>Store releases</small>In preparation</span></span>
+              </div>
+            </div>
+          </article>
+
+          <article id="plotava" class="app-card plotava">
+            <div class="app-media">
+              <img src="/static/assets/apps/plotava-plan-detail.webp" alt="Plotava plan detail with a connected photo, dimension, and field point" loading="lazy">
+              <span class="media-label">Field documentation</span>
+            </div>
+            <div class="app-body">
+              <div class="app-brandline">
+                <img src="/static/assets/apps/plotava-icon.png" alt="Plotava app icon" class="app-icon">
+                <div><span class="app-status">Available on Android</span><h3>Plotava</h3></div>
+              </div>
+              <p class="app-description">Turn a field walk into one organized package. Pin conditions to an imported plan, attach photos and measurements, add markups, and hand off a linked, printable PDF without altering the original drawing.</p>
+              <div class="app-tags" aria-label="Plotava features"><span>Plan-linked points</span><span>Photos &amp; markups</span><span>Precise dimensions</span><span>Linked PDF handoff</span></div>
+              <div class="app-actions" aria-label="Plotava links">
+                <a href="{{ plotava_android_url }}" data-studio-download data-app-name="plotava" data-platform="android" target="_blank" rel="noopener noreferrer" class="store-link google"><span class="store-mark" aria-hidden="true">A</span><span><small>Get it on</small>Google Play</span></a>
+                <span class="coming-store" aria-label="Plotava is coming soon to the App Store"><span class="store-mark" aria-hidden="true">iOS</span><span><small>Coming soon on the</small>App Store</span></span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="studio-note" aria-labelledby="studioNoteTitle">
+      <div>
+        <p class="eyebrow">A growing studio</p>
+        <h2 id="studioNoteTitle">Different subjects. The same practical instinct.</h2>
+        <p>These are independent products, built around different jobs to be done. Charged Alpha remains the home for stock research and investing education; the Studio gives every product a clear place to be discovered without blurring that focus.</p>
+      </div>
+      <div class="studio-note-links" aria-label="More Charged Alpha destinations">
+        <a href="/shows"><span>Explore stock research</span><span aria-hidden="true">&rarr;</span></a>
+        <a href="/about"><span>Meet the builder</span><span aria-hidden="true">&rarr;</span></a>
+        <a href="/privacy"><span>Privacy &amp; support</span><span aria-hidden="true">&rarr;</span></a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand"><img src="/static/assets/charged-alpha-logo.png" alt="">CHARGED ALPHA STUDIO</div>
+      <div class="footer-links">
+        <a href="/">Stock Library</a>
+        <a href="/games">Games</a>
+        <a href="/studio">Studio</a>
+        <a href="/about">About</a>
+        <a href="/privacy">Privacy</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const mobileMenuButton = document.getElementById('mobileMenuButton');
+    const mobileMenu = document.getElementById('mobileMenu');
+
+    function closeMobileMenu() {
+      mobileMenu.classList.remove('open');
+      mobileMenuButton.setAttribute('aria-expanded', 'false');
+    }
+
+    mobileMenuButton.addEventListener('click', function () {
+      const isOpen = mobileMenu.classList.toggle('open');
+      mobileMenuButton.setAttribute('aria-expanded', String(isOpen));
+    });
+
+    document.addEventListener('keydown', function (event) {
+      if (event.key === 'Escape') closeMobileMenu();
+    });
+
+    const studioTracking = {
+      source: {{ tracking_params.utm_source | tojson }},
+      medium: {{ tracking_params.utm_medium | tojson }},
+      campaign: {{ tracking_params.utm_campaign | tojson }},
+      page_location: window.location.href
+    };
+
+    function trackStudioEvent(name, eventData) {
+      const data = Object.assign({}, studioTracking, eventData || {});
+      if (typeof window.gtag === 'function') {
+        window.gtag('event', name, data);
+      } else {
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push(Object.assign({ event: name }, data));
+      }
+    }
+
+    trackStudioEvent('studio_view', { product_count: 4 });
+
+    document.querySelectorAll('[data-studio-download]').forEach(function (link) {
+      link.addEventListener('click', function () {
+        trackStudioEvent('app_store_click', {
+          app_name: link.dataset.appName,
+          platform: link.dataset.platform,
+          placement: 'studio_directory'
+        });
+      });
+    });
+  </script>
+</body>
+</html>
