@@ -10,6 +10,258 @@
   },
   "episodes": [
     {
+      "ticker": "ZTO",
+      "company": "ZTO Express (Cayman) Inc.",
+      "sector": "Industrials",
+      "quarter": "Q2 2026",
+      "episode_number": "",
+      "title": "ZTO Stock Q2 2026: Profit Up 50%, Stock Down 7% - The Volume Guide Got Cut",
+      "published_at": "2026-08-20T01:43:36+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=5V1zv_iOVyo",
+      "spotify_url": "https://open.spotify.com/episode/4b9nmwOJht4pkJlggwg6qa",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/zto-stock-q2-2026-profit-up-50-stock-down-7-the-volume-guide-got-cut/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "OPRA",
+      "company": "Opera Limited",
+      "sector": "Communication Services",
+      "quarter": "Q2 2026",
+      "episode_number": "",
+      "title": "OPRA Stock Q2 2026: Revenue Grew 25% - The New Guide Implies 14%",
+      "published_at": "2026-08-20T00:51:13+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=Iv3EydqVPFo",
+      "spotify_url": "https://open.spotify.com/episode/2B5PeE2qbTrUMezRy4BDgp",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/opra-stock-q2-2026-revenue-grew-25-the-new-guide-implies-14/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "FLNG",
+      "company": "FLEX LNG Ltd.",
+      "sector": "Energy",
+      "quarter": "Q2 2026",
+      "episode_number": "",
+      "title": "FLNG Stock Q2 2026: Best Quarter Since 2021 - And Cash Still Fell $50 Million",
+      "published_at": "2026-08-19T18:41:25+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=-SnEbCTHLI8",
+      "spotify_url": "https://open.spotify.com/episode/4FTm9Kx2nSrJnx9fgXDiQy",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/flng-stock-q2-2026-best-quarter-since-2021-and-cash-still-fell-50-million/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "TJX",
+      "company": "TJX Companies",
+      "sector": "Consumer Cyclical",
+      "quarter": "Q2 FY2027",
+      "episode_number": "",
+      "title": "TJX Stock Q2 FY2027: 60% Of The Company Grew 1% - Where The Profit Actually Came From",
+      "published_at": "2026-08-19T17:27:44+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=rjadUpBRC_Y",
+      "spotify_url": "https://open.spotify.com/episode/4WupfAkQq7vSqkELAfA56R",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/tjx-stock-q2-fy2027-60-of-the-company-grew-1-where-the-profit-actually-came-from/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "YMM",
+      "company": "Full Truck Alliance Co. Ltd.",
+      "sector": "Technology",
+      "quarter": "Q2 2026",
+      "episode_number": "",
+      "title": "YMM Stock Q2 2026: Operating Profit Up 30%, Net Income Up 6% - Where The Other 24 Points Went",
+      "published_at": "2026-08-19T16:24:33+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=YvEtqT9Xi5w",
+      "spotify_url": "https://open.spotify.com/episode/4BZYDxiGLw7KVu4hgLvUoC",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/ymm-stock-q2-2026-operating-profit-up-30-net-income-up-6-where-the-other-24-points-went/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "SQM",
+      "company": "Sociedad Química y Minera de Chile S.A.",
+      "sector": "Basic Materials",
+      "quarter": "Q2 2026",
+      "episode_number": "",
+      "title": "SQM Stock Q2 2026: Earnings Up 646% And The Chilean State Took More Than Shareholders",
+      "published_at": "2026-08-19T15:31:21+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=Ebt6VU7Zii0",
+      "spotify_url": "https://open.spotify.com/episode/4UakDqfAJS7eE17d2jEdQ0",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/sqm-stock-q2-2026-earnings-up-646-and-the-chilean-state-took-more-than-shareholders/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "TGT",
+      "company": "Target Corporation",
+      "sector": "Consumer Defensive",
+      "quarter": "Q2 FY2026",
+      "episode_number": "",
+      "title": "TGT Stock Q2 FY2026: Target - 94% Of The Beat Was A Tariff Refund",
+      "published_at": "2026-08-19T14:24:58+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=uYsc-SwvFXQ",
+      "spotify_url": "https://open.spotify.com/episode/5k49uhrGmbVCfWWHbcHM05",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/tgt-stock-q2-fy2026-target-94-of-the-beat-was-a-tariff-refund/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "IMTX",
+      "company": "Immatics N.V.",
+      "sector": "Healthcare",
+      "quarter": "Q2 2026",
+      "episode_number": "",
+      "title": "IMTX Stock Q2 2026: Immatics - The Phase 3 Slipped To H1 2027",
+      "published_at": "2026-08-19T11:37:07+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=kJH27dltQPE",
+      "spotify_url": "https://open.spotify.com/episode/1mMaHLY8tlo3wMG9U5Ti1l",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/imtx-stock-q2-2026-immatics-the-phase-3-slipped-to-h1-2027/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "HLIO",
+      "company": "Helios Technologies, Inc.",
+      "sector": "Industrials",
+      "quarter": "Q2 2026",
+      "episode_number": "",
+      "title": "HLIO Stock Q2 2026: Helios - Electronics Closed A 370bp Gap",
+      "published_at": "2026-08-19T10:38:21+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=z3lc79vcn_Y",
+      "spotify_url": "https://open.spotify.com/episode/6IDBzT8JBNNV6A2pfUCrEV",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/hlio-stock-q2-2026-helios-electronics-closed-a-370bp-gap/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "SDRL",
+      "company": "Seadrill Limited",
+      "sector": "Energy",
+      "quarter": "Q2 2026",
+      "episode_number": "",
+      "title": "SDRL Stock Q2 2026: Seadrill - A $71M Swing, $16M Of It Drilling",
+      "published_at": "2026-08-19T09:43:41+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=fXmEdS89z08",
+      "spotify_url": "https://open.spotify.com/episode/68snAZVItWxzr7gNWgaL81",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/sdrl-stock-q2-2026-seadrill-a-71m-swing-16m-of-it-drilling/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "HSAI",
+      "company": "Hesai Group",
+      "sector": "Consumer Cyclical",
+      "quarter": "Q2 2026",
+      "episode_number": "",
+      "title": "HSAI Stock Q2 2026: Hesai Group - The EPS Miss That Was Not Real",
+      "published_at": "2026-08-19T07:55:54+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=momW30rijJ4",
+      "spotify_url": "https://open.spotify.com/episode/4CJIoNKswRGg9sRXZW4ZHU",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/hsai-stock-q2-2026-hesai-group-the-eps-miss-that-was-not-real/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "BHP",
+      "company": "BHP Group Limited",
+      "sector": "Basic Materials",
+      "quarter": "FY2026",
+      "episode_number": "",
+      "title": "BHP Stock FY2026: BHP Group - The Record Year Was Price, Not Tonnes",
+      "published_at": "2026-08-19T06:58:37+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=qCxBfd94MxQ",
+      "spotify_url": "https://open.spotify.com/episode/13neYHXFeORlKrD0NOaaZ5",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/bhp-stock-fy2026-bhp-group-the-record-year-was-price-not-tonnes/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "BIDU",
+      "company": "Baidu, Inc.",
+      "sector": "Communication Services",
+      "quarter": "Q2 2026",
+      "episode_number": "",
+      "title": "BIDU Stock Q2 2026: Baidu - The AI Engine Went Backwards, Not The Ads",
+      "published_at": "2026-08-19T06:07:51+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=5kb70ODf0l4",
+      "spotify_url": "",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/bidu-stock-q2-2026-baidu-the-ai-engine-went-backwards-not-the-ads/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "ANDG",
+      "company": "Andersen Group Inc.",
+      "sector": "Consumer Cyclical",
+      "quarter": "Q2 2026",
+      "episode_number": "",
+      "title": "ANDG Stock Q2 2026: Andersen Group - Record Revenue, And The 12% You Actually Own",
+      "published_at": "2026-08-18T02:44:14+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=BCR8l06iGDI",
+      "spotify_url": "",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/andg-stock-q2-2026-andersen-group-record-revenue-and-the-12-you-actually-own/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
       "ticker": "OCTV",
       "company": "Octave Intelligence plc",
       "sector": "Technology",
@@ -30973,6 +31225,192 @@
       "description": "Fast clips that point viewers into full research videos and stock pages.",
       "videos": [
         {
+          "title": "ZTO Stock: ZTO Express Q2 2026 Earnings - Profit Up 50%, Stock Down 7% #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/J86WwialTY0",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-08-20T01:44:06+00:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "ZTO"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "OPRA Stock: Opera Q2 2026 Earnings - The Raise Was Just The Quarter #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/fDtVmVYMnSU",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-08-20T00:51:50+00:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "OPRA"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "FLNG Stock: Flex LNG Q2 2026 Earnings - Best Quarter Since 2021 #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/K4lMxk9Mdbo",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-08-19T18:42:00+00:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "FLNG",
+            "LNG"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "TJX Stock: TJX Companies Q2 FY2027 Earnings - 60% Of The Company Grew 1% #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/Q5rd3mHoMnM",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-08-19T17:28:28+00:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "TJX",
+            "FY2027"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "YMM Stock: Full Truck Alliance Q2 2026 Earnings - Operating Profit +30%, Net Income +6% #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/sssRBjSPqeI",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-08-19T16:24:59+00:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "YMM"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "SQM Stock: Sociedad Quimica y Minera Q2 2026 Earnings - Up 646%, And The State Took More #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/Pjl0xmf1pd8",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-08-19T15:31:55+00:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "SQM"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "TGT Stock: Target Q2 FY2026 Earnings - 94% Of The Beat Was A Refund #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/T3wKceEoGb0",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-08-19T14:25:36+00:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "TGT",
+            "FY2026"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "IMTX Stock: Immatics Q2 2026 - The Phase 3 Slipped To 2027 #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/jI-jNM0W2D4",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-08-19T04:37:35-07:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "IMTX"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "HLIO Stock: Helios Q2 2026 Earnings - Electronics Closed A 370bp Gap #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/9uK6oyMXd-g",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-08-19T03:38:53-07:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "HLIO"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "SDRL Stock: Seadrill Q2 2026 Earnings - A $71M Swing, $16M Of It Drilling #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/R_vZdvuJu6s",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-08-19T02:50:58-07:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "SDRL"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "HSAI Stock: Hesai Group Q2 2026 Earnings - The Miss That Was Not Real #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/7m8_2QESQvc",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-08-19T00:56:19-07:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "HSAI"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "BHP Stock: BHP Group FY2026 Earnings - The Record Was Price, Not Tonnes #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/h3_vEHRyJi4",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-08-18T23:59:13-07:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "BHP",
+            "FY2026"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "BIDU Stock: Baidu Q2 2026 Earnings - The AI Engine Went Backwards #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/dpyuiN9NAnU",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-08-19T06:08:21+00:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "BIDU"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "ANDG Stock: Andersen Group Q2 2026 Earnings - Record Revenue, And The 12% You Own #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/_JHyd9EKJGY",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-08-17T19:44:44-07:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "ANDG"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
           "title": "OCTV Stock: Octave Intelligence Q2 2026 - A $2.1B Write-Down Its Stock Caused #Shorts",
           "youtube_url": "https://www.youtube.com/shorts/vmO9xVuS8GE",
           "spotify_url": "",
@@ -38599,7 +39037,7 @@
       ]
     }
   ],
-  "last_synced_at": "2026-08-17T21:08:23-05:00",
+  "last_synced_at": "2026-08-19T21:06:32-05:00",
   "stock_metadata": {
     "A": {
       "company": "Agilent Technologies, Inc.",
@@ -38869,6 +39307,10 @@
       "company": "AutoNation, Inc.",
       "sector": "Consumer Cyclical"
     },
+    "ANDG": {
+      "company": "Andersen Group Inc.",
+      "sector": "Consumer Cyclical"
+    },
     "ANET": {
       "company": "Arista Networks",
       "sector": "Technology"
@@ -39128,6 +39570,10 @@
     "BG": {
       "company": "Bunge Limited",
       "sector": "Consumer Defensive"
+    },
+    "BHP": {
+      "company": "BHP Group Limited",
+      "sector": "Basic Materials"
     },
     "BIDU": {
       "company": "Baidu, Inc.",
@@ -40133,6 +40579,10 @@
       "company": "National Beverage Corp.",
       "sector": "Consumer Defensive"
     },
+    "FLNG": {
+      "company": "FLEX LNG Ltd.",
+      "sector": "Energy"
+    },
     "FLUT": {
       "sector": "Consumer Cyclical",
       "company": "Flutter Entertainment plc"
@@ -40397,6 +40847,10 @@
       "company": "HIVE Digital Technologies Ltd.",
       "sector": "Financial Services"
     },
+    "HLIO": {
+      "company": "Helios Technologies, Inc.",
+      "sector": "Industrials"
+    },
     "HLT": {
       "company": "Hilton Worldwide Holdings Inc.",
       "sector": "Consumer Cyclical"
@@ -40524,6 +40978,10 @@
     "IMOS": {
       "company": "ChipMOS TECHNOLOGIES INC.",
       "sector": "Technology"
+    },
+    "IMTX": {
+      "company": "Immatics N.V.",
+      "sector": "Healthcare"
     },
     "INCY": {
       "company": "Incyte Corporation",
@@ -41361,6 +41819,10 @@
       "company": "Onto Innovation Inc.",
       "sector": "Technology"
     },
+    "OPRA": {
+      "company": "Opera Limited",
+      "sector": "Communication Services"
+    },
     "ORCL": {
       "company": "Oracle Corp.",
       "sector": "Technology"
@@ -41853,6 +42315,10 @@
     "SCHW": {
       "company": "The Charles Schwab Corporation",
       "sector": "Financial Services"
+    },
+    "SDRL": {
+      "company": "Seadrill Limited",
+      "sector": "Energy"
     },
     "SE": {
       "company": "Sea Limited",
@@ -42729,6 +43195,10 @@
     },
     "YEXT": {
       "company": "Yext, Inc.",
+      "sector": "Technology"
+    },
+    "YMM": {
+      "company": "Full Truck Alliance Co. Ltd.",
       "sector": "Technology"
     },
     "YPF": {
