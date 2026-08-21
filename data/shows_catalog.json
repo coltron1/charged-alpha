@@ -10,6 +10,204 @@
   },
   "episodes": [
     {
+      "ticker": "KEYS",
+      "company": "Keysight Technologies, Inc.",
+      "sector": "Technology",
+      "quarter": "Q3 FY2026",
+      "episode_number": "",
+      "title": "KEYS Stock Q3 FY2026: Keysight Earnings - Orders +56%, The Book Leads",
+      "published_at": "2026-08-20T13:34:57+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=sfvHhIldVoE",
+      "spotify_url": "https://open.spotify.com/episode/1nSAJRNSF9eMTbcCgElcJD",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/keys-stock-q3-fy2026-keysight-earnings-orders-56-the-book-leads/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "FN",
+      "company": "Fabrinet",
+      "sector": "Technology",
+      "quarter": "Q4 FY2026",
+      "episode_number": "",
+      "title": "FN Stock Q4 FY2026: Fabrinet Earnings - Record Year, It Keeps 12 Cents",
+      "published_at": "2026-08-20T12:34:38+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=_8dira2uH3E",
+      "spotify_url": "https://open.spotify.com/episode/0K5caM2x5Imkfo2bQOoIWy",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/fn-stock-q4-fy2026-fabrinet-earnings-record-year-it-keeps-12-cents/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "THCH",
+      "company": "TH International Limited",
+      "sector": "Consumer Cyclical",
+      "quarter": "Q2 2026",
+      "episode_number": "",
+      "title": "THCH Stock Q2 2026: Tim Hortons China Earnings - Sales Fell 22%, You Own A Third",
+      "published_at": "2026-08-20T11:27:26+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=2OwiBbIPcPk",
+      "spotify_url": "https://open.spotify.com/episode/7teV82nRFq1DX2ZnonHQKB",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/thch-stock-q2-2026-tim-hortons-china-earnings-sales-fell-22-you-own-a-third/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "AXIL",
+      "company": "AXIL Brands, Inc.",
+      "sector": "Technology",
+      "quarter": "Q4 FY2026",
+      "episode_number": "",
+      "title": "AXIL Stock Q4 FY2026: AXIL Brands Had A Record Year - And Direct Sales Fell",
+      "published_at": "2026-08-20T10:30:36+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=V8bBLmAV7xM",
+      "spotify_url": "https://open.spotify.com/episode/7uVRSyhvnKyMImOpbuoCvN",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/axil-stock-q4-fy2026-axil-brands-had-a-record-year-and-direct-sales-fell/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "CRGO",
+      "company": "Freightos Limited",
+      "sector": "Industrials",
+      "quarter": "Q2 2026",
+      "episode_number": "",
+      "title": "CRGO Stock Q2 2026: Freightos Booked A Record $422M - And Kept 0.69% Of It",
+      "published_at": "2026-08-20T09:34:54+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=fJNO1VqBSPQ",
+      "spotify_url": "https://open.spotify.com/episode/5hGXPZFzUfSU3rQRsRNQif",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/crgo-stock-q2-2026-freightos-booked-a-record-422m-and-kept-069-of-it/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "TAYD",
+      "company": "Taylor Devices, Inc.",
+      "sector": "Industrials",
+      "quarter": "Q4 FY2026",
+      "episode_number": "",
+      "title": "TAYD Stock Q4 FY2026: Taylor Devices Order Book Doubled - Seismic Is 5% Of It",
+      "published_at": "2026-08-20T08:07:24+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=4xEdau3CENU",
+      "spotify_url": "https://open.spotify.com/episode/7iChDlGQWXSleWoBLtEzjS",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/tayd-stock-q4-fy2026-taylor-devices-order-book-doubled-seismic-is-5-of-it/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "AUNA",
+      "company": "Auna SA",
+      "sector": "Healthcare",
+      "quarter": "Q2 2026",
+      "episode_number": "",
+      "title": "AUNA Stock Q2 2026: Auna Gapped 14% Down, Closed Flat - Leverage Frozen At 3.6x",
+      "published_at": "2026-08-20T07:15:27+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=03Tp8JRDf2c",
+      "spotify_url": "https://open.spotify.com/episode/5y9T3j5CqFjiXqW8S8LN9H",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/auna-stock-q2-2026-auna-gapped-14-down-closed-flat-leverage-frozen-at-36x/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "LZB",
+      "company": "La-Z-Boy Incorporated",
+      "sector": "Consumer Cyclical",
+      "quarter": "Q1 FY2027",
+      "episode_number": "",
+      "title": "LZB Stock Q1 FY2027: La-Z-Boy Fell 17% - It Earns 3x More Through Stores It Owns",
+      "published_at": "2026-08-20T06:16:48+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=Z6wTFwgLu8o",
+      "spotify_url": "https://open.spotify.com/episode/5Dm6eX8u9gVTuQx0zP8CXK",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/lzb-stock-q1-fy2027-la-z-boy-fell-17-it-earns-3x-more-through-stores-it-owns/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "FLXS",
+      "company": "Flexsteel Industries, Inc.",
+      "sector": "Consumer Cyclical",
+      "quarter": "Q4 FY2026",
+      "episode_number": "",
+      "title": "FLXS Stock Q4 FY2026: Flexsteel Retired A Quarter Of Itself At $47 - The Stock Is $78",
+      "published_at": "2026-08-20T04:44:17+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=Ndox8hue2IA",
+      "spotify_url": "https://open.spotify.com/episode/4wfcJLTwBtvrE24wOR73yJ",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/flxs-stock-q4-fy2026-flexsteel-retired-a-quarter-of-itself-at-47-the-stock-is-78/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "YALA",
+      "company": "Yalla Group Limited",
+      "sector": "Technology",
+      "quarter": "Q2 2026",
+      "episode_number": "",
+      "title": "YALA Stock Q2 2026: Cash Equals The Entire Market Cap - And Marketing Just Doubled",
+      "published_at": "2026-08-20T03:43:31+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=D0MWctz8JE8",
+      "spotify_url": "https://open.spotify.com/episode/52B701EWlxhOlmvFGctgdr",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/yala-stock-q2-2026-cash-equals-the-entire-market-cap-and-marketing-just-doubled/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "MRCY",
+      "company": "Mercury Systems, Inc.",
+      "sector": "Industrials",
+      "quarter": "Q4 FY2026",
+      "episode_number": "",
+      "title": "MRCY Stock Q4 FY2026: Record $1.9B Backlog, Free Cash Flow Down 43% - Grading The Turnaround",
+      "published_at": "2026-08-20T02:49:45+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=-HvO3Kmp79M",
+      "spotify_url": "https://open.spotify.com/episode/5493aICc8G42qjyyvYXBUO",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/mrcy-stock-q4-fy2026-record-19b-backlog-free-cash-flow-down-43-grading-the-turnaround/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
       "ticker": "ZTO",
       "company": "ZTO Express (Cayman) Inc.",
       "sector": "Industrials",
@@ -31225,6 +31423,156 @@
       "description": "Fast clips that point viewers into full research videos and stock pages.",
       "videos": [
         {
+          "title": "KEYS Stock: Keysight Technologies Q3 FY2026 Earnings - Orders Lead #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/Krv4qXYo7rs",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-08-20T13:35:25+00:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "KEYS",
+            "FY2026"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "FN Stock: Fabrinet Q4 FY2026 Earnings - It Keeps 12 Cents #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/jndERQgzIHw",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-08-20T12:35:10+00:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "FN",
+            "FY2026"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "THCH Stock: Tim Hortons China Q2 2026 Earnings - You Own A Third Of It #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/BR1m4fpWbCQ",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-08-20T11:28:05+00:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "THCH"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "AXIL Stock: AXIL Brands Q4 FY2026 Earnings - Record Year, Direct Sales Fell #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/4vF_bzwZDIw",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-08-20T10:31:11+00:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "AXIL",
+            "FY2026"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "CRGO Stock: Freightos Q2 2026 Earnings - A Record $422M Booked, $2.9M Collected #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/0qRb76y9B6M",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-08-20T09:35:33+00:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "CRGO"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "TAYD Stock: Taylor Devices Q4 FY2026 Earnings - Seismic Is 5% Of A Record Order Book #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/jSbw63_LsXI",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-08-20T08:12:47+00:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "TAYD",
+            "FY2026"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "AUNA Stock: Auna Q2 2026 Earnings - Gapped 14% Down, Closed Flat #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/UsrRhNrTFBM",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-08-20T07:16:10+00:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "AUNA"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "LZB Stock: La-Z-Boy Q1 FY2027 Earnings - Down 17%, And It Owns 234 Of Its 380 Stores #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/7_kuCz3kt6c",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-08-20T06:17:35+00:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "LZB",
+            "FY2027"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "FLXS Stock: Flexsteel Q4 FY2026 Earnings - A Quarter Of The Company Retired At $47 #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/acAG1WbW2cQ",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-08-19T21:44:48-07:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "FLXS",
+            "FY2026"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "YALA Stock: Yalla Group Q2 2026 Earnings - Cash Equals The Whole Market Cap #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/O4dwNSMnXWg",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-08-19T20:48:43-07:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "YALA"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "MRCY Stock: Mercury Systems Q4 FY2026 Earnings - Record Backlog, Cash Flow Down 43% #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/JhWlMFOqRWQ",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-08-19T19:50:29-07:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "MRCY",
+            "FY2026"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
           "title": "ZTO Stock: ZTO Express Q2 2026 Earnings - Profit Up 50%, Stock Down 7% #Shorts",
           "youtube_url": "https://www.youtube.com/shorts/J86WwialTY0",
           "spotify_url": "",
@@ -39037,7 +39385,7 @@
       ]
     }
   ],
-  "last_synced_at": "2026-08-19T21:06:32-05:00",
+  "last_synced_at": "2026-08-20T21:03:41-05:00",
   "stock_metadata": {
     "A": {
       "company": "Agilent Technologies, Inc.",
@@ -39466,6 +39814,10 @@
     "AWK": {
       "company": "American Water Works",
       "sector": "Utilities"
+    },
+    "AXIL": {
+      "company": "AXIL Brands, Inc.",
+      "sector": "Technology"
     },
     "AXON": {
       "company": "Axon Enterprise, Inc.",
@@ -40063,6 +40415,10 @@
       "company": "Credo Technology Group Holding Ltd",
       "sector": "Technology"
     },
+    "CRGO": {
+      "company": "Freightos Limited",
+      "sector": "Industrials"
+    },
     "CRH": {
       "company": "CRH PLC",
       "sector": "Basic Materials"
@@ -40587,9 +40943,17 @@
       "sector": "Consumer Cyclical",
       "company": "Flutter Entertainment plc"
     },
+    "FLXS": {
+      "company": "Flexsteel Industries, Inc.",
+      "sector": "Consumer Cyclical"
+    },
     "FLY": {
       "company": "Firefly Aerospace Inc.",
       "sector": "Industrials"
+    },
+    "FN": {
+      "company": "Fabrinet",
+      "sector": "Technology"
     },
     "FNB": {
       "company": "F.N.B. Corporation",
@@ -41514,6 +41878,10 @@
     "MPWR": {
       "company": "Monolithic Power Systems, Inc.",
       "sector": "Technology"
+    },
+    "MRCY": {
+      "company": "Mercury Systems, Inc.",
+      "sector": "Industrials"
     },
     "MRK": {
       "company": "Merck & Co.",
@@ -42600,6 +42968,10 @@
       "company": "Molson Coors Beverage Company",
       "sector": "Consumer Defensive"
     },
+    "TAYD": {
+      "company": "Taylor Devices, Inc.",
+      "sector": "Industrials"
+    },
     "TBBB": {
       "company": "BBB Foods Inc.",
       "sector": "Consumer Defensive"
@@ -42663,6 +43035,10 @@
     "THC": {
       "company": "Tenet Healthcare Corporation",
       "sector": "Healthcare"
+    },
+    "THCH": {
+      "company": "TH International Limited",
+      "sector": "Consumer Cyclical"
     },
     "THO": {
       "company": "THOR Industries, Inc.",
@@ -43183,6 +43559,10 @@
     },
     "XYZ": {
       "company": "Block, Inc.",
+      "sector": "Technology"
+    },
+    "YALA": {
+      "company": "Yalla Group Limited",
       "sector": "Technology"
     },
     "YAMHF": {
