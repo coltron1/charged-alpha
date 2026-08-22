@@ -10,6 +10,78 @@
   },
   "episodes": [
     {
+      "ticker": "ROST",
+      "company": "Ross Stores, Inc.",
+      "sector": "Consumer Cyclical",
+      "quarter": "Q2 FY2026",
+      "episode_number": "",
+      "title": "ROST Stock Q2 FY2026: Ross Stores Earnings - 78% Of The Beat Was A Refund",
+      "published_at": "2026-08-22T01:45:56+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=8IiBRlC72tk",
+      "spotify_url": "https://open.spotify.com/episode/5UdOqo3e1kqt9OLOSAdEtu",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/rost-stock-q2-fy2026-ross-stores-earnings-78-of-the-beat-was-a-refund/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "NDSN",
+      "company": "Nordson Corporation",
+      "sector": "Industrials",
+      "quarter": "Q3 FY2026",
+      "episode_number": "",
+      "title": "NDSN Stock Q3 FY2026: Nordson Earnings - One Segment Did All The Growth",
+      "published_at": "2026-08-22T00:14:51+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=dakoGS6nW34",
+      "spotify_url": "https://open.spotify.com/episode/01ktuwVIoukglwDZGewqyb",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/ndsn-stock-q3-fy2026-nordson-earnings-one-segment-did-all-the-growth/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "WOLF",
+      "company": "Wolfspeed, Inc.",
+      "sector": "Technology",
+      "quarter": "Q4 FY2026",
+      "episode_number": "",
+      "title": "WOLF Stock Q4 FY2026: Wolfspeed Earnings - The Share Count Doubles Again",
+      "published_at": "2026-08-21T23:08:21+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=OfNCKtbIbjU",
+      "spotify_url": "https://open.spotify.com/episode/1ihJ0S2P7gGohGY11ybQOm",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/wolf-stock-q4-fy2026-wolfspeed-earnings-the-share-count-doubles-again/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "WMT",
+      "company": "Walmart Inc.",
+      "sector": "Consumer",
+      "quarter": "Q2 FY2027",
+      "episode_number": "",
+      "title": "WMT Stock Q2 FY2027: Walmart Earnings - Guidance Raised, Stock Down 9%",
+      "published_at": "2026-08-21T22:06:41+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=bAzwy3iL0yU",
+      "spotify_url": "https://open.spotify.com/episode/2VpFJRAKfcZW7PKNfp7HoH",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/wmt-stock-q2-fy2027-walmart-earnings-guidance-raised-stock-down-9/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
       "ticker": "KEYS",
       "company": "Keysight Technologies, Inc.",
       "sector": "Technology",
@@ -31423,6 +31495,62 @@
       "description": "Fast clips that point viewers into full research videos and stock pages.",
       "videos": [
         {
+          "title": "ROST Stock: Ross Stores Q2 FY2026 Earnings - 78% Of The Beat Was A Refund",
+          "youtube_url": "https://www.youtube.com/shorts/uFnKetCkSXs",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-08-22T01:46:28+00:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "ROST",
+            "FY2026"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "NDSN Stock: Nordson Q3 FY2026 Earnings - One Segment Did All The Growth",
+          "youtube_url": "https://www.youtube.com/shorts/DV66AbXf36Y",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-08-22T00:15:32+00:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "NDSN",
+            "FY2026"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "WOLF Stock: Wolfspeed Q4 FY2026 Earnings - The Share Count Doubles Again",
+          "youtube_url": "https://www.youtube.com/shorts/tMVf-Z6njVo",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-08-21T23:08:44+00:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "WOLF",
+            "FY2026"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "WMT Stock: Walmart Q2 FY2027 Earnings - Guidance Up, Stock Down 9%",
+          "youtube_url": "https://www.youtube.com/shorts/w0mcKp-FDos",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-08-21T22:07:07+00:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "WMT",
+            "FY2027"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
           "title": "KEYS Stock: Keysight Technologies Q3 FY2026 Earnings - Orders Lead #Shorts",
           "youtube_url": "https://www.youtube.com/shorts/Krv4qXYo7rs",
           "spotify_url": "",
@@ -39385,7 +39513,7 @@
       ]
     }
   ],
-  "last_synced_at": "2026-08-20T21:03:41-05:00",
+  "last_synced_at": "2026-08-21T21:05:50-05:00",
   "stock_metadata": {
     "A": {
       "company": "Agilent Technologies, Inc.",
@@ -41979,6 +42107,10 @@
       "company": "Nasdaq, Inc.",
       "sector": "Financial Services"
     },
+    "NDSN": {
+      "company": "Nordson Corporation",
+      "sector": "Industrials"
+    },
     "NEE": {
       "company": "NextEra Energy Inc.",
       "sector": "Utilities"
@@ -43472,6 +43604,10 @@
     "WMT": {
       "company": "Walmart Inc.",
       "sector": "Consumer"
+    },
+    "WOLF": {
+      "company": "Wolfspeed, Inc.",
+      "sector": "Technology"
     },
     "WOOF": {
       "company": "Petco Health and Wellness Company, Inc.",
