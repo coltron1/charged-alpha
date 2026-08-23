@@ -434,7 +434,7 @@
             <div class="roadmap-brandline">
               <img src="/static/assets/apps/today-was-icon.png" alt="Today Was app icon" class="roadmap-icon">
               <div>
-                <span class="app-status">Coming soon</span>
+                <span class="app-status available">Available now on iPhone</span>
                 <h3>Today Was</h3>
               </div>
             </div>
@@ -449,8 +449,12 @@
               </ul>
             </div>
             <div class="roadmap-actions">
-              <a href="https://daymoire.chargedalpha.com/" target="_blank" rel="noopener noreferrer" class="btn-secondary">Explore Today Was</a>
-              <span class="fine-print">The current web preview is available while app-store releases are prepared.</span>
+              <a href="{{ today_was_ios_url }}" target="_blank" rel="noopener noreferrer" class="app-store-link apple" aria-label="Download Today Was on the App Store">
+                <span class="store-mark" aria-hidden="true">iOS</span>
+                <span><small>Download on the</small>App Store</span>
+              </a>
+              <a href="{{ today_was_web_url }}" target="_blank" rel="noopener noreferrer" class="btn-secondary">Explore Today Was web preview</a>
+              <span class="fine-print">Available now on iPhone. A web preview is also available.</span>
             </div>
           </article>
         </div>

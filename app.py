@@ -560,6 +560,7 @@ PHYSICS_LAB_APP_STORE_URL = "https://apps.apple.com/us/app/charged-physics-lab/i
 PHYSICS_LAB_GOOGLE_PLAY_URL = "https://play.google.com/store/apps/details?id=com.chargedacademy.app"
 PLOTAVA_GOOGLE_PLAY_URL = "https://play.google.com/store/apps/details?id=com.plotava.app"
 TODAY_WAS_URL = "https://daymoire.chargedalpha.com/"
+TODAY_WAS_APP_STORE_URL = "https://apps.apple.com/us/app/today-was/id6794942824"
 APP_TRACKING_DEFAULTS = {
     "utm_source": "chargedalpha",
     "utm_medium": "website",
@@ -2752,6 +2753,7 @@ def studio():
         physics_android_url=_add_query_params(PHYSICS_LAB_GOOGLE_PLAY_URL, tracking_params),
         plotava_android_url=_add_query_params(PLOTAVA_GOOGLE_PLAY_URL, tracking_params),
         today_was_url=_add_query_params(TODAY_WAS_URL, tracking_params),
+        today_was_ios_url=_add_query_params(TODAY_WAS_APP_STORE_URL, tracking_params),
         tracking_params=tracking_params,
         studio_schema={
             "@context": "https://schema.org",
@@ -2788,9 +2790,11 @@ def studio():
                     "downloadUrl": [PHYSICS_LAB_APP_STORE_URL, PHYSICS_LAB_GOOGLE_PLAY_URL],
                 },
                 {
-                    "@type": "WebApplication",
+                    "@type": "MobileApplication",
                     "name": "Today Was",
+                    "operatingSystem": "iOS",
                     "applicationCategory": "LifestyleApplication",
+                    "downloadUrl": TODAY_WAS_APP_STORE_URL,
                     "url": TODAY_WAS_URL,
                 },
                 {
@@ -2833,6 +2837,8 @@ def about():
         "about.html",
         ios_url=_add_query_params(APP_STORE_URL, tracking_params),
         android_url=_add_query_params(GOOGLE_PLAY_URL, tracking_params),
+        today_was_ios_url=_add_query_params(TODAY_WAS_APP_STORE_URL, tracking_params),
+        today_was_web_url=_add_query_params(TODAY_WAS_URL, tracking_params),
     )
 
 
