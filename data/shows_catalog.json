@@ -10,6 +10,96 @@
   },
   "episodes": [
     {
+      "ticker": "NTES",
+      "company": "NetEase, Inc.",
+      "sector": "Communication Services",
+      "quarter": "Q2 2026",
+      "episode_number": "",
+      "title": "NetEase (NTES): The 23% Miss Never Touched The Games Business",
+      "published_at": "2026-08-22T16:17:36+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=VMgimLafqPs",
+      "spotify_url": "https://open.spotify.com/episode/38QjcrvaxuzgSxfF7V1Ywm",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/netease-ntes-the-23-miss-never-touched-the-games-business/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "COTY",
+      "company": "Coty Inc.",
+      "sector": "Consumer Defensive",
+      "quarter": "Q4 FY2026",
+      "episode_number": "",
+      "title": "COTY Stock Q4 FY2026: Coty Earnings - USD741M Went To A Buyback Hedge",
+      "published_at": "2026-08-22T15:10:50+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=lT4S3UpevLs",
+      "spotify_url": "https://open.spotify.com/episode/0TAx91WDKsvW2I9n7vWeba",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/coty-stock-q4-fy2026-coty-earnings-usd741m-went-to-a-buyback-hedge/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "BABA",
+      "company": "Alibaba Group Holding Limited",
+      "sector": "Consumer Cyclical",
+      "quarter": "Q1 FY2027",
+      "episode_number": "",
+      "title": "Alibaba (BABA): The 92% Earnings Miss That Wasn’t - And The One That Was",
+      "published_at": "2026-08-22T13:46:58+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=4V9Dd-nGqGA",
+      "spotify_url": "https://open.spotify.com/episode/0vMnYXhdOoRvaFmTMy58Q3",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/alibaba-baba-the-92-earnings-miss-that-wasn-t-and-the-one-that-was/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "OSIS",
+      "company": "OSI Systems, Inc.",
+      "sector": "Technology",
+      "quarter": "Q4 FY2026",
+      "episode_number": "",
+      "title": "OSI Systems (OSIS): They Beat By A Penny And The Backlog Didn’t Grow",
+      "published_at": "2026-08-22T04:17:37+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=cVn86LmOqww",
+      "spotify_url": "https://open.spotify.com/episode/3qu2sjetgbLc78HGkRjEnS",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/osi-systems-osis-they-beat-by-a-penny-and-the-backlog-didn-t-grow/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "AAP",
+      "company": "Advance Auto Parts Inc.",
+      "sector": "Consumer Cyclical",
+      "quarter": "Q2 2026",
+      "episode_number": "",
+      "title": "AAP Stock Q2 2026: Advance Auto Parts Earnings - The Turnaround Clock Ran Out",
+      "published_at": "2026-08-22T03:09:17+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=MphdHibfZGA",
+      "spotify_url": "https://open.spotify.com/episode/02pEo6WVq38lrhlEmStcJx",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/aap-stock-q2-2026-advance-auto-parts-earnings-the-turnaround-clock-ran-out/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
       "ticker": "ROST",
       "company": "Ross Stores, Inc.",
       "sector": "Consumer Cyclical",
@@ -31495,6 +31585,74 @@
       "description": "Fast clips that point viewers into full research videos and stock pages.",
       "videos": [
         {
+          "title": "NTES Stock Q2 2026: NetEase Earnings - It Sold More And Paid Less #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/hPa3xlhKJtg",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-08-22T16:18:13+00:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "NTES"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "COTY Stock: Coty Q4 FY2026 Earnings - USD741M On A Buyback Hedge",
+          "youtube_url": "https://www.youtube.com/shorts/oStF4Ts8AEI",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-08-22T15:11:30+00:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "COTY",
+            "FY2026"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "BABA Stock: Alibaba June Quarter 2026 Earnings - The 92% Miss That Wasn't #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/yconq16F_z8",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-08-22T13:47:29+00:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "BABA"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "OSIS Stock: OSI Systems Q4 FY2026 Earnings - Read The Backlog, Not The Print #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/a8EPLdA8b9I",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-08-22T04:18:10+00:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "OSIS",
+            "OSI",
+            "FY2026"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "AAP Stock: Advance Auto Parts Q2 2026 Earnings - The Turnaround Clock Ran Out",
+          "youtube_url": "https://www.youtube.com/shorts/ibTE9qL5VkA",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-08-22T03:10:10+00:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "AAP"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
           "title": "ROST Stock: Ross Stores Q2 FY2026 Earnings - 78% Of The Beat Was A Refund",
           "youtube_url": "https://www.youtube.com/shorts/uFnKetCkSXs",
           "spotify_url": "",
@@ -39513,7 +39671,7 @@
       ]
     }
   ],
-  "last_synced_at": "2026-08-21T21:05:50-05:00",
+  "last_synced_at": "2026-08-22T21:06:26-05:00",
   "stock_metadata": {
     "A": {
       "company": "Agilent Technologies, Inc.",
@@ -40506,6 +40664,10 @@
     "COST": {
       "company": "Costco Wholesale",
       "sector": "Consumer"
+    },
+    "COTY": {
+      "company": "Coty Inc.",
+      "sector": "Consumer Defensive"
     },
     "CPA": {
       "company": "Copa Holdings, S.A.",
@@ -42338,6 +42500,10 @@
     "OSCR": {
       "company": "Oscar Health, Inc.",
       "sector": "Healthcare"
+    },
+    "OSIS": {
+      "company": "OSI Systems, Inc.",
+      "sector": "Technology"
     },
     "OSK": {
       "company": "Oshkosh Corporation",
