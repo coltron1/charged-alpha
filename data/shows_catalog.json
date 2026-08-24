@@ -10,6 +10,114 @@
   },
   "episodes": [
     {
+      "ticker": "LOW",
+      "company": "Lowe's Companies",
+      "sector": "Consumer",
+      "quarter": "Q2 FY2026",
+      "episode_number": "",
+      "title": "Lowe’s (LOW) Q2 FY2026: Sales +8.3%, Comps +0.2%, And A Bought Beat",
+      "published_at": "2026-08-23T11:58:06+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=N4v97PQTdSo",
+      "spotify_url": "https://open.spotify.com/episode/5LnmGfRUwrHHadTOpv5bRp",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/lowe-s-low-q2-fy2026-sales-83-comps-02-and-a-bought-beat/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "SCSC",
+      "company": "ScanSource, Inc.",
+      "sector": "Technology",
+      "quarter": "Q4 FY2026",
+      "episode_number": "",
+      "title": "ScanSource (SCSC) Q4 FY2026: 10 Cents vs 99 Cents, And A $220M Cheque",
+      "published_at": "2026-08-23T10:36:30+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=CUYikOFCV0A",
+      "spotify_url": "https://open.spotify.com/episode/5s0CcWmBqFuMVDdKrQUpvf",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/scansource-scsc-q4-fy2026-10-cents-vs-99-cents-and-a-220m-cheque/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "DAO",
+      "company": "Youdao, Inc.",
+      "sector": "Consumer Defensive",
+      "quarter": "Q2 2026",
+      "episode_number": "",
+      "title": "Youdao (DAO) Q2 2026: A Record Quarter, Negative Equity, 92x Earnings",
+      "published_at": "2026-08-23T09:06:47+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=Yf8sFLzng3c",
+      "spotify_url": "https://open.spotify.com/episode/4DGxVqwg5Sxleyeh6x7vQm",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/youdao-dao-q2-2026-a-record-quarter-negative-equity-92x-earnings/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "NMM",
+      "company": "Navios Maritime Partners L.P.",
+      "sector": "Industrials",
+      "quarter": "Q2 2026",
+      "episode_number": "",
+      "title": "Navios Maritime Partners (NMM): Earnings Up 147% And Still 0.71x Book",
+      "published_at": "2026-08-23T08:00:20+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=GYa_tWV37Lw",
+      "spotify_url": "https://open.spotify.com/episode/036qHfuK4etx2TL3wQVNGv",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/navios-maritime-partners-nmm-earnings-up-147-and-still-071x-book/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "BKE",
+      "company": "Buckle, Inc. (The)",
+      "sector": "Consumer Cyclical",
+      "quarter": "Q2 FY2026",
+      "episode_number": "",
+      "title": "The Buckle (BKE): The 10% Dividend Yield That Nobody Actually Promised",
+      "published_at": "2026-08-23T06:24:17+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=s5hB12oY-eo",
+      "spotify_url": "https://open.spotify.com/episode/7v4QTU8aVE7lW1Duc8bJj9",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/the-buckle-bke-the-10-dividend-yield-that-nobody-actually-promised/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "BEKE",
+      "company": "KE Holdings Inc.",
+      "sector": "Real Estate",
+      "quarter": "Q2 2026",
+      "episode_number": "",
+      "title": "KE Holdings (BEKE): The Revenue That Left Was Carrying Almost No Profit",
+      "published_at": "2026-08-23T04:01:23+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=qNRO1HIqGkk",
+      "spotify_url": "https://open.spotify.com/episode/2TF3DGsH8PRekAHs0k6Qix",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/ke-holdings-beke-the-revenue-that-left-was-carrying-almost-no-profit/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
       "ticker": "NTES",
       "company": "NetEase, Inc.",
       "sector": "Communication Services",
@@ -31420,6 +31528,33 @@
       "description": "Theme videos, comparisons, and multi-stock frameworks for broader research.",
       "videos": [
         {
+          "title": "Alvotech (ALVO) H1 2026: Revenue -30.8%, Guidance Unchanged, And A 2x Second Half",
+          "youtube_url": "https://www.youtube.com/watch?v=vxi7jmS7jv0",
+          "spotify_url": "https://open.spotify.com/episode/6uRbvFPvEVjOW7F4rvboOX",
+          "podbean_url": "https://chargedalpha.podbean.com/e/alvotech-alvo-h1-2026-revenue-308-guidance-unchanged-and-a-2x-second-half/",
+          "apple_url": "",
+          "published_at": "2026-08-23T13:10:48+00:00",
+          "section": "Market and Sector Explainers",
+          "tickers": [
+            "ALVO",
+            "H1"
+          ],
+          "summary": "A special-topic Charged Alpha video connected to current stock and earnings research."
+        },
+        {
+          "title": "Telix Pharmaceuticals (TLX): The $40 Million Cheque That Made The Profit",
+          "youtube_url": "https://www.youtube.com/watch?v=dhCRxPxkMpQ",
+          "spotify_url": "https://open.spotify.com/episode/1Pafj8zQrmwnjm8X00dkLT",
+          "podbean_url": "https://chargedalpha.podbean.com/e/telix-pharmaceuticals-tlx-the-40-million-cheque-that-made-the-profit/",
+          "apple_url": "",
+          "published_at": "2026-08-23T05:22:56+00:00",
+          "section": "Market and Sector Explainers",
+          "tickers": [
+            "TLX"
+          ],
+          "summary": "A special-topic Charged Alpha video connected to current stock and earnings research."
+        },
+        {
           "title": "IHG Stock H1 2026: InterContinental Hotels Earnings - The Buyback, Counted Twice",
           "youtube_url": "https://www.youtube.com/watch?v=xqlXEZHPfsw",
           "spotify_url": "https://open.spotify.com/episode/2J5R9tRZBjTyoZKJScxN2z",
@@ -31584,6 +31719,116 @@
       "title": "Shorts and Clips",
       "description": "Fast clips that point viewers into full research videos and stock pages.",
       "videos": [
+        {
+          "title": "ALVO Stock: Alvotech H1 2026 Earnings - Revenue -31%, Guidance Held #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/00Ba2osKF0s",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-08-23T13:11:18+00:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "ALVO",
+            "H1"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "LOW Stock: Lowe's Q2 FY2026 Earnings - Sales +8%, Comps +0.2% #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/-xQVLkxsHMc",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-08-23T11:58:43+00:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "LOW",
+            "FY2026"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "SCSC Stock: ScanSource Q4 FY2026 Earnings - 10 Cents vs 99 Cents #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/_yLzVLjphj4",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-08-23T10:37:08+00:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "SCSC",
+            "FY2026"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "DAO Stock: Youdao Q2 2026 Earnings - Record Profit, Negative Equity #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/8AsTTR5EDI4",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-08-23T09:07:23+00:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "DAO"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "NMM Stock: Navios Maritime Partners Q2 2026 Earnings - Up 147% And Still 0.71x Book #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/w3lLnhVHcTo",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-08-23T08:00:59+00:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "NMM"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "BKE Stock: The Buckle Q2 FY2026 Earnings - The 10% Yield Nobody Promised #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/_iHIO9jdQBU",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-08-23T06:25:21+00:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "BKE",
+            "FY2026"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "TLX Stock: Telix Pharmaceuticals H1 2026 Earnings - The $40m Cheque That Made The Profit #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/sDNJzZvoBeQ",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-08-23T05:23:21+00:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "TLX",
+            "H1"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "BEKE Stock Q2 2026: KE Holdings Earnings - Revenue Fell, Profit Doubled #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/N7bFIFzBNpU",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-08-23T04:01:55+00:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "BEKE",
+            "KE"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
         {
           "title": "NTES Stock Q2 2026: NetEase Earnings - It Sold More And Paid Less #Shorts",
           "youtube_url": "https://www.youtube.com/shorts/hPa3xlhKJtg",
@@ -39671,7 +39916,7 @@
       ]
     }
   ],
-  "last_synced_at": "2026-08-22T21:06:26-05:00",
+  "last_synced_at": "2026-08-23T21:11:35-05:00",
   "stock_metadata": {
     "A": {
       "company": "Agilent Technologies, Inc.",
@@ -40800,6 +41045,10 @@
     "DAL": {
       "sector": "Industrials",
       "company": "Delta Air Lines, Inc."
+    },
+    "DAO": {
+      "company": "Youdao, Inc.",
+      "sector": "Consumer Defensive"
     },
     "DAR": {
       "company": "Darling Ingredients Inc.",
@@ -42321,6 +42570,10 @@
       "company": "Annaly Capital Management",
       "sector": "Real Estate"
     },
+    "NMM": {
+      "company": "Navios Maritime Partners L.P.",
+      "sector": "Industrials"
+    },
     "NOC": {
       "company": "Northrop Grumman Corporation",
       "sector": "Industrials"
@@ -42981,6 +43234,10 @@
     "SCHW": {
       "company": "The Charles Schwab Corporation",
       "sector": "Financial Services"
+    },
+    "SCSC": {
+      "company": "ScanSource, Inc.",
+      "sector": "Technology"
     },
     "SDRL": {
       "company": "Seadrill Limited",
