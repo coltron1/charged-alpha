@@ -10,6 +10,42 @@
   },
   "episodes": [
     {
+      "ticker": "NSSC",
+      "company": "Napco Security Technologies, Inc.",
+      "sector": "Industrials",
+      "quarter": "Q4 FY2026",
+      "episode_number": "",
+      "title": "Napco Security (NSSC) Q4 FY2026: A Record Quarter With A Customs Refund Inside It",
+      "published_at": "2026-08-25T00:37:21+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=tqMq2nmwR_A",
+      "spotify_url": "https://open.spotify.com/episode/5aAJPaOOSwgh9ENHHz5iZ3",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/napco-security-nssc-q4-fy2026-a-record-quarter-with-a-customs-refund-inside-it/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "PDD",
+      "company": "PDD Holdings Inc.",
+      "sector": "Consumer Cyclical",
+      "quarter": "Q2 2026",
+      "episode_number": "",
+      "title": "PDD Holdings (PDD) Q2 2026: Revenue +8%, Earnings -12%, And A $61bn Portfolio",
+      "published_at": "2026-08-24T23:28:21+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=6SvF-NlD9o0",
+      "spotify_url": "https://open.spotify.com/episode/73yru14i8gwrgoY0W9vsub",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/pdd-holdings-pdd-q2-2026-revenue-8-earnings-12-and-a-61bn-portfolio/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
       "ticker": "LOW",
       "company": "Lowe's Companies",
       "sector": "Consumer",
@@ -31720,6 +31756,33 @@
       "description": "Fast clips that point viewers into full research videos and stock pages.",
       "videos": [
         {
+          "title": "NSSC Stock: Napco Security Q4 FY2026 Earnings - 9 Cents Came From Customs #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/oNrRPr9oPec",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-08-25T00:37:58+00:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "NSSC",
+            "FY2026"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "PDD Stock: PDD Holdings Q2 2026 Earnings - Revenue +8%, Earnings -12% #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/ViPwV2_HRO8",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-08-24T23:29:01+00:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "PDD"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
           "title": "ALVO Stock: Alvotech H1 2026 Earnings - Revenue -31%, Guidance Held #Shorts",
           "youtube_url": "https://www.youtube.com/shorts/00Ba2osKF0s",
           "spotify_url": "",
@@ -39916,7 +39979,7 @@
       ]
     }
   ],
-  "last_synced_at": "2026-08-23T21:11:35-05:00",
+  "last_synced_at": "2026-08-24T21:01:58-05:00",
   "stock_metadata": {
     "A": {
       "company": "Agilent Technologies, Inc.",
@@ -42604,6 +42667,10 @@
     },
     "NSC": {
       "company": "Norfolk Southern Corporation",
+      "sector": "Industrials"
+    },
+    "NSSC": {
+      "company": "Napco Security Technologies, Inc.",
       "sector": "Industrials"
     },
     "NTAP": {
