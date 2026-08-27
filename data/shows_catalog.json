@@ -10,6 +10,24 @@
   },
   "episodes": [
     {
+      "ticker": "DKS",
+      "company": "DICK'S Sporting Goods, Inc.",
+      "sector": "Consumer Cyclical",
+      "quarter": "Q2 FY2026",
+      "episode_number": "",
+      "title": "DICK’S Sporting Goods (DKS) Q2 FY2026: The Worst Day In 5,000 Sessions",
+      "published_at": "2026-08-26T16:12:07+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=h5oGaST7kmM",
+      "spotify_url": "https://open.spotify.com/episode/3IBQ3yoQ3tyJelFdR1OLvX",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/dick-s-sporting-goods-dks-q2-fy2026-the-worst-day-in-5000-sessions/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
       "ticker": "NSSC",
       "company": "Napco Security Technologies, Inc.",
       "sector": "Industrials",
@@ -31639,8 +31657,7 @@
           "published_at": "2026-07-27T13:05:36+00:00",
           "section": "Market and Sector Explainers",
           "tickers": [
-            "HOLD",
-            "H1"
+            "AZN"
           ],
           "summary": "A special-topic Charged Alpha video connected to current stock and earnings research."
         },
@@ -31755,6 +31772,19 @@
       "title": "Shorts and Clips",
       "description": "Fast clips that point viewers into full research videos and stock pages.",
       "videos": [
+        {
+          "title": "DKS Stock: DICK'S Sporting Goods Q2 FY2026 Earnings - Worst Day Ever #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/zhAmiBN1oX8",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-08-26T09:21:22-07:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "DKS"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
         {
           "title": "NSSC Stock: Napco Security Q4 FY2026 Earnings - 9 Cents Came From Customs #Shorts",
           "youtube_url": "https://www.youtube.com/shorts/oNrRPr9oPec",
@@ -39979,7 +40009,7 @@
       ]
     }
   ],
-  "last_synced_at": "2026-08-24T21:01:58-05:00",
+  "last_synced_at": "2026-08-26T21:15:30-05:00",
   "stock_metadata": {
     "A": {
       "company": "Agilent Technologies, Inc.",
@@ -40618,7 +40648,7 @@
       "sector": "Technology"
     },
     "BR": {
-      "company": "technology",
+      "company": "Broadridge Financial Solutions, Inc.",
       "sector": "Technology"
     },
     "BRC": {
@@ -41254,7 +41284,7 @@
       "sector": "Utilities"
     },
     "DUOL": {
-      "company": "technology",
+      "company": "Duolingo, Inc.",
       "sector": "Technology"
     },
     "DVA": {
@@ -42154,7 +42184,7 @@
       "sector": "Industrials"
     },
     "KRYS": {
-      "company": "healthcare",
+      "company": "Krystal Biotech, Inc.",
       "sector": "Healthcare"
     },
     "KSS": {
@@ -42786,7 +42816,7 @@
       "sector": "Communication"
     },
     "ON": {
-      "company": "technology",
+      "company": "ON Semiconductor Corporation",
       "sector": "Technology"
     },
     "ONDS": {
