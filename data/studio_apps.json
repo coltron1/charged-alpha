@@ -1,0 +1,115 @@
+{
+  "schema_version": 1,
+  "updated_at": "2026-08-28",
+  "publisher": {
+    "name": "Charged Alpha Studio",
+    "url": "https://chargedalpha.com/studio"
+  },
+  "apps": [
+    {
+      "slug": "charged-alpha",
+      "name": "Charged Alpha",
+      "section": "learn",
+      "theme": "alpha",
+      "category_label": "Investing education",
+      "application_category": "EducationalApplication",
+      "operating_system": "iOS, Android",
+      "availability": "Available on iPhone & Android",
+      "description": "Learn the mechanics behind stocks, valuation, earnings, and options through short narrated lessons, hands-on labs, daily review, and Storm Chaser, a replayable market-crisis game.",
+      "features": [
+        "Interactive lessons",
+        "Valuation labs",
+        "Options strategies",
+        "Works offline"
+      ],
+      "image_path": "/static/assets/mobile-app/charged-alpha-valuation-lab.webp",
+      "image_alt": "Charged Alpha interactive valuation lab with adjustable inputs",
+      "icon_path": "/static/assets/mobile-app/charged-alpha-app-icon.jpg",
+      "stores": {
+        "ios": "https://apps.apple.com/us/app/charged-alpha/id6789744882",
+        "android": "https://play.google.com/store/apps/details?id=com.chargedalpha.academy"
+      },
+      "product_url": "https://chargedalpha.com/app",
+      "product_label": "See Charged Alpha in action"
+    },
+    {
+      "slug": "charged-physics-lab",
+      "name": "Charged Physics Lab",
+      "section": "learn",
+      "theme": "physics",
+      "category_label": "Physics I & II",
+      "application_category": "EducationalApplication",
+      "operating_system": "iOS, Android",
+      "availability": "Available on iPhone & Android",
+      "description": "Turn a formula sheet into a visual workspace. Search 200 Physics I and II equations, set values inside the formula, isolate a variable, and carry the result into the next step.",
+      "features": [
+        "200 formulas",
+        "Live algebra",
+        "Formula chains",
+        "Narrated examples"
+      ],
+      "image_path": "/static/assets/apps/charged-physics-lab-live-algebra.webp",
+      "image_alt": "Charged Physics Lab live equation workspace with values and diagram",
+      "icon_path": "/static/assets/apps/charged-physics-lab-icon.png",
+      "stores": {
+        "ios": "https://apps.apple.com/us/app/charged-physics-lab/id6794717292",
+        "android": "https://play.google.com/store/apps/details?id=com.chargedacademy.app"
+      },
+      "product_url": "https://chargedalpha.com/charged-physics-lab/support",
+      "product_label": "Physics Lab details"
+    },
+    {
+      "slug": "today-was",
+      "name": "Today Was",
+      "section": "fieldwork",
+      "theme": "today",
+      "category_label": "Daily journal & log",
+      "application_category": "LifestyleApplication",
+      "operating_system": "iOS",
+      "availability": "Available now on iPhone",
+      "description": "A voice-first journal and structured daily log for the details worth saving. Build entries with reusable templates, photos, exact location pins, weather statistics, and the context behind a day in the field.",
+      "features": [
+        "Voice-first entries",
+        "10 log templates",
+        "Weather detail",
+        "Location pins"
+      ],
+      "image_path": "/static/assets/apps/today-was-weather-location.webp",
+      "image_alt": "Today Was daily log with weather data and saved exact location",
+      "icon_path": "/static/assets/apps/today-was-icon.png",
+      "stores": {
+        "ios": "https://apps.apple.com/us/app/today-was/id6794942824"
+      },
+      "product_url": "https://daymoire.chargedalpha.com/",
+      "product_label": "Explore Today Was"
+    },
+    {
+      "slug": "plotava",
+      "name": "Plotava",
+      "section": "fieldwork",
+      "theme": "plotava",
+      "category_label": "Field documentation",
+      "application_category": "BusinessApplication",
+      "operating_system": "Android",
+      "availability": "Available on Android",
+      "description": "Turn a field walk into one organized package. Pin conditions to an imported plan, attach photos and tape measurements, add markups, and hand off a linked, printable PDF without altering the original drawing.",
+      "features": [
+        "Plan-linked points",
+        "Photos & markups",
+        "Tape measurements",
+        "Linked PDF handoff"
+      ],
+      "image_path": "/static/assets/apps/plotava-plan-detail.webp",
+      "image_alt": "Plotava plan detail with a connected photo, dimension, and field point",
+      "icon_path": "/static/assets/apps/plotava-icon.png",
+      "stores": {
+        "android": "https://play.google.com/store/apps/details?id=com.plotava.app"
+      },
+      "coming_soon": [
+        "ios"
+      ],
+      "product_url": "https://plotava.com/",
+      "product_label": "Explore Plotava"
+    }
+  ]
+}

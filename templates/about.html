@@ -154,6 +154,7 @@
     .app-store-link:hover { transform:translateY(-1px); box-shadow:0 12px 24px rgba(0,0,0,.22); }
     .app-store-link.apple { background:#e2e8f0; }
     .app-store-link.google { color:#fff; background:#15803d; }
+    .app-store-link.web { color:#cffafe; border:1px solid rgba(103,232,249,.5); background:#0c2a3d; }
     .app-store-link .store-mark { font-size:18px; line-height:1; }
     .app-store-link small { display:block; font-size:10px; font-weight:700; line-height:1.1; opacity:.75; }
     .app-feature-footer { display:flex; flex-wrap:wrap; align-items:center; gap:15px; margin-top:15px; }
@@ -377,6 +378,10 @@
                 <span class="app-chip">One project free</span>
               </div>
               <div class="app-store-row" aria-label="Download Plotava">
+                <a href="{{ plotava_site_url }}" target="_blank" rel="noopener noreferrer" class="app-store-link web" aria-label="Explore Plotava at plotava.com">
+                  <span class="store-mark" aria-hidden="true">P</span>
+                  <span><small>See the full product</small>Plotava.com</span>
+                </a>
                 <a href="https://play.google.com/store/apps/details?id=com.plotava.app&amp;referrer=utm_source%3Dchargedalpha%26utm_medium%3Dreferral%26utm_campaign%3Dplotava_launch%26utm_content%3Dabout_apps" target="_blank" rel="noopener noreferrer" class="app-store-link google" aria-label="Get Plotava on Google Play">
                   <span class="store-mark" aria-hidden="true">&#9654;</span>
                   <span><small>Get it on</small>Google Play</span>

@@ -99,6 +99,7 @@ app = Flask(__name__)
 app.wsgi_app = ProxyFix(app.wsgi_app, x_for=1, x_proto=1, x_host=1, x_port=1)
 BASE_DIR = Path(__file__).resolve().parent
 SHOWS_CATALOG_PATH = BASE_DIR / "data" / "shows_catalog.json"
+STUDIO_CATALOG_PATH = BASE_DIR / "data" / "studio_apps.json"
 GOOGLE_SITE_VERIFICATION_FILENAME = "google8b17550efa5dc3e4.html"
 INTERACTIVE_GAME_BUILD_PATH = BASE_DIR / "static" / "games" / "interactive"
 INTERACTIVE_GAME_MANIFEST_PATH = INTERACTIVE_GAME_BUILD_PATH / ".vite" / "manifest.json"
@@ -325,10 +326,10 @@ SEO_PAGE_META = {
         ),
     },
     "/studio": {
-        "title": "The Studio — Apps for Learning & Fieldwork | Charged Alpha",
+        "title": "Charged Alpha Studio — Practical Apps for Learning & Fieldwork",
         "description": (
-            "Explore independent apps by Colton: Charged Alpha investing education, "
-            "Charged Physics Lab, Today Was daily logging, and Plotava field documentation."
+            "Explore practical apps by Colton from Charged Alpha Studio: investing education, "
+            "interactive physics, daily field logging, and Plotava field documentation."
         ),
     },
     "/screener": {
@@ -559,6 +560,7 @@ GOOGLE_PLAY_URL = "https://play.google.com/store/apps/details?id=com.chargedalph
 PHYSICS_LAB_APP_STORE_URL = "https://apps.apple.com/us/app/charged-physics-lab/id6794717292"
 PHYSICS_LAB_GOOGLE_PLAY_URL = "https://play.google.com/store/apps/details?id=com.chargedacademy.app"
 PLOTAVA_GOOGLE_PLAY_URL = "https://play.google.com/store/apps/details?id=com.plotava.app"
+PLOTAVA_SITE_URL = "https://plotava.com/"
 TODAY_WAS_URL = "https://daymoire.chargedalpha.com/"
 TODAY_WAS_APP_STORE_URL = "https://apps.apple.com/us/app/today-was/id6794942824"
 APP_TRACKING_DEFAULTS = {
@@ -931,6 +933,44 @@ def _add_query_params(base_url, params):
     return urlunsplit(
         (parsed.scheme, parsed.netloc, parsed.path, urlencode(existing), parsed.fragment)
     )
+
+
+def _load_studio_catalog():
+    with STUDIO_CATALOG_PATH.open(encoding="utf-8") as catalog_file:
+        catalog = json.load(catalog_file)
+    apps = catalog.get("apps")
+    if catalog.get("schema_version") != 1 or not isinstance(apps, list) or not apps:
+        raise ValueError("Studio catalog is missing a supported schema or app list")
+    return catalog
+
+
+def _studio_catalog_for_api():
+    catalog = _load_studio_catalog()
+    for studio_app in catalog["apps"]:
+        studio_app["image_url"] = _canonical_url(studio_app["image_path"])
+        studio_app["icon_url"] = _canonical_url(studio_app["icon_path"])
+    return catalog
+
+
+def _studio_apps_for_template(tracking_params):
+    apps = _load_studio_catalog()["apps"]
+    for studio_app in apps:
+        app_tracking = dict(tracking_params)
+        app_tracking["utm_content"] = f"{studio_app['slug']}_card"
+        studio_app["tracked_stores"] = {
+            platform: _add_query_params(store_url, app_tracking)
+            for platform, store_url in studio_app.get("stores", {}).items()
+        }
+        studio_app["tracked_product_url"] = _add_query_params(
+            studio_app["product_url"],
+            {
+                "utm_source": "chargedalpha",
+                "utm_medium": "referral",
+                "utm_campaign": "studio_crosslink",
+                "utm_content": f"{studio_app['slug']}_product",
+            },
+        )
+    return apps
 
 
 def _parse_datetime(value):
@@ -2745,15 +2785,28 @@ def studio():
     if not (request.args.get("utm_campaign") or "").strip():
         tracking_params["utm_campaign"] = "studio"
 
+    studio_apps = _studio_apps_for_template(tracking_params)
+    studio_schema_apps = []
+    for position, studio_app in enumerate(studio_apps, start=1):
+        schema_app = {
+            "@type": "MobileApplication",
+            "@id": f"{studio_app['product_url']}#app",
+            "name": studio_app["name"],
+            "description": studio_app["description"],
+            "operatingSystem": studio_app["operating_system"],
+            "applicationCategory": studio_app["application_category"],
+            "url": studio_app["product_url"],
+            "image": _canonical_url(studio_app["icon_path"]),
+            "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+        }
+        store_urls = list(studio_app.get("stores", {}).values())
+        if store_urls:
+            schema_app["downloadUrl"] = store_urls
+        studio_schema_apps.append(schema_app)
+
     return render_template(
         "studio.html",
-        charged_alpha_ios_url=_add_query_params(APP_STORE_URL, tracking_params),
-        charged_alpha_android_url=_add_query_params(GOOGLE_PLAY_URL, tracking_params),
-        physics_ios_url=_add_query_params(PHYSICS_LAB_APP_STORE_URL, tracking_params),
-        physics_android_url=_add_query_params(PHYSICS_LAB_GOOGLE_PLAY_URL, tracking_params),
-        plotava_android_url=_add_query_params(PLOTAVA_GOOGLE_PLAY_URL, tracking_params),
-        today_was_url=_add_query_params(TODAY_WAS_URL, tracking_params),
-        today_was_ios_url=_add_query_params(TODAY_WAS_APP_STORE_URL, tracking_params),
+        studio_apps=studio_apps,
         tracking_params=tracking_params,
         studio_schema={
             "@context": "https://schema.org",
@@ -2761,52 +2814,36 @@ def studio():
                 {
                     "@type": "CollectionPage",
                     "@id": f"{SITE_URL}/studio#webpage",
-                    "name": "The Studio by Colton",
+                    "name": "Charged Alpha Studio",
                     "description": SEO_PAGE_META["/studio"]["description"],
                     "url": f"{SITE_URL}/studio",
+                    "isPartOf": {"@id": f"{SITE_URL}/#website"},
                     "mainEntity": {
                         "@type": "ItemList",
-                        "numberOfItems": 4,
+                        "numberOfItems": len(studio_apps),
                         "itemListElement": [
-                            {"@type": "ListItem", "position": 1, "name": "Charged Alpha"},
-                            {"@type": "ListItem", "position": 2, "name": "Charged Physics Lab"},
-                            {"@type": "ListItem", "position": 3, "name": "Today Was"},
-                            {"@type": "ListItem", "position": 4, "name": "Plotava"},
+                            {
+                                "@type": "ListItem",
+                                "position": position,
+                                "name": studio_app["name"],
+                                "url": studio_app["product_url"],
+                            }
+                            for position, studio_app in enumerate(studio_apps, start=1)
                         ],
                     },
                 },
-                {
-                    "@type": "MobileApplication",
-                    "name": "Charged Alpha",
-                    "operatingSystem": "iOS, Android",
-                    "applicationCategory": "EducationalApplication",
-                    "downloadUrl": [APP_STORE_URL, GOOGLE_PLAY_URL],
-                },
-                {
-                    "@type": "MobileApplication",
-                    "name": "Charged Physics Lab",
-                    "operatingSystem": "iOS, Android",
-                    "applicationCategory": "EducationalApplication",
-                    "downloadUrl": [PHYSICS_LAB_APP_STORE_URL, PHYSICS_LAB_GOOGLE_PLAY_URL],
-                },
-                {
-                    "@type": "MobileApplication",
-                    "name": "Today Was",
-                    "operatingSystem": "iOS",
-                    "applicationCategory": "LifestyleApplication",
-                    "downloadUrl": TODAY_WAS_APP_STORE_URL,
-                    "url": TODAY_WAS_URL,
-                },
-                {
-                    "@type": "MobileApplication",
-                    "name": "Plotava",
-                    "operatingSystem": "Android",
-                    "applicationCategory": "BusinessApplication",
-                    "downloadUrl": PLOTAVA_GOOGLE_PLAY_URL,
-                },
-            ],
+            ] + studio_schema_apps,
         },
     )
+
+
+@app.get("/api/studio/apps")
+def studio_apps_api():
+    response = jsonify(_studio_catalog_for_api())
+    response.headers["Access-Control-Allow-Origin"] = "https://plotava.com"
+    response.headers["Cache-Control"] = "public, max-age=900, stale-while-revalidate=86400"
+    response.headers["Vary"] = "Origin"
+    return response
 
 
 @app.route("/games")
@@ -2839,6 +2876,15 @@ def about():
         android_url=_add_query_params(GOOGLE_PLAY_URL, tracking_params),
         today_was_ios_url=_add_query_params(TODAY_WAS_APP_STORE_URL, tracking_params),
         today_was_web_url=_add_query_params(TODAY_WAS_URL, tracking_params),
+        plotava_site_url=_add_query_params(
+            PLOTAVA_SITE_URL,
+            {
+                "utm_source": "chargedalpha",
+                "utm_medium": "referral",
+                "utm_campaign": "studio_crosslink",
+                "utm_content": "about_plotava",
+            },
+        ),
     )
 
 

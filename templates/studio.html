@@ -105,6 +105,8 @@
     .coming-store small { display:block; color:#728194; font-size:9px; font-weight:800; line-height:1.1; text-transform:uppercase; }
     .text-link { display:inline-flex; align-items:center; min-height:48px; color:#c5d8e9; font-size:12px; font-weight:900; text-decoration:none; }
     .text-link:hover { color:#fff; text-decoration:underline; text-underline-offset:4px; }
+    .product-link { padding:0 12px; border:1px solid color-mix(in srgb, var(--accent) 55%, #2c465d); border-radius:7px; color:var(--accent); background:color-mix(in srgb, var(--accent) 8%, #0a111b); }
+    .product-link:hover { border-color:var(--accent); color:#fff; text-decoration:none; }
     .studio-note { display:grid; grid-template-columns:1.25fr .75fr; gap:32px; align-items:center; width:min(1240px,100%); margin:0 auto; padding:68px 28px; }
     .studio-note h2 { margin:12px 0; color:#fff; font-size:clamp(30px,3.9vw,47px); line-height:1.06; letter-spacing:0; }
     .studio-note p { max-width:710px; margin:0; color:#aebdd0; font-size:15px; line-height:1.7; }
@@ -162,6 +164,37 @@
   </style>
 </head>
 <body>
+  {% macro studio_app_card(studio_app) -%}
+  <article id="{{ studio_app.slug }}" class="app-card{% if studio_app.theme != 'alpha' %} {{ studio_app.theme }}{% endif %}">
+    <div class="app-media">
+      <img src="{{ studio_app.image_path }}" alt="{{ studio_app.image_alt }}" loading="lazy">
+      <span class="media-label">{{ studio_app.category_label }}</span>
+    </div>
+    <div class="app-body">
+      <div class="app-brandline">
+        <img src="{{ studio_app.icon_path }}" alt="{{ studio_app.name }} app icon" class="app-icon" loading="lazy">
+        <div><span class="app-status">{{ studio_app.availability }}</span><h3>{{ studio_app.name }}</h3></div>
+      </div>
+      <p class="app-description">{{ studio_app.description }}</p>
+      <div class="app-tags" aria-label="{{ studio_app.name }} features">
+        {% for feature in studio_app.features %}<span>{{ feature }}</span>{% endfor %}
+      </div>
+      <div class="app-actions" aria-label="{{ studio_app.name }} links">
+        {% for platform, store_url in studio_app.tracked_stores.items() %}
+        <a href="{{ store_url }}" data-studio-download data-app-name="{{ studio_app.slug }}" data-platform="{{ platform }}" target="_blank" rel="noopener noreferrer" class="store-link{% if platform == 'android' %} google{% elif platform == 'web' %} web{% endif %}">
+          <span class="store-mark" aria-hidden="true">{% if platform == 'ios' %}iOS{% elif platform == 'android' %}A{% else %}WEB{% endif %}</span>
+          <span><small>{% if platform == 'ios' %}Download on the{% elif platform == 'android' %}Get it on{% else %}Open the{% endif %}</small>{% if platform == 'ios' %}App Store{% elif platform == 'android' %}Google Play{% else %}Web app{% endif %}</span>
+        </a>
+        {% endfor %}
+        {% for platform in studio_app.get('coming_soon', []) %}
+        <span class="coming-store" aria-label="{{ studio_app.name }} is coming soon to the App Store"><span class="store-mark" aria-hidden="true">{{ 'iOS' if platform == 'ios' else platform }}</span><span><small>Coming soon on the</small>{{ 'App Store' if platform == 'ios' else platform }}</span></span>
+        {% endfor %}
+        <a href="{{ studio_app.tracked_product_url }}" data-studio-product data-app-name="{{ studio_app.slug }}"{% if not studio_app.product_url.startswith('https://chargedalpha.com') %} target="_blank" rel="noopener noreferrer"{% endif %} class="text-link product-link">{{ studio_app.product_label }} <span aria-hidden="true">&rarr;</span></a>
+      </div>
+    </div>
+  </article>
+  {%- endmacro %}
+
   <header class="studio-header">
     <div class="header-inner">
       <a href="/" class="brand" aria-label="Charged Alpha home">
@@ -212,17 +245,16 @@
           </div>
         </div>
         <div class="mosaic" aria-label="Studio app previews">
-          <figure class="mosaic-figure"><img src="/static/assets/mobile-app/charged-alpha-valuation-lab.webp" alt="Charged Alpha valuation lab" fetchpriority="high"><figcaption>Charged Alpha</figcaption></figure>
-          <figure class="mosaic-figure"><img src="/static/assets/apps/charged-physics-lab-live-algebra.webp" alt="Charged Physics Lab live algebra workspace" fetchpriority="high"><figcaption>Physics Lab</figcaption></figure>
-          <figure class="mosaic-figure"><img src="/static/assets/apps/today-was-weather-location.webp" alt="Today Was daily journal with detailed weather and saved location" fetchpriority="high"><figcaption>Today Was</figcaption></figure>
-          <figure class="mosaic-figure"><img src="/static/assets/apps/plotava-plan-detail.webp" alt="Plotava plan point with notes, photos, and measurement" fetchpriority="high"><figcaption>Plotava</figcaption></figure>
+          {% for studio_app in studio_apps %}
+          <figure class="mosaic-figure"><img src="{{ studio_app.image_path }}" alt="{{ studio_app.image_alt }}" fetchpriority="high"><figcaption>{{ studio_app.name }}</figcaption></figure>
+          {% endfor %}
         </div>
       </div>
     </section>
 
     <nav class="directory-nav" aria-label="Studio collection navigation">
       <div class="directory-nav-inner">
-        <strong>4 products in the Studio</strong>
+        <strong>{{ studio_apps | length }} products in the Studio</strong>
         <div class="directory-nav-links">
           <a href="#learn">Learn &amp; practice</a>
           <a href="#fieldwork">Capture &amp; fieldwork</a>
@@ -240,45 +272,9 @@
           <p>Interactive tools that make a concept tangible: change an input, follow the result, and build an intuition you can use again.</p>
         </div>
         <div class="app-grid">
-          <article id="charged-alpha" class="app-card">
-            <div class="app-media">
-              <img src="/static/assets/mobile-app/charged-alpha-valuation-lab.webp" alt="Charged Alpha interactive valuation lab with adjustable inputs" loading="lazy">
-              <span class="media-label">Investing education</span>
-            </div>
-            <div class="app-body">
-              <div class="app-brandline">
-                <img src="/static/assets/mobile-app/charged-alpha-app-icon.jpg" alt="Charged Alpha app icon" class="app-icon">
-                <div><span class="app-status">Available on iPhone &amp; Android</span><h3>Charged Alpha</h3></div>
-              </div>
-              <p class="app-description">Learn the mechanics behind stocks, valuation, earnings, and options through short narrated lessons, hands-on labs, daily review, and Storm Chaser, a replayable market-crisis game.</p>
-              <div class="app-tags" aria-label="Charged Alpha features"><span>Interactive lessons</span><span>Valuation labs</span><span>Options strategies</span><span>Works offline</span></div>
-              <div class="app-actions" aria-label="Charged Alpha links">
-                <a href="{{ charged_alpha_ios_url }}" data-studio-download data-app-name="charged_alpha" data-platform="ios" target="_blank" rel="noopener noreferrer" class="store-link"><span class="store-mark" aria-hidden="true">iOS</span><span><small>Download on the</small>App Store</span></a>
-                <a href="{{ charged_alpha_android_url }}" data-studio-download data-app-name="charged_alpha" data-platform="android" target="_blank" rel="noopener noreferrer" class="store-link google"><span class="store-mark" aria-hidden="true">A</span><span><small>Get it on</small>Google Play</span></a>
-                <a href="/app" class="text-link">See Charged Alpha in action &rarr;</a>
-              </div>
-            </div>
-          </article>
-
-          <article id="charged-physics-lab" class="app-card physics">
-            <div class="app-media">
-              <img src="/static/assets/apps/charged-physics-lab-live-algebra.webp" alt="Charged Physics Lab live equation workspace with values and diagram" loading="lazy">
-              <span class="media-label">Physics I &amp; II</span>
-            </div>
-            <div class="app-body">
-              <div class="app-brandline">
-                <img src="/static/assets/apps/charged-physics-lab-icon.png" alt="Charged Physics Lab app icon" class="app-icon">
-                <div><span class="app-status">Available on iPhone &amp; Android</span><h3>Charged Physics Lab</h3></div>
-              </div>
-              <p class="app-description">Turn a formula sheet into a visual workspace. Search 200 Physics I and II equations, set values inside the formula, isolate a variable, and carry the result into the next step.</p>
-              <div class="app-tags" aria-label="Charged Physics Lab features"><span>200 formulas</span><span>Live algebra</span><span>Formula chains</span><span>Narrated examples</span></div>
-              <div class="app-actions" aria-label="Charged Physics Lab links">
-                <a href="{{ physics_ios_url }}" data-studio-download data-app-name="charged_physics_lab" data-platform="ios" target="_blank" rel="noopener noreferrer" class="store-link"><span class="store-mark" aria-hidden="true">iOS</span><span><small>Download on the</small>App Store</span></a>
-                <a href="{{ physics_android_url }}" data-studio-download data-app-name="charged_physics_lab" data-platform="android" target="_blank" rel="noopener noreferrer" class="store-link google"><span class="store-mark" aria-hidden="true">A</span><span><small>Get it on</small>Google Play</span></a>
-                <a href="/charged-physics-lab/support" class="text-link">Physics Lab details &rarr;</a>
-              </div>
-            </div>
-          </article>
+          {% for studio_app in studio_apps %}
+            {% if studio_app.section == 'learn' %}{{ studio_app_card(studio_app) }}{% endif %}
+          {% endfor %}
         </div>
       </div>
     </section>
@@ -293,43 +289,9 @@
           <p>From an ordinary day to a site walk, these tools hold onto the details most likely to get lost between the moment and the handoff.</p>
         </div>
         <div class="app-grid">
-          <article id="today-was" class="app-card today">
-            <div class="app-media">
-              <img src="/static/assets/apps/today-was-weather-location.webp" alt="Today Was daily log with weather data and saved exact location" loading="lazy">
-              <span class="media-label">Daily journal &amp; log</span>
-            </div>
-            <div class="app-body">
-              <div class="app-brandline">
-                <img src="/static/assets/apps/today-was-icon.png" alt="Today Was app icon" class="app-icon">
-                <div><span class="app-status">Available now on iPhone</span><h3>Today Was</h3></div>
-              </div>
-              <p class="app-description">A voice-first journal and structured daily log for the details worth saving. Build entries with reusable templates, photos, exact location pins, weather statistics, and the context behind a day in the field.</p>
-              <div class="app-tags" aria-label="Today Was features"><span>Voice-first entries</span><span>10 log templates</span><span>Weather detail</span><span>Location pins</span></div>
-              <div class="app-actions" aria-label="Today Was links">
-                <a href="{{ today_was_url }}" data-studio-download data-app-name="today_was" data-platform="web" target="_blank" rel="noopener noreferrer" class="store-link web"><span class="store-mark" aria-hidden="true">WEB</span><span><small>Open the</small>Today Was preview</span></a>
-                <a href="{{ today_was_ios_url }}" data-studio-download data-app-name="today_was" data-platform="ios" target="_blank" rel="noopener noreferrer" class="store-link"><span class="store-mark" aria-hidden="true">iOS</span><span><small>Download on the</small>App Store</span></a>
-              </div>
-            </div>
-          </article>
-
-          <article id="plotava" class="app-card plotava">
-            <div class="app-media">
-              <img src="/static/assets/apps/plotava-plan-detail.webp" alt="Plotava plan detail with a connected photo, dimension, and field point" loading="lazy">
-              <span class="media-label">Field documentation</span>
-            </div>
-            <div class="app-body">
-              <div class="app-brandline">
-                <img src="/static/assets/apps/plotava-icon.png" alt="Plotava app icon" class="app-icon">
-                <div><span class="app-status">Available on Android</span><h3>Plotava</h3></div>
-              </div>
-              <p class="app-description">Turn a field walk into one organized package. Pin conditions to an imported plan, attach photos and measurements, add markups, and hand off a linked, printable PDF without altering the original drawing.</p>
-              <div class="app-tags" aria-label="Plotava features"><span>Plan-linked points</span><span>Photos &amp; markups</span><span>Precise dimensions</span><span>Linked PDF handoff</span></div>
-              <div class="app-actions" aria-label="Plotava links">
-                <a href="{{ plotava_android_url }}" data-studio-download data-app-name="plotava" data-platform="android" target="_blank" rel="noopener noreferrer" class="store-link google"><span class="store-mark" aria-hidden="true">A</span><span><small>Get it on</small>Google Play</span></a>
-                <span class="coming-store" aria-label="Plotava is coming soon to the App Store"><span class="store-mark" aria-hidden="true">iOS</span><span><small>Coming soon on the</small>App Store</span></span>
-              </div>
-            </div>
-          </article>
+          {% for studio_app in studio_apps %}
+            {% if studio_app.section == 'fieldwork' %}{{ studio_app_card(studio_app) }}{% endif %}
+          {% endfor %}
         </div>
       </div>
     </section>
@@ -338,7 +300,7 @@
       <div>
         <p class="eyebrow">A growing studio</p>
         <h2 id="studioNoteTitle">Different subjects. The same practical instinct.</h2>
-        <p>These are independent products, built around different jobs to be done. Charged Alpha remains the home for stock research and investing education; the Studio gives every product a clear place to be discovered without blurring that focus.</p>
+        <p>Each product keeps a distinct audience and identity, with Charged Alpha Studio serving as the connective tissue. Charged Alpha remains the home for stock research and investing education; Plotava remains purpose-built for field documentation and field-to-office handoff.</p>
       </div>
       <div class="studio-note-links" aria-label="More Charged Alpha destinations">
         <a href="/shows"><span>Explore stock research</span><span aria-hidden="true">&rarr;</span></a>
@@ -396,13 +358,22 @@
       }
     }
 
-    trackStudioEvent('studio_view', { product_count: 4 });
+    trackStudioEvent('studio_view', { product_count: {{ studio_apps | length }} });
 
     document.querySelectorAll('[data-studio-download]').forEach(function (link) {
       link.addEventListener('click', function () {
         trackStudioEvent('app_store_click', {
           app_name: link.dataset.appName,
           platform: link.dataset.platform,
+          placement: 'studio_directory'
+        });
+      });
+    });
+
+    document.querySelectorAll('[data-studio-product]').forEach(function (link) {
+      link.addEventListener('click', function () {
+        trackStudioEvent('studio_product_click', {
+          app_name: link.dataset.appName,
           placement: 'studio_directory'
         });
       });
