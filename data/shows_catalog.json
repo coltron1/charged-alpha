@@ -10,6 +10,294 @@
   },
   "episodes": [
     {
+      "ticker": "STDN",
+      "company": "Standard Nuclear, Inc.",
+      "sector": "Basic Materials",
+      "quarter": "Q2 2026",
+      "episode_number": "",
+      "title": "STDN Stock Q2 2026: TRISO Finally Has A Price, And It Is Not Enough",
+      "published_at": "2026-08-28T02:01:19+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=KqQX0inoYHU",
+      "spotify_url": "",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/stdn-stock-q2-2026-triso-finally-has-a-price-and-it-is-not-enough/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "MESO",
+      "company": "Mesoblast Limited",
+      "sector": "Healthcare",
+      "quarter": "FY2026",
+      "episode_number": "",
+      "title": "MESO Stock FY2026: Revenue Up 599%, And 46% Of The Price Is Unapproved",
+      "published_at": "2026-08-27T22:53:42+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=etJOEawt9R0",
+      "spotify_url": "https://open.spotify.com/episode/3YuYekRDYnBdlzXIZCWuXO",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/meso-stock-fy2026-revenue-up-599-and-46-of-the-price-is-unapproved/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "HDL",
+      "company": "Super Hi International Holding Ltd.",
+      "sector": "Consumer Cyclical",
+      "quarter": "Q2 2026",
+      "episode_number": "",
+      "title": "HDL Stock Q2 2026: A 10% Headline On Falling Same-Store Sales",
+      "published_at": "2026-08-27T20:43:50+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=-ljOd356klg",
+      "spotify_url": "https://open.spotify.com/episode/4QTcihV3rg720pDkDyAyNJ",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/hdl-stock-q2-2026-a-10-headline-on-falling-same-store-sales/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "FORTY",
+      "company": "Formula Systems (1985) Ltd.",
+      "sector": "Technology",
+      "quarter": "Q2 2026",
+      "episode_number": "",
+      "title": "FORTY Stock Q2 2026: A Record Quarter That Was Mostly The Shekel",
+      "published_at": "2026-08-27T19:36:03+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=deNP3b6YRJM",
+      "spotify_url": "https://open.spotify.com/episode/3BbKdwGWwezCfIxlOdfxUy",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/forty-stock-q2-2026-a-record-quarter-that-was-mostly-the-shekel/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "STRT",
+      "company": "Strattec Security Corporation",
+      "sector": "Consumer Cyclical",
+      "quarter": "Q4 FY2026",
+      "episode_number": "",
+      "title": "STRT Stock Q4 FY2026: Record Year, Entire Gain Booked By December",
+      "published_at": "2026-08-27T18:31:24+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=qDrfr6v777g",
+      "spotify_url": "https://open.spotify.com/episode/2KCLBENfyd5C40JjPZVuJn",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/strt-stock-q4-fy2026-record-year-entire-gain-booked-by-december/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "TUYA",
+      "company": "Tuya Inc.",
+      "sector": "Technology",
+      "quarter": "Q2 2026",
+      "episode_number": "",
+      "title": "TUYA Stock Q2 2026: Profit Up 48%, Cash Flow Down 66%",
+      "published_at": "2026-08-27T17:25:12+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=Iopw9B0mXY8",
+      "spotify_url": "https://open.spotify.com/episode/6HRW7aRj6acCwtB2Wla8jZ",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/tuya-stock-q2-2026-profit-up-48-cash-flow-down-66/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "SFL",
+      "company": "SFL Corporation Ltd.",
+      "sector": "Industrials",
+      "quarter": "Q2 2026",
+      "episode_number": "",
+      "title": "SFL Stock Q2 2026: The $3.8B Backlog Shrank, Spot Paid The Bill",
+      "published_at": "2026-08-27T16:25:41+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=0i4h-vuh5LI",
+      "spotify_url": "https://open.spotify.com/episode/44XL0pEGdpA1hwUeSjxoCv",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/sfl-stock-q2-2026-the-38b-backlog-shrank-spot-paid-the-bill/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "CTRN",
+      "company": "Citi Trends, Inc.",
+      "sector": "Consumer Cyclical",
+      "quarter": "Q2 FY2026",
+      "episode_number": "",
+      "title": "CTRN Stock Q2 FY2026: 94% Of The Profit Goes Back Into The Stores",
+      "published_at": "2026-08-27T15:10:47+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=vM8CBESe108",
+      "spotify_url": "https://open.spotify.com/episode/4xneHDWAsst0Ueq0eolXLs",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/ctrn-stock-q2-fy2026-94-of-the-profit-goes-back-into-the-stores/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "JOYY",
+      "company": "JOYY Inc.",
+      "sector": "Communication Services",
+      "quarter": "Q2 2026",
+      "episode_number": "",
+      "title": "JOYY Stock Q2 2026: 53% More Ad Revenue, Zero More Profit",
+      "published_at": "2026-08-27T14:04:09+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=R7H8Hq8fsF0",
+      "spotify_url": "https://open.spotify.com/episode/1JNW3ctNeU1IZizovZtCVu",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/joyy-stock-q2-2026-53-more-ad-revenue-zero-more-profit/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "TRMD",
+      "company": "TORM plc",
+      "sector": "Energy",
+      "quarter": "Q2 2026",
+      "episode_number": "",
+      "title": "TORM (TRMD) Q2 2026: A Record Quarter That Was Already Sold",
+      "published_at": "2026-08-27T10:12:57+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=6KwCn7mzH0A",
+      "spotify_url": "https://open.spotify.com/episode/1iT6NU4olgGBoYXztPOiL9",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/torm-trmd-q2-2026-a-record-quarter-that-was-already-sold/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "MZTI",
+      "company": "The Marzetti Company",
+      "sector": "Consumer Defensive",
+      "quarter": "Q4 FY2026",
+      "episode_number": "",
+      "title": "Marzetti (MZTI) Q4 FY2026: One Restaurant Chain Is 30% Of The Company",
+      "published_at": "2026-08-27T09:12:20+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=l8XSq3enzZU",
+      "spotify_url": "https://open.spotify.com/episode/0IR5UUHNBYiO5F6i0mzZwJ",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/marzetti-mzti-q4-fy2026-one-restaurant-chain-is-30-of-the-company/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "SJM",
+      "company": "The J. M. Smucker Company",
+      "sector": "Consumer Defensive",
+      "quarter": "Q1 FY2027",
+      "episode_number": "",
+      "title": "J.M. Smucker (SJM) Q1 FY2027: 80% Of The Raise Was A Tariff Refund",
+      "published_at": "2026-08-27T06:44:25+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=oCnMNvgSEZQ",
+      "spotify_url": "",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/jm-smucker-sjm-q1-fy2027-80-of-the-raise-was-a-tariff-refund/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "SMTC",
+      "company": "Semtech Corporation",
+      "sector": "Technology",
+      "quarter": "Q2 FY2027",
+      "episode_number": "",
+      "title": "Semtech (SMTC) Q2 FY2027: Paid $1.24B, Selling It For $62M",
+      "published_at": "2026-08-27T05:46:21+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=-nMO_woQia0",
+      "spotify_url": "",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/semtech-smtc-q2-fy2027-paid-124b-selling-it-for-62m/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "WSM",
+      "company": "Williams-Sonoma, Inc.",
+      "sector": "Consumer Cyclical",
+      "quarter": "Q2 FY2026",
+      "episode_number": "",
+      "title": "Williams-Sonoma (WSM) Q2 FY2026: A 6.2% Comp That Moved The Stock 1%",
+      "published_at": "2026-08-27T04:30:45+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=s4KXv-IxM8s",
+      "spotify_url": "",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/williams-sonoma-wsm-q2-fy2026-a-62-comp-that-moved-the-stock-1/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "INTU",
+      "company": "Intuit Inc.",
+      "sector": "Technology",
+      "quarter": "Q4 FY2026",
+      "episode_number": "",
+      "title": "Intuit (INTU) Q4 FY2026: They Changed What Earnings Means",
+      "published_at": "2026-08-27T03:18:20+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=3EK23k9JIxw",
+      "spotify_url": "",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/intuit-intu-q4-fy2026-they-changed-what-earnings-means/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "ANF",
+      "company": "Abercrombie & Fitch Co.",
+      "sector": "Consumer Cyclical",
+      "quarter": "Q2 FY2026",
+      "episode_number": "",
+      "title": "Abercrombie & Fitch (ANF) Q2 FY2026: Up 36% On A Zero Comp",
+      "published_at": "2026-08-27T02:32:29+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=1Hg19FqwWW8",
+      "spotify_url": "",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/abercrombie-fitch-anf-q2-fy2026-up-36-on-a-zero-comp/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
       "ticker": "DKS",
       "company": "DICK'S Sporting Goods, Inc.",
       "sector": "Consumer Cyclical",
@@ -31582,6 +31870,45 @@
       "description": "Theme videos, comparisons, and multi-stock frameworks for broader research.",
       "videos": [
         {
+          "title": "Woodside (WDS) H1 2026: The $1.7B Cheque Behind Both Headlines",
+          "youtube_url": "https://www.youtube.com/watch?v=9BT3ZdJujYc",
+          "spotify_url": "https://open.spotify.com/episode/1uXZ1pe5ifInesiBIfMdfy",
+          "podbean_url": "https://chargedalpha.podbean.com/e/woodside-wds-h1-2026-the-17b-cheque-behind-both-headlines/",
+          "apple_url": "",
+          "published_at": "2026-08-27T12:57:06+00:00",
+          "section": "Market and Sector Explainers",
+          "tickers": [
+            "WDS"
+          ],
+          "summary": "A special-topic Charged Alpha video connected to current stock and earnings research."
+        },
+        {
+          "title": "Cadeler (CDLR) H1 2026: Cash Profit Doubled, Profit Halved",
+          "youtube_url": "https://www.youtube.com/watch?v=7GSn6PFn6uc",
+          "spotify_url": "https://open.spotify.com/episode/4pVaVIhXaxJPHfU5PWrItK",
+          "podbean_url": "https://chargedalpha.podbean.com/e/cadeler-cdlr-h1-2026-cash-profit-doubled-profit-halved/",
+          "apple_url": "",
+          "published_at": "2026-08-27T11:14:35+00:00",
+          "section": "Market and Sector Explainers",
+          "tickers": [
+            "CDLR"
+          ],
+          "summary": "A special-topic Charged Alpha video connected to current stock and earnings research."
+        },
+        {
+          "title": "Gold Fields (GFI) H1 2026: The Earnings Were Public 14 Days Early",
+          "youtube_url": "https://www.youtube.com/watch?v=dcU1jgwmotE",
+          "spotify_url": "",
+          "podbean_url": "https://chargedalpha.podbean.com/e/gold-fields-gfi-h1-2026-the-earnings-were-public-14-days-early/",
+          "apple_url": "",
+          "published_at": "2026-08-27T07:57:45+00:00",
+          "section": "Market and Sector Explainers",
+          "tickers": [
+            "GFI"
+          ],
+          "summary": "A special-topic Charged Alpha video connected to current stock and earnings research."
+        },
+        {
           "title": "Alvotech (ALVO) H1 2026: Revenue -30.8%, Guidance Unchanged, And A 2x Second Half",
           "youtube_url": "https://www.youtube.com/watch?v=vxi7jmS7jv0",
           "spotify_url": "https://open.spotify.com/episode/6uRbvFPvEVjOW7F4rvboOX",
@@ -31772,6 +32099,253 @@
       "title": "Shorts and Clips",
       "description": "Fast clips that point viewers into full research videos and stock pages.",
       "videos": [
+        {
+          "title": "STDN Stock: Standard Nuclear Q2 2026 Earnings - TRISO Has A Price Now #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/lkH-YYRV1dY",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-08-27T19:01:54-07:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "STDN"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "MESO Stock: Mesoblast FY2026 Earnings - Revenue Up 599%, Loss Cut 44% #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/inzrG3YBBOk",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-08-27T22:54:15+00:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "MESO"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "HDL Stock: Super Hi Q2 2026 Earnings - Revenue Up 10%, Same Stores Down #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/deQlUHOtbVg",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-08-27T20:44:20+00:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "HDL"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "FORTY Stock: Formula Systems Q2 2026 Earnings - A Record That Was Mostly Currency #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/7jp6b_lqd7Y",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-08-27T19:36:50+00:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "FORTY"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "STRT Stock: Strattec Security Q4 FY2026 Earnings - A 51% Beat That Fell 8% #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/uOKFmNRzCCQ",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-08-27T18:31:54+00:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "STRT"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "TUYA Stock: Tuya Inc. Q2 2026 Earnings - Profit Up 48%, Cash Flow Down 66% #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/3efmSNzgY_c",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-08-27T17:25:55+00:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "TUYA"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "SFL Stock: SFL Corporation Q2 2026 Earnings - The Backlog Shrank #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/bNfV4hyR1lE",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-08-27T16:26:18+00:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "SFL"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "CTRN Stock: Citi Trends Q2 FY2026 Earnings - The Comp Is Real, And Rented #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/0_ryKnueykA",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-08-27T15:11:14+00:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "CTRN"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "JOYY Stock: Q2 2026 Earnings - 53% More Revenue, Zero More Profit #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/aLgLb3m-8TQ",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-08-27T14:04:47+00:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "JOYY"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "WDS Stock: Woodside Energy H1 2026 Earnings - One Cheque, Counted Twice #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/LB3d38Mzcxs",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-08-27T05:57:39-07:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "WDS"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "CDLR Stock: Cadeler A/S H1 2026 Earnings - Cash Profit Doubled, Profit Halved #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/YfJ2c607Gaw",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-08-27T04:15:00-07:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "CDLR"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "TRMD Stock: TORM plc Q2 2026 Earnings - 73% Of Next Quarter Already Sold #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/u2jp8kaZSRs",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-08-27T03:13:31-07:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "TRMD"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "MZTI Stock: Marzetti Q4 FY2026 Earnings - One Chain Is 30% Of The Company #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/pMOc6REc9BY",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-08-27T02:12:50-07:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "MZTI"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "GFI Stock: Gold Fields H1 2026 Earnings - The News Was 14 Days Old #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/df7TxfrtWpQ",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-08-27T00:58:08-07:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "GFI"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "SJM Stock: J.M. Smucker Q1 FY2027 Earnings - 80% Of The Raise Was A Refund #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/YqnZ5njgzIY",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-08-26T23:44:52-07:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "SJM"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "SMTC Stock: Semtech Q2 FY2027 Earnings - Paid $1.24B, Sold For $62M #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/WHd8PapY8bI",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-08-26T22:46:52-07:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "SMTC"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "WSM Stock: Williams-Sonoma Q2 FY2026 Earnings - A 6.2% Comp, A 1% Day #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/QPERJPAwNJ0",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-08-26T21:31:09-07:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "WSM"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "INTU Stock: Intuit Q4 FY2026 Earnings - They Changed What Earnings Means #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/wukoUYs7r8Q",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-08-26T20:18:52-07:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "INTU"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "ANF Stock: Abercrombie & Fitch Q2 FY2026 Earnings - Up 36% On A Zero Comp #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/shVhbJ4FCKw",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-08-26T19:32:56-07:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "ANF"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
         {
           "title": "DKS Stock: DICK'S Sporting Goods Q2 FY2026 Earnings - Worst Day Ever #Shorts",
           "youtube_url": "https://www.youtube.com/shorts/zhAmiBN1oX8",
@@ -40009,7 +40583,7 @@
       ]
     }
   ],
-  "last_synced_at": "2026-08-26T21:15:30-05:00",
+  "last_synced_at": "2026-08-27T21:04:37-05:00",
   "stock_metadata": {
     "A": {
       "company": "Agilent Technologies, Inc.",
@@ -41095,6 +41669,10 @@
       "company": "Cintas Corporation",
       "sector": "Industrials"
     },
+    "CTRN": {
+      "company": "Citi Trends, Inc.",
+      "sector": "Consumer Cyclical"
+    },
     "CTSH": {
       "company": "Cognizant Technology Solutions Corporation",
       "sector": "Technology"
@@ -41603,6 +42181,10 @@
       "company": "FormFactor, Inc.",
       "sector": "Technology"
     },
+    "FORTY": {
+      "company": "Formula Systems (1985) Ltd.",
+      "sector": "Technology"
+    },
     "FOXA": {
       "company": "Fox Corporation",
       "sector": "Communication Services"
@@ -41810,6 +42392,10 @@
     "HD": {
       "company": "Home Depot Inc.",
       "sector": "Consumer"
+    },
+    "HDL": {
+      "company": "Super Hi International Holding Ltd.",
+      "sector": "Consumer Cyclical"
     },
     "HE": {
       "company": "Hawaiian Electric Industries, I",
@@ -42098,6 +42684,10 @@
     "JOBY": {
       "company": "Joby Aviation, Inc.",
       "sector": "Industrials"
+    },
+    "JOYY": {
+      "company": "JOYY Inc.",
+      "sector": "Communication Services"
     },
     "JPM": {
       "company": "JPMorgan Chase",
@@ -42423,6 +43013,10 @@
       "company": "MercadoLibre, Inc.",
       "sector": "Consumer Cyclical"
     },
+    "MESO": {
+      "company": "Mesoblast Limited",
+      "sector": "Healthcare"
+    },
     "META": {
       "company": "Meta Platforms Inc.",
       "sector": "Communication"
@@ -42586,6 +43180,10 @@
     "MXL": {
       "company": "MaxLinear, Inc.",
       "sector": "Technology"
+    },
+    "MZTI": {
+      "company": "The Marzetti Company",
+      "sector": "Consumer Defensive"
     },
     "NAVN": {
       "company": "Navan, Inc.",
@@ -43364,6 +43962,10 @@
       "company": "Smithfield Foods, Inc.",
       "sector": "Consumer Defensive"
     },
+    "SFL": {
+      "company": "SFL Corporation Ltd.",
+      "sector": "Industrials"
+    },
     "SFM": {
       "company": "Sprouts Farmers Market, Inc.",
       "sector": "Consumer Defensive"
@@ -43532,6 +44134,10 @@
       "company": "SS&C Technologies Holdings, Inc.",
       "sector": "Technology"
     },
+    "STDN": {
+      "company": "Standard Nuclear, Inc.",
+      "sector": "Basic Materials"
+    },
     "STE": {
       "company": "STERIS plc",
       "sector": "Healthcare"
@@ -43551,6 +44157,10 @@
     "STRL": {
       "company": "Sterling Infrastructure",
       "sector": "Industrials"
+    },
+    "STRT": {
+      "company": "Strattec Security Corporation",
+      "sector": "Consumer Cyclical"
     },
     "STT": {
       "company": "State Street Corporation",
@@ -43761,6 +44371,10 @@
       "company": "Trimble Inc.",
       "sector": "Technology"
     },
+    "TRMD": {
+      "company": "TORM plc",
+      "sector": "Energy"
+    },
     "TROW": {
       "company": "T. Rowe Price Group, Inc.",
       "sector": "Financial Services"
@@ -43828,6 +44442,10 @@
     "TU": {
       "company": "TELUS Corporation",
       "sector": "Communication Services"
+    },
+    "TUYA": {
+      "company": "Tuya Inc.",
+      "sector": "Technology"
     },
     "TWLO": {
       "company": "Twilio Inc.",
