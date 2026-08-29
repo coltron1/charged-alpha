@@ -326,10 +326,10 @@ SEO_PAGE_META = {
         ),
     },
     "/studio": {
-        "title": "Charged Alpha Studio — Practical Apps for Learning & Fieldwork",
+        "title": "Charged Alpha Studio — Apps for Learning, Fieldwork & Play",
         "description": (
             "Explore practical apps by Colton from Charged Alpha Studio: investing education, "
-            "interactive physics, daily field logging, and Plotava field documentation."
+            "interactive physics, daily field logging, the free Whirlytwig game, and Plotava field documentation."
         ),
     },
     "/screener": {
@@ -949,6 +949,8 @@ def _studio_catalog_for_api():
     for studio_app in catalog["apps"]:
         studio_app["image_url"] = _canonical_url(studio_app["image_path"])
         studio_app["icon_url"] = _canonical_url(studio_app["icon_path"])
+        for gallery_image in studio_app.get("gallery", []):
+            gallery_image["image_url"] = _canonical_url(gallery_image["image_path"])
     return catalog
 
 

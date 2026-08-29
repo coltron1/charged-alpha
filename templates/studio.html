@@ -19,6 +19,7 @@
       --line:#26384c;
       --cyan:#67e8f9;
       --gold:#f6c963;
+      --orange:#fbbf24;
       --green:#6ee7b7;
       --rose:#fda4af;
     }
@@ -68,20 +69,28 @@
     .directory-nav-links a { padding:8px 11px; border:1px solid #2a3f56; border-radius:999px; color:#a9b8ca; font-size:11px; font-weight:800; text-decoration:none; }
     .directory-nav-links a:hover { border-color:#67e8f9; color:#cffafe; }
     .collection-section { padding:82px 28px; border-bottom:1px solid #1b2a3c; }
+    .collection-section.play { background:#0b100f; }
     .collection-section.capture { background:#081019; }
     .section-inner { width:min(1240px,100%); margin:0 auto; }
     .section-heading { display:flex; align-items:end; justify-content:space-between; gap:30px; margin-bottom:28px; }
     .section-heading h2 { margin:10px 0 0; color:#fff; font-size:clamp(30px,3.8vw,48px); line-height:1.04; letter-spacing:0; }
     .section-heading p { max-width:470px; margin:0; color:var(--muted); font-size:15px; line-height:1.65; }
     .app-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:18px; }
+    .collection-section.play .app-grid { grid-template-columns:1fr; }
     .app-card { --accent:var(--cyan); --accent-ink:#06212a; display:flex; flex-direction:column; overflow:hidden; min-height:100%; border:1px solid #2a4057; border-top:3px solid var(--accent); border-radius:8px; background:var(--surface); }
     .app-card.physics { --accent:var(--gold); --accent-ink:#251a03; }
     .app-card.today { --accent:var(--rose); --accent-ink:#300e16; }
+    .app-card.whirlytwig { --accent:var(--orange); --accent-ink:#2d1802; }
     .app-card.plotava { --accent:var(--green); --accent-ink:#042116; }
     .app-media { position:relative; aspect-ratio:16/8.7; overflow:hidden; background:#050a11; }
+    .app-card.whirlytwig .app-media { aspect-ratio:1024/500; }
     .app-media img { display:block; width:100%; height:100%; object-fit:cover; object-position:top; transition:transform .35s ease; }
     .app-card:hover .app-media img { transform:scale(1.025); }
     .media-label { position:absolute; top:13px; left:13px; padding:7px 9px; border:1px solid color-mix(in srgb, var(--accent) 62%, transparent); border-radius:999px; color:var(--accent); background:rgba(5,10,17,.88); font-size:10px; font-weight:900; letter-spacing:.12em; text-transform:uppercase; }
+    .app-gallery { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px; width:min(100%,620px); margin:0 auto; padding:18px 22px 0; background:#080d12; }
+    .app-gallery figure { position:relative; min-width:0; aspect-ratio:9/16; margin:0; overflow:hidden; border:1px solid color-mix(in srgb, var(--accent) 48%, #2a4057); border-radius:7px; background:#05080d; }
+    .app-gallery img { display:block; width:100%; height:100%; object-fit:cover; object-position:top; }
+    .app-gallery figcaption { position:absolute; right:8px; bottom:8px; left:8px; padding:7px 8px; border:1px solid rgba(255,255,255,.14); border-radius:5px; color:#fff7df; background:rgba(15,11,5,.87); font-size:9px; font-weight:900; letter-spacing:.08em; text-align:center; text-transform:uppercase; }
     .app-body { display:flex; flex:1; flex-direction:column; padding:22px; }
     .app-brandline { display:flex; align-items:center; gap:12px; }
     .app-icon { width:52px; height:52px; flex:0 0 auto; overflow:hidden; border:1px solid color-mix(in srgb, var(--accent) 64%, transparent); border-radius:12px; background:#0a111b; object-fit:cover; }
@@ -143,6 +152,7 @@
       .directory-nav-inner { align-items:flex-start; flex-direction:column; padding:17px 20px; }
       .section-heading { align-items:flex-start; flex-direction:column; gap:12px; }
       .app-grid { grid-template-columns:1fr; }
+      .app-gallery { padding:14px 16px 0; }
       .studio-note { grid-template-columns:1fr; gap:28px; padding:55px 20px; }
       .footer-inner { align-items:flex-start; flex-direction:column; padding:24px 20px; }
     }
@@ -155,6 +165,8 @@
       .text-link { justify-content:center; }
       .mosaic-figure, .mosaic-figure img { min-height:112px; }
       .app-body { padding:19px; }
+      .app-gallery { gap:8px; padding:10px 10px 0; }
+      .app-gallery figcaption { right:5px; bottom:5px; left:5px; padding:5px 4px; font-size:8px; }
     }
     @media (prefers-reduced-motion:reduce) {
       html { scroll-behavior:auto; }
@@ -170,6 +182,16 @@
       <img src="{{ studio_app.image_path }}" alt="{{ studio_app.image_alt }}" loading="lazy">
       <span class="media-label">{{ studio_app.category_label }}</span>
     </div>
+    {% if studio_app.get('gallery') %}
+    <div class="app-gallery" aria-label="{{ studio_app.name }} store gameplay previews">
+      {% for gallery_image in studio_app.gallery %}
+      <figure>
+        <img src="{{ gallery_image.image_path }}" alt="{{ gallery_image.image_alt }}" loading="lazy">
+        <figcaption>{{ gallery_image.source_label }}</figcaption>
+      </figure>
+      {% endfor %}
+    </div>
+    {% endif %}
     <div class="app-body">
       <div class="app-brandline">
         <img src="{{ studio_app.icon_path }}" alt="{{ studio_app.name }} app icon" class="app-icon" loading="lazy">
@@ -187,7 +209,7 @@
         </a>
         {% endfor %}
         {% for platform in studio_app.get('coming_soon', []) %}
-        <span class="coming-store" aria-label="{{ studio_app.name }} is coming soon to the App Store"><span class="store-mark" aria-hidden="true">{{ 'iOS' if platform == 'ios' else platform }}</span><span><small>Coming soon on the</small>{{ 'App Store' if platform == 'ios' else platform }}</span></span>
+        <span class="coming-store" aria-label="{{ studio_app.name }} is coming soon on {{ 'the App Store' if platform == 'ios' else 'Google Play' if platform == 'android' else platform }}"><span class="store-mark" aria-hidden="true">{{ 'iOS' if platform == 'ios' else 'A' if platform == 'android' else platform }}</span><span><small>Coming soon on</small>{{ 'the App Store' if platform == 'ios' else 'Google Play' if platform == 'android' else platform }}</span></span>
         {% endfor %}
         <a href="{{ studio_app.tracked_product_url }}" data-studio-product data-app-name="{{ studio_app.slug }}"{% if not studio_app.product_url.startswith('https://chargedalpha.com') %} target="_blank" rel="noopener noreferrer"{% endif %} class="text-link product-link">{{ studio_app.product_label }} <span aria-hidden="true">&rarr;</span></a>
       </div>
@@ -232,7 +254,7 @@
       <div class="hero-inner">
         <div class="hero-copy">
           <p class="eyebrow">Independent products by Colton</p>
-          <h1 id="studioTitle">Useful apps for learning, fieldwork, and the work in between.</h1>
+          <h1 id="studioTitle">Useful apps for learning, fieldwork, and a little play.</h1>
           <p>Each product starts with a practical question: How can this be clearer, more interactive, or easier to carry into real life? Explore the growing collection and download the one that fits what you are doing today.</p>
           <div class="hero-actions">
             <a href="#learn" class="button primary">Explore the collection</a>
@@ -241,11 +263,12 @@
           <div class="hero-note" aria-label="Studio product categories">
             <span>Learning &amp; practice</span>
             <span>Journaling &amp; fieldwork</span>
+            <span>Quick games &amp; challenges</span>
             <span>iPhone &amp; Android</span>
           </div>
         </div>
         <div class="mosaic" aria-label="Studio app previews">
-          {% for studio_app in studio_apps %}
+          {% for studio_app in studio_apps[:4] %}
           <figure class="mosaic-figure"><img src="{{ studio_app.image_path }}" alt="{{ studio_app.image_alt }}" fetchpriority="high"><figcaption>{{ studio_app.name }}</figcaption></figure>
           {% endfor %}
         </div>
@@ -257,6 +280,7 @@
         <strong>{{ studio_apps | length }} products in the Studio</strong>
         <div class="directory-nav-links">
           <a href="#learn">Learn &amp; practice</a>
+          <a href="#play">Play</a>
           <a href="#fieldwork">Capture &amp; fieldwork</a>
         </div>
       </div>
@@ -274,6 +298,23 @@
         <div class="app-grid">
           {% for studio_app in studio_apps %}
             {% if studio_app.section == 'learn' %}{{ studio_app_card(studio_app) }}{% endif %}
+          {% endfor %}
+        </div>
+      </div>
+    </section>
+
+    <section id="play" class="collection-section play" aria-labelledby="playTitle">
+      <div class="section-inner">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Play &amp; reset</p>
+            <h2 id="playTitle">Catch the wind. Make the landing count.</h2>
+          </div>
+          <p>Whirlytwig is a free, quick-play adventure built for a few lively minutes: guide a tiny ant through weather, hazards, and a very ambitious picnic landing.</p>
+        </div>
+        <div class="app-grid">
+          {% for studio_app in studio_apps %}
+            {% if studio_app.section == 'play' %}{{ studio_app_card(studio_app) }}{% endif %}
           {% endfor %}
         </div>
       </div>

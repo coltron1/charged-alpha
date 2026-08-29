@@ -13,9 +13,16 @@ class StudioCatalogTests(unittest.TestCase):
         slugs = [studio_app["slug"] for studio_app in apps]
 
         self.assertEqual(catalog["schema_version"], 1)
-        self.assertEqual(len(apps), 4)
+        self.assertEqual(len(apps), 5)
         self.assertEqual(len(slugs), len(set(slugs)))
+        self.assertIn("whirlytwig", slugs)
         self.assertIn("plotava", slugs)
+        self.assertEqual(slugs[-1], "plotava")
+        whirlytwig = next(studio_app for studio_app in apps if studio_app["slug"] == "whirlytwig")
+        self.assertIn("ios", whirlytwig["stores"])
+        self.assertNotIn("android", whirlytwig["stores"])
+        self.assertEqual(whirlytwig["coming_soon"], ["android"])
+        self.assertEqual(len(whirlytwig["gallery"]), 2)
         self.assertEqual(
             next(studio_app for studio_app in apps if studio_app["slug"] == "plotava")["product_url"],
             "https://plotava.com/",
@@ -30,6 +37,8 @@ class StudioCatalogTests(unittest.TestCase):
         self.assertIn("max-age=900", response.headers["Cache-Control"])
         self.assertEqual(payload["publisher"]["name"], "Charged Alpha Studio")
         self.assertTrue(payload["apps"][0]["image_url"].startswith("https://chargedalpha.com/"))
+        whirlytwig = next(studio_app for studio_app in payload["apps"] if studio_app["slug"] == "whirlytwig")
+        self.assertTrue(whirlytwig["gallery"][0]["image_url"].startswith("https://chargedalpha.com/"))
 
     def test_studio_page_links_to_plotava_product_site(self):
         response = self.client.get("/studio")
@@ -40,6 +49,9 @@ class StudioCatalogTests(unittest.TestCase):
         self.assertIn("studio_crosslink", html)
         self.assertIn("data-studio-product", html)
         self.assertIn("Charged Alpha Studio", html)
+        self.assertIn("Whirlytwig", html)
+        self.assertIn("App Store gameplay", html)
+        self.assertIn("Google Play preview", html)
 
 
 if __name__ == "__main__":

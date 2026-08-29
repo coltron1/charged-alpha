@@ -84,6 +84,46 @@
       "product_label": "Explore Today Was"
     },
     {
+      "slug": "whirlytwig",
+      "name": "Whirlytwig",
+      "section": "play",
+      "theme": "whirlytwig",
+      "category_label": "Free casual game",
+      "application_category": "GameApplication",
+      "operating_system": "iOS",
+      "availability": "Free on iPhone",
+      "description": "Guide Pip, a tiny ant, through a wind-riding picnic adventure. Launch beneath the fall canopy, steer around birds, spiders, rain, and shifting wind, then line up the landing on fruit and picnic treats for a bigger score.",
+      "features": [
+        "Quick portrait rounds",
+        "Wind & weather",
+        "Tactical route map",
+        "No ads or purchases"
+      ],
+      "image_path": "/static/assets/apps/whirlytwig-feature.webp",
+      "image_alt": "Whirlytwig wind-riding picnic adventure with Pip flying through an autumn game world",
+      "gallery": [
+        {
+          "image_path": "/static/assets/apps/whirlytwig-ios-gameplay.webp",
+          "image_alt": "Whirlytwig App Store gameplay showing Pip's route through the full picnic",
+          "source_label": "App Store gameplay"
+        },
+        {
+          "image_path": "/static/assets/apps/whirlytwig-google-play-gameplay.webp",
+          "image_alt": "Whirlytwig Google Play preview showing Pip flying through a lightning storm",
+          "source_label": "Google Play preview"
+        }
+      ],
+      "icon_path": "/static/assets/apps/whirlytwig-icon.webp",
+      "stores": {
+        "ios": "https://apps.apple.com/us/app/whirlytwig/id6803248239"
+      },
+      "coming_soon": [
+        "android"
+      ],
+      "product_url": "https://chargedalpha.com/studio#whirlytwig",
+      "product_label": "Meet Whirlytwig"
+    },
+    {
       "slug": "plotava",
       "name": "Plotava",
       "section": "fieldwork",
