@@ -10,6 +10,132 @@
   },
   "episodes": [
     {
+      "ticker": "HAFN",
+      "company": "Hafnia Limited",
+      "sector": "Industrials",
+      "quarter": "Q2 2026",
+      "episode_number": "",
+      "title": "Hafnia (HAFN): A Record Quarter, And A Forward Book Already 30% Lower",
+      "published_at": "2026-08-28T23:06:26+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=dC6DGKdEZ3E",
+      "spotify_url": "https://open.spotify.com/episode/7dUESKNaXXRAtNu3NFQ79V",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/hafnia-hafn-a-record-quarter-and-a-forward-book-already-30-lower/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "IREN",
+      "company": "IREN Limited",
+      "sector": "Financial Services",
+      "quarter": "Q4 FY2026",
+      "episode_number": "",
+      "title": "IREN Limited (IREN): The $11.4bn Lease Hiding Inside The AI Cloud Story",
+      "published_at": "2026-08-28T22:42:54+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=Vc6JG_jLmhQ",
+      "spotify_url": "https://open.spotify.com/episode/2aMkQWMSCorCBFs4H0kDVs",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/iren-limited-iren-the-114bn-lease-hiding-inside-the-ai-cloud-story/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "TITN",
+      "company": "Titan Machinery Inc.",
+      "sector": "Industrials",
+      "quarter": "Q2 FY2027",
+      "episode_number": "",
+      "title": "Titan Machinery (TITN): The Destock Worked, And The Loss Still Got Wider",
+      "published_at": "2026-08-28T21:22:24+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=Jj6G1mCyfAU",
+      "spotify_url": "https://open.spotify.com/episode/6UOjp8bSgbSZNe9ywUq7fD",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/titan-machinery-titn-the-destock-worked-and-the-loss-still-got-wider/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "MBUU",
+      "company": "Malibu Boats, Inc.",
+      "sector": "Consumer Cyclical",
+      "quarter": "Q4 FY2026",
+      "episode_number": "",
+      "title": "Malibu Boats (MBUU): Revenue +43%, And The Filing That Landed 21 Hours Later",
+      "published_at": "2026-08-28T20:35:08+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=BHnJQFEWOxw",
+      "spotify_url": "https://open.spotify.com/episode/03dYdRwXlXvf7OycOlcKX4",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/malibu-boats-mbuu-revenue-43-and-the-filing-that-landed-21-hours-later/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "HMY",
+      "company": "Harmony Gold Mining Company Limited",
+      "sector": "Basic Materials",
+      "quarter": "FY2026",
+      "episode_number": "",
+      "title": "Harmony Gold (HMY): A Record Gold Year, And The Stock Still Fell 6%",
+      "published_at": "2026-08-28T19:40:53+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=Wm-Hx6s7rhY",
+      "spotify_url": "https://open.spotify.com/episode/2flouXLXo9ayZAK1qRcQ8f",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/harmony-gold-hmy-a-record-gold-year-and-the-stock-still-fell-6/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "PAHC",
+      "company": "Phibro Animal Health Corporation",
+      "sector": "Healthcare",
+      "quarter": "Q4 FY2026",
+      "episode_number": "",
+      "title": "PAHC Stock Q4 FY2026: A Record Year, And 3.9% Of It Became Cash",
+      "published_at": "2026-08-28T03:36:21+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=5PbLsXwG618",
+      "spotify_url": "https://open.spotify.com/episode/0cVNSPcR2BBaOIrgjPNzho",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/pahc-stock-q4-fy2026-a-record-year-and-39-of-it-became-cash/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "BBW",
+      "company": "Build-A-Bear Workshop, Inc.",
+      "sector": "Consumer Cyclical",
+      "quarter": "Q2 FY2026",
+      "episode_number": "",
+      "title": "BBW Stock: Build-A-Bear Workshop Q2 FY2026 Earnings - Down 27% As The Growth Leg Was Cut",
+      "published_at": "2026-08-28T03:32:27+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=hdayRbHi2ks",
+      "spotify_url": "https://open.spotify.com/episode/4KMLuIaxiuKpbtwcnaf9ZX",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/bbw-stock-build-a-bear-workshop-q2-fy2026-earnings-down-27-as-the-growth-leg-was-cut/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
       "ticker": "STDN",
       "company": "Standard Nuclear, Inc.",
       "sector": "Basic Materials",
@@ -19,7 +145,7 @@
       "published_at": "2026-08-28T02:01:19+00:00",
       "status": "youtube_podcast_complete",
       "youtube_url": "https://www.youtube.com/watch?v=KqQX0inoYHU",
-      "spotify_url": "",
+      "spotify_url": "https://open.spotify.com/episode/7zpTJbZeX8FMgBAkq4z17z",
       "apple_url": "",
       "google_url": "",
       "iheart_url": "",
@@ -32100,6 +32226,97 @@
       "description": "Fast clips that point viewers into full research videos and stock pages.",
       "videos": [
         {
+          "title": "HAFN Stock: Hafnia Q2 2026 Earnings - Record Quarter, Book Already 30% Lower #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/ZMBj56xYZ8k",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-08-28T23:07:04+00:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "HAFN"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "IREN Stock: IREN Limited FY2026 Earnings - 69% Of The Book Is A Lease",
+          "youtube_url": "https://www.youtube.com/shorts/TkeN4nZ0Q5A",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-08-28T22:43:33+00:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "IREN"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "TITN Stock: Titan Machinery Q2 FY2027 Earnings - Inventory Down 18%, Loss Wider #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/drh6fX3KMmw",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-08-28T21:23:13+00:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "TITN"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "MBUU Stock: Malibu Boats Q4 FY2026 Earnings - Revenue +43%, Stock +8% #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/b0LHOnSCSXk",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-08-28T20:36:00+00:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "MBUU"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "HMY Stock: Harmony Gold FY2026 Earnings - Record Year, Stock Fell 6% #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/xCg7ctBWSBA",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-08-28T19:41:30+00:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "HMY"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "PAHC Stock: Phibro Q4 FY2026 Earnings - Record Year, $9.9m Of Cash #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/xFpuu1KfTgY",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-08-28T03:36:51+00:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "PAHC"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "BBW Stock: Build-A-Bear Workshop Q2 FY2026 Earnings - It Beat, And Fell 27% #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/Z-ypEfKdN2I",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-08-28T03:33:06+00:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "BBW"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
           "title": "STDN Stock: Standard Nuclear Q2 2026 Earnings - TRISO Has A Price Now #Shorts",
           "youtube_url": "https://www.youtube.com/shorts/lkH-YYRV1dY",
           "spotify_url": "",
@@ -40583,7 +40800,7 @@
       ]
     }
   ],
-  "last_synced_at": "2026-08-27T21:04:37-05:00",
+  "last_synced_at": "2026-08-28T21:03:18-05:00",
   "stock_metadata": {
     "A": {
       "company": "Agilent Technologies, Inc.",
@@ -41088,6 +41305,10 @@
     "BBIO": {
       "company": "BridgeBio Pharma, Inc.",
       "sector": "Healthcare"
+    },
+    "BBW": {
+      "company": "Build-A-Bear Workshop, Inc.",
+      "sector": "Consumer Cyclical"
     },
     "BBWI": {
       "company": "Bath & Body Works, Inc.",
@@ -42369,6 +42590,10 @@
       "company": "GXO Logistics, Inc.",
       "sector": "Industrials"
     },
+    "HAFN": {
+      "company": "Hafnia Limited",
+      "sector": "Industrials"
+    },
     "HAL": {
       "company": "Halliburton Company",
       "sector": "Energy"
@@ -42440,6 +42665,10 @@
     "HMC": {
       "company": "Honda Motor Company, Ltd.",
       "sector": "Consumer Cyclical"
+    },
+    "HMY": {
+      "company": "Harmony Gold Mining Company Limited",
+      "sector": "Basic Materials"
     },
     "HNGE": {
       "company": "Hinge Health, Inc.",
@@ -42620,6 +42849,10 @@
     "IRDM": {
       "company": "Iridium Communications Inc.",
       "sector": "Communication Services"
+    },
+    "IREN": {
+      "company": "IREN Limited",
+      "sector": "Financial Services"
     },
     "IRM": {
       "company": "Iron Mountain Incorporated",
@@ -42967,6 +43200,10 @@
     },
     "MBLY": {
       "company": "Mobileye Global Inc.",
+      "sector": "Consumer Cyclical"
+    },
+    "MBUU": {
+      "company": "Malibu Boats, Inc.",
       "sector": "Consumer Cyclical"
     },
     "MCD": {
@@ -43492,6 +43729,10 @@
     "PAGS": {
       "company": "PagSeguro Digital Ltd.",
       "sector": "Technology"
+    },
+    "PAHC": {
+      "company": "Phibro Animal Health Corporation",
+      "sector": "Healthcare"
     },
     "PANW": {
       "company": "Palo Alto Networks, Inc.",
@@ -44318,6 +44559,10 @@
     "TIGR": {
       "company": "UP Fintech Holding Limited",
       "sector": "Financial Services"
+    },
+    "TITN": {
+      "company": "Titan Machinery Inc.",
+      "sector": "Industrials"
     },
     "TJX": {
       "company": "The TJX Companies, Inc.",
