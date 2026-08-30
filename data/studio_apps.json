@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-08-29",
+  "updated_at": "2026-08-30",
   "publisher": {
     "name": "Charged Alpha Studio",
     "url": "https://chargedalpha.com/studio"
@@ -131,8 +131,8 @@
       "theme": "plotava",
       "category_label": "Field documentation",
       "application_category": "BusinessApplication",
-      "operating_system": "Android",
-      "availability": "Available on Android",
+      "operating_system": "iOS, Android",
+      "availability": "Available on iPhone & Android",
       "description": "Turn a field walk into one organized package. Pin conditions to an imported plan, attach photos and tape measurements, add markups, and hand off a linked, printable PDF without altering the original drawing.",
       "features": [
         "Plan-linked points",
@@ -144,11 +144,9 @@
       "image_alt": "Plotava plan detail with a connected photo, dimension, and field point",
       "icon_path": "/static/assets/apps/plotava-icon.png",
       "stores": {
+        "ios": "https://apps.apple.com/us/app/plotava/id6800150073",
         "android": "https://play.google.com/store/apps/details?id=com.plotava.app"
       },
-      "coming_soon": [
-        "ios"
-      ],
       "product_url": "https://plotava.com/",
       "product_label": "Explore Plotava"
     }

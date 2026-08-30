@@ -20,6 +20,7 @@ class StudioCatalogTests(unittest.TestCase):
         self.assertEqual(slugs[:2], ["plotava", "today-was"])
         whirlytwig = next(studio_app for studio_app in apps if studio_app["slug"] == "whirlytwig")
         today_was = next(studio_app for studio_app in apps if studio_app["slug"] == "today-was")
+        plotava = next(studio_app for studio_app in apps if studio_app["slug"] == "plotava")
         self.assertIn("ios", whirlytwig["stores"])
         self.assertNotIn("android", whirlytwig["stores"])
         self.assertEqual(whirlytwig["coming_soon"], ["android"])
@@ -30,9 +31,15 @@ class StudioCatalogTests(unittest.TestCase):
             "https://play.google.com/store/apps/details?id=com.chargedalpha.daymoire",
         )
         self.assertEqual(
-            next(studio_app for studio_app in apps if studio_app["slug"] == "plotava")["product_url"],
+            plotava["product_url"],
             "https://plotava.com/",
         )
+        self.assertEqual(plotava["operating_system"], "iOS, Android")
+        self.assertEqual(
+            plotava["stores"]["ios"],
+            "https://apps.apple.com/us/app/plotava/id6800150073",
+        )
+        self.assertNotIn("ios", plotava.get("coming_soon", []))
 
     def test_public_catalog_feed_is_cacheable_and_available_to_plotava(self):
         response = self.client.get("/api/studio/apps")
@@ -61,6 +68,16 @@ class StudioCatalogTests(unittest.TestCase):
         self.assertIn("com.chargedalpha.daymoire", html)
         self.assertLess(html.index('id="plotava"'), html.index('id="today-was"'))
         self.assertLess(html.index('id="today-was"'), html.index('id="charged-alpha"'))
+
+    def test_about_page_links_plotava_on_both_app_stores(self):
+        response = self.client.get("/about")
+        html = response.get_data(as_text=True)
+
+        self.assertEqual(response.status_code, 200)
+        self.assertIn("https://apps.apple.com/us/app/plotava/id6800150073", html)
+        self.assertIn("https://play.google.com/store/apps/details?id=com.plotava.app", html)
+        self.assertIn("Available now on iPhone &amp; Android", html)
+        self.assertNotIn("Plotava is coming soon to the App Store", html)
 
 
 if __name__ == "__main__":

@@ -566,6 +566,7 @@ APP_STORE_URL = "https://apps.apple.com/us/app/charged-alpha/id6789744882"
 GOOGLE_PLAY_URL = "https://play.google.com/store/apps/details?id=com.chargedalpha.academy"
 PHYSICS_LAB_APP_STORE_URL = "https://apps.apple.com/us/app/charged-physics-lab/id6794717292"
 PHYSICS_LAB_GOOGLE_PLAY_URL = "https://play.google.com/store/apps/details?id=com.chargedacademy.app"
+PLOTAVA_APP_STORE_URL = "https://apps.apple.com/us/app/plotava/id6800150073"
 PLOTAVA_GOOGLE_PLAY_URL = "https://play.google.com/store/apps/details?id=com.plotava.app"
 PLOTAVA_SITE_URL = "https://plotava.com/"
 TODAY_WAS_URL = "https://daymoire.chargedalpha.com/"
@@ -2884,12 +2885,23 @@ def games_index():
 @app.route("/about")
 def about():
     tracking_params = _app_tracking_params()
+    plotava_tracking_params = {
+        "utm_source": "chargedalpha",
+        "utm_medium": "referral",
+        "utm_campaign": "plotava_launch",
+        "utm_content": "about_apps",
+    }
     return render_template(
         "about.html",
         ios_url=_add_query_params(APP_STORE_URL, tracking_params),
         android_url=_add_query_params(GOOGLE_PLAY_URL, tracking_params),
         today_was_ios_url=_add_query_params(TODAY_WAS_APP_STORE_URL, tracking_params),
         today_was_web_url=_add_query_params(TODAY_WAS_URL, tracking_params),
+        plotava_ios_url=_add_query_params(PLOTAVA_APP_STORE_URL, plotava_tracking_params),
+        plotava_android_url=_add_query_params(
+            PLOTAVA_GOOGLE_PLAY_URL,
+            {"referrer": urlencode(plotava_tracking_params)},
+        ),
         plotava_site_url=_add_query_params(
             PLOTAVA_SITE_URL,
             {
