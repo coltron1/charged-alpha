@@ -10,6 +10,114 @@
   },
   "episodes": [
     {
+      "ticker": "GRRR",
+      "company": "Gorilla Technology Group Inc.",
+      "sector": "Technology",
+      "quarter": "H1 2026",
+      "episode_number": "",
+      "title": "Gorilla Technology (GRRR): Revenue Doubled And The Gross Line Went Negative",
+      "published_at": "2026-08-29T23:44:45+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=veh6PLMsujw",
+      "spotify_url": "https://open.spotify.com/episode/0a32Lny51HGzt10mgTzNQb",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/gorilla-technology-grrr-revenue-doubled-and-the-gross-line-went-negative/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "MTLS",
+      "company": "Materialise NV",
+      "sector": "Technology",
+      "quarter": "Q2 2026",
+      "episode_number": "",
+      "title": "Materialise (MTLS): One Segment Earns 118% Of The Profit",
+      "published_at": "2026-08-29T10:51:10+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=6mw_8R9Attw",
+      "spotify_url": "https://open.spotify.com/episode/6ASWqftcRxcO9Xie7mDzqC",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/materialise-mtls-one-segment-earns-118-of-the-profit/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "JKS",
+      "company": "JinkoSolar Holding Co., Ltd.",
+      "sector": "Technology",
+      "quarter": "Q2 2026",
+      "episode_number": "",
+      "title": "JinkoSolar (JKS): The $212M Operating Loss That Was Reported As $103M",
+      "published_at": "2026-08-29T09:47:41+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=gTNozjvWN-c",
+      "spotify_url": "https://open.spotify.com/episode/4pINV0GwZfgBYiI38YczhN",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/jinkosolar-jks-the-212m-operating-loss-that-was-reported-as-103m/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "GOTU",
+      "company": "Gaotu Techedu Inc.",
+      "sector": "Consumer Defensive",
+      "quarter": "Q2 2026",
+      "episode_number": "",
+      "title": "Gaotu Techedu (GOTU): More Cash Than Market Cap - And Two Thirds Of It Is Prepaid Tuition",
+      "published_at": "2026-08-29T08:11:31+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=AmhbBbxhfBg",
+      "spotify_url": "https://open.spotify.com/episode/0tHa9LpTKadKPeEp6ijMoV",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/gaotu-techedu-gotu-more-cash-than-market-cap-and-two-thirds-of-it-is-prepaid-tuition/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "LTRX",
+      "company": "Lantronix, Inc.",
+      "sector": "Technology",
+      "quarter": "Q4 FY2026",
+      "episode_number": "",
+      "title": "Lantronix (LTRX): The $12.6M Drone Line That Replaced An $11M Customer",
+      "published_at": "2026-08-29T07:09:42+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=MwxhQjGdgcs",
+      "spotify_url": "https://open.spotify.com/episode/7rGC16micAsSh6lBYIImYZ",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/lantronix-ltrx-the-126m-drone-line-that-replaced-an-11m-customer/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "CSIQ",
+      "company": "Canadian Solar Inc.",
+      "sector": "Technology",
+      "quarter": "Q2 2026",
+      "episode_number": "",
+      "title": "Canadian Solar (CSIQ): The 27 Cents That Sits On No Line Of The Income Statement",
+      "published_at": "2026-08-29T06:06:22+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=b0uQpqTZ91o",
+      "spotify_url": "https://open.spotify.com/episode/05haPw011q7qMsWWgSTjvx",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/canadian-solar-csiq-the-27-cents-that-sits-on-no-line-of-the-income-statement/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
       "ticker": "HAFN",
       "company": "Hafnia Limited",
       "sector": "Industrials",
@@ -32226,6 +32334,86 @@
       "description": "Fast clips that point viewers into full research videos and stock pages.",
       "videos": [
         {
+          "title": "GRRR Stock: Gorilla Technology H1 2026 Earnings - Revenue Doubled, Margin Negative #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/1S5tTnOHgdE",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-08-29T23:45:24+00:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "GRRR",
+            "H1"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "MTLS Stock: Materialise Q2 2026 Earnings - One Segment Is All The Profit #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/a_zSHzQKCXQ",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-08-29T10:51:36+00:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "MTLS"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "JKS Stock: JinkoSolar Q2 2026 Earnings - The Loss Was Twice As Big #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/34G48rvdL8M",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-08-29T09:47:18+00:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "JKS"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "GOTU Stock: Gaotu Techedu Q2 2026 Earnings - More Cash Than Market Cap #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/JL4ofWbKsT4",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-08-29T08:24:16+00:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "GOTU"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "LTRX Stock: Lantronix Q4 FY2026 Earnings - A New Line In, A Customer Out #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/O0fzQKzUMls",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-08-29T07:10:42+00:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "LTRX",
+            "FY2026"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "CSIQ Stock: Canadian Solar Q2 2026 Earnings - The Cost On No Line Of The P&L #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/KluKP59QffE",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-08-29T06:06:53+00:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "CSIQ"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
           "title": "HAFN Stock: Hafnia Q2 2026 Earnings - Record Quarter, Book Already 30% Lower #Shorts",
           "youtube_url": "https://www.youtube.com/shorts/ZMBj56xYZ8k",
           "spotify_url": "",
@@ -40800,7 +40988,7 @@
       ]
     }
   ],
-  "last_synced_at": "2026-08-28T21:03:18-05:00",
+  "last_synced_at": "2026-08-29T21:02:57-05:00",
   "stock_metadata": {
     "A": {
       "company": "Agilent Technologies, Inc.",
@@ -41878,6 +42066,10 @@
       "company": "Cisco Systems",
       "sector": "Technology"
     },
+    "CSIQ": {
+      "company": "Canadian Solar Inc.",
+      "sector": "Technology"
+    },
     "CSL": {
       "company": "Carlisle Companies Incorporated",
       "sector": "Industrials"
@@ -42542,6 +42734,10 @@
       "company": "Alphabet Inc.",
       "sector": "Communication"
     },
+    "GOTU": {
+      "company": "Gaotu Techedu Inc.",
+      "sector": "Consumer Defensive"
+    },
     "GPC": {
       "company": "Genuine Parts Company",
       "sector": "Consumer Cyclical"
@@ -42560,6 +42756,10 @@
     },
     "GRMN": {
       "company": "Garmin Ltd.",
+      "sector": "Technology"
+    },
+    "GRRR": {
+      "company": "Gorilla Technology Group Inc.",
       "sector": "Technology"
     },
     "GS": {
@@ -42910,6 +43110,10 @@
       "company": "James Hardie Industries plc",
       "sector": "Basic Materials"
     },
+    "JKS": {
+      "company": "JinkoSolar Holding Co., Ltd.",
+      "sector": "Technology"
+    },
     "JNJ": {
       "company": "Johnson & Johnson",
       "sector": "Healthcare"
@@ -43128,6 +43332,10 @@
     },
     "LSCC": {
       "company": "Lattice Semiconductor Corporation",
+      "sector": "Technology"
+    },
+    "LTRX": {
+      "company": "Lantronix, Inc.",
       "sector": "Technology"
     },
     "LULU": {
@@ -43397,6 +43605,10 @@
     "MTD": {
       "company": "Mettler-Toledo International, I",
       "sector": "Healthcare"
+    },
+    "MTLS": {
+      "company": "Materialise NV",
+      "sector": "Technology"
     },
     "MTN": {
       "company": "Vail Resorts, Inc.",
