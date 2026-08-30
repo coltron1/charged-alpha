@@ -140,8 +140,35 @@
         "Tape measurements",
         "Linked PDF handoff"
       ],
-      "image_path": "/static/assets/apps/plotava-plan-detail.webp",
-      "image_alt": "Plotava plan detail with a connected photo, dimension, and field point",
+      "image_path": "/static/assets/apps/plotava/01-pin-the-plan.webp",
+      "image_alt": "Plotava showing numbered field points placed on an arena plan",
+      "gallery": [
+        {
+          "image_path": "/static/assets/apps/plotava/02-one-place-every-detail.webp",
+          "image_alt": "Photos and files kept together at one Plotava field point",
+          "source_label": "Linked evidence"
+        },
+        {
+          "image_path": "/static/assets/apps/plotava/03-dimension-plan-detail.webp",
+          "image_alt": "A tape measurement captured with its surrounding condition in Plotava",
+          "source_label": "Field capture"
+        },
+        {
+          "image_path": "/static/assets/apps/plotava/04-mark-up-field-photo.webp",
+          "image_alt": "A dimension marked directly on a field photo in Plotava",
+          "source_label": "Photo markup"
+        },
+        {
+          "image_path": "/static/assets/apps/plotava/05-follow-nested-conditions.webp",
+          "image_alt": "Plotava automatically organizing a linked Field Package",
+          "source_label": "Auto-organized"
+        },
+        {
+          "image_path": "/static/assets/apps/plotava/06-build-linked-handoff.webp",
+          "image_alt": "A linked Plotava PDF with plan points and a field point directory",
+          "source_label": "Linked PDF"
+        }
+      ],
       "icon_path": "/static/assets/apps/plotava-icon.png",
       "stores": {
         "ios": "https://apps.apple.com/us/app/plotava/id6800150073",

@@ -160,18 +160,17 @@
     .app-feature-footer { display:flex; flex-wrap:wrap; align-items:center; gap:15px; margin-top:15px; }
     .fine-print { color:#64748b; font-size:12px; line-height:1.5; }
     .plotava-feature { margin-top:24px; overflow:hidden; scroll-margin-top:96px; }
-    .plotava-banner {
-      display:block; width:100%; aspect-ratio:1024/500; object-fit:cover;
-      border-bottom:1px solid rgba(249,115,22,.28); background:#0b2238;
+    .plotava-screenshots {
+      display:grid; grid-template-columns:repeat(6,minmax(0,1fr)); gap:10px; padding:16px;
+      border-bottom:1px solid rgba(249,115,22,.28); background:#061624;
     }
-    .plotava-body { display:grid; gap:28px; padding:18px; }
-    .plotava-media { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px; align-items:start; }
-    .plotava-media figure { min-width:0; margin:0; }
-    .plotava-media img {
+    .plotava-screenshots figure { min-width:0; margin:0; }
+    .plotava-screenshots img {
       display:block; width:100%; aspect-ratio:1320/2868; object-fit:cover; object-position:top;
       border:1px solid rgba(249,115,22,.28); border-radius:8px; background:#050914;
     }
-    .plotava-media figcaption { margin-top:8px; color:#94a3b8; font-size:11px; line-height:1.5; }
+    .plotava-screenshots figcaption { margin-top:8px; color:#94a3b8; font-size:10px; line-height:1.45; }
+    .plotava-body { padding:22px; }
     .plotava-positioning {
       margin-top:16px; padding:12px 14px; border-left:3px solid #f97316;
       color:#cbd5e1; background:rgba(124,45,18,.16); font-size:13px; line-height:1.65;
@@ -208,8 +207,11 @@
     @media (min-width: 980px) {
       .hero-grid { grid-template-columns:.96fr 1.04fr; }
       .app-featured { grid-template-columns:1.05fr .95fr; padding:22px; }
-      .plotava-body { grid-template-columns:1.05fr .95fr; padding:22px; }
       .app-future-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }
+    }
+    @media (max-width: 900px) {
+      .plotava-screenshots { display:flex; overflow-x:auto; scroll-padding:16px; scroll-snap-type:x mandatory; }
+      .plotava-screenshots figure { flex:0 0 min(54vw,220px); scroll-snap-align:start; }
     }
     @media (max-width: 640px) {
       .nav-tight { display:none; }
@@ -347,18 +349,33 @@
         </article>
 
         <article id="plotava" class="plotava-feature">
-          <img src="/static/assets/apps/plotava-feature.webp" alt="Plotava: pin it, capture it, mark it, and hand off one linked field package" class="plotava-banner" loading="lazy">
+          <div class="plotava-screenshots" aria-label="Six real Plotava app previews">
+            <figure>
+              <img src="/static/assets/apps/plotava/01-pin-the-plan.webp" alt="Plotava showing numbered field points placed on an arena plan" loading="lazy">
+              <figcaption>Pin the exact plan location.</figcaption>
+            </figure>
+            <figure>
+              <img src="/static/assets/apps/plotava/02-one-place-every-detail.webp" alt="Photos and files kept together at one Plotava field point" loading="lazy">
+              <figcaption>Keep every field photo linked.</figcaption>
+            </figure>
+            <figure>
+              <img src="/static/assets/apps/plotava/03-dimension-plan-detail.webp" alt="A tape measurement captured with its surrounding condition in Plotava" loading="lazy">
+              <figcaption>Capture the measurement and condition.</figcaption>
+            </figure>
+            <figure>
+              <img src="/static/assets/apps/plotava/04-mark-up-field-photo.webp" alt="A dimension marked directly on a field photo in Plotava" loading="lazy">
+              <figcaption>Mark it directly on the evidence.</figcaption>
+            </figure>
+            <figure>
+              <img src="/static/assets/apps/plotava/05-follow-nested-conditions.webp" alt="Plotava automatically organizing a linked Field Package" loading="lazy">
+              <figcaption>Auto-build one organized package.</figcaption>
+            </figure>
+            <figure>
+              <img src="/static/assets/apps/plotava/06-build-linked-handoff.webp" alt="A linked Plotava PDF with plan points and a field point directory" loading="lazy">
+              <figcaption>Tap the PDF points to reach the evidence.</figcaption>
+            </figure>
+          </div>
           <div class="plotava-body">
-            <div class="plotava-media" aria-label="Plotava app previews">
-              <figure>
-                <img src="/static/assets/apps/plotava-plan-detail.webp" alt="Plotava field point connecting a plan detail, photo, dimension, and nested points" loading="lazy">
-                <figcaption>Keep every photo, note, crop, and measurement tied to its exact place.</figcaption>
-              </figure>
-              <figure>
-                <img src="/static/assets/apps/plotava-field-package.webp" alt="Plotava export screen for building a linked and printable PDF Field Package" loading="lazy">
-                <figcaption>Build one printable, clickable Field Package for a clean office handoff.</figcaption>
-              </figure>
-            </div>
             <div class="app-feature-copy">
               <div class="app-brandline">
                 <img src="/static/assets/apps/plotava-icon.png" alt="Plotava app icon" class="app-brand-icon">

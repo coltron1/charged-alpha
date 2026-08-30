@@ -84,6 +84,8 @@
     .app-card.plotava { --accent:var(--green); --accent-ink:#042116; }
     .app-media { position:relative; aspect-ratio:16/8.7; overflow:hidden; background:#050a11; }
     .app-card.whirlytwig .app-media { aspect-ratio:1024/500; }
+    .app-card.plotava .app-media { aspect-ratio:16/10; background:#071a29; }
+    .app-card.plotava .app-media img { object-position:center 18%; }
     .app-media img { display:block; width:100%; height:100%; object-fit:cover; object-position:top; transition:transform .35s ease; }
     .app-card:hover .app-media img { transform:scale(1.025); }
     .media-label { position:absolute; top:13px; left:13px; padding:7px 9px; border:1px solid color-mix(in srgb, var(--accent) 62%, transparent); border-radius:999px; color:var(--accent); background:rgba(5,10,17,.88); font-size:10px; font-weight:900; letter-spacing:.12em; text-transform:uppercase; }
@@ -91,6 +93,8 @@
     .app-gallery figure { position:relative; min-width:0; aspect-ratio:9/16; margin:0; overflow:hidden; border:1px solid color-mix(in srgb, var(--accent) 48%, #2a4057); border-radius:7px; background:#05080d; }
     .app-gallery img { display:block; width:100%; height:100%; object-fit:cover; object-position:top; }
     .app-gallery figcaption { position:absolute; right:8px; bottom:8px; left:8px; padding:7px 8px; border:1px solid rgba(255,255,255,.14); border-radius:5px; color:#fff7df; background:rgba(15,11,5,.87); font-size:9px; font-weight:900; letter-spacing:.08em; text-align:center; text-transform:uppercase; }
+    .app-card.plotava .app-gallery { display:flex; width:100%; max-width:none; overflow-x:auto; padding-bottom:18px; scroll-padding:22px; scroll-snap-type:x mandatory; scrollbar-color:var(--green) #101923; scrollbar-width:thin; }
+    .app-card.plotava .app-gallery figure { flex:0 0 clamp(150px,15vw,190px); aspect-ratio:1320/2868; scroll-snap-align:start; }
     .app-body { display:flex; flex:1; flex-direction:column; padding:22px; }
     .app-brandline { display:flex; align-items:center; gap:12px; }
     .app-icon { width:52px; height:52px; flex:0 0 auto; overflow:hidden; border:1px solid color-mix(in srgb, var(--accent) 64%, transparent); border-radius:12px; background:#0a111b; object-fit:cover; }

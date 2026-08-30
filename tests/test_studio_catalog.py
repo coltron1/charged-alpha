@@ -40,6 +40,11 @@ class StudioCatalogTests(unittest.TestCase):
             "https://apps.apple.com/us/app/plotava/id6800150073",
         )
         self.assertNotIn("ios", plotava.get("coming_soon", []))
+        self.assertEqual(len(plotava["gallery"]), 5)
+        self.assertEqual(
+            plotava["image_path"],
+            "/static/assets/apps/plotava/01-pin-the-plan.webp",
+        )
 
     def test_public_catalog_feed_is_cacheable_and_available_to_plotava(self):
         response = self.client.get("/api/studio/apps")
@@ -78,6 +83,9 @@ class StudioCatalogTests(unittest.TestCase):
         self.assertIn("https://play.google.com/store/apps/details?id=com.plotava.app", html)
         self.assertIn("Available now on iPhone &amp; Android", html)
         self.assertNotIn("Plotava is coming soon to the App Store", html)
+        for screenshot_number in range(1, 7):
+            self.assertIn(f"/static/assets/apps/plotava/0{screenshot_number}-", html)
+        self.assertNotIn("plotava-feature.webp", html)
 
 
 if __name__ == "__main__":
