@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-08-28",
+  "updated_at": "2026-08-29",
   "publisher": {
     "name": "Charged Alpha Studio",
     "url": "https://chargedalpha.com/studio"
@@ -65,8 +65,8 @@
       "theme": "today",
       "category_label": "Daily journal & log",
       "application_category": "LifestyleApplication",
-      "operating_system": "iOS",
-      "availability": "Available now on iPhone",
+      "operating_system": "iOS, Android",
+      "availability": "Available on iPhone & Android",
       "description": "A voice-first journal and structured daily log for the details worth saving. Build entries with reusable templates, photos, exact location pins, weather statistics, and the context behind a day in the field.",
       "features": [
         "Voice-first entries",
@@ -78,7 +78,8 @@
       "image_alt": "Today Was daily log with weather data and saved exact location",
       "icon_path": "/static/assets/apps/today-was-icon.png",
       "stores": {
-        "ios": "https://apps.apple.com/us/app/today-was/id6794942824"
+        "ios": "https://apps.apple.com/us/app/today-was/id6794942824",
+        "android": "https://play.google.com/store/apps/details?id=com.chargedalpha.daymoire"
       },
       "product_url": "https://daymoire.chargedalpha.com/",
       "product_label": "Explore Today Was"

@@ -100,6 +100,13 @@ app.wsgi_app = ProxyFix(app.wsgi_app, x_for=1, x_proto=1, x_host=1, x_port=1)
 BASE_DIR = Path(__file__).resolve().parent
 SHOWS_CATALOG_PATH = BASE_DIR / "data" / "shows_catalog.json"
 STUDIO_CATALOG_PATH = BASE_DIR / "data" / "studio_apps.json"
+STUDIO_APP_DISPLAY_ORDER = (
+    "plotava",
+    "today-was",
+    "charged-alpha",
+    "charged-physics-lab",
+    "whirlytwig",
+)
 GOOGLE_SITE_VERIFICATION_FILENAME = "google8b17550efa5dc3e4.html"
 INTERACTIVE_GAME_BUILD_PATH = BASE_DIR / "static" / "games" / "interactive"
 INTERACTIVE_GAME_MANIFEST_PATH = INTERACTIVE_GAME_BUILD_PATH / ".vite" / "manifest.json"
@@ -941,6 +948,11 @@ def _load_studio_catalog():
     apps = catalog.get("apps")
     if catalog.get("schema_version") != 1 or not isinstance(apps, list) or not apps:
         raise ValueError("Studio catalog is missing a supported schema or app list")
+    priorities = {slug: position for position, slug in enumerate(STUDIO_APP_DISPLAY_ORDER)}
+    catalog["apps"] = sorted(
+        apps,
+        key=lambda studio_app: priorities.get(studio_app.get("slug"), len(priorities)),
+    )
     return catalog
 
 

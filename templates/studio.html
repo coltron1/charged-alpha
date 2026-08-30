@@ -257,7 +257,7 @@
           <h1 id="studioTitle">Useful apps for learning, fieldwork, and a little play.</h1>
           <p>Each product starts with a practical question: How can this be clearer, more interactive, or easier to carry into real life? Explore the growing collection and download the one that fits what you are doing today.</p>
           <div class="hero-actions">
-            <a href="#learn" class="button primary">Explore the collection</a>
+            <a href="#fieldwork" class="button primary">Explore the collection</a>
             <a href="/about" class="button">Meet the builder</a>
           </div>
           <div class="hero-note" aria-label="Studio product categories">
@@ -279,12 +279,29 @@
       <div class="directory-nav-inner">
         <strong>{{ studio_apps | length }} products in the Studio</strong>
         <div class="directory-nav-links">
+          <a href="#fieldwork">Capture &amp; fieldwork</a>
           <a href="#learn">Learn &amp; practice</a>
           <a href="#play">Play</a>
-          <a href="#fieldwork">Capture &amp; fieldwork</a>
         </div>
       </div>
     </nav>
+
+    <section id="fieldwork" class="collection-section capture" aria-labelledby="fieldworkTitle">
+      <div class="section-inner">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Featured field tools</p>
+            <h2 id="fieldworkTitle">Keep the details that matter connected.</h2>
+          </div>
+          <p>Start with Plotava for plan-linked field documentation, then meet Today Was for private daily logs enriched with voice, weather, photos, metrics, and exact locations.</p>
+        </div>
+        <div class="app-grid">
+          {% for studio_app in studio_apps %}
+            {% if studio_app.section == 'fieldwork' %}{{ studio_app_card(studio_app) }}{% endif %}
+          {% endfor %}
+        </div>
+      </div>
+    </section>
 
     <section id="learn" class="collection-section" aria-labelledby="learnTitle">
       <div class="section-inner">
@@ -315,23 +332,6 @@
         <div class="app-grid">
           {% for studio_app in studio_apps %}
             {% if studio_app.section == 'play' %}{{ studio_app_card(studio_app) }}{% endif %}
-          {% endfor %}
-        </div>
-      </div>
-    </section>
-
-    <section id="fieldwork" class="collection-section capture" aria-labelledby="fieldworkTitle">
-      <div class="section-inner">
-        <div class="section-heading">
-          <div>
-            <p class="eyebrow">Capture &amp; fieldwork</p>
-            <h2 id="fieldworkTitle">Keep the details that matter connected.</h2>
-          </div>
-          <p>From an ordinary day to a site walk, these tools hold onto the details most likely to get lost between the moment and the handoff.</p>
-        </div>
-        <div class="app-grid">
-          {% for studio_app in studio_apps %}
-            {% if studio_app.section == 'fieldwork' %}{{ studio_app_card(studio_app) }}{% endif %}
           {% endfor %}
         </div>
       </div>

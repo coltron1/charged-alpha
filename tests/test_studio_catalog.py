@@ -17,12 +17,18 @@ class StudioCatalogTests(unittest.TestCase):
         self.assertEqual(len(slugs), len(set(slugs)))
         self.assertIn("whirlytwig", slugs)
         self.assertIn("plotava", slugs)
-        self.assertEqual(slugs[-1], "plotava")
+        self.assertEqual(slugs[:2], ["plotava", "today-was"])
         whirlytwig = next(studio_app for studio_app in apps if studio_app["slug"] == "whirlytwig")
+        today_was = next(studio_app for studio_app in apps if studio_app["slug"] == "today-was")
         self.assertIn("ios", whirlytwig["stores"])
         self.assertNotIn("android", whirlytwig["stores"])
         self.assertEqual(whirlytwig["coming_soon"], ["android"])
         self.assertEqual(len(whirlytwig["gallery"]), 2)
+        self.assertEqual(today_was["operating_system"], "iOS, Android")
+        self.assertEqual(
+            today_was["stores"]["android"],
+            "https://play.google.com/store/apps/details?id=com.chargedalpha.daymoire",
+        )
         self.assertEqual(
             next(studio_app for studio_app in apps if studio_app["slug"] == "plotava")["product_url"],
             "https://plotava.com/",
@@ -52,6 +58,9 @@ class StudioCatalogTests(unittest.TestCase):
         self.assertIn("Whirlytwig", html)
         self.assertIn("App Store gameplay", html)
         self.assertIn("Google Play preview", html)
+        self.assertIn("com.chargedalpha.daymoire", html)
+        self.assertLess(html.index('id="plotava"'), html.index('id="today-was"'))
+        self.assertLess(html.index('id="today-was"'), html.index('id="charged-alpha"'))
 
 
 if __name__ == "__main__":
