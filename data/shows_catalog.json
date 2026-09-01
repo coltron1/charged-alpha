@@ -10,6 +10,42 @@
   },
   "episodes": [
     {
+      "ticker": "NCNO",
+      "company": "nCino, Inc.",
+      "sector": "Technology",
+      "quarter": "Q2 FY2027",
+      "episode_number": "",
+      "title": "NCNO Stock: SELL Call - $176M Of Buybacks On $115M Of Cash Q2 FY2027",
+      "published_at": "2026-08-31T14:26:05+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=yghugPN8N_w",
+      "spotify_url": "https://open.spotify.com/episode/1XRGgSrf6xxIuu3RIEvywm",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/ncno-stock-sell-call-176m-of-buybacks-on-115m-of-cash-q2-fy2027/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "CMBT",
+      "company": "Cmb.Tech NV",
+      "sector": "Energy",
+      "quarter": "Q2 2026",
+      "episode_number": "",
+      "title": "CMBT Stock: SELL Call - Record $364M Quarter, But The Net Debt Equals The Market Cap",
+      "published_at": "2026-08-31T14:22:50+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=cq8syGUC1S4",
+      "spotify_url": "https://open.spotify.com/episode/4YokSSdesB2QiMXVyUS460",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/cmbt-stock-sell-call-record-364m-quarter-but-the-net-debt-equals-the-market-cap/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
       "ticker": "HEI",
       "company": "Heico Corporation",
       "sector": "Industrials",
@@ -19,7 +55,7 @@
       "published_at": "2026-08-31T01:51:24+00:00",
       "status": "youtube_podcast_complete",
       "youtube_url": "https://www.youtube.com/watch?v=1N8Om5z119c",
-      "spotify_url": "",
+      "spotify_url": "https://open.spotify.com/episode/4vIu7N6nugh4BVmSxw0uff",
       "apple_url": "",
       "google_url": "",
       "iheart_url": "",
@@ -32694,6 +32730,35 @@
       "description": "Fast clips that point viewers into full research videos and stock pages.",
       "videos": [
         {
+          "title": "NCNO Stock: nCino Q2 FY2027 - It Borrowed To Buy Its Own Shares",
+          "youtube_url": "https://www.youtube.com/shorts/8RFdD_pghuU",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-08-31T14:26:18+00:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "NCNO",
+            "FY2027"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "CMBT Stock: $364M Quarter, And Debt Equal To The Whole Company | CMB.TECH Q2 2026",
+          "youtube_url": "https://www.youtube.com/shorts/-6nT_iOpUVM",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-08-31T14:21:26+00:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "CMBT",
+            "CMB.",
+            "TECH"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
           "title": "HEI Stock: HEICO Q3 FY2026 - Two Tickers, One Company, 35% Apart",
           "youtube_url": "https://www.youtube.com/shorts/vyl2UkrU5jI",
           "spotify_url": "",
@@ -41630,7 +41695,7 @@
       ]
     }
   ],
-  "last_synced_at": "2026-08-30T21:03:26-05:00",
+  "last_synced_at": "2026-08-31T21:10:11-05:00",
   "stock_metadata": {
     "A": {
       "company": "Agilent Technologies, Inc.",
