@@ -10,6 +10,42 @@
   },
   "episodes": [
     {
+      "ticker": "SBSW",
+      "company": "Sibanye Stillwater Limited",
+      "sector": "Basic Materials",
+      "quarter": "Current",
+      "episode_number": "",
+      "title": "SBSW Stock: BUY Call - All 4 Mines Dug Less And Sibanye Still Posted A Record H1 2026",
+      "published_at": "2026-09-02T01:04:27+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=mS8skWGLRHI",
+      "spotify_url": "https://open.spotify.com/episode/1C9Qe3LOutzTGfHXVg3oZa",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/sbsw-stock-buy-call-all-4-mines-dug-less-and-sibanye-still-posted-a-record-h1-2026/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "MDT",
+      "company": "Medtronic plc.",
+      "sector": "Healthcare",
+      "quarter": "Q1 FY2027",
+      "episode_number": "",
+      "title": "MDT Stock: Half of Medtronic’s 13.7% Growth Was an Extra Week | Q1 FY2027",
+      "published_at": "2026-09-01T23:54:24+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=JWeaDszuNjw",
+      "spotify_url": "https://open.spotify.com/episode/7LkSzex20wzdGx94jA4zr1",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/mdt-stock-half-of-medtronic-s-137-growth-was-an-extra-week-q1-fy2027/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
       "ticker": "NCNO",
       "company": "nCino, Inc.",
       "sector": "Technology",
@@ -32730,6 +32766,33 @@
       "description": "Fast clips that point viewers into full research videos and stock pages.",
       "videos": [
         {
+          "title": "Every Mine Dug Less. Record Profit. #SBSW",
+          "youtube_url": "https://www.youtube.com/shorts/cNK29yrZ9XA",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-09-01T18:04:48-07:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "SBSW"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "Half of Medtronic's 13.7% Growth Was an Extra Week | MDT Q1 FY2027",
+          "youtube_url": "https://www.youtube.com/shorts/ybU0VBFAPFI",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-09-01T16:54:35-07:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "MDT",
+            "FY2027"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
           "title": "NCNO Stock: nCino Q2 FY2027 - It Borrowed To Buy Its Own Shares",
           "youtube_url": "https://www.youtube.com/shorts/8RFdD_pghuU",
           "spotify_url": "",
@@ -41695,7 +41758,7 @@
       ]
     }
   ],
-  "last_synced_at": "2026-08-31T21:10:11-05:00",
+  "last_synced_at": "2026-09-01T21:06:49-05:00",
   "stock_metadata": {
     "A": {
       "company": "Agilent Technologies, Inc.",
@@ -45081,6 +45144,10 @@
     "SBS": {
       "company": "Companhia de Saneamento Básico do Estado de São Paulo - SABESP",
       "sector": "Utilities"
+    },
+    "SBSW": {
+      "company": "Sibanye Stillwater Limited",
+      "sector": "Basic Materials"
     },
     "SBUX": {
       "company": "Starbucks Corp.",
