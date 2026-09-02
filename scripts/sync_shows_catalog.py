@@ -848,7 +848,15 @@ def sync_catalog(args: argparse.Namespace) -> dict:
     print("Fetching YouTube Shorts...")
     shorts = run_ytdlp_flat(f"{args.youtube_channel.rstrip('/')}/shorts")
     print("Fetching YouTube RSS dates...")
-    youtube_dates = parse_youtube_rss_dates(fetch_text(args.youtube_rss))
+    try:
+        youtube_dates = parse_youtube_rss_dates(fetch_text(args.youtube_rss))
+    except Exception as exc:
+        # YouTube's public RSS endpoint can be unavailable even while the
+        # channel and its individual video metadata remain accessible.
+        # Pending rows below are then dated with yt-dlp and, if needed, the
+        # public video page rather than stopping the entire catalog sync.
+        print(f"Warning: unable to read YouTube RSS dates: {exc}", file=sys.stderr)
+        youtube_dates = {}
     print("Fetching Podbean feed...")
     podcast_items, titled_podcasts = parse_podbean_items(fetch_text(args.podbean_feed))
     print("Fetching Spotify show page...")
