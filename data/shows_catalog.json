@@ -10,6 +10,168 @@
   },
   "episodes": [
     {
+      "ticker": "CRDO",
+      "company": "Credo Technology Group Holding Ltd",
+      "sector": "Technology",
+      "quarter": "Q1 FY2027",
+      "episode_number": "",
+      "title": "Credo Stock: It Bought $1.25bn Mid-Quarter, Won’t Say What It Earns (CRDO Q1 FY2027)",
+      "published_at": "2026-09-03T01:45:19+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=TWLayQjHL18",
+      "spotify_url": "https://open.spotify.com/episode/6Tt0hJ2quQ9hOKi8Egn2Xs",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/credo-stock-it-bought-125bn-mid-quarter-won-t-say-what-it-earns-crdo-q1-fy2027/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "GTLB",
+      "company": "GitLab Inc.",
+      "sector": "Technology",
+      "quarter": "Q2 FY2027",
+      "episode_number": "",
+      "title": "GTLB Stock: Shares Rose 10%, Gross Margin Fell A Sixth Time - GitLab Q2 FY2027",
+      "published_at": "2026-09-03T01:37:39+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=L0ouh6Wd4gE",
+      "spotify_url": "https://open.spotify.com/episode/0039d3M6ZB6gszRYDQUbRX",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/gtlb-stock-shares-rose-10-gross-margin-fell-a-sixth-time-gitlab-q2-fy2027/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "MDB",
+      "company": "MongoDB, Inc.",
+      "sector": "Technology",
+      "quarter": "Q2 FY2027",
+      "episode_number": "",
+      "title": "MongoDB Stock: Backlog +91%, But 70% Was Never Invoiced - We Say SELL (MDB Q2 FY2027)",
+      "published_at": "2026-09-03T01:35:58+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=pgwoUqRXuQg",
+      "spotify_url": "https://open.spotify.com/episode/3svsA2wDcHpOGXz5K6rPGi",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/mongodb-stock-backlog-91-but-70-was-never-invoiced-we-say-sell-mdb-q2-fy2027/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "HQY",
+      "company": "HealthEquity, Inc.",
+      "sector": "Healthcare",
+      "quarter": "Q2 FY2027",
+      "episode_number": "",
+      "title": "HealthEquity Stock: A Record Quarter - and a $3B Rate Lock. Why We Say HOLD (HQY Q2 FY2027)",
+      "published_at": "2026-09-02T07:41:08+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=FJFlulFB1Rc",
+      "spotify_url": "https://open.spotify.com/episode/55pNzmBzp0tZqzqhT8zYSx",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/healthequity-stock-a-record-quarter-and-a-3b-rate-lock-why-we-say-hold-hqy-q2-fy2027/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "SAIC",
+      "company": "Science Applications International Corporation",
+      "sector": "Technology",
+      "quarter": "Q2 FY2027",
+      "episode_number": "",
+      "title": "SAIC Stock: Pretax Profit Up 10%, Net Income Down 20% Q2 FY2027",
+      "published_at": "2026-09-02T07:40:06+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=DHd87FeCUrc",
+      "spotify_url": "https://open.spotify.com/episode/1TD2sBD7fZ3Uo5aVwdueHt",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/saic-stock-pretax-profit-up-10-net-income-down-20-q2-fy2027/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "SSL",
+      "company": "Sasol Limited",
+      "sector": "Basic Materials",
+      "quarter": "FY2026",
+      "episode_number": "",
+      "title": "Sasol Stock (SSL): HOLD Call - Best Year In Five, Written Down Again FY2026",
+      "published_at": "2026-09-02T05:59:08+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=W04LO1teMuk",
+      "spotify_url": "https://open.spotify.com/episode/3UNtGNywlovZ5PKrIU7qZC",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/sasol-stock-ssl-hold-call-best-year-in-five-written-down-again-fy2026/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "YEXT",
+      "company": "Yext, Inc.",
+      "sector": "Technology",
+      "quarter": "Q2 FY2027",
+      "episode_number": "",
+      "title": "YEXT Stock: HOLD - The Beat Came From The Buyback Q2 FY2027",
+      "published_at": "2026-09-02T05:50:08+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=izpku595dV8",
+      "spotify_url": "https://open.spotify.com/episode/6gzkVTZkVdmL7AvaeOh8Ce",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/yext-stock-hold-the-beat-came-from-the-buyback-q2-fy2027/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "MMED",
+      "company": "MiniMed Group, Inc.",
+      "sector": "Healthcare",
+      "quarter": "Q1 FY2027",
+      "episode_number": "",
+      "title": "MiniMed Stock (MMED): HOLD Call - $319M Owed On The Growth Q1 FY2027",
+      "published_at": "2026-09-02T04:22:54+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=GKZaIabp6Mg",
+      "spotify_url": "https://open.spotify.com/episode/1wu62ez7gPZNb8RXQZauMh",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/minimed-stock-mmed-hold-call-319m-owed-on-the-growth-q1-fy2027/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "NIO",
+      "company": "NIO Inc.",
+      "sector": "Consumer Cyclical",
+      "quarter": "Q2 2026",
+      "episode_number": "",
+      "title": "NIO Stock: SELL Call - 24,193 More Cars And A Bigger Loss Q2 2026",
+      "published_at": "2026-09-02T02:19:09+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=K_cPcOAm8HI",
+      "spotify_url": "https://open.spotify.com/episode/1L4AefXHy6Ac7M510nrxmP",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/nio-stock-sell-call-24193-more-cars-and-a-bigger-loss-q2-2026/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
       "ticker": "SBSW",
       "company": "Sibanye Stillwater Limited",
       "sector": "Basic Materials",
@@ -32766,6 +32928,119 @@
       "description": "Fast clips that point viewers into full research videos and stock pages.",
       "videos": [
         {
+          "title": "Credo Bought $1.25bn Mid-Quarter. It Won't Say What That Business Earns #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/2kEqQ90m-5E",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-09-02T18:45:37-07:00",
+          "section": "Shorts and Clips",
+          "tickers": [],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "GitLab Stock: Up 10%, And The Margin Fell Again - GTLB Q2 FY2027",
+          "youtube_url": "https://www.youtube.com/shorts/qIAUqXrvTiw",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-09-02T18:37:04-07:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "GTLB",
+            "FY2027"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "MongoDB's Backlog Nearly Doubled. 70% of It Was Never Invoiced #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/XlnXEz2NJgE",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-09-02T18:36:12-07:00",
+          "section": "Shorts and Clips",
+          "tickers": [],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "HealthEquity Locked Away $3B of Its Own Upside - Then Called It a Record #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/-MGnLjzbaSg",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-09-02T00:41:13-07:00",
+          "section": "Shorts and Clips",
+          "tickers": [],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "SAIC Stock: Pretax Profit Up, Net Income Down 20% - Q2 FY2027",
+          "youtube_url": "https://www.youtube.com/shorts/xBSc4icLdqo",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-09-02T00:40:14-07:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "SAIC",
+            "FY2027"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "Sasol's best year in five - and it wrote the plant down again #Sasol #SSL",
+          "youtube_url": "https://www.youtube.com/shorts/mvT5i3eWcck",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-09-01T22:59:09-07:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "SSL"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "The Beat Came From The Buyback #YEXT",
+          "youtube_url": "https://www.youtube.com/shorts/8qb_6vo-oU0",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-09-01T22:50:28-07:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "YEXT"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "Somebody Else Funded The Growth #MMED",
+          "youtube_url": "https://www.youtube.com/shorts/AkdWvoxkdaU",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-09-01T21:23:13-07:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "MMED"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "24,193 More Cars. A Bigger Loss. #NIO",
+          "youtube_url": "https://www.youtube.com/shorts/PHi4h3VdTWM",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-09-01T19:19:29-07:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "NIO"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
           "title": "Every Mine Dug Less. Record Profit. #SBSW",
           "youtube_url": "https://www.youtube.com/shorts/cNK29yrZ9XA",
           "spotify_url": "",
@@ -41758,7 +42033,7 @@
       ]
     }
   ],
-  "last_synced_at": "2026-09-01T21:06:49-05:00",
+  "last_synced_at": "2026-09-02T21:03:54-05:00",
   "stock_metadata": {
     "A": {
       "company": "Agilent Technologies, Inc.",
@@ -44272,6 +44547,10 @@
       "company": "Martin Marietta Materials, Inc.",
       "sector": "Basic Materials"
     },
+    "MMED": {
+      "company": "MiniMed Group, Inc.",
+      "sector": "Healthcare"
+    },
     "MMM": {
       "company": "3M Company",
       "sector": "Industrials"
@@ -45355,6 +45634,10 @@
     },
     "SSD": {
       "company": "Simpson Manufacturing Company, ",
+      "sector": "Basic Materials"
+    },
+    "SSL": {
+      "company": "Sasol Limited",
       "sector": "Basic Materials"
     },
     "SSNC": {
