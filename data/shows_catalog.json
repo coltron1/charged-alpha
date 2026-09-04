@@ -155,8 +155,8 @@
     },
     {
       "ticker": "BF.B",
-      "company": "BF.B",
-      "sector": "Unclassified",
+      "company": "Brown-Forman Corporation",
+      "sector": "Consumer Defensive",
       "quarter": "Q1 FY2027",
       "episode_number": "",
       "title": "BF.B Stock: Profit Grew 4%, But the Guide Says the Year Shrinks (Brown-Forman Q1 FY2027)",
@@ -44702,6 +44702,11 @@
     "BEKE": {
       "company": "KE Holdings Inc.",
       "sector": "Real Estate"
+    },
+    "BF.B": {
+      "company": "Brown-Forman Corporation",
+      "sector": "Consumer Defensive",
+      "yf_symbol": "BF-B"
     },
     "BEN": {
       "company": "Franklin Resources, Inc.",
