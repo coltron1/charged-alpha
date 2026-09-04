@@ -26,6 +26,8 @@ PROJECT_ROOT = Path(__file__).resolve().parents[1]
 if str(PROJECT_ROOT) not in sys.path:
     sys.path.insert(0, str(PROJECT_ROOT))
 
+from scripts.earnings_shorts import link_earnings_shorts, youtube_id
+
 
 DEFAULT_CATALOG = Path("data/shows_catalog.json")
 DEFAULT_YOUTUBE_CHANNEL = "https://www.youtube.com/@ChargedAlpha"
@@ -34,14 +36,14 @@ DEFAULT_PODBEAN_FEED = "https://feed.podbean.com/chargedalpha/feed.xml"
 DEFAULT_SPOTIFY_SHOW = "https://open.spotify.com/show/72TRXJNznbvrpM72hdVN3b"
 DEFAULT_APPLE_LOOKUP = "https://itunes.apple.com/lookup?id=1891551459&entity=podcastEpisode&limit=200&country=us"
 
-TICKER_STOCK_TITLE_RE = re.compile(r"^([A-Z][A-Z0-9.\-]{0,12}) Stock:\s+(.+)$")
+TICKER_STOCK_TITLE_RE = re.compile(r"^([A-Z][A-Z0-9.\-]{0,12}) Stock\b.*?:\s+(.+)$")
 COMPANY_TICKER_STOCK_TITLE_RE = re.compile(
-    r"^.+? Stock \(([A-Z][A-Z0-9.\-]{0,12})\):\s+(.+)$"
+    r"^.+? \(([A-Z][A-Z0-9.\-]{0,12})\)(?:\s+(?:(?:Q[1-4]|H[12])\s+(?:FY)?\d{4}|FY\s?\d{4}))?:\s+(.+)$"
 )
-PERIOD_RE = re.compile(r"\b(Q[1-4]\s+(?:FY)?\d{4}|FY\s?\d{4})\b", re.IGNORECASE)
+PERIOD_RE = re.compile(r"\b((?:Q[1-4]|H[12])\s+(?:FY)?\d{4}|FY\s?\d{4})\b", re.IGNORECASE)
 PODCAST_IDENTITY_RE = re.compile(
     r"\(([A-Z][A-Z0-9.\-]{0,12})\)\s+"
-    r"(Q[1-4]\s+(?:FY)?\d{4}|FY\s?\d{4})\b"
+    r"((?:Q[1-4]|H[12])\s+(?:FY)?\d{4}|FY\s?\d{4})\b"
 )
 SPOTIFY_EPISODE_RE = re.compile(
     r'<a href="(/episode/[^"]+)"><h4[^>]*data-testid="episodeTitle"[^>]*>(.*?)</h4>',
@@ -520,12 +522,14 @@ def collect_stock_metadata(catalog: dict) -> tuple[dict[str, str], dict[str, str
 
 def newest_unlinked(rows: list[VideoRow], existing_urls: set[str], scan_all: bool) -> list[VideoRow]:
     pending: list[VideoRow] = []
+    existing_ids = {youtube_id(url) for url in existing_urls} - {""}
     for row in rows:
-        if row.url in existing_urls:
+        if row.url in existing_urls or row.video_id in existing_ids:
             if not scan_all:
                 break
             continue
         pending.append(row)
+        existing_ids.add(row.video_id)
     return pending
 
 
@@ -831,6 +835,33 @@ def backfill_catalog_platform_links(
     return updated
 
 
+def recover_earnings_from_explainers(catalog, titled_podcasts, companies, sectors):
+    recovered = []
+    section = find_section(catalog, "Market and Sector Explainers")
+    if section is None:
+        return recovered
+    remaining = []
+    existing_ids = {youtube_id(ep.get("youtube_url")) for ep in catalog.get("episodes", [])}
+    for video in section.get("videos", []):
+        parsed = resolve_stock_key(video.get("title") or "", titled_podcasts)
+        if not parsed or parsed[1] == "Current" or youtube_id(video.get("youtube_url")) in existing_ids:
+            remaining.append(video)
+            continue
+        ticker, quarter = parsed
+        episode = {key: value for key, value in video.items() if key not in {"section", "tickers", "summary"}}
+        episode.update({
+            "ticker": ticker, "quarter": quarter,
+            "company": companies.get(ticker) or ticker,
+            "sector": sectors.get(ticker) or "Unclassified",
+            "episode_number": "", "has_episode": True, "status": "youtube_live",
+        })
+        recovered.append(episode)
+        existing_ids.add(youtube_id(video.get("youtube_url")))
+    section["videos"] = remaining
+    catalog["episodes"] = recovered + catalog.get("episodes", [])
+    return recovered
+
+
 def sync_catalog(args: argparse.Namespace) -> dict:
     catalog_path = Path(args.catalog)
     catalog = json.loads(catalog_path.read_text())
@@ -873,7 +904,8 @@ def sync_catalog(args: argparse.Namespace) -> dict:
         apple_items_by_guid, titled_apple = {}, {}
 
     pending_videos = newest_unlinked(videos, existing_urls, args.scan_all)
-    pending_shorts = newest_unlinked(shorts, existing_urls, args.scan_all)
+    # Shorts are often published out of order; always recover gaps in this tab.
+    pending_shorts = newest_unlinked(shorts, existing_urls, scan_all=True)
     pending_without_rss_dates = [
         row
         for row in [*pending_videos, *pending_shorts]
@@ -897,6 +929,7 @@ def sync_catalog(args: argparse.Namespace) -> dict:
 
     new_episodes: list[dict] = []
     new_explainers: list[dict] = []
+    recovered_earnings = recover_earnings_from_explainers(catalog, titled_podcasts, companies, sectors)
     pending_stock_keys = [
         parsed
         for row in pending_videos
@@ -959,7 +992,7 @@ def sync_catalog(args: argparse.Namespace) -> dict:
     ]
 
     new_episodes.sort(key=lambda episode: episode.get("published_at") or "", reverse=True)
-    new_metadata_summary = enrich_new_episode_metadata(new_episodes, stock_metadata)
+    new_metadata_summary = enrich_new_episode_metadata(new_episodes + recovered_earnings, stock_metadata)
     catalog["episodes"] = new_episodes + catalog.get("episodes", [])
     if stock_metadata:
         catalog["stock_metadata"] = dict(sorted(stock_metadata.items()))
@@ -981,6 +1014,7 @@ def sync_catalog(args: argparse.Namespace) -> dict:
         apple_items_by_guid,
         titled_apple,
     )
+    earnings_shorts = link_earnings_shorts(catalog)
     metadata_summary = {
         "profiles": len(stock_metadata),
         "lookups": new_metadata_summary["lookups"],
@@ -1003,8 +1037,10 @@ def sync_catalog(args: argparse.Namespace) -> dict:
 
     summary = {
         "stock_episodes": len(new_episodes),
+        "reclassified_earnings": len(recovered_earnings),
         "explainers": len(new_explainers),
         "shorts": len(new_shorts),
+        "earnings_shorts": earnings_shorts,
         "stock_tickers": [episode["ticker"] for episode in new_episodes],
         "backfilled_links": backfilled_links,
         "metadata": metadata_summary,

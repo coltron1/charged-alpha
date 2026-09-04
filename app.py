@@ -1422,8 +1422,26 @@ def _resolved_show_metadata(stock, profile):
     }
 
 
-def build_show_library(episodes, stock_metadata=None):
+def build_show_library(episodes, stock_metadata=None, video_sections=None):
     grouped = {}
+    shorts_by_episode = {}
+    seen_shorts = set()
+    for video in flatten_video_sections(video_sections):
+        if video.get("section_title") != "Shorts and Clips":
+            continue
+        episode_id = _youtube_video_id(video.get("earnings_youtube_url"))
+        short_id = _youtube_video_id(video.get("youtube_url"))
+        if not episode_id or not short_id or short_id in seen_shorts:
+            continue
+        seen_shorts.add(short_id)
+        shorts_by_episode.setdefault(episode_id, []).append({
+            "title": video.get("title") or "Earnings Short",
+            "youtube_url": f"https://www.youtube.com/shorts/{short_id}",
+            "thumbnail_url": _youtube_thumbnail_url(video.get("youtube_url")),
+            "published_at": video.get("published_at") or "",
+        })
+    for shorts in shorts_by_episode.values():
+        shorts.sort(key=_episode_published_sort_key, reverse=True)
     metadata_by_slug = _show_metadata_by_slug(stock_metadata)
     quarter_set = set()
     published_episode_count = 0
@@ -1474,6 +1492,7 @@ def build_show_library(episodes, stock_metadata=None):
                 "has_episode": has_any_link,
                 "has_any_link": has_any_link,
                 "youtube_url": ep.get("youtube_url") or "",
+                "youtube_shorts": shorts_by_episode.get(_youtube_video_id(ep.get("youtube_url")), []),
                 "spotify_url": ep.get("spotify_url") or "",
                 "apple_url": ep.get("apple_url") or "",
                 "google_url": ep.get("google_url") or "",
@@ -1508,6 +1527,7 @@ def build_show_library(episodes, stock_metadata=None):
         stock["latest_published_at"] = latest_published.get("published_at") or latest.get("published_at") or ""
         stock["latest_video_quarter"] = latest_youtube["quarter"] if latest_youtube else None
         stock["latest_video_title"] = latest_youtube["title"] if latest_youtube else ""
+        stock["latest_youtube_shorts"] = latest_youtube["youtube_shorts"] if latest_youtube else []
         stock["latest_video_published_at"] = latest_youtube["published_at"] if latest_youtube else ""
         stock["latest_video_thumbnail"] = _youtube_thumbnail_url(latest_youtube.get("youtube_url")) if latest_youtube else DEFAULT_SOCIAL_IMAGE_URL
         stock["latest_youtube_embed_url"] = _youtube_embed_url(latest_youtube.get("youtube_url")) if latest_youtube else ""
@@ -2384,6 +2404,7 @@ def _shows_context():
     show_library = build_show_library(
         shows_data.get("episodes", []),
         shows_data.get("stock_metadata", {}),
+        shows_data.get("video_sections", []),
     )
     context = {
         "shows_data": shows_data,
@@ -3162,6 +3183,7 @@ def show_stock_detail_page(ticker_slug):
         video
         for video in flatten_video_sections(shows_data.get("video_sections", []))
         if page_show_stock["ticker"] in [ticker.upper() for ticker in video.get("tickers", [])]
+        and not video.get("earnings_youtube_url")
     ][:6]
 
     seo_title = f"{page_show_stock['company']} ({page_show_stock['ticker']}) Stock Library — Charged Alpha"

@@ -2,6 +2,7 @@ import unittest
 from unittest.mock import patch
 
 from app import (
+    app,
     _cached_show_stock_detail,
     _detail_cache,
     _hydrate_show_stock_identity,
@@ -12,6 +13,35 @@ from yf_utils import fetch_ticker_info, ticker_info_cache
 
 
 class ShowLibraryTests(unittest.TestCase):
+    def test_shorts_belong_to_exact_earnings_video_not_just_ticker(self):
+        episodes = [
+            {"ticker": "TEST", "quarter": "Q2 2026", "title": "Newest", "published_at": "2026-08-01", "youtube_url": "https://youtu.be/new"},
+            {"ticker": "TEST", "quarter": "Q1 2026", "title": "Older", "published_at": "2026-05-01", "youtube_url": "https://youtu.be/old"},
+        ]
+        clip = {"title": "A quick earnings take", "youtube_url": "https://youtube.com/shorts/clip", "earnings_youtube_url": "https://youtube.com/watch?v=old", "published_at": "2026-05-01"}
+        sections = [{"title": "Shorts and Clips", "videos": [clip, clip]}]
+        stock = build_show_library(episodes, video_sections=sections)["stocks"][0]
+        self.assertEqual(stock["latest_youtube_shorts"], [])
+        self.assertEqual(len(stock["episodes"][1]["youtube_shorts"]), 1)
+        self.assertIn("clip", stock["episodes"][1]["youtube_shorts"][0]["thumbnail_url"])
+
+    def test_stock_page_renders_shorts_with_main_video_and_archive_only_when_available(self):
+        episodes = [{"ticker": "TEST", "quarter": "Q2 2026", "title": "Full earnings video", "published_at": "2026-08-01", "youtube_url": "https://youtu.be/full"}]
+        clip = {"title": "Quick <earnings> take", "youtube_url": "https://youtube.com/shorts/clip", "earnings_youtube_url": "https://youtu.be/full", "published_at": "2026-08-02", "tickers": ["TEST"]}
+        for clips in [[clip], []]:
+            sections = [{"title": "Shorts and Clips", "videos": clips}]
+            context = {"shows_data": {"video_sections": sections}, "show_library": build_show_library(episodes, video_sections=sections)}
+            with patch("app._shows_context", return_value=context), patch("app._cached_show_stock_detail", return_value={}), patch("app._pick_competitor_stocks", return_value=[]):
+                response = app.test_client().get("/shows/test")
+            self.assertEqual(response.status_code, 200)
+            rendered = response.get_data(as_text=True)
+            self.assertEqual(rendered.count('class="earnings-short-link"'), 2 if clips else 0)
+            self.assertIn("Full video on YouTube", rendered)
+            if clips:
+                self.assertIn("Quick &lt;earnings&gt; take", rendered)
+                self.assertIn('datetime="2026-08-02"', rendered)
+                self.assertNotIn("Non-quarter videos featuring", rendered)
+
     def test_profile_and_valid_history_beat_newer_placeholders(self):
         episodes = [
             {

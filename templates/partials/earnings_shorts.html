@@ -1,0 +1,17 @@
+{% if earnings_shorts %}
+<div class="earnings-shorts" aria-label="YouTube Shorts for {{ earnings_quarter }}">
+  <p class="earnings-shorts-label">Short takes <span>{{ earnings_quarter }}</span></p>
+  {% for short in earnings_shorts %}
+  <a class="earnings-short-link" href="{{ short.youtube_url }}" target="_blank" rel="noopener noreferrer">
+    <img src="{{ short.thumbnail_url }}" alt="" width="64" height="96" loading="lazy" decoding="async">
+    <span class="earnings-short-copy">
+      <span class="earnings-short-title">{{ short.title }}</span>
+      {% if short.published_at %}
+      <time datetime="{{ short.published_at }}">{{ short.published_at[:10] }}</time>
+      {% endif %}
+      <span class="earnings-short-action">Watch Short on YouTube <span aria-hidden="true">&nearr;</span></span>
+    </span>
+  </a>
+  {% endfor %}
+</div>
+{% endif %}

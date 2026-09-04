@@ -34,6 +34,17 @@
     .primary-video-frame { width:100%; aspect-ratio:16/9; background:#020617; }
     .primary-video-frame iframe { display:block; width:100%; height:100%; border:0; }
     .primary-video-meta { padding:18px; border-top:1px solid #1e293b; background:#0f172a; }
+    .earnings-shorts { margin-top:20px; padding-top:16px; border-top:1px solid #334155; }
+    .earnings-shorts-label { margin:0 0 12px; color:#fda4af; font-size:12px; font-weight:800; }
+    .earnings-shorts-label > span { margin-left:8px; color:#94a3b8; font-weight:500; }
+    .earnings-short-link { display:flex; gap:14px; align-items:center; padding:8px 0; color:inherit; text-decoration:none; }
+    .earnings-short-link img { flex:0 0 64px; width:64px; height:96px; object-fit:cover; border-radius:6px; background:#020617; }
+    .earnings-short-copy { min-width:0; display:grid; gap:6px; font-size:12px; }
+    .earnings-short-title { color:#f8fafc; font-size:14px; font-weight:650; line-height:1.5; overflow-wrap:anywhere; }
+    .earnings-short-copy time { color:#94a3b8; }
+    .earnings-short-action { color:#fda4af; font-weight:700; }
+    .earnings-short-link:hover .earnings-short-action { color:#fff; text-decoration:underline; }
+    .earnings-short-link:focus-visible { outline:2px solid #fda4af; outline-offset:4px; border-radius:4px; }
     .range-btn {
       padding:8px 12px; border-radius:10px; border:1px solid #334155; background:transparent;
       color:#cbd5e1; font-size:12px; font-weight:700; cursor:pointer; transition:.15s;
@@ -219,7 +230,7 @@
             {% endif %}
             <div class="flex flex-wrap gap-2 mt-4">
               {% if show_stock.latest_youtube_url %}
-              <a href="{{ show_stock.latest_youtube_url }}" target="_blank" rel="noopener noreferrer" class="platform-pill" style="background:#dc2626;">Open YouTube</a>
+              <a href="{{ show_stock.latest_youtube_url }}" target="_blank" rel="noopener noreferrer" class="platform-pill" style="background:#dc2626;">Full video on YouTube</a>
               {% endif %}
               {% if show_stock.latest_spotify_url %}
               <a href="{{ show_stock.latest_spotify_url }}" target="_blank" rel="noopener noreferrer" class="platform-pill" style="background:#16a34a;">Open Spotify</a>
@@ -237,6 +248,9 @@
               <a href="{{ podcast_platforms.apple }}" target="_blank" rel="noopener noreferrer" class="platform-pill" style="background:#64748b;">Apple Podcasts</a>
               {% endif %}
             </div>
+            {% with earnings_shorts=show_stock.latest_youtube_shorts, earnings_quarter=show_stock.latest_video_quarter %}
+            {% include "partials/earnings_shorts.html" %}
+            {% endwith %}
           </div>
         </section>
         {% endif %}
@@ -531,6 +545,9 @@
           </div>
           <div class="text-white font-semibold leading-snug">{{ episode.title }}</div>
           <div class="text-sm text-slate-400 leading-relaxed mt-2">Quarterly earnings-analysis entry for {{ show_stock.company }}. Use the links on the right to open the video or podcast episode.</div>
+          {% with earnings_shorts=episode.youtube_shorts, earnings_quarter=episode.quarter %}
+          {% include "partials/earnings_shorts.html" %}
+          {% endwith %}
         </div>
         <div class="flex flex-wrap lg:justify-end gap-2">
           {% if episode.youtube_url %}
