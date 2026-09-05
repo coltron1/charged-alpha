@@ -10,6 +10,240 @@
   },
   "episodes": [
     {
+      "ticker": "SWBI",
+      "company": "Smith & Wesson Brands, Inc.",
+      "sector": "Industrials",
+      "quarter": "Q1 FY2027",
+      "episode_number": "",
+      "title": "SWBI Stock: The 32% Quarter Its Own Guidance Says Will Not Repeat | Q1 FY2027",
+      "published_at": "2026-09-04T14:30:00+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=LfiNpmOH29o",
+      "spotify_url": "https://open.spotify.com/episode/3BSCr0FVZAljNqpSqphoG3",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/swbi-stock-the-32-quarter-its-own-guidance-says-will-not-repeat-q1-fy2027/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "DOCU",
+      "company": "DocuSign, Inc.",
+      "sector": "Technology",
+      "quarter": "Q2 FY2027",
+      "episode_number": "",
+      "title": "DOCU Stock: The Tax Bill That Ate The Quarter | Docusign Q2 FY2027",
+      "published_at": "2026-09-04T12:12:36+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=2KQ8OXPfWGA",
+      "spotify_url": "https://open.spotify.com/episode/4GjVF3dtlAhSDnBbGWEbtG",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/docu-stock-the-tax-bill-that-ate-the-quarter-docusign-q2-fy2027/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "GWRE",
+      "company": "Guidewire Software, Inc.",
+      "sector": "Technology",
+      "quarter": "Q4 FY2026",
+      "episode_number": "",
+      "title": "GWRE Stock: Guidewire Q4 FY2026 Earnings — A Beat, Then a 15% Drop",
+      "published_at": "2026-09-04T11:09:25+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=NdU_8rSTMDs",
+      "spotify_url": "https://open.spotify.com/episode/2eR9ItBh8uUmFZa9Do3Ms4",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/gwre-stock-guidewire-q4-fy2026-earnings-%e2%80%94-a-beat-then-a-15-drop/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "EGAN",
+      "company": "eGain Corporation",
+      "sector": "Technology",
+      "quarter": "Q4 FY2026",
+      "episode_number": "",
+      "title": "EGAN Stock: Up 3%, And Four Sequential Declines | eGain Q4 FY2026",
+      "published_at": "2026-09-04T11:04:35+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=SWuqVvktJms",
+      "spotify_url": "https://open.spotify.com/episode/5AJBlwjBA8xCvSqkNpTVaX",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/egan-stock-up-3-and-four-sequential-declines-egain-q4-fy2026/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "ASAN",
+      "company": "Asana, Inc.",
+      "sector": "Technology",
+      "quarter": "Q2 FY2027",
+      "episode_number": "",
+      "title": "ASAN Stock: Asana Beat, Raised Guidance, and Fell 11% (Q2 FY2027)",
+      "published_at": "2026-09-04T10:43:07+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=UPAHXbJR_r0",
+      "spotify_url": "https://open.spotify.com/episode/5JsO3C1z5xHyCNuIBWpEN5",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/asan-stock-asana-beat-raised-guidance-and-fell-11-q2-fy2027/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "MOMO",
+      "company": "Hello Group Inc.",
+      "sector": "Communication Services",
+      "quarter": "Q2 2026",
+      "episode_number": "",
+      "title": "MOMO Stock: Hello Group Now Trades Below Its Own Cash (Q2 2026)",
+      "published_at": "2026-09-04T10:19:10+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=nmZaQ-1zJLc",
+      "spotify_url": "https://open.spotify.com/episode/64DKp0a4JZFKs7S6cgn3MQ",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/momo-stock-hello-group-now-trades-below-its-own-cash-q2-2026/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "ELVR",
+      "company": "Elevra Lithium Limited",
+      "sector": "Basic Materials",
+      "quarter": "FY2026",
+      "episode_number": "",
+      "title": "ELVR Stock: The $44 Million Profit That Was Also A $44 Million Loss | FY2026",
+      "published_at": "2026-09-04T08:06:23+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=vxAO0Dp17cU",
+      "spotify_url": "https://open.spotify.com/episode/6rq6xEglaqVBU4YD0yM6tY",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/elvr-stock-the-44-million-profit-that-was-also-a-44-million-loss-fy2026/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "PATH",
+      "company": "UiPath, Inc.",
+      "sector": "Technology",
+      "quarter": "Q2 FY2027",
+      "episode_number": "",
+      "title": "PATH Stock: It Cut Its Own Dilution In Half. The Stock Fell 8% Anyway Q2 FY2027",
+      "published_at": "2026-09-04T07:04:43+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=MHNoSAzfzoc",
+      "spotify_url": "https://open.spotify.com/episode/3B8I9KHKvia8ui50H68DBu",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/path-stock-it-cut-its-own-dilution-in-half-the-stock-fell-8-anyway-q2-fy2027/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "AMBA",
+      "company": "Ambarella, Inc.",
+      "sector": "Technology",
+      "quarter": "Q2 FY2027",
+      "episode_number": "",
+      "title": "AMBA Stock: The $9 Million Credit That Halved A Loss | Q2 FY2027",
+      "published_at": "2026-09-04T07:04:28+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=RqreUtA1raA",
+      "spotify_url": "https://open.spotify.com/episode/5JUbjwpbHAazyT8q7su6jT",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/amba-stock-the-9-million-credit-that-halved-a-loss-q2-fy2027/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "IOT",
+      "company": "Samsara Inc.",
+      "sector": "Technology",
+      "quarter": "Q2 FY2027",
+      "episode_number": "",
+      "title": "IOT Stock: Samsara’s Best Profit Quarter Came With a Growth Warning (Q2 FY2027)",
+      "published_at": "2026-09-04T06:26:57+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=xeQ1NhEdjVM",
+      "spotify_url": "https://open.spotify.com/episode/3CET9bJjZBkqyCPbUtEVaG",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/iot-stock-samsara-s-best-profit-quarter-came-with-a-growth-warning-q2-fy2027/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "SNOW",
+      "company": "Snowflake Inc.",
+      "sector": "Technology",
+      "quarter": "Q2 FY2027",
+      "episode_number": "",
+      "title": "SNOW Stock: Every Forecast Went Up Except The One That’s Cash Q2 FY2027",
+      "published_at": "2026-09-04T04:56:25+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=jBJ_4T7izzo",
+      "spotify_url": "https://open.spotify.com/episode/2eBjOk0etnNhbrw0PL5X3w",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/snow-stock-every-forecast-went-up-except-the-one-that-s-cash-q2-fy2027/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "AGX",
+      "company": "Argan, Inc.",
+      "sector": "Industrials",
+      "quarter": "Q2 FY2027",
+      "episode_number": "",
+      "title": "AGX Stock: The Billion-Dollar Cash Pile That Is Only Half Real | Q2 FY2027",
+      "published_at": "2026-09-04T04:03:31+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=GZAFX46C6Aw",
+      "spotify_url": "https://open.spotify.com/episode/3T77WMzM6tfRnjztCCpxdC",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/agx-stock-the-billion-dollar-cash-pile-that-is-only-half-real-q2-fy2027/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "CPB",
+      "company": "The Campbell's Company",
+      "sector": "Consumer Defensive",
+      "quarter": "Q4 FY2026",
+      "episode_number": "",
+      "title": "CPB Stock: A Billion In Cash Flow, Debt Went Up Anyway Q4 FY2026",
+      "published_at": "2026-09-04T03:44:28+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=3gYexvg2nYY",
+      "spotify_url": "",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/cpb-stock-a-billion-in-cash-flow-debt-went-up-anyway-q4-fy2026/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
       "ticker": "FIVE",
       "company": "Five Below, Inc.",
       "sector": "Consumer Cyclical",
@@ -33160,6 +33394,256 @@
       "description": "Fast clips that point viewers into full research videos and stock pages.",
       "videos": [
         {
+          "title": "SWBI Stock: Shipments Grew 3.5x Faster Than Demand | Q1 FY2027 #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/XHZJ86uj9Mw",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-09-04T07:29:53-07:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "SWBI",
+            "FY2027"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage.",
+          "earnings_youtube_url": "https://www.youtube.com/watch?v=LfiNpmOH29o",
+          "earnings_match": "stock_period_date"
+        },
+        {
+          "title": "DOCU Stock: 80% More Operating Profit, 23% More Net | Q2 FY2027 #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/XRn2-v-_sAs",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-09-04T05:12:46-07:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "DOCU",
+            "FY2027"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage.",
+          "earnings_youtube_url": "https://www.youtube.com/watch?v=2KQ8OXPfWGA",
+          "earnings_match": "stock_period_date"
+        },
+        {
+          "title": "GWRE Stock: Guidewire Q4 FY2026 Earnings — Best Year Ever, Then a 15% Drop",
+          "youtube_url": "https://www.youtube.com/shorts/V7jKwppB1YU",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-09-04T04:09:25-07:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "GWRE",
+            "FY2026"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage.",
+          "earnings_youtube_url": "https://www.youtube.com/watch?v=NdU_8rSTMDs",
+          "earnings_match": "stock_period_date"
+        },
+        {
+          "title": "EGAN Stock: The 3% Growth Year That Fell Every Quarter | Q4 FY2026 #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/0rPLVEeCkd4",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-09-04T04:09:15-07:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "EGAN",
+            "FY2026"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage.",
+          "earnings_youtube_url": "https://www.youtube.com/watch?v=SWuqVvktJms",
+          "earnings_match": "stock_period_date"
+        },
+        {
+          "title": "ASAN Stock: Asana Q2 FY2027 Earnings — A Beat, A Raise, And An 11% Fall",
+          "youtube_url": "https://www.youtube.com/shorts/oH9Dd3wzb8E",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-09-04T04:05:09-07:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "ASAN",
+            "FY2027"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage.",
+          "earnings_youtube_url": "https://www.youtube.com/watch?v=UPAHXbJR_r0",
+          "earnings_match": "stock_period_date"
+        },
+        {
+          "title": "MOMO Stock: Hello Group Q2 2026 Earnings - Priced Below Its Own Cash",
+          "youtube_url": "https://www.youtube.com/shorts/bMiXeL6Xdn0",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-09-04T03:18:48-07:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "MOMO"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage.",
+          "earnings_youtube_url": "https://www.youtube.com/watch?v=nmZaQ-1zJLc",
+          "earnings_match": "stock_period_date"
+        },
+        {
+          "title": "ELVR Stock: A $44M Profit And A $44M Cash Outflow | FY2026 Earnings #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/zWHSyBjOqgM",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-09-04T01:17:28-07:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "ELVR",
+            "FY2026"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage.",
+          "earnings_youtube_url": "https://www.youtube.com/watch?v=vxAO0Dp17cU",
+          "earnings_match": "stock_period_date"
+        },
+        {
+          "title": "PATH Stock: Profit Is Up 43%, Dilution Is Down 42% - Why Did It Fall 8%? #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/4N6rCrE5E7Q",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-09-04T00:14:32-07:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "PATH"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage.",
+          "earnings_youtube_url": "https://www.youtube.com/watch?v=MHNoSAzfzoc",
+          "earnings_match": "stock_date"
+        },
+        {
+          "title": "AMBA Stock: The Loss That Shrank Because A Project Died | Q2 FY2027 #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/wj3iCRJ7MBY",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-09-04T00:05:27-07:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "AMBA",
+            "FY2027"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage.",
+          "earnings_youtube_url": "https://www.youtube.com/watch?v=RqreUtA1raA",
+          "earnings_match": "stock_period_date"
+        },
+        {
+          "title": "IOT Stock: Samsara Q2 FY2027 Earnings — Best Profit Quarter, Slowest Growth Guide",
+          "youtube_url": "https://www.youtube.com/shorts/t2H1QTsxCH0",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-09-03T23:49:30-07:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "IOT",
+            "FY2027"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage.",
+          "earnings_youtube_url": "https://www.youtube.com/watch?v=xeQ1NhEdjVM",
+          "earnings_match": "stock_period_date"
+        },
+        {
+          "title": "AGX Stock: Only Half That Cash Pile Is Real | Argan Q2 FY2027 #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/q6Y_Cv0AkNQ",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-09-03T22:31:32-07:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "AGX",
+            "FY2027"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage.",
+          "earnings_youtube_url": "https://www.youtube.com/watch?v=GZAFX46C6Aw",
+          "earnings_match": "stock_period_date"
+        },
+        {
+          "title": "CPB Stock: It Cut The Dividend 36% - Did The Debt Improve? #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/EGLKWQsdM1g",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-09-03T22:30:33-07:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "CPB"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
+        },
+        {
+          "title": "FIVE Stock: Five Below's $3.99 EPS Is Really $1.68 | Q2 FY2026",
+          "youtube_url": "https://www.youtube.com/shorts/-oMdi3wXhSY",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-09-03T22:16:50-07:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "FIVE",
+            "FY2026"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage.",
+          "earnings_youtube_url": "https://www.youtube.com/watch?v=18R6NAhH-lw",
+          "earnings_match": "stock_period_date"
+        },
+        {
+          "title": "WOOF Stock: Profit Tripled, Two Thirds From Tax | Petco Q2 FY2026 #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/58EK8L9pcRE",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-09-03T22:10:59-07:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "WOOF",
+            "FY2026"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage.",
+          "earnings_youtube_url": "https://www.youtube.com/watch?v=gZLLCOjNXak",
+          "earnings_match": "stock_period_date"
+        },
+        {
+          "title": "SNOW Stock: Same Cash Guide, Three Times In A Row #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/4V98kCmmhWQ",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-09-03T21:55:49-07:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "SNOW"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage.",
+          "earnings_youtube_url": "https://www.youtube.com/watch?v=jBJ_4T7izzo",
+          "earnings_match": "stock_date"
+        },
+        {
+          "title": "CHPT Stock: ChargePoint Beat, But The Interest Vanished | Q2 FY2027",
+          "youtube_url": "https://www.youtube.com/shorts/tgroGTPilyc",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-09-03T21:31:12-07:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "CHPT",
+            "FY2027"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage.",
+          "earnings_youtube_url": "https://www.youtube.com/watch?v=OmPC7d1oRzI",
+          "earnings_match": "stock_period_date"
+        },
+        {
           "title": "FIVE Stock: Five Below's $3.99 EPS Is Really $1.68 | Q2 FY2026",
           "youtube_url": "https://www.youtube.com/shorts/FGk63uWSuYE",
           "spotify_url": "",
@@ -44165,7 +44649,7 @@
       ]
     }
   ],
-  "last_synced_at": "2026-09-03T21:29:05-05:00",
+  "last_synced_at": "2026-09-04T21:04:55-05:00",
   "stock_metadata": {
     "A": {
       "company": "Agilent Technologies, Inc.",
@@ -44316,7 +44800,7 @@
       "sector": "Technology"
     },
     "AIG": {
-      "company": "American International Group, I",
+      "company": "American International Group, Inc.",
       "sector": "Financial Services"
     },
     "AIP": {
@@ -44552,7 +45036,7 @@
       "sector": "Consumer Cyclical"
     },
     "ASR": {
-      "company": "Grupo Aeroportuario del Sureste",
+      "company": "Grupo Aeroportuario del Sureste, S. A. B. de C. V.",
       "sector": "Industrials"
     },
     "ASX": {
@@ -44652,7 +45136,7 @@
       "sector": "Financial Services"
     },
     "BAH": {
-      "company": "Booz Allen Hamilton Holding Cor",
+      "company": "Booz Allen Hamilton Holding Corporation",
       "sector": "Industrials"
     },
     "BAM": {
@@ -44703,14 +45187,14 @@
       "company": "KE Holdings Inc.",
       "sector": "Real Estate"
     },
+    "BEN": {
+      "company": "Franklin Resources, Inc.",
+      "sector": "Financial Services"
+    },
     "BF.B": {
       "company": "Brown-Forman Corporation",
       "sector": "Consumer Defensive",
       "yf_symbol": "BF-B"
-    },
-    "BEN": {
-      "company": "Franklin Resources, Inc.",
-      "sector": "Financial Services"
     },
     "BFLY": {
       "company": "Butterfly Network, Inc.",
@@ -44737,7 +45221,7 @@
       "sector": "Communication Services"
     },
     "BIP": {
-      "company": "Brookfield Infrastructure Partn",
+      "company": "Brookfield Infrastructure Partners L.P.",
       "sector": "Utilities"
     },
     "BIRK": {
@@ -45121,7 +45605,7 @@
       "sector": "Industrials"
     },
     "CNI": {
-      "company": "Canadian National Railway Compa",
+      "company": "Canadian National Railway Company",
       "sector": "Industrials"
     },
     "CNM": {
@@ -45229,7 +45713,7 @@
       "sector": "Basic Materials"
     },
     "CRL": {
-      "company": "Charles River Laboratories Inte",
+      "company": "Charles River Laboratories International, Inc.",
       "sector": "Healthcare"
     },
     "CRM": {
@@ -45241,7 +45725,7 @@
       "sector": "Technology"
     },
     "CRS": {
-      "company": "Carpenter Technology Corporatio",
+      "company": "Carpenter Technology Corporation",
       "sector": "Industrials"
     },
     "CRUS": {
@@ -45389,8 +45873,8 @@
       "sector": "Healthcare"
     },
     "DIS": {
-      "company": "Walt Disney Co.",
-      "sector": "Technology"
+      "company": "The Walt Disney Company",
+      "sector": "Communication Services"
     },
     "DKNG": {
       "company": "DraftKings Inc.",
@@ -45528,6 +46012,10 @@
       "company": "Everest Group, Ltd.",
       "sector": "Financial Services"
     },
+    "EGAN": {
+      "company": "eGain Corporation",
+      "sector": "Technology"
+    },
     "EGHT": {
       "company": "8x8, Inc.",
       "sector": "Technology"
@@ -45541,7 +46029,7 @@
       "sector": "Utilities"
     },
     "EL": {
-      "company": "Estee Lauder Companies, Inc. (T",
+      "company": "The Estée Lauder Companies Inc.",
       "sector": "Consumer Defensive"
     },
     "ELAN": {
@@ -45555,6 +46043,10 @@
     "ELV": {
       "company": "Elevance Health Inc",
       "sector": "Healthcare"
+    },
+    "ELVR": {
+      "company": "Elevra Lithium Limited",
+      "sector": "Basic Materials"
     },
     "EMA": {
       "company": "Emera Incorporated",
@@ -45681,7 +46173,7 @@
       "sector": "Consumer Cyclical"
     },
     "FAF": {
-      "company": "First American Corporation (New",
+      "company": "First American Financial Corporation",
       "sector": "Financial Services"
     },
     "FANG": {
@@ -46033,7 +46525,7 @@
       "sector": "Consumer Cyclical"
     },
     "HE": {
-      "company": "Hawaiian Electric Industries, I",
+      "company": "Hawaiian Electric Industries, Inc.",
       "sector": "Utilities"
     },
     "HEI": {
@@ -46049,7 +46541,7 @@
       "sector": "Financial Services"
     },
     "HII": {
-      "company": "Huntington Ingalls Industries, ",
+      "company": "Huntington Ingalls Industries, Inc.",
       "sector": "Industrials"
     },
     "HIMS": {
@@ -46314,7 +46806,7 @@
     },
     "JCI": {
       "sector": "Industrials",
-      "company": "Johnson Controls International "
+      "company": "Johnson Controls International plc"
     },
     "JD": {
       "company": "JD.com, Inc.",
@@ -46817,7 +47309,7 @@
       "sector": "Technology"
     },
     "MSM": {
-      "company": "MSC Industrial Direct Company, ",
+      "company": "MSC Industrial Direct Co., Inc.",
       "sector": "Industrials"
     },
     "MTB": {
@@ -46825,7 +47317,7 @@
       "sector": "Financial Services"
     },
     "MTD": {
-      "company": "Mettler-Toledo International, I",
+      "company": "Mettler-Toledo International Inc.",
       "sector": "Healthcare"
     },
     "MTLS": {
@@ -47806,7 +48298,7 @@
       "sector": "Healthcare"
     },
     "SSD": {
-      "company": "Simpson Manufacturing Company, ",
+      "company": "Simpson Manufacturing Co., Inc.",
       "sector": "Basic Materials"
     },
     "SSL": {
@@ -47873,6 +48365,10 @@
       "company": "Smurfit Westrock Plc",
       "sector": "Consumer Cyclical"
     },
+    "SWBI": {
+      "company": "Smith & Wesson Brands, Inc.",
+      "sector": "Industrials"
+    },
     "SWK": {
       "company": "Stanley Black & Decker, Inc.",
       "sector": "Industrials"
@@ -47938,7 +48434,7 @@
       "sector": "Industrials"
     },
     "TDY": {
-      "company": "Teledyne Technologies Incorpora",
+      "company": "Teledyne Technologies Incorporated",
       "sector": "Technology"
     },
     "TEAM": {
@@ -48343,7 +48839,7 @@
       "sector": "Consumer Cyclical"
     },
     "WAB": {
-      "company": "Westinghouse Air Brake Technolo",
+      "company": "Westinghouse Air Brake Technologies Corporation",
       "sector": "Industrials"
     },
     "WAL": {
