@@ -10,6 +10,78 @@
   },
   "episodes": [
     {
+      "ticker": "MTRX",
+      "company": "Matrix Service Company",
+      "sector": "Industrials",
+      "quarter": "Q4 FY2026",
+      "episode_number": "",
+      "title": "MTRX Stock: Matrix Service Q4 FY2026 Earnings -- Profitable Again, Book-to-Bill Just 0.7x",
+      "published_at": "2026-09-05T13:42:20+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=IB7hjpY0gcg",
+      "spotify_url": "https://open.spotify.com/episode/4Vooi7qzxSPUeQwiqT5Rz9",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/mtrx-stock-matrix-service-q4-fy2026-earnings-profitable-again-book-to-bill-just-07x-1788615741/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "AOUT",
+      "company": "American Outdoor Brands, Inc.",
+      "sector": "Consumer Cyclical",
+      "quarter": "Q1 FY2027",
+      "episode_number": "",
+      "title": "American Outdoor Brands (AOUT) Jumped 44.66% — But Organic Growth Was Only 4.3%",
+      "published_at": "2026-09-05T05:16:45+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=lyfJviTvzL4",
+      "spotify_url": "https://open.spotify.com/episode/0f5Lk2H3zdljWK19nj9ev0",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/american-outdoor-brands-aout-jumped-4466-%e2%80%94-but-organic-growth-was-only-43/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "GASS",
+      "company": "StealthGas Inc.",
+      "sector": "Industrials",
+      "quarter": "Q2 2026",
+      "episode_number": "",
+      "title": "GASS Stock: StealthGas Trades At Half Its Own Book Value (Q2 2026)",
+      "published_at": "2026-09-05T04:35:43+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=S47lTyiRa0Y",
+      "spotify_url": "https://open.spotify.com/episode/2FUKjeg2lKi8yGggt505h5",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/gass-stock-stealthgas-trades-at-half-its-own-book-value-q2-2026/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "REX",
+      "company": "REX American Resources Corporation",
+      "sector": "Basic Materials",
+      "quarter": "Q2 2026",
+      "episode_number": "",
+      "title": "REX Stock Q2 2026: REX American Resources Earnings - Record EPS, Zero Extra Gallons Sold",
+      "published_at": "2026-09-05T03:54:38+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=9ANMkz1AeQo",
+      "spotify_url": "https://open.spotify.com/episode/2Vsm3odiOiV12MB4O6JZ8Y",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/rex-stock-q2-2026-rex-american-resources-earnings-record-eps-zero-extra-gallons-sold/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
       "ticker": "SWBI",
       "company": "Smith & Wesson Brands, Inc.",
       "sector": "Industrials",
@@ -33394,6 +33466,66 @@
       "description": "Fast clips that point viewers into full research videos and stock pages.",
       "videos": [
         {
+          "title": "MTRX: Profitable Again, But Book-to-Bill Is Only 0.7x",
+          "youtube_url": "https://www.youtube.com/shorts/a3kLjK1ipME",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-09-05T13:43:44+00:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "MTRX"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage.",
+          "earnings_youtube_url": "https://www.youtube.com/watch?v=IB7hjpY0gcg",
+          "earnings_match": "stock_date"
+        },
+        {
+          "title": "GASS Stock: StealthGas Q2 2026 Earnings - Trading At Half Book Value",
+          "youtube_url": "https://www.youtube.com/shorts/epUOWit9L7w",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-09-05T13:42:19+00:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "GASS"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage.",
+          "earnings_youtube_url": "https://www.youtube.com/watch?v=S47lTyiRa0Y",
+          "earnings_match": "stock_period_date"
+        },
+        {
+          "title": "REX Stock: REX American Resources Q2 2026 Earnings - Record EPS, Same Gallons Sold",
+          "youtube_url": "https://www.youtube.com/shorts/AOk_1kuvUaU",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-09-05T13:41:29+00:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "REX"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage.",
+          "earnings_youtube_url": "https://www.youtube.com/watch?v=9ANMkz1AeQo",
+          "earnings_match": "stock_period_date"
+        },
+        {
+          "title": "AOUT Jumped 44.66% — But Organic Growth Was Only 4.3%",
+          "youtube_url": "https://www.youtube.com/shorts/pi4mOy5MDFc",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-09-05T13:40:27+00:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "AOUT"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage.",
+          "earnings_youtube_url": "https://www.youtube.com/watch?v=lyfJviTvzL4",
+          "earnings_match": "stock_date"
+        },
+        {
           "title": "SWBI Stock: Shipments Grew 3.5x Faster Than Demand | Q1 FY2027 #Shorts",
           "youtube_url": "https://www.youtube.com/shorts/XHZJ86uj9Mw",
           "spotify_url": "",
@@ -44649,7 +44781,7 @@
       ]
     }
   ],
-  "last_synced_at": "2026-09-04T21:04:55-05:00",
+  "last_synced_at": "2026-09-05T21:03:40-05:00",
   "stock_metadata": {
     "A": {
       "company": "Agilent Technologies, Inc.",
@@ -44958,6 +45090,10 @@
     "AOS": {
       "company": "A. O. Smith Corporation",
       "sector": "Industrials"
+    },
+    "AOUT": {
+      "company": "American Outdoor Brands, Inc.",
+      "sector": "Consumer Cyclical"
     },
     "APD": {
       "company": "Air Products & Chemicals",
@@ -46336,6 +46472,10 @@
       "company": "Gap, Inc. (The)",
       "sector": "Consumer Cyclical"
     },
+    "GASS": {
+      "company": "StealthGas Inc.",
+      "sector": "Industrials"
+    },
     "GBX": {
       "company": "The Greenbrier Companies, Inc.",
       "sector": "Industrials"
@@ -47327,6 +47467,10 @@
     "MTN": {
       "company": "Vail Resorts, Inc.",
       "sector": "Consumer Cyclical"
+    },
+    "MTRX": {
+      "company": "Matrix Service Company",
+      "sector": "Industrials"
     },
     "MTSI": {
       "company": "MACOM Technology Solutions Holdings, Inc.",
