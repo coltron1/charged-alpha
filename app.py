@@ -3294,7 +3294,8 @@ def research_packet_page(slug):
         abort(503)
     response = Response(content, mimetype="text/html")
     response.headers["Link"] = f'<{packet["canonical_url"]}>; rel="canonical"'
-    response.headers["Cache-Control"] = "public, max-age=300"
+    # Cloudflare otherwise injects its analytics beacon into finalized HTML.
+    response.headers["Cache-Control"] = "public, max-age=300, no-transform"
     response.set_etag(packet["sha256"])
     return response.make_conditional(request)
 

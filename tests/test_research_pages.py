@@ -42,6 +42,7 @@ class ResearchPageTests(unittest.TestCase):
             self.assertEqual(response.status_code, 200)
             self.assertEqual(response.data, source)
             self.assertEqual(response.headers["Link"], '<' + row["canonical_url"] + '>; rel="canonical"')
+            self.assertIn("no-transform", response.headers["Cache-Control"])
             self.assertEqual(conditional.status_code, 304)
 
     def test_unknown_or_unverified_document_is_never_served(self):
