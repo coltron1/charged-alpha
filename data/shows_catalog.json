@@ -10,6 +10,42 @@
   },
   "episodes": [
     {
+      "ticker": "BZUN",
+      "company": "Baozun Inc.",
+      "sector": "Consumer Cyclical",
+      "quarter": "Q2 2026",
+      "episode_number": "",
+      "title": "Baozun (BZUN): The Market Prices Its Business at Less Than Zero",
+      "published_at": "2026-09-06T04:34:29+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=PoF7tBFvJy4",
+      "spotify_url": "https://open.spotify.com/episode/2Oe3nA9MJ4Jza8xyQOvVQs",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/baozun-bzun-the-market-prices-its-business-at-less-than-zero/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "BBY",
+      "company": "Best Buy Co., Inc.",
+      "sector": "Consumer Cyclical",
+      "quarter": "Q2 FY2027",
+      "episode_number": "",
+      "title": "BBY Stock: NEUTRAL Call — The Beat Was A Tariff Refund, Q2 FY2027",
+      "published_at": "2026-09-06T04:31:42+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=d5oFi4TU6gg",
+      "spotify_url": "https://open.spotify.com/episode/3vgPbr4TcfgpUjNGuvmhOo",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/bby-stock-neutral-call-%e2%80%94-the-beat-was-a-tariff-refund-q2-fy2027/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
       "ticker": "MTRX",
       "company": "Matrix Service Company",
       "sector": "Industrials",
@@ -33466,6 +33502,36 @@
       "description": "Fast clips that point viewers into full research videos and stock pages.",
       "videos": [
         {
+          "title": "BZUN Stock: Baozun Q2 2026 Earnings — Priced Below Its Own Cash #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/go-qI8cA6AQ",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-09-06T04:34:25+00:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "BZUN"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage.",
+          "earnings_youtube_url": "https://www.youtube.com/watch?v=PoF7tBFvJy4",
+          "earnings_match": "stock_period_date"
+        },
+        {
+          "title": "BBY Stock: Best Buy Q2 2026 Earnings — The Beat Was A Tariff Refund",
+          "youtube_url": "https://www.youtube.com/shorts/w1oaHXjYf-Q",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-09-06T04:31:55+00:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "BBY"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage.",
+          "earnings_youtube_url": "https://www.youtube.com/watch?v=d5oFi4TU6gg",
+          "earnings_match": "verified_description"
+        },
+        {
           "title": "MTRX: Profitable Again, But Book-to-Bill Is Only 0.7x",
           "youtube_url": "https://www.youtube.com/shorts/a3kLjK1ipME",
           "spotify_url": "",
@@ -44781,7 +44847,7 @@
       ]
     }
   ],
-  "last_synced_at": "2026-09-05T21:03:40-05:00",
+  "last_synced_at": "2026-09-06T21:42:57-05:00",
   "stock_metadata": {
     "A": {
       "company": "Agilent Technologies, Inc.",
@@ -45499,6 +45565,10 @@
     "BYND": {
       "sector": "Consumer Defensive",
       "company": "Beyond Meat, Inc."
+    },
+    "BZUN": {
+      "company": "Baozun Inc.",
+      "sector": "Consumer Cyclical"
     },
     "C": {
       "company": "Citigroup Inc.",
