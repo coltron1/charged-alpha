@@ -79,6 +79,7 @@ from auth import (
     set_email_updates_address,
 )
 from chart_storage import save_chart_state, load_chart_state, list_user_charts, delete_chart_state
+from research_packets import load_packets, packet_html_path
 
 # ── Import backend modules ──────────────────────────────────────────────────
 from stock_screener import (screen_stocks, get_stock_detail,
@@ -99,6 +100,7 @@ app = Flask(__name__)
 app.wsgi_app = ProxyFix(app.wsgi_app, x_for=1, x_proto=1, x_host=1, x_port=1)
 BASE_DIR = Path(__file__).resolve().parent
 SHOWS_CATALOG_PATH = BASE_DIR / "data" / "shows_catalog.json"
+RESEARCH_PACKETS_PATH = BASE_DIR / "data" / "research_packets.json"
 STUDIO_CATALOG_PATH = BASE_DIR / "data" / "studio_apps.json"
 STUDIO_APP_DISPLAY_ORDER = (
     "plotava",
@@ -1319,6 +1321,52 @@ def load_shows_catalog():
         return json.load(f)
 
 
+def _episodes_with_research_packets(episodes, packets):
+    """Make verified packet stocks searchable even before the public-feed sync."""
+    merged = list(episodes or [])
+    known_ids = {_youtube_video_id(ep.get("youtube_url")) for ep in merged}
+    for packet in packets:
+        primary_id = packet.get("primary_youtube_long")
+        if not primary_id or primary_id in known_ids:
+            continue
+        merged.append({
+            "ticker": packet["ticker"], "company": packet["company"],
+            "quarter": packet["period"], "title": packet["title"],
+            "youtube_url": f"https://www.youtube.com/watch?v={primary_id}",
+            # A packet's publication date is not the video's publication date.
+            "published_at": "",
+        })
+        known_ids.add(primary_id)
+    return merged
+
+
+def _stock_research_context(stock, packets):
+    selected = [dict(packet) for packet in packets if _show_slug(packet["ticker"]) == stock["slug"]]
+    selected.sort(key=lambda packet: (packet["year"], packet["quarter"], packet["period"]), reverse=True)
+    groups = {}
+    by_video = {}
+    for packet in selected:
+        if not packet.get("youtube_studio"):
+            for episode in stock["episodes"]:
+                if (packet.get("primary_youtube_long") and
+                        _youtube_video_id(episode.get("studio_primary_youtube_url")) == packet["primary_youtube_long"]):
+                    packet["youtube_studio"] = _youtube_video_id(episode.get("youtube_url"))
+                    break
+        year_label = ("FY" if packet["fiscal"] else "") + str(packet["year"])
+        groups.setdefault(year_label, {"label": year_label, "packets": []})["packets"].append(packet)
+        for field in ("primary_youtube_long", "youtube_studio"):
+            if packet.get(field):
+                by_video[packet[field]] = packet
+    page_stock = dict(stock)
+    page_stock["episodes"] = []
+    for episode in stock["episodes"]:
+        item = dict(episode)
+        item["research_packet"] = (by_video.get(_youtube_video_id(episode.get("youtube_url"))) or
+                                   by_video.get(_youtube_video_id(episode.get("studio_primary_youtube_url"))))
+        page_stock["episodes"].append(item)
+    return page_stock, list(groups.values()), selected
+
+
 def _show_slug(ticker):
     return (ticker or "").upper().replace(".", "-").replace("/", "-").strip()
 
@@ -1492,6 +1540,7 @@ def build_show_library(episodes, stock_metadata=None, video_sections=None):
                 "has_episode": has_any_link,
                 "has_any_link": has_any_link,
                 "youtube_url": ep.get("youtube_url") or "",
+                "studio_primary_youtube_url": ep.get("studio_primary_youtube_url") or "",
                 "youtube_shorts": shorts_by_episode.get(_youtube_video_id(ep.get("youtube_url")), []),
                 "spotify_url": ep.get("spotify_url") or "",
                 "apple_url": ep.get("apple_url") or "",
@@ -2401,8 +2450,9 @@ def _shows_context():
         return cached
 
     shows_data = load_shows_catalog()
+    research_packets = load_packets(RESEARCH_PACKETS_PATH)
     show_library = build_show_library(
-        shows_data.get("episodes", []),
+        _episodes_with_research_packets(shows_data.get("episodes", []), research_packets),
         shows_data.get("stock_metadata", {}),
         shows_data.get("video_sections", []),
     )
@@ -2410,6 +2460,7 @@ def _shows_context():
         "shows_data": shows_data,
         "show_library": show_library,
         "show_client_stocks": build_show_client_stocks(show_library.get("stocks", [])),
+        "research_packets": research_packets,
     }
     _shows_cache.set("shows_context", context)
     return context
@@ -2549,8 +2600,9 @@ def google_site_verification():
 @app.route("/sitemap.xml")
 def sitemap_xml():
     shows_data = load_shows_catalog()
+    research_packets = load_packets(RESEARCH_PACKETS_PATH)
     show_library = build_show_library(
-        shows_data.get("episodes", []),
+        _episodes_with_research_packets(shows_data.get("episodes", []), research_packets),
         shows_data.get("stock_metadata", {}),
     )
     latest_catalog_date = _date_for_sitemap(_latest_catalog_timestamp(shows_data))
@@ -2579,6 +2631,9 @@ def sitemap_xml():
         loc = f"{SITE_URL}/shows/{stock['slug']}"
         lastmod = _date_for_sitemap(stock.get("latest_published_at"))
         url_entries.append(url_entry(loc, lastmod))
+
+    for packet in research_packets:
+        url_entries.append(url_entry(packet["canonical_url"], _date_for_sitemap(packet.get("source_published"))))
 
     for path in PUBLIC_SITEMAP_PATHS:
         if path in ("/", "/shows") or _is_noindex_path(path):
@@ -3169,6 +3224,9 @@ def show_stock_detail_page(ticker_slug):
         stock_detail.setdefault(key, None)
 
     page_show_stock = _hydrate_show_stock_identity(show_stock, stock_detail)
+    page_show_stock, research_years, research_packets = _stock_research_context(
+        page_show_stock, context.get("research_packets", [])
+    )
     competitor_stocks = _pick_competitor_stocks(page_show_stock, show_library["stocks"])
     if competitor_stocks:
         with ThreadPoolExecutor(max_workers=min(2, len(competitor_stocks))) as ex:
@@ -3189,7 +3247,7 @@ def show_stock_detail_page(ticker_slug):
     seo_title = f"{page_show_stock['company']} ({page_show_stock['ticker']}) Stock Library — Charged Alpha"
     seo_description = (
         f"Track {page_show_stock['company']} ({page_show_stock['ticker']}) across Charged Alpha earnings episodes, "
-        "with YouTube, podcast, stock metrics, chart context, and competitor comparisons."
+        "with quarterly research packets, YouTube, podcasts, stock metrics, charts, and competitor comparisons."
     )
     seo_meta = {
         "title": seo_title,
@@ -3210,11 +3268,35 @@ def show_stock_detail_page(ticker_slug):
         stock_detail=stock_detail,
         competitor_analysis=competitor_analysis,
         related_videos=related_videos,
+        research_years=research_years,
+        research_packets=research_packets,
         chart_symbol=page_show_stock["yf_symbol"],
         podcast_platforms=shows_data.get("platform_links", {}),
         seo_meta=seo_meta,
         structured_data=_stock_page_structured_data(page_show_stock, seo_meta),
     )
+
+
+@app.route("/research/<slug>")
+def research_packet_page(slug):
+    packet = next((item for item in load_packets(RESEARCH_PACKETS_PATH) if item["slug"] == slug), None)
+    if packet is None:
+        abort(404)
+    # Serve the producer's exact finalized document, including its own metadata.
+    # The HTTP canonical link adds indexing context without rewriting any bytes.
+    try:
+        path = packet_html_path(packet, RESEARCH_PACKETS_PATH)
+        content = path.read_bytes()
+        if hashlib.sha256(content).hexdigest() != packet["sha256"]:
+            raise ValueError("Research packet changed while reading")
+    except (OSError, ValueError):
+        app.logger.exception("Research packet integrity check failed for %s", slug)
+        abort(503)
+    response = Response(content, mimetype="text/html")
+    response.headers["Link"] = f'<{packet["canonical_url"]}>; rel="canonical"'
+    response.headers["Cache-Control"] = "public, max-age=300"
+    response.set_etag(packet["sha256"])
+    return response.make_conditional(request)
 
 
 # ── Market pulse API (homepage ticker) ────────────────────────────────────

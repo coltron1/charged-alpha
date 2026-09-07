@@ -1,6 +1,7 @@
 import copy
 import contextlib
 import io
+import hashlib
 import json
 import tempfile
 import unittest
@@ -8,7 +9,8 @@ from argparse import Namespace
 from pathlib import Path
 from unittest.mock import patch
 
-from scripts.earnings_shorts import build_earnings_index, link_earnings_shorts, match_short, youtube_id
+from scripts.earnings_shorts import (bind_studio_editions, build_earnings_index, link_earnings_shorts,
+    load_episode_link_evidence, match_short, validate_link_record, youtube_id)
 from scripts.sync_shows_catalog import VideoRow, newest_unlinked, recover_earnings_from_explainers, sync_catalog
 
 
@@ -155,6 +157,101 @@ class EarningsShortMatchingTests(unittest.TestCase):
             self.assertEqual(first["earnings_shorts"]["newly_linked"], 1)
             self.assertFalse(second["catalog_changed"])
             self.assertEqual(path.read_text(), contents)
+
+
+class VerifiedEpisodeLinkTests(unittest.TestCase):
+    def record(self, source, target, relation="short_earnings", description=None):
+        description = description or (("Watch the original presentation: " if relation == "studio_primary" else "FULL BREAKDOWN: ") + target["youtube_url"])
+        vid = youtube_id(source["youtube_url"])
+        return {vid: {"source_video_id": vid, "source_url": source["youtube_url"],
+            "channel_id": "UC4ZDZpC0OvoN4cCGoUSofuA", "title": source["title"],
+            "description": description, "description_sha256": hashlib.sha256(description.encode()).hexdigest(),
+            "fetched_at": "2026-09-07T18:00:00Z", "target_video_id": youtube_id(target["youtube_url"]), "relation": relation}}
+
+    def catalog(self, clip=None, episodes=None):
+        return {"episodes": episodes or [episode()], "video_sections": [{"title": "Shorts and Clips", "videos": [clip or short()]}]}
+
+    def test_verified_description_resolves_period_conflict_and_remains_idempotent(self):
+        clip=short(title="GTLB Stock: Q1 FY2027")
+        catalog=self.catalog(clip);original=copy.deepcopy(catalog["episodes"]);evidence=self.record(clip,episode())
+        self.assertEqual(link_earnings_shorts(catalog,evidence)["newly_linked"],1)
+        self.assertEqual(clip["earnings_match"],"verified_description_link")
+        before=copy.deepcopy(catalog)
+        self.assertEqual(link_earnings_shorts(catalog,evidence)["updated"],0)
+        self.assertEqual(catalog,before);self.assertEqual(catalog["episodes"],original)
+
+    def test_description_can_identify_unknown_public_title_without_fabricating_title(self):
+        clip=short(title="unknown");catalog=self.catalog(clip)
+        link_earnings_shorts(catalog,self.record(clip,episode()))
+        self.assertEqual(clip["title"],"unknown")
+        self.assertEqual(clip["earnings_youtube_url"],episode()["youtube_url"])
+
+    def test_evidence_identity_description_and_channel_must_match(self):
+        clip=short();record=self.record(clip,episode());vid=youtube_id(clip["youtube_url"])
+        for field,value in [("channel_id","another"),("source_video_id","OtherId1234"),("description","changed"),
+                            ("target_video_id","OtherId1234"),("fetched_at","bad")]:
+            bad=copy.deepcopy(record);bad[vid][field]=value
+            with self.subTest(field=field),self.assertRaises(ValueError):validate_link_record(vid,bad[vid])
+        clip["title"]="GTLB Stock: Q1 FY2027";catalog=self.catalog(clip)
+        self.assertEqual(link_earnings_shorts(catalog,record)["unmatched"],1)
+
+    def test_explicit_description_does_not_turn_general_research_into_earnings(self):
+        target=episode(quarter="Current",title="GTLB Stock: AI research")
+        clip=short(title="unknown");catalog=self.catalog(clip,[target])
+        self.assertEqual(link_earnings_shorts(catalog,self.record(clip,target))["unmatched"],1)
+        self.assertNotIn("earnings_youtube_url",clip)
+
+    def test_multiple_cataloged_targets_are_not_guessed(self):
+        clip=short(title="GTLB Stock: Q1 FY2027");second=episode(youtube_url="https://youtu.be/OtherId1234")
+        desc="FULL BREAKDOWN: "+episode()["youtube_url"]+"\nAnother report: "+second["youtube_url"]
+        catalog=self.catalog(clip,[episode(),second])
+        self.assertEqual(link_earnings_shorts(catalog,self.record(clip,episode(),description=desc))["unmatched"],1)
+        self.assertNotIn("earnings_youtube_url",clip)
+
+    def test_explicit_target_waits_for_exact_long_id_to_arrive(self):
+        clip=short(title="unknown");catalog=self.catalog(clip);catalog["episodes"]=[];evidence=self.record(clip,episode())
+        self.assertEqual(link_earnings_shorts(catalog,evidence)["unmatched"],1)
+        catalog["episodes"].append(episode())
+        self.assertEqual(link_earnings_shorts(catalog,evidence)["newly_linked"],1)
+
+    def test_studio_variant_does_not_replace_or_compete_with_primary(self):
+        primary=episode();studio=episode(youtube_url="https://youtu.be/Studio00001",quarter="Current",
+            title="GTLB Stock: Record results — Animated Studio Edition",published_at="2026-09-03T01:38:00Z",
+            spotify_url="",podbean_url="")
+        catalog=self.catalog(episodes=[studio,primary]);original=copy.deepcopy(primary)
+        evidence=self.record(studio,primary,"studio_primary")
+        summary=bind_studio_editions(catalog,evidence)
+        self.assertEqual(summary["quarter_corrected"],1);self.assertEqual(studio["quarter"],primary["quarter"])
+        self.assertEqual(studio["studio_primary_youtube_url"],primary["youtube_url"])
+        self.assertEqual(studio["youtube_url"],"https://youtu.be/Studio00001")
+        self.assertEqual(primary,original);self.assertEqual(len(catalog["episodes"]),2)
+        link_earnings_shorts(catalog,evidence)
+        self.assertEqual(catalog["video_sections"][0]["videos"][0]["earnings_youtube_url"],primary["youtube_url"])
+        self.assertEqual(bind_studio_editions(catalog,evidence)["quarter_corrected"],0)
+        self.assertEqual(bind_studio_editions(catalog,evidence)["newly_linked"],0)
+
+    def test_studio_quarter_requires_label_exact_id_and_same_ticker(self):
+        studio=episode(youtube_url="https://youtu.be/Studio00001",quarter="Current",title="GTLB — Animated Studio Edition")
+        for target in [episode(ticker="OTHER"),episode(quarter="Current")]:
+            catalog={"episodes":[studio,target]}
+            self.assertEqual(bind_studio_editions(catalog,self.record(studio,target,"studio_primary"))["unverified"],1)
+            self.assertEqual(studio["quarter"],"Current")
+        evidence=self.record(studio,episode(),"studio_primary",description="Other video: "+episode()["youtube_url"])
+        with self.assertRaisesRegex(ValueError,"labelled"):bind_studio_editions({"episodes":[studio,episode()]},evidence)
+
+    def test_sync_loads_durable_evidence_beside_catalog_and_second_run_has_no_diff(self):
+        clip=short(title="GTLB Stock: Q1 FY2027");catalog=self.catalog(clip)
+        with tempfile.TemporaryDirectory() as directory:
+            path=Path(directory)/"catalog.json";path.write_text(json.dumps(catalog))
+            evidence_path=path.parent/"episode_link_evidence.json"
+            evidence_path.write_text(json.dumps({"schema_version":1,"records":self.record(clip,episode())}))
+            original_evidence=evidence_path.read_bytes()
+            args=Namespace(catalog=str(path),youtube_channel="https://youtube.com/@ChargedAlpha",youtube_rss="rss",podbean_feed="podbean",spotify_show="spotify",apple_lookup="apple",scan_all=False,refresh_stock_metadata=False,dry_run=False)
+            with patch("scripts.sync_shows_catalog.run_ytdlp_flat",return_value=[]),patch("scripts.sync_shows_catalog.fetch_text",side_effect=lambda url:{"rss":"<feed/>","podbean":"<rss><channel/></rss>","spotify":"","apple":'{"results": []}'}[url]),contextlib.redirect_stdout(io.StringIO()):
+                first=sync_catalog(args);contents=path.read_bytes();second=sync_catalog(args)
+            self.assertTrue(first["catalog_changed"]);self.assertFalse(second["catalog_changed"])
+            self.assertEqual(path.read_bytes(),contents);self.assertEqual(evidence_path.read_bytes(),original_evidence)
+            self.assertEqual(load_episode_link_evidence(evidence_path),self.record(clip,episode()))
 
 
 if __name__ == "__main__":

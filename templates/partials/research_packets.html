@@ -1,0 +1,86 @@
+{% if research_packets %}
+<section id="quarterly-research" class="px-6 pb-6" aria-labelledby="research-heading">
+  <div class="max-w-7xl mx-auto card overflow-hidden research-archive">
+    <div class="p-6 md:p-8 research-heading">
+      <div>
+        <p class="text-sm font-bold text-cyan-400 uppercase tracking-[.22em] mb-2">Behind the earnings</p>
+        <h2 id="research-heading" class="text-2xl font-bold text-white">Quarterly research for {{ show_stock.ticker }}</h2>
+        <p class="text-sm text-slate-400 mt-2">Full analysis, charts, valuation, and sources for each reporting period.</p>
+      </div>
+      <span class="research-count">{{ research_packets|length }} {{ 'report' if research_packets|length == 1 else 'reports' }}</span>
+    </div>
+    {% for year in research_years %}
+    <details class="research-year"{% if loop.first %} open{% endif %}>
+      <summary>
+        <span class="research-year-label">{{ year.label }}</span>
+        <span class="research-year-count">{{ year.packets|length }} {{ 'report' if year.packets|length == 1 else 'reports' }}</span>
+        <span class="research-chevron" aria-hidden="true">⌄</span>
+      </summary>
+      <div class="research-quarter-grid">
+        {% for packet in year.packets %}
+        <article class="research-quarter" aria-labelledby="research-title-{{ packet.slug }}">
+          <div class="research-period-row">
+            <span class="research-period">{{ packet.period }}</span>
+            {% if packet.slug == research_packets[0].slug %}<span class="research-latest">Latest research</span>{% endif %}
+          </div>
+          <h3 id="research-title-{{ packet.slug }}" class="research-title"><a href="{{ url_for('research_packet_page', slug=packet.slug) }}">{{ packet.title }}</a></h3>
+          <p class="research-description">{{ packet.description }}</p>
+          {% if packet.figures or packet.tables %}
+          <p class="research-includes">{% if packet.figures %}{{ packet.figures }} figures{% endif %}{% if packet.figures and packet.tables %} · {% endif %}{% if packet.tables %}{{ packet.tables }} tables{% endif %}</p>
+          {% endif %}
+          <div class="research-actions">
+            <a class="research-read" href="{{ url_for('research_packet_page', slug=packet.slug) }}">Read research packet <span aria-hidden="true">↗</span></a>
+            <div class="research-episode-links">
+              {% if packet.primary_youtube_long %}<a href="https://www.youtube.com/watch?v={{ packet.primary_youtube_long }}" target="_blank" rel="noopener noreferrer">Watch episode</a>{% endif %}
+              {% if packet.youtube_studio %}<a href="https://www.youtube.com/watch?v={{ packet.youtube_studio }}" target="_blank" rel="noopener noreferrer">Studio edition</a>{% endif %}
+            </div>
+          </div>
+        </article>
+        {% endfor %}
+      </div>
+    </details>
+    {% endfor %}
+  </div>
+</section>
+<style>
+  #quarterly-research { scroll-margin-top: 90px; }
+  .research-archive { border-color: #164e63; background: linear-gradient(130deg, #0b202d, #0f172a 65%); }
+  .research-heading { display:flex; align-items:center; justify-content:space-between; gap:20px; }
+  .research-count { color:#a5f3fc; border:1px solid #155e75; border-radius:999px; padding:7px 12px; font-size:12px; white-space:nowrap; }
+  .research-year { border-top:1px solid #1e3a49; }
+  .research-year summary { display:flex; align-items:center; gap:14px; padding:20px 32px; list-style:none; cursor:pointer; }
+  .research-year summary::-webkit-details-marker { display:none; }
+  .research-year summary:hover { background:rgba(8,145,178,.06); }
+  .research-year summary:focus-visible, .research-quarter a:focus-visible { outline:2px solid #67e8f9; outline-offset:4px; }
+  .research-year-label { font-size:18px; font-weight:800; color:#e2e8f0; }
+  .research-year-count { color:#94a3b8; font-size:12px; }
+  .research-chevron { margin-left:auto; color:#67e8f9; font-size:22px; transition:transform .15s; }
+  .research-year[open] .research-chevron { transform:rotate(180deg); }
+  .research-quarter-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:16px; padding:0 32px 28px; }
+  .research-quarter { display:flex; flex-direction:column; min-width:0; padding:24px; background:rgba(2,6,23,.4); border:1px solid #1e3a49; border-radius:14px; }
+  .research-quarter:only-child { grid-column:1/-1; }
+  .research-period-row { display:flex; align-items:center; flex-wrap:wrap; gap:12px; margin-bottom:14px; }
+  .research-period { color:#a5f3fc; font-size:13px; font-weight:800; letter-spacing:.06em; }
+  .research-latest { color:#6ee7b7; font-size:11px; padding:4px 8px; border-radius:5px; background:rgba(16,185,129,.1); }
+  .research-title { font-size:21px; line-height:1.35; font-weight:800; color:#f8fafc; }
+  .research-title a:hover { color:#67e8f9; }
+  .research-description { color:#94a3b8; line-height:1.7; font-size:14px; margin:12px 0; max-width:85ch; }
+  .research-includes { color:#64748b; font-size:12px; margin-bottom:16px; }
+  .research-actions { display:flex; flex-wrap:wrap; gap:20px; align-items:center; margin-top:auto; padding-top:6px; }
+  .research-read { display:inline-flex; justify-content:space-between; align-items:center; gap:20px; background:#0891b2; color:#fff; padding:12px 16px; font-size:13px; font-weight:800; border-radius:8px; }
+  .research-read:hover { background:#0e7490; }
+  .research-episode-links { display:flex; flex-wrap:wrap; gap:16px; font-size:12px; color:#cbd5e1; }
+  .research-episode-links a { text-decoration:underline; text-underline-offset:4px; text-decoration-color:#475569; }
+  .research-episode-links a:hover { color:#67e8f9; }
+  @media(max-width:640px) {
+    .research-heading { align-items:flex-start; }
+    .research-count { display:none; }
+    .research-year summary { padding:18px 24px; }
+    .research-quarter-grid { grid-template-columns:minmax(0,1fr); padding:0 16px 20px; }
+    .research-quarter { padding:20px; }
+    .research-title { font-size:19px; }
+    .research-actions { align-items:stretch; gap:16px; }
+    .research-read { width:100%; }
+  }
+</style>
+{% endif %}

@@ -26,7 +26,7 @@ PROJECT_ROOT = Path(__file__).resolve().parents[1]
 if str(PROJECT_ROOT) not in sys.path:
     sys.path.insert(0, str(PROJECT_ROOT))
 
-from scripts.earnings_shorts import link_earnings_shorts, youtube_id
+from scripts.earnings_shorts import bind_studio_editions, load_episode_link_evidence, link_earnings_shorts, youtube_id
 
 
 DEFAULT_CATALOG = Path("data/shows_catalog.json")
@@ -865,6 +865,8 @@ def recover_earnings_from_explainers(catalog, titled_podcasts, companies, sector
 def sync_catalog(args: argparse.Namespace) -> dict:
     catalog_path = Path(args.catalog)
     catalog = json.loads(catalog_path.read_text())
+    evidence_path = getattr(args, "episode_link_evidence", None) or catalog_path.parent / "episode_link_evidence.json"
+    link_evidence = load_episode_link_evidence(evidence_path)
     catalog_content_before = json.dumps(
         {key: value for key, value in catalog.items() if key != "last_synced_at"},
         sort_keys=True,
@@ -1014,7 +1016,8 @@ def sync_catalog(args: argparse.Namespace) -> dict:
         apple_items_by_guid,
         titled_apple,
     )
-    earnings_shorts = link_earnings_shorts(catalog)
+    studio_editions = bind_studio_editions(catalog, link_evidence)
+    earnings_shorts = link_earnings_shorts(catalog, link_evidence)
     metadata_summary = {
         "profiles": len(stock_metadata),
         "lookups": new_metadata_summary["lookups"],
@@ -1041,6 +1044,7 @@ def sync_catalog(args: argparse.Namespace) -> dict:
         "explainers": len(new_explainers),
         "shorts": len(new_shorts),
         "earnings_shorts": earnings_shorts,
+        "studio_editions": studio_editions,
         "stock_tickers": [episode["ticker"] for episode in new_episodes],
         "backfilled_links": backfilled_links,
         "metadata": metadata_summary,
@@ -1060,6 +1064,7 @@ def sync_catalog(args: argparse.Namespace) -> dict:
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description="Sync Charged Alpha show catalog links.")
     parser.add_argument("--catalog", default=str(DEFAULT_CATALOG), help="Path to shows_catalog.json.")
+    parser.add_argument("--episode-link-evidence", help="Reviewed public-description evidence JSON; defaults beside catalog to episode_link_evidence.json.")
     parser.add_argument("--youtube-channel", default=DEFAULT_YOUTUBE_CHANNEL)
     parser.add_argument("--youtube-rss", default=DEFAULT_YOUTUBE_RSS)
     parser.add_argument("--podbean-feed", default=DEFAULT_PODBEAN_FEED)

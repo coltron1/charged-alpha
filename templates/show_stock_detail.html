@@ -175,9 +175,12 @@
         </div>
         <h1 class="text-4xl md:text-5xl font-black text-white leading-tight mb-4">{{ show_stock.company }}</h1>
         <p class="text-lg text-slate-400 leading-relaxed max-w-3xl mb-6">
-          Live stock metrics, chart context, a quarter-by-quarter episode archive, and a deeper competitor comparison so this page behaves more like an investor workspace than a flat episode link page.
+          Earnings episodes, quarterly research, live stock metrics, charts, and competitor comparisons in one place.
         </p>
         <div class="flex flex-wrap gap-3">
+          {% if research_packets %}
+          <a href="#quarterly-research" class="platform-pill" style="background:#0e7490;">Quarterly research <span aria-hidden="true">↓</span></a>
+          {% endif %}
           {% if show_stock.latest_youtube_url %}
           <a href="{{ show_stock.latest_youtube_url }}" target="_blank" rel="noopener noreferrer" class="platform-pill" style="background:#dc2626;">Latest on YouTube</a>
           {% endif %}
@@ -282,6 +285,8 @@
     </div>
   </div>
 </section>
+
+{% include "partials/research_packets.html" %}
 
 {% if show_stock.market_data_note %}
 <section class="px-6 pb-6">
@@ -550,6 +555,9 @@
           {% endwith %}
         </div>
         <div class="flex flex-wrap lg:justify-end gap-2">
+          {% if episode.research_packet %}
+          <a href="{{ url_for('research_packet_page', slug=episode.research_packet.slug) }}" class="platform-pill" style="background:#0e7490;">Research packet</a>
+          {% endif %}
           {% if episode.youtube_url %}
           <a href="{{ episode.youtube_url }}" target="_blank" rel="noopener noreferrer" class="platform-pill" style="background:#dc2626;">YouTube</a>
           {% endif %}

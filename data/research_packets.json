@@ -1,0 +1,38 @@
+{
+  "schema_version": 1,
+  "packets": [
+    {
+      "key": "BZUN:Q2-2026",
+      "year": 2026,
+      "quarter": 2,
+      "fiscal": false,
+      "slug": "bzun-q2-2026",
+      "ticker": "BZUN",
+      "company": "Baozun Inc.",
+      "period": "Q2 2026",
+      "canonical_url": "https://chargedalpha.com/research/bzun-q2-2026",
+      "title": "Baozun (BZUN): the market prices its business at less than zero",
+      "page_title": "BZUN Q2 2026 Research Packet — Charged Alpha",
+      "description": "Baozun (BZUN) Q2 2026 earnings research packet: the call, three valuation routes, scenarios, signposts, earnings quality, balance sheet, risks and catalysts — companion to the Charged Alpha episode.",
+      "sha256": "524a0c81f3f113e02a2e5dc3b3cf74e6151d22a87410306585e786d0c752455e",
+      "html_file": "research_packets/bzun-q2-2026.html",
+      "source_episode": "BZUN-Q2-2026",
+      "source_staged_at": "2026-09-07T21:16:21Z",
+      "source_sha256": {
+        "READY": "6c711ccc65a1027ac64e5911ed9363e3b8ccddb4a21bcc3f21a180493ce34066",
+        "handoff.json": "72f5920bff8b334a823d81b4ee2766ee3f1c8451ad6171033977b2dff9639503",
+        "packet/bzun-q2-2026-research-packet.html": "524a0c81f3f113e02a2e5dc3b3cf74e6151d22a87410306585e786d0c752455e",
+        "packet/packet_meta.json": "5b4f1f8ab211e2f8fe134aa2a4b6ec0882b6ab998f5d0fa467b111279dfcdd54",
+        "packet/packet.json": "c3d155ae6dcb9e03e615e276eb25a7a7fddbb0157cc7834e250f614dc7fb0e4f"
+      },
+      "primary_youtube_long": "PoF7tBFvJy4",
+      "primary_youtube_short": "go-qI8cA6AQ",
+      "youtube_studio": "mEff9G1P4RY",
+      "youtube_studio_short": null,
+      "source_published": "September 7, 2026",
+      "words": 5230,
+      "figures": 19,
+      "tables": 14
+    }
+  ]
+}
