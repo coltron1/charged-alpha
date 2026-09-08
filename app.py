@@ -1527,6 +1527,16 @@ def build_show_library(episodes, stock_metadata=None, video_sections=None):
             },
         )
 
+        video_id = _youtube_video_id(ep.get("youtube_url"))
+        short_sources = [video_id]
+        if video_id and ep.get("studio_primary_link_evidence") == video_id:
+            short_sources.append(_youtube_video_id(ep.get("studio_primary_youtube_url")))
+        episode_shorts = {
+            short["youtube_url"]: short
+            for source_id in short_sources
+            for short in shorts_by_episode.get(source_id, [])
+        }
+
         stock["episodes"].append(
             {
                 "ticker": ticker,
@@ -1541,7 +1551,7 @@ def build_show_library(episodes, stock_metadata=None, video_sections=None):
                 "has_any_link": has_any_link,
                 "youtube_url": ep.get("youtube_url") or "",
                 "studio_primary_youtube_url": ep.get("studio_primary_youtube_url") or "",
-                "youtube_shorts": shorts_by_episode.get(_youtube_video_id(ep.get("youtube_url")), []),
+                "youtube_shorts": sorted(episode_shorts.values(), key=_episode_published_sort_key, reverse=True),
                 "spotify_url": ep.get("spotify_url") or "",
                 "apple_url": ep.get("apple_url") or "",
                 "google_url": ep.get("google_url") or "",

@@ -13,6 +13,39 @@ from yf_utils import fetch_ticker_info, ticker_info_cache
 
 
 class ShowLibraryTests(unittest.TestCase):
+    def test_verified_studio_shares_original_shorts_in_hero_and_both_archive_rows(self):
+        episodes = [
+            {"ticker": "TEST", "quarter": "Q2 2026", "title": "Studio", "published_at": "2026-08-03", "youtube_url": "https://youtu.be/StudioVid01", "studio_primary_youtube_url": "https://youtu.be/PrimaryVid1", "studio_primary_link_evidence": "StudioVid01"},
+            {"ticker": "TEST", "quarter": "Q2 2026", "title": "Original", "published_at": "2026-08-01", "youtube_url": "https://youtu.be/PrimaryVid1"},
+            {"ticker": "TEST", "quarter": "Q1 2026", "title": "Older", "published_at": "2026-05-01", "youtube_url": "https://youtu.be/OlderVideo1"},
+        ]
+        clips = [
+            {"title": "Original Short", "youtube_url": "https://youtube.com/shorts/PrimaryClip", "earnings_youtube_url": "https://youtu.be/PrimaryVid1", "published_at": "2026-08-01"},
+            {"title": "Studio Short", "youtube_url": "https://youtube.com/shorts/StudioClip1", "earnings_youtube_url": "https://youtu.be/StudioVid01", "published_at": "2026-08-03"},
+            {"title": "Older Short", "youtube_url": "https://youtube.com/shorts/OlderClip01", "earnings_youtube_url": "https://youtu.be/OlderVideo1", "published_at": "2026-05-01"},
+        ]
+        sections = [{"title": "Shorts and Clips", "videos": clips + [clips[0]]}]
+        library = build_show_library(episodes, video_sections=sections)
+        stock = library["stocks"][0]
+        self.assertEqual([s["title"] for s in stock["latest_youtube_shorts"]], ["Studio Short", "Original Short"])
+        self.assertEqual([s["title"] for s in stock["episodes"][1]["youtube_shorts"]], ["Original Short"])
+        self.assertEqual([s["title"] for s in stock["episodes"][2]["youtube_shorts"]], ["Older Short"])
+        self.assertNotIn("youtube_shorts", episodes[0])
+        context = {"shows_data": {"video_sections": sections}, "show_library": library}
+        with patch("app._shows_context", return_value=context), patch("app._cached_show_stock_detail", return_value={}), patch("app._pick_competitor_stocks", return_value=[]):
+            response = app.test_client().get("/shows/test")
+        self.assertEqual(response.status_code, 200)
+        rendered = response.get_data(as_text=True)
+        self.assertEqual(rendered.count('class="earnings-short-link"'), 6)
+
+    def test_unbound_studio_primary_does_not_inherit_shorts(self):
+        for evidence in (None, "OtherVideo1"):
+            with self.subTest(evidence=evidence):
+                episodes = [{"ticker": "TEST", "quarter": "Q2 2026", "title": "Studio", "youtube_url": "https://youtu.be/StudioVid01", "studio_primary_youtube_url": "https://youtu.be/PrimaryVid1", "studio_primary_link_evidence": evidence}]
+                clip = {"title": "Original Short", "youtube_url": "https://youtube.com/shorts/PrimaryClip", "earnings_youtube_url": "https://youtu.be/PrimaryVid1"}
+                stock = build_show_library(episodes, video_sections=[{"title": "Shorts and Clips", "videos": [clip]}])["stocks"][0]
+                self.assertEqual(stock["latest_youtube_shorts"], [])
+
     def test_shorts_belong_to_exact_earnings_video_not_just_ticker(self):
         episodes = [
             {"ticker": "TEST", "quarter": "Q2 2026", "title": "Newest", "published_at": "2026-08-01", "youtube_url": "https://youtu.be/new"},
