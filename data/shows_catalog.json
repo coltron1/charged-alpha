@@ -15,6 +15,26 @@
       "sector": "Consumer Cyclical",
       "quarter": "Q2 FY2026",
       "episode_number": "",
+      "title": "ASO Stock: What Is Behind the Tariff Cash Boost? — Q2 FY2026 — Animated Studio Edition",
+      "published_at": "2026-09-09T21:46:05+00:00",
+      "status": "youtube_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=RFxKO35OYFY",
+      "spotify_url": "",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "",
+      "has_episode": true,
+      "amazon_url": "",
+      "studio_primary_youtube_url": "https://www.youtube.com/watch?v=b_A-_aBqEvc",
+      "studio_primary_link_evidence": "RFxKO35OYFY"
+    },
+    {
+      "ticker": "ASO",
+      "company": "Academy Sports and Outdoors, Inc.",
+      "sector": "Consumer Cyclical",
+      "quarter": "Q2 FY2026",
+      "episode_number": "",
       "title": "ASO Stock: What Is Behind the Tariff Cash Boost? — Q2 FY2026",
       "published_at": "2026-09-09T20:51:12+00:00",
       "status": "youtube_podcast_complete",
@@ -33792,6 +33812,22 @@
       "description": "Fast clips that point viewers into full research videos and stock pages.",
       "videos": [
         {
+          "title": "ASO Stock: Where Did the Tariff Cash Go? — Q2 FY2026",
+          "youtube_url": "https://www.youtube.com/shorts/hmtG0f64fGk",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-09-09T21:38:53+00:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "ASO",
+            "FY2026"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage.",
+          "earnings_youtube_url": "https://www.youtube.com/watch?v=b_A-_aBqEvc",
+          "earnings_match": "stock_period_date"
+        },
+        {
           "title": "CASY Stock: Profit Jumps, Cash After Capex Falls — Q1 FY2027",
           "youtube_url": "https://www.youtube.com/shorts/zWlQUx-52nk",
           "spotify_url": "",
@@ -45312,7 +45348,7 @@
       ]
     }
   ],
-  "last_synced_at": "2026-09-09T15:57:48-05:00",
+  "last_synced_at": "2026-09-09T16:52:10-05:00",
   "stock_metadata": {
     "A": {
       "company": "Agilent Technologies, Inc.",
