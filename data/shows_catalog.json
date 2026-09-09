@@ -15,6 +15,26 @@
       "sector": "Consumer Cyclical",
       "quarter": "Q1 FY2027",
       "episode_number": "",
+      "title": "CASY Stock: A 15% Drop Still Leaves a Premium — Q1 FY2027 — Animated Studio Edition",
+      "published_at": "2026-09-09T17:23:24+00:00",
+      "status": "youtube_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=fHg8UIIkyGY",
+      "spotify_url": "",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "",
+      "has_episode": true,
+      "amazon_url": "",
+      "studio_primary_youtube_url": "https://www.youtube.com/watch?v=9f5VG3pFvh8",
+      "studio_primary_link_evidence": "fHg8UIIkyGY"
+    },
+    {
+      "ticker": "CASY",
+      "company": "Casey's General Stores, Inc.",
+      "sector": "Consumer Cyclical",
+      "quarter": "Q1 FY2027",
+      "episode_number": "",
       "title": "CASY Stock: A 15% Drop Still Leaves a Premium — Q1 FY2027",
       "published_at": "2026-09-09T16:38:12+00:00",
       "status": "youtube_podcast_complete",
@@ -33754,6 +33774,22 @@
       "description": "Fast clips that point viewers into full research videos and stock pages.",
       "videos": [
         {
+          "title": "CASY Stock: Profit Jumps, Cash After Capex Falls — Q1 FY2027",
+          "youtube_url": "https://www.youtube.com/shorts/zWlQUx-52nk",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-09-09T17:03:30+00:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "CASY",
+            "FY2027"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage.",
+          "earnings_youtube_url": "https://www.youtube.com/watch?v=9f5VG3pFvh8",
+          "earnings_match": "stock_period_date"
+        },
+        {
           "title": "BZUN Stock: Baozun Q2 2026 Earnings — Priced Below Its Own Cash (Animated) #Shorts",
           "youtube_url": "https://www.youtube.com/shorts/n7bEvcV5rsA",
           "spotify_url": "",
@@ -45258,7 +45294,7 @@
       ]
     }
   ],
-  "last_synced_at": "2026-09-09T11:44:48-05:00",
+  "last_synced_at": "2026-09-09T12:39:05-05:00",
   "stock_metadata": {
     "A": {
       "company": "Agilent Technologies, Inc.",
