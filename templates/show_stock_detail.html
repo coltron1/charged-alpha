@@ -235,18 +235,18 @@
               {% if show_stock.latest_youtube_url %}
               <a href="{{ show_stock.latest_youtube_url }}" target="_blank" rel="noopener noreferrer" class="platform-pill" style="background:#dc2626;">Full video on YouTube</a>
               {% endif %}
-              {% if show_stock.latest_spotify_url %}
-              <a href="{{ show_stock.latest_spotify_url }}" target="_blank" rel="noopener noreferrer" class="platform-pill" style="background:#16a34a;">Open Spotify</a>
+              {% if show_stock.latest_video_links.spotify %}
+              <a href="{{ show_stock.latest_video_links.spotify }}" target="_blank" rel="noopener noreferrer" class="platform-pill" style="background:#16a34a;">Open Spotify</a>
               {% elif podcast_platforms.spotify %}
               <a href="{{ podcast_platforms.spotify }}" target="_blank" rel="noopener noreferrer" class="platform-pill" style="background:#16a34a;">Spotify Show</a>
               {% endif %}
-              {% if show_stock.latest_podcast_url %}
-              <a href="{{ show_stock.latest_podcast_url }}" target="_blank" rel="noopener noreferrer" class="platform-pill" style="background:#7c3aed;">Open Podbean</a>
+              {% if show_stock.latest_video_links.podbean %}
+              <a href="{{ show_stock.latest_video_links.podbean }}" target="_blank" rel="noopener noreferrer" class="platform-pill" style="background:#7c3aed;">Open Podbean</a>
               {% elif podcast_platforms.podbean %}
               <a href="{{ podcast_platforms.podbean }}" target="_blank" rel="noopener noreferrer" class="platform-pill" style="background:#7c3aed;">Podbean Show</a>
               {% endif %}
-              {% if show_stock.latest_apple_url %}
-              <a href="{{ show_stock.latest_apple_url }}" target="_blank" rel="noopener noreferrer" class="platform-pill" style="background:#64748b;">Open Apple</a>
+              {% if show_stock.latest_video_links.apple %}
+              <a href="{{ show_stock.latest_video_links.apple }}" target="_blank" rel="noopener noreferrer" class="platform-pill" style="background:#64748b;">Open Apple</a>
               {% elif podcast_platforms.apple %}
               <a href="{{ podcast_platforms.apple }}" target="_blank" rel="noopener noreferrer" class="platform-pill" style="background:#64748b;">Apple Podcasts</a>
               {% endif %}

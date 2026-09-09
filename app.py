@@ -1586,6 +1586,13 @@ def build_show_library(episodes, stock_metadata=None, video_sections=None):
         stock["latest_published_at"] = latest_published.get("published_at") or latest.get("published_at") or ""
         stock["latest_video_quarter"] = latest_youtube["quarter"] if latest_youtube else None
         stock["latest_video_title"] = latest_youtube["title"] if latest_youtube else ""
+        # A video card's podcast buttons belong to that exact episode. The
+        # stock-wide latest links below may intentionally refer to older quarters.
+        stock["latest_video_links"] = {
+            platform: (latest_youtube.get(field) or "") if latest_youtube else ""
+            for platform, field in (("spotify", "spotify_url"), ("podbean", "podbean_url"),
+                                    ("apple", "apple_url"))
+        }
         stock["latest_youtube_shorts"] = latest_youtube["youtube_shorts"] if latest_youtube else []
         stock["latest_video_published_at"] = latest_youtube["published_at"] if latest_youtube else ""
         stock["latest_video_thumbnail"] = _youtube_thumbnail_url(latest_youtube.get("youtube_url")) if latest_youtube else DEFAULT_SOCIAL_IMAGE_URL
