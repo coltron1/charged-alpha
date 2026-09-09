@@ -10,6 +10,24 @@
   },
   "episodes": [
     {
+      "ticker": "CASY",
+      "company": "Casey's General Stores, Inc.",
+      "sector": "Consumer Cyclical",
+      "quarter": "Q1 FY2027",
+      "episode_number": "",
+      "title": "CASY Stock: A 15% Drop Still Leaves a Premium — Q1 FY2027",
+      "published_at": "2026-09-09T16:38:12+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=9f5VG3pFvh8",
+      "spotify_url": "",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/casy-stock-a-15-drop-still-leaves-a-premium-%e2%80%94-q1-fy2027/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
       "ticker": "HPE",
       "company": "Hewlett Packard Enterprise Company",
       "sector": "Technology",
@@ -45240,7 +45258,7 @@
       ]
     }
   ],
-  "last_synced_at": "2026-09-08T08:44:30-05:00",
+  "last_synced_at": "2026-09-09T11:44:48-05:00",
   "stock_metadata": {
     "A": {
       "company": "Agilent Technologies, Inc.",

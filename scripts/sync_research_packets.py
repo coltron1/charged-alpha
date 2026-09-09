@@ -12,6 +12,7 @@ from pathlib import Path
 import re
 import sys
 import tempfile
+import unicodedata
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 if str(PROJECT_ROOT) not in sys.path:
@@ -61,6 +62,16 @@ class HeadMetadata(HTMLParser):
 def json_object(raw, label):
     value = json.loads(raw)
     require(isinstance(value, dict), f"{label} must be a JSON object")
+    return value
+
+
+def canonical_company_name(value):
+    """Compare display/legal spelling only; never infer a company from its ticker."""
+    require(isinstance(value, str) and value.strip(), "Packet company identity missing")
+    value = unicodedata.normalize("NFKC", value).translate(str.maketrans({"‘": "'", "’": "'"}))
+    value = " ".join(value.split()).casefold()
+    value = re.sub(r",\s*inc\.?$", "", value).strip()
+    require(value, "Packet company identity missing")
     return value
 
 
@@ -150,7 +161,8 @@ def read_candidate(queue):
     require(meta.get("file") == filename, "Packet metadata filename differs")
     for key in ("ticker", "period"):
         require(handoff.get(key) == meta.get(key) == cm.get(key), f"Packet {key} identity differs")
-    require(handoff.get("company") == cm.get("company"), "Packet company identity differs")
+    require(canonical_company_name(handoff.get("company")) == canonical_company_name(cm.get("company")),
+            "Packet company identity differs")
     for key in ("slug", "title", "page_title"):
         require(packet.get(key) == cm.get(key), f"Packet content {key} differs")
     parsed = HeadMetadata()

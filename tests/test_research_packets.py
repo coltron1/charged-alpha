@@ -98,6 +98,39 @@ class ResearchPacketTests(unittest.TestCase):
         self.assertEqual(result["packets"][0]["status"], "already_imported")
         self.assertEqual(files, {p: (p.read_bytes(), p.stat().st_mtime_ns) for p in files})
 
+    def test_casy_display_legal_company_spelling_preserves_exact_source(self):
+        source, raw = self.fixture("CASY", "Q1 FY2027")
+        self.mutate(source / "handoff.json", lambda h: h.update(company="Casey's General Stores, Inc."))
+        self.mutate(source / "packet/packet.json", lambda p: p["meta"].update(company="Casey’s General Stores"))
+        before = {p: p.read_bytes() for p in source.rglob("*") if p.is_file()}
+        self.assertEqual(self.import_all(False)["packets"][0]["status"], "ready_to_import")
+        self.assertEqual(self.import_all()["imported"], 1)
+        record = load_packets(self.index)[0]
+        self.assertEqual(record["company"], "Casey's General Stores, Inc.")
+        self.assertEqual(packet_html_path(record, self.index).read_bytes(), raw)
+        self.assertEqual(before, {p: p.read_bytes() for p in before})
+        self.assertEqual(record["source_sha256"]["packet/packet.json"],
+                         hashlib.sha256(before[source / "packet/packet.json"]).hexdigest())
+
+    def test_company_normalization_is_limited_to_declared_formatting(self):
+        self.assertEqual(sync.canonical_company_name("  Ｃasey’s\u00a0 General\nStores, INC.  "),
+                         sync.canonical_company_name("Casey's General Stores"))
+        for name in ("Casey's General Store", "Casey's General Stores Corporation",
+                     "Casey's General Stores, LLC", "Casey's General Stores Inc.",
+                     "Casey's General Stores, Inc. Holdings"):
+            with self.subTest(name=name):
+                self.assertNotEqual(sync.canonical_company_name(name),
+                                    sync.canonical_company_name("Casey's General Stores"))
+
+    def test_company_substantive_mismatch_or_empty_identity_refuses_import(self):
+        for name in ("Different Company", "CASY", "", "  ", None, 42, ", Inc."):
+            with self.subTest(name=name):
+                shutil.rmtree(self.queue); self.queue.mkdir()
+                source, _ = self.fixture("CASY", "Q1 FY2027")
+                self.mutate(source / "packet/packet.json", lambda p: p["meta"].update(company=name))
+                self.assertEqual(self.import_all()["errors"], 1)
+                self.assertFalse(self.index.exists())
+
     def test_year_quarter_history_and_ticker_queries(self):
         for period in ("Q2 2026", "Q4 FY2025", "Q1 FY2027", "Q3 2026"):
             self.fixture(period=period)
