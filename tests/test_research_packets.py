@@ -122,6 +122,32 @@ class ResearchPacketTests(unittest.TestCase):
                 self.assertNotEqual(sync.canonical_company_name(name),
                                     sync.canonical_company_name("Casey's General Stores"))
 
+    def test_aso_conjunction_spelling_preserves_exact_packet_and_sources(self):
+        source, raw = self.fixture("ASO", "Q2 FY2026")
+        self.mutate(source / "handoff.json", lambda h: h.update(company="Academy Sports and Outdoors"))
+        self.mutate(source / "packet/packet.json", lambda p: p["meta"].update(company="Academy Sports & Outdoors, Inc."))
+        before = {p: p.read_bytes() for p in source.rglob("*") if p.is_file()}
+        self.assertEqual(self.import_all(False)["packets"][0]["status"], "ready_to_import")
+        self.assertEqual(self.import_all()["imported"], 1)
+        record = load_packets(self.index)[0]
+        self.assertEqual(record["company"], "Academy Sports and Outdoors")
+        self.assertEqual(packet_html_path(record, self.index).read_bytes(), raw)
+        self.assertEqual(before, {p: p.read_bytes() for p in before})
+        self.assertEqual(self.import_all()["imported"], 0)
+
+    def test_conjunction_normalization_does_not_accept_changed_company_words(self):
+        for name in ("Academy Sports Outdoors", "Academy Sports & Outdoor, Inc.",
+                     "Academy SportsandOutdoors", "Academy Sports & Outdoors Holdings"):
+            with self.subTest(name=name):
+                shutil.rmtree(self.queue); self.queue.mkdir()
+                source, _ = self.fixture("ASO", "Q2 FY2026")
+                self.mutate(source / "handoff.json", lambda h: h.update(company="Academy Sports and Outdoors"))
+                self.mutate(source / "packet/packet.json", lambda p: p["meta"].update(company=name))
+                self.assertEqual(self.import_all()["errors"], 1)
+                self.assertFalse(self.index.exists())
+        self.assertNotEqual(sync.canonical_company_name("AT&T"),
+                            sync.canonical_company_name("ATandT"))
+
     def test_company_substantive_mismatch_or_empty_identity_refuses_import(self):
         for name in ("Different Company", "CASY", "", "  ", None, 42, ", Inc."):
             with self.subTest(name=name):

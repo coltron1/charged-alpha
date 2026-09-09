@@ -70,6 +70,9 @@ def canonical_company_name(value):
     require(isinstance(value, str) and value.strip(), "Packet company identity missing")
     value = unicodedata.normalize("NFKC", value).translate(str.maketrans({"‘": "'", "’": "'"}))
     value = " ".join(value.split()).casefold()
+    # A standalone ampersand is the display spelling of the same conjunction.
+    # Preserve embedded brand punctuation (for example AT&T) and every other word.
+    value = re.sub(r"(?<!\S)&(?!\S)", "and", value)
     value = re.sub(r",\s*inc\.?$", "", value).strip()
     require(value, "Packet company identity missing")
     return value

@@ -10,6 +10,24 @@
   },
   "episodes": [
     {
+      "ticker": "ASO",
+      "company": "Academy Sports and Outdoors, Inc.",
+      "sector": "Consumer Cyclical",
+      "quarter": "Q2 FY2026",
+      "episode_number": "",
+      "title": "ASO Stock: What Is Behind the Tariff Cash Boost? — Q2 FY2026",
+      "published_at": "2026-09-09T20:51:12+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=b_A-_aBqEvc",
+      "spotify_url": "",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/aso-stock-what-is-behind-the-tariff-cash-boost-%e2%80%94-q2-fy2026/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
       "ticker": "CASY",
       "company": "Casey's General Stores, Inc.",
       "sector": "Consumer Cyclical",
@@ -45294,7 +45312,7 @@
       ]
     }
   ],
-  "last_synced_at": "2026-09-09T13:38:52-05:00",
+  "last_synced_at": "2026-09-09T15:57:48-05:00",
   "stock_metadata": {
     "A": {
       "company": "Agilent Technologies, Inc.",
