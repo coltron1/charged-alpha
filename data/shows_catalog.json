@@ -10,6 +10,24 @@
   },
   "episodes": [
     {
+      "ticker": "AVAV",
+      "company": "AeroVironment, Inc.",
+      "sector": "Industrials",
+      "quarter": "Q1 FY2027",
+      "episode_number": "",
+      "title": "AVAV Stock: The Factory Bill Behind a $1.5B Backlog — Q1 FY2027",
+      "published_at": "2026-09-09T23:40:44+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=StuW1oXYZK8",
+      "spotify_url": "https://open.spotify.com/episode/4XMR5py324QLJEKjHYWqYi",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/avav-stock-the-factory-bill-behind-a-15b-backlog-%e2%80%94-q1-fy2027/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
       "ticker": "ASO",
       "company": "Academy Sports and Outdoors, Inc.",
       "sector": "Consumer Cyclical",
@@ -45348,7 +45366,7 @@
       ]
     }
   ],
-  "last_synced_at": "2026-09-09T17:05:27-05:00",
+  "last_synced_at": "2026-09-09T18:53:07-05:00",
   "stock_metadata": {
     "A": {
       "company": "Agilent Technologies, Inc.",
