@@ -15,6 +15,26 @@
       "sector": "Industrials",
       "quarter": "Q1 FY2027",
       "episode_number": "",
+      "title": "AVAV Stock: The Factory Bill Behind a $1.5B Backlog — Q1 FY2027 — Animated Studio Edition",
+      "published_at": "2026-09-10T00:56:34+00:00",
+      "status": "youtube_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=xoGhEDUzyjA",
+      "spotify_url": "",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "",
+      "has_episode": true,
+      "amazon_url": "",
+      "studio_primary_youtube_url": "https://www.youtube.com/watch?v=StuW1oXYZK8",
+      "studio_primary_link_evidence": "xoGhEDUzyjA"
+    },
+    {
+      "ticker": "AVAV",
+      "company": "AeroVironment, Inc.",
+      "sector": "Industrials",
+      "quarter": "Q1 FY2027",
+      "episode_number": "",
       "title": "AVAV Stock: The Factory Bill Behind a $1.5B Backlog — Q1 FY2027",
       "published_at": "2026-09-09T23:40:44+00:00",
       "status": "youtube_podcast_complete",
@@ -33830,6 +33850,22 @@
       "description": "Fast clips that point viewers into full research videos and stock pages.",
       "videos": [
         {
+          "title": "AVAV Stock: Who Pays the Factory Bill? — Q1 FY2027",
+          "youtube_url": "https://www.youtube.com/shorts/PG8RLX4nfBo",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-09-10T00:59:00+00:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "AVAV",
+            "FY2027"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage.",
+          "earnings_youtube_url": "https://www.youtube.com/watch?v=StuW1oXYZK8",
+          "earnings_match": "stock_period_date"
+        },
+        {
           "title": "ASO Stock: Where Did the Tariff Cash Go? — Q2 FY2026",
           "youtube_url": "https://www.youtube.com/shorts/hmtG0f64fGk",
           "spotify_url": "",
@@ -45366,7 +45402,7 @@
       ]
     }
   ],
-  "last_synced_at": "2026-09-09T18:53:07-05:00",
+  "last_synced_at": "2026-09-09T20:02:25-05:00",
   "stock_metadata": {
     "A": {
       "company": "Agilent Technologies, Inc.",
