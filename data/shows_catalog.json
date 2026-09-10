@@ -10,6 +10,42 @@
   },
   "episodes": [
     {
+      "ticker": "ADBE",
+      "company": "Adobe Inc.",
+      "sector": "Technology",
+      "quarter": "Q3 FY2026",
+      "episode_number": "",
+      "title": "ADBE Stock: One Billion Users, What Reaches Owners? — Q3 FY2026",
+      "published_at": "2026-09-10T22:22:56+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=b2j2Uvttwak",
+      "spotify_url": "",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/adbe-stock-one-billion-users-what-reaches-owners-%e2%80%94-q3-fy2026/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "CPRT",
+      "company": "Copart, Inc.",
+      "sector": "Industrials",
+      "quarter": "Q4 FY2026",
+      "episode_number": "",
+      "title": "CPRT Stock: More Free Cash, Less Operating Cash — Q4 FY2026",
+      "published_at": "2026-09-10T21:55:31+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=f-xKQgdPoHc",
+      "spotify_url": "https://open.spotify.com/episode/2WWMhkwqgJ9Qg722EN0HVJ",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/cprt-stock-more-free-cash-less-operating-cash-%e2%80%94-q4-fy2026/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
       "ticker": "SIG",
       "company": "Signet Jewelers Limited",
       "sector": "Consumer Cyclical",
@@ -19,7 +55,7 @@
       "published_at": "2026-09-10T19:36:51+00:00",
       "status": "youtube_podcast_complete",
       "youtube_url": "https://www.youtube.com/watch?v=H78TTQCIpPo",
-      "spotify_url": "",
+      "spotify_url": "https://open.spotify.com/episode/6FLo3FdRQZqYqbff8JgwOL",
       "apple_url": "",
       "google_url": "",
       "iheart_url": "",
@@ -33942,6 +33978,22 @@
       "description": "Fast clips that point viewers into full research videos and stock pages.",
       "videos": [
         {
+          "title": "CPRT Stock: Copart Q4 FY2026 — What Lifted Free Cash? #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/TcRfAckiKxQ",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-09-10T15:24:59-07:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "CPRT",
+            "FY2026"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage.",
+          "earnings_youtube_url": "https://www.youtube.com/watch?v=f-xKQgdPoHc",
+          "earnings_match": "stock_period_date"
+        },
+        {
           "title": "SIG Stock: Signet Q2 FY2027 — What Lifted Profit? #Shorts",
           "youtube_url": "https://www.youtube.com/shorts/3aCCdy4hLm8",
           "spotify_url": "",
@@ -45558,7 +45610,7 @@
       ]
     }
   ],
-  "last_synced_at": "2026-09-10T15:10:53-05:00",
+  "last_synced_at": "2026-09-10T17:27:09-05:00",
   "stock_metadata": {
     "A": {
       "company": "Agilent Technologies, Inc.",
@@ -46604,6 +46656,10 @@
     "CPRI": {
       "company": "Capri Holdings Limited",
       "sector": "Consumer Cyclical"
+    },
+    "CPRT": {
+      "company": "Copart, Inc.",
+      "sector": "Industrials"
     },
     "CR": {
       "company": "Crane Company",
