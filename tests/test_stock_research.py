@@ -152,6 +152,7 @@ class PageTests(unittest.TestCase):
             client = app.test_client()
             response = client.get("/shows/casy")
             self.assertEqual(response.status_code,200)
+            self.assertIn('href="/#searchInput" class="return-search">Search Another Stock</a>', response.get_data(as_text=True))
             self.assertIn("0.71x",response.get_data(as_text=True))
             self.assertEqual(client.get("/api/research/UNKNOWN/financials").status_code,404)
 
