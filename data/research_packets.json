@@ -165,6 +165,39 @@
       "words": 5230,
       "figures": 19,
       "tables": 14
+    },
+    {
+      "key": "CHWY:Q2-FY2026",
+      "year": 2026,
+      "quarter": 2,
+      "fiscal": true,
+      "slug": "chwy-q2-fy2026",
+      "ticker": "CHWY",
+      "company": "Chewy, Inc.",
+      "period": "Q2 FY2026",
+      "canonical_url": "https://chargedalpha.com/research/chwy-q2-fy2026",
+      "title": "CHWY: Higher Profit, Less Free Cash — The Cost of Expansion",
+      "page_title": "CHWY Q2 FY2026 Research Packet — Charged Alpha",
+      "description": "Chewy raised guidance, but acquisitions, debt and recurring compensation make owner cash the decisive test.",
+      "sha256": "e83c98f7a0dae62695c11da04ddca6177b283bda43d7a60a5a9ec1025c3c7553",
+      "html_file": "research_packets/chwy-q2-fy2026.html",
+      "source_episode": "CHWY-Q2-FY2026",
+      "source_staged_at": "2026-09-10T13:34:07Z",
+      "source_sha256": {
+        "READY": "35b4dd74961de12f19bd5bc709d1a732589929ccfcb9b6678f16c7972e92557f",
+        "handoff.json": "a377d441ac122077b7cdee6003c1839c364554ba5bd049315291be86ce9c3038",
+        "packet/chwy-q2-fy2026-research-packet.html": "e83c98f7a0dae62695c11da04ddca6177b283bda43d7a60a5a9ec1025c3c7553",
+        "packet/packet_meta.json": "8c22d086e6c76e4cf38eb49565002cfd962d53635386a5b9dd5597ad8ddedfeb",
+        "packet/packet.json": "0e5f1c79a663f36f312fd8a1808cb6359ea8e08b366f5e5c960672d23fce106e"
+      },
+      "primary_youtube_long": "A5ZGHSnY3cY",
+      "primary_youtube_short": null,
+      "youtube_studio": null,
+      "youtube_studio_short": null,
+      "source_published": "September 9, 2026",
+      "words": 6184,
+      "figures": 18,
+      "tables": 16
     }
   ]
 }

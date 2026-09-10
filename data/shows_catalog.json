@@ -10,6 +10,26 @@
   },
   "episodes": [
     {
+      "ticker": "SAIL",
+      "company": "SailPoint, Inc.",
+      "sector": "Technology",
+      "quarter": "Q2 FY2027",
+      "episode_number": "",
+      "title": "SAIL Stock: AI Demand Grows, but Cash Flow Falls 19% — Q2 FY2027 — Animated Studio Edition",
+      "published_at": "2026-09-10T13:29:32+00:00",
+      "status": "youtube_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=2ZHMZnu2fh8",
+      "spotify_url": "",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "",
+      "has_episode": true,
+      "amazon_url": "",
+      "studio_primary_youtube_url": "https://www.youtube.com/watch?v=SAuSmFDNZ58",
+      "studio_primary_link_evidence": "2ZHMZnu2fh8"
+    },
+    {
       "ticker": "CHWY",
       "company": "Chewy, Inc.",
       "sector": "Consumer Cyclical",
@@ -33886,6 +33906,22 @@
       "description": "Fast clips that point viewers into full research videos and stock pages.",
       "videos": [
         {
+          "title": "SAIL Stock: AI Grows, Cash Flow Falls — Q2 FY2027 Earnings #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/AgZnk_DNJko",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-09-10T13:35:10+00:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "SAIL",
+            "FY2027"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage.",
+          "earnings_youtube_url": "https://www.youtube.com/watch?v=SAuSmFDNZ58",
+          "earnings_match": "stock_period_date"
+        },
+        {
           "title": "AVAV Stock: Who Pays the Factory Bill? — Q1 FY2027",
           "youtube_url": "https://www.youtube.com/shorts/PG8RLX4nfBo",
           "spotify_url": "",
@@ -45438,7 +45474,7 @@
       ]
     }
   ],
-  "last_synced_at": "2026-09-09T23:56:41-05:00",
+  "last_synced_at": "2026-09-10T08:40:46-05:00",
   "stock_metadata": {
     "A": {
       "company": "Agilent Technologies, Inc.",
