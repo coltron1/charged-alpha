@@ -10,6 +10,24 @@
   },
   "episodes": [
     {
+      "ticker": "FLWS",
+      "company": "1-800-FLOWERS.COM, Inc.",
+      "sector": "Consumer Cyclical",
+      "quarter": "Q4 FY2026",
+      "episode_number": "",
+      "title": "FLWS Stock: A $7M Refund, Almost No Earnings Cushion — Q4 FY2026",
+      "published_at": "2026-09-10T19:15:45+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=X-sIfbakPCg",
+      "spotify_url": "https://open.spotify.com/episode/5wCdb3pcRwHriQFOyVSYZZ",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/flws-stock-a-7m-refund-almost-no-earnings-cushion-%e2%80%94-q4-fy2026/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
       "ticker": "SAIL",
       "company": "SailPoint, Inc.",
       "sector": "Technology",
@@ -45490,7 +45508,7 @@
       ]
     }
   ],
-  "last_synced_at": "2026-09-10T08:51:21-05:00",
+  "last_synced_at": "2026-09-10T14:32:57-05:00",
   "stock_metadata": {
     "A": {
       "company": "Agilent Technologies, Inc.",
@@ -47108,6 +47126,10 @@
     "FLUT": {
       "sector": "Consumer Cyclical",
       "company": "Flutter Entertainment plc"
+    },
+    "FLWS": {
+      "company": "1-800-FLOWERS.COM, Inc.",
+      "sector": "Consumer Cyclical"
     },
     "FLXS": {
       "company": "Flexsteel Industries, Inc.",
