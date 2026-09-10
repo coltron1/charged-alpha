@@ -10,6 +10,24 @@
   },
   "episodes": [
     {
+      "ticker": "CHWY",
+      "company": "Chewy, Inc.",
+      "sector": "Consumer Cyclical",
+      "quarter": "Q2 FY2026",
+      "episode_number": "",
+      "title": "CHWY Stock: Profit Rose, Free Cash Fell — Q2 FY2026",
+      "published_at": "2026-09-10T03:50:14+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=A5ZGHSnY3cY",
+      "spotify_url": "https://open.spotify.com/episode/1oQpVgJMlZoWPGSyLkIxvG",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/chwy-stock-profit-rose-free-cash-fell-%e2%80%94-q2-fy2026/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
       "ticker": "SAIL",
       "company": "SailPoint, Inc.",
       "sector": "Technology",
@@ -45420,7 +45438,7 @@
       ]
     }
   ],
-  "last_synced_at": "2026-09-09T22:42:23-05:00",
+  "last_synced_at": "2026-09-09T23:56:41-05:00",
   "stock_metadata": {
     "A": {
       "company": "Agilent Technologies, Inc.",
