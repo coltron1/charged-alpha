@@ -33978,6 +33978,22 @@
       "description": "Fast clips that point viewers into full research videos and stock pages.",
       "videos": [
         {
+          "title": "ADBE Stock: Adobe Q3 FY2026 — What Do Owners Keep? #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/RuTzgItln28",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-09-10T22:53:33+00:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "ADBE",
+            "FY2026"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage.",
+          "earnings_youtube_url": "https://www.youtube.com/watch?v=b2j2Uvttwak",
+          "earnings_match": "stock_period_date"
+        },
+        {
           "title": "CPRT Stock: Copart Q4 FY2026 — What Lifted Free Cash? #Shorts",
           "youtube_url": "https://www.youtube.com/shorts/TcRfAckiKxQ",
           "spotify_url": "",
@@ -45610,7 +45626,7 @@
       ]
     }
   ],
-  "last_synced_at": "2026-09-10T17:27:09-05:00",
+  "last_synced_at": "2026-09-10T17:58:11-05:00",
   "stock_metadata": {
     "A": {
       "company": "Agilent Technologies, Inc.",
