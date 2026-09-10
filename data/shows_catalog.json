@@ -33942,6 +33942,22 @@
       "description": "Fast clips that point viewers into full research videos and stock pages.",
       "videos": [
         {
+          "title": "SIG Stock: Signet Q2 FY2027 — What Lifted Profit? #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/3aCCdy4hLm8",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-09-10T20:10:03+00:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "SIG",
+            "FY2027"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage.",
+          "earnings_youtube_url": "https://www.youtube.com/watch?v=H78TTQCIpPo",
+          "earnings_match": "stock_period_date"
+        },
+        {
           "title": "FLWS Stock: Flowers Q4 FY2026 — The $7M Refund Test #Shorts",
           "youtube_url": "https://www.youtube.com/shorts/LD7vj4VusT0",
           "spotify_url": "",
@@ -45542,7 +45558,7 @@
       ]
     }
   ],
-  "last_synced_at": "2026-09-10T14:54:28-05:00",
+  "last_synced_at": "2026-09-10T15:10:53-05:00",
   "stock_metadata": {
     "A": {
       "company": "Agilent Technologies, Inc.",
