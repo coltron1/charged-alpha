@@ -10,6 +10,24 @@
   },
   "episodes": [
     {
+      "ticker": "SAIL",
+      "company": "SailPoint, Inc.",
+      "sector": "Technology",
+      "quarter": "Q2 FY2027",
+      "episode_number": "",
+      "title": "SAIL Stock: AI Demand Grows, but Cash Flow Falls 19% — Q2 FY2027",
+      "published_at": "2026-09-10T03:34:55+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=SAuSmFDNZ58",
+      "spotify_url": "https://open.spotify.com/episode/6kjHLOmUIsY2tkewYUD2mx",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/sail-stock-ai-demand-grows-but-cash-flow-falls-19-%e2%80%94-q2-fy2027/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
       "ticker": "AVAV",
       "company": "AeroVironment, Inc.",
       "sector": "Industrials",
@@ -45402,7 +45420,7 @@
       ]
     }
   ],
-  "last_synced_at": "2026-09-09T20:02:25-05:00",
+  "last_synced_at": "2026-09-09T22:42:23-05:00",
   "stock_metadata": {
     "A": {
       "company": "Agilent Technologies, Inc.",
