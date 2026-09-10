@@ -33906,6 +33906,22 @@
       "description": "Fast clips that point viewers into full research videos and stock pages.",
       "videos": [
         {
+          "title": "CHWY Stock: Chewy Q2 FY2026 — Profit Up, Cash Down #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/xuoVVO-foiY",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-09-10T13:46:57+00:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "CHWY",
+            "FY2026"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage.",
+          "earnings_youtube_url": "https://www.youtube.com/watch?v=A5ZGHSnY3cY",
+          "earnings_match": "stock_period_date"
+        },
+        {
           "title": "SAIL Stock: AI Grows, Cash Flow Falls — Q2 FY2027 Earnings #Shorts",
           "youtube_url": "https://www.youtube.com/shorts/AgZnk_DNJko",
           "spotify_url": "",
@@ -45474,7 +45490,7 @@
       ]
     }
   ],
-  "last_synced_at": "2026-09-10T08:40:46-05:00",
+  "last_synced_at": "2026-09-10T08:51:21-05:00",
   "stock_metadata": {
     "A": {
       "company": "Agilent Technologies, Inc.",
