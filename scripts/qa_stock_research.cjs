@@ -1,0 +1,91 @@
+/* Deterministic browser regression checks; provider fixtures never ship to users. */
+const {chromium} = require('playwright');
+const assert = require('node:assert/strict');
+const base = process.argv[2] || 'http://127.0.0.1:5063';
+const figures = {status:'ready', fetched_at:'2026-09-10T00:00:00Z',
+  quarterly:[{date:'2026-03-31', revenue:100, net_income:10, eps:1, free_cashflow:null, operating_margin:10},
+    {date:'2026-06-30', revenue:120, net_income:14, eps:1.4, free_cashflow:12, operating_margin:12}],
+  annual:[{date:'2025-12-31', revenue:400, net_income:35, eps:3.5, free_cashflow:30, operating_margin:9}]};
+
+(async () => {
+  const browser = await chromium.launch({channel:'chrome', headless:true});
+  let checks = 0;
+  try {
+    for (const width of [320,390,768,1440]) {
+      const page = await browser.newPage({viewport:{width,height:900}});
+      const errors = [];
+      page.on('pageerror', e => errors.push(e.message));
+      await page.route('**/api/research/*/financials', route => route.fulfill({json:figures}));
+      await page.route('**/screener/api/stock/*/chart?*', route => route.fulfill({json:{labels:['2026-08-01','2026-09-01'],prices:[100,110]}}));
+      for (const symbol of ['CASY','NVDA','JPM','SFM','SWBI']) {
+        const start = Date.now();
+        const response = await page.goto(base + '/shows/' + symbol, {waitUntil:'domcontentloaded'});
+        assert.equal(response.status(),200);
+        await page.locator('#metricGroup').selectOption('overview');
+        assert.equal(await page.locator('h1').count(),1);
+        assert.match(await page.title(),/Charged Alpha/);
+        assert.equal(await page.locator('link[rel="canonical"]').count(),1);
+        const dimensions = await page.evaluate(() => ({width:innerWidth,scroll:document.documentElement.scrollWidth}));
+        assert.ok(dimensions.scroll <= dimensions.width, symbol + ' overflows at ' + width);
+        assert.ok(await page.locator('.comparison-table tbody tr:visible').count() <= 9);
+        await page.locator('#metricGroup').selectOption('all');
+        assert.ok(await page.locator('.comparison-table tbody tr:visible').count() > 9);
+        await page.locator('#metricGroup').selectOption('overview');
+        if (symbol === 'CASY') {
+          const columns = await page.locator('.comparison-table thead').innerText();
+          assert.doesNotMatch(await page.locator('#scenarioResult').innerText(),/Enter positive/);
+          assert.match(columns,/MUSA/); assert.match(columns,/ATD.TO/); assert.doesNotMatch(columns,/Ford|TJX/);
+          const debt = page.locator('.comparison-table tbody tr').filter({has:page.locator('th', {hasText:'Debt / equity'})});
+          assert.match(await debt.innerText(),/0.71x/);
+          await page.locator('#financials').scrollIntoViewIfNeeded();
+          await page.waitForFunction(() => document.getElementById('financialStatus').textContent.includes('2 available'));
+          await page.locator('#statementPeriod').selectOption('annual');
+          await page.locator('#statementMetric').selectOption('eps');
+          assert.match(await page.locator('#financialStatus').innerText(),/1 available annual periods/);
+          await page.locator('#financialTableWrap').evaluate(el => el.open = true);
+          assert.match(await page.locator('#financialTable').innerText(),/3.5/);
+          await page.locator('#valuation').scrollIntoViewIfNeeded();
+          await page.waitForFunction(() => document.getElementById('priceStatus').textContent.includes('adjusted closing'));
+          await page.locator('#scenarioEPS').fill('10');
+          await page.locator('#scenarioPE').fill('20');
+          assert.equal(await page.locator('#scenarioResult').innerText(),'USD 200.00');
+          await page.locator('#scenarioPE').fill('-1');
+          assert.match(await page.locator('#scenarioResult').innerText(),/Enter positive/);
+          const chartPixels = await page.locator('#financialChart').evaluate(el => {
+            const data = el.getContext('2d').getImageData(0,0,el.width,el.height).data;
+            let visible = 0; for (let i=3;i<data.length;i+=4) if(data[i]) visible++;
+            return visible;
+          });
+          assert.ok(chartPixels > 100,'Financial chart must not be blank');
+          const groups = page.locator('.archive-period');
+          assert.ok(await groups.count() > 0);
+          if (await groups.count() > 1) {
+            await groups.nth(1).locator('summary').click();
+            assert.ok(await groups.nth(1).evaluate(el=>el.open));
+          }
+          if (width < 640) {
+            await page.locator('.mobile-nav > summary').click();
+            assert.ok(await page.locator('.mobile-nav nav a[href="/games"]').isVisible());
+            await page.locator('.mobile-nav > summary').click();
+          }
+          await page.locator('#peers').screenshot({path:'/tmp/research-peers-' + width + '.png'});
+          await page.evaluate(()=>scrollTo(0,0));
+          await page.screenshot({path:'/tmp/research-overview-' + width + '.png'});
+        }
+        console.log(symbol, width, 'passed', Date.now()-start+'ms (browser + controls)');
+        checks++;
+      }
+      await page.goto(base + '/shows/CASY?peers=MUSA,ATD.TO#peers');
+      assert.match(await page.locator('#peers').innerText(),/Custom selections/);
+      assert.doesNotMatch(await page.locator('.comparison-table thead').innerText(),/Peer median/);
+      assert.deepEqual(errors,[]);
+      await page.close();
+    }
+    const page = await browser.newPage();
+    await page.route('**/api/research/*/financials', route => route.fulfill({status:503,json:{status:'unavailable',message:'Test provider unavailable'}}));
+    await page.goto(base + '/shows/CASY#financials');
+    await page.waitForFunction(()=>document.getElementById('financialStatus').textContent.includes('Test provider unavailable'));
+    assert.equal(await page.locator('#loadFinancials').isEnabled(),true);
+    console.log(checks + ' stock/viewport combinations, custom comparison, history controls, chart pixels and failure recovery passed.');
+  } finally { await browser.close(); }
+})().catch(error => { console.error(error); process.exit(1); });

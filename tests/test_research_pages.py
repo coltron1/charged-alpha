@@ -95,7 +95,7 @@ class ResearchPageTests(unittest.TestCase):
 
     def test_research_section_beside_episodes_and_archive_link_are_present(self):
         rows = [packet(), packet("Q1 2026", 2026, 1, primary="OldVideo001"), packet("Q4 2025", 2025, 4, primary="OldVideo002")]
-        with patch("app.load_shows_catalog", return_value={"episodes": []}), patch("app.load_packets", return_value=rows), patch("app._cached_show_stock_detail", return_value={}), patch("app._pick_competitor_stocks", return_value=[]):
+        with patch("app.load_shows_catalog", return_value={"episodes": []}), patch("app.load_packets", return_value=rows), patch("app._cached_show_stock_detail", return_value={}):
             response = self.client.get("/shows/bzun")
         self.assertEqual(response.status_code, 200)
         body = response.get_data(as_text=True)
@@ -104,7 +104,9 @@ class ResearchPageTests(unittest.TestCase):
         self.assertEqual(body.count('class="research-year" open'), 1)
         self.assertEqual(body.count('class="research-quarter"'), 3)
         self.assertGreaterEqual(body.count('/research/bzun-q2-2026'), 3)
-        self.assertLess(body.index('id="quarterly-research"'), body.index("Current price"))
+        latest = body.split('id="latest"', 1)[1].split('id="peers"', 1)[0]
+        self.assertIn('/research/bzun-q2-2026', latest)
+        self.assertLess(body.index('id="archive"'), body.index('id="quarterly-research"'))
 
     def test_sitemap_includes_packet_and_stock(self):
         row = packet()

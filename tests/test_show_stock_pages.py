@@ -29,7 +29,7 @@ class ShowLibraryTests(unittest.TestCase):
                 ]
                 library = build_show_library(episodes)
                 context = {"shows_data": {"video_sections": [], "platform_links": platforms}, "show_library": library}
-                with patch("app._shows_context", return_value=context), patch("app._cached_show_stock_detail", return_value={}), patch("app._pick_competitor_stocks", return_value=[]):
+                with patch("app._shows_context", return_value=context), patch("app._cached_show_stock_detail", return_value={}):
                     response = app.test_client().get("/shows/test")
                 self.assertEqual(response.status_code, 200)
                 rendered = response.get_data(as_text=True)
@@ -42,7 +42,7 @@ class ShowLibraryTests(unittest.TestCase):
                     self.assertIn(old, rendered)  # The historical archive retains its links.
                 self.assertEqual(library["stocks"][0]["episodes"][1]["apple_url"], older_links["apple_url"])
 
-    def test_verified_studio_shares_original_shorts_in_hero_and_both_archive_rows(self):
+    def test_verified_studio_shares_shorts_with_hero_and_deduplicated_quarter_archive(self):
         episodes = [
             {"ticker": "TEST", "quarter": "Q2 2026", "title": "Studio", "published_at": "2026-08-03", "youtube_url": "https://youtu.be/StudioVid01", "studio_primary_youtube_url": "https://youtu.be/PrimaryVid1", "studio_primary_link_evidence": "StudioVid01"},
             {"ticker": "TEST", "quarter": "Q2 2026", "title": "Original", "published_at": "2026-08-01", "youtube_url": "https://youtu.be/PrimaryVid1"},
@@ -61,11 +61,12 @@ class ShowLibraryTests(unittest.TestCase):
         self.assertEqual([s["title"] for s in stock["episodes"][2]["youtube_shorts"]], ["Older Short"])
         self.assertNotIn("youtube_shorts", episodes[0])
         context = {"shows_data": {"video_sections": sections}, "show_library": library}
-        with patch("app._shows_context", return_value=context), patch("app._cached_show_stock_detail", return_value={}), patch("app._pick_competitor_stocks", return_value=[]):
+        with patch("app._shows_context", return_value=context), patch("app._cached_show_stock_detail", return_value={}):
             response = app.test_client().get("/shows/test")
         self.assertEqual(response.status_code, 200)
         rendered = response.get_data(as_text=True)
-        self.assertEqual(rendered.count('class="earnings-short-link"'), 6)
+        self.assertEqual(rendered.count('class="earnings-short-link"'), 5)
+        self.assertEqual(rendered.count('class="archive-period"'), 2)
 
     def test_unbound_studio_primary_does_not_inherit_shorts(self):
         for evidence in (None, "OtherVideo1"):
@@ -93,7 +94,7 @@ class ShowLibraryTests(unittest.TestCase):
         for clips in [[clip], []]:
             sections = [{"title": "Shorts and Clips", "videos": clips}]
             context = {"shows_data": {"video_sections": sections}, "show_library": build_show_library(episodes, video_sections=sections)}
-            with patch("app._shows_context", return_value=context), patch("app._cached_show_stock_detail", return_value={}), patch("app._pick_competitor_stocks", return_value=[]):
+            with patch("app._shows_context", return_value=context), patch("app._cached_show_stock_detail", return_value={}):
                 response = app.test_client().get("/shows/test")
             self.assertEqual(response.status_code, 200)
             rendered = response.get_data(as_text=True)
