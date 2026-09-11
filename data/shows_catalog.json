@@ -10,6 +10,24 @@
   },
   "episodes": [
     {
+      "ticker": "USAU",
+      "company": "U.S. Gold Corp.",
+      "sector": "Basic Materials",
+      "quarter": "Q1 FY2027",
+      "episode_number": "",
+      "title": "USAU Stock: Who Pays to Build CK Gold? — Q1 FY2027",
+      "published_at": "2026-09-11T22:11:33+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=8OY7PA-Ohj8",
+      "spotify_url": "https://open.spotify.com/episode/3kZgVGte6i2gyee5idEjgl",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/usau-stock-who-pays-to-build-ck-gold-%e2%80%94-q1-fy2027/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
       "ticker": "FIZZ",
       "company": "National Beverage Corp.",
       "sector": "Consumer Defensive",
@@ -45825,7 +45843,7 @@
       ]
     }
   ],
-  "last_synced_at": "2026-09-11T08:15:11-05:00",
+  "last_synced_at": "2026-09-11T17:22:30-05:00",
   "stock_metadata": {
     "A": {
       "company": "Agilent Technologies, Inc.",
@@ -49933,6 +49951,10 @@
     "URI": {
       "company": "United Rentals, Inc.",
       "sector": "Industrials"
+    },
+    "USAU": {
+      "company": "U.S. Gold Corp.",
+      "sector": "Basic Materials"
     },
     "USB": {
       "company": "U.S. Bancorp",
