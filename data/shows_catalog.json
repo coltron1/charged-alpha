@@ -10,6 +10,24 @@
   },
   "episodes": [
     {
+      "ticker": "LPTH",
+      "company": "LightPath Technologies, Inc.",
+      "sector": "Technology",
+      "quarter": "Q4 FY2026",
+      "episode_number": "",
+      "title": "LPTH Stock: Backlog Tripled. Shareholders Funded the Cash. — Q4 FY2026",
+      "published_at": "2026-09-11T02:11:33+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=-URhcjtgBE0",
+      "spotify_url": "https://open.spotify.com/episode/1f7KEkcKRue3ph3h2dW2xk",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/lpth-stock-backlog-tripled-shareholders-funded-the-cash-%e2%80%94-q4-fy2026/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
       "ticker": "ORCL",
       "company": "Oracle Corp.",
       "sector": "Technology",
@@ -19,7 +37,7 @@
       "published_at": "2026-09-11T00:42:35+00:00",
       "status": "youtube_podcast_complete",
       "youtube_url": "https://www.youtube.com/watch?v=bj6Ca1HBXkE",
-      "spotify_url": "",
+      "spotify_url": "https://open.spotify.com/episode/1qyoMXx4kYmXtxZM3UbUJB",
       "apple_url": "",
       "google_url": "",
       "iheart_url": "",
@@ -45660,7 +45678,7 @@
       ]
     }
   ],
-  "last_synced_at": "2026-09-10T20:09:38-05:00",
+  "last_synced_at": "2026-09-10T21:17:08-05:00",
   "stock_metadata": {
     "A": {
       "company": "Agilent Technologies, Inc.",
@@ -48057,6 +48075,10 @@
     },
     "LPL": {
       "company": "LG Display Co., Ltd.",
+      "sector": "Technology"
+    },
+    "LPTH": {
+      "company": "LightPath Technologies, Inc.",
       "sector": "Technology"
     },
     "LQDA": {
