@@ -10,6 +10,42 @@
   },
   "episodes": [
     {
+      "ticker": "FIZZ",
+      "company": "National Beverage Corp.",
+      "sector": "Consumer Defensive",
+      "quarter": "Q1 FY2027",
+      "episode_number": "",
+      "title": "FIZZ Stock: Pricing Held Sales. Can Profit Recover? — Q1 FY2027",
+      "published_at": "2026-09-11T07:54:36+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=nFXTX246tXw",
+      "spotify_url": "https://open.spotify.com/episode/5FfrBsXV1rWRhjLQozPibn",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/fizz-stock-pricing-held-sales-can-profit-recover-%e2%80%94-q1-fy2027/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "UNFI",
+      "company": "United Natural Foods, Inc.",
+      "sector": "Consumer Defensive",
+      "quarter": "Q4 FY2026",
+      "episode_number": "",
+      "title": "UNFI Stock: Profit Recovered. Why Is the Cash Guide Lower? — Q4 FY2026",
+      "published_at": "2026-09-11T07:46:39+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=l3gx-jz2xfY",
+      "spotify_url": "https://open.spotify.com/episode/2hbkvOf5TPRh8SwLYWtvKF",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/unfi-stock-profit-recovered-why-is-the-cash-guide-lower-%e2%80%94-q4-fy2026/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
       "ticker": "DBI",
       "company": "Designer Brands Inc.",
       "sector": "Consumer Cyclical",
@@ -45759,7 +45795,7 @@
       ]
     }
   ],
-  "last_synced_at": "2026-09-11T00:03:29-05:00",
+  "last_synced_at": "2026-09-11T03:12:03-05:00",
   "stock_metadata": {
     "A": {
       "company": "Agilent Technologies, Inc.",
