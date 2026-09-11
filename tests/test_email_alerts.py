@@ -82,6 +82,30 @@ class StockAlertsTests(unittest.TestCase):
             self.assertIn('noindex', response.headers['X-Robots-Tag'])
             self.assertNotIn('googletagmanager.com', response.text)
 
+    def test_follow_link_preselects_a_confirmed_email_signup(self):
+        response = self.client.get('/alerts?ticker=ADBE')
+        self.assertEqual(response.status_code, 200)
+        self.assertIn('Get updates for ADBE', response.text)
+        self.assertIn('id="stockAlertSignup" data-alert-selection="requested"', response.text)
+        self.assertIn('Selected email alert: ADBE.', response.text)
+        self.assertEqual(response.headers['Cache-Control'], 'no-store')
+        self.assertIn('noindex', response.headers['X-Robots-Tag'])
+        self.assertNotIn('googletagmanager.com', response.text)
+
+        invalid = self.client.get('/alerts?ticker=NOTREAL')
+        self.assertIn('Manage your email alerts.', invalid.text)
+        self.assertNotIn('data-alert-selection="requested"', invalid.text)
+
+        sub = self.active()
+        managed = self.client.get('/alerts?ticker=AVAV')
+        self.assertIn('data-alert-add-stock="AVAV"', managed.text)
+        self.assertEqual(json.loads(sub.tickers_json), ['ADBE'])
+
+        site.app.config['STOCK_ALERTS_PUBLIC'] = False
+        unavailable = site.app.test_client().get('/alerts?ticker=ADBE')
+        self.assertIn('Email alerts are not available yet.', unavailable.text)
+        self.assertNotIn('id="stockAlertSignup"', unavailable.text)
+
     def test_disabled_delivery_does_nothing(self):
         site.app.config['RESEND_WEBHOOK_SECRET'] = ''
         self.assertEqual(self.signup().status_code, 503)

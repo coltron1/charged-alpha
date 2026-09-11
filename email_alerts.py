@@ -129,6 +129,19 @@ def validate_tickers(value):
     return result
 
 
+def requested_tickers():
+    """Return only catalog stocks explicitly supplied by a Follow link."""
+    requested = request.args.getlist('ticker')
+    if not requested:
+        return []
+    try:
+        return validate_tickers(requested)
+    except ValueError:
+        # A malformed private-link query must not become a usable subscription
+        # selection, but it also should not reveal catalog details.
+        return []
+
+
 def safe_link(url):
     try:
         parsed = urlsplit(url or '')
@@ -366,9 +379,27 @@ def unsubscribe_alerts(token):
 
 @bp.route('/alerts', methods=['GET'])
 def portal():
+    requested = requested_tickers()
     sub = current_subscriber()
-    return render_template('stock_alerts.html', mode='manage' if sub else 'login', csrf=csrf_token(),
-                           email=masked_email(sub.email) if sub else '', selected=json.loads(sub.tickers_json) if sub else [])
+    if sub:
+        selected = json.loads(sub.tickers_json)
+        mode = 'manage'
+        suggested = [ticker for ticker in requested if ticker not in selected]
+    elif requested and public_enabled():
+        selected = requested
+        mode = 'signup'
+        suggested = []
+    elif requested:
+        selected = []
+        mode = 'unavailable'
+        suggested = []
+    else:
+        selected = []
+        mode = 'login'
+        suggested = []
+    return render_template('stock_alerts.html', mode=mode, csrf=csrf_token(),
+                           email=masked_email(sub.email) if sub else '', selected=selected,
+                           suggested=suggested)
 
 
 @bp.post('/api/alerts/preferences')
