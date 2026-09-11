@@ -38,14 +38,25 @@ const figures = {status:'ready', fetched_at:'2026-09-10T00:00:00Z',
           const debt = page.locator('.comparison-table tbody tr').filter({has:page.locator('th', {hasText:'Debt / equity'})});
           assert.match(await debt.innerText(),/0.71x/);
           await page.locator('#financials').scrollIntoViewIfNeeded();
-          await page.waitForFunction(() => document.getElementById('financialStatus').textContent.includes('2 available'));
-          await page.locator('#statementPeriod').selectOption('annual');
+          const annual = page.locator('input[name="statementPeriod"][value="annual"]');
+          const quarterly = page.locator('input[name="statementPeriod"][value="quarterly"]');
+          await page.waitForFunction(() => document.getElementById('financialStatus').textContent.includes('1 available annual period'));
+          assert.equal(await annual.isChecked(),true); assert.equal(await quarterly.isChecked(),false);
           await page.locator('#statementMetric').selectOption('eps');
-          assert.match(await page.locator('#financialStatus').innerText(),/1 available annual periods/);
-          await page.locator('#financialTableWrap').evaluate(el => el.open = true);
-          assert.match(await page.locator('#financialTable').innerText(),/3.5/);
+          assert.match(await page.locator('#financialStatus').innerText(),/1 available annual period/);
+          await page.locator('#financialChartTableWrap').evaluate(el => el.open = true);
+          assert.match(await page.locator('#financialChartTable').innerText(),/3.5/);
+          await quarterly.check();
+          await page.waitForFunction(() => document.getElementById('financialStatus').textContent.includes('2 available quarterly periods'));
+          assert.equal(await annual.isChecked(),false); assert.equal(await quarterly.isChecked(),true);
+          assert.match(await page.locator('#financialStatus').innerText(),/2 available quarterly periods/);
+          assert.match(await page.locator('#financialChartTable').innerText(),/1\.4/);
+          await annual.check();
+          await page.waitForFunction(() => document.getElementById('financialStatus').textContent.includes('1 available annual period'));
+          assert.equal(await annual.isChecked(),true); assert.equal(await quarterly.isChecked(),false);
+          assert.match(await page.locator('#financialChartTable').innerText(),/3.5/);
           await page.locator('#valuation').scrollIntoViewIfNeeded();
-          await page.waitForFunction(() => document.getElementById('priceStatus').textContent.includes('adjusted closing'));
+          await page.waitForFunction(() => document.getElementById('priceStatus').textContent.includes('Split- and dividend-adjusted close'));
           await page.locator('#scenarioEPS').fill('10');
           await page.locator('#scenarioPE').fill('20');
           assert.equal(await page.locator('#scenarioResult').innerText(),'USD 200.00');
@@ -64,9 +75,13 @@ const figures = {status:'ready', fetched_at:'2026-09-10T00:00:00Z',
             assert.ok(await groups.nth(1).evaluate(el=>el.open));
           }
           if (width < 640) {
-            await page.locator('.mobile-nav > summary').click();
-            assert.ok(await page.locator('.mobile-nav nav a[href="/games"]').isVisible());
-            await page.locator('.mobile-nav > summary').click();
+            const menu = page.locator('.ca-menu-button');
+            await menu.click();
+            assert.equal(await menu.getAttribute('aria-expanded'),'true');
+            await page.locator('#ca-nav details').filter({has:page.locator('a[href="/games"]')}).locator('summary').click();
+            assert.ok(await page.locator('#ca-nav a[href="/games"]').isVisible());
+            await menu.click();
+            assert.equal(await menu.getAttribute('aria-expanded'),'false');
           }
           await page.locator('#peers').screenshot({path:'/tmp/research-peers-' + width + '.png'});
           await page.evaluate(()=>scrollTo(0,0));
