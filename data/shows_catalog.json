@@ -10,6 +10,24 @@
   },
   "episodes": [
     {
+      "ticker": "ORCL",
+      "company": "Oracle Corp.",
+      "sector": "Technology",
+      "quarter": "Q1 FY2027",
+      "episode_number": "",
+      "title": "ORCL Stock: Who Funds Oracle’s $23 Billion Cash Quarter? — Q1 FY2027",
+      "published_at": "2026-09-11T00:42:35+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=bj6Ca1HBXkE",
+      "spotify_url": "",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/orcl-stock-who-funds-oracle-s-23-billion-cash-quarter-%e2%80%94-q1-fy2027/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
       "ticker": "ADBE",
       "company": "Adobe Inc.",
       "sector": "Technology",
@@ -19,7 +37,7 @@
       "published_at": "2026-09-10T22:22:56+00:00",
       "status": "youtube_podcast_complete",
       "youtube_url": "https://www.youtube.com/watch?v=b2j2Uvttwak",
-      "spotify_url": "",
+      "spotify_url": "https://open.spotify.com/episode/2dHoqS7TbpZzbnQ7sh4bOw",
       "apple_url": "",
       "google_url": "",
       "iheart_url": "",
@@ -45626,7 +45644,7 @@
       ]
     }
   ],
-  "last_synced_at": "2026-09-10T17:58:11-05:00",
+  "last_synced_at": "2026-09-10T19:46:02-05:00",
   "stock_metadata": {
     "A": {
       "company": "Agilent Technologies, Inc.",
