@@ -34086,6 +34086,36 @@
       "description": "Fast clips that point viewers into full research videos and stock pages.",
       "videos": [
         {
+          "title": "FIZZ Earnings: Pricing Held Sales. Profit Fell. #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/m3XG-SHRzz4",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-09-11T13:12:05+00:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "FIZZ"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage.",
+          "earnings_youtube_url": "https://www.youtube.com/watch?v=nFXTX246tXw",
+          "earnings_match": "stock_date"
+        },
+        {
+          "title": "UNFI Earnings: Profit Recovers. Cash Guide Falls. #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/jDldUu_Xhkg",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-09-11T12:57:11+00:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "UNFI"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage.",
+          "earnings_youtube_url": "https://www.youtube.com/watch?v=l3gx-jz2xfY",
+          "earnings_match": "stock_date"
+        },
+        {
           "title": "DBI Earnings: Who Keeps the Tariff Windfall? #DBI #Shorts",
           "youtube_url": "https://www.youtube.com/shorts/TLld_FBymog",
           "spotify_url": "",
@@ -45795,7 +45825,7 @@
       ]
     }
   ],
-  "last_synced_at": "2026-09-11T03:12:03-05:00",
+  "last_synced_at": "2026-09-11T08:15:11-05:00",
   "stock_metadata": {
     "A": {
       "company": "Agilent Technologies, Inc.",
