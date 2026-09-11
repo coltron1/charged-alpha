@@ -1,0 +1,34 @@
+/* UI tests against scripts/preview_alerts.py only; no emails are sent. */
+const {chromium}=require('playwright'),assert=require('node:assert/strict');
+const base='http://127.0.0.1:5056';
+(async()=>{const browser=await chromium.launch({channel:'chrome',headless:true});
+try{for(const width of [390,785,1280]){
+  const context=await browser.newContext({viewport:{width,height:900}}),page=await context.newPage(),errors=[];
+  page.on('pageerror',e=>errors.push(e.message));
+  await page.goto(base+'/?q=ADBE');await page.locator('[data-follow-stock="ADBE"]').click();
+  await page.goto(base+'/following');await page.locator('#stockAlertSignup').waitFor();
+  await page.locator('#alertEmail').fill(`reader${width}@example.com`);
+  await page.locator('#alertConsent').check();await page.locator('#requestStockAlerts').click();
+  await page.waitForFunction(()=>document.querySelector('#alertSignupStatus').textContent.includes('Check your inbox'));
+  const confirmation=await context.request.get(base+'/__qa/confirmation').then(r=>r.json());
+  await page.goto(base+confirmation.path);
+  assert.equal(await page.locator('h1').textContent(),'Confirm your stock alerts');
+  await page.getByRole('button',{name:'Confirm Email Alerts',exact:true}).click();
+  await page.waitForURL(base+'/alerts');await page.locator('#alertManageForm').waitFor();
+  assert.equal(await page.locator('#alertSelectedStocks button').count(),1);
+  await page.locator('#alertStockSearch').fill('AVAV');await page.getByRole('button',{name:/Add AVAV -/}).click();
+  await page.getByRole('button',{name:'Save Email Preferences',exact:true}).click();
+  await page.waitForFunction(()=>document.querySelector('#alertManageStatus').textContent.includes('saved'));
+  await page.reload();assert.equal(await page.locator('#alertSelectedStocks button').count(),2);
+  await page.screenshot({path:`/tmp/charged-alpha-email-preferences-${width}.png`,fullPage:true});
+  assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));
+  await page.getByRole('button',{name:'Remove ADBE from emailed stocks',exact:true}).click();
+  await page.getByRole('button',{name:'Save Email Preferences',exact:true}).click();
+  await page.waitForFunction(()=>document.querySelector('#alertManageStatus').textContent.includes('saved'));
+  assert.deepEqual(await page.evaluate(()=>CAFollowing.read()),['ADBE'],'Email preferences must not silently edit bookmarks');
+  await page.getByRole('button',{name:'Unsubscribe From All',exact:true}).click();
+  await page.waitForFunction(()=>document.querySelector('#alertManageStatus').textContent.includes('Unsubscribed'));
+  await page.reload();await page.locator('#alertAccessForm').waitFor();
+  assert.deepEqual(errors,[]);console.log(`${width}px: opt-in, confirmation, add/remove stocks, persistent email preferences, unsubscribe, no overflow passed`);
+  await context.close();
+}}finally{await browser.close();}})().catch(error=>{console.error(error);process.exitCode=1;});

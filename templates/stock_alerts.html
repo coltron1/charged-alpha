@@ -1,0 +1,25 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><meta name="referrer" content="no-referrer"><title>Email Alerts | Charged Alpha</title><link rel="icon" href="/static/assets/charged-alpha-logo.png"><link rel="stylesheet" href="/static/email-alerts.css?v=1"><script src="/static/email-alerts.js?v=1" defer></script></head><body>
+{% include 'partials/brand_header.html' %}
+<main class="ca-page"><div class="ca-wrap alert-portal" id="alertPortal" data-mode="{{ mode }}">
+<p class="ca-kicker">CHARGED ALPHA EMAIL ALERTS</p>
+{% if mode == 'confirm' %}
+<h1>{{ 'Open your email preferences' if access else 'Confirm your stock alerts' }}</h1><p>{{ email }}</p>
+{% if not access %}<p>Selected stocks: <strong>{{ selected|join(', ') }}</strong></p><p>A free digest after 9:10 p.m. Central on days with new coverage. Unsubscribe anytime.</p>{% endif %}
+<form method="post"><input type="hidden" name="csrf" value="{{ csrf }}"><button class="ca-button primary" type="submit">{{ 'Continue' if access else 'Confirm Email Alerts' }}</button></form>
+{% elif mode == 'unsubscribe' %}
+<h1>Stop stock research emails?</h1><p>Your browser bookmarks will stay unchanged.</p><form method="post"><button class="ca-button primary" type="submit">Unsubscribe</button></form>
+{% elif mode == 'unsubscribed' %}
+<h1>You’re unsubscribed.</h1><p>You will not receive further stock alerts. An email already being delivered may still arrive.</p><a class="ca-button" href="/following">Back to Following</a>
+{% elif mode == 'expired' %}
+<h1>This link is no longer available.</h1><p>It may have expired, been used, or been replaced by a newer preference change.</p><a class="ca-button primary" href="/alerts">Request a New Link</a>
+{% elif mode == 'manage' %}
+<div class="ca-section-heading"><div><h1>Your emailed stocks</h1><p>{{ email }} &middot; Confirmed</p></div><button id="alertSignOut" type="button" class="ca-button">Sign Out</button></div>
+<p>One digest after 9:10 p.m. Central on days with new research. Browser bookmarks are separate.</p>
+<form id="alertManageForm"><label for="alertStockSearch">Add a stock</label><input id="alertStockSearch" type="search" placeholder="Ticker or company" autocomplete="off"><div id="alertStockResults" class="alert-stock-results"></div>
+<div class="alert-selected" id="alertSelectedStocks"></div><p id="alertSelectedCount"></p><button type="submit" class="ca-button primary">Save Email Preferences</button><button type="button" class="ca-button" id="alertUnsubscribe">Unsubscribe From All</button></form><p id="alertManageStatus" role="status"></p>
+<a href="/following" class="ca-button">Back to Following</a>
+{% else %}
+<h1>Manage your email alerts.</h1><p>We’ll email you a private sign-in link. No password needed.</p><form id="alertAccessForm"><label for="accessEmail">Email address</label><div class="alert-form-row"><input id="accessEmail" type="email" autocomplete="email" required maxlength="254"><button class="ca-button primary" type="submit">Email Me a Link</button></div></form><p id="alertAccessStatus" role="status"></p><a class="ca-button" href="/following">Choose Stocks in Following</a>
+{% endif %}
+<noscript><p>Email confirmation and unsubscribe work without JavaScript. Editing stock preferences requires JavaScript.</p></noscript>
+</div></main>{% include 'partials/brand_footer.html' %}<script id="alert-initial-stocks" type="application/json">{{ (selected or [])|tojson }}</script></body></html>

@@ -1,0 +1,16 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Charged Alpha stock alerts</title></head>
+<body style="margin:0;background:#f4f6f5;color:#17231d;font-family:Arial,sans-serif;line-height:1.6">
+<div style="max-width:600px;margin:auto;padding:28px 22px;background:#ffffff">
+<a href="https://chargedalpha.com" style="color:#17231d;text-decoration:none"><img src="https://chargedalpha.com/static/assets/charged-alpha-logo.png" width="46" height="46" alt="Charged Alpha" style="vertical-align:middle;margin-right:12px"><strong>CHARGED ALPHA</strong></a>
+<p style="font-size:13px;color:#52635a">Frontier AI stock research</p>
+{% if kind == 'digest' %}
+<h1 style="font-size:26px;line-height:1.3">New research on the companies you follow.</h1>
+<p>What changed, what the headline misses, and what to watch next.</p>
+{% for entry in entries %}<div style="border-top:1px solid #d5ddd8;padding:20px 0"><p style="font-size:13px;color:#52635a">{{ entry.ticker }} &middot; {{ entry.period }} &middot; {{ entry.date }}</p><h2 style="font-size:20px;line-height:1.4">{{ entry.title }}</h2><p><a href="{{ entry.url }}" style="display:inline-block;background:#173e32;color:#fff;padding:11px 18px;border-radius:5px;text-decoration:none;font-weight:bold">Open Stock Research</a></p><p>{% for link in entry.links %}<a href="{{ link.url }}" style="color:#176446;margin-right:14px">{{ link.label }}</a> {% endfor %}</p></div>{% endfor %}
+{% elif kind == 'confirm' %}
+<h1 style="font-size:26px;line-height:1.3">Confirm your stock alerts.</h1><p>You requested free research alerts for <strong>{{ selected|join(', ') }}</strong>.</p><p>One digest on days with new coverage, sent after 9:10 p.m. Central. No ads for unrelated apps. No alerts for reports already in the library when you confirm.</p><p><a href="{{ confirm_url }}" style="display:inline-block;background:#173e32;color:#fff;padding:12px 18px;border-radius:5px;text-decoration:none;font-weight:bold">Review and Confirm</a></p><p>This link expires in 24 hours. If you did not request this, ignore this email. Your subscription will not change.</p>
+{% else %}
+<h1 style="font-size:26px;line-height:1.3">Manage your stock alerts.</h1><p><a href="{{ confirm_url }}" style="display:inline-block;background:#173e32;color:#fff;padding:12px 18px;border-radius:5px;text-decoration:none;font-weight:bold">Open Email Preferences</a></p><p>This private link expires in 24 hours. If you did not request it, ignore this email. No changes have been made.</p>
+{% endif %}
+<div style="border-top:1px solid #d5ddd8;margin-top:26px;padding-top:18px;font-size:12px;color:#52635a"><p>{% if kind == 'digest' %}<a href="{{ manage_url }}" style="color:#176446">Manage stocks</a> &middot; {% endif %}<a href="{{ unsubscribe_url }}" style="color:#176446">Unsubscribe</a> &middot; <a href="https://chargedalpha.com/privacy" style="color:#176446">Privacy</a></p><p>Charged Alpha<br>{{ postal_address }}</p><p>Educational research, not personalized investment advice. AI-generated research can contain errors; verify sources and assumptions.</p></div>
+</div></body></html>

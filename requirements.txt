@@ -11,3 +11,4 @@ pandas==3.0.5
 requests==2.34.2
 lxml==6.1.1
 html5lib==1.1
+svix==2.4.0

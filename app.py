@@ -84,6 +84,7 @@ from research_reader import reader_html
 from stock_research import read_registry, comparison, format_value, group_episode_archive, age_days
 from stock_research_data import financial_status
 from stock_comparison_data import search_stocks, custom_profile_status, SYMBOL as COMPARISON_SYMBOL
+from email_alerts import init_alerts, start_worker as start_alert_worker
 
 # ── Import backend modules ──────────────────────────────────────────────────
 from stock_screener import (screen_stocks, get_stock_detail,
@@ -2062,6 +2063,7 @@ def unauthorized():
 
 init_oauth(app)
 app.register_blueprint(auth_bp)
+init_alerts(app, lambda: _shows_context())
 
 with app.app_context():
     db.create_all()
@@ -2249,7 +2251,7 @@ def _chart_helper(symbol, range_key, params_map=None):
 def inject_seo_meta():
     return {
         "seo_meta": _get_seo_meta(),
-        "google_analytics_id": GOOGLE_ANALYTICS_ID if request.host.split(":", 1)[0] in {CANONICAL_HOST, WWW_CANONICAL_HOST} and request.path != '/following' else "",
+        "google_analytics_id": GOOGLE_ANALYTICS_ID if request.host.split(":", 1)[0] in {CANONICAL_HOST, WWW_CANONICAL_HOST} and request.path != '/following' and not request.path.startswith('/alerts') else "",
         "auth_public_enabled": public_auth_enabled,
     }
 
@@ -3744,6 +3746,8 @@ def charts_delete():
 # ═════════════════════════════════════════════════════════════════════════════
 #  RUN
 # ═════════════════════════════════════════════════════════════════════════════
+start_alert_worker(app)
+
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))
     app.run(host="0.0.0.0", port=port, debug=os.environ.get("FLASK_DEBUG", "0") == "1")

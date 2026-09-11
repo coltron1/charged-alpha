@@ -1,0 +1,25 @@
+CHARGED ALPHA | Frontier AI stock research
+
+{% if kind == 'digest' %}New research on the companies you follow.
+What changed, what the headline misses, and what to watch next.
+{% for entry in entries %}
+{{ entry.ticker }} | {{ entry.period }} | {{ entry.date }}
+{{ entry.title }}
+Open Stock Research: {{ entry.url }}
+{% for link in entry.links %}{{ link.label }}: {{ link.url }}
+{% endfor %}{% endfor %}
+Manage stocks: {{ manage_url }}
+{% elif kind == 'confirm' %}Confirm your stock alerts for {{ selected|join(', ') }}.
+One digest on days with new coverage, after 9:10 p.m. Central. No unrelated app ads.
+Review and confirm: {{ confirm_url }}
+This link expires in 24 hours. Ignore it if you did not request this; no changes will be made.
+{% else %}Manage your stock alerts: {{ confirm_url }}
+This private link expires in 24 hours. Ignore it if you did not request this; no changes will be made.
+{% endif %}
+Unsubscribe: {{ unsubscribe_url }}
+Privacy: https://chargedalpha.com/privacy
+
+Charged Alpha
+{{ postal_address }}
+
+Educational research, not personalized investment advice. AI-generated research can contain errors; verify sources and assumptions.
