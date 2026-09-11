@@ -34032,6 +34032,21 @@
       "description": "Fast clips that point viewers into full research videos and stock pages.",
       "videos": [
         {
+          "title": "Lovesac Profit: The Refund Was Bigger Than Earnings #LOVE #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/ggbF8La5sws",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-09-10T21:05:11-07:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "LOVE"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage.",
+          "earnings_youtube_url": "https://www.youtube.com/watch?v=Z9vEeMrOVUQ",
+          "earnings_match": "stock_date"
+        },
+        {
           "title": "LPTH Stock: Record Cash. Who Funded It? #Shorts",
           "youtube_url": "https://www.youtube.com/shorts/mrOvSnG1S7I",
           "spotify_url": "",
@@ -45711,7 +45726,7 @@
       ]
     }
   ],
-  "last_synced_at": "2026-09-10T22:42:53-05:00",
+  "last_synced_at": "2026-09-10T23:15:42-05:00",
   "stock_metadata": {
     "A": {
       "company": "Agilent Technologies, Inc.",
