@@ -34014,6 +34014,21 @@
       "description": "Fast clips that point viewers into full research videos and stock pages.",
       "videos": [
         {
+          "title": "LPTH Stock: Record Cash. Who Funded It? #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/mrOvSnG1S7I",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-09-10T19:53:08-07:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "LPTH"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage.",
+          "earnings_youtube_url": "https://www.youtube.com/watch?v=-URhcjtgBE0",
+          "earnings_match": "stock_date"
+        },
+        {
           "title": "ORCL Stock: Oracle Q1 FY2027 — Who Funds the Cash? #Shorts",
           "youtube_url": "https://www.youtube.com/shorts/6eFBmMVI6NA",
           "spotify_url": "",
@@ -45678,7 +45693,7 @@
       ]
     }
   ],
-  "last_synced_at": "2026-09-10T21:17:08-05:00",
+  "last_synced_at": "2026-09-10T21:55:10-05:00",
   "stock_metadata": {
     "A": {
       "company": "Agilent Technologies, Inc.",
