@@ -15,6 +15,21 @@ const financialFixture = request => {
   const ticker = decodeURIComponent(new URL(request.url()).pathname.split('/')[3] || '').toUpperCase();
   return crossCurrencyFigures[ticker] || figures;
 };
+const displayedAmount = value => String(Math.round((value + Number.EPSILON) * 100) / 100);
+const comparisonTableSnapshot = page => page.locator('#financialChartTable table').evaluate(table => ({
+  caption:table.caption.textContent.trim(),
+  headers:[...table.tHead.rows[0].cells].map(cell=>cell.textContent.trim()),
+  rows:[...table.tBodies[0].rows].map(row=>({
+    period:row.cells[0].textContent.trim(),
+    companies:[...row.cells].slice(1).map(cell=>({
+      value:[...cell.childNodes].filter(node=>node.nodeType===Node.TEXT_NODE).map(node=>node.textContent).join('').trim(),
+      periodEnd:cell.querySelector('.chart-period-date')?.textContent.trim() || '',
+    })),
+  })),
+}));
+async function assertComparisonTable(page, expected) {
+  assert.deepEqual(await comparisonTableSnapshot(page),expected);
+}
 
 (async () => {
   const browser = await chromium.launch({channel:'chrome', headless:true});
@@ -114,13 +129,32 @@ const financialFixture = request => {
     assert.equal(comparisonResponse.status(),200);
     await comparisonPage.locator('#financials').scrollIntoViewIfNeeded();
     await comparisonPage.waitForFunction(() => document.getElementById('financialStatus').textContent.includes('1 available annual period'));
+    const currentFx = await comparisonPage.locator('#financialComparisonFx').evaluate(node => JSON.parse(node.textContent));
+    assert.equal(currentFx.target_currency,'USD');
+    assert.equal(currentFx.rates?.USD,1);
+    const expectedCompanies = ['BIRK','ONON','DECK'].map(ticker => {
+      const statement = crossCurrencyFigures[ticker], currency = statement.currency, rate = Number(currentFx.rates?.[currency]);
+      assert.ok(Number.isFinite(rate) && rate > 0,`${currency} comparison FX must be finite and positive`);
+      if(currency !== 'USD')assert.ok(Number.isFinite(Date.parse(currentFx.observed_at_by_currency?.[currency])),`${currency} comparison FX observation date must be valid`);
+      assert.ok(Number.isFinite(statement.annual[0].revenue),`${ticker} annual revenue fixture must be finite`);
+      return {ticker,currency,periodEnd:statement.annual[0].date,value:displayedAmount(statement.annual[0].revenue*rate)};
+    });
+    const expectedComparisonTable = {
+      caption:'Revenue (USD)',
+      headers:['Year of period end',...expectedCompanies.map(company=>company.ticker)],
+      rows:[{period:'2025',companies:expectedCompanies.map(company=>({value:company.value,periodEnd:'Ended '+company.periodEnd}))}],
+    };
     await comparisonPage.locator('#compareFinancials').check();
-    await comparisonPage.waitForFunction(() => /116\.14/.test(document.getElementById('financialChartTable').textContent) && /122\.99/.test(document.getElementById('financialChartTable').textContent));
-    const comparisonTable = await comparisonPage.locator('#financialChartTable').textContent();
-    assert.match(comparisonTable,/BIRK/); assert.match(comparisonTable,/ONON/); assert.match(comparisonTable,/DECK/);
-    assert.match(comparisonTable,/116\.14/); assert.match(comparisonTable,/122\.99/); assert.match(comparisonTable,/100/);
+    await comparisonPage.waitForFunction(() => document.getElementById('financialCompareStatus').textContent.includes('normalized to USD'));
+    const wrongFxTable = structuredClone(expectedComparisonTable);
+    wrongFxTable.rows[0].companies[0].value=displayedAmount(Number(expectedCompanies[0].value)+0.01);
+    await assert.rejects(assertComparisonTable(comparisonPage,wrongFxTable),/Expected values to be strictly deep-equal/);
+    await assertComparisonTable(comparisonPage,expectedComparisonTable);
     assert.match(await comparisonPage.locator('#financialCompareStatus').innerText(),/normalized to USD/);
     assert.match(await comparisonPage.locator('#financialCompareSources').innerText(),/CHF to USD/);
+    await comparisonPage.locator('#financialChartTableWrap').evaluate(element => element.open=true);
+    await comparisonPage.locator('#financials').screenshot({path:'/tmp/research-financial-comparison.png'});
+    console.log('Cross-currency table passed with server FX:',expectedCompanies.map(company=>`${company.ticker} ${company.currency} ${company.value} USD`).join('; '),'; one-cent wrong conversion rejected.');
     assert.deepEqual(comparisonErrors,[]);
     await comparisonPage.close();
     const page = await browser.newPage();
