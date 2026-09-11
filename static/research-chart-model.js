@@ -50,10 +50,27 @@
     if (!/^\d{4}-\d{2}-\d{2}$/.test(date || '')) return null;
     return period === 'annual' ? date.slice(0,4) : date.slice(0,4)+' Q'+Math.ceil(Number(date.slice(5,7))/3);
   }
-  function compareStatements(subject, peers, metric, period, years) {
-    const kind = metrics[metric][1], currency = subject.data?.currency || null;
+  function currencyCode(value) {
+    const code = typeof value === 'string' ? value.trim().toUpperCase() : '';
+    return /^[A-Z]{3}$/.test(code) ? code : null;
+  }
+  function comparisonConversion(companies, monetary, options = {}) {
+    if (!monetary) return null;
+    const currencies = companies.map(company=>currencyCode(company.data?.currency));
+    if (new Set(currencies.filter(Boolean)).size < 2) return null;
+    const targetCurrency = currencyCode(options.targetCurrency), rates = options.rates || {}, observedAt = options.observedAtByCurrency || {};
+    if (!targetCurrency || !currencies.every(Boolean)) return null;
+    const converted = companies.map((company,index)=>{
+      const currency = currencies[index], rawRate = currency === targetCurrency ? 1 : Number(rates[currency]);
+      return {ticker:company.ticker,currency,rate:finite(rawRate) && rawRate > 0 ? rawRate : null,observedAt:observedAt[currency] || null};
+    });
+    return converted.some(company=>company.rate === null) ? null : {targetCurrency,companies:converted};
+  }
+  function compareStatements(subject, peers, metric, period, years, options) {
+    const kind = metrics[metric][1], currency = currencyCode(subject.data?.currency);
     const monetary = kind === 'money' || kind === 'per-share';
     const companies = [subject, ...peers.filter((p,i)=>p.ticker!==subject.ticker && peers.findIndex(other=>other.ticker===p.ticker)===i).slice(0,2)];
+    const currencyConversion = comparisonConversion(companies, monetary, options);
     const selectedRows = windowRows(subject.data?.[period] || [], years, period);
     const groups = [...new Set(selectedRows.map(row=>periodGroup(row.date,period)).filter(Boolean))];
     const keys = companies.map((_,i)=>'company'+i), excluded = [], ambiguous = [];
@@ -65,7 +82,7 @@
         if (map.has(group)) { map.set(group,null); ambiguous.push(company.ticker+' '+group); }
         else map.set(group,row);
       }
-      if (i > 0 && monetary && (!currency || !company.data?.currency || company.data.currency !== currency)) {
+      if (i > 0 && monetary && !currencyConversion && (!currency || currencyCode(company.data?.currency) !== currency)) {
         excluded.push(company.ticker);
         return new Map();
       }
@@ -75,14 +92,16 @@
       const row = {date:group, periodEnds:{}};
       keys.forEach((key,i)=>{
         const reported = indexes[i].get(group);
-        row[key] = finite(reported?.[metric]) ? reported[metric] : null;
+        const rate = currencyConversion?.companies[i]?.rate || 1;
+        row[key] = finite(reported?.[metric]) ? reported[metric] * rate : null;
         row.periodEnds[key] = reported?.date || null;
       });
       return row;
     });
     return {rows,keys,labels:companies.map(company=>company.ticker),comparison:true,excluded,ambiguous,
       periodLabel:period==='annual'?'Year of period end':'Calendar quarter of period end',
-      unit:({money:currency || 'Reporting currency','per-share':(currency || 'Reporting currency')+'/share',shares:'shares',percent:'%',ratio:'x'})[kind]};
+      currencyConversion,
+      unit:({money:currencyConversion?.targetCurrency || currency || 'Reporting currency','per-share':(currencyConversion?.targetCurrency || currency || 'Reporting currency')+'/share',shares:'shares',percent:'%',ratio:'x'})[kind]};
   }
   function priceSeries(data, mode) {
     let peak = null;

@@ -3,6 +3,15 @@
   const root = document.querySelector('main[data-symbol]'), model = window.CAChartModel;
   if (!root || !model) return;
   const $ = id => document.getElementById(id), {metrics, finite} = model;
+  const readJson = id => {
+    try { return JSON.parse($(id)?.textContent || '{}'); } catch (_) { return {}; }
+  };
+  const comparisonFx = readJson('financialComparisonFx');
+  const comparisonOptions = {
+    targetCurrency: comparisonFx.target_currency,
+    rates: comparisonFx.rates,
+    observedAtByCurrency: comparisonFx.observed_at_by_currency,
+  };
   const symbol = encodeURIComponent(root.dataset.symbol);
   const colors = ['#9edcca','#eccc7e','#82b8ed','#ef9ea9'];
   const charts = new Map(), views = new Map();
@@ -83,9 +92,12 @@
     if(comparing()) {
       const metric=config.id ? $(config.id+'CompareMetric').value : config.keys[0];
       return {...config,title:config.id?config.title+': '+metrics[metric][0]:config.title,
-        ...model.compareStatements({ticker:root.dataset.symbol,data:statements},chartPeers.map(ticker=>({ticker,data:peerData.get(ticker)})),metric,selected('statementPeriod'),Number(selected('financialRange')))};
+        ...comparisonView(metric)};
     }
     return {...config,rows,labels:config.keys.map(key=>metrics[key][0]),unit:unit(config.keys[0])};
+  }
+  function comparisonView(metric) {
+    return model.compareStatements({ticker:root.dataset.symbol,data:statements},chartPeers.map(ticker=>({ticker,data:peerData.get(ticker)})),metric,selected('statementPeriod'),Number(selected('financialRange')),comparisonOptions);
   }
   function renderFinancials() {
     if (!statements) return;
@@ -110,12 +122,15 @@
     if(!comparing())return;
     const loading=chartPeers.filter(ticker=>peerJobs.has(ticker));
     const failed=chartPeers.filter(ticker=>peerErrors.has(ticker));
+    const monetaryCheck=statements ? comparisonView('revenue') : null;
+    const conversion=monetaryCheck?.currencyConversion;
     $('financialCompareStatus').textContent=!chartPeers.length?'No chart comparison stocks selected.':
       loading.length?'Loading '+loading.join(', ')+' financial statements...':
       failed.length?'Some comparison data is unavailable. Available series remain visible.':
-      'Comparing '+[root.dataset.symbol,...chartPeers].join(', ')+'.';
+      'Comparing '+[root.dataset.symbol,...chartPeers].join(', ')+'.'+(conversion?' Money and EPS are normalized to '+conversion.targetCurrency+' using captured FX rates, not historical FX restatements.':'');
     $('retryFinancialPeers').hidden=!failed.length;
     const list=$('financialCompareSources');list.replaceChildren();
+    const convertedByTicker=new Map((conversion?.companies || []).map(company=>[company.ticker,company]));
     for(const ticker of chartPeers) {
       const data=peerData.get(ticker),li=document.createElement('li');
       if(data) {
@@ -124,9 +139,16 @@
         const source=document.createElement('a');source.textContent=data.source || 'Statement source';
         if(/^https:\/\//.test(data.source_url || '')){source.href=data.source_url;source.target='_blank';source.rel='noopener noreferrer';}
         li.append(source);
-        if(!data.currency || !statements?.currency || data.currency!==statements.currency)li.append(' Currency amounts excluded: reporting currencies differ or are unknown. Ratios and share counts remain available.');
+        const converted=convertedByTicker.get(ticker);
+        if(converted) {
+          if(converted.currency===conversion.targetCurrency)li.append(' Money and EPS already use '+conversion.targetCurrency+'.');
+          else {
+            const rate=converted.rate.toLocaleString('en-US',{maximumFractionDigits:6});
+            li.append(' Money and EPS normalized from '+converted.currency+' to '+conversion.targetCurrency+' at 1 '+converted.currency+' = '+rate+' '+conversion.targetCurrency+(converted.observedAt?' (captured '+converted.observedAt.slice(0,10)+').':'.'));
+          }
+        } else if(monetaryCheck?.excluded.includes(ticker) && !loading.length)li.append(' Currency amounts excluded because a recent conversion rate is unavailable. Ratios and share counts remain available.');
         const period=selected('statementPeriod'),years=Number(selected('financialRange'));
-        const check=model.compareStatements({ticker:root.dataset.symbol,data:statements},[{ticker,data}],'shares',period,years);
+        const check=model.compareStatements({ticker:root.dataset.symbol,data:statements},[{ticker,data}],'shares',period,years,comparisonOptions);
         if(!check.rows.some(row=>row.periodEnds.company1))li.append(' No matching reported periods in this window.');
         if(data.note){const methodology=document.createElement('details'),summary=document.createElement('summary'),text=document.createElement('p');summary.textContent=ticker+' data notes';text.textContent=data.note;methodology.append(summary,text);li.append(methodology);}
       } else li.textContent=ticker+': '+(peerErrors.get(ticker) || 'Loading financial statements...');

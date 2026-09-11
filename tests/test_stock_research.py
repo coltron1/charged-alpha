@@ -146,6 +146,20 @@ class StatementTests(unittest.TestCase):
 
 
 class PageTests(unittest.TestCase):
+    def test_financial_comparison_fx_uses_only_fresh_valid_snapshot_rates(self):
+        from app import _financial_comparison_fx
+        now = datetime.now(timezone.utc)
+        data = _financial_comparison_fx({
+            "fx": {"USD": 1, "EUR": 1.16, "CHF": 1.23, "OLD": 2, "BAD": -1},
+            "fx_observed_at_by_currency": {
+                "EUR": now.isoformat(), "CHF": now.isoformat(),
+                "OLD": (now - timedelta(days=15)).isoformat(),
+            },
+        })
+        self.assertEqual(data["target_currency"], "USD")
+        self.assertEqual(data["rates"], {"USD": 1.0, "EUR": 1.16, "CHF": 1.23})
+        self.assertEqual(data["observed_at_by_currency"]["EUR"], now.isoformat())
+
     def test_no_provider_calls_and_unknown_financial_symbol(self):
         from app import app, build_show_library
         context = {"shows_data":{}, "show_library":build_show_library([{"ticker":"CASY","title":"Earnings","quarter":"Q1 FY2027","youtube_url":"https://youtu.be/CurrentVid1","published_at":"2026-09-09"}])}

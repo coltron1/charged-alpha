@@ -49,7 +49,7 @@ test('quarterly comparison groups calendar quarter ends, never slides missing re
   assert.deepEqual(view.rows.map(row=>row.date),['2026 Q2','2026 Q3']);
   assert.deepEqual(model.values(view.rows,'company1'),[null,400]);
 });
-test('currency comparisons never mix money or EPS but allow ratios and shares', () => {
+test('currency comparisons leave incompatible monetary values blank until an FX snapshot is available', () => {
   const rows=[{date:'2026-01-31',revenue:100,eps:2,shares:10,net_margin:-4}];
   const subject=company('BASE','USD',rows),peer=company('EURO','EUR',rows);
   for(const metric of ['revenue','eps']) {
@@ -59,6 +59,22 @@ test('currency comparisons never mix money or EPS but allow ratios and shares', 
   assert.equal(model.compareStatements(subject,[peer],'shares','annual',1).rows[0].company1,10);
   assert.equal(model.compareStatements(subject,[peer],'net_margin','annual',1).rows[0].company1,-4);
   assert.equal(model.compareStatements(company('BASE',null,rows),[company('OTHER',null,rows)],'revenue','annual',1).rows[0].company1,null);
+});
+test('currency comparisons normalize money and EPS with captured FX instead of plotting empty peer labels', () => {
+  const rows=[{date:'2026-01-31',revenue:100,eps:2,shares:10}];
+  const subject=company('BIRK','EUR',rows),onon=company('ONON','CHF',rows),deck=company('DECK','USD',rows);
+  const options={targetCurrency:'USD',rates:{EUR:1.16,CHF:1.23,USD:1},observedAtByCurrency:{EUR:'2026-09-11T00:00:00+00:00',CHF:'2026-09-11T00:00:00+00:00',USD:'2026-09-11T00:00:00+00:00'}};
+  const revenue=model.compareStatements(subject,[onon,deck],'revenue','annual',1,options);
+  assert.deepEqual(revenue.rows.map(row=>[row.company1,row.company2]),[[123,100]]);
+  assert.ok(Math.abs(revenue.rows[0].company0-116)<1e-10);
+  assert.equal(revenue.unit,'USD');
+  assert.deepEqual(revenue.excluded,[]);
+  assert.equal(revenue.currencyConversion.targetCurrency,'USD');
+  assert.deepEqual(revenue.currencyConversion.companies.map(company=>company.currency),['EUR','CHF','USD']);
+  const eps=model.compareStatements(subject,[onon,deck],'eps','annual',1,options);
+  assert.deepEqual(eps.rows.map(row=>[row.company0,row.company1,row.company2]),[[2.32,2.46,2]]);
+  assert.equal(eps.unit,'USD/share');
+  assert.equal(model.compareStatements(subject,[onon,deck],'shares','annual',1,options).rows[0].company1,10);
 });
 test('comparison enforces two distinct peers and preserves actual zeros and losses', () => {
   const rows=[{date:'2026-01-31',revenue:0,net_income:-1}];

@@ -2886,6 +2886,28 @@ def shows_stocks_api():
     })
 
 
+def _financial_comparison_fx(registry):
+    """Expose only fresh, captured currency rates used for chart comparison."""
+    raw_rates = registry.get("fx", {})
+    raw_observed_at = registry.get("fx_observed_at_by_currency", {})
+    rates, observed_at_by_currency = {"USD": 1.0}, {}
+    for raw_currency, raw_rate in raw_rates.items():
+        currency = str(raw_currency).upper()
+        observed_at = raw_observed_at.get(raw_currency) or raw_observed_at.get(currency)
+        try:
+            rate = float(raw_rate)
+        except (TypeError, ValueError):
+            continue
+        if not re.fullmatch(r"[A-Z]{3}", currency) or not (0 < rate < 1_000_000):
+            continue
+        if currency != "USD" and age_days(observed_at) > 14:
+            continue
+        rates[currency] = rate
+        if observed_at:
+            observed_at_by_currency[currency] = observed_at
+    return {"target_currency": "USD", "rates": rates, "observed_at_by_currency": observed_at_by_currency}
+
+
 @app.route("/shows/<ticker_slug>")
 def show_stock_detail_page(ticker_slug):
     from research_ui import latest_episode_podcasts
@@ -2899,7 +2921,8 @@ def show_stock_detail_page(ticker_slug):
 
     # Page rendering never waits for market-data providers. Scheduled snapshots
     # supply the overview; statements and charts load independently.
-    profiles = read_registry().get("profiles", {})
+    registry = read_registry()
+    profiles = registry.get("profiles", {})
     stock_detail = dict(profiles.get(show_stock["yf_symbol"], {}))
     if stock_detail:
         stock_detail["name"] = stock_detail["company"]
@@ -2995,6 +3018,7 @@ def show_stock_detail_page(ticker_slug):
         research_years=research_years,
         research_packets=research_packets,
         chart_symbol=page_show_stock["yf_symbol"],
+        financial_comparison_fx=_financial_comparison_fx(registry),
         podcast_platforms=shows_data.get("platform_links", {}),
         seo_meta=seo_meta,
         structured_data=_stock_page_structured_data(page_show_stock, seo_meta),

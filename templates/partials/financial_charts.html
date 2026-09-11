@@ -15,7 +15,7 @@
     <p id="financialCompareStatus" class="data-note" role="status"></p>
     <ul id="financialCompareSources" class="data-note financial-compare-sources"></ul>
     <button type="button" id="retryFinancialPeers" hidden><i data-lucide="refresh-cw" aria-hidden="true"></i>Retry comparison data</button>
-    <p class="data-note">Periods are grouped by their ending calendar year or quarter, not identical fiscal calendars. Exact period-end dates appear in tooltips and reported figures. Currency amounts are compared only when reporting currencies match; no FX conversion. Gaps are not estimated.</p>
+    <p class="data-note">Periods are grouped by their ending calendar year or quarter, not identical fiscal calendars. Exact period-end dates appear in tooltips and reported figures. When reporting currencies differ and a recent captured FX rate is available, money and EPS are normalized to USD for comparison. This is not a historical FX restatement. Gaps are not estimated.</p>
   </div>
   <p id="financialStatus" role="status" class="data-note">Financial statements load separately from the research page.</p>
   <button id="loadFinancials" type="button">Load financial trends</button>
@@ -26,7 +26,7 @@
     <p id="financialChartEmpty" class="chart-empty" hidden></p>
     <details id="financialChartTableWrap"><summary>Reported figures</summary><div id="financialChartTable" class="table-scroll" tabindex="0"></div></details>
     <div class="advanced-chart-grid" id="advancedCharts"></div>
-    <details class="methodology"><summary>Financial data &amp; calculation notes</summary><p id="financialMethodology"></p><p>Amounts use the stated reporting currency, not USD conversion. Stock-based compensation is noncash. Free cash flow is operating cash flow less capital spending, which may include capitalized software. Missing metrics are not estimated or assumed to be zero. Banking and insurance ratios require industry-specific interpretation. Latest restatements may differ from figures in older episodes.</p></details>
+    <details class="methodology"><summary>Financial data &amp; calculation notes</summary><p id="financialMethodology"></p><p>Standalone charts use the stated reporting currency. When a chart comparison spans currencies, money and EPS can be normalized to USD using a recent captured FX snapshot; this is for comparison only, not a historical FX restatement. Stock-based compensation is noncash. Free cash flow is operating cash flow less capital spending, which may include capitalized software. Missing metrics are not estimated or assumed to be zero. Banking and insurance ratios require industry-specific interpretation. Latest restatements may differ from figures in older episodes.</p></details>
   </div>
   <noscript><p>Interactive financial charts require JavaScript. The earnings research and comparison table remain available above.</p></noscript>
 </section>
