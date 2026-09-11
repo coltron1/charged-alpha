@@ -10,6 +10,24 @@
   },
   "episodes": [
     {
+      "ticker": "LOVE",
+      "company": "The Lovesac Company",
+      "sector": "Consumer Cyclical",
+      "quarter": "Q2 FY2027",
+      "episode_number": "",
+      "title": "LOVE Stock: The Refund Made the Profit. Can Retail Make the Cash? — Q2 FY2027",
+      "published_at": "2026-09-11T03:28:39+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=Z9vEeMrOVUQ",
+      "spotify_url": "https://open.spotify.com/episode/0dJoJ29E6RScy6G9HtKxih",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/love-stock-the-refund-made-the-profit-can-retail-make-the-cash-%e2%80%94-q2-fy2027/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
       "ticker": "LPTH",
       "company": "LightPath Technologies, Inc.",
       "sector": "Technology",
@@ -45693,7 +45711,7 @@
       ]
     }
   ],
-  "last_synced_at": "2026-09-10T21:55:10-05:00",
+  "last_synced_at": "2026-09-10T22:42:53-05:00",
   "stock_metadata": {
     "A": {
       "company": "Agilent Technologies, Inc.",
@@ -48083,6 +48101,10 @@
     "LNT": {
       "company": "Alliant Energy",
       "sector": "Utilities"
+    },
+    "LOVE": {
+      "company": "The Lovesac Company",
+      "sector": "Consumer Cyclical"
     },
     "LOW": {
       "company": "Lowe's Companies",
