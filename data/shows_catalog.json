@@ -33996,6 +33996,22 @@
       "description": "Fast clips that point viewers into full research videos and stock pages.",
       "videos": [
         {
+          "title": "ORCL Stock: Oracle Q1 FY2027 — Who Funds the Cash? #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/6eFBmMVI6NA",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-09-10T18:03:44-07:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "ORCL",
+            "FY2027"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage.",
+          "earnings_youtube_url": "https://www.youtube.com/watch?v=bj6Ca1HBXkE",
+          "earnings_match": "stock_period_date"
+        },
+        {
           "title": "ADBE Stock: Adobe Q3 FY2026 — What Do Owners Keep? #Shorts",
           "youtube_url": "https://www.youtube.com/shorts/RuTzgItln28",
           "spotify_url": "",
@@ -45644,7 +45660,7 @@
       ]
     }
   ],
-  "last_synced_at": "2026-09-10T19:46:02-05:00",
+  "last_synced_at": "2026-09-10T20:09:38-05:00",
   "stock_metadata": {
     "A": {
       "company": "Agilent Technologies, Inc.",
