@@ -10,6 +10,24 @@
   },
   "episodes": [
     {
+      "ticker": "DBI",
+      "company": "Designer Brands Inc.",
+      "sector": "Consumer Cyclical",
+      "quarter": "Q2 FY2026",
+      "episode_number": "",
+      "title": "DBI Stock: Who Keeps the Tariff Windfall? — Q2 FY2026",
+      "published_at": "2026-09-11T04:20:34+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=Q1lHCKCrOR8",
+      "spotify_url": "https://open.spotify.com/episode/2abnnDirMQJyO3Ah6PszkT",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/dbi-stock-who-keeps-the-tariff-windfall-%e2%80%94-q2-fy2026/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
       "ticker": "LOVE",
       "company": "The Lovesac Company",
       "sector": "Consumer Cyclical",
@@ -34032,6 +34050,21 @@
       "description": "Fast clips that point viewers into full research videos and stock pages.",
       "videos": [
         {
+          "title": "DBI Earnings: Who Keeps the Tariff Windfall? #DBI #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/TLld_FBymog",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-09-10T21:59:55-07:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "DBI"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage.",
+          "earnings_youtube_url": "https://www.youtube.com/watch?v=Q1lHCKCrOR8",
+          "earnings_match": "stock_date"
+        },
+        {
           "title": "Lovesac Profit: The Refund Was Bigger Than Earnings #LOVE #Shorts",
           "youtube_url": "https://www.youtube.com/shorts/ggbF8La5sws",
           "spotify_url": "",
@@ -45726,7 +45759,7 @@
       ]
     }
   ],
-  "last_synced_at": "2026-09-10T23:15:42-05:00",
+  "last_synced_at": "2026-09-11T00:03:29-05:00",
   "stock_metadata": {
     "A": {
       "company": "Agilent Technologies, Inc.",

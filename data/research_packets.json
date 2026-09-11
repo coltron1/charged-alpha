@@ -429,6 +429,39 @@
       "words": 6184,
       "figures": 18,
       "tables": 16
+    },
+    {
+      "key": "DBI:Q2-FY2026",
+      "year": 2026,
+      "quarter": 2,
+      "fiscal": true,
+      "slug": "dbi-q2-fy2026",
+      "ticker": "DBI",
+      "company": "Designer Brands Inc.",
+      "period": "Q2 FY2026",
+      "canonical_url": "https://chargedalpha.com/research/dbi-q2-fy2026",
+      "title": "DBI: Who Keeps the Tariff Windfall?",
+      "page_title": "DBI Q2 FY2026 Research Packet — Charged Alpha",
+      "description": "DBI tariff recoveries, Investor financing, recurring profit and common shareholder value.",
+      "sha256": "60d502dc79daa7e901e74897572a004514361fc0279125856d877228925f728f",
+      "html_file": "research_packets/dbi-q2-fy2026.html",
+      "source_episode": "DBI-Q2-FY2026",
+      "source_staged_at": "2026-09-11T04:36:09Z",
+      "source_sha256": {
+        "READY": "d180979dae097d3f196415cc2266c444cdce889bf1d279510ec26e5189498e07",
+        "handoff.json": "3713701d0824ec76291fae83dc3fad557db65f0499c2c2f34078af055a6561e6",
+        "packet/dbi-q2-fy2026-research-packet.html": "60d502dc79daa7e901e74897572a004514361fc0279125856d877228925f728f",
+        "packet/packet_meta.json": "12a352c4221a4ac46d397f341aad14f60999e8628d96b650a515a756c3f1da75",
+        "packet/packet.json": "b21ae8631de45a4e18d729b80403d143cdae749aa7944e69581983868e63e5b9"
+      },
+      "primary_youtube_long": "Q1lHCKCrOR8",
+      "primary_youtube_short": null,
+      "youtube_studio": null,
+      "youtube_studio_short": null,
+      "source_published": "September 10, 2026",
+      "words": 6522,
+      "figures": 12,
+      "tables": 38
     }
   ]
 }
