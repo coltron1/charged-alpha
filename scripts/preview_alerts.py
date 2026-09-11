@@ -16,7 +16,8 @@ if '--background' in sys.argv:
 os.environ.update(DATABASE_URL='sqlite:///:memory:', GOOGLE_ANALYTICS_ID='', BRAND_PREVIEW='1',
                   STOCK_ALERTS_ENABLED='1', STOCK_ALERTS_PUBLIC='1', STOCK_ALERTS_WORKER='0',
                   RESEND_API_KEY='qa-never-sent', RESEND_WEBHOOK_SECRET='qa-never-sent',
-                  STOCK_ALERTS_POSTAL_ADDRESS='Example Business Address')
+                  STOCK_ALERTS_POSTAL_ADDRESS='Example Business Address',
+                  STOCK_ALERTS_ADMIN_TOKEN='qa-admin-token-not-production')
 sys.path.insert(0, str(ROOT))
 from app import app
 from email_alert_models import StockAlertMessage

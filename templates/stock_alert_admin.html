@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <meta name="referrer" content="no-referrer">
+  <title>Stock Alert Dashboard | Charged Alpha</title>
+  <link rel="icon" href="/static/assets/charged-alpha-logo.png">
+  <link rel="stylesheet" href="/static/brand.css?v=1">
+  <link rel="stylesheet" href="/static/email-alerts.css?v=3">
+</head>
+<body>
+{% include 'partials/brand_header.html' %}
+<main class="ca-page">
+  <div class="ca-wrap alert-admin">
+  {% if mode == 'login' %}
+    <section class="alert-admin-login" aria-labelledby="adminLoginHeading">
+      <p class="ca-kicker">PRIVATE OWNER AREA</p>
+      <h1 id="adminLoginHeading">Stock alert dashboard</h1>
+      <p>Sign in to view subscriber, stock-selection, and delivery reporting.</p>
+      {% if error %}<p class="alert-error" role="alert">{{ error }}</p>{% endif %}
+      <form method="post" action="/alerts/admin">
+        <input type="hidden" name="csrf" value="{{ csrf }}">
+        <label for="adminToken">Dashboard passphrase</label>
+        <div class="alert-form-row">
+          <input id="adminToken" name="token" type="password" autocomplete="current-password" spellcheck="false" required minlength="24" maxlength="512" autofocus>
+          <button class="ca-button primary" type="submit">Open Dashboard</button>
+        </div>
+      </form>
+    </section>
+  {% else %}
+    <div class="alert-admin-toolbar">
+      <div>
+        <p class="ca-kicker">PRIVATE OWNER AREA</p>
+        <h1>Stock alert dashboard</h1>
+        <p>Current as of {{ dashboard.generated_at.strftime('%Y-%m-%d %H:%M UTC') }}. Attribution begins with this release.</p>
+      </div>
+      <form method="post" action="/alerts/admin/signout">
+        <input type="hidden" name="csrf" value="{{ csrf }}">
+        <button class="ca-button" type="submit">Sign Out</button>
+      </form>
+    </div>
+
+    <section class="alert-admin-metrics" aria-label="Subscriber totals">
+      <div class="alert-admin-metric"><span>Confirmed subscribers</span><strong>{{ dashboard.states.get('active', 0) }}</strong></div>
+      <div class="alert-admin-metric"><span>Pending confirmation</span><strong>{{ dashboard.states.get('pending', 0) }}</strong></div>
+      <div class="alert-admin-metric"><span>Active stock selections</span><strong>{{ dashboard.active_stock_alerts }}</strong></div>
+      <div class="alert-admin-metric"><span>Confirmed in 30 days</span><strong>{{ dashboard.confirmed_30d }}</strong></div>
+      <div class="alert-admin-metric"><span>Unsubscribed</span><strong>{{ dashboard.states.get('unsubscribed', 0) }}</strong></div>
+      <div class="alert-admin-metric"><span>Suppressed</span><strong>{{ dashboard.states.get('suppressed', 0) }}</strong></div>
+    </section>
+
+    <div class="alert-admin-grid">
+      <section class="alert-admin-panel alert-admin-panel-wide" aria-labelledby="trendHeading">
+        <div class="alert-admin-panel-heading"><div><p class="ca-kicker">LAST 30 DAYS</p><h2 id="trendHeading">Confirmed signup trend</h2></div><strong>{{ dashboard.confirmed_30d }}</strong></div>
+        <div class="alert-admin-trend" aria-label="Confirmed stock-alert signups per day">
+          {% for row in dashboard.trend %}
+          <div class="alert-admin-trend-column" title="{{ row.date }}: {{ row.count }} confirmed">
+            <progress value="{{ row.count }}" max="{{ dashboard.trend_max or 1 }}" aria-label="{{ row.label }}: {{ row.count }} confirmed signups"></progress>
+            {% if loop.index == 1 or loop.index == dashboard.trend|length or loop.index % 7 == 0 %}<span>{{ row.label }}</span>{% endif %}
+          </div>
+          {% endfor %}
+        </div>
+      </section>
+
+      <section class="alert-admin-panel" aria-labelledby="stocksHeading">
+        <div class="alert-admin-panel-heading"><div><p class="ca-kicker">CURRENTLY ACTIVE</p><h2 id="stocksHeading">Most selected stocks</h2></div></div>
+        {% if dashboard.top_tickers %}
+        <ol class="alert-admin-ranking">
+          {% for row in dashboard.top_tickers %}<li><a href="/shows/{{ row.ticker }}">{{ row.ticker }}</a><strong>{{ row.count }}</strong></li>{% endfor %}
+        </ol>
+        {% else %}<p class="alert-admin-empty">No confirmed stock selections yet.</p>{% endif %}
+      </section>
+
+      <section class="alert-admin-panel" aria-labelledby="deliveryHeading">
+        <div class="alert-admin-panel-heading"><div><p class="ca-kicker">LAST 30 DAYS</p><h2 id="deliveryHeading">Delivery health</h2></div></div>
+        <dl class="alert-admin-facts">
+          <div><dt>Accepted by Resend</dt><dd>{{ dashboard.message_states.get('sent', 0) }}</dd></div>
+          <div><dt>Queued or sending</dt><dd>{{ dashboard.message_states.get('queued', 0) + dashboard.message_states.get('sending', 0) }}</dd></div>
+          <div><dt>Failed or uncertain</dt><dd>{{ dashboard.message_states.get('failed', 0) + dashboard.message_states.get('uncertain', 0) }}</dd></div>
+          <div><dt>Delivered callback</dt><dd>{{ dashboard.outcomes.get('delivered', 0) }}</dd></div>
+          <div><dt>Bounce / complaint / suppression</dt><dd>{{ dashboard.outcomes.get('email.bounced', 0) + dashboard.outcomes.get('email.complained', 0) + dashboard.outcomes.get('email.suppressed', 0) }}</dd></div>
+        </dl>
+      </section>
+
+      <section class="alert-admin-panel alert-admin-panel-wide" aria-labelledby="funnelHeading">
+        <div class="alert-admin-panel-heading"><div><p class="ca-kicker">LAST 30 DAYS</p><h2 id="funnelHeading">Signup attribution</h2></div></div>
+        {% if dashboard.sources %}
+        <div class="alert-admin-table-wrap"><table class="alert-admin-table"><thead><tr><th>Source</th><th>Confirmation requests</th><th>Confirmed</th><th>Confirmation rate</th><th>Added stocks</th></tr></thead><tbody>
+          {% for row in dashboard.sources %}<tr><td>{{ row.source|title }}</td><td>{{ row.requested }}</td><td>{{ row.confirmed }}</td><td>{{ row.rate ~ '%' if row.rate is not none else '—' }}</td><td>{{ row.added }}</td></tr>{% endfor %}
+        </tbody></table></div>
+        {% else %}<p class="alert-admin-empty">Attribution will appear after the first confirmed signup from this release.</p>{% endif %}
+      </section>
+
+      <section class="alert-admin-panel alert-admin-panel-wide" aria-labelledby="recentHeading">
+        <div class="alert-admin-panel-heading"><div><p class="ca-kicker">PRIVACY-SAFE VIEW</p><h2 id="recentHeading">Recent confirmed subscribers</h2></div><form method="post" action="/alerts/admin/export.csv"><input type="hidden" name="csrf" value="{{ csrf }}"><button class="ca-button primary" type="submit">Download CSV</button></form></div>
+        <p class="alert-admin-note">Addresses are masked here. The protected CSV is the only view that includes full email addresses.</p>
+        {% if dashboard.recent %}
+        <div class="alert-admin-table-wrap"><table class="alert-admin-table"><thead><tr><th>Email</th><th>Selected stocks</th><th>Latest attribution</th><th>Confirmed</th></tr></thead><tbody>
+          {% for row in dashboard.recent %}<tr><td>{{ row.email }}</td><td>{{ row.tickers|join(', ') }}</td><td>{{ row.source|replace('_', ' ')|title }}</td><td>{{ row.confirmed_at.strftime('%Y-%m-%d') if row.confirmed_at else '—' }}</td></tr>{% endfor %}
+        </tbody></table></div>
+        {% else %}<p class="alert-admin-empty">No confirmed subscribers yet.</p>{% endif %}
+      </section>
+    </div>
+  {% endif %}
+  </div>
+</main>
+{% include 'partials/brand_footer.html' %}
+</body>
+</html>

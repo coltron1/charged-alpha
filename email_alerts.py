@@ -1,18 +1,21 @@
 """Confirmed, stock-specific alerts with durable delivery and explicit rollout gates."""
+import csv
 import datetime as dt
 import hashlib
 import hmac
+import io
 import json
 import os
 import re
 import secrets
 import threading
 import uuid
+from collections import Counter, defaultdict
 from urllib.parse import urlsplit, quote
 from zoneinfo import ZoneInfo
 
 import requests
-from flask import Blueprint, abort, current_app, jsonify, redirect, render_template, request, session
+from flask import Blueprint, Response, abort, current_app, jsonify, redirect, render_template, request, session
 from itsdangerous import BadSignature, SignatureExpired, URLSafeTimedSerializer
 from sqlalchemy import or_
 from sqlalchemy.exc import IntegrityError
@@ -20,7 +23,7 @@ from sqlalchemy.exc import IntegrityError
 from auth import normalize_email_updates_address
 from email_alert_models import (db, StockAlertSubscriber as Subscriber, StockAlertRequest as ConfirmRequest,
                                StockAlertSeen as Seen, StockAlertMessage as Message,
-                               StockAlertThrottle as Throttle, StockAlertLease as Lease)
+                               StockAlertEvent as Event, StockAlertThrottle as Throttle, StockAlertLease as Lease)
 from research_ui import publication_date
 from stock_research import group_episode_archive
 
@@ -28,6 +31,11 @@ bp = Blueprint('stock_alerts', __name__)
 BASE = 'https://chargedalpha.com'
 PERIOD = re.compile(r'^(?:Q[1-4]|H[12])\s+(?:FY)?\d{4}$|^FY\s?\d{4}$')
 PENDING = ('queued', 'sending')
+ALERT_SOURCES = {
+    'campaign', 'direct', 'email', 'following', 'manage', 'podcast', 'resend', 'stock_follow',
+    'unknown', 'website', 'youtube',
+}
+ADMIN_SESSION_SECONDS = 12 * 60 * 60
 _wake = threading.Event()
 
 
@@ -61,14 +69,54 @@ def allowed_recipient(email):
     return configured() and (public_enabled() or email == current_app.config.get('STOCK_ALERTS_TEST_EMAIL'))
 
 
-def csrf_token():
-    if not session.get('stock_alert_csrf'):
-        session['stock_alert_csrf'] = secrets.token_urlsafe(24)
-    return session['stock_alert_csrf']
+def normalize_alert_source(value, default='unknown'):
+    source = re.sub(r'[^a-z_]', '', str(value or '').strip().lower())[:32]
+    fallback = default if default in ALERT_SOURCES else 'unknown'
+    return source if source in ALERT_SOURCES else fallback
 
 
-def csrf_check():
-    expected = session.get('stock_alert_csrf', '')
+def requested_source():
+    return normalize_alert_source(request.args.get('source'), 'direct')
+
+
+def admin_token():
+    token = str(current_app.config.get('STOCK_ALERTS_ADMIN_TOKEN', '')).strip()
+    return token if len(token) >= 24 else ''
+
+
+def admin_enabled():
+    return bool(admin_token())
+
+
+def admin_token_version():
+    return hashlib.sha256(admin_token().encode()).hexdigest()[:24]
+
+
+def admin_session_active():
+    identity = session.get('stock_alert_admin')
+    return bool(
+        admin_enabled()
+        and isinstance(identity, list)
+        and len(identity) == 2
+        and isinstance(identity[0], (int, float))
+        and isinstance(identity[1], str)
+        and identity[0] >= utc_timestamp() - ADMIN_SESSION_SECONDS
+        and hmac.compare_digest(identity[1], admin_token_version())
+    )
+
+
+def establish_admin_session():
+    session['stock_alert_admin'] = [utc_timestamp(), admin_token_version()]
+
+
+def csrf_token(key='stock_alert_csrf'):
+    if not session.get(key):
+        session[key] = secrets.token_urlsafe(24)
+    return session[key]
+
+
+def csrf_check(key='stock_alert_csrf'):
+    expected = session.get(key, '')
     supplied = request.headers.get('X-CSRF-Token') or request.form.get('csrf', '')
     origin = request.headers.get('Origin')
     allowed = {BASE, 'https://www.chargedalpha.com'}
@@ -82,6 +130,58 @@ def csrf_check():
         abort(403)
     if not expected or not isinstance(supplied, str) or not hmac.compare_digest(expected, supplied):
         abort(403)
+
+
+def admin_csrf_token():
+    return csrf_token('stock_alert_admin_csrf')
+
+
+def admin_csrf_check():
+    csrf_check('stock_alert_admin_csrf')
+
+
+def ticker_sources(body, tickers, default='manage'):
+    raw = body.get('ticker_sources') if isinstance(body, dict) else None
+    if not isinstance(raw, dict):
+        return {ticker: normalize_alert_source(default, 'manage') for ticker in tickers}
+    return {
+        ticker: normalize_alert_source(raw.get(ticker), normalize_alert_source(default, 'manage'))
+        for ticker in tickers
+    }
+
+
+def record_events(subscriber_id, event_type, tickers=None, source='unknown', request_id=None):
+    """Record only internal IDs, stock symbols, and sanitized source labels."""
+    values = sorted(set(tickers or [])) or [None]
+    for ticker in values:
+        db.session.add(Event(
+            subscriber_id=subscriber_id,
+            request_id=request_id,
+            event_type=event_type,
+            ticker=ticker,
+            source=normalize_alert_source(source),
+            occurred_at=now(),
+        ))
+
+
+def source_for_request(request_id):
+    event = Event.query.filter_by(request_id=request_id, event_type='signup_requested').order_by(Event.occurred_at.asc()).first()
+    return event.source if event else 'unknown'
+
+
+def latest_sources_for_subscribers(subscriber_ids):
+    """Return the latest attributable action for each requested subscriber."""
+    if not subscriber_ids:
+        return {}
+    rows = (Event.query
+            .filter(Event.subscriber_id.in_(subscriber_ids),
+                    Event.event_type.in_(('signup_confirmed', 'preference_added')))
+            .order_by(Event.occurred_at.desc(), Event.id.desc())
+            .all())
+    result = {}
+    for event in rows:
+        result.setdefault(event.subscriber_id, event.source)
+    return result
 
 
 def signer(salt):
@@ -127,6 +227,93 @@ def validate_tickers(value):
     if any(t not in valid for t in result):
         raise ValueError('One or more stocks are not in the research library.')
     return result
+
+
+def stored_tickers(value):
+    try:
+        tickers = json.loads(value or '[]')
+    except (TypeError, ValueError):
+        return []
+    return sorted({ticker for ticker in tickers if isinstance(ticker, str) and re.fullmatch(r'[A-Z0-9.-]{1,24}', ticker)})
+
+
+def alert_dashboard_data():
+    """Prepare aggregate-only operational reporting for the private owner page."""
+    current = now()
+    since = current - dt.timedelta(days=30)
+    subscribers = Subscriber.query.order_by(Subscriber.created_at.desc()).all()
+    states = Counter(sub.state for sub in subscribers)
+    active = [sub for sub in subscribers if sub.state == 'active']
+    ticker_counts = Counter(
+        ticker
+        for sub in active
+        for ticker in stored_tickers(sub.tickers_json)
+    )
+
+    daily_confirmed = Counter(
+        sub.confirmed_at.date().isoformat()
+        for sub in subscribers
+        if sub.confirmed_at and sub.confirmed_at >= since
+    )
+    trend = []
+    for offset in range(29, -1, -1):
+        day = (current - dt.timedelta(days=offset)).date()
+        trend.append({'date': day.isoformat(), 'label': day.strftime('%b %-d'), 'count': daily_confirmed[day.isoformat()]})
+    maximum = max((row['count'] for row in trend), default=0)
+    for row in trend:
+        row['percent'] = round((row['count'] / maximum) * 100) if maximum else 0
+
+    events = Event.query.filter(Event.occurred_at >= since).all()
+    source_sets = defaultdict(lambda: {'requested': set(), 'confirmed': set(), 'added': set()})
+    for event in sorted(events, key=lambda item: item.occurred_at, reverse=True):
+        key = event.request_id or event.id
+        if event.event_type == 'signup_requested':
+            source_sets[event.source]['requested'].add(key)
+        elif event.event_type == 'signup_confirmed':
+            source_sets[event.source]['confirmed'].add(key)
+        elif event.event_type == 'preference_added':
+            source_sets[event.source]['added'].add(event.id)
+
+    sources = []
+    for source, counts in source_sets.items():
+        requested = len(counts['requested'])
+        confirmed = len(counts['confirmed'])
+        sources.append({
+            'source': source.replace('_', ' '),
+            'requested': requested,
+            'confirmed': confirmed,
+            'added': len(counts['added']),
+            'rate': round((confirmed / requested) * 100) if requested else None,
+        })
+    sources.sort(key=lambda row: (-row['confirmed'], -row['requested'], row['source']))
+
+    messages = Message.query.filter(Message.created_at >= since).all()
+    message_states = Counter(message.state for message in messages)
+    outcomes = Counter(message.outcome for message in messages if message.outcome)
+    recent = sorted(active, key=lambda sub: sub.confirmed_at or sub.created_at, reverse=True)[:12]
+    recent_sources = latest_sources_for_subscribers([sub.id for sub in recent])
+    return {
+        'generated_at': current,
+        'window_start': since,
+        'states': states,
+        'active_stock_alerts': sum(ticker_counts.values()),
+        'confirmed_30d': sum(row['count'] for row in trend),
+        'top_tickers': [{'ticker': ticker, 'count': count} for ticker, count in ticker_counts.most_common(12)],
+        'trend': trend,
+        'trend_max': maximum,
+        'sources': sources,
+        'message_states': message_states,
+        'outcomes': outcomes,
+        'recent': [
+            {
+                'email': masked_email(sub.email),
+                'tickers': stored_tickers(sub.tickers_json),
+                'confirmed_at': sub.confirmed_at,
+                'source': recent_sources.get(sub.id, 'not tracked'),
+            }
+            for sub in recent
+        ],
+    }
 
 
 def requested_tickers():
@@ -246,6 +433,11 @@ def private_response(response):
     response.headers['Cache-Control'] = 'no-store'
     response.headers['X-Robots-Tag'] = 'noindex, nofollow'
     response.headers['Referrer-Policy'] = 'no-referrer'
+    response.headers['X-Frame-Options'] = 'DENY'
+    response.headers['Content-Security-Policy'] = (
+        "default-src 'self'; base-uri 'none'; form-action 'self'; frame-ancestors 'none'; "
+        "object-src 'none'; img-src 'self' data:; style-src 'self'; script-src 'self'; connect-src 'self'"
+    )
     return response
 
 
@@ -302,6 +494,8 @@ def request_alerts():
                             created_at=now(), expires_at=now() + dt.timedelta(hours=24))
     db.session.add(record)
     db.session.flush()
+    if kind == 'confirm':
+        record_events(sub.id, 'signup_requested', selected, normalize_alert_source(body.get('source'), 'direct'), record.id)
     payload = email_payload(sub, kind, confirm_url=BASE + '/alerts/confirm/' + token, selected=selected)
     db.session.add(Message(dedupe_key='request:' + record.id, subscriber_id=sub.id, version=sub.version,
                            kind=kind, payload_json=json.dumps(payload), created_at=now(), retry_at=now()))
@@ -332,6 +526,7 @@ def confirm_alerts(token):
             sub.confirmed_at = now()
             sub.version += 1
             sub.updated_at = now()
+            record_events(sub.id, 'signup_confirmed', selected, source_for_request(record.id), record.id)
         elif sub.state != 'active':
             abort(400)
         record.used_at = now()
@@ -370,6 +565,7 @@ def unsubscribe_alerts(token):
     if request.method == 'POST':
         # RFC 8058 mail-client POSTs do not carry a browser session or CSRF token.
         if sub.state not in ('unsubscribed', 'suppressed'):
+            record_events(sub.id, 'unsubscribed', stored_tickers(sub.tickers_json), 'email')
             deactivate(sub)
             db.session.commit()
         session.pop('stock_alert_identity', None)
@@ -380,6 +576,7 @@ def unsubscribe_alerts(token):
 @bp.route('/alerts', methods=['GET'])
 def portal():
     requested = requested_tickers()
+    source = requested_source()
     sub = current_subscriber()
     if sub:
         selected = json.loads(sub.tickers_json)
@@ -399,7 +596,68 @@ def portal():
         suggested = []
     return render_template('stock_alerts.html', mode=mode, csrf=csrf_token(),
                            email=masked_email(sub.email) if sub else '', selected=selected,
-                           suggested=suggested)
+                           suggested=suggested, requested_source=source)
+
+
+def require_admin_session():
+    if not admin_enabled():
+        abort(404)
+    if not admin_session_active():
+        abort(403)
+
+
+@bp.route('/alerts/admin', methods=['GET', 'POST'])
+def admin_dashboard():
+    if not admin_enabled():
+        abort(404)
+    if request.method == 'POST':
+        admin_csrf_check()
+        if request.content_length and request.content_length > 8192:
+            abort(413)
+        if not rate_hit('admin-ip:' + (request.remote_addr or ''), 5, 900):
+            return render_template('stock_alert_admin.html', mode='login', csrf=admin_csrf_token(),
+                                   error='Too many sign-in attempts. Try again in 15 minutes.'), 429
+        candidate = request.form.get('token', '')
+        valid = isinstance(candidate, str) and candidate.isascii() and hmac.compare_digest(candidate, admin_token())
+        if not valid:
+            return render_template('stock_alert_admin.html', mode='login', csrf=admin_csrf_token(),
+                                   error='That dashboard passphrase was not accepted.'), 401
+        establish_admin_session()
+        return redirect('/alerts/admin')
+    if not admin_session_active():
+        return render_template('stock_alert_admin.html', mode='login', csrf=admin_csrf_token())
+    return render_template('stock_alert_admin.html', mode='dashboard', csrf=admin_csrf_token(),
+                           dashboard=alert_dashboard_data())
+
+
+@bp.post('/alerts/admin/signout')
+def admin_logout():
+    require_admin_session()
+    admin_csrf_check()
+    session.pop('stock_alert_admin', None)
+    session.pop('stock_alert_admin_csrf', None)
+    return redirect('/alerts/admin')
+
+
+@bp.post('/alerts/admin/export.csv')
+def admin_export_csv():
+    require_admin_session()
+    admin_csrf_check()
+    subscribers = Subscriber.query.order_by(Subscriber.created_at.desc()).all()
+    sources = latest_sources_for_subscribers([sub.id for sub in subscribers])
+    output = io.StringIO(newline='')
+    writer = csv.writer(output)
+    writer.writerow(('email', 'state', 'tickers', 'created_at', 'confirmed_at', 'updated_at', 'last_attribution_source'))
+    for sub in subscribers:
+        writer.writerow((sub.email, sub.state, ' '.join(stored_tickers(sub.tickers_json)),
+                         sub.created_at.isoformat() if sub.created_at else '',
+                         sub.confirmed_at.isoformat() if sub.confirmed_at else '',
+                         sub.updated_at.isoformat() if sub.updated_at else '',
+                         sources.get(sub.id, 'not tracked')))
+    stamp = now().date().isoformat()
+    return Response(output.getvalue(), mimetype='text/csv', headers={
+        'Content-Disposition': f'attachment; filename="charged-alpha-stock-alerts-{stamp}.csv"',
+    })
 
 
 @bp.post('/api/alerts/preferences')
@@ -415,6 +673,7 @@ def save_preferences():
     if not isinstance(body, dict):
         abort(400)
     if body.get('action') == 'unsubscribe':
+        record_events(sub.id, 'unsubscribed', stored_tickers(sub.tickers_json), 'manage')
         deactivate(sub)
         session.pop('stock_alert_identity', None)
     else:
@@ -422,12 +681,20 @@ def save_preferences():
             selected = validate_tickers(body.get('tickers'))
         except ValueError as exc:
             return jsonify(error=str(exc)), 400
-        baseline(sub, set(selected) - set(json.loads(sub.tickers_json)))
+        previous = stored_tickers(sub.tickers_json)
+        added = sorted(set(selected) - set(previous))
+        removed = sorted(set(previous) - set(selected))
+        sources = ticker_sources(body, selected)
+        baseline(sub, added)
         cancel_queued(sub)
         sub.tickers_json = json.dumps(selected)
         sub.version += 1
         sub.updated_at = now()
         establish_session(sub)
+        for ticker in added:
+            record_events(sub.id, 'preference_added', [ticker], sources[ticker])
+        if removed:
+            record_events(sub.id, 'preference_removed', removed, 'manage')
     db.session.commit()
     return jsonify(ok=True)
 
@@ -463,6 +730,7 @@ def webhook():
     if message and event.get('type') in ('email.bounced', 'email.complained', 'email.suppressed'):
         sub = Subscriber.query.filter_by(id=message.subscriber_id).with_for_update().first()
         if sub and sub.state != 'suppressed':
+            record_events(sub.id, 'suppressed', stored_tickers(sub.tickers_json), 'resend')
             deactivate(sub, 'suppressed')
         message.outcome = event['type']
         db.session.commit()
@@ -612,7 +880,8 @@ def start_worker(app):
 
 
 def init_alerts(app, provider):
-    for key in ('RESEND_API_KEY', 'RESEND_WEBHOOK_SECRET', 'STOCK_ALERTS_POSTAL_ADDRESS', 'STOCK_ALERTS_TEST_EMAIL'):
+    for key in ('RESEND_API_KEY', 'RESEND_WEBHOOK_SECRET', 'STOCK_ALERTS_POSTAL_ADDRESS', 'STOCK_ALERTS_TEST_EMAIL',
+                'STOCK_ALERTS_ADMIN_TOKEN'):
         app.config[key] = os.environ.get(key, '').strip()
     for key in ('STOCK_ALERTS_ENABLED', 'STOCK_ALERTS_PUBLIC', 'STOCK_ALERTS_WORKER'):
         app.config[key] = os.environ.get(key) == '1'

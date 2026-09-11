@@ -70,6 +70,7 @@
     const form = $('stockAlertSignup');
     const status = $('alertSignupStatus');
     const source = form.dataset.alertSelection || 'following';
+    const alertSource = form.dataset.alertSource || 'direct';
     const selectedStocks = () => source === 'requested'
       ? initialStocks()
       : (window.CAFollowing?.read() || []);
@@ -105,6 +106,7 @@
           tickers,
           consent: $('alertConsent').checked,
           website: form.elements.website?.value || '',
+          source: alertSource,
         });
         status.textContent = 'Check your inbox for a confirmation link. Your email selection changes only after you confirm.';
       });
@@ -127,12 +129,14 @@
     const form = $('alertManageForm');
     const status = $('alertManageStatus');
     let selected = initialStocks();
+    const selectionSources = Object.fromEntries(selected.map(ticker => [ticker, 'manage']));
     let stocks = [];
     const suggestedButtons = [...document.querySelectorAll('[data-alert-add-stock]')];
 
-    function addStock(ticker) {
+    function addStock(ticker, source = 'manage') {
       if (!ticker || selected.includes(ticker) || selected.length >= 50) return;
       selected.push(ticker);
+      selectionSources[ticker] = source;
       selected.sort();
       draw();
       search();
@@ -152,6 +156,7 @@
         button.append(icon);
         button.addEventListener('click', () => {
           selected = selected.filter(value => value !== ticker);
+          delete selectionSources[ticker];
           draw();
           search();
         });
@@ -190,7 +195,7 @@
     }
 
     suggestedButtons.forEach(button => {
-      button.addEventListener('click', () => addStock(button.dataset.alertAddStock));
+      button.addEventListener('click', () => addStock(button.dataset.alertAddStock, button.dataset.alertAddSource || 'manage'));
     });
     draw();
     fetch('/api/shows/stocks')
@@ -210,7 +215,7 @@
     form.addEventListener('submit', event => {
       event.preventDefault();
       submit(form, status, async () => {
-        await post('/api/alerts/preferences', {tickers: selected});
+        await post('/api/alerts/preferences', {tickers: selected, ticker_sources: selectionSources});
         status.textContent = 'Email preferences saved. Browser bookmarks are unchanged.';
       });
     });

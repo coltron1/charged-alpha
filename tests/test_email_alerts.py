@@ -11,7 +11,8 @@ os.environ['DATABASE_URL'] = 'sqlite:///:memory:'
 os.environ['STOCK_ALERTS_WORKER'] = '0'
 import app as site
 import email_alerts as alerts
-from email_alert_models import db, StockAlertSubscriber as Subscriber, StockAlertRequest as Request, StockAlertMessage as Message, StockAlertSeen as Seen
+from email_alert_models import (db, StockAlertSubscriber as Subscriber, StockAlertRequest as Request,
+                                StockAlertMessage as Message, StockAlertSeen as Seen, StockAlertEvent as Event)
 from svix.webhooks import Webhook
 
 FIXED = dt.datetime(2026, 9, 11, 3, 0)
@@ -23,7 +24,8 @@ class StockAlertsTests(unittest.TestCase):
         site.app.config.update(TESTING=True, STOCK_ALERTS_ENABLED=True, STOCK_ALERTS_PUBLIC=True,
                                STOCK_ALERTS_WORKER=False, RESEND_API_KEY='not-a-real-key',
                                RESEND_WEBHOOK_SECRET=SECRET, STOCK_ALERTS_POSTAL_ADDRESS='Test Business Address',
-                               STOCK_ALERTS_DAILY_LIMIT=80, STOCK_ALERTS_MONTHLY_LIMIT=2500)
+                               STOCK_ALERTS_DAILY_LIMIT=80, STOCK_ALERTS_MONTHLY_LIMIT=2500,
+                               STOCK_ALERTS_ADMIN_TOKEN='test-admin-token-1234567890-long')
         self.context = site.app.app_context()
         self.context.push()
         db.drop_all()
@@ -47,19 +49,37 @@ class StockAlertsTests(unittest.TestCase):
     def post(self, path, data, client=None):
         return (client or self.client).post(path, json=data, headers={'X-CSRF-Token': self.csrf, 'Origin': alerts.BASE})
 
-    def signup(self, email='reader@example.com', stocks=None):
-        return self.post('/api/alerts/request', {'email': email, 'tickers': stocks or ['ADBE'], 'consent': True})
+    def signup(self, email='reader@example.com', stocks=None, source='direct'):
+        return self.post('/api/alerts/request', {
+            'email': email,
+            'tickers': stocks or ['ADBE'],
+            'consent': True,
+            'source': source,
+        })
 
     def token(self):
         payload = json.loads(Message.query.filter_by(kind='confirm').order_by(Message.created_at.desc()).first().payload_json)
         return re.search(r'/alerts/confirm/([^\s<"]+)', payload['text']).group(1)
 
-    def active(self):
-        self.assertEqual(self.signup().status_code, 200)
+    def active(self, source='direct'):
+        self.assertEqual(self.signup(source=source).status_code, 200)
         token = self.token()
         response = self.client.post('/alerts/confirm/' + token, data={'csrf': self.csrf})
         self.assertEqual(response.status_code, 302)
         return Subscriber.query.one()
+
+    def admin_csrf(self, client=None):
+        response = (client or self.client).get('/alerts/admin')
+        match = re.search(r'name="csrf" value="([^"]+)"', response.text)
+        self.assertIsNotNone(match)
+        return match.group(1)
+
+    def admin_login(self, client=None, token=None):
+        client = client or self.client
+        return client.post('/alerts/admin', data={
+            'csrf': self.admin_csrf(client),
+            'token': token or site.app.config['STOCK_ALERTS_ADMIN_TOKEN'],
+        })
 
     def add_report(self):
         self.data['show_library']['stocks'][0]['episodes'].insert(0, {
@@ -83,10 +103,11 @@ class StockAlertsTests(unittest.TestCase):
             self.assertNotIn('googletagmanager.com', response.text)
 
     def test_follow_link_preselects_a_confirmed_email_signup(self):
-        response = self.client.get('/alerts?ticker=ADBE')
+        response = self.client.get('/alerts?ticker=ADBE&source=stock_follow')
         self.assertEqual(response.status_code, 200)
         self.assertIn('Get updates for ADBE', response.text)
         self.assertIn('id="stockAlertSignup" data-alert-selection="requested"', response.text)
+        self.assertIn('data-alert-source="stock_follow"', response.text)
         self.assertIn('Selected email alert: ADBE.', response.text)
         self.assertEqual(response.headers['Cache-Control'], 'no-store')
         self.assertIn('noindex', response.headers['X-Robots-Tag'])
@@ -97,8 +118,9 @@ class StockAlertsTests(unittest.TestCase):
         self.assertNotIn('data-alert-selection="requested"', invalid.text)
 
         sub = self.active()
-        managed = self.client.get('/alerts?ticker=AVAV')
+        managed = self.client.get('/alerts?ticker=AVAV&source=stock_follow')
         self.assertIn('data-alert-add-stock="AVAV"', managed.text)
+        self.assertIn('data-alert-add-source="stock_follow"', managed.text)
         self.assertEqual(json.loads(sub.tickers_json), ['ADBE'])
 
         site.app.config['STOCK_ALERTS_PUBLIC'] = False
@@ -139,6 +161,56 @@ class StockAlertsTests(unittest.TestCase):
         self.assertEqual(self.client.post('/alerts/confirm/' + token, data={'csrf': self.csrf}).status_code, 302)
         self.assertEqual(sub.state, 'active')
         self.assertEqual(self.client.post('/alerts/confirm/' + token, data={'csrf': self.csrf}).status_code, 400)
+
+    def test_records_signup_and_preference_attribution(self):
+        self.assertEqual(self.signup(source='stock_follow').status_code, 200)
+        request_record = Request.query.one()
+        self.assertEqual(Event.query.filter_by(event_type='signup_requested').count(), 1)
+        requested = Event.query.filter_by(event_type='signup_requested').one()
+        self.assertEqual((requested.request_id, requested.ticker, requested.source),
+                         (request_record.id, 'ADBE', 'stock_follow'))
+        self.assertEqual(self.client.post('/alerts/confirm/' + self.token(), data={'csrf': self.csrf}).status_code, 302)
+        confirmed = Event.query.filter_by(event_type='signup_confirmed').one()
+        self.assertEqual((confirmed.request_id, confirmed.ticker, confirmed.source),
+                         (request_record.id, 'ADBE', 'stock_follow'))
+        self.assertEqual(self.post('/api/alerts/preferences', {
+            'tickers': ['ADBE', 'AVAV'],
+            'ticker_sources': {'AVAV': 'stock_follow'},
+        }).status_code, 200)
+        added = Event.query.filter_by(event_type='preference_added', ticker='AVAV').one()
+        self.assertEqual(added.source, 'stock_follow')
+
+    def test_admin_dashboard_is_private_and_csv_requires_authenticated_session(self):
+        self.active(source='stock_follow')
+        locked = self.client.get('/alerts/admin')
+        self.assertEqual(locked.status_code, 200)
+        self.assertIn('Dashboard passphrase', locked.text)
+        self.assertNotIn('reader@example.com', locked.text)
+        rejected = self.admin_login(token='wrong-admin-token-1234567890')
+        self.assertEqual(rejected.status_code, 401)
+        self.assertEqual(self.admin_login().status_code, 302)
+        dashboard = self.client.get('/alerts/admin')
+        self.assertEqual(dashboard.status_code, 200)
+        self.assertIn('Confirmed subscribers', dashboard.text)
+        self.assertIn('ADBE', dashboard.text)
+        self.assertIn('re***@example.com', dashboard.text)
+        self.assertNotIn('reader@example.com', dashboard.text)
+        self.assertEqual(dashboard.headers['Cache-Control'], 'no-store')
+        self.assertEqual(dashboard.headers['X-Frame-Options'], 'DENY')
+        self.assertIn('frame-ancestors', dashboard.headers['Content-Security-Policy'])
+        self.assertNotIn('googletagmanager.com', dashboard.text)
+        csv_response = self.client.post('/alerts/admin/export.csv', data={'csrf': self.admin_csrf()})
+        self.assertEqual(csv_response.status_code, 200)
+        self.assertIn('text/csv', csv_response.content_type)
+        self.assertIn('reader@example.com', csv_response.text)
+        self.assertIn('stock_follow', csv_response.text)
+        self.assertEqual(self.client.post('/alerts/admin/signout', data={'csrf': self.admin_csrf()}).status_code, 302)
+        self.assertIn('Dashboard passphrase', self.client.get('/alerts/admin').text)
+
+    def test_admin_dashboard_is_unavailable_without_a_configured_secret(self):
+        site.app.config['STOCK_ALERTS_ADMIN_TOKEN'] = ''
+        self.assertEqual(self.client.get('/alerts/admin').status_code, 404)
+        self.assertEqual(self.client.post('/alerts/admin/export.csv').status_code, 404)
 
     def test_expired_and_tampered_confirmation_links_fail(self):
         self.signup()

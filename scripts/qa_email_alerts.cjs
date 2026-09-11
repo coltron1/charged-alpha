@@ -6,7 +6,7 @@ try{for(const width of [390,785,1280]){
   const context=await browser.newContext({viewport:{width,height:900}}),page=await context.newPage(),errors=[];
   page.on('pageerror',e=>errors.push(e.message));
   await page.goto(base+'/shows/ADBE');await page.locator('[data-follow-stock="ADBE"]').click();
-  await page.waitForURL(base+'/alerts?ticker=ADBE');await page.locator('#stockAlertSignup').waitFor();
+  await page.waitForURL(base+'/alerts?ticker=ADBE&source=stock_follow');await page.locator('#stockAlertSignup').waitFor();
   assert.match(await page.locator('#alertSelection').textContent(),/Selected email alert: ADBE/);
   await page.locator('#alertEmail').fill(`reader${width}@example.com`);
   await page.locator('#alertConsent').check();await page.locator('#requestStockAlerts').click();
@@ -21,6 +21,13 @@ try{for(const width of [390,785,1280]){
   await page.getByRole('button',{name:'Save Email Preferences',exact:true}).click();
   await page.waitForFunction(()=>document.querySelector('#alertManageStatus').textContent.includes('saved'));
   await page.reload();assert.equal(await page.locator('#alertSelectedStocks button').count(),2);
+  await page.goto(base+'/alerts/admin');await page.locator('#adminToken').fill('qa-admin-token-not-production');
+  await page.getByRole('button',{name:'Open Dashboard',exact:true}).click();await page.waitForURL(base+'/alerts/admin');
+  assert.ok(await page.locator('.alert-admin-metrics').isVisible());
+  assert.equal((await page.content()).includes(`reader${width}@example.com`),false);
+  assert.ok(await page.getByRole('button',{name:'Download CSV',exact:true}).isVisible());
+  await page.screenshot({path:`/tmp/charged-alpha-email-dashboard-${width}.png`,fullPage:true});
+  await page.goto(base+'/alerts?ticker=AVAV');await page.locator('#alertManageForm').waitFor();
   await page.screenshot({path:`/tmp/charged-alpha-email-preferences-${width}.png`,fullPage:true});
   assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));
   await page.getByRole('button',{name:'Remove ADBE from emailed stocks',exact:true}).click();

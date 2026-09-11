@@ -15,6 +15,7 @@ The default is off. Configure only in Railway environment variables:
 - `STOCK_ALERTS_WORKER=1`: starts the delivery loop in the existing web process.
 - `STOCK_ALERTS_PUBLIC=0`: pilot only; set to 1 after real delivery verification.
 - `STOCK_ALERTS_TEST_EMAIL`: owner-approved pilot inbox. Not exposed publicly.
+- `STOCK_ALERTS_ADMIN_TOKEN`: a unique 32-byte-or-longer dashboard passphrase. Keep it only in Railway; rotating it immediately signs dashboard sessions out.
 
 Public signup also refuses to turn on unless the configured database is Postgres
 and the sender worker is enabled. That prevents a configuration mistake from
@@ -70,6 +71,28 @@ opt-out and delivery identities remain to enforce suppression and deduplication.
 Never put API keys, recipient lists, confirmation links or postal addresses in
 commits or deployment logs. Private alert pages use no-store, noindex and
 no-referrer, and do not emit Google Analytics.
+
+## Owner reporting
+
+`/alerts/admin` is a hidden, no-index operational dashboard. It is unavailable
+until `STOCK_ALERTS_ADMIN_TOKEN` is configured, and then requires that secret
+plus a session-bound CSRF token. Its session is HttpOnly, SameSite=Lax, secure
+on Railway, expires after 12 hours, and is invalidated when the secret rotates.
+The page also sends `DENY` framing and a same-origin Content Security Policy.
+
+The dashboard shows confirmed/pending/unsubscribed/suppressed totals, active
+stock selections, a 30-day confirmation trend, top selected stocks, signup
+attribution, and Resend delivery health. Subscriber addresses are masked on
+screen. The protected CSV export contains the full address only for explicit
+operator use and should never be forwarded or stored in a shared drive.
+
+Attribution begins with this release. A stock-page Follow button records
+`stock_follow`; the Following page records `following`; direct links can use a
+whitelisted `source` query parameter such as `youtube`, `podcast`, or
+`campaign`. The database records only an internal subscriber ID, ticker,
+sanitized source label, event type, and timestamp. Browser-local Following is
+deliberately not uploaded or counted because it has no user identity or consent
+to do so.
 
 ## Validation
 

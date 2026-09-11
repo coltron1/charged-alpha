@@ -59,6 +59,25 @@ class StockAlertMessage(db.Model):
     outcome = db.Column(db.String(80))
 
 
+class StockAlertEvent(db.Model):
+    """Minimal, non-public audit trail for alert signup and preference reporting."""
+
+    __tablename__ = 'stock_alert_events'
+
+    id = db.Column(db.String(32), primary_key=True, default=uid)
+    subscriber_id = db.Column(db.String(32), db.ForeignKey('stock_alert_subscribers.id'), nullable=False, index=True)
+    request_id = db.Column(db.String(32), db.ForeignKey('stock_alert_requests.id', ondelete='SET NULL'), nullable=True, index=True)
+    event_type = db.Column(db.String(32), nullable=False, index=True)
+    ticker = db.Column(db.String(24), index=True)
+    source = db.Column(db.String(32), nullable=False, default='unknown', index=True)
+    occurred_at = db.Column(db.DateTime, nullable=False, default=dt.datetime.utcnow, index=True)
+
+    __table_args__ = (
+        db.Index('ix_stock_alert_events_type_time', 'event_type', 'occurred_at'),
+        db.Index('ix_stock_alert_events_ticker_time', 'ticker', 'occurred_at'),
+    )
+
+
 class StockAlertThrottle(db.Model):
     __tablename__ = 'stock_alert_throttles'
     key = db.Column(db.String(64), primary_key=True)

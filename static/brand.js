@@ -54,7 +54,7 @@
   }
 
   function openAlertSignup(ticker) {
-    location.assign(`/alerts?ticker=${encodeURIComponent(ticker)}`);
+    location.assign(`/alerts?ticker=${encodeURIComponent(ticker)}&source=stock_follow`);
   }
 
   window.CAFollowing = {read, update, toast};
