@@ -276,9 +276,10 @@ def format_value(value, kind="number", currency="USD"):
     return f"{n:,.2f}"
 
 
-def comparison(ticker, profiles, custom=None, now=None):
+def comparison(ticker, profiles, custom=None, now=None, default_limit=3):
     primary = profiles.get(ticker, {"ticker": ticker, "company": ticker})
     peers, benchmarks = select_peers(ticker, profiles, now)
+    peers = peers[:default_limit]
     if custom is not None:
         chosen = []
         seen = {primary.get("issuer", ticker)}
@@ -290,11 +291,19 @@ def comparison(ticker, profiles, custom=None, now=None):
             chosen.append({**profile, "role": "custom", "reason": "Selected by you", "size_band": "custom comparison", "size_ratio": divide(profile.get("market_cap_usd"), primary.get("market_cap_usd"))})
         columns = [{**primary, "role": "subject"}] + chosen
     else:
-        columns = [{**primary, "role": "subject"}] + peers + benchmarks[:max(0, 3 - len(peers))]
+        columns = [{**primary, "role": "subject"}] + peers + benchmarks[:max(0, default_limit - len(peers))]
+    # A refreshed quote cannot make an old or undated financial statement current.
+    quote_metrics = {"market_cap_usd", "forward_pe", "dividend_yield", "beta"}
+    def metric_value(profile, key):
+        if key not in quote_metrics and not 0 <= age_days(profile.get("period_end"), now) <= 550:
+            return None
+        return number(profile.get(key))
+    for column in columns:
+        column["financials_unverified"] = not 0 <= age_days(column.get("period_end"), now) <= 550
     rows = []
     banking = "bank" in primary.get("industry_key", "") or "insurance" in primary.get("industry_key", "")
     for key, label, kind, basis, category in METRICS:
-        values = [number(peer.get(key)) for peer in peers]
+        values = [metric_value(peer, key) for peer in peers]
         values = [value for value in values if value is not None]
         peer_median = median(values) if len(values) >= 2 and custom is None else None
         if banking and key in {"price_to_book", "return_on_equity", "profit_margin", "trailing_pe"}:
@@ -302,7 +311,7 @@ def comparison(ticker, profiles, custom=None, now=None):
         if banking and key in {"ev_ebitda", "operating_margin", "fcf_yield", "net_debt_ebitda", "debt_to_equity"}:
             continue
         rows.append({"key": key, "label": label, "kind": kind, "basis": basis, "group": category,
-                     "values": [format_value(column.get(key), kind) for column in columns],
+                     "values": [format_value(metric_value(column, key), kind) for column in columns],
                      "median": format_value(peer_median, kind), "median_value": peer_median,
                      "median_count": len(values) if custom is None else 0})
     return {"columns": columns, "rows": rows, "peer_count": len(peers), "custom": custom is not None,

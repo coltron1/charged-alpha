@@ -23,13 +23,14 @@
             <span class="research-period">{{ packet.period }}</span>
             {% if packet.slug == research_packets[0].slug %}<span class="research-latest">Latest research</span>{% endif %}
           </div>
-          <h3 id="research-title-{{ packet.slug }}" class="research-title"><a href="{{ url_for('research_packet_page', slug=packet.slug) }}">{{ packet.title }}</a></h3>
+          <h3 id="research-title-{{ packet.slug }}" class="research-title"><a href="{{ url_for('research_packet_page', slug=packet.slug, view='reader') }}">{{ packet.title }}</a></h3>
           <p class="research-description">{{ packet.description }}</p>
           {% if packet.figures or packet.tables %}
           <p class="research-includes">{% if packet.figures %}{{ packet.figures }} figures{% endif %}{% if packet.figures and packet.tables %} · {% endif %}{% if packet.tables %}{{ packet.tables }} tables{% endif %}</p>
           {% endif %}
           <div class="research-actions">
-            <a class="research-read" href="{{ url_for('research_packet_page', slug=packet.slug) }}">Read research packet <span aria-hidden="true">↗</span></a>
+            <a class="research-read" href="{{ url_for('research_packet_page', slug=packet.slug, view='reader') }}">Read research packet <span aria-hidden="true">↗</span></a>
+            <a href="{{ url_for('research_packet_page', slug=packet.slug) }}" download="{{ packet.slug }}.html">Download original report</a>
             <div class="research-episode-links">
               {% if packet.primary_youtube_long %}<a href="https://www.youtube.com/watch?v={{ packet.primary_youtube_long }}" target="_blank" rel="noopener noreferrer">Watch episode</a>{% endif %}
               {% if packet.youtube_studio %}<a href="https://www.youtube.com/watch?v={{ packet.youtube_studio }}" target="_blank" rel="noopener noreferrer">Studio edition</a>{% endif %}

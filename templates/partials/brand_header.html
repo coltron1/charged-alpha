@@ -1,0 +1,20 @@
+<link rel="stylesheet" href="/static/brand.css?v=1">
+<script src="/static/lucide.min.js" defer></script>
+<script src="/static/brand.js?v=2" defer></script>
+<header class="ca-header">
+  <div class="ca-header-inner">
+    <a class="ca-brand" href="/" aria-label="Charged Alpha home"><img src="/static/assets/charged-alpha-logo.png" width="44" height="44" alt=""><span>CHARGED ALPHA<sup>TM</sup><small>Frontier AI stock research</small></span></a>
+    <button class="ca-menu-button" type="button" aria-label="Open navigation" aria-controls="ca-nav" aria-expanded="false"><i data-lucide="menu" aria-hidden="true"></i></button>
+    <nav id="ca-nav" class="ca-nav-main" aria-label="Main navigation">
+      <a href="/" {% if request.path == '/' or request.path.startswith('/shows') %}aria-current="page"{% endif %}>Stock Research</a>
+      <a href="/following" {% if request.path == '/following' %}aria-current="page"{% endif %}>Following<span class="ca-follow-count" hidden></span></a>
+      <details class="ca-dropdown"><summary>Tools <i data-lucide="chevron-down" aria-hidden="true"></i></summary><div class="ca-menu-panel ca-tools-panel">
+        {% for path,label in [('/screener/','Stock Screener'),('/etf/','ETF Screener'),('/mutual-funds/','Mutual Funds'),('/options/','Options Scanner'),('/earnings/','Earnings Calendar'),('/charts/','Stock Charts'),('/bonds/','Bond Dashboard'),('/reits/','REIT Screener'),('/crypto/','Crypto Screener'),('/forex/','Forex Heatmap'),('/commodities/','Commodities'),('/gold/','Precious Metals')] %}<a href="{{ path }}">{{ label }}</a>{% endfor %}
+      </div></details>
+      <details class="ca-dropdown"><summary>More <i data-lucide="chevron-down" aria-hidden="true"></i></summary><div class="ca-menu-panel">
+        <a href="/studio">Charged Alpha Studio</a><a href="/app">Charged Alpha Learning App</a><a href="/games">Games</a><a href="/about">About Colton</a><a href="/shows#beyond-earnings">More Videos</a><a href="/privacy">Privacy</a>
+      </div></details>
+      <a class="ca-channel-link" href="https://www.youtube.com/@ChargedAlpha" target="_blank" rel="noopener noreferrer"><i data-lucide="circle-play" aria-hidden="true"></i>YouTube</a>
+    </nav>
+  </div>
+</header>

@@ -147,18 +147,7 @@
   </style>
 </head>
 <body>
-  <header class="app-header">
-    <a href="/" class="brand" aria-label="Charged Alpha home">
-      <img src="/static/assets/charged-alpha-logo.png" alt="Charged Alpha logo">
-      <span class="brand-copy"><strong>CHARGED ALPHA</strong><span>Stock Library</span></span>
-    </a>
-    <nav class="app-nav" aria-label="App page navigation">
-      <a href="/shows">Stock Encyclopedia</a>
-      <a href="/studio" class="studio-link">Studio</a>
-      <a href="/about">About</a>
-      <a href="#download" class="nav-cta">Get the app</a>
-    </nav>
-  </header>
+{% include 'partials/brand_header.html' %}
 
   <main>
     <section class="app-hero" id="download" aria-labelledby="appTitle">

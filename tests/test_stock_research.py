@@ -15,6 +15,7 @@ def profile(symbol, cap=100, industry="specialty-retail", **overrides):
     info = {"longName":symbol, "currency":"USD", "financialCurrency":"USD", "marketCap":cap,
             "industryKey":industry, "industry":"Specialty Retail", "bookValue":10, "trailingEps":2,
             "forwardEps":3, "currentPrice":50, "regularMarketTime":NOW.timestamp() - 3600,
+            "mostRecentQuarter":(NOW - timedelta(days=60)).timestamp(),
             "totalRevenue":cap, "debtToEquity":70.547, "returnOnEquity":.15}
     info.update(overrides)
     return normalize_profile(symbol, info, (NOW - timedelta(hours=1)).isoformat(), {"USD":1, "CAD":.75})
@@ -152,7 +153,8 @@ class PageTests(unittest.TestCase):
             client = app.test_client()
             response = client.get("/shows/casy")
             self.assertEqual(response.status_code,200)
-            self.assertIn('href="/#searchInput" class="return-search">Search Another Stock</a>', response.get_data(as_text=True))
+            self.assertIn('href="/#searchInput" class="return-search" data-search-return', response.get_data(as_text=True))
+            self.assertIn('Search Another Stock</a>', response.get_data(as_text=True))
             self.assertIn("0.71x",response.get_data(as_text=True))
             self.assertEqual(client.get("/api/research/UNKNOWN/financials").status_code,404)
 

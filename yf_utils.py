@@ -4,6 +4,7 @@ Used by all screener/data modules to avoid duplication and share caches.
 """
 
 import time
+import math
 import uuid
 import threading
 from collections import OrderedDict
@@ -259,6 +260,7 @@ DEFAULT_CHART_PARAMS = {
     "3m":  dict(period="3mo", interval="1d"),
     "6m":  dict(period="6mo", interval="1d"),
     "1y":  dict(period="1y",  interval="1d"),
+    "3y":  dict(period="5y",  interval="1wk", years=3),
     "5y":  dict(period="5y",  interval="1wk"),
     "10y": dict(period="10y", interval="1mo"),
 }
@@ -275,16 +277,22 @@ def fetch_chart(ticker, range_key="1y", params_map=None, decimals=2):
           DEFAULT_CHART_PARAMS.get("1y"))
     try:
         t = yf.Ticker(ticker)
-        hist = t.history(period=p["period"], interval=p["interval"])
+        hist = t.history(period=p["period"], interval=p["interval"], auto_adjust=True)
         if hist.empty:
             return None
         if hist.index.tz is not None:
             hist.index = hist.index.tz_localize(None)
+        if p.get("years"):
+            cutoff = pd.Timestamp.now(tz="UTC").tz_localize(None) - pd.DateOffset(years=p["years"])
+            hist = hist.loc[hist.index >= cutoff.normalize()]
+        if hist.empty:
+            return None
         fmt = "%Y-%m-%d %H:%M" if range_key in ("1d", "1w") else "%Y-%m-%d"
         labels = hist.index.strftime(fmt).tolist()
-        prices = [round(float(v), decimals) if pd.notna(v) else None
+        prices = [round(float(v), decimals) if pd.notna(v) and math.isfinite(float(v)) else None
                   for v in hist["Close"]]
-        data = {"labels": labels, "prices": prices}
+        volumes = [float(v) if pd.notna(v) and math.isfinite(float(v)) and v >= 0 else None for v in hist["Volume"]] if "Volume" in hist else [None] * len(hist)
+        data = {"labels": labels, "prices": prices, "volumes": volumes, "interval": p["interval"]}
         chart_cache.set(cache_key, data)
         return data
     except Exception:

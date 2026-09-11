@@ -14,7 +14,7 @@
       line-height:1.6;
     }
     .wrap { max-width:760px; margin:0 auto; padding:48px 22px 80px; }
-    header { border-bottom:1px solid var(--line); padding-bottom:22px; margin-bottom:30px; }
+    .wrap header { border-bottom:1px solid var(--line); padding-bottom:22px; margin-bottom:30px; }
     .brand { color:var(--gold); font-weight:700; letter-spacing:.06em; text-transform:uppercase; font-size:13px; }
     .home-link { display:inline-block; margin-bottom:18px; color:var(--muted); text-decoration:none; font-size:14px; }
     .home-link:hover { color:var(--gold); }
@@ -33,12 +33,13 @@
   </style>
 </head>
 <body>
+  {% include 'partials/brand_header.html' %}
   <div class="wrap">
     <a class="home-link" href="/">Back to Charged Alpha</a>
     <header>
       <div class="brand">Charged Alpha</div>
       <h1>Charged Alpha Privacy Policy</h1>
-      <div class="updated">Effective August 13, 2026</div>
+      <div class="updated">Effective September 10, 2026</div>
     </header>
 
     <p class="lead">Charged Alpha does not ask for brokerage credentials and does not execute trades. Your course progress is stored primarily on your device. Email collection is optional, and app measurement uses a random identifier rather than your name, email, advertising identifier, or hardware identifier.</p>
@@ -54,6 +55,7 @@
     <p><strong>Email updates (optional):</strong> if you choose to subscribe - from the welcome screen or the Settings toggle - the email address you enter is sent to Charged Alpha's backend and stored so we can send product news, new lessons, and investing research. Providing an email is never required to use the App, and you can opt out at any time in Settings or from any email we send.</p>
 
     <h2>Information used by the website</h2>
+    <p>The website's Following list stores selected stock tickers in your browser's local storage. This list is not an account, is not synchronized across devices, and does not subscribe you to email. Remove a company with its Follow control or clear this site's browser data to erase the local list. Search state may be retained for the current browser session so you can return to your results.</p>
     <p>The chargedalpha.com website is separate from the offline app. The Site uses Google Analytics to understand aggregate traffic, page performance, and how visitors use public pages. The Site may also use basic cookies or similar browser storage for security, sessions, preferences, and normal functionality. Public pages can include embedded YouTube videos or subscribe buttons; when those load or are used, YouTube/Google may receive information according to Google's own privacy practices.</p>
 
     <h2>How information is used</h2>

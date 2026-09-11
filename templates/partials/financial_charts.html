@@ -1,0 +1,32 @@
+<section id="financials" class="band">
+  <div class="section-heading"><div><p class="eyebrow">Reported performance</p><h2>Financial trends</h2></div></div>
+  <div class="financial-toolbar">
+    <fieldset class="chart-segments"><legend>Reporting period</legend><label><input type="radio" name="statementPeriod" value="annual" checked><span>Annual</span></label><label><input type="radio" name="statementPeriod" value="quarterly"><span>Quarterly</span></label></fieldset>
+    <fieldset class="chart-segments"><legend>Financial history</legend>{% for years in [1,3,5] %}<label><input type="radio" name="financialRange" value="{{ years }}" {% if years==5 %}checked{% endif %}><span>{{ years }}Y</span></label>{% endfor %}</fieldset>
+    <label class="chart-metric-select">Metric<select id="statementMetric" aria-label="Financial metric"></select></label>
+    <fieldset class="chart-segments chart-style"><legend>Chart style</legend><label title="Bars"><input type="radio" name="financialStyle" value="bar" checked aria-label="Bar chart"><span><i data-lucide="chart-column" aria-hidden="true"></i></span></label><label title="Line"><input type="radio" name="financialStyle" value="line" aria-label="Line chart"><span><i data-lucide="chart-line" aria-hidden="true"></i></span></label></fieldset>
+  </div>
+  <div class="financial-compare-toolbar">
+    <label class="financial-compare-toggle"><input type="checkbox" role="switch" id="compareFinancials" aria-controls="financialCompareOptions financialResults"><span>Compare financial charts</span></label>
+    <a href="#peers">Comparison stocks</a>
+  </div>
+  <div id="financialCompareOptions" hidden>
+    <fieldset class="financial-compare-picks"><legend>Chart comparisons (up to two)</legend><div id="financialComparePeers"></div></fieldset>
+    <p id="financialCompareStatus" class="data-note" role="status"></p>
+    <ul id="financialCompareSources" class="data-note financial-compare-sources"></ul>
+    <button type="button" id="retryFinancialPeers" hidden><i data-lucide="refresh-cw" aria-hidden="true"></i>Retry comparison data</button>
+    <p class="data-note">Periods are grouped by their ending calendar year or quarter, not identical fiscal calendars. Exact period-end dates appear in tooltips and reported figures. Currency amounts are compared only when reporting currencies match; no FX conversion. Gaps are not estimated.</p>
+  </div>
+  <p id="financialStatus" role="status" class="data-note">Financial statements load separately from the research page.</p>
+  <button id="loadFinancials" type="button">Load financial trends</button>
+  <p id="financialSourceLine" class="data-note" hidden>Source: <a id="financialSource" target="_blank" rel="noopener noreferrer"></a>. Window ends at the latest available reporting period.</p>
+  <div id="financialResults" hidden>
+    <div class="chart-title-row"><h3 id="financialChartTitle">Revenue</h3><button type="button" class="chart-icon-button" data-expand-chart="financialChart" aria-label="Expand financial chart" title="Expand financial chart"><i data-lucide="maximize-2" aria-hidden="true"></i></button></div>
+    <div class="chart-frame" id="financialChartFrame"><canvas id="financialChart" aria-label="Reported financial trends" role="img"></canvas></div>
+    <p id="financialChartEmpty" class="chart-empty" hidden></p>
+    <details id="financialChartTableWrap"><summary>Reported figures</summary><div id="financialChartTable" class="table-scroll" tabindex="0"></div></details>
+    <div class="advanced-chart-grid" id="advancedCharts"></div>
+    <details class="methodology"><summary>Financial data &amp; calculation notes</summary><p id="financialMethodology"></p><p>Amounts use the stated reporting currency, not USD conversion. Stock-based compensation is noncash. Free cash flow is operating cash flow less capital spending, which may include capitalized software. Missing metrics are not estimated or assumed to be zero. Banking and insurance ratios require industry-specific interpretation. Latest restatements may differ from figures in older episodes.</p></details>
+  </div>
+  <noscript><p>Interactive financial charts require JavaScript. The earnings research and comparison table remain available above.</p></noscript>
+</section>

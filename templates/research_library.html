@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>{{ seo_meta.title }}</title>
+{% include 'partials/seo_meta.html' %}<link rel="icon" href="/static/assets/charged-alpha-logo.png">
+{% for item in structured_data or [] %}<script type="application/ld+json">{{ item|tojson }}</script>{% endfor %}
+<style>body{margin:0;background:#101213}.ca-skip{position:absolute;left:16px;top:-90px;z-index:100;background:#e2eee7;padding:12px;color:#152c24}.ca-skip:focus{top:8px}</style>
+<script src="/static/research-library.js?v=2" defer></script></head><body>
+<a class="ca-skip" href="#searchInput">Skip to stock search</a>{% include 'partials/brand_header.html' %}
+<main class="ca-page" id="research-library" data-following="{{ 'true' if following_page else 'false' }}">
+  <div class="ca-wrap">
+    <section class="ca-intro" id="library">
+      {% if following_page %}
+      <p class="ca-kicker">YOUR RESEARCH LIST</p><div class="ca-following-intro"><h1>Following</h1><a class="ca-button primary" href="/#searchInput"><i data-lucide="plus" aria-hidden="true"></i>Find Another Stock</a></div>
+      <p class="ca-storage-note">Saved only on this browser. No account, email notifications, or cross-device syncing yet.</p>
+      {% else %}
+      <div class="ca-intro-title"><h1>Charged Alpha</h1><span class="ca-intro-note">Frontier AI research. Freely available.</span></div>
+      <p class="ca-promise">Understand <strong>what changed</strong> in the companies you follow, <strong>what the headline misses</strong>, and <strong>what to watch next.</strong></p>
+      {% endif %}
+      <div class="ca-search-area"><label for="searchInput">{% if following_page %}Search your followed stocks{% else %}Find stock research, videos &amp; comparisons{% endif %}</label><div class="ca-search-box"><i data-lucide="search" aria-hidden="true"></i><input type="search" id="searchInput" name="q" placeholder="Ticker, company, or episode title" autocomplete="off" aria-describedby="searchStatus"><button id="clearSearch" type="button" aria-label="Clear search" title="Clear search" hidden><i data-lucide="x" aria-hidden="true"></i></button></div><p class="ca-search-meta" id="searchStatus" role="status">{% if following_page %}Loading your list...{% else %}Full videos, quick summaries, podcasts, and free research packets.{% endif %}</p></div>
+    </section>
+    <section class="ca-section ca-results" id="search-results" aria-labelledby="resultsHeading"><div class="ca-section-heading"><div><h2 id="resultsHeading">{{ 'Your stocks' if following_page else 'Latest stock research' }}</h2><p id="resultsNote">{{ 'Latest available coverage for the companies you follow.' if following_page else 'The business behind the numbers. Start with a company.' }}</p></div>{% if not following_page %}<a href="/following">Your Following list <span aria-hidden="true">&rarr;</span></a>{% endif %}</div>
+      <div class="ca-results-grid" id="stockGrid">{% if not following_page %}{% for stock in show_stocks[:12] %}{% include 'partials/research_card.html' %}{% endfor %}{% endif %}</div>
+      <div class="ca-empty" id="emptyState" hidden><h2>{{ 'A place for the stocks you follow.' if following_page else 'No matching research yet.' }}</h2><p>{{ 'Add a company from its research page to keep it here.' if following_page else 'Try another ticker, company name, or reporting period.' }}</p>{% if following_page %}<a href="/#searchInput" class="ca-button primary">Find a Stock</a>{% endif %}</div>
+      <div class="ca-load-more" id="loadMoreWrap"><button class="ca-button" id="loadMoreBtn" type="button">Show More Stocks <i data-lucide="chevron-down" aria-hidden="true"></i></button></div>
+      <noscript><p class="ca-search-meta">Search and Following require JavaScript. The stock pages above remain available.</p></noscript>
+    </section>
+    {% if not following_page %}
+    <section class="ca-section ca-subscribe-strip"><div><strong>The next earnings story, beyond the headline.</strong><p>Watch Charged Alpha on YouTube, or listen on your favorite podcast platform.</p></div><a class="ca-button ca-electric" href="https://www.youtube.com/channel/UC4ZDZpC0OvoN4cCGoUSofuA?sub_confirmation=1" target="_blank" rel="noopener noreferrer"><i data-lucide="circle-play" aria-hidden="true"></i>Subscribe on YouTube</a></section>
+    <section class="ca-section ca-app-band" id="mobile-app"><div class="ca-app-layout"><div class="ca-app-copy"><div class="ca-app-mini-brand"><img src="/static/assets/charged-alpha-logo.png" alt="Charged Alpha app icon" width="43" height="43"><span>THE CHARGED ALPHA LEARNING APP</span></div><h2>Get more out of every analysis.</h2><p>Explore the metrics behind the research through narrated lessons and interactive labs. Change the assumptions. Hear how the analysis changes.</p><div class="ca-app-actions"><a href="https://apps.apple.com/us/app/charged-alpha/id6789744882" class="ca-button ca-electric" target="_blank" rel="noopener noreferrer">App Store <i data-lucide="arrow-up-right" aria-hidden="true"></i></a><a href="https://play.google.com/store/apps/details?id=com.chargedalpha.academy" class="ca-button ca-electric" target="_blank" rel="noopener noreferrer">Google Play <i data-lucide="arrow-up-right" aria-hidden="true"></i></a><a href="/app" class="ca-button">Explore the App</a></div></div><a href="/app" class="ca-app-images" aria-label="Explore Charged Alpha interactive lessons"><img src="/static/assets/mobile-app/charged-alpha-lessons.webp" alt="Narrated investing lesson" width="600" height="1300" loading="lazy"><img src="/static/assets/mobile-app/charged-alpha-valuation-lab.webp" alt="Interactive company valuation lab" width="600" height="1300" loading="lazy"><img src="/static/assets/mobile-app/charged-alpha-storm-chaser-poster.jpg" alt="Storm Chaser market game" width="600" height="1300" loading="lazy"></a></div></section>
+    {% if video_sections %}<section class="ca-section" id="beyond-earnings"><div class="ca-section-heading"><div><p class="ca-kicker">MORE FROM CHARGED ALPHA</p><h2>Beyond the quarter</h2></div></div>
+      {% for section in video_sections %}<details class="ca-beyond-group"{% if loop.first %} open{% endif %}><summary>{{ section.title }}</summary><div class="ca-beyond-list">{% for video in section.videos %}<article><h3>{{ video.title }}</h3><p>{{ (video.published_at or '')[:10] }}</p>{% for field,label in [('youtube_url','YouTube'),('spotify_url','Spotify'),('podbean_url','Podbean'),('apple_url','Apple Podcasts')] %}{% if video.get(field) %}<a href="{{ video[field] }}" target="_blank" rel="noopener noreferrer">{{ label }}</a>{% endif %}{% endfor %}</article>{% endfor %}</div></details>{% endfor %}
+    </section>{% endif %}
+    {% endif %}
+  </div>
+</main>{% include 'partials/brand_footer.html' %}
+<script id="library-data" type="application/json">{{ show_stocks|tojson }}</script>
+</body></html>

@@ -1,0 +1,9 @@
+<article class="ca-stock-card" data-stock="{{ stock.ticker }}">
+  {% if stock.latest_video_thumbnail %}<a class="ca-card-image" href="/shows/{{ stock.slug }}" tabindex="-1" aria-hidden="true"><img src="{{ stock.latest_video_thumbnail }}" alt="" width="480" height="270" loading="lazy"><span class="ca-media-tag">{{ stock.latest_video_quarter or 'Stock research' }}</span></a>{% endif %}
+  <div class="ca-card-body"><div class="ca-card-meta"><span class="ca-ticker">{{ stock.ticker }}</span><span>{{ stock.sector or 'Stock research' }}</span></div>
+    <h3><a href="/shows/{{ stock.slug }}" data-analysis-link>{{ stock.company }}</a></h3>
+    <p class="ca-card-title">{{ stock.latest_video_title or (stock.packet.title if stock.packet else 'Earnings videos, podcasts, and stock research.') }}</p>
+    <p class="ca-card-date">{% if stock.latest_video_published_at %}Episode {{ stock.latest_video_published_at[:10] }}{% elif stock.latest_published_at %}Episode {{ stock.latest_published_at[:10] }}{% else %}Episode date unavailable{% endif %}{% if stock.packet %} <span class="ca-packet-label">&middot; Free research packet</span>{% endif %}</p>
+    <div class="ca-card-actions"><a href="/shows/{{ stock.slug }}" data-analysis-link>View Research <i data-lucide="arrow-up-right" aria-hidden="true"></i></a><button type="button" class="ca-follow-button" data-follow-stock="{{ stock.ticker }}" aria-pressed="false" aria-label="Follow {{ stock.ticker }}" title="Follow {{ stock.ticker }}"><i data-lucide="bookmark" aria-hidden="true"></i></button></div>
+  </div>
+</article>

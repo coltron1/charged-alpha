@@ -223,37 +223,7 @@
   </style>
 </head>
 <body class="min-h-screen">
-  <header class="sticky top-0 z-50 px-6 py-4" style="background:rgba(10,15,30,.88);backdrop-filter:blur(16px);border-bottom:1px solid rgba(30,41,59,.8);">
-    <div class="mx-auto flex max-w-7xl items-center justify-between gap-6">
-      <a href="/" class="flex items-center gap-3 text-white no-underline">
-        <img src="/static/assets/charged-alpha-logo.png" alt="Charged Alpha logo" class="logo-bolt">
-        <div>
-          <div class="text-lg font-extrabold tracking-tight">CHARGED ALPHA</div>
-          <div class="text-[11px] uppercase tracking-[.22em] text-slate-500">About Colton</div>
-        </div>
-      </a>
-      <nav class="hidden items-center gap-6 md:flex">
-        <a href="/" class="nav-link">Home</a>
-        <a href="/games" class="nav-link">Games</a>
-        <a href="/shows" class="nav-link">Stock Library</a>
-        <a href="/studio" class="nav-link">Studio</a>
-        <a href="/about" class="nav-link active">About</a>
-        <a href="https://www.youtube.com/channel/UC4ZDZpC0OvoN4cCGoUSofuA?sub_confirmation=1" target="_blank" rel="noopener noreferrer" class="btn-secondary text-sm" style="padding:10px 14px;">YouTube Channel</a>
-      </nav>
-      <button id="aboutMenuButton" type="button" class="about-menu-btn" aria-label="Open navigation menu" aria-expanded="false" aria-controls="aboutMobileMenu">
-        <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
-      </button>
-    </div>
-    <nav id="aboutMobileMenu" class="about-mobile-menu md:hidden" aria-label="Mobile navigation">
-      <div class="about-mobile-menu-grid">
-        <a href="/">Home</a>
-        <a href="/shows">Stock Library</a>
-        <a href="/games">Games</a>
-        <a href="/studio">Studio</a>
-        <a href="/about" class="active" aria-current="page">About</a>
-      </div>
-    </nav>
-  </header>
+{% include 'partials/brand_header.html' %}
 
   <main>
     <section class="hero px-6 py-12 md:py-16">

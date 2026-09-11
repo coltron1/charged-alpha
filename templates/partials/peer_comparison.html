@@ -1,0 +1,21 @@
+{% for column in competitor_analysis.columns if column.financials_unverified %}<p class="data-note financial-warning">{{ column.ticker }}: financial period {{ column.period_end or 'unavailable' }}. Historical financial ratios are withheld because the period is undated, future-dated, or over 550 days old.</p>{% endfor %}
+{% if competitor_analysis.columns|length == 1 %}<p class="notice">No suitable peers with fresh, comparable size data are available. We have not substituted unrelated companies.</p>{% endif %}
+{% if competitor_analysis.custom %}<p class="notice">Custom selections are not vetted peers. Peer medians are disabled.</p>{% endif %}
+<div class="table-scroll" tabindex="0" role="region" aria-label="Stock comparison table">
+<table class="comparison-table"><caption>Market metrics &middot; missing or inapplicable values shown as &mdash;</caption>
+<thead><tr><th scope="col">Metric</th>{% for column in competitor_analysis.columns %}<th scope="col">{% if column.coverage %}<a href="/shows/{{ column.coverage.slug }}">{{ column.ticker }}</a>{% else %}{{ column.ticker }}{% endif %}<small>{{ column.company }}</small><small>Snapshot {{ (column.observed_at or '')[:10] or 'unavailable' }}</small><small>Financial period: {{ column.period_end or 'unavailable' }}</small></th>{% endfor %}{% if competitor_analysis.has_median %}<th scope="col">Peer median<small>Similar-size peers only</small></th>{% endif %}</tr></thead>
+<tbody>{% for row in competitor_analysis.rows %}<tr data-metric-group="{{ row.group }}"><th scope="row">{{ row.label }}<small>{{ row.basis }}</small></th>{% for value in row['values'] %}<td>{{ value }}</td>{% endfor %}{% if competitor_analysis.has_median %}<td>{{ row.median }}{% if row.median_value is not none %}<small>n={{ row.median_count }}</small>{% endif %}</td>{% endif %}</tr>{% endfor %}</tbody></table></div>
+<div class="peer-list">{% for column in competitor_analysis.columns if column.role != 'subject' %}
+<article class="peer-item"><div>
+<h3>{% if column.coverage %}<a href="/shows/{{ column.coverage.slug }}">{{ column.company }} ({{ column.ticker }})</a>{% else %}{{ column.company }} ({{ column.ticker }}){% endif %}</h3>
+<p class="peer-role">{{ column.size_band|capitalize }}{% if column.size_ratio %} &middot; {{ '%.2f'|format(column.size_ratio) }}x market cap{% endif %}</p>
+<p>{{ column.reason }}{% if column.business_note %}. {{ column.business_note }}{% endif %}</p>
+<div class="media-links">{% if column.coverage %}
+<a href="/shows/{{ column.coverage.slug }}">Stock research</a>
+{% for key,label in [('latest_spotify_url','Spotify'),('latest_podcast_url','Podbean'),('latest_apple_url','Apple Podcasts')] %}{% if column.coverage.get(key) %}<a href="{{ column.coverage[key] }}" target="_blank" rel="noopener noreferrer">{{ label }}</a>{% endif %}{% endfor %}
+{% for clip in column.coverage.latest_youtube_shorts[:1] %}<a href="{{ clip.youtube_url }}" target="_blank" rel="noopener noreferrer">YouTube Short</a>{% endfor %}
+{% endif %}{% for packet in column.packets %}<a href="{{ url_for('research_packet_page', slug=packet.slug, view='reader') }}">Research packet &middot; {{ packet.period }}</a>{% endfor %}
+<a href="{{ column.source_url }}" target="_blank" rel="noopener noreferrer">Market data</a></div>
+{% if not column.coverage %}<p class="data-note">No Charged Alpha episode is linked for this listing yet.</p>{% endif %}</div>
+{% if column.coverage and column.coverage.latest_youtube_url %}<a class="peer-video" href="{{ column.coverage.latest_youtube_url }}" target="_blank" rel="noopener noreferrer"><img src="{{ column.coverage.latest_video_thumbnail }}" alt="{{ column.ticker }} earnings video" loading="lazy"><span>YouTube &middot; {{ column.coverage.latest_video_quarter }}{% if column.coverage.latest_video_published_at %} &middot; {{ column.coverage.latest_video_published_at[:10] }}{% endif %}</span></a>{% endif %}
+</article>{% endfor %}</div>

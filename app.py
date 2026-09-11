@@ -51,7 +51,7 @@ except ImportError:
     ZoneInfo = None
 
 import yfinance as yf
-from flask import Flask, abort, render_template, request, jsonify, redirect, Response, url_for
+from flask import Flask, abort, render_template, request, jsonify, redirect, Response, url_for, make_response
 from flask_compress import Compress
 from flask_login import LoginManager, current_user, login_required
 from sqlalchemy.exc import IntegrityError, SQLAlchemyError
@@ -80,8 +80,10 @@ from auth import (
 )
 from chart_storage import save_chart_state, load_chart_state, list_user_charts, delete_chart_state
 from research_packets import load_packets, packet_html_path
+from research_reader import reader_html
 from stock_research import read_registry, comparison, format_value, group_episode_archive, age_days
 from stock_research_data import financial_status
+from stock_comparison_data import search_stocks, custom_profile_status, SYMBOL as COMPARISON_SYMBOL
 
 # ── Import backend modules ──────────────────────────────────────────────────
 from stock_screener import (screen_stocks, get_stock_detail,
@@ -315,11 +317,10 @@ SEO_DEFAULTS = {
 }
 SEO_PAGE_META = {
     "/": {
-        "title": "Charged Alpha Stock Earnings Videos & Research Tools",
+        "title": "Charged Alpha | Frontier AI Stock Research",
         "description": (
-            "Search Charged Alpha earnings videos by ticker, quarter, YouTube "
-            "episode, Spotify podcast, and stock analysis page, plus free "
-            "investing research tools."
+            "Understand what changed in the companies you follow, what the headline misses, "
+            "and what to watch next. Free stock research, videos, podcasts, and comparisons."
         ),
     },
     "/shows": {
@@ -1553,6 +1554,7 @@ def build_show_library(episodes, stock_metadata=None, video_sections=None):
                 "has_any_link": has_any_link,
                 "youtube_url": ep.get("youtube_url") or "",
                 "studio_primary_youtube_url": ep.get("studio_primary_youtube_url") or "",
+                "studio_primary_link_evidence": ep.get("studio_primary_link_evidence") or "",
                 "youtube_shorts": sorted(episode_shorts.values(), key=_episode_published_sort_key, reverse=True),
                 "spotify_url": ep.get("spotify_url") or "",
                 "apple_url": ep.get("apple_url") or "",
@@ -2138,6 +2140,7 @@ def _cached_detail(cache_prefix, symbol, fetch_fn):
 
 
 def _shows_context():
+    from research_ui import research_listing
     cached = _shows_cache.get("shows_context")
     if cached:
         return cached
@@ -2152,7 +2155,7 @@ def _shows_context():
     context = {
         "shows_data": shows_data,
         "show_library": show_library,
-        "show_client_stocks": build_show_client_stocks(show_library.get("stocks", [])),
+        "show_client_stocks": research_listing(build_show_client_stocks(show_library.get("stocks", [])), research_packets),
         "research_packets": research_packets,
     }
     _shows_cache.set("shows_context", context)
@@ -2246,7 +2249,7 @@ def _chart_helper(symbol, range_key, params_map=None):
 def inject_seo_meta():
     return {
         "seo_meta": _get_seo_meta(),
-        "google_analytics_id": GOOGLE_ANALYTICS_ID,
+        "google_analytics_id": GOOGLE_ANALYTICS_ID if request.host.split(":", 1)[0] in {CANONICAL_HOST, WWW_CANONICAL_HOST} and request.path != '/following' else "",
         "auth_public_enabled": public_auth_enabled,
     }
 
@@ -2530,7 +2533,7 @@ def index():
     show_library = context["show_library"]
     show_stocks = context.get("show_client_stocks", [])
     return render_template(
-        "shows.html",
+        "research_library.html",
         show_stocks=show_stocks[:SHOWS_INITIAL_STOCK_COUNT],
         show_stats=show_library.get("stats", {}),
         show_quarters=show_library.get("quarters", []),
@@ -2842,7 +2845,7 @@ def shows():
     show_library = context["show_library"]
     show_stocks = context.get("show_client_stocks", [])
     return render_template(
-        "shows.html",
+        "research_library.html",
         show_stocks=show_stocks[:SHOWS_INITIAL_STOCK_COUNT],
         show_stats=show_library.get("stats", {}),
         show_quarters=show_library.get("quarters", []),
@@ -2851,6 +2854,25 @@ def shows():
         podcast_platforms=shows_data.get("platform_links", {}),
         structured_data=_shows_page_structured_data("/shows", show_library),
     )
+
+
+@app.route("/following")
+def following_page():
+    meta = {**_get_seo_meta(), "title": "Following | Charged Alpha", "robots": "noindex,nofollow", "description": "Your stock research list, stored only on this browser."}
+    response = make_response(render_template("research_library.html", following_page=True, show_stocks=[], video_sections=[], structured_data=[], seo_meta=meta))
+    response.headers["Cache-Control"] = "no-store"
+    response.headers["X-Robots-Tag"] = "noindex, nofollow"
+    return response
+
+
+@app.route("/brand-preview")
+def brand_preview():
+    if os.environ.get("BRAND_PREVIEW") != "1":
+        abort(404)
+    response = make_response(render_template("brand_preview.html"))
+    response.headers["Cache-Control"] = "no-store"
+    response.headers["X-Robots-Tag"] = "noindex, nofollow"
+    return response
 
 
 @app.route("/api/shows/stocks")
@@ -2864,6 +2886,7 @@ def shows_stocks_api():
 
 @app.route("/shows/<ticker_slug>")
 def show_stock_detail_page(ticker_slug):
+    from research_ui import latest_episode_podcasts
     context = _shows_context()
     shows_data = context["shows_data"]
     show_library = context["show_library"]
@@ -2927,10 +2950,9 @@ def show_stock_detail_page(ticker_slug):
         page_show_stock, context.get("research_packets", [])
     )
     custom = [s.strip().upper() for s in request.args.get("peers", "").split(",") if s.strip()][:4] if "peers" in request.args else None
-    competitor_analysis = comparison(show_stock["yf_symbol"], profiles, custom)
-    covered = {s["yf_symbol"]: s for s in show_library["stocks"]}
-    for column in competitor_analysis["columns"]:
-        column["coverage"] = covered.get(column["ticker"])
+    episode_archive = group_episode_archive(page_show_stock["episodes"])
+    grouped_slugs = {packet["slug"] for group in episode_archive for packet in group["packets"]}
+    competitor_analysis = _research_comparison(show_stock["yf_symbol"], profiles, context, custom)
     related_videos = [
         video
         for video in flatten_video_sections(shows_data.get("video_sections", []))
@@ -2938,7 +2960,7 @@ def show_stock_detail_page(ticker_slug):
         and not video.get("earnings_youtube_url")
     ][:6]
 
-    seo_title = f"{page_show_stock['company']} ({page_show_stock['ticker']}) Stock Library — Charged Alpha"
+    seo_title = f"{page_show_stock['company']} ({page_show_stock['ticker']}) Stock Research — Charged Alpha"
     seo_description = (
         f"Track {page_show_stock['company']} ({page_show_stock['ticker']}) across Charged Alpha earnings episodes, "
         "with quarterly research packets, YouTube, podcasts, stock metrics, charts, and competitor comparisons."
@@ -2961,9 +2983,10 @@ def show_stock_detail_page(ticker_slug):
         show_stock=page_show_stock,
         stock_detail=stock_detail,
         competitor_analysis=competitor_analysis,
-        peer_options=sorted(({"ticker": s, "company": p["company"]} for s, p in profiles.items()), key=lambda p: p["ticker"]),
         selected_peers=", ".join(custom or []),
-        episode_archive=group_episode_archive(page_show_stock["episodes"]),
+        episode_archive=episode_archive,
+        ungrouped_packets=[packet for packet in research_packets if packet["slug"] not in grouped_slugs],
+        latest_podcasts=latest_episode_podcasts(page_show_stock, _youtube_video_id),
         snapshot_stale=age_days(stock_detail.get("observed_at")) > 14,
         research_format=format_value,
         related_videos=related_videos,
@@ -2979,11 +3002,77 @@ def show_stock_detail_page(ticker_slug):
 @app.route("/api/research/<symbol>/financials")
 def stock_research_financials(symbol):
     symbol = symbol.upper()
-    if symbol not in read_registry().get("profiles", {}):
-        return jsonify({"status": "unavailable", "message": "Financial statements are not available for this listing."}), 404
-    data, status = financial_status(symbol)
+    if not COMPARISON_SYMBOL.fullmatch(symbol):
+        return jsonify({"status": "unavailable", "message": "Invalid stock symbol."}), 400
+    registry = read_registry()
+    profile = registry.get("profiles", {}).get(symbol)
+    if profile is None:
+        if request.args.get("comparison") != "1":
+            return jsonify({"status": "unavailable", "message": "Financial statements are not available for this listing."}), 404
+        profile, profile_status = custom_profile_status(symbol, registry)
+        if profile_status != "ready":
+            status = 202 if profile_status == "loading" else 503
+            response = jsonify({"status": "loading" if status == 202 else "unavailable",
+                                "message": "Loading stock listing..." if status == 202 else "Financial statements are not available for this listing right now."})
+            response.status_code = status
+            response.headers["Cache-Control"] = "no-store"
+            return response
+    data, status = financial_status(symbol, profile.get("financial_currency"))
     response = jsonify(data)
     response.status_code = status
+    response.headers["Cache-Control"] = "no-store"
+    return response
+
+
+def _research_comparison(symbol, profiles, context, custom=None):
+    result = comparison(symbol, profiles, custom, default_limit=2)
+    covered = {stock["yf_symbol"]: stock for stock in context["show_library"]["stocks"]}
+    packets = context.get("research_packets", [])
+    for column in result["columns"]:
+        column["coverage"] = covered.get(column["ticker"])
+        packet_ticker = column["coverage"]["ticker"] if column["coverage"] else column["ticker"]
+        column["packets"] = [packet for packet in packets if packet_ticker == packet.get("ticker")][:1]
+    return result
+
+
+@app.route("/api/research/search")
+def research_stock_search():
+    query = request.args.get("q", "").strip()
+    if not 1 <= len(query) <= 60:
+        return jsonify({"results": []})
+    try:
+        results = search_stocks(query, read_registry().get("profiles", {}), request.args.get("remote") == "1")
+        return jsonify({"results": results})
+    except Exception:
+        return jsonify({"message": "Listing search is temporarily unavailable. Try again."}), 503
+
+
+@app.route("/api/research/<symbol>/comparison")
+def research_stock_comparison(symbol):
+    symbol = symbol.upper()
+    registry = read_registry()
+    profiles = dict(registry.get("profiles", {}))
+    if symbol not in profiles:
+        abort(404)
+    custom = None
+    if "peers" in request.args:
+        custom = [s.strip().upper() for s in request.args["peers"].split(",") if s.strip()]
+        if len(custom) > 4 or any(not COMPARISON_SYMBOL.fullmatch(s) for s in custom):
+            return jsonify({"message": "Choose up to four valid stock symbols."}), 400
+        seen = {profiles[symbol].get("issuer", symbol)}
+        for ticker in custom:
+            profile, status = custom_profile_status(ticker, registry)
+            if status != "ready":
+                if status == "loading":
+                    return jsonify({"status": "loading", "message": "Loading " + ticker + " market data..."}), 202
+                return jsonify({"message": ticker + " data is unavailable right now."}), 503
+            if profile.get("issuer", ticker) in seen:
+                return jsonify({"message": "Choose a different company; this issuer is already in the comparison."}), 400
+            seen.add(profile.get("issuer", ticker))
+            profiles[ticker] = profile
+    result = _research_comparison(symbol, profiles, _shows_context(), custom)
+    response = jsonify({"status": "ready", "peers": [{"ticker": p["ticker"], "company": p["company"]} for p in result["columns"][1:]],
+                        "html": render_template("partials/peer_comparison.html", competitor_analysis=result)})
     response.headers["Cache-Control"] = "no-store"
     return response
 
@@ -2993,8 +3082,8 @@ def research_packet_page(slug):
     packet = next((item for item in load_packets(RESEARCH_PACKETS_PATH) if item["slug"] == slug), None)
     if packet is None:
         abort(404)
-    # Serve the producer's exact finalized document, including its own metadata.
-    # The HTTP canonical link adds indexing context without rewriting any bytes.
+    # The canonical URL stays byte-exact for the producer's publication checks.
+    # Website links opt into a presentation-only reading view of verified bytes.
     try:
         path = packet_html_path(packet, RESEARCH_PACKETS_PATH)
         content = path.read_bytes()
@@ -3003,11 +3092,23 @@ def research_packet_page(slug):
     except (OSError, ValueError):
         app.logger.exception("Research packet integrity check failed for %s", slug)
         abort(503)
+    if request.args.get("view") == "reader":
+        try:
+            assets = {}
+            for extension in ("css", "js"):
+                filename = f"research-reader.{extension}"
+                version = hashlib.sha256((BASE_DIR / "static" / filename).read_bytes()).hexdigest()[:12]
+                assets[extension] = url_for("static", filename=filename, v=version)
+            content = reader_html(content, stylesheet_url=assets["css"], script_url=assets["js"],
+                                  canonical_url=packet["canonical_url"])
+        except (OSError, ValueError):
+            app.logger.exception("Research packet reading view failed for %s", slug)
+            abort(503)
     response = Response(content, mimetype="text/html")
     response.headers["Link"] = f'<{packet["canonical_url"]}>; rel="canonical"'
     # Cloudflare otherwise injects its analytics beacon into finalized HTML.
     response.headers["Cache-Control"] = "public, max-age=300, no-transform"
-    response.set_etag(packet["sha256"])
+    response.set_etag(hashlib.sha256(content).hexdigest())
     return response.make_conditional(request)
 
 

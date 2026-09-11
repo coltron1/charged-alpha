@@ -60,25 +60,7 @@
 </head>
 <body>
   {% set hero_game = games[0] %}
-  <header class="sticky top-0 z-40 border-b border-slate-800/80 bg-[#080b12]/90 backdrop-blur">
-    <div class="mx-auto flex h-16 max-w-7xl items-center justify-between px-6">
-      <a href="/" class="flex items-center gap-3 text-white no-underline">
-        <img src="/static/assets/charged-alpha-logo.png" alt="Charged Alpha logo" class="h-10 w-10 rounded-lg border border-cyan-300/30">
-        <div>
-          <div class="text-sm font-black tracking-wide">CHARGED ALPHA</div>
-          <div class="text-[10px] font-bold uppercase tracking-[.18em] text-cyan-300">Interactive</div>
-        </div>
-      </a>
-      <nav class="flex items-center gap-4 md:gap-6">
-        <a href="/games" class="nav-link text-amber-200">Games</a>
-        <a href="/" class="nav-link hidden sm:inline">Main Site</a>
-        <a href="/studio" class="nav-link text-cyan-100">Studio</a>
-        <a href="/shows" class="nav-link hidden md:inline">Stock Encyclopedia</a>
-        <a href="/about" class="nav-link hidden md:inline">About</a>
-        <a href="/charts/" class="nav-link hidden md:inline">Charts</a>
-      </nav>
-    </div>
-  </header>
+{% include 'partials/brand_header.html' %}
 
   <main>
     <section class="leaderboard-strip px-6 py-3" aria-label="Weekly top game scores">

@@ -221,37 +221,7 @@
   </article>
   {%- endmacro %}
 
-  <header class="studio-header">
-    <div class="header-inner">
-      <a href="/" class="brand" aria-label="Charged Alpha home">
-        <img src="/static/assets/charged-alpha-logo.png" alt="Charged Alpha logo">
-        <span><strong>CHARGED ALPHA</strong><span>The Studio</span></span>
-      </a>
-      <nav class="studio-nav" aria-label="Primary navigation">
-        <a href="/">Home</a>
-        <a href="/shows">Stock Library</a>
-        <a href="/screener/">Research Tools</a>
-        <a href="/games">Games</a>
-        <a href="/studio" class="active" aria-current="page">Studio</a>
-        <a href="/about">About</a>
-        <a href="/app" class="nav-cta">Charged Alpha App</a>
-      </nav>
-      <button id="mobileMenuButton" type="button" class="mobile-menu-button" aria-expanded="false" aria-controls="mobileMenu" aria-label="Open navigation menu">
-        <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
-      </button>
-    </div>
-    <nav id="mobileMenu" class="mobile-menu" aria-label="Mobile navigation">
-      <div class="mobile-menu-inner">
-        <a href="/">Home</a>
-        <a href="/shows">Stock Library</a>
-        <a href="/screener/">Research Tools</a>
-        <a href="/games">Games</a>
-        <a href="/studio" class="active" aria-current="page">Studio</a>
-        <a href="/about">About</a>
-        <a href="/app">Charged Alpha App</a>
-      </div>
-    </nav>
-  </header>
+{% include 'partials/brand_header.html' %}
 
   <main>
     <section class="hero" aria-labelledby="studioTitle">
@@ -369,23 +339,6 @@
   </footer>
 
   <script>
-    const mobileMenuButton = document.getElementById('mobileMenuButton');
-    const mobileMenu = document.getElementById('mobileMenu');
-
-    function closeMobileMenu() {
-      mobileMenu.classList.remove('open');
-      mobileMenuButton.setAttribute('aria-expanded', 'false');
-    }
-
-    mobileMenuButton.addEventListener('click', function () {
-      const isOpen = mobileMenu.classList.toggle('open');
-      mobileMenuButton.setAttribute('aria-expanded', String(isOpen));
-    });
-
-    document.addEventListener('keydown', function (event) {
-      if (event.key === 'Escape') closeMobileMenu();
-    });
-
     const studioTracking = {
       source: {{ tracking_params.utm_source | tojson }},
       medium: {{ tracking_params.utm_medium | tojson }},

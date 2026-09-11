@@ -163,66 +163,8 @@
 <!-- ═══════════════════════════════════════════════════════
      NAVIGATION
      ═══════════════════════════════════════════════════════ -->
-<nav class="ca-nav">
-  <div style="display:flex;align-items:center">
-    <a href="/" class="nav-logo"><img src="/static/assets/charged-alpha-logo.png" alt="Charged Alpha logo" class="nav-bolt">CHARGED ALPHA</a>
-    <span class="ca-nav-title">ETF Screener</span>
-  </div>
-  <div style="display:flex;align-items:center;gap:8px">
-    <div class="mode-toggle nav-mode">
-      <span class="mode-label-b active-label">Beginner</span>
-      <label class="toggle-switch"><input type="checkbox" id="modeToggle" onchange="toggleMode(this)"><div class="toggle-track"></div><div class="toggle-knob"></div></label>
-      <span class="mode-label-e">Expert</span>
-    </div>
-    <div class="ca-nav-links">
-    <div class="ca-tools-wrap" id="toolsWrap">
-      <button class="ca-tools-btn" onclick="document.getElementById('toolsWrap').classList.toggle('open')">Tools <span class="arrow">&#9662;</span></button>
-      <div class="ca-tools-dd">
-        <a href="/screener/">Stock Screener</a>
-        <a href="/etf/" class="active">ETF Screener</a>
-        <a href="/crypto/">Crypto Screener</a>
-        <a href="/options/">Options Scanner</a>
-        <a href="/bonds/">Bond Dashboard</a>
-        <a href="/reits/">REIT Screener</a>
-        <a href="/forex/">Forex Heatmap</a>
-        <a href="/commodities/">Commodities</a>
-        <a href="/earnings/">Earnings Calendar</a>
-        <a href="/gold/">Precious Metals</a>
-          <a href="/charts/">Stock Charts</a>
-      </div>
-    </div>
-    <a href="/studio" class="ca-tools-btn" style="text-decoration:none">Studio</a>
-    {% if auth_public_enabled() %}
-    <a href="/auth/login" style="padding:6px 14px;border-radius:8px;font-size:12px;font-weight:600;color:#94a3b8;border:1px solid #334155;text-decoration:none;transition:all .15s;">Sign In</a>
-    <a href="/auth/register" style="padding:6px 14px;border-radius:8px;font-size:12px;font-weight:600;color:white;background:linear-gradient(135deg,#6366f1,#7c3aed);text-decoration:none;transition:all .15s;">Sign Up</a>
-    {% endif %}
-  </div>
-  </div>
-  <button class="ca-hamburger" onclick="document.getElementById('mobileMenu').classList.toggle('open')">
-    <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
-  </button>
-  <div class="ca-mobile-menu" id="mobileMenu">
-    <div class="mode-toggle"><span class="mode-label-b active-label">Beginner</span><label class="toggle-switch"><input type="checkbox" class="modeToggleMobile" onchange="toggleMode(this)"><div class="toggle-track"></div><div class="toggle-knob"></div></label><span class="mode-label-e">Expert</span></div>
-    <a href="/">Home</a>
-    <a href="/studio">Studio</a>
-    <a href="/screener/">Stock Screener</a>
-    <a href="/etf/" class="active">ETF Screener</a>
-    <a href="/crypto/">Crypto Screener</a>
-    <a href="/options/">Options Scanner</a>
-    <a href="/bonds/">Bond Dashboard</a>
-    <a href="/reits/">REIT Screener</a>
-    <a href="/forex/">Forex Heatmap</a>
-    <a href="/commodities/">Commodities</a>
-    <a href="/earnings/">Earnings Calendar</a>
-    <a href="/gold/">Precious Metals</a>
-          <a href="/charts/">Stock Charts</a>
-    <div style="height:1px;background:#1e293b;margin:8px 0"></div>
-    {% if auth_public_enabled() %}
-    <a href="/auth/login">Sign In</a>
-    <a href="/auth/register" style="color:#a5b4fc">Sign Up</a>
-    {% endif %}
-  </div>
-</nav>
+{% include 'partials/brand_header.html' %}
+{% include 'partials/tool_mode.html' %}
 
 <!-- ═══════════════════════════════════════════════════════
      SCREENER PAGE

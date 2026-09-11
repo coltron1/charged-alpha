@@ -1,0 +1,11 @@
+<div class="peer-picker-toolbar"><p class="data-note">Comparison stocks</p><button type="button" id="resetPeers">Reset suggested peers</button></div>
+<div id="peerSlots" class="peer-slots">{% for column in competitor_analysis.columns[1:] %}<button type="button" class="peer-slot" data-peer-slot="{{ loop.index0 }}" data-ticker="{{ column.ticker }}" data-company="{{ column.company }}"><span class="peer-slot-label">Comparison {{ loop.index }}</span><strong>{{ column.ticker }}</strong><span>{{ column.company }}</span><span class="peer-slot-change"><i data-lucide="search" aria-hidden="true"></i>Change stock</span></button>{% endfor %}{% if competitor_analysis.columns|length < 5 %}<button type="button" class="peer-slot peer-slot-add" data-peer-slot="{{ competitor_analysis.columns|length - 1 }}"><i data-lucide="plus" aria-hidden="true"></i>Add stock</button>{% endif %}</div>
+<p id="comparisonStatus" class="data-note" role="status"></p>
+<div id="comparisonContents">{% include 'partials/peer_comparison.html' %}</div>
+<noscript><form class="peer-form" action="#peers" method="get"><label for="peerInput">Custom comparison tickers (up to four)</label><div class="form-row"><input id="peerInput" name="peers" value="{{ selected_peers }}" maxlength="80"><button type="submit">Compare</button></div></form></noscript>
+<dialog id="peerSearchDialog" class="peer-search-dialog" aria-labelledby="peerSearchTitle">
+  <div class="chart-title-row"><h2 id="peerSearchTitle">Choose a comparison stock</h2><form method="dialog"><button class="chart-icon-button" aria-label="Close stock search" title="Close stock search"><i data-lucide="x" aria-hidden="true"></i></button></form></div>
+  <form id="peerSearchForm"><label for="peerSearchInput">Ticker or company</label><input type="search" id="peerSearchInput" placeholder="AAPL or Apple" maxlength="60" autocomplete="off"><button type="submit" id="remotePeerSearch"><i data-lucide="search" aria-hidden="true"></i>Search all listed stocks</button></form>
+  <p id="peerSearchStatus" class="data-note" role="status">Search covered companies, or search all listed stocks.</p><div id="peerSearchResults" class="peer-search-results"></div>
+  <button type="button" id="removePeer">Remove this comparison</button>
+</dialog>

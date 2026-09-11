@@ -108,7 +108,7 @@ def main() -> int:
                     errors.append(f"/shows/{slug} returned HTTP {response.status_code}")
                     continue
                 body = response.get_data()
-                if b"Market context for" not in body or b"Episode archive for" not in body:
+                if any(anchor not in body for anchor in (b'id="latest"', b'id="peers"', b'id="financials"', b'id="valuation"', b'id="archive"')):
                     errors.append(f"/shows/{slug} omitted a required stock-analysis section")
                     continue
                 rendered_pages += 1
