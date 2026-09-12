@@ -27,7 +27,8 @@
 {% if stock_detail.next_earnings %}<p class="data-note">Next earnings: {{ stock_detail.next_earnings }}{% if stock_detail.next_earnings_end != stock_detail.next_earnings %} to {{ stock_detail.next_earnings_end }}{% endif %} (provider estimate, not issuer-confirmed).</p>{% endif %}
 {% if stock_detail.summary %}<details class="company-context"><summary>Company background</summary><p>{{ stock_detail.summary }}</p>{% if stock_detail.website and stock_detail.website.startswith('https://') %}<a href="{{ stock_detail.website }}" target="_blank" rel="noopener noreferrer">Company website</a>{% endif %}</details>{% endif %}
 </section>
-<nav class="section-nav" aria-label="Stock research sections"><a href="#latest">Latest Research</a><a href="#peers">Comparisons</a><a href="#financials">Financials</a><a href="#valuation">Valuation</a><a href="#archive">Research History</a></nav>
+{% set latest_packet = research_packets[0] if research_packets else none %}
+<nav class="section-nav" aria-label="Stock research sections"><a href="#latest">Latest Research</a>{% if latest_packet and latest_packet.what_changed %}<a href="#whats-changed">What’s Changed</a>{% endif %}<a href="#peers">Comparisons</a><a href="#financials">Financials</a><a href="#valuation">Valuation</a><a href="#archive">Research History</a></nav>
 <section id="latest" class="band">
 <div class="section-heading"><div><p class="eyebrow">{{ show_stock.latest_video_quarter or 'Latest coverage' }}</p><h2>Go beyond the headline.</h2></div>{% if show_stock.latest_video_published_at %}<time>Episode {{ show_stock.latest_video_published_at[:10] }}</time>{% endif %}</div>
 <div class="latest-grid">
@@ -45,6 +46,14 @@
 <dl class="context-metrics"><div><dt>52-week range</dt><dd>{{ research_format(stock_detail.week_52_low, 'money', stock_detail.currency or '') }} &ndash; {{ research_format(stock_detail.week_52_high, 'money', stock_detail.currency or '') }}</dd></div><div><dt>Analyst mean price target</dt><dd>{{ research_format(stock_detail.analyst_target, 'money', stock_detail.currency or '') }}</dd></div>{% if stock_detail.analyst_count %}<div><dt>Analysts in provider consensus</dt><dd>{{ stock_detail.analyst_count|int }}</dd></div>{% endif %}</dl>
 <p class="data-note">Analyst targets are estimates, not a forecast or a measure of intrinsic value. Historical reports reflect information available at publication.</p></aside>
 </div></section>
+{% if latest_packet and latest_packet.what_changed %}
+<section id="whats-changed" class="band change-summary">
+<div class="section-heading change-summary-heading"><div><p class="eyebrow">{{ latest_packet.period }} REPORT HIGHLIGHTS</p><h2>What’s changed for {{ show_stock.ticker }}</h2></div>{% if latest_packet.source_published %}<time>Research published {{ latest_packet.source_published }}</time>{% endif %}</div>
+<p class="change-summary-lede">{{ latest_packet.what_changed.summary }}</p>
+<ol class="change-summary-list">{% for item in latest_packet.what_changed['items'] %}<li><span class="change-summary-number" aria-hidden="true">{{ loop.index }}</span><div><h3>{{ item.title }}</h3><p>{{ item.detail }}</p></div></li>{% endfor %}</ol>
+<div class="change-summary-actions"><a class="primary-link" href="{{ url_for('research_packet_page', slug=latest_packet.slug, view='reader') }}">See the evidence in the full report <i data-lucide="arrow-up-right" aria-hidden="true"></i></a>{% if show_stock.latest_youtube_url %}<a href="{{ show_stock.latest_youtube_url }}" target="_blank" rel="noopener noreferrer">Watch the analysis</a>{% endif %}</div>
+</section>
+{% endif %}
 <section id="peers" class="band">
 <div class="section-heading"><div><p class="eyebrow">Comparable businesses</p><h2>{{ show_stock.ticker }} peer comparison</h2></div><label class="select-label">Metrics <select id="metricGroup"><option value="overview">Overview</option><option value="valuation">Valuation</option><option value="quality">Growth &amp; profitability</option><option value="risk">Balance sheet &amp; income</option><option value="all">All metrics</option></select></label></div>
 <p class="data-note">Same business group first, then company size. Preferred market cap: 0.5&ndash;2x; extended range: one-third&ndash;3x. Outside that range, industry benchmarks are labeled separately and excluded from peer medians.</p>

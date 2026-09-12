@@ -18,6 +18,11 @@ def packet(period="Q2 2026", year=2026, quarter=2, fiscal=False, primary="LongVi
         "canonical_url": "https://chargedalpha.com/research/" + slug,
         "title": "Baozun: research <with sources>", "page_title": "BZUN Research Packet",
         "description": "The episode's research, charts, and sources.",
+        "what_changed": {"summary": "The quarter changed in three important ways.", "items": [
+            {"title": "Demand improved.", "detail": "Reported growth accelerated."},
+            {"title": "Cash lagged.", "detail": "Working capital absorbed cash."},
+            {"title": "Valuation stayed demanding.", "detail": "Execution must improve."},
+        ]},
         "primary_youtube_long": primary, "primary_youtube_short": "ShortClip01",
         "youtube_studio": "StudioVid01", "youtube_studio_short": None,
         "source_published": "", "sha256": "", "figures": 19, "tables": 14,
@@ -150,6 +155,11 @@ class ResearchPageTests(unittest.TestCase):
             self.assertTrue(any(urljoin('https://chargedalpha.com/shows/BZUN', href).split('#', 1)[0] == row['canonical_url'] for href in links))
         latest = body.split('id="latest"', 1)[1].split('id="peers"', 1)[0]
         self.assertIn('/research/bzun-q2-2026', latest)
+        self.assertIn('id="whats-changed"', body)
+        self.assertIn('What’s changed for BZUN', body)
+        self.assertIn('The quarter changed in three important ways.', body)
+        self.assertIn('Demand improved.', body)
+        self.assertIn('href="#whats-changed"', body)
         self.assertLess(body.index('id="archive"'), body.index('id="quarterly-research"'))
 
     def test_sitemap_includes_packet_and_stock(self):

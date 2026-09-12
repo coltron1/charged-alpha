@@ -52,6 +52,30 @@ def period_identity(ticker, period):
             "fiscal": fiscal, "slug": slug}
 
 
+def validate_what_changed(value):
+    """Validate the plain-text summary shared by stock pages and alert emails."""
+    require(isinstance(value, dict), "Packet what_changed must be an object")
+    require(set(value) == {"summary", "items"}, "Packet what_changed fields differ")
+    summary = value["summary"]
+    require(isinstance(summary, str) and summary.strip() == summary and 1 <= len(summary) <= 500,
+            "Invalid packet what_changed summary")
+    require("<" not in summary and ">" not in summary and "\n" not in summary and "\r" not in summary,
+            "Packet what_changed summary must be plain text")
+    items = value["items"]
+    require(isinstance(items, list) and 3 <= len(items) <= 5,
+            "Packet what_changed requires three to five items")
+    for item in items:
+        require(isinstance(item, dict) and set(item) == {"title", "detail"},
+                "Invalid packet what_changed item")
+        for field, maximum in (("title", 180), ("detail", 500)):
+            text = item[field]
+            require(isinstance(text, str) and text.strip() == text and 1 <= len(text) <= maximum,
+                    f"Invalid packet what_changed {field}")
+            require("<" not in text and ">" not in text and "\n" not in text and "\r" not in text,
+                    f"Packet what_changed {field} must be plain text")
+    return value
+
+
 def validate_record(packet):
     require(isinstance(packet, dict), "Packet registry record must be an object")
     expected = period_identity(packet.get("ticker"), packet.get("period"))
@@ -64,6 +88,8 @@ def validate_record(packet):
     require(isinstance(packet.get("sha256"), str) and SHA_RE.fullmatch(packet["sha256"]), "Invalid packet SHA256")
     for field in ("company", "title", "page_title", "description", "source_episode"):
         require(isinstance(packet.get(field), str) and packet[field].strip(), f"Missing packet {field}")
+    if "what_changed" in packet:
+        validate_what_changed(packet["what_changed"])
     return packet
 
 

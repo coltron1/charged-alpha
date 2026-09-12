@@ -5,7 +5,11 @@ What changed, what the headline misses, and what to watch next.
 {% for entry in entries %}
 {{ entry.ticker }} | {{ entry.period }} | {{ entry.date }}
 {{ entry.title }}
-Open Stock Research: {{ entry.url }}
+{% if entry.what_changed %}WHAT'S CHANGED
+{{ entry.what_changed.summary }}
+{% for item in entry.what_changed['items'][:3] %}- {{ item.title }}
+{% endfor %}{% endif %}
+Open What's Changed: {{ entry.url }}
 {% for link in entry.links %}{{ link.label }}: {{ link.url }}
 {% endfor %}{% endfor %}
 Manage stocks: {{ manage_url }}

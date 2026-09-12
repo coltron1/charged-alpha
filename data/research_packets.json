@@ -32,7 +32,32 @@
       "source_published": "September 10, 2026",
       "words": 6989,
       "figures": 14,
-      "tables": 37
+      "tables": 37,
+      "what_changed": {
+        "summary": "Lovesac Q2 FY2027: the tariff refund, underlying margins, holiday profit hurdle, seasonal cash and a transparent per-share valuation.",
+        "items": [
+          {
+            "title": "The profit headline needs a refund bridge.",
+            "detail": "Reported EPS is $0.51; the issuer says the refund adds $0.86."
+          },
+          {
+            "title": "Underlying demand remains soft.",
+            "detail": "Comparable sales and both new and repeat customer counts fell."
+          },
+          {
+            "title": "The holiday quarter still carries the year.",
+            "detail": "Annual and Q3 guide midpoints imply about $53.8M Q4 adjusted EBITDA."
+          },
+          {
+            "title": "Cash is seasonal.",
+            "detail": "H1 FCF is negative despite the receipt; inventory and buybacks use funding."
+          },
+          {
+            "title": "Value the common claim explicitly.",
+            "detail": "Our 16.5M gross-share model and $15M cash reserve are assumptions with sensitivities."
+          }
+        ]
+      }
     },
     {
       "key": "SAIL:Q2-FY2027",
@@ -65,7 +90,32 @@
       "source_published": "September 9, 2026",
       "words": 5709,
       "figures": 14,
-      "tables": 26
+      "tables": 26,
+      "what_changed": {
+        "summary": "SailPoint Q2 FY2027: the SaaS transition, commission investment, dilution and three transparent valuation routes.",
+        "items": [
+          {
+            "title": "Cloud is doing the work.",
+            "detail": "SaaS added $49.114M of revenue while everything else combined declined $4.660M."
+          },
+          {
+            "title": "Cash conversion slipped.",
+            "detail": "Capitalized commission outflow grew much faster than revenue; quarterly FCF fell despite stronger demand."
+          },
+          {
+            "title": "The adjusted bridge is large.",
+            "detail": "SBC and acquired amortization account for most of the $121.745M gap from adjusted profit to GAAP loss."
+          },
+          {
+            "title": "Management raised ARR, not revenue.",
+            "detail": "Fiscal 2027 ARR guidance increased, while its $1.265B–$1.275B revenue range stayed unchanged."
+          },
+          {
+            "title": "The destination is partly priced in.",
+            "detail": "Three transparent models produce roughly $15.57–$17.65 before conservative rounding; higher dilution or lower multiples can overwhelm growth."
+          }
+        ]
+      }
     },
     {
       "key": "SIG:Q2-FY2027",
@@ -98,7 +148,32 @@
       "source_published": "September 10, 2026",
       "words": 6745,
       "figures": 19,
-      "tables": 33
+      "tables": 33,
+      "what_changed": {
+        "summary": "Separating tariff refunds, credit economics and share repurchases from Signet’s recurring operating improvement.",
+        "items": [
+          {
+            "title": "Profit is improving.",
+            "detail": "The ex-refund operating comparison remains positive, although much slower than the headline."
+          },
+          {
+            "title": "The guide has new ingredients.",
+            "detail": "The annual outlook includes tariff refunds and $30–$40M of credit-partner income."
+          },
+          {
+            "title": "Comps changed perimeter.",
+            "detail": "Blue Nile and James Allen leave the comparable-sales calculation this quarter."
+          },
+          {
+            "title": "Cash is seasonal.",
+            "detail": "Strong annual cash does not make the whole quarter-end balance excess capital."
+          },
+          {
+            "title": "Value needs discipline.",
+            "detail": "Three routes yield $98.51–$108.63; a $105 anchor offers limited margin of safety."
+          }
+        ]
+      }
     },
     {
       "key": "AVAV:Q1-FY2027",
@@ -131,7 +206,32 @@
       "source_published": "September 9, 2026",
       "words": 6142,
       "figures": 19,
-      "tables": 36
+      "tables": 36,
+      "what_changed": {
+        "summary": "SCDE losses and a major capacity investment cycle complicate the cash return behind AeroVironment’s growing order book.",
+        "items": [
+          {
+            "title": "The profitable engine grew.",
+            "detail": "AxS added $60.6M of sales and $9.5M of adjusted EBITDA. Its margin slipped slightly."
+          },
+          {
+            "title": "The second segment reversed the gain.",
+            "detail": "SCDE adjusted EBITDA fell $12.7M, leaving group EBITDA lower."
+          },
+          {
+            "title": "Adjusted EPS is a different story.",
+            "detail": "$0.59 versus $0.32 reflects financing changes and lower stock compensation; amortization is excluded in both periods."
+          },
+          {
+            "title": "A funded order does not prepay the factory.",
+            "detail": "Inventory and unbilled work consumed cash while equipment spending accelerated."
+          },
+          {
+            "title": "Our valuation gives growth credit.",
+            "detail": "The DCF assumes sustained expansion and much better margins, yet remains below the price."
+          }
+        ]
+      }
     },
     {
       "key": "CASY:Q1-FY2027",
@@ -164,7 +264,32 @@
       "source_published": "September 9, 2026",
       "words": 5768,
       "figures": 18,
-      "tables": 34
+      "tables": 34,
+      "what_changed": {
+        "summary": "Casey’s Q1 FY2027 research: fuel spreads, softer inside growth, weaker cash after capex, and three transparent valuation routes behind a HOLD call.",
+        "items": [
+          {
+            "title": "The beat is real.",
+            "detail": "$7.37 EPS exceeded the dated $6.78 FMP estimate by 8.7%; revenue beat 2.1%."
+          },
+          {
+            "title": "Durability is the question.",
+            "detail": "Fuel spreads were high; inside comparable sales slowed."
+          },
+          {
+            "title": "Cash is the counterweight.",
+            "detail": "Capex rose 76.6%, taking residual cash down 27.7%."
+          },
+          {
+            "title": "Guidance was maintained.",
+            "detail": "EBITDA growth 8–10% is not an EPS forecast."
+          },
+          {
+            "title": "Price still matters.",
+            "detail": "$620.50 exceeds our $530 base despite the sharp intraday decline."
+          }
+        ]
+      }
     },
     {
       "key": "FIZZ:Q1-FY2027",
@@ -197,7 +322,32 @@
       "source_published": "September 11, 2026",
       "words": 6796,
       "figures": 16,
-      "tables": 33
+      "tables": 33,
+      "what_changed": {
+        "summary": "National Beverage pricing, volume and aluminum costs tested against cash quality, concentrated control and three transparent valuation routes.",
+        "items": [
+          {
+            "title": "The flat sales headline hides weaker demand.",
+            "detail": "Higher price per case offsets a 6.4% volume decline."
+          },
+          {
+            "title": "Aluminum matters, but the bridge must stay intact.",
+            "detail": "Management estimates 600 bps pressure within a net 300 bps margin decline; do not count it twice."
+          },
+          {
+            "title": "Cash conversion is seasonal.",
+            "detail": "Low cash taxes and prepaid-asset movements support the quarter; annualizing FCF overstates the evidence."
+          },
+          {
+            "title": "Common control is concentrated.",
+            "detail": "The CEO beneficially owns 73.2%; the 1%-of-sales management fee remains an operating cost."
+          },
+          {
+            "title": "There is no margin of safety at $30.91.",
+            "detail": "$28.50 base, $28.85 weighted; conditional entry $21.38 with business tests."
+          }
+        ]
+      }
     },
     {
       "key": "ORCL:Q1-FY2027",
@@ -230,7 +380,32 @@
       "source_published": "September 10, 2026",
       "words": 6987,
       "figures": 15,
-      "tables": 39
+      "tables": 39,
+      "what_changed": {
+        "summary": "Customer financing, infrastructure reinvestment and the common-share economics behind Oracle’s record operating cash.",
+        "items": [
+          {
+            "title": "The operating beat is real.",
+            "detail": "Revenue and adjusted operating profit both grow about 30%."
+          },
+          {
+            "title": "Cash timing is material.",
+            "detail": "Financing-component customer prepayments supply nearly half of operating cash."
+          },
+          {
+            "title": "Funding is not asset cost.",
+            "detail": "The net-capex-outlay measure cannot replace gross capex in FCF without double-counting prepayments."
+          },
+          {
+            "title": "Ownership changes.",
+            "detail": "The ATM is completed and the preferred will convert; coupons and dilution require consistent treatment."
+          },
+          {
+            "title": "Valuation depends on payback.",
+            "detail": "Earnings routes are near $150, but the cash-transition model is much lower."
+          }
+        ]
+      }
     },
     {
       "key": "USAU:Q1-FY2027",
@@ -263,7 +438,32 @@
       "source_published": "September 11, 2026",
       "words": 6737,
       "figures": 14,
-      "tables": 28
+      "tables": 28,
+      "what_changed": {
+        "summary": "Project NPV meets financing reality: cash use, permits, share claims and a transparent common-equity valuation.",
+        "items": [
+          {
+            "title": "The accounting loss overstates the change in cash use.",
+            "detail": "A prior warrant gain disappears; current spending still rises."
+          },
+          {
+            "title": "The funding gap is the central investment question.",
+            "detail": "Cash is 6.4% of initial capital, not committed construction funding."
+          },
+          {
+            "title": "Project NPV already subtracts capital.",
+            "detail": "Do not deduct it again or ignore the new money when adding new shares."
+          },
+          {
+            "title": "Dilution needs economic treatment.",
+            "detail": "The base uses approximate TSM, with gross zero-proceeds claims only as stress."
+          },
+          {
+            "title": "No fresh consensus or production guide is verified.",
+            "detail": "Hold with low conviction; $10.50 entry is conditional."
+          }
+        ]
+      }
     },
     {
       "key": "CPRT:Q4-FY2026",
@@ -296,7 +496,32 @@
       "source_published": "September 10, 2026",
       "words": 6271,
       "figures": 18,
-      "tables": 31
+      "tables": 31,
+      "what_changed": {
+        "summary": "Copart’s lower capital spending lifts free cash flow while US margins, operating cash and earnings weaken. Three valuation routes test what the rebound requires.",
+        "items": [
+          {
+            "title": "Free cash flow and operating cash tell different stories.",
+            "detail": "Capital spending fell $231.6M, more than offsetting a $195.3M decline in cash generated by operations."
+          },
+          {
+            "title": "The geographic split matters.",
+            "detail": "US quarterly operating profit fell $45.3M. International profit improved only $1.6M, despite double-digit sales growth."
+          },
+          {
+            "title": "Repurchases cushion EPS, not the income statement.",
+            "detail": "Annual cash repurchases were $1.633B; quarterly diluted average shares fell 4.7%, while net profit declined 17.4%."
+          },
+          {
+            "title": "The balance sheet remains a strength.",
+            "detail": "Cash and held-to-maturity securities total $4.490B. Restricted and foreign balances mean this is not an immediately distributable dividend."
+          },
+          {
+            "title": "The quote already assumes improvement.",
+            "detail": "Our cash model requires roughly 13.7% annual five-year growth to explain the after-hours price, versus 7% in our base model."
+          }
+        ]
+      }
     },
     {
       "key": "FLWS:Q4-FY2026",
@@ -329,7 +554,32 @@
       "source_published": "September 10, 2026",
       "words": 6763,
       "figures": 17,
-      "tables": 29
+      "tables": 29,
+      "what_changed": {
+        "summary": "The flowers and gifting turnaround has valuable brands, but cash generation and financing terms decide how much reaches shareholders.",
+        "items": [
+          {
+            "title": "Accounting improvement overstates the recovery.",
+            "detail": "Smaller impairment charges explain more than the improvement in the annual GAAP loss; adjusted net results deteriorated."
+          },
+          {
+            "title": "The refund matters.",
+            "detail": "Approximately $7M of tariff refunds helped Q4 gross profit. Annual adjusted EBITDA would have been negative in a simple refund-removal illustration."
+          },
+          {
+            "title": "Corporate costs consume the brand earnings.",
+            "detail": "Adjusted segment contribution of $128.5M falls to $2.9M after the comparable corporate burden. Segment profit is not equity profit."
+          },
+          {
+            "title": "Positive operating cash is not sufficient.",
+            "detail": "Inventory reductions contributed $24.3M to $18.3M of annual OCF; capital spending then left negative free cash flow."
+          },
+          {
+            "title": "The capital structure is still being negotiated.",
+            "detail": "The amended covenant framework buys flexibility, while possible debt, equity and asset sales create materially different outcomes for shareholders."
+          }
+        ]
+      }
     },
     {
       "key": "LPTH:Q4-FY2026",
@@ -362,7 +612,32 @@
       "source_published": "September 10, 2026",
       "words": 6512,
       "figures": 16,
-      "tables": 30
+      "tables": 30,
+      "what_changed": {
+        "summary": "LightPath Q4 FY2026: record backlog, acquisition-driven growth, cash burn, dilution and the valuation required to turn optics demand into common-shareholder returns.",
+        "items": [
+          {
+            "title": "Demand has substance.",
+            "detail": "The backlog is approximately three times the previous year-end level, with most scheduled for delivery within twelve months. It still depends on customer schedules and successful manufacturing."
+          },
+          {
+            "title": "The acquired perimeter matters.",
+            "detail": "FY2026 includes twelve months of G5 Infrared and about five months of AML. Reported revenue growth is not a same-business organic growth rate."
+          },
+          {
+            "title": "Adjusted profit does not equal cash.",
+            "detail": "The company excludes earnout remeasurement and stock compensation. Earnouts can reflect business success while still transferring value to acquisition sellers."
+          },
+          {
+            "title": "Use the new share base.",
+            "detail": "June-end common shares exceed the share count implied by the provider market-cap snapshot. Our forward models use 81 M shares, clearly identified as an assumption."
+          },
+          {
+            "title": "No numerical company guide was verified.",
+            "detail": "We separate management’s qualitative outlook, stale/thin Street estimates and our own assumptions. We do not manufacture a beat or miss."
+          }
+        ]
+      }
     },
     {
       "key": "UNFI:Q4-FY2026",
@@ -395,7 +670,32 @@
       "source_published": "September 11, 2026",
       "words": 6193,
       "figures": 16,
-      "tables": 16
+      "tables": 16,
+      "what_changed": {
+        "summary": "United Natural Foods Q4 FY2026: verified profit and cash bridges, FY2027 investment demands, three valuation routes, nine-quarter history and dated signposts.",
+        "items": [
+          {
+            "title": "Profit and next-year cash point in different directions.",
+            "detail": "The EBITDA guide rises; the FCF midpoint falls. Capital plus cloud investment rises from $252M to about $300M. The company does not provide a full forward cash bridge, so the spending increase is context, not an exact explanation of every dollar."
+          },
+          {
+            "title": "The operating improvement survives the cyber adjustment.",
+            "detail": "Q4 adjusted EBITDA removes a $3M net cyber benefit this year and adds back $26M of costs last year. The full-year subtraction is $21M. Keep those periods separate."
+          },
+          {
+            "title": "Sales contraction is not a measured organic decline.",
+            "detail": "Management quantifies about 500 basis points of optimization headwind and 150 points of project unwind, with a favorable but unquantified cyber comparison. Those components do not establish underlying volume growth."
+          },
+          {
+            "title": "Cash is improving, with qualifications.",
+            "detail": "Annual operating cash increased, but receivables and inventory released cash, stock compensation was added back, and receivable monetization has an economic cost. None of that makes cash unreal; it changes what can repeat."
+          },
+          {
+            "title": "Valuation is an assumption set, not a target borrowed from the Street.",
+            "detail": "Our $49 uses disclosed guidance, observed debt and an explicit diluted-share assumption. A conditional entry near $39.20 provides a 20% discount to that value; the current price does not."
+          }
+        ]
+      }
     },
     {
       "key": "ADBE:Q3-FY2026",
@@ -428,7 +728,32 @@
       "source_published": "September 10, 2026",
       "words": 6771,
       "figures": 14,
-      "tables": 26
+      "tables": 26,
+      "what_changed": {
+        "summary": "AI reach, contracted growth, recurring compensation and the cash economics behind Adobe’s earnings.",
+        "items": [
+          {
+            "title": "Adoption is expanding.",
+            "detail": "AI-first ARR grows more than 150%, but the current dollar base and paid-user conversion are undisclosed."
+          },
+          {
+            "title": "Costs matter.",
+            "detail": "Revenue grows faster than both GAAP and adjusted operating income."
+          },
+          {
+            "title": "Compensation is recurring.",
+            "detail": "$544M of the $620M operating adjustment is stock-based and deferred compensation."
+          },
+          {
+            "title": "Cash remains strong.",
+            "detail": "Trailing FCF less SBC reaches $8.521B, with repurchase discipline still important."
+          },
+          {
+            "title": "Value has a range.",
+            "detail": "Three routes yield $262.68–$314.94; the $300 anchor requires a $225 entry at the stated uncertainty."
+          }
+        ]
+      }
     },
     {
       "key": "ASO:Q2-FY2026",
@@ -461,7 +786,32 @@
       "source_published": "September 9, 2026",
       "words": 6115,
       "figures": 16,
-      "tables": 34
+      "tables": 34,
+      "what_changed": {
+        "summary": "ASO Q2 FY2026: verified profit and share-count bridges, tariff refund accounting, cash conversion, three valuation routes and dated signposts.",
+        "items": [
+          {
+            "title": "Growth is real, but uneven.",
+            "detail": "Total sales increased 3.0% while comps slipped 0.4%. The store base reached 327 and online sales grew 12.8%. Subtracting comp from total growth is not an exact new-store revenue bridge because the populations and denominators differ."
+          },
+          {
+            "title": "Profit did more of the EPS work than the share count.",
+            "detail": "Net income grew 9.94%; diluted shares fell 6.11%. On an old-share-count-first bridge, higher profit adds about $0.18 per share and the lower denominator adds about $0.13. Neither effect should be mistaken for the other."
+          },
+          {
+            "title": "The tariff benefit is not a non-GAAP add-back.",
+            "detail": "The $0.06 net EPS benefit remains in reported and adjusted performance. The actual adjusted-income bridge adds equity compensation and a debt-retirement loss, then deducts their tax effects."
+          },
+          {
+            "title": "Cash needs a wider lens.",
+            "detail": "H1 operating cash includes tariff refunds, while $72.2M of tariff-claim remittances sits in financing. Reported adjusted FCF is $237.6M; subtracting that financing outflow gives a $165.3M cash illustration, not a measure of recurring FCF."
+          },
+          {
+            "title": "The rerating has used much of the valuation cushion.",
+            "detail": "At our approximately $49.99 snapshot, the $50 central value offers almost no upside. The $33/$53/$68 scenarios have a $50 weighted value. A profitable retailer can still be an unattractive fresh purchase when uncertainty is high and the cushion is thin."
+          }
+        ]
+      }
     },
     {
       "key": "BZUN:Q2-2026",
@@ -494,7 +844,32 @@
       "source_published": "September 7, 2026",
       "words": 5230,
       "figures": 19,
-      "tables": 14
+      "tables": 14,
+      "what_changed": {
+        "summary": "Baozun (BZUN) Q2 2026 earnings research packet: the call, three valuation routes, scenarios, signposts, earnings quality, balance sheet, risks and catalysts — companion to the Charged Alpha episode.",
+        "items": [
+          {
+            "title": "The operating swing is real but seasonal.",
+            "detail": "Q2 is a mid-size quarter; Q4 (Singles' Day) carries the year. Non-GAAP operating income of RMB74M in Q2 compares with RMB198M in Q4 2025 and RMB8M in Q1 2026 — read the trailing four quarters (RMB269M), not one print."
+          },
+          {
+            "title": "Group profit is not shareholder profit.",
+            "detail": "Of RMB43.8M of Q2 net income, RMB26.8M went to minority holders — mostly Cainiao's 37% of the Baotong logistics arm — leaving RMB17.0M for Baozun's shareholders. Any valuation of 'the operating business' has to net this out."
+          },
+          {
+            "title": "The cash is the thesis, and it is real:",
+            "detail": "RMB2.81B of cash and short-term investments against RMB1.24B of short-term loans — $231M net, $3.98 per ADS — but it sits inside a Cayman holding structure with minority holders owning 34% of total equity, a small VIE (4.4% of revenue) and a China-ADR discount that has persisted for years."
+          },
+          {
+            "title": "Management raised the bar on itself:",
+            "detail": "the 2028 non-GAAP operating income target went from RMB550M (set March 2026) to at least RMB700M (August 2026). Consensus (3–6 analysts) sits at RMB586M for 2028 — the Street does not yet believe it."
+          },
+          {
+            "title": "The consumer is the risk, in their own words:",
+            "detail": "E-Commerce product sales fell 9.6% on Home & Furnishing and Cosmetics, and the release says 'soft consumer sentiment'. If that spreads into the services line (63% of revenue), the margin story stalls."
+          }
+        ]
+      }
     },
     {
       "key": "CHWY:Q2-FY2026",
@@ -527,7 +902,32 @@
       "source_published": "September 9, 2026",
       "words": 6184,
       "figures": 18,
-      "tables": 16
+      "tables": 16,
+      "what_changed": {
+        "summary": "Chewy raised guidance, but acquisitions, debt and recurring compensation make owner cash the decisive test.",
+        "items": [
+          {
+            "title": "Operations improved.",
+            "detail": "Gross margin stayed 30.4% while operating profit increased."
+          },
+          {
+            "title": "Cash did not keep pace.",
+            "detail": "Capex rose and quarterly FCF fell to $89.5M."
+          },
+          {
+            "title": "The settlement is separated.",
+            "detail": "$24M legal proceeds benefit GAAP income and are removed from adjusted EBITDA."
+          },
+          {
+            "title": "The balance sheet changed.",
+            "detail": "Acquisitions and buybacks accompany $600M new principal debt."
+          },
+          {
+            "title": "Price requires conversion.",
+            "detail": "Owner-cash DCF needs 23.4% five-year growth to justify $20.75 under our discount assumptions."
+          }
+        ]
+      }
     },
     {
       "key": "DBI:Q2-FY2026",
@@ -560,7 +960,32 @@
       "source_published": "September 10, 2026",
       "words": 6522,
       "figures": 12,
-      "tables": 38
+      "tables": 38,
+      "what_changed": {
+        "summary": "DBI tariff recoveries, Investor financing, recurring profit and common shareholder value.",
+        "items": [
+          {
+            "title": "Three gross margins matter.",
+            "detail": "50.0% reported, 47.9% issuer adjusted and 45.14% after full recovery removal."
+          },
+          {
+            "title": "The Investor was paid.",
+            "detail": "$18.3M remittance includes principal and interest; cash already reflects it."
+          },
+          {
+            "title": "Minority earnings are not all common earnings.",
+            "detail": "Adjusted net income adds back Topo attribution."
+          },
+          {
+            "title": "Debt extends beyond headline borrowing.",
+            "detail": "Finance leases add an inferred $29.46M."
+          },
+          {
+            "title": "Price must compensate for the claims.",
+            "detail": "$3.50 base value versus $5.99 reference, with high uncertainty."
+          }
+        ]
+      }
     }
   ]
 }

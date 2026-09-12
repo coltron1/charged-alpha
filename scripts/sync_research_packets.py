@@ -20,10 +20,11 @@ if str(PROJECT_ROOT) not in sys.path:
 
 from research_packets import (DEFAULT_INDEX, load_packets, packet_html_path, packet_sort_key,
                               period_identity, reject_symlinks, require, safe_path, sha256,
-                              validate_record)
+                              validate_record, validate_what_changed)
 
 DEFAULT_QUEUE = Path.home() / "Desktop/CHARGED ALPHA EPISODES/_studio_queue"
 PACKET_REQUIRED_FROM = datetime(2026, 9, 8, tzinfo=timezone.utc)
+HIGHLIGHTS_REQUIRED_FROM = datetime(2026, 9, 11, tzinfo=timezone.utc)
 IMMUTABLE_FIELDS = ("key", "ticker", "company", "period", "year", "quarter", "fiscal", "slug",
                     "canonical_url", "title", "page_title", "description", "sha256", "source_episode")
 
@@ -57,6 +58,54 @@ class HeadMetadata(HTMLParser):
     def handle_data(self, data):
         if self.in_head and self.in_title:
             self.titles[-1] += data
+
+
+class HighlightText(HTMLParser):
+    """Extract readable text and the emphasized lead from one packet highlight."""
+    def __init__(self):
+        super().__init__(convert_charrefs=True)
+        self.parts, self.emphasis, self.emphasis_depth = [], [], 0
+
+    def handle_starttag(self, tag, attrs):
+        if tag.lower() in ("b", "strong"):
+            self.emphasis_depth += 1
+
+    def handle_endtag(self, tag):
+        if tag.lower() in ("b", "strong") and self.emphasis_depth:
+            self.emphasis_depth -= 1
+
+    def handle_data(self, data):
+        text = " ".join(data.split())
+        if not text:
+            return
+        self.parts.append(text)
+        if self.emphasis_depth:
+            self.emphasis.append(text)
+
+
+def packet_highlights(content, *, required=False):
+    """Create the shared plain-text summary from the finalized packet's fast read."""
+    values = content.get("five_things")
+    if values is None:
+        require(not required, "Packet five_things are required for What’s Changed")
+        return None
+    require(isinstance(values, list) and 3 <= len(values) <= 5,
+            "Packet five_things must contain three to five highlights")
+    items = []
+    for value in values:
+        require(isinstance(value, str) and value.strip(), "Invalid packet five_things item")
+        parser = HighlightText()
+        parser.feed(value)
+        parser.close()
+        plain, title = " ".join(parser.parts), " ".join(parser.emphasis)
+        require(plain and title and plain.startswith(title),
+                "Each packet five_things item needs an emphasized lead")
+        detail = plain[len(title):].strip()
+        require(detail, "Each packet five_things item needs supporting detail")
+        items.append({"title": title, "detail": detail})
+    summary = content.get("meta", {}).get("description")
+    result = {"summary": summary, "items": items}
+    return validate_what_changed(result)
 
 
 def json_object(raw, label):
@@ -174,6 +223,7 @@ def read_candidate(queue):
     require(len(parsed.titles) == 1 and parsed.titles[0].strip() == packet["page_title"], "HTML page title differs")
     require(parsed.descriptions[0] == cm.get("description"), "HTML description differs from packet content")
     require(not parsed.canonicals or parsed.canonicals == [canonical], "HTML canonical URL differs")
+    what_changed = packet_highlights(content, required=when >= HIGHLIGHTS_REQUIRED_FROM)
     primary, links = handoff.get("primary", {}), meta.get("links", {})
     require(isinstance(primary, dict) and isinstance(links, dict), "Invalid source video links")
     require(content.get("links") == links, "Packet video links differ from metadata")
@@ -191,6 +241,8 @@ def read_candidate(queue):
               "html_file": f"research_packets/{identity['slug']}.html", "source_episode": episode,
               "source_staged_at": staged_at, "source_sha256": {name: sha256(data) for name, data in raw.items()},
               **videos}
+    if what_changed:
+        record["what_changed"] = what_changed
     if cm.get("published"):
         require(isinstance(cm["published"], str), "Invalid source publication date")
         record["source_published"] = cm["published"]
@@ -232,6 +284,18 @@ def classify(candidate, records, index):
         require(len(matched) == 1 and all(matched[0][k] == record[k] for k in IMMUTABLE_FIELDS),
                 "Immutable ticker/period packet conflicts with registry; no overwrite")
         packet_html_path(matched[0], index)
+        if record.get("what_changed"):
+            if matched[0].get("what_changed"):
+                require(matched[0]["what_changed"] == record["what_changed"],
+                        "Packet What’s Changed differs from registered source")
+            else:
+                old_content = [value for name, value in matched[0].get("source_sha256", {}).items()
+                               if name.endswith("/packet.json")]
+                new_content = [value for name, value in record.get("source_sha256", {}).items()
+                               if name.endswith("/packet.json")]
+                require(len(old_content) == len(new_content) == 1 and old_content == new_content,
+                        "Packet content hash differs; refusing metadata enrichment")
+                return "ready_to_enrich"
         return "already_imported"
     path = safe_path(index.parent, record["html_file"], must_exist=False)
     if path.exists():
@@ -251,6 +315,20 @@ def atomic_index(index, records):
     finally:
         if os.path.exists(name):
             os.unlink(name)
+
+
+def enriched_records(records, record):
+    """Add derived summary metadata without changing immutable packet bytes."""
+    require(record.get("what_changed"), "Missing What’s Changed metadata")
+    updated, found = [], False
+    for existing in records:
+        if existing["key"] == record["key"]:
+            require(not existing.get("what_changed"), "What’s Changed is already registered")
+            existing = {**existing, "what_changed": record["what_changed"]}
+            found = True
+        updated.append(existing)
+    require(found, "Packet enrichment target is missing")
+    return updated
 
 
 def install_html(path, raw):
@@ -313,6 +391,10 @@ def sync_packets(queue_root=DEFAULT_QUEUE, index_path=DEFAULT_INDEX, *, execute=
                         atomic_index(index, next_records)
                         records = next_records
                         status = "imported"
+                    elif status == "ready_to_enrich":
+                        records = enriched_records(records, candidate["record"])
+                        atomic_index(index, records)
+                        status = "enriched"
                     candidate["status"] = status
                 except (ValueError, OSError, KeyError, TypeError) as exc:
                     candidate["status"], candidate["reason"] = "error", str(exc)
@@ -322,7 +404,8 @@ def sync_packets(queue_root=DEFAULT_QUEUE, index_path=DEFAULT_INDEX, *, execute=
     return {"mode": "execute" if execute else "plan", "index_path": str(index), "packets": results,
             "errors": sum(p["status"] == "error" for p in results),
             "pending_source": sum(p["status"] == "pending_source" for p in results),
-            "imported": sum(p["status"] == "imported" for p in results)}
+            "imported": sum(p["status"] == "imported" for p in results),
+            "enriched": sum(p["status"] == "enriched" for p in results)}
 
 
 def main():

@@ -373,6 +373,9 @@ def editions():
                 result[key] = {'key': key, 'ticker': packet['ticker'], 'company': packet['company'], 'period': period,
                                'date': date, 'title': packet['title'], 'links': [link],
                                'url': BASE + '/shows/' + quote(packet['ticker'], safe='') + '?utm_source=stock_alert&utm_medium=email'}
+        if key in result and packet.get('what_changed'):
+            result[key]['what_changed'] = packet['what_changed']
+            result[key]['url'] = result[key]['url'].split('#', 1)[0] + '#whats-changed'
     return result
 
 

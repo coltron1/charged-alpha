@@ -232,6 +232,30 @@ class StockAlertsTests(unittest.TestCase):
         self.assertIn('Spotify', payload['text'])
         self.assertIn('List-Unsubscribe-Post', payload['headers'])
 
+    def test_digest_reuses_packet_whats_changed_summary(self):
+        self.active()
+        self.add_report()
+        self.data['research_packets'] = [{
+            'ticker': 'ADBE', 'company': 'ADBE Company', 'period': 'Q2 FY2026',
+            'slug': 'adbe-q2-fy2026', 'title': 'ADBE: What changed', 'source_published': '2026-09-10',
+            'what_changed': {'summary': 'Growth improved, but cash conversion remains the test.', 'items': [
+                {'title': 'Revenue accelerated.', 'detail': 'The quarter grew faster.'},
+                {'title': 'Margins expanded.', 'detail': 'Operating leverage returned.'},
+                {'title': 'Cash lagged.', 'detail': 'Working capital used cash.'},
+                {'title': 'Valuation rose.', 'detail': 'The hurdle is now higher.'},
+            ]},
+        }]
+        self.assertEqual(alerts.queue_digests(), 1)
+        payload = json.loads(Message.query.filter_by(kind='digest').one().payload_json)
+        for text in (payload['html'], payload['text']):
+            self.assertIn('Growth improved, but cash conversion remains the test.', text)
+            self.assertIn('Revenue accelerated.', text)
+            self.assertIn('Cash lagged.', text)
+            self.assertNotIn('The quarter grew faster.', text)
+            self.assertNotIn('Valuation rose.', text)
+        self.assertIn('#whats-changed', payload['text'])
+        self.assertIn("Open What's Changed", payload['text'])
+
     def test_separate_platform_editions_are_one_earnings_alert(self):
         sub = self.active()
         self.add_report()

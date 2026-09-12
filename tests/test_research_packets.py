@@ -47,7 +47,12 @@ class ResearchPacketTests(unittest.TestCase):
         meta.update(ticker=ticker, period=period, bytes=len(raw), words=100, figures=2, tables=1, links=links)
         content = {"meta": {"ticker": ticker, "company": hand["company"], "period": period,
                             "slug": slug, "title": packet["title"], "page_title": title,
-                            "description": description, "published": "September 7, 2026"}, "links": links}
+                            "description": description, "published": "September 7, 2026"}, "links": links,
+                   "five_things": [
+                       "<b>Revenue accelerated.</b> The latest quarter grew faster than the prior period.",
+                       "<b>Cash conversion weakened.</b> Working capital absorbed more of reported profit.",
+                       "<b>The valuation hurdle moved.</b> The current price requires stronger execution.",
+                   ]}
         (folder / "READY").write_text(hand["staged_at"] + "\n")
         (folder / "handoff.json").write_text(json.dumps(hand))
         (folder / "packet/packet_meta.json").write_text(json.dumps(meta))
@@ -88,6 +93,14 @@ class ResearchPacketTests(unittest.TestCase):
         self.assertEqual((packet["figures"], packet["tables"], packet["words"]), (2, 1, 100))
         self.assertEqual(packet["primary_youtube_long"], "abcdefghijk")
         self.assertEqual(packet["source_published"], "September 7, 2026")
+        self.assertEqual(packet["what_changed"], {
+            "summary": "Exact A & B research.",
+            "items": [
+                {"title": "Revenue accelerated.", "detail": "The latest quarter grew faster than the prior period."},
+                {"title": "Cash conversion weakened.", "detail": "Working capital absorbed more of reported profit."},
+                {"title": "The valuation hurdle moved.", "detail": "The current price requires stronger execution."},
+            ],
+        })
         self.assertEqual(before, {str(p): p.read_bytes() for p in source.rglob("*") if p.is_file()})
 
     def test_idempotent_import_has_no_file_or_timestamp_churn(self):
@@ -97,6 +110,34 @@ class ResearchPacketTests(unittest.TestCase):
         self.assertEqual(result["imported"], 0)
         self.assertEqual(result["packets"][0]["status"], "already_imported")
         self.assertEqual(files, {p: (p.read_bytes(), p.stat().st_mtime_ns) for p in files})
+
+    def test_existing_packet_can_add_source_bound_highlights_without_changing_html(self):
+        source, raw = self.fixture()
+        with patch.object(sync, "packet_highlights", return_value=None):
+            self.import_all()
+        before_html = packet_html_path(load_packets(self.index)[0], self.index).read_bytes()
+        plan = self.import_all(False)
+        self.assertEqual(plan["packets"][0]["status"], "ready_to_enrich")
+        result = self.import_all()
+        self.assertEqual((result["imported"], result["enriched"]), (0, 1))
+        self.assertEqual(packet_html_path(load_packets(self.index)[0], self.index).read_bytes(), before_html)
+        self.assertEqual(before_html, raw)
+        self.assertEqual(len(load_packets(self.index)[0]["what_changed"]["items"]), 3)
+        self.assertEqual(self.import_all()["packets"][0]["status"], "already_imported")
+
+    def test_new_packets_require_valid_plain_text_highlights(self):
+        source, _ = self.fixture()
+        (source / "READY").write_text("2026-09-11T00:00:00Z\n")
+        self.mutate(source / "handoff.json", lambda h: h.update(staged_at="2026-09-11T00:00:00Z"))
+        self.mutate(source / "packet/packet.json", lambda p: p.pop("five_things"))
+        self.assertEqual(self.import_all()["errors"], 1)
+        self.assertFalse(self.index.exists())
+
+        shutil.rmtree(self.queue); self.queue.mkdir()
+        source, _ = self.fixture()
+        self.mutate(source / "packet/packet.json",
+                    lambda p: p.update(five_things=["No emphasized lead", "<b>Two.</b> Detail", "<b>Three.</b> Detail"]))
+        self.assertEqual(self.import_all()["errors"], 1)
 
     def test_casy_display_legal_company_spelling_preserves_exact_source(self):
         source, raw = self.fixture("CASY", "Q1 FY2027")
