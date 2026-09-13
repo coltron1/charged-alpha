@@ -1,0 +1,52 @@
+{% if production_board %}
+<section class="production-preview" aria-labelledby="production-preview-title">
+  <header class="production-preview__header">
+    <div>
+      <p class="production-eyebrow">Episode tracker</p>
+      <h2 id="production-preview-title">What we just covered. What reports next.</h2>
+    </div>
+    <a class="production-preview__all" href="/production">View schedule &amp; history <span aria-hidden="true">&rarr;</span></a>
+  </header>
+  {% if production_board.stale %}<p class="production-preview__notice">Calendar update pending · expected dates may change.</p>{% endif %}
+  <div class="production-preview__columns">
+    <section class="production-preview__column" aria-labelledby="production-latest-title">
+      <h3 id="production-latest-title"><span class="production-dot production-dot--complete" aria-hidden="true"></span>Latest episodes</h3>
+      <ol class="production-rows">
+        {% for item in production_board.latest[:3] %}
+        <li class="production-row production-row--complete">
+          <div class="production-row__identity">
+            {% if item.stock_url %}<a class="production-ticker" href="{{ item.stock_url }}">{{ item.ticker }}</a>{% else %}<span class="production-ticker">{{ item.ticker }}</span>{% endif %}
+            <span class="production-company">{{ item.company }}</span>
+          </div>
+          <div class="production-row__detail">
+            <span>{{ item.period }}{% if item.completed_label %} &middot; {{ item.completed_label }}{% endif %}</span>
+            {% if item.video_url %}<a href="{{ item.video_url }}" target="_blank" rel="noopener noreferrer">Watch</a>{% elif item.packet_url %}<a href="{{ item.packet_url }}">Read</a>{% endif %}
+          </div>
+        </li>
+        {% else %}
+        <li class="production-row production-row--empty">New episodes will appear here.</li>
+        {% endfor %}
+      </ol>
+    </section>
+    <section class="production-preview__column" aria-labelledby="production-upcoming-title">
+      <h3 id="production-upcoming-title"><span class="production-dot production-dot--upcoming" aria-hidden="true"></span>Reporting next</h3>
+      <ol class="production-rows">
+        {% for item in production_board.upcoming[:3] %}
+        <li class="production-row">
+          <div class="production-row__identity">
+            {% if item.stock_url %}<a class="production-ticker" href="{{ item.stock_url }}">{{ item.ticker }}</a>{% else %}<span class="production-ticker">{{ item.ticker }}</span>{% endif %}
+            <span class="production-company">{{ item.company }}</span>
+          </div>
+          <div class="production-row__detail">
+            <span>{{ item.report_date_label }}{% if item.report_time_label %} &middot; {{ item.report_time_label }}{% endif %}</span>
+            {% if item.source_url %}<a href="{{ item.source_url }}" target="_blank" rel="noopener noreferrer" aria-label="Earnings date source for {{ item.company }}">Source</a>{% endif %}
+          </div>
+        </li>
+        {% else %}
+        <li class="production-row production-row--empty">No upcoming reports in the current watchlist.</li>
+        {% endfor %}
+      </ol>
+    </section>
+  </div>
+</section>
+{% endif %}

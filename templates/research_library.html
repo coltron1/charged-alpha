@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>{{ seo_meta.title }}</title>
 {% include 'partials/seo_meta.html' %}<link rel="icon" href="/static/assets/charged-alpha-logo.png">
+{% if not following_page %}<link rel="stylesheet" href="/static/production-schedule.css?v=1">{% endif %}
 {% for item in structured_data or [] %}<script type="application/ld+json">{{ item|tojson }}</script>{% endfor %}
 <style>body{margin:0;background:#101213}.ca-skip{position:absolute;left:16px;top:-90px;z-index:100;background:#e2eee7;padding:12px;color:#152c24}.ca-skip:focus{top:8px}</style>
 <script src="/static/research-library.js?v=2" defer></script></head><body>
@@ -14,6 +15,7 @@
       {% else %}
       <div class="ca-intro-title"><h1>Charged Alpha</h1><span class="ca-intro-note">Frontier AI research. Freely available.</span></div>
       <p class="ca-promise">Understand <strong>what changed</strong> in the companies you follow, <strong>what the headline misses</strong>, and <strong>what to watch next.</strong></p>
+      {% include 'partials/production_preview.html' %}
       {% endif %}
       <div class="ca-search-area"><label for="searchInput">{% if following_page %}Search your followed stocks{% else %}Find stock research, videos &amp; comparisons{% endif %}</label><div class="ca-search-box"><i data-lucide="search" aria-hidden="true"></i><input type="search" id="searchInput" name="q" placeholder="Ticker, company, or episode title" autocomplete="off" aria-describedby="searchStatus"><button id="clearSearch" type="button" aria-label="Clear search" title="Clear search" hidden><i data-lucide="x" aria-hidden="true"></i></button></div><p class="ca-search-meta" id="searchStatus" role="status">{% if following_page %}Loading your list...{% else %}Full videos, quick summaries, podcasts, and free research packets.{% endif %}</p></div>
     </section>

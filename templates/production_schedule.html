@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Episode Schedule &amp; History | Charged Alpha</title>
+  {% include 'partials/seo_meta.html' %}
+  <link rel="icon" href="/static/assets/charged-alpha-logo.png">
+  <link rel="stylesheet" href="/static/production-schedule.css?v=1">
+  <style>body{margin:0;background:#101213}.ca-skip{position:absolute;left:16px;top:-90px;z-index:100;background:#e2eee7;padding:12px;color:#152c24}.ca-skip:focus{top:8px}</style>
+</head>
+<body>
+<a class="ca-skip" href="#production-main">Skip to episode schedule</a>
+{% include 'partials/brand_header.html' %}
+<main class="ca-page production-page" id="production-main">
+  <div class="ca-wrap">
+    <header class="production-hero">
+      <p class="production-eyebrow">Episode tracker</p>
+      <h1>Schedule &amp; history</h1>
+      <p>Follow the earnings reports on our near-term research list, then browse the companies we have covered.</p>
+      <div class="production-hero__meta">
+        {% if production_board.updated_label %}<span>Episodes updated {{ production_board.updated_label }}</span>{% endif %}
+        {% if production_board.calendar_updated_label %}<span>Earnings dates updated {{ production_board.calendar_updated_label }}</span>{% endif %}
+      </div>
+      {% if production_board.stale %}<p class="production-notice" role="status">The earnings calendar is awaiting a fresh source check. Dates below may change.</p>{% endif %}
+    </header>
+
+    <section class="production-section" aria-labelledby="upcoming-schedule-title">
+      <div class="production-section__heading">
+        <div><p class="production-eyebrow">Next seven days</p><h2 id="upcoming-schedule-title">Anticipated earnings calendar</h2></div>
+        <p>Release timing is shown in Central Time when confirmed.</p>
+      </div>
+      <div class="production-days">
+        {% for day in production_board.days %}
+        <section class="production-day" aria-labelledby="production-day-{{ loop.index }}">
+          <h3 id="production-day-{{ loop.index }}">{{ day.date_label }}</h3>
+          {% if day['items'] %}
+          <ul>
+            {% for item in day['items'] %}
+            <li>
+              <div class="production-event__company">
+                {% if item.stock_url %}<a class="production-ticker" href="{{ item.stock_url }}">{{ item.ticker }}</a>{% else %}<span class="production-ticker">{{ item.ticker }}</span>{% endif %}
+                <span>{{ item.company }}</span>
+              </div>
+              <div class="production-event__timing">
+                <strong>{{ item.report_time_label or 'Time unconfirmed' }}</strong>
+                <span>{{ item.date_status }}</span>
+                {% if item.source_url %}<a href="{{ item.source_url }}" target="_blank" rel="noopener noreferrer" aria-label="Earnings date source for {{ item.company }}">Source</a>{% endif %}
+              </div>
+            </li>
+            {% endfor %}
+          </ul>
+          {% else %}<p class="production-day__empty">No tracked reports.</p>{% endif %}
+        </section>
+        {% else %}
+        <p class="production-empty">The next schedule will appear after the earnings calendar is refreshed.</p>
+        {% endfor %}
+      </div>
+      <p class="production-calendar-note">Calendar estimates are supplied by Financial Modeling Prep. Companies can revise earnings dates and times; issuer announcements are linked where checked.</p>
+    </section>
+
+    <section class="production-section" aria-labelledby="completed-history-title">
+      <div class="production-section__heading">
+        <div><p class="production-eyebrow">Recently completed</p><h2 id="completed-history-title">Episode history</h2></div>
+        <p>{{ production_board.history|length }} completed earnings research episodes.</p>
+      </div>
+      {% if production_board.history %}
+      <div class="production-history-wrap">
+        <table class="production-history">
+          <thead><tr><th scope="col">Company</th><th scope="col">Period</th><th scope="col">Completed</th><th scope="col">Research</th></tr></thead>
+          <tbody>
+            {% for item in production_board.history %}
+            <tr>
+              <th scope="row"><span class="production-history__company">{% if item.stock_url %}<a class="production-ticker" href="{{ item.stock_url }}">{{ item.ticker }}</a>{% else %}<span class="production-ticker">{{ item.ticker }}</span>{% endif %}<span>{{ item.company }}</span></span></th>
+              <td>{{ item.period }}</td>
+              <td>{{ item.completed_label }}</td>
+              <td><span class="production-links">{% if item.video_url %}<a href="{{ item.video_url }}" target="_blank" rel="noopener noreferrer">Video</a>{% endif %}{% if item.short_url %}<a href="{{ item.short_url }}" target="_blank" rel="noopener noreferrer">Short</a>{% endif %}{% if item.packet_url %}<a href="{{ item.packet_url }}">Packet</a>{% endif %}</span></td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+      {% else %}<p class="production-empty">Completed episodes will appear here.</p>{% endif %}
+    </section>
+  </div>
+</main>
+{% include 'partials/brand_footer.html' %}
+</body>
+</html>

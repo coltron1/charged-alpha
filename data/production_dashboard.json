@@ -1,0 +1,391 @@
+{
+  "schema": "charged-alpha-public-production/1",
+  "updated_at": "2026-09-13T09:24:44.561178-05:00",
+  "calendar_updated_at": "2026-09-13T08:44:24.586217-05:00",
+  "calendar_status": "fresh",
+  "daily_target": 10,
+  "history": [
+    {
+      "ticker": "UNFI",
+      "company": "United Natural Foods, Inc.",
+      "period": "Q4 FY2026",
+      "completed_at": "2026-09-11T20:11:34.370126-05:00",
+      "video_url": "https://youtu.be/l3gx-jz2xfY",
+      "short_url": "https://youtu.be/jDldUu_Xhkg",
+      "packet_url": "https://chargedalpha.com/research/unfi-q4-fy2026",
+      "stock_url": "/shows/unfi"
+    },
+    {
+      "ticker": "FIZZ",
+      "company": "National Beverage Corp.",
+      "period": "Q1 FY2027",
+      "completed_at": "2026-09-11T20:11:33.900147-05:00",
+      "video_url": "https://youtu.be/nFXTX246tXw",
+      "short_url": "https://youtu.be/m3XG-SHRzz4",
+      "packet_url": "https://chargedalpha.com/research/fizz-q1-fy2027",
+      "stock_url": "/shows/fizz"
+    },
+    {
+      "ticker": "DBI",
+      "company": "Designer Brands Inc.",
+      "period": "Q2 FY2026",
+      "completed_at": "2026-09-11T20:11:33.423867-05:00",
+      "video_url": "https://youtu.be/Q1lHCKCrOR8",
+      "short_url": "https://youtu.be/TLld_FBymog",
+      "packet_url": "https://chargedalpha.com/research/dbi-q2-fy2026",
+      "stock_url": "/shows/dbi"
+    },
+    {
+      "ticker": "LOVE",
+      "company": "The Lovesac Company",
+      "period": "Q2 FY2027",
+      "completed_at": "2026-09-11T20:11:32.917998-05:00",
+      "video_url": "https://youtu.be/Z9vEeMrOVUQ",
+      "short_url": "https://youtu.be/ggbF8La5sws",
+      "packet_url": "https://chargedalpha.com/research/love-q2-fy2027",
+      "stock_url": "/shows/love"
+    },
+    {
+      "ticker": "LPTH",
+      "company": "LightPath Technologies, Inc.",
+      "period": "Q4 FY2026",
+      "completed_at": "2026-09-11T20:11:32.406148-05:00",
+      "video_url": "https://youtu.be/-URhcjtgBE0",
+      "short_url": "https://youtu.be/mrOvSnG1S7I",
+      "packet_url": "https://chargedalpha.com/research/lpth-q4-fy2026",
+      "stock_url": "/shows/lpth"
+    },
+    {
+      "ticker": "ORCL",
+      "company": "Oracle Corp.",
+      "period": "Q1 FY2027",
+      "completed_at": "2026-09-11T20:11:31.876566-05:00",
+      "video_url": "https://youtu.be/bj6Ca1HBXkE",
+      "short_url": "https://youtu.be/6eFBmMVI6NA",
+      "packet_url": "https://chargedalpha.com/research/orcl-q1-fy2027",
+      "stock_url": "/shows/orcl"
+    },
+    {
+      "ticker": "ADBE",
+      "company": "Adobe Inc.",
+      "period": "Q3 FY2026",
+      "completed_at": "2026-09-11T20:11:31.380004-05:00",
+      "video_url": "https://youtu.be/b2j2Uvttwak",
+      "short_url": "https://youtu.be/RuTzgItln28",
+      "packet_url": "https://chargedalpha.com/research/adbe-q3-fy2026",
+      "stock_url": "/shows/adbe"
+    },
+    {
+      "ticker": "CPRT",
+      "company": "Copart, Inc.",
+      "period": "Q4 FY2026",
+      "completed_at": "2026-09-11T20:11:30.884826-05:00",
+      "video_url": "https://youtu.be/f-xKQgdPoHc",
+      "short_url": "https://youtu.be/TcRfAckiKxQ",
+      "packet_url": "https://chargedalpha.com/research/cprt-q4-fy2026",
+      "stock_url": "/shows/cprt"
+    },
+    {
+      "ticker": "SIG",
+      "company": "Signet Jewelers Limited",
+      "period": "Q2 FY2027",
+      "completed_at": "2026-09-11T20:11:30.381395-05:00",
+      "video_url": "https://youtu.be/H78TTQCIpPo",
+      "short_url": "https://youtu.be/3aCCdy4hLm8",
+      "packet_url": "https://chargedalpha.com/research/sig-q2-fy2027",
+      "stock_url": "/shows/sig"
+    },
+    {
+      "ticker": "FLWS",
+      "company": "1-800-FLOWERS.COM, Inc.",
+      "period": "Q4 FY2026",
+      "completed_at": "2026-09-11T20:11:29.871319-05:00",
+      "video_url": "https://youtu.be/X-sIfbakPCg",
+      "short_url": "https://youtu.be/LD7vj4VusT0",
+      "packet_url": "https://chargedalpha.com/research/flws-q4-fy2026",
+      "stock_url": "/shows/flws"
+    },
+    {
+      "ticker": "SAIL",
+      "company": "SailPoint, Inc.",
+      "period": "Q2 FY2027",
+      "completed_at": "2026-09-11T20:11:29.262562-05:00",
+      "video_url": "https://youtu.be/SAuSmFDNZ58",
+      "short_url": "https://youtu.be/AgZnk_DNJko",
+      "packet_url": "https://chargedalpha.com/research/sail-q2-fy2027",
+      "stock_url": "/shows/sail"
+    },
+    {
+      "ticker": "CHWY",
+      "company": "Chewy, Inc.",
+      "period": "Q2 FY2026",
+      "completed_at": "2026-09-11T20:11:27.677395-05:00",
+      "video_url": "https://youtu.be/A5ZGHSnY3cY",
+      "short_url": "https://youtu.be/xuoVVO-foiY",
+      "packet_url": "https://chargedalpha.com/research/chwy-q2-fy2026",
+      "stock_url": "/shows/chwy"
+    },
+    {
+      "ticker": "USAU",
+      "company": "U.S. Gold Corp.",
+      "period": "Q1 FY2027",
+      "completed_at": "2026-09-11T17:43:22.602837-05:00",
+      "video_url": "https://youtu.be/8OY7PA-Ohj8",
+      "short_url": "https://youtu.be/6r815HKRTaY",
+      "packet_url": "https://chargedalpha.com/research/usau-q1-fy2027",
+      "stock_url": "/shows/usau"
+    },
+    {
+      "ticker": "AVAV",
+      "company": "AeroVironment, Inc.",
+      "period": "Q1 FY2027",
+      "completed_at": "2026-09-09T20:01:25.767205-05:00",
+      "video_url": "https://youtu.be/xoGhEDUzyjA",
+      "short_url": "https://youtu.be/PG8RLX4nfBo",
+      "packet_url": "https://chargedalpha.com/research/avav-q1-fy2027",
+      "stock_url": "/shows/avav"
+    },
+    {
+      "ticker": "ASO",
+      "company": "Academy Sports and Outdoors, Inc.",
+      "period": "Q2 FY2026",
+      "completed_at": "2026-09-09T16:56:44.184129-05:00",
+      "video_url": "https://youtu.be/RFxKO35OYFY",
+      "short_url": "https://youtu.be/hmtG0f64fGk",
+      "packet_url": "https://chargedalpha.com/research/aso-q2-fy2026",
+      "stock_url": "/shows/aso"
+    },
+    {
+      "ticker": "CASY",
+      "company": "Casey's General Stores, Inc.",
+      "period": "Q1 FY2027",
+      "completed_at": "2026-09-09T12:38:04.392669-05:00",
+      "video_url": "https://youtu.be/fHg8UIIkyGY",
+      "short_url": "https://youtu.be/zWlQUx-52nk",
+      "packet_url": "https://chargedalpha.com/research/casy-q1-fy2027",
+      "stock_url": "/shows/casy"
+    },
+    {
+      "ticker": "BZUN",
+      "company": "Baozun Inc.",
+      "period": "Q2 2026",
+      "completed_at": "2026-09-08T08:42:32.733987-05:00",
+      "video_url": "https://youtu.be/mEff9G1P4RY",
+      "short_url": "https://youtu.be/n7bEvcV5rsA",
+      "packet_url": "https://chargedalpha.com/research/bzun-q2-2026",
+      "stock_url": "/shows/bzun"
+    },
+    {
+      "ticker": "SWBI",
+      "company": "Smith & Wesson Brands, Inc.",
+      "period": "Q1 FY2027",
+      "completed_at": "2026-09-08T08:41:22.668825-05:00",
+      "video_url": "https://youtu.be/AzYbJlBAxEY",
+      "short_url": "https://youtu.be/m-S-jHmQfFM",
+      "packet_url": null,
+      "stock_url": "/shows/swbi"
+    },
+    {
+      "ticker": "MTRX",
+      "company": "Matrix Service Company",
+      "period": "Q4 FY2026",
+      "completed_at": "2026-09-08T08:40:36.841254-05:00",
+      "video_url": "https://youtu.be/3HYSO9eaDmQ",
+      "short_url": "https://youtu.be/QTyneZkcdto",
+      "packet_url": null,
+      "stock_url": "/shows/mtrx"
+    },
+    {
+      "ticker": "HPE",
+      "company": "Hewlett Packard Enterprise Company",
+      "period": "Q3 FY2026",
+      "completed_at": "2026-09-08T08:39:46.569535-05:00",
+      "video_url": "https://youtu.be/tr3sQV551C8",
+      "short_url": "https://youtu.be/ZaUexOVSg_8",
+      "packet_url": null,
+      "stock_url": "/shows/hpe"
+    },
+    {
+      "ticker": "BBY",
+      "company": "Best Buy Co., Inc.",
+      "period": "Q2 FY2027",
+      "completed_at": "2026-09-08T08:35:35.444790-05:00",
+      "video_url": "https://youtu.be/PbClWTgTZ-A",
+      "short_url": "https://youtu.be/iwCOsaOjI5A",
+      "packet_url": null,
+      "stock_url": "/shows/bby"
+    },
+    {
+      "ticker": "AMBA",
+      "company": "Ambarella, Inc.",
+      "period": "Q2 FY2027",
+      "completed_at": "2026-09-08T08:28:49.119879-05:00",
+      "video_url": "https://youtu.be/yqzC5uhhi_c",
+      "short_url": "https://youtu.be/NxwQAc92Lx4",
+      "packet_url": null,
+      "stock_url": "/shows/amba"
+    },
+    {
+      "ticker": "NTAP",
+      "company": "NetApp, Inc.",
+      "period": "Q1 FY2027",
+      "completed_at": "2026-09-08T08:25:47.933825-05:00",
+      "video_url": "https://youtu.be/CwYgiHlO9aM",
+      "short_url": "https://youtu.be/f9rX0tYigzk",
+      "packet_url": null,
+      "stock_url": "/shows/ntap"
+    },
+    {
+      "ticker": "IOT",
+      "company": "Samsara Inc.",
+      "period": "Q2 FY2027",
+      "completed_at": "2026-09-07T12:27:02.078847-05:00",
+      "video_url": "https://youtu.be/cxhzMaX5Ak4",
+      "short_url": "https://youtu.be/Cead9QgqB5U",
+      "packet_url": null,
+      "stock_url": "/shows/iot"
+    }
+  ],
+  "upcoming": [
+    {
+      "ticker": "HITI",
+      "company": "High Tide Inc.",
+      "report_date": "2026-09-14",
+      "report_time_label": "After U.S. market close",
+      "planned_date": "2026-09-15",
+      "date_status": "Issuer-announced",
+      "source_url": "https://hightideinc.com/high-tide-to-announce-third-fiscal-quarter-2026-financial-results/",
+      "stock_url": "/shows/hiti"
+    },
+    {
+      "ticker": "HKD",
+      "company": "AMTD Digital Inc.",
+      "report_date": "2026-09-14",
+      "report_time_label": "Time unconfirmed",
+      "planned_date": "2026-09-15",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": null
+    },
+    {
+      "ticker": "HERE",
+      "company": "Here Group Limited",
+      "report_date": "2026-09-14",
+      "report_time_label": "Time unconfirmed",
+      "planned_date": "2026-09-15",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": null
+    },
+    {
+      "ticker": "PLAY",
+      "company": "Dave & Buster's Entertainment, Inc.",
+      "report_date": "2026-09-14",
+      "report_time_label": "Time unconfirmed",
+      "planned_date": "2026-09-15",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": "/shows/play"
+    },
+    {
+      "ticker": "FPS",
+      "company": "Forgent Power Solutions, Inc.",
+      "report_date": "2026-09-15",
+      "report_time_label": "Time unconfirmed",
+      "planned_date": "2026-09-16",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": null
+    },
+    {
+      "ticker": "ESP",
+      "company": "Espey Mfg. & Electronics Corp.",
+      "report_date": "2026-09-16",
+      "report_time_label": "Time unconfirmed",
+      "planned_date": "2026-09-17",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": null
+    },
+    {
+      "ticker": "LEN",
+      "company": "Lennar Corporation",
+      "report_date": "2026-09-16",
+      "report_time_label": "After U.S. market close",
+      "planned_date": "2026-09-17",
+      "date_status": "Issuer-announced",
+      "source_url": "https://newsroom.lennar.com/2026-09-02-Lennar-Corporation-to-Broadcast-Its-Third-Quarter-2026-Earnings-Call-on-September-17,-2026",
+      "stock_url": "/shows/len"
+    },
+    {
+      "ticker": "ALMU",
+      "company": "Aeluma, Inc.",
+      "report_date": "2026-09-16",
+      "report_time_label": "Time unconfirmed",
+      "planned_date": "2026-09-17",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": null
+    },
+    {
+      "ticker": "RZLT",
+      "company": "Rezolute, Inc.",
+      "report_date": "2026-09-16",
+      "report_time_label": "Time unconfirmed",
+      "planned_date": "2026-09-17",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": null
+    },
+    {
+      "ticker": "LUXE",
+      "company": "LuxExperience B.V.",
+      "report_date": "2026-09-16",
+      "report_time_label": "Time unconfirmed",
+      "planned_date": "2026-09-17",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": null
+    },
+    {
+      "ticker": "ADSE",
+      "company": "ADS-TEC Energy PLC",
+      "report_date": "2026-09-17",
+      "report_time_label": "Time unconfirmed",
+      "planned_date": "2026-09-18",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": null
+    },
+    {
+      "ticker": "DAVA",
+      "company": "Endava plc",
+      "report_date": "2026-09-17",
+      "report_time_label": "Time unconfirmed",
+      "planned_date": "2026-09-18",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": null
+    },
+    {
+      "ticker": "IPHA",
+      "company": "Innate Pharma S.A.",
+      "report_date": "2026-09-17",
+      "report_time_label": "Time unconfirmed",
+      "planned_date": "2026-09-18",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": null
+    },
+    {
+      "ticker": "MPLT",
+      "company": "MapLight Therapeutics, Inc.",
+      "report_date": "2026-09-18",
+      "report_time_label": "Time unconfirmed",
+      "planned_date": "2026-09-19",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": null
+    }
+  ]
+}

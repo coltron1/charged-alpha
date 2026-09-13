@@ -81,6 +81,7 @@ from auth import (
 from chart_storage import save_chart_state, load_chart_state, list_user_charts, delete_chart_state
 from research_packets import load_packets, packet_html_path
 from research_reader import reader_html
+from production_board import load_board
 from stock_research import read_registry, comparison, format_value, group_episode_archive, age_days
 from stock_research_data import financial_status
 from stock_comparison_data import search_stocks, custom_profile_status, SYMBOL as COMPARISON_SYMBOL
@@ -2543,7 +2544,16 @@ def index():
         video_sections=shows_data.get("video_sections", []),
         podcast_platforms=shows_data.get("platform_links", {}),
         structured_data=_shows_page_structured_data("/", show_library),
+        production_board=load_board(),
     )
+
+
+@app.route("/production")
+def production_schedule():
+    meta = _get_seo_meta('/production')
+    meta.update(title='Episode Schedule & History | Charged Alpha',
+                description='Recently completed stock research and the upcoming earnings calendar from Charged Alpha.')
+    return render_template('production_schedule.html', production_board=load_board(), seo_meta=meta)
 
 
 @app.route("/app")
