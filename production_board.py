@@ -132,5 +132,5 @@ def load_board(path=None, now=None):
     return {'updated_label': time_label(data.get('updated_at')),
             'calendar_updated_label': time_label(data.get('calendar_updated_at')),
             'calendar_status': 'stale' if stale else 'fresh', 'daily_target': data.get('daily_target', 10),
-            'latest': history[:3], 'upcoming': upcoming[:3], 'history': history,
+            'latest': history[:1], 'upcoming': upcoming[:2], 'history': history,
             'days': days, 'stale': stale}

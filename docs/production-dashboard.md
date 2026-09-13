@@ -1,6 +1,6 @@
 # Public episode tracker
 
-The homepage shows the most recent three completed episode bundles and the next three anticipated earnings reports. `/production` expands into the seven-day earnings calendar and completed history. Earnings release timing is separate from the production plan; exact issuer-confirmed clock times use Central Time, while before/after-market and unknown times retain their actual level of certainty.
+The homepage shows the most recent completed episode bundle and the next two anticipated earnings reports. `/production` expands into the seven-day earnings calendar and completed history. Earnings release timing is separate from the production plan; exact issuer-confirmed clock times use Central Time, while before/after-market and unknown times retain their actual level of certainty.
 
 The combined Charged Alpha producer/studio/site heartbeat owns this data. After its normal episode/catalog/packet sync, refresh the private production snapshot and run:
 

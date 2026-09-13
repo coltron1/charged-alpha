@@ -10,9 +10,9 @@
   {% if production_board.stale %}<p class="production-preview__notice">Calendar update pending · expected dates may change.</p>{% endif %}
   <div class="production-preview__columns">
     <section class="production-preview__column" aria-labelledby="production-latest-title">
-      <h3 id="production-latest-title"><span class="production-dot production-dot--complete" aria-hidden="true"></span>Latest episodes</h3>
+      <h3 id="production-latest-title"><span class="production-dot production-dot--complete" aria-hidden="true"></span>Latest episode</h3>
       <ol class="production-rows">
-        {% for item in production_board.latest[:3] %}
+        {% for item in production_board.latest %}
         <li class="production-row production-row--complete">
           <div class="production-row__identity">
             {% if item.stock_url %}<a class="production-ticker" href="{{ item.stock_url }}">{{ item.ticker }}</a>{% else %}<span class="production-ticker">{{ item.ticker }}</span>{% endif %}
@@ -31,7 +31,7 @@
     <section class="production-preview__column" aria-labelledby="production-upcoming-title">
       <h3 id="production-upcoming-title"><span class="production-dot production-dot--upcoming" aria-hidden="true"></span>Reporting next</h3>
       <ol class="production-rows">
-        {% for item in production_board.upcoming[:3] %}
+        {% for item in production_board.upcoming %}
         <li class="production-row">
           <div class="production-row__identity">
             {% if item.stock_url %}<a class="production-ticker" href="{{ item.stock_url }}">{{ item.ticker }}</a>{% else %}<span class="production-ticker">{{ item.ticker }}</span>{% endif %}

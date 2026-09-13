@@ -52,7 +52,7 @@ class ProductionBoardTests(unittest.TestCase):
         self.assertEqual(later['upcoming'], [])
         self.assertEqual(len(later['history']), 1)
 
-    def test_routes_show_three_preview_entries_and_expand(self):
+    def test_routes_show_one_completed_two_upcoming_and_full_history(self):
         import app as site
         with tempfile.TemporaryDirectory() as folder:
             path = Path(folder) / 'board.json'
@@ -69,7 +69,10 @@ class ProductionBoardTests(unittest.TestCase):
         self.assertEqual(home.status_code, 200); self.assertEqual(full.status_code, 200)
         columns = page.xpath('//*[contains(concat(" ", normalize-space(@class), " "), " production-preview__column ")]')
         self.assertEqual(len(columns), 2)
-        self.assertEqual([len(c.xpath('.//li')) for c in columns], [3, 3])
+        self.assertEqual([len(c.xpath('.//li')) for c in columns], [1, 2])
+        expanded = html.fromstring(full.data)
+        self.assertEqual(len(expanded.xpath('//table[contains(@class, "production-history")]/tbody/tr')), 4)
+        self.assertEqual(len(expanded.xpath('//*[contains(@class, "production-days")]//li')), 4)
         self.assertIn(b'/production', home.data)
         self.assertNotIn(b'pilot_state', full.data)
 
