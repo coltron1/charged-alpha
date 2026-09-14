@@ -466,6 +466,64 @@
       }
     },
     {
+      "key": "ABAT:FY2026",
+      "year": 2026,
+      "quarter": 0,
+      "fiscal": true,
+      "slug": "abat-fy2026",
+      "ticker": "ABAT",
+      "company": "American Battery Technology Company",
+      "period": "FY2026",
+      "canonical_url": "https://chargedalpha.com/research/abat-fy2026",
+      "title": "ABAT Stock: Can the Customers Still Buy? — FY2026",
+      "page_title": "ABAT FY2026 Research Packet — Charged Alpha",
+      "description": "Recycling gross profit improved, but customer access, stock compensation and mine financing determine what reaches each ABAT share.",
+      "sha256": "ef90852d1e6fa8567fcf63363485c36a1834c273af73aa765d673b313c0c3cf0",
+      "html_file": "research_packets/abat-fy2026.html",
+      "source_episode": "ABAT-FY2026",
+      "source_staged_at": "2026-09-14T16:20:10Z",
+      "source_sha256": {
+        "READY": "660ad85079822f6f034729fa884cea6ce61a5a64f87892551606ad12b7ea7ac8",
+        "handoff.json": "fa2d44aa6e617a41187d18e53fb04181e8611d75b0c29d5bbd951499871c19ae",
+        "packet/abat-fy2026-research-packet.html": "ef90852d1e6fa8567fcf63363485c36a1834c273af73aa765d673b313c0c3cf0",
+        "packet/packet_meta.json": "f3fd6f5eff0cd13d133f91a9d927bd047cfbe704a1d022fd5c8e8ed1a8049f07",
+        "packet/packet.json": "0a07e4b89a334dfa5b6768f6bba47c167ec48d9d785e72c131fec5479baa7047"
+      },
+      "primary_youtube_long": "yi3oYARvm5I",
+      "primary_youtube_short": null,
+      "youtube_studio": null,
+      "youtube_studio_short": null,
+      "what_changed": {
+        "summary": "Recycling gross profit improved, but customer access, stock compensation and mine financing determine what reaches each ABAT share.",
+        "items": [
+          {
+            "title": "Factory margins improved.",
+            "detail": "Derived fourth-quarter gross profit reached $1.29 million, while the full year still recorded a gross loss."
+          },
+          {
+            "title": "Customer access is the near-term test.",
+            "detail": "Black mass is a majority of revenue; the company seeks an exception to the domestic-allocation requirement."
+          },
+          {
+            "title": "Stock pay exceeded sales.",
+            "detail": "FY2026 compensation expense was $46.48 million, and the common-share count rose sharply."
+          },
+          {
+            "title": "Cash came from financing.",
+            "detail": "Outside capital more than offset operating and investing cash use; zero financial debt does not mean self-funding."
+          },
+          {
+            "title": "The mine is an option, not cash.",
+            "detail": "Our valuation separates project success, financing ownership and per-share dilution."
+          }
+        ]
+      },
+      "source_published": "September 14, 2026",
+      "words": 6867,
+      "figures": 14,
+      "tables": 31
+    },
+    {
       "key": "CPRT:Q4-FY2026",
       "year": 2026,
       "quarter": 4,
@@ -986,6 +1044,64 @@
           }
         ]
       }
+    },
+    {
+      "key": "IMPP:Q2-2026",
+      "year": 2026,
+      "quarter": 2,
+      "fiscal": false,
+      "slug": "impp-q2-2026",
+      "ticker": "IMPP",
+      "company": "Imperial Petroleum Inc.",
+      "period": "Q2 2026",
+      "canonical_url": "https://chargedalpha.com/research/impp-q2-2026",
+      "title": "IMPP: Who Owns the Cash Windfall?",
+      "page_title": "IMPP Q2 2026 Research Packet — Charged Alpha",
+      "description": "Record freight earnings meet vessel commitments, preferred claims and a changing common-share denominator.",
+      "sha256": "eb20410af1f20bb44487c5368a4b5b2f35f3a716fd542820def883971d8fadeb",
+      "html_file": "research_packets/impp-q2-2026.html",
+      "source_episode": "IMPP-Q2-2026",
+      "source_staged_at": "2026-09-14T16:26:13Z",
+      "source_sha256": {
+        "READY": "ebcfc912a1d4aad27388dec4ff11990307e04aeb712fd1099831bf5fba69374c",
+        "handoff.json": "6770672b2c743562f6fa7f4ced3e8651a9f3a6ffac333388e745fa7cb6c71b30",
+        "packet/impp-q2-2026-research-packet.html": "eb20410af1f20bb44487c5368a4b5b2f35f3a716fd542820def883971d8fadeb",
+        "packet/packet_meta.json": "dd1e28b57cf7fe73815b39dfd3a49957ed854f2572e97b462857878a4d34e1c4",
+        "packet/packet.json": "59143cc0b99ca6ef70cf9ea38cadd01a539ae1def693e674de52288e9221348b"
+      },
+      "primary_youtube_long": "Bzmd1bcXQAI",
+      "primary_youtube_short": null,
+      "youtube_studio": null,
+      "youtube_studio_short": null,
+      "what_changed": {
+        "summary": "Record freight earnings meet vessel commitments, preferred claims and a changing common-share denominator.",
+        "items": [
+          {
+            "title": "The quarter is strong.",
+            "detail": "More vessels and better freight rates lifted operating profit, despite lower operational utilization."
+          },
+          {
+            "title": "The cash screen needs a new denominator.",
+            "detail": "Company shares imply about $264M equity value, above gross cash and deposits."
+          },
+          {
+            "title": "Fleet purchases move between cash-flow categories.",
+            "detail": "Seller financing payments make simple investing-only FCF misleading."
+          },
+          {
+            "title": "Ownership claims are material.",
+            "detail": "Preferred liquidation priority and the $6.30 warrant pool change per-share value."
+          },
+          {
+            "title": "Our discount is a judgment.",
+            "detail": "Related-party incentives and uncertain capital access explain the pre-money haircut; it is not a measured market constant."
+          }
+        ]
+      },
+      "source_published": "September 14, 2026",
+      "words": 6561,
+      "figures": 18,
+      "tables": 38
     }
   ]
 }

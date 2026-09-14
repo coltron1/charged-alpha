@@ -10,6 +10,42 @@
   },
   "episodes": [
     {
+      "ticker": "IMPP",
+      "company": "Imperial Petroleum Inc.",
+      "sector": "Energy",
+      "quarter": "Q2 2026",
+      "episode_number": "",
+      "title": "IMPP Stock: Who Owns the Cash Windfall? — Q2 2026",
+      "published_at": "2026-09-14T14:33:01+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=Bzmd1bcXQAI",
+      "spotify_url": "https://open.spotify.com/episode/1JriYJSujvqSGek1FrwttA",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/impp-stock-who-owns-the-cash-windfall-%e2%80%94-q2-2026/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "ABAT",
+      "company": "American Battery Technology Company",
+      "sector": "Industrials",
+      "quarter": "FY2026",
+      "episode_number": "",
+      "title": "ABAT Stock: Can Customers Still Place Orders? — FY2026",
+      "published_at": "2026-09-14T15:00:53+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=yi3oYARvm5I",
+      "spotify_url": "https://open.spotify.com/episode/5My13OyymXBDY5AOKNlSsL",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/abat-stock-can-customers-still-place-orders-%e2%80%94-fy2026/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
       "ticker": "USAU",
       "company": "U.S. Gold Corp.",
       "sector": "Basic Materials",
@@ -45860,7 +45896,7 @@
       ]
     }
   ],
-  "last_synced_at": "2026-09-11T17:34:27-05:00",
+  "last_synced_at": "2026-09-14T11:26:55-05:00",
   "stock_metadata": {
     "A": {
       "company": "Agilent Technologies, Inc.",
@@ -45893,6 +45929,10 @@
     "AAPL": {
       "company": "Apple Inc.",
       "sector": "Technology"
+    },
+    "ABAT": {
+      "company": "American Battery Technology Company",
+      "sector": "Industrials"
     },
     "ABBV": {
       "company": "AbbVie Inc.",
@@ -47930,6 +47970,10 @@
     "IMOS": {
       "company": "ChipMOS TECHNOLOGIES INC.",
       "sector": "Technology"
+    },
+    "IMPP": {
+      "company": "Imperial Petroleum Inc.",
+      "sector": "Energy"
     },
     "IMTX": {
       "company": "Immatics N.V.",
