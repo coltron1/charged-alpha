@@ -1,7 +1,7 @@
 {
   "schema": "charged-alpha-public-production/1",
-  "updated_at": "2026-09-13T09:24:44.561178-05:00",
-  "calendar_updated_at": "2026-09-13T08:44:24.586217-05:00",
+  "updated_at": "2026-09-14T08:03:42.518658-05:00",
+  "calendar_updated_at": "2026-09-14T08:03:41.733397-05:00",
   "calendar_status": "fresh",
   "daily_target": 10,
   "history": [
@@ -260,6 +260,16 @@
     {
       "ticker": "HKD",
       "company": "AMTD Digital Inc.",
+      "report_date": "2026-09-14",
+      "report_time_label": "Time unconfirmed",
+      "planned_date": "2026-09-15",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": null
+    },
+    {
+      "ticker": "ABAT",
+      "company": "American Battery Technology Company Common Stock",
       "report_date": "2026-09-14",
       "report_time_label": "Time unconfirmed",
       "planned_date": "2026-09-15",
