@@ -105,6 +105,27 @@ class ResearchPageTests(unittest.TestCase):
         self.assertIsNone(result["episodes"][1]["research_packet"])
         self.assertNotIn("research_packet", stock["episodes"][0])
 
+    def test_annual_and_half_year_research_archive_display_in_period_order(self):
+        rows = [
+            packet("H1 FY2026", 2026, 0, True, "HalfOne0001"),
+            packet("Q4 FY2026", 2026, 4, True, "QuarterFour"),
+            packet("H2 FY2026", 2026, 0, True, "HalfTwo0001"),
+            packet("FY2026", 2026, 0, True, "Annual00001"),
+        ]
+        stock = {"slug": "BZUN", "episodes": []}
+        _, groups, selected = site._stock_research_context(stock, rows)
+        self.assertEqual([group["label"] for group in groups], ["FY2026"])
+        self.assertEqual([packet["period"] for packet in selected],
+                         ["FY2026", "H2 FY2026", "Q4 FY2026", "H1 FY2026"])
+        with patch("app.load_shows_catalog", return_value={"episodes": []}), patch("app.load_packets", return_value=rows), patch("app._cached_show_stock_detail", return_value={}):
+            response = self.client.get("/shows/bzun")
+        body = response.get_data(as_text=True)
+        self.assertEqual(response.status_code, 200)
+        self.assertIn('id="period-fy2026" open', body)
+        positions = [body.index(f"<summary><strong>{period}")
+                     for period in ("FY2026", "H2 FY2026", "Q4 FY2026", "H1 FY2026")]
+        self.assertEqual(positions, sorted(positions))
+
     def test_packet_is_searchable_when_episode_feed_has_not_arrived(self):
         row = packet()
         row["source_published"] = "2026-09-07"

@@ -1,6 +1,8 @@
 """Presentation helpers for the research-first website; never alter packet bytes."""
 from datetime import datetime
 
+from research_packets import packet_sort_key
+
 
 def publication_date(value):
     for pattern in ("%Y-%m-%d", "%B %d, %Y"):
@@ -19,7 +21,7 @@ def research_listing(stocks, packets):
     for original in stocks:
         stock = dict(original)
         candidates = by_ticker.get(stock["ticker"].upper(), [])
-        packet = max(candidates, key=lambda p: (p["year"], p["quarter"]), default=None)
+        packet = min(candidates, key=packet_sort_key, default=None)
         stock["packet"] = ({key: packet.get(key) for key in ("slug", "title", "description", "period", "source_published")} if packet else None)
         stock["research_date"] = max(publication_date(stock.get("latest_video_published_at") or stock.get("latest_published_at")), publication_date(packet.get("source_published")) if packet else "")
         result.append(stock)

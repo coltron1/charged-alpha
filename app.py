@@ -79,7 +79,7 @@ from auth import (
     set_email_updates_address,
 )
 from chart_storage import save_chart_state, load_chart_state, list_user_charts, delete_chart_state
-from research_packets import load_packets, packet_html_path
+from research_packets import load_packets, packet_html_path, packet_sort_key
 from research_reader import reader_html
 from production_board import load_board
 from stock_research import read_registry, comparison, format_value, group_episode_archive, age_days
@@ -1347,7 +1347,7 @@ def _episodes_with_research_packets(episodes, packets):
 
 def _stock_research_context(stock, packets):
     selected = [dict(packet) for packet in packets if _show_slug(packet["ticker"]) == stock["slug"]]
-    selected.sort(key=lambda packet: (packet["year"], packet["quarter"], packet["period"]), reverse=True)
+    selected.sort(key=packet_sort_key)
     groups = {}
     by_video = {}
     for packet in selected:
@@ -1378,6 +1378,12 @@ def _show_slug(ticker):
 
 def _quarter_sort_key(label):
     text = (label or "").upper()
+    annual_match = re.fullmatch(r"FY\s?(\d{4})", text)
+    half_match = re.fullmatch(r"H([1-2])\s+(?:FY\s*)?(\d{4})", text)
+    if annual_match:
+        return (int(annual_match.group(1)), 5, text)
+    if half_match:
+        return (int(half_match.group(2)), 2.5 if half_match.group(1) == "1" else 4.5, text)
     quarter_match = re.search(r"Q([1-4])", text)
     year_match = re.search(r"(20\d{2})", text)
     quarter = int(quarter_match.group(1)) if quarter_match else 0

@@ -39,17 +39,34 @@ def safe_path(root, relative, *, must_exist=True):
     return path
 
 
-def period_identity(ticker, period):
+def _period_data(ticker, period):
     require(isinstance(ticker, str) and TICKER_RE.fullmatch(ticker), "Invalid packet ticker")
     require(isinstance(period, str), "Invalid packet period")
-    match = re.fullmatch(r"Q([1-4])\s+(FY\s*)?(\d{4})", period)
-    require(match is not None, "Packet period must identify a quarter and reporting year")
-    quarter, fiscal, year = int(match[1]), bool(match[2]), int(match[3])
+    quarter_match = re.fullmatch(r"Q([1-4])\s+(FY\s*)?(\d{4})", period)
+    annual_match = re.fullmatch(r"FY(\d{4})", period)
+    half_match = re.fullmatch(r"H([1-2])\s+(FY\s*)?(\d{4})", period)
+    require(quarter_match or annual_match or half_match,
+            "Packet period must identify a quarter, half year, or fiscal year")
+    if quarter_match:
+        period_code = f"Q{quarter_match[1]}"
+        quarter, fiscal, year = int(quarter_match[1]), bool(quarter_match[2]), int(quarter_match[3])
+        order = quarter
+    elif annual_match:
+        period_code = "FY"
+        quarter, fiscal, year, order = 0, True, int(annual_match[1]), 5
+    else:
+        period_code = f"H{half_match[1]}"
+        quarter, fiscal, year = 0, bool(half_match[2]), int(half_match[3])
+        order = 2.5 if period_code == "H1" else 4.5
     require(2000 <= year <= 2199, "Invalid packet reporting year")
-    normalized = f"Q{quarter}-{'FY' if fiscal else ''}{year}"
+    normalized = f"FY{year}" if annual_match else f"{period_code}-{'FY' if fiscal else ''}{year}"
     slug = re.sub(r"[.\-]+", "-", ticker.lower()) + "-" + normalized.lower()
-    return {"key": f"{ticker}:{normalized}", "year": year, "quarter": quarter,
-            "fiscal": fiscal, "slug": slug}
+    return ({"key": f"{ticker}:{normalized}", "year": year, "quarter": quarter,
+             "fiscal": fiscal, "slug": slug}, order)
+
+
+def period_identity(ticker, period):
+    return _period_data(ticker, period)[0]
 
 
 def validate_what_changed(value):
@@ -94,7 +111,8 @@ def validate_record(packet):
 
 
 def packet_sort_key(packet):
-    return (-packet["year"], -packet["quarter"], packet["ticker"], not packet["fiscal"], packet["slug"])
+    identity, order = _period_data(packet["ticker"], packet["period"])
+    return (-identity["year"], -order, packet["ticker"], not identity["fiscal"], identity["slug"])
 
 
 def load_packets(index_path=None):

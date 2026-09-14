@@ -111,6 +111,31 @@ class ResearchPacketTests(unittest.TestCase):
         self.assertEqual(result["packets"][0]["status"], "already_imported")
         self.assertEqual(files, {p: (p.read_bytes(), p.stat().st_mtime_ns) for p in files})
 
+    def test_annual_packet_import_is_immutable_and_uses_annual_identity(self):
+        source, raw = self.fixture("ABAT", "FY2026")
+        before = {path: path.read_bytes() for path in source.rglob("*") if path.is_file()}
+        self.assertEqual(self.import_all(False)["packets"][0]["status"], "ready_to_import")
+        self.assertEqual(self.import_all()["imported"], 1)
+        record = load_packets(self.index)[0]
+        self.assertEqual((record["key"], record["period"], record["quarter"], record["fiscal"], record["slug"]),
+                         ("ABAT:FY2026", "FY2026", 0, True, "abat-fy2026"))
+        self.assertNotIn("Q4", record["period"])
+        self.assertEqual(packet_html_path(record, self.index).read_bytes(), raw)
+        self.assertEqual(before, {path: path.read_bytes() for path in before})
+        self.assertEqual(self.import_all()["packets"][0]["status"], "already_imported")
+
+    def test_half_year_identities_are_valid_and_malformed_periods_are_rejected(self):
+        self.assertEqual(period_identity("LAES", "H1 2026")["key"], "LAES:H1-2026")
+        self.assertEqual(period_identity("LAES", "H2 FY2026")["slug"], "laes-h2-fy2026")
+        for period in ("FY 2026", "FY2026-extra", "H3 2026", "Q5 FY2026"):
+            with self.subTest(period=period):
+                with self.assertRaises(ValueError):
+                    period_identity("ABAT", period)
+        source, _ = self.fixture("ABAT", "FY2026")
+        self.mutate(source / "handoff.json", lambda handoff: handoff.update(period="FY 2026"))
+        self.assertEqual(self.import_all()["errors"], 1)
+        self.assertFalse(self.index.exists())
+
     def test_existing_packet_can_add_source_bound_highlights_without_changing_html(self):
         source, raw = self.fixture()
         with patch.object(sync, "packet_highlights", return_value=None):
