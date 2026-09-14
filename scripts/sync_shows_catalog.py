@@ -538,12 +538,18 @@ def extract_tickers(title: str) -> list[str]:
     tickers: list[str] = []
     for match in TICKER_RE.findall(title):
         ticker = match.upper()
-        if ticker in TICKER_STOPWORDS or ticker.startswith("Q") and ticker[1:].isdigit():
+        if (ticker in TICKER_STOPWORDS or ticker.startswith("Q") and ticker[1:].isdigit()
+                or re.fullmatch(r"FY\d{4}", ticker)):
             continue
         if ticker not in seen:
             seen.add(ticker)
             tickers.append(ticker)
     return tickers[:8]
+
+
+def remove_fiscal_year_labels(tickers: list[str]) -> list[str]:
+    """Keep historical Short associations while removing non-security FY labels."""
+    return [ticker for ticker in tickers if not re.fullmatch(r"FY\d{4}", str(ticker).upper())]
 
 
 def find_section(catalog: dict, title: str) -> dict | None:
@@ -1008,6 +1014,9 @@ def sync_catalog(args: argparse.Namespace) -> dict:
     if shorts_section is not None:
         shorts_section.setdefault("videos", [])
         shorts_section["videos"] = new_shorts + shorts_section["videos"]
+        for short in shorts_section["videos"]:
+            if isinstance(short.get("tickers"), list):
+                short["tickers"] = remove_fiscal_year_labels(short["tickers"])
 
     backfilled_links = backfill_catalog_platform_links(
         catalog,

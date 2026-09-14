@@ -1,10 +1,30 @@
 {
   "schema": "charged-alpha-public-production/1",
-  "updated_at": "2026-09-14T10:13:38.467997-05:00",
+  "updated_at": "2026-09-14T12:08:50.375989-05:00",
   "calendar_updated_at": "2026-09-14T08:03:41.733397-05:00",
-  "calendar_status": "fresh",
+  "calendar_status": "stale",
   "daily_target": 10,
   "history": [
+    {
+      "ticker": "IMPP",
+      "company": "Imperial Petroleum Inc.",
+      "period": "Q2 2026",
+      "completed_at": "2026-09-14T12:08:18.554492-05:00",
+      "video_url": "https://youtu.be/Bzmd1bcXQAI",
+      "short_url": "https://youtu.be/7C0f8M7cS6s",
+      "packet_url": "https://chargedalpha.com/research/impp-q2-2026",
+      "stock_url": "/shows/impp"
+    },
+    {
+      "ticker": "ABAT",
+      "company": "American Battery Technology Company",
+      "period": "FY2026",
+      "completed_at": "2026-09-14T12:03:52.607171-05:00",
+      "video_url": "https://youtu.be/yi3oYARvm5I",
+      "short_url": "https://youtu.be/d55zIpNR_F0",
+      "packet_url": "https://chargedalpha.com/research/abat-fy2026",
+      "stock_url": "/shows/abat"
+    },
     {
       "ticker": "UNFI",
       "company": "United Natural Foods, Inc.",

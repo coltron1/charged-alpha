@@ -3,6 +3,8 @@ import json
 
 from scripts.sync_shows_catalog import (
     PodcastItem,
+    extract_tickers,
+    remove_fiscal_year_labels,
     normalize_title,
     parse_apple_items,
     parse_stock_title,
@@ -11,6 +13,13 @@ from scripts.sync_shows_catalog import (
 
 
 class StockTitleParsingTests(unittest.TestCase):
+    def test_excludes_fiscal_year_labels_from_short_tickers(self):
+        self.assertEqual(
+            extract_tickers("ABAT Stock: Can Customers Still Place Orders? FY2026 #Shorts"),
+            ["ABAT"],
+        )
+        self.assertEqual(remove_fiscal_year_labels(["ABAT", "FY2026", "IMPP"]), ["ABAT", "IMPP"])
+
     def test_parses_ticker_first_title_with_quarter(self):
         self.assertEqual(
             parse_stock_title("ISRG Stock: Intuitive Surgical BEAT Q2 2026"),
