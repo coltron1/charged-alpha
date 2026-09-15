@@ -12,6 +12,66 @@ from stock_research import BUSINESS_GROUPS, SNAPSHOT_PATH, normalize_profile, nu
 from yf_utils import fetch_ticker_info
 
 FX_CURRENCIES = ("CAD", "EUR", "GBP", "JPY", "CNY", "TWD", "HKD", "CHF", "AUD", "KRW")
+CATALOG_PATH = Path(__file__).resolve().parents[1] / "data/shows_catalog.json"
+
+
+def catalog_research_symbols(path=CATALOG_PATH):
+    """Return current provider symbols and explicitly historical catalog pages."""
+    catalog = json.loads(Path(path).read_text())
+    metadata = catalog.get("stock_metadata") or {}
+    tickers = {
+        str(episode.get("ticker") or "").upper().strip()
+        for episode in catalog.get("episodes", [])
+        if str(episode.get("ticker") or "").strip()
+    }
+    symbols, historical = set(), set()
+    for ticker in tickers:
+        profile = metadata.get(ticker) if isinstance(metadata.get(ticker), dict) else {}
+        provider_symbol = str(profile.get("yf_symbol") or "").upper().strip()
+        if profile.get("market_data_note") and not provider_symbol:
+            historical.add(ticker)
+            continue
+        symbols.add(provider_symbol or ticker.replace(".", "-"))
+    return symbols, historical
+
+
+def supplement_quote_fields(ticker, info):
+    """Fill quote fields when Yahoo's company profile response is partial."""
+    result = dict(info or {})
+    if ticker is None:
+        return result
+    try:
+        fast = ticker.fast_info or {}
+    except Exception:
+        fast = {}
+    try:
+        ticker.history(period="5d", interval="1d")
+        metadata = ticker.history_metadata or {}
+    except Exception:
+        metadata = {}
+
+    def value(source, key):
+        try:
+            return source.get(key)
+        except Exception:
+            return None
+
+    fallbacks = {
+        "marketCap": value(fast, "marketCap"),
+        "currentPrice": value(metadata, "regularMarketPrice") or value(fast, "lastPrice"),
+        "regularMarketPrice": value(metadata, "regularMarketPrice") or value(fast, "lastPrice"),
+        "previousClose": value(metadata, "previousClose") or value(fast, "previousClose"),
+        "regularMarketTime": value(metadata, "regularMarketTime"),
+        "fiftyTwoWeekHigh": value(metadata, "fiftyTwoWeekHigh") or value(fast, "yearHigh"),
+        "fiftyTwoWeekLow": value(metadata, "fiftyTwoWeekLow") or value(fast, "yearLow"),
+        "regularMarketVolume": value(metadata, "regularMarketVolume") or value(fast, "lastVolume"),
+        "currency": value(metadata, "currency"),
+        "exchange": value(metadata, "exchangeName"),
+    }
+    for key, fallback in fallbacks.items():
+        if result.get(key) in (None, "") and fallback not in (None, ""):
+            result[key] = fallback
+    return result
 
 
 def refresh_fx(registry, observed_at):
@@ -76,15 +136,29 @@ def main():
     parser.add_argument("--max-age-hours", type=float, default=0, help="Skip a successful recent full refresh; zero forces refresh")
     args = parser.parse_args()
     registry = read_registry()
-    if not args.symbols and not args.limit and args.max_age_hours > 0 and registry.get("full_refreshed_at") and 0 <= age_days(registry["full_refreshed_at"]) * 24 < args.max_age_hours:
-        print("Research snapshots are within the requested refresh interval; no changes.")
-        return 0
     profiles = dict(registry.get("profiles", {}))
+    catalog_symbols, historical_symbols = catalog_research_symbols()
+    recent_full_refresh = (
+        not args.symbols
+        and not args.limit
+        and args.max_age_hours > 0
+        and registry.get("full_refreshed_at")
+        and 0 <= age_days(registry["full_refreshed_at"]) * 24 < args.max_age_hours
+    )
+    missing_catalog_symbols = catalog_symbols - set(profiles)
+    if recent_full_refresh and not missing_catalog_symbols:
+        print("Research snapshots are within the requested refresh interval; no catalog profiles are missing.")
+        return 0
     if args.symbols:
         symbols = set(args.symbols.upper().split(","))
+    elif recent_full_refresh:
+        symbols = missing_catalog_symbols
+        print(
+            "Daily snapshots are current; refreshing newly cataloged symbols: "
+            + ",".join(sorted(symbols))
+        )
     else:
-        from app import _shows_context
-        symbols = {s["yf_symbol"] for s in _shows_context()["show_library"]["stocks"]}
+        symbols = set(catalog_symbols)
         symbols.update(s for members in BUSINESS_GROUPS.values() for s in members)
     symbols = sorted(symbols, key=lambda s: (profiles.get(s, {}).get("observed_at", ""), s))
     if args.limit:
@@ -94,8 +168,10 @@ def main():
     print(f"FX refreshed {len(FX_CURRENCIES) - len(failed_fx)}/{len(FX_CURRENCIES)}"
           + (f"; unavailable: {','.join(failed_fx)}" if failed_fx else ""), flush=True)
     def fetch(symbol):
-        _, info = fetch_ticker_info(symbol, max_retries=2)
-        if not info or not info.get("industry") or not number(info.get("marketCap")):
+        ticker, info = fetch_ticker_info(symbol, max_retries=2)
+        info = supplement_quote_fields(ticker, info) if info else {}
+        if (not info or not number(info.get("marketCap"))
+                or not number(info.get("currentPrice") or info.get("regularMarketPrice"))):
             return symbol, None
         return symbol, refreshed_profile(symbol, info, now, fresh_fx, profiles.get(symbol))
     failures = []
@@ -112,7 +188,12 @@ def main():
                 failures.append(jobs[job])
             if index % 100 == 0:
                 print(f"Refreshed {index}/{len(symbols)}", flush=True)
-    full_refreshed_at = now if not args.symbols and not args.limit and not failed_fx and len(failures) < len(symbols) / 2 else registry.get("full_refreshed_at")
+    full_refreshed_at = (
+        now
+        if not args.symbols and not args.limit and not recent_full_refresh
+        and not failed_fx and len(failures) < len(symbols) / 2
+        else registry.get("full_refreshed_at")
+    )
     output = {"schema_version": 1, "refreshed_at": now, "full_refreshed_at": full_refreshed_at,
               "fx": fx, "fx_observed_at": fx_observed_at,
               "fx_observed_at_by_currency": dict(sorted(fx_dates.items())), "failed_fx": sorted(failed_fx),
@@ -122,7 +203,8 @@ def main():
     temporary = SNAPSHOT_PATH.with_suffix(".tmp")
     temporary.write_text(json.dumps(output, indent=2, ensure_ascii=True, allow_nan=False) + "\n")
     temporary.replace(SNAPSHOT_PATH)
-    print(f"Saved {len(profiles)} profiles; {len(failures)} refresh failures (last valid snapshots retained).")
+    print(f"Saved {len(profiles)} profiles; {len(failures)} refresh failures (last valid snapshots retained)."
+          + (f" {len(historical_symbols)} historical catalog page(s) intentionally have no live profile." if historical_symbols else ""))
     return 1 if len(failures) == len(symbols) else 0
 
 

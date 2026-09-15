@@ -185,6 +185,17 @@ class ShowLibraryTests(unittest.TestCase):
         self.assertTrue(stock["company_is_ticker"])
         self.assertEqual(stock["sector"], "Consumer Cyclical")
 
+    def test_historical_page_uses_reviewed_current_provider_symbol(self):
+        stock = build_show_library(
+            [{"ticker": "VSCO", "company": "Victoria's Secret & Co.", "sector": "Consumer Cyclical"}],
+            {"VSCO": {"company": "Victoria's Secret & Co.", "sector": "Consumer Cyclical",
+                       "yf_symbol": "VSXY", "market_data_note": "Ticker changed."}},
+        )["stocks"][0]
+
+        self.assertEqual(stock["slug"], "VSCO")
+        self.assertEqual(stock["yf_symbol"], "VSXY")
+        self.assertEqual(stock["market_data_note"], "Ticker changed.")
+
 
 class ShowDetailCacheTests(unittest.TestCase):
     def setUp(self):

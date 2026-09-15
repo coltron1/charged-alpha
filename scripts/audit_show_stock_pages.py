@@ -5,7 +5,6 @@ from __future__ import annotations
 
 import sys
 from pathlib import Path
-from unittest.mock import patch
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -20,34 +19,7 @@ from app import (  # noqa: E402
     load_shows_catalog,
 )
 from app import app as flask_app  # noqa: E402
-
-
-def _render_detail(symbol, allow_fetch=True):
-    """Deterministic detail fixture used to exercise every dynamic page route."""
-    return {
-        "info": {
-            "symbol": symbol,
-            "name": f"{symbol} Holdings",
-            "price": 100.0,
-            "previous_close": 99.0,
-            "change": 1.0,
-            "change_pct": 1.01,
-            "market_cap": 1_000_000_000,
-            "volume": 1_000_000,
-            "week_52_low": 75.0,
-            "week_52_high": 125.0,
-            "forward_pe": 20.0,
-            "revenue_growth": 8.0,
-            "operating_margin": 15.0,
-            "profit_margin": 10.0,
-            "return_on_equity": 12.0,
-            "fcf_yield": 4.0,
-            "debt_to_equity": 50.0,
-            "current_ratio": 1.5,
-            "target_upside": 10.0,
-        },
-        "options": [],
-    }
+from stock_research import age_days, number, read_registry  # noqa: E402
 
 
 def main() -> int:
@@ -56,7 +28,10 @@ def main() -> int:
         catalog.get("episodes", []),
         catalog.get("stock_metadata", {}),
     )
+    stock_metadata = catalog.get("stock_metadata", {})
     errors = []
+    warnings = []
+    profiles = read_registry().get("profiles", {})
     slugs = set()
     youtube_pages = 0
 
@@ -81,6 +56,25 @@ def main() -> int:
             errors.append(f"/shows/{slug} has no episode timeline")
             continue
 
+        metadata = stock_metadata.get(ticker, {})
+        historical_listing = bool(
+            metadata.get("market_data_note") and not metadata.get("yf_symbol")
+        )
+        profile = profiles.get(stock.get("yf_symbol"))
+        if not profile and not historical_listing:
+            errors.append(
+                f"/shows/{slug} has no dated research profile for {stock.get('yf_symbol')}"
+            )
+        elif profile:
+            if not profile.get("observed_at"):
+                errors.append(f"/shows/{slug} profile has no observation date")
+            if number(profile.get("price")) is None:
+                errors.append(f"/shows/{slug} profile has no current quote")
+            if number(profile.get("market_cap_usd")) is None:
+                errors.append(f"/shows/{slug} profile has no USD market cap")
+            if age_days(profile.get("observed_at")) > 2:
+                warnings.append(f"/shows/{slug} snapshot is more than two days old")
+
         latest_youtube = next(
             (episode for episode in stock["episodes"] if episode.get("youtube_url")),
             None,
@@ -96,22 +90,20 @@ def main() -> int:
             if latest_youtube.get("youtube_url") != expected.get("youtube_url"):
                 errors.append(f"/shows/{slug} does not choose its newest published YouTube episode")
 
-    # The library uses a shared template, so render every generated route with
-    # deterministic market data. This catches missing context/template branches
-    # without making a thousand outbound Yahoo requests during a catalog audit.
+    # Page rendering is provider-free and uses the committed snapshot registry.
+    # Render every route so empty profile fallbacks cannot pass unnoticed.
     rendered_pages = 0
-    with patch("app._cached_show_stock_detail", side_effect=_render_detail):
-        with flask_app.test_client() as client:
-            for slug in sorted(slugs):
-                response = client.get(f"/shows/{slug}")
-                if response.status_code != 200:
-                    errors.append(f"/shows/{slug} returned HTTP {response.status_code}")
-                    continue
-                body = response.get_data()
-                if any(anchor not in body for anchor in (b'id="latest"', b'id="peers"', b'id="financials"', b'id="valuation"', b'id="archive"')):
-                    errors.append(f"/shows/{slug} omitted a required stock-analysis section")
-                    continue
-                rendered_pages += 1
+    with flask_app.test_client() as client:
+        for slug in sorted(slugs):
+            response = client.get(f"/shows/{slug}")
+            if response.status_code != 200:
+                errors.append(f"/shows/{slug} returned HTTP {response.status_code}")
+                continue
+            body = response.get_data()
+            if any(anchor not in body for anchor in (b'id="latest"', b'id="peers"', b'id="financials"', b'id="valuation"', b'id="archive"')):
+                errors.append(f"/shows/{slug} omitted a required stock-analysis section")
+                continue
+            rendered_pages += 1
 
     if errors:
         print("Stock page catalog audit failed:")
@@ -119,9 +111,15 @@ def main() -> int:
             print(f"- {error}")
         return 1
 
+    if warnings:
+        print("Stock page catalog audit warnings:")
+        for warning in warnings:
+            print(f"- {warning}")
+
     print(
         "Stock page catalog audit passed: "
-        f"{len(slugs)} generated pages rendered, {youtube_pages} with a primary YouTube episode."
+        f"{len(slugs)} generated pages rendered, {youtube_pages} with a primary YouTube episode, "
+        f"{len(profiles)} dated research profiles available."
     )
     return 0
 

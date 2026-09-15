@@ -46556,7 +46556,8 @@
     },
     "BK": {
       "company": "The Bank of New York Mellon Corporation",
-      "sector": "Financial Services"
+      "sector": "Financial Services",
+      "yf_symbol": "BNY"
     },
     "BKD": {
       "company": "Brookdale Senior Living Inc.",
@@ -46640,7 +46641,8 @@
     },
     "BRK.B": {
       "company": "Berkshire Hathaway",
-      "sector": "Financials"
+      "sector": "Financials",
+      "yf_symbol": "BRK-B"
     },
     "BRO": {
       "company": "Brown & Brown, Inc.",
@@ -50186,7 +50188,9 @@
     },
     "VSCO": {
       "company": "Victoria's Secret & Co.",
-      "sector": "Consumer Cyclical"
+      "sector": "Consumer Cyclical",
+      "yf_symbol": "VSXY",
+      "market_data_note": "Victoria's Secret began trading under ticker VSXY on June 2, 2026. This historical VSCO page now uses the continuing VSXY listing for current market data."
     },
     "VSH": {
       "company": "Vishay Intertechnology, Inc.",

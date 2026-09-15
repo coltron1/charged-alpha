@@ -41,7 +41,7 @@ async function assertComparisonTable(page, expected) {
       page.on('pageerror', e => errors.push(e.message));
       await page.route('**/api/research/*/financials*', route => route.fulfill({json:financialFixture(route.request())}));
       await page.route('**/screener/api/stock/*/chart?*', route => route.fulfill({json:{labels:['2026-08-01','2026-09-01'],prices:[100,110]}}));
-      for (const symbol of ['CASY','NVDA','JPM','SFM','SWBI']) {
+      for (const symbol of ['CASY','FPS','NVDA','JPM','SFM','SWBI']) {
         const start = Date.now();
         const response = await page.goto(base + '/shows/' + symbol, {waitUntil:'domcontentloaded'});
         assert.equal(response.status(),200);
@@ -52,6 +52,15 @@ async function assertComparisonTable(page, expected) {
         const dimensions = await page.evaluate(() => ({width:innerWidth,scroll:document.documentElement.scrollWidth}));
         assert.ok(dimensions.scroll <= dimensions.width, symbol + ' overflows at ' + width);
         assert.ok(await page.locator('.comparison-table tbody tr:visible').count() <= 9);
+        if (symbol === 'FPS') {
+          const overview = await page.locator('#overview').innerText();
+          assert.match(overview,/Forgent Power Solutions/);
+          assert.doesNotMatch(overview,/Market snapshot unavailable/);
+          assert.match(overview,/Snapshot 2026-09-15/);
+          if (width === 390 || width === 1440) {
+            await page.screenshot({path:'/tmp/research-fps-' + width + '.png'});
+          }
+        }
         await page.locator('#metricGroup').selectOption('all');
         assert.ok(await page.locator('.comparison-table tbody tr:visible').count() > 9);
         await page.locator('#metricGroup').selectOption('overview');

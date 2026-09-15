@@ -22,10 +22,16 @@ recreate the retired nightly sync. Include changed
 `data/stock_research_snapshots.json` with the normal reviewed site commit.
 The refresh covers catalog listings plus the reviewed business-group universe,
 including companies without Charged Alpha episodes. A complete refresh runs at
-most daily with the flag above; targeted repairs use `--symbols CASY,MUSA,ATD.TO`.
+most daily with the flag above. Even inside that window, the same command refreshes
+any newly cataloged active listing whose profile is missing; targeted repairs use
+`--symbols CASY,MUSA,ATD.TO`. Reviewed `yf_symbol` mappings preserve historical
+page URLs across ticker changes. A `market_data_note` without a provider symbol is
+reserved for a genuinely historical listing that no longer has live market data.
 Failures retain their previous dated snapshot; failure symbols are recorded.
-Check failure counts and unexpected coverage loss before committing. A partial
-or failed refresh is never represented as freshly updated data for that company.
+Check failure counts and unexpected coverage loss before committing. The stock
+page audit fails when any active catalog listing lacks a dated profile, current
+quote, or USD market capitalization, so a new media-only page cannot be deployed
+silently. A partial or failed refresh is never represented as freshly updated data for that company.
 FX retries retain the last verified rates with their original per-currency
 observation dates, while recording unavailable currencies. Retained rates are
 provenance only: new profile normalization uses current-run FX observations, and

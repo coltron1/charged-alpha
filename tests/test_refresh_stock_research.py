@@ -1,4 +1,5 @@
 from copy import deepcopy
+from datetime import datetime, timezone
 import json
 import sys
 import tempfile
@@ -21,6 +22,60 @@ def info(symbol="CADCO", currency="CAD"):
 
 
 class FxRefreshTests(unittest.TestCase):
+    def test_catalog_symbols_apply_aliases_and_skip_historical_listings(self):
+        catalog = {
+            "episodes": [{"ticker": "OLD"}, {"ticker": "LIVE"}, {"ticker": "DOT.B"}],
+            "stock_metadata": {
+                "OLD": {"market_data_note": "Acquired"},
+                "LIVE": {"yf_symbol": "NEW"},
+            },
+        }
+        with tempfile.TemporaryDirectory() as td:
+            path = Path(td) / "catalog.json"
+            path.write_text(json.dumps(catalog))
+            symbols, historical = subject.catalog_research_symbols(path)
+        self.assertEqual(symbols, {"NEW", "DOT-B"})
+        self.assertEqual(historical, {"OLD"})
+
+    def test_partial_profile_uses_fast_quote_and_dated_history_metadata(self):
+        class Ticker:
+            fast_info = {"marketCap": 125, "lastPrice": 11, "previousClose": 10}
+            history_metadata = {"regularMarketTime": 1789496582, "currency": "USD"}
+
+            def history(self, **kwargs):
+                return None
+
+        result = subject.supplement_quote_fields(
+            Ticker(), {"longName": "Example", "industry": "Retail"}
+        )
+        self.assertEqual(result["marketCap"], 125)
+        self.assertEqual(result["currentPrice"], 11)
+        self.assertEqual(result["previousClose"], 10)
+        self.assertEqual(result["regularMarketTime"], 1789496582)
+
+    def test_recent_full_refresh_still_adds_missing_catalog_profile(self):
+        current = datetime.now(timezone.utc).isoformat()
+        registry = {
+            "schema_version": 1, "refreshed_at": current, "full_refreshed_at": current,
+            "fx": {"USD": 1}, "fx_observed_at": current,
+            "fx_observed_at_by_currency": {"USD": current}, "failed_symbols": [],
+            "profiles": {"OLD": {"ticker": "OLD", "observed_at": current}},
+        }
+        new_info = info("NEW", "USD")
+        with tempfile.TemporaryDirectory() as td:
+            output = Path(td) / "snapshot.json"
+            with patch.object(subject, "read_registry", return_value=deepcopy(registry)), \
+                 patch.object(subject, "SNAPSHOT_PATH", output), \
+                 patch.object(subject, "catalog_research_symbols", return_value=({"OLD", "NEW"}, set())), \
+                 patch.object(subject, "refresh_fx", return_value=({"USD": 1}, {"USD": 1}, {"USD": current}, [], current)), \
+                 patch.object(subject, "fetch_ticker_info", return_value=(None, new_info)), \
+                 patch.object(sys, "argv", ["refresh_stock_research.py", "--max-age-hours", "24"]):
+                self.assertEqual(subject.main(), 0)
+            result = json.loads(output.read_text())
+        self.assertIn("NEW", result["profiles"])
+        self.assertIn("OLD", result["profiles"])
+        self.assertEqual(result["full_refreshed_at"], current)
+
     def test_failed_retry_preserves_first_refresh_rates_and_dates(self):
         rates = {currency: index / 10 for index, currency in enumerate(subject.FX_CURRENCIES, 1)}
         def success(symbol, max_retries):
