@@ -1,6 +1,6 @@
 {
   "schema": "charged-alpha-public-production/1",
-  "updated_at": "2026-09-15T10:36:34.232249-05:00",
+  "updated_at": "2026-09-15T10:48:06.571051-05:00",
   "calendar_updated_at": "2026-09-15T07:17:48.743730-05:00",
   "calendar_status": "fresh",
   "daily_target": 10,
@@ -297,16 +297,6 @@
     }
   ],
   "upcoming": [
-    {
-      "ticker": "FPS",
-      "company": "Forgent Power Solutions, Inc.",
-      "report_date": "2026-09-15",
-      "report_time_label": "5:30 AM CDT",
-      "planned_date": "2026-09-15",
-      "date_status": "Issuer-announced",
-      "source_url": "https://ir.forgentpower.com/news-events/press-releases/detail/107/forgent-reports-record-fourth-quarter-and-full-year-2026-results-exceeds-high-end-of-guidance-and-enters-fiscal-2027-with-all-time-high-backlog",
-      "stock_url": "/shows/fps"
-    },
     {
       "ticker": "HERE",
       "company": "Here Group Limited",
