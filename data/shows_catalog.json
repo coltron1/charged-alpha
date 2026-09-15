@@ -34176,6 +34176,21 @@
       "description": "Fast clips that point viewers into full research videos and stock pages.",
       "videos": [
         {
+          "title": "HITI Stock: High Tide Inc. Q3 FY2026 — Profit vs. Cash #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/HNyHociCjYE",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-09-15T14:19:11+00:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "HITI"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage.",
+          "earnings_youtube_url": "https://www.youtube.com/watch?v=qVAFjcu3vDk",
+          "earnings_match": "stock_period_date"
+        },
+        {
           "title": "IMPP Stock: Who Owns the Cash Windfall? — Q2 2026 #Shorts",
           "youtube_url": "https://www.youtube.com/shorts/7C0f8M7cS6s",
           "spotify_url": "",
@@ -45850,7 +45865,7 @@
       ]
     }
   ],
-  "last_synced_at": "2026-09-15T08:56:10-05:00",
+  "last_synced_at": "2026-09-15T09:33:07-05:00",
   "stock_metadata": {
     "A": {
       "company": "Agilent Technologies, Inc.",
