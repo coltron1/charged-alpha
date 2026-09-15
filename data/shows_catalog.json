@@ -34176,6 +34176,21 @@
       "description": "Fast clips that point viewers into full research videos and stock pages.",
       "videos": [
         {
+          "title": "BNTC Stock: Benitec FY2026 Cash Per Share Has a Catch #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/SVxdg-xdOos",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-09-15T14:38:58+00:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "BNTC"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage.",
+          "earnings_youtube_url": "https://www.youtube.com/watch?v=SW7gDqh4z4w",
+          "earnings_match": "stock_period_date"
+        },
+        {
           "title": "HITI Stock: High Tide Inc. Q3 FY2026 — Profit vs. Cash #Shorts",
           "youtube_url": "https://www.youtube.com/shorts/HNyHociCjYE",
           "spotify_url": "",
@@ -45865,7 +45880,7 @@
       ]
     }
   ],
-  "last_synced_at": "2026-09-15T09:33:07-05:00",
+  "last_synced_at": "2026-09-15T09:52:04-05:00",
   "stock_metadata": {
     "A": {
       "company": "Agilent Technologies, Inc.",
