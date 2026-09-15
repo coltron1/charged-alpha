@@ -524,6 +524,64 @@
       "tables": 31
     },
     {
+      "key": "BNTC:FY2026",
+      "year": 2026,
+      "quarter": 0,
+      "fiscal": true,
+      "slug": "bntc-fy2026",
+      "ticker": "BNTC",
+      "company": "Benitec Biopharma Inc.",
+      "period": "FY2026",
+      "canonical_url": "https://chargedalpha.com/research/bntc-fy2026",
+      "title": "BNTC: The Cash Is Real. So Are the Ownership Claims.",
+      "page_title": "BNTC FY2026 Research Packet — Charged Alpha",
+      "description": "Benitec funded its clinical programme, but prefunded warrants and equity compensation change the cash-per-share story.",
+      "sha256": "0b34cc363860502846122f20ccff21fab7102c99ec816a61963781257b15ddad",
+      "html_file": "research_packets/bntc-fy2026.html",
+      "source_episode": "BNTC-FY2026",
+      "source_staged_at": "2026-09-15T14:05:59Z",
+      "source_sha256": {
+        "READY": "7d5472cc99a9e2b41532517d0fa0101065468a0160506d6d247a4a057a225a0a",
+        "handoff.json": "3a4fca38ec5721506d338a2b8147def45c5a962ead22d7de50b41c8ad1da5531",
+        "packet/bntc-fy2026-research-packet.html": "0b34cc363860502846122f20ccff21fab7102c99ec816a61963781257b15ddad",
+        "packet/packet_meta.json": "917c39c7ea7668e6b0106e715ff21cb2a7f67595338fb910df02ee0c9c51dcd6",
+        "packet/packet.json": "b04d5a251460cdc33f815f993bfa9e0644350226c56c2d9351cabfe2a4c0f6cd"
+      },
+      "primary_youtube_long": "SW7gDqh4z4w",
+      "primary_youtube_short": null,
+      "youtube_studio": null,
+      "youtube_studio_short": null,
+      "what_changed": {
+        "summary": "Benitec funded its clinical programme, but prefunded warrants and equity compensation change the cash-per-share story.",
+        "items": [
+          {
+            "title": "Cash rose through financing.",
+            "detail": "Net financing inflow of $98.977M funded the $82.228M increase in cash equivalents."
+          },
+          {
+            "title": "Prefunded warrants change the denominator.",
+            "detail": "Near-zero-exercise claims bring June economic shares to 49.487M and cash backing to $3.64 per share."
+          },
+          {
+            "title": "Cash burn understates the ownership cost.",
+            "detail": "Share-based compensation of $26.410M equals51.6% of annual operating expense."
+          },
+          {
+            "title": "Clinical progress remains early evidence.",
+            "detail": "The issuer reports six patients through 12-month follow-up and three higher-dose patients treated, with FDA minutes expected in October."
+          },
+          {
+            "title": "Accounting history still matters.",
+            "detail": "Prior interim SBC figures were restated; management reports remediation, which needs a durable record."
+          }
+        ]
+      },
+      "source_published": "September 15, 2026",
+      "words": 5802,
+      "figures": 15,
+      "tables": 30
+    },
+    {
       "key": "CPRT:Q4-FY2026",
       "year": 2026,
       "quarter": 4,
