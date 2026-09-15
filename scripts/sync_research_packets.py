@@ -25,6 +25,7 @@ from research_packets import (DEFAULT_INDEX, load_packets, packet_html_path, pac
 DEFAULT_QUEUE = Path.home() / "Desktop/CHARGED ALPHA EPISODES/_studio_queue"
 PACKET_REQUIRED_FROM = datetime(2026, 9, 8, tzinfo=timezone.utc)
 HIGHLIGHTS_REQUIRED_FROM = datetime(2026, 9, 11, tzinfo=timezone.utc)
+DEFERRED_ORIGIN_DIR = "_deferred_short_origin"
 IMMUTABLE_FIELDS = ("key", "ticker", "company", "period", "year", "quarter", "fiscal", "slug",
                     "canonical_url", "title", "page_title", "description", "sha256", "source_episode")
 
@@ -145,6 +146,95 @@ def staged_date(handoff, ready):
     return max(dates)
 
 
+def source_date(value, label):
+    require(isinstance(value, str) and value, f"Missing {label}")
+    try:
+        parsed = datetime.fromisoformat(value.replace("Z", "+00:00"))
+    except ValueError as exc:
+        raise ValueError(f"Invalid {label}") from exc
+    require(parsed.tzinfo is not None, f"{label} needs a timezone")
+    return parsed.astimezone(timezone.utc)
+
+
+def retained_legacy_origin(queue, handoff, raw):
+    """Validate cryptographic proof that only an owed Short restaged a pre-cutoff handoff."""
+    origin = handoff.get("deferred_short_origin")
+    require(isinstance(origin, dict), "Restaged packet-null handoff lacks retained origin proof")
+    require(set(origin) == {"schema_version", "directory", "ready_at", "staged_at", "sha256"}
+            and origin.get("schema_version") == 1 and origin.get("directory") == DEFERRED_ORIGIN_DIR,
+            "Invalid retained origin provenance")
+    hashes = origin.get("sha256")
+    names = ("READY", "handoff.json", "LONGFORM_DONE")
+    require(isinstance(hashes, dict) and set(hashes) == set(names)
+            and all(isinstance(value, str) and re.fullmatch(r"[0-9a-f]{64}", value)
+                    for value in hashes.values()), "Invalid retained origin hashes")
+    retained = {}
+    for name in names:
+        relative = f"{DEFERRED_ORIGIN_DIR}/{name}"
+        retained[name] = safe_path(queue, relative).read_bytes()
+        raw[relative] = retained[name]
+        require(sha256(retained[name]) == hashes[name], f"Retained origin {name} hash differs")
+    try:
+        ready_at = retained["READY"].decode("utf-8").strip()
+    except UnicodeDecodeError as exc:
+        raise ValueError("Invalid retained origin READY timestamp") from exc
+    original = json_object(retained["handoff.json"], "Retained origin handoff")
+    require(origin["ready_at"] == ready_at and origin["staged_at"] == original.get("staged_at"),
+            "Retained origin timestamps differ from provenance")
+    require(source_date(ready_at, "retained READY timestamp") < PACKET_REQUIRED_FROM
+            and source_date(original.get("staged_at"), "retained handoff timestamp") < PACKET_REQUIRED_FROM,
+            "Retained packet-null origin is not before the packet requirement")
+    require(original.get("short") is None and original.get("packet") is None,
+            "Retained origin was not packet-null and Short-null")
+    identity = period_identity(handoff.get("ticker"), handoff.get("period"))
+    require(handoff.get("episode") == identity["key"].replace(":", "-"),
+            "Deferred Short episode/ticker/period identity differs")
+    primary = handoff.get("primary")
+    require(isinstance(primary, dict) and isinstance(primary.get("youtube_long"), str)
+            and re.fullmatch(r"[A-Za-z0-9_-]{11}", primary["youtube_long"]),
+            "Deferred Short primary identity is invalid")
+    require(set(handoff) == set(original) | {"deferred_short_origin"},
+            "Restaged handoff fields differ from retained origin")
+    for key, value in original.items():
+        if key not in ("short", "staged_at"):
+            require(handoff.get(key) == value, f"Restaged handoff {key} differs from retained origin")
+    require(isinstance(handoff.get("short"), dict), "Deferred Short metadata is missing")
+
+    raw["LONGFORM_DONE"] = safe_path(queue, "LONGFORM_DONE").read_bytes()
+    require(raw["LONGFORM_DONE"] == retained["LONGFORM_DONE"],
+            "Current long completion differs from retained origin")
+    long_done = json_object(raw["LONGFORM_DONE"], "Long-form completion")
+    require(long_done.get("episode_id") == handoff.get("episode") and long_done.get("cut_id") == "studio-v1"
+            and isinstance(long_done.get("video_id"), str)
+            and re.fullmatch(r"[A-Za-z0-9_-]{11}", long_done["video_id"])
+            and isinstance(long_done.get("output_sha256"), str)
+            and re.fullmatch(r"[0-9a-f]{64}", long_done["output_sha256"]),
+            "Retained long completion identity is invalid")
+
+    raw["SHORT_ADDED"] = safe_path(queue, "SHORT_ADDED").read_bytes()
+    raw["producer_staging_receipt.json"] = safe_path(queue, "producer_staging_receipt.json").read_bytes()
+    receipt = json_object(raw["producer_staging_receipt.json"], "Producer staging receipt")
+    try:
+        current_ready = raw["READY"].decode("utf-8").strip()
+        current_short_added = raw["SHORT_ADDED"].decode("utf-8").strip()
+    except UnicodeDecodeError as exc:
+        raise ValueError("Invalid deferred Short staging marker") from exc
+    require(receipt.get("schema_version") == 1 and receipt.get("episode") == handoff.get("episode")
+            and receipt.get("operation") == "add_deferred_short"
+            and receipt.get("staged_at") == handoff.get("staged_at") == current_ready == current_short_added,
+            "Deferred Short staging markers differ")
+    require(receipt.get("retained_origin_sha256") == hashes,
+            "Producer staging receipt does not bind retained origin")
+    staged_hashes = receipt.get("staged_file_sha256")
+    require(isinstance(staged_hashes, dict), "Producer staging receipt lacks staged hashes")
+    bound = {"handoff.json": raw["handoff.json"], "LONGFORM_DONE": raw["LONGFORM_DONE"]}
+    bound.update({f"{DEFERRED_ORIGIN_DIR}/{name}": retained[name] for name in names})
+    require(all(staged_hashes.get(name) == sha256(value) for name, value in bound.items()),
+            "Producer staging receipt hash binding differs")
+    return {"status": "legacy_no_packet", "source_episode": handoff["episode"],
+            "queue_dir": str(queue), "reason": "Validated retained pre-cutoff packet-null origin"}
+
+
 def source_episode(queue, handoff, raw):
     """Resolve only the canonical folder or the completion helper's bound sibling."""
     episode = handoff.get("episode")
@@ -184,9 +274,15 @@ def read_candidate(queue):
     when, staged_at = staged_date(handoff, raw["READY"])
     packet = handoff.get("packet")
     if packet is None:
-        return {"status": "pending_source" if when >= PACKET_REQUIRED_FROM else "legacy_no_packet",
-                "source_episode": episode, "queue_dir": str(queue),
-                "reason": "no packet" if when >= PACKET_REQUIRED_FROM else "Older packet-null handoff is valid"}
+        if when < PACKET_REQUIRED_FROM:
+            return {"status": "legacy_no_packet", "source_episode": episode, "queue_dir": str(queue),
+                    "reason": "Older packet-null handoff is valid"}
+        if "deferred_short_origin" in handoff:
+            result = retained_legacy_origin(queue, handoff, raw)
+            require(result["source_episode"] == episode, "Retained origin episode identity differs")
+            return result
+        return {"status": "pending_source", "source_episode": episode, "queue_dir": str(queue),
+                "reason": "no packet"}
     require(isinstance(packet, dict) and packet.get("finalized") is True, "Packet must be explicitly finalized")
     identity = period_identity(handoff.get("ticker"), handoff.get("period"))
     require(handoff["episode"] == identity["key"].replace(":", "-"), "Episode ticker/period identity differs")

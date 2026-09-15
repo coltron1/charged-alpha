@@ -79,6 +79,60 @@ class ResearchPacketTests(unittest.TestCase):
         (target / "DONE").write_text(json.dumps(done))
         return target
 
+    def deferred_legacy_fixture(self, ticker="CIEN", period="Q3 FY2026"):
+        source, _ = self.fixture(ticker, period)
+        original = json.loads((source / "handoff.json").read_bytes())
+        original.update(staged_at="2026-09-07T14:00:00Z", short=None, packet=None)
+        original_raw = json.dumps(original, indent=1).encode()
+        ready_raw = b"2026-09-07T14:00:00Z\n"
+        long_done = {"episode_id": original["episode"], "cut_id": "studio-v1",
+                     "video_id": "studio00001", "output_sha256": "a" * 64}
+        long_raw = json.dumps(long_done).encode()
+        retained = source / sync.DEFERRED_ORIGIN_DIR
+        retained.mkdir()
+        (retained / "READY").write_bytes(ready_raw)
+        (retained / "handoff.json").write_bytes(original_raw)
+        (retained / "LONGFORM_DONE").write_bytes(long_raw)
+        hashes = {name: hashlib.sha256((retained / name).read_bytes()).hexdigest()
+                  for name in ("READY", "handoff.json", "LONGFORM_DONE")}
+        current = dict(original, staged_at="2026-09-15T16:04:57Z",
+                       short={"file": f"{ticker}_short_v3.mp4"},
+                       deferred_short_origin={"schema_version": 1, "directory": sync.DEFERRED_ORIGIN_DIR,
+                                              "ready_at": "2026-09-07T14:00:00Z",
+                                              "staged_at": "2026-09-07T14:00:00Z", "sha256": hashes})
+        (source / "handoff.json").write_text(json.dumps(current, indent=1))
+        (source / "LONGFORM_DONE").write_bytes(long_raw)
+        (source / "READY").write_text(current["staged_at"] + "\n")
+        (source / "SHORT_ADDED").write_text(current["staged_at"] + "\n")
+        receipt = {"schema_version": 1, "episode": current["episode"],
+                   "operation": "add_deferred_short", "staged_at": current["staged_at"],
+                   "retained_origin_sha256": hashes, "staged_file_sha256": {}}
+        for name in ("handoff.json", "LONGFORM_DONE"):
+            receipt["staged_file_sha256"][name] = hashlib.sha256((source / name).read_bytes()).hexdigest()
+        for name in hashes:
+            path = f"{sync.DEFERRED_ORIGIN_DIR}/{name}"
+            receipt["staged_file_sha256"][path] = hashlib.sha256((source / path).read_bytes()).hexdigest()
+        (source / "producer_staging_receipt.json").write_text(json.dumps(receipt, indent=2))
+        return source
+
+    def rebind_deferred_fixture(self, source):
+        handoff = json.loads((source / "handoff.json").read_bytes())
+        receipt = json.loads((source / "producer_staging_receipt.json").read_bytes())
+        retained = source / sync.DEFERRED_ORIGIN_DIR
+        hashes = {name: hashlib.sha256((retained / name).read_bytes()).hexdigest()
+                  for name in ("READY", "handoff.json", "LONGFORM_DONE")}
+        original = json.loads((retained / "handoff.json").read_bytes())
+        handoff["deferred_short_origin"].update(
+            ready_at=(retained / "READY").read_text().strip(), staged_at=original.get("staged_at"), sha256=hashes)
+        (source / "handoff.json").write_text(json.dumps(handoff, indent=1))
+        receipt["retained_origin_sha256"] = hashes
+        for name in ("handoff.json", "LONGFORM_DONE"):
+            receipt["staged_file_sha256"][name] = hashlib.sha256((source / name).read_bytes()).hexdigest()
+        for name in hashes:
+            path = f"{sync.DEFERRED_ORIGIN_DIR}/{name}"
+            receipt["staged_file_sha256"][path] = hashlib.sha256((source / path).read_bytes()).hexdigest()
+        (source / "producer_staging_receipt.json").write_text(json.dumps(receipt, indent=2))
+
     def test_plan_writes_nothing_and_execute_preserves_exact_bytes_and_metadata(self):
         source, raw = self.fixture()
         before = {str(p): p.read_bytes() for p in source.rglob("*") if p.is_file()}
@@ -371,6 +425,60 @@ class ResearchPacketTests(unittest.TestCase):
         self.assertFalse((new / "BLOCKED").exists())
         (old / "READY").write_text("2026-09-08T00:01:00Z\n")
         self.assertEqual(self.import_all()["pending_source"], 2)
+
+    def test_restaged_deferred_short_accepts_only_bound_pre_cutoff_origin(self):
+        source = self.deferred_legacy_fixture()
+        report = self.import_all(False)
+        self.assertEqual((report["errors"], report["pending_source"]), (0, 0))
+        self.assertEqual(report["packets"][0]["status"], "legacy_no_packet")
+        self.assertIn("retained pre-cutoff", report["packets"][0]["reason"])
+
+    def test_restaged_deferred_short_rejects_missing_tampered_and_hash_mismatch_proof(self):
+        cases = ("missing", "tampered_current", "hash_mismatch", "missing_short_added", "bad_receipt")
+        for case in cases:
+            with self.subTest(case=case):
+                shutil.rmtree(self.queue); self.queue.mkdir()
+                source = self.deferred_legacy_fixture()
+                if case == "missing":
+                    (source / sync.DEFERRED_ORIGIN_DIR / "READY").unlink()
+                elif case == "tampered_current":
+                    self.mutate(source / "LONGFORM_DONE", lambda value: value.update(video_id="changed00001"))
+                elif case == "hash_mismatch":
+                    (source / sync.DEFERRED_ORIGIN_DIR / "READY").write_text("2026-09-07T13:00:00Z\n")
+                elif case == "missing_short_added":
+                    (source / "SHORT_ADDED").unlink()
+                else:
+                    self.mutate(source / "producer_staging_receipt.json",
+                                lambda value: value.update(operation="new_episode"))
+                report = self.import_all(False)
+                self.assertEqual(report["errors"], 1)
+                self.assertFalse(self.index.exists())
+
+    def test_restaged_deferred_short_rejects_rehashed_wrong_identity(self):
+        source = self.deferred_legacy_fixture()
+        for path in (source / sync.DEFERRED_ORIGIN_DIR / "LONGFORM_DONE", source / "LONGFORM_DONE"):
+            self.mutate(path, lambda value: value.update(episode_id="OTHER-Q3-FY2026"))
+        self.rebind_deferred_fixture(source)
+        report = self.import_all(False)
+        self.assertEqual(report["errors"], 1)
+        self.assertIn("identity", report["packets"][0]["reason"])
+
+    def test_restaged_deferred_short_rejects_rehashed_new_origin(self):
+        for field in ("READY", "handoff"):
+            with self.subTest(field=field):
+                shutil.rmtree(self.queue); self.queue.mkdir()
+                source = self.deferred_legacy_fixture()
+                retained = source / sync.DEFERRED_ORIGIN_DIR
+                if field == "READY":
+                    (retained / "READY").write_text("2026-09-08T00:00:00Z\n")
+                else:
+                    original = json.loads((retained / "handoff.json").read_bytes())
+                    original["staged_at"] = "2026-09-08T00:00:00Z"
+                    (retained / "handoff.json").write_text(json.dumps(original, indent=1))
+                self.rebind_deferred_fixture(source)
+                report = self.import_all(False)
+                self.assertEqual(report["errors"], 1)
+                self.assertIn("not before", report["packets"][0]["reason"])
 
     def test_changed_source_during_execution_refuses_commit(self):
         source, _ = self.fixture()
