@@ -1,10 +1,30 @@
 {
   "schema": "charged-alpha-public-production/1",
-  "updated_at": "2026-09-15T15:25:07.898914-05:00",
-  "calendar_updated_at": "2026-09-15T15:24:50.058797-05:00",
+  "updated_at": "2026-09-15T17:51:05.058883-05:00",
+  "calendar_updated_at": "2026-09-15T17:49:27.951124-05:00",
   "calendar_status": "fresh",
   "daily_target": 10,
   "history": [
+    {
+      "ticker": "CIEN",
+      "company": "Ciena Corporation",
+      "period": "Q3 FY2026",
+      "completed_at": "2026-09-15T17:49:52.107941-05:00",
+      "video_url": "https://youtu.be/8cAVXhz2Zus",
+      "short_url": "https://youtu.be/zXYaaiBJCq8",
+      "packet_url": null,
+      "stock_url": "/shows/cien"
+    },
+    {
+      "ticker": "LAES",
+      "company": "SEALSQ Corp",
+      "period": "H1 2026",
+      "completed_at": "2026-09-15T17:46:56.660531-05:00",
+      "video_url": "https://youtu.be/7OMCuVgJtZw",
+      "short_url": "https://youtu.be/zBXAHmyntvM",
+      "packet_url": "https://chargedalpha.com/research/laes-h1-2026",
+      "stock_url": "/shows/laes"
+    },
     {
       "ticker": "FPS",
       "company": "Forgent Power Solutions, Inc.",
