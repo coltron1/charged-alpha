@@ -10,6 +10,24 @@
   },
   "episodes": [
     {
+      "ticker": "LAES",
+      "company": "SEALSQ Corp",
+      "sector": "Technology",
+      "quarter": "H1 2026",
+      "episode_number": "",
+      "title": "LAES Stock: The Cash Cushion Shrinks Per Share — H1 2026",
+      "published_at": "2026-09-15T17:39:08+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=7OMCuVgJtZw",
+      "spotify_url": "",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/laes-stock-the-cash-cushion-shrinks-per-share-%e2%80%94-h1-2026/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
       "ticker": "FPS",
       "company": "Forgent Power Solutions, Inc.",
       "sector": "Industrials",
@@ -34194,6 +34212,21 @@
       "description": "Fast clips that point viewers into full research videos and stock pages.",
       "videos": [
         {
+          "title": "CIEN Stock: Can Ciena Hold Its Margin Surge? Q3 FY2026 #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/zXYaaiBJCq8",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-09-15T17:40:26+00:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "CIEN"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage.",
+          "earnings_youtube_url": "https://www.youtube.com/watch?v=2z_sXgaIEp4",
+          "earnings_match": "stock_period_date"
+        },
+        {
           "title": "FPS Stock: Forgent Power Solutions Q4 FY2026 — Orders vs. Cash #Shorts",
           "youtube_url": "https://www.youtube.com/shorts/qtnL-NJlkOc",
           "spotify_url": "",
@@ -45913,7 +45946,7 @@
       ]
     }
   ],
-  "last_synced_at": "2026-09-15T10:33:07-05:00",
+  "last_synced_at": "2026-09-15T12:46:42-05:00",
   "stock_metadata": {
     "A": {
       "company": "Agilent Technologies, Inc.",
@@ -48247,6 +48280,10 @@
     "LAD": {
       "company": "Lithia Motors, Inc.",
       "sector": "Consumer Cyclical"
+    },
+    "LAES": {
+      "company": "SEALSQ Corp",
+      "sector": "Technology"
     },
     "LDOS": {
       "company": "Leidos Holdings, Inc.",

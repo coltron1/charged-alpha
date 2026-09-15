@@ -988,6 +988,64 @@
       "tables": 34
     },
     {
+      "key": "LAES:H1-2026",
+      "year": 2026,
+      "quarter": 0,
+      "fiscal": false,
+      "slug": "laes-h1-2026",
+      "ticker": "LAES",
+      "company": "SEALSQ Corp",
+      "period": "H1 2026",
+      "canonical_url": "https://chargedalpha.com/research/laes-h1-2026",
+      "title": "LAES: The Cash Cushion Shrinks Per Share",
+      "page_title": "LAES H1 2026 Research Packet — Charged Alpha",
+      "description": "Revenue more than doubled, but cash burn and a larger economic share count weaken the apparent cash bargain at SEALSQ.",
+      "sha256": "8794e8129be64d07f19b8524d46b4d1c8a3f5607cbcc66092e9208e833c8b858",
+      "html_file": "research_packets/laes-h1-2026.html",
+      "source_episode": "LAES-H1-2026",
+      "source_staged_at": "2026-09-15T17:46:05Z",
+      "source_sha256": {
+        "READY": "916fc02b933eaa9aa34a23346dd0cd05daec1916f1914f01c9bfa176ffeaaf68",
+        "handoff.json": "65cb0cf7bd18da1f5227b99540f21346295279004f3c3664facad27fcdf191e8",
+        "packet/laes-h1-2026-research-packet.html": "8794e8129be64d07f19b8524d46b4d1c8a3f5607cbcc66092e9208e833c8b858",
+        "packet/packet_meta.json": "7dc9d33f60d3e47de7efc34554913560eb8610a7472af10d86401c213832cca6",
+        "packet/packet.json": "721c4e08c6303e4a52b96f91fd59712b52dd8761ac1ce70a21b44957f5ba2edc"
+      },
+      "primary_youtube_long": "7OMCuVgJtZw",
+      "primary_youtube_short": null,
+      "youtube_studio": null,
+      "youtube_studio_short": null,
+      "what_changed": {
+        "summary": "Revenue more than doubled, but cash burn and a larger economic share count weaken the apparent cash bargain at SEALSQ.",
+        "items": [
+          {
+            "title": "Revenue recovered faster than costs improved.",
+            "detail": "H1 sales rose 131.1% to $11.151M and gross margin reached 48.5%, yet the operating loss widened to $32.162M. Source: current 6-K financial statements."
+          },
+          {
+            "title": "The cash-per-share story changes with the denominator.",
+            "detail": "The filed ordinary count plus five-for-one F-share economics and low-strike options gives 231.141M economic shares. Net liquid assets are $2.08 per share before future spending; the quote capitalization divided by price implies only 142.594M outstanding shares. The separate vendor float field is 113.530M shares, not that outstanding count."
+          },
+          {
+            "title": "Cash growth came from financing.",
+            "detail": "H1 operating and investing uses plus currency effects consumed $46.19M before $114.641M of financing inflows. Free cash flow was $-25.249M; the cash balance does not demonstrate operating self-funding."
+          },
+          {
+            "title": "Most receivables are related-party balances.",
+            "detail": "Shareholder and other related-party receivables total $16.673M, or 76.8% of total receivables. Customer collection days must therefore use the trade subset, not the headline receivable balance."
+          },
+          {
+            "title": "Commercial opportunities still need conversion.",
+            "detail": "Management reaffirmed $27–36M of FY2026 revenue and described more than $225M of potential opportunities through 2029. That pipeline is not contracted backlog; initial post-quantum product revenue remains expected toward late H2 2026."
+          }
+        ]
+      },
+      "source_published": "September 15, 2026",
+      "words": 5536,
+      "figures": 17,
+      "tables": 27
+    },
+    {
       "key": "ASO:Q2-FY2026",
       "year": 2026,
       "quarter": 2,
