@@ -1,7 +1,7 @@
 {
   "schema": "charged-alpha-public-production/1",
-  "updated_at": "2026-09-15T10:48:06.571051-05:00",
-  "calendar_updated_at": "2026-09-15T07:17:48.743730-05:00",
+  "updated_at": "2026-09-15T11:04:45.021083-05:00",
+  "calendar_updated_at": "2026-09-15T11:04:31.371698-05:00",
   "calendar_status": "fresh",
   "daily_target": 10,
   "history": [
@@ -400,6 +400,16 @@
     {
       "ticker": "ABVX",
       "company": "Abivax S.A.",
+      "report_date": "2026-09-21",
+      "report_time_label": "Time unconfirmed",
+      "planned_date": "",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": null
+    },
+    {
+      "ticker": "HKD",
+      "company": "AMTD Digital Inc.",
       "report_date": "2026-09-21",
       "report_time_label": "Time unconfirmed",
       "planned_date": "",
