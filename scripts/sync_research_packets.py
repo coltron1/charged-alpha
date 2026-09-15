@@ -228,7 +228,13 @@ def retained_legacy_origin(queue, handoff, raw):
     staged_hashes = receipt.get("staged_file_sha256")
     require(isinstance(staged_hashes, dict), "Producer staging receipt lacks staged hashes")
     bound = {"handoff.json": raw["handoff.json"], "LONGFORM_DONE": raw["LONGFORM_DONE"]}
-    bound.update({f"{DEFERRED_ORIGIN_DIR}/{name}": retained[name] for name in names})
+    # Canonical staging omits files named READY from this general inventory,
+    # including the retained marker. Its exact bytes were already verified above
+    # against both handoff provenance and receipt.retained_origin_sha256.
+    bound.update({f"{DEFERRED_ORIGIN_DIR}/{name}": retained[name] for name in names if name != "READY"})
+    retained_ready = f"{DEFERRED_ORIGIN_DIR}/READY"
+    if retained_ready in staged_hashes:
+        bound[retained_ready] = retained["READY"]
     require(all(staged_hashes.get(name) == sha256(value) for name, value in bound.items()),
             "Producer staging receipt hash binding differs")
     return {"status": "legacy_no_packet", "source_episode": handoff["episode"],

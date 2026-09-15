@@ -111,7 +111,8 @@ class ResearchPacketTests(unittest.TestCase):
             receipt["staged_file_sha256"][name] = hashlib.sha256((source / name).read_bytes()).hexdigest()
         for name in hashes:
             path = f"{sync.DEFERRED_ORIGIN_DIR}/{name}"
-            receipt["staged_file_sha256"][path] = hashlib.sha256((source / path).read_bytes()).hexdigest()
+            if name != "READY":  # Match the canonical stager's marker exclusion.
+                receipt["staged_file_sha256"][path] = hashlib.sha256((source / path).read_bytes()).hexdigest()
         (source / "producer_staging_receipt.json").write_text(json.dumps(receipt, indent=2))
         return source
 
@@ -434,7 +435,7 @@ class ResearchPacketTests(unittest.TestCase):
         self.assertIn("retained pre-cutoff", report["packets"][0]["reason"])
 
     def test_restaged_deferred_short_rejects_missing_tampered_and_hash_mismatch_proof(self):
-        cases = ("missing", "tampered_current", "hash_mismatch", "missing_short_added", "bad_receipt")
+        cases = ("missing", "tampered_current", "hash_mismatch", "missing_short_added", "bad_receipt", "bad_optional_ready_hash")
         for case in cases:
             with self.subTest(case=case):
                 shutil.rmtree(self.queue); self.queue.mkdir()
@@ -447,6 +448,10 @@ class ResearchPacketTests(unittest.TestCase):
                     (source / sync.DEFERRED_ORIGIN_DIR / "READY").write_text("2026-09-07T13:00:00Z\n")
                 elif case == "missing_short_added":
                     (source / "SHORT_ADDED").unlink()
+                elif case == "bad_optional_ready_hash":
+                    self.mutate(source / "producer_staging_receipt.json",
+                                lambda value: value["staged_file_sha256"].update(
+                                    {f"{sync.DEFERRED_ORIGIN_DIR}/READY": "0" * 64}))
                 else:
                     self.mutate(source / "producer_staging_receipt.json",
                                 lambda value: value.update(operation="new_episode"))
