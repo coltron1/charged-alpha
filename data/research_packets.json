@@ -698,6 +698,64 @@
       }
     },
     {
+      "key": "FPS:Q4-FY2026",
+      "year": 2026,
+      "quarter": 4,
+      "fiscal": true,
+      "slug": "fps-q4-fy2026",
+      "ticker": "FPS",
+      "company": "Forgent Power Solutions, Inc.",
+      "period": "Q4 FY2026",
+      "canonical_url": "https://chargedalpha.com/research/fps-q4-fy2026",
+      "title": "FPS: Record Orders, but Who Funds the Cash Ramp?",
+      "page_title": "FPS Q4 FY2026 Research Packet — Charged Alpha",
+      "description": "Record backlog and a stronger growth outlook meet a cash cycle funded by customer advances, an Up-C ownership bridge and a demanding valuation.",
+      "sha256": "eaa526005369350ab7123eef2f7be8fb1072396eeb7dc5078ec217ae49a4d2e6",
+      "html_file": "research_packets/fps-q4-fy2026.html",
+      "source_episode": "FPS-Q4-FY2026",
+      "source_staged_at": "2026-09-15T15:02:57Z",
+      "source_sha256": {
+        "READY": "535a588178186d3efd2b3d4a641ada68f9ee9fc7b88f2bb6788a72a429883b1a",
+        "handoff.json": "28dbd1cbd4b52d1514caa68c81e58e72d78c76f1bb5897ce092d00909b09fdd5",
+        "packet/fps-q4-fy2026-research-packet.html": "eaa526005369350ab7123eef2f7be8fb1072396eeb7dc5078ec217ae49a4d2e6",
+        "packet/packet_meta.json": "e672258e3ac6735a1e2aa28313503a96725ab0e95ed739ee588f712fbfd2cb7c",
+        "packet/packet.json": "817b6f3d3eeecead75de77ccabd02ddea73b9a14036ca7f60aae2f09038827cf"
+      },
+      "primary_youtube_long": "EPlokLp_DJw",
+      "primary_youtube_short": null,
+      "youtube_studio": null,
+      "youtube_studio_short": null,
+      "what_changed": {
+        "summary": "Record backlog and a stronger growth outlook meet a cash cycle funded by customer advances, an Up-C ownership bridge and a demanding valuation.",
+        "items": [
+          {
+            "title": "The commercial step-up is real.",
+            "detail": "Q4 sales rose 94.3% and bookings reached $1.503B. Powertrain Solutions revenue grew 259.3% for the full year, extending Forgent’s role beyond individual components."
+          },
+          {
+            "title": "The cash engine depends on advances.",
+            "detail": "Q4 operating cash was $73.901M, alongside a $130.345M increase in deferred revenue cash flow. That funding supports delivery; it should not be mistaken for cash already earned on completed orders."
+          },
+          {
+            "title": "The share count changes the valuation.",
+            "detail": "The September8 cover has 274.527M Class A shares and 29.902M Class B shares paired with Opco interests. Consolidated operating value is divided across those economic rights, not only public Class A shares."
+          },
+          {
+            "title": "The tax agreement needs a matched calculation.",
+            "detail": "The $338.925M gross tax receivable obligation transfers 85% of specified tax benefits. Our models charge normalized tax and exclude both special tax shields and their matched payments; acceleration remains a separate downside risk."
+          },
+          {
+            "title": "The guide raised the bar above old consensus.",
+            "detail": "FY2027 revenue midpoint is 22.5% above the fetched $2.04B consensus. Three valuation routes average $29.23 before rounding, versus a $30.67 verified early trade. Older bullish analyst targets are not post-release endorsements."
+          }
+        ]
+      },
+      "source_published": "September 15, 2026",
+      "words": 6339,
+      "figures": 19,
+      "tables": 30
+    },
+    {
       "key": "LPTH:Q4-FY2026",
       "year": 2026,
       "quarter": 4,

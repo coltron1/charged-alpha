@@ -10,6 +10,24 @@
   },
   "episodes": [
     {
+      "ticker": "FPS",
+      "company": "Forgent Power Solutions, Inc.",
+      "sector": "Industrials",
+      "quarter": "Q4 FY2026",
+      "episode_number": "",
+      "title": "FPS Stock: Record Orders, but Who Funds the Cash Ramp? — Q4 FY2026",
+      "published_at": "2026-09-15T14:57:05+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=EPlokLp_DJw",
+      "spotify_url": "https://open.spotify.com/episode/2TKBO86QoqRiKscRP1kggs",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/fps-stock-record-orders-but-who-funds-the-cash-ramp-%e2%80%94-q4-fy2026/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
       "ticker": "BNTC",
       "company": "Benitec Biopharma Inc.",
       "sector": "Healthcare",
@@ -19,7 +37,7 @@
       "published_at": "2026-09-15T13:51:20+00:00",
       "status": "youtube_podcast_complete",
       "youtube_url": "https://www.youtube.com/watch?v=SW7gDqh4z4w",
-      "spotify_url": "",
+      "spotify_url": "https://open.spotify.com/episode/6NujJmdl4DoHutevrYUDht",
       "apple_url": "",
       "google_url": "",
       "iheart_url": "",
@@ -45880,7 +45898,7 @@
       ]
     }
   ],
-  "last_synced_at": "2026-09-15T09:52:04-05:00",
+  "last_synced_at": "2026-09-15T10:04:20-05:00",
   "stock_metadata": {
     "A": {
       "company": "Agilent Technologies, Inc.",
@@ -47550,6 +47568,10 @@
     "FOXA": {
       "company": "Fox Corporation",
       "sector": "Communication Services"
+    },
+    "FPS": {
+      "company": "Forgent Power Solutions, Inc.",
+      "sector": "Industrials"
     },
     "FR": {
       "company": "First Industrial Realty Trust, Inc.",
