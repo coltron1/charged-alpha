@@ -34212,6 +34212,23 @@
       "description": "Fast clips that point viewers into full research videos and stock pages.",
       "videos": [
         {
+          "title": "LAES Stock: SEALSQ Corp H1 2026 Earnings — Cash Per Share #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/zBXAHmyntvM",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-09-15T17:58:49+00:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "LAES",
+            "SEALSQ",
+            "H1"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage.",
+          "earnings_youtube_url": "https://www.youtube.com/watch?v=7OMCuVgJtZw",
+          "earnings_match": "stock_period_date"
+        },
+        {
           "title": "CIEN Stock: Can Ciena Hold Its Margin Surge? Q3 FY2026 #Shorts",
           "youtube_url": "https://www.youtube.com/shorts/zXYaaiBJCq8",
           "spotify_url": "",
@@ -45946,7 +45963,7 @@
       ]
     }
   ],
-  "last_synced_at": "2026-09-15T12:46:42-05:00",
+  "last_synced_at": "2026-09-15T13:10:24-05:00",
   "stock_metadata": {
     "A": {
       "company": "Agilent Technologies, Inc.",
