@@ -1,10 +1,40 @@
 {
   "schema": "charged-alpha-public-production/1",
-  "updated_at": "2026-09-15T09:14:19.560993-05:00",
+  "updated_at": "2026-09-15T10:36:34.232249-05:00",
   "calendar_updated_at": "2026-09-15T07:17:48.743730-05:00",
   "calendar_status": "fresh",
   "daily_target": 10,
   "history": [
+    {
+      "ticker": "FPS",
+      "company": "Forgent Power Solutions, Inc.",
+      "period": "Q4 FY2026",
+      "completed_at": "2026-09-15T10:32:11.741799-05:00",
+      "video_url": "https://youtu.be/EPlokLp_DJw",
+      "short_url": "https://youtu.be/qtnL-NJlkOc",
+      "packet_url": "https://chargedalpha.com/research/fps-q4-fy2026",
+      "stock_url": "/shows/fps"
+    },
+    {
+      "ticker": "BNTC",
+      "company": "Benitec Biopharma Inc.",
+      "period": "FY2026",
+      "completed_at": "2026-09-15T09:51:14.237991-05:00",
+      "video_url": "https://youtu.be/SW7gDqh4z4w",
+      "short_url": "https://youtu.be/SVxdg-xdOos",
+      "packet_url": "https://chargedalpha.com/research/bntc-fy2026",
+      "stock_url": "/shows/bntc"
+    },
+    {
+      "ticker": "HITI",
+      "company": "High Tide Inc.",
+      "period": "Q3 FY2026",
+      "completed_at": "2026-09-15T09:30:57.542836-05:00",
+      "video_url": "https://youtu.be/qVAFjcu3vDk",
+      "short_url": "https://youtu.be/HNyHociCjYE",
+      "packet_url": "https://chargedalpha.com/research/hiti-q3-fy2026",
+      "stock_url": "/shows/hiti"
+    },
     {
       "ticker": "IMPP",
       "company": "Imperial Petroleum Inc.",
