@@ -1,8 +1,8 @@
 {
   "schema": "charged-alpha-public-production/1",
-  "updated_at": "2026-09-14T23:05:38.661471-05:00",
-  "calendar_updated_at": "2026-09-14T08:03:41.733397-05:00",
-  "calendar_status": "stale",
+  "updated_at": "2026-09-15T03:13:53.033125-05:00",
+  "calendar_updated_at": "2026-09-15T03:13:52.685385-05:00",
+  "calendar_status": "fresh",
   "daily_target": 10,
   "history": [
     {
@@ -268,58 +268,18 @@
   ],
   "upcoming": [
     {
-      "ticker": "HITI",
-      "company": "High Tide Inc.",
-      "report_date": "2026-09-14",
-      "report_time_label": "After U.S. market close",
-      "planned_date": "2026-09-15",
-      "date_status": "Issuer-announced",
-      "source_url": "https://hightideinc.com/high-tide-to-announce-third-fiscal-quarter-2026-financial-results/",
-      "stock_url": "/shows/hiti"
-    },
-    {
-      "ticker": "HKD",
-      "company": "AMTD Digital Inc.",
-      "report_date": "2026-09-14",
+      "ticker": "FPS",
+      "company": "Forgent Power Solutions, Inc.",
+      "report_date": "2026-09-15",
       "report_time_label": "Time unconfirmed",
-      "planned_date": "2026-09-15",
+      "planned_date": "2026-09-16",
       "date_status": "Calendar estimate",
       "source_url": null,
       "stock_url": null
-    },
-    {
-      "ticker": "ABAT",
-      "company": "American Battery Technology Company Common Stock",
-      "report_date": "2026-09-14",
-      "report_time_label": "Time unconfirmed",
-      "planned_date": "2026-09-15",
-      "date_status": "Calendar estimate",
-      "source_url": null,
-      "stock_url": "/shows/abat"
     },
     {
       "ticker": "HERE",
       "company": "Here Group Limited",
-      "report_date": "2026-09-14",
-      "report_time_label": "Time unconfirmed",
-      "planned_date": "2026-09-15",
-      "date_status": "Calendar estimate",
-      "source_url": null,
-      "stock_url": null
-    },
-    {
-      "ticker": "PLAY",
-      "company": "Dave & Buster's Entertainment, Inc.",
-      "report_date": "2026-09-14",
-      "report_time_label": "Time unconfirmed",
-      "planned_date": "2026-09-15",
-      "date_status": "Calendar estimate",
-      "source_url": null,
-      "stock_url": "/shows/play"
-    },
-    {
-      "ticker": "FPS",
-      "company": "Forgent Power Solutions, Inc.",
       "report_date": "2026-09-15",
       "report_time_label": "Time unconfirmed",
       "planned_date": "2026-09-16",
@@ -413,6 +373,16 @@
       "report_date": "2026-09-18",
       "report_time_label": "Time unconfirmed",
       "planned_date": "2026-09-19",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": null
+    },
+    {
+      "ticker": "ABVX",
+      "company": "Abivax S.A.",
+      "report_date": "2026-09-21",
+      "report_time_label": "Time unconfirmed",
+      "planned_date": "",
       "date_status": "Calendar estimate",
       "source_url": null,
       "stock_url": null
