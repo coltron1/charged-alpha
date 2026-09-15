@@ -38,6 +38,21 @@ class ProductionBoardTests(unittest.TestCase):
         self.assertEqual(len(result['history']), 1)
         self.assertEqual(len(result['upcoming']), 1)
 
+    def test_source_backed_completed_event_excludes_delayed_completion(self):
+        data = snapshot()
+        data['completed'][0].update({'report_date': '2026-09-14', 'completed_at': '2026-09-17T23:00:00Z'})
+        later = {**data['forecast']['date_cards'][0]['candidates'][0], 'report_date': '2026-12-15',
+                 'planned_date': '2026-12-15'}
+        data['forecast']['date_cards'][0]['candidates'].append(later)
+        result = project_snapshot(data, {})
+        self.assertEqual([row['report_date'] for row in result['upcoming']], ['2026-12-15'])
+
+    def test_completion_day_does_not_suppress_a_different_new_print(self):
+        data = snapshot()
+        data['completed'][0].update({'report_date': '2026-09-10', 'completed_at': '2026-09-14T23:00:00Z'})
+        result = project_snapshot(data, {})
+        self.assertEqual([row['report_date'] for row in result['upcoming']], ['2026-09-14'])
+
     def test_bad_links_cannot_expose_local_files_or_secrets(self):
         for url in ('file:///Users/colton/data', 'http://127.0.0.1:8766/', 'https://example.com/?apikey=secret', 'javascript:alert(1)'):
             self.assertIsNone(public_url(url))

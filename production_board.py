@@ -60,7 +60,7 @@ def project_snapshot(snapshot, catalog):
         if isinstance(metadata, dict) and metadata.get('company'):
             companies[ticker] = metadata['company']
     known = set(companies)
-    history, seen = [], set()
+    history, seen, completed_event_dates = [], set(), set()
     for item in snapshot.get('completed_history', snapshot.get('completed', [])):
         if item.get('evidence') != 'actual_bundle_DONE' or not timestamp(item.get('completed_at')):
             continue
@@ -73,10 +73,15 @@ def project_snapshot(snapshot, catalog):
         if not (video or short or packet):
             continue
         seen.add((ticker, period))
+        report_date = text(item.get('report_date'), 10)
+        if date_label(report_date) != 'Date unconfirmed':
+            completed_event_dates.add((ticker, report_date))
         history.append({'ticker': ticker, 'company': text(companies.get(ticker) or ticker), 'period': period,
                         'completed_at': item['completed_at'], 'video_url': video, 'short_url': short,
                         'packet_url': packet, 'stock_url': '/shows/' + ticker.lower() if ticker in known else None})
     history.sort(key=lambda r: timestamp(r['completed_at']), reverse=True)
+    # A DONE bundle closes only its source-backed ticker/report-date event.
+    # Completion time is publication workflow evidence, not earnings timing.
     upcoming, seen = [], set()
     forecast = snapshot.get('forecast', {})
     candidates = [row for day in forecast.get('date_cards', []) for row in day.get('candidates', [])]
@@ -86,6 +91,8 @@ def project_snapshot(snapshot, catalog):
         if item.get('screen_status') != 'candidate' or date_label(report_date) == 'Date unconfirmed' or (ticker, report_date) in seen:
             continue
         if not re.fullmatch(r'[A-Z0-9.\-]{1,16}', ticker):
+            continue
+        if (ticker, report_date) in completed_event_dates:
             continue
         seen.add((ticker, report_date))
         exact = timestamp(item.get('report_at'))
