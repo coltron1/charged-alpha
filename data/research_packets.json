@@ -814,6 +814,64 @@
       }
     },
     {
+      "key": "HITI:Q3-FY2026",
+      "year": 2026,
+      "quarter": 3,
+      "fiscal": true,
+      "slug": "hiti-q3-fy2026",
+      "ticker": "HITI",
+      "company": "High Tide Inc.",
+      "period": "Q3 FY2026",
+      "canonical_url": "https://chargedalpha.com/research/hiti-q3-fy2026",
+      "title": "HITI: Germany Scales, but How Much Profit Becomes Cash?",
+      "page_title": "HITI Q3 FY2026 Research Packet — Charged Alpha",
+      "description": "Germany lifts operating earnings, but derivative gains, minority ownership and the full cost of growth keep the cash test unfinished.",
+      "sha256": "f562a0ad91abbfdafa5107271507ae6cba6e4419ee816b725ad05834bf0468ae",
+      "html_file": "research_packets/hiti-q3-fy2026.html",
+      "source_episode": "HITI-Q3-FY2026",
+      "source_staged_at": "2026-09-15T13:44:34Z",
+      "source_sha256": {
+        "READY": "82c50dd7d098df8e399a33c70a26f29a94ef199b0a0c0753f8172ff04e938e24",
+        "handoff.json": "c8afc4fd628ef84655d927f445a45dd62c63658e203ece2c2407b2a140369244",
+        "packet/hiti-q3-fy2026-research-packet.html": "f562a0ad91abbfdafa5107271507ae6cba6e4419ee816b725ad05834bf0468ae",
+        "packet/packet_meta.json": "6e84919a9590b9d5f00894d41a62c6c96169e2ce3022eadfba2e70a05ab80067",
+        "packet/packet.json": "2670ea246e328fa293978b44aa3788c4662b8cb5b8c66927098249db0574738a"
+      },
+      "primary_youtube_long": "qVAFjcu3vDk",
+      "primary_youtube_short": null,
+      "youtube_studio": null,
+      "youtube_studio_short": null,
+      "what_changed": {
+        "summary": "Germany lifts operating earnings, but derivative gains, minority ownership and the full cost of growth keep the cash test unfinished.",
+        "items": [
+          {
+            "title": "Germany now drives most incremental revenue.",
+            "detail": "Remexian contributes C$38.23 M of the C$49.13 M year-on-year sales increase; legacy bricks-and-mortar segment revenue rises 7.3%."
+          },
+          {
+            "title": "Operating improvement survives the accounting clean-up.",
+            "detail": "C$8.71 M operating income is up 133%, but the C$12.75 M net-income headline includes a C$11.79 M derivative gain offset by a C$1.29 M contract-asset loss."
+          },
+          {
+            "title": "Cash is positive, with a narrower definition than total reinvestment.",
+            "detail": "C$7.02 M company FCF deducts sustaining capital and leases; replacing sustaining capital with all PPE and intangible purchases leaves C$5.61 M."
+          },
+          {
+            "title": "The balance-sheet and ownership bridge matters.",
+            "detail": "Restricted cash, cash-settled financing, nonrecourse factoring and Remexian’s 49% minority share all affect the interpretation of consolidated results."
+          },
+          {
+            "title": "Price already requires continued progress.",
+            "detail": "Three valuation routes span roughly USD2.39–2.74. The USD2.60 base case assumes stronger recurring owner cash flow, while current controls remain ineffective."
+          }
+        ]
+      },
+      "source_published": "September 15, 2026",
+      "words": 6616,
+      "figures": 19,
+      "tables": 34
+    },
+    {
       "key": "ASO:Q2-FY2026",
       "year": 2026,
       "quarter": 2,

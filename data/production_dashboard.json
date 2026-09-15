@@ -1,7 +1,7 @@
 {
   "schema": "charged-alpha-public-production/1",
-  "updated_at": "2026-09-15T05:10:15.789222-05:00",
-  "calendar_updated_at": "2026-09-15T03:13:52.685385-05:00",
+  "updated_at": "2026-09-15T08:45:47.914945-05:00",
+  "calendar_updated_at": "2026-09-15T07:17:48.743730-05:00",
   "calendar_status": "fresh",
   "daily_target": 10,
   "history": [
@@ -271,10 +271,10 @@
       "ticker": "FPS",
       "company": "Forgent Power Solutions, Inc.",
       "report_date": "2026-09-15",
-      "report_time_label": "Time unconfirmed",
-      "planned_date": "2026-09-16",
-      "date_status": "Calendar estimate",
-      "source_url": null,
+      "report_time_label": "5:30 AM CDT",
+      "planned_date": "2026-09-15",
+      "date_status": "Issuer-announced",
+      "source_url": "https://ir.forgentpower.com/news-events/press-releases/detail/107/forgent-reports-record-fourth-quarter-and-full-year-2026-results-exceeds-high-end-of-guidance-and-enters-fiscal-2027-with-all-time-high-backlog",
       "stock_url": null
     },
     {

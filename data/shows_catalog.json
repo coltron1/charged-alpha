@@ -10,6 +10,42 @@
   },
   "episodes": [
     {
+      "ticker": "BNTC",
+      "company": "Benitec Biopharma Inc.",
+      "sector": "Healthcare",
+      "quarter": "FY2026",
+      "episode_number": "",
+      "title": "BNTC Stock: $180 Million Cash, But What Does Each Share Own? — FY2026",
+      "published_at": "2026-09-15T13:51:20+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=SW7gDqh4z4w",
+      "spotify_url": "",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/bntc-stock-180-million-cash-but-what-does-each-share-own-%e2%80%94-fy2026/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "HITI",
+      "company": "High Tide Inc.",
+      "sector": "Healthcare",
+      "quarter": "Q3 FY2026",
+      "episode_number": "",
+      "title": "HITI Stock: Germany Scales, but Where Is the Cash? — Q3 FY2026",
+      "published_at": "2026-09-15T12:21:50+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=qVAFjcu3vDk",
+      "spotify_url": "https://open.spotify.com/episode/2Z0gAdKayFK8SkCXf4gtHe",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/hiti-stock-germany-scales-but-where-is-the-cash-%e2%80%94-q3-fy2026/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
       "ticker": "IMPP",
       "company": "Imperial Petroleum Inc.",
       "sector": "Energy",
@@ -45814,7 +45850,7 @@
       ]
     }
   ],
-  "last_synced_at": "2026-09-14T12:58:44-05:00",
+  "last_synced_at": "2026-09-15T08:56:10-05:00",
   "stock_metadata": {
     "A": {
       "company": "Agilent Technologies, Inc.",
@@ -46460,6 +46496,10 @@
     "BNS": {
       "company": "Bank Nova Scotia Halifax Pfd 3",
       "sector": "Financial Services"
+    },
+    "BNTC": {
+      "company": "Benitec Biopharma Inc.",
+      "sector": "Healthcare"
     },
     "BNTX": {
       "company": "BioNTech SE",
