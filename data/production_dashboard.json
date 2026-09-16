@@ -1,7 +1,7 @@
 {
   "schema": "charged-alpha-public-production/1",
-  "updated_at": "2026-09-16T11:43:40.258248-05:00",
-  "calendar_updated_at": "2026-09-16T10:03:52.866259-05:00",
+  "updated_at": "2026-09-16T12:02:59.349021-05:00",
+  "calendar_updated_at": "2026-09-16T12:02:59.047581-05:00",
   "calendar_status": "fresh",
   "daily_target": 10,
   "history": [
@@ -426,16 +426,6 @@
       "date_status": "Calendar estimate",
       "source_url": null,
       "stock_url": null
-    },
-    {
-      "ticker": "AIR",
-      "company": "AAR Corp.",
-      "report_date": "2026-09-22",
-      "report_time_label": "Time unconfirmed",
-      "planned_date": "",
-      "date_status": "Calendar estimate",
-      "source_url": null,
-      "stock_url": "/shows/air"
     },
     {
       "ticker": "KBH",
