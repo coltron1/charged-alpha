@@ -9,6 +9,7 @@ from zoneinfo import ZoneInfo
 ROOT = Path(__file__).resolve().parent
 CHICAGO = ZoneInfo('America/Chicago')
 SCHEMA = 'charged-alpha-public-production/1'
+PUBLISHED_RESULTS_STATUS = 'Actual results released; issuer/EDGAR source verified'
 
 
 def text(value, limit=180):
@@ -89,6 +90,8 @@ def project_snapshot(snapshot, catalog):
     for item in candidates:
         ticker, report_date = text(item.get('ticker'), 16), text(item.get('report_date'), 10)
         if item.get('screen_status') != 'candidate' or date_label(report_date) == 'Date unconfirmed' or (ticker, report_date) in seen:
+            continue
+        if item.get('date_status') == PUBLISHED_RESULTS_STATUS:
             continue
         if not re.fullmatch(r'[A-Z0-9.\-]{1,16}', ticker):
             continue

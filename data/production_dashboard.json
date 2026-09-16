@@ -1,7 +1,7 @@
 {
   "schema": "charged-alpha-public-production/1",
-  "updated_at": "2026-09-15T21:27:06.735867-05:00",
-  "calendar_updated_at": "2026-09-15T21:26:48.296126-05:00",
+  "updated_at": "2026-09-16T10:03:53.598556-05:00",
+  "calendar_updated_at": "2026-09-16T10:03:52.866259-05:00",
   "calendar_status": "fresh",
   "daily_target": 10,
   "history": [
@@ -358,16 +358,6 @@
       "stock_url": null
     },
     {
-      "ticker": "LUXE",
-      "company": "LuxExperience B.V.",
-      "report_date": "2026-09-16",
-      "report_time_label": "Time unconfirmed",
-      "planned_date": "2026-09-17",
-      "date_status": "Calendar estimate",
-      "source_url": null,
-      "stock_url": null
-    },
-    {
       "ticker": "HERE",
       "company": "Here Group Limited",
       "report_date": "2026-09-16",
@@ -422,7 +412,7 @@
       "company": "Abivax S.A.",
       "report_date": "2026-09-21",
       "report_time_label": "Time unconfirmed",
-      "planned_date": "",
+      "planned_date": "2026-09-22",
       "date_status": "Calendar estimate",
       "source_url": null,
       "stock_url": null
@@ -432,10 +422,70 @@
       "company": "AMTD Digital Inc.",
       "report_date": "2026-09-21",
       "report_time_label": "Time unconfirmed",
+      "planned_date": "2026-09-22",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": null
+    },
+    {
+      "ticker": "AIR",
+      "company": "AAR Corp.",
+      "report_date": "2026-09-22",
+      "report_time_label": "Time unconfirmed",
+      "planned_date": "",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": "/shows/air"
+    },
+    {
+      "ticker": "KBH",
+      "company": "KB Home",
+      "report_date": "2026-09-22",
+      "report_time_label": "Time unconfirmed",
       "planned_date": "",
       "date_status": "Calendar estimate",
       "source_url": null,
       "stock_url": null
+    },
+    {
+      "ticker": "MLKN",
+      "company": "MillerKnoll, Inc.",
+      "report_date": "2026-09-22",
+      "report_time_label": "Time unconfirmed",
+      "planned_date": "",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": null
+    },
+    {
+      "ticker": "AZO",
+      "company": "AutoZone, Inc.",
+      "report_date": "2026-09-22",
+      "report_time_label": "Time unconfirmed",
+      "planned_date": "",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": "/shows/azo"
+    },
+    {
+      "ticker": "WOR",
+      "company": "Worthington Industries, Inc.",
+      "report_date": "2026-09-22",
+      "report_time_label": "Time unconfirmed",
+      "planned_date": "",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": "/shows/wor"
+    },
+    {
+      "ticker": "THO",
+      "company": "Thor Industries, Inc.",
+      "report_date": "2026-09-22",
+      "report_time_label": "Time unconfirmed",
+      "planned_date": "",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": "/shows/tho"
     }
   ]
 }

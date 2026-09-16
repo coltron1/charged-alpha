@@ -53,6 +53,17 @@ class ProductionBoardTests(unittest.TestCase):
         result = project_snapshot(data, {})
         self.assertEqual([row['report_date'] for row in result['upcoming']], ['2026-09-14'])
 
+    def test_published_results_are_not_upcoming_and_future_issuer_date_survives(self):
+        data = snapshot()
+        released = data['forecast']['date_cards'][0]['candidates'][0]
+        released['date_status'] = 'Actual results released; issuer/EDGAR source verified'
+        future = {**released, 'ticker': 'FUT', 'report_date': '2026-09-22',
+                  'planned_date': '2026-09-22', 'date_status': 'Issuer-announced date'}
+        data['forecast']['date_cards'][0]['candidates'].append(future)
+        result = project_snapshot(data, {})
+        self.assertEqual([row['ticker'] for row in result['upcoming']], ['FUT'])
+        self.assertEqual(result['upcoming'][0]['date_status'], 'Issuer-announced')
+
     def test_bad_links_cannot_expose_local_files_or_secrets(self):
         for url in ('file:///Users/colton/data', 'http://127.0.0.1:8766/', 'https://example.com/?apikey=secret', 'javascript:alert(1)'):
             self.assertIsNone(public_url(url))
