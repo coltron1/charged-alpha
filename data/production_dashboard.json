@@ -1,7 +1,7 @@
 {
   "schema": "charged-alpha-public-production/1",
-  "updated_at": "2026-09-16T14:02:03.463601-05:00",
-  "calendar_updated_at": "2026-09-16T14:02:03.168187-05:00",
+  "updated_at": "2026-09-16T16:18:57.510197-05:00",
+  "calendar_updated_at": "2026-09-16T16:14:36.933378-05:00",
   "calendar_status": "fresh",
   "daily_target": 10,
   "history": [
@@ -320,26 +320,6 @@
     {
       "ticker": "ESP",
       "company": "Espey Mfg. & Electronics Corp.",
-      "report_date": "2026-09-16",
-      "report_time_label": "Time unconfirmed",
-      "planned_date": "2026-09-17",
-      "date_status": "Calendar estimate",
-      "source_url": null,
-      "stock_url": null
-    },
-    {
-      "ticker": "LEN",
-      "company": "Lennar Corporation",
-      "report_date": "2026-09-16",
-      "report_time_label": "After U.S. market close",
-      "planned_date": "2026-09-17",
-      "date_status": "Issuer-announced",
-      "source_url": "https://newsroom.lennar.com/2026-09-02-Lennar-Corporation-to-Broadcast-Its-Third-Quarter-2026-Earnings-Call-on-September-17,-2026",
-      "stock_url": "/shows/len"
-    },
-    {
-      "ticker": "ALMU",
-      "company": "Aeluma, Inc.",
       "report_date": "2026-09-16",
       "report_time_label": "Time unconfirmed",
       "planned_date": "2026-09-17",
