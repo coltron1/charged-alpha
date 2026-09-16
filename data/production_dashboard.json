@@ -1,7 +1,7 @@
 {
   "schema": "charged-alpha-public-production/1",
-  "updated_at": "2026-09-15T17:51:05.058883-05:00",
-  "calendar_updated_at": "2026-09-15T17:49:27.951124-05:00",
+  "updated_at": "2026-09-15T21:27:06.735867-05:00",
+  "calendar_updated_at": "2026-09-15T21:26:48.296126-05:00",
   "calendar_status": "fresh",
   "daily_target": 10,
   "history": [
@@ -318,16 +318,6 @@
   ],
   "upcoming": [
     {
-      "ticker": "HERE",
-      "company": "Here Group Limited",
-      "report_date": "2026-09-15",
-      "report_time_label": "Time unconfirmed",
-      "planned_date": "2026-09-16",
-      "date_status": "Calendar estimate",
-      "source_url": null,
-      "stock_url": null
-    },
-    {
       "ticker": "ESP",
       "company": "Espey Mfg. & Electronics Corp.",
       "report_date": "2026-09-16",
@@ -370,6 +360,16 @@
     {
       "ticker": "LUXE",
       "company": "LuxExperience B.V.",
+      "report_date": "2026-09-16",
+      "report_time_label": "Time unconfirmed",
+      "planned_date": "2026-09-17",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": null
+    },
+    {
+      "ticker": "HERE",
+      "company": "Here Group Limited",
       "report_date": "2026-09-16",
       "report_time_label": "Time unconfirmed",
       "planned_date": "2026-09-17",
