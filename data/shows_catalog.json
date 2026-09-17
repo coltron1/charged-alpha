@@ -34260,7 +34260,7 @@
           ],
           "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage.",
           "earnings_youtube_url": "https://www.youtube.com/watch?v=CxEKUBz7PEI",
-          "earnings_match": "verified_public_receipt"
+          "earnings_match": "stock_period_date"
         },
         {
           "title": "LEN Stock: Lennar Q3 FY2026 — Land-Light, Cash-Heavy #Shorts",
@@ -46029,7 +46029,7 @@
       ]
     }
   ],
-  "last_synced_at": "2026-09-16T22:40:43-05:00",
+  "last_synced_at": "2026-09-17T07:15:55-05:00",
   "stock_metadata": {
     "A": {
       "company": "Agilent Technologies, Inc.",
