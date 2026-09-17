@@ -2,6 +2,7 @@
 const {chromium} = require('playwright');
 const assert = require('node:assert/strict');
 const base = process.argv[2] || 'http://127.0.0.1:5063';
+const fpsSnapshotDate = require('../data/stock_research_snapshots.json').profiles.FPS.observed_at.slice(0, 10);
 const figures = {status:'ready', fetched_at:'2026-09-10T00:00:00Z', currency:'USD', source:'Test statement source', source_url:'https://example.com/statements',
   quarterly:[{date:'2026-03-31', revenue:100, net_income:10, eps:1, free_cashflow:null, operating_margin:10},
     {date:'2026-06-30', revenue:120, net_income:14, eps:1.4, free_cashflow:12, operating_margin:12}],
@@ -56,7 +57,7 @@ async function assertComparisonTable(page, expected) {
           const overview = await page.locator('#overview').innerText();
           assert.match(overview,/Forgent Power Solutions/);
           assert.doesNotMatch(overview,/Market snapshot unavailable/);
-          assert.match(overview,/Snapshot 2026-09-15/);
+          assert.match(overview,new RegExp('Snapshot ' + fpsSnapshotDate));
           if (width === 390 || width === 1440) {
             await page.screenshot({path:'/tmp/research-fps-' + width + '.png'});
           }
