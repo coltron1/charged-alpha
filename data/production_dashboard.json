@@ -1,10 +1,30 @@
 {
   "schema": "charged-alpha-public-production/1",
-  "updated_at": "2026-09-17T07:15:49.735810-05:00",
+  "updated_at": "2026-09-17T08:31:36.905224-05:00",
   "calendar_updated_at": "2026-09-17T05:39:49.516761-05:00",
   "calendar_status": "fresh",
   "daily_target": 10,
   "history": [
+    {
+      "ticker": "IMMR",
+      "company": "Immersion Corporation",
+      "period": "Q1 FY2027",
+      "completed_at": "2026-09-17T08:30:52.182039-05:00",
+      "video_url": "https://youtu.be/MiVqNnA85cY",
+      "short_url": "https://youtu.be/0X11liA7XzU",
+      "packet_url": "https://chargedalpha.com/research/immr-q1-fy2027",
+      "stock_url": "/shows/immr"
+    },
+    {
+      "ticker": "UROY",
+      "company": "Uranium Royalty Corp.",
+      "period": "Q1 FY2027",
+      "completed_at": "2026-09-17T08:29:15.926008-05:00",
+      "video_url": "https://youtu.be/OQeX8vD5aQE",
+      "short_url": "https://youtu.be/sYTK_of1Ges",
+      "packet_url": "https://chargedalpha.com/research/uroy-q1-fy2027",
+      "stock_url": "/shows/uroy"
+    },
     {
       "ticker": "ALMU",
       "company": "Aeluma, Inc.",
