@@ -1,10 +1,30 @@
 {
   "schema": "charged-alpha-public-production/1",
-  "updated_at": "2026-09-16T21:42:59.744703-05:00",
+  "updated_at": "2026-09-16T22:31:23.538645-05:00",
   "calendar_updated_at": "2026-09-16T18:38:48.744628-05:00",
   "calendar_status": "fresh",
   "daily_target": 10,
   "history": [
+    {
+      "ticker": "ALMU",
+      "company": "Aeluma, Inc.",
+      "period": "Q4 FY2026",
+      "completed_at": "2026-09-16T22:25:06.582991-05:00",
+      "video_url": "https://youtu.be/CxEKUBz7PEI",
+      "short_url": "https://youtu.be/bsxqopJy-As",
+      "packet_url": "https://chargedalpha.com/research/almu-q4-fy2026",
+      "stock_url": "/shows/almu"
+    },
+    {
+      "ticker": "LEN",
+      "company": "Lennar Corporation",
+      "period": "Q3 FY2026",
+      "completed_at": "2026-09-16T22:17:07.023343-05:00",
+      "video_url": "https://youtu.be/Job9Hgy3LYs",
+      "short_url": "https://youtu.be/KP6l-T-aFao",
+      "packet_url": "https://chargedalpha.com/research/len-q3-fy2026",
+      "stock_url": "/shows/len"
+    },
     {
       "ticker": "CIEN",
       "company": "Ciena Corporation",

@@ -34248,6 +34248,21 @@
       "description": "Fast clips that point viewers into full research videos and stock pages.",
       "videos": [
         {
+          "title": "ALMU Stock: Aeluma Q4 FY2026 — CHIPS Funding Has an Equity Price #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/bsxqopJy-As",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-09-16T20:18:48-07:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "ALMU"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage.",
+          "earnings_youtube_url": "https://www.youtube.com/watch?v=CxEKUBz7PEI",
+          "earnings_match": "verified_public_receipt"
+        },
+        {
           "title": "LEN Stock: Lennar Q3 FY2026 — Land-Light, Cash-Heavy #Shorts",
           "youtube_url": "https://www.youtube.com/shorts/KP6l-T-aFao",
           "spotify_url": "",
@@ -46014,7 +46029,7 @@
       ]
     }
   ],
-  "last_synced_at": "2026-09-16T21:55:05-05:00",
+  "last_synced_at": "2026-09-16T22:30:00-05:00",
   "stock_metadata": {
     "A": {
       "company": "Agilent Technologies, Inc.",
