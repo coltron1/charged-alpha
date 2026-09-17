@@ -582,6 +582,64 @@
       "tables": 30
     },
     {
+      "key": "ALMU:Q4-FY2026",
+      "year": 2026,
+      "quarter": 4,
+      "fiscal": true,
+      "slug": "almu-q4-fy2026",
+      "ticker": "ALMU",
+      "company": "Aeluma, Inc.",
+      "period": "Q4 FY2026",
+      "canonical_url": "https://chargedalpha.com/research/almu-q4-fy2026",
+      "title": "ALMU: The $30 Million CHIPS Deal Has an Equity Price",
+      "page_title": "ALMU Q4 FY2026 Research Packet — Charged Alpha",
+      "description": "Aeluma has cash to fund its photonics ambitions, but conditional CHIPS funding comes with equity and commercial scale remains unproven.",
+      "sha256": "57fc114713eeb885cb58389c5893bc82ae503c18bab23c11f83c906ba45e6c2e",
+      "html_file": "research_packets/almu-q4-fy2026.html",
+      "source_episode": "ALMU-Q4-FY2026",
+      "source_staged_at": "2026-09-17T03:06:41Z",
+      "source_sha256": {
+        "READY": "9c0c5f9c56209f08662f700e621ac6e916603c1340a72a076711f2595f3d67a7",
+        "handoff.json": "3ffae0423d2e70c221abec91547e6ee928dc5180d57aa60b754a72d6474ab657",
+        "packet/almu-q4-fy2026-research-packet.html": "57fc114713eeb885cb58389c5893bc82ae503c18bab23c11f83c906ba45e6c2e",
+        "packet/packet_meta.json": "6ea04c14794cbe6cf54ff7d61bd71af49f846d3ed1808231fa4db34028183b26",
+        "packet/packet.json": "8993ab8ceef4d14b9e32958e4c131648f808fc222c570d6ee11e3e654ca89b25"
+      },
+      "primary_youtube_long": "CxEKUBz7PEI",
+      "primary_youtube_short": null,
+      "youtube_studio": null,
+      "youtube_studio_short": null,
+      "what_changed": {
+        "summary": "Aeluma has cash to fund its photonics ambitions, but conditional CHIPS funding comes with equity and commercial scale remains unproven.",
+        "items": [
+          {
+            "title": "The CHIPS proposal has an equity price.",
+            "detail": "July 29 terms call for equity securities equal in value to the final award; up to $30M is conditional and is not cash already held."
+          },
+          {
+            "title": "Commercialization spending accelerated before revenue.",
+            "detail": "Q4 revenue was $0.582M while research and development expense reached $2.274M; GAAP loss widened to $4.013M."
+          },
+          {
+            "title": "The cash increase came from capital markets.",
+            "detail": "FY2026 public-offering proceeds net of costs were $43.478M, against $3.912M of computed free-cash-flow use."
+          },
+          {
+            "title": "Count the new owners.",
+            "detail": "June-end basic shares rose 21.4% year over year; the September 11 cover reports 19,265,671 shares, above the denominator implied by provider capitalization."
+          },
+          {
+            "title": "Controls and commercial proof both remain unfinished.",
+            "detail": "The annual report still describes an unresolved material weakness, while management describes customer NRE negotiations rather than binding high-volume revenue commitments."
+          }
+        ]
+      },
+      "source_published": "September 16, 2026",
+      "words": 6008,
+      "figures": 15,
+      "tables": 27
+    },
+    {
       "key": "CPRT:Q4-FY2026",
       "year": 2026,
       "quarter": 4,
@@ -986,6 +1044,64 @@
       "words": 6616,
       "figures": 19,
       "tables": 34
+    },
+    {
+      "key": "LEN:Q3-FY2026",
+      "year": 2026,
+      "quarter": 3,
+      "fiscal": true,
+      "slug": "len-q3-fy2026",
+      "ticker": "LEN",
+      "company": "Lennar Corporation",
+      "period": "Q3 FY2026",
+      "canonical_url": "https://chargedalpha.com/research/len-q3-fy2026",
+      "title": "LEN: Land-Light, Cash-Heavy",
+      "page_title": "LEN Q3 FY2026 Research Packet — Charged Alpha",
+      "description": "Lennar is building faster with fewer owned lots, but inventory, land deposits and borrowing show why a cheaper-looking balance sheet still needs a cash recovery.",
+      "sha256": "9202d54213153a8d7e1fe6981413c2c8b09c53933fe1587118b9fa58c24d10ce",
+      "html_file": "research_packets/len-q3-fy2026.html",
+      "source_episode": "LEN-Q3-FY2026",
+      "source_staged_at": "2026-09-17T02:35:42Z",
+      "source_sha256": {
+        "READY": "afe1f32a22f7564f3c9f507aad9bbd5792f8768f82936335e8b3597712a18cb0",
+        "handoff.json": "2ae21e58a6dd9d43315ccc0ef1c98f6148cd950d6f804a4a85fedd1b7a2081ba",
+        "packet/len-q3-fy2026-research-packet.html": "9202d54213153a8d7e1fe6981413c2c8b09c53933fe1587118b9fa58c24d10ce",
+        "packet/packet_meta.json": "58852815cf42062c18e0449928e5fdc27ba14b2b656e3115a5691fc66387f22c",
+        "packet/packet.json": "b89336556826766ebd948df042da2a2f6ec99c5ea7cc27f69639ae6fae9bd7a3"
+      },
+      "primary_youtube_long": "Job9Hgy3LYs",
+      "primary_youtube_short": null,
+      "youtube_studio": null,
+      "youtube_studio_short": null,
+      "what_changed": {
+        "summary": "Lennar is building faster with fewer owned lots, but inventory, land deposits and borrowing show why a cheaper-looking balance sheet still needs a cash recovery.",
+        "items": [
+          {
+            "title": "Land-light still ties up cash.",
+            "detail": "Homebuilding cash fell to $1.150 billion while owned inventory and land deposits rose; fewer owned homesites are only one part of capital employed."
+          },
+          {
+            "title": "Efficiency improved faster than demand.",
+            "detail": "Cycle time fell to 116 days and construction cost per square foot fell 6% year over year, while new orders declined 9%."
+          },
+          {
+            "title": "The volume target moved down.",
+            "detail": "Full-year deliveries are now expected at 80,000–81,000, versus 82,000–83,000 previously; Q4 gross margin guidance is 15.5%–16.0%."
+          },
+          {
+            "title": "Small adjusted-EPS gap hides offsetting items.",
+            "detail": "Technology investment losses and a Financial Services benefit pull in opposite directions; $1.23 adjusted EPS does not erase operating pressure."
+          },
+          {
+            "title": "Price offers limited cushion.",
+            "detail": "Our $75 base and probability-weighted values sit near a dated $76.74 after-hours trade; High uncertainty calls for a larger margin of safety before BUY."
+          }
+        ]
+      },
+      "source_published": "September 16, 2026",
+      "words": 6186,
+      "figures": 16,
+      "tables": 29
     },
     {
       "key": "LAES:H1-2026",
