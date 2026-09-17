@@ -1220,6 +1220,64 @@
       "tables": 29
     },
     {
+      "key": "IPHA:H1-2026",
+      "year": 2026,
+      "quarter": 0,
+      "fiscal": false,
+      "slug": "ipha-h1-2026",
+      "ticker": "IPHA",
+      "company": "Innate Pharma S.A.",
+      "period": "H1 2026",
+      "canonical_url": "https://chargedalpha.com/research/ipha-h1-2026",
+      "title": "IPHA: Funding Bought Time. The Science Still Has to Pay.",
+      "page_title": "IPHA H1 2026 Research Packet — Charged Alpha",
+      "description": "Sobi closed, new shares arrived and runway extended; a careful cash-and-pipeline valuation explains our HOLD at $1.80 base value.",
+      "sha256": "81edca0a9e343bef229081c8e6da8fb8f411ce9b20069fcb527b7d7cf6ee62fc",
+      "html_file": "research_packets/ipha-h1-2026.html",
+      "source_episode": "IPHA-H1-2026",
+      "source_staged_at": "2026-09-17T17:16:41Z",
+      "source_sha256": {
+        "READY": "5bfa27e0e1520ed9fb8a7ac81713eacf4369c8e7d8052d5d1ac1c6a47477ad48",
+        "handoff.json": "31994c1d7518fe2cc7ac1ddb7c92a0cf4692d246d8e16f011915a800dc585b7d",
+        "packet/ipha-h1-2026-research-packet.html": "81edca0a9e343bef229081c8e6da8fb8f411ce9b20069fcb527b7d7cf6ee62fc",
+        "packet/packet_meta.json": "c8597ad42e5aaa0cd7ceab0cfad8c53134777cbad4a374daa089a484987b5d43",
+        "packet/packet.json": "2106a4a2ba82e5f2527f5ca24231aff3924bfb1bbe7cb184d667aae9c7434ad5"
+      },
+      "primary_youtube_long": "EZWpLZhZzlo",
+      "primary_youtube_short": null,
+      "youtube_studio": null,
+      "youtube_studio_short": null,
+      "what_changed": {
+        "summary": "Sobi closed, new shares arrived and runway extended; a careful cash-and-pipeline valuation explains our HOLD at $1.80 base value.",
+        "items": [
+          {
+            "title": "The transaction closed.",
+            "detail": "Sobi conditions were fulfilled September 16; $75M is triggered, but the release still describes payment as expected."
+          },
+          {
+            "title": "The share count changed.",
+            "detail": "August added 17.647M ordinary shares. Disclosed post-placement ordinary shares are 111.719M; our valuation uses 117.822M fully diluted."
+          },
+          {
+            "title": "Revenue is not commercial traction.",
+            "detail": "The €3.115M licensing line includes €2.5M from an expired Sanofi option; research financing brings combined income to €5.663M."
+          },
+          {
+            "title": "Headline cash has several layers.",
+            "detail": "€21.376M includes €10.480M noncurrent financial assets; separate financial and collaboration obligations also matter."
+          },
+          {
+            "title": "The clinical calendar decides the next chapter.",
+            "detail": "PACIFIC-9 is expected in H2 2026; IPH4502 initial data in 2026; TELLOMAK-3 first patient in Q1 2027."
+          }
+        ]
+      },
+      "source_published": "September 17, 2026",
+      "words": 5946,
+      "figures": 15,
+      "tables": 30
+    },
+    {
       "key": "LAES:H1-2026",
       "year": 2026,
       "quarter": 0,

@@ -10,6 +10,24 @@
   },
   "episodes": [
     {
+      "ticker": "IPHA",
+      "company": "Innate Pharma S.A.",
+      "sector": "Healthcare",
+      "quarter": "H1 2026",
+      "episode_number": "",
+      "title": "IPHA Stock: $75M Buys Time, Not Approval — Innate Pharma H1 2026",
+      "published_at": "2026-09-17T17:13:05+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=EZWpLZhZzlo",
+      "spotify_url": "",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/ipha-stock-75m-buys-time-not-approval-%e2%80%94-innate-pharma-h1-2026/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
       "ticker": "IMMR",
       "company": "Immersion Corporation",
       "sector": "Technology",
@@ -34284,6 +34302,22 @@
       "description": "Fast clips that point viewers into full research videos and stock pages.",
       "videos": [
         {
+          "title": "IPHA Stock: Innate Pharma H1 2026 Earnings — $75M Buys Time #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/MDR4R99MO3g",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-09-17T17:30:21+00:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "IPHA",
+            "H1"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage.",
+          "earnings_youtube_url": "https://www.youtube.com/watch?v=EZWpLZhZzlo",
+          "earnings_match": "stock_period_date"
+        },
+        {
           "title": "IMMR Stock: What Is Recurring? — Q1 FY2027 #Shorts",
           "youtube_url": "https://www.youtube.com/shorts/0X11liA7XzU",
           "spotify_url": "",
@@ -46095,7 +46129,7 @@
       ]
     }
   ],
-  "last_synced_at": "2026-09-17T08:19:17-05:00",
+  "last_synced_at": "2026-09-17T12:32:13-05:00",
   "stock_metadata": {
     "A": {
       "company": "Agilent Technologies, Inc.",
@@ -48235,6 +48269,10 @@
     "IP": {
       "company": "International Paper Company",
       "sector": "Consumer Cyclical"
+    },
+    "IPHA": {
+      "company": "Innate Pharma S.A.",
+      "sector": "Healthcare"
     },
     "IQ": {
       "company": "iQIYI, Inc.",
