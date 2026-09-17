@@ -350,6 +350,64 @@
       }
     },
     {
+      "key": "IMMR:Q1-FY2027",
+      "year": 2027,
+      "quarter": 1,
+      "fiscal": true,
+      "slug": "immr-q1-fy2027",
+      "ticker": "IMMR",
+      "company": "Immersion Corporation",
+      "period": "Q1 FY2027",
+      "canonical_url": "https://chargedalpha.com/research/immr-q1-fy2027",
+      "title": "IMMR: Profit Recovered. What Is Recurring?",
+      "page_title": "IMMR Q1 FY2027 Research Packet — Charged Alpha",
+      "description": "Immersion returned to attributable profit, but investment gains, a minority-owned consolidated retailer and written options complicate the apparent cash bargain.",
+      "sha256": "33baf240870efb778f96f5feeb28fbf7b75665e9a3d3a5dad2852df9e33d1195",
+      "html_file": "research_packets/immr-q1-fy2027.html",
+      "source_episode": "IMMR-Q1-FY2027",
+      "source_staged_at": "2026-09-17T13:02:08Z",
+      "source_sha256": {
+        "READY": "f6aade987b82dda35e6113a636952baf584b162fe03553235390a64860220ca9",
+        "handoff.json": "ba42967b2ddea34280a57756ee7880d0899a8bfbeb0b8aee0419a0d77ea46b65",
+        "packet/immr-q1-fy2027-research-packet.html": "33baf240870efb778f96f5feeb28fbf7b75665e9a3d3a5dad2852df9e33d1195",
+        "packet/packet_meta.json": "d68125fe244a41eea883f5cff7531347aaa8d73ceb88a41d5f201a21cd6e83e8",
+        "packet/packet.json": "12aff513e2f334df78456ab82a474d7b2c82cb73eadf97b7bfc9f6d3cae64081"
+      },
+      "primary_youtube_long": "MiVqNnA85cY",
+      "primary_youtube_short": null,
+      "youtube_studio": null,
+      "youtube_studio_short": null,
+      "what_changed": {
+        "summary": "Immersion returned to attributable profit, but investment gains, a minority-owned consolidated retailer and written options complicate the apparent cash bargain.",
+        "items": [
+          {
+            "title": "The profit rebound is not all operating.",
+            "detail": "Haptic operating profit was $0.306M; $13.763M of investment and derivative gains supported other income."
+          },
+          {
+            "title": "Consolidation is not ownership.",
+            "detail": "Immersion consolidates BNED while owning 32.3%; the other shareholders receive most of that subsidiary’s economics."
+          },
+          {
+            "title": "Cash has claims attached.",
+            "detail": "Our conservative parent liquid bridge deducts all $54.375M of parent liabilities, including written options, from cash and marketable equities."
+          },
+          {
+            "title": "Two reporting conclusions can coexist.",
+            "detail": "Nasdaq closed the late-filing matter in May, while management still describes July controls as ineffective."
+          },
+          {
+            "title": "HOLD is a valuation judgment.",
+            "detail": "Our $7.50 base is close to the $7.12 dated price. A conditional entry near $5.63 requires the asset and operating thesis to remain intact."
+          }
+        ]
+      },
+      "source_published": "September 17, 2026",
+      "words": 6905,
+      "figures": 17,
+      "tables": 33
+    },
+    {
       "key": "ORCL:Q1-FY2027",
       "year": 2027,
       "quarter": 1,
@@ -406,6 +464,64 @@
           }
         ]
       }
+    },
+    {
+      "key": "UROY:Q1-FY2027",
+      "year": 2027,
+      "quarter": 1,
+      "fiscal": true,
+      "slug": "uroy-q1-fy2027",
+      "ticker": "UROY",
+      "company": "Uranium Royalty Corp.",
+      "period": "Q1 FY2027",
+      "canonical_url": "https://chargedalpha.com/research/uroy-q1-fy2027",
+      "title": "UROY: Surging Earnings, a Bigger Share Count, and a January Debt Deadline",
+      "page_title": "UROY Q1 FY2027 Research Packet — Charged Alpha",
+      "description": "Uranium inventory sales funded a transformative royalty acquisition, but current shares, restricted cash and the January bridge repayment matter more than headline EPS.",
+      "sha256": "c48abc865a1769a98bcd9d121c6747107153b440682a8aac964a4d11770d879e",
+      "html_file": "research_packets/uroy-q1-fy2027.html",
+      "source_episode": "UROY-Q1-FY2027",
+      "source_staged_at": "2026-09-17T12:45:22Z",
+      "source_sha256": {
+        "READY": "dceddc463cb4760ba629f20f58b8f6a8fe45b110082546b7d009fe4c70fe0171",
+        "handoff.json": "1fb55b6f8aef3acea76409bca56ef4ce6d080fe68e6349df872efd6d0c04295f",
+        "packet/uroy-q1-fy2027-research-packet.html": "c48abc865a1769a98bcd9d121c6747107153b440682a8aac964a4d11770d879e",
+        "packet/packet_meta.json": "5cecd62eebfd2825898105381c6efe052f4aa4fb03a719e492881e00ed244eb2",
+        "packet/packet.json": "12f08983a8fc1a6a02700f8085066c6bfc62edd413dc4f1230c003c99b943838"
+      },
+      "primary_youtube_long": "OQeX8vD5aQE",
+      "primary_youtube_short": null,
+      "youtube_studio": null,
+      "youtube_studio_short": null,
+      "what_changed": {
+        "summary": "Uranium inventory sales funded a transformative royalty acquisition, but current shares, restricted cash and the January bridge repayment matter more than headline EPS.",
+        "items": [
+          {
+            "title": "The inventory engine was monetized.",
+            "detail": "Physical uranium sales generated $50.967M of revenue, while remaining inventory carrying value fell to $0.220M. Repeating this quarter requires replenishment or new royalty receipts."
+          },
+          {
+            "title": "The denominator changed.",
+            "detail": "July-end common shares plus exchangeables total 381.067M, far above the quarter’s 157.281M weighted diluted average. Current valuation uses current economic shares."
+          },
+          {
+            "title": "Cash has different priorities.",
+            "detail": "Unrestricted cash is $54.104M; another $49.547M is restricted and cannot simply be added to discretionary liquidity."
+          },
+          {
+            "title": "January is a real financing test.",
+            "detail": "A $40M bridge balance must be repaid by January 31, 2027. Management explicitly says substantial doubt about continuing as a going concern is not alleviated."
+          },
+          {
+            "title": "Sweetwater’s full economics are still emerging.",
+            "detail": "The deal closed July 27; the quarter includes only the brief post-acquisition period. Purchase accounting, minority interests and debt service shape what reaches common owners."
+          }
+        ]
+      },
+      "source_published": "September 16, 2026",
+      "words": 5668,
+      "figures": 14,
+      "tables": 24
     },
     {
       "key": "USAU:Q1-FY2027",

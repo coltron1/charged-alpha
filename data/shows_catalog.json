@@ -10,6 +10,42 @@
   },
   "episodes": [
     {
+      "ticker": "IMMR",
+      "company": "Immersion Corporation",
+      "sector": "Technology",
+      "quarter": "Q1 FY2027",
+      "episode_number": "",
+      "title": "IMMR Stock: Profit Recovered. What Is Recurring? — Q1 FY2027",
+      "published_at": "2026-09-17T12:56:52+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=MiVqNnA85cY",
+      "spotify_url": "https://open.spotify.com/episode/1io9czm2YTn1ULobwF7WRG",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/immr-stock-profit-recovered-what-is-recurring-%e2%80%94-q1-fy2027/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "UROY",
+      "company": "Uranium Royalty Corp.",
+      "sector": "Energy",
+      "quarter": "Q1 FY2027",
+      "episode_number": "",
+      "title": "UROY Stock: Profit Surge, New Owners, and a $40M Deadline — Q1 FY2027",
+      "published_at": "2026-09-17T12:36:42+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=OQeX8vD5aQE",
+      "spotify_url": "https://open.spotify.com/episode/1BIp7pSyov9fRop7S0we1n",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/uroy-stock-profit-surge-new-owners-and-a-40m-deadline-%e2%80%94-q1-fy2027/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
       "ticker": "ALMU",
       "company": "Aeluma, Inc.",
       "sector": "Technology",
@@ -34248,6 +34284,36 @@
       "description": "Fast clips that point viewers into full research videos and stock pages.",
       "videos": [
         {
+          "title": "IMMR Stock: What Is Recurring? — Q1 FY2027 #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/0X11liA7XzU",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-09-17T13:14:39+00:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "IMMR"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage.",
+          "earnings_youtube_url": "https://www.youtube.com/watch?v=MiVqNnA85cY",
+          "earnings_match": "stock_period_date"
+        },
+        {
+          "title": "UROY Stock: Uranium Royalty Q1 FY2027 — The $40M Deadline #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/sYTK_of1Ges",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-09-17T13:08:16+00:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "UROY"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage.",
+          "earnings_youtube_url": "https://www.youtube.com/watch?v=OQeX8vD5aQE",
+          "earnings_match": "stock_period_date"
+        },
+        {
           "title": "ALMU Stock: Aeluma Q4 FY2026 — CHIPS Funding Has an Equity Price #Shorts",
           "youtube_url": "https://www.youtube.com/shorts/bsxqopJy-As",
           "spotify_url": "",
@@ -46029,7 +46095,7 @@
       ]
     }
   ],
-  "last_synced_at": "2026-09-17T07:15:55-05:00",
+  "last_synced_at": "2026-09-17T08:19:17-05:00",
   "stock_metadata": {
     "A": {
       "company": "Agilent Technologies, Inc.",
@@ -48110,6 +48176,10 @@
       "company": "Illumina, Inc.",
       "sector": "Healthcare"
     },
+    "IMMR": {
+      "company": "Immersion Corporation",
+      "sector": "Technology"
+    },
     "IMO": {
       "company": "Imperial Oil Limited",
       "sector": "Energy"
@@ -50163,6 +50233,10 @@
     "URI": {
       "company": "United Rentals, Inc.",
       "sector": "Industrials"
+    },
+    "UROY": {
+      "company": "Uranium Royalty Corp.",
+      "sector": "Energy"
     },
     "USAU": {
       "company": "U.S. Gold Corp.",
