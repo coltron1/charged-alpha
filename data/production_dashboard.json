@@ -1,7 +1,7 @@
 {
   "schema": "charged-alpha-public-production/1",
-  "updated_at": "2026-09-16T22:31:23.538645-05:00",
-  "calendar_updated_at": "2026-09-16T18:38:48.744628-05:00",
+  "updated_at": "2026-09-16T22:50:25.343349-05:00",
+  "calendar_updated_at": "2026-09-16T22:39:46.308668-05:00",
   "calendar_status": "fresh",
   "daily_target": 10,
   "history": [
@@ -358,16 +358,6 @@
       "stock_url": null
     },
     {
-      "ticker": "HERE",
-      "company": "Here Group Limited",
-      "report_date": "2026-09-16",
-      "report_time_label": "Time unconfirmed",
-      "planned_date": "2026-09-17",
-      "date_status": "Calendar estimate",
-      "source_url": null,
-      "stock_url": null
-    },
-    {
       "ticker": "ADSE",
       "company": "ADS-TEC Energy PLC",
       "report_date": "2026-09-17",
@@ -390,6 +380,16 @@
     {
       "ticker": "IPHA",
       "company": "Innate Pharma S.A.",
+      "report_date": "2026-09-17",
+      "report_time_label": "Time unconfirmed",
+      "planned_date": "2026-09-18",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": null
+    },
+    {
+      "ticker": "HERE",
+      "company": "Here Group Limited",
       "report_date": "2026-09-17",
       "report_time_label": "Time unconfirmed",
       "planned_date": "2026-09-18",
