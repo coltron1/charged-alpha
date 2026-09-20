@@ -1,7 +1,7 @@
 {
   "schema": "charged-alpha-public-production/1",
-  "updated_at": "2026-09-17T18:09:26.229065-05:00",
-  "calendar_updated_at": "2026-09-17T16:54:06.466975-05:00",
+  "updated_at": "2026-09-20T09:11:10.057231-05:00",
+  "calendar_updated_at": "2026-09-20T09:03:30.992694-05:00",
   "calendar_status": "fresh",
   "daily_target": 10,
   "history": [
@@ -360,9 +360,9 @@
     {
       "ticker": "ADSE",
       "company": "ADS-TEC Energy PLC",
-      "report_date": "2026-09-17",
+      "report_date": "2026-09-21",
       "report_time_label": "Time unconfirmed",
-      "planned_date": "2026-09-18",
+      "planned_date": "2026-09-22",
       "date_status": "Calendar estimate",
       "source_url": null,
       "stock_url": null
@@ -370,59 +370,9 @@
     {
       "ticker": "ESP",
       "company": "Espey Mfg. & Electronics Corp.",
-      "report_date": "2026-09-17",
+      "report_date": "2026-09-21",
       "report_time_label": "Time unconfirmed",
-      "planned_date": "2026-09-18",
-      "date_status": "Calendar estimate",
-      "source_url": null,
-      "stock_url": null
-    },
-    {
-      "ticker": "DAVA",
-      "company": "Endava plc",
-      "report_date": "2026-09-17",
-      "report_time_label": "Time unconfirmed",
-      "planned_date": "2026-09-18",
-      "date_status": "Calendar estimate",
-      "source_url": null,
-      "stock_url": null
-    },
-    {
-      "ticker": "IPHA",
-      "company": "Innate Pharma S.A.",
-      "report_date": "2026-09-17",
-      "report_time_label": "Time unconfirmed",
-      "planned_date": "2026-09-18",
-      "date_status": "Calendar estimate",
-      "source_url": null,
-      "stock_url": "/shows/ipha"
-    },
-    {
-      "ticker": "RZLT",
-      "company": "Rezolute, Inc.",
-      "report_date": "2026-09-17",
-      "report_time_label": "Time unconfirmed",
-      "planned_date": "2026-09-18",
-      "date_status": "Calendar estimate",
-      "source_url": null,
-      "stock_url": null
-    },
-    {
-      "ticker": "HERE",
-      "company": "Here Group Limited",
-      "report_date": "2026-09-17",
-      "report_time_label": "Time unconfirmed",
-      "planned_date": "2026-09-18",
-      "date_status": "Calendar estimate",
-      "source_url": null,
-      "stock_url": null
-    },
-    {
-      "ticker": "MPLT",
-      "company": "MapLight Therapeutics, Inc.",
-      "report_date": "2026-09-18",
-      "report_time_label": "Time unconfirmed",
-      "planned_date": "2026-09-19",
+      "planned_date": "2026-09-22",
       "date_status": "Calendar estimate",
       "source_url": null,
       "stock_url": null
@@ -430,6 +380,16 @@
     {
       "ticker": "ABVX",
       "company": "Abivax S.A.",
+      "report_date": "2026-09-21",
+      "report_time_label": "Time unconfirmed",
+      "planned_date": "2026-09-22",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": null
+    },
+    {
+      "ticker": "RZLT",
+      "company": "Rezolute, Inc.",
       "report_date": "2026-09-21",
       "report_time_label": "Time unconfirmed",
       "planned_date": "2026-09-22",
@@ -460,6 +420,16 @@
     {
       "ticker": "MLKN",
       "company": "MillerKnoll, Inc.",
+      "report_date": "2026-09-22",
+      "report_time_label": "Time unconfirmed",
+      "planned_date": "2026-09-23",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": null
+    },
+    {
+      "ticker": "HERE",
+      "company": "Here Group Limited",
       "report_date": "2026-09-22",
       "report_time_label": "Time unconfirmed",
       "planned_date": "2026-09-23",
@@ -502,7 +472,7 @@
       "company": "General Mills, Inc.",
       "report_date": "2026-09-23",
       "report_time_label": "Time unconfirmed",
-      "planned_date": "",
+      "planned_date": "2026-09-24",
       "date_status": "Calendar estimate",
       "source_url": null,
       "stock_url": "/shows/gis"
@@ -512,7 +482,7 @@
       "company": "Cintas Corporation",
       "report_date": "2026-09-23",
       "report_time_label": "Time unconfirmed",
-      "planned_date": "",
+      "planned_date": "2026-09-24",
       "date_status": "Calendar estimate",
       "source_url": null,
       "stock_url": "/shows/ctas"
@@ -522,7 +492,7 @@
       "company": "NeoVolta Inc",
       "report_date": "2026-09-23",
       "report_time_label": "Time unconfirmed",
-      "planned_date": "",
+      "planned_date": "2026-09-24",
       "date_status": "Calendar estimate",
       "source_url": null,
       "stock_url": null
@@ -532,7 +502,7 @@
       "company": "Paychex, Inc.",
       "report_date": "2026-09-23",
       "report_time_label": "Time unconfirmed",
-      "planned_date": "",
+      "planned_date": "2026-09-24",
       "date_status": "Calendar estimate",
       "source_url": null,
       "stock_url": "/shows/payx"
@@ -542,7 +512,7 @@
       "company": "AnaptysBio, Inc.",
       "report_date": "2026-09-23",
       "report_time_label": "Time unconfirmed",
-      "planned_date": "",
+      "planned_date": "2026-09-24",
       "date_status": "Calendar estimate",
       "source_url": null,
       "stock_url": null
@@ -552,7 +522,7 @@
       "company": "Manchester United plc",
       "report_date": "2026-09-23",
       "report_time_label": "Time unconfirmed",
-      "planned_date": "",
+      "planned_date": "2026-09-24",
       "date_status": "Calendar estimate",
       "source_url": null,
       "stock_url": null
@@ -562,7 +532,7 @@
       "company": "H.B. Fuller Company",
       "report_date": "2026-09-23",
       "report_time_label": "Time unconfirmed",
-      "planned_date": "",
+      "planned_date": "2026-09-24",
       "date_status": "Calendar estimate",
       "source_url": null,
       "stock_url": null
@@ -572,7 +542,97 @@
       "company": "IperionX Limited",
       "report_date": "2026-09-23",
       "report_time_label": "Time unconfirmed",
-      "planned_date": "",
+      "planned_date": "2026-09-24",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": null
+    },
+    {
+      "ticker": "UEC",
+      "company": "Uranium Energy Corp.",
+      "report_date": "2026-09-24",
+      "report_time_label": "Time unconfirmed",
+      "planned_date": "2026-09-25",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": "/shows/uec"
+    },
+    {
+      "ticker": "TBN",
+      "company": "Tamboran Resources Corp",
+      "report_date": "2026-09-24",
+      "report_time_label": "Time unconfirmed",
+      "planned_date": "2026-09-25",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": null
+    },
+    {
+      "ticker": "SNX",
+      "company": "TD Synnex Corp",
+      "report_date": "2026-09-24",
+      "report_time_label": "Time unconfirmed",
+      "planned_date": "2026-09-25",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": "/shows/snx"
+    },
+    {
+      "ticker": "PSQL",
+      "company": "Pasqal Holding S.A. Ordinary Share",
+      "report_date": "2026-09-24",
+      "report_time_label": "Time unconfirmed",
+      "planned_date": "2026-09-25",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": null
+    },
+    {
+      "ticker": "RML",
+      "company": "Resolution Minerals Ltd. Sponsored ADR",
+      "report_date": "2026-09-24",
+      "report_time_label": "Time unconfirmed",
+      "planned_date": "2026-09-25",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": null
+    },
+    {
+      "ticker": "COST",
+      "company": "Costco Wholesale Corporation",
+      "report_date": "2026-09-24",
+      "report_time_label": "Time unconfirmed",
+      "planned_date": "2026-09-25",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": "/shows/cost"
+    },
+    {
+      "ticker": "IONR",
+      "company": "ioneer Ltd",
+      "report_date": "2026-09-24",
+      "report_time_label": "Time unconfirmed",
+      "planned_date": "2026-09-25",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": null
+    },
+    {
+      "ticker": "SCHL",
+      "company": "Scholastic Corporation",
+      "report_date": "2026-09-24",
+      "report_time_label": "Time unconfirmed",
+      "planned_date": "2026-09-25",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": null
+    },
+    {
+      "ticker": "IVA",
+      "company": "Inventiva S.A.",
+      "report_date": "2026-09-25",
+      "report_time_label": "Time unconfirmed",
+      "planned_date": "2026-09-26",
       "date_status": "Calendar estimate",
       "source_url": null,
       "stock_url": null
