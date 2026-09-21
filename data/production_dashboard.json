@@ -1,7 +1,7 @@
 {
   "schema": "charged-alpha-public-production/1",
-  "updated_at": "2026-09-20T19:55:48.022849-05:00",
-  "calendar_updated_at": "2026-09-20T17:56:00.177830-05:00",
+  "updated_at": "2026-09-21T05:45:06.117812-05:00",
+  "calendar_updated_at": "2026-09-21T05:45:05.421943-05:00",
   "calendar_status": "fresh",
   "daily_target": 10,
   "history": [
@@ -380,6 +380,16 @@
     {
       "ticker": "ABVX",
       "company": "Abivax S.A.",
+      "report_date": "2026-09-21",
+      "report_time_label": "Time unconfirmed",
+      "planned_date": "2026-09-22",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": null
+    },
+    {
+      "ticker": "EBF",
+      "company": "Ennis, Inc.",
       "report_date": "2026-09-21",
       "report_time_label": "Time unconfirmed",
       "planned_date": "2026-09-22",
