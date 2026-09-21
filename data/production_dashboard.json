@@ -1,7 +1,7 @@
 {
   "schema": "charged-alpha-public-production/1",
-  "updated_at": "2026-09-21T05:45:06.117812-05:00",
-  "calendar_updated_at": "2026-09-21T05:45:05.421943-05:00",
+  "updated_at": "2026-09-21T10:04:55.635627-05:00",
+  "calendar_updated_at": "2026-09-21T10:04:53.343983-05:00",
   "calendar_status": "fresh",
   "daily_target": 10,
   "history": [
@@ -586,6 +586,16 @@
       "date_status": "Calendar estimate",
       "source_url": null,
       "stock_url": "/shows/snx"
+    },
+    {
+      "ticker": "DAVA",
+      "company": "Endava plc",
+      "report_date": "2026-09-24",
+      "report_time_label": "Time unconfirmed",
+      "planned_date": "2026-09-25",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": null
     },
     {
       "ticker": "PSQL",
