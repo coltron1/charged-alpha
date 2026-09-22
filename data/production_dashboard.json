@@ -1,10 +1,20 @@
 {
   "schema": "charged-alpha-public-production/1",
-  "updated_at": "2026-09-22T15:17:52.161616-05:00",
+  "updated_at": "2026-09-22T17:24:46.499935-05:00",
   "calendar_updated_at": "2026-09-22T15:17:51.305885-05:00",
   "calendar_status": "fresh",
   "daily_target": 10,
   "history": [
+    {
+      "ticker": "KBH",
+      "company": "KB Home",
+      "period": "Q3 FY2026",
+      "completed_at": "2026-09-22T17:23:28.030673-05:00",
+      "video_url": "https://youtu.be/6coWGayi3rU",
+      "short_url": "https://youtu.be/krrRYHXijyU",
+      "packet_url": "https://chargedalpha.com/research/kbh-q3-fy2026",
+      "stock_url": "/shows/kbh"
+    },
     {
       "ticker": "THO",
       "company": "THOR Industries, Inc.",
@@ -440,16 +450,6 @@
     {
       "ticker": "HKD",
       "company": "AMTD Digital Inc.",
-      "report_date": "2026-09-22",
-      "report_time_label": "Time unconfirmed",
-      "planned_date": "2026-09-23",
-      "date_status": "Calendar estimate",
-      "source_url": null,
-      "stock_url": null
-    },
-    {
-      "ticker": "KBH",
-      "company": "KB Home",
       "report_date": "2026-09-22",
       "report_time_label": "Time unconfirmed",
       "planned_date": "2026-09-23",
