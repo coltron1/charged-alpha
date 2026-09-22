@@ -1,7 +1,7 @@
 {
   "schema": "charged-alpha-public-production/1",
-  "updated_at": "2026-09-22T13:17:47.550645-05:00",
-  "calendar_updated_at": "2026-09-22T13:17:47.160757-05:00",
+  "updated_at": "2026-09-22T15:17:52.161616-05:00",
+  "calendar_updated_at": "2026-09-22T15:17:51.305885-05:00",
   "calendar_status": "fresh",
   "daily_target": 10,
   "history": [
@@ -556,16 +556,6 @@
       "date_status": "Calendar estimate",
       "source_url": null,
       "stock_url": null
-    },
-    {
-      "ticker": "UEC",
-      "company": "Uranium Energy Corp.",
-      "report_date": "2026-09-24",
-      "report_time_label": "Time unconfirmed",
-      "planned_date": "2026-09-25",
-      "date_status": "Calendar estimate",
-      "source_url": null,
-      "stock_url": "/shows/uec"
     },
     {
       "ticker": "TBN",
