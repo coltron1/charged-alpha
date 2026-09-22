@@ -10,6 +10,42 @@
   },
   "episodes": [
     {
+      "ticker": "ANAB",
+      "company": "AnaptysBio, Inc.",
+      "sector": "Healthcare",
+      "quarter": "Q2 2026",
+      "episode_number": "",
+      "title": "ANAB Stock: $5.11 EPS Is the Wrong Headline — AnaptysBio Q2 2026",
+      "published_at": "2026-09-21T23:37:30+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=E0rEdywPMEY",
+      "spotify_url": "https://open.spotify.com/episode/0fMlH7KTzZxFyMMP9vGKFl",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/anab-stock-511-eps-is-the-wrong-headline-%e2%80%94-anaptysbio-q2-2026/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "ABVX",
+      "company": "ABIVAX Société Anonyme",
+      "sector": "Healthcare",
+      "quarter": "Q2 2026",
+      "episode_number": "",
+      "title": "ABVX Stock: The Runway Is Funded. Can Obefazimod Earn It? — Q2 2026",
+      "published_at": "2026-09-21T23:22:29+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=3eicHMenfEE",
+      "spotify_url": "https://open.spotify.com/episode/0yapUJxUTMYxE15oD25v50",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/abvx-stock-the-runway-is-funded-can-obefazimod-earn-it-%e2%80%94-q2-2026/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
       "ticker": "IPHA",
       "company": "Innate Pharma S.A.",
       "sector": "Healthcare",
@@ -34302,6 +34338,36 @@
       "description": "Fast clips that point viewers into full research videos and stock pages.",
       "videos": [
         {
+          "title": "ANAB Stock: AnaptysBio Q2 2026 — $5.11 EPS Is Misleading #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/QomloOUeHZY",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-09-21T23:55:13+00:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "ANAB"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage.",
+          "earnings_youtube_url": "https://www.youtube.com/watch?v=E0rEdywPMEY",
+          "earnings_match": "stock_period_date"
+        },
+        {
+          "title": "ABVX Stock: Abivax Q2 2026 Earnings — Runway Funded #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/H_CvnNAPfus",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-09-21T23:39:05+00:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "ABVX"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage.",
+          "earnings_youtube_url": "https://www.youtube.com/watch?v=3eicHMenfEE",
+          "earnings_match": "stock_period_date"
+        },
+        {
           "title": "IPHA Stock: Innate Pharma H1 2026 Earnings — $75M Buys Time #Shorts",
           "youtube_url": "https://www.youtube.com/shorts/MDR4R99MO3g",
           "spotify_url": "",
@@ -46129,7 +46195,7 @@
       ]
     }
   ],
-  "last_synced_at": "2026-09-17T15:01:28-05:00",
+  "last_synced_at": "2026-09-21T19:04:43-05:00",
   "stock_metadata": {
     "A": {
       "company": "Agilent Technologies, Inc.",
@@ -46181,6 +46247,10 @@
     },
     "ABT": {
       "company": "Abbott Laboratories",
+      "sector": "Healthcare"
+    },
+    "ABVX": {
+      "company": "ABIVAX Société Anonyme",
       "sector": "Healthcare"
     },
     "ACGL": {
@@ -46414,6 +46484,10 @@
     "AN": {
       "company": "AutoNation, Inc.",
       "sector": "Consumer Cyclical"
+    },
+    "ANAB": {
+      "company": "AnaptysBio, Inc.",
+      "sector": "Healthcare"
     },
     "ANDG": {
       "company": "Andersen Group Inc.",

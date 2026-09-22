@@ -1336,6 +1336,122 @@
       "tables": 27
     },
     {
+      "key": "ABVX:Q2-2026",
+      "year": 2026,
+      "quarter": 2,
+      "fiscal": false,
+      "slug": "abvx-q2-2026",
+      "ticker": "ABVX",
+      "company": "Abivax S.A.",
+      "period": "Q2 2026",
+      "canonical_url": "https://chargedalpha.com/research/abvx-q2-2026",
+      "title": "ABVX: The Cash Runway Is Real. So Is the Valuation Risk.",
+      "page_title": "ABVX Q2 2026 Research Packet — Charged Alpha",
+      "description": "Abivax now has funding into Q4 2029 and a planned obefazimod NDA, but nearly $8.6B of diluted value above capital leaves little room for execution mistakes.",
+      "sha256": "6c48f560fc5ba8560f336a7e85bf02dd740f272aac3c303687fb994f23f05fa1",
+      "html_file": "research_packets/abvx-q2-2026.html",
+      "source_episode": "ABVX-Q2-2026",
+      "source_staged_at": "2026-09-21T23:27:16Z",
+      "source_sha256": {
+        "READY": "10b48ba3e4da28f00effffa5b21a49206cf64d3128be00a29c36f012526f68bf",
+        "handoff.json": "4fe17a281cd2ccafff73cd7576a1de71b83b97c6c4514008b01b61f3c619df2a",
+        "packet/abvx-q2-2026-research-packet.html": "6c48f560fc5ba8560f336a7e85bf02dd740f272aac3c303687fb994f23f05fa1",
+        "packet/packet_meta.json": "3452170e79084e1d5b444d53420f654f25f92766986f8fa75699e9f699c32dfb",
+        "packet/packet.json": "ed4fec35325172f0434ae60786c5ffd98fe5aca85734b3ec0d083fb61f5a116e"
+      },
+      "primary_youtube_long": "3eicHMenfEE",
+      "primary_youtube_short": null,
+      "youtube_studio": null,
+      "youtube_studio_short": null,
+      "what_changed": {
+        "summary": "Abivax now has funding into Q4 2029 and a planned obefazimod NDA, but nearly $8.6B of diluted value above capital leaves little room for execution mistakes.",
+        "items": [
+          {
+            "title": "Funding risk moved farther out.",
+            "detail": "€402.4M of June liquidity plus €767.1M of July net proceeds supports management’s runway into Q4 2029."
+          },
+          {
+            "title": "The denominator moved too.",
+            "detail": "The July offer added 7.36M ADSs; our valuation uses 95.45M diluted ordinary equivalents, not the provider’s stale 73.43M shares."
+          },
+          {
+            "title": "The headline loss is partly unusual.",
+            "detail": "A €43.205M royalty-certificate derecognition drove part of Q2’s €117.433M loss, but R&D, G&A and cash burn also rose sharply."
+          },
+          {
+            "title": "Regulatory execution is now the center.",
+            "detail": "Management plans an obefazimod UC NDA by year-end 2026 and Crohn’s Phase 2b data in mid-2027."
+          },
+          {
+            "title": "Reporting controls remain a risk.",
+            "detail": "The 2025 material weaknesses were not confirmed remediated in the current filing; this packet carries that issue rather than assuming a cure."
+          }
+        ]
+      },
+      "source_published": "September 21, 2026",
+      "words": 5344,
+      "figures": 13,
+      "tables": 25
+    },
+    {
+      "key": "ANAB:Q2-2026",
+      "year": 2026,
+      "quarter": 2,
+      "fiscal": false,
+      "slug": "anab-q2-2026",
+      "ticker": "ANAB",
+      "company": "AnaptysBio, Inc.",
+      "period": "Q2 2026",
+      "canonical_url": "https://chargedalpha.com/research/anab-q2-2026",
+      "title": "ANAB: The EPS Is Tax Accounting. The Value Is the Royalty Contract.",
+      "page_title": "ANAB Q2 2026 Research Packet — Charged Alpha",
+      "description": "Anaptys reported growing Jemperli royalties, a one-time tax-driven profit and an unresolved contract case; our HOLD values post-Sagard cash at $58 per share.",
+      "sha256": "fd17823b700e18cc69a0f1a3b82d012a0ac64b86d2b19bf6cb00a254f32bbd5d",
+      "html_file": "research_packets/anab-q2-2026.html",
+      "source_episode": "ANAB-Q2-2026",
+      "source_staged_at": "2026-09-21T23:39:15Z",
+      "source_sha256": {
+        "READY": "ee6841c66b5b1c734f5ad46a19677b0dcb924c430a51e0428cbe2743732b9bed",
+        "handoff.json": "398097846f6770a9a44a38fb2a9b0bcb3a9e8f03662d346d6da4e31239ff2ffc",
+        "packet/anab-q2-2026-research-packet.html": "fd17823b700e18cc69a0f1a3b82d012a0ac64b86d2b19bf6cb00a254f32bbd5d",
+        "packet/packet_meta.json": "df86a405df687ff29f2ebaa7e4afad185941329d0d369a6850d8122edef7c100",
+        "packet/packet.json": "b9e1edc969197b539f3f7355cd5c84499fc2cbbefae66a428a3b2bf1ac4bdd17"
+      },
+      "primary_youtube_long": "E0rEdywPMEY",
+      "primary_youtube_short": null,
+      "youtube_studio": null,
+      "youtube_studio_short": null,
+      "what_changed": {
+        "summary": "Anaptys reported growing Jemperli royalties, a one-time tax-driven profit and an unresolved contract case; our HOLD values post-Sagard cash at $58 per share.",
+        "items": [
+          {
+            "title": "Royalties are growing.",
+            "detail": "H1 Jemperli sales rose 30.3%, pushing Anaptys toward higher contractual tiers."
+          },
+          {
+            "title": "The profit headline is misleading.",
+            "detail": "Q2 pretax loss became a large profit only after a $181.491M tax benefit."
+          },
+          {
+            "title": "Sagard still gets paid first.",
+            "detail": "About $302.5M had been earned; management estimates paydown in H2 2027."
+          },
+          {
+            "title": "The contract is in court.",
+            "detail": "Trial is complete, the October 20 hearing remains ahead and the remedy is unresolved."
+          },
+          {
+            "title": "The cash narrative does not reconcile.",
+            "detail": "Audited operating outflows total $52.559M, not the release's $72.9M sentence."
+          }
+        ]
+      },
+      "source_published": "September 21, 2026",
+      "words": 4269,
+      "figures": 14,
+      "tables": 19
+    },
+    {
       "key": "ASO:Q2-FY2026",
       "year": 2026,
       "quarter": 2,
