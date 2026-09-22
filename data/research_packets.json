@@ -1278,6 +1278,64 @@
       "tables": 34
     },
     {
+      "key": "KBH:Q3-FY2026",
+      "year": 2026,
+      "quarter": 3,
+      "fiscal": true,
+      "slug": "kbh-q3-fy2026",
+      "ticker": "KBH",
+      "company": "KB Home",
+      "period": "Q3 FY2026",
+      "canonical_url": "https://chargedalpha.com/research/kbh-q3-fy2026",
+      "title": "KBH: Backlog Grew. Demand per Community Did Not.",
+      "page_title": "KBH Q3 FY2026 Research Packet — Charged Alpha",
+      "description": "KB Home beat depressed EPS expectations, but lower order absorption and rising net debt temper the apparent discount to book value.",
+      "sha256": "26260c43b7f403bfff8587874ab43c5fefb69cbf7a3761c5e4f4819acad145eb",
+      "html_file": "research_packets/kbh-q3-fy2026.html",
+      "source_episode": "KBH-Q3-FY2026",
+      "source_staged_at": "2026-09-22T21:42:33Z",
+      "source_sha256": {
+        "READY": "9850c04be901b10b92adbb35f152cd135ad73a3382de04eaec84dea000a296d3",
+        "handoff.json": "e3a688027cd86da8dd1f2590ae9ff5cbcf05ac9225f07d496699eb14c5ba4ac4",
+        "packet/kbh-q3-fy2026-research-packet.html": "26260c43b7f403bfff8587874ab43c5fefb69cbf7a3761c5e4f4819acad145eb",
+        "packet/packet_meta.json": "515bb850d966a74b78f66955ccc059eff285b48609a7a6b266638a1867b36bc7",
+        "packet/packet.json": "fd8013f86fcf8f95a29b33cc1a93e2cc23597129b42b693812200b16ff333a7d"
+      },
+      "primary_youtube_long": "6coWGayi3rU",
+      "primary_youtube_short": null,
+      "youtube_studio": null,
+      "youtube_studio_short": null,
+      "what_changed": {
+        "summary": "KB Home beat depressed EPS expectations, but lower order absorption and rising net debt temper the apparent discount to book value.",
+        "items": [
+          {
+            "title": "The EPS beat is not a sales rebound.",
+            "detail": "$1.05 EPS exceeded FMP consensus, but revenue fell 19.96% and net income fell 40.56%."
+          },
+          {
+            "title": "Backlog rose while selling productivity fell.",
+            "detail": "Backlog grew 1.50% YoY, but orders per community declined from 3.8 to 3.1."
+          },
+          {
+            "title": "Built to Order helped sequential margins.",
+            "detail": "Nearly three-quarters of deliveries were BTO; reported housing margin recovered to 16.5% from 15.2%."
+          },
+          {
+            "title": "Tax and investment items supported profit.",
+            "detail": "The quarter included a $3.5M gain and a 19.6% effective tax rate versus 23.3% last year."
+          },
+          {
+            "title": "The book discount carries inventory and funding risk.",
+            "detail": "Inventory reached $5.981B and defined net debt rose $485.764M from fiscal year-end."
+          }
+        ]
+      },
+      "source_published": "September 22, 2026",
+      "words": 6621,
+      "figures": 19,
+      "tables": 34
+    },
+    {
       "key": "LEN:Q3-FY2026",
       "year": 2026,
       "quarter": 3,

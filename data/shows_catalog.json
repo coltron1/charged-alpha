@@ -10,6 +10,24 @@
   },
   "episodes": [
     {
+      "ticker": "KBH",
+      "company": "KB Home",
+      "sector": "Consumer Cyclical",
+      "quarter": "Q3 FY2026",
+      "episode_number": "",
+      "title": "KBH Stock: Backlog Grew, Demand Slowed — Q3 FY2026",
+      "published_at": "2026-09-22T21:29:19+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=6coWGayi3rU",
+      "spotify_url": "https://open.spotify.com/episode/28RrMtJdwW9rxUrrZZODNC",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/kbh-stock-backlog-grew-demand-slowed-%e2%80%94-q3-fy2026/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
       "ticker": "AZO",
       "company": "AutoZone, Inc.",
       "sector": "Consumer Cyclical",
@@ -34374,6 +34392,22 @@
       "description": "Fast clips that point viewers into full research videos and stock pages.",
       "videos": [
         {
+          "title": "KBH Stock: KB Home Q3 FY2026 Earnings — Backlog Up, Demand Slower #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/krrRYHXijyU",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-09-22T21:57:03+00:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "KBH",
+            "KB"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage.",
+          "earnings_youtube_url": "https://www.youtube.com/watch?v=6coWGayi3rU",
+          "earnings_match": "stock_period_date"
+        },
+        {
           "title": "AZO Stock: AutoZone Q4 FY2026 Earnings — The Refund Inside #Shorts",
           "youtube_url": "https://www.youtube.com/shorts/E7xYhCLXMCs",
           "spotify_url": "",
@@ -46262,7 +46296,7 @@
       ]
     }
   ],
-  "last_synced_at": "2026-09-22T10:47:41-05:00",
+  "last_synced_at": "2026-09-22T17:03:24-05:00",
   "stock_metadata": {
     "A": {
       "company": "Agilent Technologies, Inc.",
@@ -48510,6 +48544,10 @@
     "JPM": {
       "company": "JPMorgan Chase",
       "sector": "Financials"
+    },
+    "KBH": {
+      "company": "KB Home",
+      "sector": "Consumer Cyclical"
     },
     "KC": {
       "company": "Kingsoft Cloud Holdings Limited",
