@@ -1,10 +1,20 @@
 {
   "schema": "charged-alpha-public-production/1",
-  "updated_at": "2026-09-21T19:13:14.281389-05:00",
-  "calendar_updated_at": "2026-09-21T16:10:48.081128-05:00",
+  "updated_at": "2026-09-21T19:34:03.540142-05:00",
+  "calendar_updated_at": "2026-09-21T19:27:33.467777-05:00",
   "calendar_status": "fresh",
   "daily_target": 10,
   "history": [
+    {
+      "ticker": "IPHA",
+      "company": "Innate Pharma S.A.",
+      "period": "H1 2026",
+      "completed_at": "2026-09-21T19:33:19.983746-05:00",
+      "video_url": "https://youtu.be/EZWpLZhZzlo",
+      "short_url": "https://youtu.be/MDR4R99MO3g",
+      "packet_url": "https://chargedalpha.com/research/ipha-h1-2026",
+      "stock_url": "/shows/ipha"
+    },
     {
       "ticker": "ANAB",
       "company": "AnaptysBio, Inc.",
