@@ -1,10 +1,30 @@
 {
   "schema": "charged-alpha-public-production/1",
-  "updated_at": "2026-09-22T10:48:10.913397-05:00",
+  "updated_at": "2026-09-22T11:03:36.119010-05:00",
   "calendar_updated_at": "2026-09-22T10:48:04.773717-05:00",
   "calendar_status": "fresh",
   "daily_target": 10,
   "history": [
+    {
+      "ticker": "THO",
+      "company": "THOR Industries, Inc.",
+      "period": "Q4 FY2026",
+      "completed_at": "2026-09-22T11:02:47.555256-05:00",
+      "video_url": "https://youtu.be/2NhR8k0yods",
+      "short_url": "https://youtu.be/2xU_iIHh3y4",
+      "packet_url": "https://chargedalpha.com/research/tho-q4-fy2026",
+      "stock_url": "/shows/tho"
+    },
+    {
+      "ticker": "AZO",
+      "company": "AutoZone, Inc.",
+      "period": "Q4 FY2026",
+      "completed_at": "2026-09-22T11:02:46.395247-05:00",
+      "video_url": "https://youtu.be/51uwFVD2Zbc",
+      "short_url": "https://youtu.be/E7xYhCLXMCs",
+      "packet_url": "https://chargedalpha.com/research/azo-q4-fy2026",
+      "stock_url": "/shows/azo"
+    },
     {
       "ticker": "IPHA",
       "company": "Innate Pharma S.A.",
@@ -448,16 +468,6 @@
       "stock_url": null
     },
     {
-      "ticker": "AZO",
-      "company": "AutoZone, Inc.",
-      "report_date": "2026-09-22",
-      "report_time_label": "Time unconfirmed",
-      "planned_date": "2026-09-23",
-      "date_status": "Calendar estimate",
-      "source_url": null,
-      "stock_url": "/shows/azo"
-    },
-    {
       "ticker": "WOR",
       "company": "Worthington Industries, Inc.",
       "report_date": "2026-09-22",
@@ -466,16 +476,6 @@
       "date_status": "Calendar estimate",
       "source_url": null,
       "stock_url": "/shows/wor"
-    },
-    {
-      "ticker": "THO",
-      "company": "Thor Industries, Inc.",
-      "report_date": "2026-09-22",
-      "report_time_label": "Time unconfirmed",
-      "planned_date": "2026-09-23",
-      "date_status": "Calendar estimate",
-      "source_url": null,
-      "stock_url": "/shows/tho"
     },
     {
       "ticker": "GIS",
