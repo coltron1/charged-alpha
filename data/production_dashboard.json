@@ -1,10 +1,30 @@
 {
   "schema": "charged-alpha-public-production/1",
-  "updated_at": "2026-09-21T16:25:27.275167-05:00",
+  "updated_at": "2026-09-21T19:13:14.281389-05:00",
   "calendar_updated_at": "2026-09-21T16:10:48.081128-05:00",
   "calendar_status": "fresh",
   "daily_target": 10,
   "history": [
+    {
+      "ticker": "ANAB",
+      "company": "AnaptysBio, Inc.",
+      "period": "Q2 2026",
+      "completed_at": "2026-09-21T19:12:49.243659-05:00",
+      "video_url": "https://youtu.be/E0rEdywPMEY",
+      "short_url": "https://youtu.be/QomloOUeHZY",
+      "packet_url": "https://chargedalpha.com/research/anab-q2-2026",
+      "stock_url": "/shows/anab"
+    },
+    {
+      "ticker": "ABVX",
+      "company": "ABIVAX Société Anonyme",
+      "period": "Q2 2026",
+      "completed_at": "2026-09-21T19:12:32.695761-05:00",
+      "video_url": "https://youtu.be/3eicHMenfEE",
+      "short_url": "https://youtu.be/H_CvnNAPfus",
+      "packet_url": "https://chargedalpha.com/research/abvx-q2-2026",
+      "stock_url": "/shows/abvx"
+    },
     {
       "ticker": "IMMR",
       "company": "Immersion Corporation",
@@ -378,28 +398,8 @@
       "stock_url": null
     },
     {
-      "ticker": "ABVX",
-      "company": "Abivax S.A.",
-      "report_date": "2026-09-21",
-      "report_time_label": "Time unconfirmed",
-      "planned_date": "2026-09-22",
-      "date_status": "Calendar estimate",
-      "source_url": null,
-      "stock_url": null
-    },
-    {
       "ticker": "EBF",
       "company": "Ennis, Inc.",
-      "report_date": "2026-09-21",
-      "report_time_label": "Time unconfirmed",
-      "planned_date": "2026-09-22",
-      "date_status": "Calendar estimate",
-      "source_url": null,
-      "stock_url": null
-    },
-    {
-      "ticker": "ANAB",
-      "company": "AnaptysBio, Inc.",
       "report_date": "2026-09-21",
       "report_time_label": "Time unconfirmed",
       "planned_date": "2026-09-22",
