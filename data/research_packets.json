@@ -756,6 +756,64 @@
       "tables": 27
     },
     {
+      "key": "AZO:Q4-FY2026",
+      "year": 2026,
+      "quarter": 4,
+      "fiscal": true,
+      "slug": "azo-q4-fy2026",
+      "ticker": "AZO",
+      "company": "AutoZone, Inc.",
+      "period": "Q4 FY2026",
+      "canonical_url": "https://chargedalpha.com/research/azo-q4-fy2026",
+      "title": "AZO: The Margin Rebound Has a Refund Inside",
+      "page_title": "AZO Q4 FY2026 Research Packet — Charged Alpha",
+      "description": "AutoZone earnings rose, but tariff refunds, LIFO, growing inventory and flat free cash flow complicate the recovery. Our HOLD model values the stock at $2,800.",
+      "sha256": "830e0f3304631494fba46c1ad1bf2c062f0fdc2b88ff729df80b25b53b0b9bac",
+      "html_file": "research_packets/azo-q4-fy2026.html",
+      "source_episode": "AZO-Q4-FY2026",
+      "source_staged_at": "2026-09-22T15:12:05Z",
+      "source_sha256": {
+        "READY": "342c527867ce186192ef4ec5edc0d72320581e4d4967b625669395c60dcb85da",
+        "handoff.json": "8c0148592ee363f5a298ddd29202ca217f5bc6f4ef526a8a6bd1af9fa281a1c6",
+        "packet/azo-q4-fy2026-research-packet.html": "830e0f3304631494fba46c1ad1bf2c062f0fdc2b88ff729df80b25b53b0b9bac",
+        "packet/packet_meta.json": "43de2597455452af44ee96941c02304fe2a05ac11931f3d1a9de33e03e3ec8ae",
+        "packet/packet.json": "928c79f90a5d8a7dc328496bd0e044296e04ee393a89c3c0efa5329877cfea57"
+      },
+      "primary_youtube_long": "51uwFVD2Zbc",
+      "primary_youtube_short": null,
+      "youtube_studio": null,
+      "youtube_studio_short": null,
+      "what_changed": {
+        "summary": "AutoZone earnings rose, but tariff refunds, LIFO, growing inventory and flat free cash flow complicate the recovery. Our HOLD model values the stock at $2,800.",
+        "items": [
+          {
+            "title": "The margin rebound has temporary contributors.",
+            "detail": "Tariff refunds and the comparative LIFO effect total 250 bp against a 182 bp gross-margin increase."
+          },
+          {
+            "title": "Commercial scale is outpacing productivity.",
+            "detail": "Sales grew 8.6%, but weekly sales per program rose 2.7% as the program count expanded."
+          },
+          {
+            "title": "Cash after investment barely grew.",
+            "detail": "FY2026 OCF less capital spending was $1.807B versus $1.790B, despite 7.4% sales growth."
+          },
+          {
+            "title": "Buyback discipline matters.",
+            "detail": "About $2.026B was repurchased at an average $3,496, above the pre-release reference."
+          },
+          {
+            "title": "The price already allows for some recovery.",
+            "detail": "Three valuation routes center near $2,800, with a $2,100–$3,900 scenario range."
+          }
+        ]
+      },
+      "source_published": "September 22, 2026",
+      "words": 5462,
+      "figures": 13,
+      "tables": 28
+    },
+    {
       "key": "CPRT:Q4-FY2026",
       "year": 2026,
       "quarter": 4,
@@ -986,6 +1044,64 @@
           }
         ]
       }
+    },
+    {
+      "key": "THO:Q4-FY2026",
+      "year": 2026,
+      "quarter": 4,
+      "fiscal": true,
+      "slug": "tho-q4-fy2026",
+      "ticker": "THO",
+      "company": "THOR Industries",
+      "period": "Q4 FY2026",
+      "canonical_url": "https://chargedalpha.com/research/tho-q4-fy2026",
+      "title": "THO: A $100M Savings Promise Meets a Cash-Flow Reset",
+      "page_title": "THO Q4 FY2026 Research Packet — Charged Alpha",
+      "description": "THOR’s channel inventory improved, but free cash flow fell sharply; we value the gradual recovery near $70 and test the savings promise against actual margins.",
+      "sha256": "2154950461e1ee1eba896e5f2860463b0c291be7f882fec5ef9120cf30c9af50",
+      "html_file": "research_packets/tho-q4-fy2026.html",
+      "source_episode": "THO-Q4-FY2026",
+      "source_staged_at": "2026-09-22T14:35:17Z",
+      "source_sha256": {
+        "READY": "dd0886b5e3d1ab31c83e7fca2d3f0919fcb96ef918fe765db9e5e2b36feec03f",
+        "handoff.json": "b63b15e941abc23d8c7d2cacd7e77a606fedf0b8a7f3bedec0ecef5faf2f33d0",
+        "packet/tho-q4-fy2026-research-packet.html": "2154950461e1ee1eba896e5f2860463b0c291be7f882fec5ef9120cf30c9af50",
+        "packet/packet_meta.json": "ae715499208e4e18649ca6ab6371350acc525bf838acc938d91ee8fb2d638efd",
+        "packet/packet.json": "892b95783565fb90b9d4872032a62f27ccad63d012798bab8c0381afc362a989"
+      },
+      "primary_youtube_long": "2NhR8k0yods",
+      "primary_youtube_short": null,
+      "youtube_studio": null,
+      "youtube_studio_short": null,
+      "what_changed": {
+        "summary": "THOR’s channel inventory improved, but free cash flow fell sharply; we value the gradual recovery near $70 and test the savings promise against actual margins.",
+        "items": [
+          {
+            "title": "Margins, not just volume, broke lower.",
+            "detail": "Q4 sales fell 8.4%, while gross margin lost 230 basis points."
+          },
+          {
+            "title": "Cash returns need context.",
+            "detail": "Annual dividends and buybacks exceeded $168.8M free cash flow by $55.1M."
+          },
+          {
+            "title": "The channel is healthier.",
+            "detail": "North American dealer inventory fell to roughly 64,000 units; company-owned inventory still increased."
+          },
+          {
+            "title": "Savings are not next-year guidance.",
+            "detail": "Management expects over $100M annual earnings improvement once fully implemented, with timing still under review."
+          },
+          {
+            "title": "Valuation needs evidence.",
+            "detail": "Our $70 base and $68.50 weighted value assume gradual recovery; the saved $69.94 quote predates the print."
+          }
+        ]
+      },
+      "source_published": "September 22, 2026",
+      "words": 5248,
+      "figures": 17,
+      "tables": 30
     },
     {
       "key": "UNFI:Q4-FY2026",
