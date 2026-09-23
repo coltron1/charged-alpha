@@ -1,7 +1,7 @@
 {
   "schema": "charged-alpha-public-production/1",
-  "updated_at": "2026-09-22T19:35:25.944764-05:00",
-  "calendar_updated_at": "2026-09-22T19:35:10.385099-05:00",
+  "updated_at": "2026-09-23T07:24:18.943268-05:00",
+  "calendar_updated_at": "2026-09-23T07:17:34.427883-05:00",
   "calendar_status": "fresh",
   "daily_target": 10,
   "history": [
@@ -418,76 +418,6 @@
   ],
   "upcoming": [
     {
-      "ticker": "ADSE",
-      "company": "ADS-TEC Energy PLC",
-      "report_date": "2026-09-22",
-      "report_time_label": "Time unconfirmed",
-      "planned_date": "2026-09-23",
-      "date_status": "Calendar estimate",
-      "source_url": null,
-      "stock_url": null
-    },
-    {
-      "ticker": "ESP",
-      "company": "Espey Mfg. & Electronics Corp.",
-      "report_date": "2026-09-22",
-      "report_time_label": "Time unconfirmed",
-      "planned_date": "2026-09-23",
-      "date_status": "Calendar estimate",
-      "source_url": null,
-      "stock_url": null
-    },
-    {
-      "ticker": "RZLT",
-      "company": "Rezolute, Inc.",
-      "report_date": "2026-09-22",
-      "report_time_label": "Time unconfirmed",
-      "planned_date": "2026-09-23",
-      "date_status": "Calendar estimate",
-      "source_url": null,
-      "stock_url": null
-    },
-    {
-      "ticker": "HKD",
-      "company": "AMTD Digital Inc.",
-      "report_date": "2026-09-22",
-      "report_time_label": "Time unconfirmed",
-      "planned_date": "2026-09-23",
-      "date_status": "Calendar estimate",
-      "source_url": null,
-      "stock_url": null
-    },
-    {
-      "ticker": "MLKN",
-      "company": "MillerKnoll, Inc.",
-      "report_date": "2026-09-22",
-      "report_time_label": "Time unconfirmed",
-      "planned_date": "2026-09-23",
-      "date_status": "Calendar estimate",
-      "source_url": null,
-      "stock_url": null
-    },
-    {
-      "ticker": "HERE",
-      "company": "Here Group Limited",
-      "report_date": "2026-09-22",
-      "report_time_label": "Time unconfirmed",
-      "planned_date": "2026-09-23",
-      "date_status": "Calendar estimate",
-      "source_url": null,
-      "stock_url": null
-    },
-    {
-      "ticker": "WOR",
-      "company": "Worthington Industries, Inc.",
-      "report_date": "2026-09-22",
-      "report_time_label": "Time unconfirmed",
-      "planned_date": "2026-09-23",
-      "date_status": "Calendar estimate",
-      "source_url": null,
-      "stock_url": "/shows/wor"
-    },
-    {
       "ticker": "GIS",
       "company": "General Mills, Inc.",
       "report_date": "2026-09-23",
@@ -506,6 +436,26 @@
       "date_status": "Calendar estimate",
       "source_url": null,
       "stock_url": "/shows/ctas"
+    },
+    {
+      "ticker": "ADSE",
+      "company": "ADS-TEC Energy PLC",
+      "report_date": "2026-09-23",
+      "report_time_label": "Time unconfirmed",
+      "planned_date": "2026-09-24",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": null
+    },
+    {
+      "ticker": "ESP",
+      "company": "Espey Mfg. & Electronics Corp.",
+      "report_date": "2026-09-23",
+      "report_time_label": "Time unconfirmed",
+      "planned_date": "2026-09-24",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": null
     },
     {
       "ticker": "NEOV",
@@ -530,6 +480,16 @@
     {
       "ticker": "MANU",
       "company": "Manchester United plc",
+      "report_date": "2026-09-23",
+      "report_time_label": "Time unconfirmed",
+      "planned_date": "2026-09-24",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": null
+    },
+    {
+      "ticker": "RZLT",
+      "company": "Rezolute, Inc.",
       "report_date": "2026-09-23",
       "report_time_label": "Time unconfirmed",
       "planned_date": "2026-09-24",
@@ -642,7 +602,7 @@
       "company": "IDT Corporation",
       "report_date": "2026-09-28",
       "report_time_label": "Time unconfirmed",
-      "planned_date": "",
+      "planned_date": "2026-09-29",
       "date_status": "Calendar estimate",
       "source_url": null,
       "stock_url": null
@@ -652,7 +612,7 @@
       "company": "WeShop Holdings Limited Class A Ordinary Shares",
       "report_date": "2026-09-28",
       "report_time_label": "Time unconfirmed",
-      "planned_date": "",
+      "planned_date": "2026-09-29",
       "date_status": "Calendar estimate",
       "source_url": null,
       "stock_url": null
@@ -662,7 +622,7 @@
       "company": "Uxin Limited",
       "report_date": "2026-09-28",
       "report_time_label": "Time unconfirmed",
-      "planned_date": "",
+      "planned_date": "2026-09-29",
       "date_status": "Calendar estimate",
       "source_url": null,
       "stock_url": null
@@ -672,10 +632,70 @@
       "company": "Vail Resorts, Inc.",
       "report_date": "2026-09-28",
       "report_time_label": "Time unconfirmed",
-      "planned_date": "",
+      "planned_date": "2026-09-29",
       "date_status": "Calendar estimate",
       "source_url": null,
       "stock_url": "/shows/mtn"
+    },
+    {
+      "ticker": "UEC",
+      "company": "Uranium Energy Corp.",
+      "report_date": "2026-09-29",
+      "report_time_label": "Time unconfirmed",
+      "planned_date": "",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": "/shows/uec"
+    },
+    {
+      "ticker": "AIR",
+      "company": "AAR Corp.",
+      "report_date": "2026-09-29",
+      "report_time_label": "Time unconfirmed",
+      "planned_date": "",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": "/shows/air"
+    },
+    {
+      "ticker": "NBTX",
+      "company": "Nanobiotix S.A.",
+      "report_date": "2026-09-29",
+      "report_time_label": "Time unconfirmed",
+      "planned_date": "",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": null
+    },
+    {
+      "ticker": "CNXC",
+      "company": "Concentrix Corporation",
+      "report_date": "2026-09-29",
+      "report_time_label": "Time unconfirmed",
+      "planned_date": "",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": "/shows/cnxc"
+    },
+    {
+      "ticker": "KMX",
+      "company": "CarMax, Inc.",
+      "report_date": "2026-09-29",
+      "report_time_label": "Time unconfirmed",
+      "planned_date": "",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": "/shows/kmx"
+    },
+    {
+      "ticker": "TMQ",
+      "company": "Trilogy Metals Inc.",
+      "report_date": "2026-09-29",
+      "report_time_label": "Time unconfirmed",
+      "planned_date": "",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": null
     }
   ]
 }
