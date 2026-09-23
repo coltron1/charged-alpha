@@ -1,10 +1,30 @@
 {
   "schema": "charged-alpha-public-production/1",
-  "updated_at": "2026-09-23T15:31:34.054620-05:00",
+  "updated_at": "2026-09-23T15:58:33.853741-05:00",
   "calendar_updated_at": "2026-09-23T13:43:18.188638-05:00",
   "calendar_status": "fresh",
   "daily_target": 10,
   "history": [
+    {
+      "ticker": "PAYX",
+      "company": "Paychex, Inc.",
+      "period": "Q1 FY2027",
+      "completed_at": "2026-09-23T15:57:21.539962-05:00",
+      "video_url": "https://youtu.be/aQVewA_cgDM",
+      "short_url": "https://youtu.be/rcv_tCl6y84",
+      "packet_url": "https://chargedalpha.com/research/payx-q1-fy2027",
+      "stock_url": "/shows/payx"
+    },
+    {
+      "ticker": "GIS",
+      "company": "General Mills, Inc.",
+      "period": "Q1 FY2027",
+      "completed_at": "2026-09-23T15:57:07.975266-05:00",
+      "video_url": "https://youtu.be/wqHCgNaupQs",
+      "short_url": "https://youtu.be/Vv80ODzBwVI",
+      "packet_url": "https://chargedalpha.com/research/gis-q1-fy2027",
+      "stock_url": "/shows/gis"
+    },
     {
       "ticker": "KBH",
       "company": "KB Home",
@@ -418,16 +438,6 @@
   ],
   "upcoming": [
     {
-      "ticker": "GIS",
-      "company": "General Mills, Inc.",
-      "report_date": "2026-09-23",
-      "report_time_label": "Time unconfirmed",
-      "planned_date": "2026-09-24",
-      "date_status": "Calendar estimate",
-      "source_url": null,
-      "stock_url": "/shows/gis"
-    },
-    {
       "ticker": "CTAS",
       "company": "Cintas Corporation",
       "report_date": "2026-09-23",
@@ -466,16 +476,6 @@
       "date_status": "Calendar estimate",
       "source_url": null,
       "stock_url": null
-    },
-    {
-      "ticker": "PAYX",
-      "company": "Paychex, Inc.",
-      "report_date": "2026-09-23",
-      "report_time_label": "Time unconfirmed",
-      "planned_date": "2026-09-24",
-      "date_status": "Calendar estimate",
-      "source_url": null,
-      "stock_url": "/shows/payx"
     },
     {
       "ticker": "RZLT",
