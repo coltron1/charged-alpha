@@ -1,5 +1,8 @@
+import threading
 import unittest
-from unittest.mock import patch
+from unittest.mock import Mock, patch
+
+import yf_utils
 
 from app import (
     app,
@@ -334,17 +337,63 @@ class TickerInfoRetryTests(unittest.TestCase):
             def info(self):
                 return self._info
 
+        failed = FakeTicker({"quoteType": "EQUITY"})
+        recovered = FakeTicker({"longName": "Fervo Energy Company", "marketCap": 6130000000})
         with patch(
             "yf_utils.yf.Ticker",
-            side_effect=[
-                FakeTicker({"quoteType": "EQUITY"}),
-                FakeTicker({"longName": "Fervo Energy Company", "marketCap": 6130000000}),
-            ],
-        ) as ticker, patch("yf_utils.time.sleep"):
+            side_effect=[failed, recovered],
+        ) as ticker, patch("yf_utils._reset_yahoo_auth_state") as reset, patch("yf_utils.time.sleep"):
             _ticker, info = fetch_ticker_info("FRVO", max_retries=2)
 
         self.assertEqual(info["longName"], "Fervo Energy Company")
         self.assertEqual(ticker.call_count, 2)
+        reset.assert_called_once_with(failed)
+
+    def test_failed_ticker_is_not_retried_through_same_stale_info_property(self):
+        class FailedTicker:
+            @property
+            def info(self):
+                raise AssertionError("same Ticker.info state must not be reused")
+
+            def get_info(self):
+                return {}
+
+        recovered = Mock()
+        recovered.get_info.return_value = {"longName": "Fervo Energy Company"}
+        failed = FailedTicker()
+        with patch("yf_utils.yf.Ticker", side_effect=[failed, recovered]), \
+             patch("yf_utils._reset_yahoo_auth_state", return_value=True) as reset, \
+             patch("yf_utils.time.sleep"):
+            _ticker, info = fetch_ticker_info("FRVO", max_retries=2)
+
+        self.assertEqual(info["longName"], "Fervo Energy Company")
+        reset.assert_called_once_with(failed)
+
+    def test_auth_reset_clears_process_and_persistent_cookie_state(self):
+        class Cookies:
+            def __init__(self):
+                self.cleared = False
+
+            def clear(self):
+                self.cleared = True
+
+        cookies = Cookies()
+        data = Mock()
+        data._cookie_lock = threading.Lock()
+        data._session = Mock(cookies=cookies)
+        data._cookie = "old-cookie"
+        data._crumb = "old-crumb"
+        data._cookie_strategy = "csrf"
+        ticker = Mock(_data=data)
+        cookie_cache = Mock()
+        with patch("yf_utils.yf.cache.get_cookie_cache", return_value=cookie_cache):
+            self.assertTrue(yf_utils._reset_yahoo_auth_state(ticker))
+
+        self.assertTrue(cookies.cleared)
+        self.assertIsNone(data._cookie)
+        self.assertIsNone(data._crumb)
+        self.assertEqual(data._cookie_strategy, "basic")
+        cookie_cache.store.assert_called_once_with("curlCffi", None)
 
 
 if __name__ == "__main__":

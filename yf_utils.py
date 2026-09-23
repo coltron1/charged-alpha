@@ -53,6 +53,11 @@ ticker_info_cache = TTLCache(default_ttl=300, max_size=1000)
 chart_cache = TTLCache(default_ttl=300, max_size=500)
 quote_snapshot_cache = TTLCache(default_ttl=120, max_size=500)
 
+# yfinance keeps one process-wide session/cookie/crumb tuple for every Ticker.
+# Keep quote-summary requests and auth recovery together so concurrent refresh
+# workers cannot replace that tuple while another request is still using it.
+_yahoo_session_lock = threading.RLock()
+
 
 # ── Ticker info fetcher (shared across stock, ETF, REIT screeners) ─────────
 
@@ -77,6 +82,39 @@ def _has_usable_ticker_info(info):
         )
     )
 
+
+def _reset_yahoo_auth_state(ticker):
+    """Discard anonymous Yahoo credentials after an unusable provider response.
+
+    yfinance retries a failed request with its alternate cookie strategy, but an
+    invalid crumb can leave the singleton session holding the rejected tuple.
+    A second call on the same Ticker also reuses its failed quote scraper.  Clear
+    only the anonymous provider state so the next outer attempt creates a fresh
+    Ticker and lets yfinance mint a matching cookie and crumb.
+    """
+    data = getattr(ticker, "_data", None)
+    lock = getattr(data, "_cookie_lock", None)
+    session = getattr(data, "_session", None)
+    if data is None or lock is None:
+        return False
+    try:
+        with lock:
+            cookies = getattr(session, "cookies", None)
+            if cookies is not None:
+                cookies.clear()
+            data._cookie = None
+            data._crumb = None
+            data._cookie_strategy = "basic"
+        # A rejected persistent cookie would otherwise be loaded immediately
+        # into the freshly cleared session.
+        cache = getattr(yf, "cache", None)
+        if cache is not None:
+            cache.get_cookie_cache().store("curlCffi", None)
+        return True
+    except Exception:
+        return False
+
+
 def fetch_ticker_info(symbol, max_retries=2):
     """Fetch yfinance Ticker and info dict with caching and rate-limit retry.
 
@@ -88,34 +126,30 @@ def fetch_ticker_info(symbol, max_retries=2):
         return cached
 
     attempts = max(1, int(max_retries or 1))
-    for attempt in range(attempts):
-        retry_delay = 0.5 * (attempt + 1)
-        try:
-            t = yf.Ticker(symbol)
-            info = None
+    with _yahoo_session_lock:
+        for attempt in range(attempts):
+            retry_delay = 0.5 * (attempt + 1)
+            t = None
             try:
+                t = yf.Ticker(symbol)
                 info = t.get_info()
-            except Exception:
-                info = None
-            if not info:
-                try:
-                    info = t.info
-                except Exception:
-                    info = None
-            if _has_usable_ticker_info(info):
-                result = (t, info)
-                ticker_info_cache.set(symbol, result)
-                return result
-        except Exception as e:
-            err = str(e)
-            if "Too Many Requests" in err or "Rate" in err or "429" in err:
-                retry_delay = 5 * (attempt + 1)
+                if _has_usable_ticker_info(info):
+                    result = (t, info)
+                    ticker_info_cache.set(symbol, result)
+                    return result
+            except Exception as e:
+                err = str(e)
+                if "Too Many Requests" in err or "Rate" in err or "429" in err:
+                    retry_delay = 5 * (attempt + 1)
 
-        # Yahoo occasionally returns an empty payload without raising. Treat it
-        # as a transient failure instead of poisoning downstream pages with an
-        # immediate empty result.
-        if attempt < attempts - 1:
-            time.sleep(retry_delay)
+            # `.info` and `get_info()` use the same per-Ticker quote scraper, so
+            # calling both cannot recover its failed `_already_fetched` state.
+            # Reset the shared anonymous credentials before constructing the
+            # next Ticker instead.
+            if attempt < attempts - 1:
+                if t is not None:
+                    _reset_yahoo_auth_state(t)
+                time.sleep(retry_delay)
     return None, None
 
 
