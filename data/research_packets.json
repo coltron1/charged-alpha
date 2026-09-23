@@ -1046,6 +1046,64 @@
       }
     },
     {
+      "key": "MANU:Q4-FY2026",
+      "year": 2026,
+      "quarter": 4,
+      "fiscal": true,
+      "slug": "manu-q4-fy2026",
+      "ticker": "MANU",
+      "company": "Manchester United",
+      "period": "Q4 FY2026",
+      "canonical_url": "https://chargedalpha.com/research/manu-q4-fy2026",
+      "title": "MANU: Champions League Returns. Where Is the Cash?",
+      "page_title": "MANU Q4 FY2026 Research Packet — Charged Alpha",
+      "description": "Record revenue meets flat EBITDA guidance, player investment and stadium funding risk. Our cash-based review of Manchester United.",
+      "sha256": "13a104811d92dc3f04ff7e82b55d51d4014cee4b0f8c8fcb5d1115fa57053a36",
+      "html_file": "research_packets/manu-q4-fy2026.html",
+      "source_episode": "MANU-Q4-FY2026",
+      "source_staged_at": "2026-09-23T14:22:50Z",
+      "source_sha256": {
+        "READY": "514887610750a3a3ccd33ec25957fad7d481eef8abe233489c3207fc47a2d9f8",
+        "handoff.json": "a37e122f726f674d61a265da9960d700f381ec79c794118cdf41e5360dfae625",
+        "packet/manu-q4-fy2026-research-packet.html": "13a104811d92dc3f04ff7e82b55d51d4014cee4b0f8c8fcb5d1115fa57053a36",
+        "packet/packet_meta.json": "12afa5ff57f41d641fe71326462d3709bf15fa95acab74d7fcbd79fce0d5a0fc",
+        "packet/packet.json": "3e66f46332a307bf6bfe59a73c1efef85f838a5733ace401f9b385695129ecb0"
+      },
+      "primary_youtube_long": "KVNsA5IlUD4",
+      "primary_youtube_short": null,
+      "youtube_studio": null,
+      "youtube_studio_short": null,
+      "what_changed": {
+        "summary": "Record revenue meets flat EBITDA guidance, player investment and stadium funding risk. Our cash-based review of Manchester United.",
+        "items": [
+          {
+            "title": "Record annual numbers hide a weak fourth quarter.",
+            "detail": "Q4 revenue fell 4.07% and adjusted EBITDA fell 23.06%."
+          },
+          {
+            "title": "Champions League revenue comes with costs.",
+            "detail": "FY27 revenue midpoint rises 10.68%, but EBITDA midpoint falls 0.65%."
+          },
+          {
+            "title": "The player bill changes the cash story.",
+            "detail": "£178.715M OCF becomes −£50.859M after all investing cash."
+          },
+          {
+            "title": "Removing land is only one adjustment.",
+            "detail": "Excluding £63.5M stadium land leaves £12.641M, still helped by unquantified transfer-receivable monetization."
+          },
+          {
+            "title": "The share price already pays for a substantial recovery.",
+            "detail": "At the prior close, enterprise value is 15.19× guided EBITDA; our base uses 11×."
+          }
+        ]
+      },
+      "source_published": "September 23, 2026",
+      "words": 6382,
+      "figures": 17,
+      "tables": 35
+    },
+    {
       "key": "THO:Q4-FY2026",
       "year": 2026,
       "quarter": 4,

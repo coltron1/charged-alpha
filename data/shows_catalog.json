@@ -10,6 +10,24 @@
   },
   "episodes": [
     {
+      "ticker": "MANU",
+      "company": "Manchester United plc",
+      "sector": "Communication Services",
+      "quarter": "Q4 FY2026",
+      "episode_number": "",
+      "title": "MANU Stock: Champions League Returns. Where Is the Cash? — Q4 FY2026",
+      "published_at": "2026-09-23T14:16:45+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=KVNsA5IlUD4",
+      "spotify_url": "https://open.spotify.com/episode/4TFhpRm6zIOkIXvf4tqAdK",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/manu-stock-champions-league-returns-where-is-the-cash-%e2%80%94-q4-fy2026/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
       "ticker": "KBH",
       "company": "KB Home",
       "sector": "Consumer Cyclical",
@@ -34392,6 +34410,21 @@
       "description": "Fast clips that point viewers into full research videos and stock pages.",
       "videos": [
         {
+          "title": "MANU Stock: Manchester United Q4 FY2026 Earnings — Where Is the Cash? #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/-EkIsBQDJCM",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-09-23T14:33:32+00:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "MANU"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage.",
+          "earnings_youtube_url": "https://www.youtube.com/watch?v=KVNsA5IlUD4",
+          "earnings_match": "stock_period_date"
+        },
+        {
           "title": "KBH Stock: KB Home Q3 FY2026 Earnings — Backlog Up, Demand Slower #Shorts",
           "youtube_url": "https://www.youtube.com/shorts/krrRYHXijyU",
           "spotify_url": "",
@@ -46296,7 +46329,7 @@
       ]
     }
   ],
-  "last_synced_at": "2026-09-22T17:03:24-05:00",
+  "last_synced_at": "2026-09-23T09:36:24-05:00",
   "stock_metadata": {
     "A": {
       "company": "Agilent Technologies, Inc.",
@@ -48828,6 +48861,10 @@
     "MANH": {
       "company": "Manhattan Associates",
       "sector": "Technology"
+    },
+    "MANU": {
+      "company": "Manchester United plc",
+      "sector": "Communication Services"
     },
     "MAR": {
       "company": "Marriott International",
