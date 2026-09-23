@@ -10,6 +10,42 @@
   },
   "episodes": [
     {
+      "ticker": "GIS",
+      "company": "General Mills, Inc.",
+      "sector": "Consumer Defensive",
+      "quarter": "Q1 FY2027",
+      "episode_number": "",
+      "title": "GIS Stock: Flat Sales Hide a $99M Profit Gap — Q1 FY2027",
+      "published_at": "2026-09-23T20:11:46+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=wqHCgNaupQs",
+      "spotify_url": "https://open.spotify.com/episode/5payxxSDh7rIewXKnJGKbd",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/gis-stock-flat-sales-hide-a-99m-profit-gap-%e2%80%94-q1-fy2027/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "PAYX",
+      "company": "Paychex, Inc.",
+      "sector": "Technology",
+      "quarter": "Q1 FY2027",
+      "episode_number": "",
+      "title": "PAYX Stock: The Dividend Outran Cash — What Recovers Next? Q1 FY2027",
+      "published_at": "2026-09-23T20:08:59+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=aQVewA_cgDM",
+      "spotify_url": "https://open.spotify.com/episode/5mgZCAE8ZfiQBpW4kIJsB6",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/payx-stock-the-dividend-outran-cash-%e2%80%94-what-recovers-next-q1-fy2027/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
       "ticker": "MANU",
       "company": "Manchester United plc",
       "sector": "Communication Services",
@@ -34410,6 +34446,36 @@
       "description": "Fast clips that point viewers into full research videos and stock pages.",
       "videos": [
         {
+          "title": "PAYX Stock: Paychex Q1 FY2027 Earnings — Dividend vs. Cash #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/rcv_tCl6y84",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-09-23T13:27:44-07:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "PAYX"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage.",
+          "earnings_youtube_url": "https://www.youtube.com/watch?v=aQVewA_cgDM",
+          "earnings_match": "stock_period_date"
+        },
+        {
+          "title": "GIS Stock: General Mills Q1 FY2027 — Flat Sales, Profit Gap #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/Vv80ODzBwVI",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-09-23T13:26:51-07:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "GIS"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage.",
+          "earnings_youtube_url": "https://www.youtube.com/watch?v=wqHCgNaupQs",
+          "earnings_match": "stock_period_date"
+        },
+        {
           "title": "MANU Stock: Manchester United Q4 FY2026 Earnings — Where Is the Cash? #Shorts",
           "youtube_url": "https://www.youtube.com/shorts/-EkIsBQDJCM",
           "spotify_url": "",
@@ -46329,7 +46395,7 @@
       ]
     }
   ],
-  "last_synced_at": "2026-09-23T09:36:24-05:00",
+  "last_synced_at": "2026-09-23T15:31:04-05:00",
   "stock_metadata": {
     "A": {
       "company": "Agilent Technologies, Inc.",

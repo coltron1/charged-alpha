@@ -350,6 +350,64 @@
       }
     },
     {
+      "key": "GIS:Q1-FY2027",
+      "year": 2027,
+      "quarter": 1,
+      "fiscal": true,
+      "slug": "gis-q1-fy2027",
+      "ticker": "GIS",
+      "company": "General Mills",
+      "period": "Q1 FY2027",
+      "canonical_url": "https://chargedalpha.com/research/gis-q1-fy2027",
+      "title": "GIS: Flat sales hide a $99 million domestic profit gap",
+      "page_title": "GIS Q1 FY2027 Research Packet — Charged Alpha",
+      "description": "Retail and Pet lost $99 million of segment profit despite flat company organic sales; our $37 valuation needs better volume, margins and cash conversion.",
+      "sha256": "16cf9716d2ec05ed721d8d99297f423bb9aa619bc6ab5e098b0dd6ef6d5803ad",
+      "html_file": "research_packets/gis-q1-fy2027.html",
+      "source_episode": "GIS-Q1-FY2027",
+      "source_staged_at": "2026-09-23T20:16:03Z",
+      "source_sha256": {
+        "READY": "e232b9e01eba9c27dbd752c2f9a685cdaca97e6066e2a447ac68c2e2e032088c",
+        "handoff.json": "5d2a964577855ed5f08e35c849010786d20c803220b08a0ca4043bf4d65ddc83",
+        "packet/gis-q1-fy2027-research-packet.html": "16cf9716d2ec05ed721d8d99297f423bb9aa619bc6ab5e098b0dd6ef6d5803ad",
+        "packet/packet_meta.json": "e300a9a5ace85d9d66cf24cf070acb3c9ca9dc5c7677d6377e220595296cc225",
+        "packet/packet.json": "af304b62ac8e5b4362a70aaff81cd14f5fe1fd2683af772a29eeb3ba71f67fe0"
+      },
+      "primary_youtube_long": "wqHCgNaupQs",
+      "primary_youtube_short": null,
+      "youtube_studio": null,
+      "youtube_studio_short": null,
+      "what_changed": {
+        "summary": "Retail and Pet lost $99 million of segment profit despite flat company organic sales; our $37 valuation needs better volume, margins and cash conversion.",
+        "items": [
+          {
+            "title": "Stabilization is uneven.",
+            "detail": "Flat total organic sales include a three percent Retail decline and flat Pet sales with a six-point volume decline."
+          },
+          {
+            "title": "The profit gap is domestic.",
+            "detail": "Retail and Pet lost a combined $99M of segment profit; Foodservice and International added only $18.3M."
+          },
+          {
+            "title": "The GAAP headline is distorted.",
+            "detail": "The prior year included a $1,054.4M disposal gain; adjusted operating profit still fell 10.9%."
+          },
+          {
+            "title": "Cash needs a seasonal recovery.",
+            "detail": "First-quarter FCF was $207.3M, or 51.4% of adjusted net earnings, against a roughly 95% full-year conversion target."
+          },
+          {
+            "title": "Our valuation leaves little cushion.",
+            "detail": "Three routes produce $36.31–$37.20 per share; the $37 base and $36 weighted value support HOLD at the $35.74 reference quote."
+          }
+        ]
+      },
+      "source_published": "September 23, 2026",
+      "words": 5771,
+      "figures": 18,
+      "tables": 13
+    },
+    {
       "key": "IMMR:Q1-FY2027",
       "year": 2027,
       "quarter": 1,
@@ -464,6 +522,64 @@
           }
         ]
       }
+    },
+    {
+      "key": "PAYX:Q1-FY2027",
+      "year": 2027,
+      "quarter": 1,
+      "fiscal": true,
+      "slug": "payx-q1-fy2027",
+      "ticker": "PAYX",
+      "company": "Paychex, Inc.",
+      "period": "Q1 FY2027",
+      "canonical_url": "https://chargedalpha.com/research/payx-q1-fy2027",
+      "title": "PAYX: The dividend outran quarterly cash. The real test is what recovers.",
+      "page_title": "PAYX Q1 FY2027 Research Packet — Charged Alpha",
+      "description": "Paychex expanded margins and raised its PEO outlook, but quarterly free cash flow fell below dividends; our $114 base value weighs timing recovery against debt and acquisition adjustments.",
+      "sha256": "30b03ef1613d2c7b28a3bc11154ba8ded010ae649954f2805e67b6d9fd2dcfdf",
+      "html_file": "research_packets/payx-q1-fy2027.html",
+      "source_episode": "PAYX-Q1-FY2027",
+      "source_staged_at": "2026-09-23T20:14:09Z",
+      "source_sha256": {
+        "READY": "c941ef9387bf0ad1c17303e0bb47d42f6527ec351ec716fc2c36c1f277978b33",
+        "handoff.json": "04fa267bcca7af77bd13ec333c793f6c815ad917d1ead69121da13ee85c7e2e1",
+        "packet/payx-q1-fy2027-research-packet.html": "30b03ef1613d2c7b28a3bc11154ba8ded010ae649954f2805e67b6d9fd2dcfdf",
+        "packet/packet_meta.json": "57b6d016de04cbc73f2dfd88cb22cc85f8c5d054864afecbe622a37157b839cc",
+        "packet/packet.json": "64b9152921cd40e73c6cb21d7044cb3348c0108e1f2fc768cbfb5aee279c6713"
+      },
+      "primary_youtube_long": "aQVewA_cgDM",
+      "primary_youtube_short": null,
+      "youtube_studio": null,
+      "youtube_studio_short": null,
+      "what_changed": {
+        "summary": "Paychex expanded margins and raised its PEO outlook, but quarterly free cash flow fell below dividends; our $114 base value weighs timing recovery against debt and acquisition adjustments.",
+        "items": [
+          {
+            "title": "The cash shortfall is real but seasonal evidence is incomplete.",
+            "detail": "Quarterly operating cash fell to $413.5 million; after $56.1 million of capex, dividends exceeded free cash flow by $66.7 million. Trailing coverage remains positive."
+          },
+          {
+            "title": "Most of the cash decline sits in three identifiable lines.",
+            "detail": "Payables and other liabilities, receivables, and deferred taxes contributed $292.7 million of the $304.9 million operating-cash decline. These are timing and tax effects to monitor, not proof of a permanent loss."
+          },
+          {
+            "title": "Margin improvement contains two different stories.",
+            "detail": "GAAP operating profit increased $77.3 million, while adjusted profit increased $58.0 million; the $19.3 million difference reflects lower acquisition adjustments."
+          },
+          {
+            "title": "PEO momentum improved without a company-wide EPS raise.",
+            "detail": "PEO and Insurance Solutions guidance moved to 7%–8% growth and client-interest guidance rose $5 million, while overall revenue, margin and adjusted EPS guidance stayed unchanged."
+          },
+          {
+            "title": "Client funds are not an equity-value cash windfall.",
+            "detail": "Corporate cash and investments total $934.2 million excluding restricted cash, against $4,558.0 million of borrowings. Our $114 base value uses that corporate balance sheet."
+          }
+        ]
+      },
+      "source_published": "September 23, 2026",
+      "words": 6526,
+      "figures": 17,
+      "tables": 28
     },
     {
       "key": "UROY:Q1-FY2027",
