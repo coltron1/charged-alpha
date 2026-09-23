@@ -1,10 +1,20 @@
 {
   "schema": "charged-alpha-public-production/1",
-  "updated_at": "2026-09-23T15:58:33.853741-05:00",
-  "calendar_updated_at": "2026-09-23T13:43:18.188638-05:00",
+  "updated_at": "2026-09-23T16:52:25.334667-05:00",
+  "calendar_updated_at": "2026-09-23T16:36:34.994140-05:00",
   "calendar_status": "fresh",
   "daily_target": 10,
   "history": [
+    {
+      "ticker": "MANU",
+      "company": "Manchester United plc",
+      "period": "Q4 FY2026",
+      "completed_at": "2026-09-23T16:48:07.047765-05:00",
+      "video_url": "https://youtu.be/KVNsA5IlUD4",
+      "short_url": "https://youtu.be/-EkIsBQDJCM",
+      "packet_url": "https://chargedalpha.com/research/manu-q4-fy2026",
+      "stock_url": "/shows/manu"
+    },
     {
       "ticker": "PAYX",
       "company": "Paychex, Inc.",
