@@ -1,10 +1,20 @@
 {
   "schema": "charged-alpha-public-production/1",
-  "updated_at": "2026-09-24T08:47:44.845335-05:00",
+  "updated_at": "2026-09-24T09:04:52.544076-05:00",
   "calendar_updated_at": "2026-09-24T08:47:39.853956-05:00",
   "calendar_status": "fresh",
   "daily_target": 10,
   "history": [
+    {
+      "ticker": "SNX",
+      "company": "TD SYNNEX Corporation",
+      "period": "Q3 FY2026",
+      "completed_at": "2026-09-24T09:03:49.982789-05:00",
+      "video_url": "https://youtu.be/BjySy4O8A1M",
+      "short_url": "https://youtu.be/Ss8myLiY1dc",
+      "packet_url": "https://chargedalpha.com/research/snx-q3-fy2026",
+      "stock_url": "/shows/snx"
+    },
     {
       "ticker": "MANU",
       "company": "Manchester United plc",
@@ -466,16 +476,6 @@
       "date_status": "Calendar estimate",
       "source_url": null,
       "stock_url": null
-    },
-    {
-      "ticker": "SNX",
-      "company": "TD Synnex Corp",
-      "report_date": "2026-09-24",
-      "report_time_label": "Time unconfirmed",
-      "planned_date": "2026-09-25",
-      "date_status": "Calendar estimate",
-      "source_url": null,
-      "stock_url": "/shows/snx"
     },
     {
       "ticker": "PSQL",
