@@ -1,7 +1,7 @@
 {
   "schema": "charged-alpha-public-production/1",
-  "updated_at": "2026-09-24T13:12:52.895452-05:00",
-  "calendar_updated_at": "2026-09-24T12:58:00.776206-05:00",
+  "updated_at": "2026-09-24T15:20:25.795715-05:00",
+  "calendar_updated_at": "2026-09-24T15:20:21.828660-05:00",
   "calendar_status": "fresh",
   "daily_target": 10,
   "history": [
@@ -558,6 +558,16 @@
       "stock_url": null
     },
     {
+      "ticker": "UXIN",
+      "company": "Uxin Limited",
+      "report_date": "2026-09-24",
+      "report_time_label": "Time unconfirmed",
+      "planned_date": "2026-09-26",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": null
+    },
+    {
       "ticker": "IVA",
       "company": "Inventiva S.A.",
       "report_date": "2026-09-25",
@@ -570,6 +580,26 @@
     {
       "ticker": "IDT",
       "company": "IDT Corporation",
+      "report_date": "2026-09-28",
+      "report_time_label": "Time unconfirmed",
+      "planned_date": "2026-09-29",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": null
+    },
+    {
+      "ticker": "WSHP",
+      "company": "WeShop Holdings Limited Class A Ordinary Shares",
+      "report_date": "2026-09-28",
+      "report_time_label": "Time unconfirmed",
+      "planned_date": "2026-09-29",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": null
+    },
+    {
+      "ticker": "TRAK",
+      "company": "ReposiTrak, Inc.",
       "report_date": "2026-09-28",
       "report_time_label": "Time unconfirmed",
       "planned_date": "2026-09-29",
