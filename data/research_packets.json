@@ -1568,6 +1568,64 @@
       "tables": 29
     },
     {
+      "key": "SNX:Q3-FY2026",
+      "year": 2026,
+      "quarter": 3,
+      "fiscal": true,
+      "slug": "snx-q3-fy2026",
+      "ticker": "SNX",
+      "company": "TD SYNNEX Corporation",
+      "period": "Q3 FY2026",
+      "canonical_url": "https://chargedalpha.com/research/snx-q3-fy2026",
+      "title": "SNX: Record Profit, a $976 Million Cash Outflow",
+      "page_title": "SNX Q3 FY2026 Research Packet — Charged Alpha",
+      "description": "Record operating profit meets a larger funding bill: our $280 base value depends on inventory and receivables converting into cash.",
+      "sha256": "0012d652e55a75b4ed988e28cc16d6cd93154d6a699e3f8f4abc1649656f57cf",
+      "html_file": "research_packets/snx-q3-fy2026.html",
+      "source_episode": "SNX-Q3-FY2026",
+      "source_staged_at": "2026-09-24T13:29:17Z",
+      "source_sha256": {
+        "READY": "489b2166f4c439f5732beda353ae08a3fd59280410b6ed3021aad346e17fd40d",
+        "handoff.json": "04d368be1f6c8a3e7cc2c8e20f6e440961cadffa6cb5717f3dad3552f38e642a",
+        "packet/snx-q3-fy2026-research-packet.html": "0012d652e55a75b4ed988e28cc16d6cd93154d6a699e3f8f4abc1649656f57cf",
+        "packet/packet_meta.json": "d2f9945740cb5a4b51f8633482fb68b445df33637d6175695a13948ff99a1710",
+        "packet/packet.json": "2437d5a58acf0050263c715f0567203d1a805a8b4ca71939ea624c5a7be8096b"
+      },
+      "primary_youtube_long": "BjySy4O8A1M",
+      "primary_youtube_short": null,
+      "youtube_studio": null,
+      "youtube_studio_short": null,
+      "what_changed": {
+        "summary": "Record operating profit meets a larger funding bill: our $280 base value depends on inventory and receivables converting into cash.",
+        "items": [
+          {
+            "title": "Scale reached operating profit.",
+            "detail": "Revenue grew 37.7%, while SG&A grew 4.9%; GAAP operating income rose 67.6%."
+          },
+          {
+            "title": "Cash went the other way.",
+            "detail": "Quarter free cash flow was negative $975.6M despite $416.2M net income."
+          },
+          {
+            "title": "Inventory carries a funding bill.",
+            "detail": "The balance reached $15.292B and net debt reached $4.772B."
+          },
+          {
+            "title": "The outlook stays strong.",
+            "detail": "Q4 revenue guidance is $21.8B–$22.6B and adjusted EPS is $5.65–$6.15."
+          },
+          {
+            "title": "Value needs cash conversion.",
+            "detail": "Our HOLD and $280 base compare with a thin $256.60 pre-market trade; the $287.89 prior close is a separate reference."
+          }
+        ]
+      },
+      "source_published": "September 24, 2026",
+      "words": 6589,
+      "figures": 19,
+      "tables": 36
+    },
+    {
       "key": "IPHA:H1-2026",
       "year": 2026,
       "quarter": 0,

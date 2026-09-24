@@ -1,7 +1,7 @@
 {
   "schema": "charged-alpha-public-production/1",
-  "updated_at": "2026-09-24T07:21:01.634342-05:00",
-  "calendar_updated_at": "2026-09-24T03:31:01.686227-05:00",
+  "updated_at": "2026-09-24T08:47:44.845335-05:00",
+  "calendar_updated_at": "2026-09-24T08:47:39.853956-05:00",
   "calendar_status": "fresh",
   "daily_target": 10,
   "history": [
@@ -448,6 +448,16 @@
   ],
   "upcoming": [
     {
+      "ticker": "ADSE",
+      "company": "ADS-TEC Energy PLC",
+      "report_date": "2026-09-24",
+      "report_time_label": "Time unconfirmed",
+      "planned_date": "2026-09-25",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": null
+    },
+    {
       "ticker": "TBN",
       "company": "Tamboran Resources Corp",
       "report_date": "2026-09-24",
@@ -470,6 +480,16 @@
     {
       "ticker": "PSQL",
       "company": "Pasqal Holding S.A. Ordinary Share",
+      "report_date": "2026-09-24",
+      "report_time_label": "Time unconfirmed",
+      "planned_date": "2026-09-25",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": null
+    },
+    {
+      "ticker": "RZLT",
+      "company": "Rezolute, Inc.",
       "report_date": "2026-09-24",
       "report_time_label": "Time unconfirmed",
       "planned_date": "2026-09-25",
