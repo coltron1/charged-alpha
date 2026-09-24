@@ -5,6 +5,7 @@ Flask-Login==0.6.3
 Authlib==1.7.2
 python-dotenv==1.2.2
 psycopg2-binary==2.9.12
+psycopg[binary]==3.2.13
 gunicorn==26.0.0
 yfinance==1.6.0
 pandas==3.0.5
