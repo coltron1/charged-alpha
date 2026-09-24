@@ -1,7 +1,7 @@
 {
   "schema": "charged-alpha-public-production/1",
-  "updated_at": "2026-09-23T21:37:53.373242-05:00",
-  "calendar_updated_at": "2026-09-23T21:37:46.137643-05:00",
+  "updated_at": "2026-09-24T07:21:01.634342-05:00",
+  "calendar_updated_at": "2026-09-24T03:31:01.686227-05:00",
   "calendar_status": "fresh",
   "daily_target": 10,
   "history": [
@@ -448,86 +448,6 @@
   ],
   "upcoming": [
     {
-      "ticker": "CTAS",
-      "company": "Cintas Corporation",
-      "report_date": "2026-09-23",
-      "report_time_label": "Time unconfirmed",
-      "planned_date": "2026-09-24",
-      "date_status": "Calendar estimate",
-      "source_url": null,
-      "stock_url": "/shows/ctas"
-    },
-    {
-      "ticker": "ADSE",
-      "company": "ADS-TEC Energy PLC",
-      "report_date": "2026-09-23",
-      "report_time_label": "Time unconfirmed",
-      "planned_date": "2026-09-24",
-      "date_status": "Calendar estimate",
-      "source_url": null,
-      "stock_url": null
-    },
-    {
-      "ticker": "ESP",
-      "company": "Espey Mfg. & Electronics Corp.",
-      "report_date": "2026-09-23",
-      "report_time_label": "Time unconfirmed",
-      "planned_date": "2026-09-24",
-      "date_status": "Calendar estimate",
-      "source_url": null,
-      "stock_url": null
-    },
-    {
-      "ticker": "NEOV",
-      "company": "NeoVolta Inc",
-      "report_date": "2026-09-23",
-      "report_time_label": "Time unconfirmed",
-      "planned_date": "2026-09-24",
-      "date_status": "Calendar estimate",
-      "source_url": null,
-      "stock_url": null
-    },
-    {
-      "ticker": "RZLT",
-      "company": "Rezolute, Inc.",
-      "report_date": "2026-09-23",
-      "report_time_label": "Time unconfirmed",
-      "planned_date": "2026-09-24",
-      "date_status": "Calendar estimate",
-      "source_url": null,
-      "stock_url": null
-    },
-    {
-      "ticker": "FUL",
-      "company": "H.B. Fuller Company",
-      "report_date": "2026-09-23",
-      "report_time_label": "Time unconfirmed",
-      "planned_date": "2026-09-24",
-      "date_status": "Calendar estimate",
-      "source_url": null,
-      "stock_url": null
-    },
-    {
-      "ticker": "HKD",
-      "company": "AMTD Digital Inc.",
-      "report_date": "2026-09-23",
-      "report_time_label": "Time unconfirmed",
-      "planned_date": "2026-09-24",
-      "date_status": "Calendar estimate",
-      "source_url": null,
-      "stock_url": null
-    },
-    {
-      "ticker": "IPX",
-      "company": "IperionX Limited",
-      "report_date": "2026-09-23",
-      "report_time_label": "Time unconfirmed",
-      "planned_date": "2026-09-24",
-      "date_status": "Calendar estimate",
-      "source_url": null,
-      "stock_url": null
-    },
-    {
       "ticker": "TBN",
       "company": "Tamboran Resources Corp",
       "report_date": "2026-09-24",
@@ -580,6 +500,16 @@
     {
       "ticker": "IONR",
       "company": "ioneer Ltd",
+      "report_date": "2026-09-24",
+      "report_time_label": "Time unconfirmed",
+      "planned_date": "2026-09-25",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": null
+    },
+    {
+      "ticker": "IPX",
+      "company": "IperionX Limited",
       "report_date": "2026-09-24",
       "report_time_label": "Time unconfirmed",
       "planned_date": "2026-09-25",
@@ -642,7 +572,7 @@
       "company": "Uranium Energy Corp.",
       "report_date": "2026-09-29",
       "report_time_label": "Time unconfirmed",
-      "planned_date": "",
+      "planned_date": "2026-09-30",
       "date_status": "Calendar estimate",
       "source_url": null,
       "stock_url": "/shows/uec"
@@ -652,7 +582,7 @@
       "company": "AAR Corp.",
       "report_date": "2026-09-29",
       "report_time_label": "Time unconfirmed",
-      "planned_date": "",
+      "planned_date": "2026-09-30",
       "date_status": "Calendar estimate",
       "source_url": null,
       "stock_url": "/shows/air"
@@ -662,7 +592,7 @@
       "company": "Nanobiotix S.A.",
       "report_date": "2026-09-29",
       "report_time_label": "Time unconfirmed",
-      "planned_date": "",
+      "planned_date": "2026-09-30",
       "date_status": "Calendar estimate",
       "source_url": null,
       "stock_url": null
@@ -672,7 +602,7 @@
       "company": "Concentrix Corporation",
       "report_date": "2026-09-29",
       "report_time_label": "Time unconfirmed",
-      "planned_date": "",
+      "planned_date": "2026-09-30",
       "date_status": "Calendar estimate",
       "source_url": null,
       "stock_url": "/shows/cnxc"
@@ -682,7 +612,7 @@
       "company": "CarMax, Inc.",
       "report_date": "2026-09-29",
       "report_time_label": "Time unconfirmed",
-      "planned_date": "",
+      "planned_date": "2026-09-30",
       "date_status": "Calendar estimate",
       "source_url": null,
       "stock_url": "/shows/kmx"
@@ -691,6 +621,56 @@
       "ticker": "TMQ",
       "company": "Trilogy Metals Inc.",
       "report_date": "2026-09-29",
+      "report_time_label": "Time unconfirmed",
+      "planned_date": "2026-09-30",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": null
+    },
+    {
+      "ticker": "JBL",
+      "company": "Jabil Inc.",
+      "report_date": "2026-09-30",
+      "report_time_label": "Time unconfirmed",
+      "planned_date": "",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": "/shows/jbl"
+    },
+    {
+      "ticker": "CAG",
+      "company": "Conagra Brands, Inc.",
+      "report_date": "2026-09-30",
+      "report_time_label": "Time unconfirmed",
+      "planned_date": "",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": "/shows/cag"
+    },
+    {
+      "ticker": "CALM",
+      "company": "Cal-Maine Foods, Inc.",
+      "report_date": "2026-09-30",
+      "report_time_label": "Time unconfirmed",
+      "planned_date": "",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": null
+    },
+    {
+      "ticker": "PRGS",
+      "company": "Progress Software Corporation",
+      "report_date": "2026-09-30",
+      "report_time_label": "Time unconfirmed",
+      "planned_date": "",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": "/shows/prgs"
+    },
+    {
+      "ticker": "BSET",
+      "company": "Bassett Furniture Industries, Incorporated",
+      "report_date": "2026-09-30",
       "report_time_label": "Time unconfirmed",
       "planned_date": "",
       "date_status": "Calendar estimate",
