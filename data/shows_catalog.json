@@ -10,6 +10,24 @@
   },
   "episodes": [
     {
+      "ticker": "COST",
+      "company": "Costco Wholesale",
+      "sector": "Consumer",
+      "quarter": "Q4 FY2026",
+      "episode_number": "",
+      "title": "COST Stock: A 12% Clean EPS Gain Meets an 18.5% Hurdle — Q4 FY2026",
+      "published_at": "2026-09-25T04:18:38+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=xgmoRynmyVY",
+      "spotify_url": "https://open.spotify.com/episode/5zpkpGtzezjWaogkeVE9rl",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/cost-stock-a-12-clean-eps-gain-meets-an-185-hurdle-%e2%80%94-q4-fy2026/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
       "ticker": "SNX",
       "company": "TD SYNNEX Corporation",
       "sector": "Technology",
@@ -46430,7 +46448,7 @@
       ]
     }
   ],
-  "last_synced_at": "2026-09-24T08:56:41-05:00",
+  "last_synced_at": "2026-09-24T23:39:55-05:00",
   "stock_metadata": {
     "A": {
       "company": "Agilent Technologies, Inc.",

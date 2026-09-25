@@ -1,7 +1,7 @@
 {
   "schema": "charged-alpha-public-production/1",
-  "updated_at": "2026-09-24T22:02:08.281854-05:00",
-  "calendar_updated_at": "2026-09-24T20:43:04.204708-05:00",
+  "updated_at": "2026-09-24T23:40:24.249496-05:00",
+  "calendar_updated_at": "2026-09-24T23:40:20.957003-05:00",
   "calendar_status": "fresh",
   "daily_target": 10,
   "history": [
@@ -538,16 +538,6 @@
       "stock_url": null
     },
     {
-      "ticker": "IPX",
-      "company": "IperionX Limited",
-      "report_date": "2026-09-24",
-      "report_time_label": "Time unconfirmed",
-      "planned_date": "2026-09-25",
-      "date_status": "Calendar estimate",
-      "source_url": null,
-      "stock_url": null
-    },
-    {
       "ticker": "SCHL",
       "company": "Scholastic Corporation",
       "report_date": "2026-09-24",
@@ -562,7 +552,7 @@
       "company": "Uxin Limited",
       "report_date": "2026-09-24",
       "report_time_label": "Time unconfirmed",
-      "planned_date": "2026-09-26",
+      "planned_date": "2026-09-25",
       "date_status": "Calendar estimate",
       "source_url": null,
       "stock_url": null
@@ -570,6 +560,16 @@
     {
       "ticker": "IVA",
       "company": "Inventiva S.A.",
+      "report_date": "2026-09-25",
+      "report_time_label": "Time unconfirmed",
+      "planned_date": "2026-09-26",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": null
+    },
+    {
+      "ticker": "IPX",
+      "company": "IperionX Limited",
       "report_date": "2026-09-25",
       "report_time_label": "Time unconfirmed",
       "planned_date": "2026-09-26",

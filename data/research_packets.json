@@ -930,6 +930,64 @@
       "tables": 28
     },
     {
+      "key": "COST:Q4-FY2026",
+      "year": 2026,
+      "quarter": 4,
+      "fiscal": true,
+      "slug": "cost-q4-fy2026",
+      "ticker": "COST",
+      "company": "Costco Wholesale Corporation",
+      "period": "Q4 FY2026",
+      "canonical_url": "https://chargedalpha.com/research/cost-q4-fy2026",
+      "title": "COST: A 12% Clean EPS Gain Meets an 18.5% Hurdle",
+      "page_title": "COST Q4 FY2026 Research Packet — Charged Alpha",
+      "description": "Costco delivered double-digit normalized earnings growth, but our $850 base value says the stock still prices in a faster cash-compounding path than the recent record.",
+      "sha256": "457682f37311a07f44708ab5457109f92d15c93e7e991f046eb733454644b412",
+      "html_file": "research_packets/cost-q4-fy2026.html",
+      "source_episode": "COST-Q4-FY2026",
+      "source_staged_at": "2026-09-25T04:24:50Z",
+      "source_sha256": {
+        "READY": "06ac31b9621f815ba867e0f19dfe22c820fb5cfb229e84ac96480bbcd17f0e97",
+        "handoff.json": "7010b923345ee6ecaaec49db1120f6f452d246fac4e7bdd078f2dd9da811a510",
+        "packet/cost-q4-fy2026-research-packet.html": "457682f37311a07f44708ab5457109f92d15c93e7e991f046eb733454644b412",
+        "packet/packet_meta.json": "6c764cb3f735528cd976a156c8879e1d85c4c3741a1fd964ac88c5724224dcda",
+        "packet/packet.json": "9570e9295a98b9b8cde3de14893b17c45a395653b14acae5e9ad2c58349199ca"
+      },
+      "primary_youtube_long": "xgmoRynmyVY",
+      "primary_youtube_short": null,
+      "youtube_studio": null,
+      "youtube_studio_short": null,
+      "what_changed": {
+        "summary": "Costco delivered double-digit normalized earnings growth, but our $850 base value says the stock still prices in a faster cash-compounding path than the recent record.",
+        "items": [
+          {
+            "title": "The beat survives normalization.",
+            "detail": "Q4 EPS was $6.75; removing the $0.15 tariff-refund benefit leaves $6.60, still up 12.4%."
+          },
+          {
+            "title": "The membership engine remains durable.",
+            "detail": "Paid members grew 3.8%, worldwide renewal was 89.8%, and membership income rose 7.7% excluding currency."
+          },
+          {
+            "title": "Cash conversion improved.",
+            "detail": "FY free cash flow reached $9.390B and net cash reached $15.139B before leases."
+          },
+          {
+            "title": "The price demands acceleration.",
+            "detail": "Our reverse model needs roughly 18.5% annual cash-flow growth for five years versus an 11.7% recent CAGR."
+          },
+          {
+            "title": "The call stays HOLD.",
+            "detail": "Our $850 base is below the $897.02 early trade; a lower price or faster cash growth would improve the expected return."
+          }
+        ]
+      },
+      "source_published": "September 24, 2026",
+      "words": 5789,
+      "figures": 19,
+      "tables": 35
+    },
+    {
       "key": "CPRT:Q4-FY2026",
       "year": 2026,
       "quarter": 4,
