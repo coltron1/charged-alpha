@@ -1,10 +1,20 @@
 {
   "schema": "charged-alpha-public-production/1",
-  "updated_at": "2026-09-25T00:53:39.856227-05:00",
+  "updated_at": "2026-09-25T01:06:11.650873-05:00",
   "calendar_updated_at": "2026-09-24T23:40:20.957003-05:00",
   "calendar_status": "stale",
   "daily_target": 10,
   "history": [
+    {
+      "ticker": "RZLT",
+      "company": "Rezolute, Inc.",
+      "period": "Q4 FY2026",
+      "completed_at": "2026-09-25T01:05:47.778623-05:00",
+      "video_url": "https://youtu.be/kNZXzqKWZeM",
+      "short_url": "https://youtu.be/C2g9ZsrC1gI",
+      "packet_url": "https://chargedalpha.com/research/rzlt-q4-fy2026",
+      "stock_url": "/shows/rzlt"
+    },
     {
       "ticker": "UXIN",
       "company": "Uxin Limited",
@@ -506,16 +516,6 @@
       "date_status": "Calendar estimate",
       "source_url": null,
       "stock_url": null
-    },
-    {
-      "ticker": "RZLT",
-      "company": "Rezolute, Inc.",
-      "report_date": "2026-09-24",
-      "report_time_label": "Time unconfirmed",
-      "planned_date": "2026-09-25",
-      "date_status": "Calendar estimate",
-      "source_url": null,
-      "stock_url": "/shows/rzlt"
     },
     {
       "ticker": "RML",
