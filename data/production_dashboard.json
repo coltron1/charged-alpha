@@ -1,8 +1,8 @@
 {
   "schema": "charged-alpha-public-production/1",
-  "updated_at": "2026-09-25T01:06:11.650873-05:00",
-  "calendar_updated_at": "2026-09-24T23:40:20.957003-05:00",
-  "calendar_status": "stale",
+  "updated_at": "2026-09-25T03:21:24.719170-05:00",
+  "calendar_updated_at": "2026-09-25T03:16:10.755413-05:00",
+  "calendar_status": "fresh",
   "daily_target": 10,
   "history": [
     {
@@ -488,76 +488,6 @@
   ],
   "upcoming": [
     {
-      "ticker": "ADSE",
-      "company": "ADS-TEC Energy PLC",
-      "report_date": "2026-09-24",
-      "report_time_label": "Time unconfirmed",
-      "planned_date": "2026-09-25",
-      "date_status": "Calendar estimate",
-      "source_url": null,
-      "stock_url": null
-    },
-    {
-      "ticker": "TBN",
-      "company": "Tamboran Resources Corp",
-      "report_date": "2026-09-24",
-      "report_time_label": "Time unconfirmed",
-      "planned_date": "2026-09-25",
-      "date_status": "Calendar estimate",
-      "source_url": null,
-      "stock_url": null
-    },
-    {
-      "ticker": "PSQL",
-      "company": "Pasqal Holding S.A. Ordinary Share",
-      "report_date": "2026-09-24",
-      "report_time_label": "Time unconfirmed",
-      "planned_date": "2026-09-25",
-      "date_status": "Calendar estimate",
-      "source_url": null,
-      "stock_url": null
-    },
-    {
-      "ticker": "RML",
-      "company": "Resolution Minerals Ltd. Sponsored ADR",
-      "report_date": "2026-09-24",
-      "report_time_label": "Time unconfirmed",
-      "planned_date": "2026-09-25",
-      "date_status": "Calendar estimate",
-      "source_url": null,
-      "stock_url": null
-    },
-    {
-      "ticker": "HKD",
-      "company": "AMTD Digital Inc.",
-      "report_date": "2026-09-24",
-      "report_time_label": "Time unconfirmed",
-      "planned_date": "2026-09-25",
-      "date_status": "Calendar estimate",
-      "source_url": null,
-      "stock_url": null
-    },
-    {
-      "ticker": "IONR",
-      "company": "ioneer Ltd",
-      "report_date": "2026-09-24",
-      "report_time_label": "Time unconfirmed",
-      "planned_date": "2026-09-25",
-      "date_status": "Calendar estimate",
-      "source_url": null,
-      "stock_url": null
-    },
-    {
-      "ticker": "SCHL",
-      "company": "Scholastic Corporation",
-      "report_date": "2026-09-24",
-      "report_time_label": "Time unconfirmed",
-      "planned_date": "2026-09-25",
-      "date_status": "Calendar estimate",
-      "source_url": null,
-      "stock_url": null
-    },
-    {
       "ticker": "IVA",
       "company": "Inventiva S.A.",
       "report_date": "2026-09-25",
@@ -570,6 +500,16 @@
     {
       "ticker": "IPX",
       "company": "IperionX Limited",
+      "report_date": "2026-09-25",
+      "report_time_label": "Time unconfirmed",
+      "planned_date": "2026-09-26",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": null
+    },
+    {
+      "ticker": "HTLM",
+      "company": "HomesToLife Ltd",
       "report_date": "2026-09-25",
       "report_time_label": "Time unconfirmed",
       "planned_date": "2026-09-26",
@@ -733,6 +673,66 @@
       "report_date": "2026-09-30",
       "report_time_label": "Time unconfirmed",
       "planned_date": "2026-10-01",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": null
+    },
+    {
+      "ticker": "ACN",
+      "company": "Accenture plc",
+      "report_date": "2026-10-01",
+      "report_time_label": "Time unconfirmed",
+      "planned_date": "",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": "/shows/acn"
+    },
+    {
+      "ticker": "PKE",
+      "company": "Park Aerospace Corp.",
+      "report_date": "2026-10-01",
+      "report_time_label": "Time unconfirmed",
+      "planned_date": "",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": null
+    },
+    {
+      "ticker": "MKC",
+      "company": "McCormick & Company, Incorporated",
+      "report_date": "2026-10-01",
+      "report_time_label": "Time unconfirmed",
+      "planned_date": "",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": null
+    },
+    {
+      "ticker": "NKE",
+      "company": "NIKE, Inc.",
+      "report_date": "2026-10-01",
+      "report_time_label": "Time unconfirmed",
+      "planned_date": "",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": "/shows/nke"
+    },
+    {
+      "ticker": "AYI",
+      "company": "Acuity Brands, Inc.",
+      "report_date": "2026-10-01",
+      "report_time_label": "Time unconfirmed",
+      "planned_date": "",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": "/shows/ayi"
+    },
+    {
+      "ticker": "TORO",
+      "company": "Toro Corp.",
+      "report_date": "2026-10-01",
+      "report_time_label": "Time unconfirmed",
+      "planned_date": "",
       "date_status": "Calendar estimate",
       "source_url": null,
       "stock_url": null
