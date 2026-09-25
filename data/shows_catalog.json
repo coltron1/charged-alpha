@@ -10,6 +10,24 @@
   },
   "episodes": [
     {
+      "ticker": "RZLT",
+      "company": "Rezolute, Inc.",
+      "sector": "Healthcare",
+      "quarter": "Q4 FY2026",
+      "episode_number": "",
+      "title": "RZLT Stock: Seven Early Responses, Two Unresolved Paths — Q4 FY2026",
+      "published_at": "2026-09-25T05:39:18+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=kNZXzqKWZeM",
+      "spotify_url": "https://open.spotify.com/episode/4DR1fupWgL6PBL6zKtIWYE",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/rzlt-stock-seven-early-responses-two-unresolved-paths-%e2%80%94-q4-fy2026/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
       "ticker": "UXIN",
       "company": "Uxin Limited",
       "sector": "Consumer Cyclical",
@@ -19,7 +37,7 @@
       "published_at": "2026-09-25T05:27:50+00:00",
       "status": "youtube_podcast_complete",
       "youtube_url": "https://www.youtube.com/watch?v=677BagwfOg4",
-      "spotify_url": "",
+      "spotify_url": "https://open.spotify.com/episode/0CCBfvD8edzZyBJL8aDXTj",
       "apple_url": "",
       "google_url": "",
       "iheart_url": "",
@@ -34500,6 +34518,36 @@
       "description": "Fast clips that point viewers into full research videos and stock pages.",
       "videos": [
         {
+          "title": "RZLT Stock: Seven Responses, Unresolved Clinical Paths — Q4 FY2026 #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/C2g9ZsrC1gI",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-09-24T22:57:28-07:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "RZLT"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage.",
+          "earnings_youtube_url": "https://www.youtube.com/watch?v=kNZXzqKWZeM",
+          "earnings_match": "stock_period_date"
+        },
+        {
+          "title": "UXIN Stock: Volume Nearly Doubled, Margin Turned Negative — Q2 2026 #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/5aQqUckhQCA",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-09-24T22:40:10-07:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "UXIN"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage.",
+          "earnings_youtube_url": "https://www.youtube.com/watch?v=677BagwfOg4",
+          "earnings_match": "stock_period_date"
+        },
+        {
           "title": "COST Stock: Clean EPS Growth, an 18.5% Cash Hurdle — Q4 FY2026 #Shorts",
           "youtube_url": "https://www.youtube.com/shorts/0dE-EDNLxYQ",
           "spotify_url": "",
@@ -46481,7 +46529,7 @@
       ]
     }
   ],
-  "last_synced_at": "2026-09-25T00:34:32-05:00",
+  "last_synced_at": "2026-09-25T01:00:57-05:00",
   "stock_metadata": {
     "A": {
       "company": "Agilent Technologies, Inc.",
@@ -49982,6 +50030,10 @@
     "RYAAY": {
       "company": "Ryanair Holdings plc",
       "sector": "Industrials"
+    },
+    "RZLT": {
+      "company": "Rezolute, Inc.",
+      "sector": "Healthcare"
     },
     "S": {
       "company": "SentinelOne, Inc.",

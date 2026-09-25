@@ -1278,6 +1278,64 @@
       "tables": 35
     },
     {
+      "key": "RZLT:Q4-FY2026",
+      "year": 2026,
+      "quarter": 4,
+      "fiscal": true,
+      "slug": "rzlt-q4-fy2026",
+      "ticker": "RZLT",
+      "company": "Rezolute, Inc.",
+      "period": "Q4 FY2026",
+      "canonical_url": "https://chargedalpha.com/research/rzlt-q4-fy2026",
+      "title": "RZLT: Seven Responses, Two Unresolved Paths",
+      "page_title": "RZLT Q4 FY2026 Research Packet — Charged Alpha",
+      "description": "Rezolute reports seven early tumor-trial responders while the failed congenital study remains under FDA review. We examine the cash runway, economic share count and success burden in the price.",
+      "sha256": "11bef05d845a614b7e3c9a4740273da03b0e5bf221a1ade245945b80de86a0bf",
+      "html_file": "research_packets/rzlt-q4-fy2026.html",
+      "source_episode": "RZLT-Q4-FY2026",
+      "source_staged_at": "2026-09-25T05:44:19Z",
+      "source_sha256": {
+        "READY": "4dcf096353e0469e960449d83471f4f5e8c8be0fd02f39d882e7b5218c049db3",
+        "handoff.json": "631291cd1daaf30219dd0c7d97536fa67443e82893ef9fa4b72f656f0374c9a7",
+        "packet/rzlt-q4-fy2026-research-packet.html": "11bef05d845a614b7e3c9a4740273da03b0e5bf221a1ade245945b80de86a0bf",
+        "packet/packet_meta.json": "2d699928aa34e530964e60bcf4d0d4e4af512dc6bb6c10503c09829b78006907",
+        "packet/packet.json": "ba3bcf80eba1e1c7ac7eae058a94787db8dad1fddd14ecff83784eac22d0d099"
+      },
+      "primary_youtube_long": "kNZXzqKWZeM",
+      "primary_youtube_short": null,
+      "youtube_studio": null,
+      "youtube_studio_short": null,
+      "what_changed": {
+        "summary": "Rezolute reports seven early tumor-trial responders while the failed congenital study remains under FDA review. We examine the cash runway, economic share count and success burden in the price.",
+        "items": [
+          {
+            "title": "Tumor evidence improves.",
+            "detail": "A seventh of the initial eight upLIFT participants met the response threshold; enrollment and final analysis remain unfinished."
+          },
+          {
+            "title": "Congenital uncertainty persists.",
+            "detail": "sunRIZE failed its primary and key secondary endpoints, and FDA review has no stated completion date."
+          },
+          {
+            "title": "The annual loss widened.",
+            "detail": "Lower R&D was offset by higher administration and stock compensation; better loss EPS reflects a larger share denominator."
+          },
+          {
+            "title": "The cash clock matters.",
+            "detail": "June liquidity was $107.801M against $64.635M of annual operating cash use; approval and additional trials can require more capital."
+          },
+          {
+            "title": "The price asks for more success.",
+            "detail": "Our $2.50 conditional base is below the $3.94 close, with a wide $0.25–$7.00 scenario range."
+          }
+        ]
+      },
+      "source_published": "September 24, 2026",
+      "words": 6773,
+      "figures": 15,
+      "tables": 32
+    },
+    {
       "key": "THO:Q4-FY2026",
       "year": 2026,
       "quarter": 4,
