@@ -1,7 +1,7 @@
 {
   "schema": "charged-alpha-public-production/1",
-  "updated_at": "2026-09-25T14:22:52.866686-05:00",
-  "calendar_updated_at": "2026-09-25T14:15:33.016269-05:00",
+  "updated_at": "2026-09-25T17:04:17.495499-05:00",
+  "calendar_updated_at": "2026-09-25T17:00:09.966401-05:00",
   "calendar_status": "fresh",
   "daily_target": 10,
   "history": [
@@ -558,16 +558,6 @@
       "stock_url": null
     },
     {
-      "ticker": "TRAK",
-      "company": "ReposiTrak, Inc.",
-      "report_date": "2026-09-28",
-      "report_time_label": "Time unconfirmed",
-      "planned_date": "2026-09-29",
-      "date_status": "Calendar estimate",
-      "source_url": null,
-      "stock_url": null
-    },
-    {
       "ticker": "UXIN",
       "company": "Uxin Limited",
       "report_date": "2026-09-28",
@@ -618,16 +608,6 @@
       "stock_url": null
     },
     {
-      "ticker": "CNXC",
-      "company": "Concentrix Corporation",
-      "report_date": "2026-09-29",
-      "report_time_label": "Time unconfirmed",
-      "planned_date": "2026-09-30",
-      "date_status": "Calendar estimate",
-      "source_url": null,
-      "stock_url": "/shows/cnxc"
-    },
-    {
       "ticker": "KMX",
       "company": "CarMax, Inc.",
       "report_date": "2026-09-29",
@@ -636,6 +616,16 @@
       "date_status": "Calendar estimate",
       "source_url": null,
       "stock_url": "/shows/kmx"
+    },
+    {
+      "ticker": "CNXC",
+      "company": "Concentrix Corporation",
+      "report_date": "2026-09-29",
+      "report_time_label": "Time unconfirmed",
+      "planned_date": "2026-09-30",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": "/shows/cnxc"
     },
     {
       "ticker": "TMQ",
