@@ -1,10 +1,20 @@
 {
   "schema": "charged-alpha-public-production/1",
-  "updated_at": "2026-09-24T23:40:24.249496-05:00",
+  "updated_at": "2026-09-25T00:36:09.485710-05:00",
   "calendar_updated_at": "2026-09-24T23:40:20.957003-05:00",
-  "calendar_status": "fresh",
+  "calendar_status": "stale",
   "daily_target": 10,
   "history": [
+    {
+      "ticker": "COST",
+      "company": "Costco Wholesale",
+      "period": "Q4 FY2026",
+      "completed_at": "2026-09-25T00:23:49.149432-05:00",
+      "video_url": "https://youtu.be/xgmoRynmyVY",
+      "short_url": "https://youtu.be/0dE-EDNLxYQ",
+      "packet_url": "https://chargedalpha.com/research/cost-q4-fy2026",
+      "stock_url": "/shows/cost"
+    },
     {
       "ticker": "SNX",
       "company": "TD SYNNEX Corporation",
@@ -518,16 +528,6 @@
       "stock_url": null
     },
     {
-      "ticker": "COST",
-      "company": "Costco Wholesale Corporation",
-      "report_date": "2026-09-24",
-      "report_time_label": "Time unconfirmed",
-      "planned_date": "2026-09-25",
-      "date_status": "Calendar estimate",
-      "source_url": null,
-      "stock_url": "/shows/cost"
-    },
-    {
       "ticker": "IONR",
       "company": "ioneer Ltd",
       "report_date": "2026-09-24",
@@ -555,7 +555,7 @@
       "planned_date": "2026-09-25",
       "date_status": "Calendar estimate",
       "source_url": null,
-      "stock_url": null
+      "stock_url": "/shows/uxin"
     },
     {
       "ticker": "IVA",
@@ -615,7 +615,7 @@
       "planned_date": "2026-09-29",
       "date_status": "Calendar estimate",
       "source_url": null,
-      "stock_url": null
+      "stock_url": "/shows/uxin"
     },
     {
       "ticker": "MTN",
@@ -692,7 +692,7 @@
       "company": "Jabil Inc.",
       "report_date": "2026-09-30",
       "report_time_label": "Time unconfirmed",
-      "planned_date": "",
+      "planned_date": "2026-10-01",
       "date_status": "Calendar estimate",
       "source_url": null,
       "stock_url": "/shows/jbl"
@@ -702,7 +702,7 @@
       "company": "Conagra Brands, Inc.",
       "report_date": "2026-09-30",
       "report_time_label": "Time unconfirmed",
-      "planned_date": "",
+      "planned_date": "2026-10-01",
       "date_status": "Calendar estimate",
       "source_url": null,
       "stock_url": "/shows/cag"
@@ -712,7 +712,7 @@
       "company": "Cal-Maine Foods, Inc.",
       "report_date": "2026-09-30",
       "report_time_label": "Time unconfirmed",
-      "planned_date": "",
+      "planned_date": "2026-10-01",
       "date_status": "Calendar estimate",
       "source_url": null,
       "stock_url": null
@@ -722,7 +722,7 @@
       "company": "Progress Software Corporation",
       "report_date": "2026-09-30",
       "report_time_label": "Time unconfirmed",
-      "planned_date": "",
+      "planned_date": "2026-10-01",
       "date_status": "Calendar estimate",
       "source_url": null,
       "stock_url": "/shows/prgs"
@@ -732,7 +732,7 @@
       "company": "Bassett Furniture Industries, Incorporated",
       "report_date": "2026-09-30",
       "report_time_label": "Time unconfirmed",
-      "planned_date": "",
+      "planned_date": "2026-10-01",
       "date_status": "Calendar estimate",
       "source_url": null,
       "stock_url": null

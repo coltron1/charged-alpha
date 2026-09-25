@@ -2204,6 +2204,64 @@
       "words": 6561,
       "figures": 18,
       "tables": 38
+    },
+    {
+      "key": "UXIN:Q2-2026",
+      "year": 2026,
+      "quarter": 2,
+      "fiscal": false,
+      "slug": "uxin-q2-2026",
+      "ticker": "UXIN",
+      "company": "Uxin Limited",
+      "period": "Q2 2026",
+      "canonical_url": "https://chargedalpha.com/research/uxin-q2-2026",
+      "title": "UXIN: Volume Nearly Doubled. Gross Margin Turned Negative.",
+      "page_title": "UXIN Q2 2026 Research Packet — Charged Alpha",
+      "description": "Retail volume rose 88.8%, but inventory markdowns pushed gross margin below zero while outside capital still supports liquidity.",
+      "sha256": "6d2ab1548eeec94b227963fadf1ca6a208720a539279962244ebab03ebaf441f",
+      "html_file": "research_packets/uxin-q2-2026.html",
+      "source_episode": "UXIN-Q2-2026",
+      "source_staged_at": "2026-09-25T05:33:03Z",
+      "source_sha256": {
+        "READY": "0c45f96c783f990f767368ff772963de5a016dd03bcb7da74b9a82149de78a21",
+        "handoff.json": "8c83053e618e0e23fb7ee0b64790b7773aefe08336449bb7adc4693cc51bd401",
+        "packet/uxin-q2-2026-research-packet.html": "6d2ab1548eeec94b227963fadf1ca6a208720a539279962244ebab03ebaf441f",
+        "packet/packet_meta.json": "145400c86e5166b2ee5a502ab19e28a1c5883b0b238997ff44567762a30e9553",
+        "packet/packet.json": "baab3ac45717b87828d4c965986709e65750676eb1a747fc04a66abb260211ef"
+      },
+      "primary_youtube_long": "677BagwfOg4",
+      "primary_youtube_short": null,
+      "youtube_studio": null,
+      "youtube_studio_short": null,
+      "what_changed": {
+        "summary": "Retail volume rose 88.8%, but inventory markdowns pushed gross margin below zero while outside capital still supports liquidity.",
+        "items": [
+          {
+            "title": "Demand scaled rapidly.",
+            "detail": "Retail vehicle volume rose 88.8% to 19,610."
+          },
+          {
+            "title": "The inventory reset was expensive.",
+            "detail": "Gross margin fell to negative 0.7% and operating loss reached RMB151.9 million."
+          },
+          {
+            "title": "Scale helped one cost line.",
+            "detail": "Sales and marketing per retail vehicle fell about 14.9%, but that could not offset negative vehicle economics."
+          },
+          {
+            "title": "Capital providers remain central.",
+            "detail": "Current liabilities exceed current assets and historical growth has depended on financing."
+          },
+          {
+            "title": "The next quarter is a margin test.",
+            "detail": "Management guides to gross margin above 6%; static break-even at the Q2 expense base is about 12.45%."
+          }
+        ]
+      },
+      "source_published": "September 24, 2026",
+      "words": 6130,
+      "figures": 22,
+      "tables": 40
     }
   ]
 }
