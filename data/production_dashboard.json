@@ -1,7 +1,7 @@
 {
   "schema": "charged-alpha-public-production/1",
-  "updated_at": "2026-09-25T09:58:03.432583-05:00",
-  "calendar_updated_at": "2026-09-25T09:51:13.636150-05:00",
+  "updated_at": "2026-09-25T12:08:38.119468-05:00",
+  "calendar_updated_at": "2026-09-25T12:06:48.051875-05:00",
   "calendar_status": "fresh",
   "daily_target": 10,
   "history": [
@@ -540,6 +540,16 @@
     {
       "ticker": "WSHP",
       "company": "WeShop Holdings Limited Class A Ordinary Shares",
+      "report_date": "2026-09-28",
+      "report_time_label": "Time unconfirmed",
+      "planned_date": "2026-09-29",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": null
+    },
+    {
+      "ticker": "HKD",
+      "company": "AMTD Digital Inc.",
       "report_date": "2026-09-28",
       "report_time_label": "Time unconfirmed",
       "planned_date": "2026-09-29",
