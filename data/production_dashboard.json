@@ -1,7 +1,7 @@
 {
   "schema": "charged-alpha-public-production/1",
-  "updated_at": "2026-09-25T05:34:09.475354-05:00",
-  "calendar_updated_at": "2026-09-25T05:28:28.154520-05:00",
+  "updated_at": "2026-09-25T07:45:40.925790-05:00",
+  "calendar_updated_at": "2026-09-25T07:42:15.806465-05:00",
   "calendar_status": "fresh",
   "daily_target": 10,
   "history": [
@@ -510,6 +510,16 @@
     {
       "ticker": "IDT",
       "company": "IDT Corporation",
+      "report_date": "2026-09-28",
+      "report_time_label": "Time unconfirmed",
+      "planned_date": "2026-09-29",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": null
+    },
+    {
+      "ticker": "ADSE",
+      "company": "ADS-TEC Energy PLC",
       "report_date": "2026-09-28",
       "report_time_label": "Time unconfirmed",
       "planned_date": "2026-09-29",

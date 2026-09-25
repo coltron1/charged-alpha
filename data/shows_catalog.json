@@ -10,6 +10,42 @@
   },
   "episodes": [
     {
+      "ticker": "VFS",
+      "company": "VinFast Auto Ltd.",
+      "sector": "Consumer Cyclical",
+      "quarter": "Q1 2026",
+      "episode_number": "",
+      "title": "VFS Stock: Deliveries Up 61% but the Cash Keeps Burning Q1 2026",
+      "published_at": "2026-06-08T17:29:32+00:00",
+      "status": "youtube_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=_Dj3CQNcXEI",
+      "spotify_url": "",
+      "apple_url": "https://podcasts.apple.com/us/podcast/vfs-stock-deliveries-up-61-but-the-cash-keeps-burning-q1-2026/id1891551459?i=1000771756562&uo=4",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/vfs-stock-deliveries-up-61-but-the-cash-keeps-burning-q1-2026-1780953477/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "CPB",
+      "company": "The Campbell's Company",
+      "sector": "Consumer Defensive",
+      "quarter": "Q3 FY2026",
+      "episode_number": "",
+      "title": "CPB Stock: Profit Falls 32% Yet Still Beats — A 5% Yield Trap? Q3 FY2026",
+      "published_at": "2026-06-08T17:02:04+00:00",
+      "status": "youtube_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=52ZAetSvJEk",
+      "spotify_url": "",
+      "apple_url": "https://podcasts.apple.com/us/podcast/cpb-stock-profit-falls-32-yet-still-beats-a-5-yield/id1891551459?i=1000771756764&uo=4",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/cpb-stock-profit-falls-32-yet-still-beats-%e2%80%94-a-5-yield-trap-q3-fy2026-1780953453/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
       "ticker": "RZLT",
       "company": "Rezolute, Inc.",
       "sector": "Healthcare",
@@ -34407,6 +34443,41 @@
       "description": "Theme videos, comparisons, and multi-stock frameworks for broader research.",
       "videos": [
         {
+          "title": "Nvidia’s AI Boom Has a Hidden Bottleneck",
+          "youtube_url": "https://www.youtube.com/watch?v=YmAL13K0MfA",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-05-07T03:50:10+00:00",
+          "section": "Market and Sector Explainers",
+          "tickers": [],
+          "summary": "A special-topic Charged Alpha video connected to current stock and earnings research."
+        },
+        {
+          "title": "Big Tech Earnings Ranked: AI Capex Exploded, Google Took the Lead | Q12026",
+          "youtube_url": "https://www.youtube.com/watch?v=W0NWyBoZgNI",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-04-30T03:32:56+00:00",
+          "section": "Market and Sector Explainers",
+          "tickers": [],
+          "summary": "A special-topic Charged Alpha video connected to current stock and earnings research."
+        },
+        {
+          "title": "RPM — Q3 FY2026 Earnings Deep Dive | Charged Alpha",
+          "youtube_url": "https://www.youtube.com/watch?v=dzWdOFdXjgs",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-04-16T03:57:26+00:00",
+          "section": "Market and Sector Explainers",
+          "tickers": [
+            "RPM"
+          ],
+          "summary": "A special-topic Charged Alpha video connected to current stock and earnings research."
+        },
+        {
           "title": "5 Consumer Earnings, 1 Verdict: CASY vs CHWY vs LEN vs TCOM vs VFS",
           "youtube_url": "https://www.youtube.com/watch?v=QBXpdXwT1Zg",
           "podbean_url": "https://chargedalpha.podbean.com/e/5-consumer-earnings-1-verdict-casy-vs-chwy-vs-len-vs-tcom-vs-vfs/",
@@ -46468,9 +46539,7 @@
           "tickers": [
             "VFS"
           ],
-          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage.",
-          "earnings_youtube_url": "https://www.youtube.com/watch?v=EodaqPv-tq4",
-          "earnings_match": "stock_period_date"
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
         },
         {
           "title": "VFS +61% — GROWTH SOARS, CASH BURNS #Shorts",
@@ -46496,9 +46565,7 @@
           "tickers": [
             "CPB"
           ],
-          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage.",
-          "earnings_youtube_url": "https://www.youtube.com/watch?v=Xu8Op8L-fF4",
-          "earnings_match": "stock_date"
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
         },
         {
           "title": "CPB Stock: Q3 FY2026 in 60 Seconds #Shorts",
@@ -46510,9 +46577,7 @@
           "tickers": [
             "CPB"
           ],
-          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage.",
-          "earnings_youtube_url": "https://www.youtube.com/watch?v=Xu8Op8L-fF4",
-          "earnings_match": "stock_period_date"
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage."
         },
         {
           "title": "VST Stock: AI's Power Bill Explained #Shorts",
@@ -46529,7 +46594,7 @@
       ]
     }
   ],
-  "last_synced_at": "2026-09-25T01:00:57-05:00",
+  "last_synced_at": "2026-09-25T07:44:56-05:00",
   "stock_metadata": {
     "A": {
       "company": "Agilent Technologies, Inc.",
@@ -46592,11 +46657,11 @@
       "sector": "Financial Services"
     },
     "ACHR": {
-      "company": "Archer Aviation Inc.",
+      "company": "Archer Aviation",
       "sector": "Industrials"
     },
     "ACI": {
-      "company": "Albertsons Companies, Inc.",
+      "company": "Albertsons Companies Inc",
       "sector": "Consumer Defensive"
     },
     "ACM": {
@@ -46620,7 +46685,7 @@
       "sector": "Real Estate"
     },
     "ADI": {
-      "company": "Analog Devices, Inc.",
+      "company": "Analog Devices",
       "sector": "Technology"
     },
     "ADM": {
@@ -46712,7 +46777,7 @@
       "sector": "Technology"
     },
     "ALB": {
-      "sector": "Basic Materials",
+      "sector": "Industrials",
       "company": "Albemarle Corporation"
     },
     "ALC": {
@@ -46792,7 +46857,7 @@
       "sector": "Technology"
     },
     "AMP": {
-      "company": "Ameriprise Financial, Inc.",
+      "company": "Ameriprise Financial Inc.",
       "sector": "Financial Services"
     },
     "AMRX": {
@@ -46880,7 +46945,7 @@
       "sector": "Communication Services"
     },
     "APPF": {
-      "company": "AppFolio, Inc.",
+      "company": "AppFolio Inc.",
       "sector": "Technology"
     },
     "ARCO": {
@@ -46976,7 +47041,7 @@
       "sector": "Industrials"
     },
     "AVGO": {
-      "company": "Broadcom Inc.",
+      "company": "Broadcom",
       "sector": "Technology"
     },
     "AVY": {
@@ -47032,7 +47097,7 @@
       "sector": "Consumer Cyclical"
     },
     "BAC": {
-      "company": "Bank of America Corporation",
+      "company": "Bank of America",
       "sector": "Financial Services"
     },
     "BAH": {
@@ -47210,7 +47275,7 @@
       "sector": "Technology"
     },
     "BR": {
-      "company": "Broadridge Financial Solutions, Inc.",
+      "company": "technology",
       "sector": "Technology"
     },
     "BRC": {
@@ -47227,7 +47292,7 @@
       "sector": "Financial Services"
     },
     "BROS": {
-      "sector": "Consumer Cyclical",
+      "sector": "Consumer",
       "company": "Dutch Bros Inc."
     },
     "BRUN": {
@@ -47267,7 +47332,7 @@
       "sector": "Industrials"
     },
     "BYND": {
-      "sector": "Consumer Defensive",
+      "sector": "Consumer",
       "company": "Beyond Meat, Inc."
     },
     "BZUN": {
@@ -47275,7 +47340,7 @@
       "sector": "Consumer Cyclical"
     },
     "C": {
-      "company": "Citigroup Inc.",
+      "company": "Citigroup",
       "sector": "Financial Services"
     },
     "CACI": {
@@ -47327,7 +47392,7 @@
       "sector": "Consumer Cyclical"
     },
     "CB": {
-      "company": "Chubb Limited",
+      "company": "Chubb Ltd.",
       "sector": "Financials"
     },
     "CBOE": {
@@ -47335,7 +47400,7 @@
       "sector": "Financial Services"
     },
     "CBRE": {
-      "company": "CBRE Group, Inc.",
+      "company": "CBRE Group Inc.",
       "sector": "Real Estate"
     },
     "CBRL": {
@@ -47347,7 +47412,7 @@
       "sector": "Technology"
     },
     "CBSH": {
-      "company": "Commerce Bancshares, Inc.",
+      "company": "Commerce Bancshares Inc",
       "sector": "Financial Services"
     },
     "CCI": {
@@ -47391,7 +47456,7 @@
       "sector": "Healthcare"
     },
     "CELH": {
-      "sector": "Consumer Defensive",
+      "sector": "Consumer",
       "company": "Celsius Holdings, Inc."
     },
     "CFG": {
@@ -47463,7 +47528,7 @@
       "sector": "Technology"
     },
     "CLF": {
-      "company": "Cleveland-Cliffs Inc.",
+      "company": "Cleveland-Cliffs Inc",
       "sector": "Basic Materials"
     },
     "CLS": {
@@ -47487,7 +47552,7 @@
       "sector": "Communication Services"
     },
     "CME": {
-      "company": "CME Group Inc.",
+      "company": "CME Group Inc",
       "sector": "Financial Services"
     },
     "CMG": {
@@ -47523,7 +47588,7 @@
       "sector": "Industrials"
     },
     "CNP": {
-      "company": "CenterPoint Energy, Inc.",
+      "company": "CenterPoint Energy Inc.",
       "sector": "Utilities"
     },
     "CNXC": {
@@ -47535,7 +47600,7 @@
       "sector": "Consumer Defensive"
     },
     "COF": {
-      "company": "Capital One Financial Corporation",
+      "company": "Capital One Financial",
       "sector": "Financial Services"
     },
     "COGT": {
@@ -47547,11 +47612,11 @@
       "sector": "Technology"
     },
     "COIN": {
-      "company": "Coinbase Global, Inc.",
+      "company": "Coinbase",
       "sector": "Financial Services"
     },
     "COLB": {
-      "company": "Columbia Banking System, Inc.",
+      "company": "Columbia Banking System Inc.",
       "sector": "Financial Services"
     },
     "COO": {
@@ -47663,7 +47728,7 @@
       "sector": "Technology"
     },
     "CSL": {
-      "company": "Carlisle Companies Incorporated",
+      "company": "Carlisle Companies Inc.",
       "sector": "Industrials"
     },
     "CSX": {
@@ -47683,7 +47748,7 @@
       "sector": "Technology"
     },
     "CTVA": {
-      "company": "Corteva, Inc.",
+      "company": "Corteva",
       "sector": "Basic Materials"
     },
     "CURV": {
@@ -47731,7 +47796,7 @@
       "sector": "Consumer Defensive"
     },
     "DASH": {
-      "sector": "Consumer Cyclical",
+      "sector": "Technology",
       "company": "DoorDash, Inc."
     },
     "DBI": {
@@ -47787,8 +47852,8 @@
       "sector": "Healthcare"
     },
     "DIS": {
-      "company": "The Walt Disney Company",
-      "sector": "Communication Services"
+      "company": "Walt Disney Co.",
+      "sector": "Technology"
     },
     "DKNG": {
       "company": "DraftKings Inc.",
@@ -47799,7 +47864,7 @@
       "sector": "Consumer Cyclical"
     },
     "DLR": {
-      "company": "Digital Realty Trust, Inc.",
+      "company": "Digital Realty Trust Inc.",
       "sector": "Real Estate"
     },
     "DLTR": {
@@ -47839,7 +47904,7 @@
       "sector": "Industrials"
     },
     "DPZ": {
-      "company": "Domino's Pizza Inc",
+      "company": "Domino’s Pizza Inc",
       "sector": "Consumer Cyclical"
     },
     "DRI": {
@@ -47871,7 +47936,7 @@
       "sector": "Utilities"
     },
     "DUOL": {
-      "company": "Duolingo, Inc.",
+      "company": "technology",
       "sector": "Technology"
     },
     "DVA": {
@@ -48027,7 +48092,7 @@
       "sector": "Industrials"
     },
     "ESI": {
-      "company": "Element Solutions Inc.",
+      "company": "Element Solutions Inc",
       "sector": "Basic Materials"
     },
     "ESLT": {
@@ -48063,7 +48128,7 @@
       "sector": "Healthcare"
     },
     "EWBC": {
-      "company": "East West Bancorp, Inc.",
+      "company": "East West Bancorp",
       "sector": "Financial Services"
     },
     "EXE": {
@@ -48103,7 +48168,7 @@
       "sector": "Industrials"
     },
     "FCX": {
-      "company": "Freeport-McMoRan, Inc.",
+      "company": "Freeport-McMoRan Inc.",
       "sector": "Basic Materials"
     },
     "FDS": {
@@ -48131,7 +48196,7 @@
       "sector": "Technology"
     },
     "FHB": {
-      "company": "First Hawaiian, Inc.",
+      "company": "First Hawaiian Inc.",
       "sector": "Financial Services"
     },
     "FHN": {
@@ -48159,7 +48224,7 @@
       "sector": "Consumer Cyclical"
     },
     "FIX": {
-      "company": "Comfort Systems USA, Inc.",
+      "company": "Comfort Systems USA Inc.",
       "sector": "Industrials"
     },
     "FIZZ": {
@@ -48171,7 +48236,7 @@
       "sector": "Energy"
     },
     "FLUT": {
-      "sector": "Consumer Cyclical",
+      "sector": "Consumer",
       "company": "Flutter Entertainment plc"
     },
     "FLWS": {
@@ -48191,7 +48256,7 @@
       "sector": "Technology"
     },
     "FNB": {
-      "company": "F.N.B. Corporation",
+      "company": "FNB Corporation",
       "sector": "Financial Services"
     },
     "FNF": {
@@ -48291,7 +48356,7 @@
       "sector": "Technology"
     },
     "GEV": {
-      "company": "GE Vernova Inc.",
+      "company": "GE Vernova",
       "sector": "Industrials"
     },
     "GFI": {
@@ -48335,7 +48400,7 @@
       "sector": "Energy"
     },
     "GLPI": {
-      "company": "Gaming and Leisure Properties, Inc.",
+      "company": "Gaming and Leisure Properties Inc.",
       "sector": "Real Estate"
     },
     "GLW": {
@@ -48463,7 +48528,7 @@
       "sector": "Consumer Defensive"
     },
     "HIG": {
-      "company": "The Hartford Insurance Group, Inc.",
+      "company": "Hartford Financial Services Group Inc.",
       "sector": "Financial Services"
     },
     "HII": {
@@ -48575,7 +48640,7 @@
       "sector": "Industrials"
     },
     "IBKR": {
-      "company": "Interactive Brokers Group, Inc.",
+      "company": "Interactive Brokers Group",
       "sector": "Financial Services"
     },
     "IBM": {
@@ -48675,7 +48740,7 @@
       "sector": "Technology"
     },
     "IP": {
-      "company": "International Paper Company",
+      "company": "International Paper",
       "sector": "Consumer Cyclical"
     },
     "IPHA": {
@@ -48835,7 +48900,7 @@
       "sector": "Consumer Cyclical"
     },
     "KNSL": {
-      "company": "Kinsale Capital Group, Inc.",
+      "company": "Kinsale Capital Group Inc.",
       "sector": "Financial Services"
     },
     "KNX": {
@@ -48863,7 +48928,7 @@
       "sector": "Industrials"
     },
     "KRYS": {
-      "company": "Krystal Biotech, Inc.",
+      "company": "healthcare",
       "sector": "Healthcare"
     },
     "KSS": {
@@ -49019,7 +49084,7 @@
       "sector": "Industrials"
     },
     "LVS": {
-      "company": "Las Vegas Sands Corp.",
+      "company": "Las Vegas Sands Corp",
       "sector": "Consumer Cyclical"
     },
     "LW": {
@@ -49095,7 +49160,7 @@
       "sector": "Healthcare"
     },
     "MCO": {
-      "company": "Moody's Corporation",
+      "company": "Moody’s Corporation",
       "sector": "Financial Services"
     },
     "MDB": {
@@ -49119,7 +49184,7 @@
       "sector": "Healthcare"
     },
     "MEDP": {
-      "company": "Medpace Holdings, Inc.",
+      "company": "Medpace Holdings",
       "sector": "Healthcare"
     },
     "MELI": {
@@ -49163,7 +49228,7 @@
       "sector": "Technology"
     },
     "MLI": {
-      "company": "Mueller Industries, Inc.",
+      "company": "Mueller Industries",
       "sector": "Industrials"
     },
     "MLM": {
@@ -49191,7 +49256,7 @@
       "sector": "Consumer Cyclical"
     },
     "MNST": {
-      "sector": "Consumer Defensive",
+      "sector": "Consumer",
       "company": "Monster Beverage Corporation"
     },
     "MO": {
@@ -49203,7 +49268,7 @@
       "sector": "Consumer Cyclical"
     },
     "MOH": {
-      "company": "Molina Healthcare, Inc.",
+      "company": "Molina Healthcare",
       "sector": "Healthcare"
     },
     "MOMO": {
@@ -49235,7 +49300,7 @@
       "sector": "Healthcare"
     },
     "MRSH": {
-      "company": "Marsh & McLennan Companies, Inc.",
+      "company": "Marsh & McLennan",
       "sector": "Financial Services"
     },
     "MRVL": {
@@ -49331,7 +49396,7 @@
       "sector": "Technology"
     },
     "NDAQ": {
-      "company": "Nasdaq, Inc.",
+      "company": "Nasdaq Inc.",
       "sector": "Financial Services"
     },
     "NDSN": {
@@ -49347,7 +49412,7 @@
       "sector": "Consumer Cyclical"
     },
     "NEM": {
-      "company": "Newmont Corporation",
+      "company": "Newmont Corp",
       "sector": "Basic Materials"
     },
     "NEOG": {
@@ -49411,7 +49476,7 @@
       "sector": "Technology"
     },
     "NRG": {
-      "sector": "Utilities",
+      "sector": "Energy",
       "company": "NRG Energy, Inc."
     },
     "NRIX": {
@@ -49499,7 +49564,7 @@
       "sector": "Technology"
     },
     "NYT": {
-      "sector": "Communication Services",
+      "sector": "Technology",
       "company": "New York Times Company (The)"
     },
     "OCTV": {
@@ -49539,7 +49604,7 @@
       "sector": "Communication"
     },
     "ON": {
-      "company": "ON Semiconductor Corporation",
+      "company": "technology",
       "sector": "Technology"
     },
     "ONDS": {
@@ -49643,7 +49708,7 @@
       "sector": "Industrials"
     },
     "PCG": {
-      "company": "PG&E Corporation",
+      "company": "PG&E Corp",
       "sector": "Utilities"
     },
     "PCOR": {
@@ -49663,11 +49728,11 @@
       "sector": "Technology"
     },
     "PEN": {
-      "company": "Penumbra, Inc.",
+      "company": "Penumbra Inc",
       "sector": "Healthcare"
     },
     "PEP": {
-      "company": "PepsiCo",
+      "company": "PepsiCo Inc.",
       "sector": "Consumer"
     },
     "PFE": {
@@ -49691,7 +49756,7 @@
       "sector": "Industrials"
     },
     "PHM": {
-      "company": "PulteGroup, Inc.",
+      "company": "PulteGroup Inc",
       "sector": "Consumer Cyclical"
     },
     "PI": {
@@ -49723,11 +49788,11 @@
       "sector": "Communication Services"
     },
     "PLD": {
-      "company": "Prologis Inc",
+      "company": "Prologis Inc.",
       "sector": "Real Estate"
     },
     "PLTR": {
-      "company": "Palantir Technologies Inc.",
+      "company": "Palantir Technologies",
       "sector": "Technology"
     },
     "PLUS": {
@@ -49735,7 +49800,7 @@
       "sector": "Technology"
     },
     "PM": {
-      "company": "Philip Morris International Inc",
+      "company": "Philip Morris International",
       "sector": "Consumer Defensive"
     },
     "PNC": {
@@ -49743,7 +49808,7 @@
       "sector": "Financial Services"
     },
     "PNFP": {
-      "company": "Pinnacle Financial Partners, Inc.",
+      "company": "Pinnacle Financial Partners",
       "sector": "Financial Services"
     },
     "PNR": {
@@ -49755,7 +49820,7 @@
       "sector": "Healthcare"
     },
     "POET": {
-      "company": "POET Technologies Inc.",
+      "company": "POET Technologies",
       "sector": "Technology"
     },
     "PONY": {
@@ -49779,7 +49844,7 @@
       "sector": "Technology"
     },
     "PRU": {
-      "company": "Prudential Financial, Inc.",
+      "company": "financial services",
       "sector": "Financial Services"
     },
     "PSKY": {
@@ -49843,7 +49908,7 @@
       "sector": "Consumer Cyclical"
     },
     "QSR": {
-      "sector": "Consumer Cyclical",
+      "sector": "Consumer",
       "company": "Restaurant Brands International"
     },
     "QUBT": {
@@ -49851,7 +49916,7 @@
       "sector": "Technology"
     },
     "R": {
-      "company": "Ryder System, Inc.",
+      "company": "Ryder System Inc",
       "sector": "Industrials"
     },
     "RACE": {
@@ -49920,7 +49985,7 @@
       "sector": "Consumer Cyclical"
     },
     "RHI": {
-      "company": "Robert Half Inc.",
+      "company": "Robert Half International",
       "sector": "Industrials"
     },
     "RIOT": {
@@ -49936,7 +50001,7 @@
       "sector": "Industrials"
     },
     "RJF": {
-      "company": "Raymond James Financial, Inc.",
+      "company": "Raymond James Financial",
       "sector": "Financial Services"
     },
     "RKLB": {
@@ -49948,7 +50013,7 @@
       "sector": "Consumer Cyclical"
     },
     "RLI": {
-      "company": "RLI Corp.",
+      "company": "RLI Corp",
       "sector": "Financial Services"
     },
     "RMBS": {
@@ -49980,11 +50045,11 @@
       "sector": "Communication Services"
     },
     "ROL": {
-      "company": "Rollins, Inc.",
+      "company": "Rollins Inc.",
       "sector": "Consumer Cyclical"
     },
     "ROP": {
-      "company": "Roper Technologies, Inc.",
+      "company": "Roper Technologies Inc",
       "sector": "Technology"
     },
     "ROST": {
@@ -50000,7 +50065,7 @@
       "sector": "Energy"
     },
     "RS": {
-      "company": "Reliance, Inc.",
+      "company": "Reliance Inc.",
       "sector": "Basic Materials"
     },
     "RSG": {
@@ -50064,7 +50129,7 @@
       "sector": "Consumer"
     },
     "SCHW": {
-      "company": "The Charles Schwab Corporation",
+      "company": "Charles Schwab Corporation",
       "sector": "Financial Services"
     },
     "SCSC": {
@@ -50092,7 +50157,7 @@
       "sector": "Healthcare"
     },
     "SF": {
-      "company": "Stifel Financial Corporation",
+      "company": "Stifel Financial Corp",
       "sector": "Financial Services"
     },
     "SFD": {
@@ -50120,7 +50185,7 @@
       "sector": "Materials"
     },
     "SID": {
-      "company": "Companhia Siderurgica Nacional ",
+      "company": "Companhia Siderurgica Nacional",
       "sector": "Basic Materials"
     },
     "SIFY": {
@@ -50176,7 +50241,7 @@
       "sector": "Consumer Defensive"
     },
     "SMR": {
-      "company": "NuScale Power Corporation",
+      "company": "NuScale Power",
       "sector": "Industrials"
     },
     "SMTC": {
@@ -50184,11 +50249,11 @@
       "sector": "Technology"
     },
     "SNA": {
-      "company": "Snap-On Incorporated",
+      "company": "Snap-on Inc",
       "sector": "Industrials"
     },
     "SNAP": {
-      "sector": "Communication Services",
+      "sector": "Technology",
       "company": "Snap Inc."
     },
     "SNDK": {
@@ -50272,7 +50337,7 @@
       "sector": "Basic Materials"
     },
     "SSNC": {
-      "company": "SS&C Technologies Holdings, Inc.",
+      "company": "SS&C Technologies Holdings Inc.",
       "sector": "Technology"
     },
     "STDN": {
@@ -50284,7 +50349,7 @@
       "sector": "Healthcare"
     },
     "STLD": {
-      "company": "Steel Dynamics, Inc.",
+      "company": "Steel Dynamics Inc",
       "sector": "Basic Materials"
     },
     "STM": {
@@ -50328,7 +50393,7 @@
       "sector": "Basic Materials"
     },
     "SW": {
-      "company": "Smurfit Westrock Plc",
+      "company": "Smurfit WestRock",
       "sector": "Consumer Cyclical"
     },
     "SWBI": {
@@ -50408,7 +50473,7 @@
       "sector": "Technology"
     },
     "TECH": {
-      "sector": "Healthcare",
+      "sector": "Technology",
       "company": "Bio-Techne Corporation"
     },
     "TECK": {
@@ -50469,7 +50534,7 @@
       "sector": "Industrials"
     },
     "TJX": {
-      "company": "The TJX Companies, Inc.",
+      "company": "TJX Companies",
       "sector": "Consumer Cyclical"
     },
     "TKO": {
@@ -50493,7 +50558,7 @@
       "sector": "Healthcare"
     },
     "TMUS": {
-      "company": "T-Mobile US, Inc.",
+      "company": "T-Mobile US",
       "sector": "Communication Services"
     },
     "TNL": {
@@ -50529,7 +50594,7 @@
       "sector": "Energy"
     },
     "TROW": {
-      "company": "T. Rowe Price Group, Inc.",
+      "company": "T. Rowe Price",
       "sector": "Financial Services"
     },
     "TRU": {
@@ -50621,7 +50686,7 @@
       "sector": "Industrials"
     },
     "TYL": {
-      "company": "Tyler Technologies, Inc.",
+      "company": "Tyler Technologies",
       "sector": "Technology"
     },
     "U": {
@@ -50689,7 +50754,7 @@
       "sector": "Consumer Cyclical"
     },
     "URI": {
-      "company": "United Rentals, Inc.",
+      "company": "United Rentals",
       "sector": "Industrials"
     },
     "UROY": {
@@ -50749,7 +50814,7 @@
       "sector": "Energy"
     },
     "VKTX": {
-      "company": "Viking Therapeutics, Inc.",
+      "company": "Viking Therapeutics Inc.",
       "sector": "Healthcare"
     },
     "VLO": {
@@ -50781,7 +50846,7 @@
       "sector": "Technology"
     },
     "VRT": {
-      "company": "Vertiv Holdings Co",
+      "company": "Vertiv Holdings",
       "sector": "Industrials"
     },
     "VRTX": {
@@ -50803,7 +50868,7 @@
       "sector": "Technology"
     },
     "VST": {
-      "sector": "Utilities",
+      "sector": "Energy",
       "company": "Vistra Corp."
     },
     "VTRS": {
@@ -50819,7 +50884,7 @@
       "sector": "Consumer Cyclical"
     },
     "WAB": {
-      "company": "Westinghouse Air Brake Technologies Corporation",
+      "company": "Wabtec Corporation",
       "sector": "Industrials"
     },
     "WAL": {
@@ -50927,7 +50992,7 @@
       "sector": "Industrials"
     },
     "WRB": {
-      "company": "W.R. Berkley Corporation",
+      "company": "W R Berkley Corp",
       "sector": "Financial Services"
     },
     "WRD": {
@@ -50943,7 +51008,7 @@
       "sector": "Consumer Cyclical"
     },
     "WST": {
-      "company": "West Pharmaceutical Services, Inc.",
+      "company": "West Pharmaceutical Services Inc.",
       "sector": "Healthcare"
     },
     "WTFC": {
@@ -50951,11 +51016,11 @@
       "sector": "Financial Services"
     },
     "WTW": {
-      "company": "Willis Towers Watson Public Limited Company",
+      "company": "Willis Towers Watson",
       "sector": "Financial Services"
     },
     "WU": {
-      "company": "The Western Union Company",
+      "company": "Western Union Company",
       "sector": "Financial Services"
     },
     "WULF": {
