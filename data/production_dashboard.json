@@ -1,7 +1,7 @@
 {
   "schema": "charged-alpha-public-production/1",
-  "updated_at": "2026-09-25T23:38:51.101473-05:00",
-  "calendar_updated_at": "2026-09-25T23:36:23.386952-05:00",
+  "updated_at": "2026-09-26T01:59:27.831330-05:00",
+  "calendar_updated_at": "2026-09-26T01:48:17.057620-05:00",
   "calendar_status": "fresh",
   "daily_target": 10,
   "history": [
@@ -488,16 +488,6 @@
   ],
   "upcoming": [
     {
-      "ticker": "HTLM",
-      "company": "HomesToLife Ltd",
-      "report_date": "2026-09-25",
-      "report_time_label": "Time unconfirmed",
-      "planned_date": "2026-09-26",
-      "date_status": "Calendar estimate",
-      "source_url": null,
-      "stock_url": null
-    },
-    {
       "ticker": "IDT",
       "company": "IDT Corporation",
       "report_date": "2026-09-28",
@@ -692,7 +682,7 @@
       "company": "Accenture plc",
       "report_date": "2026-10-01",
       "report_time_label": "Time unconfirmed",
-      "planned_date": "",
+      "planned_date": "2026-10-02",
       "date_status": "Calendar estimate",
       "source_url": null,
       "stock_url": "/shows/acn"
@@ -702,7 +692,7 @@
       "company": "Park Aerospace Corp.",
       "report_date": "2026-10-01",
       "report_time_label": "Time unconfirmed",
-      "planned_date": "",
+      "planned_date": "2026-10-02",
       "date_status": "Calendar estimate",
       "source_url": null,
       "stock_url": null
@@ -712,7 +702,7 @@
       "company": "McCormick & Company, Incorporated",
       "report_date": "2026-10-01",
       "report_time_label": "Time unconfirmed",
-      "planned_date": "",
+      "planned_date": "2026-10-02",
       "date_status": "Calendar estimate",
       "source_url": null,
       "stock_url": null
@@ -722,7 +712,7 @@
       "company": "NIKE, Inc.",
       "report_date": "2026-10-01",
       "report_time_label": "Time unconfirmed",
-      "planned_date": "",
+      "planned_date": "2026-10-02",
       "date_status": "Calendar estimate",
       "source_url": null,
       "stock_url": "/shows/nke"
@@ -732,7 +722,7 @@
       "company": "Acuity Brands, Inc.",
       "report_date": "2026-10-01",
       "report_time_label": "Time unconfirmed",
-      "planned_date": "",
+      "planned_date": "2026-10-02",
       "date_status": "Calendar estimate",
       "source_url": null,
       "stock_url": "/shows/ayi"
@@ -742,7 +732,7 @@
       "company": "Toro Corp.",
       "report_date": "2026-10-01",
       "report_time_label": "Time unconfirmed",
-      "planned_date": "",
+      "planned_date": "2026-10-02",
       "date_status": "Calendar estimate",
       "source_url": null,
       "stock_url": null
