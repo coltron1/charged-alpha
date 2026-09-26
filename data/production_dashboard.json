@@ -1,7 +1,7 @@
 {
   "schema": "charged-alpha-public-production/1",
-  "updated_at": "2026-09-25T21:29:40.463421-05:00",
-  "calendar_updated_at": "2026-09-25T21:28:44.630102-05:00",
+  "updated_at": "2026-09-25T23:38:51.101473-05:00",
+  "calendar_updated_at": "2026-09-25T23:36:23.386952-05:00",
   "calendar_status": "fresh",
   "daily_target": 10,
   "history": [
@@ -488,16 +488,6 @@
   ],
   "upcoming": [
     {
-      "ticker": "IPX",
-      "company": "IperionX Limited",
-      "report_date": "2026-09-25",
-      "report_time_label": "Time unconfirmed",
-      "planned_date": "2026-09-26",
-      "date_status": "Calendar estimate",
-      "source_url": null,
-      "stock_url": null
-    },
-    {
       "ticker": "HTLM",
       "company": "HomesToLife Ltd",
       "report_date": "2026-09-25",
@@ -550,6 +540,16 @@
     {
       "ticker": "HKD",
       "company": "AMTD Digital Inc.",
+      "report_date": "2026-09-28",
+      "report_time_label": "Time unconfirmed",
+      "planned_date": "2026-09-29",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": null
+    },
+    {
+      "ticker": "IPX",
+      "company": "IperionX Limited",
       "report_date": "2026-09-28",
       "report_time_label": "Time unconfirmed",
       "planned_date": "2026-09-29",
