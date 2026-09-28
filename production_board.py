@@ -11,6 +11,20 @@ CHICAGO = ZoneInfo('America/Chicago')
 SCHEMA = 'charged-alpha-public-production/1'
 PUBLISHED_RESULTS_STATUS = 'Actual results released; issuer/EDGAR source verified'
 
+PUBLIC_STAGE_LABELS = (
+    ('source-short-tts', 'Recording Short'),
+    ('source-short-asm', 'Preparing Short'),
+    ('source-short-render', 'Rendering Short'),
+    ('source-short-enc', 'Finishing Short'),
+    ('source-short-qa', 'Checking Short'),
+    ('primary-tts', 'Recording episode'),
+    ('primary-asm', 'Preparing episode'),
+    ('primary-render', 'Rendering episode'),
+    ('primary-enc', 'Finishing episode'),
+    ('primary-final', 'Finishing episode'),
+    ('primary-qa', 'Checking episode'),
+)
+
 
 def text(value, limit=180):
     return ' '.join(str(value or '').split())[:limit]
@@ -51,6 +65,14 @@ def public_url(value, hosts=None):
         return None
 
 
+def public_stage_label(value):
+    value = str(value or '').lower()
+    for marker, label in PUBLIC_STAGE_LABELS:
+        if marker in value:
+            return label
+    return 'Production in progress'
+
+
 def project_snapshot(snapshot, catalog):
     if snapshot.get('schema') != 'charged-alpha-production-dashboard/1':
         raise ValueError('Unsupported dashboard snapshot')
@@ -81,6 +103,33 @@ def project_snapshot(snapshot, catalog):
                         'completed_at': item['completed_at'], 'video_url': video, 'short_url': short,
                         'packet_url': packet, 'stock_url': '/shows/' + ticker.lower() if ticker in known else None})
     history.sort(key=lambda r: timestamp(r['completed_at']), reverse=True)
+    active_by_id, active_event_dates = {}, set()
+    backlog = snapshot.get('candidate_backlog', {})
+    for item in backlog.get('active', []) if isinstance(backlog, dict) else []:
+        if not isinstance(item, dict) or item.get('status') != 'in_progress':
+            continue
+        episode_id = text(item.get('source', {}).get('episode_id'), 80)
+        if episode_id:
+            active_by_id[episode_id] = item
+    active = []
+    current_work = snapshot.get('current_work', {})
+    for work in current_work.get('research_build', []) if isinstance(current_work, dict) else []:
+        if not isinstance(work, dict):
+            continue
+        episode_id = text(work.get('episode_id'), 80)
+        item = active_by_id.get(episode_id)
+        if not item:
+            continue
+        ticker, period = text(item.get('ticker'), 16), text(item.get('period'), 40)
+        if not re.fullmatch(r'[A-Z0-9.\-]{1,16}', ticker) or not period:
+            continue
+        active.append({'ticker': ticker, 'company': text(item.get('company') or companies.get(ticker) or ticker),
+                       'period': period, 'status_label': 'Building now',
+                       'stage_label': public_stage_label(work.get('latest_stage')),
+                       'stock_url': '/shows/' + ticker.lower() if ticker in known else None})
+        report_date = text(item.get('report_date'), 10)
+        if date_label(report_date) != 'Date unconfirmed':
+            active_event_dates.add((ticker, report_date))
     # A DONE bundle closes only its source-backed ticker/report-date event.
     # Completion time is publication workflow evidence, not earnings timing.
     upcoming, seen = [], set()
@@ -96,6 +145,8 @@ def project_snapshot(snapshot, catalog):
         if not re.fullmatch(r'[A-Z0-9.\-]{1,16}', ticker):
             continue
         if (ticker, report_date) in completed_event_dates:
+            continue
+        if (ticker, report_date) in active_event_dates:
             continue
         seen.add((ticker, report_date))
         exact = timestamp(item.get('report_at'))
@@ -114,7 +165,8 @@ def project_snapshot(snapshot, catalog):
     health = snapshot.get('source_health', {})
     return {'schema': SCHEMA, 'updated_at': snapshot['generated_at'],
             'calendar_updated_at': health.get('fetched_at'), 'calendar_status': health.get('fetch_status', 'unavailable'),
-            'daily_target': forecast.get('daily_target', 10), 'history': history, 'upcoming': upcoming}
+            'daily_target': forecast.get('daily_target', 10), 'active': active,
+            'history': history, 'upcoming': upcoming}
 
 
 def load_board(path=None, now=None):
@@ -125,7 +177,7 @@ def load_board(path=None, now=None):
         if data.get('schema') != SCHEMA:
             raise ValueError('Unsupported public dashboard')
     except (OSError, ValueError):
-        data = {'history': [], 'upcoming': [], 'calendar_status': 'unavailable'}
+        data = {'active': [], 'history': [], 'upcoming': [], 'calendar_status': 'unavailable'}
     history = [{**row, 'completed_label': time_label(row.get('completed_at'))} for row in data.get('history', [])]
     upcoming = []
     for row in data.get('upcoming', []):
@@ -142,5 +194,5 @@ def load_board(path=None, now=None):
     return {'updated_label': time_label(data.get('updated_at')),
             'calendar_updated_label': time_label(data.get('calendar_updated_at')),
             'calendar_status': 'stale' if stale else 'fresh', 'daily_target': data.get('daily_target', 10),
-            'latest': history[:1], 'upcoming': upcoming[:2], 'history': history,
+            'latest': history[:1], 'active': data.get('active', []), 'upcoming': upcoming[:2], 'history': history,
             'days': days, 'stale': stale}

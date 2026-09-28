@@ -1,9 +1,27 @@
 {
   "schema": "charged-alpha-public-production/1",
-  "updated_at": "2026-09-28T16:56:03.699050-05:00",
+  "updated_at": "2026-09-28T18:07:17.145825-05:00",
   "calendar_updated_at": "2026-09-28T16:52:33.940570-05:00",
   "calendar_status": "fresh",
   "daily_target": 10,
+  "active": [
+    {
+      "ticker": "IDT",
+      "company": "IDT Corporation",
+      "period": "Q4 FY2026",
+      "status_label": "Building now",
+      "stage_label": "Preparing Short",
+      "stock_url": null
+    },
+    {
+      "ticker": "MTN",
+      "company": "Vail Resorts, Inc.",
+      "period": "Q4 FY2026",
+      "status_label": "Building now",
+      "stage_label": "Finishing episode",
+      "stock_url": "/shows/mtn"
+    }
+  ],
   "history": [
     {
       "ticker": "RZLT",

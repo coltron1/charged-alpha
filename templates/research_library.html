@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>{{ seo_meta.title }}</title>
 {% include 'partials/seo_meta.html' %}<link rel="icon" href="/static/assets/charged-alpha-logo.png">
-{% if not following_page %}<link rel="stylesheet" href="/static/production-schedule.css?v=1">{% endif %}
+{% if not following_page %}<link rel="stylesheet" href="/static/production-schedule.css?v=2">{% endif %}
 {% for item in structured_data or [] %}<script type="application/ld+json">{{ item|tojson }}</script>{% endfor %}
 <style>body{margin:0;background:#101213}.ca-skip{position:absolute;left:16px;top:-90px;z-index:100;background:#e2eee7;padding:12px;color:#152c24}.ca-skip:focus{top:8px}</style>
 <script src="/static/research-library.js?v=2" defer></script></head><body>

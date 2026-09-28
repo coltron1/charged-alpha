@@ -6,7 +6,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 from unittest.mock import patch
 
-from production_board import project_snapshot, load_board, public_url
+from production_board import project_snapshot, load_board, public_url, public_stage_label
 
 
 def snapshot():
@@ -18,18 +18,55 @@ def snapshot():
             'forecast': {'daily_target': 10, 'date_cards': [{'candidates': [row]}]},
             'completed': [{'ticker': 'XYZ', 'period': 'Q1 2026', 'evidence': 'actual_bundle_DONE',
                            'completed_at': '2026-09-12T20:00:00Z', 'video_url': 'https://youtu.be/TestVideo01'}],
+            'candidate_backlog': {'active': [{
+                'ticker': 'ABC', 'company': 'Active Example', 'period': 'Q2 2026', 'report_date': '2026-09-14', 'status': 'in_progress',
+                'source': {'episode_id': 'ABC-Q2-2026', 'path': '/Users/private/authorization.json'},
+                'reasons': ['private user authorization'], 'authorization_sha256': 'secret-hash'}]},
+            'current_work': {'research_build': [{
+                'episode_id': 'ABC-Q2-2026', 'latest_stage': 'run999-primary-render-02',
+                'latest_event_status': 'command_succeeded', 'live_process_evidence': True}]},
             'schedule': {'status': 'PAUSED'}, 'claim': '/Users/private/claim', 'pid': 123, 'secret': 'never-public'}
 
 
 class ProductionBoardTests(unittest.TestCase):
+    def test_public_stage_labels_are_plain_and_bounded(self):
+        self.assertEqual(public_stage_label('run941-primary-final-collect'), 'Finishing episode')
+        self.assertEqual(public_stage_label('run942-source-short-asm-revised'), 'Preparing Short')
+        self.assertEqual(public_stage_label('private-unknown-step'), 'Production in progress')
+
     def test_public_projection_removes_private_fields_and_keeps_verified_times(self):
         result = project_snapshot(snapshot(), {'episodes': [{'ticker': 'XYZ', 'company': 'Example Inc.'}]})
         raw = json.dumps(result)
-        for private in ('/Users/', 'never-public', 'PAUSED', '"pid"', '"claim"'):
+        for private in ('/Users/', 'never-public', 'PAUSED', '"pid"', '"claim"',
+                        'private user authorization', 'secret-hash', 'run999-primary-render-02'):
             self.assertNotIn(private, raw)
         self.assertEqual(result['upcoming'][0]['report_time_label'], '3:30 PM CDT')
         self.assertEqual(result['history'][0]['stock_url'], '/shows/xyz')
         self.assertEqual(result['upcoming'][0]['date_status'], 'Issuer-announced')
+        self.assertEqual(result['active'], [{
+            'ticker': 'ABC', 'company': 'Active Example', 'period': 'Q2 2026',
+            'status_label': 'Building now', 'stage_label': 'Rendering episode',
+            'stock_url': None}])
+
+    def test_active_requires_protected_ledger_and_current_work_intersection(self):
+        data = snapshot()
+        data['current_work']['research_build'].append({
+            'episode_id': 'UNAUTH-Q1-2026', 'latest_stage': 'run998-primary-tts-01'})
+        data['candidate_backlog']['active'].append({
+            'ticker': 'STALE', 'company': 'Stale Example', 'period': 'Q1 2026', 'report_date': '2026-09-14',
+            'status': 'in_progress', 'source': {'episode_id': 'STALE-Q1-2026'}})
+        result = project_snapshot(data, {})
+        self.assertEqual([row['ticker'] for row in result['active']], ['ABC'])
+        self.assertEqual([row['ticker'] for row in result['upcoming']], ['XYZ'])
+
+    def test_active_report_is_not_duplicated_in_upcoming(self):
+        data = snapshot()
+        data['candidate_backlog']['active'][0]['ticker'] = 'XYZ'
+        data['candidate_backlog']['active'][0]['source']['episode_id'] = 'XYZ-Q2-2026'
+        data['current_work']['research_build'][0]['episode_id'] = 'XYZ-Q2-2026'
+        result = project_snapshot(data, {})
+        self.assertEqual([row['ticker'] for row in result['active']], ['XYZ'])
+        self.assertEqual(result['upcoming'], [])
 
     def test_plain_upload_is_not_completion_and_future_quarter_survives(self):
         data = snapshot()
@@ -99,6 +136,7 @@ class ProductionBoardTests(unittest.TestCase):
         expanded = html.fromstring(full.data)
         self.assertEqual(len(expanded.xpath('//table[contains(@class, "production-history")]/tbody/tr')), 4)
         self.assertEqual(len(expanded.xpath('//*[contains(@class, "production-days")]//li')), 4)
+        self.assertEqual(len(expanded.xpath('//*[contains(@class, "production-active-card")]')), 1)
         self.assertIn(b'/production', home.data)
         self.assertNotIn(b'pilot_state', full.data)
 

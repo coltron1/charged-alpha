@@ -6,7 +6,7 @@
   <title>Episode Schedule &amp; History | Charged Alpha</title>
   {% include 'partials/seo_meta.html' %}
   <link rel="icon" href="/static/assets/charged-alpha-logo.png">
-  <link rel="stylesheet" href="/static/production-schedule.css?v=1">
+  <link rel="stylesheet" href="/static/production-schedule.css?v=2">
   <style>body{margin:0;background:#101213}.ca-skip{position:absolute;left:16px;top:-90px;z-index:100;background:#e2eee7;padding:12px;color:#152c24}.ca-skip:focus{top:8px}</style>
 </head>
 <body>
@@ -24,6 +24,27 @@
       </div>
       {% if production_board.stale %}<p class="production-notice" role="status">The earnings calendar is awaiting a fresh source check. Dates below may change.</p>{% endif %}
     </header>
+
+    {% if production_board.active %}
+    <section class="production-section" aria-labelledby="active-production-title">
+      <div class="production-section__heading">
+        <div><p class="production-eyebrow">In production</p><h2 id="active-production-title">Episodes building now</h2></div>
+        <p>Current production stage; publication links appear only after release.</p>
+      </div>
+      <div class="production-active-grid">
+        {% for item in production_board.active %}
+        <article class="production-active-card">
+          <div class="production-event__company">
+            {% if item.stock_url %}<a class="production-ticker" href="{{ item.stock_url }}">{{ item.ticker }}</a>{% else %}<span class="production-ticker">{{ item.ticker }}</span>{% endif %}
+            <span>{{ item.company }}</span>
+          </div>
+          <strong>{{ item.period }}</strong>
+          <span>{{ item.stage_label }}</span>
+        </article>
+        {% endfor %}
+      </div>
+    </section>
+    {% endif %}
 
     <section class="production-section" aria-labelledby="upcoming-schedule-title">
       <div class="production-section__heading">
