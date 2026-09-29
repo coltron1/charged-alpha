@@ -1,7 +1,7 @@
 {
   "schema": "charged-alpha-public-production/1",
-  "updated_at": "2026-09-29T10:40:20.262835-05:00",
-  "calendar_updated_at": "2026-09-29T10:25:35.336947-05:00",
+  "updated_at": "2026-09-29T17:28:15.407214-05:00",
+  "calendar_updated_at": "2026-09-29T17:19:37.719324-05:00",
   "calendar_status": "fresh",
   "daily_target": 10,
   "active": [],
@@ -519,14 +519,14 @@
       "stock_url": null
     },
     {
-      "ticker": "CNXC",
-      "company": "Concentrix Corporation",
+      "ticker": "HKD",
+      "company": "AMTD Digital Inc.",
       "report_date": "2026-09-29",
-      "report_time_label": "After U.S. market close",
+      "report_time_label": "Time unconfirmed",
       "planned_date": "2026-09-30",
-      "date_status": "Issuer-announced",
-      "source_url": "https://ir.concentrix.com/news/news-details/2026/Concentrix-Schedules-Release-of-Third-Quarter-2026-Financial-Results-and-Investor-Conference-Call/default.aspx",
-      "stock_url": "/shows/cnxc"
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": null
     },
     {
       "ticker": "IPX",
