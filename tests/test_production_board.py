@@ -24,7 +24,7 @@ def snapshot():
                 'reasons': ['private user authorization'], 'authorization_sha256': 'secret-hash'}]},
             'current_work': {'research_build': [{
                 'episode_id': 'ABC-Q2-2026', 'latest_stage': 'run999-primary-render-02',
-                'latest_event_status': 'command_succeeded', 'live_process_evidence': True}]},
+                'latest_event_status': 'running', 'live_process_evidence': True}]},
             'schedule': {'status': 'PAUSED'}, 'claim': '/Users/private/claim', 'pid': 123, 'secret': 'never-public'}
 
 
@@ -58,6 +58,29 @@ class ProductionBoardTests(unittest.TestCase):
         result = project_snapshot(data, {})
         self.assertEqual([row['ticker'] for row in result['active']], ['ABC'])
         self.assertEqual([row['ticker'] for row in result['upcoming']], ['XYZ'])
+
+    def test_active_uses_exact_episode_identity_and_live_controller_evidence(self):
+        data = snapshot()
+        data['candidate_backlog']['active'] = [
+            {'ticker': 'KMX', 'company': 'CarMax', 'period': 'Q2 FY2027', 'status': 'in_progress',
+             'source': {'kind': 'ranking'}},
+            {'ticker': 'UEC', 'company': 'Uranium Energy', 'period': 'FY2026', 'status': 'in_progress',
+             'source': {'kind': 'ranking'}},
+            {'ticker': 'NOLIVE', 'company': 'No Live Evidence', 'period': 'Q3 2026', 'status': 'in_progress',
+             'source': {'kind': 'ranking'}},
+        ]
+        data['current_work']['research_build'] = [
+            {'episode_id': 'KMX-Q2-FY2027', 'ticker': 'KMX', 'period': 'Q2 FY2027',
+             'latest_stage': 'primary-tts', 'latest_event_status': 'running', 'live_process_evidence': True},
+            {'episode_id': 'UEC-Q1-FY2026', 'ticker': 'UEC', 'period': 'Q1 FY2026',
+             'latest_stage': 'primary-tts', 'latest_event_status': 'running', 'live_process_evidence': True},
+            {'episode_id': 'UEC-FY2026', 'ticker': 'UEC', 'period': 'FY2026',
+             'latest_stage': 'primary-tts', 'latest_event_status': 'running', 'live_process_evidence': True},
+            {'episode_id': 'NOLIVE-Q3-2026', 'ticker': 'NOLIVE', 'period': 'Q3 2026',
+             'latest_stage': 'primary-tts', 'latest_event_status': 'command_succeeded', 'live_process_evidence': True},
+        ]
+        result = project_snapshot(data, {})
+        self.assertEqual([row['ticker'] for row in result['active']], ['KMX', 'UEC'])
 
     def test_active_report_is_not_duplicated_in_upcoming(self):
         data = snapshot()

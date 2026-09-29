@@ -73,6 +73,14 @@ def public_stage_label(value):
     return 'Production in progress'
 
 
+def episode_identity(ticker, period):
+    ticker = text(ticker, 16)
+    period = text(period, 40)
+    if not re.fullmatch(r'[A-Z0-9.\-]{1,16}', ticker) or not period:
+        return None
+    return ticker + '-' + re.sub(r'\s+', '-', period)
+
+
 def project_snapshot(snapshot, catalog):
     if snapshot.get('schema') != 'charged-alpha-production-dashboard/1':
         raise ValueError('Unsupported dashboard snapshot')
@@ -108,7 +116,7 @@ def project_snapshot(snapshot, catalog):
     for item in backlog.get('active', []) if isinstance(backlog, dict) else []:
         if not isinstance(item, dict) or item.get('status') != 'in_progress':
             continue
-        episode_id = text(item.get('source', {}).get('episode_id'), 80)
+        episode_id = episode_identity(item.get('ticker'), item.get('period'))
         if episode_id:
             active_by_id[episode_id] = item
     active = []
@@ -118,10 +126,13 @@ def project_snapshot(snapshot, catalog):
             continue
         episode_id = text(work.get('episode_id'), 80)
         item = active_by_id.get(episode_id)
-        if not item:
+        if (not item or work.get('live_process_evidence') is not True or
+                work.get('latest_event_status') != 'running'):
             continue
         ticker, period = text(item.get('ticker'), 16), text(item.get('period'), 40)
-        if not re.fullmatch(r'[A-Z0-9.\-]{1,16}', ticker) or not period:
+        if (not re.fullmatch(r'[A-Z0-9.\-]{1,16}', ticker) or not period or
+                text(work.get('ticker'), 16) not in {'', ticker} or
+                text(work.get('period'), 40) not in {'', period}):
             continue
         active.append({'ticker': ticker, 'company': text(item.get('company') or companies.get(ticker) or ticker),
                        'period': period, 'status_label': 'Building now',
