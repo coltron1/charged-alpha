@@ -10,6 +10,42 @@
   },
   "episodes": [
     {
+      "ticker": "IDT",
+      "company": "IDT Corporation",
+      "sector": "Communication Services",
+      "quarter": "Q4 FY2026",
+      "episode_number": "",
+      "title": "IDT Stock: Record Profits, Where Is the Cash? — Q4 FY2026",
+      "published_at": "2026-09-29T00:32:50+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=fivARrYkpkM",
+      "spotify_url": "",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/idt-stock-record-profits-where-is-the-cash-%e2%80%94-q4-fy2026/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "MTN",
+      "company": "Vail Resorts, Inc.",
+      "sector": "Consumer Cyclical",
+      "quarter": "Q4 FY2026",
+      "episode_number": "",
+      "title": "MTN Stock: The $114M Cash Gap Behind Vail’s Dividend — Q4 FY2026",
+      "published_at": "2026-09-28T23:30:52+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=43hTk_7PLlw",
+      "spotify_url": "https://open.spotify.com/episode/6m68GmVDRWHJm1EAAtnx7m",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/mtn-stock-the-114m-cash-gap-behind-vail-s-dividend-%e2%80%94-q4-fy2026/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
       "ticker": "VFS",
       "company": "VinFast Auto Ltd.",
       "sector": "Consumer Cyclical",
@@ -34589,6 +34625,36 @@
       "description": "Fast clips that point viewers into full research videos and stock pages.",
       "videos": [
         {
+          "title": "IDT Stock Earnings: Record Profits, a Cash Test — Q4 FY2026 #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/5-7h8gxkYzg",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-09-28T17:47:34-07:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "IDT"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage.",
+          "earnings_youtube_url": "https://www.youtube.com/watch?v=fivARrYkpkM",
+          "earnings_match": "stock_period_date"
+        },
+        {
+          "title": "MTN Stock Earnings: Vail Resorts’ $114M Cash Gap — Q4 FY2026 #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/7Up7TTHa6v4",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-09-28T17:45:06-07:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "MTN"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage.",
+          "earnings_youtube_url": "https://www.youtube.com/watch?v=43hTk_7PLlw",
+          "earnings_match": "stock_period_date"
+        },
+        {
           "title": "RZLT Stock: Seven Responses, Unresolved Clinical Paths — Q4 FY2026 #Shorts",
           "youtube_url": "https://www.youtube.com/shorts/C2g9ZsrC1gI",
           "spotify_url": "",
@@ -46594,7 +46660,7 @@
       ]
     }
   ],
-  "last_synced_at": "2026-09-25T07:44:56-05:00",
+  "last_synced_at": "2026-09-28T19:53:35-05:00",
   "stock_metadata": {
     "A": {
       "company": "Agilent Technologies, Inc.",
@@ -48658,6 +48724,10 @@
     "IDCC": {
       "company": "InterDigital, Inc.",
       "sector": "Technology"
+    },
+    "IDT": {
+      "company": "IDT Corporation",
+      "sector": "Communication Services"
     },
     "IDXX": {
       "company": "IDEXX Laboratories, Inc.",

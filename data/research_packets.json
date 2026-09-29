@@ -1162,6 +1162,64 @@
       "tables": 30
     },
     {
+      "key": "IDT:Q4-FY2026",
+      "year": 2026,
+      "quarter": 4,
+      "fiscal": true,
+      "slug": "idt-q4-fy2026",
+      "ticker": "IDT",
+      "company": "IDT Corporation",
+      "period": "Q4 FY2026",
+      "canonical_url": "https://chargedalpha.com/research/idt-q4-fy2026",
+      "title": "IDT: Record Profits, a Cash Conversion Test",
+      "page_title": "IDT Q4 FY2026 Research Packet — Charged Alpha",
+      "description": "IDT’s higher-margin businesses are growing, but settlement funding leaves a gap between record profits and owner cash. Our $60 base tests the recovery required.",
+      "sha256": "073d92a70ea00619cf1ff3a18ade7a6abaf0b6346886f837724877351ff97801",
+      "html_file": "research_packets/idt-q4-fy2026.html",
+      "source_episode": "IDT-Q4-FY2026",
+      "source_staged_at": "2026-09-29T00:37:40Z",
+      "source_sha256": {
+        "READY": "87ab8906a5fdc40154bba68510e70c416f890e35ade8c37858b1fdd4e051ca4f",
+        "handoff.json": "d296927b9ac110057ba7e1c43d0fc90fb9736300c6c1dd9945b64290c5c99ecb",
+        "packet/idt-q4-fy2026-research-packet.html": "073d92a70ea00619cf1ff3a18ade7a6abaf0b6346886f837724877351ff97801",
+        "packet/packet_meta.json": "1d42b9d413c9b40c27f8299687dd2dc69740115a6a587ea3e4340809957a9e85",
+        "packet/packet.json": "6667037db7fba176fc0c9f7ecb6c3e587fe174800e841d8e6b8fb4bf029992ef"
+      },
+      "primary_youtube_long": "fivARrYkpkM",
+      "primary_youtube_short": null,
+      "youtube_studio": null,
+      "youtube_studio_short": null,
+      "what_changed": {
+        "summary": "IDT’s higher-margin businesses are growing, but settlement funding leaves a gap between record profits and owner cash. Our $60 base tests the recovery required.",
+        "items": [
+          {
+            "title": "Growth is reaching operating profit.",
+            "detail": "Quarterly revenue rose 7% while operating income rose 52%; the higher-margin businesses matter more than their revenue share suggests."
+          },
+          {
+            "title": "The cash headline needs a deposit adjustment.",
+            "detail": "Annual GAAP operating cash was $91.1M; removing the customer-deposit inflow leaves $60.9M, versus $107.8M a year earlier. After capex, that is $37.8M, before owner-specific adjustments."
+          },
+          {
+            "title": "NRS has a changing mix and a changed metric.",
+            "detail": "Merchant services and advertising helped growth; the Rule of 40 calculation now uses total revenue growth instead of recurring revenue growth. Keep the definition change visible."
+          },
+          {
+            "title": "Guidance raises the bar.",
+            "detail": "Management targets FY2027 gross profit of $545–555M and adjusted EBITDA of $176–180M. More accounting profit must eventually produce cash after settlement needs and investment."
+          },
+          {
+            "title": "Not every dollar belongs to the public shareholder.",
+            "detail": "Restricted cash, minority holdings, subsidiary awards and voting control all affect how much economic value reaches IDT Class B shares. Our $60 base uses explicit ownership and cash reserves."
+          }
+        ]
+      },
+      "source_published": "September 28, 2026",
+      "words": 5701,
+      "figures": 16,
+      "tables": 29
+    },
+    {
       "key": "LPTH:Q4-FY2026",
       "year": 2026,
       "quarter": 4,
@@ -1276,6 +1334,64 @@
       "words": 6382,
       "figures": 17,
       "tables": 35
+    },
+    {
+      "key": "MTN:Q4-FY2026",
+      "year": 2026,
+      "quarter": 4,
+      "fiscal": true,
+      "slug": "mtn-q4-fy2026",
+      "ticker": "MTN",
+      "company": "Vail Resorts",
+      "period": "Q4 FY2026",
+      "canonical_url": "https://chargedalpha.com/research/mtn-q4-fy2026",
+      "title": "MTN: The Dividend Needs a Cash Recovery While Pass Commitments Shrink",
+      "page_title": "MTN Q4 FY2026 Research Packet — Charged Alpha",
+      "description": "Vail needs stronger cash generation to fund its dividend while advance pass sales weaken; our three valuation routes support a cautious HOLD.",
+      "sha256": "6d877c8925c2e40ec6080afdebc2b3643e78c120fab94a9836bf32bc3799f261",
+      "html_file": "research_packets/mtn-q4-fy2026.html",
+      "source_episode": "MTN-Q4-FY2026",
+      "source_staged_at": "2026-09-28T23:35:59Z",
+      "source_sha256": {
+        "READY": "03a31c9f23698d12fee951250ab0d6c00ea612f19e027ecb5894b87b23dcfa1b",
+        "handoff.json": "6396df71a173d5c600173107da44730d118a242d62c99e5daa2ec29fbfa86ee8",
+        "packet/mtn-q4-fy2026-research-packet.html": "6d877c8925c2e40ec6080afdebc2b3643e78c120fab94a9836bf32bc3799f261",
+        "packet/packet_meta.json": "30e3338c24b74aa70d5a5947bfa9de339dcc4c7ed107832a2e9a81c49af07718",
+        "packet/packet.json": "7f5deb6308694c8dbd117ca347ea53e2c9dc2779bd7a187f4b80e494b0da6118"
+      },
+      "primary_youtube_long": "43hTk_7PLlw",
+      "primary_youtube_short": null,
+      "youtube_studio": null,
+      "youtube_studio_short": null,
+      "what_changed": {
+        "summary": "Vail needs stronger cash generation to fund its dividend while advance pass sales weaken; our three valuation routes support a cautious HOLD.",
+        "items": [
+          {
+            "title": "The cash gap widened.",
+            "detail": "Free cash flow of $248.0M fell below $317.1M of dividends; $45.0M of repurchases widened the distribution gap to $114.1M."
+          },
+          {
+            "title": "Advance demand weakened.",
+            "detail": "Pass units, days and dollars fell approximately 12%, 10% and 6%. Better mix cushions revenue, but it does not establish customer growth."
+          },
+          {
+            "title": "The recovery is conditional.",
+            "detail": "Fiscal 2027 resort EBITDA guidance of $805–865M assumes normal weather and roughly $25M of incremental efficiencies, alongside lower pass demand and cost normalization."
+          },
+          {
+            "title": "Debt takes a larger share.",
+            "detail": "Annual net interest expense rose to $205.6M, absorbing cash that cannot be distributed or invested twice."
+          },
+          {
+            "title": "Governance remains contested.",
+            "detail": "Activist nominees and a potential proxy contest remain unresolved. We model operating economics without assigning a speculative governance premium."
+          }
+        ]
+      },
+      "source_published": "September 28, 2026",
+      "words": 5795,
+      "figures": 14,
+      "tables": 27
     },
     {
       "key": "RZLT:Q4-FY2026",
