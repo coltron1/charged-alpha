@@ -34661,6 +34661,36 @@
       "description": "Fast clips that point viewers into full research videos and stock pages.",
       "videos": [
         {
+          "title": "UEC Stock: Uranium Energy FY2026 Earnings—Cash vs. Liquidity #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/GjITVu994xI",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-09-29T23:47:40+00:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "UEC"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage.",
+          "earnings_youtube_url": "https://www.youtube.com/watch?v=QtjDW3N__hw",
+          "earnings_match": "stock_period_date"
+        },
+        {
+          "title": "KMX Stock: CarMax Q2 FY2027 Earnings — Recovery Meets Credit Risk #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/ajzEVFi8Kh8",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-09-29T23:46:57+00:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "KMX"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage.",
+          "earnings_youtube_url": "https://www.youtube.com/watch?v=HYoHJkt2W5I",
+          "earnings_match": "stock_period_date"
+        },
+        {
           "title": "IDT Stock Earnings: Record Profits, a Cash Test — Q4 FY2026 #Shorts",
           "youtube_url": "https://www.youtube.com/shorts/5-7h8gxkYzg",
           "spotify_url": "",
@@ -46696,7 +46726,7 @@
       ]
     }
   ],
-  "last_synced_at": "2026-09-29T18:33:00-05:00",
+  "last_synced_at": "2026-09-29T18:53:55-05:00",
   "stock_metadata": {
     "A": {
       "company": "Agilent Technologies, Inc.",

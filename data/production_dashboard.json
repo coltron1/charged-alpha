@@ -1,20 +1,31 @@
 {
   "schema": "charged-alpha-public-production/1",
-  "updated_at": "2026-09-29T18:38:41.989191-05:00",
+  "updated_at": "2026-09-29T18:53:20.517432-05:00",
   "calendar_updated_at": "2026-09-29T17:19:37.719324-05:00",
   "calendar_status": "fresh",
   "daily_target": 10,
-  "active": [
+  "active": [],
+  "history": [
     {
       "ticker": "UEC",
       "company": "Uranium Energy Corp.",
       "period": "FY2026",
-      "status_label": "Building now",
-      "stage_label": "Production in progress",
+      "completed_at": "2026-09-29T18:52:56.781254-05:00",
+      "video_url": "https://youtu.be/QtjDW3N__hw",
+      "short_url": "https://youtu.be/GjITVu994xI",
+      "packet_url": "https://chargedalpha.com/research/uec-fy2026",
       "stock_url": "/shows/uec"
-    }
-  ],
-  "history": [
+    },
+    {
+      "ticker": "KMX",
+      "company": "CarMax, Inc.",
+      "period": "Q2 FY2027",
+      "completed_at": "2026-09-29T18:51:00.792087-05:00",
+      "video_url": "https://youtu.be/HYoHJkt2W5I",
+      "short_url": "https://youtu.be/ajzEVFi8Kh8",
+      "packet_url": "https://chargedalpha.com/research/kmx-q2-fy2027",
+      "stock_url": "/shows/kmx"
+    },
     {
       "ticker": "IDT",
       "company": "IDT Corporation",
