@@ -1,7 +1,7 @@
 {
   "schema": "charged-alpha-public-production/1",
-  "updated_at": "2026-09-28T20:08:47.855435-05:00",
-  "calendar_updated_at": "2026-09-28T16:52:33.940570-05:00",
+  "updated_at": "2026-09-29T10:40:20.262835-05:00",
+  "calendar_updated_at": "2026-09-29T10:25:35.336947-05:00",
   "calendar_status": "fresh",
   "daily_target": 10,
   "active": [],
@@ -509,48 +509,8 @@
   ],
   "upcoming": [
     {
-      "ticker": "HKD",
-      "company": "AMTD Digital Inc.",
-      "report_date": "2026-09-28",
-      "report_time_label": "Time unconfirmed",
-      "planned_date": "2026-09-29",
-      "date_status": "Calendar estimate",
-      "source_url": null,
-      "stock_url": null
-    },
-    {
-      "ticker": "KMX",
-      "company": "CarMax, Inc.",
-      "report_date": "2026-09-29",
-      "report_time_label": "Before U.S. market open",
-      "planned_date": "2026-09-29",
-      "date_status": "Issuer-announced",
-      "source_url": "https://investors.carmax.com/news-and-events/news/news-details/2026/CarMax-Announces-Second-Quarter-Conference-Call/default.aspx",
-      "stock_url": "/shows/kmx"
-    },
-    {
-      "ticker": "UEC",
-      "company": "Uranium Energy Corp.",
-      "report_date": "2026-09-29",
-      "report_time_label": "Time unconfirmed",
-      "planned_date": "2026-09-30",
-      "date_status": "Calendar estimate",
-      "source_url": null,
-      "stock_url": "/shows/uec"
-    },
-    {
-      "ticker": "AIR",
-      "company": "AAR Corp.",
-      "report_date": "2026-09-29",
-      "report_time_label": "After U.S. market close",
-      "planned_date": "2026-09-30",
-      "date_status": "Issuer-announced",
-      "source_url": "https://prod.website.aarcorp.com/en/newsroom/press-releases/2026/aar-to-announce-first-quarter-fiscal-year-2027-results-on-september-29-2026/",
-      "stock_url": "/shows/air"
-    },
-    {
-      "ticker": "NBTX",
-      "company": "Nanobiotix S.A.",
+      "ticker": "ADSE",
+      "company": "ADS-TEC Energy PLC",
       "report_date": "2026-09-29",
       "report_time_label": "Time unconfirmed",
       "planned_date": "2026-09-30",
@@ -567,6 +527,16 @@
       "date_status": "Issuer-announced",
       "source_url": "https://ir.concentrix.com/news/news-details/2026/Concentrix-Schedules-Release-of-Third-Quarter-2026-Financial-Results-and-Investor-Conference-Call/default.aspx",
       "stock_url": "/shows/cnxc"
+    },
+    {
+      "ticker": "IPX",
+      "company": "IperionX Limited",
+      "report_date": "2026-09-29",
+      "report_time_label": "Time unconfirmed",
+      "planned_date": "2026-09-30",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": null
     },
     {
       "ticker": "TMQ",
@@ -687,6 +657,36 @@
       "date_status": "Calendar estimate",
       "source_url": null,
       "stock_url": null
+    },
+    {
+      "ticker": "BETA",
+      "company": "BETA Technologies, Inc.",
+      "report_date": "2026-10-05",
+      "report_time_label": "Time unconfirmed",
+      "planned_date": "",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": null
+    },
+    {
+      "ticker": "RELL",
+      "company": "Richardson Electronics, Ltd.",
+      "report_date": "2026-10-05",
+      "report_time_label": "Time unconfirmed",
+      "planned_date": "",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": null
+    },
+    {
+      "ticker": "AEHR",
+      "company": "Aehr Test Systems",
+      "report_date": "2026-10-05",
+      "report_time_label": "Time unconfirmed",
+      "planned_date": "",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": "/shows/aehr"
     }
   ]
 }
