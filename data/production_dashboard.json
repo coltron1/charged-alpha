@@ -1,28 +1,31 @@
 {
   "schema": "charged-alpha-public-production/1",
-  "updated_at": "2026-09-28T19:56:45.777225-05:00",
+  "updated_at": "2026-09-28T20:08:47.855435-05:00",
   "calendar_updated_at": "2026-09-28T16:52:33.940570-05:00",
   "calendar_status": "fresh",
   "daily_target": 10,
-  "active": [
+  "active": [],
+  "history": [
     {
       "ticker": "IDT",
       "company": "IDT Corporation",
       "period": "Q4 FY2026",
-      "status_label": "Building now",
-      "stage_label": "Production in progress",
+      "completed_at": "2026-09-28T20:06:15.758285-05:00",
+      "video_url": "https://youtu.be/fivARrYkpkM",
+      "short_url": "https://youtu.be/5-7h8gxkYzg",
+      "packet_url": "https://chargedalpha.com/research/idt-q4-fy2026",
       "stock_url": "/shows/idt"
     },
     {
       "ticker": "MTN",
       "company": "Vail Resorts, Inc.",
       "period": "Q4 FY2026",
-      "status_label": "Building now",
-      "stage_label": "Production in progress",
+      "completed_at": "2026-09-28T20:04:10.460096-05:00",
+      "video_url": "https://youtu.be/43hTk_7PLlw",
+      "short_url": "https://youtu.be/7Up7TTHa6v4",
+      "packet_url": "https://chargedalpha.com/research/mtn-q4-fy2026",
       "stock_url": "/shows/mtn"
-    }
-  ],
-  "history": [
+    },
     {
       "ticker": "RZLT",
       "company": "Rezolute, Inc.",
