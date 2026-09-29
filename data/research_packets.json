@@ -872,6 +872,64 @@
       "tables": 30
     },
     {
+      "key": "UEC:FY2026",
+      "year": 2026,
+      "quarter": 0,
+      "fiscal": true,
+      "slug": "uec-fy2026",
+      "ticker": "UEC",
+      "company": "Uranium Energy Corp.",
+      "period": "FY2026",
+      "canonical_url": "https://chargedalpha.com/research/uec-fy2026",
+      "title": "UEC: the $753 million liquidity headline—and the growth it still has to fund",
+      "page_title": "UEC FY2026 Research Packet — Charged Alpha",
+      "description": "Mine costs improved, but cash was rebuilt through share issuance; our model separates spendable capital from unpriced conversion ambition.",
+      "sha256": "0912e6e1b2c8b6301befcb712f8de7225f901742a003204b2bb4d8c72c63ce58",
+      "html_file": "research_packets/uec-fy2026.html",
+      "source_episode": "UEC-FY2026",
+      "source_staged_at": "2026-09-29T23:32:43Z",
+      "source_sha256": {
+        "READY": "f334758f047632694bcf359471062259e1101ca28cb1150e37739a5b8b231dd9",
+        "handoff.json": "727ee205391b2f178aa66521f708bf9a6b50e622a432d04108b688faf9c080e8",
+        "packet/uec-fy2026-research-packet.html": "0912e6e1b2c8b6301befcb712f8de7225f901742a003204b2bb4d8c72c63ce58",
+        "packet/packet_meta.json": "fbc1d5dc3c37d3555f44a49b0ab01fc7c04257dd64d2df6fc6aa06711c7003b3",
+        "packet/packet.json": "8a5ea5924f83defafcad5b4b5a7f42e51ef821cddd0ced99fdd665d9e79dc4e9"
+      },
+      "primary_youtube_long": "QtjDW3N__hw",
+      "primary_youtube_short": null,
+      "youtube_studio": null,
+      "youtube_studio_short": null,
+      "what_changed": {
+        "summary": "Mine costs improved, but cash was rebuilt through share issuance; our model separates spendable capital from unpriced conversion ambition.",
+        "items": [
+          {
+            "title": "Output improved at the mines.",
+            "detail": "Fourth-quarter production reached 82,744 pounds, with Christensen Ranch producing 65,392 pounds and Burke Hollow adding 17,352 pounds."
+          },
+          {
+            "title": "Unit cost is not company cost.",
+            "detail": "The $36.54 quarterly total-cost measure covers production inventory additions per pound; mineral spending, corporate expenses and conversion development remain separate burdens."
+          },
+          {
+            "title": "Liquidity came mainly from owners.",
+            "detail": "Fiscal 2026 net share proceeds were $529.96 million, while operating activities used $98.56 million. This financing strengthened the balance sheet while increasing shares outstanding."
+          },
+          {
+            "title": "The government opportunity is not an order.",
+            "detail": "NNSA’s stated need and UEC’s response to an information request are not awarded revenue. The conversion project’s Class IV estimate is expected by mid2027."
+          },
+          {
+            "title": "Our valuation requires more than cost improvement.",
+            "detail": "The base model assumes output grows to five million pounds by FY2031 and still produces $4.35 per share. The bull case needs stronger prices, faster growth and more valuable resource options."
+          }
+        ]
+      },
+      "source_published": "September 29, 2026",
+      "words": 6746,
+      "figures": 16,
+      "tables": 30
+    },
+    {
       "key": "ALMU:Q4-FY2026",
       "year": 2026,
       "quarter": 4,
