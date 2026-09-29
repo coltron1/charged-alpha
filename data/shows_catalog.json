@@ -10,6 +10,42 @@
   },
   "episodes": [
     {
+      "ticker": "UEC",
+      "company": "Uranium Energy Corp.",
+      "sector": "Energy",
+      "quarter": "FY2026",
+      "episode_number": "",
+      "title": "UEC Stock: $753M in Liquid Assets—Who Paid for It? FY2026",
+      "published_at": "2026-09-29T23:28:07+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=QtjDW3N__hw",
+      "spotify_url": "",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/uec-stock-753m-in-liquid-assets%e2%80%94who-paid-for-it-fy2026/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "KMX",
+      "company": "CarMax, Inc.",
+      "sector": "Consumer Cyclical",
+      "quarter": "Q2 FY2027",
+      "episode_number": "",
+      "title": "KMX Stock: CarMax Volume Recovery Faces a Credit Test | Q2 FY2027",
+      "published_at": "2026-09-29T23:19:43+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=HYoHJkt2W5I",
+      "spotify_url": "https://open.spotify.com/episode/39cPoZaONuUVa9IRQzOgGx",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/kmx-stock-carmax-volume-recovery-faces-a-credit-test-q2-fy2027/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
       "ticker": "IDT",
       "company": "IDT Corporation",
       "sector": "Communication Services",
@@ -46660,7 +46696,7 @@
       ]
     }
   ],
-  "last_synced_at": "2026-09-29T10:40:10-05:00",
+  "last_synced_at": "2026-09-29T18:33:00-05:00",
   "stock_metadata": {
     "A": {
       "company": "Agilent Technologies, Inc.",

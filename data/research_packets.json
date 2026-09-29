@@ -2,6 +2,64 @@
   "schema_version": 1,
   "packets": [
     {
+      "key": "KMX:Q2-FY2027",
+      "year": 2027,
+      "quarter": 2,
+      "fiscal": true,
+      "slug": "kmx-q2-fy2027",
+      "ticker": "KMX",
+      "company": "CarMax, Inc.",
+      "period": "Q2 FY2027",
+      "canonical_url": "https://chargedalpha.com/research/kmx-q2-fy2027",
+      "title": "KMX: The Volume Recovery Still Has a Credit Test",
+      "page_title": "KMX Q2 FY2027 Research Packet — Charged Alpha",
+      "description": "CarMax is selling more cars with better overhead leverage; we separate sustainable earnings from credit relief and gains before valuing the recovery.",
+      "sha256": "3b35dd385592d79435c459b24bc3772222466f953508dd6b994f5a51ce1d4e2a",
+      "html_file": "research_packets/kmx-q2-fy2027.html",
+      "source_episode": "KMX-Q2-FY2027",
+      "source_staged_at": "2026-09-29T23:31:18Z",
+      "source_sha256": {
+        "READY": "6271889d847d9479f220bacb60acdd584d139301dc841d499d3391ffd105ce6e",
+        "handoff.json": "ea841f2eccae027a715bd6720404efafa7cdc6d56997a981057d130306981e6b",
+        "packet/kmx-q2-fy2027-research-packet.html": "3b35dd385592d79435c459b24bc3772222466f953508dd6b994f5a51ce1d4e2a",
+        "packet/packet_meta.json": "871448a28268ebb53d84058b282b546852bdd4e976f9913ca0ff3b751f6972ea",
+        "packet/packet.json": "3c96da4c5dc5e1c27df5c8bb0e553f857b23bce828cc6beb788643878ef664cc"
+      },
+      "primary_youtube_long": "HYoHJkt2W5I",
+      "primary_youtube_short": null,
+      "youtube_studio": null,
+      "youtube_studio_short": null,
+      "what_changed": {
+        "summary": "CarMax is selling more cars with better overhead leverage; we separate sustainable earnings from credit relief and gains before valuing the recovery.",
+        "items": [
+          {
+            "title": "More cars, less profit per car.",
+            "detail": "Retail used units rose 13.8%, but retail gross profit per unit fell to $2,105."
+          },
+          {
+            "title": "Overhead leverage returned.",
+            "detail": "SG&A per total unit fell $157 even as absolute SG&A increased 4.6%."
+          },
+          {
+            "title": "Finance helped the recovery.",
+            "detail": "Lower provisions and a $16.6 million loan-sale gain supported CAF income."
+          },
+          {
+            "title": "Capital returns are restarting carefully.",
+            "detail": "Management plans modest Q3 repurchases; authorization is not a cash balance."
+          },
+          {
+            "title": "Price asks for persistence.",
+            "detail": "Our three valuation checks support roughly $55 against the saved $59.10 quote."
+          }
+        ]
+      },
+      "source_published": "September 29, 2026",
+      "words": 5200,
+      "figures": 16,
+      "tables": 26
+    },
+    {
       "key": "LOVE:Q2-FY2027",
       "year": 2027,
       "quarter": 2,
