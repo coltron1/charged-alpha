@@ -1,27 +1,10 @@
 {
   "schema": "charged-alpha-public-production/1",
-  "updated_at": "2026-09-30T09:37:51.945194-05:00",
+  "updated_at": "2026-09-30T10:13:13.739635-05:00",
   "calendar_updated_at": "2026-09-30T09:37:49.312808-05:00",
   "calendar_status": "fresh",
   "daily_target": 10,
-  "active": [
-    {
-      "ticker": "CAG",
-      "company": "Conagra Brands, Inc.",
-      "period": "Q1 FY2027",
-      "status_label": "Building now",
-      "stage_label": "Production in progress",
-      "stock_url": "/shows/cag"
-    },
-    {
-      "ticker": "JBL",
-      "company": "Jabil Inc.",
-      "period": "Q4 FY2026",
-      "status_label": "Building now",
-      "stage_label": "Production in progress",
-      "stock_url": "/shows/jbl"
-    }
-  ],
+  "active": [],
   "history": [
     {
       "ticker": "CALM",
@@ -555,6 +538,26 @@
     }
   ],
   "upcoming": [
+    {
+      "ticker": "JBL",
+      "company": "Jabil Inc.",
+      "report_date": "2026-09-30",
+      "report_time_label": "Before U.S. market open",
+      "planned_date": "2026-09-30",
+      "date_status": "Issuer-announced",
+      "source_url": "https://investors.jabil.com/news/news-details/2026/Jabil-Announces-Date-for-Fourth-Quarter-and-Fiscal-Year-2026-Earnings-Release-and-Investor-Briefing/default.aspx",
+      "stock_url": "/shows/jbl"
+    },
+    {
+      "ticker": "CAG",
+      "company": "Conagra Brands, Inc.",
+      "report_date": "2026-09-30",
+      "report_time_label": "Before U.S. market open",
+      "planned_date": "2026-09-30",
+      "date_status": "Issuer-announced",
+      "source_url": "https://www.conagrabrands.com/news-room/news-conagra-brands-to-release-fiscal-2027-first-quarter-earnings-on-september-30-2026-prn-122962",
+      "stock_url": "/shows/cag"
+    },
     {
       "ticker": "ADSE",
       "company": "ADS-TEC Energy PLC",

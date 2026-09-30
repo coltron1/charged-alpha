@@ -292,6 +292,64 @@
       }
     },
     {
+      "key": "CAG:Q1-FY2027",
+      "year": 2027,
+      "quarter": 1,
+      "fiscal": true,
+      "slug": "cag-q1-fy2027",
+      "ticker": "CAG",
+      "company": "Conagra Brands, Inc.",
+      "period": "Q1 FY2027",
+      "canonical_url": "https://chargedalpha.com/research/cag-q1-fy2027",
+      "title": "CAG: Earnings Rose. The Operating Engine Did Not.",
+      "page_title": "CAG Q1 FY2027 Research Packet — Charged Alpha",
+      "description": "Conagra’s adjusted EPS grew while operating profit and cash weakened; joint-venture income, dividend coverage and debt determine the next test.",
+      "sha256": "e4ffb0df9c71cec0eea58fc625302ad60d2b1b0ae75844b72b57af4f5f2473c5",
+      "html_file": "research_packets/cag-q1-fy2027.html",
+      "source_episode": "CAG-Q1-FY2027",
+      "source_staged_at": "2026-09-30T15:02:30Z",
+      "source_sha256": {
+        "READY": "b3b32a32ac02805affee540e6d9b4feb2d49e25e2ec54293bed56081855501cd",
+        "handoff.json": "c06416b37e88dd42f810fdfb702cce66d7998281676a2931c86decdc0fc54a36",
+        "packet/cag-q1-fy2027-research-packet.html": "e4ffb0df9c71cec0eea58fc625302ad60d2b1b0ae75844b72b57af4f5f2473c5",
+        "packet/packet_meta.json": "d8ecd48205c2927d339cd39ce7c65f08bd5805bac79b7afd34d3f28a305e34da",
+        "packet/packet.json": "8ca5448c3c916c3da6b396aa928858c3558c5fc4efeaa418de9b22ec3d1de282"
+      },
+      "primary_youtube_long": "DTFkW4zO6F4",
+      "primary_youtube_short": null,
+      "youtube_studio": null,
+      "youtube_studio_short": null,
+      "what_changed": {
+        "summary": "Conagra’s adjusted EPS grew while operating profit and cash weakened; joint-venture income, dividend coverage and debt determine the next test.",
+        "items": [
+          {
+            "title": "EPS improved while operations softened.",
+            "detail": "Adjusted EPS rose 5.1%, but adjusted operating profit fell 4.1% to $297.9M."
+          },
+          {
+            "title": "Below-the-line help mattered.",
+            "detail": "Ardent Mills equity earnings increased $21M; only $18.2M of this quarter’s $50.4M earnings arrived as distributions."
+          },
+          {
+            "title": "Two benefits aided the quarter.",
+            "detail": "The release identifies $10M of incentive-compensation benefit and about $4M of tariff refunds, both within adjusted performance."
+          },
+          {
+            "title": "Cash is the next proof point.",
+            "detail": "Free cash flow was −$127.9M, and net debt rose $338.1M from fiscal year-end despite falling year over year."
+          },
+          {
+            "title": "The dividend leaves a narrow cushion.",
+            "detail": "Annualizing the reported $0.35 quarterly payment gives $1.40 a share versus $1.45 guidance-midpoint adjusted EPS; future declarations remain board decisions."
+          }
+        ]
+      },
+      "source_published": "September 30, 2026",
+      "words": 5559,
+      "figures": 17,
+      "tables": 29
+    },
+    {
       "key": "CALM:Q1-FY2027",
       "year": 2027,
       "quarter": 1,

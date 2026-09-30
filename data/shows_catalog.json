@@ -10,6 +10,24 @@
   },
   "episodes": [
     {
+      "ticker": "CAG",
+      "company": "ConAgra Brands, Inc.",
+      "sector": "Consumer Defensive",
+      "quarter": "Q1 FY2027",
+      "episode_number": "",
+      "title": "CAG Stock: Earnings Rose, but the Food Business Earned Less — Q1 FY2027",
+      "published_at": "2026-09-30T14:46:59+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=DTFkW4zO6F4",
+      "spotify_url": "https://open.spotify.com/episode/428ZguhOSvk7DvwGSbd3Jq",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/cag-stock-earnings-rose-but-the-food-business-earned-less-%e2%80%94-q1-fy2027/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
       "ticker": "CALM",
       "company": "Cal-Maine Foods, Inc.",
       "sector": "Consumer Defensive",
@@ -19,7 +37,7 @@
       "published_at": "2026-09-30T13:49:49+00:00",
       "status": "youtube_podcast_complete",
       "youtube_url": "https://www.youtube.com/watch?v=6vK6_h_YGOw",
-      "spotify_url": "",
+      "spotify_url": "https://open.spotify.com/episode/0wLrSRsc3dD97Yi2Yi0t41",
       "apple_url": "",
       "google_url": "",
       "iheart_url": "",
@@ -46759,7 +46777,7 @@
       ]
     }
   ],
-  "last_synced_at": "2026-09-30T09:35:07-05:00",
+  "last_synced_at": "2026-09-30T10:04:53-05:00",
   "stock_metadata": {
     "A": {
       "company": "Agilent Technologies, Inc.",
