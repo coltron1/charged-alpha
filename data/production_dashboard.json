@@ -1,7 +1,7 @@
 {
   "schema": "charged-alpha-public-production/1",
-  "updated_at": "2026-09-30T14:07:32.303844-05:00",
-  "calendar_updated_at": "2026-09-30T13:54:56.027218-05:00",
+  "updated_at": "2026-09-30T16:01:51.007528-05:00",
+  "calendar_updated_at": "2026-09-30T15:55:33.684083-05:00",
   "calendar_status": "fresh",
   "daily_target": 10,
   "active": [],
@@ -558,26 +558,6 @@
     }
   ],
   "upcoming": [
-    {
-      "ticker": "PRGS",
-      "company": "Progress Software Corporation",
-      "report_date": "2026-09-30",
-      "report_time_label": "After U.S. market close",
-      "planned_date": "2026-10-01",
-      "date_status": "Issuer-announced",
-      "source_url": "https://investors.progress.com/news-releases/news-release-details/progress-software-report-third-quarter-2026-financial-results",
-      "stock_url": "/shows/prgs"
-    },
-    {
-      "ticker": "BSET",
-      "company": "Bassett Furniture Industries, Incorporated",
-      "report_date": "2026-09-30",
-      "report_time_label": "After U.S. market close",
-      "planned_date": "2026-10-01",
-      "date_status": "Issuer-announced",
-      "source_url": "https://investors.bassettfurniture.com/news-releases/news-release-details/bassett-announces-third-quarter-conference-call-1",
-      "stock_url": null
-    },
     {
       "ticker": "ACN",
       "company": "Accenture plc",
