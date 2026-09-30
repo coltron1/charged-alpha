@@ -10,6 +10,24 @@
   },
   "episodes": [
     {
+      "ticker": "CALM",
+      "company": "Cal-Maine Foods, Inc.",
+      "sector": "Consumer Defensive",
+      "quarter": "Q1 FY2027",
+      "episode_number": "",
+      "title": "CALM Stock: Better Egg Mix, Weaker Profits — Q1 FY2027",
+      "published_at": "2026-09-30T13:49:49+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=6vK6_h_YGOw",
+      "spotify_url": "",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/calm-stock-better-egg-mix-weaker-profits-%e2%80%94-q1-fy2027/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
       "ticker": "UEC",
       "company": "Uranium Energy Corp.",
       "sector": "Energy",
@@ -46726,7 +46744,7 @@
       ]
     }
   ],
-  "last_synced_at": "2026-09-29T21:42:25-05:00",
+  "last_synced_at": "2026-09-30T09:07:13-05:00",
   "stock_metadata": {
     "A": {
       "company": "Agilent Technologies, Inc.",
@@ -47490,6 +47508,10 @@
     "CAL": {
       "company": "Caleres, Inc.",
       "sector": "Consumer Cyclical"
+    },
+    "CALM": {
+      "company": "Cal-Maine Foods, Inc.",
+      "sector": "Consumer Defensive"
     },
     "CALX": {
       "company": "Calix, Inc.",

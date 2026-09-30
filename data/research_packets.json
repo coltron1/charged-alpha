@@ -292,6 +292,64 @@
       }
     },
     {
+      "key": "CALM:Q1-FY2027",
+      "year": 2027,
+      "quarter": 1,
+      "fiscal": true,
+      "slug": "calm-q1-fy2027",
+      "ticker": "CALM",
+      "company": "Cal-Maine Foods, Inc.",
+      "period": "Q1 FY2027",
+      "canonical_url": "https://chargedalpha.com/research/calm-q1-fy2027",
+      "title": "CALM: A Better Sales Mix Has Not Built an Earnings Floor",
+      "page_title": "CALM Q1 FY2027 Research Packet — Charged Alpha",
+      "description": "Cal-Maine’s specialty and prepared-food share rose to 54.1%, but every reportable segment earned less; cash, normalized profits and the dividend recovery hurdle decide the value.",
+      "sha256": "89aeb5ef38f9b88909169f478da55e0a765c8482f01ac1b4aac014eec85fe29c",
+      "html_file": "research_packets/calm-q1-fy2027.html",
+      "source_episode": "CALM-Q1-FY2027",
+      "source_staged_at": "2026-09-30T14:00:12Z",
+      "source_sha256": {
+        "READY": "d168c8d28199751f7f9bcbb9e94cd6668c9a9fb69e0a48ed83442d1a230682a2",
+        "handoff.json": "55782c30a75d278500ccc78107e5b205e63f81d8e905d32135b719b17f38932c",
+        "packet/calm-q1-fy2027-research-packet.html": "89aeb5ef38f9b88909169f478da55e0a765c8482f01ac1b4aac014eec85fe29c",
+        "packet/packet_meta.json": "a79acc5cebe2529b77f5add69b5ea08edbaa65430f1f5abe76bd174b3db6d285",
+        "packet/packet.json": "5d7324043b70269a5f18627b1971283041bd2f3751d301af2f707581749826c1"
+      },
+      "primary_youtube_long": "6vK6_h_YGOw",
+      "primary_youtube_short": null,
+      "youtube_studio": null,
+      "youtube_studio_short": null,
+      "what_changed": {
+        "summary": "Cal-Maine’s specialty and prepared-food share rose to 54.1%, but every reportable segment earned less; cash, normalized profits and the dividend recovery hurdle decide the value.",
+        "items": [
+          {
+            "title": "Mix rose while profits fell.",
+            "detail": "Specialty and Prepared Foods reached 54.1% of external sales versus 37.1%; both segments produced lower revenue and lower income."
+          },
+          {
+            "title": "Conventional pricing drove the loss.",
+            "detail": "Average selling price fell 59.3%, while volume fell only 0.7%; Conventional lost $71.0 million."
+          },
+          {
+            "title": "Liquidity bought time, not a dividend.",
+            "detail": "Cash and available-for-sale securities were $767.6 million, down $156.5 million from year-end; the cumulative dividend recovery hurdle is $94.5 million."
+          },
+          {
+            "title": "Capacity is still ahead of contribution.",
+            "detail": "Prepared Foods volume fell 19.3% during expansion and optimization; the greater-than-60% capacity plan targets first-half FY2028, not a promised sales growth rate."
+          },
+          {
+            "title": "Price already assumes recovery.",
+            "detail": "The $68.55 reference is the September 29 close, before this print; our $58 base value depends on normalized profits rather than today’s losses."
+          }
+        ]
+      },
+      "source_published": "September 30, 2026",
+      "words": 6569,
+      "figures": 20,
+      "tables": 39
+    },
+    {
       "key": "CASY:Q1-FY2027",
       "year": 2027,
       "quarter": 1,
