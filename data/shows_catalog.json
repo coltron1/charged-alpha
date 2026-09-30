@@ -10,6 +10,24 @@
   },
   "episodes": [
     {
+      "ticker": "JBL",
+      "company": "Jabil Inc.",
+      "sector": "Technology",
+      "quarter": "Q4 FY2026",
+      "episode_number": "",
+      "title": "JBL Stock: Earnings Surge, Cash Faces a Funding Test — Q4 FY2026",
+      "published_at": "2026-09-30T16:06:06+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=0fLJVFrb0m8",
+      "spotify_url": "",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/jbl-stock-earnings-surge-cash-faces-a-funding-test-%e2%80%94-q4-fy2026/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
       "ticker": "CAG",
       "company": "ConAgra Brands, Inc.",
       "sector": "Consumer Defensive",
@@ -46792,7 +46810,7 @@
       ]
     }
   ],
-  "last_synced_at": "2026-09-30T10:34:17-05:00",
+  "last_synced_at": "2026-09-30T11:09:37-05:00",
   "stock_metadata": {
     "A": {
       "company": "Agilent Technologies, Inc.",

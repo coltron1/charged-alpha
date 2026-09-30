@@ -1452,6 +1452,64 @@
       "tables": 29
     },
     {
+      "key": "JBL:Q4-FY2026",
+      "year": 2026,
+      "quarter": 4,
+      "fiscal": true,
+      "slug": "jbl-q4-fy2026",
+      "ticker": "JBL",
+      "company": "Jabil Inc.",
+      "period": "Q4 FY2026",
+      "canonical_url": "https://chargedalpha.com/research/jbl-q4-fy2026",
+      "title": "JBL: Earnings Accelerate, but Cash Has a Funding Test",
+      "page_title": "JBL Q4 FY2026 Research Packet — Charged Alpha",
+      "description": "Jabil guides core EPS growth of34% but adjusted cash growth of4%; working-capital funding, economic costs and valuation decide how much the stronger sales outlook is worth.",
+      "sha256": "73ee34278c535e005026f7a26e1b0b10c1a2607178958d625d979d133a05a53b",
+      "html_file": "research_packets/jbl-q4-fy2026.html",
+      "source_episode": "JBL-Q4-FY2026",
+      "source_staged_at": "2026-09-30T16:23:24Z",
+      "source_sha256": {
+        "READY": "d83af7230c43832dd9a839678e0f09d05723e6e04a0c45dd8402aaeaee121302",
+        "handoff.json": "8e381dd94bfb8172a1946a3c59004c3a1f7a1af598bc52c8f912e77384ff2d50",
+        "packet/jbl-q4-fy2026-research-packet.html": "73ee34278c535e005026f7a26e1b0b10c1a2607178958d625d979d133a05a53b",
+        "packet/packet_meta.json": "b078ab3e1d41432469e229ad2f0af14b2a4c80bf8e1209277f30978258c25e08",
+        "packet/packet.json": "b9688b557d43dcbb506a3a013ce9319c078fcce064da9b98f774d8cc525be7f1"
+      },
+      "primary_youtube_long": "0fLJVFrb0m8",
+      "primary_youtube_short": null,
+      "youtube_studio": null,
+      "youtube_studio_short": null,
+      "what_changed": {
+        "summary": "Jabil guides core EPS growth of34% but adjusted cash growth of4%; working-capital funding, economic costs and valuation decide how much the stronger sales outlook is worth.",
+        "items": [
+          {
+            "title": "The quarter accelerated.",
+            "detail": "Revenue rose28.6% to$10.616B and core EPS rose33.7% to$4.40."
+          },
+          {
+            "title": "Working capital grew on both sides.",
+            "detail": "Operating assets used$7.846B while grouped liabilities supplied$7.984B."
+          },
+          {
+            "title": "Cash definitions matter.",
+            "detail": "Adjusted free cash flow of$1.532B includes$158M of PP&E proceeds and advances; gross-capex FCF was$1.374B."
+          },
+          {
+            "title": "Next year has a cash-growth gap.",
+            "detail": "Core EPS guidance grows34.1%, but adjusted FCF guidance grows4.4%."
+          },
+          {
+            "title": "Value requires disciplined assumptions.",
+            "detail": "Three routes cluster around$300; the pre-print close was$318.84 and dated Street targets remain higher."
+          }
+        ]
+      },
+      "source_published": "September30, 2026",
+      "words": 5026,
+      "figures": 15,
+      "tables": 28
+    },
+    {
       "key": "LPTH:Q4-FY2026",
       "year": 2026,
       "quarter": 4,
