@@ -34697,6 +34697,21 @@
       "description": "Fast clips that point viewers into full research videos and stock pages.",
       "videos": [
         {
+          "title": "CAG Stock: Conagra Earnings Rose, Cash Flow Fell — Q1 FY2027 #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/O8TLv0ml4OY",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-09-30T15:28:59+00:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "CAG"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage.",
+          "earnings_youtube_url": "https://www.youtube.com/watch?v=DTFkW4zO6F4",
+          "earnings_match": "stock_period_date"
+        },
+        {
           "title": "CALM Stock: Cal-Maine Q1 FY2027 Earnings — Better Mix, Weaker Profits #Shorts",
           "youtube_url": "https://www.youtube.com/shorts/V4ttVfR5IYU",
           "spotify_url": "",
@@ -46777,7 +46792,7 @@
       ]
     }
   ],
-  "last_synced_at": "2026-09-30T10:04:53-05:00",
+  "last_synced_at": "2026-09-30T10:34:17-05:00",
   "stock_metadata": {
     "A": {
       "company": "Agilent Technologies, Inc.",
