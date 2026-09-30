@@ -1,7 +1,7 @@
 {
   "schema": "charged-alpha-public-production/1",
-  "updated_at": "2026-09-29T21:28:31.818150-05:00",
-  "calendar_updated_at": "2026-09-29T21:28:28.654919-05:00",
+  "updated_at": "2026-09-30T00:14:33.858955-05:00",
+  "calendar_updated_at": "2026-09-30T00:14:33.520140-05:00",
   "calendar_status": "fresh",
   "daily_target": 10,
   "active": [],
@@ -529,46 +529,6 @@
   ],
   "upcoming": [
     {
-      "ticker": "ADSE",
-      "company": "ADS-TEC Energy PLC",
-      "report_date": "2026-09-29",
-      "report_time_label": "Time unconfirmed",
-      "planned_date": "2026-09-30",
-      "date_status": "Calendar estimate",
-      "source_url": null,
-      "stock_url": null
-    },
-    {
-      "ticker": "HKD",
-      "company": "AMTD Digital Inc.",
-      "report_date": "2026-09-29",
-      "report_time_label": "Time unconfirmed",
-      "planned_date": "2026-09-30",
-      "date_status": "Calendar estimate",
-      "source_url": null,
-      "stock_url": null
-    },
-    {
-      "ticker": "IPX",
-      "company": "IperionX Limited",
-      "report_date": "2026-09-29",
-      "report_time_label": "Time unconfirmed",
-      "planned_date": "2026-09-30",
-      "date_status": "Calendar estimate",
-      "source_url": null,
-      "stock_url": null
-    },
-    {
-      "ticker": "TMQ",
-      "company": "Trilogy Metals Inc.",
-      "report_date": "2026-09-29",
-      "report_time_label": "Time unconfirmed",
-      "planned_date": "2026-09-30",
-      "date_status": "Calendar estimate",
-      "source_url": null,
-      "stock_url": null
-    },
-    {
       "ticker": "JBL",
       "company": "Jabil Inc.",
       "report_date": "2026-09-30",
@@ -683,7 +643,7 @@
       "company": "BETA Technologies, Inc.",
       "report_date": "2026-10-05",
       "report_time_label": "Time unconfirmed",
-      "planned_date": "",
+      "planned_date": "2026-10-06",
       "date_status": "Calendar estimate",
       "source_url": null,
       "stock_url": null
@@ -693,7 +653,7 @@
       "company": "Richardson Electronics, Ltd.",
       "report_date": "2026-10-05",
       "report_time_label": "Time unconfirmed",
-      "planned_date": "",
+      "planned_date": "2026-10-06",
       "date_status": "Calendar estimate",
       "source_url": null,
       "stock_url": null
@@ -703,10 +663,70 @@
       "company": "Aehr Test Systems",
       "report_date": "2026-10-05",
       "report_time_label": "Time unconfirmed",
-      "planned_date": "",
+      "planned_date": "2026-10-06",
       "date_status": "Calendar estimate",
       "source_url": null,
       "stock_url": "/shows/aehr"
+    },
+    {
+      "ticker": "STZ",
+      "company": "Constellation Brands, Inc.",
+      "report_date": "2026-10-06",
+      "report_time_label": "Time unconfirmed",
+      "planned_date": "",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": "/shows/stz"
+    },
+    {
+      "ticker": "PENG",
+      "company": "Penguin Solutions, Inc.",
+      "report_date": "2026-10-06",
+      "report_time_label": "Time unconfirmed",
+      "planned_date": "",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": null
+    },
+    {
+      "ticker": "RPM",
+      "company": "RPM International Inc.",
+      "report_date": "2026-10-06",
+      "report_time_label": "Time unconfirmed",
+      "planned_date": "",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": null
+    },
+    {
+      "ticker": "APOG",
+      "company": "Apogee Enterprises, Inc.",
+      "report_date": "2026-10-06",
+      "report_time_label": "Time unconfirmed",
+      "planned_date": "",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": null
+    },
+    {
+      "ticker": "VLGEA",
+      "company": "Village Super Market, Inc.",
+      "report_date": "2026-10-06",
+      "report_time_label": "Time unconfirmed",
+      "planned_date": "",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": null
+    },
+    {
+      "ticker": "NEOG",
+      "company": "Neogen Corporation",
+      "report_date": "2026-10-06",
+      "report_time_label": "Time unconfirmed",
+      "planned_date": "",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": "/shows/neog"
     }
   ]
 }
