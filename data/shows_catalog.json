@@ -34679,6 +34679,21 @@
       "description": "Fast clips that point viewers into full research videos and stock pages.",
       "videos": [
         {
+          "title": "CALM Stock: Cal-Maine Q1 FY2027 Earnings — Better Mix, Weaker Profits #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/V4ttVfR5IYU",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-09-30T14:24:00+00:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "CALM"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage.",
+          "earnings_youtube_url": "https://www.youtube.com/watch?v=6vK6_h_YGOw",
+          "earnings_match": "stock_period_date"
+        },
+        {
           "title": "UEC Stock: Uranium Energy FY2026 Earnings—Cash vs. Liquidity #Shorts",
           "youtube_url": "https://www.youtube.com/shorts/GjITVu994xI",
           "spotify_url": "",
@@ -46744,7 +46759,7 @@
       ]
     }
   ],
-  "last_synced_at": "2026-09-30T09:07:13-05:00",
+  "last_synced_at": "2026-09-30T09:35:07-05:00",
   "stock_metadata": {
     "A": {
       "company": "Agilent Technologies, Inc.",

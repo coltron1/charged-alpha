@@ -1,11 +1,38 @@
 {
   "schema": "charged-alpha-public-production/1",
-  "updated_at": "2026-09-30T09:02:09.525166-05:00",
-  "calendar_updated_at": "2026-09-30T05:32:07.838128-05:00",
+  "updated_at": "2026-09-30T09:37:51.945194-05:00",
+  "calendar_updated_at": "2026-09-30T09:37:49.312808-05:00",
   "calendar_status": "fresh",
   "daily_target": 10,
-  "active": [],
+  "active": [
+    {
+      "ticker": "CAG",
+      "company": "Conagra Brands, Inc.",
+      "period": "Q1 FY2027",
+      "status_label": "Building now",
+      "stage_label": "Production in progress",
+      "stock_url": "/shows/cag"
+    },
+    {
+      "ticker": "JBL",
+      "company": "Jabil Inc.",
+      "period": "Q4 FY2026",
+      "status_label": "Building now",
+      "stage_label": "Production in progress",
+      "stock_url": "/shows/jbl"
+    }
+  ],
   "history": [
+    {
+      "ticker": "CALM",
+      "company": "Cal-Maine Foods, Inc.",
+      "period": "Q1 FY2027",
+      "completed_at": "2026-09-30T09:32:25.786924-05:00",
+      "video_url": "https://youtu.be/6vK6_h_YGOw",
+      "short_url": "https://youtu.be/V4ttVfR5IYU",
+      "packet_url": "https://chargedalpha.com/research/calm-q1-fy2027",
+      "stock_url": "/shows/calm"
+    },
     {
       "ticker": "UEC",
       "company": "Uranium Energy Corp.",
@@ -529,34 +556,14 @@
   ],
   "upcoming": [
     {
-      "ticker": "JBL",
-      "company": "Jabil Inc.",
+      "ticker": "ADSE",
+      "company": "ADS-TEC Energy PLC",
       "report_date": "2026-09-30",
-      "report_time_label": "Before U.S. market open",
-      "planned_date": "2026-09-30",
-      "date_status": "Issuer-announced",
-      "source_url": "https://investors.jabil.com/news/news-details/2026/Jabil-Announces-Date-for-Fourth-Quarter-and-Fiscal-Year-2026-Earnings-Release-and-Investor-Briefing/default.aspx",
-      "stock_url": "/shows/jbl"
-    },
-    {
-      "ticker": "CAG",
-      "company": "Conagra Brands, Inc.",
-      "report_date": "2026-09-30",
-      "report_time_label": "Before U.S. market open",
-      "planned_date": "2026-09-30",
-      "date_status": "Issuer-announced",
-      "source_url": "https://www.conagrabrands.com/news-room/news-conagra-brands-to-release-fiscal-2027-first-quarter-earnings-on-september-30-2026-prn-122962",
-      "stock_url": "/shows/cag"
-    },
-    {
-      "ticker": "CALM",
-      "company": "Cal-Maine Foods, Inc.",
-      "report_date": "2026-09-30",
-      "report_time_label": "Before U.S. market open",
-      "planned_date": "2026-09-30",
-      "date_status": "Issuer-announced",
-      "source_url": "https://calmainefoods.gcs-web.com/news-releases/news-release-details/cal-maine-foods-schedules-first-quarter-fiscal-2027-earnings",
-      "stock_url": "/shows/calm"
+      "report_time_label": "Time unconfirmed",
+      "planned_date": "2026-10-01",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": null
     },
     {
       "ticker": "PRGS",
@@ -576,6 +583,16 @@
       "planned_date": "2026-10-01",
       "date_status": "Issuer-announced",
       "source_url": "https://investors.bassettfurniture.com/news-releases/news-release-details/bassett-announces-third-quarter-conference-call-1",
+      "stock_url": null
+    },
+    {
+      "ticker": "HTLM",
+      "company": "HomesToLife Ltd",
+      "report_date": "2026-09-30",
+      "report_time_label": "Time unconfirmed",
+      "planned_date": "2026-10-01",
+      "date_status": "Calendar estimate",
+      "source_url": null,
       "stock_url": null
     },
     {
