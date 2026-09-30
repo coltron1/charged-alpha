@@ -34715,6 +34715,21 @@
       "description": "Fast clips that point viewers into full research videos and stock pages.",
       "videos": [
         {
+          "title": "JBL Stock: Jabil Q4 FY2026 Earnings — Cash Lags the Growth #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/UBm5IbsctZk",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-09-30T16:40:16+00:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "JBL"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage.",
+          "earnings_youtube_url": "https://www.youtube.com/watch?v=0fLJVFrb0m8",
+          "earnings_match": "stock_period_date"
+        },
+        {
           "title": "CAG Stock: Conagra Earnings Rose, Cash Flow Fell — Q1 FY2027 #Shorts",
           "youtube_url": "https://www.youtube.com/shorts/O8TLv0ml4OY",
           "spotify_url": "",
@@ -46810,7 +46825,7 @@
       ]
     }
   ],
-  "last_synced_at": "2026-09-30T11:09:37-05:00",
+  "last_synced_at": "2026-09-30T11:44:50-05:00",
   "stock_metadata": {
     "A": {
       "company": "Agilent Technologies, Inc.",

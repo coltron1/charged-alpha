@@ -1,20 +1,21 @@
 {
   "schema": "charged-alpha-public-production/1",
-  "updated_at": "2026-09-30T10:34:17.572454-05:00",
+  "updated_at": "2026-09-30T11:43:41.573578-05:00",
   "calendar_updated_at": "2026-09-30T09:37:49.312808-05:00",
   "calendar_status": "fresh",
   "daily_target": 10,
-  "active": [
+  "active": [],
+  "history": [
     {
       "ticker": "JBL",
       "company": "Jabil Inc.",
       "period": "Q4 FY2026",
-      "status_label": "Building now",
-      "stage_label": "Production in progress",
+      "completed_at": "2026-09-30T11:43:41.441074-05:00",
+      "video_url": "https://youtu.be/0fLJVFrb0m8",
+      "short_url": "https://youtu.be/UBm5IbsctZk",
+      "packet_url": "https://chargedalpha.com/research/jbl-q4-fy2026",
       "stock_url": "/shows/jbl"
-    }
-  ],
-  "history": [
+    },
     {
       "ticker": "CAG",
       "company": "ConAgra Brands, Inc.",
