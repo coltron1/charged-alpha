@@ -1,7 +1,7 @@
 {
   "schema": "charged-alpha-public-production/1",
-  "updated_at": "2026-10-01T14:57:47.417862-05:00",
-  "calendar_updated_at": "2026-10-01T14:54:09.665888-05:00",
+  "updated_at": "2026-10-01T17:03:39.607203-05:00",
+  "calendar_updated_at": "2026-10-01T16:55:09.016255-05:00",
   "calendar_status": "fresh",
   "daily_target": 10,
   "active": [],
@@ -577,16 +577,6 @@
       "date_status": "Calendar estimate",
       "source_url": null,
       "stock_url": null
-    },
-    {
-      "ticker": "NKE",
-      "company": "NIKE, Inc.",
-      "report_date": "2026-10-01",
-      "report_time_label": "3:15 PM CDT",
-      "planned_date": "2026-10-02",
-      "date_status": "Issuer-announced",
-      "source_url": "https://investors.nike.com/investors/news-events-and-reports/investor-news/investor-news-details/2026/NIKE-Inc--Announces-First-Quarter-Fiscal-2027-Earnings-and-Conference-Call/default.aspx",
-      "stock_url": "/shows/nke"
     },
     {
       "ticker": "TORO",
