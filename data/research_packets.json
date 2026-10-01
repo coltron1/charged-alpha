@@ -1046,6 +1046,64 @@
       "tables": 30
     },
     {
+      "key": "ACN:Q4-FY2026",
+      "year": 2026,
+      "quarter": 4,
+      "fiscal": true,
+      "slug": "acn-q4-fy2026",
+      "ticker": "ACN",
+      "company": "Accenture plc",
+      "period": "Q4 FY2026",
+      "canonical_url": "https://chargedalpha.com/research/acn-q4-fy2026",
+      "title": "ACN: Earnings Surged, but the Cash Cushion Shrunk",
+      "page_title": "ACN Q4 FY2026 Research Packet — Charged Alpha",
+      "description": "Accenture beat its revenue range, but comparison effects, acquisition spending and new debt make owner cash the valuation test.",
+      "sha256": "c8a31bfbf20554eaf9042058a8e3553946227aad1146028791b9eea8a26f7007",
+      "html_file": "research_packets/acn-q4-fy2026.html",
+      "source_episode": "ACN-Q4-FY2026",
+      "source_staged_at": "2026-10-01T14:59:34Z",
+      "source_sha256": {
+        "READY": "a72d9e40654629f7938dd5568c06d86d44df505245c744e33711f0d9cbb2ddb3",
+        "handoff.json": "0bf441952d45821f43ed0b1412aac30858b4d3435e53e6ba38709930f3af8433",
+        "packet/acn-q4-fy2026-research-packet.html": "c8a31bfbf20554eaf9042058a8e3553946227aad1146028791b9eea8a26f7007",
+        "packet/packet_meta.json": "c6af1ec38fbc5d8af53d9e398d3135ce68b854d1effb916331c485f33596af7f",
+        "packet/packet.json": "e70b8cc76bc502ce1954154aa760df21d95795dea09365a47bf3131395ff5f00"
+      },
+      "primary_youtube_long": "eADkkfGlTIU",
+      "primary_youtube_short": null,
+      "youtube_studio": null,
+      "youtube_studio_short": null,
+      "what_changed": {
+        "summary": "Accenture beat its revenue range, but comparison effects, acquisition spending and new debt make owner cash the valuation test.",
+        "items": [
+          {
+            "title": "The headline has a comparison effect.",
+            "detail": "Q4 EPS rose 46% on GAAP, but 9% against the adjusted prior-year number."
+          },
+          {
+            "title": "Revenue strength is broad.",
+            "detail": "All geographic markets grew 7% in local currency, with total sales above guidance."
+          },
+          {
+            "title": "More cash does not mean more net cash.",
+            "detail": "Funded borrowing rose to $10.112B, leaving a $2.726B net cash cushion."
+          },
+          {
+            "title": "Capital deployment matters.",
+            "detail": "$7.521B buybacks, $3.987B dividends and $4.941B business/investment purchases compete for internally generated cash."
+          },
+          {
+            "title": "The next cash plan is restrained.",
+            "detail": "FY27 FCF guidance is $11.0–11.8B versus $11.621B in FY26; entry discipline stays important."
+          }
+        ]
+      },
+      "source_published": "October 1, 2026",
+      "words": 6029,
+      "figures": 20,
+      "tables": 36
+    },
+    {
       "key": "ALMU:Q4-FY2026",
       "year": 2026,
       "quarter": 4,
