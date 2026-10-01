@@ -1,7 +1,7 @@
 {
   "schema": "charged-alpha-public-production/1",
-  "updated_at": "2026-09-30T20:02:16.198985-05:00",
-  "calendar_updated_at": "2026-09-30T19:58:37.960064-05:00",
+  "updated_at": "2026-10-01T08:28:26.643724-05:00",
+  "calendar_updated_at": "2026-10-01T08:11:53.314635-05:00",
   "calendar_status": "fresh",
   "daily_target": 10,
   "active": [],
@@ -559,28 +559,8 @@
   ],
   "upcoming": [
     {
-      "ticker": "ACN",
-      "company": "Accenture plc",
-      "report_date": "2026-10-01",
-      "report_time_label": "Time unconfirmed",
-      "planned_date": "2026-10-02",
-      "date_status": "Calendar estimate",
-      "source_url": null,
-      "stock_url": "/shows/acn"
-    },
-    {
       "ticker": "PKE",
       "company": "Park Aerospace Corp.",
-      "report_date": "2026-10-01",
-      "report_time_label": "Time unconfirmed",
-      "planned_date": "2026-10-02",
-      "date_status": "Calendar estimate",
-      "source_url": null,
-      "stock_url": null
-    },
-    {
-      "ticker": "MKC",
-      "company": "McCormick & Company, Incorporated",
       "report_date": "2026-10-01",
       "report_time_label": "Time unconfirmed",
       "planned_date": "2026-10-02",
@@ -597,16 +577,6 @@
       "date_status": "Calendar estimate",
       "source_url": null,
       "stock_url": "/shows/nke"
-    },
-    {
-      "ticker": "AYI",
-      "company": "Acuity Brands, Inc.",
-      "report_date": "2026-10-01",
-      "report_time_label": "Time unconfirmed",
-      "planned_date": "2026-10-02",
-      "date_status": "Calendar estimate",
-      "source_url": null,
-      "stock_url": "/shows/ayi"
     },
     {
       "ticker": "TORO",
@@ -629,16 +599,6 @@
       "stock_url": null
     },
     {
-      "ticker": "RELL",
-      "company": "Richardson Electronics, Ltd.",
-      "report_date": "2026-10-05",
-      "report_time_label": "Time unconfirmed",
-      "planned_date": "2026-10-06",
-      "date_status": "Calendar estimate",
-      "source_url": null,
-      "stock_url": null
-    },
-    {
       "ticker": "AEHR",
       "company": "Aehr Test Systems",
       "report_date": "2026-10-05",
@@ -653,7 +613,7 @@
       "company": "Constellation Brands, Inc.",
       "report_date": "2026-10-06",
       "report_time_label": "Time unconfirmed",
-      "planned_date": "",
+      "planned_date": "2026-10-07",
       "date_status": "Calendar estimate",
       "source_url": null,
       "stock_url": "/shows/stz"
@@ -663,7 +623,7 @@
       "company": "Penguin Solutions, Inc.",
       "report_date": "2026-10-06",
       "report_time_label": "Time unconfirmed",
-      "planned_date": "",
+      "planned_date": "2026-10-07",
       "date_status": "Calendar estimate",
       "source_url": null,
       "stock_url": null
@@ -673,7 +633,7 @@
       "company": "RPM International Inc.",
       "report_date": "2026-10-06",
       "report_time_label": "Time unconfirmed",
-      "planned_date": "",
+      "planned_date": "2026-10-07",
       "date_status": "Calendar estimate",
       "source_url": null,
       "stock_url": null
@@ -683,7 +643,7 @@
       "company": "Apogee Enterprises, Inc.",
       "report_date": "2026-10-06",
       "report_time_label": "Time unconfirmed",
-      "planned_date": "",
+      "planned_date": "2026-10-07",
       "date_status": "Calendar estimate",
       "source_url": null,
       "stock_url": null
@@ -693,7 +653,7 @@
       "company": "Village Super Market, Inc.",
       "report_date": "2026-10-06",
       "report_time_label": "Time unconfirmed",
-      "planned_date": "",
+      "planned_date": "2026-10-07",
       "date_status": "Calendar estimate",
       "source_url": null,
       "stock_url": null
@@ -703,10 +663,40 @@
       "company": "Neogen Corporation",
       "report_date": "2026-10-06",
       "report_time_label": "Time unconfirmed",
-      "planned_date": "",
+      "planned_date": "2026-10-07",
       "date_status": "Calendar estimate",
       "source_url": null,
       "stock_url": "/shows/neog"
+    },
+    {
+      "ticker": "APLD",
+      "company": "Applied Digital Corp.",
+      "report_date": "2026-10-07",
+      "report_time_label": "Time unconfirmed",
+      "planned_date": "",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": "/shows/apld"
+    },
+    {
+      "ticker": "RELL",
+      "company": "Richardson Electronics, Ltd.",
+      "report_date": "2026-10-07",
+      "report_time_label": "Time unconfirmed",
+      "planned_date": "",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": null
+    },
+    {
+      "ticker": "HKD",
+      "company": "AMTD Digital Inc.",
+      "report_date": "2026-10-07",
+      "report_time_label": "Time unconfirmed",
+      "planned_date": "",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": null
     }
   ]
 }
