@@ -10,6 +10,24 @@
   },
   "episodes": [
     {
+      "ticker": "NKE",
+      "company": "Nike Inc.",
+      "sector": "Consumer",
+      "quarter": "Q1 FY2027",
+      "episode_number": "",
+      "title": "NKE Stock: Nike’s Reset Has a Cash Bill — Q1 FY2027",
+      "published_at": "2026-10-01T23:17:22+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=I4X7wCdouA0",
+      "spotify_url": "https://open.spotify.com/episode/0Lwd1kPAe0PCPVJTIuqeCh",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/nke-stock-nike-s-reset-has-a-cash-bill-%e2%80%94-q1-fy2027/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
       "ticker": "ACN",
       "company": "Accenture plc",
       "sector": "Technology",
@@ -46858,7 +46876,7 @@
       ]
     }
   ],
-  "last_synced_at": "2026-10-01T10:31:41-05:00",
+  "last_synced_at": "2026-10-01T18:43:41-05:00",
   "stock_metadata": {
     "A": {
       "company": "Agilent Technologies, Inc.",

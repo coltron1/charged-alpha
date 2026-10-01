@@ -640,6 +640,64 @@
       "tables": 33
     },
     {
+      "key": "NKE:Q1-FY2027",
+      "year": 2027,
+      "quarter": 1,
+      "fiscal": true,
+      "slug": "nke-q1-fy2027",
+      "ticker": "NKE",
+      "company": "NIKE, Inc.",
+      "period": "Q1 FY2027",
+      "canonical_url": "https://chargedalpha.com/research/nke-q1-fy2027",
+      "title": "NKE: The Reset Has a Cash Bill",
+      "page_title": "NKE Q1 FY2027 Research Packet — Charged Alpha",
+      "description": "NIKE improved gross margin, but weak direct sales, a lower earnings outlook and restructuring cash needs make the recovery price-sensitive.",
+      "sha256": "6b8b9781d4bc32a363f55b67a5b5fce773d64474ad10f8a482ace56b6f376b59",
+      "html_file": "research_packets/nke-q1-fy2027.html",
+      "source_episode": "NKE-Q1-FY2027",
+      "source_staged_at": "2026-10-01T23:37:17Z",
+      "source_sha256": {
+        "READY": "6a9798064066d234c8ef5850785c12afe80ac288672ff61802d8d1c0f276253d",
+        "handoff.json": "61e4c6fcca0fdc1b37d191054b5c1057d20f495b3e7465d28b3b5982711b5a4f",
+        "packet/nke-q1-fy2027-research-packet.html": "6b8b9781d4bc32a363f55b67a5b5fce773d64474ad10f8a482ace56b6f376b59",
+        "packet/packet_meta.json": "f227787c20deb919e1caafa1582f59d686587f90e0a679e79ed9ed572a8ca653",
+        "packet/packet.json": "3197af2748171a8436682eaf17ab5adb9042ed451958e4472aabea92cb3a88be"
+      },
+      "primary_youtube_long": "I4X7wCdouA0",
+      "primary_youtube_short": null,
+      "youtube_studio": null,
+      "youtube_studio_short": null,
+      "what_changed": {
+        "summary": "NIKE improved gross margin, but weak direct sales, a lower earnings outlook and restructuring cash needs make the recovery price-sensitive.",
+        "items": [
+          {
+            "title": "The margin recovery is incomplete.",
+            "detail": "Gross margin rose to 42.8%, but lower sales left operating profit below the prior-year quarter."
+          },
+          {
+            "title": "Direct demand remains weak.",
+            "detail": "NIKE Direct sales fell 8%, while Greater China revenue fell 22% on a reported basis."
+          },
+          {
+            "title": "Pace has an upfront cash bill.",
+            "detail": "The $2.5 billion savings estimate is cumulative through FY2031, before $1.0 billion of additional charges and reinvestment."
+          },
+          {
+            "title": "The dividend needs a funding bridge.",
+            "detail": "FY2026 free cash flow of $2.184 billion was below $2.407 billion of dividends."
+          },
+          {
+            "title": "Valuation still assumes recovery.",
+            "detail": "Our $25 central value is below the saved $32.78 post-release reference; a $20 entry review requires the thesis to remain intact."
+          }
+        ]
+      },
+      "source_published": "October 1, 2026",
+      "words": 6215,
+      "figures": 16,
+      "tables": 30
+    },
+    {
       "key": "ORCL:Q1-FY2027",
       "year": 2027,
       "quarter": 1,
