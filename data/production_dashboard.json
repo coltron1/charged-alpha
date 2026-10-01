@@ -1,7 +1,7 @@
 {
   "schema": "charged-alpha-public-production/1",
-  "updated_at": "2026-10-01T12:57:58.232624-05:00",
-  "calendar_updated_at": "2026-10-01T12:48:12.941784-05:00",
+  "updated_at": "2026-10-01T14:57:47.417862-05:00",
+  "calendar_updated_at": "2026-10-01T14:54:09.665888-05:00",
   "calendar_status": "fresh",
   "daily_target": 10,
   "active": [],
@@ -591,9 +591,9 @@
     {
       "ticker": "TORO",
       "company": "Toro Corp.",
-      "report_date": "2026-10-01",
+      "report_date": "2026-10-02",
       "report_time_label": "Time unconfirmed",
-      "planned_date": "2026-10-02",
+      "planned_date": "2026-10-03",
       "date_status": "Calendar estimate",
       "source_url": null,
       "stock_url": null
