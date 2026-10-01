@@ -84,6 +84,33 @@ class HighlightText(HTMLParser):
             self.emphasis.append(text)
 
 
+def normalize_highlight_detail(value):
+    """Restore narrowly proven display spaces without changing financial tokens."""
+    require(isinstance(value, str), "Packet highlight detail must be text")
+    # These word/number boundaries are present in the retained packet corpus. Keep
+    # the vocabulary explicit so product names such as iPhone16 are not rewritten.
+    value = re.sub(r"\b(rose|but|grew|grows|equals|mid|September)(?=\d)", r"\1 ", value)
+    # Lowercase prose followed by a currency value needs a separator. Uppercase
+    # currency prefixes such as C$ and US$ deliberately do not match.
+    value = re.sub(r"(?<=[a-z])(?=\$)", " ", value)
+    value = re.sub(r"(?<=[,;:])(?=\$)", " ", value)
+    value = re.sub(r"\b(in)(?=FY\d)", r"\1 ", value)
+    value = re.sub(r"\b(FY\d{2})(?=(?:FCF|EPS|EBITDA|GAAP)\b)", r"\1 ", value)
+    return value
+
+
+def normalized_what_changed(value):
+    """Canonical comparison view; callers retain the original registry object."""
+    validate_what_changed(value)
+    return {
+        "summary": value["summary"],
+        "items": [
+            {"title": item["title"], "detail": normalize_highlight_detail(item["detail"])}
+            for item in value["items"]
+        ],
+    }
+
+
 def packet_highlights(content, *, required=False):
     """Create the shared plain-text summary from the finalized packet's fast read."""
     values = content.get("five_things")
@@ -101,7 +128,7 @@ def packet_highlights(content, *, required=False):
         plain, title = " ".join(parser.parts), " ".join(parser.emphasis)
         require(plain and title and plain.startswith(title),
                 "Each packet five_things item needs an emphasized lead")
-        detail = plain[len(title):].strip()
+        detail = normalize_highlight_detail(plain[len(title):].strip())
         require(detail, "Each packet five_things item needs supporting detail")
         items.append({"title": title, "detail": detail})
     summary = content.get("meta", {}).get("description")
@@ -388,7 +415,8 @@ def classify(candidate, records, index):
         packet_html_path(matched[0], index)
         if record.get("what_changed"):
             if matched[0].get("what_changed"):
-                require(matched[0]["what_changed"] == record["what_changed"],
+                require(normalized_what_changed(matched[0]["what_changed"]) ==
+                        normalized_what_changed(record["what_changed"]),
                         "Packet What’s Changed differs from registered source")
             else:
                 old_content = [value for name, value in matched[0].get("source_sha256", {}).items()

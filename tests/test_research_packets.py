@@ -205,6 +205,57 @@ class ResearchPacketTests(unittest.TestCase):
         self.assertEqual(len(load_packets(self.index)[0]["what_changed"]["items"]), 3)
         self.assertEqual(self.import_all()["packets"][0]["status"], "already_imported")
 
+    def test_highlight_detail_spacing_is_narrow_and_preserves_financial_tokens(self):
+        value = ("Revenue rose28.6% to$10.616B, but9% stayed; buybacks,$3.987B; "
+                 "FY27FCF versus inFY26, mid2027, September8. "
+                 "Keep iPhone16, 3M, C$38.23, US$111.53B, $7.521B, Q4, FY27, 10-K and AT&T.")
+        self.assertEqual(sync.normalize_highlight_detail(value),
+                         "Revenue rose 28.6% to $10.616B, but 9% stayed; buybacks, $3.987B; "
+                         "FY27 FCF versus in FY26, mid 2027, September 8. "
+                         "Keep iPhone16, 3M, C$38.23, US$111.53B, $7.521B, Q4, FY27, 10-K and AT&T.")
+
+    def test_spacing_only_registered_highlights_are_idempotent_but_values_stay_strict(self):
+        source, _ = self.fixture()
+        self.mutate(source / "packet/packet.json", lambda p: p.update(five_things=[
+            "<b>Revenue accelerated.</b> Revenue rose28.6% to$10.616B.",
+            "<b>Cash conversion weakened.</b> Free cash flow grew7%.",
+            "<b>The valuation hurdle moved.</b> FY27FCF is compared with inFY26.",
+        ]))
+        self.assertEqual(self.import_all()["imported"], 1)
+        self.assertEqual(load_packets(self.index)[0]["what_changed"]["items"][0]["detail"],
+                         "Revenue rose 28.6% to $10.616B.")
+
+        # Simulate a retained legacy registry whose source-equivalent details lack
+        # display spaces. Planning and execution must not rewrite those bytes.
+        self.mutate(self.index, lambda data: data["packets"][0]["what_changed"].update(items=[
+            {"title": "Revenue accelerated.", "detail": "Revenue rose28.6% to$10.616B."},
+            {"title": "Cash conversion weakened.", "detail": "Free cash flow grew7%."},
+            {"title": "The valuation hurdle moved.", "detail": "FY27FCF is compared with inFY26."},
+        ]))
+        before = self.index.read_bytes()
+        self.assertEqual(self.import_all(False)["packets"][0]["status"], "already_imported")
+        self.assertEqual(self.import_all()["packets"][0]["status"], "already_imported")
+        self.assertEqual(self.index.read_bytes(), before)
+
+        # Spacing normalization never masks a changed amount.
+        self.mutate(self.index, lambda data: data["packets"][0]["what_changed"]["items"][0].update(
+            detail="Revenue rose28.6% to$10.617B."))
+        report = self.import_all(False)
+        self.assertEqual(report["errors"], 1)
+        self.assertIn("differs from registered source", report["packets"][0]["reason"])
+
+        # Wording and emphasized-title changes remain substantive mismatches.
+        self.mutate(self.index, lambda data: data["packets"][0]["what_changed"]["items"][0].update(
+            detail="Revenue fell28.6% to$10.616B."))
+        report = self.import_all(False)
+        self.assertEqual(report["errors"], 1)
+        self.assertIn("differs from registered source", report["packets"][0]["reason"])
+        self.mutate(self.index, lambda data: data["packets"][0]["what_changed"]["items"][0].update(
+            title="Revenue slowed."))
+        report = self.import_all(False)
+        self.assertEqual(report["errors"], 1)
+        self.assertIn("differs from registered source", report["packets"][0]["reason"])
+
     def test_new_packets_require_valid_plain_text_highlights(self):
         source, _ = self.fixture()
         (source / "READY").write_text("2026-09-11T00:00:00Z\n")
