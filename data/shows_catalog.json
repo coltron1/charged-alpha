@@ -34751,6 +34751,21 @@
       "description": "Fast clips that point viewers into full research videos and stock pages.",
       "videos": [
         {
+          "title": "NKE Stock: Nike’s Reset Has a Cash Bill — Q1 FY2027 #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/__K_isPXHC0",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-10-01T23:58:53+00:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "NKE"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage.",
+          "earnings_youtube_url": "https://www.youtube.com/watch?v=I4X7wCdouA0",
+          "earnings_match": "stock_period_date"
+        },
+        {
           "title": "ACN Stock: Accenture Q4 FY2026 — Profits Up, Cash Cushion Down #Shorts",
           "youtube_url": "https://www.youtube.com/shorts/pyFJTGlqwlE",
           "spotify_url": "",
@@ -46876,7 +46891,7 @@
       ]
     }
   ],
-  "last_synced_at": "2026-10-01T18:43:41-05:00",
+  "last_synced_at": "2026-10-01T19:05:40-05:00",
   "stock_metadata": {
     "A": {
       "company": "Agilent Technologies, Inc.",

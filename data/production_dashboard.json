@@ -1,20 +1,21 @@
 {
   "schema": "charged-alpha-public-production/1",
-  "updated_at": "2026-10-01T18:25:06.291982-05:00",
-  "calendar_updated_at": "2026-10-01T16:55:09.016255-05:00",
+  "updated_at": "2026-10-01T19:08:50.321202-05:00",
+  "calendar_updated_at": "2026-10-01T19:05:39.528332-05:00",
   "calendar_status": "fresh",
   "daily_target": 10,
-  "active": [
+  "active": [],
+  "history": [
     {
       "ticker": "NKE",
-      "company": "NIKE, Inc.",
+      "company": "Nike Inc.",
       "period": "Q1 FY2027",
-      "status_label": "Building now",
-      "stage_label": "Production in progress",
+      "completed_at": "2026-10-01T19:04:41.631519-05:00",
+      "video_url": "https://youtu.be/I4X7wCdouA0",
+      "short_url": "https://youtu.be/__K_isPXHC0",
+      "packet_url": "https://chargedalpha.com/research/nke-q1-fy2027",
       "stock_url": "/shows/nke"
-    }
-  ],
-  "history": [
+    },
     {
       "ticker": "ACN",
       "company": "Accenture plc",
