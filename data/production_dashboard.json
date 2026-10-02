@@ -1,7 +1,7 @@
 {
   "schema": "charged-alpha-public-production/1",
-  "updated_at": "2026-10-01T19:41:19.013770-05:00",
-  "calendar_updated_at": "2026-10-01T19:05:39.528332-05:00",
+  "updated_at": "2026-10-02T09:13:09.804382-05:00",
+  "calendar_updated_at": "2026-10-02T08:50:17.925324-05:00",
   "calendar_status": "fresh",
   "daily_target": 10,
   "active": [],
@@ -581,9 +581,9 @@
     {
       "ticker": "PKE",
       "company": "Park Aerospace Corp.",
-      "report_date": "2026-10-01",
+      "report_date": "2026-10-02",
       "report_time_label": "Time unconfirmed",
-      "planned_date": "2026-10-02",
+      "planned_date": "2026-10-03",
       "date_status": "Calendar estimate",
       "source_url": null,
       "stock_url": null
@@ -683,7 +683,7 @@
       "company": "Applied Digital Corp.",
       "report_date": "2026-10-07",
       "report_time_label": "Time unconfirmed",
-      "planned_date": "",
+      "planned_date": "2026-10-08",
       "date_status": "Calendar estimate",
       "source_url": null,
       "stock_url": "/shows/apld"
@@ -693,7 +693,7 @@
       "company": "Richardson Electronics, Ltd.",
       "report_date": "2026-10-07",
       "report_time_label": "Time unconfirmed",
-      "planned_date": "",
+      "planned_date": "2026-10-08",
       "date_status": "Calendar estimate",
       "source_url": null,
       "stock_url": null
@@ -703,10 +703,40 @@
       "company": "AMTD Digital Inc.",
       "report_date": "2026-10-07",
       "report_time_label": "Time unconfirmed",
+      "planned_date": "2026-10-08",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": null
+    },
+    {
+      "ticker": "PEP",
+      "company": "PepsiCo, Inc.",
+      "report_date": "2026-10-08",
+      "report_time_label": "Time unconfirmed",
+      "planned_date": "",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": "/shows/pep"
+    },
+    {
+      "ticker": "ODC",
+      "company": "Oil-Dri Corporation of America",
+      "report_date": "2026-10-08",
+      "report_time_label": "Time unconfirmed",
       "planned_date": "",
       "date_status": "Calendar estimate",
       "source_url": null,
       "stock_url": null
+    },
+    {
+      "ticker": "NRIX",
+      "company": "Nurix Therapeutics, Inc.",
+      "report_date": "2026-10-08",
+      "report_time_label": "Time unconfirmed",
+      "planned_date": "",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": "/shows/nrix"
     }
   ]
 }
