@@ -1,7 +1,7 @@
 {
   "schema": "charged-alpha-public-production/1",
-  "updated_at": "2026-10-02T13:02:44.581421-05:00",
-  "calendar_updated_at": "2026-10-02T11:20:01.069128-05:00",
+  "updated_at": "2026-10-02T15:00:16.538059-05:00",
+  "calendar_updated_at": "2026-10-02T14:49:57.817288-05:00",
   "calendar_status": "fresh",
   "daily_target": 10,
   "active": [],
@@ -599,26 +599,6 @@
       "stock_url": null
     },
     {
-      "ticker": "TAYD",
-      "company": "Taylor Devices, Inc.",
-      "report_date": "2026-10-02",
-      "report_time_label": "Time unconfirmed",
-      "planned_date": "2026-10-03",
-      "date_status": "Calendar estimate",
-      "source_url": null,
-      "stock_url": "/shows/tayd"
-    },
-    {
-      "ticker": "TORO",
-      "company": "Toro Corp.",
-      "report_date": "2026-10-02",
-      "report_time_label": "Time unconfirmed",
-      "planned_date": "2026-10-03",
-      "date_status": "Calendar estimate",
-      "source_url": null,
-      "stock_url": null
-    },
-    {
       "ticker": "BETA",
       "company": "BETA Technologies, Inc.",
       "report_date": "2026-10-05",
@@ -637,6 +617,16 @@
       "date_status": "Calendar estimate",
       "source_url": null,
       "stock_url": "/shows/aehr"
+    },
+    {
+      "ticker": "TORO",
+      "company": "Toro Corp.",
+      "report_date": "2026-10-05",
+      "report_time_label": "Time unconfirmed",
+      "planned_date": "2026-10-06",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": null
     },
     {
       "ticker": "STZ",
