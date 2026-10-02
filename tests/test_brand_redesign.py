@@ -37,7 +37,7 @@ class BrandRedesignTests(unittest.TestCase):
         self.assertEqual(stocks, original)
 
     def test_packet_date_never_replaces_episode_date(self):
-        result=research_listing([{'ticker':'TEST','latest_video_published_at':''}], [{'ticker':'TEST','year':2026,'quarter':2,'source_published':'September 10, 2026','source_staged_at':'2099-01-01','slug':'test-q2-2026'}])[0]
+        result=research_listing([{'ticker':'TEST','latest_video_published_at':''}], [{'ticker':'TEST','year':2026,'quarter':2,'period':'Q2 FY2026','source_published':'September 10, 2026','source_staged_at':'2099-01-01','slug':'test-q2-2026'}])[0]
         self.assertEqual(result['research_date'],'2026-09-10')
         self.assertEqual(result['latest_video_published_at'],'')
 
