@@ -34769,6 +34769,21 @@
       "description": "Fast clips that point viewers into full research videos and stock pages.",
       "videos": [
         {
+          "title": "TMQ Stock: Trilogy Metals Q3 FY2026 — Profit Without Copper #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/dt9M5pVWNp0",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-10-02T16:50:44+00:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "TMQ"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage.",
+          "earnings_youtube_url": "https://www.youtube.com/watch?v=xOb7Y9tETDM",
+          "earnings_match": "stock_period_date"
+        },
+        {
           "title": "NKE Stock: Nike’s Reset Has a Cash Bill — Q1 FY2027 #Shorts",
           "youtube_url": "https://www.youtube.com/shorts/__K_isPXHC0",
           "spotify_url": "",
@@ -46909,7 +46924,7 @@
       ]
     }
   ],
-  "last_synced_at": "2026-10-02T11:19:53-05:00",
+  "last_synced_at": "2026-10-02T11:57:48-05:00",
   "stock_metadata": {
     "A": {
       "company": "Agilent Technologies, Inc.",
