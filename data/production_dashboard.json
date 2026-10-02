@@ -1,7 +1,7 @@
 {
   "schema": "charged-alpha-public-production/1",
-  "updated_at": "2026-10-02T09:13:09.804382-05:00",
-  "calendar_updated_at": "2026-10-02T08:50:17.925324-05:00",
+  "updated_at": "2026-10-02T11:20:36.798030-05:00",
+  "calendar_updated_at": "2026-10-02T11:20:01.069128-05:00",
   "calendar_status": "fresh",
   "daily_target": 10,
   "active": [],
@@ -587,6 +587,16 @@
       "date_status": "Calendar estimate",
       "source_url": null,
       "stock_url": null
+    },
+    {
+      "ticker": "TAYD",
+      "company": "Taylor Devices, Inc.",
+      "report_date": "2026-10-02",
+      "report_time_label": "Time unconfirmed",
+      "planned_date": "2026-10-03",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": "/shows/tayd"
     },
     {
       "ticker": "TORO",

@@ -10,6 +10,24 @@
   },
   "episodes": [
     {
+      "ticker": "TMQ",
+      "company": "Trilogy Metals Inc.",
+      "sector": "Basic Materials",
+      "quarter": "Q3 FY2026",
+      "episode_number": "",
+      "title": "TMQ Stock: A Profit Without Copper — Q3 FY2026",
+      "published_at": "2026-10-02T16:01:51+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=xOb7Y9tETDM",
+      "spotify_url": "https://open.spotify.com/episode/196RR1uPjjsqg6Gv7PBcgt",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/tmq-stock-a-profit-without-copper-%e2%80%94-q3-fy2026/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
       "ticker": "NKE",
       "company": "Nike Inc.",
       "sector": "Consumer",
@@ -46891,7 +46909,7 @@
       ]
     }
   ],
-  "last_synced_at": "2026-10-01T19:05:40-05:00",
+  "last_synced_at": "2026-10-02T11:19:53-05:00",
   "stock_metadata": {
     "A": {
       "company": "Agilent Technologies, Inc.",
@@ -50861,6 +50879,10 @@
     "TMO": {
       "company": "Thermo Fisher Scientific",
       "sector": "Healthcare"
+    },
+    "TMQ": {
+      "company": "Trilogy Metals Inc.",
+      "sector": "Basic Materials"
     },
     "TMUS": {
       "company": "T-Mobile US",

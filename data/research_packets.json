@@ -2264,6 +2264,64 @@
       "tables": 36
     },
     {
+      "key": "TMQ:Q3-FY2026",
+      "year": 2026,
+      "quarter": 3,
+      "fiscal": true,
+      "slug": "tmq-q3-fy2026",
+      "ticker": "TMQ",
+      "company": "Trilogy Metals Inc.",
+      "period": "Q3 FY2026",
+      "canonical_url": "https://chargedalpha.com/research/tmq-q3-fy2026",
+      "title": "TMQ: A paper profit, a real funding milestone, and a long road",
+      "page_title": "TMQ Q3 FY2026 Research Packet — Charged Alpha",
+      "description": "Why a derivative gain and closed government investment do not make Trilogy Metals a producing mine.",
+      "sha256": "9189a5710636d8082524fb5d5d35c8e06fe343d08cd1187ab947fbcf45af3111",
+      "html_file": "research_packets/tmq-q3-fy2026.html",
+      "source_episode": "TMQ-Q3-FY2026",
+      "source_staged_at": "2026-10-02T16:19:37Z",
+      "source_sha256": {
+        "READY": "acfdf494edde2318a94f206a498ead61853b01744b1a1a018756cbe91f107906",
+        "handoff.json": "b7fe87a739347c08992a6cb1d5cb7defdde56f24a1b82ea1d888d0979b5655d4",
+        "packet/tmq-q3-fy2026-research-packet.html": "9189a5710636d8082524fb5d5d35c8e06fe343d08cd1187ab947fbcf45af3111",
+        "packet/packet_meta.json": "6559b08cf7e6950151b1d0b619fca4a1c68e16937ca4c35ca81441c77a92ecc9",
+        "packet/packet.json": "0be05c645c15c421fe52928eb41ada96dc9f16f0942ef63aef67b4d3a0cf2281"
+      },
+      "primary_youtube_long": "xOb7Y9tETDM",
+      "primary_youtube_short": null,
+      "youtube_studio": null,
+      "youtube_studio_short": null,
+      "what_changed": {
+        "summary": "Why a derivative gain and closed government investment do not make Trilogy Metals a producing mine.",
+        "items": [
+          {
+            "title": "The profit is not copper production.",
+            "detail": "A $11.564m derivative gain exceeded the $0.244m bottom line."
+          },
+          {
+            "title": "The government investment closed.",
+            "detail": "September 11 proceeds include $17.8m to Trilogy, committed to Ambler Metals."
+          },
+          {
+            "title": "The share denominator changed.",
+            "detail": "October 2 cover shares exceed the quarter average; conditional warrants add another layer."
+          },
+          {
+            "title": "The road and mine remain separate hurdles.",
+            "detail": "A September 2028 permitting target is not a production date."
+          },
+          {
+            "title": "Price already assumes progress.",
+            "detail": "Our risked asset models sit below the current snapshot; monitor financing terms and permits."
+          }
+        ]
+      },
+      "source_published": "October 2, 2026",
+      "words": 5580,
+      "figures": 16,
+      "tables": 27
+    },
+    {
       "key": "IPHA:H1-2026",
       "year": 2026,
       "quarter": 0,
