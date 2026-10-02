@@ -1,11 +1,21 @@
 {
   "schema": "charged-alpha-public-production/1",
-  "updated_at": "2026-10-02T11:20:36.798030-05:00",
+  "updated_at": "2026-10-02T12:07:08.631135-05:00",
   "calendar_updated_at": "2026-10-02T11:20:01.069128-05:00",
   "calendar_status": "fresh",
   "daily_target": 10,
   "active": [],
   "history": [
+    {
+      "ticker": "TMQ",
+      "company": "Trilogy Metals Inc.",
+      "period": "Q3 FY2026",
+      "completed_at": "2026-10-02T12:06:09.761714-05:00",
+      "video_url": "https://youtu.be/xOb7Y9tETDM",
+      "short_url": "https://youtu.be/dt9M5pVWNp0",
+      "packet_url": "https://chargedalpha.com/research/tmq-q3-fy2026",
+      "stock_url": "/shows/tmq"
+    },
     {
       "ticker": "NKE",
       "company": "Nike Inc.",
