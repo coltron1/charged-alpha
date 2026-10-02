@@ -38,7 +38,7 @@
             <span class="production-company">{{ item.company }}</span>
           </div>
           <div class="production-row__detail">
-            <span>{{ item.report_date_label }}{% if item.report_time_label %} &middot; {{ item.report_time_label }}{% endif %}</span>
+            <span>{{ item.report_date_label }}{% if item.report_time_label %} &middot; {{ item.report_time_label }}{% endif %}{% if item.date_status %} &middot; {{ item.date_status }}{% endif %}</span>
             {% if item.source_url %}<a href="{{ item.source_url }}" target="_blank" rel="noopener noreferrer" aria-label="Earnings date source for {{ item.company }}">Source</a>{% endif %}
           </div>
         </li>

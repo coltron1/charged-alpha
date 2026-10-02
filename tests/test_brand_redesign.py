@@ -1,6 +1,9 @@
 import copy
+import json
 import os
+import tempfile
 import unittest
+from pathlib import Path
 from unittest.mock import patch
 
 os.environ.setdefault('DATABASE_URL', 'sqlite:///:memory:')
@@ -70,6 +73,38 @@ class BrandRedesignTests(unittest.TestCase):
         self.assertNotIn('cdn.tailwindcss.com',body)
         self.assertIn('charged-alpha-logo.png',body)
         self.assertIn('<sup>TM</sup>',body)
+
+    def test_home_upcoming_dates_show_provenance_and_keep_preview_limits(self):
+        board = {
+            'schema': 'charged-alpha-public-production/1',
+            'updated_at': '2026-10-02T17:00:00Z',
+            'calendar_updated_at': '2026-10-02T17:00:00Z',
+            'calendar_status': 'fresh',
+            'daily_target': 10,
+            'active': [],
+            'history': [
+                {'ticker': 'NEW', 'company': 'Newest', 'period': 'Q3 FY2026', 'completed_at': '2026-10-02T16:00:00Z'},
+                {'ticker': 'OLD', 'company': 'Older', 'period': 'Q2 FY2026', 'completed_at': '2026-10-01T16:00:00Z'},
+            ],
+            'upcoming': [
+                {'ticker': 'EST', 'company': 'Estimated', 'report_date': '2026-10-03', 'report_time_label': 'Time unconfirmed', 'date_status': 'Calendar estimate'},
+                {'ticker': 'ISS', 'company': 'Issuer', 'report_date': '2026-10-04', 'report_time_label': 'Before U.S. market open', 'date_status': 'Issuer-announced'},
+                {'ticker': 'THIRD', 'company': 'Third', 'report_date': '2026-10-05', 'report_time_label': 'After U.S. market close', 'date_status': 'Calendar estimate'},
+            ],
+        }
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / 'production_dashboard.json'
+            path.write_text(json.dumps(board))
+            preview = site.load_board(path=path, now=datetime(2026, 10, 2, 18, tzinfo=timezone.utc))
+        with patch.object(site, 'load_board', return_value=preview):
+            body = site.app.test_client().get('/').get_data(as_text=True)
+        self.assertIn('Calendar estimate', body)
+        self.assertIn('Issuer-announced', body)
+        self.assertIn('EST', body)
+        self.assertIn('ISS', body)
+        self.assertNotIn('THIRD', body)
+        self.assertIn('Newest', body)
+        self.assertNotIn('Older', body)
 
     def test_following_private_device_scope_no_email_or_analytics(self):
         response=site.app.test_client().get('/following',base_url='https://chargedalpha.com')
