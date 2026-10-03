@@ -1,7 +1,7 @@
 {
   "schema": "charged-alpha-public-production/1",
-  "updated_at": "2026-10-02T23:11:17.443819-05:00",
-  "calendar_updated_at": "2026-10-02T22:47:20.515387-05:00",
+  "updated_at": "2026-10-03T01:01:22.826817-05:00",
+  "calendar_updated_at": "2026-10-03T00:49:44.414777-05:00",
   "calendar_status": "fresh",
   "daily_target": 10,
   "active": [],
@@ -589,16 +589,6 @@
   ],
   "upcoming": [
     {
-      "ticker": "PKE",
-      "company": "Park Aerospace Corp.",
-      "report_date": "2026-10-02",
-      "report_time_label": "Time unconfirmed",
-      "planned_date": "2026-10-03",
-      "date_status": "Calendar estimate",
-      "source_url": null,
-      "stock_url": null
-    },
-    {
       "ticker": "BETA",
       "company": "BETA Technologies, Inc.",
       "report_date": "2026-10-05",
@@ -723,7 +713,7 @@
       "company": "PepsiCo, Inc.",
       "report_date": "2026-10-08",
       "report_time_label": "Time unconfirmed",
-      "planned_date": "",
+      "planned_date": "2026-10-09",
       "date_status": "Calendar estimate",
       "source_url": null,
       "stock_url": "/shows/pep"
@@ -733,7 +723,7 @@
       "company": "Oil-Dri Corporation of America",
       "report_date": "2026-10-08",
       "report_time_label": "Time unconfirmed",
-      "planned_date": "",
+      "planned_date": "2026-10-09",
       "date_status": "Calendar estimate",
       "source_url": null,
       "stock_url": null
@@ -743,10 +733,20 @@
       "company": "Nurix Therapeutics, Inc.",
       "report_date": "2026-10-08",
       "report_time_label": "Time unconfirmed",
-      "planned_date": "",
+      "planned_date": "2026-10-09",
       "date_status": "Calendar estimate",
       "source_url": null,
       "stock_url": "/shows/nrix"
+    },
+    {
+      "ticker": "GLDG",
+      "company": "GoldMining Inc.",
+      "report_date": "2026-10-09",
+      "report_time_label": "Time unconfirmed",
+      "planned_date": "",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": null
     }
   ]
 }
