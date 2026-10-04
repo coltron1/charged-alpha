@@ -1,7 +1,7 @@
 {
   "schema": "charged-alpha-public-production/1",
-  "updated_at": "2026-10-03T22:06:47.244851-05:00",
-  "calendar_updated_at": "2026-10-03T21:45:55.404645-05:00",
+  "updated_at": "2026-10-04T00:04:50.030275-05:00",
+  "calendar_updated_at": "2026-10-04T00:00:40.087984-05:00",
   "calendar_status": "fresh",
   "daily_target": 10,
   "active": [],
@@ -753,7 +753,7 @@
       "company": "GoldMining Inc.",
       "report_date": "2026-10-09",
       "report_time_label": "Time unconfirmed",
-      "planned_date": "",
+      "planned_date": "2026-10-10",
       "date_status": "Calendar estimate",
       "source_url": null,
       "stock_url": null
