@@ -10,6 +10,42 @@
   },
   "episodes": [
     {
+      "ticker": "PENG",
+      "company": "Penguin Solutions, Inc.",
+      "sector": "Technology",
+      "quarter": "Q4 FY2026",
+      "episode_number": "",
+      "title": "PENG Stock: The AI Growth Test Is Now Cash — Q4 FY2026",
+      "published_at": "2026-10-06T23:38:55+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=3r9lqDg9RTI",
+      "spotify_url": "",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/peng-stock-the-ai-growth-test-is-now-cash-%e2%80%94-q4-fy2026/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "STZ",
+      "company": "Constellation Brands, Inc.",
+      "sector": "Consumer Defensive",
+      "quarter": "Q2 FY2027",
+      "episode_number": "",
+      "title": "STZ Stock: More Beer Shipped, But Who Is Buying? — Q2 FY2027",
+      "published_at": "2026-10-06T23:28:04+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=AfUsfueG014",
+      "spotify_url": "https://open.spotify.com/episode/4eawu4o4kQzQtjSfX7dO37",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/stz-stock-more-beer-shipped-but-who-is-buying-%e2%80%94-q2-fy2027/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
       "ticker": "TMQ",
       "company": "Trilogy Metals Inc.",
       "sector": "Basic Materials",
@@ -46924,7 +46960,7 @@
       ]
     }
   ],
-  "last_synced_at": "2026-10-02T11:57:48-05:00",
+  "last_synced_at": "2026-10-06T18:44:56-05:00",
   "stock_metadata": {
     "A": {
       "company": "Agilent Technologies, Inc.",
@@ -50068,6 +50104,10 @@
     "PEN": {
       "company": "Penumbra Inc",
       "sector": "Healthcare"
+    },
+    "PENG": {
+      "company": "Penguin Solutions, Inc.",
+      "sector": "Technology"
     },
     "PEP": {
       "company": "PepsiCo Inc.",

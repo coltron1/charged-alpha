@@ -234,6 +234,64 @@
       }
     },
     {
+      "key": "STZ:Q2-FY2027",
+      "year": 2027,
+      "quarter": 2,
+      "fiscal": true,
+      "slug": "stz-q2-fy2027",
+      "ticker": "STZ",
+      "company": "Constellation Brands",
+      "period": "Q2 FY2027",
+      "canonical_url": "https://chargedalpha.com/research/stz-q2-fy2027",
+      "title": "STZ: Shipments Rebound, Consumer Demand Still Trails",
+      "page_title": "STZ Q2 FY2027 Research Packet — Charged Alpha",
+      "description": "Beer shipments rose while depletions declined; flat comparable profit and cash-flow timing shape a $130 base value.",
+      "sha256": "f0353de9dc36e57867a2317d67b0ceecc6a22c5056239cef632b687d4624e974",
+      "html_file": "research_packets/stz-q2-fy2027.html",
+      "source_episode": "STZ-Q2-FY2027",
+      "source_staged_at": "2026-10-06T23:34:21Z",
+      "source_sha256": {
+        "READY": "7a62a1b7c4061a1402ace39b7c0d9a323d71175ccefbea45c4314fbb10d08f4b",
+        "handoff.json": "1653dbc1eb0cb32f5715940be4949d215215e52ab8e0afd55d58cb42dbdf3db8",
+        "packet/stz-q2-fy2027-research-packet.html": "f0353de9dc36e57867a2317d67b0ceecc6a22c5056239cef632b687d4624e974",
+        "packet/packet_meta.json": "f0d6bb2ab113187d4acc45dcc483c9e2bf28b0bba46975e86a03f30940f2fa61",
+        "packet/packet.json": "301f60bfa6dd681e10e49878f833b3ebc025e091135aed2245bca6806f3f5a35"
+      },
+      "primary_youtube_long": "AfUsfueG014",
+      "primary_youtube_short": null,
+      "youtube_studio": null,
+      "youtube_studio_short": null,
+      "what_changed": {
+        "summary": "Beer shipments rose while depletions declined; flat comparable profit and cash-flow timing shape a $130 base value.",
+        "items": [
+          {
+            "title": "Shipment growth outran demand.",
+            "detail": "Beer shipments +5.5%, depletions -0.6%; the 6.1-point gap needs an inventory explanation."
+          },
+          {
+            "title": "EPS growth leaned on buybacks.",
+            "detail": "Comparable net income $637.3M versus $637.8M; diluted shares declined about 3%."
+          },
+          {
+            "title": "Margin paid for investment.",
+            "detail": "Beer margin fell 160 basis points to 39.0% despite better gross margin."
+          },
+          {
+            "title": "Cash improved through lower capex.",
+            "detail": "H1 FCF rose 4.2% as operating cash flow fell 0.7%."
+          },
+          {
+            "title": "The outlook stayed steady.",
+            "detail": "Comparable EPS $11.20–$11.90 and FCF $1.6–$1.7B were reaffirmed; our base value is $130."
+          }
+        ]
+      },
+      "source_published": "October 6, 2026",
+      "words": 5704,
+      "figures": 15,
+      "tables": 28
+    },
+    {
       "key": "AVAV:Q1-FY2027",
       "year": 2027,
       "quarter": 1,
@@ -1798,6 +1856,64 @@
       "words": 5795,
       "figures": 14,
       "tables": 27
+    },
+    {
+      "key": "PENG:Q4-FY2026",
+      "year": 2026,
+      "quarter": 4,
+      "fiscal": true,
+      "slug": "peng-q4-fy2026",
+      "ticker": "PENG",
+      "company": "Penguin Solutions, Inc.",
+      "period": "Q4 FY2026",
+      "canonical_url": "https://chargedalpha.com/research/peng-q4-fy2026",
+      "title": "PENG: the AI growth test is now cash conversion",
+      "page_title": "PENG Q4 FY2026 Research Packet — Charged Alpha",
+      "description": "Penguin beat expectations and raised its outlook. Our research tests memory-led growth, working capital, dilution and valuation.",
+      "sha256": "4256a8f8dbb553734e0f22e425489e31c30fc7351839cd7652a7226175f8d802",
+      "html_file": "research_packets/peng-q4-fy2026.html",
+      "source_episode": "PENG-Q4-FY2026",
+      "source_staged_at": "2026-10-06T23:44:00Z",
+      "source_sha256": {
+        "READY": "47a33656204b5676b7d4ce36b05ce2eac1cda4d658383686594b1191501f799f",
+        "handoff.json": "62e22a65af57e6ee7cc83fc28993462c38aee6ed8509544662a1ff1d0c59f337",
+        "packet/peng-q4-fy2026-research-packet.html": "4256a8f8dbb553734e0f22e425489e31c30fc7351839cd7652a7226175f8d802",
+        "packet/packet_meta.json": "49e4d346b1cd85c69511783e477fc9a888e179eb3fa5f396251b1912b6aed4a2",
+        "packet/packet.json": "49622d1e9c8abe2944fd288fa8001e9d1eb4986be55dc13d01f3e82046e962f5"
+      },
+      "primary_youtube_long": "3r9lqDg9RTI",
+      "primary_youtube_short": null,
+      "youtube_studio": null,
+      "youtube_studio_short": null,
+      "what_changed": {
+        "summary": "Penguin beat expectations and raised its outlook. Our research tests memory-led growth, working capital, dilution and valuation.",
+        "items": [
+          {
+            "title": "The earnings beat is substantial.",
+            "detail": "Quarterly revenue and adjusted EPS exceeded the captured provider estimates; FY2027 guidance increased."
+          },
+          {
+            "title": "Memory supplied most of the current growth.",
+            "detail": "Its contribution explains91.2% of the quarterly revenue increase; new AI customer wins are not disclosed backlog dollars."
+          },
+          {
+            "title": "Growth consumed cash.",
+            "detail": "Receivables and inventory expanded sharply, producing negative FY2026 free cash flow despite stronger operating income."
+          },
+          {
+            "title": "The share denominator changed.",
+            "detail": "Old-note exchanges issued common stock; convertible preferred participation requires explicit valuation treatment."
+          },
+          {
+            "title": "Our call remains price-sensitive.",
+            "detail": "HOLD at a $60 base, with a $35–$100 scenario band and a $48 margin-of-safety checkpoint."
+          }
+        ]
+      },
+      "source_published": "October 6, 2026",
+      "words": 5583,
+      "figures": 16,
+      "tables": 30
     },
     {
       "key": "RZLT:Q4-FY2026",
