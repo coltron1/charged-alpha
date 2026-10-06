@@ -1,7 +1,7 @@
 {
   "schema": "charged-alpha-public-production/1",
-  "updated_at": "2026-10-06T14:45:48.130924-05:00",
-  "calendar_updated_at": "2026-10-06T14:43:03.289705-05:00",
+  "updated_at": "2026-10-06T17:12:29.823285-05:00",
+  "calendar_updated_at": "2026-10-06T16:52:05.366133-05:00",
   "calendar_status": "fresh",
   "daily_target": 10,
   "active": [],
@@ -589,44 +589,14 @@
   ],
   "upcoming": [
     {
-      "ticker": "STZ",
-      "company": "Constellation Brands, Inc.",
-      "report_date": "2026-10-06",
-      "report_time_label": "After U.S. market close",
-      "planned_date": "2026-10-07",
-      "date_status": "Issuer-announced",
-      "source_url": "https://ir.cbrands.com/news-events/press-releases/detail/345/constellation-brands-to-report-second-quarter-fiscal-2027-financial-results-on-october-6-2026-after-market-close-and-host-conference-call-on-october-7-2026-at-8-00-am-et",
-      "stock_url": "/shows/stz"
-    },
-    {
-      "ticker": "PENG",
-      "company": "Penguin Solutions, Inc.",
-      "report_date": "2026-10-06",
-      "report_time_label": "Time unconfirmed",
-      "planned_date": "2026-10-07",
-      "date_status": "Issuer-announced",
-      "source_url": "https://ir.penguinsolutions.com/news/news-details/2026/Penguin-Solutions-Sets-Conference-Call-for-Fourth-Quarter-and-Fiscal-2026-Results/default.aspx",
-      "stock_url": null
-    },
-    {
-      "ticker": "VLGEA",
-      "company": "Village Super Market, Inc.",
+      "ticker": "AEHR",
+      "company": "Aehr Test Systems",
       "report_date": "2026-10-06",
       "report_time_label": "Time unconfirmed",
       "planned_date": "2026-10-07",
       "date_status": "Calendar estimate",
       "source_url": null,
-      "stock_url": null
-    },
-    {
-      "ticker": "NEOG",
-      "company": "Neogen Corporation",
-      "report_date": "2026-10-06",
-      "report_time_label": "After U.S. market close",
-      "planned_date": "2026-10-07",
-      "date_status": "Issuer-announced",
-      "source_url": "https://investors.neogen.com/news/news-details/2026/Neogen-Announces-First-Quarter-Earnings-Release-Date/default.aspx",
-      "stock_url": "/shows/neog"
+      "stock_url": "/shows/aehr"
     },
     {
       "ticker": "APLD",
