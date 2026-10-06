@@ -1,7 +1,7 @@
 {
   "schema": "charged-alpha-public-production/1",
-  "updated_at": "2026-10-06T08:59:35.404963-05:00",
-  "calendar_updated_at": "2026-10-06T08:46:59.788170-05:00",
+  "updated_at": "2026-10-06T10:51:35.180131-05:00",
+  "calendar_updated_at": "2026-10-06T10:51:32.504995-05:00",
   "calendar_status": "fresh",
   "daily_target": 10,
   "active": [],
@@ -652,10 +652,10 @@
       "ticker": "RELL",
       "company": "Richardson Electronics, Ltd.",
       "report_date": "2026-10-07",
-      "report_time_label": "Time unconfirmed",
+      "report_time_label": "After U.S. market close",
       "planned_date": "2026-10-08",
-      "date_status": "Calendar estimate",
-      "source_url": null,
+      "date_status": "Issuer-announced",
+      "source_url": "https://www.rell.com/press-room/",
       "stock_url": null
     },
     {
