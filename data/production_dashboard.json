@@ -1,7 +1,7 @@
 {
   "schema": "charged-alpha-public-production/1",
-  "updated_at": "2026-10-05T10:05:08.391030-05:00",
-  "calendar_updated_at": "2026-10-05T10:03:14.324874-05:00",
+  "updated_at": "2026-10-06T08:59:35.404963-05:00",
+  "calendar_updated_at": "2026-10-06T08:46:59.788170-05:00",
   "calendar_status": "fresh",
   "daily_target": 10,
   "active": [],
@@ -589,43 +589,13 @@
   ],
   "upcoming": [
     {
-      "ticker": "BETA",
-      "company": "BETA Technologies, Inc.",
-      "report_date": "2026-10-05",
-      "report_time_label": "Time unconfirmed",
-      "planned_date": "2026-10-06",
-      "date_status": "Calendar estimate",
-      "source_url": null,
-      "stock_url": null
-    },
-    {
-      "ticker": "AEHR",
-      "company": "Aehr Test Systems",
-      "report_date": "2026-10-05",
-      "report_time_label": "Time unconfirmed",
-      "planned_date": "2026-10-06",
-      "date_status": "Calendar estimate",
-      "source_url": null,
-      "stock_url": "/shows/aehr"
-    },
-    {
-      "ticker": "TORO",
-      "company": "Toro Corp.",
-      "report_date": "2026-10-05",
-      "report_time_label": "Time unconfirmed",
-      "planned_date": "2026-10-06",
-      "date_status": "Calendar estimate",
-      "source_url": null,
-      "stock_url": null
-    },
-    {
       "ticker": "STZ",
       "company": "Constellation Brands, Inc.",
       "report_date": "2026-10-06",
-      "report_time_label": "Time unconfirmed",
+      "report_time_label": "After U.S. market close",
       "planned_date": "2026-10-07",
-      "date_status": "Calendar estimate",
-      "source_url": null,
+      "date_status": "Issuer-announced",
+      "source_url": "https://ir.cbrands.com/news-events/press-releases/detail/345/constellation-brands-to-report-second-quarter-fiscal-2027-financial-results-on-october-6-2026-after-market-close-and-host-conference-call-on-october-7-2026-at-8-00-am-et",
       "stock_url": "/shows/stz"
     },
     {
@@ -634,23 +604,13 @@
       "report_date": "2026-10-06",
       "report_time_label": "Time unconfirmed",
       "planned_date": "2026-10-07",
-      "date_status": "Calendar estimate",
-      "source_url": null,
+      "date_status": "Issuer-announced",
+      "source_url": "https://ir.penguinsolutions.com/news/news-details/2026/Penguin-Solutions-Sets-Conference-Call-for-Fourth-Quarter-and-Fiscal-2026-Results/default.aspx",
       "stock_url": null
     },
     {
-      "ticker": "RPM",
-      "company": "RPM International Inc.",
-      "report_date": "2026-10-06",
-      "report_time_label": "Time unconfirmed",
-      "planned_date": "2026-10-07",
-      "date_status": "Calendar estimate",
-      "source_url": null,
-      "stock_url": null
-    },
-    {
-      "ticker": "APOG",
-      "company": "Apogee Enterprises, Inc.",
+      "ticker": "TORO",
+      "company": "Toro Corp.",
       "report_date": "2026-10-06",
       "report_time_label": "Time unconfirmed",
       "planned_date": "2026-10-07",
@@ -672,10 +632,10 @@
       "ticker": "NEOG",
       "company": "Neogen Corporation",
       "report_date": "2026-10-06",
-      "report_time_label": "Time unconfirmed",
+      "report_time_label": "After U.S. market close",
       "planned_date": "2026-10-07",
-      "date_status": "Calendar estimate",
-      "source_url": null,
+      "date_status": "Issuer-announced",
+      "source_url": "https://investors.neogen.com/news/news-details/2026/Neogen-Announces-First-Quarter-Earnings-Release-Date/default.aspx",
       "stock_url": "/shows/neog"
     },
     {
