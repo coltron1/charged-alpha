@@ -1,7 +1,7 @@
 {
   "schema": "charged-alpha-public-production/1",
-  "updated_at": "2026-10-07T14:48:59.283357-05:00",
-  "calendar_updated_at": "2026-10-07T12:45:55.792388-05:00",
+  "updated_at": "2026-10-07T18:29:42.960327-05:00",
+  "calendar_updated_at": "2026-10-07T18:26:45.395147-05:00",
   "calendar_status": "fresh",
   "daily_target": 10,
   "active": [],
@@ -609,26 +609,6 @@
   ],
   "upcoming": [
     {
-      "ticker": "APLD",
-      "company": "Applied Digital Corp.",
-      "report_date": "2026-10-07",
-      "report_time_label": "After U.S. market close",
-      "planned_date": "2026-10-08",
-      "date_status": "Issuer-announced",
-      "source_url": "https://ir.applieddigital.com/news-events/press-releases/detail/160/applied-digital-sets-fiscal-first-quarter-2027-conference",
-      "stock_url": "/shows/apld"
-    },
-    {
-      "ticker": "RELL",
-      "company": "Richardson Electronics, Ltd.",
-      "report_date": "2026-10-07",
-      "report_time_label": "After U.S. market close",
-      "planned_date": "2026-10-08",
-      "date_status": "Issuer-announced",
-      "source_url": "https://www.rell.com/press-news/richardson-electronics-announces-date-of-first-quarter-fiscal-year-2027-conference-call/",
-      "stock_url": null
-    },
-    {
       "ticker": "AEHR",
       "company": "Aehr Test Systems",
       "report_date": "2026-10-07",
@@ -641,16 +621,6 @@
     {
       "ticker": "HKD",
       "company": "AMTD Digital Inc.",
-      "report_date": "2026-10-07",
-      "report_time_label": "Time unconfirmed",
-      "planned_date": "2026-10-08",
-      "date_status": "Calendar estimate",
-      "source_url": null,
-      "stock_url": null
-    },
-    {
-      "ticker": "TORO",
-      "company": "Toro Corp.",
       "report_date": "2026-10-07",
       "report_time_label": "Time unconfirmed",
       "planned_date": "2026-10-08",
@@ -681,6 +651,16 @@
     {
       "ticker": "ODC",
       "company": "Oil-Dri Corporation of America",
+      "report_date": "2026-10-08",
+      "report_time_label": "Time unconfirmed",
+      "planned_date": "2026-10-09",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": null
+    },
+    {
+      "ticker": "TORO",
+      "company": "Toro Corp.",
       "report_date": "2026-10-08",
       "report_time_label": "Time unconfirmed",
       "planned_date": "2026-10-09",
