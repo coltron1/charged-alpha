@@ -1,11 +1,31 @@
 {
   "schema": "charged-alpha-public-production/1",
-  "updated_at": "2026-10-07T08:55:59.436391-05:00",
+  "updated_at": "2026-10-07T11:08:17.479579-05:00",
   "calendar_updated_at": "2026-10-07T08:44:49.527985-05:00",
   "calendar_status": "fresh",
   "daily_target": 10,
   "active": [],
   "history": [
+    {
+      "ticker": "PENG",
+      "company": "Penguin Solutions, Inc.",
+      "period": "Q4 FY2026",
+      "completed_at": "2026-10-07T11:05:59.409498-05:00",
+      "video_url": "https://youtu.be/3r9lqDg9RTI",
+      "short_url": "https://youtu.be/rzUzdaA3Nbc",
+      "packet_url": "https://chargedalpha.com/research/peng-q4-fy2026",
+      "stock_url": "/shows/peng"
+    },
+    {
+      "ticker": "STZ",
+      "company": "Constellation Brands, Inc.",
+      "period": "Q2 FY2027",
+      "completed_at": "2026-10-07T11:05:59.005487-05:00",
+      "video_url": "https://youtu.be/AfUsfueG014",
+      "short_url": "https://youtu.be/zn1Q2F1jkv0",
+      "packet_url": "https://chargedalpha.com/research/stz-q2-fy2027",
+      "stock_url": "/shows/stz"
+    },
     {
       "ticker": "TMQ",
       "company": "Trilogy Metals Inc.",
