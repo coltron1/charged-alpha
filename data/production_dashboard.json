@@ -1,7 +1,7 @@
 {
   "schema": "charged-alpha-public-production/1",
-  "updated_at": "2026-10-06T19:08:17.662857-05:00",
-  "calendar_updated_at": "2026-10-06T19:04:53.357379-05:00",
+  "updated_at": "2026-10-07T08:55:59.436391-05:00",
+  "calendar_updated_at": "2026-10-07T08:44:49.527985-05:00",
   "calendar_status": "fresh",
   "daily_target": 10,
   "active": [],
@@ -589,16 +589,6 @@
   ],
   "upcoming": [
     {
-      "ticker": "AEHR",
-      "company": "Aehr Test Systems",
-      "report_date": "2026-10-06",
-      "report_time_label": "Time unconfirmed",
-      "planned_date": "2026-10-07",
-      "date_status": "Calendar estimate",
-      "source_url": null,
-      "stock_url": "/shows/aehr"
-    },
-    {
       "ticker": "APLD",
       "company": "Applied Digital Corp.",
       "report_date": "2026-10-07",
@@ -617,6 +607,16 @@
       "date_status": "Issuer-announced",
       "source_url": "https://www.rell.com/press-news/richardson-electronics-announces-date-of-first-quarter-fiscal-year-2027-conference-call/",
       "stock_url": null
+    },
+    {
+      "ticker": "AEHR",
+      "company": "Aehr Test Systems",
+      "report_date": "2026-10-07",
+      "report_time_label": "Time unconfirmed",
+      "planned_date": "2026-10-08",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": "/shows/aehr"
     },
     {
       "ticker": "HKD",
@@ -687,6 +687,46 @@
       "date_status": "Calendar estimate",
       "source_url": null,
       "stock_url": null
+    },
+    {
+      "ticker": "JNJ",
+      "company": "Johnson & Johnson",
+      "report_date": "2026-10-13",
+      "report_time_label": "Time unconfirmed",
+      "planned_date": "",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": "/shows/jnj"
+    },
+    {
+      "ticker": "UNH",
+      "company": "UnitedHealth Group Incorporated",
+      "report_date": "2026-10-13",
+      "report_time_label": "Time unconfirmed",
+      "planned_date": "",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": "/shows/unh"
+    },
+    {
+      "ticker": "ACI",
+      "company": "Albertsons Companies, Inc.",
+      "report_date": "2026-10-13",
+      "report_time_label": "Time unconfirmed",
+      "planned_date": "",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": "/shows/aci"
+    },
+    {
+      "ticker": "AZZ",
+      "company": "AZZ Inc.",
+      "report_date": "2026-10-13",
+      "report_time_label": "Time unconfirmed",
+      "planned_date": "",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": "/shows/azz"
     }
   ]
 }
