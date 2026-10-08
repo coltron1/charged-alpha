@@ -1,19 +1,10 @@
 {
   "schema": "charged-alpha-public-production/1",
-  "updated_at": "2026-10-08T11:32:59.820425-05:00",
+  "updated_at": "2026-10-08T11:53:34.681684-05:00",
   "calendar_updated_at": "2026-10-08T11:32:26.506336-05:00",
   "calendar_status": "fresh",
   "daily_target": 10,
-  "active": [
-    {
-      "ticker": "PEP",
-      "company": "PepsiCo, Inc.",
-      "period": "Q3 2026",
-      "status_label": "Building now",
-      "stage_label": "Production in progress",
-      "stock_url": "/shows/pep"
-    }
-  ],
+  "active": [],
   "history": [
     {
       "ticker": "APLD",
