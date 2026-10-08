@@ -10,6 +10,24 @@
   },
   "episodes": [
     {
+      "ticker": "PEP",
+      "company": "PepsiCo Inc.",
+      "sector": "Consumer",
+      "quarter": "Q3 2026",
+      "episode_number": "",
+      "title": "PEP Stock: The Refund Behind the Profit Growth — Q3 2026",
+      "published_at": "2026-10-08T16:16:03+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=GIpdVjbnUBY",
+      "spotify_url": "",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/pep-stock-the-refund-behind-the-profit-growth-%e2%80%94-q3-2026/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
       "ticker": "APLD",
       "company": "Applied Digital Corporation",
       "sector": "Technology",
@@ -47023,7 +47041,7 @@
       ]
     }
   ],
-  "last_synced_at": "2026-10-07T20:33:48-05:00",
+  "last_synced_at": "2026-10-08T11:26:44-05:00",
   "stock_metadata": {
     "A": {
       "company": "Agilent Technologies, Inc.",

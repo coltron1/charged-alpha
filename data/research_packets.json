@@ -2380,6 +2380,64 @@
       "tables": 29
     },
     {
+      "key": "PEP:Q3-2026",
+      "year": 2026,
+      "quarter": 3,
+      "fiscal": false,
+      "slug": "pep-q3-2026",
+      "ticker": "PEP",
+      "company": "PepsiCo",
+      "period": "Q3 2026",
+      "canonical_url": "https://chargedalpha.com/research/pep-q3-2026",
+      "title": "PEP Stock: The Refund Behind the Profit Growth",
+      "page_title": "PEP Q3 2026 Research Packet — Charged Alpha",
+      "description": "PepsiCo cut its earnings outlook while a tariff refund exceeded the quarterly increase in core operating profit.",
+      "sha256": "b9ea753b9904dcb4d2baf94e786e0336a6d42ad38b8bcbc4a752b4b866a1a84e",
+      "html_file": "research_packets/pep-q3-2026.html",
+      "source_episode": "PEP-Q3-2026",
+      "source_staged_at": "2026-10-08T16:31:22Z",
+      "source_sha256": {
+        "READY": "eafc0127cded345c111c686f8d16a302eea16a63965acc60754e54f1a5a00caa",
+        "handoff.json": "ad36569afd280c01cd5fe2945375c307419e602ea69a9360083112339d5fb366",
+        "packet/pep-q3-2026-research-packet.html": "b9ea753b9904dcb4d2baf94e786e0336a6d42ad38b8bcbc4a752b4b866a1a84e",
+        "packet/packet_meta.json": "1b581151ef9bc2b9d3c11fb0977cab12460708bef37d8b1ec9ac14cf54533363",
+        "packet/packet.json": "c350200adf36a56a2656fcb95f0aff5fd39be7c400b429a2831176643e2dca83"
+      },
+      "primary_youtube_long": "GIpdVjbnUBY",
+      "primary_youtube_short": null,
+      "youtube_studio": null,
+      "youtube_studio_short": null,
+      "what_changed": {
+        "summary": "PepsiCo cut its earnings outlook while a tariff refund exceeded the quarterly increase in core operating profit.",
+        "items": [
+          {
+            "title": "The headline overstates the operating improvement.",
+            "detail": "Core EPS rose 2% while GAAP EPS increased 17%; the prior-year adjustment burden was much larger."
+          },
+          {
+            "title": "The refund matters.",
+            "detail": "Subtracting the disclosed $178m tariff refund from $4.277bn core profit gives $4.099bn, below last year’s $4.137bn. This is our diagnostic, not an issuer measure."
+          },
+          {
+            "title": "International is doing the heavy lifting.",
+            "detail": "Organic revenue grew 8% and core operating margin expanded 105 basis points."
+          },
+          {
+            "title": "The domestic repair costs money.",
+            "detail": "North America food core margin fell 280 basis points as affordability and marketing investment outweighed savings."
+          },
+          {
+            "title": "Price offers income, but limited cushion.",
+            "detail": "HOLD, conviction 3/5, $135 fair value; a $115 entry would create about 15% margin to that anchor."
+          }
+        ]
+      },
+      "source_published": "October 8, 2026",
+      "words": 5482,
+      "figures": 18,
+      "tables": 33
+    },
+    {
       "key": "SNX:Q3-FY2026",
       "year": 2026,
       "quarter": 3,
