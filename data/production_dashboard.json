@@ -1,7 +1,7 @@
 {
   "schema": "charged-alpha-public-production/1",
-  "updated_at": "2026-10-08T12:18:10.479151-05:00",
-  "calendar_updated_at": "2026-10-08T12:17:01.766435-05:00",
+  "updated_at": "2026-10-08T14:18:45.337668-05:00",
+  "calendar_updated_at": "2026-10-08T14:15:24.128499-05:00",
   "calendar_status": "fresh",
   "daily_target": 10,
   "active": [],
@@ -639,16 +639,6 @@
       "stock_url": null
     },
     {
-      "ticker": "ODC",
-      "company": "Oil-Dri Corporation of America",
-      "report_date": "2026-10-08",
-      "report_time_label": "After U.S. market close",
-      "planned_date": "2026-10-09",
-      "date_status": "Issuer-announced",
-      "source_url": "https://investors.oildri.com/news-releases/news-release-details/oil-dri-announces-dates-fourth-quarter-and-fiscal-year-2026",
-      "stock_url": null
-    },
-    {
       "ticker": "HKD",
       "company": "AMTD Digital Inc.",
       "report_date": "2026-10-08",
@@ -659,13 +649,13 @@
       "stock_url": null
     },
     {
-      "ticker": "TORO",
-      "company": "Toro Corp.",
+      "ticker": "ODC",
+      "company": "Oil-Dri Corporation of America",
       "report_date": "2026-10-08",
-      "report_time_label": "Time unconfirmed",
+      "report_time_label": "After U.S. market close",
       "planned_date": "2026-10-09",
-      "date_status": "Calendar estimate",
-      "source_url": null,
+      "date_status": "Issuer-announced",
+      "source_url": "https://investors.oildri.com/news-releases/news-release-details/oil-dri-announces-dates-fourth-quarter-and-fiscal-year-2026",
       "stock_url": null
     },
     {
@@ -681,6 +671,16 @@
     {
       "ticker": "GLDG",
       "company": "GoldMining Inc.",
+      "report_date": "2026-10-09",
+      "report_time_label": "Time unconfirmed",
+      "planned_date": "2026-10-10",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": null
+    },
+    {
+      "ticker": "TORO",
+      "company": "Toro Corp.",
       "report_date": "2026-10-09",
       "report_time_label": "Time unconfirmed",
       "planned_date": "2026-10-10",
