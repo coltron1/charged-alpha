@@ -1,11 +1,21 @@
 {
   "schema": "charged-alpha-public-production/1",
-  "updated_at": "2026-10-08T11:53:34.681684-05:00",
+  "updated_at": "2026-10-08T11:59:49.544798-05:00",
   "calendar_updated_at": "2026-10-08T11:32:26.506336-05:00",
   "calendar_status": "fresh",
   "daily_target": 10,
   "active": [],
   "history": [
+    {
+      "ticker": "PEP",
+      "company": "PepsiCo Inc.",
+      "period": "Q3 2026",
+      "completed_at": "2026-10-08T11:59:14.063697-05:00",
+      "video_url": "https://youtu.be/GIpdVjbnUBY",
+      "short_url": "https://youtu.be/w_7FtkrUKBY",
+      "packet_url": "https://chargedalpha.com/research/pep-q3-2026",
+      "stock_url": "/shows/pep"
+    },
     {
       "ticker": "APLD",
       "company": "Applied Digital Corporation",
