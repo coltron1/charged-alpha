@@ -1,20 +1,21 @@
 {
   "schema": "charged-alpha-public-production/1",
-  "updated_at": "2026-10-07T20:13:06.756243-05:00",
+  "updated_at": "2026-10-07T20:41:26.450318-05:00",
   "calendar_updated_at": "2026-10-07T18:26:45.395147-05:00",
   "calendar_status": "fresh",
   "daily_target": 10,
-  "active": [
+  "active": [],
+  "history": [
     {
       "ticker": "APLD",
-      "company": "Applied Digital Corp.",
+      "company": "Applied Digital Corporation",
       "period": "Q1 FY2027",
-      "status_label": "Building now",
-      "stage_label": "Production in progress",
+      "completed_at": "2026-10-07T20:40:09.156884-05:00",
+      "video_url": "https://youtu.be/p_JQ50IkaI4",
+      "short_url": "https://youtu.be/lnvvWvklcJA",
+      "packet_url": "https://chargedalpha.com/research/apld-q1-fy2027",
       "stock_url": "/shows/apld"
-    }
-  ],
-  "history": [
+    },
     {
       "ticker": "PENG",
       "company": "Penguin Solutions, Inc.",
