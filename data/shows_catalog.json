@@ -10,6 +10,24 @@
   },
   "episodes": [
     {
+      "ticker": "APLD",
+      "company": "Applied Digital Corporation",
+      "sector": "Technology",
+      "quarter": "Q1 FY2027",
+      "episode_number": "",
+      "title": "APLD Stock: The Rent Is Real. The Equity Math Is Harder — Q1 FY2027",
+      "published_at": "2026-10-08T00:54:20+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=p_JQ50IkaI4",
+      "spotify_url": "https://open.spotify.com/episode/4nT7IEQStZYRvAi1SOJDff",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/apld-stock-the-rent-is-real-the-equity-math-is-harder-%e2%80%94-q1-fy2027/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
       "ticker": "PENG",
       "company": "Penguin Solutions, Inc.",
       "sector": "Technology",
@@ -46990,7 +47008,7 @@
       ]
     }
   ],
-  "last_synced_at": "2026-10-07T08:52:21-05:00",
+  "last_synced_at": "2026-10-07T20:01:45-05:00",
   "stock_metadata": {
     "A": {
       "company": "Agilent Technologies, Inc.",

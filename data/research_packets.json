@@ -292,6 +292,64 @@
       "tables": 28
     },
     {
+      "key": "APLD:Q1-FY2027",
+      "year": 2027,
+      "quarter": 1,
+      "fiscal": true,
+      "slug": "apld-q1-fy2027",
+      "ticker": "APLD",
+      "company": "Applied Digital Corporation",
+      "period": "Q1 FY2027",
+      "canonical_url": "https://chargedalpha.com/research/apld-q1-fy2027",
+      "title": "APLD: The Rent Is Real. The Equity Math Is Harder.",
+      "page_title": "APLD Q1 FY2027 Research Packet — Charged Alpha",
+      "description": "Recurring rent is taking shape, but tenant fit-out, preferred claims and construction funding separate operating progress from value per common share.",
+      "sha256": "0628aa4f634aeb88e35334006ee9fd1055226220e110495d1f92d72c96d01b04",
+      "html_file": "research_packets/apld-q1-fy2027.html",
+      "source_episode": "APLD-Q1-FY2027",
+      "source_staged_at": "2026-10-08T01:12:20Z",
+      "source_sha256": {
+        "READY": "ac1b2a9721a16bc730b46db9e1db4624a94bcae761c489bba873a6b98e1a5356",
+        "handoff.json": "21dfdc2d78f46005af83444e6018e081abca4795e042ebe310c248f6a40d94c8",
+        "packet/apld-q1-fy2027-research-packet.html": "0628aa4f634aeb88e35334006ee9fd1055226220e110495d1f92d72c96d01b04",
+        "packet/packet_meta.json": "c2c0f0999806eaca026ea78967b16e7236cd28dfcbd37010a4e63de90da15ea3",
+        "packet/packet.json": "fc705dfb7cbc301e2066d71d64d2382facc29a5402e1044178800a2ba8ecc526"
+      },
+      "primary_youtube_long": "p_JQ50IkaI4",
+      "primary_youtube_short": null,
+      "youtube_studio": null,
+      "youtube_studio_short": null,
+      "what_changed": {
+        "summary": "Recurring rent is taking shape, but tenant fit-out, preferred claims and construction funding separate operating progress from value per common share.",
+        "items": [
+          {
+            "title": "Rental execution is becoming measurable.",
+            "detail": "HPC base rent reached $65.8 million and property NOI was $58.8 million. The 250 MW October milestone gives the next quarter a larger operating base."
+          },
+          {
+            "title": "The revenue mix matters more than the headline.",
+            "detail": "Tenant fit-out contributed $183.5 million, versus $65.8 million of HPC base rent; tenant recoveries add revenue with matching cost."
+          },
+          {
+            "title": "Positive operating cash flow does not fund the build.",
+            "detail": "Operating cash of $63.9 million compared with $2.075 billion of purchases of property, equipment and other assets. Financing remains central."
+          },
+          {
+            "title": "Common shareholders sit below meaningful other claims.",
+            "detail": "Debt was $6.377 billion, redeemable minority equity $2.011 billion, and parent preferred equity $181.3 million at quarter end. The preferred partnership return can compound."
+          },
+          {
+            "title": "Future power is an option, not delivered earnings.",
+            "detail": "Finland potential capacity and the related-party Base Electron power agreement expand possibilities. Neither substitutes for contracted rent, completed facilities or funding."
+          }
+        ]
+      },
+      "source_published": "October 7, 2026",
+      "words": 5966,
+      "figures": 12,
+      "tables": 25
+    },
+    {
       "key": "AVAV:Q1-FY2027",
       "year": 2027,
       "quarter": 1,
