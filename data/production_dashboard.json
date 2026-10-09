@@ -1,7 +1,7 @@
 {
   "schema": "charged-alpha-public-production/1",
-  "updated_at": "2026-10-08T22:16:47.724494-05:00",
-  "calendar_updated_at": "2026-10-08T22:13:08.243072-05:00",
+  "updated_at": "2026-10-09T07:24:39.654070-05:00",
+  "calendar_updated_at": "2026-10-09T07:24:39.320683-05:00",
   "calendar_status": "fresh",
   "daily_target": 10,
   "active": [],
@@ -629,26 +629,6 @@
   ],
   "upcoming": [
     {
-      "ticker": "HKD",
-      "company": "AMTD Digital Inc.",
-      "report_date": "2026-10-08",
-      "report_time_label": "Time unconfirmed",
-      "planned_date": "2026-10-09",
-      "date_status": "Calendar estimate",
-      "source_url": null,
-      "stock_url": null
-    },
-    {
-      "ticker": "NRIX",
-      "company": "Nurix Therapeutics, Inc.",
-      "report_date": "2026-10-08",
-      "report_time_label": "Time unconfirmed",
-      "planned_date": "2026-10-09",
-      "date_status": "Calendar estimate",
-      "source_url": null,
-      "stock_url": "/shows/nrix"
-    },
-    {
       "ticker": "GLDG",
       "company": "GoldMining Inc.",
       "report_date": "2026-10-09",
@@ -713,10 +693,80 @@
       "company": "ASML Holding N.V.",
       "report_date": "2026-10-14",
       "report_time_label": "Time unconfirmed",
-      "planned_date": "",
+      "planned_date": "2026-10-15",
       "date_status": "Calendar estimate",
       "source_url": null,
       "stock_url": "/shows/asml"
+    },
+    {
+      "ticker": "TSM",
+      "company": "Taiwan Semiconductor Manufacturing Company Limited",
+      "report_date": "2026-10-15",
+      "report_time_label": "Time unconfirmed",
+      "planned_date": "",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": "/shows/tsm"
+    },
+    {
+      "ticker": "PLD",
+      "company": "Prologis, Inc.",
+      "report_date": "2026-10-15",
+      "report_time_label": "Time unconfirmed",
+      "planned_date": "",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": "/shows/pld"
+    },
+    {
+      "ticker": "CMC",
+      "company": "Commercial Metals Company",
+      "report_date": "2026-10-15",
+      "report_time_label": "Time unconfirmed",
+      "planned_date": "",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": null
+    },
+    {
+      "ticker": "SNA",
+      "company": "Snap-on Incorporated",
+      "report_date": "2026-10-15",
+      "report_time_label": "Time unconfirmed",
+      "planned_date": "",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": "/shows/sna"
+    },
+    {
+      "ticker": "ERIC",
+      "company": "Telefonaktiebolaget LM Ericsson (publ)",
+      "report_date": "2026-10-15",
+      "report_time_label": "Time unconfirmed",
+      "planned_date": "",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": "/shows/eric"
+    },
+    {
+      "ticker": "WIT",
+      "company": "Wipro Limited",
+      "report_date": "2026-10-15",
+      "report_time_label": "Time unconfirmed",
+      "planned_date": "",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": "/shows/wit"
+    },
+    {
+      "ticker": "MAN",
+      "company": "ManpowerGroup Inc.",
+      "report_date": "2026-10-15",
+      "report_time_label": "Time unconfirmed",
+      "planned_date": "",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": "/shows/man"
     }
   ]
 }
