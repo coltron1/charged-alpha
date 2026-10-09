@@ -1,7 +1,7 @@
 {
   "schema": "charged-alpha-public-production/1",
-  "updated_at": "2026-10-09T07:34:19.591866-05:00",
-  "calendar_updated_at": "2026-10-09T07:24:39.320683-05:00",
+  "updated_at": "2026-10-09T09:35:55.263430-05:00",
+  "calendar_updated_at": "2026-10-09T09:32:33.865241-05:00",
   "calendar_status": "fresh",
   "daily_target": 10,
   "active": [],
@@ -639,11 +639,11 @@
       "stock_url": null
     },
     {
-      "ticker": "TORO",
-      "company": "Toro Corp.",
-      "report_date": "2026-10-09",
+      "ticker": "HKD",
+      "company": "AMTD Digital Inc.",
+      "report_date": "2026-10-12",
       "report_time_label": "Time unconfirmed",
-      "planned_date": "2026-10-10",
+      "planned_date": "2026-10-13",
       "date_status": "Calendar estimate",
       "source_url": null,
       "stock_url": null
