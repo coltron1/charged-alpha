@@ -32,6 +32,10 @@ Check failure counts and unexpected coverage loss before committing. The stock
 page audit fails when any active catalog listing lacks a dated profile, current
 quote, or USD market capitalization, so a new media-only page cannot be deployed
 silently. A partial or failed refresh is never represented as freshly updated data for that company.
+Issuer-announced exchange transfers may use a narrow, ticker-and-issuer-bound,
+effective-dated override in `stock_research.py`. The profile retains the raw
+provider label as `provider_exchange` and records the issuer source URL and
+effective date. Do not remap a provider exchange label globally.
 FX retries retain the last verified rates with their original per-currency
 observation dates, while recording unavailable currencies. Retained rates are
 provenance only: new profile normalization uses current-run FX observations, and

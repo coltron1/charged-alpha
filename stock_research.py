@@ -80,6 +80,21 @@ BUSINESS_NOTES = {
     "TSLA": "Automotive revenue alongside energy storage and other businesses.",
 }
 
+# Provider exchange labels can lag an issuer-announced listing transfer. Keep
+# these exceptions narrow, dated and source-bound so a similarly named security
+# or an observation from before the transfer remains provider-derived.
+EXCHANGE_OVERRIDES = {
+    "DDS": {
+        "exchange": "TXSE",
+        "expected_issuer": "Dillard's, Inc.",
+        "effective_date": "2026-10-05",
+        "source_url": (
+            "https://investor.dillards.com/news-releases/news-release-details/"
+            "dillards-introduces-hadley-greene-x-gianni-bini-fall-2026"
+        ),
+    },
+}
+
 
 def number(value):
     try:
@@ -128,6 +143,31 @@ def groups_for(ticker, industry_key):
     if industry_key and industry_key not in EXCLUDED_GENERIC_INDUSTRIES:
         return ["industry:" + industry_key]
     return []
+
+
+def apply_exchange_override(ticker, profile, observed_at):
+    """Apply a reviewed, effective-dated issuer exchange correction."""
+    override = EXCHANGE_OVERRIDES.get(ticker)
+    if not override:
+        return profile
+    try:
+        observed_date = datetime.fromisoformat(
+            str(observed_at).replace("Z", "+00:00")
+        ).date()
+        effective_date = datetime.fromisoformat(override["effective_date"]).date()
+    except (TypeError, ValueError):
+        return profile
+    if observed_date < effective_date:
+        return profile
+    normalize = lambda value: re.sub(r"[^a-z0-9]", "", str(value or "").lower())
+    if normalize(profile.get("company")) != normalize(override["expected_issuer"]):
+        return profile
+    result = dict(profile)
+    result["provider_exchange"] = result.get("exchange") or ""
+    result["exchange"] = override["exchange"]
+    result["exchange_effective_date"] = override["effective_date"]
+    result["exchange_source_url"] = override["source_url"]
+    return result
 
 
 def normalize_profile(ticker, info, observed_at, fx=None):
@@ -196,7 +236,7 @@ def normalize_profile(ticker, info, observed_at, fx=None):
     if "bank" in result["industry_key"] or "insurance" in result["industry_key"]:
         for key in ("gross_margin", "operating_margin", "fcf_yield", "fcf_margin", "net_debt_ebitda", "current_ratio", "debt_to_equity", "ev_ebitda", "ev_sales"):
             result[key] = None
-    return result
+    return apply_exchange_override(ticker, result, observed_at)
 
 
 def select_peers(ticker, profiles, now=None):

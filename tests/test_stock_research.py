@@ -22,6 +22,37 @@ def profile(symbol, cap=100, industry="specialty-retail", **overrides):
 
 
 class MetricTests(unittest.TestCase):
+    def test_dds_exchange_override_is_ticker_issuer_and_date_bound(self):
+        source = {
+            "longName": "Dillard’s, Inc.", "currency": "USD",
+            "financialCurrency": "USD", "marketCap": 100,
+            "currentPrice": 10, "fullExchangeName": "NYSE American",
+        }
+        current = normalize_profile(
+            "DDS", source, "2026-10-11T20:00:00+00:00", {"USD": 1}
+        )
+        self.assertEqual(current["exchange"], "TXSE")
+        self.assertEqual(current["provider_exchange"], "NYSE American")
+        self.assertEqual(current["exchange_effective_date"], "2026-10-05")
+        self.assertIn("investor.dillards.com", current["exchange_source_url"])
+
+        before = normalize_profile(
+            "DDS", source, "2026-10-04T20:00:00+00:00", {"USD": 1}
+        )
+        wrong_ticker = normalize_profile(
+            "OTHER", source, "2026-10-11T20:00:00+00:00", {"USD": 1}
+        )
+        wrong_issuer = normalize_profile(
+            "DDS", {**source, "longName": "Different Retailer, Inc."},
+            "2026-10-11T20:00:00+00:00", {"USD": 1}
+        )
+        malformed_date = normalize_profile(
+            "DDS", source, "unknown", {"USD": 1}
+        )
+        for untouched in (before, wrong_ticker, wrong_issuer, malformed_date):
+            self.assertEqual(untouched["exchange"], "NYSE American")
+            self.assertNotIn("provider_exchange", untouched)
+
     def test_units_and_currency_conversion(self):
         result = profile("CASY", debtToEquity=70.547, revenueGrowth=.125, dividendRate=2)
         self.assertAlmostEqual(result["debt_to_equity"], .70547)
