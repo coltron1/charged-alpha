@@ -50322,8 +50322,10 @@
       "sector": "Financial Services"
     },
     "PSKY": {
-      "company": "Paramount Skydance Corporation",
-      "sector": "Communication Services"
+      "company": "Skydance Corporation",
+      "sector": "Communication Services",
+      "yf_symbol": "SKYD",
+      "market_data_note": "Skydance Corporation's Class B shares changed ticker from PSKY to SKYD and moved to the NYSE on October 6, 2026. This historical PSKY page uses the continuing SKYD listing for current market data."
     },
     "PSMT": {
       "company": "PriceSmart, Inc.",
