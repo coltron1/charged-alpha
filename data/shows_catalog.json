@@ -10,6 +10,24 @@
   },
   "episodes": [
     {
+      "ticker": "ACI",
+      "company": "Albertsons Companies Inc",
+      "sector": "Consumer Defensive",
+      "quarter": "Q2 FY2026",
+      "episode_number": "",
+      "title": "ACI Stock: The Cheap Multiple Lost Its Forecast — Q2 FY2026",
+      "published_at": "2026-10-13T15:22:55+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=ug_6sTzSnmQ",
+      "spotify_url": "https://open.spotify.com/episode/4cmJbD9vRW8LDm32kLG7Ya",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/aci-stock-the-cheap-multiple-lost-its-forecast-%e2%80%94-q2-fy2026/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
       "ticker": "PEP",
       "company": "PepsiCo Inc.",
       "sector": "Consumer",
@@ -47056,7 +47074,7 @@
       ]
     }
   ],
-  "last_synced_at": "2026-10-08T14:13:52-05:00",
+  "last_synced_at": "2026-10-13T10:33:05-05:00",
   "stock_metadata": {
     "A": {
       "company": "Agilent Technologies, Inc.",

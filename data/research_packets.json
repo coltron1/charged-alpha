@@ -2728,6 +2728,64 @@
       "tables": 25
     },
     {
+      "key": "ACI:Q2-FY2026",
+      "year": 2026,
+      "quarter": 2,
+      "fiscal": true,
+      "slug": "aci-q2-fy2026",
+      "ticker": "ACI",
+      "company": "Albertsons Companies, Inc.",
+      "period": "Q2 FY2026",
+      "canonical_url": "https://chargedalpha.com/research/aci-q2-fy2026",
+      "title": "ACI: The cheap multiple lost its forecast",
+      "page_title": "ACI Q2 FY2026 Research Packet — Charged Alpha",
+      "description": "Albertsons withdrew its outlook as identical sales fell and debt rose. Three explicit valuation routes support a cautious HOLD and a $14 base value.",
+      "sha256": "9556f07cfde14c3a1d2e04a6093f63d37c62511e033662dcbfaa0bdbd8fc9394",
+      "html_file": "research_packets/aci-q2-fy2026.html",
+      "source_episode": "ACI-Q2-FY2026",
+      "source_staged_at": "2026-10-13T15:42:12Z",
+      "source_sha256": {
+        "READY": "05442bec08d1086f9f5a29201953c7923297a550d991007a109b6ee9711913b3",
+        "handoff.json": "c94ad22c03ab46e49616682e304c3adfa05ea4800a34d8c5a01f059ff8eef8ec",
+        "packet/aci-q2-fy2026-research-packet.html": "9556f07cfde14c3a1d2e04a6093f63d37c62511e033662dcbfaa0bdbd8fc9394",
+        "packet/packet_meta.json": "59876c63908859ac2d874a9f5d3baba73c3219fa056b0b742200263140c86a0c",
+        "packet/packet.json": "61fa6f0e51728f45592ba34e64119f0b7aba8e2920b75ebb472c0b9bacb84472"
+      },
+      "primary_youtube_long": "ug_6sTzSnmQ",
+      "primary_youtube_short": null,
+      "youtube_studio": null,
+      "youtube_studio_short": null,
+      "what_changed": {
+        "summary": "Albertsons withdrew its outlook as identical sales fell and debt rose. Three explicit valuation routes support a cautious HOLD and a $14 base value.",
+        "items": [
+          {
+            "title": "The forecast has been withdrawn.",
+            "detail": "Management will complete a comprehensive business review before updating its financial framework. July’s reduced outlook is historical, not current guidance."
+          },
+          {
+            "title": "Flat sales conceal weaker economics.",
+            "detail": "Identical sales fell 0.8%, while adjusted EBITDA fell 7.6% and GAAP operating income fell 40.9%. Digital growth has not prevented margin pressure."
+          },
+          {
+            "title": "Share shrinkage softens the EPS decline.",
+            "detail": "Adjusted net income fell 27.9%, compared with an 18.2% fall in adjusted EPS. The denominator improved while operating performance deteriorated."
+          },
+          {
+            "title": "Capital returns exceed recent free cash flow.",
+            "detail": "First-half cash buybacks and dividends totaled $565.4M versus computed free cash flow of $310.7M. Financial net debt is $9.046B."
+          },
+          {
+            "title": "Our $14 base needs evidence of stabilization.",
+            "detail": "The $8–20 scenario range and $13.10 weighted value reflect uncertainty. A price below $11 would merit reassessment only if sales, EBITDA and cash signposts also improve."
+          }
+        ]
+      },
+      "source_published": "October 13, 2026",
+      "words": 6810,
+      "figures": 18,
+      "tables": 32
+    },
+    {
       "key": "ANAB:Q2-2026",
       "year": 2026,
       "quarter": 2,
