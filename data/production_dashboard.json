@@ -1,7 +1,7 @@
 {
   "schema": "charged-alpha-public-production/1",
-  "updated_at": "2026-10-13T13:40:44.223900-05:00",
-  "calendar_updated_at": "2026-10-13T13:38:03.081027-05:00",
+  "updated_at": "2026-10-13T15:37:53.212993-05:00",
+  "calendar_updated_at": "2026-10-13T15:33:32.648990-05:00",
   "calendar_status": "fresh",
   "daily_target": 10,
   "active": [],
@@ -657,16 +657,6 @@
       "date_status": "Calendar estimate",
       "source_url": null,
       "stock_url": null
-    },
-    {
-      "ticker": "AZZ",
-      "company": "AZZ Inc.",
-      "report_date": "2026-10-13",
-      "report_time_label": "After U.S. market close",
-      "planned_date": "2026-10-14",
-      "date_status": "Issuer-announced",
-      "source_url": "https://investor.azz.com/2026-09-23-AZZ-Inc-to-Review-Second-Quarter-Fiscal-Year-2027-Financial-Results-on-Wednesday,-October-14,-2026",
-      "stock_url": "/shows/azz"
     },
     {
       "ticker": "ASML",
