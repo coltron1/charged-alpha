@@ -1,7 +1,7 @@
 {
   "schema": "charged-alpha-public-production/1",
-  "updated_at": "2026-10-13T11:27:41.848901-05:00",
-  "calendar_updated_at": "2026-10-13T07:51:20.637693-05:00",
+  "updated_at": "2026-10-13T11:48:36.475151-05:00",
+  "calendar_updated_at": "2026-10-13T11:43:44.229417-05:00",
   "calendar_status": "fresh",
   "daily_target": 10,
   "active": [],
@@ -638,6 +638,16 @@
     }
   ],
   "upcoming": [
+    {
+      "ticker": "HKD",
+      "company": "AMTD Digital Inc.",
+      "report_date": "2026-10-13",
+      "report_time_label": "Time unconfirmed",
+      "planned_date": "2026-10-14",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": null
+    },
     {
       "ticker": "GLDG",
       "company": "GoldMining Inc.",
