@@ -1,7 +1,7 @@
 {
   "schema": "charged-alpha-public-production/1",
-  "updated_at": "2026-10-12T21:53:41.995867-05:00",
-  "calendar_updated_at": "2026-10-12T19:56:50.980989-05:00",
+  "updated_at": "2026-10-13T08:03:53.794849-05:00",
+  "calendar_updated_at": "2026-10-13T07:51:20.637693-05:00",
   "calendar_status": "fresh",
   "daily_target": 10,
   "active": [],
@@ -629,73 +629,23 @@
   ],
   "upcoming": [
     {
-      "ticker": "HKD",
-      "company": "AMTD Digital Inc.",
-      "report_date": "2026-10-12",
-      "report_time_label": "Time unconfirmed",
-      "planned_date": "2026-10-13",
-      "date_status": "Calendar estimate",
-      "source_url": null,
-      "stock_url": null
-    },
-    {
       "ticker": "GLDG",
       "company": "GoldMining Inc.",
-      "report_date": "2026-10-12",
+      "report_date": "2026-10-13",
       "report_time_label": "Time unconfirmed",
-      "planned_date": "2026-10-13",
+      "planned_date": "2026-10-14",
       "date_status": "Calendar estimate",
       "source_url": null,
       "stock_url": null
-    },
-    {
-      "ticker": "NRIX",
-      "company": "Nurix Therapeutics, Inc.",
-      "report_date": "2026-10-12",
-      "report_time_label": "Time unconfirmed",
-      "planned_date": "2026-10-13",
-      "date_status": "Calendar estimate",
-      "source_url": null,
-      "stock_url": "/shows/nrix"
-    },
-    {
-      "ticker": "JNJ",
-      "company": "Johnson & Johnson",
-      "report_date": "2026-10-13",
-      "report_time_label": "Time unconfirmed",
-      "planned_date": "2026-10-14",
-      "date_status": "Calendar estimate",
-      "source_url": null,
-      "stock_url": "/shows/jnj"
-    },
-    {
-      "ticker": "UNH",
-      "company": "UnitedHealth Group Incorporated",
-      "report_date": "2026-10-13",
-      "report_time_label": "Time unconfirmed",
-      "planned_date": "2026-10-14",
-      "date_status": "Calendar estimate",
-      "source_url": null,
-      "stock_url": "/shows/unh"
-    },
-    {
-      "ticker": "ACI",
-      "company": "Albertsons Companies, Inc.",
-      "report_date": "2026-10-13",
-      "report_time_label": "Time unconfirmed",
-      "planned_date": "2026-10-14",
-      "date_status": "Calendar estimate",
-      "source_url": null,
-      "stock_url": "/shows/aci"
     },
     {
       "ticker": "AZZ",
       "company": "AZZ Inc.",
       "report_date": "2026-10-13",
-      "report_time_label": "Time unconfirmed",
+      "report_time_label": "After U.S. market close",
       "planned_date": "2026-10-14",
-      "date_status": "Calendar estimate",
-      "source_url": null,
+      "date_status": "Issuer-announced",
+      "source_url": "https://investor.azz.com/2026-09-23-AZZ-Inc-to-Review-Second-Quarter-Fiscal-Year-2027-Financial-Results-on-Wednesday,-October-14,-2026",
       "stock_url": "/shows/azz"
     },
     {
@@ -777,6 +727,66 @@
       "date_status": "Calendar estimate",
       "source_url": null,
       "stock_url": null
+    },
+    {
+      "ticker": "SMMT",
+      "company": "Summit Therapeutics Inc.",
+      "report_date": "2026-10-19",
+      "report_time_label": "Time unconfirmed",
+      "planned_date": "",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": "/shows/smmt"
+    },
+    {
+      "ticker": "CLF",
+      "company": "Cleveland-Cliffs Inc.",
+      "report_date": "2026-10-19",
+      "report_time_label": "Time unconfirmed",
+      "planned_date": "",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": "/shows/clf"
+    },
+    {
+      "ticker": "CCK",
+      "company": "Crown Holdings, Inc.",
+      "report_date": "2026-10-19",
+      "report_time_label": "Time unconfirmed",
+      "planned_date": "",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": "/shows/cck"
+    },
+    {
+      "ticker": "KARO",
+      "company": "Karooooo Ltd.",
+      "report_date": "2026-10-19",
+      "report_time_label": "Time unconfirmed",
+      "planned_date": "",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": null
+    },
+    {
+      "ticker": "AGNC",
+      "company": "AGNC Investment Corp.",
+      "report_date": "2026-10-19",
+      "report_time_label": "Time unconfirmed",
+      "planned_date": "",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": "/shows/agnc"
+    },
+    {
+      "ticker": "STLD",
+      "company": "Steel Dynamics, Inc.",
+      "report_date": "2026-10-19",
+      "report_time_label": "Time unconfirmed",
+      "planned_date": "",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": "/shows/stld"
     }
   ]
 }
