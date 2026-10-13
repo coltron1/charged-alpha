@@ -1,11 +1,21 @@
 {
   "schema": "charged-alpha-public-production/1",
-  "updated_at": "2026-10-13T08:03:53.794849-05:00",
+  "updated_at": "2026-10-13T11:27:41.848901-05:00",
   "calendar_updated_at": "2026-10-13T07:51:20.637693-05:00",
   "calendar_status": "fresh",
   "daily_target": 10,
   "active": [],
   "history": [
+    {
+      "ticker": "ACI",
+      "company": "Albertsons Companies Inc",
+      "period": "Q2 FY2026",
+      "completed_at": "2026-10-13T11:26:39.520553-05:00",
+      "video_url": "https://youtu.be/ug_6sTzSnmQ",
+      "short_url": "https://youtu.be/rfjWGBDPwds",
+      "packet_url": "https://chargedalpha.com/research/aci-q2-fy2026",
+      "stock_url": "/shows/aci"
+    },
     {
       "ticker": "PEP",
       "company": "PepsiCo Inc.",
