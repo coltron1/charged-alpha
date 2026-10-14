@@ -1,11 +1,21 @@
 {
   "schema": "charged-alpha-public-production/1",
-  "updated_at": "2026-10-14T10:10:05.047966-05:00",
-  "calendar_updated_at": "2026-10-14T07:18:18.667355-05:00",
+  "updated_at": "2026-10-14T10:34:17.004181-05:00",
+  "calendar_updated_at": "2026-10-14T10:32:24.961839-05:00",
   "calendar_status": "fresh",
   "daily_target": 10,
   "active": [],
   "history": [
+    {
+      "ticker": "ASML",
+      "company": "ASML Holding N.V.",
+      "period": "Q3 2026",
+      "completed_at": "2026-10-14T10:28:22.409763-05:00",
+      "video_url": "https://youtu.be/3A-lH_Gz1Fk",
+      "short_url": "https://youtu.be/CNiwZJeA1ho",
+      "packet_url": "https://chargedalpha.com/research/asml-q3-2026",
+      "stock_url": "/shows/asml"
+    },
     {
       "ticker": "ACI",
       "company": "Albertsons Companies Inc",
@@ -638,6 +648,16 @@
     }
   ],
   "upcoming": [
+    {
+      "ticker": "HKD",
+      "company": "AMTD Digital Inc.",
+      "report_date": "2026-10-14",
+      "report_time_label": "Time unconfirmed",
+      "planned_date": "2026-10-15",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": null
+    },
     {
       "ticker": "GLDG",
       "company": "GoldMining Inc.",
