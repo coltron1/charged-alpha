@@ -1,7 +1,7 @@
 {
   "schema": "charged-alpha-public-production/1",
-  "updated_at": "2026-10-14T14:47:06.603847-05:00",
-  "calendar_updated_at": "2026-10-14T14:45:34.738271-05:00",
+  "updated_at": "2026-10-14T17:06:44.969030-05:00",
+  "calendar_updated_at": "2026-10-14T16:49:58.604189-05:00",
   "calendar_status": "fresh",
   "daily_target": 10,
   "active": [],
@@ -648,26 +648,6 @@
     }
   ],
   "upcoming": [
-    {
-      "ticker": "HKD",
-      "company": "AMTD Digital Inc.",
-      "report_date": "2026-10-14",
-      "report_time_label": "Time unconfirmed",
-      "planned_date": "2026-10-15",
-      "date_status": "Calendar estimate",
-      "source_url": null,
-      "stock_url": null
-    },
-    {
-      "ticker": "GLDG",
-      "company": "GoldMining Inc.",
-      "report_date": "2026-10-14",
-      "report_time_label": "Time unconfirmed",
-      "planned_date": "2026-10-15",
-      "date_status": "Calendar estimate",
-      "source_url": null,
-      "stock_url": null
-    },
     {
       "ticker": "TSM",
       "company": "Taiwan Semiconductor Manufacturing Company Limited",
