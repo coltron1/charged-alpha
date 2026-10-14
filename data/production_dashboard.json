@@ -1,7 +1,7 @@
 {
   "schema": "charged-alpha-public-production/1",
-  "updated_at": "2026-10-13T21:34:25.075578-05:00",
-  "calendar_updated_at": "2026-10-13T21:28:39.162679-05:00",
+  "updated_at": "2026-10-14T08:20:54.364114-05:00",
+  "calendar_updated_at": "2026-10-14T07:18:18.667355-05:00",
   "calendar_status": "fresh",
   "daily_target": 10,
   "active": [],
@@ -639,34 +639,14 @@
   ],
   "upcoming": [
     {
-      "ticker": "HKD",
-      "company": "AMTD Digital Inc.",
-      "report_date": "2026-10-13",
-      "report_time_label": "Time unconfirmed",
-      "planned_date": "2026-10-14",
-      "date_status": "Calendar estimate",
-      "source_url": null,
-      "stock_url": null
-    },
-    {
       "ticker": "GLDG",
       "company": "GoldMining Inc.",
-      "report_date": "2026-10-13",
-      "report_time_label": "Time unconfirmed",
-      "planned_date": "2026-10-14",
-      "date_status": "Calendar estimate",
-      "source_url": null,
-      "stock_url": null
-    },
-    {
-      "ticker": "ASML",
-      "company": "ASML Holding N.V.",
       "report_date": "2026-10-14",
       "report_time_label": "Time unconfirmed",
       "planned_date": "2026-10-15",
       "date_status": "Calendar estimate",
       "source_url": null,
-      "stock_url": "/shows/asml"
+      "stock_url": null
     },
     {
       "ticker": "TSM",
@@ -743,7 +723,7 @@
       "company": "Summit Therapeutics Inc.",
       "report_date": "2026-10-19",
       "report_time_label": "Time unconfirmed",
-      "planned_date": "",
+      "planned_date": "2026-10-20",
       "date_status": "Calendar estimate",
       "source_url": null,
       "stock_url": "/shows/smmt"
@@ -753,7 +733,7 @@
       "company": "Cleveland-Cliffs Inc.",
       "report_date": "2026-10-19",
       "report_time_label": "Time unconfirmed",
-      "planned_date": "",
+      "planned_date": "2026-10-20",
       "date_status": "Calendar estimate",
       "source_url": null,
       "stock_url": "/shows/clf"
@@ -763,7 +743,7 @@
       "company": "Crown Holdings, Inc.",
       "report_date": "2026-10-19",
       "report_time_label": "Time unconfirmed",
-      "planned_date": "",
+      "planned_date": "2026-10-20",
       "date_status": "Calendar estimate",
       "source_url": null,
       "stock_url": "/shows/cck"
@@ -773,7 +753,7 @@
       "company": "Karooooo Ltd.",
       "report_date": "2026-10-19",
       "report_time_label": "Time unconfirmed",
-      "planned_date": "",
+      "planned_date": "2026-10-20",
       "date_status": "Calendar estimate",
       "source_url": null,
       "stock_url": null
@@ -783,7 +763,7 @@
       "company": "AGNC Investment Corp.",
       "report_date": "2026-10-19",
       "report_time_label": "Time unconfirmed",
-      "planned_date": "",
+      "planned_date": "2026-10-20",
       "date_status": "Calendar estimate",
       "source_url": null,
       "stock_url": "/shows/agnc"
@@ -793,10 +773,190 @@
       "company": "Steel Dynamics, Inc.",
       "report_date": "2026-10-19",
       "report_time_label": "Time unconfirmed",
-      "planned_date": "",
+      "planned_date": "2026-10-20",
       "date_status": "Calendar estimate",
       "source_url": null,
       "stock_url": "/shows/stld"
+    },
+    {
+      "ticker": "ISRG",
+      "company": "Intuitive Surgical, Inc.",
+      "report_date": "2026-10-20",
+      "report_time_label": "Time unconfirmed",
+      "planned_date": "",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": "/shows/isrg"
+    },
+    {
+      "ticker": "VICR",
+      "company": "Vicor Corporation",
+      "report_date": "2026-10-20",
+      "report_time_label": "Time unconfirmed",
+      "planned_date": "",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": "/shows/vicr"
+    },
+    {
+      "ticker": "NOC",
+      "company": "Northrop Grumman Corporation",
+      "report_date": "2026-10-20",
+      "report_time_label": "Time unconfirmed",
+      "planned_date": "",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": "/shows/noc"
+    },
+    {
+      "ticker": "AMX",
+      "company": "América Móvil, S.A.B. de C.V.",
+      "report_date": "2026-10-20",
+      "report_time_label": "Time unconfirmed",
+      "planned_date": "",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": null
+    },
+    {
+      "ticker": "RTX",
+      "company": "RTX Corporation",
+      "report_date": "2026-10-20",
+      "report_time_label": "Time unconfirmed",
+      "planned_date": "",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": "/shows/rtx"
+    },
+    {
+      "ticker": "PEGA",
+      "company": "Pegasystems Inc.",
+      "report_date": "2026-10-20",
+      "report_time_label": "Time unconfirmed",
+      "planned_date": "",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": "/shows/pega"
+    },
+    {
+      "ticker": "NFLX",
+      "company": "Netflix, Inc.",
+      "report_date": "2026-10-20",
+      "report_time_label": "Time unconfirmed",
+      "planned_date": "",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": "/shows/nflx"
+    },
+    {
+      "ticker": "HAL",
+      "company": "Halliburton Company",
+      "report_date": "2026-10-20",
+      "report_time_label": "Time unconfirmed",
+      "planned_date": "",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": "/shows/hal"
+    },
+    {
+      "ticker": "OMC",
+      "company": "Omnicom Group Inc.",
+      "report_date": "2026-10-20",
+      "report_time_label": "Time unconfirmed",
+      "planned_date": "",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": "/shows/omc"
+    },
+    {
+      "ticker": "EFX",
+      "company": "Equifax Inc.",
+      "report_date": "2026-10-20",
+      "report_time_label": "Time unconfirmed",
+      "planned_date": "",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": "/shows/efx"
+    },
+    {
+      "ticker": "NLY",
+      "company": "Annaly Capital Management, Inc.",
+      "report_date": "2026-10-20",
+      "report_time_label": "Time unconfirmed",
+      "planned_date": "",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": "/shows/nly"
+    },
+    {
+      "ticker": "ELS",
+      "company": "Equity LifeStyle Properties, Inc.",
+      "report_date": "2026-10-20",
+      "report_time_label": "Time unconfirmed",
+      "planned_date": "",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": null
+    },
+    {
+      "ticker": "VMI",
+      "company": "Valmont Industries, Inc.",
+      "report_date": "2026-10-20",
+      "report_time_label": "Time unconfirmed",
+      "planned_date": "",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": "/shows/vmi"
+    },
+    {
+      "ticker": "PNR",
+      "company": "Pentair plc",
+      "report_date": "2026-10-20",
+      "report_time_label": "Time unconfirmed",
+      "planned_date": "",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": "/shows/pnr"
+    },
+    {
+      "ticker": "ADC",
+      "company": "Agree Realty Corporation",
+      "report_date": "2026-10-20",
+      "report_time_label": "Time unconfirmed",
+      "planned_date": "",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": "/shows/adc"
+    },
+    {
+      "ticker": "WFRD",
+      "company": "Weatherford International plc",
+      "report_date": "2026-10-20",
+      "report_time_label": "Time unconfirmed",
+      "planned_date": "",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": "/shows/wfrd"
+    },
+    {
+      "ticker": "LRN",
+      "company": "Stride, Inc.",
+      "report_date": "2026-10-20",
+      "report_time_label": "Time unconfirmed",
+      "planned_date": "",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": "/shows/lrn"
+    },
+    {
+      "ticker": "MMM",
+      "company": "3M Company",
+      "report_date": "2026-10-20",
+      "report_time_label": "Time unconfirmed",
+      "planned_date": "",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": "/shows/mmm"
     }
   ]
 }
