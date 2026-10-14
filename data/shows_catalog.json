@@ -10,6 +10,24 @@
   },
   "episodes": [
     {
+      "ticker": "GLDG",
+      "company": "GoldMining Inc.",
+      "sector": "Basic Materials",
+      "quarter": "Q3 FY2026",
+      "episode_number": "",
+      "title": "GLDG Stock: Working Capital Is Not Spendable Cash — Q3 FY2026",
+      "published_at": "2026-10-14T23:37:50+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=-jIHsALj-Ng",
+      "spotify_url": "",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/gldg-stock-working-capital-is-not-spendable-cash-%e2%80%94-q3-fy2026/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
       "ticker": "ASML",
       "company": "ASML Holding N.V.",
       "sector": "Technology",
@@ -47122,7 +47140,7 @@
       ]
     }
   ],
-  "last_synced_at": "2026-10-14T10:21:50-05:00",
+  "last_synced_at": "2026-10-14T18:40:37-05:00",
   "stock_metadata": {
     "A": {
       "company": "Agilent Technologies, Inc.",
@@ -48926,6 +48944,10 @@
     "GLBE": {
       "company": "Global-E Online Ltd.",
       "sector": "Consumer Cyclical"
+    },
+    "GLDG": {
+      "company": "GoldMining Inc.",
+      "sector": "Basic Materials"
     },
     "GLNG": {
       "company": "Golar LNG Limited",

@@ -2264,6 +2264,64 @@
       "tables": 32
     },
     {
+      "key": "GLDG:Q3-FY2026",
+      "year": 2026,
+      "quarter": 3,
+      "fiscal": true,
+      "slug": "gldg-q3-fy2026",
+      "ticker": "GLDG",
+      "company": "GoldMining Inc.",
+      "period": "Q3 FY2026",
+      "canonical_url": "https://chargedalpha.com/research/gldg-q3-fy2026",
+      "title": "GLDG: working capital is not the same as spendable cash",
+      "page_title": "GLDG Q3 FY2026 Research Packet — Charged Alpha",
+      "description": "A source-based examination of exploration spending, locked holdings and risk-adjusted project value.",
+      "sha256": "9b5c7ad59eb7fa535de4783ba6b915e5612840bcfa96a901237449660db176c0",
+      "html_file": "research_packets/gldg-q3-fy2026.html",
+      "source_episode": "GLDG-Q3-FY2026",
+      "source_staged_at": "2026-10-14T23:39:30Z",
+      "source_sha256": {
+        "READY": "c33cce65fef5778de28d81b3140e96cf9298fb05a4167ddf657e4044711e427b",
+        "handoff.json": "59292203649c95b4d976208ad59f34ca4addaf2caaf38908d1efceccade26a81",
+        "packet/gldg-q3-fy2026-research-packet.html": "9b5c7ad59eb7fa535de4783ba6b915e5612840bcfa96a901237449660db176c0",
+        "packet/packet_meta.json": "052dc16bb0ef6163c161ef4f924a972be0f9b2b0527da9460f86f1125687d37c",
+        "packet/packet.json": "6ee60fd5a7c1d93d63addd3bf25bf70b224ef0143f7352a5f017beb540a6f104"
+      },
+      "primary_youtube_long": "-jIHsALj-Ng",
+      "primary_youtube_short": null,
+      "youtube_studio": null,
+      "youtube_studio_short": null,
+      "what_changed": {
+        "summary": "A source-based examination of exploration spending, locked holdings and risk-adjusted project value.",
+        "items": [
+          {
+            "title": "The quarter bought exploration progress.",
+            "detail": "C$11.40m of exploration expense drove most of the operating loss; this is a pre-revenue business."
+          },
+          {
+            "title": "Cash is narrower than working capital.",
+            "detail": "The C$46.61m headline includes marketable holdings and a locked NevGold position."
+          },
+          {
+            "title": "Count USGO once.",
+            "detail": "Valuing its listed shares requires removing its cash and liabilities from the parent residual calculation."
+          },
+          {
+            "title": "A PEA is a conditional project study.",
+            "detail": "São Jorge’s $532.5m NPV uses $3,500 gold and does not establish reserves or funded construction."
+          },
+          {
+            "title": "Price already gives projects credit.",
+            "detail": "Our adjusted listed-stake baseline leaves roughly $56.93m of project value implied by the stock price."
+          }
+        ]
+      },
+      "source_published": "October 14, 2026",
+      "words": 5332,
+      "figures": 16,
+      "tables": 30
+    },
+    {
       "key": "HITI:Q3-FY2026",
       "year": 2026,
       "quarter": 3,
