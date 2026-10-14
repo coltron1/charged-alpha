@@ -2206,6 +2206,64 @@
       }
     },
     {
+      "key": "ASML:Q3-2026",
+      "year": 2026,
+      "quarter": 3,
+      "fiscal": false,
+      "slug": "asml-q3-2026",
+      "ticker": "ASML",
+      "company": "ASML Holding N.V.",
+      "period": "Q3 2026",
+      "canonical_url": "https://chargedalpha.com/research/asml-q3-2026",
+      "title": "ASML: cash surged, but how much can repeat?",
+      "page_title": "ASML Q3 2026 Research Packet — Charged Alpha",
+      "description": "ASML Q3 2026: a stronger operating quarter, advance-funded cash and a HOLD at $1,650 fair value; three valuation routes, scenarios and dated checkpoints.",
+      "sha256": "2cfea7496083ae996455f8117c1bc60027f3efe4760777c0add2a66a2876c375",
+      "html_file": "research_packets/asml-q3-2026.html",
+      "source_episode": "ASML-Q3-2026",
+      "source_staged_at": "2026-10-14T15:07:51Z",
+      "source_sha256": {
+        "READY": "865747277c0bb08995dc34b9a5ef9d4ff01906e0d5f6bfc1c8c7e6a5c887991f",
+        "handoff.json": "d568543acf2655997abaec79ab2827d069e86c3032aed4a78d5df58fa1bb3c5b",
+        "packet/asml-q3-2026-research-packet.html": "2cfea7496083ae996455f8117c1bc60027f3efe4760777c0add2a66a2876c375",
+        "packet/packet_meta.json": "54e91067ae80844686665223fdf34a8457c7268e5a364214f4499714f26e1e93",
+        "packet/packet.json": "d01bb1ae8688ea624a8843fc8f2c3a5b37b4349874dccdcc8584fd8fab6bb7cd"
+      },
+      "primary_youtube_long": "3A-lH_Gz1Fk",
+      "primary_youtube_short": null,
+      "youtube_studio": null,
+      "youtube_studio_short": null,
+      "what_changed": {
+        "summary": "ASML Q3 2026: a stronger operating quarter, advance-funded cash and a HOLD at $1,650 fair value; three valuation routes, scenarios and dated checkpoints.",
+        "items": [
+          {
+            "title": "The operating ramp is real.",
+            "detail": "Sales rose 55.2% and operating income more than doubled; the improvement survives removing the investment gain."
+          },
+          {
+            "title": "Surging cash is not all repeatable.",
+            "detail": "Working capital supplied €7.009B, or 59.4% of operating cash; future delivery obligations matter."
+          },
+          {
+            "title": "Upgrades drove margin strength.",
+            "detail": "Service and field-option sales reached €3.289B; gross margin exceeded the previous guidance ceiling."
+          },
+          {
+            "title": "The stock already prices growth.",
+            "detail": "Our 2027 earnings route supports about $1,650, close to the pre-release quotation rather than far above it."
+          },
+          {
+            "title": "HOLD, with measurable checkpoints.",
+            "detail": "Watch Q4 revenue of €14.2–15.2B, gross margin near 57% and cash conversion after timing effects."
+          }
+        ]
+      },
+      "source_published": "October 14, 2026",
+      "words": 5584,
+      "figures": 18,
+      "tables": 32
+    },
+    {
       "key": "HITI:Q3-FY2026",
       "year": 2026,
       "quarter": 3,

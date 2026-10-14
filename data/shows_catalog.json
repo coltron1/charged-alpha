@@ -10,6 +10,24 @@
   },
   "episodes": [
     {
+      "ticker": "ASML",
+      "company": "ASML Holding N.V.",
+      "sector": "Technology",
+      "quarter": "Q3 2026",
+      "episode_number": "",
+      "title": "ASML Stock: Cash Surged, But How Much Can Repeat? — Q3 2026",
+      "published_at": "2026-10-14T15:02:20+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=3A-lH_Gz1Fk",
+      "spotify_url": "https://open.spotify.com/episode/0kTsGCH3bqPQrWko0dq0vV",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/asml-stock-cash-surged-but-how-much-can-repeat-%e2%80%94-q3-2026/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
       "ticker": "ACI",
       "company": "Albertsons Companies Inc",
       "sector": "Consumer Defensive",
@@ -47089,7 +47107,7 @@
       ]
     }
   ],
-  "last_synced_at": "2026-10-13T11:09:15-05:00",
+  "last_synced_at": "2026-10-14T10:08:49-05:00",
   "stock_metadata": {
     "A": {
       "company": "Agilent Technologies, Inc.",
