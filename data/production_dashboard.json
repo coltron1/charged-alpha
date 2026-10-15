@@ -1,19 +1,10 @@
 {
   "schema": "charged-alpha-public-production/1",
-  "updated_at": "2026-10-15T14:28:30.239815-05:00",
+  "updated_at": "2026-10-15T15:02:53.839526-05:00",
   "calendar_updated_at": "2026-10-15T12:48:20.679175-05:00",
   "calendar_status": "fresh",
   "daily_target": 10,
-  "active": [
-    {
-      "ticker": "UNH",
-      "company": "UnitedHealth Group Incorporated",
-      "period": "Q3 2026",
-      "status_label": "Building now",
-      "stage_label": "Production in progress",
-      "stock_url": "/shows/unh"
-    }
-  ],
+  "active": [],
   "history": [
     {
       "ticker": "TSM",

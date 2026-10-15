@@ -2786,6 +2786,64 @@
       "tables": 34
     },
     {
+      "key": "UNH:Q3-2026",
+      "year": 2026,
+      "quarter": 3,
+      "fiscal": false,
+      "slug": "unh-q3-2026",
+      "ticker": "UNH",
+      "company": "UnitedHealth Group Incorporated",
+      "period": "Q3 2026",
+      "canonical_url": "https://chargedalpha.com/research/unh-q3-2026",
+      "title": "UNH: The Recovery Is Real. How Much Is Already Priced In?",
+      "page_title": "UNH Q 3 2026 Research Packet — Charged Alpha",
+      "description": "UnitedHealth profit recovered and guidance rose, but reserve development, membership contraction and portfolio effects qualify the improvement. Hold, $400 base value.",
+      "sha256": "049f002d101a392f269ef553ef94b31a78a46d0831ed6f1cb9870b80cd62888d",
+      "html_file": "research_packets/unh-q3-2026.html",
+      "source_episode": "UNH-Q3-2026",
+      "source_staged_at": "2026-10-15T20:02:02Z",
+      "source_sha256": {
+        "READY": "65c4ebd018dc5193ec31d5481f43e507521f6095264880c54d01df55147e1ba3",
+        "handoff.json": "99c3d9251ce62fe1b90e3f3acf1609f67138a9b71194eeeee24ae1b66fea2fe7",
+        "packet/unh-q3-2026-research-packet.html": "049f002d101a392f269ef553ef94b31a78a46d0831ed6f1cb9870b80cd62888d",
+        "packet/packet_meta.json": "f151e5e1c4fc18a93c56f9c45f4248823594fa01fa8b06eb4ea76dea079fc220",
+        "packet/packet.json": "e6b0ce43ca2082f65c6e09a46209efa05d10917d1a76b8ae6e96c9e7a115fa96"
+      },
+      "primary_youtube_long": "Lx5ET719uQ0",
+      "primary_youtube_short": null,
+      "youtube_studio": null,
+      "youtube_studio_short": null,
+      "what_changed": {
+        "summary": "UnitedHealth profit recovered and guidance rose, but reserve development, membership contraction and portfolio effects qualify the improvement. Hold, $400 base value.",
+        "items": [
+          {
+            "title": "Profit recovered while revenue shrank.",
+            "detail": "Operating earnings rose 52.1% to $6.56 B despite 0.4% lower revenue."
+          },
+          {
+            "title": "Reserve development helped the headline.",
+            "detail": "The $610 M benefit equals roughly 70 basispoints of premiums; illustrative MCR without it is 89.1%."
+          },
+          {
+            "title": "Adjusted operating profit is below GAAP.",
+            "detail": "Removing portfolio and other benefits takes $6.56 Bto $6.27 B, even though adjusted EPS is higher."
+          },
+          {
+            "title": "Membership and portfolio changes still matter.",
+            "detail": "Medical members fell to 48.3 M; South America closing remains unconfirmed and losses continue."
+          },
+          {
+            "title": "Our valuation is below the Street.",
+            "detail": "Hold with $400 base and $395 weighted value versus $410.12 quote and $469.10 aggregate target."
+          }
+        ]
+      },
+      "source_published": "October 15, 2026",
+      "words": 6130,
+      "figures": 21,
+      "tables": 34
+    },
+    {
       "key": "IPHA:H1-2026",
       "year": 2026,
       "quarter": 0,
