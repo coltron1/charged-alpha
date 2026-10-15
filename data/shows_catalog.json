@@ -10,6 +10,24 @@
   },
   "episodes": [
     {
+      "ticker": "CMC",
+      "company": "Commercial Metals Company",
+      "sector": "Industrials",
+      "quarter": "Q4 FY2026",
+      "episode_number": "",
+      "title": "CMC Stock: Stronger Steel, But Can the New Portfolio Pay? — Q4 FY2026",
+      "published_at": "2026-10-15T16:31:25+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=01CXzak1PCU",
+      "spotify_url": "https://open.spotify.com/episode/3owWAePyZ3jBN0WaZcs4s4",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/cmc-stock-stronger-steel-but-can-the-new-portfolio-pay-%e2%80%94-q4-fy2026/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
       "ticker": "GLDG",
       "company": "GoldMining Inc.",
       "sector": "Basic Materials",
@@ -47155,7 +47173,7 @@
       ]
     }
   ],
-  "last_synced_at": "2026-10-15T08:19:17-05:00",
+  "last_synced_at": "2026-10-15T11:40:22-05:00",
   "stock_metadata": {
     "A": {
       "company": "Agilent Technologies, Inc.",
@@ -48111,6 +48129,10 @@
     "CMBT": {
       "company": "Cmb.Tech NV",
       "sector": "Energy"
+    },
+    "CMC": {
+      "company": "Commercial Metals Company",
+      "sector": "Industrials"
     },
     "CMCSA": {
       "company": "Comcast Corporation",

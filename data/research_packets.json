@@ -1394,6 +1394,64 @@
       "tables": 28
     },
     {
+      "key": "CMC:Q4-FY2026",
+      "year": 2026,
+      "quarter": 4,
+      "fiscal": true,
+      "slug": "cmc-q4-fy2026",
+      "ticker": "CMC",
+      "company": "Commercial Metals Company",
+      "period": "Q4 FY2026",
+      "canonical_url": "https://chargedalpha.com/research/cmc-q4-fy2026",
+      "title": "CMC: Steel Is Stronger. The New Portfolio Still Has to Earn Its Price.",
+      "page_title": "CMC Q4 FY2026 Research Packet — Charged Alpha",
+      "description": "CMC delivered stronger steel margins and cash flow, but precast softness, normalized taxes and acquisition debt keep our call at Hold with a $70 base value.",
+      "sha256": "8b60b3788be3db13a8dc8034d29202608dd51ae245692c680bf16a16bbc35bfa",
+      "html_file": "research_packets/cmc-q4-fy2026.html",
+      "source_episode": "CMC-Q4-FY2026",
+      "source_staged_at": "2026-10-15T16:41:14Z",
+      "source_sha256": {
+        "READY": "a7cacb9195ef16b2d625be3ca83ddce77965dcd1682d91de266c3df8490f1805",
+        "handoff.json": "9be0d730c7706c2bfa04de1e527abd9dda7d6d9bb34d61e0f69e740b81ae0c15",
+        "packet/cmc-q4-fy2026-research-packet.html": "8b60b3788be3db13a8dc8034d29202608dd51ae245692c680bf16a16bbc35bfa",
+        "packet/packet_meta.json": "903f578039da30fe37174b1de896e0bf1a4a9829a13769c78fe2bf79925fa8c3",
+        "packet/packet.json": "6b1e855e6fa33ca7206c5f0f3483740cd7c56db69d7b1c10dfae29725ddb315d"
+      },
+      "primary_youtube_long": "01CXzak1PCU",
+      "primary_youtube_short": null,
+      "youtube_studio": null,
+      "youtube_studio_short": null,
+      "what_changed": {
+        "summary": "CMC delivered stronger steel margins and cash flow, but precast softness, normalized taxes and acquisition debt keep our call at Hold with a $70 base value.",
+        "items": [
+          {
+            "title": "Steel is carrying the improvement.",
+            "detail": "North America adjusted EBITDA reached $317.5M as metal margins widened to $652 per ton."
+          },
+          {
+            "title": "Acquisitions change the comparison.",
+            "detail": "Precast added $57M EBITDA but missed expectations; residual CSG EBITDA was $44.7M, below last year."
+          },
+          {
+            "title": "EPS needs a tax adjustment in the model.",
+            "detail": "Q4 effective tax was 7.4%; our 23% sensitivity lowers the same pretax earnings to about $1.58 per share."
+          },
+          {
+            "title": "Cash improved, but the acquisition bill remains.",
+            "detail": "Fiscal FCF was $479.1M against $2.6B ordinary net debt and a separate litigation reserve."
+          },
+          {
+            "title": "The quote already assumes progress.",
+            "detail": "Our $70 base and $67.50 weighted value leave little cushion at $67.93; Hold, conviction 3/5."
+          }
+        ]
+      },
+      "source_published": "October 15, 2026",
+      "words": 5953,
+      "figures": 18,
+      "tables": 32
+    },
+    {
       "key": "COST:Q4-FY2026",
       "year": 2026,
       "quarter": 4,
