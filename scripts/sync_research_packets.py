@@ -61,6 +61,17 @@ class HeadMetadata(HTMLParser):
             self.titles[-1] += data
 
 
+def normalized_period(value):
+    """Canonicalize display whitespace only for a complete quarterly period token."""
+    require(isinstance(value, str), "Packet period must be text")
+    display = " ".join(value.upper().split())
+    match = re.fullmatch(r"Q\s*([1-4])(?:\s+|-)\s*((?:FY)?20\d{2})", display)
+    if match:
+        return f"Q{match.group(1)} {match.group(2)}"
+    legacy = " ".join(value.upper().replace("-", " ").split())
+    return legacy if re.fullmatch(r"(?:H[12] (?:FY)?20\d{2}|FY20\d{2})", legacy) else display
+
+
 class HighlightText(HTMLParser):
     """Extract readable text and the emphasized lead from one packet highlight."""
     def __init__(self):
@@ -340,8 +351,11 @@ def read_candidate(queue):
     for key in ("slug", "canonical_url", "title", "page_title"):
         require(packet.get(key) == meta.get(key), f"Packet {key} differs from metadata")
     require(meta.get("file") == filename, "Packet metadata filename differs")
-    for key in ("ticker", "period"):
-        require(handoff.get(key) == meta.get(key) == cm.get(key), f"Packet {key} identity differs")
+    require(handoff.get("ticker") == meta.get("ticker") == cm.get("ticker"),
+            "Packet ticker identity differs")
+    require(meta.get("period") == cm.get("period"), "Packet period document/metadata differs")
+    require(normalized_period(handoff.get("period")) == normalized_period(meta.get("period")),
+            "Packet period identity differs")
     require(canonical_company_name(handoff.get("company")) == canonical_company_name(cm.get("company")),
             "Packet company identity differs")
     for key in ("slug", "title", "page_title"):

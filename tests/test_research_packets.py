@@ -191,6 +191,28 @@ class ResearchPacketTests(unittest.TestCase):
         self.assertEqual(self.import_all()["errors"], 1)
         self.assertFalse(self.index.exists())
 
+    def test_quarter_display_whitespace_imports_without_weakening_identity(self):
+        self.assertEqual(sync.normalized_period('H1-FY2026'), 'H1 FY2026')
+        self.assertEqual(sync.normalized_period('H2-2026'), 'H2 2026')
+        self.assertEqual(sync.normalized_period('FY2026'), 'FY2026')
+        self.assertNotEqual(sync.normalized_period('Q-3 2026'), 'Q3 2026')
+        source, raw = self.fixture('UNH', 'Q3 2026')
+        for name in ('packet_meta.json','packet.json'):
+            path=source/'packet'/name; value=json.loads(path.read_bytes())
+            (value['meta'] if name=='packet.json' else value)['period']='Q 3 2026'; path.write_text(json.dumps(value))
+        self.assertEqual(self.import_all()['imported'], 1)
+        self.assertEqual(packet_html_path(load_packets(self.index)[0], self.index).read_bytes(), raw)
+        self.assertEqual(load_packets(self.index)[0]['period'], 'Q3 2026')
+        for bad in ('Q 2 2026','Q 3 FY2026','Q 3 2025','Q 33 2026','Q 0 2026',
+                    'Q-3 2026','Q--3 2026','Q 3 2026 extra'):
+            other=Path(tempfile.mkdtemp(dir=self.root)); self.queue=other/'queue'; self.queue.mkdir()
+            source,_=self.fixture('UNH','Q3 2026')
+            for name in ('packet_meta.json','packet.json'):
+                path=source/'packet'/name; value=json.loads(path.read_bytes())
+                (value['meta'] if name=='packet.json' else value)['period']=bad; path.write_text(json.dumps(value))
+            self.index=other/'site/data/research_packets.json'
+            with self.subTest(period=bad): self.assertEqual(self.import_all()['errors'],1)
+
     def test_existing_packet_can_add_source_bound_highlights_without_changing_html(self):
         source, raw = self.fixture()
         with patch.object(sync, "packet_highlights", return_value=None):
