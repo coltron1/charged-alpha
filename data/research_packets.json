@@ -2322,6 +2322,64 @@
       "tables": 32
     },
     {
+      "key": "ERIC:Q3-2026",
+      "year": 2026,
+      "quarter": 3,
+      "fiscal": false,
+      "slug": "eric-q3-2026",
+      "ticker": "ERIC",
+      "company": "Ericsson",
+      "period": "Q3 2026",
+      "canonical_url": "https://chargedalpha.com/research/eric-q3-2026",
+      "title": "ERIC: Profit Fell, But the Comparison Is the Trap",
+      "page_title": "ERIC Q3 2026 Research Packet — Charged Alpha",
+      "description": "Ericsson’s underlying operating improvement, cash conversion and dated per-ADS valuation after the Q3 earnings release.",
+      "sha256": "92c706d7a8870396e3293715f7aac433ccca693151d983677f0fcf712542f456",
+      "html_file": "research_packets/eric-q3-2026.html",
+      "source_episode": "ERIC-Q3-2026",
+      "source_staged_at": "2026-10-15T22:48:01Z",
+      "source_sha256": {
+        "READY": "5f707e7f41934d98d1d822b5e9d3c12462f4b88015a9533385119133be226c54",
+        "handoff.json": "8fb97dafa696bd17e8cfb287e23143b6ec3f6356921d01492a1f0e0804903842",
+        "packet/eric-q3-2026-research-packet.html": "92c706d7a8870396e3293715f7aac433ccca693151d983677f0fcf712542f456",
+        "packet/packet_meta.json": "9ea7c21b1fea6399c81933a922d668be302a08dc8891b93512ae7c011723cd21",
+        "packet/packet.json": "98e6772dfdec838356b8edd5a185c5d1570c88eb4a2c0e340f4b5d7a07cc20d4"
+      },
+      "primary_youtube_long": "_H4H0L38huw",
+      "primary_youtube_short": null,
+      "youtube_studio": null,
+      "youtube_studio_short": null,
+      "what_changed": {
+        "summary": "Ericsson’s underlying operating improvement, cash conversion and dated per-ADS valuation after the Q3 earnings release.",
+        "items": [
+          {
+            "title": "Normalize the comparison, not every cost.",
+            "detail": "Prior adjusted EBITA still included the SEK 7.6bn iconectiv gain. Removing that disclosed gain gives a different operating story."
+          },
+          {
+            "title": "Licensing helped the margin.",
+            "detail": "IPR revenue rose to SEK 3.9bn, partly from previously unlicensed periods. Annualized recurring IPR was approximately SEK 13.5bn."
+          },
+          {
+            "title": "Cash is less flattering than earnings.",
+            "detail": "Inventory consumed SEK 4.086bn this quarter and SEK 10.438bn year to date. FCF before M&A was SEK 4.902bn."
+          },
+          {
+            "title": "Keep the share and currency units straight.",
+            "detail": "One US ADS represents one B share. Accounts are in SEK; valuations are USD per ADS at the dated 9.9473 SEK/USD reference."
+          },
+          {
+            "title": "The market already rewarded the improvement.",
+            "detail": "The ADS rose 11.8% from the prior close. Our base cash assumptions support a value below the resulting $10.71 price."
+          }
+        ]
+      },
+      "source_published": "October 15, 2026",
+      "words": 5167,
+      "figures": 16,
+      "tables": 28
+    },
+    {
       "key": "GLDG:Q3-FY2026",
       "year": 2026,
       "quarter": 3,

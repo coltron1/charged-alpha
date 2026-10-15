@@ -10,6 +10,24 @@
   },
   "episodes": [
     {
+      "ticker": "ERIC",
+      "company": "Telefonaktiebolaget LM Ericsson (publ)",
+      "sector": "Technology",
+      "quarter": "Q3 2026",
+      "episode_number": "",
+      "title": "ERIC Stock: Profit Fell, But the Comparison Is the Trap — Q3 2026",
+      "published_at": "2026-10-15T22:41:11+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=_H4H0L38huw",
+      "spotify_url": "",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/eric-stock-profit-fell-but-the-comparison-is-the-trap-%e2%80%94-q3-2026/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
       "ticker": "PLD",
       "company": "Prologis Inc.",
       "sector": "Real Estate",
@@ -47321,7 +47339,7 @@
       ]
     }
   ],
-  "last_synced_at": "2026-10-15T17:35:16-05:00",
+  "last_synced_at": "2026-10-15T17:45:42-05:00",
   "stock_metadata": {
     "A": {
       "company": "Agilent Technologies, Inc.",
