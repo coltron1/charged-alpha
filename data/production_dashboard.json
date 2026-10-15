@@ -1,11 +1,21 @@
 {
   "schema": "charged-alpha-public-production/1",
-  "updated_at": "2026-10-15T15:26:12.201381-05:00",
+  "updated_at": "2026-10-15T15:44:25.378444-05:00",
   "calendar_updated_at": "2026-10-15T12:48:20.679175-05:00",
   "calendar_status": "fresh",
   "daily_target": 10,
   "active": [],
   "history": [
+    {
+      "ticker": "JNJ",
+      "company": "Johnson & Johnson",
+      "period": "Q3 2026",
+      "completed_at": "2026-10-15T15:39:04.465066-05:00",
+      "video_url": "https://youtu.be/xUxHVxq5XIA",
+      "short_url": "https://youtu.be/_VNAvbtn1rA",
+      "packet_url": "https://chargedalpha.com/research/jnj-q3-2026",
+      "stock_url": "/shows/jnj"
+    },
     {
       "ticker": "UNH",
       "company": "UnitedHealth Group",
