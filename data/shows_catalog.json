@@ -10,6 +10,24 @@
   },
   "episodes": [
     {
+      "ticker": "UNH",
+      "company": "UnitedHealth Group",
+      "sector": "Healthcare",
+      "quarter": "Q3 2026",
+      "episode_number": "",
+      "title": "UNH Stock: The Recovery Is Real. Is It Already Priced In? — Q3 2026",
+      "published_at": "2026-10-15T19:18:40+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=Lx5ET719uQ0",
+      "spotify_url": "https://open.spotify.com/episode/6gaaxExPb3wc3bbpTjmcxU",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/unh-stock-the-recovery-is-real-is-it-already-priced-in-%e2%80%94-q3-2026/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
       "ticker": "TSM",
       "company": "Taiwan Semiconductor Manufacturing Company Limited",
       "sector": "Technology",
@@ -47222,7 +47240,7 @@
       ]
     }
   ],
-  "last_synced_at": "2026-10-15T12:48:36-05:00",
+  "last_synced_at": "2026-10-15T14:34:07-05:00",
   "stock_metadata": {
     "A": {
       "company": "Agilent Technologies, Inc.",
