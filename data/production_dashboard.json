@@ -1,11 +1,21 @@
 {
   "schema": "charged-alpha-public-production/1",
-  "updated_at": "2026-10-14T18:39:38.374149-05:00",
-  "calendar_updated_at": "2026-10-14T16:49:58.604189-05:00",
+  "updated_at": "2026-10-14T19:01:23.134346-05:00",
+  "calendar_updated_at": "2026-10-14T19:00:52.710381-05:00",
   "calendar_status": "fresh",
   "daily_target": 10,
   "active": [],
   "history": [
+    {
+      "ticker": "GLDG",
+      "company": "GoldMining Inc.",
+      "period": "Q3 FY2026",
+      "completed_at": "2026-10-14T18:59:49.832146-05:00",
+      "video_url": "https://youtu.be/-jIHsALj-Ng",
+      "short_url": "https://youtu.be/fZq2fzBO5qo",
+      "packet_url": "https://chargedalpha.com/research/gldg-q3-fy2026",
+      "stock_url": "/shows/gldg"
+    },
     {
       "ticker": "ASML",
       "company": "ASML Holding N.V.",

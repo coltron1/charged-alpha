@@ -34895,6 +34895,21 @@
       "description": "Fast clips that point viewers into full research videos and stock pages.",
       "videos": [
         {
+          "title": "GLDG Stock: GoldMining Q3 FY2026 Earnings — Cash Has a Catch #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/fZq2fzBO5qo",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-10-14T16:50:57-07:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "GLDG"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage.",
+          "earnings_youtube_url": "https://www.youtube.com/watch?v=-jIHsALj-Ng",
+          "earnings_match": "stock_period_date"
+        },
+        {
           "title": "ASML Stock: Cash Surge Has a Catch — Q3 2026 #Shorts",
           "youtube_url": "https://www.youtube.com/shorts/CNiwZJeA1ho",
           "spotify_url": "",
@@ -47140,7 +47155,7 @@
       ]
     }
   ],
-  "last_synced_at": "2026-10-14T18:40:37-05:00",
+  "last_synced_at": "2026-10-14T18:52:32-05:00",
   "stock_metadata": {
     "A": {
       "company": "Agilent Technologies, Inc.",
