@@ -2670,6 +2670,64 @@
       "tables": 33
     },
     {
+      "key": "PLD:Q3-2026",
+      "year": 2026,
+      "quarter": 3,
+      "fiscal": false,
+      "slug": "pld-q3-2026",
+      "ticker": "PLD",
+      "company": "Prologis, Inc.",
+      "period": "Q3 2026",
+      "canonical_url": "https://chargedalpha.com/research/pld-q3-2026",
+      "title": "PLD: Stronger rents, but how much becomes shareholder cash?",
+      "page_title": "PLD Q3 2026 Research Packet — Charged Alpha",
+      "description": "Core FFO grew, but leasing costs, development funding and a pending acquisition make cash conversion the valuation test.",
+      "sha256": "9b1e57ee0a7cae99b4d32658f17350852dce3724e22a3bd041504a2638c09079",
+      "html_file": "research_packets/pld-q3-2026.html",
+      "source_episode": "PLD-Q3-2026",
+      "source_staged_at": "2026-10-15T22:16:45Z",
+      "source_sha256": {
+        "READY": "192cea1b102a58d132f0f2b208b4e2782c78d2bbfcec4f111d6078da3108e084",
+        "handoff.json": "1f9c29595a30c7a57b714675f1219045f359f1d507a915d82b1b3e1ccf5dbe2c",
+        "packet/pld-q3-2026-research-packet.html": "9b1e57ee0a7cae99b4d32658f17350852dce3724e22a3bd041504a2638c09079",
+        "packet/packet_meta.json": "e054671b8ac897576c630d3f582ce25eaae1d581615c23535c84597879be51de",
+        "packet/packet.json": "ee7a729646a1c1e0175747fd3d40818953b5a330f7d1ea6845aa0e149da61d2c"
+      },
+      "primary_youtube_long": "bVHkSRqPaY4",
+      "primary_youtube_short": null,
+      "youtube_studio": null,
+      "youtube_studio_short": null,
+      "what_changed": {
+        "summary": "Core FFO grew, but leasing costs, development funding and a pending acquisition make cash conversion the valuation test.",
+        "items": [
+          {
+            "title": "Growth improved.",
+            "detail": "Core FFO per share rose to $1.60 from $1.49, while revenue grew 7.84%."
+          },
+          {
+            "title": "The cash bridge matters.",
+            "detail": "AFFO was 78.1% of Core FFO after the full mix of leasing, noncash and other adjustments."
+          },
+          {
+            "title": "Guidance moved both ways.",
+            "detail": "Core FFO midpoint rose one cent, while occupancy and Strategic Capital ranges narrowed lower."
+          },
+          {
+            "title": "Development needs funding.",
+            "detail": "Annual operating cash must support maintenance, dividends and a substantial development program."
+          },
+          {
+            "title": "SEGRO remains pending.",
+            "detail": "Our $125 standalone base adds no unverified synergy or transaction financing benefit."
+          }
+        ]
+      },
+      "source_published": "October 15, 2026",
+      "words": 6623,
+      "figures": 19,
+      "tables": 34
+    },
+    {
       "key": "SNX:Q3-FY2026",
       "year": 2026,
       "quarter": 3,

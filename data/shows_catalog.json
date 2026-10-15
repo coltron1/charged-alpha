@@ -10,6 +10,24 @@
   },
   "episodes": [
     {
+      "ticker": "PLD",
+      "company": "Prologis Inc.",
+      "sector": "Real Estate",
+      "quarter": "Q3 2026",
+      "episode_number": "",
+      "title": "PLD Stock: Rents Rose. How Much Becomes Shareholder Cash? — Q3 2026",
+      "published_at": "2026-10-15T22:03:52+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=bVHkSRqPaY4",
+      "spotify_url": "",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/pld-stock-rents-rose-how-much-becomes-shareholder-cash-%e2%80%94-q3-2026/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
       "ticker": "JNJ",
       "company": "Johnson & Johnson",
       "sector": "Healthcare",
@@ -47288,7 +47306,7 @@
       ]
     }
   ],
-  "last_synced_at": "2026-10-15T15:39:43-05:00",
+  "last_synced_at": "2026-10-15T17:08:56-05:00",
   "stock_metadata": {
     "A": {
       "company": "Agilent Technologies, Inc.",

@@ -1,10 +1,19 @@
 {
   "schema": "charged-alpha-public-production/1",
-  "updated_at": "2026-10-15T15:44:25.378444-05:00",
+  "updated_at": "2026-10-15T17:10:35.826102-05:00",
   "calendar_updated_at": "2026-10-15T12:48:20.679175-05:00",
-  "calendar_status": "fresh",
+  "calendar_status": "stale",
   "daily_target": 10,
-  "active": [],
+  "active": [
+    {
+      "ticker": "ERIC",
+      "company": "Telefonaktiebolaget LM Ericsson (publ)",
+      "period": "Q3 2026",
+      "status_label": "Building now",
+      "stage_label": "Production in progress",
+      "stock_url": "/shows/eric"
+    }
+  ],
   "history": [
     {
       "ticker": "JNJ",
