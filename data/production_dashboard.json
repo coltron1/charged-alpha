@@ -1,8 +1,8 @@
 {
   "schema": "charged-alpha-public-production/1",
-  "updated_at": "2026-10-15T12:02:55.937775-05:00",
+  "updated_at": "2026-10-15T12:27:03.453608-05:00",
   "calendar_updated_at": "2026-10-15T08:18:15.261175-05:00",
-  "calendar_status": "fresh",
+  "calendar_status": "stale",
   "daily_target": 10,
   "active": [],
   "history": [

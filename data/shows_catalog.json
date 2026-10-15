@@ -34931,6 +34931,22 @@
       "description": "Fast clips that point viewers into full research videos and stock pages.",
       "videos": [
         {
+          "title": "TSM Stock: TSMC Q3 2026 Earnings — Cash Versus Price #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/xKvNVJzZcLU",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-10-15T10:21:22-07:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "TSM",
+            "TSMC"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage.",
+          "earnings_youtube_url": "https://www.youtube.com/watch?v=y89siZQK0r0",
+          "earnings_match": "stock_period_date"
+        },
+        {
           "title": "CMC Stock: Steel Improved, Precast Missed — Q4 FY2026 #Shorts",
           "youtube_url": "https://www.youtube.com/shorts/lSOs4LFkfRc",
           "spotify_url": "",
@@ -47206,7 +47222,7 @@
       ]
     }
   ],
-  "last_synced_at": "2026-10-15T12:08:48-05:00",
+  "last_synced_at": "2026-10-15T12:26:57-05:00",
   "stock_metadata": {
     "A": {
       "company": "Agilent Technologies, Inc.",
