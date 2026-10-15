@@ -1,11 +1,31 @@
 {
   "schema": "charged-alpha-public-production/1",
-  "updated_at": "2026-10-15T12:27:03.453608-05:00",
-  "calendar_updated_at": "2026-10-15T08:18:15.261175-05:00",
-  "calendar_status": "stale",
+  "updated_at": "2026-10-15T13:15:28.918619-05:00",
+  "calendar_updated_at": "2026-10-15T12:48:20.679175-05:00",
+  "calendar_status": "fresh",
   "daily_target": 10,
   "active": [],
   "history": [
+    {
+      "ticker": "TSM",
+      "company": "Taiwan Semiconductor Manufacturing Company Limited",
+      "period": "Q3 2026",
+      "completed_at": "2026-10-15T13:02:22.761736-05:00",
+      "video_url": "https://youtu.be/y89siZQK0r0",
+      "short_url": "https://youtu.be/xKvNVJzZcLU",
+      "packet_url": "https://chargedalpha.com/research/tsm-q3-2026",
+      "stock_url": "/shows/tsm"
+    },
+    {
+      "ticker": "CMC",
+      "company": "Commercial Metals Company",
+      "period": "Q4 FY2026",
+      "completed_at": "2026-10-15T13:02:22.198340-05:00",
+      "video_url": "https://youtu.be/01CXzak1PCU",
+      "short_url": "https://youtu.be/lSOs4LFkfRc",
+      "packet_url": "https://chargedalpha.com/research/cmc-q4-fy2026",
+      "stock_url": "/shows/cmc"
+    },
     {
       "ticker": "GLDG",
       "company": "GoldMining Inc.",
@@ -927,6 +947,16 @@
       "date_status": "Calendar estimate",
       "source_url": null,
       "stock_url": "/shows/nee"
+    },
+    {
+      "ticker": "TDY",
+      "company": "Teledyne Technologies Incorporated",
+      "report_date": "2026-10-21",
+      "report_time_label": "Time unconfirmed",
+      "planned_date": "",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": "/shows/tdy"
     },
     {
       "ticker": "ABT",
