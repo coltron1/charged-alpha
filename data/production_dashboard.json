@@ -1,11 +1,21 @@
 {
   "schema": "charged-alpha-public-production/1",
-  "updated_at": "2026-10-15T15:02:53.839526-05:00",
+  "updated_at": "2026-10-15T15:26:12.201381-05:00",
   "calendar_updated_at": "2026-10-15T12:48:20.679175-05:00",
   "calendar_status": "fresh",
   "daily_target": 10,
   "active": [],
   "history": [
+    {
+      "ticker": "UNH",
+      "company": "UnitedHealth Group",
+      "period": "Q3 2026",
+      "completed_at": "2026-10-15T15:22:06.663940-05:00",
+      "video_url": "https://youtu.be/Lx5ET719uQ0",
+      "short_url": "https://youtu.be/kzjhdz3v4jk",
+      "packet_url": "https://chargedalpha.com/research/unh-q3-2026",
+      "stock_url": "/shows/unh"
+    },
     {
       "ticker": "TSM",
       "company": "Taiwan Semiconductor Manufacturing Company Limited",

@@ -2438,6 +2438,64 @@
       "tables": 34
     },
     {
+      "key": "JNJ:Q3-2026",
+      "year": 2026,
+      "quarter": 3,
+      "fiscal": false,
+      "slug": "jnj-q3-2026",
+      "ticker": "JNJ",
+      "company": "Johnson & Johnson",
+      "period": "Q3 2026",
+      "canonical_url": "https://chargedalpha.com/research/jnj-q3-2026",
+      "title": "JNJ: sales are growing, but what reaches shareholders?",
+      "page_title": "JNJ Q3 2026 Research Packet — Charged Alpha",
+      "description": "Johnson & Johnson Q3 2026: growing medicine sales, lower adjusted earnings, litigation cash risk and three transparent valuation routes.",
+      "sha256": "9774d27ea55cd44f0616f27e1218a873cff099a0e0f321c6bfa92d22cebc8174",
+      "html_file": "research_packets/jnj-q3-2026.html",
+      "source_episode": "JNJ-Q3-2026",
+      "source_staged_at": "2026-10-15T20:23:58Z",
+      "source_sha256": {
+        "READY": "0387559c15a3d86411da46a48400f63c21ca0c0428fe6680e923c5302cd8eb9a",
+        "handoff.json": "544e0153420af28991582eac68307e9abeebc271c52c21de9a8e81a460453978",
+        "packet/jnj-q3-2026-research-packet.html": "9774d27ea55cd44f0616f27e1218a873cff099a0e0f321c6bfa92d22cebc8174",
+        "packet/packet_meta.json": "d2f93abae24ea82abea8043314bd15ca2b6b31cfc1ff119a02884921d54ae50a",
+        "packet/packet.json": "db4ade9c78d08dc96ee3b33d1313e6202184c4edf8deba1678b3b3d38a943bef"
+      },
+      "primary_youtube_long": "xUxHVxq5XIA",
+      "primary_youtube_short": null,
+      "youtube_studio": null,
+      "youtube_studio_short": null,
+      "what_changed": {
+        "summary": "Johnson & Johnson Q3 2026: growing medicine sales, lower adjusted earnings, litigation cash risk and three transparent valuation routes.",
+        "items": [
+          {
+            "title": "Revenue and earnings diverged.",
+            "detail": "Innovative Medicine grew faster than MedTech, but research spending, transaction costs and mix weighed on profit."
+          },
+          {
+            "title": "Separate the legal charge from the business.",
+            "detail": "The $5.519B litigation adjustment is excluded from adjusted profit; possible settlement cash remains economically relevant."
+          },
+          {
+            "title": "Tremfya replaces much of the Stelara decline.",
+            "detail": "Their combined sales increased only $118M; the rest of the portfolio must keep contributing."
+          },
+          {
+            "title": "The cash story needs the filing.",
+            "detail": "Management estimates more than $6B of quarterly free cash flow, while detailed Q3 cash-flow and balance-sheet tables are still pending."
+          },
+          {
+            "title": "Do not pay for every pipeline success today.",
+            "detail": "The $235 anchor is below the $253.62 dated price; new indications and portfolio changes must earn their valuation."
+          }
+        ]
+      },
+      "source_published": "October 15, 2026",
+      "words": 5669,
+      "figures": 19,
+      "tables": 20
+    },
+    {
       "key": "KBH:Q3-FY2026",
       "year": 2026,
       "quarter": 3,

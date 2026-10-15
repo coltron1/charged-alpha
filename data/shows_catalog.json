@@ -10,6 +10,24 @@
   },
   "episodes": [
     {
+      "ticker": "JNJ",
+      "company": "Johnson & Johnson",
+      "sector": "Healthcare",
+      "quarter": "Q3 2026",
+      "episode_number": "",
+      "title": "JNJ Stock: Sales Grew, So Why Did Earnings Fall? — Q3 2026",
+      "published_at": "2026-10-15T20:14:27+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=xUxHVxq5XIA",
+      "spotify_url": "",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/jnj-stock-sales-grew-so-why-did-earnings-fall-%e2%80%94-q3-2026/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
       "ticker": "UNH",
       "company": "UnitedHealth Group",
       "sector": "Healthcare",
@@ -34949,6 +34967,21 @@
       "description": "Fast clips that point viewers into full research videos and stock pages.",
       "videos": [
         {
+          "title": "UNH Stock: Profit Recovered, But Reserves Helped — Q3 2026 #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/kzjhdz3v4jk",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-10-15T20:15:53+00:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "UNH"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage.",
+          "earnings_youtube_url": "https://www.youtube.com/watch?v=Lx5ET719uQ0",
+          "earnings_match": "stock_period_date"
+        },
+        {
           "title": "TSM Stock: TSMC Q3 2026 Earnings — Cash Versus Price #Shorts",
           "youtube_url": "https://www.youtube.com/shorts/xKvNVJzZcLU",
           "spotify_url": "",
@@ -47240,7 +47273,7 @@
       ]
     }
   ],
-  "last_synced_at": "2026-10-15T14:34:07-05:00",
+  "last_synced_at": "2026-10-15T15:22:53-05:00",
   "stock_metadata": {
     "A": {
       "company": "Agilent Technologies, Inc.",
