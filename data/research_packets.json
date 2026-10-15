@@ -2728,6 +2728,64 @@
       "tables": 27
     },
     {
+      "key": "TSM:Q3-2026",
+      "year": 2026,
+      "quarter": 3,
+      "fiscal": false,
+      "slug": "tsm-q3-2026",
+      "ticker": "TSM",
+      "company": "Taiwan Semiconductor Manufacturing Company Limited",
+      "period": "Q3 2026",
+      "canonical_url": "https://chargedalpha.com/research/tsm-q3-2026",
+      "title": "TSM: a stronger cash quarter still needs a valuation test",
+      "page_title": "TSM Q3 2026 Research Packet — Charged Alpha",
+      "description": "TSMC Q3 2026: the operating improvement, prior-quarter investment gain, cash conversion and three explicit valuation routes.",
+      "sha256": "c2d84ea4fc6d7bd32380f90b0307ba22df6881cc177269df92c0fedc8d0f108e",
+      "html_file": "research_packets/tsm-q3-2026.html",
+      "source_episode": "TSM-Q3-2026",
+      "source_staged_at": "2026-10-15T17:01:20Z",
+      "source_sha256": {
+        "READY": "c74a0578a29111d4b098ad9941452ecd0f1dfa74341b3d21c8e6cf4f3b7505b2",
+        "handoff.json": "a5b9922bb1c2ee14d510d3dfa0ce2871f80a3b522b19bab68dbe713176ef1bd9",
+        "packet/tsm-q3-2026-research-packet.html": "c2d84ea4fc6d7bd32380f90b0307ba22df6881cc177269df92c0fedc8d0f108e",
+        "packet/packet_meta.json": "e0b7fa6fe9abd4770e28b37e49d270439175adc6b90549e3880d9e417e493be8",
+        "packet/packet.json": "e15adde074f0d6e1d4f64646ff1b680c13f91dbd225d31ebb6f332be561feb7e"
+      },
+      "primary_youtube_long": "y89siZQK0r0",
+      "primary_youtube_short": null,
+      "youtube_studio": null,
+      "youtube_studio_short": null,
+      "what_changed": {
+        "summary": "TSMC Q3 2026: the operating improvement, prior-quarter investment gain, cash conversion and three explicit valuation routes.",
+        "items": [
+          {
+            "title": "The headline understates the operating comparison.",
+            "detail": "Q2 contained a NT$63.2bn VIS disposal and remeasurement gain. Q3 non-operating income returned to NT$34.59bn while revenue rose 17.6% sequentially."
+          },
+          {
+            "title": "Cash improved materially.",
+            "detail": "Quarterly operating cash exceeded attributable profit, and free cash flow more than tripled from the year-earlier period. It still pays for a capital-intensive expansion."
+          },
+          {
+            "title": "Mix is getting more concentrated.",
+            "detail": "HPC reached 68% of revenue. This is broader than AI accelerators; the company does not publish profit by platform."
+          },
+          {
+            "title": "A good business can be fully valued.",
+            "detail": "The normalized cash model gives about $318, versus $489 from a forward earnings multiple. We publish both rather than hide the disagreement."
+          },
+          {
+            "title": "Reporting bases matter.",
+            "detail": "Quarterly figures use Taiwan-IFRS. IASB annual tax and attributable earnings differ. We keep those bases separate and never label the difference a company non-GAAP add-back."
+          }
+        ]
+      },
+      "source_published": "October 15, 2026",
+      "words": 6529,
+      "figures": 21,
+      "tables": 34
+    },
+    {
       "key": "IPHA:H1-2026",
       "year": 2026,
       "quarter": 0,

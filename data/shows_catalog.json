@@ -10,6 +10,24 @@
   },
   "episodes": [
     {
+      "ticker": "TSM",
+      "company": "Taiwan Semiconductor Manufacturing Company Limited",
+      "sector": "Technology",
+      "quarter": "Q3 2026",
+      "episode_number": "",
+      "title": "TSM Stock: Stronger Cash, But Is the Price Fair? — Q3 2026",
+      "published_at": "2026-10-15T16:45:43+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=y89siZQK0r0",
+      "spotify_url": "",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/tsm-stock-stronger-cash-but-is-the-price-fair-%e2%80%94-q3-2026/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
       "ticker": "CMC",
       "company": "Commercial Metals Company",
       "sector": "Industrials",
@@ -34913,6 +34931,21 @@
       "description": "Fast clips that point viewers into full research videos and stock pages.",
       "videos": [
         {
+          "title": "CMC Stock: Steel Improved, Precast Missed — Q4 FY2026 #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/lSOs4LFkfRc",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-10-15T10:07:00-07:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "CMC"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage.",
+          "earnings_youtube_url": "https://www.youtube.com/watch?v=01CXzak1PCU",
+          "earnings_match": "stock_period_date"
+        },
+        {
           "title": "GLDG Stock: GoldMining Q3 FY2026 Earnings — Cash Has a Catch #Shorts",
           "youtube_url": "https://www.youtube.com/shorts/fZq2fzBO5qo",
           "spotify_url": "",
@@ -47173,7 +47206,7 @@
       ]
     }
   ],
-  "last_synced_at": "2026-10-15T11:40:22-05:00",
+  "last_synced_at": "2026-10-15T12:08:48-05:00",
   "stock_metadata": {
     "A": {
       "company": "Agilent Technologies, Inc.",
