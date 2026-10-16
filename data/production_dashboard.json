@@ -1,10 +1,19 @@
 {
   "schema": "charged-alpha-public-production/1",
-  "updated_at": "2026-10-15T21:43:49.641600-05:00",
-  "calendar_updated_at": "2026-10-15T21:16:15.407276-05:00",
+  "updated_at": "2026-10-16T00:25:28.206246-05:00",
+  "calendar_updated_at": "2026-10-16T00:03:51.741619-05:00",
   "calendar_status": "fresh",
   "daily_target": 10,
-  "active": [],
+  "active": [
+    {
+      "ticker": "WIT",
+      "company": "Wipro Limited",
+      "period": "Q2 FY2027",
+      "status_label": "Building now",
+      "stage_label": "Production in progress",
+      "stock_url": "/shows/wit"
+    }
+  ],
   "history": [
     {
       "ticker": "MKC",
@@ -983,7 +992,7 @@
       "company": "Rollins, Inc.",
       "report_date": "2026-10-21",
       "report_time_label": "Time unconfirmed",
-      "planned_date": "",
+      "planned_date": "2026-10-22",
       "date_status": "Calendar estimate",
       "source_url": null,
       "stock_url": "/shows/rol"
@@ -993,7 +1002,7 @@
       "company": "SAP SE",
       "report_date": "2026-10-21",
       "report_time_label": "Time unconfirmed",
-      "planned_date": "",
+      "planned_date": "2026-10-22",
       "date_status": "Calendar estimate",
       "source_url": null,
       "stock_url": "/shows/sap"
@@ -1003,7 +1012,7 @@
       "company": "NextEra Energy, Inc.",
       "report_date": "2026-10-21",
       "report_time_label": "Time unconfirmed",
-      "planned_date": "",
+      "planned_date": "2026-10-22",
       "date_status": "Calendar estimate",
       "source_url": null,
       "stock_url": "/shows/nee"
@@ -1013,7 +1022,7 @@
       "company": "Teledyne Technologies Incorporated",
       "report_date": "2026-10-21",
       "report_time_label": "Time unconfirmed",
-      "planned_date": "",
+      "planned_date": "2026-10-22",
       "date_status": "Calendar estimate",
       "source_url": null,
       "stock_url": "/shows/tdy"
@@ -1023,7 +1032,7 @@
       "company": "Abbott Laboratories",
       "report_date": "2026-10-21",
       "report_time_label": "Time unconfirmed",
-      "planned_date": "",
+      "planned_date": "2026-10-22",
       "date_status": "Calendar estimate",
       "source_url": null,
       "stock_url": "/shows/abt"
@@ -1033,7 +1042,7 @@
       "company": "Meta Platforms, Inc.",
       "report_date": "2026-10-21",
       "report_time_label": "Time unconfirmed",
-      "planned_date": "",
+      "planned_date": "2026-10-22",
       "date_status": "Calendar estimate",
       "source_url": null,
       "stock_url": "/shows/meta"
@@ -1043,7 +1052,7 @@
       "company": "UniFirst Corporation",
       "report_date": "2026-10-21",
       "report_time_label": "Time unconfirmed",
-      "planned_date": "",
+      "planned_date": "2026-10-22",
       "date_status": "Calendar estimate",
       "source_url": null,
       "stock_url": "/shows/unf"
@@ -1053,7 +1062,7 @@
       "company": "Kinder Morgan, Inc.",
       "report_date": "2026-10-21",
       "report_time_label": "Time unconfirmed",
-      "planned_date": "",
+      "planned_date": "2026-10-22",
       "date_status": "Calendar estimate",
       "source_url": null,
       "stock_url": "/shows/kmi"
@@ -1063,7 +1072,7 @@
       "company": "Lam Research Corporation",
       "report_date": "2026-10-21",
       "report_time_label": "Time unconfirmed",
-      "planned_date": "",
+      "planned_date": "2026-10-22",
       "date_status": "Calendar estimate",
       "source_url": null,
       "stock_url": "/shows/lrcx"
@@ -1073,7 +1082,7 @@
       "company": "International Business Machines Corporation",
       "report_date": "2026-10-21",
       "report_time_label": "Time unconfirmed",
-      "planned_date": "",
+      "planned_date": "2026-10-22",
       "date_status": "Calendar estimate",
       "source_url": null,
       "stock_url": "/shows/ibm"
@@ -1427,6 +1436,626 @@
       "date_status": "Calendar estimate",
       "source_url": null,
       "stock_url": "/shows/wdfc"
+    },
+    {
+      "ticker": "CMCSA",
+      "company": "Comcast Corporation",
+      "report_date": "2026-10-22",
+      "report_time_label": "Time unconfirmed",
+      "planned_date": "",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": "/shows/cmcsa"
+    },
+    {
+      "ticker": "FIX",
+      "company": "Comfort Systems USA, Inc.",
+      "report_date": "2026-10-22",
+      "report_time_label": "Time unconfirmed",
+      "planned_date": "",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": "/shows/fix"
+    },
+    {
+      "ticker": "MXL",
+      "company": "MaxLinear, Inc.",
+      "report_date": "2026-10-22",
+      "report_time_label": "Time unconfirmed",
+      "planned_date": "",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": "/shows/mxl"
+    },
+    {
+      "ticker": "ROP",
+      "company": "Roper Technologies, Inc.",
+      "report_date": "2026-10-22",
+      "report_time_label": "Time unconfirmed",
+      "planned_date": "",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": "/shows/rop"
+    },
+    {
+      "ticker": "SSNC",
+      "company": "SS&C Technologies Holdings, Inc.",
+      "report_date": "2026-10-22",
+      "report_time_label": "Time unconfirmed",
+      "planned_date": "",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": "/shows/ssnc"
+    },
+    {
+      "ticker": "PCG",
+      "company": "PG&E Corporation",
+      "report_date": "2026-10-22",
+      "report_time_label": "Time unconfirmed",
+      "planned_date": "",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": "/shows/pcg"
+    },
+    {
+      "ticker": "IRDM",
+      "company": "Iridium Communications Inc.",
+      "report_date": "2026-10-22",
+      "report_time_label": "Time unconfirmed",
+      "planned_date": "",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": "/shows/irdm"
+    },
+    {
+      "ticker": "NEM",
+      "company": "Newmont Corporation",
+      "report_date": "2026-10-22",
+      "report_time_label": "Time unconfirmed",
+      "planned_date": "",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": "/shows/nem"
+    },
+    {
+      "ticker": "WDC",
+      "company": "Western Digital Corporation",
+      "report_date": "2026-10-22",
+      "report_time_label": "Time unconfirmed",
+      "planned_date": "",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": "/shows/wdc"
+    },
+    {
+      "ticker": "TSCO",
+      "company": "Tractor Supply Company",
+      "report_date": "2026-10-22",
+      "report_time_label": "Time unconfirmed",
+      "planned_date": "",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": "/shows/tsco"
+    },
+    {
+      "ticker": "LMT",
+      "company": "Lockheed Martin Corporation",
+      "report_date": "2026-10-22",
+      "report_time_label": "Time unconfirmed",
+      "planned_date": "",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": "/shows/lmt"
+    },
+    {
+      "ticker": "UNP",
+      "company": "Union Pacific Corporation",
+      "report_date": "2026-10-22",
+      "report_time_label": "Time unconfirmed",
+      "planned_date": "",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": "/shows/unp"
+    },
+    {
+      "ticker": "ITGR",
+      "company": "Integer Holdings Corporation",
+      "report_date": "2026-10-22",
+      "report_time_label": "Time unconfirmed",
+      "planned_date": "",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": null
+    },
+    {
+      "ticker": "GSIT",
+      "company": "GSI Technology, Inc.",
+      "report_date": "2026-10-22",
+      "report_time_label": "Time unconfirmed",
+      "planned_date": "",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": null
+    },
+    {
+      "ticker": "VLO",
+      "company": "Valero Energy Corporation",
+      "report_date": "2026-10-22",
+      "report_time_label": "Time unconfirmed",
+      "planned_date": "",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": "/shows/vlo"
+    },
+    {
+      "ticker": "CASS",
+      "company": "Cass Information Systems, Inc.",
+      "report_date": "2026-10-22",
+      "report_time_label": "Time unconfirmed",
+      "planned_date": "",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": null
+    },
+    {
+      "ticker": "HON",
+      "company": "Honeywell International Inc.",
+      "report_date": "2026-10-22",
+      "report_time_label": "Time unconfirmed",
+      "planned_date": "",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": "/shows/hon"
+    },
+    {
+      "ticker": "COCO",
+      "company": "The Vita Coco Company, Inc.",
+      "report_date": "2026-10-22",
+      "report_time_label": "Time unconfirmed",
+      "planned_date": "",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": "/shows/coco"
+    },
+    {
+      "ticker": "CBRE",
+      "company": "CBRE Group, Inc.",
+      "report_date": "2026-10-22",
+      "report_time_label": "Time unconfirmed",
+      "planned_date": "",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": "/shows/cbre"
+    },
+    {
+      "ticker": "DTW",
+      "company": "DTE Energy Company 5.25 % Debentures 2017-01.12.77 Global",
+      "report_date": "2026-10-22",
+      "report_time_label": "Time unconfirmed",
+      "planned_date": "",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": null
+    },
+    {
+      "ticker": "DOV",
+      "company": "Dover Corporation",
+      "report_date": "2026-10-22",
+      "report_time_label": "Time unconfirmed",
+      "planned_date": "",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": "/shows/dov"
+    },
+    {
+      "ticker": "MANU",
+      "company": "Manchester United plc",
+      "report_date": "2026-10-22",
+      "report_time_label": "Time unconfirmed",
+      "planned_date": "",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": "/shows/manu"
+    },
+    {
+      "ticker": "DECK",
+      "company": "Deckers Outdoor Corporation",
+      "report_date": "2026-10-22",
+      "report_time_label": "Time unconfirmed",
+      "planned_date": "",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": "/shows/deck"
+    },
+    {
+      "ticker": "DOW",
+      "company": "Dow Inc.",
+      "report_date": "2026-10-22",
+      "report_time_label": "Time unconfirmed",
+      "planned_date": "",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": "/shows/dow"
+    },
+    {
+      "ticker": "IMAX",
+      "company": "IMAX Corporation",
+      "report_date": "2026-10-22",
+      "report_time_label": "Time unconfirmed",
+      "planned_date": "",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": null
+    },
+    {
+      "ticker": "PHM",
+      "company": "PulteGroup, Inc.",
+      "report_date": "2026-10-22",
+      "report_time_label": "Time unconfirmed",
+      "planned_date": "",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": "/shows/phm"
+    },
+    {
+      "ticker": "NOK",
+      "company": "Nokia Oyj",
+      "report_date": "2026-10-22",
+      "report_time_label": "Time unconfirmed",
+      "planned_date": "",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": "/shows/nok"
+    },
+    {
+      "ticker": "SNA",
+      "company": "Snap-on Incorporated",
+      "report_date": "2026-10-22",
+      "report_time_label": "Time unconfirmed",
+      "planned_date": "",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": "/shows/sna"
+    },
+    {
+      "ticker": "CRS",
+      "company": "Carpenter Technology Corporation",
+      "report_date": "2026-10-22",
+      "report_time_label": "Time unconfirmed",
+      "planned_date": "",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": "/shows/crs"
+    },
+    {
+      "ticker": "NVR",
+      "company": "NVR, Inc.",
+      "report_date": "2026-10-22",
+      "report_time_label": "Time unconfirmed",
+      "planned_date": "",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": null
+    },
+    {
+      "ticker": "ALLE",
+      "company": "Allegion plc",
+      "report_date": "2026-10-22",
+      "report_time_label": "Time unconfirmed",
+      "planned_date": "",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": "/shows/alle"
+    },
+    {
+      "ticker": "REXR",
+      "company": "Rexford Industrial Realty, Inc.",
+      "report_date": "2026-10-22",
+      "report_time_label": "Time unconfirmed",
+      "planned_date": "",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": null
+    },
+    {
+      "ticker": "NSC",
+      "company": "Norfolk Southern Corporation",
+      "report_date": "2026-10-22",
+      "report_time_label": "Time unconfirmed",
+      "planned_date": "",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": "/shows/nsc"
+    },
+    {
+      "ticker": "CMSC",
+      "company": "CMS Energy Corporation 5.875% J",
+      "report_date": "2026-10-22",
+      "report_time_label": "Time unconfirmed",
+      "planned_date": "",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": null
+    },
+    {
+      "ticker": "FSV",
+      "company": "FirstService Corporation",
+      "report_date": "2026-10-22",
+      "report_time_label": "Time unconfirmed",
+      "planned_date": "",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": null
+    },
+    {
+      "ticker": "APPF",
+      "company": "AppFolio Inc.",
+      "report_date": "2026-10-22",
+      "report_time_label": "Time unconfirmed",
+      "planned_date": "",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": "/shows/appf"
+    },
+    {
+      "ticker": "BYD",
+      "company": "Boyd Gaming Corporation",
+      "report_date": "2026-10-22",
+      "report_time_label": "Time unconfirmed",
+      "planned_date": "",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": null
+    },
+    {
+      "ticker": "DTK",
+      "company": "DTE Energy Company 2025 Series",
+      "report_date": "2026-10-22",
+      "report_time_label": "Time unconfirmed",
+      "planned_date": "",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": null
+    },
+    {
+      "ticker": "KRC",
+      "company": "Kilroy Realty Corporation",
+      "report_date": "2026-10-22",
+      "report_time_label": "Time unconfirmed",
+      "planned_date": "",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": null
+    },
+    {
+      "ticker": "CURB",
+      "company": "Curbline Properties Corp.",
+      "report_date": "2026-10-22",
+      "report_time_label": "Time unconfirmed",
+      "planned_date": "",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": null
+    },
+    {
+      "ticker": "DTB",
+      "company": "DTE Energy Company 2020 Series",
+      "report_date": "2026-10-22",
+      "report_time_label": "Time unconfirmed",
+      "planned_date": "",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": null
+    },
+    {
+      "ticker": "DTG",
+      "company": "DTE Energy Company 2021 Series",
+      "report_date": "2026-10-22",
+      "report_time_label": "Time unconfirmed",
+      "planned_date": "",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": null
+    },
+    {
+      "ticker": "VTMX",
+      "company": "Corporación Inmobiliaria Vesta, S.A.B. de C.V.",
+      "report_date": "2026-10-22",
+      "report_time_label": "Time unconfirmed",
+      "planned_date": "",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": null
+    },
+    {
+      "ticker": "AMBP",
+      "company": "Ardagh Metal Packaging S.A.",
+      "report_date": "2026-10-22",
+      "report_time_label": "Time unconfirmed",
+      "planned_date": "",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": null
+    },
+    {
+      "ticker": "SAM",
+      "company": "The Boston Beer Company, Inc.",
+      "report_date": "2026-10-22",
+      "report_time_label": "Time unconfirmed",
+      "planned_date": "",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": null
+    },
+    {
+      "ticker": "XPRO",
+      "company": "Expro Group Holdings N.V.",
+      "report_date": "2026-10-22",
+      "report_time_label": "Time unconfirmed",
+      "planned_date": "",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": null
+    },
+    {
+      "ticker": "RNG",
+      "company": "RingCentral, Inc.",
+      "report_date": "2026-10-22",
+      "report_time_label": "Time unconfirmed",
+      "planned_date": "",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": "/shows/rng"
+    },
+    {
+      "ticker": "COUR",
+      "company": "Coursera, Inc.",
+      "report_date": "2026-10-22",
+      "report_time_label": "Time unconfirmed",
+      "planned_date": "",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": null
+    },
+    {
+      "ticker": "VRSN",
+      "company": "VeriSign, Inc.",
+      "report_date": "2026-10-22",
+      "report_time_label": "Time unconfirmed",
+      "planned_date": "",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": "/shows/vrsn"
+    },
+    {
+      "ticker": "MRTN",
+      "company": "Marten Transport, Ltd.",
+      "report_date": "2026-10-22",
+      "report_time_label": "Time unconfirmed",
+      "planned_date": "",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": null
+    },
+    {
+      "ticker": "ELME",
+      "company": "Elme Communities",
+      "report_date": "2026-10-22",
+      "report_time_label": "Time unconfirmed",
+      "planned_date": "",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": null
+    },
+    {
+      "ticker": "JAKK",
+      "company": "JAKKS Pacific, Inc.",
+      "report_date": "2026-10-22",
+      "report_time_label": "Time unconfirmed",
+      "planned_date": "",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": null
+    },
+    {
+      "ticker": "LVWR",
+      "company": "LiveWire Group, Inc.",
+      "report_date": "2026-10-22",
+      "report_time_label": "Time unconfirmed",
+      "planned_date": "",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": null
+    },
+    {
+      "ticker": "ORC",
+      "company": "Orchid Island Capital, Inc.",
+      "report_date": "2026-10-22",
+      "report_time_label": "Time unconfirmed",
+      "planned_date": "",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": null
+    },
+    {
+      "ticker": "PINE",
+      "company": "Alpine Income Property Trust, Inc.",
+      "report_date": "2026-10-22",
+      "report_time_label": "Time unconfirmed",
+      "planned_date": "",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": null
+    },
+    {
+      "ticker": "ULH",
+      "company": "Universal Logistics Holdings, Inc.",
+      "report_date": "2026-10-22",
+      "report_time_label": "Time unconfirmed",
+      "planned_date": "",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": null
+    },
+    {
+      "ticker": "SPOT",
+      "company": "Spotify Technology S.A.",
+      "report_date": "2026-10-22",
+      "report_time_label": "Time unconfirmed",
+      "planned_date": "",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": "/shows/spot"
+    },
+    {
+      "ticker": "BWMX",
+      "company": "Betterware de Mexico, S.A.P.I. de C.V.",
+      "report_date": "2026-10-22",
+      "report_time_label": "Time unconfirmed",
+      "planned_date": "",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": null
+    },
+    {
+      "ticker": "BMI",
+      "company": "Badger Meter, Inc.",
+      "report_date": "2026-10-22",
+      "report_time_label": "Time unconfirmed",
+      "planned_date": "",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": "/shows/bmi"
+    },
+    {
+      "ticker": "WKC",
+      "company": "World Kinect Corporation",
+      "report_date": "2026-10-22",
+      "report_time_label": "Time unconfirmed",
+      "planned_date": "",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": "/shows/wkc"
+    },
+    {
+      "ticker": "LNN",
+      "company": "Lindsay Corporation",
+      "report_date": "2026-10-22",
+      "report_time_label": "Time unconfirmed",
+      "planned_date": "",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": "/shows/lnn"
+    },
+    {
+      "ticker": "IIIN",
+      "company": "Insteel Industries, Inc.",
+      "report_date": "2026-10-22",
+      "report_time_label": "Time unconfirmed",
+      "planned_date": "",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": "/shows/iiin"
     }
   ]
 }
