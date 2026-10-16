@@ -1,19 +1,10 @@
 {
   "schema": "charged-alpha-public-production/1",
-  "updated_at": "2026-10-16T11:34:51.000973-05:00",
+  "updated_at": "2026-10-16T12:18:11.630898-05:00",
   "calendar_updated_at": "2026-10-16T10:51:20.149489-05:00",
   "calendar_status": "fresh",
   "daily_target": 10,
-  "active": [
-    {
-      "ticker": "LADR",
-      "company": "Ladder Capital Corp",
-      "period": "Q3 FY2026",
-      "status_label": "Building now",
-      "stage_label": "Production in progress",
-      "stock_url": null
-    }
-  ],
+  "active": [],
   "history": [
     {
       "ticker": "FAST",

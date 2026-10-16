@@ -2728,6 +2728,64 @@
       "tables": 34
     },
     {
+      "key": "LADR:Q3-FY2026",
+      "year": 2026,
+      "quarter": 3,
+      "fiscal": true,
+      "slug": "ladr-q3-fy2026",
+      "ticker": "LADR",
+      "company": "Ladder Capital",
+      "period": "Q3 FY2026",
+      "canonical_url": "https://chargedalpha.com/research/ladr-q3-fy2026",
+      "title": "LADR: Earnings jumped. How much can repeat?",
+      "page_title": "LADR Q3 FY2026 Research Packet — Charged Alpha",
+      "description": "Separate Ladder Capital’s property-sale gain from repeatable dividend capacity, reconcile interest presentation and test book value against funding risk.",
+      "sha256": "7a8161fb43d4d9dc64ec2fc4b4a71b444191141417eff22e1bc59f14209bd005",
+      "html_file": "research_packets/ladr-q3-fy2026.html",
+      "source_episode": "LADR-Q3-FY2026",
+      "source_staged_at": "2026-10-16T17:14:40Z",
+      "source_sha256": {
+        "READY": "a1f0016f198e8f834163704f2ace2abdc5c7fa87769ce917af9871796ef90fdf",
+        "handoff.json": "5a708f28d892a1233805dc29b2436568a88927e77ad2e37aed08ee24a5bac421",
+        "packet/ladr-q3-fy2026-research-packet.html": "7a8161fb43d4d9dc64ec2fc4b4a71b444191141417eff22e1bc59f14209bd005",
+        "packet/packet_meta.json": "c7a3354785c1b64c2b901d82f214de02487399eecd3a5ee512bebd40029e8555",
+        "packet/packet.json": "9605b7799848eaec0b37c307ff80bb3dda10682ec2ad9a9855fca19e0b84d7e5"
+      },
+      "primary_youtube_long": "_mNn93Shcuc",
+      "primary_youtube_short": null,
+      "youtube_studio": null,
+      "youtube_studio_short": null,
+      "what_changed": {
+        "summary": "Separate Ladder Capital’s property-sale gain from repeatable dividend capacity, reconcile interest presentation and test book value against funding risk.",
+        "items": [
+          {
+            "title": "Reported coverage needs context.",
+            "detail": "$0.35 DE EPS exceeds the $0.23 dividend but includes a large property realization."
+          },
+          {
+            "title": "The sale was not fully excluded.",
+            "detail": "$30.691m remains in distributable earnings after the depreciation reversal."
+          },
+          {
+            "title": "Compare like with like.",
+            "detail": "September NII after real-estate interest is $23.041m, only about 2% above original June."
+          },
+          {
+            "title": "Funding supports the assets.",
+            "detail": "Debt, restricted cash and securities have different economic roles."
+          },
+          {
+            "title": "Book discount is not proof of safety.",
+            "detail": "The $9 anchor is near the dated price and depends on credit and dividend durability."
+          }
+        ]
+      },
+      "source_published": "October 16, 2026",
+      "words": 6080,
+      "figures": 17,
+      "tables": 26
+    },
+    {
       "key": "LEN:Q3-FY2026",
       "year": 2026,
       "quarter": 3,

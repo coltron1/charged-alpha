@@ -10,6 +10,24 @@
   },
   "episodes": [
     {
+      "ticker": "LADR",
+      "company": "Ladder Capital Corp",
+      "sector": "Real Estate",
+      "quarter": "Q3 FY2026",
+      "episode_number": "",
+      "title": "LADR Stock: Earnings Jumped. How Much Can Repeat? — Q3 FY2026",
+      "published_at": "2026-10-16T16:59:49+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=_mNn93Shcuc",
+      "spotify_url": "https://open.spotify.com/episode/5jyo4iUXr2oFRSV0EBV6Ux",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/ladr-stock-earnings-jumped-how-much-can-repeat-%e2%80%94-q3-fy2026/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
       "ticker": "FAST",
       "company": "Fastenal Company",
       "sector": "Industrials",
@@ -47453,7 +47471,7 @@
       ]
     }
   ],
-  "last_synced_at": "2026-10-16T10:41:14-05:00",
+  "last_synced_at": "2026-10-16T12:16:24-05:00",
   "stock_metadata": {
     "A": {
       "company": "Agilent Technologies, Inc.",
@@ -49829,6 +49847,10 @@
     "LAD": {
       "company": "Lithia Motors, Inc.",
       "sector": "Consumer Cyclical"
+    },
+    "LADR": {
+      "company": "Ladder Capital Corp",
+      "sector": "Real Estate"
     },
     "LAES": {
       "company": "SEALSQ Corp",
