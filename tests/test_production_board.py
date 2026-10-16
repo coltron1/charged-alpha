@@ -117,12 +117,22 @@ class ProductionBoardTests(unittest.TestCase):
         data = snapshot()
         released = data['forecast']['date_cards'][0]['candidates'][0]
         released['date_status'] = 'Actual results released; issuer/EDGAR source verified'
+        issuer_only = {**released, 'ticker': 'WIT',
+                       'date_status': 'Actual issuer results released; SEC filing pending'}
         future = {**released, 'ticker': 'FUT', 'report_date': '2026-09-22',
                   'planned_date': '2026-09-22', 'date_status': 'Issuer-announced date'}
-        data['forecast']['date_cards'][0]['candidates'].append(future)
+        unknown = {**released, 'ticker': 'UNK', 'report_date': '2026-09-23',
+                   'planned_date': '2026-09-23', 'date_status': 'unknown future status'}
+        data['forecast']['date_cards'][0]['candidates'].extend(
+            [issuer_only, future, unknown])
         result = project_snapshot(data, {})
-        self.assertEqual([row['ticker'] for row in result['upcoming']], ['FUT'])
+        self.assertEqual([row['ticker'] for row in result['upcoming']], ['FUT', 'UNK'])
         self.assertEqual(result['upcoming'][0]['date_status'], 'Issuer-announced')
+        self.assertEqual(result['upcoming'][1]['date_status'], 'Calendar estimate')
+        self.assertNotIn('WIT', [row['ticker'] for row in result['history']])
+        self.assertNotIn('WIT', [row['ticker'] for row in result['active']])
+        self.assertNotIn('Actual issuer results released; SEC filing pending',
+                         json.dumps(result))
 
     def test_bad_links_cannot_expose_local_files_or_secrets(self):
         for url in ('file:///Users/colton/data', 'http://127.0.0.1:8766/', 'https://example.com/?apikey=secret', 'javascript:alert(1)'):

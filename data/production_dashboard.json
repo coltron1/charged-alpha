@@ -1,8 +1,8 @@
 {
   "schema": "charged-alpha-public-production/1",
-  "updated_at": "2026-10-15T18:14:33.089236-05:00",
-  "calendar_updated_at": "2026-10-15T12:48:20.679175-05:00",
-  "calendar_status": "stale",
+  "updated_at": "2026-10-15T19:11:33.944031-05:00",
+  "calendar_updated_at": "2026-10-15T18:55:47.883093-05:00",
+  "calendar_status": "fresh",
   "daily_target": 10,
   "active": [],
   "history": [
@@ -719,6 +719,16 @@
   ],
   "upcoming": [
     {
+      "ticker": "ADUR",
+      "company": "Aduro Clean Technologies Inc.",
+      "report_date": "2026-10-15",
+      "report_time_label": "Time unconfirmed",
+      "planned_date": "2026-10-16",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": "/shows/adur"
+    },
+    {
       "ticker": "EVMN",
       "company": "Evommune, Inc.",
       "report_date": "2026-10-16",
@@ -727,6 +737,26 @@
       "date_status": "Calendar estimate",
       "source_url": null,
       "stock_url": null
+    },
+    {
+      "ticker": "LADR",
+      "company": "Ladder Capital Corp",
+      "report_date": "2026-10-16",
+      "report_time_label": "Time unconfirmed",
+      "planned_date": "2026-10-17",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": null
+    },
+    {
+      "ticker": "CLF",
+      "company": "Cleveland-Cliffs Inc.",
+      "report_date": "2026-10-19",
+      "report_time_label": "Before U.S. market open",
+      "planned_date": "2026-10-19",
+      "date_status": "Issuer-announced",
+      "source_url": "https://www.clevelandcliffs.com/investors/news-events/press-releases/detail/703/cleveland-cliffs-to-announce-third-quarter-2026-earnings",
+      "stock_url": "/shows/clf"
     },
     {
       "ticker": "SMMT",
@@ -739,54 +769,104 @@
       "stock_url": "/shows/smmt"
     },
     {
-      "ticker": "CLF",
-      "company": "Cleveland-Cliffs Inc.",
-      "report_date": "2026-10-19",
-      "report_time_label": "Time unconfirmed",
-      "planned_date": "2026-10-20",
-      "date_status": "Calendar estimate",
-      "source_url": null,
-      "stock_url": "/shows/clf"
-    },
-    {
       "ticker": "CCK",
       "company": "Crown Holdings, Inc.",
       "report_date": "2026-10-19",
-      "report_time_label": "Time unconfirmed",
+      "report_time_label": "After U.S. market close",
       "planned_date": "2026-10-20",
-      "date_status": "Calendar estimate",
-      "source_url": null,
+      "date_status": "Issuer-announced",
+      "source_url": "https://www.crowncork.com/investors/news",
       "stock_url": "/shows/cck"
     },
     {
       "ticker": "KARO",
       "company": "Karooooo Ltd.",
       "report_date": "2026-10-19",
-      "report_time_label": "Time unconfirmed",
+      "report_time_label": "After U.S. market close",
       "planned_date": "2026-10-20",
-      "date_status": "Calendar estimate",
-      "source_url": null,
+      "date_status": "Issuer-announced",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1828102/000121390026106644/ea030768001ex99-1.htm",
       "stock_url": null
     },
     {
       "ticker": "AGNC",
       "company": "AGNC Investment Corp.",
       "report_date": "2026-10-19",
-      "report_time_label": "Time unconfirmed",
+      "report_time_label": "After U.S. market close",
       "planned_date": "2026-10-20",
-      "date_status": "Calendar estimate",
-      "source_url": null,
+      "date_status": "Issuer-announced",
+      "source_url": "https://agncgcswebcom.gcs-web.com/news-releases/news-release-details/agnc-investment-corp-announces-date-third-quarter-earnings-10",
       "stock_url": "/shows/agnc"
     },
     {
       "ticker": "STLD",
       "company": "Steel Dynamics, Inc.",
       "report_date": "2026-10-19",
-      "report_time_label": "Time unconfirmed",
-      "planned_date": "2026-10-20",
-      "date_status": "Calendar estimate",
-      "source_url": null,
+      "report_time_label": "After U.S. market close",
+      "planned_date": "",
+      "date_status": "Issuer-announced",
+      "source_url": "https://ir.steeldynamics.com/steel-dynamics-announces-third-quarter-2026-earnings-conference-call-and-webcast/",
       "stock_url": "/shows/stld"
+    },
+    {
+      "ticker": "VICR",
+      "company": "Vicor Corporation",
+      "report_date": "2026-10-20",
+      "report_time_label": "6:00 AM CDT",
+      "planned_date": "2026-10-20",
+      "date_status": "Issuer-announced",
+      "source_url": "https://vicorcorporation.gcs-web.com/news-releases/news-release-details/vicor-corporation-hold-third-quarter-earnings-conference-call-5",
+      "stock_url": "/shows/vicr"
+    },
+    {
+      "ticker": "NOC",
+      "company": "Northrop Grumman Corporation",
+      "report_date": "2026-10-20",
+      "report_time_label": "Before U.S. market open",
+      "planned_date": "2026-10-20",
+      "date_status": "Issuer-announced",
+      "source_url": "https://investor.northropgrumman.com/news-releases/news-release-details/northrop-grumman-announces-date-third-quarter-2026-financial",
+      "stock_url": "/shows/noc"
+    },
+    {
+      "ticker": "RTX",
+      "company": "RTX Corporation",
+      "report_date": "2026-10-20",
+      "report_time_label": "Before U.S. market open",
+      "planned_date": "2026-10-20",
+      "date_status": "Issuer-announced",
+      "source_url": "https://raytheon.mediaroom.com/2026-09-29-RTX-to-release-third-quarter-earnings-results-on-October-20%2C-2026",
+      "stock_url": "/shows/rtx"
+    },
+    {
+      "ticker": "HAL",
+      "company": "Halliburton Company",
+      "report_date": "2026-10-20",
+      "report_time_label": "Before U.S. market open",
+      "planned_date": "2026-10-20",
+      "date_status": "Issuer-announced",
+      "source_url": "https://ir.halliburton.com/news-releases/news-release-details/halliburton-third-quarter-2026-earnings-conference-call",
+      "stock_url": "/shows/hal"
+    },
+    {
+      "ticker": "EFX",
+      "company": "Equifax Inc.",
+      "report_date": "2026-10-20",
+      "report_time_label": "5:30 AM CDT",
+      "planned_date": "2026-10-20",
+      "date_status": "Issuer-announced",
+      "source_url": "https://investor.equifax.com/news-events/press-releases/detail/1422/equifax-announces-earnings-release-date-and-conference-call",
+      "stock_url": "/shows/efx"
+    },
+    {
+      "ticker": "VMI",
+      "company": "Valmont Industries, Inc.",
+      "report_date": "2026-10-20",
+      "report_time_label": "Before U.S. market open",
+      "planned_date": "2026-10-20",
+      "date_status": "Issuer-announced",
+      "source_url": "https://investors.valmont.com/news-releases/news-release-details/valmont-announces-timing-third-quarter-2026-earnings-release-and",
+      "stock_url": "/shows/vmi"
     },
     {
       "ticker": "ISRG",
@@ -799,26 +879,6 @@
       "stock_url": "/shows/isrg"
     },
     {
-      "ticker": "VICR",
-      "company": "Vicor Corporation",
-      "report_date": "2026-10-20",
-      "report_time_label": "Time unconfirmed",
-      "planned_date": "2026-10-21",
-      "date_status": "Calendar estimate",
-      "source_url": null,
-      "stock_url": "/shows/vicr"
-    },
-    {
-      "ticker": "NOC",
-      "company": "Northrop Grumman Corporation",
-      "report_date": "2026-10-20",
-      "report_time_label": "Time unconfirmed",
-      "planned_date": "2026-10-21",
-      "date_status": "Calendar estimate",
-      "source_url": null,
-      "stock_url": "/shows/noc"
-    },
-    {
       "ticker": "AMX",
       "company": "América Móvil, S.A.B. de C.V.",
       "report_date": "2026-10-20",
@@ -829,44 +889,24 @@
       "stock_url": null
     },
     {
-      "ticker": "RTX",
-      "company": "RTX Corporation",
-      "report_date": "2026-10-20",
-      "report_time_label": "Time unconfirmed",
-      "planned_date": "2026-10-21",
-      "date_status": "Calendar estimate",
-      "source_url": null,
-      "stock_url": "/shows/rtx"
-    },
-    {
       "ticker": "PEGA",
       "company": "Pegasystems Inc.",
       "report_date": "2026-10-20",
-      "report_time_label": "Time unconfirmed",
+      "report_time_label": "After U.S. market close",
       "planned_date": "2026-10-21",
-      "date_status": "Calendar estimate",
-      "source_url": null,
+      "date_status": "Issuer-announced",
+      "source_url": "https://www.pega.com/it/about/news/press-releases/pega-announce-financial-results-third-quarter-2026-and-host-conference",
       "stock_url": "/shows/pega"
     },
     {
       "ticker": "NFLX",
       "company": "Netflix, Inc.",
       "report_date": "2026-10-20",
-      "report_time_label": "Time unconfirmed",
+      "report_time_label": "After U.S. market close",
       "planned_date": "2026-10-21",
-      "date_status": "Calendar estimate",
-      "source_url": null,
+      "date_status": "Issuer-announced",
+      "source_url": "https://ir.netflix.net/investor-news-and-events/financial-releases/press-release-details/2026/Netflix-to-Announce-Third-Quarter-2026-Financial-Results/default.aspx",
       "stock_url": "/shows/nflx"
-    },
-    {
-      "ticker": "HAL",
-      "company": "Halliburton Company",
-      "report_date": "2026-10-20",
-      "report_time_label": "Time unconfirmed",
-      "planned_date": "2026-10-21",
-      "date_status": "Calendar estimate",
-      "source_url": null,
-      "stock_url": "/shows/hal"
     },
     {
       "ticker": "OMC",
@@ -879,53 +919,33 @@
       "stock_url": "/shows/omc"
     },
     {
-      "ticker": "EFX",
-      "company": "Equifax Inc.",
-      "report_date": "2026-10-20",
-      "report_time_label": "Time unconfirmed",
-      "planned_date": "2026-10-21",
-      "date_status": "Calendar estimate",
-      "source_url": null,
-      "stock_url": "/shows/efx"
-    },
-    {
       "ticker": "NLY",
       "company": "Annaly Capital Management, Inc.",
       "report_date": "2026-10-20",
-      "report_time_label": "Time unconfirmed",
-      "planned_date": "",
-      "date_status": "Calendar estimate",
-      "source_url": null,
+      "report_time_label": "After U.S. market close",
+      "planned_date": "2026-10-21",
+      "date_status": "Issuer-announced",
+      "source_url": "https://www.annaly.com/news-insights/press-releases/2026/09-29-2026-211523434",
       "stock_url": "/shows/nly"
     },
     {
       "ticker": "ELS",
       "company": "Equity LifeStyle Properties, Inc.",
       "report_date": "2026-10-20",
-      "report_time_label": "Time unconfirmed",
-      "planned_date": "",
-      "date_status": "Calendar estimate",
-      "source_url": null,
+      "report_time_label": "After U.S. market close",
+      "planned_date": "2026-10-21",
+      "date_status": "Issuer-announced",
+      "source_url": "https://equitylifestyle.gcs-web.com/news-releases/news-release-details/equity-lifestyle-properties-inc-announces-third-quarter-2026",
       "stock_url": null
-    },
-    {
-      "ticker": "VMI",
-      "company": "Valmont Industries, Inc.",
-      "report_date": "2026-10-20",
-      "report_time_label": "Time unconfirmed",
-      "planned_date": "",
-      "date_status": "Calendar estimate",
-      "source_url": null,
-      "stock_url": "/shows/vmi"
     },
     {
       "ticker": "ADC",
       "company": "Agree Realty Corporation",
       "report_date": "2026-10-20",
-      "report_time_label": "Time unconfirmed",
-      "planned_date": "",
-      "date_status": "Calendar estimate",
-      "source_url": null,
+      "report_time_label": "After U.S. market close",
+      "planned_date": "2026-10-21",
+      "date_status": "Issuer-announced",
+      "source_url": "https://www.nasdaq.com/press-release/agree-realty-announces-third-quarter-2026-earnings-release-date-and-conference-call",
       "stock_url": "/shows/adc"
     },
     {
@@ -933,7 +953,7 @@
       "company": "Weatherford International plc",
       "report_date": "2026-10-20",
       "report_time_label": "Time unconfirmed",
-      "planned_date": "",
+      "planned_date": "2026-10-21",
       "date_status": "Calendar estimate",
       "source_url": null,
       "stock_url": "/shows/wfrd"
@@ -943,7 +963,7 @@
       "company": "Stride, Inc.",
       "report_date": "2026-10-20",
       "report_time_label": "Time unconfirmed",
-      "planned_date": "",
+      "planned_date": "2026-10-21",
       "date_status": "Calendar estimate",
       "source_url": null,
       "stock_url": "/shows/lrn"
@@ -1199,16 +1219,6 @@
       "stock_url": "/shows/cci"
     },
     {
-      "ticker": "EEFT",
-      "company": "Euronet Worldwide, Inc.",
-      "report_date": "2026-10-21",
-      "report_time_label": "Time unconfirmed",
-      "planned_date": "",
-      "date_status": "Calendar estimate",
-      "source_url": null,
-      "stock_url": "/shows/eeft"
-    },
-    {
       "ticker": "LVS",
       "company": "Las Vegas Sands Corp.",
       "report_date": "2026-10-21",
@@ -1349,16 +1359,6 @@
       "stock_url": null
     },
     {
-      "ticker": "EPAC",
-      "company": "Enerpac Tool Group Corp.",
-      "report_date": "2026-10-21",
-      "report_time_label": "Time unconfirmed",
-      "planned_date": "",
-      "date_status": "Calendar estimate",
-      "source_url": null,
-      "stock_url": null
-    },
-    {
       "ticker": "GTY",
       "company": "Getty Realty Corp.",
       "report_date": "2026-10-21",
@@ -1391,16 +1391,6 @@
     {
       "ticker": "BDN",
       "company": "Brandywine Realty Trust",
-      "report_date": "2026-10-21",
-      "report_time_label": "Time unconfirmed",
-      "planned_date": "",
-      "date_status": "Calendar estimate",
-      "source_url": null,
-      "stock_url": null
-    },
-    {
-      "ticker": "KREF",
-      "company": "KKR Real Estate Finance Trust Inc.",
       "report_date": "2026-10-21",
       "report_time_label": "Time unconfirmed",
       "planned_date": "",
