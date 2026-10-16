@@ -1,7 +1,7 @@
 {
   "schema": "charged-alpha-public-production/1",
-  "updated_at": "2026-10-16T10:41:03.658551-05:00",
-  "calendar_updated_at": "2026-10-16T07:59:49.127878-05:00",
+  "updated_at": "2026-10-16T11:34:51.000973-05:00",
+  "calendar_updated_at": "2026-10-16T10:51:20.149489-05:00",
   "calendar_status": "fresh",
   "daily_target": 10,
   "active": [
@@ -15,6 +15,16 @@
     }
   ],
   "history": [
+    {
+      "ticker": "FAST",
+      "company": "Fastenal Company",
+      "period": "Q3 2026",
+      "completed_at": "2026-10-16T11:33:02.899828-05:00",
+      "video_url": "https://youtu.be/oGtTSt03Aw4",
+      "short_url": "https://youtu.be/UYcXNM_yz-s",
+      "packet_url": "https://chargedalpha.com/research/fast-q3-2026",
+      "stock_url": "/shows/fast"
+    },
     {
       "ticker": "WIT",
       "company": "Wipro Limited",
@@ -758,16 +768,6 @@
       "stock_url": null
     },
     {
-      "ticker": "BVC",
-      "company": "BitVentures Limited",
-      "report_date": "2026-10-16",
-      "report_time_label": "Time unconfirmed",
-      "planned_date": "2026-10-17",
-      "date_status": "Calendar estimate",
-      "source_url": null,
-      "stock_url": null
-    },
-    {
       "ticker": "CLF",
       "company": "Cleveland-Cliffs Inc.",
       "report_date": "2026-10-19",
@@ -828,16 +828,6 @@
       "stock_url": "/shows/stld"
     },
     {
-      "ticker": "VICR",
-      "company": "Vicor Corporation",
-      "report_date": "2026-10-20",
-      "report_time_label": "6:00 AM CDT",
-      "planned_date": "2026-10-20",
-      "date_status": "Issuer-announced",
-      "source_url": "https://vicorcorporation.gcs-web.com/news-releases/news-release-details/vicor-corporation-hold-third-quarter-earnings-conference-call-5",
-      "stock_url": "/shows/vicr"
-    },
-    {
       "ticker": "NOC",
       "company": "Northrop Grumman Corporation",
       "report_date": "2026-10-20",
@@ -846,6 +836,16 @@
       "date_status": "Issuer-announced",
       "source_url": "https://investor.northropgrumman.com/news-releases/news-release-details/northrop-grumman-announces-date-third-quarter-2026-financial",
       "stock_url": "/shows/noc"
+    },
+    {
+      "ticker": "VICR",
+      "company": "Vicor Corporation",
+      "report_date": "2026-10-20",
+      "report_time_label": "6:00 AM CDT",
+      "planned_date": "2026-10-20",
+      "date_status": "Issuer-announced",
+      "source_url": "https://vicorcorporation.gcs-web.com/news-releases/news-release-details/vicor-corporation-hold-third-quarter-earnings-conference-call-5",
+      "stock_url": "/shows/vicr"
     },
     {
       "ticker": "RTX",
@@ -1078,16 +1078,6 @@
       "stock_url": "/shows/kmi"
     },
     {
-      "ticker": "LRCX",
-      "company": "Lam Research Corporation",
-      "report_date": "2026-10-21",
-      "report_time_label": "Time unconfirmed",
-      "planned_date": "2026-10-22",
-      "date_status": "Calendar estimate",
-      "source_url": null,
-      "stock_url": "/shows/lrcx"
-    },
-    {
       "ticker": "IBM",
       "company": "International Business Machines Corporation",
       "report_date": "2026-10-21",
@@ -1096,6 +1086,16 @@
       "date_status": "Calendar estimate",
       "source_url": null,
       "stock_url": "/shows/ibm"
+    },
+    {
+      "ticker": "LRCX",
+      "company": "Lam Research Corporation",
+      "report_date": "2026-10-21",
+      "report_time_label": "Time unconfirmed",
+      "planned_date": "2026-10-22",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": "/shows/lrcx"
     },
     {
       "ticker": "HXL",
@@ -1648,16 +1648,6 @@
       "stock_url": "/shows/cbre"
     },
     {
-      "ticker": "DTW",
-      "company": "DTE Energy Company 5.25 % Debentures 2017-01.12.77 Global",
-      "report_date": "2026-10-22",
-      "report_time_label": "Time unconfirmed",
-      "planned_date": "",
-      "date_status": "Calendar estimate",
-      "source_url": null,
-      "stock_url": null
-    },
-    {
       "ticker": "DOV",
       "company": "Dover Corporation",
       "report_date": "2026-10-22",
@@ -1666,6 +1656,16 @@
       "date_status": "Calendar estimate",
       "source_url": null,
       "stock_url": "/shows/dov"
+    },
+    {
+      "ticker": "DTW",
+      "company": "DTE Energy Company 5.25 % Debentures 2017-01.12.77 Global",
+      "report_date": "2026-10-22",
+      "report_time_label": "Time unconfirmed",
+      "planned_date": "",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": null
     },
     {
       "ticker": "MANU",
@@ -1698,16 +1698,6 @@
       "stock_url": "/shows/dow"
     },
     {
-      "ticker": "IMAX",
-      "company": "IMAX Corporation",
-      "report_date": "2026-10-22",
-      "report_time_label": "Time unconfirmed",
-      "planned_date": "",
-      "date_status": "Calendar estimate",
-      "source_url": null,
-      "stock_url": null
-    },
-    {
       "ticker": "PHM",
       "company": "PulteGroup, Inc.",
       "report_date": "2026-10-22",
@@ -1716,6 +1706,16 @@
       "date_status": "Calendar estimate",
       "source_url": null,
       "stock_url": "/shows/phm"
+    },
+    {
+      "ticker": "IMAX",
+      "company": "IMAX Corporation",
+      "report_date": "2026-10-22",
+      "report_time_label": "Time unconfirmed",
+      "planned_date": "",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": null
     },
     {
       "ticker": "NOK",
@@ -1848,6 +1848,16 @@
       "stock_url": null
     },
     {
+      "ticker": "DTG",
+      "company": "DTE Energy Company 2021 Series",
+      "report_date": "2026-10-22",
+      "report_time_label": "Time unconfirmed",
+      "planned_date": "",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": null
+    },
+    {
       "ticker": "CURB",
       "company": "Curbline Properties Corp.",
       "report_date": "2026-10-22",
@@ -1860,16 +1870,6 @@
     {
       "ticker": "DTB",
       "company": "DTE Energy Company 2020 Series",
-      "report_date": "2026-10-22",
-      "report_time_label": "Time unconfirmed",
-      "planned_date": "",
-      "date_status": "Calendar estimate",
-      "source_url": null,
-      "stock_url": null
-    },
-    {
-      "ticker": "DTG",
-      "company": "DTE Energy Company 2021 Series",
       "report_date": "2026-10-22",
       "report_time_label": "Time unconfirmed",
       "planned_date": "",
