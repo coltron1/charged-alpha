@@ -1,11 +1,21 @@
 {
   "schema": "charged-alpha-public-production/1",
-  "updated_at": "2026-10-16T15:35:55.364967-05:00",
+  "updated_at": "2026-10-16T15:45:05.400149-05:00",
   "calendar_updated_at": "2026-10-16T15:35:18.508491-05:00",
   "calendar_status": "fresh",
   "daily_target": 10,
   "active": [],
   "history": [
+    {
+      "ticker": "ADUR",
+      "company": "Aduro Clean Technologies Inc.",
+      "period": "Q1 FY2027",
+      "completed_at": "2026-10-16T15:44:36.775981-05:00",
+      "video_url": "https://youtu.be/yz_SHBGucmU",
+      "short_url": "https://youtu.be/sRn9ay7695o",
+      "packet_url": "https://chargedalpha.com/research/adur-q1-fy2027",
+      "stock_url": "/shows/adur"
+    },
     {
       "ticker": "LADR",
       "company": "Ladder Capital Corp",
