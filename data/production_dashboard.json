@@ -1,19 +1,10 @@
 {
   "schema": "charged-alpha-public-production/1",
-  "updated_at": "2026-10-16T12:48:09.474725-05:00",
+  "updated_at": "2026-10-16T13:46:51.352392-05:00",
   "calendar_updated_at": "2026-10-16T10:51:20.149489-05:00",
   "calendar_status": "fresh",
   "daily_target": 10,
-  "active": [
-    {
-      "ticker": "ADUR",
-      "company": "Aduro Clean Technologies Inc.",
-      "period": "Q1 FY2027",
-      "status_label": "Building now",
-      "stage_label": "Production in progress",
-      "stock_url": "/shows/adur"
-    }
-  ],
+  "active": [],
   "history": [
     {
       "ticker": "LADR",

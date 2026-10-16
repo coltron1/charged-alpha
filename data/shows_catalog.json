@@ -10,6 +10,24 @@
   },
   "episodes": [
     {
+      "ticker": "ADUR",
+      "company": "Aduro Clean Technologies Inc.",
+      "sector": "Industrials",
+      "quarter": "Q1 FY2027",
+      "episode_number": "",
+      "title": "ADUR Stock: A Profit Without Sales — Q1 FY2027",
+      "published_at": "2026-10-16T18:45:11+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=yz_SHBGucmU",
+      "spotify_url": "",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/adur-stock-a-profit-without-sales-%e2%80%94-q1-fy2027/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
       "ticker": "LADR",
       "company": "Ladder Capital Corp",
       "sector": "Real Estate",
@@ -47486,7 +47504,7 @@
       ]
     }
   ],
-  "last_synced_at": "2026-10-16T12:49:33-05:00",
+  "last_synced_at": "2026-10-16T13:48:25-05:00",
   "stock_metadata": {
     "A": {
       "company": "Agilent Technologies, Inc.",

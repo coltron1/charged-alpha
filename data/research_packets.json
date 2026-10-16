@@ -350,6 +350,64 @@
       "tables": 29
     },
     {
+      "key": "ADUR:Q1-FY2027",
+      "year": 2027,
+      "quarter": 1,
+      "fiscal": true,
+      "slug": "adur-q1-fy2027",
+      "ticker": "ADUR",
+      "company": "Aduro Clean Technologies",
+      "period": "Q1 FY2027",
+      "canonical_url": "https://chargedalpha.com/research/adur-q1-fy2027",
+      "title": "ADUR: A Profit Without Sales, and the Cash Behind It",
+      "page_title": "ADUR Q1 FY2027 Research Packet — Charged Alpha",
+      "description": "Separate the noncash profit, financing-funded runway and commercialization assumptions in Aduro’s first fiscal quarter.",
+      "sha256": "b77b65712c005fde092274cec56cb9c44455f91ac30a436c89a6f5d39f8c7742",
+      "html_file": "research_packets/adur-q1-fy2027.html",
+      "source_episode": "ADUR-Q1-FY2027",
+      "source_staged_at": "2026-10-16T18:45:51Z",
+      "source_sha256": {
+        "READY": "3504d0b44e8b209d9619a8c41df2ff0cac0deb798d6578851b3c3c6103572f40",
+        "handoff.json": "15ab1dc5e12875343e37b98c92c0bdb0752a6ba0e8969f56797746938c3c8540",
+        "packet/adur-q1-fy2027-research-packet.html": "b77b65712c005fde092274cec56cb9c44455f91ac30a436c89a6f5d39f8c7742",
+        "packet/packet_meta.json": "6101356d645cd272121fe44f12824a6b1f9dca4d1b880aa1d0bcc3e4e6967751",
+        "packet/packet.json": "03bbdc649e70fdf787e7fbf4bb316dc26621afa4cf79705b3a06bf975c3676a9"
+      },
+      "primary_youtube_long": "yz_SHBGucmU",
+      "primary_youtube_short": null,
+      "youtube_studio": null,
+      "youtube_studio_short": null,
+      "what_changed": {
+        "summary": "Separate the noncash profit, financing-funded runway and commercialization assumptions in Aduro’s first fiscal quarter.",
+        "items": [
+          {
+            "title": "A positive bottom line can coexist with zero sales.",
+            "detail": "The C$4.240M warrant gain more than offsets the C$3.496M loss before other items."
+          },
+          {
+            "title": "The runway improved for a financing reason.",
+            "detail": "Net share proceeds were C$30.281M; operating cash flow and capital spending together consumed C$3.244M."
+          },
+          {
+            "title": "Technical progress is real but has a different denominator.",
+            "detail": "A September 75-hour campaign processed about 758 kg. It is a subsequent operating test, not quarter revenue or a commercial contract."
+          },
+          {
+            "title": "The timetable still contains execution risk.",
+            "detail": "Management expects FOAK completion in early calendar 2028. Cost, permitting, uptime, licensing and customer economics remain separate tests."
+          },
+          {
+            "title": "Price needs its own model.",
+            "detail": "The dated $10.10 common share quote is far above the roughly $1.29 dated cash-minus-lease reference; that premium must be earned by future commercialization."
+          }
+        ]
+      },
+      "source_published": "October 16, 2026",
+      "words": 6366,
+      "figures": 14,
+      "tables": 28
+    },
+    {
       "key": "APLD:Q1-FY2027",
       "year": 2027,
       "quarter": 1,
