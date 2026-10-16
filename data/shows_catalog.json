@@ -19,7 +19,7 @@
       "published_at": "2026-10-16T18:45:11+00:00",
       "status": "youtube_podcast_complete",
       "youtube_url": "https://www.youtube.com/watch?v=yz_SHBGucmU",
-      "spotify_url": "",
+      "spotify_url": "https://open.spotify.com/episode/62lWtJu2EscpspGV5KVmjU",
       "apple_url": "",
       "google_url": "",
       "iheart_url": "",
@@ -35093,6 +35093,21 @@
       "description": "Fast clips that point viewers into full research videos and stock pages.",
       "videos": [
         {
+          "title": "ADUR Stock: Profit Without Sales? — Q1 FY2027 #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/sRn9ay7695o",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-10-16T18:58:52+00:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "ADUR"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage.",
+          "earnings_youtube_url": "https://www.youtube.com/watch?v=yz_SHBGucmU",
+          "earnings_match": "stock_period_date"
+        },
+        {
           "title": "LADR Stock: The Gain Inside Dividend Coverage — Q3 FY2026 #Shorts",
           "youtube_url": "https://www.youtube.com/shorts/_6lPLlzw4kQ",
           "spotify_url": "",
@@ -47504,7 +47519,7 @@
       ]
     }
   ],
-  "last_synced_at": "2026-10-16T13:48:25-05:00",
+  "last_synced_at": "2026-10-16T15:35:35-05:00",
   "stock_metadata": {
     "A": {
       "company": "Agilent Technologies, Inc.",

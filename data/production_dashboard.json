@@ -1,7 +1,7 @@
 {
   "schema": "charged-alpha-public-production/1",
-  "updated_at": "2026-10-16T13:46:51.352392-05:00",
-  "calendar_updated_at": "2026-10-16T10:51:20.149489-05:00",
+  "updated_at": "2026-10-16T15:35:55.364967-05:00",
+  "calendar_updated_at": "2026-10-16T15:35:18.508491-05:00",
   "calendar_status": "fresh",
   "daily_target": 10,
   "active": [],
@@ -1829,16 +1829,6 @@
       "stock_url": null
     },
     {
-      "ticker": "DTK",
-      "company": "DTE Energy Company 2025 Series",
-      "report_date": "2026-10-22",
-      "report_time_label": "Time unconfirmed",
-      "planned_date": "",
-      "date_status": "Calendar estimate",
-      "source_url": null,
-      "stock_url": null
-    },
-    {
       "ticker": "KRC",
       "company": "Kilroy Realty Corporation",
       "report_date": "2026-10-22",
@@ -1929,16 +1919,6 @@
       "stock_url": "/shows/rng"
     },
     {
-      "ticker": "COUR",
-      "company": "Coursera, Inc.",
-      "report_date": "2026-10-22",
-      "report_time_label": "Time unconfirmed",
-      "planned_date": "",
-      "date_status": "Calendar estimate",
-      "source_url": null,
-      "stock_url": null
-    },
-    {
       "ticker": "VRSN",
       "company": "VeriSign, Inc.",
       "report_date": "2026-10-22",
@@ -1961,6 +1941,16 @@
     {
       "ticker": "ELME",
       "company": "Elme Communities",
+      "report_date": "2026-10-22",
+      "report_time_label": "Time unconfirmed",
+      "planned_date": "",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": null
+    },
+    {
+      "ticker": "FPH",
+      "company": "Five Point Holdings, LLC",
       "report_date": "2026-10-22",
       "report_time_label": "Time unconfirmed",
       "planned_date": "",
