@@ -10,6 +10,24 @@
   },
   "episodes": [
     {
+      "ticker": "MKC",
+      "company": "McCormick & Company, Incorporated",
+      "sector": "Consumer Defensive",
+      "quarter": "Q3 FY2026",
+      "episode_number": "",
+      "title": "MKC Stock: Sales Jumped. What Reaches Each Share? — Q3 FY2026",
+      "published_at": "2026-10-16T01:31:05+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=-uMniHT_1x0",
+      "spotify_url": "",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/mkc-stock-sales-jumped-what-reaches-each-share-%e2%80%94-q3-fy2026/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
       "ticker": "ERIC",
       "company": "Telefonaktiebolaget LM Ericsson (publ)",
       "sector": "Technology",
@@ -47354,7 +47372,7 @@
       ]
     }
   ],
-  "last_synced_at": "2026-10-15T18:11:24-05:00",
+  "last_synced_at": "2026-10-15T20:36:25-05:00",
   "stock_metadata": {
     "A": {
       "company": "Agilent Technologies, Inc.",
@@ -49998,6 +50016,10 @@
     "MIDD": {
       "company": "The Middleby Corporation",
       "sector": "Industrials"
+    },
+    "MKC": {
+      "company": "McCormick & Company, Incorporated",
+      "sector": "Consumer Defensive"
     },
     "MKSI": {
       "company": "MKS Inc.",

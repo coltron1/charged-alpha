@@ -2670,6 +2670,64 @@
       "tables": 29
     },
     {
+      "key": "MKC:Q3-FY2026",
+      "year": 2026,
+      "quarter": 3,
+      "fiscal": true,
+      "slug": "mkc-q3-fy2026",
+      "ticker": "MKC",
+      "company": "McCormick & Company, Incorporated",
+      "period": "Q3 FY2026",
+      "canonical_url": "https://chargedalpha.com/research/mkc-q3-fy2026",
+      "title": "MKC: Bigger sales, but what reaches each share?",
+      "page_title": "MKC Q3 FY2026 Research Packet — Charged Alpha",
+      "description": "McCormick’s acquisition-driven growth, cash conversion and pending Unilever combination tested against three valuation routes.",
+      "sha256": "c5f3f625e5c354600d705cb9fb3f01559c67d9104a011b58c4854f69c96b3bf9",
+      "html_file": "research_packets/mkc-q3-fy2026.html",
+      "source_episode": "MKC-Q3-FY2026",
+      "source_staged_at": "2026-10-16T01:34:32Z",
+      "source_sha256": {
+        "READY": "2caa3243271df2a08f5089ab7e45c16114d009169f1bf2007c148aa0a7c5aab1",
+        "handoff.json": "083a15ae51b37f16dce440c16cc1dcb2ab0d833e0efd288d891a1528f46e7016",
+        "packet/mkc-q3-fy2026-research-packet.html": "c5f3f625e5c354600d705cb9fb3f01559c67d9104a011b58c4854f69c96b3bf9",
+        "packet/packet_meta.json": "c088628f4fd07d5e669cb6b82b2dc6eaa7d6974d2a8f7ea469aee1389a3e3e11",
+        "packet/packet.json": "6dab08af0feef4b93271bf555d2f8d36ead7c52963936b5185a5a40a569abe4f"
+      },
+      "primary_youtube_long": "-uMniHT_1x0",
+      "primary_youtube_short": null,
+      "youtube_studio": null,
+      "youtube_studio_short": null,
+      "what_changed": {
+        "summary": "McCormick’s acquisition-driven growth, cash conversion and pending Unilever combination tested against three valuation routes.",
+        "items": [
+          {
+            "title": "Growth is mostly acquired.",
+            "detail": "Mexico contributed 14.6 points of the 17.4% reported sales increase."
+          },
+          {
+            "title": "Margins improved before special charges.",
+            "detail": "Adjusted operating profit rose 22.1%; adjusted EPS rose only 1.2%."
+          },
+          {
+            "title": "GAAP moves in opposite directions.",
+            "detail": "Quarterly charges depress profit, while the year-to-date Mexico gain inflates it."
+          },
+          {
+            "title": "Cash has competing claims.",
+            "detail": "YTD post-capex cash of $467.6M compares with $387.0M common dividends and $729.9M acquisition cash."
+          },
+          {
+            "title": "The deal changes the per-share question.",
+            "detail": "Current holders are expected to own 35.0% of the combination; financing and closing remain unresolved."
+          }
+        ]
+      },
+      "source_published": "October 15, 2026",
+      "words": 5532,
+      "figures": 20,
+      "tables": 33
+    },
+    {
       "key": "PEP:Q3-2026",
       "year": 2026,
       "quarter": 3,
