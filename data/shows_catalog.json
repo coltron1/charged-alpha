@@ -35021,6 +35021,21 @@
       "description": "Fast clips that point viewers into full research videos and stock pages.",
       "videos": [
         {
+          "title": "MKC Stock: McCormick Q3 FY2026 Earnings — Sales Surge, EPS Stalls #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/vXCxxYtqgmA",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-10-15T18:52:46-07:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "MKC"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage.",
+          "earnings_youtube_url": "https://www.youtube.com/watch?v=-uMniHT_1x0",
+          "earnings_match": "stock_period_date"
+        },
+        {
           "title": "ERIC Stock: Profit Down, Cash Test Ahead — Q3 2026 #Shorts",
           "youtube_url": "https://www.youtube.com/shorts/5JlEwy3AP38",
           "spotify_url": "",
@@ -47372,7 +47387,7 @@
       ]
     }
   ],
-  "last_synced_at": "2026-10-15T20:36:25-05:00",
+  "last_synced_at": "2026-10-15T20:54:53-05:00",
   "stock_metadata": {
     "A": {
       "company": "Agilent Technologies, Inc.",
