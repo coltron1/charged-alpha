@@ -35075,6 +35075,21 @@
       "description": "Fast clips that point viewers into full research videos and stock pages.",
       "videos": [
         {
+          "title": "LADR Stock: The Gain Inside Dividend Coverage — Q3 FY2026 #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/_6lPLlzw4kQ",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-10-16T17:40:53+00:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "LADR"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage.",
+          "earnings_youtube_url": "https://www.youtube.com/watch?v=_mNn93Shcuc",
+          "earnings_match": "stock_period_date"
+        },
+        {
           "title": "FAST Stock: Profit Up 19.7%, Cash Up 6.4% — Q3 2026 #Shorts",
           "youtube_url": "https://www.youtube.com/shorts/UYcXNM_yz-s",
           "spotify_url": "",
@@ -47471,7 +47486,7 @@
       ]
     }
   ],
-  "last_synced_at": "2026-10-16T12:16:24-05:00",
+  "last_synced_at": "2026-10-16T12:49:33-05:00",
   "stock_metadata": {
     "A": {
       "company": "Agilent Technologies, Inc.",

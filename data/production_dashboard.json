@@ -1,11 +1,30 @@
 {
   "schema": "charged-alpha-public-production/1",
-  "updated_at": "2026-10-16T12:18:11.630898-05:00",
+  "updated_at": "2026-10-16T12:48:09.474725-05:00",
   "calendar_updated_at": "2026-10-16T10:51:20.149489-05:00",
   "calendar_status": "fresh",
   "daily_target": 10,
-  "active": [],
+  "active": [
+    {
+      "ticker": "ADUR",
+      "company": "Aduro Clean Technologies Inc.",
+      "period": "Q1 FY2027",
+      "status_label": "Building now",
+      "stage_label": "Production in progress",
+      "stock_url": "/shows/adur"
+    }
+  ],
   "history": [
+    {
+      "ticker": "LADR",
+      "company": "Ladder Capital Corp",
+      "period": "Q3 FY2026",
+      "completed_at": "2026-10-16T12:46:00.256926-05:00",
+      "video_url": "https://youtu.be/_mNn93Shcuc",
+      "short_url": "https://youtu.be/_6lPLlzw4kQ",
+      "packet_url": "https://chargedalpha.com/research/ladr-q3-fy2026",
+      "stock_url": "/shows/ladr"
+    },
     {
       "ticker": "FAST",
       "company": "Fastenal Company",
