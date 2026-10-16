@@ -292,6 +292,64 @@
       "tables": 28
     },
     {
+      "key": "WIT:Q2-FY2027",
+      "year": 2027,
+      "quarter": 2,
+      "fiscal": true,
+      "slug": "wit-q2-fy2027",
+      "ticker": "WIT",
+      "company": "Wipro Limited",
+      "period": "Q2 FY2027",
+      "canonical_url": "https://chargedalpha.com/research/wit-q2-fy2027",
+      "title": "WIT: EPS rose. Did the business?",
+      "page_title": "WIT Q2 FY2027 Research Packet — Charged Alpha",
+      "description": "Cash conversion, buyback arithmetic and bookings explain Wipro’s quarter.",
+      "sha256": "b8785181e76fc306af3210077570f74b1f746f385f3897ee2b52708a6b4ca63e",
+      "html_file": "research_packets/wit-q2-fy2027.html",
+      "source_episode": "WIT-Q2-FY2027",
+      "source_staged_at": "2026-10-16T13:43:43Z",
+      "source_sha256": {
+        "READY": "9be4b26f224cd52f214f1cc11b673fd5c6f06201ea878607ab0dea0daf375969",
+        "handoff.json": "1cec6364f61396345a35245f6733ed085fcb0fddfbb6b2f477022fd128e3c60e",
+        "packet/wit-q2-fy2027-research-packet.html": "b8785181e76fc306af3210077570f74b1f746f385f3897ee2b52708a6b4ca63e",
+        "packet/packet_meta.json": "8e73852c87c48e03e3564bd47868e01bc7e68de34064b23de4f37113255a963f",
+        "packet/packet.json": "da18f2209b3d7ba77072432b2c2610dbee191f556545d0a3aeaabfd7ffbe9874"
+      },
+      "primary_youtube_long": "v7DU1ibPL7k",
+      "primary_youtube_short": null,
+      "youtube_studio": null,
+      "youtube_studio_short": null,
+      "what_changed": {
+        "summary": "Cash conversion, buyback arithmetic and bookings explain Wipro’s quarter.",
+        "items": [
+          {
+            "title": "The share count matters.",
+            "detail": "June’s completed buyback reduces the earnings denominator; it does not establish a demand recovery."
+          },
+          {
+            "title": "Collection improved.",
+            "detail": "Quarterly operating cash exceeded profit, but capital returns exceeded first-half free cash flow."
+          },
+          {
+            "title": "Bookings require context.",
+            "detail": "Contract value includes renewals and multi-year work; it is neither revenue nor a guaranteed backlog."
+          },
+          {
+            "title": "The balance sheet still has resources.",
+            "detail": "Our conservative net-liquid-cash measure includes leases and excludes strategic investments."
+          },
+          {
+            "title": "Price already pays for stability.",
+            "detail": "Near our base value, the stock needs better operations to earn a stronger rating."
+          }
+        ]
+      },
+      "source_published": "October 16, 2026",
+      "words": 5460,
+      "figures": 18,
+      "tables": 29
+    },
+    {
       "key": "APLD:Q1-FY2027",
       "year": 2027,
       "quarter": 1,

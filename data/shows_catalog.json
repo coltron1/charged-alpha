@@ -10,6 +10,24 @@
   },
   "episodes": [
     {
+      "ticker": "WIT",
+      "company": "Wipro Limited",
+      "sector": "Technology",
+      "quarter": "Q2 FY2027",
+      "episode_number": "",
+      "title": "WIT Stock: EPS Rose. Did the Business? — Wipro Q2 FY2027",
+      "published_at": "2026-10-16T13:19:20+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=v7DU1ibPL7k",
+      "spotify_url": "https://open.spotify.com/episode/3qMrse0aQDarfemVKQRGhx",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/wit-stock-eps-rose-did-the-business-%e2%80%94-wipro-q2-fy2027/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
       "ticker": "MKC",
       "company": "McCormick & Company, Incorporated",
       "sector": "Consumer Defensive",
@@ -47387,7 +47405,7 @@
       ]
     }
   ],
-  "last_synced_at": "2026-10-15T23:55:03-05:00",
+  "last_synced_at": "2026-10-16T08:45:29-05:00",
   "stock_metadata": {
     "A": {
       "company": "Agilent Technologies, Inc.",

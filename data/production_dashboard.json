@@ -1,17 +1,17 @@
 {
   "schema": "charged-alpha-public-production/1",
-  "updated_at": "2026-10-16T00:25:28.206246-05:00",
-  "calendar_updated_at": "2026-10-16T00:03:51.741619-05:00",
+  "updated_at": "2026-10-16T08:42:11.228568-05:00",
+  "calendar_updated_at": "2026-10-16T07:59:49.127878-05:00",
   "calendar_status": "fresh",
   "daily_target": 10,
   "active": [
     {
-      "ticker": "WIT",
-      "company": "Wipro Limited",
-      "period": "Q2 FY2027",
+      "ticker": "FAST",
+      "company": "Fastenal Company",
+      "period": "Q3 2026",
       "status_label": "Building now",
       "stage_label": "Production in progress",
-      "stock_url": "/shows/wit"
+      "stock_url": "/shows/fast"
     }
   ],
   "history": [
@@ -748,8 +748,8 @@
       "stock_url": null
     },
     {
-      "ticker": "LADR",
-      "company": "Ladder Capital Corp",
+      "ticker": "BVC",
+      "company": "BitVentures Limited",
       "report_date": "2026-10-16",
       "report_time_label": "Time unconfirmed",
       "planned_date": "2026-10-17",
@@ -1466,6 +1466,16 @@
       "date_status": "Calendar estimate",
       "source_url": null,
       "stock_url": "/shows/mxl"
+    },
+    {
+      "ticker": "TTMI",
+      "company": "TTM Technologies, Inc.",
+      "report_date": "2026-10-22",
+      "report_time_label": "Time unconfirmed",
+      "planned_date": "",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": "/shows/ttmi"
     },
     {
       "ticker": "ROP",
