@@ -1,7 +1,7 @@
 {
   "schema": "charged-alpha-public-production/1",
-  "updated_at": "2026-10-15T21:00:20.560308-05:00",
-  "calendar_updated_at": "2026-10-15T18:55:47.883093-05:00",
+  "updated_at": "2026-10-15T21:43:49.641600-05:00",
+  "calendar_updated_at": "2026-10-15T21:16:15.407276-05:00",
   "calendar_status": "fresh",
   "daily_target": 10,
   "active": [],
@@ -728,16 +728,6 @@
     }
   ],
   "upcoming": [
-    {
-      "ticker": "ADUR",
-      "company": "Aduro Clean Technologies Inc.",
-      "report_date": "2026-10-15",
-      "report_time_label": "Time unconfirmed",
-      "planned_date": "2026-10-16",
-      "date_status": "Calendar estimate",
-      "source_url": null,
-      "stock_url": "/shows/adur"
-    },
     {
       "ticker": "EVMN",
       "company": "Evommune, Inc.",
