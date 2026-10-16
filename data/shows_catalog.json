@@ -10,6 +10,24 @@
   },
   "episodes": [
     {
+      "ticker": "FAST",
+      "company": "Fastenal Company",
+      "sector": "Industrials",
+      "quarter": "Q3 2026",
+      "episode_number": "",
+      "title": "FAST Stock: Profit Jumped. Why Did Cash Lag? — Q3 2026",
+      "published_at": "2026-10-16T14:48:16+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=oGtTSt03Aw4",
+      "spotify_url": "https://open.spotify.com/episode/16WEnFJb1gvO2EIZuuspdQ",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/fast-stock-profit-jumped-why-did-cash-lag-%e2%80%94-q3-2026/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
       "ticker": "WIT",
       "company": "Wipro Limited",
       "sector": "Technology",
@@ -47420,7 +47438,7 @@
       ]
     }
   ],
-  "last_synced_at": "2026-10-16T09:23:08-05:00",
+  "last_synced_at": "2026-10-16T10:09:09-05:00",
   "stock_metadata": {
     "A": {
       "company": "Agilent Technologies, Inc.",

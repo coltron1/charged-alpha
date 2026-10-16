@@ -2438,6 +2438,64 @@
       "tables": 28
     },
     {
+      "key": "FAST:Q3-2026",
+      "year": 2026,
+      "quarter": 3,
+      "fiscal": false,
+      "slug": "fast-q3-2026",
+      "ticker": "FAST",
+      "company": "Fastenal",
+      "period": "Q3 2026",
+      "canonical_url": "https://chargedalpha.com/research/fast-q3-2026",
+      "title": "FAST: Profit jumped. Why did cash lag?",
+      "page_title": "FAST Q3 2026 Research Packet — Charged Alpha",
+      "description": "Fastenal grew earnings faster than cash after investment. Follow the working-capital bridge, customer mix and the growth priced into the shares.",
+      "sha256": "ed6fb6a2a5c2e788ad9a43c2f13d6983ffbcefbe4768fc28ebd57999101b437b",
+      "html_file": "research_packets/fast-q3-2026.html",
+      "source_episode": "FAST-Q3-2026",
+      "source_staged_at": "2026-10-16T15:03:57Z",
+      "source_sha256": {
+        "READY": "9ab968a691eac890a91b5849da9bb76641c9a00987bdc0df582ca86d6dab488a",
+        "handoff.json": "1afb7c1a1c5bdbf844c799cd60789e02de4627f5be538393fa855ff58284b128",
+        "packet/fast-q3-2026-research-packet.html": "ed6fb6a2a5c2e788ad9a43c2f13d6983ffbcefbe4768fc28ebd57999101b437b",
+        "packet/packet_meta.json": "115c6a5eec2646f60bf38691bdc42f985af5a00406f5a0df38dc6bad3a304d54",
+        "packet/packet.json": "063a08c91f4b99e0dfda37f18b71f786879c035d9befe54d7722ca889ffdad18"
+      },
+      "primary_youtube_long": "oGtTSt03Aw4",
+      "primary_youtube_short": null,
+      "youtube_studio": null,
+      "youtube_studio_short": null,
+      "what_changed": {
+        "summary": "Fastenal grew earnings faster than cash after investment. Follow the working-capital bridge, customer mix and the growth priced into the shares.",
+        "items": [
+          {
+            "title": "Growth is real.",
+            "detail": "Equal business-day counts mean the reported 15.5% revenue gain is also the daily-sales gain; pricing contributed about 240 basis points."
+          },
+          {
+            "title": "Expense leverage carried profit.",
+            "detail": "Gross margin fell, but selling and administrative costs grew more slowly than revenue."
+          },
+          {
+            "title": "Collections deserve attention.",
+            "detail": "Receivables grew 19.9%, faster than sales, while inventory growth was much slower."
+          },
+          {
+            "title": "Cash has competing claims.",
+            "detail": "Gross capex, dividends and repurchases left only $18.9m from quarterly operating cash."
+          },
+          {
+            "title": "The valuation needs sustained cash growth.",
+            "detail": "A five-year reverse case requires roughly 30% annual cash growth at our 9% return and 3% terminal assumptions."
+          }
+        ]
+      },
+      "source_published": "October 16, 2026",
+      "words": 5294,
+      "figures": 19,
+      "tables": 17
+    },
+    {
       "key": "GLDG:Q3-FY2026",
       "year": 2026,
       "quarter": 3,
