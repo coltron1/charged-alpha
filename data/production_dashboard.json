@@ -1,20 +1,21 @@
 {
   "schema": "charged-alpha-public-production/1",
-  "updated_at": "2026-10-16T08:42:11.228568-05:00",
+  "updated_at": "2026-10-16T09:24:24.559855-05:00",
   "calendar_updated_at": "2026-10-16T07:59:49.127878-05:00",
   "calendar_status": "fresh",
   "daily_target": 10,
-  "active": [
-    {
-      "ticker": "FAST",
-      "company": "Fastenal Company",
-      "period": "Q3 2026",
-      "status_label": "Building now",
-      "stage_label": "Production in progress",
-      "stock_url": "/shows/fast"
-    }
-  ],
+  "active": [],
   "history": [
+    {
+      "ticker": "WIT",
+      "company": "Wipro Limited",
+      "period": "Q2 FY2027",
+      "completed_at": "2026-10-16T09:21:32.876492-05:00",
+      "video_url": "https://youtu.be/v7DU1ibPL7k",
+      "short_url": "https://youtu.be/yqaTJ36LJo0",
+      "packet_url": "https://chargedalpha.com/research/wit-q2-fy2027",
+      "stock_url": "/shows/wit"
+    },
     {
       "ticker": "MKC",
       "company": "McCormick & Company, Incorporated",
