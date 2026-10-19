@@ -1,11 +1,21 @@
 {
   "schema": "charged-alpha-public-production/1",
-  "updated_at": "2026-10-19T13:20:29.606571-05:00",
-  "calendar_updated_at": "2026-10-19T12:47:08.781939-05:00",
+  "updated_at": "2026-10-19T15:35:37.981345-05:00",
+  "calendar_updated_at": "2026-10-19T15:23:46.087106-05:00",
   "calendar_status": "fresh",
   "daily_target": 10,
   "active": [],
   "history": [
+    {
+      "ticker": "CLF",
+      "company": "Cleveland-Cliffs Inc",
+      "period": "Q3 2026",
+      "completed_at": "2026-10-19T15:34:50.864974-05:00",
+      "video_url": "https://youtu.be/qBw-TPKkp60",
+      "short_url": "https://youtu.be/fdTCJHvqZYg",
+      "packet_url": "https://chargedalpha.com/research/clf-q3-2026",
+      "stock_url": "/shows/clf"
+    },
     {
       "ticker": "ADUR",
       "company": "Aduro Clean Technologies Inc.",
@@ -789,41 +799,11 @@
       "stock_url": null
     },
     {
-      "ticker": "CCK",
-      "company": "Crown Holdings, Inc.",
-      "report_date": "2026-10-19",
-      "report_time_label": "After U.S. market close",
-      "planned_date": "2026-10-20",
-      "date_status": "Issuer-announced",
-      "source_url": "https://www.crowncork.com/investors/news",
-      "stock_url": "/shows/cck"
-    },
-    {
-      "ticker": "KARO",
-      "company": "Karooooo Ltd.",
-      "report_date": "2026-10-19",
-      "report_time_label": "After U.S. market close",
-      "planned_date": "2026-10-20",
-      "date_status": "Issuer-announced",
-      "source_url": "https://karooooo.com/wp-content/uploads/2026/10/ea030768001-6k_karoooooEDGAR1_Bannerless.pdf",
-      "stock_url": null
-    },
-    {
-      "ticker": "AGNC",
-      "company": "AGNC Investment Corp.",
-      "report_date": "2026-10-19",
-      "report_time_label": "After U.S. market close",
-      "planned_date": "2026-10-20",
-      "date_status": "Issuer-announced",
-      "source_url": "https://agncgcswebcom.gcs-web.com/news-releases/news-release-details/agnc-investment-corp-announces-date-third-quarter-earnings-10",
-      "stock_url": "/shows/agnc"
-    },
-    {
       "ticker": "STLD",
       "company": "Steel Dynamics, Inc.",
       "report_date": "2026-10-19",
       "report_time_label": "After U.S. market close",
-      "planned_date": "",
+      "planned_date": "2026-10-20",
       "date_status": "Issuer-announced",
       "source_url": "https://ir.steeldynamics.com/steel-dynamics-announces-third-quarter-2026-earnings-conference-call-and-webcast/",
       "stock_url": "/shows/stld"
@@ -877,6 +857,16 @@
       "date_status": "Issuer-announced",
       "source_url": "https://investor.equifax.com/news-events/press-releases/detail/1422/equifax-announces-earnings-release-date-and-conference-call",
       "stock_url": "/shows/efx"
+    },
+    {
+      "ticker": "VMI",
+      "company": "Valmont Industries, Inc.",
+      "report_date": "2026-10-20",
+      "report_time_label": "Before U.S. market open",
+      "planned_date": "2026-10-20",
+      "date_status": "Issuer-announced",
+      "source_url": "https://investors.valmont.com/news-releases/news-release-details/valmont-announces-timing-third-quarter-2026-earnings-release-and",
+      "stock_url": "/shows/vmi"
     },
     {
       "ticker": "ISRG",
@@ -959,16 +949,6 @@
       "stock_url": null
     },
     {
-      "ticker": "VMI",
-      "company": "Valmont Industries, Inc.",
-      "report_date": "2026-10-20",
-      "report_time_label": "Before U.S. market open",
-      "planned_date": "2026-10-21",
-      "date_status": "Issuer-announced",
-      "source_url": "https://investors.valmont.com/news-releases/news-release-details/valmont-announces-timing-third-quarter-2026-earnings-release-and",
-      "stock_url": "/shows/vmi"
-    },
-    {
       "ticker": "ADC",
       "company": "Agree Realty Corporation",
       "report_date": "2026-10-20",
@@ -983,7 +963,7 @@
       "company": "Weatherford International plc",
       "report_date": "2026-10-20",
       "report_time_label": "Time unconfirmed",
-      "planned_date": "",
+      "planned_date": "2026-10-21",
       "date_status": "Calendar estimate",
       "source_url": null,
       "stock_url": "/shows/wfrd"
