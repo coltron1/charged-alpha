@@ -1,7 +1,7 @@
 {
   "schema": "charged-alpha-public-production/1",
-  "updated_at": "2026-10-19T15:35:37.981345-05:00",
-  "calendar_updated_at": "2026-10-19T15:23:46.087106-05:00",
+  "updated_at": "2026-10-19T17:30:46.914508-05:00",
+  "calendar_updated_at": "2026-10-19T17:23:33.245816-05:00",
   "calendar_status": "fresh",
   "daily_target": 10,
   "active": [],
@@ -797,16 +797,6 @@
       "date_status": "Calendar estimate",
       "source_url": null,
       "stock_url": null
-    },
-    {
-      "ticker": "STLD",
-      "company": "Steel Dynamics, Inc.",
-      "report_date": "2026-10-19",
-      "report_time_label": "After U.S. market close",
-      "planned_date": "2026-10-20",
-      "date_status": "Issuer-announced",
-      "source_url": "https://ir.steeldynamics.com/steel-dynamics-announces-third-quarter-2026-earnings-conference-call-and-webcast/",
-      "stock_url": "/shows/stld"
     },
     {
       "ticker": "NOC",
