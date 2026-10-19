@@ -2438,6 +2438,64 @@
       "tables": 32
     },
     {
+      "key": "CLF:Q3-2026",
+      "year": 2026,
+      "quarter": 3,
+      "fiscal": false,
+      "slug": "clf-q3-2026",
+      "ticker": "CLF",
+      "company": "Cleveland-Cliffs",
+      "period": "Q3 2026",
+      "canonical_url": "https://chargedalpha.com/research/clf-q3-2026",
+      "title": "CLF: The Recovery Is Real. Can It Pay Down the Debt?",
+      "page_title": "CLF Q3 2026 Research Packet — Charged Alpha",
+      "description": "A source-backed review of Cleveland-Cliffs pricing recovery, cash conversion and conditional 2027 outlook.",
+      "sha256": "13b0d7416c98f0da9113a02166a6ac2a0cba33207aa705b52ded4a687cf3e13c",
+      "html_file": "research_packets/clf-q3-2026.html",
+      "source_episode": "CLF-Q3-2026",
+      "source_staged_at": "2026-10-19T17:49:59Z",
+      "source_sha256": {
+        "READY": "3e6a10b3edd30fe8f10314bd3886b79e362c43745752148e34cfae5ed621167b",
+        "handoff.json": "3cbc85b80a94e1735f44c4191d5ab3b87dddbe7135da0ef858591a2889d70bf7",
+        "packet/clf-q3-2026-research-packet.html": "13b0d7416c98f0da9113a02166a6ac2a0cba33207aa705b52ded4a687cf3e13c",
+        "packet/packet_meta.json": "6abe848bcd18f034eb8caaa7d8f4b59e69c1f184bd5d9bea707d11ed1bd3bed9",
+        "packet/packet.json": "8ab3bb697403b123e33dfe1c94f57e514f8ae8e214e6ba6a139f4704d1fbbf96"
+      },
+      "primary_youtube_long": "qBw-TPKkp60",
+      "primary_youtube_short": null,
+      "youtube_studio": null,
+      "youtube_studio_short": null,
+      "what_changed": {
+        "summary": "A source-backed review of Cleveland-Cliffs pricing recovery, cash conversion and conditional 2027 outlook.",
+        "items": [
+          {
+            "title": "The recovery is profitable under GAAP.",
+            "detail": "Operating income reached $311M."
+          },
+          {
+            "title": "Cash has not accelerated with EBITDA.",
+            "detail": "Q3 FCF was $72M versus $73M in Q2."
+          },
+          {
+            "title": "Liquidity is not cash.",
+            "detail": "The $3.2B liquidity headline includes financing capacity; cash was $77M."
+          },
+          {
+            "title": "Next year is conditional.",
+            "detail": "The more than $4B outlook depends on contracts and index-price forecasts."
+          },
+          {
+            "title": "HOLD at $13.80.",
+            "detail": "Base value is $15; an illustrative 25% margin-of-safety entry is $11.25 if fundamentals hold."
+          }
+        ]
+      },
+      "source_published": "October 19, 2026",
+      "words": 6021,
+      "figures": 19,
+      "tables": 31
+    },
+    {
       "key": "ERIC:Q3-2026",
       "year": 2026,
       "quarter": 3,
