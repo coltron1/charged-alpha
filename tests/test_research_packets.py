@@ -236,6 +236,49 @@ class ResearchPacketTests(unittest.TestCase):
                          "FY27 FCF versus in FY26, mid 2027, September 8. "
                          "Keep iPhone16, 3M, C$38.23, US$111.53B, $7.521B, Q4, FY27, 10-K and AT&T.")
 
+    def test_financial_comparator_is_plain_text_without_weakening_angle_validation(self):
+        self.assertEqual(sync.normalize_highlight_detail("The >$4B outlook depends on contracts."),
+                         "The more than $4B outlook depends on contracts.")
+        self.assertEqual(sync.normalize_highlight_detail("The > $4B outlook depends on contracts."),
+                         "The more than $4B outlook depends on contracts.")
+        self.assertEqual(sync.normalize_highlight_detail("> $4B depends on contracts."),
+                         "more than $4B depends on contracts.")
+        for value in ("x>$4B", ">>$4B", "The >= $4B outlook.", ">\n$4B",
+                      "Use <b>markup</b>.", "Revenue > peers.",
+                      "The >C$4B outlook.", "The >$four billion outlook."):
+            with self.subTest(value=value):
+                detail = sync.normalize_highlight_detail(value)
+                self.assertTrue("<" in detail or ">" in detail)
+                with self.assertRaisesRegex(ValueError, "plain text"):
+                    sync.validate_what_changed({"summary": "Strict angle validation.", "items": [
+                        {"title": "One.", "detail": detail},
+                        {"title": "Two.", "detail": "Supporting detail."},
+                        {"title": "Three.", "detail": "Supporting detail."},
+                    ]})
+
+    def test_clf_five_things_financial_comparator_parses_without_source_mutation(self):
+        source, raw = self.fixture("CLF", "Q3 2026")
+        packet_path = source / "packet/packet.json"
+        self.mutate(packet_path, lambda p: p.update(five_things=[
+            "<b>Profitability returned.</b> Adjusted EBITDA and net income improved.",
+            "<b>Cash lagged earnings.</b> Working capital absorbed operating cash flow.",
+            "<b>Debt remains the constraint.</b> Deleveraging depends on cash conversion.",
+            "<b>Next year is conditional.</b> The >$4B outlook depends on contracts and index-price forecasts.",
+            "<b>Execution sets the valuation.</b> Volume and pricing must support the recovery.",
+        ]))
+        source_packet_before = packet_path.read_bytes()
+        source_html_before = (source / "packet" / "clf-q3-2026-research-packet.html").read_bytes()
+        plan = self.import_all(False)
+        self.assertEqual(plan["packets"][0]["status"], "ready_to_import")
+        result = self.import_all()
+        self.assertEqual(result["imported"], 1)
+        self.assertEqual(load_packets(self.index)[0]["what_changed"]["items"][3]["detail"],
+                         "The more than $4B outlook depends on contracts and index-price forecasts.")
+        self.assertEqual(packet_path.read_bytes(), source_packet_before)
+        self.assertEqual((source / "packet" / "clf-q3-2026-research-packet.html").read_bytes(),
+                         source_html_before)
+        self.assertEqual(source_html_before, raw)
+
     def test_spacing_only_registered_highlights_are_idempotent_but_values_stay_strict(self):
         source, _ = self.fixture()
         self.mutate(source / "packet/packet.json", lambda p: p.update(five_things=[

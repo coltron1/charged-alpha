@@ -98,6 +98,12 @@ class HighlightText(HTMLParser):
 def normalize_highlight_detail(value):
     """Restore narrowly proven display spaces without changing financial tokens."""
     require(isinstance(value, str), "Packet highlight detail must be text")
+    # Packet prose may use a standalone greater-than comparator directly before
+    # a dollar amount.  Convert only that financial token to plain words so the
+    # derived What’s Changed detail remains strict plain text; leave the immutable
+    # packet document and HTML untouched.  Operators such as >= and markup-like
+    # angle brackets deliberately remain invalid for validate_what_changed().
+    value = re.sub(r"(?<!\S)>[ \t]*(?=\$\d)", "more than ", value)
     # These word/number boundaries are present in the retained packet corpus. Keep
     # the vocabulary explicit so product names such as iPhone16 are not rewritten.
     value = re.sub(r"\b(rose|but|grew|grows|equals|mid|September)(?=\d)", r"\1 ", value)
