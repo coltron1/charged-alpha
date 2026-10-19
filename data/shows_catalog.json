@@ -10,6 +10,24 @@
   },
   "episodes": [
     {
+      "ticker": "CLF",
+      "company": "Cleveland-Cliffs Inc",
+      "sector": "Basic Materials",
+      "quarter": "Q3 2026",
+      "episode_number": "",
+      "title": "CLF Stock: Profit Is Back — Can the Recovery Pay Down Debt? | Q3 2026",
+      "published_at": "2026-10-19T17:04:39+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=qBw-TPKkp60",
+      "spotify_url": "https://open.spotify.com/episode/0ouATEtz0eHeXemCMwXUKK",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/clf-stock-profit-is-back-%e2%80%94-can-the-recovery-pay-down-debt-q3-2026/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
       "ticker": "ADUR",
       "company": "Aduro Clean Technologies Inc.",
       "sector": "Industrials",
@@ -47519,7 +47537,7 @@
       ]
     }
   ],
-  "last_synced_at": "2026-10-16T15:35:35-05:00",
+  "last_synced_at": "2026-10-19T12:18:38-05:00",
   "stock_metadata": {
     "A": {
       "company": "Agilent Technologies, Inc.",
