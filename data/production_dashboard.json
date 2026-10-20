@@ -1,11 +1,31 @@
 {
   "schema": "charged-alpha-public-production/1",
-  "updated_at": "2026-10-20T14:21:26.505779-05:00",
-  "calendar_updated_at": "2026-10-20T14:14:05.584959-05:00",
+  "updated_at": "2026-10-20T15:55:23.889596-05:00",
+  "calendar_updated_at": "2026-10-20T15:41:09.715623-05:00",
   "calendar_status": "fresh",
   "daily_target": 10,
   "active": [],
   "history": [
+    {
+      "ticker": "MMM",
+      "company": "3M Company",
+      "period": "Q3 2026",
+      "completed_at": "2026-10-20T15:53:04.658097-05:00",
+      "video_url": "https://youtu.be/3j5tZnBvuBk",
+      "short_url": "https://youtu.be/QwafCbI3z7I",
+      "packet_url": "https://chargedalpha.com/research/mmm-q3-2026",
+      "stock_url": "/shows/mmm"
+    },
+    {
+      "ticker": "VICR",
+      "company": "Vicor Corporation",
+      "period": "Q3 2026",
+      "completed_at": "2026-10-20T15:52:24.102405-05:00",
+      "video_url": "https://youtu.be/1qbCAJlirLQ",
+      "short_url": "https://youtu.be/qAEQnfXfQm0",
+      "packet_url": "https://chargedalpha.com/research/vicr-q3-2026",
+      "stock_url": "/shows/vicr"
+    },
     {
       "ticker": "EFX",
       "company": "Equifax Inc.",
@@ -839,16 +859,6 @@
   ],
   "upcoming": [
     {
-      "ticker": "ISRG",
-      "company": "Intuitive Surgical, Inc.",
-      "report_date": "2026-10-20",
-      "report_time_label": "Time unconfirmed",
-      "planned_date": "2026-10-21",
-      "date_status": "Calendar estimate",
-      "source_url": null,
-      "stock_url": "/shows/isrg"
-    },
-    {
       "ticker": "AMX",
       "company": "América Móvil, S.A.B. de C.V.",
       "report_date": "2026-10-20",
@@ -943,7 +953,7 @@
       "company": "Heartland Express, Inc.",
       "report_date": "2026-10-20",
       "report_time_label": "Time unconfirmed",
-      "planned_date": "",
+      "planned_date": "2026-10-21",
       "date_status": "Calendar estimate",
       "source_url": null,
       "stock_url": null
@@ -967,6 +977,16 @@
       "date_status": "Calendar estimate",
       "source_url": null,
       "stock_url": "/shows/sap"
+    },
+    {
+      "ticker": "TBB",
+      "company": "AT&T Inc. 5.35% GLB NTS 66",
+      "report_date": "2026-10-21",
+      "report_time_label": "Time unconfirmed",
+      "planned_date": "2026-10-22",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": null
     },
     {
       "ticker": "NEE",
@@ -1043,7 +1063,7 @@
       "company": "Lam Research Corporation",
       "report_date": "2026-10-21",
       "report_time_label": "Time unconfirmed",
-      "planned_date": "2026-10-22",
+      "planned_date": "2026-10-23",
       "date_status": "Calendar estimate",
       "source_url": null,
       "stock_url": "/shows/lrcx"
@@ -1053,7 +1073,7 @@
       "company": "Hexcel Corporation",
       "report_date": "2026-10-21",
       "report_time_label": "Time unconfirmed",
-      "planned_date": "2026-10-23",
+      "planned_date": "2026-10-24",
       "date_status": "Calendar estimate",
       "source_url": null,
       "stock_url": "/shows/hxl"
@@ -1553,7 +1573,7 @@
       "company": "Honeywell International Inc.",
       "report_date": "2026-10-22",
       "report_time_label": "Time unconfirmed",
-      "planned_date": "2026-10-25",
+      "planned_date": "2026-10-26",
       "date_status": "Calendar estimate",
       "source_url": null,
       "stock_url": "/shows/hon"
@@ -1593,7 +1613,7 @@
       "company": "DTE Energy Company 5.25 % Debentures 2017-01.12.77 Global",
       "report_date": "2026-10-22",
       "report_time_label": "Time unconfirmed",
-      "planned_date": "2026-10-26",
+      "planned_date": "",
       "date_status": "Calendar estimate",
       "source_url": null,
       "stock_url": null
@@ -1647,16 +1667,6 @@
       "date_status": "Calendar estimate",
       "source_url": null,
       "stock_url": "/shows/phm"
-    },
-    {
-      "ticker": "IMAX",
-      "company": "IMAX Corporation",
-      "report_date": "2026-10-22",
-      "report_time_label": "Time unconfirmed",
-      "planned_date": "",
-      "date_status": "Calendar estimate",
-      "source_url": null,
-      "stock_url": null
     },
     {
       "ticker": "NOK",
@@ -2043,7 +2053,7 @@
       "company": "National Presto Industries, Inc.",
       "report_date": "2026-10-23",
       "report_time_label": "Time unconfirmed",
-      "planned_date": "2026-10-24",
+      "planned_date": "2026-10-25",
       "date_status": "Calendar estimate",
       "source_url": null,
       "stock_url": null
