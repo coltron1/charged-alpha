@@ -19,7 +19,7 @@
       "published_at": "2026-10-20T12:38:12+00:00",
       "status": "youtube_podcast_complete",
       "youtube_url": "https://www.youtube.com/watch?v=cdDPFxJiH6E",
-      "spotify_url": "",
+      "spotify_url": "https://open.spotify.com/episode/3vs6MCsKubfaBfTjQdLMxU",
       "apple_url": "",
       "google_url": "",
       "iheart_url": "",
@@ -37,7 +37,7 @@
       "published_at": "2026-10-20T11:50:54+00:00",
       "status": "youtube_podcast_complete",
       "youtube_url": "https://www.youtube.com/watch?v=jgp3zdLWrBo",
-      "spotify_url": "",
+      "spotify_url": "https://open.spotify.com/episode/0Tw8sOeYDzPs1Hp4dJOhYo",
       "apple_url": "",
       "google_url": "",
       "iheart_url": "",
@@ -35183,6 +35183,21 @@
       "description": "Fast clips that point viewers into full research videos and stock pages.",
       "videos": [
         {
+          "title": "HAL Stock: Halliburton Margins Improve, Cash Lags | Q3 2026 #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/bnZYww35lvw",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-10-20T05:59:35-07:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "HAL"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage.",
+          "earnings_youtube_url": "https://www.youtube.com/watch?v=cdDPFxJiH6E",
+          "earnings_match": "stock_period_date"
+        },
+        {
           "title": "NOC Stock: Northrop Grumman Earnings Beat, Cash Test | Q3 2026 #Shorts",
           "youtube_url": "https://www.youtube.com/shorts/yH30320i8Rw",
           "spotify_url": "",
@@ -47669,7 +47684,7 @@
       ]
     }
   ],
-  "last_synced_at": "2026-10-20T07:54:33-05:00",
+  "last_synced_at": "2026-10-20T08:04:34-05:00",
   "stock_metadata": {
     "A": {
       "company": "Agilent Technologies, Inc.",
