@@ -3366,6 +3366,64 @@
       "tables": 33
     },
     {
+      "key": "PEGA:Q3-2026",
+      "year": 2026,
+      "quarter": 3,
+      "fiscal": false,
+      "slug": "pega-q3-2026",
+      "ticker": "PEGA",
+      "company": "Pegasystems Inc.",
+      "period": "Q3 2026",
+      "canonical_url": "https://chargedalpha.com/research/pega-q3-2026",
+      "title": "PEGA: Cloud Growth Is Not the Same as Owner Cash",
+      "page_title": "PEGA Q3 2026 Research Packet — Charged Alpha",
+      "description": "Cloud ACV rose 20%, but total growth slowed and cash fell. We test the owner economics, buybacks and unresolved Appian risk behind a more cautious valuation.",
+      "sha256": "c5877134b029a9c392c9e61f633c4febdb6853e08d714a563fbaaba0becb05f1",
+      "html_file": "research_packets/pega-q3-2026.html",
+      "source_episode": "PEGA-Q3-2026",
+      "source_staged_at": "2026-10-20T22:48:29Z",
+      "source_sha256": {
+        "READY": "ec44b7eb065be3e2a516b8c68db5b8ebaa2351ea6ae866d61d2b95373f0228db",
+        "handoff.json": "f9286827e9b135c52a41dabe85073100b0df29ecd50c1e1be0c6b92a879e6e15",
+        "packet/pega-q3-2026-research-packet.html": "c5877134b029a9c392c9e61f633c4febdb6853e08d714a563fbaaba0becb05f1",
+        "packet/packet_meta.json": "faa714a80b2773badd80dc34e55b8f4fc026e8f3bb356f0e4cc349542cf59fd4",
+        "packet/packet.json": "74e99facf5a8b1c2ad296c994a9a44a0e1b14758075cbda0d7427dafc7a0a22b"
+      },
+      "primary_youtube_long": "Ubha4lIRku8",
+      "primary_youtube_short": null,
+      "youtube_studio": null,
+      "youtube_studio_short": null,
+      "what_changed": {
+        "summary": "Cloud ACV rose 20%, but total growth slowed and cash fell. We test the owner economics, buybacks and unresolved Appian risk behind a more cautious valuation.",
+        "items": [
+          {
+            "title": "Cloud growth is only part of the contract story.",
+            "detail": "Pega Cloud ACV rose 20%, but maintenance and subscription-license ACV fell. Total reported ACV growth was 6%, down from 17% at December 2025."
+          },
+          {
+            "title": "The cash outlook deserves more weight than the adjusted EPS increase.",
+            "detail": "Nine-month free cash flow fell 14.3% to $289.8M, and management says slower ACV may continue to hurt cash generation this year."
+          },
+          {
+            "title": "Buybacks exceeded internally generated free cash.",
+            "detail": "Cash-flow-statement program repurchases of $432.7 M plus $15.1 M dividends exceeded nine-month FCF by $158.0M. They reduced shares, but also drew on financial resources."
+          },
+          {
+            "title": "The Appian dispute is not a settled liability or a closed issue.",
+            "detail": "The old judgment was reversed. A January 2027 retrial remains pending, and an October 16 ruling permits an additional reasonable-royalty damages theory."
+          },
+          {
+            "title": "Our prior BUY is not the new call.",
+            "detail": "The current cash-based routes support a $28 central value versus a dated $34.83 indicative midpoint. We now rate PEGA SELL at 3/5 conviction, with very high uncertainty."
+          }
+        ]
+      },
+      "source_published": "October 20, 2026",
+      "words": 5452,
+      "figures": 16,
+      "tables": 29
+    },
+    {
       "key": "PEP:Q3-2026",
       "year": 2026,
       "quarter": 3,

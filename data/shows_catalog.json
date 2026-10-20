@@ -35291,6 +35291,21 @@
       "description": "Fast clips that point viewers into full research videos and stock pages.",
       "videos": [
         {
+          "title": "ISRG Stock: Intuitive Surgical Q3 2026 — What Is Priced In? #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/_GD7WO1IYZs",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-10-20T22:46:46+00:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "ISRG"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage.",
+          "earnings_youtube_url": "https://www.youtube.com/watch?v=_UmdKchIIPc",
+          "earnings_match": "stock_period_date"
+        },
+        {
           "title": "MMM Stock: 3M Q3 2026 Earnings — Which Cash Is Yours? #Shorts",
           "youtube_url": "https://www.youtube.com/shorts/QwafCbI3z7I",
           "spotify_url": "",
@@ -47852,7 +47867,7 @@
       ]
     }
   ],
-  "last_synced_at": "2026-10-20T17:35:02-05:00",
+  "last_synced_at": "2026-10-20T17:50:21-05:00",
   "stock_metadata": {
     "A": {
       "company": "Agilent Technologies, Inc.",
