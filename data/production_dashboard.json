@@ -1,11 +1,21 @@
 {
   "schema": "charged-alpha-public-production/1",
-  "updated_at": "2026-10-20T15:56:52.843447-05:00",
+  "updated_at": "2026-10-20T17:51:21.454159-05:00",
   "calendar_updated_at": "2026-10-20T15:41:09.715623-05:00",
   "calendar_status": "fresh",
   "daily_target": 10,
   "active": [],
   "history": [
+    {
+      "ticker": "ISRG",
+      "company": "Intuitive Surgical",
+      "period": "Q3 2026",
+      "completed_at": "2026-10-20T17:49:11.502627-05:00",
+      "video_url": "https://youtu.be/_UmdKchIIPc",
+      "short_url": "https://youtu.be/_GD7WO1IYZs",
+      "packet_url": "https://chargedalpha.com/research/isrg-q3-2026",
+      "stock_url": "/shows/isrg"
+    },
     {
       "ticker": "MMM",
       "company": "3M Company",
