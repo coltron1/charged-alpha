@@ -10,6 +10,24 @@
   },
   "episodes": [
     {
+      "ticker": "MMM",
+      "company": "3M Company",
+      "sector": "Industrials",
+      "quarter": "Q3 2026",
+      "episode_number": "",
+      "title": "MMM Stock: Better Earnings — Which Cash Reaches Shareholders? | Q3 2026",
+      "published_at": "2026-10-20T18:23:02+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=3j5tZnBvuBk",
+      "spotify_url": "https://open.spotify.com/episode/1KIqkHhN4ZXJhan5oiqnGr",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/mmm-stock-better-earnings-%e2%80%94-which-cash-reaches-shareholders-q3-2026/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
       "ticker": "VICR",
       "company": "Vicor Corporation",
       "sector": "Technology",
@@ -19,7 +37,7 @@
       "published_at": "2026-10-20T16:50:37+00:00",
       "status": "youtube_podcast_complete",
       "youtube_url": "https://www.youtube.com/watch?v=1qbCAJlirLQ",
-      "spotify_url": "",
+      "spotify_url": "https://open.spotify.com/episode/0gboYt4c9TvYvZsbTFeIZS",
       "apple_url": "",
       "google_url": "",
       "iheart_url": "",
@@ -47768,7 +47786,7 @@
       ]
     }
   ],
-  "last_synced_at": "2026-10-20T12:03:39-05:00",
+  "last_synced_at": "2026-10-20T13:29:20-05:00",
   "stock_metadata": {
     "A": {
       "company": "Agilent Technologies, Inc.",
