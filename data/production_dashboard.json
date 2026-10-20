@@ -1,20 +1,21 @@
 {
   "schema": "charged-alpha-public-production/1",
-  "updated_at": "2026-10-20T08:07:22.603708-05:00",
-  "calendar_updated_at": "2026-10-20T05:06:22.930159-05:00",
+  "updated_at": "2026-10-20T09:25:08.639303-05:00",
+  "calendar_updated_at": "2026-10-20T09:24:41.455735-05:00",
   "calendar_status": "fresh",
   "daily_target": 10,
-  "active": [
+  "active": [],
+  "history": [
     {
       "ticker": "RTX",
       "company": "RTX Corporation",
       "period": "Q3 2026",
-      "status_label": "Building now",
-      "stage_label": "Production in progress",
+      "completed_at": "2026-10-20T09:23:34.419414-05:00",
+      "video_url": "https://youtu.be/pQLBJFTRupQ",
+      "short_url": "https://youtu.be/j-Jp2NC4MWY",
+      "packet_url": "https://chargedalpha.com/research/rtx-q3-2026",
       "stock_url": "/shows/rtx"
-    }
-  ],
-  "history": [
+    },
     {
       "ticker": "HAL",
       "company": "Halliburton Company",
@@ -888,16 +889,6 @@
       "stock_url": "/shows/mli"
     },
     {
-      "ticker": "OMC",
-      "company": "Omnicom Group Inc.",
-      "report_date": "2026-10-20",
-      "report_time_label": "Time unconfirmed",
-      "planned_date": "2026-10-21",
-      "date_status": "Calendar estimate",
-      "source_url": null,
-      "stock_url": "/shows/omc"
-    },
-    {
       "ticker": "NLY",
       "company": "Annaly Capital Management, Inc.",
       "report_date": "2026-10-20",
@@ -932,7 +923,7 @@
       "company": "Weatherford International plc",
       "report_date": "2026-10-20",
       "report_time_label": "Time unconfirmed",
-      "planned_date": "",
+      "planned_date": "2026-10-21",
       "date_status": "Calendar estimate",
       "source_url": null,
       "stock_url": "/shows/wfrd"
@@ -1646,6 +1637,16 @@
       "date_status": "Calendar estimate",
       "source_url": null,
       "stock_url": "/shows/dow"
+    },
+    {
+      "ticker": "OMC",
+      "company": "Omnicom Group Inc.",
+      "report_date": "2026-10-22",
+      "report_time_label": "Time unconfirmed",
+      "planned_date": "",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": "/shows/omc"
     },
     {
       "ticker": "PHM",
