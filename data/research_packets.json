@@ -3308,6 +3308,64 @@
       "tables": 34
     },
     {
+      "key": "RTX:Q3-2026",
+      "year": 2026,
+      "quarter": 3,
+      "fiscal": false,
+      "slug": "rtx-q3-2026",
+      "ticker": "RTX",
+      "company": "RTX Corporation",
+      "period": "Q3 2026",
+      "canonical_url": "https://chargedalpha.com/research/rtx-q3-2026",
+      "title": "RTX Q3 2026: How Much of the Earnings Surge Repeats?",
+      "page_title": "RTX Q3 2026 Research Packet — Charged Alpha",
+      "description": "RTX raises its outlook, but IEEPA recovery, customer exposure and cash timing complicate the price paid for growth.",
+      "sha256": "1f75ee04f710fa316eb2005a700f145d0321eb60bb40cbf353822f472f531606",
+      "html_file": "research_packets/rtx-q3-2026.html",
+      "source_episode": "RTX-Q3-2026",
+      "source_staged_at": "2026-10-20T14:10:16Z",
+      "source_sha256": {
+        "READY": "006e3be6dbc55ba0aa47a6ad46a1ec9df14ff6f7caf504be1db6bba26c890f14",
+        "handoff.json": "4dcc0a31f1f855796d9cc6783a0406d22b7b4e2fe576e963d2a9a66187001e7d",
+        "packet/rtx-q3-2026-research-packet.html": "1f75ee04f710fa316eb2005a700f145d0321eb60bb40cbf353822f472f531606",
+        "packet/packet_meta.json": "78d45d80b6fd88e5635fa7e3ee9489b19e7bfe90a8f51693134ac0d8d0481f7e",
+        "packet/packet.json": "3f7826254a274ed90e778626daeb846aa6abc18ddaa249fbbf6f5100a502acfa"
+      },
+      "primary_youtube_long": "pQLBJFTRupQ",
+      "primary_youtube_short": null,
+      "youtube_studio": null,
+      "youtube_studio_short": null,
+      "what_changed": {
+        "summary": "RTX raises its outlook, but IEEPA recovery, customer exposure and cash timing complicate the price paid for growth.",
+        "items": [
+          {
+            "title": "Growth extends across the portfolio.",
+            "detail": "Sales reached $24.965B, with higher commercial aftermarket and defense activity. Backlog reached $340B."
+          },
+          {
+            "title": "The earnings surge includes a recovery benefit.",
+            "detail": "Adjusted EPS of $2.26 includes $0.25 from IEEPA recovery. Removing only that benefit leaves $2.01, still above last year’s $1.70."
+          },
+          {
+            "title": "Cash timing cuts both ways.",
+            "detail": "Quarterly FCF declined to $2.119B, while nine-month FCF rose to $6.306B. Contract-liability movements explain a large part of the quarterly reversal."
+          },
+          {
+            "title": "Pratt has both momentum and customer risk.",
+            "detail": "Adjusted operating profit rose to $968M, but GAAP profit fell to $608M after a $363M customer-bankruptcy charge."
+          },
+          {
+            "title": "Valuation remains the constraint.",
+            "detail": "Our three routes support $165 base value and $173.75 probability-weighted value versus $192.11 before the print. A stronger business need not be a cheap stock."
+          }
+        ]
+      },
+      "source_published": "October 20, 2026",
+      "words": 5673,
+      "figures": 17,
+      "tables": 33
+    },
+    {
       "key": "SNX:Q3-FY2026",
       "year": 2026,
       "quarter": 3,

@@ -10,6 +10,24 @@
   },
   "episodes": [
     {
+      "ticker": "RTX",
+      "company": "RTX Corporation",
+      "sector": "Industrials",
+      "quarter": "Q3 2026",
+      "episode_number": "",
+      "title": "RTX Stock: Earnings Surged — How Much Can Repeat? | Q3 2026",
+      "published_at": "2026-10-20T13:34:54+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=pQLBJFTRupQ",
+      "spotify_url": "",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/rtx-stock-earnings-surged-%e2%80%94-how-much-can-repeat-q3-2026/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
       "ticker": "HAL",
       "company": "Halliburton Company",
       "sector": "Energy",
@@ -47684,7 +47702,7 @@
       ]
     }
   ],
-  "last_synced_at": "2026-10-20T08:04:34-05:00",
+  "last_synced_at": "2026-10-20T08:49:59-05:00",
   "stock_metadata": {
     "A": {
       "company": "Agilent Technologies, Inc.",
