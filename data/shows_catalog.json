@@ -10,6 +10,42 @@
   },
   "episodes": [
     {
+      "ticker": "AGNC",
+      "company": "AGNC Investment Corp.",
+      "sector": "Real Estate",
+      "quarter": "Q3 2026",
+      "episode_number": "",
+      "title": "AGNC Stock: The Dividend Held — Why Did Capital Shrink? | Q3 2026",
+      "published_at": "2026-10-20T02:21:39+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=zEmBJMBZX7Y",
+      "spotify_url": "",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/agnc-stock-the-dividend-held-%e2%80%94-why-did-capital-shrink-q3-2026/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "STLD",
+      "company": "Steel Dynamics Inc",
+      "sector": "Basic Materials",
+      "quarter": "Q3 2026",
+      "episode_number": "",
+      "title": "STLD Stock: Earnings Surged — Is the Steel Cycle Already Priced In? | Q3 2026",
+      "published_at": "2026-10-19T19:45:36-07:00",
+      "status": "youtube_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=KZ6flAkcV0c",
+      "spotify_url": "",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
       "ticker": "CLF",
       "company": "Cleveland-Cliffs Inc",
       "sector": "Basic Materials",
@@ -47552,7 +47588,7 @@
       ]
     }
   ],
-  "last_synced_at": "2026-10-19T13:20:36-05:00",
+  "last_synced_at": "2026-10-19T22:03:59-05:00",
   "stock_metadata": {
     "A": {
       "company": "Agilent Technologies, Inc.",

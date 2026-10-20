@@ -2380,6 +2380,64 @@
       }
     },
     {
+      "key": "AGNC:Q3-2026",
+      "year": 2026,
+      "quarter": 3,
+      "fiscal": false,
+      "slug": "agnc-q3-2026",
+      "ticker": "AGNC",
+      "company": "AGNC Investment Corp.",
+      "period": "Q3 2026",
+      "canonical_url": "https://chargedalpha.com/research/agnc-q3-2026",
+      "title": "AGNC: The Dividend Held, but Capital Took the Hit",
+      "page_title": "AGNC Q3 2026 Research Packet — Charged Alpha",
+      "description": "The dividend remained covered by the carry measure, but a sharp tangible-book decline leaves a thin cushion for leveraged mortgage risk.",
+      "sha256": "55c9f50ba730b3690634c3af634749d65f8f467958dbe79db896a083f9cfb72e",
+      "html_file": "research_packets/agnc-q3-2026.html",
+      "source_episode": "AGNC-Q3-2026",
+      "source_staged_at": "2026-10-20T02:45:34Z",
+      "source_sha256": {
+        "READY": "b15d5bec2ea76ad40941250f6c875b31312b086d08db3ae3a94da205d80380bc",
+        "handoff.json": "1cc1a189b245f1e2d4dab37dc3a356d06caa8482dd78a0049312c19c59785f13",
+        "packet/agnc-q3-2026-research-packet.html": "55c9f50ba730b3690634c3af634749d65f8f467958dbe79db896a083f9cfb72e",
+        "packet/packet_meta.json": "b1369b9aebcf03c2ce8d2a026a518af20c3f60f4a2bebeb7c71760df00a43fa5",
+        "packet/packet.json": "52aa5ab9fb8276388f5bca06858462f040b43e687cc81f34b0822e33d7fba528"
+      },
+      "primary_youtube_long": "zEmBJMBZX7Y",
+      "primary_youtube_short": null,
+      "youtube_studio": null,
+      "youtube_studio_short": null,
+      "what_changed": {
+        "summary": "The dividend remained covered by the carry measure, but a sharp tangible-book decline leaves a thin cushion for leveraged mortgage risk.",
+        "items": [
+          {
+            "title": "The dividend did not offset the capital loss.",
+            "detail": "Tangible book fell $1.45 per common share while quarterly dividends were $0.36."
+          },
+          {
+            "title": "Carry coverage is narrow.",
+            "detail": "Non-GAAP spread EPS of $0.37 covers the $0.36 payout, but does not include all capital movements."
+          },
+          {
+            "title": "Financing costs squeezed the spread.",
+            "detail": "Economic funding costs rose faster than asset yields; net spread fell to 1.86%."
+          },
+          {
+            "title": "Issuance helped capital but did not prevent erosion.",
+            "detail": "The ATM raised $992 million at a premium to book, while per-share book still declined."
+          },
+          {
+            "title": "Our valuation requires a cushion.",
+            "detail": "The $7.50 base and $7.40 weighted value sit below the $8.44 reference; Street targets are not yet verified post-print revisions."
+          }
+        ]
+      },
+      "source_published": "October 19, 2026",
+      "words": 5580,
+      "figures": 17,
+      "tables": 29
+    },
+    {
       "key": "ASML:Q3-2026",
       "year": 2026,
       "quarter": 3,
