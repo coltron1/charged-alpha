@@ -2554,6 +2554,64 @@
       "tables": 31
     },
     {
+      "key": "EFX:Q3-2026",
+      "year": 2026,
+      "quarter": 3,
+      "fiscal": false,
+      "slug": "efx-q3-2026",
+      "ticker": "EFX",
+      "company": "Equifax Inc.",
+      "period": "Q3 2026",
+      "canonical_url": "https://chargedalpha.com/research/efx-q3-2026",
+      "title": "EFX: Earnings Accelerated. Cash Has Not Caught Up.",
+      "page_title": "EFX Q3 2026 Research Packet — Charged Alpha",
+      "description": "Equifax raises per-share earnings while mortgage guidance weakens; our cash, share-count and valuation analysis separates operating progress from a smaller denominator.",
+      "sha256": "dd255c616dde3d1f8c5772988e8536336a4e46ea826833ad773d0c13960a3cd9",
+      "html_file": "research_packets/efx-q3-2026.html",
+      "source_episode": "EFX-Q3-2026",
+      "source_staged_at": "2026-10-20T16:42:19Z",
+      "source_sha256": {
+        "READY": "ed6c6d56d3ee48f6c2e1c17e299190f610465e08af831b420443ee4db030cc90",
+        "handoff.json": "f9245e551480571eebd71d5bc6f64a180a7bc1c68fabc3f1fac5ad113e7efba2",
+        "packet/efx-q3-2026-research-packet.html": "dd255c616dde3d1f8c5772988e8536336a4e46ea826833ad773d0c13960a3cd9",
+        "packet/packet_meta.json": "1120c2139878994107a1dfa51329e9d87ea7857d72191fd426857eca78d0adf5",
+        "packet/packet.json": "ce17052b781dba0e679dfafda17212479e9b94026227516d8dbe8f7cb3782fd1"
+      },
+      "primary_youtube_long": "L63zMY4zw40",
+      "primary_youtube_short": null,
+      "youtube_studio": null,
+      "youtube_studio_short": null,
+      "what_changed": {
+        "summary": "Equifax raises per-share earnings while mortgage guidance weakens; our cash, share-count and valuation analysis separates operating progress from a smaller denominator.",
+        "items": [
+          {
+            "title": "Operating demand remains broad.",
+            "detail": "Diversified Markets grew 8% reported; all three reporting segments grew revenue despite mortgage weakness."
+          },
+          {
+            "title": "The headline EPS growth needs a bridge.",
+            "detail": "GAAP EPS rose 38.8%; adjusted net income rose 5.7%, with a 4.8% smaller diluted share count supporting per-share growth."
+          },
+          {
+            "title": "The outlook softened.",
+            "detail": "Full-year revenue midpoint fell $84M to $6.661B; adjusted EPS midpoint fell only four cents to $8.50 as management targets cost offsets."
+          },
+          {
+            "title": "Cash distributions exceed year-to-date free cash flow.",
+            "detail": "Repurchases and dividends totaled $851.4M versus $763.2M of OCF less gross cash capital expenditures."
+          },
+          {
+            "title": "Our model leaves little immediate cushion.",
+            "detail": "The $175 base value is close to the $175.17 intraday quote; the $130–230 scenario band reflects mortgage, cash conversion and valuation risk."
+          }
+        ]
+      },
+      "source_published": "October 20, 2026",
+      "words": 5721,
+      "figures": 18,
+      "tables": 31
+    },
+    {
       "key": "ERIC:Q3-2026",
       "year": 2026,
       "quarter": 3,
