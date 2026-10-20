@@ -1,11 +1,21 @@
 {
   "schema": "charged-alpha-public-production/1",
-  "updated_at": "2026-10-19T22:14:25.841638-05:00",
+  "updated_at": "2026-10-19T22:55:52.468193-05:00",
   "calendar_updated_at": "2026-10-19T22:14:19.163943-05:00",
   "calendar_status": "fresh",
   "daily_target": 10,
   "active": [],
   "history": [
+    {
+      "ticker": "STLD",
+      "company": "Steel Dynamics Inc",
+      "period": "Q3 2026",
+      "completed_at": "2026-10-19T22:53:06.367877-05:00",
+      "video_url": "https://youtu.be/KZ6flAkcV0c",
+      "short_url": "https://youtu.be/k3vPvrlSDz0",
+      "packet_url": "https://chargedalpha.com/research/stld-q3-2026",
+      "stock_url": "/shows/stld"
+    },
     {
       "ticker": "AGNC",
       "company": "AGNC Investment Corp.",

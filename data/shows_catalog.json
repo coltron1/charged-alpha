@@ -19,7 +19,7 @@
       "published_at": "2026-10-20T02:21:39+00:00",
       "status": "youtube_podcast_complete",
       "youtube_url": "https://www.youtube.com/watch?v=zEmBJMBZX7Y",
-      "spotify_url": "",
+      "spotify_url": "https://open.spotify.com/episode/4LaPOmRzRoJS22acK2kbY9",
       "apple_url": "",
       "google_url": "",
       "iheart_url": "",
@@ -37,7 +37,7 @@
       "published_at": "2026-10-19T19:45:36-07:00",
       "status": "youtube_complete",
       "youtube_url": "https://www.youtube.com/watch?v=KZ6flAkcV0c",
-      "spotify_url": "",
+      "spotify_url": "https://open.spotify.com/episode/0tjF4PyJANpMREueeRXrG3",
       "apple_url": "",
       "google_url": "",
       "iheart_url": "",
@@ -35147,6 +35147,21 @@
       "description": "Fast clips that point viewers into full research videos and stock pages.",
       "videos": [
         {
+          "title": "STLD Stock: Steel Dynamics Q3 2026 — Strong Earnings, Demanding Price #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/k3vPvrlSDz0",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-10-19T20:43:39-07:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "STLD"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage.",
+          "earnings_youtube_url": "https://www.youtube.com/watch?v=KZ6flAkcV0c",
+          "earnings_match": "stock_period_date"
+        },
+        {
           "title": "AGNC Stock: AGNC Investment Corp. Q3 2026 — Dividend vs. Capital #Shorts",
           "youtube_url": "https://www.youtube.com/shorts/JFehm_7bGFg",
           "spotify_url": "",
@@ -47603,7 +47618,7 @@
       ]
     }
   ],
-  "last_synced_at": "2026-10-19T22:12:34-05:00",
+  "last_synced_at": "2026-10-19T22:54:17-05:00",
   "stock_metadata": {
     "A": {
       "company": "Agilent Technologies, Inc.",
