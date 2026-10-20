@@ -10,6 +10,24 @@
   },
   "episodes": [
     {
+      "ticker": "EFX",
+      "company": "Equifax Inc.",
+      "sector": "Industrials",
+      "quarter": "Q3 2026",
+      "episode_number": "",
+      "title": "EFX Stock: Earnings Jumped, But Cash Fell — Q3 2026",
+      "published_at": "2026-10-20T15:49:08+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=L63zMY4zw40",
+      "spotify_url": "",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/efx-stock-earnings-jumped-but-cash-fell-%e2%80%94-q3-2026/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
       "ticker": "RTX",
       "company": "RTX Corporation",
       "sector": "Industrials",
@@ -47717,7 +47735,7 @@
       ]
     }
   ],
-  "last_synced_at": "2026-10-20T09:22:21-05:00",
+  "last_synced_at": "2026-10-20T11:02:08-05:00",
   "stock_metadata": {
     "A": {
       "company": "Agilent Technologies, Inc.",
