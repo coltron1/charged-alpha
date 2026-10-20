@@ -41,7 +41,7 @@
       "apple_url": "",
       "google_url": "",
       "iheart_url": "",
-      "podbean_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/stld-stock-earnings-surged-%e2%80%94-is-the-steel-cycle-already-priced-in-q3-2026/",
       "has_episode": true,
       "amazon_url": ""
     },
@@ -35147,6 +35147,21 @@
       "description": "Fast clips that point viewers into full research videos and stock pages.",
       "videos": [
         {
+          "title": "AGNC Stock: AGNC Investment Corp. Q3 2026 — Dividend vs. Capital #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/JFehm_7bGFg",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-10-19T20:10:41-07:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "AGNC"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage.",
+          "earnings_youtube_url": "https://www.youtube.com/watch?v=zEmBJMBZX7Y",
+          "earnings_match": "stock_period_date"
+        },
+        {
           "title": "CLF Stock: Cleveland-Cliffs Q3 2026 Earnings — Profit vs. Cash #Shorts",
           "youtube_url": "https://www.youtube.com/shorts/fdTCJHvqZYg",
           "spotify_url": "",
@@ -47588,7 +47603,7 @@
       ]
     }
   ],
-  "last_synced_at": "2026-10-19T22:03:59-05:00",
+  "last_synced_at": "2026-10-19T22:12:34-05:00",
   "stock_metadata": {
     "A": {
       "company": "Agilent Technologies, Inc.",

@@ -1,11 +1,21 @@
 {
   "schema": "charged-alpha-public-production/1",
-  "updated_at": "2026-10-19T21:52:45.541136-05:00",
-  "calendar_updated_at": "2026-10-19T19:27:31.744492-05:00",
+  "updated_at": "2026-10-19T22:14:25.841638-05:00",
+  "calendar_updated_at": "2026-10-19T22:14:19.163943-05:00",
   "calendar_status": "fresh",
   "daily_target": 10,
   "active": [],
   "history": [
+    {
+      "ticker": "AGNC",
+      "company": "AGNC Investment Corp.",
+      "period": "Q3 2026",
+      "completed_at": "2026-10-19T22:13:29.484975-05:00",
+      "video_url": "https://youtu.be/zEmBJMBZX7Y",
+      "short_url": "https://youtu.be/JFehm_7bGFg",
+      "packet_url": "https://chargedalpha.com/research/agnc-q3-2026",
+      "stock_url": "/shows/agnc"
+    },
     {
       "ticker": "CLF",
       "company": "Cleveland-Cliffs Inc",

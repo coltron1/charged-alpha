@@ -3250,6 +3250,64 @@
       "tables": 36
     },
     {
+      "key": "STLD:Q3-2026",
+      "year": 2026,
+      "quarter": 3,
+      "fiscal": false,
+      "slug": "stld-q3-2026",
+      "ticker": "STLD",
+      "company": "Steel Dynamics, Inc.",
+      "period": "Q3 2026",
+      "canonical_url": "https://chargedalpha.com/research/stld-q3-2026",
+      "title": "STLD: Stronger Earnings, a Demanding Price",
+      "page_title": "STLD Q3 2026 Research Packet — Charged Alpha",
+      "description": "Steel margins and cash flow improved, but the current share price requires stronger durable earnings than our normalized case.",
+      "sha256": "7e8b8a27778e2da1a693a2f246131d9cf777d25ded26462c9c23fb515761f5b9",
+      "html_file": "research_packets/stld-q3-2026.html",
+      "source_episode": "STLD-Q3-2026",
+      "source_staged_at": "2026-10-20T03:11:30Z",
+      "source_sha256": {
+        "READY": "ee20bfd1076c2d1907788d6cf2d4b25e84799549800087e6c77199fba6649caa",
+        "handoff.json": "ad9360fbbdd97c58b8e3a19bcc5af12f494789213c835f7e9385cedf84d1af02",
+        "packet/stld-q3-2026-research-packet.html": "7e8b8a27778e2da1a693a2f246131d9cf777d25ded26462c9c23fb515761f5b9",
+        "packet/packet_meta.json": "c9ebbace49bf175790aae8f4a5aa81f5c2f25e0b3fce080d33a06a8df974e312",
+        "packet/packet.json": "b4a6c63719e3aa57d172fd98ccb4b857326bd51a8f8e3ad7db2078c705c7b2a0"
+      },
+      "primary_youtube_long": "KZ6flAkcV0c",
+      "primary_youtube_short": null,
+      "youtube_studio": null,
+      "youtube_studio_short": null,
+      "what_changed": {
+        "summary": "Steel margins and cash flow improved, but the current share price requires stronger durable earnings than our normalized case.",
+        "items": [
+          {
+            "title": "The quarter improved.",
+            "detail": "Steel margins drove earnings and strong cash conversion."
+          },
+          {
+            "title": "Guidance still matters.",
+            "detail": "EPS was below the latest company range despite strong year-over-year growth."
+          },
+          {
+            "title": "Aluminum remains a test.",
+            "detail": "EBITDA breakeven is progress; operating profitability is not yet established."
+          },
+          {
+            "title": "The quote precedes the release.",
+            "detail": "The actual post-print reaction and the October20 call are pending."
+          },
+          {
+            "title": "Price is the problem.",
+            "detail": "Our $190 base and $187.50 weighted value require a cushion for a cyclical business."
+          }
+        ]
+      },
+      "source_published": "October 19, 2026",
+      "words": 5651,
+      "figures": 18,
+      "tables": 31
+    },
+    {
       "key": "TMQ:Q3-FY2026",
       "year": 2026,
       "quarter": 3,
