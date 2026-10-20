@@ -10,6 +10,24 @@
   },
   "episodes": [
     {
+      "ticker": "HAL",
+      "company": "Halliburton Company",
+      "sector": "Energy",
+      "quarter": "Q3 2026",
+      "episode_number": "",
+      "title": "HAL Stock: Better Margins, But Where Is the Cash? | Q3 2026",
+      "published_at": "2026-10-20T12:38:12+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=cdDPFxJiH6E",
+      "spotify_url": "",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/hal-stock-better-margins-but-where-is-the-cash-q3-2026/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
       "ticker": "NOC",
       "company": "Northrop Grumman Corporation",
       "sector": "Industrials",
@@ -47651,7 +47669,7 @@
       ]
     }
   ],
-  "last_synced_at": "2026-10-20T07:09:22-05:00",
+  "last_synced_at": "2026-10-20T07:54:33-05:00",
   "stock_metadata": {
     "A": {
       "company": "Agilent Technologies, Inc.",

@@ -2728,6 +2728,64 @@
       "tables": 30
     },
     {
+      "key": "HAL:Q3-2026",
+      "year": 2026,
+      "quarter": 3,
+      "fiscal": false,
+      "slug": "hal-q3-2026",
+      "ticker": "HAL",
+      "company": "Halliburton Company",
+      "period": "Q3 2026",
+      "canonical_url": "https://chargedalpha.com/research/hal-q3-2026",
+      "title": "HAL: Better Adjusted Margins, A Tougher Cash Test",
+      "page_title": "HAL Q3 2026 Research Packet — Charged Alpha",
+      "description": "Halliburton’s adjusted profit improved sequentially, but cash conversion and the price paid for recovery determine our HOLD call.",
+      "sha256": "f5677934af7f7e3d125bc6e51b4aa3bea20ab5a618aa9e75685fe3b22e234c58",
+      "html_file": "research_packets/hal-q3-2026.html",
+      "source_episode": "HAL-Q3-2026",
+      "source_staged_at": "2026-10-20T12:50:08Z",
+      "source_sha256": {
+        "READY": "e5812819d7135396356196baf333b5e48ae7ceae061fb8178748dff5988c0ea2",
+        "handoff.json": "3a476e917500cc68f5165989b5b72f474f96e0e479002d522cd9176b90614d16",
+        "packet/hal-q3-2026-research-packet.html": "f5677934af7f7e3d125bc6e51b4aa3bea20ab5a618aa9e75685fe3b22e234c58",
+        "packet/packet_meta.json": "1b5b7573b7ecedc374ab16f60522eefd241f4c205110e1f5e21d237694ca5985",
+        "packet/packet.json": "8af59797e1338923ef4d34492954e04642bafd54f76bb6ed86aaf48c608867ae"
+      },
+      "primary_youtube_long": "cdDPFxJiH6E",
+      "primary_youtube_short": null,
+      "youtube_studio": null,
+      "youtube_studio_short": null,
+      "what_changed": {
+        "summary": "Halliburton’s adjusted profit improved sequentially, but cash conversion and the price paid for recovery determine our HOLD call.",
+        "items": [
+          {
+            "title": "Two profit stories:",
+            "detail": "adjusted operating income rose 7.0% sequentially to $731M; GAAP operating income fell to $624M."
+          },
+          {
+            "title": "International carries the mix:",
+            "detail": "$3.543B international revenue offsets a $2.160B North American business that declined sequentially."
+          },
+          {
+            "title": "Cash requires a second definition:",
+            "detail": "$368M operating cash less $266M capex is $102M; PP&E proceeds lift company free cash flow to $156M."
+          },
+          {
+            "title": "Recovery remains an outlook:",
+            "detail": "management’s early 2027 view is mid-single-digit growth and about 15% operating margins, assuming flat North America."
+          },
+          {
+            "title": "Price disciplines the call:",
+            "detail": "$34 base value versus the $32.98 pre-release close leaves little cushion; $27.20 would provide a 20% margin of safety only if the thesis holds."
+          }
+        ]
+      },
+      "source_published": "October 20, 2026",
+      "words": 5349,
+      "figures": 19,
+      "tables": 31
+    },
+    {
       "key": "HITI:Q3-FY2026",
       "year": 2026,
       "quarter": 3,
