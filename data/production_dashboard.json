@@ -1,19 +1,10 @@
 {
   "schema": "charged-alpha-public-production/1",
-  "updated_at": "2026-10-20T12:45:39.714650-05:00",
+  "updated_at": "2026-10-20T14:00:43.516750-05:00",
   "calendar_updated_at": "2026-10-20T09:24:41.455735-05:00",
-  "calendar_status": "fresh",
+  "calendar_status": "stale",
   "daily_target": 10,
-  "active": [
-    {
-      "ticker": "MMM",
-      "company": "3M Company",
-      "period": "Q3 2026",
-      "status_label": "Building now",
-      "stage_label": "Production in progress",
-      "stock_url": "/shows/mmm"
-    }
-  ],
+  "active": [],
   "history": [
     {
       "ticker": "EFX",
