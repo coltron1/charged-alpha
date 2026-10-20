@@ -10,6 +10,24 @@
   },
   "episodes": [
     {
+      "ticker": "NOC",
+      "company": "Northrop Grumman Corporation",
+      "sector": "Industrials",
+      "quarter": "Q3 2026",
+      "episode_number": "",
+      "title": "NOC Stock: Earnings Beat, But Is the Cash Repeatable? | Q3 2026",
+      "published_at": "2026-10-20T11:50:54+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=jgp3zdLWrBo",
+      "spotify_url": "",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/noc-stock-earnings-beat-but-is-the-cash-repeatable-q3-2026/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
       "ticker": "AGNC",
       "company": "AGNC Investment Corp.",
       "sector": "Real Estate",
@@ -47618,7 +47636,7 @@
       ]
     }
   ],
-  "last_synced_at": "2026-10-19T22:54:17-05:00",
+  "last_synced_at": "2026-10-20T06:57:45-05:00",
   "stock_metadata": {
     "A": {
       "company": "Agilent Technologies, Inc.",

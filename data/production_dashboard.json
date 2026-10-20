@@ -1,10 +1,19 @@
 {
   "schema": "charged-alpha-public-production/1",
-  "updated_at": "2026-10-20T03:08:22.854973-05:00",
-  "calendar_updated_at": "2026-10-20T01:07:19.291695-05:00",
+  "updated_at": "2026-10-20T06:36:42.609122-05:00",
+  "calendar_updated_at": "2026-10-20T05:06:22.930159-05:00",
   "calendar_status": "fresh",
   "daily_target": 10,
-  "active": [],
+  "active": [
+    {
+      "ticker": "NOC",
+      "company": "Northrop Grumman Corporation",
+      "period": "Q3 2026",
+      "status_label": "Building now",
+      "stage_label": "Production in progress",
+      "stock_url": "/shows/noc"
+    }
+  ],
   "history": [
     {
       "ticker": "STLD",
@@ -798,66 +807,6 @@
     }
   ],
   "upcoming": [
-    {
-      "ticker": "NOC",
-      "company": "Northrop Grumman Corporation",
-      "report_date": "2026-10-20",
-      "report_time_label": "Before U.S. market open",
-      "planned_date": "2026-10-20",
-      "date_status": "Issuer-announced",
-      "source_url": "https://investor.northropgrumman.com/news-releases/news-release-details/northrop-grumman-announces-date-third-quarter-2026-financial",
-      "stock_url": "/shows/noc"
-    },
-    {
-      "ticker": "VICR",
-      "company": "Vicor Corporation",
-      "report_date": "2026-10-20",
-      "report_time_label": "6:00 AM CDT",
-      "planned_date": "2026-10-20",
-      "date_status": "Issuer-announced",
-      "source_url": "https://vicorcorporation.gcs-web.com/news-releases/news-release-details/vicor-corporation-hold-third-quarter-earnings-conference-call-5",
-      "stock_url": "/shows/vicr"
-    },
-    {
-      "ticker": "RTX",
-      "company": "RTX Corporation",
-      "report_date": "2026-10-20",
-      "report_time_label": "Before U.S. market open",
-      "planned_date": "2026-10-20",
-      "date_status": "Issuer-announced",
-      "source_url": "https://raytheon.mediaroom.com/2026-09-29-RTX-to-release-third-quarter-earnings-results-on-October-20%2C-2026",
-      "stock_url": "/shows/rtx"
-    },
-    {
-      "ticker": "HAL",
-      "company": "Halliburton Company",
-      "report_date": "2026-10-20",
-      "report_time_label": "Before U.S. market open",
-      "planned_date": "2026-10-20",
-      "date_status": "Issuer-announced",
-      "source_url": "https://ir.halliburton.com/news-releases/news-release-details/halliburton-third-quarter-2026-earnings-conference-call",
-      "stock_url": "/shows/hal"
-    },
-    {
-      "ticker": "EFX",
-      "company": "Equifax Inc.",
-      "report_date": "2026-10-20",
-      "report_time_label": "5:30 AM CDT",
-      "planned_date": "2026-10-20",
-      "date_status": "Issuer-announced",
-      "source_url": "https://investor.equifax.com/news-events/press-releases/detail/1422/equifax-announces-earnings-release-date-and-conference-call",
-      "stock_url": "/shows/efx"
-    },
-    {
-      "ticker": "VMI",
-      "company": "Valmont Industries, Inc.",
-      "report_date": "2026-10-20",
-      "report_time_label": "Before U.S. market open",
-      "planned_date": "2026-10-20",
-      "date_status": "Issuer-announced",
-      "source_url": "https://investors.valmont.com/news-releases/news-release-details/valmont-announces-timing-third-quarter-2026-earnings-release-and",
-      "stock_url": "/shows/vmi"
-    },
     {
       "ticker": "ISRG",
       "company": "Intuitive Surgical, Inc.",

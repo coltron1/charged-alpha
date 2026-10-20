@@ -3076,6 +3076,64 @@
       "tables": 33
     },
     {
+      "key": "NOC:Q3-2026",
+      "year": 2026,
+      "quarter": 3,
+      "fiscal": false,
+      "slug": "noc-q3-2026",
+      "ticker": "NOC",
+      "company": "Northrop Grumman Corporation",
+      "period": "Q3 2026",
+      "canonical_url": "https://chargedalpha.com/research/noc-q3-2026",
+      "title": "NOC Q3 2026: Record Backlog, Uneven Cash",
+      "page_title": "NOC Q3 2026 Research Packet — Charged Alpha",
+      "description": "Record orders and a higher EPS outlook meet a harder cash-flow valuation test.",
+      "sha256": "d020802b98551d475c0eea935b7596c6b4e2d9aadf2716d32e08b8a7b7bc363b",
+      "html_file": "research_packets/noc-q3-2026.html",
+      "source_episode": "NOC-Q3-2026",
+      "source_staged_at": "2026-10-20T11:57:42Z",
+      "source_sha256": {
+        "READY": "f4d019ca012f9918945f20e520251e1b881257ecf2f5f1010198b9e86c2e02b8",
+        "handoff.json": "2caeeb20843b064549bbc92f91a723ecb383985eed0dbc38bb25723089508f56",
+        "packet/noc-q3-2026-research-packet.html": "d020802b98551d475c0eea935b7596c6b4e2d9aadf2716d32e08b8a7b7bc363b",
+        "packet/packet_meta.json": "13ae0b74314ec6958186227a287f83c312ff85307c13153ee1ee3366157daa98",
+        "packet/packet.json": "92b186df14ddd99b6fbfa1672a81bf9d3e144741c5b665170109423032bbe5d2"
+      },
+      "primary_youtube_long": "jgp3zdLWrBo",
+      "primary_youtube_short": null,
+      "youtube_studio": null,
+      "youtube_studio_short": null,
+      "what_changed": {
+        "summary": "Record orders and a higher EPS outlook meet a harder cash-flow valuation test.",
+        "items": [
+          {
+            "title": "Backlog hit a record.",
+            "detail": "Net awards of $16.4 B exceeded quarterly sales; total backlog reached $109.597 B, with $59.502 B still unfunded."
+          },
+          {
+            "title": "EPS rose while pretax profit fell.",
+            "detail": "EPS increased to $7.89, but pretax income declined $25 M. A $49 M lower tax expense did more than offset that decline."
+          },
+          {
+            "title": "Cash needs a definition check.",
+            "detail": "Adjusted free cash flow of $1.810 B includes $371 M from equipment sold to a customer. Operating cash flow less capital expenditure was $1.439 B."
+          },
+          {
+            "title": "The earnings outlook improved.",
+            "detail": "The MTM-adjusted EPS midpoint rose $0.70 to $29.55; segment operating-income midpoint rose $65 M to $4.990 B."
+          },
+          {
+            "title": "Our valuation remains below the tape.",
+            "detail": "Three explicit routes support $455 base value and $465 probability-weighted value versus the prior close of $510.65. The scheduled 08:30 CDT call is pending."
+          }
+        ]
+      },
+      "source_published": "October 20, 2026",
+      "words": 5528,
+      "figures": 19,
+      "tables": 33
+    },
+    {
       "key": "PEP:Q3-2026",
       "year": 2026,
       "quarter": 3,
