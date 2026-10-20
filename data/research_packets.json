@@ -3192,6 +3192,64 @@
       "tables": 33
     },
     {
+      "key": "MMM:Q3-2026",
+      "year": 2026,
+      "quarter": 3,
+      "fiscal": false,
+      "slug": "mmm-q3-2026",
+      "ticker": "MMM",
+      "company": "3M Company",
+      "period": "Q3 2026",
+      "canonical_url": "https://chargedalpha.com/research/mmm-q3-2026",
+      "title": "MMM Q3 2026: Better Earnings. Which Cash Reaches Shareholders?",
+      "page_title": "MMM Q3 2026 Research Packet — Charged Alpha",
+      "description": "Operating gains, cash adjustments and legacy claims define the value of 3M’s recovery.",
+      "sha256": "5f336a5a9d22bdc6cd6bce1c5eb723a4cfea33cf78a8be61dab3f59ff04afa72",
+      "html_file": "research_packets/mmm-q3-2026.html",
+      "source_episode": "MMM-Q3-2026",
+      "source_staged_at": "2026-10-20T18:58:16Z",
+      "source_sha256": {
+        "READY": "2d231d2ecaefd756184ad2b6f55626044fa4578b509267710b400cc0fd852176",
+        "handoff.json": "b379f5cce079f14d12c40fa7e4ab3f03697ac2dd5d99d900cd77488e061efd97",
+        "packet/mmm-q3-2026-research-packet.html": "5f336a5a9d22bdc6cd6bce1c5eb723a4cfea33cf78a8be61dab3f59ff04afa72",
+        "packet/packet_meta.json": "2264c7dca02d6bd330474c4088c097eb958049398ec18e38761c8ef2db7c4cae",
+        "packet/packet.json": "ec8080baf2f2a9bca4e323f1b7b429ebd39f4c63f739c2947b410db54363636d"
+      },
+      "primary_youtube_long": "3j5tZnBvuBk",
+      "primary_youtube_short": null,
+      "youtube_studio": null,
+      "youtube_studio_short": null,
+      "what_changed": {
+        "summary": "Operating gains, cash adjustments and legacy claims define the value of 3M’s recovery.",
+        "items": [
+          {
+            "title": "Underlying performance improved.",
+            "detail": "Adjusted organic growth was 3.3%; Safety and Industrial led with 7.0%. Transportation and Consumer were less strong."
+          },
+          {
+            "title": "Definitions changed.",
+            "detail": "Adjusted results now exclude acquired-intangible amortization, with prior periods recast. Compare the new $2.50 with the recast $2.23."
+          },
+          {
+            "title": "The cash bridge matters.",
+            "detail": "Quarterly cash adjustments total $967M, mainly after-tax litigation and PFAS payments. Those dollars did leave the company."
+          },
+          {
+            "title": "The balance sheet has more claimants.",
+            "detail": "The new Madison venture brings redeemable minority interests and a put derivative alongside ordinary borrowing debt."
+          },
+          {
+            "title": "AI opportunity is conditional.",
+            "detail": "Amazon warrant milestones are not booked revenue or guaranteed orders. New operating evidence must earn any higher valuation."
+          }
+        ]
+      },
+      "source_published": "October 20, 2026",
+      "words": 5865,
+      "figures": 18,
+      "tables": 32
+    },
+    {
       "key": "NOC:Q3-2026",
       "year": 2026,
       "quarter": 3,
