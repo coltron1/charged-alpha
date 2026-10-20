@@ -10,6 +10,42 @@
   },
   "episodes": [
     {
+      "ticker": "PEGA",
+      "company": "Pegasystems",
+      "sector": "Technology",
+      "quarter": "Q3 2026",
+      "episode_number": "",
+      "title": "PEGA Stock: Cloud Growth Is Real — Where Is the Owner Cash? | Q3 2026",
+      "published_at": "2026-10-20T22:29:34+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=Ubha4lIRku8",
+      "spotify_url": "",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/pega-stock-cloud-growth-is-real-%e2%80%94-where-is-the-owner-cash-q3-2026/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "ISRG",
+      "company": "Intuitive Surgical",
+      "sector": "Healthcare",
+      "quarter": "Q3 2026",
+      "episode_number": "",
+      "title": "ISRG Stock: Strong Procedures, a $450M Charge — What Does the Price Assume? Q3 2026",
+      "published_at": "2026-10-20T22:05:45+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=_UmdKchIIPc",
+      "spotify_url": "https://open.spotify.com/episode/7jerMjYtW3KW12CoyMkDAR",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/isrg-stock-strong-procedures-a-450m-charge-%e2%80%94-what-does-the-price-assume-q3-2026/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
       "ticker": "MMM",
       "company": "3M Company",
       "sector": "Industrials",
@@ -47816,7 +47852,7 @@
       ]
     }
   ],
-  "last_synced_at": "2026-10-20T15:51:53-05:00",
+  "last_synced_at": "2026-10-20T17:35:02-05:00",
   "stock_metadata": {
     "A": {
       "company": "Agilent Technologies, Inc.",

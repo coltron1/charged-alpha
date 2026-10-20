@@ -2902,6 +2902,64 @@
       "tables": 34
     },
     {
+      "key": "ISRG:Q3-2026",
+      "year": 2026,
+      "quarter": 3,
+      "fiscal": false,
+      "slug": "isrg-q3-2026",
+      "ticker": "ISRG",
+      "company": "Intuitive Surgical, Inc.",
+      "period": "Q3 2026",
+      "canonical_url": "https://chargedalpha.com/research/isrg-q3-2026",
+      "title": "ISRG: Strong Procedures, a $450M Charge, and the Price of Growth",
+      "page_title": "ISRG Q3 2026 Research Packet — Charged Alpha",
+      "description": "Intuitive Surgical grows revenue and raises its margin outlook, but settlement uncertainty, tariff refunds and owner cash economics keep our call at HOLD.",
+      "sha256": "944b34ec3dbbe3f00f93f4ce814b6f45ca5a5e8e98e9563de8167b0c05afd233",
+      "html_file": "research_packets/isrg-q3-2026.html",
+      "source_episode": "ISRG-Q3-2026",
+      "source_staged_at": "2026-10-20T22:31:40Z",
+      "source_sha256": {
+        "READY": "dd056951a6ec24f7195ef1d289c6ca23a15c59214d228d5dcbbe23cea23f9a4d",
+        "handoff.json": "9a34acf21ebdc8d67eb611b43a380367862a4e1e88bb5bdefa44f17722bd8297",
+        "packet/isrg-q3-2026-research-packet.html": "944b34ec3dbbe3f00f93f4ce814b6f45ca5a5e8e98e9563de8167b0c05afd233",
+        "packet/packet_meta.json": "ba99f08e45142915f7ab506b0ce1681295370ad13c879dac138239cbb1891b28",
+        "packet/packet.json": "e804283ddf1c9684618ac49d0b535489bbba2119aa9a61b86b5abb7321fc0cab"
+      },
+      "primary_youtube_long": "_UmdKchIIPc",
+      "primary_youtube_short": null,
+      "youtube_studio": null,
+      "youtube_studio_short": null,
+      "what_changed": {
+        "summary": "Intuitive Surgical grows revenue and raises its margin outlook, but settlement uncertainty, tariff refunds and owner cash economics keep our call at HOLD.",
+        "items": [
+          {
+            "title": "Demand remains strong.",
+            "detail": "Revenue rises 21.70% and da Vinci procedures grow approximately 14%; combined instruments and service contribute 74.77% of revenue."
+          },
+          {
+            "title": "The charge is real and conditional.",
+            "detail": "The $450M antitrust settlement still needs preliminary and final court approval; the packet reserves the gross cash payment."
+          },
+          {
+            "title": "Refunds lift both earnings measures.",
+            "detail": "Adjusted EPS of $3.00 includes $0.06 from earlier tariffs; our analytical ex-refund EPS is $2.94."
+          },
+          {
+            "title": "Guidance improves unevenly.",
+            "detail": "Gross-margin midpoint rises 0.5 percentage point, while the procedure-growth midpoint remains 14.5% and opex growth stays 11%–13%."
+          },
+          {
+            "title": "Valuation keeps the call at HOLD.",
+            "detail": "Three routes cluster near $390 versus a dated $407.90 trade; $300/$390/$500 scenarios produce $395 weighted value."
+          }
+        ]
+      },
+      "source_published": "October 20, 2026",
+      "words": 5913,
+      "figures": 18,
+      "tables": 33
+    },
+    {
       "key": "JNJ:Q3-2026",
       "year": 2026,
       "quarter": 3,

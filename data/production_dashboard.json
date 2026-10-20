@@ -1,6 +1,6 @@
 {
   "schema": "charged-alpha-public-production/1",
-  "updated_at": "2026-10-20T15:55:23.889596-05:00",
+  "updated_at": "2026-10-20T15:56:52.843447-05:00",
   "calendar_updated_at": "2026-10-20T15:41:09.715623-05:00",
   "calendar_status": "fresh",
   "daily_target": 10,
@@ -867,16 +867,6 @@
       "date_status": "Calendar estimate",
       "source_url": null,
       "stock_url": null
-    },
-    {
-      "ticker": "PEGA",
-      "company": "Pegasystems Inc.",
-      "report_date": "2026-10-20",
-      "report_time_label": "After U.S. market close",
-      "planned_date": "2026-10-21",
-      "date_status": "Issuer-announced",
-      "source_url": "https://www.pega.com/it/about/news/press-releases/pega-announce-financial-results-third-quarter-2026-and-host-conference",
-      "stock_url": "/shows/pega"
     },
     {
       "ticker": "SPCX",
