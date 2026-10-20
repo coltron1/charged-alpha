@@ -3714,6 +3714,64 @@
       "tables": 34
     },
     {
+      "key": "VICR:Q3-2026",
+      "year": 2026,
+      "quarter": 3,
+      "fiscal": false,
+      "slug": "vicr-q3-2026",
+      "ticker": "VICR",
+      "company": "Vicor Corporation",
+      "period": "Q3 2026",
+      "canonical_url": "https://chargedalpha.com/research/vicr-q3-2026",
+      "title": "VICR Q3 2026: Royalties Surge. Can the Cash Justify the Price?",
+      "page_title": "VICR Q3 2026 Research Packet — Charged Alpha",
+      "description": "Product growth, royalty recurrence and capacity investment explain why Vicor’s record quarter still demands valuation discipline.",
+      "sha256": "67a00890938adad0f337a7c167b3a44844896efd1a040ea0234a3fcec7b3ef43",
+      "html_file": "research_packets/vicr-q3-2026.html",
+      "source_episode": "VICR-Q3-2026",
+      "source_staged_at": "2026-10-20T17:22:04Z",
+      "source_sha256": {
+        "READY": "f31b37592011bf7108ae59f27940c3e5b81a36c13ce5e1619dbb83fce9aa93f0",
+        "handoff.json": "7b50cd01138bf9d7fbf0858bdf0b732818b9e750dc9bbef10ba825955aa3e66b",
+        "packet/vicr-q3-2026-research-packet.html": "67a00890938adad0f337a7c167b3a44844896efd1a040ea0234a3fcec7b3ef43",
+        "packet/packet_meta.json": "aa4c1b6df0cc36e6ff2580dfcbafb0c286973f70c9bb5b1ac77f9bf72a7cd99d",
+        "packet/packet.json": "453ea1f02e9a6b44ea85667430435bf57f78f0d8f7fc8bb04fc40e089782aacc"
+      },
+      "primary_youtube_long": "1qbCAJlirLQ",
+      "primary_youtube_short": null,
+      "youtube_studio": null,
+      "youtube_studio_short": null,
+      "what_changed": {
+        "summary": "Product growth, royalty recurrence and capacity investment explain why Vicor’s record quarter still demands valuation discipline.",
+        "items": [
+          {
+            "title": "Products are growing, too.",
+            "detail": "The quarter is not solely a licensing story: product revenue reached $130.501M, up 47.1% year over year."
+          },
+          {
+            "title": "Royalties change the earnings mix.",
+            "detail": "$66.613M of royalties represent 33.8% of revenue. Contract timing and enforceability matter more as this share rises."
+          },
+          {
+            "title": "Margins improved with mix and product economics.",
+            "detail": "The computed product gross margin reached 52.2%; consolidated gross margin was 68.3%. These are different measures."
+          },
+          {
+            "title": "Expansion makes cash conversion essential.",
+            "detail": "Backlog reached $406M and management describes a much larger manufacturing footprint. Capacity intentions are not completed factories or guaranteed orders."
+          },
+          {
+            "title": "Valuation remains the constraint.",
+            "detail": "The $206.075 timed intraday quote exceeds both our $155 base and $165.75 weighted scenario value. Older $320 and $375 targets are not fresh endorsements of this print."
+          }
+        ]
+      },
+      "source_published": "October 20, 2026",
+      "words": 6903,
+      "figures": 19,
+      "tables": 31
+    },
+    {
       "key": "IPHA:H1-2026",
       "year": 2026,
       "quarter": 0,
