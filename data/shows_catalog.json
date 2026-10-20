@@ -35165,6 +35165,21 @@
       "description": "Fast clips that point viewers into full research videos and stock pages.",
       "videos": [
         {
+          "title": "NOC Stock: Northrop Grumman Earnings Beat, Cash Test | Q3 2026 #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/yH30320i8Rw",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-10-20T12:07:03+00:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "NOC"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage.",
+          "earnings_youtube_url": "https://www.youtube.com/watch?v=jgp3zdLWrBo",
+          "earnings_match": "stock_period_date"
+        },
+        {
           "title": "STLD Stock: Steel Dynamics Q3 2026 — Strong Earnings, Demanding Price #Shorts",
           "youtube_url": "https://www.youtube.com/shorts/k3vPvrlSDz0",
           "spotify_url": "",
@@ -47636,7 +47651,7 @@
       ]
     }
   ],
-  "last_synced_at": "2026-10-20T06:57:45-05:00",
+  "last_synced_at": "2026-10-20T07:09:22-05:00",
   "stock_metadata": {
     "A": {
       "company": "Agilent Technologies, Inc.",

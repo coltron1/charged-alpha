@@ -1,20 +1,30 @@
 {
   "schema": "charged-alpha-public-production/1",
-  "updated_at": "2026-10-20T06:36:42.609122-05:00",
+  "updated_at": "2026-10-20T07:12:11.782740-05:00",
   "calendar_updated_at": "2026-10-20T05:06:22.930159-05:00",
   "calendar_status": "fresh",
   "daily_target": 10,
   "active": [
     {
-      "ticker": "NOC",
-      "company": "Northrop Grumman Corporation",
+      "ticker": "HAL",
+      "company": "Halliburton Company",
       "period": "Q3 2026",
       "status_label": "Building now",
       "stage_label": "Production in progress",
-      "stock_url": "/shows/noc"
+      "stock_url": "/shows/hal"
     }
   ],
   "history": [
+    {
+      "ticker": "NOC",
+      "company": "Northrop Grumman Corporation",
+      "period": "Q3 2026",
+      "completed_at": "2026-10-20T07:11:38.100306-05:00",
+      "video_url": "https://youtu.be/jgp3zdLWrBo",
+      "short_url": "https://youtu.be/yH30320i8Rw",
+      "packet_url": "https://chargedalpha.com/research/noc-q3-2026",
+      "stock_url": "/shows/noc"
+    },
     {
       "ticker": "STLD",
       "company": "Steel Dynamics Inc",
