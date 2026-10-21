@@ -1,19 +1,10 @@
 {
   "schema": "charged-alpha-public-production/1",
-  "updated_at": "2026-10-20T23:28:26.254355-05:00",
+  "updated_at": "2026-10-20T23:46:33.024494-05:00",
   "calendar_updated_at": "2026-10-20T23:27:41.582848-05:00",
   "calendar_status": "fresh",
   "daily_target": 10,
-  "active": [
-    {
-      "ticker": "LRN",
-      "company": "Stride, Inc.",
-      "period": "Q1 FY2027",
-      "status_label": "Building now",
-      "stage_label": "Production in progress",
-      "stock_url": "/shows/lrn"
-    }
-  ],
+  "active": [],
   "history": [
     {
       "ticker": "NLY",
