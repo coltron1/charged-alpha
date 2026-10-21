@@ -872,6 +872,64 @@
       "tables": 33
     },
     {
+      "key": "LRN:Q1-FY2027",
+      "year": 2027,
+      "quarter": 1,
+      "fiscal": true,
+      "slug": "lrn-q1-fy2027",
+      "ticker": "LRN",
+      "company": "Stride, Inc.",
+      "period": "Q1 FY2027",
+      "canonical_url": "https://chargedalpha.com/research/lrn-q1-fy2027",
+      "title": "LRN: EPS Rose. Did the Business Improve?",
+      "page_title": "LRN Q1 FY2027 Research Packet — Charged Alpha",
+      "description": "Stride reported higher GAAP EPS while adjusted earnings and enrollment fell. We trace the compensation credit, seasonal cash and convertible obligations.",
+      "sha256": "50b9a74f207eba5caa40449efb2d3b4970b0f0938602a192f833f9176d388afb",
+      "html_file": "research_packets/lrn-q1-fy2027.html",
+      "source_episode": "LRN-Q1-FY2027",
+      "source_staged_at": "2026-10-21T16:51:42Z",
+      "source_sha256": {
+        "READY": "4a0d388bbe0f216419d8b953d5b0528914b900059d6d39b4b742965b86521e13",
+        "handoff.json": "770561c3fdf3a739b9b977d0068df8ad103653714ee17f33eb196ffad0511926",
+        "packet/lrn-q1-fy2027-research-packet.html": "50b9a74f207eba5caa40449efb2d3b4970b0f0938602a192f833f9176d388afb",
+        "packet/packet_meta.json": "a5b20022dca4289dc504348cb676fea27f9181b5273edd5ae52ccff170033bec",
+        "packet/packet.json": "7d0938af61243cf6772665f5c748a0645d758550954f5d8d99367cac95508459"
+      },
+      "primary_youtube_long": "qvYM_5p800E",
+      "primary_youtube_short": null,
+      "youtube_studio": null,
+      "youtube_studio_short": null,
+      "what_changed": {
+        "summary": "Stride reported higher GAAP EPS while adjusted earnings and enrollment fell. We trace the compensation credit, seasonal cash and convertible obligations.",
+        "items": [
+          {
+            "title": "Revenue growth did not mean enrollment growth.",
+            "detail": "Revenue rose 3.0%, while average enrollment fell 2.5%. Higher revenue per enrollment and Career Learning mix carried the top line."
+          },
+          {
+            "title": "A compensation credit changes the earnings story.",
+            "detail": "GAAP operating profit rose 22.2%, but adjusted operating profit fell 3.1%. Reported stock-compensation expense was negative $7.4M; its specific cause is not established by the release."
+          },
+          {
+            "title": "The denominator matters.",
+            "detail": "GAAP net income fell 5.6%, yet GAAP EPS rose 3.6% as diluted shares fell. Adjusted EPS uses a separate capped-call-adjusted denominator and fell 9.9%."
+          },
+          {
+            "title": "Cash improved without becoming positive.",
+            "detail": "First-quarter operating cash used $124.8M. Receivables are seasonally high, and software investment plus finance-lease principal must still be funded."
+          },
+          {
+            "title": "The latest $38 target is not for this issuer.",
+            "detail": "The provider linked a CHYM / Stride Bank article to LRN. We reject it and label genuine older $94 and $125 LRN targets as stale observations."
+          }
+        ]
+      },
+      "source_published": "October 20, 2026",
+      "words": 5663,
+      "figures": 18,
+      "tables": 36
+    },
+    {
       "key": "NKE:Q1-FY2027",
       "year": 2027,
       "quarter": 1,
@@ -2322,6 +2380,64 @@
       }
     },
     {
+      "key": "ABT:Q3-2026",
+      "year": 2026,
+      "quarter": 3,
+      "fiscal": false,
+      "slug": "abt-q3-2026",
+      "ticker": "ABT",
+      "company": "Abbott Laboratories",
+      "period": "Q3 2026",
+      "canonical_url": "https://chargedalpha.com/research/abt-q3-2026",
+      "title": "ABT: Sales Jumped. What Reaches Shareholders?",
+      "page_title": "ABT Q3 2026 Research Packet — Charged Alpha",
+      "description": "Abbott reported 14.5% sales growth and 9.2% adjusted EPS growth. We separate acquisition effects, specified charges, cash demands and the planned Nutrition separation.",
+      "sha256": "4ec000d89c29709a3ef893f4751ca39412a64ba7ab0820bc7e2d508f0e55864e",
+      "html_file": "research_packets/abt-q3-2026.html",
+      "source_episode": "ABT-Q3-2026",
+      "source_staged_at": "2026-10-21T17:04:00Z",
+      "source_sha256": {
+        "READY": "7a06a34aff6e829fda46eebb677078b27903152d2f985fc24ad5cf4a26ffcdeb",
+        "handoff.json": "9cb1d9a023df982e7466de7f0ba4ff7a78cb975bac93b94a6369ce06d6c13013",
+        "packet/abt-q3-2026-research-packet.html": "4ec000d89c29709a3ef893f4751ca39412a64ba7ab0820bc7e2d508f0e55864e",
+        "packet/packet_meta.json": "0ef1238947e3a00902ef08fd65af2260356fd3095f4b6340575641186505cb2c",
+        "packet/packet.json": "66fc82dd2f3619b4e4b43b1ef2fa89df58c1987ec29fd95fea6bdc7ec56d6529"
+      },
+      "primary_youtube_long": "U15BmlmDgDE",
+      "primary_youtube_short": null,
+      "youtube_studio": null,
+      "youtube_studio_short": null,
+      "what_changed": {
+        "summary": "Abbott reported 14.5% sales growth and 9.2% adjusted EPS growth. We separate acquisition effects, specified charges, cash demands and the planned Nutrition separation.",
+        "items": [
+          {
+            "title": "Growth is real, but the headline includes acquisition scale.",
+            "detail": "Reported sales rose 14.5%; the issuer’s comparable measure rose 7.0%. The calculation adds historical Exact Sciences revenue to the prior base and adjusts FX and an expiring structural-heart agreement."
+          },
+          {
+            "title": "The earnings definitions diverge.",
+            "detail": "Adjusted EPS rose 9.2% to $1.42 while GAAP EPS fell43.6% to $0.53. Pretax specified items of $1.689B include $841M intangible amortization and approximately $670M legal settlements."
+          },
+          {
+            "title": "Cash evidence has a date limit.",
+            "detail": "The release does not provide September cash-flow or balance-sheet statements. June30 net debt was $27.005B; first-half FCF was $2.907B before dividends and repurchases."
+          },
+          {
+            "title": "Nutrition separation is a future transaction.",
+            "detail": "The plan targets end2027, subject to conditions. Distributed shares, debt allocation, taxes and stranded costs determine shareholder value; no automatic separation premium is assumed."
+          },
+          {
+            "title": "Our prior BUY becomes HOLD.",
+            "detail": "The historical Q2 judgment remains intact. The updated integrated cash and debt analysis supports $90 central value rather than treating a falling share price or higher adjusted EPS as sufficient evidence to buy."
+          }
+        ]
+      },
+      "source_published": "October 21, 2026",
+      "words": 5271,
+      "figures": 17,
+      "tables": 37
+    },
+    {
       "key": "ADBE:Q3-FY2026",
       "year": 2026,
       "quarter": 3,
@@ -3308,6 +3424,122 @@
       "tables": 32
     },
     {
+      "key": "NEE:Q3-2026",
+      "year": 2026,
+      "quarter": 3,
+      "fiscal": false,
+      "slug": "nee-q3-2026",
+      "ticker": "NEE",
+      "company": "NextEra Energy",
+      "period": "Q3 2026",
+      "canonical_url": "https://chargedalpha.com/research/nee-q3-2026",
+      "title": "NEE: The growth is real. The funding bill is bigger.",
+      "page_title": "NEE Q3 2026 Research Packet — Charged Alpha",
+      "description": "Adjusted EPS rose 9.7%, but expanding project investment and the Dominion combination make funding terms central to NextEra Energy’s value.",
+      "sha256": "916126838898c330dd7466cd00b1477d8375035af0503fe3544ed185ae7e08d1",
+      "html_file": "research_packets/nee-q3-2026.html",
+      "source_episode": "NEE-Q3-2026",
+      "source_staged_at": "2026-10-21T17:04:04Z",
+      "source_sha256": {
+        "READY": "9790e89dc16d59060eace07b95e79c37e10a3b9017992d184c645fe4836b7b96",
+        "handoff.json": "8cc70784d2da13f3ef637d270b50757849a805d05a0deea8e47a755785f96190",
+        "packet/nee-q3-2026-research-packet.html": "916126838898c330dd7466cd00b1477d8375035af0503fe3544ed185ae7e08d1",
+        "packet/packet_meta.json": "bea760a6bf5f2ab8b1be6fdf36d471d48a1faf66f4be0dabe1ec6bbf6f657dc7",
+        "packet/packet.json": "af4467b774d04418e0b7db58a0d8e2815919e0e2524c7b0688930f3f057c9233"
+      },
+      "primary_youtube_long": "y_nTBEkaMyU",
+      "primary_youtube_short": null,
+      "youtube_studio": null,
+      "youtube_studio_short": null,
+      "what_changed": {
+        "summary": "Adjusted EPS rose 9.7%, but expanding project investment and the Dominion combination make funding terms central to NextEra Energy’s value.",
+        "items": [
+          {
+            "title": "Operating growth is healthy.",
+            "detail": "FPL earned $1.620B and NEER adjusted earnings reached $1.247B; corporate adjusted loss was $275M."
+          },
+          {
+            "title": "GAAP growth overstates the operating acceleration.",
+            "detail": "$2.246B of after-tax non-qualifying hedge gains were removed in the adjusted reconciliation."
+          },
+          {
+            "title": "The investment bill is expanding.",
+            "detail": "Nine-month broad project deployment was $27.554B versus $12.322B operating cash flow; the difference precedes dividends."
+          },
+          {
+            "title": "Dominion is still a pending combination.",
+            "detail": "Shareholders approved it, but state and federal reviews continue and closing is expected in the second half of 2027."
+          },
+          {
+            "title": "Price leaves little room for error.",
+            "detail": "Our $80 base and $80 weighted value sit close to the dated $78.86 pre-release close; the scenario range is $60–$100."
+          }
+        ]
+      },
+      "source_published": "October 21, 2026",
+      "words": 6121,
+      "figures": 16,
+      "tables": 32
+    },
+    {
+      "key": "NFLX:Q3-2026",
+      "year": 2026,
+      "quarter": 3,
+      "fiscal": false,
+      "slug": "nflx-q3-2026",
+      "ticker": "NFLX",
+      "company": "Netflix, Inc.",
+      "period": "Q3 2026",
+      "canonical_url": "https://chargedalpha.com/research/nflx-q3-2026",
+      "title": "NFLX: Profit Jumped. What Will Repeat?",
+      "page_title": "NFLX Q3 2026 Research Packet — Charged Alpha",
+      "description": "Netflix grew profit strongly, but expense timing, a Brazil tax comparison and merger cash complicate the headline. We test recurring cash against the share price.",
+      "sha256": "f91850cba2fdf454bbf2ee55d558a33582c926707763ad6963e92f489314c19c",
+      "html_file": "research_packets/nflx-q3-2026.html",
+      "source_episode": "NFLX-Q3-2026",
+      "source_staged_at": "2026-10-21T16:52:00Z",
+      "source_sha256": {
+        "READY": "fece599560432643bb97654ba8a0433c925844d788117134bed91fb7d3a6bcc9",
+        "handoff.json": "ee50549b44d745d01a6dadc3b95d534fd1e27c9b060d3fdf24a1ad7914e427c7",
+        "packet/nflx-q3-2026-research-packet.html": "f91850cba2fdf454bbf2ee55d558a33582c926707763ad6963e92f489314c19c",
+        "packet/packet_meta.json": "4b11b94c651c7fa3e9d4c797b35bd7e86d3af0c5e5cf073372f322604c16b32f",
+        "packet/packet.json": "4f413dd8c3ad8f1a5b244fd118fd86527d83d3edd3dc56a9b1119f3e3978412f"
+      },
+      "primary_youtube_long": "_4lq6h61mvg",
+      "primary_youtube_short": null,
+      "youtube_studio": null,
+      "youtube_studio_short": null,
+      "what_changed": {
+        "summary": "Netflix grew profit strongly, but expense timing, a Brazil tax comparison and merger cash complicate the headline. We test recurring cash against the share price.",
+        "items": [
+          {
+            "title": "Profit growth needs a cleaner comparison.",
+            "detail": "Operating income rose 37.3%, but last year included a $619M Brazil charge. Against that adjusted base, growth is15.3%; this year also benefited from expense timing."
+          },
+          {
+            "title": "The advertising forecast fell.",
+            "detail": "Expected2026 advertising revenue is now $2.7B versus roughly $3.0B, reflecting slower product rollouts. Subscription revenue performed better than expected."
+          },
+          {
+            "title": "Cash guidance contains a large one-off.",
+            "detail": "Annual FCF guidance fell to $12B and includes a $2.8B merger termination receipt. Subtracting the gross receipt yields $9.2B, not a tax-adjusted recurring forecast."
+          },
+          {
+            "title": "Buybacks ran ahead of quarterly cash.",
+            "detail": "Netflix repurchased $4.80B of stock against $2.88B FCF. Gross debt rose with a refinancing ahead of a $1B Q4 maturity."
+          },
+          {
+            "title": "Our prior BUY changes to SELL.",
+            "detail": "The old $90 estimate remains in the historical record. A stricter recurring-cash model now supports $55; the change is a valuation reassessment, not a claim that this quarter alone destroyed $35 per share."
+          }
+        ]
+      },
+      "source_published": "October 20, 2026",
+      "words": 5837,
+      "figures": 17,
+      "tables": 37
+    },
+    {
       "key": "NLY:Q3-2026",
       "year": 2026,
       "quarter": 3,
@@ -3712,6 +3944,64 @@
       "words": 6589,
       "figures": 19,
       "tables": 36
+    },
+    {
+      "key": "SPCX:Q3-2026",
+      "year": 2026,
+      "quarter": 3,
+      "fiscal": false,
+      "slug": "spcx-q3-2026",
+      "ticker": "SPCX",
+      "company": "Space Exploration Technologies Corp.",
+      "period": "Q3 2026",
+      "canonical_url": "https://chargedalpha.com/research/spcx-q3-2026",
+      "title": "SPCX: The $6 Billion Earnings Bridge Behind SpaceX’s Turnaround",
+      "page_title": "SPCX Q3 2026 Research Packet — Charged Alpha",
+      "description": "SpaceX turns profitable, but a $6 billion EBITDA bridge, major reinvestment and a larger share base raise the cash-return hurdle.",
+      "sha256": "ba249242b7b94dac1c7919b9957f2d7fe60890e6cdf659e74aed58d71b07788f",
+      "html_file": "research_packets/spcx-q3-2026.html",
+      "source_episode": "SPCX-Q3-2026",
+      "source_staged_at": "2026-10-21T16:51:23Z",
+      "source_sha256": {
+        "READY": "6dfdeb90bfddd10031c590e71e60bfa40338ad1c0594c5c7f924e323320f5a92",
+        "handoff.json": "befe9c03701cddcf77be189dc0521cecd4b44dc604459ea481de585f01a2ec7d",
+        "packet/spcx-q3-2026-research-packet.html": "ba249242b7b94dac1c7919b9957f2d7fe60890e6cdf659e74aed58d71b07788f",
+        "packet/packet_meta.json": "27cf6d4357a37eb58fbc7e6de1cd5bdc18965df00ec09d87038b5550f4e26fc2",
+        "packet/packet.json": "0b8d39540fc5ece766af98365121d6aaa43fbeb9cfb3bb1314104a4799a68a71"
+      },
+      "primary_youtube_long": "5okHuCmVy3g",
+      "primary_youtube_short": null,
+      "youtube_studio": null,
+      "youtube_studio_short": null,
+      "what_changed": {
+        "summary": "SpaceX turns profitable, but a $6 billion EBITDA bridge, major reinvestment and a larger share base raise the cash-return hurdle.",
+        "items": [
+          {
+            "title": "The profit inflection is real.",
+            "detail": "GAAP operating income turned positive at $2.791B, with Connectivity contributing $2.367B."
+          },
+          {
+            "title": "EBITDA needs a six-billion-dollar bridge.",
+            "detail": "D&A and ordinary/acquisition equity compensation explain most of the $6.018B difference."
+          },
+          {
+            "title": "SI growth is not just Cursor.",
+            "detail": "The acquisition contributed $608M of $7.560B SI revenue, but the residual is not a certified organic-growth measure."
+          },
+          {
+            "title": "Cash returns still trail deployment.",
+            "detail": "Quarter OCF of $9.631B left simple FCF negative $9.962B after PP&E purchases."
+          },
+          {
+            "title": "The share denominator changed.",
+            "detail": "September A+B shares total 13.579B; stale provider float and market-cap counts are not the valuation denominator."
+          }
+        ]
+      },
+      "source_published": "October 20, 2026",
+      "words": 5167,
+      "figures": 15,
+      "tables": 25
     },
     {
       "key": "STLD:Q3-2026",
