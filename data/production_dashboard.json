@@ -1,20 +1,21 @@
 {
   "schema": "charged-alpha-public-production/1",
-  "updated_at": "2026-10-20T19:40:41.269700-05:00",
+  "updated_at": "2026-10-20T21:00:55.511123-05:00",
   "calendar_updated_at": "2026-10-20T15:41:09.715623-05:00",
-  "calendar_status": "fresh",
+  "calendar_status": "stale",
   "daily_target": 10,
-  "active": [
+  "active": [],
+  "history": [
     {
       "ticker": "NLY",
-      "company": "Annaly Capital Management, Inc.",
+      "company": "Annaly Capital Management",
       "period": "Q3 2026",
-      "status_label": "Building now",
-      "stage_label": "Production in progress",
+      "completed_at": "2026-10-20T20:59:14.257068-05:00",
+      "video_url": "https://youtu.be/VGC1eWxnzZk",
+      "short_url": "https://youtu.be/HKVa5Ikf91c",
+      "packet_url": "https://chargedalpha.com/research/nly-q3-2026",
       "stock_url": "/shows/nly"
-    }
-  ],
-  "history": [
+    },
     {
       "ticker": "PEGA",
       "company": "Pegasystems",

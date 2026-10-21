@@ -35309,6 +35309,21 @@
       "description": "Fast clips that point viewers into full research videos and stock pages.",
       "videos": [
         {
+          "title": "NLY Stock: Annaly Q3 2026 Earnings — Income and Capital Risk #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/HKVa5Ikf91c",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-10-20T18:54:44-07:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "NLY"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage.",
+          "earnings_youtube_url": "https://www.youtube.com/watch?v=VGC1eWxnzZk",
+          "earnings_match": "stock_period_date"
+        },
+        {
           "title": "PEGA Stock: Pega Q3 2026 Earnings — Cloud Growth, Which Cash? #Shorts",
           "youtube_url": "https://www.youtube.com/shorts/gFVlyplbsHI",
           "spotify_url": "",
@@ -47900,7 +47915,7 @@
       ]
     }
   ],
-  "last_synced_at": "2026-10-20T20:20:48-05:00",
+  "last_synced_at": "2026-10-20T20:56:47-05:00",
   "stock_metadata": {
     "A": {
       "company": "Agilent Technologies, Inc.",
