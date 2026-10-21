@@ -1,8 +1,8 @@
 {
   "schema": "charged-alpha-public-production/1",
-  "updated_at": "2026-10-20T21:00:55.511123-05:00",
-  "calendar_updated_at": "2026-10-20T15:41:09.715623-05:00",
-  "calendar_status": "stale",
+  "updated_at": "2026-10-20T21:23:33.158844-05:00",
+  "calendar_updated_at": "2026-10-20T21:06:45.399783-05:00",
+  "calendar_status": "fresh",
   "daily_target": 10,
   "active": [],
   "history": [
@@ -899,16 +899,6 @@
       "stock_url": null
     },
     {
-      "ticker": "SPCX",
-      "company": "Space Exploration Technologies Corp.",
-      "report_date": "2026-10-20",
-      "report_time_label": "After U.S. market close",
-      "planned_date": "2026-10-21",
-      "date_status": "Issuer-announced",
-      "source_url": "https://ir.spacex.com/updates/releases-details/2026/SpaceX-to-Post-Third-Quarter-2026-Results-and-Host-Webcast-on-October-20-2026-2026-QssQGye3im/",
-      "stock_url": "/shows/spcx"
-    },
-    {
       "ticker": "NFLX",
       "company": "Netflix, Inc.",
       "report_date": "2026-10-20",
@@ -947,16 +937,6 @@
       "date_status": "Calendar estimate",
       "source_url": null,
       "stock_url": "/shows/wfrd"
-    },
-    {
-      "ticker": "LRN",
-      "company": "Stride, Inc.",
-      "report_date": "2026-10-20",
-      "report_time_label": "Time unconfirmed",
-      "planned_date": "2026-10-21",
-      "date_status": "Calendar estimate",
-      "source_url": null,
-      "stock_url": "/shows/lrn"
     },
     {
       "ticker": "HTLD",
@@ -1627,16 +1607,6 @@
       "date_status": "Calendar estimate",
       "source_url": null,
       "stock_url": null
-    },
-    {
-      "ticker": "MANU",
-      "company": "Manchester United plc",
-      "report_date": "2026-10-22",
-      "report_time_label": "Time unconfirmed",
-      "planned_date": "",
-      "date_status": "Calendar estimate",
-      "source_url": null,
-      "stock_url": "/shows/manu"
     },
     {
       "ticker": "DECK",
