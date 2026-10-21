@@ -1,10 +1,19 @@
 {
   "schema": "charged-alpha-public-production/1",
-  "updated_at": "2026-10-20T21:23:33.158844-05:00",
-  "calendar_updated_at": "2026-10-20T21:06:45.399783-05:00",
+  "updated_at": "2026-10-20T23:28:26.254355-05:00",
+  "calendar_updated_at": "2026-10-20T23:27:41.582848-05:00",
   "calendar_status": "fresh",
   "daily_target": 10,
-  "active": [],
+  "active": [
+    {
+      "ticker": "LRN",
+      "company": "Stride, Inc.",
+      "period": "Q1 FY2027",
+      "status_label": "Building now",
+      "stage_label": "Production in progress",
+      "stock_url": "/shows/lrn"
+    }
+  ],
   "history": [
     {
       "ticker": "NLY",
@@ -897,16 +906,6 @@
       "date_status": "Calendar estimate",
       "source_url": null,
       "stock_url": null
-    },
-    {
-      "ticker": "NFLX",
-      "company": "Netflix, Inc.",
-      "report_date": "2026-10-20",
-      "report_time_label": "After U.S. market close",
-      "planned_date": "2026-10-21",
-      "date_status": "Issuer-announced",
-      "source_url": "https://ir.netflix.net/investor-news-and-events/financial-releases/press-release-details/2026/Netflix-to-Announce-Third-Quarter-2026-Financial-Results/default.aspx",
-      "stock_url": "/shows/nflx"
     },
     {
       "ticker": "ELS",
