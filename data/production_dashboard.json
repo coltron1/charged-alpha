@@ -1,11 +1,30 @@
 {
   "schema": "charged-alpha-public-production/1",
-  "updated_at": "2026-10-20T17:51:21.454159-05:00",
+  "updated_at": "2026-10-20T19:19:37.948769-05:00",
   "calendar_updated_at": "2026-10-20T15:41:09.715623-05:00",
   "calendar_status": "fresh",
   "daily_target": 10,
-  "active": [],
+  "active": [
+    {
+      "ticker": "NLY",
+      "company": "Annaly Capital Management, Inc.",
+      "period": "Q3 2026",
+      "status_label": "Building now",
+      "stage_label": "Production in progress",
+      "stock_url": "/shows/nly"
+    }
+  ],
   "history": [
+    {
+      "ticker": "PEGA",
+      "company": "Pegasystems",
+      "period": "Q3 2026",
+      "completed_at": "2026-10-20T19:17:34.619269-05:00",
+      "video_url": "https://youtu.be/Ubha4lIRku8",
+      "short_url": "https://youtu.be/gFVlyplbsHI",
+      "packet_url": "https://chargedalpha.com/research/pega-q3-2026",
+      "stock_url": "/shows/pega"
+    },
     {
       "ticker": "ISRG",
       "company": "Intuitive Surgical",
@@ -897,16 +916,6 @@
       "date_status": "Issuer-announced",
       "source_url": "https://ir.netflix.net/investor-news-and-events/financial-releases/press-release-details/2026/Netflix-to-Announce-Third-Quarter-2026-Financial-Results/default.aspx",
       "stock_url": "/shows/nflx"
-    },
-    {
-      "ticker": "NLY",
-      "company": "Annaly Capital Management, Inc.",
-      "report_date": "2026-10-20",
-      "report_time_label": "After U.S. market close",
-      "planned_date": "2026-10-21",
-      "date_status": "Issuer-announced",
-      "source_url": "https://www.annaly.com/news-insights/press-releases/2026/09-29-2026-211523434",
-      "stock_url": "/shows/nly"
     },
     {
       "ticker": "ELS",
