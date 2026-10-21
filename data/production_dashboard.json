@@ -1,7 +1,7 @@
 {
   "schema": "charged-alpha-public-production/1",
-  "updated_at": "2026-10-21T11:51:12.230252-05:00",
-  "calendar_updated_at": "2026-10-21T09:45:51.054467-05:00",
+  "updated_at": "2026-10-21T14:48:44.935604-05:00",
+  "calendar_updated_at": "2026-10-21T14:43:44.456116-05:00",
   "calendar_status": "fresh",
   "daily_target": 10,
   "active": [],
@@ -939,16 +939,6 @@
       "stock_url": "/shows/unf"
     },
     {
-      "ticker": "IBM",
-      "company": "International Business Machines Corporation",
-      "report_date": "2026-10-21",
-      "report_time_label": "Time unconfirmed",
-      "planned_date": "2026-10-22",
-      "date_status": "Calendar estimate",
-      "source_url": null,
-      "stock_url": "/shows/ibm"
-    },
-    {
       "ticker": "KMI",
       "company": "Kinder Morgan, Inc.",
       "report_date": "2026-10-21",
@@ -957,6 +947,16 @@
       "date_status": "Calendar estimate",
       "source_url": null,
       "stock_url": "/shows/kmi"
+    },
+    {
+      "ticker": "IBM",
+      "company": "International Business Machines Corporation",
+      "report_date": "2026-10-21",
+      "report_time_label": "Time unconfirmed",
+      "planned_date": "2026-10-22",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": "/shows/ibm"
     },
     {
       "ticker": "LRCX",
@@ -979,21 +979,11 @@
       "stock_url": "/shows/hxl"
     },
     {
-      "ticker": "ELV",
-      "company": "Elevance Health Inc.",
-      "report_date": "2026-10-21",
-      "report_time_label": "Time unconfirmed",
-      "planned_date": "2026-10-22",
-      "date_status": "Calendar estimate",
-      "source_url": null,
-      "stock_url": "/shows/elv"
-    },
-    {
       "ticker": "TMO",
       "company": "Thermo Fisher Scientific Inc.",
       "report_date": "2026-10-21",
       "report_time_label": "Time unconfirmed",
-      "planned_date": "2026-10-24",
+      "planned_date": "2026-10-22",
       "date_status": "Calendar estimate",
       "source_url": null,
       "stock_url": "/shows/tmo"
@@ -1023,7 +1013,7 @@
       "company": "CACI International Inc",
       "report_date": "2026-10-21",
       "report_time_label": "Time unconfirmed",
-      "planned_date": "2026-10-25",
+      "planned_date": "2026-10-24",
       "date_status": "Calendar estimate",
       "source_url": null,
       "stock_url": "/shows/caci"
@@ -1483,7 +1473,7 @@
       "company": "The Vita Coco Company, Inc.",
       "report_date": "2026-10-22",
       "report_time_label": "Time unconfirmed",
-      "planned_date": "2026-10-26",
+      "planned_date": "2026-10-25",
       "date_status": "Calendar estimate",
       "source_url": null,
       "stock_url": "/shows/coco"
@@ -1529,6 +1519,16 @@
       "stock_url": "/shows/deck"
     },
     {
+      "ticker": "OMC",
+      "company": "Omnicom Group Inc.",
+      "report_date": "2026-10-22",
+      "report_time_label": "Time unconfirmed",
+      "planned_date": "2026-10-26",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": "/shows/omc"
+    },
+    {
       "ticker": "DOW",
       "company": "Dow Inc.",
       "report_date": "2026-10-22",
@@ -1537,16 +1537,6 @@
       "date_status": "Calendar estimate",
       "source_url": null,
       "stock_url": "/shows/dow"
-    },
-    {
-      "ticker": "OMC",
-      "company": "Omnicom Group Inc.",
-      "report_date": "2026-10-22",
-      "report_time_label": "Time unconfirmed",
-      "planned_date": "",
-      "date_status": "Calendar estimate",
-      "source_url": null,
-      "stock_url": "/shows/omc"
     },
     {
       "ticker": "PHM",
@@ -1699,16 +1689,6 @@
       "stock_url": null
     },
     {
-      "ticker": "DTB",
-      "company": "DTE Energy Company 2020 Series",
-      "report_date": "2026-10-22",
-      "report_time_label": "Time unconfirmed",
-      "planned_date": "",
-      "date_status": "Calendar estimate",
-      "source_url": null,
-      "stock_url": null
-    },
-    {
       "ticker": "DTG",
       "company": "DTE Energy Company 2021 Series",
       "report_date": "2026-10-22",
@@ -1721,6 +1701,16 @@
     {
       "ticker": "VTMX",
       "company": "Corporación Inmobiliaria Vesta, S.A.B. de C.V.",
+      "report_date": "2026-10-22",
+      "report_time_label": "Time unconfirmed",
+      "planned_date": "",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": null
+    },
+    {
+      "ticker": "DTB",
+      "company": "DTE Energy Company 2020 Series",
       "report_date": "2026-10-22",
       "report_time_label": "Time unconfirmed",
       "planned_date": "",
@@ -1749,16 +1739,6 @@
       "stock_url": null
     },
     {
-      "ticker": "RNG",
-      "company": "RingCentral, Inc.",
-      "report_date": "2026-10-22",
-      "report_time_label": "Time unconfirmed",
-      "planned_date": "",
-      "date_status": "Calendar estimate",
-      "source_url": null,
-      "stock_url": "/shows/rng"
-    },
-    {
       "ticker": "XPRO",
       "company": "Expro Group Holdings N.V.",
       "report_date": "2026-10-22",
@@ -1767,6 +1747,16 @@
       "date_status": "Calendar estimate",
       "source_url": null,
       "stock_url": null
+    },
+    {
+      "ticker": "RNG",
+      "company": "RingCentral, Inc.",
+      "report_date": "2026-10-22",
+      "report_time_label": "Time unconfirmed",
+      "planned_date": "",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": "/shows/rng"
     },
     {
       "ticker": "VRSN",
@@ -2589,16 +2579,6 @@
       "stock_url": null
     },
     {
-      "ticker": "MOD",
-      "company": "Modine Manufacturing Company",
-      "report_date": "2026-10-27",
-      "report_time_label": "Time unconfirmed",
-      "planned_date": "",
-      "date_status": "Calendar estimate",
-      "source_url": null,
-      "stock_url": "/shows/mod"
-    },
-    {
       "ticker": "EXLS",
       "company": "ExlService Holdings, Inc.",
       "report_date": "2026-10-27",
@@ -2669,6 +2649,16 @@
       "stock_url": null
     },
     {
+      "ticker": "MANH",
+      "company": "Manhattan Associates, Inc.",
+      "report_date": "2026-10-27",
+      "report_time_label": "Time unconfirmed",
+      "planned_date": "",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": "/shows/manh"
+    },
+    {
       "ticker": "ARQT",
       "company": "Arcutis Biotherapeutics, Inc.",
       "report_date": "2026-10-27",
@@ -2689,16 +2679,6 @@
       "stock_url": "/shows/hlt"
     },
     {
-      "ticker": "MANH",
-      "company": "Manhattan Associates, Inc.",
-      "report_date": "2026-10-27",
-      "report_time_label": "Time unconfirmed",
-      "planned_date": "",
-      "date_status": "Calendar estimate",
-      "source_url": null,
-      "stock_url": "/shows/manh"
-    },
-    {
       "ticker": "ITW",
       "company": "Illinois Tool Works Inc.",
       "report_date": "2026-10-27",
@@ -2707,16 +2687,6 @@
       "date_status": "Calendar estimate",
       "source_url": null,
       "stock_url": "/shows/itw"
-    },
-    {
-      "ticker": "RCUS",
-      "company": "Arcus Biosciences, Inc.",
-      "report_date": "2026-10-27",
-      "report_time_label": "Time unconfirmed",
-      "planned_date": "",
-      "date_status": "Calendar estimate",
-      "source_url": null,
-      "stock_url": null
     },
     {
       "ticker": "PCAR",
@@ -2731,6 +2701,16 @@
     {
       "ticker": "BKR",
       "company": "Baker Hughes Company",
+      "report_date": "2026-10-27",
+      "report_time_label": "Time unconfirmed",
+      "planned_date": "",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": null
+    },
+    {
+      "ticker": "RCUS",
+      "company": "Arcus Biosciences, Inc.",
       "report_date": "2026-10-27",
       "report_time_label": "Time unconfirmed",
       "planned_date": "",
@@ -2859,16 +2839,6 @@
       "stock_url": null
     },
     {
-      "ticker": "KOF",
-      "company": "Coca-Cola FEMSA, S.A.B. de C.V.",
-      "report_date": "2026-10-27",
-      "report_time_label": "Time unconfirmed",
-      "planned_date": "",
-      "date_status": "Calendar estimate",
-      "source_url": null,
-      "stock_url": "/shows/kof"
-    },
-    {
       "ticker": "ESS",
       "company": "Essex Property Trust, Inc.",
       "report_date": "2026-10-27",
@@ -2877,6 +2847,16 @@
       "date_status": "Calendar estimate",
       "source_url": null,
       "stock_url": null
+    },
+    {
+      "ticker": "KOF",
+      "company": "Coca-Cola FEMSA, S.A.B. de C.V.",
+      "report_date": "2026-10-27",
+      "report_time_label": "Time unconfirmed",
+      "planned_date": "",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": "/shows/kof"
     },
     {
       "ticker": "LECO",
@@ -2979,16 +2959,6 @@
       "stock_url": null
     },
     {
-      "ticker": "MSA",
-      "company": "MSA Safety Incorporated",
-      "report_date": "2026-10-27",
-      "report_time_label": "Time unconfirmed",
-      "planned_date": "",
-      "date_status": "Calendar estimate",
-      "source_url": null,
-      "stock_url": null
-    },
-    {
       "ticker": "NOV",
       "company": "NOV Inc.",
       "report_date": "2026-10-27",
@@ -2999,8 +2969,8 @@
       "stock_url": "/shows/nov"
     },
     {
-      "ticker": "KNSA",
-      "company": "Kiniksa Pharmaceuticals International, plc",
+      "ticker": "CMSD",
+      "company": "CMS Energy Corporation 5.875% Junior Subordinated Notes due 2079",
       "report_date": "2026-10-27",
       "report_time_label": "Time unconfirmed",
       "planned_date": "",
@@ -3009,8 +2979,8 @@
       "stock_url": null
     },
     {
-      "ticker": "CMSD",
-      "company": "CMS Energy Corporation 5.875% Junior Subordinated Notes due 2079",
+      "ticker": "KNSA",
+      "company": "Kiniksa Pharmaceuticals International, plc",
       "report_date": "2026-10-27",
       "report_time_label": "Time unconfirmed",
       "planned_date": "",
@@ -3049,16 +3019,6 @@
       "stock_url": null
     },
     {
-      "ticker": "AROC",
-      "company": "Archrock, Inc.",
-      "report_date": "2026-10-27",
-      "report_time_label": "Time unconfirmed",
-      "planned_date": "",
-      "date_status": "Calendar estimate",
-      "source_url": null,
-      "stock_url": null
-    },
-    {
       "ticker": "RUSHA",
       "company": "Rush Enterprises, Inc.",
       "report_date": "2026-10-27",
@@ -3069,8 +3029,8 @@
       "stock_url": null
     },
     {
-      "ticker": "ENPH",
-      "company": "Enphase Energy, Inc.",
+      "ticker": "AROC",
+      "company": "Archrock, Inc.",
       "report_date": "2026-10-27",
       "report_time_label": "Time unconfirmed",
       "planned_date": "",
@@ -3081,6 +3041,16 @@
     {
       "ticker": "HRI",
       "company": "Herc Holdings Inc.",
+      "report_date": "2026-10-27",
+      "report_time_label": "Time unconfirmed",
+      "planned_date": "",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": null
+    },
+    {
+      "ticker": "ENPH",
+      "company": "Enphase Energy, Inc.",
       "report_date": "2026-10-27",
       "report_time_label": "Time unconfirmed",
       "planned_date": "",
