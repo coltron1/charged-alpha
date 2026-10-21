@@ -10,6 +10,24 @@
   },
   "episodes": [
     {
+      "ticker": "NLY",
+      "company": "Annaly Capital Management",
+      "sector": "Real Estate",
+      "quarter": "Q3 2026",
+      "episode_number": "",
+      "title": "NLY Stock: The Dividend Is Covered — What Protects the Capital? | Q3 2026",
+      "published_at": "2026-10-21T01:12:44+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=VGC1eWxnzZk",
+      "spotify_url": "https://open.spotify.com/episode/7593loyoPHMzd0fh6tUAUd",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/nly-stock-the-dividend-is-covered-%e2%80%94-what-protects-the-capital-q3-2026/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
       "ticker": "PEGA",
       "company": "Pegasystems",
       "sector": "Technology",
@@ -47882,7 +47900,7 @@
       ]
     }
   ],
-  "last_synced_at": "2026-10-20T19:17:21-05:00",
+  "last_synced_at": "2026-10-20T20:20:48-05:00",
   "stock_metadata": {
     "A": {
       "company": "Agilent Technologies, Inc.",

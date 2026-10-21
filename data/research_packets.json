@@ -3308,6 +3308,64 @@
       "tables": 32
     },
     {
+      "key": "NLY:Q3-2026",
+      "year": 2026,
+      "quarter": 3,
+      "fiscal": false,
+      "slug": "nly-q3-2026",
+      "ticker": "NLY",
+      "company": "Annaly Capital Management, Inc.",
+      "period": "Q3 2026",
+      "canonical_url": "https://chargedalpha.com/research/nly-q3-2026",
+      "title": "NLY: The Dividend Is Covered. What Protects the Capital?",
+      "page_title": "NLY Q3 2026 Research Packet — Charged Alpha",
+      "description": "Annaly earned more than its quarterly dividend, yet book value fell sharply. We separate carry, marks, funding and common-equity value.",
+      "sha256": "f991f550f0d1646f77cfffa7c194089b323c17f6df29b52e475df2b6853c87a9",
+      "html_file": "research_packets/nly-q3-2026.html",
+      "source_episode": "NLY-Q3-2026",
+      "source_staged_at": "2026-10-21T01:41:31Z",
+      "source_sha256": {
+        "READY": "5506c88020cf4ad38afe9a6463d3b0b034e2f5358f00233fb631418e7fdd1f5c",
+        "handoff.json": "a3ed478b0609d7958365586c1db3a8bdb4afa0bfa3141bc5b62fa84e34700481",
+        "packet/nly-q3-2026-research-packet.html": "f991f550f0d1646f77cfffa7c194089b323c17f6df29b52e475df2b6853c87a9",
+        "packet/packet_meta.json": "6e26fa13acae1624742c66c0a02ba3f1ef1059634fd6e2c16dbd876825e917e6",
+        "packet/packet.json": "ed08b7e9c3dec94233a836f83e11d33881831b44e9fe756e38540e0ee124b34e"
+      },
+      "primary_youtube_long": "VGC1eWxnzZk",
+      "primary_youtube_short": null,
+      "youtube_studio": null,
+      "youtube_studio_short": null,
+      "what_changed": {
+        "summary": "Annaly earned more than its quarterly dividend, yet book value fell sharply. We separate carry, marks, funding and common-equity value.",
+        "items": [
+          {
+            "title": "Coverage improved, but capital fell.",
+            "detail": "EAD of $0.80 exceeded the $0.75 dividend. Book value fell from $20.15 to $17.86 and economic return was negative 7.6%."
+          },
+          {
+            "title": "Reported margin and underlying spread moved differently.",
+            "detail": "GAAP net interest margin increased to 1.54%, but economic margin excluding the premium-amortization adjustment fell to 1.69%."
+          },
+          {
+            "title": "Growth in total earnings is not the same as growth per owner.",
+            "detail": "Common EAD rose 27.0% year over year; per-share EAD rose 9.6% and ending shares rose 15.2%."
+          },
+          {
+            "title": "Mortgage investments are not factory capex.",
+            "detail": "Vendor capital expenditure includes MSR purchases. We use actual cash-flow labels and common-equity valuation rather than a misleading industrial free-cash-flow model."
+          },
+          {
+            "title": "The quote predates the print.",
+            "detail": "$18.29 is the October 20 regular close, not a post-earnings return. The release was after the close; its exact minute is unconfirmed."
+          }
+        ]
+      },
+      "source_published": "October 20, 2026",
+      "words": 6206,
+      "figures": 18,
+      "tables": 33
+    },
+    {
       "key": "NOC:Q3-2026",
       "year": 2026,
       "quarter": 3,
