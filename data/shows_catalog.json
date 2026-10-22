@@ -35489,6 +35489,21 @@
       "description": "Fast clips that point viewers into full research videos and stock pages.",
       "videos": [
         {
+          "title": "SCCO Stock: Nine-Cent Copper Has a Catch | Q3 FY2026 #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/goOe7NPYv2M",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-10-22T22:10:49+00:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "SCCO"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage.",
+          "earnings_youtube_url": "https://www.youtube.com/watch?v=gj62sjTRAEA",
+          "earnings_match": "stock_period_date"
+        },
+        {
           "title": "NLY Stock: Annaly Q3 2026 Earnings — Income and Capital Risk #Shorts",
           "youtube_url": "https://www.youtube.com/shorts/HKVa5Ikf91c",
           "spotify_url": "",
@@ -48095,7 +48110,7 @@
       ]
     }
   ],
-  "last_synced_at": "2026-10-22T16:53:36-05:00",
+  "last_synced_at": "2026-10-22T17:27:21-05:00",
   "stock_metadata": {
     "A": {
       "company": "Agilent Technologies, Inc.",
