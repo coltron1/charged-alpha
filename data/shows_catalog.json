@@ -10,6 +10,60 @@
   },
   "episodes": [
     {
+      "ticker": "KMI",
+      "company": "Kinder Morgan",
+      "sector": "Energy",
+      "quarter": "Q3 2026",
+      "episode_number": "",
+      "title": "KMI Stock: Bigger Projects — Who Funds the Growth? | Q3 2026",
+      "published_at": "2026-10-21T23:41:22+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=PvO1Nn2Y4fc",
+      "spotify_url": "https://open.spotify.com/episode/0XX6AupIc5FgOJenAqNGGh",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/kmi-stock-bigger-projects-%e2%80%94-who-funds-the-growth-q3-2026/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "LRCX",
+      "company": "Lam Research",
+      "sector": "Technology",
+      "quarter": "Q1 FY2027",
+      "episode_number": "",
+      "title": "LRCX Stock: Cash Surged — How Much Can Repeat? | Q1 FY2027",
+      "published_at": "2026-10-21T22:53:40+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=wFcKuxoD9PU",
+      "spotify_url": "https://open.spotify.com/episode/7HYuLLUkClK1a1ZMev8srb",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/lrcx-stock-cash-surged-%e2%80%94-how-much-can-repeat-q1-fy2027/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "ELV",
+      "company": "Elevance Health Inc",
+      "sector": "Healthcare",
+      "quarter": "Q3 2026",
+      "episode_number": "",
+      "title": "ELV Stock: Guidance Rose — Which Earnings Baseline Counts? | Q3 2026",
+      "published_at": "2026-10-21T20:48:00+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=kNm4TuYV_K0",
+      "spotify_url": "https://open.spotify.com/episode/2o7jLr0A2NTsAXUYKAFFpG",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/elv-stock-guidance-rose-%e2%80%94-which-earnings-baseline-counts-q3-2026/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
       "ticker": "NEE",
       "company": "NextEra Energy Inc.",
       "sector": "Utilities",
@@ -48005,7 +48059,7 @@
       ]
     }
   ],
-  "last_synced_at": "2026-10-21T14:45:03-05:00",
+  "last_synced_at": "2026-10-21T19:22:46-05:00",
   "stock_metadata": {
     "A": {
       "company": "Agilent Technologies, Inc.",

@@ -872,6 +872,64 @@
       "tables": 33
     },
     {
+      "key": "LRCX:Q1-FY2027",
+      "year": 2027,
+      "quarter": 1,
+      "fiscal": true,
+      "slug": "lrcx-q1-fy2027",
+      "ticker": "LRCX",
+      "company": "Lam Research",
+      "period": "Q1 FY2027",
+      "canonical_url": "https://chargedalpha.com/research/lrcx-q1-fy2027",
+      "title": "LRCX: Cash Surged — How Much Can Repeat?",
+      "page_title": "LRCX Q1 FY2027 Research Packet — Charged Alpha",
+      "description": "Strong equipment growth and a working-capital cash rebound face a demanding valuation; examine the owner-cash path the price requires.",
+      "sha256": "b776ea3391693a08fb473fcb70b7001e6d6c1f2a69fde40cc094acc8ab1c583b",
+      "html_file": "research_packets/lrcx-q1-fy2027.html",
+      "source_episode": "LRCX-Q1-FY2027",
+      "source_staged_at": "2026-10-21T23:22:50Z",
+      "source_sha256": {
+        "READY": "07da3f8a2346c4dc5a16d6fb95c20911dd57e183ef9213203aad8bcdf66a09a9",
+        "handoff.json": "d5e2f8ba99963d337475a642ffd663e1a1c4dd933927d1aebd425f3c20d8466f",
+        "packet/lrcx-q1-fy2027-research-packet.html": "b776ea3391693a08fb473fcb70b7001e6d6c1f2a69fde40cc094acc8ab1c583b",
+        "packet/packet_meta.json": "f9b115746a11ee14bbb0bcda42509be78910844c345861daf8f24b79e87f74c8",
+        "packet/packet.json": "3a5d915d2acd420bded2f73ebd0bb2250798a7b38694d3ad295a31c2bce4f979"
+      },
+      "primary_youtube_long": "wFcKuxoD9PU",
+      "primary_youtube_short": null,
+      "youtube_studio": null,
+      "youtube_studio_short": null,
+      "what_changed": {
+        "summary": "Strong equipment growth and a working-capital cash rebound face a demanding valuation; examine the owner-cash path the price requires.",
+        "items": [
+          {
+            "title": "Growth is broad.",
+            "detail": "Systems and support revenue increased 61.6% and 40.0% year over year."
+          },
+          {
+            "title": "Cash improved for two reasons.",
+            "detail": "Profit rose and working capital swung by $1.395 Bsequentially."
+          },
+          {
+            "title": "Guidance execution was solid.",
+            "detail": "Revenue beat the prior midpoint 1.47%; adjustedEPS 2.33%."
+          },
+          {
+            "title": "The price needs more cash.",
+            "detail": "Reverse year-five cash is $28.17 Bversus our $18 Bforward case."
+          },
+          {
+            "title": "Disclosure limits remain explicit.",
+            "detail": "Current 10-Q notes and post-print broker revisions are not yet verified."
+          }
+        ]
+      },
+      "source_published": "October 21,2026",
+      "words": 5757,
+      "figures": 18,
+      "tables": 31
+    },
+    {
       "key": "LRN:Q1-FY2027",
       "year": 2027,
       "quarter": 1,
@@ -2728,6 +2786,64 @@
       "tables": 31
     },
     {
+      "key": "ELV:Q3-2026",
+      "year": 2026,
+      "quarter": 3,
+      "fiscal": false,
+      "slug": "elv-q3-2026",
+      "ticker": "ELV",
+      "company": "Elevance Health, Inc.",
+      "period": "Q3 2026",
+      "canonical_url": "https://chargedalpha.com/research/elv-q3-2026",
+      "title": "ELV: A Higher Guide, a Different Earnings Baseline",
+      "page_title": "ELV Q3 2026 Research Packet — Charged Alpha",
+      "description": "Elevance raised adjusted EPS guidance to $29, while its 2027 growth claim starts from $26.75. We test recurring earnings, cash timing and regulated capital.",
+      "sha256": "05c889d5640346de9b3e83f2d5bde48566e7156007fb0c8fd4b8690f0b9f7cc5",
+      "html_file": "research_packets/elv-q3-2026.html",
+      "source_episode": "ELV-Q3-2026",
+      "source_staged_at": "2026-10-21T21:09:20Z",
+      "source_sha256": {
+        "READY": "d99bdb4682eb9b40621b1ae5f88b93de72f1b47092415fcff995374de3f46340",
+        "handoff.json": "448087972c8e514611200444b3bd2a9fd74d620e9f68bcdda21bea9986673fdb",
+        "packet/elv-q3-2026-research-packet.html": "05c889d5640346de9b3e83f2d5bde48566e7156007fb0c8fd4b8690f0b9f7cc5",
+        "packet/packet_meta.json": "8cef0d3a7302c527b11102e3fb0d121293313f582da4120b5f012fbde1e4917c",
+        "packet/packet.json": "9732ae06e42ee76034d40dbf0c3ce4841837d6414f8184a1c0f15ee36994f756"
+      },
+      "primary_youtube_long": "kNm4TuYV_K0",
+      "primary_youtube_short": null,
+      "youtube_studio": null,
+      "youtube_studio_short": null,
+      "what_changed": {
+        "summary": "Elevance raised adjusted EPS guidance to $29, while its 2027 growth claim starts from $26.75. We test recurring earnings, cash timing and regulated capital.",
+        "items": [
+          {
+            "title": "The raised headline is not the recurring baseline.",
+            "detail": "At least $29 adjusted EPS includes non-operating benefits; the 2027 growth statement starts from at least $26.75."
+          },
+          {
+            "title": "EPS improved more than operating profit.",
+            "detail": "Adjusted EPS rose 15.9%, while adjusted operating gain declined 0.5%. Investment income and share count affect the comparison."
+          },
+          {
+            "title": "Cash timing explains much of the rebound.",
+            "detail": "The $5.537B working-capital swing exceeds the $3.306B operating-cash increase; regulated capital limits parent access."
+          },
+          {
+            "title": "Do not revive a closed sanctions matter.",
+            "detail": "July filing says CMS enforcement closed with no sanctions; the $935M historical exposure accrual remains in the Q3 YTD reconciliation."
+          },
+          {
+            "title": "HOLD remains, but the valuation is updated.",
+            "detail": "$420 central and $421 weighted values give recovery credit without treating $440.71 intraday as a bargain."
+          }
+        ]
+      },
+      "source_published": "October 21, 2026",
+      "words": 5723,
+      "figures": 20,
+      "tables": 38
+    },
+    {
       "key": "ERIC:Q3-2026",
       "year": 2026,
       "quarter": 3,
@@ -3190,6 +3306,64 @@
       "words": 6621,
       "figures": 19,
       "tables": 34
+    },
+    {
+      "key": "KMI:Q3-2026",
+      "year": 2026,
+      "quarter": 3,
+      "fiscal": false,
+      "slug": "kmi-q3-2026",
+      "ticker": "KMI",
+      "company": "Kinder Morgan",
+      "period": "Q3 2026",
+      "canonical_url": "https://chargedalpha.com/research/kmi-q3-2026",
+      "title": "KMI: Bigger Projects — Who Funds the Growth?",
+      "page_title": "KMI Q3 2026 Research Packet — Charged Alpha",
+      "description": "Improved earnings meet a larger construction programme. Follow cash after capex and dividends, the project return bridge and a distinct reverse valuation.",
+      "sha256": "b2c551cb166bb8ff10fa150cdab7661edca41161f51e5acb5a9e5e5a8d16488a",
+      "html_file": "research_packets/kmi-q3-2026.html",
+      "source_episode": "KMI-Q3-2026",
+      "source_staged_at": "2026-10-22T00:24:09Z",
+      "source_sha256": {
+        "READY": "6bd9044461f31bd74acc3334ecc6a2d1e4bdd02368fd9aa6a0c1eb187412d5d8",
+        "handoff.json": "a194a0e5d4c076895fce29fc0b88c098bcd090ef282da83599925dd6bce69d17",
+        "packet/kmi-q3-2026-research-packet.html": "b2c551cb166bb8ff10fa150cdab7661edca41161f51e5acb5a9e5e5a8d16488a",
+        "packet/packet_meta.json": "3d5db27895cbac4873f0352391eeccd4b2ebd3c75b4acf100f2a44c28aff2a9d",
+        "packet/packet.json": "3e187e3adf730f8c08628fa72da9d85d710c0097c557afbc8c27bcd71291ef1c"
+      },
+      "primary_youtube_long": "PvO1Nn2Y4fc",
+      "primary_youtube_short": null,
+      "youtube_studio": null,
+      "youtube_studio_short": null,
+      "what_changed": {
+        "summary": "Improved earnings meet a larger construction programme. Follow cash after capex and dividends, the project return bridge and a distinct reverse valuation.",
+        "items": [
+          {
+            "title": "Earnings improved.",
+            "detail": "The cash question comes after construction and distributions."
+          },
+          {
+            "title": "Quarterly funding tightened.",
+            "detail": "Capex growth exceeded operating-cash growth."
+          },
+          {
+            "title": "Project economics need translation.",
+            "detail": "5.7 xprojectEBITDA is not shareholder free-cash return."
+          },
+          {
+            "title": "Gross adjustments matter.",
+            "detail": "$138 Maccrual and $71 Mgain partly offset."
+          },
+          {
+            "title": "Missing evidence stays missing.",
+            "detail": "Current detailed notes and new broker revisions remain pending."
+          }
+        ]
+      },
+      "source_published": "October 21, 2026",
+      "words": 5778,
+      "figures": 15,
+      "tables": 32
     },
     {
       "key": "LADR:Q3-FY2026",
