@@ -4120,6 +4120,64 @@
       "tables": 33
     },
     {
+      "key": "SCCO:Q3-FY2026",
+      "year": 2026,
+      "quarter": 3,
+      "fiscal": true,
+      "slug": "scco-q3-fy2026",
+      "ticker": "SCCO",
+      "company": "Southern Copper Corporation",
+      "period": "Q3 FY2026",
+      "canonical_url": "https://chargedalpha.com/research/scco-q3-fy2026",
+      "title": "SCCO: The Nine-Cent Copper Cost Has a Catch",
+      "page_title": "SCCO Q3 FY2026 Research Packet — Charged Alpha",
+      "description": "Record cash generation meets a demanding share price: gross costs, by-product credits and project uncertainty define Southern Copper’s owner-return test.",
+      "sha256": "8516287be7c743207d7b66a9671a4303a479049d3166fa6227b64b4c66c0a2c3",
+      "html_file": "research_packets/scco-q3-fy2026.html",
+      "source_episode": "SCCO-Q3-FY2026",
+      "source_staged_at": "2026-10-22T21:56:01Z",
+      "source_sha256": {
+        "READY": "a118f346c351a1c9fdebd018fd0400571a2fb57bf81124180f122a1417aa8175",
+        "handoff.json": "956da8e37dc8bf5c4eae9d492d443d331dc3d7eeea3d8d859427df03a98f6ee3",
+        "packet/scco-q3-fy2026-research-packet.html": "8516287be7c743207d7b66a9671a4303a479049d3166fa6227b64b4c66c0a2c3",
+        "packet/packet_meta.json": "0956e2b63fa04ba10107351970ef06fd693921ab39e3899ba1553c6443c6242b",
+        "packet/packet.json": "9c0e631992c2e535ca45c17303559d5a6793329ad8810a6e02fc323ddd91fcbd"
+      },
+      "primary_youtube_long": "gj62sjTRAEA",
+      "primary_youtube_short": null,
+      "youtube_studio": null,
+      "youtube_studio_short": null,
+      "what_changed": {
+        "summary": "Record cash generation meets a demanding share price: gross costs, by-product credits and project uncertainty define Southern Copper’s owner-return test.",
+        "items": [
+          {
+            "title": "Record cash is real.",
+            "detail": "Q3 operating cash of $2,224.3M less $515.8M capital investment yields $1,708.5M free cash flow, calculated."
+          },
+          {
+            "title": "The low net cost depends on credits.",
+            "detail": "Gross cash cost rose to245.5¢/lb; by-products reduced the net measure to9.5¢/lb."
+          },
+          {
+            "title": "Production needs the correct comparison.",
+            "detail": "Mined copper fell1.1% YoY but rose approximately0.8% sequentially; the issuer narrative mislabels the decline."
+          },
+          {
+            "title": "Project uncertainty stays outside base value.",
+            "detail": "El Pilar annual output is stated as36,000 and29,000; no invented reconciliation or volume-derived base cash flow."
+          },
+          {
+            "title": "Price asks for stronger durability.",
+            "detail": "Our $130 central value and $136.25 weighted scenario value are below the dated $182.91 quote."
+          }
+        ]
+      },
+      "source_published": "October 22, 2026",
+      "words": 5573,
+      "figures": 15,
+      "tables": 30
+    },
+    {
       "key": "SNX:Q3-FY2026",
       "year": 2026,
       "quarter": 3,

@@ -10,6 +10,24 @@
   },
   "episodes": [
     {
+      "ticker": "SCCO",
+      "company": "Southern Copper Corporation",
+      "sector": "Basic Materials",
+      "quarter": "Q3 FY2026",
+      "episode_number": "",
+      "title": "SCCO Stock: The Nine-Cent Copper Cost Has a Catch | Q3 FY2026",
+      "published_at": "2026-10-22T21:12:12+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=gj62sjTRAEA",
+      "spotify_url": "https://open.spotify.com/episode/74KiucxZ3XFq3VYuMpHrM3",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/scco-stock-the-nine-cent-copper-cost-has-a-catch-q3-fy2026/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
       "ticker": "DHR",
       "company": "Danaher Corporation",
       "sector": "Healthcare",
@@ -48077,7 +48095,7 @@
       ]
     }
   ],
-  "last_synced_at": "2026-10-21T20:33:55-05:00",
+  "last_synced_at": "2026-10-22T16:53:36-05:00",
   "stock_metadata": {
     "A": {
       "company": "Agilent Technologies, Inc.",
@@ -51640,6 +51658,10 @@
     "SBUX": {
       "company": "Starbucks Corp.",
       "sector": "Consumer"
+    },
+    "SCCO": {
+      "company": "Southern Copper Corporation",
+      "sector": "Basic Materials"
     },
     "SCHW": {
       "company": "Charles Schwab Corporation",
