@@ -2728,6 +2728,64 @@
       "tables": 31
     },
     {
+      "key": "DHR:Q3-2026",
+      "year": 2026,
+      "quarter": 3,
+      "fiscal": false,
+      "slug": "dhr-q3-2026",
+      "ticker": "DHR",
+      "company": "Danaher",
+      "period": "Q3 2026",
+      "canonical_url": "https://chargedalpha.com/research/dhr-q3-2026",
+      "title": "DHR: Earnings Jumped — How Much Will Repeat?",
+      "page_title": "DHR Q3 2026 Research Packet — Charged Alpha",
+      "description": "Separate the tax-assisted earnings increase, revised core-growth definition and Masimo funding from recurring cash value.",
+      "sha256": "45b913c8c51c6325eea0dc6299dbc27d123f01fdf1723020734dbc3bca803954",
+      "html_file": "research_packets/dhr-q3-2026.html",
+      "source_episode": "DHR-Q3-2026",
+      "source_staged_at": "2026-10-22T01:30:47Z",
+      "source_sha256": {
+        "READY": "de6c61522100389a9bee384f69e608509a30491cb208b43c312b97c749e6cc35",
+        "handoff.json": "9983322c3dece303de5252f8a3c20942539dca331665c8dd2cf5663dd64ff621",
+        "packet/dhr-q3-2026-research-packet.html": "45b913c8c51c6325eea0dc6299dbc27d123f01fdf1723020734dbc3bca803954",
+        "packet/packet_meta.json": "426a6494f7ff5c3b168b16ec8eecb3add8747eef2439458b46ff33c999d2e4ff",
+        "packet/packet.json": "b4e2873773dc37f484e6b75cd44267a35ead992e539fa251e5087c075c6a2aa6"
+      },
+      "primary_youtube_long": "8LAmb2igDZU",
+      "primary_youtube_short": null,
+      "youtube_studio": null,
+      "youtube_studio_short": null,
+      "what_changed": {
+        "summary": "Separate the tax-assisted earnings increase, revised core-growth definition and Masimo funding from recurring cash value.",
+        "items": [
+          {
+            "title": "The tax bridge matters.",
+            "detail": "A $243 M tax-line swing explains 81.3% of the $299 M continuing earnings increase."
+          },
+          {
+            "title": "Core growth has a new definition.",
+            "detail": "Q3 excludes customer tariff refunds; acquisitions also drive reported sales."
+          },
+          {
+            "title": "Cash improved, funding expanded.",
+            "detail": "YTD companyFCF $3.982 B does not deduct $9.881 B acquisition cash."
+          },
+          {
+            "title": "Guidance rose modestly.",
+            "detail": "Adjusted EPS midpoint increased $0.07 to $8.595."
+          },
+          {
+            "title": "Value requires repeatability.",
+            "detail": "Our $200 central value compares with $233.86 EOD; litigation proceeds are excluded."
+          }
+        ]
+      },
+      "source_published": "October 21,2026",
+      "words": 5881,
+      "figures": 16,
+      "tables": 34
+    },
+    {
       "key": "EFX:Q3-2026",
       "year": 2026,
       "quarter": 3,
