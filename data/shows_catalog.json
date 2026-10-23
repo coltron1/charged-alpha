@@ -35507,6 +35507,21 @@
       "description": "Fast clips that point viewers into full research videos and stock pages.",
       "videos": [
         {
+          "title": "MXL Stock: MaxLinear Q3 2026 Earnings — Profit Before Cash #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/2fif30ftU3A",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-10-22T18:55:58-07:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "MXL"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage.",
+          "earnings_youtube_url": "https://www.youtube.com/watch?v=LTjUmkoua-k",
+          "earnings_match": "stock_period_date"
+        },
+        {
           "title": "SCCO Stock: Nine-Cent Copper Has a Catch | Q3 FY2026 #Shorts",
           "youtube_url": "https://www.youtube.com/shorts/goOe7NPYv2M",
           "spotify_url": "",
@@ -48128,7 +48143,7 @@
       ]
     }
   ],
-  "last_synced_at": "2026-10-22T19:07:09-05:00",
+  "last_synced_at": "2026-10-22T21:08:02-05:00",
   "stock_metadata": {
     "A": {
       "company": "Agilent Technologies, Inc.",

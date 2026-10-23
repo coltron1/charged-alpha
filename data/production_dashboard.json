@@ -1,11 +1,21 @@
 {
   "schema": "charged-alpha-public-production/1",
-  "updated_at": "2026-10-22T20:21:18.985938-05:00",
+  "updated_at": "2026-10-22T21:13:56.104008-05:00",
   "calendar_updated_at": "2026-10-22T19:16:58.509672-05:00",
   "calendar_status": "fresh",
   "daily_target": 10,
   "active": [],
   "history": [
+    {
+      "ticker": "MXL",
+      "company": "MaxLinear, Inc.",
+      "period": "Q3 2026",
+      "completed_at": "2026-10-22T21:09:00.377361-05:00",
+      "video_url": "https://youtu.be/LTjUmkoua-k",
+      "short_url": "https://youtu.be/2fif30ftU3A",
+      "packet_url": "https://chargedalpha.com/research/mxl-q3-2026",
+      "stock_url": "/shows/mxl"
+    },
     {
       "ticker": "SCCO",
       "company": "Southern Copper Corporation",
