@@ -4642,6 +4642,64 @@
       "tables": 34
     },
     {
+      "key": "TTMI:Q3-2026",
+      "year": 2026,
+      "quarter": 3,
+      "fiscal": false,
+      "slug": "ttmi-q3-2026",
+      "ticker": "TTMI",
+      "company": "TTM Technologies, Inc.",
+      "period": "Q3 2026",
+      "canonical_url": "https://chargedalpha.com/research/ttmi-q3-2026",
+      "title": "TTMI: Earnings Have Surged. Cash Still Has to Catch Up.",
+      "page_title": "TTMI Q3 2026 Research Packet — Charged Alpha",
+      "description": "A cash-conversion and acquisition-financing test after TTMI’s Q3 2026 results and sharp share-price decline.",
+      "sha256": "99862478e08091e129fe9762b1222cadcf7fc646f10a665a3c841be79073af84",
+      "html_file": "research_packets/ttmi-q3-2026.html",
+      "source_episode": "TTMI-Q3-2026",
+      "source_staged_at": "2026-10-23T19:25:18Z",
+      "source_sha256": {
+        "READY": "a5829ecb96c789d2554886808627a796e51b41004cfa113797d12d7b6bd950eb",
+        "handoff.json": "6efc997204bca4e636efe2e5fd4608f8a85859ceaaf514765fdd7c3ea64d89a4",
+        "packet/ttmi-q3-2026-research-packet.html": "99862478e08091e129fe9762b1222cadcf7fc646f10a665a3c841be79073af84",
+        "packet/packet_meta.json": "14a1df9cc09d1dabd39371779bbfccfbae338f695a30e61e28784010904f8618",
+        "packet/packet.json": "de24308af08311489ffe6f3b5b66291ba0547c70cb5bf2b6eb9eb7c7ae8821fc"
+      },
+      "primary_youtube_long": "h4sCsINuR3c",
+      "primary_youtube_short": null,
+      "youtube_studio": null,
+      "youtube_studio_short": null,
+      "what_changed": {
+        "summary": "A cash-conversion and acquisition-financing test after TTMI’s Q3 2026 results and sharp share-price decline.",
+        "items": [
+          {
+            "title": "Profit is real, but definitions matter.",
+            "detail": "GAAP net income is $84.8M; adjusted net income is $157.8M after $73.0M of exclusions."
+          },
+          {
+            "title": "Cash is the constraint.",
+            "detail": "Nine-month operating cash of $272.9M is largely consumed by $237.1M net investment."
+          },
+          {
+            "title": "The balance sheet has a date boundary.",
+            "detail": "September 28 statements precede the September 30 Epiq closing; they cannot define today’s enterprise value."
+          },
+          {
+            "title": "Demand and spending rise together.",
+            "detail": "Book-to-bill is 2.13, while an additional $400M manufacturing investment expands the capital commitment."
+          },
+          {
+            "title": "Cheap EPS is not the whole decision.",
+            "detail": "At 8.69× preliminary FY2027 adjusted midpoint, valuation still depends on integration, dilution and cash available to owners."
+          }
+        ]
+      },
+      "source_published": "October 23, 2026",
+      "words": 5907,
+      "figures": 19,
+      "tables": 16
+    },
+    {
       "key": "UNH:Q3-2026",
       "year": 2026,
       "quarter": 3,

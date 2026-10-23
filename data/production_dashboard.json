@@ -1,11 +1,41 @@
 {
   "schema": "charged-alpha-public-production/1",
-  "updated_at": "2026-10-23T13:31:18.149289-05:00",
-  "calendar_updated_at": "2026-10-23T11:10:58.280104-05:00",
+  "updated_at": "2026-10-23T14:43:15.197061-05:00",
+  "calendar_updated_at": "2026-10-23T14:25:14.857963-05:00",
   "calendar_status": "fresh",
   "daily_target": 10,
   "active": [],
   "history": [
+    {
+      "ticker": "SPCX",
+      "company": "Space Exploration Technologies Corp.",
+      "period": "Q3 2026",
+      "completed_at": "2026-10-23T14:39:21.237995-05:00",
+      "video_url": "https://youtu.be/5okHuCmVy3g",
+      "short_url": "https://youtu.be/knaWtkZ5Wxg",
+      "packet_url": "https://chargedalpha.com/research/spcx-q3-2026",
+      "stock_url": "/shows/spcx"
+    },
+    {
+      "ticker": "NFLX",
+      "company": "Netflix",
+      "period": "Q3 2026",
+      "completed_at": "2026-10-23T14:39:05.367719-05:00",
+      "video_url": "https://youtu.be/_4lq6h61mvg",
+      "short_url": "https://youtu.be/kPcsS3iGy4o",
+      "packet_url": "https://chargedalpha.com/research/nflx-q3-2026",
+      "stock_url": "/shows/nflx"
+    },
+    {
+      "ticker": "LRN",
+      "company": "Stride, Inc.",
+      "period": "Q1 FY2027",
+      "completed_at": "2026-10-23T14:38:45.161197-05:00",
+      "video_url": "https://youtu.be/qvYM_5p800E",
+      "short_url": "https://youtu.be/c27KZUplSrI",
+      "packet_url": "https://chargedalpha.com/research/lrn-q1-fy2027",
+      "stock_url": "/shows/lrn"
+    },
     {
       "ticker": "LRCX",
       "company": "Lam Research",
@@ -1371,16 +1401,6 @@
     {
       "ticker": "KFRC",
       "company": "Kforce Inc.",
-      "report_date": "2026-10-26",
-      "report_time_label": "Time unconfirmed",
-      "planned_date": "",
-      "date_status": "Calendar estimate",
-      "source_url": null,
-      "stock_url": null
-    },
-    {
-      "ticker": "METC",
-      "company": "Ramaco Resources, Inc.",
       "report_date": "2026-10-26",
       "report_time_label": "Time unconfirmed",
       "planned_date": "",
@@ -4447,16 +4467,6 @@
       "date_status": "Calendar estimate",
       "source_url": null,
       "stock_url": null
-    },
-    {
-      "ticker": "MAIR",
-      "company": "Madison Air Solutions Corporation",
-      "report_date": "2026-10-29",
-      "report_time_label": "Time unconfirmed",
-      "planned_date": "",
-      "date_status": "Calendar estimate",
-      "source_url": null,
-      "stock_url": "/shows/mair"
     },
     {
       "ticker": "STRC",
