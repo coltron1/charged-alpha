@@ -35561,6 +35561,21 @@
       "description": "Fast clips that point viewers into full research videos and stock pages.",
       "videos": [
         {
+          "title": "LRN Stock: Stride Q1 FY2027 Earnings — EPS Up, Business Better? #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/c27KZUplSrI",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-10-23T07:09:51-07:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "LRN"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage.",
+          "earnings_youtube_url": "https://www.youtube.com/watch?v=qvYM_5p800E",
+          "earnings_match": "stock_period_date"
+        },
+        {
           "title": "NEE Stock: NextEra Energy Q3 2026 — Growth Has a Funding Bill #Shorts",
           "youtube_url": "https://www.youtube.com/shorts/2t-cQqh_f1Q",
           "spotify_url": "",
@@ -48272,7 +48287,7 @@
       ]
     }
   ],
-  "last_synced_at": "2026-10-23T08:08:13-05:00",
+  "last_synced_at": "2026-10-23T09:12:15-05:00",
   "stock_metadata": {
     "A": {
       "company": "Agilent Technologies, Inc.",
