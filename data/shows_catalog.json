@@ -10,6 +10,24 @@
   },
   "episodes": [
     {
+      "ticker": "SAP",
+      "company": "SAP SE",
+      "sector": "Technology",
+      "quarter": "Q3 2026",
+      "episode_number": "",
+      "title": "SAP Stock: Cloud Growth Is Strong. Where Is the Owner Cash? — Q3 2026",
+      "published_at": "2026-10-23T08:20:55+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=8_uC1m2eUCk",
+      "spotify_url": "https://open.spotify.com/episode/3lDQQ1HX2tAMf6Cpfhq9Sy",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/sap-stock-cloud-growth-is-strong-where-is-the-owner-cash-%e2%80%94-q3-2026/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
       "ticker": "CMCSA",
       "company": "Comcast Corporation",
       "sector": "Communication Services",
@@ -48206,7 +48224,7 @@
       ]
     }
   ],
-  "last_synced_at": "2026-10-23T02:05:40-05:00",
+  "last_synced_at": "2026-10-23T03:37:12-05:00",
   "stock_metadata": {
     "A": {
       "company": "Agilent Technologies, Inc.",
