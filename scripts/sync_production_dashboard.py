@@ -15,7 +15,7 @@ from production_board import project_snapshot
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--snapshot', type=Path, default=Path.home() / 'Desktop/CHARGED ALPHA EPISODES/_studio_motion_codex/production/dashboard/snapshot.json')
+    parser.add_argument('--snapshot', type=Path, default=Path.home() / 'Projects/charged-alpha-production/_studio_motion_codex/production/dashboard/snapshot.json')
     parser.add_argument('--execute', action='store_true')
     args = parser.parse_args()
     try:

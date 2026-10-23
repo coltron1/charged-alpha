@@ -10,6 +10,8 @@ The combined Charged Alpha producer/studio/site heartbeat owns this data. After 
 
 Review counts and the proposed public fields, then run the same script with `--execute` through the production controller's website maintenance lane. Commit `data/production_dashboard.json` with the normal website data update and deploy through the existing Git/Railway process. Verify `/` and `/production` after deployment. Run this even when no new episode was buildable so the dated calendar is refreshed; do not claim that a failed provider request means there are no earnings.
 
+The importer defaults to the current local `~/Projects/charged-alpha-production/_studio_motion_codex/production/dashboard/snapshot.json`. The older Desktop production tree is historical and may contain a stale snapshot. Use `--snapshot` only when explicitly selecting another reviewed source.
+
 The importer is local-only. The deployed website has no dependency on the producer's Mac, localhost server, filesystem paths, credentials, or models. Its explicit output allowlist contains company identity, periods, dates/timing, public video/packet/source links and freshness. Raw private snapshot fields—including claims, PIDs, automation status, internal scoring, blocked work and local provenance—are never copied into the site.
 
 Canonical `DONE` evidence supplies completed bundles. A primary upload or render alone is not a completed bundle. Forecast entries are tentative and do not bypass the producer's filing, eligibility or quality checks. Dates older than the viewer's current day are removed from “Reporting next”; a source older than four hours is visibly marked as needing refresh.
