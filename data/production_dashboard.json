@@ -1,11 +1,41 @@
 {
   "schema": "charged-alpha-public-production/1",
-  "updated_at": "2026-10-23T09:49:55.418073-05:00",
-  "calendar_updated_at": "2026-10-23T08:08:25.504402-05:00",
+  "updated_at": "2026-10-23T11:42:11.610734-05:00",
+  "calendar_updated_at": "2026-10-23T11:10:58.280104-05:00",
   "calendar_status": "fresh",
   "daily_target": 10,
   "active": [],
   "history": [
+    {
+      "ticker": "LRCX",
+      "company": "Lam Research",
+      "period": "Q1 FY2027",
+      "completed_at": "2026-10-23T11:37:59.383853-05:00",
+      "video_url": "https://youtu.be/wFcKuxoD9PU",
+      "short_url": "https://youtu.be/jWjdeUx_fjM",
+      "packet_url": "https://chargedalpha.com/research/lrcx-q1-fy2027",
+      "stock_url": "/shows/lrcx"
+    },
+    {
+      "ticker": "KMI",
+      "company": "Kinder Morgan",
+      "period": "Q3 2026",
+      "completed_at": "2026-10-23T11:37:44.113603-05:00",
+      "video_url": "https://youtu.be/PvO1Nn2Y4fc",
+      "short_url": "https://youtu.be/hnQ5Xpx6P_0",
+      "packet_url": "https://chargedalpha.com/research/kmi-q3-2026",
+      "stock_url": "/shows/kmi"
+    },
+    {
+      "ticker": "DHR",
+      "company": "Danaher Corporation",
+      "period": "Q3 2026",
+      "completed_at": "2026-10-23T11:08:05.970146-05:00",
+      "video_url": "https://youtu.be/8LAmb2igDZU",
+      "short_url": "https://youtu.be/JEPhuRtjzRY",
+      "packet_url": "https://chargedalpha.com/research/dhr-q3-2026",
+      "stock_url": "/shows/dhr"
+    },
     {
       "ticker": "NEE",
       "company": "NextEra Energy Inc.",
@@ -4441,6 +4471,16 @@
     {
       "ticker": "STRF",
       "company": "MicroStrategy Incorporated 10.00% Series A Perpetual Strife Preferred Stock",
+      "report_date": "2026-10-29",
+      "report_time_label": "Time unconfirmed",
+      "planned_date": "",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": null
+    },
+    {
+      "ticker": "KYMR",
+      "company": "Kymera Therapeutics, Inc.",
       "report_date": "2026-10-29",
       "report_time_label": "Time unconfirmed",
       "planned_date": "",

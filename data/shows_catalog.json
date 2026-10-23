@@ -35561,6 +35561,51 @@
       "description": "Fast clips that point viewers into full research videos and stock pages.",
       "videos": [
         {
+          "title": "LRCX Stock: Lam Research Q1 FY2027 — Can the Cash Repeat? #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/jWjdeUx_fjM",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-10-23T16:01:36+00:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "LRCX"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage.",
+          "earnings_youtube_url": "https://www.youtube.com/watch?v=wFcKuxoD9PU",
+          "earnings_match": "stock_period_date"
+        },
+        {
+          "title": "KMI Stock: Kinder Morgan Q3 2026 — Who Funds the Growth? #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/hnQ5Xpx6P_0",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-10-23T16:00:17+00:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "KMI"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage.",
+          "earnings_youtube_url": "https://www.youtube.com/watch?v=PvO1Nn2Y4fc",
+          "earnings_match": "stock_period_date"
+        },
+        {
+          "title": "DHR Stock: Danaher Q3 2026 — How Much Profit Can Repeat? #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/JEPhuRtjzRY",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-10-23T15:54:43+00:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "DHR"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage.",
+          "earnings_youtube_url": "https://www.youtube.com/watch?v=8LAmb2igDZU",
+          "earnings_match": "stock_period_date"
+        },
+        {
           "title": "LRN Stock: Stride Q1 FY2027 Earnings — EPS Up, Business Better? #Shorts",
           "youtube_url": "https://www.youtube.com/shorts/c27KZUplSrI",
           "spotify_url": "",
@@ -48287,7 +48332,7 @@
       ]
     }
   ],
-  "last_synced_at": "2026-10-23T09:12:15-05:00",
+  "last_synced_at": "2026-10-23T11:39:42-05:00",
   "stock_metadata": {
     "A": {
       "company": "Agilent Technologies, Inc.",
