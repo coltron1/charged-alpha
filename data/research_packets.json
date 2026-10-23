@@ -3656,6 +3656,64 @@
       "tables": 32
     },
     {
+      "key": "MXL:Q3-2026",
+      "year": 2026,
+      "quarter": 3,
+      "fiscal": false,
+      "slug": "mxl-q3-2026",
+      "ticker": "MXL",
+      "company": "MaxLinear, Inc.",
+      "period": "Q3 2026",
+      "canonical_url": "https://chargedalpha.com/research/mxl-q3-2026",
+      "title": "MXL: Profit Arrives Before the Cash",
+      "page_title": "MXL Q3 2026 Research Packet — Charged Alpha",
+      "description": "MaxLinear’s profitable revenue ramp still needs wafer funding, working capital and dilution discipline; our model tests the cash-conversion hurdle.",
+      "sha256": "014b5572c72f172de213d29a2d16da62b68dab08f3067a3a02912746430968af",
+      "html_file": "research_packets/mxl-q3-2026.html",
+      "source_episode": "MXL-Q3-2026",
+      "source_staged_at": "2026-10-23T01:17:17Z",
+      "source_sha256": {
+        "READY": "7d8d4deeaab825a252f71367efab03554422c43e7b01cf8d8eb2c17696cd8ec9",
+        "handoff.json": "f764ee89105d56b0b8b7355f800d0bc98cbd11e378dea06ac138fa32931acf9b",
+        "packet/mxl-q3-2026-research-packet.html": "014b5572c72f172de213d29a2d16da62b68dab08f3067a3a02912746430968af",
+        "packet/packet_meta.json": "3bbe69c4425db4c1c8fe546d540e98f626a4d2be8348b9327086242a524916d2",
+        "packet/packet.json": "577ab1f2623067c0c0f60971e0041e269c88ac82d0babaf290b34300b7ca43f6"
+      },
+      "primary_youtube_long": "LTjUmkoua-k",
+      "primary_youtube_short": null,
+      "youtube_studio": null,
+      "youtube_studio_short": null,
+      "what_changed": {
+        "summary": "MaxLinear’s profitable revenue ramp still needs wafer funding, working capital and dilution discipline; our model tests the cash-conversion hurdle.",
+        "items": [
+          {
+            "title": "Profitability has crossed an operating threshold.",
+            "detail": "GAAP operating income is $30.227M versus a $4.185M loss last quarter; this is more meaningful than Q2’s tax-assisted net profit."
+          },
+          {
+            "title": "Growth still absorbs cash.",
+            "detail": "Q3 OCF is negative $13.590M and FCF after PP&E is negative $19.530M. Wafer funding and inventory can enable growth, but must eventually become collections."
+          },
+          {
+            "title": "The funding cushion has changed.",
+            "detail": "A $40M quarter-end revolver draw precedes an October22 expansion to $200M commitments and a lower $60M liquidity floor. Capacity is conditional borrowing, not cash."
+          },
+          {
+            "title": "Infrastructure supplies most incremental sales.",
+            "detail": "Its $84.564M increase explains 92.3% of total year-over-year growth; broadband revenue declined. The category is broader than optical AI alone."
+          },
+          {
+            "title": "Our price hurdle includes dilution and legal uncertainty.",
+            "detail": "Central value is $44 versus the $65.28 pre-release close. Confidential Silicon Motion arbitration and surviving litigation remain unquantified tail risks."
+          }
+        ]
+      },
+      "source_published": "October 22, 2026",
+      "words": 5568,
+      "figures": 15,
+      "tables": 25
+    },
+    {
       "key": "NEE:Q3-2026",
       "year": 2026,
       "quarter": 3,

@@ -1,6 +1,6 @@
 {
   "schema": "charged-alpha-public-production/1",
-  "updated_at": "2026-10-22T19:22:56.093565-05:00",
+  "updated_at": "2026-10-22T20:21:18.985938-05:00",
   "calendar_updated_at": "2026-10-22T19:16:58.509672-05:00",
   "calendar_status": "fresh",
   "daily_target": 10,
@@ -983,7 +983,7 @@
       "company": "Valero Energy Corporation",
       "report_date": "2026-10-22",
       "report_time_label": "Time unconfirmed",
-      "planned_date": "2026-10-24",
+      "planned_date": "2026-10-23",
       "date_status": "Calendar estimate",
       "source_url": null,
       "stock_url": "/shows/vlo"
@@ -1133,7 +1133,7 @@
       "company": "Carpenter Technology Corporation",
       "report_date": "2026-10-22",
       "report_time_label": "Time unconfirmed",
-      "planned_date": "2026-10-26",
+      "planned_date": "2026-10-25",
       "date_status": "Calendar estimate",
       "source_url": null,
       "stock_url": "/shows/crs"
@@ -1213,7 +1213,7 @@
       "company": "Robert Half Inc.",
       "report_date": "2026-10-22",
       "report_time_label": "Time unconfirmed",
-      "planned_date": "",
+      "planned_date": "2026-10-26",
       "date_status": "Calendar estimate",
       "source_url": null,
       "stock_url": "/shows/rhi"
@@ -1483,7 +1483,7 @@
       "company": "Balchem Corp",
       "report_date": "2026-10-23",
       "report_time_label": "Time unconfirmed",
-      "planned_date": "2026-10-25",
+      "planned_date": "2026-10-24",
       "date_status": "Calendar estimate",
       "source_url": null,
       "stock_url": null
