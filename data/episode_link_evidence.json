@@ -220,6 +220,17 @@
       "fetched_at": "2026-09-10T13:38:04.022435+00:00",
       "target_video_id": "SAuSmFDNZ58",
       "relation": "studio_primary"
+    },
+    "kPcsS3iGy4o": {
+      "source_video_id": "kPcsS3iGy4o",
+      "source_url": "https://www.youtube.com/watch?v=kPcsS3iGy4o",
+      "channel_id": "UC4ZDZpC0OvoN4cCGoUSofuA",
+      "title": "NFLX Stock: Netflix Q3 Earnings — Profit Up, What Repeats? #Shorts",
+      "description": "Netflix (NFLX) Q3 2026 operating profit rose 37.3%, but last year’s Brazil tax charge and current expense timing affect the comparison. The annual $12B free-cash-flow guide includes a $2.8B merger termination receipt.\n\nOur SELL, $55 central value and High uncertainty use a dated $68.69 regular close before released results. Saved Street targets predate the print.\n\nFull breakdown: https://youtu.be/_4lq6h61mvg\nResearch packet: https://chargedalpha.com/research/nflx-q3-2026\n\nEducational only. Not financial advice.\n\nLearn investing free in the Charged Alpha app: https://chargedalpha.com/app?source=youtube&ref=video\nEducational only. Not financial advice.",
+      "description_sha256": "e207f995161095b508b2287eac7e5f39afa81a639eada719aaf9b1e904d0a159",
+      "fetched_at": "2026-10-23T18:29:13.532597+00:00",
+      "target_video_id": "_4lq6h61mvg",
+      "relation": "short_earnings"
     }
   }
 }

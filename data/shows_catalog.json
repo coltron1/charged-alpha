@@ -35561,6 +35561,36 @@
       "description": "Fast clips that point viewers into full research videos and stock pages.",
       "videos": [
         {
+          "title": "SPCX Stock: SpaceX’s $6 Billion Earnings Bridge — Q3 2026 #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/knaWtkZ5Wxg",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-10-23T18:22:23+00:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "SPCX"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage.",
+          "earnings_youtube_url": "https://www.youtube.com/watch?v=5okHuCmVy3g",
+          "earnings_match": "stock_period_date"
+        },
+        {
+          "title": "NFLX Stock: Netflix Q3 Earnings — Profit Up, What Repeats? #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/kPcsS3iGy4o",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-10-23T18:16:49+00:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "NFLX"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage.",
+          "earnings_youtube_url": "https://www.youtube.com/watch?v=_4lq6h61mvg",
+          "earnings_match": "verified_description_link"
+        },
+        {
           "title": "LRCX Stock: Lam Research Q1 FY2027 — Can the Cash Repeat? #Shorts",
           "youtube_url": "https://www.youtube.com/shorts/jWjdeUx_fjM",
           "spotify_url": "",
@@ -48332,7 +48362,7 @@
       ]
     }
   ],
-  "last_synced_at": "2026-10-23T11:39:42-05:00",
+  "last_synced_at": "2026-10-23T13:30:39-05:00",
   "stock_metadata": {
     "A": {
       "company": "Agilent Technologies, Inc.",
