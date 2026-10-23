@@ -10,6 +10,24 @@
   },
   "episodes": [
     {
+      "ticker": "CMCSA",
+      "company": "Comcast Corporation",
+      "sector": "Communication Services",
+      "quarter": "Q3 2026",
+      "episode_number": "",
+      "title": "CMCSA Stock: Peacock Turns Profitable, So Why Did Cash Fall? — Q3 2026",
+      "published_at": "2026-10-23T03:50:06+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=aJ2m8sbuTCM",
+      "spotify_url": "https://open.spotify.com/episode/02BFpCUy1OVtoS2M9AhQDA",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/cmcsa-stock-peacock-turns-profitable-so-why-did-cash-fall-%e2%80%94-q3-2026/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
       "ticker": "MXL",
       "company": "MaxLinear, Inc.",
       "sector": "Technology",
@@ -48143,7 +48161,7 @@
       ]
     }
   ],
-  "last_synced_at": "2026-10-22T21:08:02-05:00",
+  "last_synced_at": "2026-10-22T23:02:34-05:00",
   "stock_metadata": {
     "A": {
       "company": "Agilent Technologies, Inc.",

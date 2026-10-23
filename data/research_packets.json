@@ -2728,6 +2728,64 @@
       "tables": 31
     },
     {
+      "key": "CMCSA:Q3-2026",
+      "year": 2026,
+      "quarter": 3,
+      "fiscal": false,
+      "slug": "cmcsa-q3-2026",
+      "ticker": "CMCSA",
+      "company": "Comcast Corporation",
+      "period": "Q3 2026",
+      "canonical_url": "https://chargedalpha.com/research/cmcsa-q3-2026",
+      "title": "CMCSA: Peacock turned profitable. Why did cash fall?",
+      "page_title": "CMCSA Q3 2026 Research Packet — Charged Alpha",
+      "description": "Peacock profitability meets a weaker residential cash engine: Comcast Q3 results, reinvestment, debt and a $23 conditional fair-value framework.",
+      "sha256": "0903a2b3c3bd6305e0e6a17e8d973b653e5a5f83167b35b4cc5d4f18b257cc10",
+      "html_file": "research_packets/cmcsa-q3-2026.html",
+      "source_episode": "CMCSA-Q3-2026",
+      "source_staged_at": "2026-10-23T04:13:42Z",
+      "source_sha256": {
+        "READY": "3a4e0fc0355ad932d7ab54191cc9f7b8548704440fe72642e078193c3af29421",
+        "handoff.json": "6c7dfafdfc5e8a539c208987d43317fa0a7da10014b240b8cfbbe3cec06998f4",
+        "packet/cmcsa-q3-2026-research-packet.html": "0903a2b3c3bd6305e0e6a17e8d973b653e5a5f83167b35b4cc5d4f18b257cc10",
+        "packet/packet_meta.json": "c79e4b9066c88c66bc82fcf78ed1a6efbfdd41ea2ff96a09f8640260c5df72cd",
+        "packet/packet.json": "dbf1c67438f33a6ea21b4fe691b8aff134b4ceefe82a2c3c949c991bb48f2f2d"
+      },
+      "primary_youtube_long": "aJ2m8sbuTCM",
+      "primary_youtube_short": null,
+      "youtube_studio": null,
+      "youtube_studio_short": null,
+      "what_changed": {
+        "summary": "Peacock profitability meets a weaker residential cash engine: Comcast Q3 results, reinvestment, debt and a $23 conditional fair-value framework.",
+        "items": [
+          {
+            "title": "Streaming is contributing.",
+            "detail": "Peacock generated $261M adjusted EBITDA, its second profitable quarter; standalone cash flow is not disclosed."
+          },
+          {
+            "title": "The cash engine is weaker.",
+            "detail": "Residential EBITDA declined $374M and parks EBITDA declined $160M year over year."
+          },
+          {
+            "title": "Definitions change the headline.",
+            "detail": "Revenue fell 6.1% reported but grew 0.5% on the issuer pro forma perimeter; both must be labeled."
+          },
+          {
+            "title": "Buyback support paused.",
+            "detail": "No Q3 program repurchases; the model assumes no automatic share-count shrinkage."
+          },
+          {
+            "title": "Cash value is near the price.",
+            "detail": "Three cautious routes support about $23 against $22.84, with a $16–32 ordinary scenario band."
+          }
+        ]
+      },
+      "source_published": "October 22, 2026",
+      "words": 5827,
+      "figures": 15,
+      "tables": 29
+    },
+    {
       "key": "DHR:Q3-2026",
       "year": 2026,
       "quarter": 3,
