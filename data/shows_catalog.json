@@ -35543,6 +35543,21 @@
       "description": "Fast clips that point viewers into full research videos and stock pages.",
       "videos": [
         {
+          "title": "NEE Stock: NextEra Energy Q3 2026 — Growth Has a Funding Bill #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/2t-cQqh_f1Q",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-10-23T10:57:20+00:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "NEE"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage.",
+          "earnings_youtube_url": "https://www.youtube.com/watch?v=y_nTBEkaMyU",
+          "earnings_match": "stock_period_date"
+        },
+        {
           "title": "SAP Stock: Q3 2026 Earnings — Cloud Growth Meets Owner Cash #Shorts",
           "youtube_url": "https://www.youtube.com/shorts/9SYiLxwik8U",
           "spotify_url": "",
@@ -48239,7 +48254,7 @@
       ]
     }
   ],
-  "last_synced_at": "2026-10-23T04:52:55-05:00",
+  "last_synced_at": "2026-10-23T06:02:22-05:00",
   "stock_metadata": {
     "A": {
       "company": "Agilent Technologies, Inc.",
