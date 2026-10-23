@@ -4236,6 +4236,64 @@
       "tables": 33
     },
     {
+      "key": "SAP:Q3-2026",
+      "year": 2026,
+      "quarter": 3,
+      "fiscal": false,
+      "slug": "sap-q3-2026",
+      "ticker": "SAP",
+      "company": "SAP SE",
+      "period": "Q3 2026",
+      "canonical_url": "https://chargedalpha.com/research/sap-q3-2026",
+      "title": "SAP: Cloud Growth Must Become Owner Cash",
+      "page_title": "SAP Q3 2026 Research Packet — Charged Alpha",
+      "description": "Strong cloud growth meets lower cloud gross margin and a valuation that requires durable cash conversion.",
+      "sha256": "e6abd8c2b20a3013817881199002c3cb16fa51f5b18e759004c5d3e63f4b8071",
+      "html_file": "research_packets/sap-q3-2026.html",
+      "source_episode": "SAP-Q3-2026",
+      "source_staged_at": "2026-10-23T08:56:40Z",
+      "source_sha256": {
+        "READY": "61be29ff8a94690bcec9e7b7b911dbe3fdee4555f6828f70599eeec9e8799596",
+        "handoff.json": "3a04ab5aaab6682fb2afc80605e14bb10c2682698ef5412fe549a926eab84e16",
+        "packet/sap-q3-2026-research-packet.html": "e6abd8c2b20a3013817881199002c3cb16fa51f5b18e759004c5d3e63f4b8071",
+        "packet/packet_meta.json": "3d00834db93c6f7dcd1e6272abb7e7eac6152843e16a104ea015a565b98111d6",
+        "packet/packet.json": "6790b06d92753d6a65290de98178667b44fd041e61652d2e9223210fb7cccc60"
+      },
+      "primary_youtube_long": "8_uC1m2eUCk",
+      "primary_youtube_short": null,
+      "youtube_studio": null,
+      "youtube_studio_short": null,
+      "what_changed": {
+        "summary": "Strong cloud growth meets lower cloud gross margin and a valuation that requires durable cash conversion.",
+        "items": [
+          {
+            "title": "Cloud carries the growth.",
+            "detail": "Cloud revenue rose to €6.668B, offsetting shrinking support and license revenue."
+          },
+          {
+            "title": "Delivery margin is the test.",
+            "detail": "IFRS cloud gross margin fell to 73.9% despite higher sales."
+          },
+          {
+            "title": "Cash allocation is crowded.",
+            "detail": "Nine-month distributions totaled €7.007B against €7.968B of issuer free cash flow, before separate acquisition outlays."
+          },
+          {
+            "title": "Not every adjusted number is higher.",
+            "detail": "Non-IFRS basic EPS of €1.89 is below IFRS basic EPS of €1.96 after financial adjustments."
+          },
+          {
+            "title": "Price requires sustained conversion.",
+            "detail": "Our $220 value rests on explicit cash growth, with substantial terminal-value sensitivity."
+          }
+        ]
+      },
+      "source_published": "October 23, 2026",
+      "words": 5555,
+      "figures": 16,
+      "tables": 30
+    },
+    {
       "key": "SCCO:Q3-FY2026",
       "year": 2026,
       "quarter": 3,
