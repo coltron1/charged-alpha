@@ -10,6 +10,24 @@
   },
   "episodes": [
     {
+      "ticker": "TTMI",
+      "company": "TTM Technologies, Inc.",
+      "sector": "Technology",
+      "quarter": "Q3 2026",
+      "episode_number": "",
+      "title": "TTMI Stock: Earnings Surged. Can Cash Catch Up? | Q3 2026",
+      "published_at": "2026-10-23T12:27:56+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=h4sCsINuR3c",
+      "spotify_url": "https://open.spotify.com/episode/3ZmIzIjTG2vIMQb2amUrgF",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/ttmi-stock-earnings-surged-can-cash-catch-up-q3-2026/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
       "ticker": "SAP",
       "company": "SAP SE",
       "sector": "Technology",
@@ -48254,7 +48272,7 @@
       ]
     }
   ],
-  "last_synced_at": "2026-10-23T06:02:22-05:00",
+  "last_synced_at": "2026-10-23T08:08:13-05:00",
   "stock_metadata": {
     "A": {
       "company": "Agilent Technologies, Inc.",

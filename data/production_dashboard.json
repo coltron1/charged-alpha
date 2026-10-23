@@ -1,7 +1,7 @@
 {
   "schema": "charged-alpha-public-production/1",
-  "updated_at": "2026-10-23T06:05:59.674860-05:00",
-  "calendar_updated_at": "2026-10-23T06:05:56.779890-05:00",
+  "updated_at": "2026-10-23T08:08:28.287200-05:00",
+  "calendar_updated_at": "2026-10-23T08:08:25.504402-05:00",
   "calendar_status": "fresh",
   "daily_target": 10,
   "active": [],
@@ -1029,16 +1029,6 @@
       "stock_url": null
     },
     {
-      "ticker": "XPRO",
-      "company": "Expro Group Holdings N.V.",
-      "report_date": "2026-10-23",
-      "report_time_label": "Time unconfirmed",
-      "planned_date": "2026-10-24",
-      "date_status": "Calendar estimate",
-      "source_url": null,
-      "stock_url": null
-    },
-    {
       "ticker": "LVWR",
       "company": "LiveWire Group, Inc.",
       "report_date": "2026-10-23",
@@ -1053,7 +1043,7 @@
       "company": "Booz Allen Hamilton Holding Corporation",
       "report_date": "2026-10-23",
       "report_time_label": "Time unconfirmed",
-      "planned_date": "2026-10-25",
+      "planned_date": "2026-10-24",
       "date_status": "Calendar estimate",
       "source_url": null,
       "stock_url": "/shows/bah"
@@ -3779,6 +3769,16 @@
       "stock_url": null
     },
     {
+      "ticker": "FPI",
+      "company": "Farmland Partners Inc.",
+      "report_date": "2026-10-28",
+      "report_time_label": "Time unconfirmed",
+      "planned_date": "",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": null
+    },
+    {
       "ticker": "ILPT",
       "company": "Industrial Logistics Properties Trust",
       "report_date": "2026-10-28",
@@ -5531,16 +5531,6 @@
     {
       "ticker": "EROK",
       "company": "EagleRock Land LLC",
-      "report_date": "2026-10-29",
-      "report_time_label": "Time unconfirmed",
-      "planned_date": "",
-      "date_status": "Calendar estimate",
-      "source_url": null,
-      "stock_url": null
-    },
-    {
-      "ticker": "LCII",
-      "company": "LCI Industries",
       "report_date": "2026-10-29",
       "report_time_label": "Time unconfirmed",
       "planned_date": "",
