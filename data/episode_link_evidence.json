@@ -242,6 +242,17 @@
       "fetched_at": "2026-10-23T22:43:49.772836+00:00",
       "target_video_id": "H9_sXmmio4c",
       "relation": "short_earnings"
+    },
+    "EBETzS-gwwQ": {
+      "source_video_id": "EBETzS-gwwQ",
+      "source_url": "https://www.youtube.com/watch?v=EBETzS-gwwQ",
+      "channel_id": "UC4ZDZpC0OvoN4cCGoUSofuA",
+      "title": "FIX Stock: The Cash Has Work Attached | Q3 2026",
+      "description": "Comfort Systems USA posted more than $1 billion of quarterly operating cash. We examine the work and reinvestment behind it. HOLD, 3/5; $1,100 fair-value anchor versus a saved $1,160.41 October 23 intraday quote. Full analysis: https://youtu.be/a-ccrEZ6roc\nResearch: https://chargedalpha.com/research/fix-q3-2026\nEducational only. Not financial advice.\n\nLearn investing free in the Charged Alpha app: https://chargedalpha.com/app?source=youtube&ref=video\nEducational only. Not financial advice.",
+      "description_sha256": "a1bc31cdeeb03dfc425b4d69a46b526d05b5de377de6b027591bcc1a50159028",
+      "fetched_at": "2026-10-23T22:52:16.680429+00:00",
+      "target_video_id": "a-ccrEZ6roc",
+      "relation": "short_earnings"
     }
   }
 }

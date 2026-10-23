@@ -35597,6 +35597,21 @@
       "description": "Fast clips that point viewers into full research videos and stock pages.",
       "videos": [
         {
+          "title": "FIX Stock: The Cash Has Work Attached | Q3 2026",
+          "youtube_url": "https://www.youtube.com/shorts/EBETzS-gwwQ",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-10-23T15:50:03-07:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "FIX"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage.",
+          "earnings_youtube_url": "https://www.youtube.com/watch?v=a-ccrEZ6roc",
+          "earnings_match": "verified_description_link"
+        },
+        {
           "title": "CCI Stock: Can the Towers Turn? | Q3 2026 #Shorts",
           "youtube_url": "https://www.youtube.com/shorts/meCfgoNyf_Q",
           "spotify_url": "",
@@ -48428,7 +48443,7 @@
       ]
     }
   ],
-  "last_synced_at": "2026-10-23T17:44:21-05:00",
+  "last_synced_at": "2026-10-23T17:52:45-05:00",
   "stock_metadata": {
     "A": {
       "company": "Agilent Technologies, Inc.",
