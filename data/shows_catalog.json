@@ -35525,6 +35525,21 @@
       "description": "Fast clips that point viewers into full research videos and stock pages.",
       "videos": [
         {
+          "title": "ELV Stock: Elevance Health Q3 Earnings — Which Baseline Counts? #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/twC7M6rgK_o",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-10-23T06:59:44+00:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "ELV"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage.",
+          "earnings_youtube_url": "https://www.youtube.com/watch?v=kNm4TuYV_K0",
+          "earnings_match": "stock_date"
+        },
+        {
           "title": "ABT Stock: Abbott Q3 Earnings — Sales Up, What Reaches Owners? #Shorts",
           "youtube_url": "https://www.youtube.com/shorts/sYyXYAfeJuc",
           "spotify_url": "",
@@ -48191,7 +48206,7 @@
       ]
     }
   ],
-  "last_synced_at": "2026-10-23T01:24:38-05:00",
+  "last_synced_at": "2026-10-23T02:05:40-05:00",
   "stock_metadata": {
     "A": {
       "company": "Agilent Technologies, Inc.",
