@@ -35525,6 +35525,21 @@
       "description": "Fast clips that point viewers into full research videos and stock pages.",
       "videos": [
         {
+          "title": "CMCSA Stock: Comcast Q3 2026 Earnings — Peacock Wins, Cash Falls #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/hoOQ4Io_wCI",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-10-22T21:59:28-07:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "CMCSA"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage.",
+          "earnings_youtube_url": "https://www.youtube.com/watch?v=aJ2m8sbuTCM",
+          "earnings_match": "stock_period_date"
+        },
+        {
           "title": "MXL Stock: MaxLinear Q3 2026 Earnings — Profit Before Cash #Shorts",
           "youtube_url": "https://www.youtube.com/shorts/2fif30ftU3A",
           "spotify_url": "",
@@ -48161,7 +48176,7 @@
       ]
     }
   ],
-  "last_synced_at": "2026-10-22T23:02:34-05:00",
+  "last_synced_at": "2026-10-23T00:13:18-05:00",
   "stock_metadata": {
     "A": {
       "company": "Agilent Technologies, Inc.",
