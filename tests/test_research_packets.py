@@ -158,6 +158,45 @@ class ResearchPacketTests(unittest.TestCase):
         })
         self.assertEqual(before, {str(p): p.read_bytes() for p in source.rglob("*") if p.is_file()})
 
+    def test_bold_summary_derives_exact_plain_text_without_source_mutation(self):
+        description = ("<b>HOLD · 3/5.</b> Comfort Systems is executing strongly, but "
+                       "customer-funded cash and rising capacity spending deserve separate treatment.")
+        source, raw = self.fixture("FIX", "Q3 2026", description=description)
+        before = {str(path): path.read_bytes() for path in source.rglob("*") if path.is_file()}
+        self.assertEqual(self.import_all(False)["packets"][0]["status"], "ready_to_import")
+        self.assertEqual(self.import_all()["imported"], 1)
+        packet = load_packets(self.index)[0]
+        self.assertEqual(packet["description"], description)
+        self.assertEqual(packet["what_changed"]["summary"],
+                         "HOLD · 3/5. Comfort Systems is executing strongly, but "
+                         "customer-funded cash and rising capacity spending deserve separate treatment.")
+        self.assertEqual(packet_html_path(packet, self.index).read_bytes(), raw)
+        self.assertEqual(before, {str(path): path.read_bytes() for path in source.rglob("*") if path.is_file()})
+
+    def test_summary_markup_adapter_is_strict(self):
+        self.assertEqual(sync.plain_summary("<strong>HOLD.</strong> Exact visible text."),
+                         "HOLD. Exact visible text.")
+        rejected = (
+            "<b>Unclosed emphasis.",
+            '<b class="rating">Attributed emphasis.</b>',
+            "<b>Mismatched emphasis.</strong>",
+            "<em>Unsupported emphasis.</em>",
+            "<script>alert(1)</script>",
+            "<!-- hidden -->Visible text.",
+            "<![CDATA[hidden]]>Visible text.",
+            "<?summary hidden?>Visible text.",
+            "<!DOCTYPE html>Visible text.",
+            "<b/>Visible text.",
+            "Revenue &gt; peers.",
+            "Use &lt;script&gt; text.",
+            "Revenue > peers.",
+            "Revenue < peers.",
+        )
+        for value in rejected:
+            with self.subTest(value=value):
+                with self.assertRaisesRegex(ValueError, "summary"):
+                    sync.plain_summary(value)
+
     def test_idempotent_import_has_no_file_or_timestamp_churn(self):
         self.fixture(); self.import_all()
         files = {p: (p.read_bytes(), p.stat().st_mtime_ns) for p in self.index.parent.rglob("*") if p.is_file()}

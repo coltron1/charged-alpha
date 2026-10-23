@@ -95,6 +95,60 @@ class HighlightText(HTMLParser):
             self.emphasis.append(text)
 
 
+class SummaryText(HTMLParser):
+    """Remove only balanced, attribute-free emphasis from a packet summary."""
+    ALLOWED = {"b", "strong"}
+
+    def __init__(self):
+        super().__init__(convert_charrefs=True)
+        self.parts, self.stack = [], []
+
+    def handle_starttag(self, tag, attrs):
+        tag = tag.lower()
+        require(tag in self.ALLOWED and not attrs,
+                "Packet what_changed summary contains unsupported markup")
+        self.stack.append(tag)
+
+    def handle_endtag(self, tag):
+        tag = tag.lower()
+        require(tag in self.ALLOWED and self.stack and self.stack[-1] == tag,
+                "Packet what_changed summary contains malformed markup")
+        self.stack.pop()
+
+    def handle_startendtag(self, tag, attrs):
+        raise ValueError("Packet what_changed summary contains unsupported markup")
+
+    def handle_data(self, data):
+        self.parts.append(data)
+
+    def handle_comment(self, data):
+        raise ValueError("Packet what_changed summary contains unsupported markup")
+
+    def handle_decl(self, decl):
+        raise ValueError("Packet what_changed summary contains unsupported markup")
+
+    def unknown_decl(self, data):
+        raise ValueError("Packet what_changed summary contains unsupported markup")
+
+    def handle_pi(self, data):
+        raise ValueError("Packet what_changed summary contains unsupported markup")
+
+
+def plain_summary(value):
+    """Return exact visible summary text for the two supported emphasis tags."""
+    require(isinstance(value, str), "Invalid packet what_changed summary")
+    parser = SummaryText()
+    parser.feed(value)
+    parser.close()
+    require(not parser.stack, "Packet what_changed summary contains malformed markup")
+    result = "".join(parser.parts)
+    require(result.strip() == result and 1 <= len(result) <= 500,
+            "Invalid packet what_changed summary")
+    require("<" not in result and ">" not in result and "\n" not in result and "\r" not in result,
+            "Packet what_changed summary must be plain text")
+    return result
+
+
 def normalize_highlight_detail(value):
     """Restore narrowly proven display spaces without changing financial tokens."""
     require(isinstance(value, str), "Packet highlight detail must be text")
@@ -148,7 +202,7 @@ def packet_highlights(content, *, required=False):
         detail = normalize_highlight_detail(plain[len(title):].strip())
         require(detail, "Each packet five_things item needs supporting detail")
         items.append({"title": title, "detail": detail})
-    summary = content.get("meta", {}).get("description")
+    summary = plain_summary(content.get("meta", {}).get("description"))
     result = {"summary": summary, "items": items}
     return validate_what_changed(result)
 
