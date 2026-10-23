@@ -231,6 +231,17 @@
       "fetched_at": "2026-10-23T18:29:13.532597+00:00",
       "target_video_id": "_4lq6h61mvg",
       "relation": "short_earnings"
+    },
+    "meCfgoNyf_Q": {
+      "source_video_id": "meCfgoNyf_Q",
+      "source_url": "https://www.youtube.com/watch?v=meCfgoNyf_Q",
+      "channel_id": "UC4ZDZpC0OvoN4cCGoUSofuA",
+      "title": "CCI Stock: Can the Towers Turn? | Q3 2026 #Shorts",
+      "description": "Crown Castle (CCI) Q3 2026: AFFO per share rose 10.7% while site rental revenue fell 4.5%. Financing and fewer shares helped; core leasing still trails the prior year. Our HOLD has $87 analyst fair value, 3/5 conviction and High uncertainty versus the $85.28 October 23 intraday snapshot. Watch leasing, continuing cash and dividend coverage.\n\nFull breakdown: https://youtu.be/H9_sXmmio4c\nResearch packet: https://chargedalpha.com/research/cci-q3-2026\n\nEducational only. Not financial advice.\n\nLearn investing free in the Charged Alpha app: https://chargedalpha.com/app?source=youtube&ref=video\nEducational only. Not financial advice.",
+      "description_sha256": "73c5873481716142aac51f128f47d02e9c0fa2f25393d597a94a06414a07d5e3",
+      "fetched_at": "2026-10-23T22:43:49.772836+00:00",
+      "target_video_id": "H9_sXmmio4c",
+      "relation": "short_earnings"
     }
   }
 }
