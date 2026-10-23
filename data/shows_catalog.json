@@ -35561,6 +35561,21 @@
       "description": "Fast clips that point viewers into full research videos and stock pages.",
       "videos": [
         {
+          "title": "TTMI Stock: Can Cash Catch Up? | Q3 2026 #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/Eno2h5KCnQE",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-10-23T19:52:55+00:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "TTMI"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage.",
+          "earnings_youtube_url": "https://www.youtube.com/watch?v=h4sCsINuR3c",
+          "earnings_match": "stock_period_date"
+        },
+        {
           "title": "SPCX Stock: SpaceX’s $6 Billion Earnings Bridge — Q3 2026 #Shorts",
           "youtube_url": "https://www.youtube.com/shorts/knaWtkZ5Wxg",
           "spotify_url": "",
@@ -48362,7 +48377,7 @@
       ]
     }
   ],
-  "last_synced_at": "2026-10-23T13:30:39-05:00",
+  "last_synced_at": "2026-10-23T14:57:08-05:00",
   "stock_metadata": {
     "A": {
       "company": "Agilent Technologies, Inc.",

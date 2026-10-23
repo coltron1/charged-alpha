@@ -1,11 +1,21 @@
 {
   "schema": "charged-alpha-public-production/1",
-  "updated_at": "2026-10-23T14:43:15.197061-05:00",
+  "updated_at": "2026-10-23T15:02:46.190105-05:00",
   "calendar_updated_at": "2026-10-23T14:25:14.857963-05:00",
   "calendar_status": "fresh",
   "daily_target": 10,
   "active": [],
   "history": [
+    {
+      "ticker": "TTMI",
+      "company": "TTM Technologies, Inc.",
+      "period": "Q3 2026",
+      "completed_at": "2026-10-23T15:02:35.186227-05:00",
+      "video_url": "https://youtu.be/h4sCsINuR3c",
+      "short_url": "https://youtu.be/Eno2h5KCnQE",
+      "packet_url": "https://chargedalpha.com/research/ttmi-q3-2026",
+      "stock_url": "/shows/ttmi"
+    },
     {
       "ticker": "SPCX",
       "company": "Space Exploration Technologies Corp.",
