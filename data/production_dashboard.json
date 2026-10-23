@@ -1,11 +1,21 @@
 {
   "schema": "charged-alpha-public-production/1",
-  "updated_at": "2026-10-23T00:00:00-05:00",
+  "updated_at": "2026-10-23T01:28:19.439116-05:00",
   "calendar_updated_at": "2026-10-23T00:00:55.237990-05:00",
   "calendar_status": "fresh",
   "daily_target": 10,
   "active": [],
   "history": [
+    {
+      "ticker": "ABT",
+      "company": "Abbott Laboratories",
+      "period": "Q3 2026",
+      "completed_at": "2026-10-23T01:27:51.716327-05:00",
+      "video_url": "https://youtu.be/U15BmlmDgDE",
+      "short_url": "https://youtu.be/sYyXYAfeJuc",
+      "packet_url": "https://chargedalpha.com/research/abt-q3-2026",
+      "stock_url": "/shows/abt"
+    },
     {
       "ticker": "CMCSA",
       "company": "Comcast Corporation",
