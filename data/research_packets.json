@@ -2670,6 +2670,64 @@
       "tables": 32
     },
     {
+      "key": "CCI:Q3-2026",
+      "year": 2026,
+      "quarter": 3,
+      "fiscal": false,
+      "slug": "cci-q3-2026",
+      "ticker": "CCI",
+      "company": "Crown Castle",
+      "period": "Q3 2026",
+      "canonical_url": "https://chargedalpha.com/research/cci-q3-2026",
+      "title": "CCI: Better Per Share, but Are the Towers Turning?",
+      "page_title": "CCI Q3 2026 Research Packet — Charged Alpha",
+      "description": "<b>HOLD, 3/5 conviction.</b> Crown Castle is becoming a simpler tower business, but stronger AFFO per share mainly reflects financing and share-count benefits after the fiber sale. Tower revenue and EBITDA still declined. Our $87 fair-value anchor and $80–$95 range leave little cushion against the dated $85.28 snapshot. High uncertainty requires either stronger leasing evidence or a materially cheaper entry.",
+      "sha256": "8b5484e3bec742190653f9fc781ca80f3d901ac9b9c5a8f713ac59248addd872",
+      "html_file": "research_packets/cci-q3-2026.html",
+      "source_episode": "CCI-Q3-2026",
+      "source_staged_at": "2026-10-23T22:25:52Z",
+      "source_sha256": {
+        "READY": "35e04b7f9084b70ea37969321243af9a4c6d39af5e32f500dcf5242a155d0f34",
+        "handoff.json": "4a3a9be9e57567a5832cc42c8d45a2ba6bd50e6d194a12d6b35f1b9dfaeb61e6",
+        "packet/cci-q3-2026-research-packet.html": "8b5484e3bec742190653f9fc781ca80f3d901ac9b9c5a8f713ac59248addd872",
+        "packet/packet_meta.json": "a4f36cad71eb0c9a280dd360bd2709669b3c2f2c0e6391255e1800d44c701325",
+        "packet/packet.json": "b9a6e0287354127f9d8b525c156b3b1a74f9d54f3631e38a69410c40f9699763"
+      },
+      "primary_youtube_long": "H9_sXmmio4c",
+      "primary_youtube_short": null,
+      "youtube_studio": null,
+      "youtube_studio_short": null,
+      "what_changed": {
+        "summary": "HOLD, 3/5 conviction. Crown Castle is becoming a simpler tower business, but stronger AFFO per share mainly reflects financing and share-count benefits after the fiber sale. Tower revenue and EBITDA still declined. Our $87 fair-value anchor and $80–$95 range leave little cushion against the dated $85.28 snapshot. High uncertainty requires either stronger leasing evidence or a materially cheaper entry.",
+        "items": [
+          {
+            "title": "The denominator is improving faster than the towers.",
+            "detail": "AFFO rose 8.2% and AFFO per share rose 10.7%, while site rental revenue fell 4.5% and adjusted EBITDA fell 6.3%."
+          },
+          {
+            "title": "The guide increase needs a cash translation.",
+            "detail": "The $20M revenue increase is straight-line rent from contract extensions; core leasing is expected near the low end of $60M–$70M."
+          },
+          {
+            "title": "The fiber sale changes every comparison.",
+            "detail": "Continuing Q3 net income was $283M versus $277M; the prior headline $323M included $46M from discontinued operations."
+          },
+          {
+            "title": "AFFO is not a free-cash-flow cheque.",
+            "detail": "Nine-month continuing OCF was $1,145M; subtracting $182M of continuing capex leaves $963M before separately disclosed intangible purchases."
+          },
+          {
+            "title": "Valuation offers income, but little error room.",
+            "detail": "The $85.28 dated quote is close to our $87 anchor. The $4.25 annualized dividend is a board-dependent assumption, not a bond coupon."
+          }
+        ]
+      },
+      "source_published": "October 23, 2026",
+      "words": 6857,
+      "figures": 15,
+      "tables": 28
+    },
+    {
       "key": "CLF:Q3-2026",
       "year": 2026,
       "quarter": 3,
@@ -3074,6 +3132,64 @@
       "words": 5294,
       "figures": 19,
       "tables": 17
+    },
+    {
+      "key": "FIX:Q3-2026",
+      "year": 2026,
+      "quarter": 3,
+      "fiscal": false,
+      "slug": "fix-q3-2026",
+      "ticker": "FIX",
+      "company": "Comfort Systems USA",
+      "period": "Q3 2026",
+      "canonical_url": "https://chargedalpha.com/research/fix-q3-2026",
+      "title": "FIX: A billion dollars of cash—and the work still owed",
+      "page_title": "FIX Q3 2026 Research Packet — Charged Alpha",
+      "description": "<b>HOLD · 3/5.</b> Comfort Systems is executing strongly, but customer-funded cash and rising capacity spending deserve separate treatment. Our three valuation routes support a rounded $1,100 anchor versus the saved $1,160.41 intraday quote. High uncertainty calls for a wider margin of safety before adding.",
+      "sha256": "3720a25c9a3f70eb58e47d5d2822878168931429877f9defe466f1270c2cb959",
+      "html_file": "research_packets/fix-q3-2026.html",
+      "source_episode": "FIX-Q3-2026",
+      "source_staged_at": "2026-10-23T22:21:06Z",
+      "source_sha256": {
+        "READY": "0ef6faf3d3cb3e969713b6ff88dd3a14b028d81d8ffb8f02f6840887bfaf7bdf",
+        "handoff.json": "28710cb6d7caf81fa1dd0cf68bd53e3f954fa1ed1406c16897a89e2696c3d1e5",
+        "packet/fix-q3-2026-research-packet.html": "3720a25c9a3f70eb58e47d5d2822878168931429877f9defe466f1270c2cb959",
+        "packet/packet_meta.json": "f643728ccbf43d298ebfa7f59ab58ffcdaa5fddafb25e6d28d838e2ac7f0e00d",
+        "packet/packet.json": "f1c5c569b82e6a078097240df6142710b515882583e6fdba763ee42a6188cf7e"
+      },
+      "primary_youtube_long": "a-ccrEZ6roc",
+      "primary_youtube_short": null,
+      "youtube_studio": null,
+      "youtube_studio_short": null,
+      "what_changed": {
+        "summary": "HOLD · 3/5. Comfort Systems is executing strongly, but customer-funded cash and rising capacity spending deserve separate treatment. Our three valuation routes support a rounded $1,100 anchor versus the saved $1,160.41 intraday quote. High uncertainty calls for a wider margin of safety before adding.",
+        "items": [
+          {
+            "title": "Cash conversion surged.",
+            "detail": "Quarterly operating cash flow reached $1,010.126M; the nine-month bridge shows substantial billings-related customer funding."
+          },
+          {
+            "title": "Reinvestment accelerated.",
+            "detail": "Quarterly capex reached $210.600M, with $196.538M in the mechanical segment."
+          },
+          {
+            "title": "Technology exposure deepened.",
+            "detail": "Revenue from that industry vertical reached $2,290.001M, or a computed 60.80% of the quarter."
+          },
+          {
+            "title": "Profitability improved.",
+            "detail": "Operating margin rose to 16.58% from 15.46%; the full below-line bridge reconciles to $489.044M net income."
+          },
+          {
+            "title": "Valuation needs normalization.",
+            "detail": "Our three routes span approximately $1,004–$1,182; a strong backlog alone does not justify treating peak cash generation as permanent."
+          }
+        ]
+      },
+      "source_published": "October 23, 2026",
+      "words": 5406,
+      "figures": 15,
+      "tables": 20
     },
     {
       "key": "GLDG:Q3-FY2026",

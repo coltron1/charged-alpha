@@ -10,6 +10,42 @@
   },
   "episodes": [
     {
+      "ticker": "CCI",
+      "company": "Crown Castle Inc",
+      "sector": "Real Estate",
+      "quarter": "Q3 2026",
+      "episode_number": "",
+      "title": "CCI Stock: Per-Share Gains. Can the Towers Turn? | Q3 2026",
+      "published_at": "2026-10-23T22:13:03+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=H9_sXmmio4c",
+      "spotify_url": "",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/cci-stock-per-share-gains-can-the-towers-turn-q3-2026/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "FIX",
+      "company": "Comfort Systems USA Inc.",
+      "sector": "Industrials",
+      "quarter": "Q3 2026",
+      "episode_number": "",
+      "title": "FIX Stock: A Billion in Cash—and the Work Still Owed | Q3 2026",
+      "published_at": "2026-10-23T22:03:25+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=a-ccrEZ6roc",
+      "spotify_url": "https://open.spotify.com/episode/0Qtv7xuY7B2LTSuahDKZ65",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/fix-stock-a-billion-in-cash%e2%80%94and-the-work-still-owed-q3-2026/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
       "ticker": "TTMI",
       "company": "TTM Technologies, Inc.",
       "sector": "Technology",
@@ -48377,7 +48413,7 @@
       ]
     }
   ],
-  "last_synced_at": "2026-10-23T14:57:08-05:00",
+  "last_synced_at": "2026-10-23T17:23:41-05:00",
   "stock_metadata": {
     "A": {
       "company": "Agilent Technologies, Inc.",
