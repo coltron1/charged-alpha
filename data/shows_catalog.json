@@ -10,6 +10,24 @@
   },
   "episodes": [
     {
+      "ticker": "MXL",
+      "company": "MaxLinear, Inc.",
+      "sector": "Technology",
+      "quarter": "Q3 2026",
+      "episode_number": "",
+      "title": "MXL Stock: Profit Arrives Before the Cash | Q3 2026",
+      "published_at": "2026-10-22T23:56:48+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=LTjUmkoua-k",
+      "spotify_url": "https://open.spotify.com/episode/0IGrjg6DCjcLlrxbQRiUfu",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/mxl-stock-profit-arrives-before-the-cash-q3-2026/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
       "ticker": "SCCO",
       "company": "Southern Copper Corporation",
       "sector": "Basic Materials",
@@ -48110,7 +48128,7 @@
       ]
     }
   ],
-  "last_synced_at": "2026-10-22T17:27:21-05:00",
+  "last_synced_at": "2026-10-22T19:07:09-05:00",
   "stock_metadata": {
     "A": {
       "company": "Agilent Technologies, Inc.",
