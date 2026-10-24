@@ -4178,6 +4178,64 @@
       "tables": 33
     },
     {
+      "key": "PCG:Q3-2026",
+      "year": 2026,
+      "quarter": 3,
+      "fiscal": false,
+      "slug": "pcg-q3-2026",
+      "ticker": "PCG",
+      "company": "PG&E Corporation",
+      "period": "Q3 2026",
+      "canonical_url": "https://chargedalpha.com/research/pcg-q3-2026",
+      "title": "PCG: Earnings Hold. Can the Funding Follow?",
+      "page_title": "PCG Q3 2026 Research Packet — Charged Alpha",
+      "description": "HOLD, 3/5 conviction. PG&E reaffirmed core EPS guidance, but the parent cash-investment gap and wildfire framework keep funding at the center of our $14 valuation.",
+      "sha256": "71733c5131fa68aeff0d84e8894e8e31e03cc458d09640ad8553144cc630be65",
+      "html_file": "research_packets/pcg-q3-2026.html",
+      "source_episode": "PCG-Q3-2026",
+      "source_staged_at": "2026-10-24T00:16:25Z",
+      "source_sha256": {
+        "READY": "e5dd6feacd00d76dd35adc6f7a8922575420234652dcaae5c7aa2e8a42285c21",
+        "handoff.json": "76ef09310ee9cdd1311d2306725995369308756d94173cf07a3a271da4ae0896",
+        "packet/pcg-q3-2026-research-packet.html": "71733c5131fa68aeff0d84e8894e8e31e03cc458d09640ad8553144cc630be65",
+        "packet/packet_meta.json": "e29e58f486e94cc0b3cc17fad1b92fadac9f1d1cf50457f0f0ed37c4510d6b9b",
+        "packet/packet.json": "c6af36094be1644dc37f1522fdd6b49cdcacd492d16999e2251e6243de2c9f01"
+      },
+      "primary_youtube_long": "MWyNpb0sW94",
+      "primary_youtube_short": null,
+      "youtube_studio": null,
+      "youtube_studio_short": null,
+      "what_changed": {
+        "summary": "HOLD, 3/5 conviction. PG&E reaffirmed core EPS guidance, but the parent cash-investment gap and wildfire framework keep funding at the center of our $14 valuation.",
+        "items": [
+          {
+            "title": "Core EPS fell while guidance held.",
+            "detail": "Q3 core EPS was $0.41 versus $0.50; 2026 and 2027 ranges remain unchanged."
+          },
+          {
+            "title": "The parent funding gap widened.",
+            "detail": "Nine-month operating cash of $5.840B minus cash capex of $9.621B leaves a computed $3.781B deficit."
+          },
+          {
+            "title": "The capital plan is smaller.",
+            "detail": "The 2027 plan fell from $13.4B to $11.4B; the old 2028–2030 forecast was withdrawn."
+          },
+          {
+            "title": "Wildfire protection stays conditional.",
+            "detail": "Eligibility, prudency and fund capacity matter; the strategic review is not a completed financing solution."
+          },
+          {
+            "title": "Our value stays below the saved Street consensus.",
+            "detail": "The $14 analyst anchor and $13.40 weighted case compare with a $12.63 close; we require more funding visibility."
+          }
+        ]
+      },
+      "source_published": "October 23, 2026",
+      "words": 6534,
+      "figures": 16,
+      "tables": 32
+    },
+    {
       "key": "PEGA:Q3-2026",
       "year": 2026,
       "quarter": 3,

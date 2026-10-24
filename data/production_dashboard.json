@@ -1,19 +1,10 @@
 {
   "schema": "charged-alpha-public-production/1",
-  "updated_at": "2026-10-23T19:05:02.915856-05:00",
-  "calendar_updated_at": "2026-10-23T18:49:06.516389-05:00",
+  "updated_at": "2026-10-23T19:25:37.290623-05:00",
+  "calendar_updated_at": "2026-10-23T19:21:40.390362-05:00",
   "calendar_status": "fresh",
   "daily_target": 10,
-  "active": [
-    {
-      "ticker": "PCG",
-      "company": "PG&E Corporation",
-      "period": "Q3 2026",
-      "status_label": "Building now",
-      "stage_label": "Production in progress",
-      "stock_url": "/shows/pcg"
-    }
-  ],
+  "active": [],
   "history": [
     {
       "ticker": "TTMI",
@@ -5896,16 +5887,6 @@
       "date_status": "Calendar estimate",
       "source_url": null,
       "stock_url": null
-    },
-    {
-      "ticker": "MBUU",
-      "company": "Malibu Boats, Inc.",
-      "report_date": "2026-10-29",
-      "report_time_label": "Time unconfirmed",
-      "planned_date": "",
-      "date_status": "Calendar estimate",
-      "source_url": null,
-      "stock_url": "/shows/mbuu"
     },
     {
       "ticker": "NCMI",

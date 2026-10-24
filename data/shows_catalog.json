@@ -10,6 +10,24 @@
   },
   "episodes": [
     {
+      "ticker": "PCG",
+      "company": "PG&E Corp",
+      "sector": "Utilities",
+      "quarter": "Q3 2026",
+      "episode_number": "",
+      "title": "PCG Stock: Guidance Stands. Can the Funding Follow? | Q3 2026",
+      "published_at": "2026-10-24T00:07:58+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=MWyNpb0sW94",
+      "spotify_url": "",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/pcg-stock-guidance-stands-can-the-funding-follow-q3-2026/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
       "ticker": "WDC",
       "company": "Western Digital Corporation",
       "sector": "Technology",
@@ -35615,6 +35633,21 @@
       "description": "Fast clips that point viewers into full research videos and stock pages.",
       "videos": [
         {
+          "title": "WDC Stock: Record Margins, a Changing Share Claim | Q1 FY2027",
+          "youtube_url": "https://www.youtube.com/shorts/o3qj3PWUOmg",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-10-24T00:26:10+00:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "WDC"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage.",
+          "earnings_youtube_url": "https://www.youtube.com/watch?v=-m-IMQYRf6s",
+          "earnings_match": "stock_period_date"
+        },
+        {
           "title": "FIX Stock: The Cash Has Work Attached | Q3 2026",
           "youtube_url": "https://www.youtube.com/shorts/EBETzS-gwwQ",
           "spotify_url": "",
@@ -48461,7 +48494,7 @@
       ]
     }
   ],
-  "last_synced_at": "2026-10-23T18:46:09-05:00",
+  "last_synced_at": "2026-10-23T19:27:22-05:00",
   "stock_metadata": {
     "A": {
       "company": "Agilent Technologies, Inc.",
