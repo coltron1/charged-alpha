@@ -10,6 +10,24 @@
   },
   "episodes": [
     {
+      "ticker": "WDC",
+      "company": "Western Digital Corporation",
+      "sector": "Technology",
+      "quarter": "Q1 FY2027",
+      "episode_number": "",
+      "title": "WDC Stock: Record Margins, but Who Keeps the Cash? | Q1 FY2027",
+      "published_at": "2026-10-23T23:37:35+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=-m-IMQYRf6s",
+      "spotify_url": "https://open.spotify.com/episode/30Dkh5MNAyco0hhpRemZyj",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/wdc-stock-record-margins-but-who-keeps-the-cash-q1-fy2027/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
       "ticker": "CCI",
       "company": "Crown Castle Inc",
       "sector": "Real Estate",
@@ -19,7 +37,7 @@
       "published_at": "2026-10-23T22:13:03+00:00",
       "status": "youtube_podcast_complete",
       "youtube_url": "https://www.youtube.com/watch?v=H9_sXmmio4c",
-      "spotify_url": "",
+      "spotify_url": "https://open.spotify.com/episode/27MmSDUFiiJ4bpFyi1nont",
       "apple_url": "",
       "google_url": "",
       "iheart_url": "",
@@ -48443,7 +48461,7 @@
       ]
     }
   ],
-  "last_synced_at": "2026-10-23T17:52:45-05:00",
+  "last_synced_at": "2026-10-23T18:46:09-05:00",
   "stock_metadata": {
     "A": {
       "company": "Agilent Technologies, Inc.",

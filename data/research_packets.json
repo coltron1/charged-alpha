@@ -1278,6 +1278,64 @@
       }
     },
     {
+      "key": "WDC:Q1-FY2027",
+      "year": 2027,
+      "quarter": 1,
+      "fiscal": true,
+      "slug": "wdc-q1-fy2027",
+      "ticker": "WDC",
+      "company": "Western Digital Corporation",
+      "period": "Q1 FY2027",
+      "canonical_url": "https://chargedalpha.com/research/wdc-q1-fy2027",
+      "title": "WDC: Record HDD Economics, but Who Keeps the Cash?",
+      "page_title": "WDC Q1 FY2027 Research Packet — Charged Alpha",
+      "description": "HOLD · 3/5. Western Digital’s HDD margins surged, but rising reinvestment and convertible dilution matter. Our $350 anchor is near the $343.67 closing quote.",
+      "sha256": "abfc3260640cdd884d6df7478e2a60cf8e330a686c587df3dbe2d4532c708873",
+      "html_file": "research_packets/wdc-q1-fy2027.html",
+      "source_episode": "WDC-Q1-FY2027",
+      "source_staged_at": "2026-10-24T00:02:52Z",
+      "source_sha256": {
+        "READY": "d1d8fd6d6ed9d7ad1a594317155ced3857106953e75ca2d6b5b19868171cc159",
+        "handoff.json": "7326807b9fb53ff06bcf24654e9bb2f0741632b4061bb2f56f9ca5820598460e",
+        "packet/wdc-q1-fy2027-research-packet.html": "abfc3260640cdd884d6df7478e2a60cf8e330a686c587df3dbe2d4532c708873",
+        "packet/packet_meta.json": "a8aef195fc4b721edcf5150b3347dfa8a6567ae570d9f3b75ec96b81b596af5c",
+        "packet/packet.json": "c278b1da02cab919535b6589a52a7d58ef8e112cb6dda0fe3d36df2deb948c09"
+      },
+      "primary_youtube_long": "-m-IMQYRf6s",
+      "primary_youtube_short": null,
+      "youtube_studio": null,
+      "youtube_studio_short": null,
+      "what_changed": {
+        "summary": "HOLD · 3/5. Western Digital’s HDD margins surged, but rising reinvestment and convertible dilution matter. Our $350 anchor is near the $343.67 closing quote.",
+        "items": [
+          {
+            "title": "HDD operating profit accelerated.",
+            "detail": "Revenue rose to $4.381B and GAAP operating income to $2.046B; the prior-year quarter had an extra week."
+          },
+          {
+            "title": "GAAP EPS hides the comparison.",
+            "detail": "The prior-year $611M Sandisk gain is absent now; current adjusted and GAAP net income coincide through offsetting adjustments."
+          },
+          {
+            "title": "Cash generation carries an investment bill.",
+            "detail": "OCF was $1.604B and gross capex $227M, leaving $1.377B free cash flow."
+          },
+          {
+            "title": "Buybacks do not settle the dilution question.",
+            "detail": "Roughly2.0M shares were repurchased for $1.001B while convertible exchanges issued4.7M shares."
+          },
+          {
+            "title": "The next guide raises the hurdle.",
+            "detail": "Q2 revenue midpoint $5.1B and adjusted EPS$5.80 contrast with a $350 valuation anchor close to the saved quote."
+          }
+        ]
+      },
+      "source_published": "October 23, 2026",
+      "words": 6203,
+      "figures": 21,
+      "tables": 31
+    },
+    {
       "key": "ABAT:FY2026",
       "year": 2026,
       "quarter": 0,
