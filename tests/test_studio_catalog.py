@@ -1,3 +1,6 @@
+import json
+from pathlib import Path
+import re
 import unittest
 
 from app import _load_studio_catalog, app
@@ -86,6 +89,31 @@ class StudioCatalogTests(unittest.TestCase):
         for screenshot_number in range(1, 7):
             self.assertIn(f"/static/assets/apps/plotava/0{screenshot_number}-", html)
         self.assertNotIn("plotava-feature.webp", html)
+
+    def test_physical_product_company_has_a_tracked_link_and_organization_schema(self):
+        html = self.client.get("/studio").get_data(as_text=True)
+        schema = json.loads(re.search(
+            r'<script type="application/ld\+json">(.*?)</script>', html, re.S
+        ).group(1))
+        companies = [entry for entry in schema["@graph"] if entry["@type"] == "Organization"]
+        company = next(entry for entry in companies if entry["name"] == "Made From Places")
+        self.assertEqual(company["url"], "https://madefromplaces.com/")
+        self.assertNotIn("offers", company)
+        self.assertNotIn("operatingSystem", company)
+        collection = next(entry for entry in schema["@graph"] if entry["@type"] == "CollectionPage")
+        self.assertEqual(collection["mainEntity"]["numberOfItems"], 6)
+        self.assertEqual(len([entry for entry in schema["@graph"] if entry["@type"] == "MobileApplication"]), 5)
+        self.assertIn('href="#places"', html)
+        self.assertIn('id="made-from-places"', html)
+        self.assertIn("made-from-places_product", html)
+        self.assertIn("Create your keepsake", html)
+        self.assertIn("Made to order in Minnesota", html)
+
+        payload = self.client.get("/api/studio/apps").get_json()
+        project = next(entry for entry in payload["projects"] if entry["slug"] == "made-from-places")
+        self.assertTrue(project["image_url"].startswith("https://chargedalpha.com/"))
+        for asset in ("image_path", "icon_path"):
+            self.assertTrue(Path(app.root_path, project[asset].lstrip("/")).is_file())
 
 
 if __name__ == "__main__":

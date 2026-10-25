@@ -1,10 +1,32 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-08-30",
+  "updated_at": "2026-10-24",
   "publisher": {
     "name": "Charged Alpha Studio",
     "url": "https://chargedalpha.com/studio"
   },
+  "projects": [
+    {
+      "slug": "made-from-places",
+      "name": "Made From Places",
+      "theme": "places",
+      "category_label": "Custom topographic keepsakes",
+      "availability": "Made to order in Minnesota",
+      "description": "Bring your favorite place home. Turn a meaningful lake, hometown, mountain, or trail into a custom 3D-printed cribbage board, puzzle, clock, or fridge magnet. Choose your location, personalize the colors and details, and make a landscape part of game night, a thoughtful gift, or everyday life.",
+      "features": [
+        "Your favorite location",
+        "Personalized details",
+        "Tactile terrain",
+        "Games, gifts & keepsakes"
+      ],
+      "image_path": "/static/assets/projects/made-from-places/made-from-places-collection.webp",
+      "image_alt": "Made From Places topographic cribbage boards, an Itasca puzzle, a mountain clock, and personalized lake and city magnets",
+      "icon_path": "/static/assets/projects/made-from-places/made-from-places-icon.png",
+      "icon_alt": "Made From Places contour logo",
+      "product_url": "https://madefromplaces.com/",
+      "product_label": "Create your keepsake"
+    }
+  ],
   "apps": [
     {
       "slug": "charged-alpha",

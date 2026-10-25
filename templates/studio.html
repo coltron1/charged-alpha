@@ -82,6 +82,13 @@
     .app-card.today { --accent:var(--rose); --accent-ink:#300e16; }
     .app-card.whirlytwig { --accent:var(--orange); --accent-ink:#2d1802; }
     .app-card.plotava { --accent:var(--green); --accent-ink:#042116; }
+    .app-card.places { --accent:#aed4a2; display:grid; grid-template-columns:minmax(0,1.1fr) minmax(0,1fr); }
+    .app-card.places .app-media { height:100%; min-height:350px; aspect-ratio:auto; background:#172c25; }
+    .app-card.places .app-media img { padding:25px; object-fit:contain; object-position:center; }
+    .app-card.places .app-body { justify-content:center; padding:32px; }
+    .app-card.places .app-actions { margin-top:8px; }
+    .app-card.places .product-link { min-height:50px; padding:12px 18px; color:#13271f; background:#aed4a2; }
+    .app-card.places .product-link:hover { background:#c8e5bf; }
     .app-media { position:relative; aspect-ratio:16/8.7; overflow:hidden; background:#050a11; }
     .app-card.whirlytwig .app-media { aspect-ratio:1024/500; }
     .app-card.plotava .app-media { aspect-ratio:16/10; background:#071a29; }
@@ -156,6 +163,9 @@
       .directory-nav-inner { align-items:flex-start; flex-direction:column; padding:17px 20px; }
       .section-heading { align-items:flex-start; flex-direction:column; gap:12px; }
       .app-grid { grid-template-columns:1fr; }
+      .app-card.places { grid-template-columns:1fr; }
+      .app-card.places .app-media { min-height:0; aspect-ratio:4/3; }
+      .app-card.places .app-body { padding:22px; }
       .app-gallery { padding:14px 16px 0; }
       .studio-note { grid-template-columns:1fr; gap:28px; padding:55px 20px; }
       .footer-inner { align-items:flex-start; flex-direction:column; padding:24px 20px; }
@@ -198,7 +208,7 @@
     {% endif %}
     <div class="app-body">
       <div class="app-brandline">
-        <img src="{{ studio_app.icon_path }}" alt="{{ studio_app.name }} app icon" class="app-icon" loading="lazy">
+        <img src="{{ studio_app.icon_path }}" alt="{{ studio_app.get('icon_alt', studio_app.name ~ ' app icon') }}" class="app-icon" loading="lazy">
         <div><span class="app-status">{{ studio_app.availability }}</span><h3>{{ studio_app.name }}</h3></div>
       </div>
       <p class="app-description">{{ studio_app.description }}</p>
@@ -228,8 +238,8 @@
       <div class="hero-inner">
         <div class="hero-copy">
           <p class="eyebrow">Independent products by Colton</p>
-          <h1 id="studioTitle">Useful apps for learning, fieldwork, and a little play.</h1>
-          <p>Each product starts with a practical question: How can this be clearer, more interactive, or easier to carry into real life? Explore the growing collection and download the one that fits what you are doing today.</p>
+          <h1 id="studioTitle">Independent apps &amp; products.</h1>
+          <p>Practical tools for learning and fieldwork, a little play, and places worth keeping. Explore Colton's growing collection of apps and companies, including custom topographic gifts from Made From Places.</p>
           <div class="hero-actions">
             <a href="#fieldwork" class="button primary">Explore the collection</a>
             <a href="/about" class="button">Meet the builder</a>
@@ -238,6 +248,7 @@
             <span>Learning &amp; practice</span>
             <span>Journaling &amp; fieldwork</span>
             <span>Quick games &amp; challenges</span>
+            <span>Custom keepsakes</span>
             <span>iPhone &amp; Android</span>
           </div>
         </div>
@@ -251,11 +262,12 @@
 
     <nav class="directory-nav" aria-label="Studio collection navigation">
       <div class="directory-nav-inner">
-        <strong>{{ studio_apps | length }} products in the Studio</strong>
+        <strong>{{ (studio_apps | length) + (studio_projects | length) }} projects in the Studio</strong>
         <div class="directory-nav-links">
           <a href="#fieldwork">Capture &amp; fieldwork</a>
           <a href="#learn">Learn &amp; practice</a>
           <a href="#play">Play</a>
+          <a href="#places">Places &amp; keepsakes</a>
         </div>
       </div>
     </nav>
@@ -311,11 +323,24 @@
       </div>
     </section>
 
+    <section id="places" class="collection-section" aria-labelledby="placesTitle">
+      <div class="section-inner">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Places &amp; keepsakes</p>
+            <h2 id="placesTitle">A place worth keeping.</h2>
+          </div>
+          <p>A favorite lake, a hometown, a trail with a story. Made From Places turns meaningful geography into something you can hold, use, and give.</p>
+        </div>
+        {% for project in studio_projects %}{{ studio_app_card(project) }}{% endfor %}
+      </div>
+    </section>
+
     <section class="studio-note" aria-labelledby="studioNoteTitle">
       <div>
         <p class="eyebrow">A growing studio</p>
         <h2 id="studioNoteTitle">Different subjects. The same practical instinct.</h2>
-        <p>Each product keeps a distinct audience and identity, with Charged Alpha Studio serving as the connective tissue. Charged Alpha remains the home for stock research and investing education; Plotava remains purpose-built for field documentation and field-to-office handoff.</p>
+        <p>Built by Colton, each app and company has its own purpose: stock research and investing education, practical field tools, playful experiences, and custom keepsakes inspired by meaningful places. The Studio brings them together so you can find the one that fits your day.</p>
       </div>
       <div class="studio-note-links" aria-label="More Charged Alpha destinations">
         <a href="/shows"><span>Explore stock research</span><span aria-hidden="true">&rarr;</span></a>
@@ -356,7 +381,7 @@
       }
     }
 
-    trackStudioEvent('studio_view', { product_count: {{ studio_apps | length }} });
+    trackStudioEvent('studio_view', { product_count: {{ (studio_apps | length) + (studio_projects | length) }} });
 
     document.querySelectorAll('[data-studio-download]').forEach(function (link) {
       link.addEventListener('click', function () {

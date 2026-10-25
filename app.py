@@ -340,10 +340,10 @@ SEO_PAGE_META = {
         ),
     },
     "/studio": {
-        "title": "Charged Alpha Studio — Apps for Learning, Fieldwork & Play",
+        "title": "Charged Alpha Studio — Independent Apps, Products & Projects",
         "description": (
-            "Explore practical apps by Colton from Charged Alpha Studio: investing education, "
-            "interactive physics, daily field logging, the free Whirlytwig game, and Plotava field documentation."
+            "Explore Colton's apps and companies: Plotava, Today Was, Charged Alpha, "
+            "Charged Physics Lab, Whirlytwig, and custom topographic keepsakes from Made From Places."
         ),
     },
     "/screener": {
@@ -966,7 +966,7 @@ def _load_studio_catalog():
 
 def _studio_catalog_for_api():
     catalog = _load_studio_catalog()
-    for studio_app in catalog["apps"]:
+    for studio_app in catalog["apps"] + catalog.get("projects", []):
         studio_app["image_url"] = _canonical_url(studio_app["image_path"])
         studio_app["icon_url"] = _canonical_url(studio_app["icon_path"])
         for gallery_image in studio_app.get("gallery", []):
@@ -2591,6 +2591,19 @@ def studio():
         tracking_params["utm_campaign"] = "studio"
 
     studio_apps = _studio_apps_for_template(tracking_params)
+    studio_projects = _load_studio_catalog().get("projects", [])
+    for project in studio_projects:
+        project["tracked_stores"] = {}
+        project["tracked_product_url"] = _add_query_params(
+            project["product_url"],
+            {
+                "utm_source": "chargedalpha",
+                "utm_medium": "referral",
+                "utm_campaign": "studio_crosslink",
+                "utm_content": f"{project['slug']}_product",
+            },
+        )
+    studio_products = studio_apps + studio_projects
     studio_schema_apps = []
     for position, studio_app in enumerate(studio_apps, start=1):
         schema_app = {
@@ -2608,10 +2621,23 @@ def studio():
         if store_urls:
             schema_app["downloadUrl"] = store_urls
         studio_schema_apps.append(schema_app)
+    studio_schema_apps.extend(
+        {
+            "@type": "Organization",
+            "@id": f"{project['product_url']}#organization",
+            "name": project["name"],
+            "description": project["description"],
+            "url": project["product_url"],
+            "logo": _canonical_url(project["icon_path"]),
+            "image": _canonical_url(project["image_path"]),
+        }
+        for project in studio_projects
+    )
 
     return render_template(
         "studio.html",
         studio_apps=studio_apps,
+        studio_projects=studio_projects,
         tracking_params=tracking_params,
         studio_schema={
             "@context": "https://schema.org",
@@ -2625,7 +2651,7 @@ def studio():
                     "isPartOf": {"@id": f"{SITE_URL}/#website"},
                     "mainEntity": {
                         "@type": "ItemList",
-                        "numberOfItems": len(studio_apps),
+                        "numberOfItems": len(studio_products),
                         "itemListElement": [
                             {
                                 "@type": "ListItem",
@@ -2633,7 +2659,7 @@ def studio():
                                 "name": studio_app["name"],
                                 "url": studio_app["product_url"],
                             }
-                            for position, studio_app in enumerate(studio_apps, start=1)
+                            for position, studio_app in enumerate(studio_products, start=1)
                         ],
                     },
                 },
