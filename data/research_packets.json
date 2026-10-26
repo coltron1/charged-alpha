@@ -4990,6 +4990,64 @@
       "tables": 16
     },
     {
+      "key": "TXN:Q3-2026",
+      "year": 2026,
+      "quarter": 3,
+      "fiscal": false,
+      "slug": "txn-q3-2026",
+      "ticker": "TXN",
+      "company": "Texas Instruments Incorporated",
+      "period": "Q3 2026",
+      "canonical_url": "https://chargedalpha.com/research/txn-q3-2026",
+      "title": "TXN: Cash Is Back. How Much Recovery Is Priced In?",
+      "page_title": "TXN Q3 2026 Research Packet — Charged Alpha",
+      "description": "HOLD, 3/5 conviction. Strong analog recovery meets a demanding cash-flow valuation and pending Silicon Labs financing.",
+      "sha256": "8a3603445f9c4c644cd94181b348024ba7938c06a3d9d9353f7837e0f96adac5",
+      "html_file": "research_packets/txn-q3-2026.html",
+      "source_episode": "TXN-Q3-2026",
+      "source_staged_at": "2026-10-26T19:05:38Z",
+      "source_sha256": {
+        "READY": "bed313396ac5b0c21ca6dd19a6bc60b7ff7486096ca4439a400c0d6804a9cdc3",
+        "handoff.json": "5b0a7fec2cae5277b6322306914a2e121a970dcbf0eed97f525a1776022d0770",
+        "packet/txn-q3-2026-research-packet.html": "8a3603445f9c4c644cd94181b348024ba7938c06a3d9d9353f7837e0f96adac5",
+        "packet/packet_meta.json": "ccea915c158b714a514ada340d047ef849c06aaad11b7e145f5d37834e63cafa",
+        "packet/packet.json": "e3285e6d85b668620430b784a907558de67195376bf8ab4c67e391685b725df4"
+      },
+      "primary_youtube_long": "lXR_15qtOP0",
+      "primary_youtube_short": null,
+      "youtube_studio": null,
+      "youtube_studio_short": null,
+      "what_changed": {
+        "summary": "HOLD, 3/5 conviction. Strong analog recovery meets a demanding cash-flow valuation and pending Silicon Labs financing.",
+        "items": [
+          {
+            "title": "Analog leads.",
+            "detail": "Revenue of $4.911B and operating profit of $2.505B drive recovery."
+          },
+          {
+            "title": "Cash definitions differ.",
+            "detail": "Company FCF adds CHIPS proceeds; ITC is already inside OCF."
+          },
+          {
+            "title": "Guidance is stable sequentially.",
+            "detail": "Q4 revenue midpoint of $6.05B is near Q3."
+          },
+          {
+            "title": "The deal is pending.",
+            "detail": "Silicon Labs has not closed; its financing facility is undrawn."
+          },
+          {
+            "title": "Valuation needs proof.",
+            "detail": "Our $270 anchor offers little cushion at $284.69."
+          }
+        ]
+      },
+      "source_published": "October 23, 2026",
+      "words": 6908,
+      "figures": 17,
+      "tables": 38
+    },
+    {
       "key": "UNH:Q3-2026",
       "year": 2026,
       "quarter": 3,

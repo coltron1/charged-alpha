@@ -10,6 +10,24 @@
   },
   "episodes": [
     {
+      "ticker": "TXN",
+      "company": "Texas Instruments",
+      "sector": "Technology",
+      "quarter": "Q3 2026",
+      "episode_number": "",
+      "title": "TXN Stock: Cash Is Back. How Much Recovery Is Priced In? | Q3 2026",
+      "published_at": "2026-10-26T19:00:38+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=lXR_15qtOP0",
+      "spotify_url": "",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/txn-stock-cash-is-back-how-much-recovery-is-priced-in-q3-2026/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
       "ticker": "TSCO",
       "company": "Tractor Supply Company",
       "sector": "Consumer Cyclical",
@@ -48542,7 +48560,7 @@
       ]
     }
   ],
-  "last_synced_at": "2026-10-26T13:53:12-05:00",
+  "last_synced_at": "2026-10-26T14:08:18-05:00",
   "stock_metadata": {
     "A": {
       "company": "Agilent Technologies, Inc.",
