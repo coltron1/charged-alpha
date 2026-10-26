@@ -1,7 +1,7 @@
 {
   "schema": "charged-alpha-public-production/1",
-  "updated_at": "2026-10-26T15:09:19.886016-05:00",
-  "calendar_updated_at": "2026-10-26T13:28:03.601435-05:00",
+  "updated_at": "2026-10-26T15:54:50.467738-05:00",
+  "calendar_updated_at": "2026-10-26T15:42:15.774499-05:00",
   "calendar_status": "fresh",
   "daily_target": 10,
   "active": [],
@@ -1099,16 +1099,6 @@
   ],
   "upcoming": [
     {
-      "ticker": "CLS",
-      "company": "Celestica Inc.",
-      "report_date": "2026-10-26",
-      "report_time_label": "Time unconfirmed",
-      "planned_date": "2026-10-27",
-      "date_status": "Calendar estimate",
-      "source_url": null,
-      "stock_url": "/shows/cls"
-    },
-    {
       "ticker": "SMMT",
       "company": "Summit Therapeutics Inc.",
       "report_date": "2026-10-26",
@@ -1117,16 +1107,6 @@
       "date_status": "Calendar estimate",
       "source_url": null,
       "stock_url": "/shows/smmt"
-    },
-    {
-      "ticker": "AMKR",
-      "company": "Amkor Technology, Inc.",
-      "report_date": "2026-10-26",
-      "report_time_label": "Time unconfirmed",
-      "planned_date": "2026-10-27",
-      "date_status": "Calendar estimate",
-      "source_url": null,
-      "stock_url": "/shows/amkr"
     },
     {
       "ticker": "RMBS",
@@ -1203,7 +1183,7 @@
       "company": "Agilysys, Inc.",
       "report_date": "2026-10-26",
       "report_time_label": "Time unconfirmed",
-      "planned_date": "",
+      "planned_date": "2026-10-27",
       "date_status": "Calendar estimate",
       "source_url": null,
       "stock_url": null
@@ -1213,7 +1193,7 @@
       "company": "Acumen Pharmaceuticals, Inc.",
       "report_date": "2026-10-26",
       "report_time_label": "Time unconfirmed",
-      "planned_date": "",
+      "planned_date": "2026-10-27",
       "date_status": "Calendar estimate",
       "source_url": null,
       "stock_url": null
