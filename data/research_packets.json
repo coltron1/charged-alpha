@@ -4816,6 +4816,64 @@
       "tables": 27
     },
     {
+      "key": "TSCO:Q3-2026",
+      "year": 2026,
+      "quarter": 3,
+      "fiscal": false,
+      "slug": "tsco-q3-2026",
+      "ticker": "TSCO",
+      "company": "Tractor Supply Company",
+      "period": "Q3 2026",
+      "canonical_url": "https://chargedalpha.com/research/tsco-q3-2026",
+      "title": "TSCO: Sales Recover, but Who Funds the Returns?",
+      "page_title": "TSCO Q3 2026 Research Packet — Charged Alpha",
+      "description": "HOLD · 3/5. Tractor Supply sales improved, but nine-month cash after gross investment fell short of dividends and buybacks; our $32 anchor is near the $33.42 quote.",
+      "sha256": "4901655ae49a528981ffbd02bc5c81f097b7ffb26db63bebe838619e4fe2cd52",
+      "html_file": "research_packets/tsco-q3-2026.html",
+      "source_episode": "TSCO-Q3-2026",
+      "source_staged_at": "2026-10-26T18:30:10Z",
+      "source_sha256": {
+        "READY": "b900b5999596918c1d7068f06da278fb946fc0151fdf219aba2ce6f95e3024d1",
+        "handoff.json": "1775b7c1ce9e9a64e5f3eb90608ca1f113148821f657084c9af9f0a5d3c37c37",
+        "packet/tsco-q3-2026-research-packet.html": "4901655ae49a528981ffbd02bc5c81f097b7ffb26db63bebe838619e4fe2cd52",
+        "packet/packet_meta.json": "ab60ec0f46218116d257841360a303f81c64aeebd8f89836d466143806e6bb6f",
+        "packet/packet.json": "c1e166ee4d48db76013a358b8e01d9beb6cb470375a0d26579b5161bc4a11520"
+      },
+      "primary_youtube_long": "807t01E2QoU",
+      "primary_youtube_short": null,
+      "youtube_studio": null,
+      "youtube_studio_short": null,
+      "what_changed": {
+        "summary": "HOLD · 3/5. Tractor Supply sales improved, but nine-month cash after gross investment fell short of dividends and buybacks; our $32 anchor is near the $33.42 quote.",
+        "items": [
+          {
+            "title": "Sales improved while profit declined.",
+            "detail": "Revenue rose 5.1%, but operating income fell to $307.7M and EPS to $0.43."
+          },
+          {
+            "title": "Comps conceal a traffic split.",
+            "detail": "Ticket rose 0.7% while transactions fell 0.3%; total comps were +0.4%."
+          },
+          {
+            "title": "Cash coverage is the decision point.",
+            "detail": "Nine-month conventional FCF was $231.0M against $719.7M of returns."
+          },
+          {
+            "title": "Property and borrowing help fund the plan.",
+            "detail": "Property proceeds were $160.1M and net borrowing $470M; neither is recurring merchandise cash."
+          },
+          {
+            "title": "The guide was reaffirmed.",
+            "detail": "Adjusted EPS $1.90–$2.00 differs from GAAP $1.78–$1.88 because of Q2 charges."
+          }
+        ]
+      },
+      "source_published": "October 23, 2026",
+      "words": 6429,
+      "figures": 18,
+      "tables": 36
+    },
+    {
       "key": "TSM:Q3-2026",
       "year": 2026,
       "quarter": 3,

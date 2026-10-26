@@ -10,6 +10,24 @@
   },
   "episodes": [
     {
+      "ticker": "TSCO",
+      "company": "Tractor Supply Company",
+      "sector": "Consumer Cyclical",
+      "quarter": "Q3 2026",
+      "episode_number": "",
+      "title": "TSCO Stock: Sales Recover, but Who Funds the Returns? | Q3 2026",
+      "published_at": "2026-10-24T01:26:03+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=807t01E2QoU",
+      "spotify_url": "https://open.spotify.com/episode/6yNIJTG6NY3QjBKuK8mYdy",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/tsco-stock-sales-recover-but-who-funds-the-returns-q3-2026/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
       "ticker": "PCG",
       "company": "PG&E Corp",
       "sector": "Utilities",
@@ -19,7 +37,7 @@
       "published_at": "2026-10-24T00:07:58+00:00",
       "status": "youtube_podcast_complete",
       "youtube_url": "https://www.youtube.com/watch?v=MWyNpb0sW94",
-      "spotify_url": "",
+      "spotify_url": "https://open.spotify.com/episode/7mECPxKX0NwOb93qKbhX0f",
       "apple_url": "",
       "google_url": "",
       "iheart_url": "",
@@ -48509,7 +48527,7 @@
       ]
     }
   ],
-  "last_synced_at": "2026-10-23T19:36:10-05:00",
+  "last_synced_at": "2026-10-26T13:30:03-05:00",
   "stock_metadata": {
     "A": {
       "company": "Agilent Technologies, Inc.",
