@@ -1,19 +1,10 @@
 {
   "schema": "charged-alpha-public-production/1",
-  "updated_at": "2026-10-26T14:26:27.434030-05:00",
+  "updated_at": "2026-10-26T14:49:02.622312-05:00",
   "calendar_updated_at": "2026-10-26T13:28:03.601435-05:00",
   "calendar_status": "fresh",
   "daily_target": 10,
-  "active": [
-    {
-      "ticker": "URI",
-      "company": "United Rentals, Inc.",
-      "period": "Q3 2026",
-      "status_label": "Building now",
-      "stage_label": "Production in progress",
-      "stock_url": "/shows/uri"
-    }
-  ],
+  "active": [],
   "history": [
     {
       "ticker": "TXN",

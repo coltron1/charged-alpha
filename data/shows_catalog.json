@@ -10,6 +10,24 @@
   },
   "episodes": [
     {
+      "ticker": "URI",
+      "company": "United Rentals",
+      "sector": "Industrials",
+      "quarter": "Q3 2026",
+      "episode_number": "",
+      "title": "URI Stock: Bigger Profit. Where Is the Extra Cash? | Q3 2026",
+      "published_at": "2026-10-26T19:37:24+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=sj8yDItRkJM",
+      "spotify_url": "https://open.spotify.com/episode/4KBB1rWNuTXBqK0jGIX3u0",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/uri-stock-bigger-profit-where-is-the-extra-cash-q3-2026/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
       "ticker": "TXN",
       "company": "Texas Instruments",
       "sector": "Technology",
@@ -19,7 +37,7 @@
       "published_at": "2026-10-26T19:00:38+00:00",
       "status": "youtube_podcast_complete",
       "youtube_url": "https://www.youtube.com/watch?v=lXR_15qtOP0",
-      "spotify_url": "",
+      "spotify_url": "https://open.spotify.com/episode/5ZyDiUJ20c1TmPtB9Y00u9",
       "apple_url": "",
       "google_url": "",
       "iheart_url": "",
@@ -48575,7 +48593,7 @@
       ]
     }
   ],
-  "last_synced_at": "2026-10-26T14:21:48-05:00",
+  "last_synced_at": "2026-10-26T14:49:00-05:00",
   "stock_metadata": {
     "A": {
       "company": "Agilent Technologies, Inc.",

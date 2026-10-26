@@ -5106,6 +5106,64 @@
       "tables": 34
     },
     {
+      "key": "URI:Q3-2026",
+      "year": 2026,
+      "quarter": 3,
+      "fiscal": false,
+      "slug": "uri-q3-2026",
+      "ticker": "URI",
+      "company": "United Rentals, Inc.",
+      "period": "Q3 2026",
+      "canonical_url": "https://chargedalpha.com/research/uri-q3-2026",
+      "title": "URI: A Bigger Fleet, a Bigger Profit — Where Is the Extra Cash?",
+      "page_title": "URI Q3 2026 Research Packet — Charged Alpha",
+      "description": "United Rentals raises revenue and profit guidance while free-cash-flow guidance stays flat; fleet productivity, investment timing and valuation decide what owners receive.",
+      "sha256": "4f6a147bd0b12a802a1667c28c678b5626fafd80e24bab2e8c56ca3cfa5d1237",
+      "html_file": "research_packets/uri-q3-2026.html",
+      "source_episode": "URI-Q3-2026",
+      "source_staged_at": "2026-10-26T19:47:16Z",
+      "source_sha256": {
+        "READY": "818eaec174b1d1be88674397de297481f9dddec766075f53d0124c9c7c6a1507",
+        "handoff.json": "faec5ed37e1d1781b2d4858471ba9483b0e89b566bd265b289329fff5bfb96f9",
+        "packet/uri-q3-2026-research-packet.html": "4f6a147bd0b12a802a1667c28c678b5626fafd80e24bab2e8c56ca3cfa5d1237",
+        "packet/packet_meta.json": "c37fe87b627beb104cb7ced08f967faa6bbe92f3181df257d6ba14270f5dd3b5",
+        "packet/packet.json": "b3b85ee77635c8ae958f05963b28b39d497f7d4c125ad7ea82cba4da470c7916"
+      },
+      "primary_youtube_long": "sj8yDItRkJM",
+      "primary_youtube_short": null,
+      "youtube_studio": null,
+      "youtube_studio_short": null,
+      "what_changed": {
+        "summary": "United Rentals raises revenue and profit guidance while free-cash-flow guidance stays flat; fleet productivity, investment timing and valuation decide what owners receive.",
+        "items": [
+          {
+            "title": "Productivity improved with the fleet.",
+            "detail": "Rental revenue rose 17.8%, including a 6.5% fleet-productivity contribution. That measure combines rates, utilization and mix; it is not a pure pricing claim."
+          },
+          {
+            "title": "Specialty is doing more of the work.",
+            "detail": "Quarterly Specialty rental revenue reached $1.704B and rental gross profit $811M, while General Rentals also expanded its margin."
+          },
+          {
+            "title": "The cash outlook did not rise with profit.",
+            "detail": "Management raised revenue and adjusted EBITDA guidance, alongside equipment investment. Free cash flow excluding restructuring remains $2.15–2.45B."
+          },
+          {
+            "title": "Returns need the full funding picture.",
+            "detail": "Nine-month issuer FCF of $1.421B compares with $1.496B of program repurchases and dividends; acquisitions and financing sit outside that simple comparison."
+          },
+          {
+            "title": "A premium price needs durable conversion.",
+            "detail": "Our $980 anchor balances earnings, enterprise value and equity cash yield. We require sustained productivity and cash delivery before paying more."
+          }
+        ]
+      },
+      "source_published": "October 26, 2026",
+      "words": 6176,
+      "figures": 19,
+      "tables": 28
+    },
+    {
       "key": "VICR:Q3-2026",
       "year": 2026,
       "quarter": 3,
