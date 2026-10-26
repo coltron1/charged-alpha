@@ -1,11 +1,31 @@
 {
   "schema": "charged-alpha-public-production/1",
-  "updated_at": "2026-10-26T17:49:48.532944-05:00",
+  "updated_at": "2026-10-26T18:03:12.234323-05:00",
   "calendar_updated_at": "2026-10-26T15:42:15.774499-05:00",
   "calendar_status": "fresh",
   "daily_target": 10,
   "active": [],
   "history": [
+    {
+      "ticker": "RMBS",
+      "company": "Rambus Inc.",
+      "period": "Q3 2026",
+      "completed_at": "2026-10-26T18:01:49.528308-05:00",
+      "video_url": "https://youtu.be/lY0GRhtA3Iw",
+      "short_url": "https://youtu.be/z0tBYURZkBo",
+      "packet_url": "https://chargedalpha.com/research/rmbs-q3-2026",
+      "stock_url": "/shows/rmbs"
+    },
+    {
+      "ticker": "AMKR",
+      "company": "Amkor Technology, Inc.",
+      "period": "Q3 2026",
+      "completed_at": "2026-10-26T18:01:39.309547-05:00",
+      "video_url": "https://youtu.be/BvnAMYu_yS4",
+      "short_url": "https://youtu.be/dm5WxoLNs34",
+      "packet_url": "https://chargedalpha.com/research/amkr-q3-2026",
+      "stock_url": "/shows/amkr"
+    },
     {
       "ticker": "CLS",
       "company": "Celestica, Inc.",
