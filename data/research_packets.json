@@ -4526,6 +4526,64 @@
       "tables": 34
     },
     {
+      "key": "RMBS:Q3-2026",
+      "year": 2026,
+      "quarter": 3,
+      "fiscal": false,
+      "slug": "rmbs-q3-2026",
+      "ticker": "RMBS",
+      "company": "Rambus Inc.",
+      "period": "Q3 2026",
+      "canonical_url": "https://chargedalpha.com/research/rmbs-q3-2026",
+      "title": "RMBS: Record Products. A Bigger Cash Test.",
+      "page_title": "RMBS Q3 2026 Research Packet — Charged Alpha",
+      "description": "Rambus product growth accelerates while inventory and economic cash conversion set the next test for valuation.",
+      "sha256": "b898aea1b353fc06c7f85b230bec81065e6e24eb3e845a8fee8d647b2439af69",
+      "html_file": "research_packets/rmbs-q3-2026.html",
+      "source_episode": "RMBS-Q3-2026",
+      "source_staged_at": "2026-10-26T22:48:16Z",
+      "source_sha256": {
+        "READY": "6b8d73755b8112b0751313c0575bbe0d8f3495ea32ab57aab87edca43973e793",
+        "handoff.json": "b71001f2fd94c0009c0161a1287227b022651f5007c21d6bdeecd74d2eac902b",
+        "packet/rmbs-q3-2026-research-packet.html": "b898aea1b353fc06c7f85b230bec81065e6e24eb3e845a8fee8d647b2439af69",
+        "packet/packet_meta.json": "319349d4005526bc93495152c486415823c9cebfb2eedd3772a6a2c1d7f2657b",
+        "packet/packet.json": "495ae32b3362eb94022afb94c156b4579af59ee82531b21bd2d574186a140ec0"
+      },
+      "primary_youtube_long": "lY0GRhtA3Iw",
+      "primary_youtube_short": null,
+      "youtube_studio": null,
+      "youtube_studio_short": null,
+      "what_changed": {
+        "summary": "Rambus product growth accelerates while inventory and economic cash conversion set the next test for valuation.",
+        "items": [
+          {
+            "title": "The beat is real.",
+            "detail": "Revenue of $218.289M and adjusted EPS of $0.84 exceeded management’s prior high ends."
+          },
+          {
+            "title": "Products drive the next step.",
+            "detail": "Q4 product revenue is guided to $127–$133M, changing mix and investment needs."
+          },
+          {
+            "title": "Inventory is the cash test.",
+            "detail": "The $87.235M balance nearly doubled since year end; conversion matters more than the build alone."
+          },
+          {
+            "title": "Design tools belong in the cash bridge.",
+            "detail": "Financing-classified EDA installments reduce economic free cash alongside PPE purchases."
+          },
+          {
+            "title": "Price still matters.",
+            "detail": "Our $85 base value is below the $90.32 dated quote; targets and future cash forecasts remain assumptions."
+          }
+        ]
+      },
+      "source_published": "October 26, 2026",
+      "words": 6556,
+      "figures": 16,
+      "tables": 29
+    },
+    {
       "key": "RTX:Q3-2026",
       "year": 2026,
       "quarter": 3,

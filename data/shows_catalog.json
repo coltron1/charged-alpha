@@ -10,6 +10,24 @@
   },
   "episodes": [
     {
+      "ticker": "RMBS",
+      "company": "Rambus Inc.",
+      "sector": "Technology",
+      "quarter": "Q3 2026",
+      "episode_number": "",
+      "title": "RMBS Stock: Record Products, Bigger Cash Test — Q3 2026",
+      "published_at": "2026-10-26T22:44:04+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=lY0GRhtA3Iw",
+      "spotify_url": "",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/rmbs-stock-record-products-bigger-cash-test-%e2%80%94-q3-2026/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
       "ticker": "AMKR",
       "company": "Amkor Technology, Inc.",
       "sector": "Technology",
@@ -19,7 +37,7 @@
       "published_at": "2026-10-26T22:06:56+00:00",
       "status": "youtube_podcast_complete",
       "youtube_url": "https://www.youtube.com/watch?v=BvnAMYu_yS4",
-      "spotify_url": "",
+      "spotify_url": "https://open.spotify.com/episode/2nSecDXKW5yDqxjvwfQ6OX",
       "apple_url": "",
       "google_url": "",
       "iheart_url": "",
@@ -48674,7 +48692,7 @@
       ]
     }
   ],
-  "last_synced_at": "2026-10-26T17:27:38-05:00",
+  "last_synced_at": "2026-10-26T17:50:08-05:00",
   "stock_metadata": {
     "A": {
       "company": "Agilent Technologies, Inc.",
