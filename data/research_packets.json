@@ -2844,6 +2844,64 @@
       "tables": 31
     },
     {
+      "key": "CLS:Q3-2026",
+      "year": 2026,
+      "quarter": 3,
+      "fiscal": false,
+      "slug": "cls-q3-2026",
+      "ticker": "CLS",
+      "company": "Celestica Inc.",
+      "period": "Q3 2026",
+      "canonical_url": "https://chargedalpha.com/research/cls-q3-2026",
+      "title": "CLS: Adjusted EPS Doubled. The Cash Bill Comes Next.",
+      "page_title": "CLS Q3 2026 Research Packet — Charged Alpha",
+      "description": "Celestica raises its growth outlook while cutting free-cash-flow guidance; the capacity ramp, receivable funding and dilution determine the margin of safety.",
+      "sha256": "01608d5f526d5f6d992533bc91f7da3c62d04320b3fed12faa7ab7c894692ad6",
+      "html_file": "research_packets/cls-q3-2026.html",
+      "source_episode": "CLS-Q3-2026",
+      "source_staged_at": "2026-10-26T21:47:36Z",
+      "source_sha256": {
+        "READY": "cfac20c02b73fc21994698abdca56a3d0562e6949252e1ff7a19d4356f807562",
+        "handoff.json": "988a79b6562483aef6ef2ad5c599114bf7b054d52da155e555fdcb878124fa19",
+        "packet/cls-q3-2026-research-packet.html": "01608d5f526d5f6d992533bc91f7da3c62d04320b3fed12faa7ab7c894692ad6",
+        "packet/packet_meta.json": "83a1c539bc4108046ab55cd1033b41c3a1cfa0a73eee183ced37b3ba94723a6f",
+        "packet/packet.json": "c4b47b572bd2bbca04be3700e6b7724f20544858142531565c7531d2d1352345"
+      },
+      "primary_youtube_long": "2BEv3FqGZTk",
+      "primary_youtube_short": null,
+      "youtube_studio": null,
+      "youtube_studio_short": null,
+      "what_changed": {
+        "summary": "Celestica raises its growth outlook while cutting free-cash-flow guidance; the capacity ramp, receivable funding and dilution determine the margin of safety.",
+        "items": [
+          {
+            "title": "The operating beat is real.",
+            "detail": "Q3 revenue of $5.8297B and adjusted EPS of $3.30 exceeded management’s prior high ends."
+          },
+          {
+            "title": "The cash forecast moved the other way.",
+            "detail": "FY2026 free-cash-flow outlook fell from $600M to $460M as working-capital investment grows."
+          },
+          {
+            "title": "Receivable financing deserves a separate check.",
+            "detail": "The 10-Q reports $700.8M of sold receivables outstanding; gross turnover is not the net cash benefit."
+          },
+          {
+            "title": "New capital changes both sides of the model.",
+            "detail": "The offering brought $3.3913B net cash while period-end shares rose to 126.1M."
+          },
+          {
+            "title": "The 2027 opportunity carries execution risk.",
+            "detail": "A$40B revenue outlook and $1.5–$2.0B capex plan make cash returns and customer commitments central to valuation."
+          }
+        ]
+      },
+      "source_published": "October 26, 2026",
+      "words": 6465,
+      "figures": 18,
+      "tables": 31
+    },
+    {
       "key": "CMCSA:Q3-2026",
       "year": 2026,
       "quarter": 3,

@@ -10,6 +10,24 @@
   },
   "episodes": [
     {
+      "ticker": "CLS",
+      "company": "Celestica, Inc.",
+      "sector": "Technology",
+      "quarter": "Q3 2026",
+      "episode_number": "",
+      "title": "CLS Stock: Earnings Soared, Cash Outlook Fell — Q3 2026",
+      "published_at": "2026-10-26T21:43:54+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=2BEv3FqGZTk",
+      "spotify_url": "https://open.spotify.com/episode/4t4H5QebEgd0aO1pcbfJ7V",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/cls-stock-earnings-soared-cash-outlook-fell-%e2%80%94-q3-2026/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
       "ticker": "URI",
       "company": "United Rentals",
       "sector": "Industrials",
@@ -48608,7 +48626,7 @@
       ]
     }
   ],
-  "last_synced_at": "2026-10-26T15:09:36-05:00",
+  "last_synced_at": "2026-10-26T16:49:35-05:00",
   "stock_metadata": {
     "A": {
       "company": "Agilent Technologies, Inc.",
