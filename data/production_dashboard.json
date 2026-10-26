@@ -1,10 +1,19 @@
 {
   "schema": "charged-alpha-public-production/1",
-  "updated_at": "2026-10-26T15:54:50.467738-05:00",
+  "updated_at": "2026-10-26T16:11:15.643635-05:00",
   "calendar_updated_at": "2026-10-26T15:42:15.774499-05:00",
   "calendar_status": "fresh",
   "daily_target": 10,
-  "active": [],
+  "active": [
+    {
+      "ticker": "CLS",
+      "company": "Celestica Inc.",
+      "period": "Q3 2026",
+      "status_label": "Building now",
+      "stage_label": "Production in progress",
+      "stock_url": "/shows/cls"
+    }
+  ],
   "history": [
     {
       "ticker": "URI",
@@ -1109,16 +1118,6 @@
       "stock_url": "/shows/smmt"
     },
     {
-      "ticker": "RMBS",
-      "company": "Rambus Inc.",
-      "report_date": "2026-10-26",
-      "report_time_label": "Time unconfirmed",
-      "planned_date": "2026-10-27",
-      "date_status": "Calendar estimate",
-      "source_url": null,
-      "stock_url": "/shows/rmbs"
-    },
-    {
       "ticker": "NUE",
       "company": "Nucor Corporation",
       "report_date": "2026-10-26",
@@ -1127,16 +1126,6 @@
       "date_status": "Calendar estimate",
       "source_url": null,
       "stock_url": "/shows/nue"
-    },
-    {
-      "ticker": "CDNS",
-      "company": "Cadence Design Systems, Inc.",
-      "report_date": "2026-10-26",
-      "report_time_label": "Time unconfirmed",
-      "planned_date": "2026-10-27",
-      "date_status": "Calendar estimate",
-      "source_url": null,
-      "stock_url": "/shows/cdns"
     },
     {
       "ticker": "ITGR",
