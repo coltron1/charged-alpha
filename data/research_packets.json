@@ -2670,6 +2670,64 @@
       "tables": 29
     },
     {
+      "key": "AMKR:Q3-2026",
+      "year": 2026,
+      "quarter": 3,
+      "fiscal": false,
+      "slug": "amkr-q3-2026",
+      "ticker": "AMKR",
+      "company": "Amkor Technology, Inc.",
+      "period": "Q3 2026",
+      "canonical_url": "https://chargedalpha.com/research/amkr-q3-2026",
+      "title": "AMKR: Flat Sales, Higher Profit — When Does the Cash Catch Up?",
+      "page_title": "AMKR Q3 2026 Research Packet — Charged Alpha",
+      "description": "Amkor earns more on nearly flat sales, but capital spending still outruns operating cash; mix, utilization and investment returns determine the value.",
+      "sha256": "e5145528ce47f61936b5028dfe4d3b7b03981e75c6e3c2f2b9af2134938f20d8",
+      "html_file": "research_packets/amkr-q3-2026.html",
+      "source_episode": "AMKR-Q3-2026",
+      "source_staged_at": "2026-10-26T22:10:19Z",
+      "source_sha256": {
+        "READY": "7c9782319572b280190af526623be1343d9d80e3b2d6f45b68c27f799a117a33",
+        "handoff.json": "c93e985a9674804d7616210d6fe0ad6694889f644a110faa8e6a5eb294ca972e",
+        "packet/amkr-q3-2026-research-packet.html": "e5145528ce47f61936b5028dfe4d3b7b03981e75c6e3c2f2b9af2134938f20d8",
+        "packet/packet_meta.json": "e19032eac95372c7f32e91fc159e0952c918d736f1a9e7637743779c1669bd5d",
+        "packet/packet.json": "2deb097e4da297fbbb5153a7ab0bb8b338c5b832fa223a2487b75d1f0c18d691"
+      },
+      "primary_youtube_long": "BvnAMYu_yS4",
+      "primary_youtube_short": null,
+      "youtube_studio": null,
+      "youtube_studio_short": null,
+      "what_changed": {
+        "summary": "Amkor earns more on nearly flat sales, but capital spending still outruns operating cash; mix, utilization and investment returns determine the value.",
+        "items": [
+          {
+            "title": "More profit without more sales.",
+            "detail": "Revenue rose only0.2%, while attributable earnings rose 50.6%; consolidated margin explains the change."
+          },
+          {
+            "title": "The mix broadens.",
+            "detail": "Computing reached26% of revenue and auto/industrial22%, offsetting weaker communications."
+          },
+          {
+            "title": "The prior guide was mixed.",
+            "detail": "Revenue and EPS landed inside July ranges, but 18.3% gross margin missed the18.5% floor."
+          },
+          {
+            "title": "Cash investment still leads.",
+            "detail": "Nine-month cash PP&E exceeded operating cash by $368M under our simple FCF definition."
+          },
+          {
+            "title": "The spending ceiling narrows.",
+            "detail": "FY2026 capex guidance is now≈$2.5B; returns on that investment remain the valuation test."
+          }
+        ]
+      },
+      "source_published": "October 26, 2026",
+      "words": 5355,
+      "figures": 15,
+      "tables": 16
+    },
+    {
       "key": "ASML:Q3-2026",
       "year": 2026,
       "quarter": 3,

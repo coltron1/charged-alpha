@@ -1,11 +1,21 @@
 {
   "schema": "charged-alpha-public-production/1",
-  "updated_at": "2026-10-26T16:52:20.400347-05:00",
+  "updated_at": "2026-10-26T17:10:51.260849-05:00",
   "calendar_updated_at": "2026-10-26T15:42:15.774499-05:00",
   "calendar_status": "fresh",
   "daily_target": 10,
   "active": [],
   "history": [
+    {
+      "ticker": "CLS",
+      "company": "Celestica, Inc.",
+      "period": "Q3 2026",
+      "completed_at": "2026-10-26T17:09:28.748445-05:00",
+      "video_url": "https://youtu.be/2BEv3FqGZTk",
+      "short_url": "https://youtu.be/AdpwynKACF0",
+      "packet_url": "https://chargedalpha.com/research/cls-q3-2026",
+      "stock_url": "/shows/cls"
+    },
     {
       "ticker": "URI",
       "company": "United Rentals",

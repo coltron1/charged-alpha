@@ -10,6 +10,24 @@
   },
   "episodes": [
     {
+      "ticker": "AMKR",
+      "company": "Amkor Technology, Inc.",
+      "sector": "Technology",
+      "quarter": "Q3 2026",
+      "episode_number": "",
+      "title": "AMKR Stock: Flat Sales, Higher Profit — When Does Cash Catch Up? | Q3 2026",
+      "published_at": "2026-10-26T22:06:56+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=BvnAMYu_yS4",
+      "spotify_url": "",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/amkr-stock-flat-sales-higher-profit-%e2%80%94-when-does-cash-catch-up-q3-2026/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
       "ticker": "CLS",
       "company": "Celestica, Inc.",
       "sector": "Technology",
@@ -35705,6 +35723,21 @@
       "description": "Fast clips that point viewers into full research videos and stock pages.",
       "videos": [
         {
+          "title": "CLS Stock: Celestica Earnings Up, Cash Outlook Down — Q3 2026 #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/AdpwynKACF0",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-10-26T22:06:17+00:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "CLS"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage.",
+          "earnings_youtube_url": "https://www.youtube.com/watch?v=2BEv3FqGZTk",
+          "earnings_match": "stock_period_date"
+        },
+        {
           "title": "URI Stock: Bigger Profit. Where Is the Cash? | Q3 2026 #Shorts",
           "youtube_url": "https://www.youtube.com/shorts/mCHVjHvMdOc",
           "spotify_url": "",
@@ -48626,7 +48659,7 @@
       ]
     }
   ],
-  "last_synced_at": "2026-10-26T16:49:35-05:00",
+  "last_synced_at": "2026-10-26T17:10:52-05:00",
   "stock_metadata": {
     "A": {
       "company": "Agilent Technologies, Inc.",
