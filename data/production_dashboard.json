@@ -1,6 +1,6 @@
 {
   "schema": "charged-alpha-public-production/1",
-  "updated_at": "2026-10-26T13:39:51.640412-05:00",
+  "updated_at": "2026-10-26T13:54:08.183528-05:00",
   "calendar_updated_at": "2026-10-26T13:28:03.601435-05:00",
   "calendar_status": "fresh",
   "daily_target": 10,
@@ -15,6 +15,16 @@
     }
   ],
   "history": [
+    {
+      "ticker": "TSCO",
+      "company": "Tractor Supply Company",
+      "period": "Q3 2026",
+      "completed_at": "2026-10-26T13:53:34.647288-05:00",
+      "video_url": "https://youtu.be/807t01E2QoU",
+      "short_url": "https://youtu.be/L7GGin46WPA",
+      "packet_url": "https://chargedalpha.com/research/tsco-q3-2026",
+      "stock_url": "/shows/tsco"
+    },
     {
       "ticker": "PCG",
       "company": "PG&E Corp",
