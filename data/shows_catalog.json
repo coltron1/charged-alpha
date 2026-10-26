@@ -35723,6 +35723,21 @@
       "description": "Fast clips that point viewers into full research videos and stock pages.",
       "videos": [
         {
+          "title": "AMKR Stock: More Profit, Where Is the Cash? | Q3 2026 #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/dm5WxoLNs34",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-10-26T22:20:08+00:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "AMKR"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage.",
+          "earnings_youtube_url": "https://www.youtube.com/watch?v=BvnAMYu_yS4",
+          "earnings_match": "stock_period_date"
+        },
+        {
           "title": "CLS Stock: Celestica Earnings Up, Cash Outlook Down — Q3 2026 #Shorts",
           "youtube_url": "https://www.youtube.com/shorts/AdpwynKACF0",
           "spotify_url": "",
@@ -48659,7 +48674,7 @@
       ]
     }
   ],
-  "last_synced_at": "2026-10-26T17:10:52-05:00",
+  "last_synced_at": "2026-10-26T17:27:38-05:00",
   "stock_metadata": {
     "A": {
       "company": "Agilent Technologies, Inc.",
