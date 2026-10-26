@@ -1,11 +1,21 @@
 {
   "schema": "charged-alpha-public-production/1",
-  "updated_at": "2026-10-26T14:49:02.622312-05:00",
+  "updated_at": "2026-10-26T15:09:19.886016-05:00",
   "calendar_updated_at": "2026-10-26T13:28:03.601435-05:00",
   "calendar_status": "fresh",
   "daily_target": 10,
   "active": [],
   "history": [
+    {
+      "ticker": "URI",
+      "company": "United Rentals",
+      "period": "Q3 2026",
+      "completed_at": "2026-10-26T15:08:19.280851-05:00",
+      "video_url": "https://youtu.be/sj8yDItRkJM",
+      "short_url": "https://youtu.be/mCHVjHvMdOc",
+      "packet_url": "https://chargedalpha.com/research/uri-q3-2026",
+      "stock_url": "/shows/uri"
+    },
     {
       "ticker": "TXN",
       "company": "Texas Instruments",

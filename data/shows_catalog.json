@@ -35687,6 +35687,21 @@
       "description": "Fast clips that point viewers into full research videos and stock pages.",
       "videos": [
         {
+          "title": "URI Stock: Bigger Profit. Where Is the Cash? | Q3 2026 #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/mCHVjHvMdOc",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-10-26T20:04:32+00:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "URI"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage.",
+          "earnings_youtube_url": "https://www.youtube.com/watch?v=sj8yDItRkJM",
+          "earnings_match": "stock_period_date"
+        },
+        {
           "title": "TXN Stock: How Much Recovery Is Priced In? | Q3 2026 #Shorts",
           "youtube_url": "https://www.youtube.com/shorts/FlBLEnrevXM",
           "spotify_url": "",
@@ -48593,7 +48608,7 @@
       ]
     }
   ],
-  "last_synced_at": "2026-10-26T14:49:00-05:00",
+  "last_synced_at": "2026-10-26T15:09:36-05:00",
   "stock_metadata": {
     "A": {
       "company": "Agilent Technologies, Inc.",
