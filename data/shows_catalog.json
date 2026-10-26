@@ -35669,6 +35669,21 @@
       "description": "Fast clips that point viewers into full research videos and stock pages.",
       "videos": [
         {
+          "title": "TXN Stock: How Much Recovery Is Priced In? | Q3 2026 #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/FlBLEnrevXM",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-10-26T19:20:11+00:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "TXN"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage.",
+          "earnings_youtube_url": "https://www.youtube.com/watch?v=lXR_15qtOP0",
+          "earnings_match": "stock_period_date"
+        },
+        {
           "title": "TSCO Stock: Sales Up, but Who Funds the Returns? | Q3 2026",
           "youtube_url": "https://www.youtube.com/shorts/L7GGin46WPA",
           "spotify_url": "",
@@ -48560,7 +48575,7 @@
       ]
     }
   ],
-  "last_synced_at": "2026-10-26T14:08:18-05:00",
+  "last_synced_at": "2026-10-26T14:21:48-05:00",
   "stock_metadata": {
     "A": {
       "company": "Agilent Technologies, Inc.",

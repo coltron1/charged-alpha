@@ -1,18 +1,10 @@
 {
   "schema": "charged-alpha-public-production/1",
-  "updated_at": "2026-10-26T14:08:53.001597-05:00",
+  "updated_at": "2026-10-26T14:26:27.434030-05:00",
   "calendar_updated_at": "2026-10-26T13:28:03.601435-05:00",
   "calendar_status": "fresh",
   "daily_target": 10,
   "active": [
-    {
-      "ticker": "TXN",
-      "company": "Texas Instruments Incorporated",
-      "period": "Q3 2026",
-      "status_label": "Building now",
-      "stage_label": "Production in progress",
-      "stock_url": "/shows/txn"
-    },
     {
       "ticker": "URI",
       "company": "United Rentals, Inc.",
@@ -23,6 +15,16 @@
     }
   ],
   "history": [
+    {
+      "ticker": "TXN",
+      "company": "Texas Instruments",
+      "period": "Q3 2026",
+      "completed_at": "2026-10-26T14:25:37.720191-05:00",
+      "video_url": "https://youtu.be/lXR_15qtOP0",
+      "short_url": "https://youtu.be/FlBLEnrevXM",
+      "packet_url": "https://chargedalpha.com/research/txn-q3-2026",
+      "stock_url": "/shows/txn"
+    },
     {
       "ticker": "TSCO",
       "company": "Tractor Supply Company",
