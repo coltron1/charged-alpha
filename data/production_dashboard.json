@@ -1,20 +1,30 @@
 {
   "schema": "charged-alpha-public-production/1",
-  "updated_at": "2026-10-26T23:17:26.815350-05:00",
+  "updated_at": "2026-10-27T00:01:14.133460-05:00",
   "calendar_updated_at": "2026-10-26T22:07:57.721580-05:00",
-  "calendar_status": "fresh",
+  "calendar_status": "stale",
   "daily_target": 10,
   "active": [
     {
-      "ticker": "NEM",
-      "company": "Newmont Corporation",
+      "ticker": "CDNS",
+      "company": "Cadence Design Systems, Inc.",
       "period": "Q3 2026",
       "status_label": "Building now",
       "stage_label": "Production in progress",
-      "stock_url": "/shows/nem"
+      "stock_url": "/shows/cdns"
     }
   ],
   "history": [
+    {
+      "ticker": "SLB",
+      "company": "Schlumberger Ltd.",
+      "period": "Q3 2026",
+      "completed_at": "2026-10-26T23:33:46.545158-05:00",
+      "video_url": "https://youtu.be/OzC_mgi43K0",
+      "short_url": "https://youtu.be/stIEyD9T0HY",
+      "packet_url": "https://chargedalpha.com/research/slb-q3-2026",
+      "stock_url": "/shows/slb"
+    },
     {
       "ticker": "RMBS",
       "company": "Rambus Inc.",
@@ -2562,7 +2572,7 @@
       "company": "Plexus Corp.",
       "report_date": "2026-10-28",
       "report_time_label": "Time unconfirmed",
-      "planned_date": "",
+      "planned_date": "2026-11-02",
       "date_status": "Calendar estimate",
       "source_url": null,
       "stock_url": null
@@ -2572,7 +2582,7 @@
       "company": "Universal Display Corporation",
       "report_date": "2026-10-28",
       "report_time_label": "Time unconfirmed",
-      "planned_date": "",
+      "planned_date": "2026-11-02",
       "date_status": "Calendar estimate",
       "source_url": null,
       "stock_url": null
@@ -4132,7 +4142,7 @@
       "company": "Exponent, Inc.",
       "report_date": "2026-10-29",
       "report_time_label": "Time unconfirmed",
-      "planned_date": "",
+      "planned_date": "2026-11-02",
       "date_status": "Calendar estimate",
       "source_url": null,
       "stock_url": null
@@ -4142,7 +4152,7 @@
       "company": "DT Midstream, Inc.",
       "report_date": "2026-10-29",
       "report_time_label": "Time unconfirmed",
-      "planned_date": "",
+      "planned_date": "2026-11-02",
       "date_status": "Calendar estimate",
       "source_url": null,
       "stock_url": null
@@ -4152,7 +4162,7 @@
       "company": "Perusahaan Perseroan (Persero) PT Telekomunikasi Indonesia Tbk",
       "report_date": "2026-10-29",
       "report_time_label": "Time unconfirmed",
-      "planned_date": "",
+      "planned_date": "2026-11-02",
       "date_status": "Calendar estimate",
       "source_url": null,
       "stock_url": null
@@ -4162,7 +4172,7 @@
       "company": "ASE Technology Holding Co., Ltd.",
       "report_date": "2026-10-29",
       "report_time_label": "Time unconfirmed",
-      "planned_date": "",
+      "planned_date": "2026-11-02",
       "date_status": "Calendar estimate",
       "source_url": null,
       "stock_url": "/shows/asx"
@@ -4172,7 +4182,7 @@
       "company": "STMicroelectronics N.V.",
       "report_date": "2026-10-29",
       "report_time_label": "Time unconfirmed",
-      "planned_date": "",
+      "planned_date": "2026-11-02",
       "date_status": "Calendar estimate",
       "source_url": null,
       "stock_url": "/shows/stm"
@@ -4182,7 +4192,7 @@
       "company": "Insmed Incorporated",
       "report_date": "2026-10-29",
       "report_time_label": "Time unconfirmed",
-      "planned_date": "",
+      "planned_date": "2026-11-02",
       "date_status": "Calendar estimate",
       "source_url": null,
       "stock_url": "/shows/insm"
@@ -4192,7 +4202,7 @@
       "company": "DexCom, Inc.",
       "report_date": "2026-10-29",
       "report_time_label": "Time unconfirmed",
-      "planned_date": "",
+      "planned_date": "2026-11-02",
       "date_status": "Calendar estimate",
       "source_url": null,
       "stock_url": "/shows/dxcm"
@@ -4202,7 +4212,7 @@
       "company": "OSI Systems, Inc.",
       "report_date": "2026-10-29",
       "report_time_label": "Time unconfirmed",
-      "planned_date": "",
+      "planned_date": "2026-11-02",
       "date_status": "Calendar estimate",
       "source_url": null,
       "stock_url": "/shows/osis"

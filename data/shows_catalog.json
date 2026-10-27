@@ -35759,6 +35759,21 @@
       "description": "Fast clips that point viewers into full research videos and stock pages.",
       "videos": [
         {
+          "title": "SLB Stock: Growth Is Back. Who Gets the Cash? | Q3 2026 #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/stIEyD9T0HY",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-10-26T21:30:41-07:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "SLB"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage.",
+          "earnings_youtube_url": "https://www.youtube.com/watch?v=OzC_mgi43K0",
+          "earnings_match": "stock_period_date"
+        },
+        {
           "title": "RMBS Stock: Rambus Inventory Nearly Doubled — Q3 2026 #Shorts",
           "youtube_url": "https://www.youtube.com/shorts/z0tBYURZkBo",
           "spotify_url": "",
@@ -48725,7 +48740,7 @@
       ]
     }
   ],
-  "last_synced_at": "2026-10-26T23:21:17-05:00",
+  "last_synced_at": "2026-10-26T23:33:06-05:00",
   "stock_metadata": {
     "A": {
       "company": "Agilent Technologies, Inc.",
