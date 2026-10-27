@@ -10,6 +10,24 @@
   },
   "episodes": [
     {
+      "ticker": "SLB",
+      "company": "Schlumberger Ltd.",
+      "sector": "Energy",
+      "quarter": "Q3 2026",
+      "episode_number": "",
+      "title": "SLB Stock: Growth Returns — But Who Gets the Cash? | Q3 2026",
+      "published_at": "2026-10-27T04:16:46+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=OzC_mgi43K0",
+      "spotify_url": "",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/slb-stock-growth-returns-%e2%80%94-but-who-gets-the-cash-q3-2026/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
       "ticker": "RMBS",
       "company": "Rambus Inc.",
       "sector": "Technology",
@@ -48707,7 +48725,7 @@
       ]
     }
   ],
-  "last_synced_at": "2026-10-26T22:08:45-05:00",
+  "last_synced_at": "2026-10-26T23:21:17-05:00",
   "stock_metadata": {
     "A": {
       "company": "Agilent Technologies, Inc.",

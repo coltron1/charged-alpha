@@ -1,10 +1,19 @@
 {
   "schema": "charged-alpha-public-production/1",
-  "updated_at": "2026-10-26T22:14:59.768566-05:00",
+  "updated_at": "2026-10-26T23:17:26.815350-05:00",
   "calendar_updated_at": "2026-10-26T22:07:57.721580-05:00",
   "calendar_status": "fresh",
   "daily_target": 10,
-  "active": [],
+  "active": [
+    {
+      "ticker": "NEM",
+      "company": "Newmont Corporation",
+      "period": "Q3 2026",
+      "status_label": "Building now",
+      "stage_label": "Production in progress",
+      "stock_url": "/shows/nem"
+    }
+  ],
   "history": [
     {
       "ticker": "RMBS",
@@ -1139,16 +1148,6 @@
       "stock_url": "/shows/smmt"
     },
     {
-      "ticker": "NUE",
-      "company": "Nucor Corporation",
-      "report_date": "2026-10-26",
-      "report_time_label": "Time unconfirmed",
-      "planned_date": "2026-10-27",
-      "date_status": "Calendar estimate",
-      "source_url": null,
-      "stock_url": "/shows/nue"
-    },
-    {
       "ticker": "ITGR",
       "company": "Integer Holdings Corporation",
       "report_date": "2026-10-26",
@@ -1223,7 +1222,7 @@
       "company": "Hawkins, Inc.",
       "report_date": "2026-10-26",
       "report_time_label": "Time unconfirmed",
-      "planned_date": "",
+      "planned_date": "2026-10-27",
       "date_status": "Calendar estimate",
       "source_url": null,
       "stock_url": null

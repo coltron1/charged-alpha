@@ -4758,6 +4758,64 @@
       "tables": 30
     },
     {
+      "key": "SLB:Q3-2026",
+      "year": 2026,
+      "quarter": 3,
+      "fiscal": false,
+      "slug": "slb-q3-2026",
+      "ticker": "SLB",
+      "company": "SLB N.V. (SLB Limited)",
+      "period": "Q3 2026",
+      "canonical_url": "https://chargedalpha.com/research/slb-q3-2026",
+      "title": "SLB: Growth Returns, but the Cash Has Competing Claims",
+      "page_title": "SLB Q3 2026 Research Packet — Charged Alpha",
+      "description": "SLB’s acquired-growth bridge, weaker annual margins and cash-return funding gap frame the value of its core recovery and pending data-center expansion.",
+      "sha256": "13f3eee0e43081742c98d2f986e696215398ffe1f05f3635f0d45c0619a0de64",
+      "html_file": "research_packets/slb-q3-2026.html",
+      "source_episode": "SLB-Q3-2026",
+      "source_staged_at": "2026-10-27T04:20:02Z",
+      "source_sha256": {
+        "READY": "b1a4b0635f1169663e30e279aaff23ae28cf649a03b2ab542de8612e37d5135c",
+        "handoff.json": "9c1566910b4edb09159aba72ab0f805e6495903603206d0782c56e572c5da522",
+        "packet/slb-q3-2026-research-packet.html": "13f3eee0e43081742c98d2f986e696215398ffe1f05f3635f0d45c0619a0de64",
+        "packet/packet_meta.json": "caeedc640817e33ab721fe6b1d61f7f7e71b73cc2f9d356c8857bb1eff80921d",
+        "packet/packet.json": "88afee49817a1499b68185387141312a66417e2ca503829c9d2d3d239c83ab39"
+      },
+      "primary_youtube_long": "OzC_mgi43K0",
+      "primary_youtube_short": null,
+      "youtube_studio": null,
+      "youtube_studio_short": null,
+      "what_changed": {
+        "summary": "SLB’s acquired-growth bridge, weaker annual margins and cash-return funding gap frame the value of its core recovery and pending data-center expansion.",
+        "items": [
+          {
+            "title": "Growth is positive but acquisition-heavy.",
+            "detail": "ChampionX contributed $377M of the $521M reported annual revenue increase; acquisition-excluded growth was approximately 2%."
+          },
+          {
+            "title": "Core operations are recovering sequentially.",
+            "detail": "Middle East activity improved, while Well Construction and Reservoir Performance margins remain below last year."
+          },
+          {
+            "title": "Digital and data centers add opportunity.",
+            "detail": "Digital ARR was $1.04B and Data Center Solutions grew 76% year over year; a standalone data-center profit is not disclosed."
+          },
+          {
+            "title": "Cash has competing claims.",
+            "detail": "Nine-month buybacks and dividends exceeded issuer free cash flow by $1.539B, alongside a rise in net debt."
+          },
+          {
+            "title": "Kelvion raises the next funding test.",
+            "detail": "The pending acquisition entails approximately $3.4B cash and $0.7B assumed debt; future acquired earnings are not invented in our model."
+          }
+        ]
+      },
+      "source_published": "October 27, 2026",
+      "words": 5329,
+      "figures": 16,
+      "tables": 16
+    },
+    {
       "key": "SNX:Q3-FY2026",
       "year": 2026,
       "quarter": 3,
