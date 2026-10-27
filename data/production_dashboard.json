@@ -1,11 +1,31 @@
 {
   "schema": "charged-alpha-public-production/1",
-  "updated_at": "2026-10-27T03:14:59.972236-05:00",
-  "calendar_updated_at": "2026-10-27T02:59:44.513493-05:00",
+  "updated_at": "2026-10-27T07:31:16.444020-05:00",
+  "calendar_updated_at": "2026-10-27T07:29:13.907824-05:00",
   "calendar_status": "fresh",
   "daily_target": 10,
   "active": [],
   "history": [
+    {
+      "ticker": "CDNS",
+      "company": "Cadence Design Systems, Inc.",
+      "period": "Q3 2026",
+      "completed_at": "2026-10-27T07:29:53.618731-05:00",
+      "video_url": "https://youtu.be/Oaf59KiY-mY",
+      "short_url": "https://youtu.be/Ykfdd8lHDrw",
+      "packet_url": "https://chargedalpha.com/research/cdns-q3-2026",
+      "stock_url": "/shows/cdns"
+    },
+    {
+      "ticker": "NEM",
+      "company": "Newmont Corp",
+      "period": "Q3 2026",
+      "completed_at": "2026-10-27T07:28:34.449612-05:00",
+      "video_url": "https://youtu.be/QF1nY2JjQGo",
+      "short_url": "https://youtu.be/n_mhm3xNiDY",
+      "packet_url": "https://chargedalpha.com/research/nem-q3-2026",
+      "stock_url": "/shows/nem"
+    },
     {
       "ticker": "SLB",
       "company": "Schlumberger Ltd.",
@@ -1339,16 +1359,6 @@
       "stock_url": "/shows/qrvo"
     },
     {
-      "ticker": "ITGR",
-      "company": "Integer Holdings Corporation",
-      "report_date": "2026-10-27",
-      "report_time_label": "Time unconfirmed",
-      "planned_date": "",
-      "date_status": "Calendar estimate",
-      "source_url": null,
-      "stock_url": null
-    },
-    {
       "ticker": "NPK",
       "company": "National Presto Industries, Inc.",
       "report_date": "2026-10-27",
@@ -1659,6 +1669,16 @@
       "stock_url": null
     },
     {
+      "ticker": "ZURA",
+      "company": "Zura Bio Limited",
+      "report_date": "2026-10-27",
+      "report_time_label": "Time unconfirmed",
+      "planned_date": "",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": null
+    },
+    {
       "ticker": "ESS",
       "company": "Essex Property Trust, Inc.",
       "report_date": "2026-10-27",
@@ -1919,6 +1939,16 @@
       "stock_url": null
     },
     {
+      "ticker": "PII",
+      "company": "Polaris Inc.",
+      "report_date": "2026-10-27",
+      "report_time_label": "Time unconfirmed",
+      "planned_date": "",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": null
+    },
+    {
       "ticker": "ABG",
       "company": "Asbury Automotive Group, Inc.",
       "report_date": "2026-10-27",
@@ -2061,6 +2091,26 @@
     {
       "ticker": "SNDL",
       "company": "SNDL Inc.",
+      "report_date": "2026-10-27",
+      "report_time_label": "Time unconfirmed",
+      "planned_date": "",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": null
+    },
+    {
+      "ticker": "UHT",
+      "company": "Universal Health Realty Income Trust",
+      "report_date": "2026-10-27",
+      "report_time_label": "Time unconfirmed",
+      "planned_date": "",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": null
+    },
+    {
+      "ticker": "ULH",
+      "company": "Universal Logistics Holdings, Inc.",
       "report_date": "2026-10-27",
       "report_time_label": "Time unconfirmed",
       "planned_date": "",
@@ -3913,7 +3963,7 @@
       "company": "OSI Systems, Inc.",
       "report_date": "2026-10-29",
       "report_time_label": "Time unconfirmed",
-      "planned_date": "2026-11-02",
+      "planned_date": "",
       "date_status": "Calendar estimate",
       "source_url": null,
       "stock_url": "/shows/osis"
@@ -4107,6 +4157,16 @@
       "date_status": "Calendar estimate",
       "source_url": null,
       "stock_url": "/shows/ftai"
+    },
+    {
+      "ticker": "ITGR",
+      "company": "Integer Holdings Corporation",
+      "report_date": "2026-10-29",
+      "report_time_label": "Time unconfirmed",
+      "planned_date": "",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": null
     },
     {
       "ticker": "MSTR",
@@ -5769,6 +5829,16 @@
       "stock_url": "/shows/xom"
     },
     {
+      "ticker": "HESM",
+      "company": "Hess Midstream LP",
+      "report_date": "2026-10-30",
+      "report_time_label": "Time unconfirmed",
+      "planned_date": "2026-11-02",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": null
+    },
+    {
       "ticker": "LBRDA",
       "company": "Liberty Broadband Corporation",
       "report_date": "2026-10-30",
@@ -6101,16 +6171,6 @@
     {
       "ticker": "VNOM",
       "company": "Viper Energy, Inc.",
-      "report_date": "2026-11-02",
-      "report_time_label": "Time unconfirmed",
-      "planned_date": "",
-      "date_status": "Calendar estimate",
-      "source_url": null,
-      "stock_url": null
-    },
-    {
-      "ticker": "HESM",
-      "company": "Hess Midstream LP",
       "report_date": "2026-11-02",
       "report_time_label": "Time unconfirmed",
       "planned_date": "",
@@ -7097,6 +7157,16 @@
       "date_status": "Calendar estimate",
       "source_url": null,
       "stock_url": "/shows/mar"
+    },
+    {
+      "ticker": "GRFS",
+      "company": "Grifols, S.A.",
+      "report_date": "2026-11-02",
+      "report_time_label": "Time unconfirmed",
+      "planned_date": "",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": "/shows/grfs"
     },
     {
       "ticker": "HLIT",
