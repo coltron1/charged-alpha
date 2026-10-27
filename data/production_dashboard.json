@@ -1,7 +1,7 @@
 {
   "schema": "charged-alpha-public-production/1",
-  "updated_at": "2026-10-26T18:03:12.234323-05:00",
-  "calendar_updated_at": "2026-10-26T15:42:15.774499-05:00",
+  "updated_at": "2026-10-26T22:14:59.768566-05:00",
+  "calendar_updated_at": "2026-10-26T22:07:57.721580-05:00",
   "calendar_status": "fresh",
   "daily_target": 10,
   "active": [],
@@ -1359,6 +1359,16 @@
       "stock_url": null
     },
     {
+      "ticker": "CPAC",
+      "company": "Cementos Pacasmayo S.A.A.",
+      "report_date": "2026-10-26",
+      "report_time_label": "Time unconfirmed",
+      "planned_date": "",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": null
+    },
+    {
       "ticker": "KFRC",
       "company": "Kforce Inc.",
       "report_date": "2026-10-26",
@@ -1387,16 +1397,6 @@
       "date_status": "Calendar estimate",
       "source_url": null,
       "stock_url": "/shows/flxs"
-    },
-    {
-      "ticker": "LVWR",
-      "company": "LiveWire Group, Inc.",
-      "report_date": "2026-10-26",
-      "report_time_label": "Time unconfirmed",
-      "planned_date": "",
-      "date_status": "Calendar estimate",
-      "source_url": null,
-      "stock_url": null
     },
     {
       "ticker": "NRC",
@@ -2309,16 +2309,6 @@
       "stock_url": "/shows/sfd"
     },
     {
-      "ticker": "CPAC",
-      "company": "Cementos Pacasmayo S.A.A.",
-      "report_date": "2026-10-27",
-      "report_time_label": "Time unconfirmed",
-      "planned_date": "",
-      "date_status": "Calendar estimate",
-      "source_url": null,
-      "stock_url": null
-    },
-    {
       "ticker": "BRSP",
       "company": "BrightSpire Capital, Inc.",
       "report_date": "2026-10-27",
@@ -2331,6 +2321,16 @@
     {
       "ticker": "CTO",
       "company": "CTO Realty Growth, Inc.",
+      "report_date": "2026-10-27",
+      "report_time_label": "Time unconfirmed",
+      "planned_date": "",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": null
+    },
+    {
+      "ticker": "LVWR",
+      "company": "LiveWire Group, Inc.",
       "report_date": "2026-10-27",
       "report_time_label": "Time unconfirmed",
       "planned_date": "",
