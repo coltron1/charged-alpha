@@ -10,6 +10,24 @@
   },
   "episodes": [
     {
+      "ticker": "CDNS",
+      "company": "Cadence Design Systems, Inc.",
+      "sector": "Technology",
+      "quarter": "Q3 2026",
+      "episode_number": "",
+      "title": "CDNS Stock: 22% Growth, Flat GAAP EPS — Who Gets the Upside? | Cadence Q3 2026",
+      "published_at": "2026-10-27T07:29:51+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=Oaf59KiY-mY",
+      "spotify_url": "https://open.spotify.com/episode/58pxo7R2Rs5a3uebJ4sPda",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/cdns-stock-22-growth-flat-gaap-eps-%e2%80%94-who-gets-the-upside-cadence-q3-2026/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
       "ticker": "NEM",
       "company": "Newmont Corp",
       "sector": "Basic Materials",
@@ -48773,7 +48791,7 @@
       ]
     }
   ],
-  "last_synced_at": "2026-10-27T02:13:04-05:00",
+  "last_synced_at": "2026-10-27T02:42:01-05:00",
   "stock_metadata": {
     "A": {
       "company": "Agilent Technologies, Inc.",

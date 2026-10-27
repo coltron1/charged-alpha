@@ -2844,6 +2844,64 @@
       "tables": 28
     },
     {
+      "key": "CDNS:Q3-2026",
+      "year": 2026,
+      "quarter": 3,
+      "fiscal": false,
+      "slug": "cdns-q3-2026",
+      "ticker": "CDNS",
+      "company": "Cadence Design Systems, Inc.",
+      "period": "Q3 2026",
+      "canonical_url": "https://chargedalpha.com/research/cdns-q3-2026",
+      "title": "Cadence: 22% Growth, but the Profit Has to Reach the Share",
+      "page_title": "CDNS Q3 2026 Research Packet — Charged Alpha",
+      "description": "Cadence’s recurring-demand strength meets weaker margin conversion, acquisition costs and a stock-compensation burden that matters for per-share cash value.",
+      "sha256": "69f0df65a562b03c28f05d1a7561c947e28878b34624cd5256fef9c78f0d1fe5",
+      "html_file": "research_packets/cdns-q3-2026.html",
+      "source_episode": "CDNS-Q3-2026",
+      "source_staged_at": "2026-10-27T07:36:43Z",
+      "source_sha256": {
+        "READY": "bda8c1e926c16aebb2ab3bc91e70eb11dc05e2235ea596ecef716323dd1372e9",
+        "handoff.json": "a503a29e190cf42f949ad0220866c0094d7bfbe03d6be90d6fbe67d6ba34fcb4",
+        "packet/cdns-q3-2026-research-packet.html": "69f0df65a562b03c28f05d1a7561c947e28878b34624cd5256fef9c78f0d1fe5",
+        "packet/packet_meta.json": "64c8763a4fa16642fd88b3c3f47bd788cdd61b6b7fec8b1e0c5f92405f195678",
+        "packet/packet.json": "930f6067e93f98ec592b028652bce0dd96ec1553bc1d8f17af738f20fa004f2b"
+      },
+      "primary_youtube_long": "Oaf59KiY-mY",
+      "primary_youtube_short": null,
+      "youtube_studio": null,
+      "youtube_studio_short": null,
+      "what_changed": {
+        "summary": "Cadence’s recurring-demand strength meets weaker margin conversion, acquisition costs and a stock-compensation burden that matters for per-share cash value.",
+        "items": [
+          {
+            "title": "Sales growth outpaced operating profit.",
+            "detail": "Revenue rose 22%, while GAAP operating income increased less than 1% and GAAP EPS remained $1.05."
+          },
+          {
+            "title": "Recurring demand is strong but not a pure organic measure.",
+            "detail": "Recurring revenue grew 18%, with acquired scope and product mix requiring separate analysis."
+          },
+          {
+            "title": "The guidance raise did not raise cash guidance.",
+            "detail": "FY2026 revenue midpoint increased $102M and adjusted EPS midpoint increased $0.30; OCF remains approximately $2.0B."
+          },
+          {
+            "title": "Repurchases did not shrink diluted ownership.",
+            "detail": "Q3 buybacks used about $400M, while diluted weighted-average shares rose 0.54% year over year."
+          },
+          {
+            "title": "The valuation methods disagree.",
+            "detail": "Earnings-based routes give about $304 per share; an owner-cash route gives about $209, supporting a rounded $270 anchor with High uncertainty."
+          }
+        ]
+      },
+      "source_published": "October 27, 2026",
+      "words": 5825,
+      "figures": 18,
+      "tables": 19
+    },
+    {
       "key": "CLF:Q3-2026",
       "year": 2026,
       "quarter": 3,

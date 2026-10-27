@@ -1,19 +1,10 @@
 {
   "schema": "charged-alpha-public-production/1",
-  "updated_at": "2026-10-27T00:56:49.385973-05:00",
+  "updated_at": "2026-10-27T02:29:07.483858-05:00",
   "calendar_updated_at": "2026-10-27T00:53:31.633806-05:00",
   "calendar_status": "fresh",
   "daily_target": 10,
-  "active": [
-    {
-      "ticker": "CDNS",
-      "company": "Cadence Design Systems, Inc.",
-      "period": "Q3 2026",
-      "status_label": "Building now",
-      "stage_label": "Production in progress",
-      "stock_url": "/shows/cdns"
-    }
-  ],
+  "active": [],
   "history": [
     {
       "ticker": "SLB",
