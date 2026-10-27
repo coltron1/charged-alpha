@@ -35777,6 +35777,21 @@
       "description": "Fast clips that point viewers into full research videos and stock pages.",
       "videos": [
         {
+          "title": "NEM Stock: Gold Lifts Profit, Where Does the Cash Go? | Q3 2026 #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/n_mhm3xNiDY",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-10-27T07:07:15+00:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "NEM"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage.",
+          "earnings_youtube_url": "https://www.youtube.com/watch?v=QF1nY2JjQGo",
+          "earnings_match": "stock_period_date"
+        },
+        {
           "title": "SLB Stock: Growth Is Back. Who Gets the Cash? | Q3 2026 #Shorts",
           "youtube_url": "https://www.youtube.com/shorts/stIEyD9T0HY",
           "spotify_url": "",
@@ -48758,7 +48773,7 @@
       ]
     }
   ],
-  "last_synced_at": "2026-10-27T01:37:47-05:00",
+  "last_synced_at": "2026-10-27T02:13:04-05:00",
   "stock_metadata": {
     "A": {
       "company": "Agilent Technologies, Inc.",
