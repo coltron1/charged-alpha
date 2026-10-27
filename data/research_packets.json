@@ -4120,6 +4120,64 @@
       "tables": 32
     },
     {
+      "key": "NEM:Q3-2026",
+      "year": 2026,
+      "quarter": 3,
+      "fiscal": false,
+      "slug": "nem-q3-2026",
+      "ticker": "NEM",
+      "company": "Newmont Corporation",
+      "period": "Q3 2026",
+      "canonical_url": "https://chargedalpha.com/research/nem-q3-2026",
+      "title": "NEM: Gold Lifts Profit — How Much Cash Is Really Spare?",
+      "page_title": "NEM Q3 2026 Research Packet — Charged Alpha",
+      "description": "Newmont earns more from higher gold prices, while mine costs, project spending and the NGM payment test sustainable cash returns.",
+      "sha256": "3fbd139138f9a8f2cc1d0304f8e9ee97903dd69f6b6b70ec48b5a4b8f5f0769d",
+      "html_file": "research_packets/nem-q3-2026.html",
+      "source_episode": "NEM-Q3-2026",
+      "source_staged_at": "2026-10-27T06:05:35Z",
+      "source_sha256": {
+        "READY": "fb9bd51876a2c9bf20d67954b77b70e78d79dcd6eca7501f5a36460cd66727d1",
+        "handoff.json": "422c083f424d82e8a6622e2862c7801586217b0b26e6fd71ddc695be7e1c8197",
+        "packet/nem-q3-2026-research-packet.html": "3fbd139138f9a8f2cc1d0304f8e9ee97903dd69f6b6b70ec48b5a4b8f5f0769d",
+        "packet/packet_meta.json": "84382f9d73d7658337af907c85408eeab1b6910d3148e38c2756abb23cf2db24",
+        "packet/packet.json": "7bec43c9d6c55b19bb7b0c5f3035f2cd877c3c392530d1550cd35905930ab567"
+      },
+      "primary_youtube_long": "QF1nY2JjQGo",
+      "primary_youtube_short": null,
+      "youtube_studio": null,
+      "youtube_studio_short": null,
+      "what_changed": {
+        "summary": "Newmont earns more from higher gold prices, while mine costs, project spending and the NGM payment test sustainable cash returns.",
+        "items": [
+          {
+            "title": "Higher prices explain much of the improvement.",
+            "detail": "Gold realized rose 22%, while attributable production fell 8.4%."
+          },
+          {
+            "title": "The cost distinction matters.",
+            "detail": "Byproduct AISC was $1,454/oz; co-product AISC was $1,963/oz. Neither equals total owner cash cost."
+          },
+          {
+            "title": "Cash remains substantial.",
+            "detail": "Q3 free cash flow was $1.912B, after $856M cash PP&E additions."
+          },
+          {
+            "title": "Some liquidity is committed.",
+            "detail": "The expected $1.95B NGM payment precedes major development milestones."
+          },
+          {
+            "title": "Valuation offers little cushion.",
+            "detail": "Our $103 base and $109.25 weighted scenario value sit near or below the $110.39 reference."
+          }
+        ]
+      },
+      "source_published": "October 26, 2026",
+      "words": 5579,
+      "figures": 18,
+      "tables": 15
+    },
+    {
       "key": "NFLX:Q3-2026",
       "year": 2026,
       "quarter": 3,

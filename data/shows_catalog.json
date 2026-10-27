@@ -10,6 +10,24 @@
   },
   "episodes": [
     {
+      "ticker": "NEM",
+      "company": "Newmont Corp",
+      "sector": "Basic Materials",
+      "quarter": "Q3 2026",
+      "episode_number": "",
+      "title": "NEM Stock: Gold Lifts Profit — How Much Cash Is Really Spare? | Q3 2026",
+      "published_at": "2026-10-27T06:01:38+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=QF1nY2JjQGo",
+      "spotify_url": "https://open.spotify.com/episode/0wUcUf12jgJ1iM3eZm9dKw",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/nem-stock-gold-lifts-profit-%e2%80%94-how-much-cash-is-really-spare-q3-2026/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
       "ticker": "SLB",
       "company": "Schlumberger Ltd.",
       "sector": "Energy",
@@ -19,7 +37,7 @@
       "published_at": "2026-10-27T04:16:46+00:00",
       "status": "youtube_podcast_complete",
       "youtube_url": "https://www.youtube.com/watch?v=OzC_mgi43K0",
-      "spotify_url": "",
+      "spotify_url": "https://open.spotify.com/episode/1cEBDNXFYgoXBLqykOPl2y",
       "apple_url": "",
       "google_url": "",
       "iheart_url": "",
@@ -48740,7 +48758,7 @@
       ]
     }
   ],
-  "last_synced_at": "2026-10-26T23:33:06-05:00",
+  "last_synced_at": "2026-10-27T01:37:47-05:00",
   "stock_metadata": {
     "A": {
       "company": "Agilent Technologies, Inc.",
