@@ -35849,6 +35849,21 @@
       "description": "Fast clips that point viewers into full research videos and stock pages.",
       "videos": [
         {
+          "title": "IBM Stock: Cash Is Growing — How Much Reaches Owners? | Q3 2026 Earnings #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/A4CH5RPimhQ",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-10-28T09:24:07-07:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "IBM"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage.",
+          "earnings_youtube_url": "https://www.youtube.com/watch?v=038ny-cpL44",
+          "earnings_match": "stock_period_date"
+        },
+        {
           "title": "DECK Stock: The Refund Is Not Demand | Q2 FY2027 #Shorts",
           "youtube_url": "https://www.youtube.com/shorts/qzTsxd3s2o8",
           "spotify_url": "",
@@ -48890,7 +48905,7 @@
       ]
     }
   ],
-  "last_synced_at": "2026-10-28T11:17:41-05:00",
+  "last_synced_at": "2026-10-28T11:26:03-05:00",
   "stock_metadata": {
     "A": {
       "company": "Agilent Technologies, Inc.",
