@@ -10,6 +10,24 @@
   },
   "episodes": [
     {
+      "ticker": "GOOGL",
+      "company": "Alphabet Inc.",
+      "sector": "Communication",
+      "quarter": "Q3 2026",
+      "episode_number": "",
+      "title": "GOOGL Stock: Cloud Doubled — Who Funds the Buildout? | Q3 2026 Earnings",
+      "published_at": "2026-10-28T23:44:45+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=JCdcqujCDPo",
+      "spotify_url": "https://open.spotify.com/episode/0w6wpIA8YdMZX9UXwGlUzp",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/googl-stock-cloud-doubled-%e2%80%94-who-funds-the-buildout-q3-2026-earnings/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
       "ticker": "BSX",
       "company": "Boston Scientific Corporation",
       "sector": "Healthcare",
@@ -19,7 +37,7 @@
       "published_at": "2026-10-28T21:45:24+00:00",
       "status": "youtube_podcast_complete",
       "youtube_url": "https://www.youtube.com/watch?v=zFV1SsJ3caQ",
-      "spotify_url": "",
+      "spotify_url": "https://open.spotify.com/episode/4qPdRYhedV1kqAc0BoLLK8",
       "apple_url": "",
       "google_url": "",
       "iheart_url": "",
@@ -49070,7 +49088,7 @@
       ]
     }
   ],
-  "last_synced_at": "2026-10-28T17:12:20-05:00",
+  "last_synced_at": "2026-10-28T18:52:36-05:00",
   "stock_metadata": {
     "A": {
       "company": "Agilent Technologies, Inc.",

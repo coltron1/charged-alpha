@@ -3656,6 +3656,64 @@
       "tables": 30
     },
     {
+      "key": "GOOGL:Q3-2026",
+      "year": 2026,
+      "quarter": 3,
+      "fiscal": false,
+      "slug": "googl-q3-2026",
+      "ticker": "GOOGL",
+      "company": "Alphabet Inc.",
+      "period": "Q3 2026",
+      "canonical_url": "https://chargedalpha.com/research/googl-q3-2026",
+      "title": "GOOGL Q3 2026: Cloud Doubled — Who Funds the Buildout?",
+      "page_title": "GOOGL Q3 2026 Research Packet — Charged Alpha",
+      "description": "Alphabet’s Cloud expansion, investment-mark earnings and external financing test the cash available to common shareholders.",
+      "sha256": "3d869c04bd9a1cb47f9a2cfa72fd894b316eaf4c9608455f5a93fcc3dadbef5b",
+      "html_file": "research_packets/googl-q3-2026.html",
+      "source_episode": "GOOGL-Q3-2026",
+      "source_staged_at": "2026-10-28T23:50:11Z",
+      "source_sha256": {
+        "READY": "849a8a88df491053706cf5ace481d8a46e702d2067f406c892b7cdf154d07616",
+        "handoff.json": "f86957e7ae3a41fe63c2b582dfd1b707f0730b7afde25e1eaae92e7e2108d258",
+        "packet/googl-q3-2026-research-packet.html": "3d869c04bd9a1cb47f9a2cfa72fd894b316eaf4c9608455f5a93fcc3dadbef5b",
+        "packet/packet_meta.json": "c798c23730cf4672c1678c7cf5165c5fb5a300f861eb4dc1ec7afbc36fac3cf5",
+        "packet/packet.json": "e18b9c405fab3c740117b86b5a07523c9d11b030f81a7c3ecc0c329cf2e93c0f"
+      },
+      "primary_youtube_long": "JCdcqujCDPo",
+      "primary_youtube_short": null,
+      "youtube_studio": null,
+      "youtube_studio_short": null,
+      "what_changed": {
+        "summary": "Alphabet’s Cloud expansion, investment-mark earnings and external financing test the cash available to common shareholders.",
+        "items": [
+          {
+            "title": "Cloud changed its mix.",
+            "detail": "TPU system sales and Wiz are included; reported growth is not a disclosed organic growth rate."
+          },
+          {
+            "title": "Operating profit grew while EPS fell.",
+            "detail": "Investment losses and preferred dividends explain why common-share earnings need a full bridge."
+          },
+          {
+            "title": "Infrastructure outspent operating cash.",
+            "detail": "Q3 capex of $51.355B exceeded $42.290B operating cash."
+          },
+          {
+            "title": "External financing matters per share.",
+            "detail": "Common issuance and debt supplied funds while buybacks were zero."
+          },
+          {
+            "title": "The price still needs cash conversion.",
+            "detail": "Our $270 anchor and $280 weighted value sit below the $324.89 closing reference; the later quote is separately labeled."
+          }
+        ]
+      },
+      "source_published": "October 28, 2026",
+      "words": 5967,
+      "figures": 17,
+      "tables": 22
+    },
+    {
       "key": "HAL:Q3-2026",
       "year": 2026,
       "quarter": 3,

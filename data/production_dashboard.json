@@ -1,7 +1,7 @@
 {
   "schema": "charged-alpha-public-production/1",
-  "updated_at": "2026-10-28T17:23:46.767950-05:00",
-  "calendar_updated_at": "2026-10-28T15:53:06.441381-05:00",
+  "updated_at": "2026-10-28T18:52:36.214248-05:00",
+  "calendar_updated_at": "2026-10-28T18:52:35.331542-05:00",
   "calendar_status": "fresh",
   "daily_target": 10,
   "active": [],
@@ -1299,16 +1299,6 @@
       "stock_url": "/shows/aur"
     },
     {
-      "ticker": "GOOG",
-      "company": "Alphabet Inc.",
-      "report_date": "2026-10-28",
-      "report_time_label": "Time unconfirmed",
-      "planned_date": "2026-10-29",
-      "date_status": "Calendar estimate",
-      "source_url": null,
-      "stock_url": null
-    },
-    {
       "ticker": "FTV",
       "company": "Fortive Corporation",
       "report_date": "2026-10-28",
@@ -1323,7 +1313,7 @@
       "company": "Honeywell Aerospace Inc",
       "report_date": "2026-10-28",
       "report_time_label": "Time unconfirmed",
-      "planned_date": "2026-11-01",
+      "planned_date": "2026-10-29",
       "date_status": "Calendar estimate",
       "source_url": null,
       "stock_url": null
@@ -1651,16 +1641,6 @@
     {
       "ticker": "QUAD",
       "company": "Quad/Graphics, Inc.",
-      "report_date": "2026-10-28",
-      "report_time_label": "Time unconfirmed",
-      "planned_date": "",
-      "date_status": "Calendar estimate",
-      "source_url": null,
-      "stock_url": null
-    },
-    {
-      "ticker": "SSII",
-      "company": "SS Innovations International, Inc.",
       "report_date": "2026-10-28",
       "report_time_label": "Time unconfirmed",
       "planned_date": "",
@@ -2699,6 +2679,16 @@
       "stock_url": null
     },
     {
+      "ticker": "LXFR",
+      "company": "Luxfer Holdings PLC",
+      "report_date": "2026-10-28",
+      "report_time_label": "Time unconfirmed",
+      "planned_date": "",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": null
+    },
+    {
       "ticker": "LXU",
       "company": "LSB Industries, Inc.",
       "report_date": "2026-10-28",
@@ -3043,7 +3033,7 @@
       "company": "ASE Technology Holding Co., Ltd.",
       "report_date": "2026-10-29",
       "report_time_label": "Time unconfirmed",
-      "planned_date": "2026-11-02",
+      "planned_date": "2026-11-01",
       "date_status": "Calendar estimate",
       "source_url": null,
       "stock_url": "/shows/asx"
@@ -3093,7 +3083,7 @@
       "company": "Textron Inc.",
       "report_date": "2026-10-29",
       "report_time_label": "Time unconfirmed",
-      "planned_date": "2026-11-03",
+      "planned_date": "2026-11-02",
       "date_status": "Calendar estimate",
       "source_url": null,
       "stock_url": "/shows/txt"
@@ -3113,7 +3103,7 @@
       "company": "Pinterest, Inc.",
       "report_date": "2026-10-29",
       "report_time_label": "Time unconfirmed",
-      "planned_date": "",
+      "planned_date": "2026-11-03",
       "date_status": "Calendar estimate",
       "source_url": null,
       "stock_url": "/shows/pins"
@@ -5581,6 +5571,16 @@
     {
       "ticker": "SIBN",
       "company": "SI-BONE, Inc.",
+      "report_date": "2026-11-02",
+      "report_time_label": "Time unconfirmed",
+      "planned_date": "",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": null
+    },
+    {
+      "ticker": "SSII",
+      "company": "SS Innovations International, Inc.",
       "report_date": "2026-11-02",
       "report_time_label": "Time unconfirmed",
       "planned_date": "",
