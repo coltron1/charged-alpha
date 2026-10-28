@@ -10,6 +10,42 @@
   },
   "episodes": [
     {
+      "ticker": "BSX",
+      "company": "Boston Scientific Corporation",
+      "sector": "Healthcare",
+      "quarter": "Q3 2026",
+      "episode_number": "",
+      "title": "BSX Stock: Cheap Earnings, Unfinished Cash Recovery | Q3 2026",
+      "published_at": "2026-10-28T21:45:24+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=zFV1SsJ3caQ",
+      "spotify_url": "",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/bsx-stock-cheap-earnings-unfinished-cash-recovery-q3-2026/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "TER",
+      "company": "Teradyne, Inc.",
+      "sector": "Technology",
+      "quarter": "Q3 2026",
+      "episode_number": "",
+      "title": "TER Stock: AI Demand Broadens — The $336M Cash Test | Q3 2026 Earnings",
+      "published_at": "2026-10-28T21:36:46+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=H17i6_d36Kk",
+      "spotify_url": "https://open.spotify.com/episode/5Tz3246MQUxzT8Hlt6Yz0W",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/ter-stock-ai-demand-broadens-%e2%80%94-the-336m-cash-test-q3-2026-earnings/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
       "ticker": "VRT",
       "company": "Vertiv Holdings",
       "sector": "Industrials",
@@ -49004,7 +49040,7 @@
       ]
     }
   ],
-  "last_synced_at": "2026-10-28T15:44:54-05:00",
+  "last_synced_at": "2026-10-28T16:51:46-05:00",
   "stock_metadata": {
     "A": {
       "company": "Agilent Technologies, Inc.",

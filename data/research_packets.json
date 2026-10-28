@@ -2902,6 +2902,64 @@
       "tables": 32
     },
     {
+      "key": "BSX:Q3-2026",
+      "year": 2026,
+      "quarter": 3,
+      "fiscal": false,
+      "slug": "bsx-q3-2026",
+      "ticker": "BSX",
+      "company": "Boston Scientific Corporation",
+      "period": "Q3 2026",
+      "canonical_url": "https://chargedalpha.com/research/bsx-q3-2026",
+      "title": "Boston Scientific: Cheap Earnings, Unfinished Cash Recovery",
+      "page_title": "BSX Q3 2026 Research Packet — Charged Alpha",
+      "description": "A cyber-disrupted quarter, a lower share count and a pending acquisition make cash recovery more important than the headline earnings multiple.",
+      "sha256": "d5ff9a973bde599661bdc5c07ad94cf25994db6368be7fb3425ef53aaa89fecf",
+      "html_file": "research_packets/bsx-q3-2026.html",
+      "source_episode": "BSX-Q3-2026",
+      "source_staged_at": "2026-10-28T21:50:29Z",
+      "source_sha256": {
+        "READY": "1c552f0613cab035e2d2b1658e8de5747cc2d379d4f65017e8adfbb97fedc097",
+        "handoff.json": "274b04d91f7de5c1465c3b96f309c05a788e7fe7c4e39dea615415a2310976ad",
+        "packet/bsx-q3-2026-research-packet.html": "d5ff9a973bde599661bdc5c07ad94cf25994db6368be7fb3425ef53aaa89fecf",
+        "packet/packet_meta.json": "830f4e8d6bcb61fcbfb9b85c7101241ffee3bb6bbdcf831aff91aa367da7c940",
+        "packet/packet.json": "da45988b16aa1d0d0b833c2285f61700ee0c513e112c38bc5bf928c0b662aefa"
+      },
+      "primary_youtube_long": "zFV1SsJ3caQ",
+      "primary_youtube_short": null,
+      "youtube_studio": null,
+      "youtube_studio_short": null,
+      "what_changed": {
+        "summary": "A cyber-disrupted quarter, a lower share count and a pending acquisition make cash recovery more important than the headline earnings multiple.",
+        "items": [
+          {
+            "title": "A small beat does not establish recovery.",
+            "detail": "Sales and EPS beat the cited provider snapshot, but Q4 guidance still implies declining revenue."
+          },
+          {
+            "title": "Margins weakened.",
+            "detail": "Gross margin fell 321 basis points; adjusted operating margin fell 147 basis points."
+          },
+          {
+            "title": "Shares cushion the EPS comparison.",
+            "detail": "At the prior denominator, adjusted income implies about $0.711 per share versus reported $0.73."
+          },
+          {
+            "title": "Cash evidence has a date.",
+            "detail": "June cash and debt are dated proxies; September cash flow is unknown."
+          },
+          {
+            "title": "The pending deal changes the hurdle.",
+            "detail": "Penumbra funding, dilution and integration require a separate future model; no unearned synergies enter this standalone value."
+          }
+        ]
+      },
+      "source_published": "October 28, 2026",
+      "words": 6047,
+      "figures": 16,
+      "tables": 20
+    },
+    {
       "key": "CCI:Q3-2026",
       "year": 2026,
       "quarter": 3,
@@ -5394,6 +5452,64 @@
       "words": 5651,
       "figures": 18,
       "tables": 31
+    },
+    {
+      "key": "TER:Q3-2026",
+      "year": 2026,
+      "quarter": 3,
+      "fiscal": false,
+      "slug": "ter-q3-2026",
+      "ticker": "TER",
+      "company": "Teradyne, Inc.",
+      "period": "Q3 2026",
+      "canonical_url": "https://chargedalpha.com/research/ter-q3-2026",
+      "title": "TER: AI Demand Broadens. The $336M Cash Test.",
+      "page_title": "TER Q3 2026 Research Packet — Charged Alpha",
+      "description": "Teradyne sales rose 70%, while inventory and prepayments absorbed $336M. Earnings ownership, cash conversion and three valuation routes.",
+      "sha256": "013b38e03961d7f6fef8421e4d698ce83cfad9fb0b4bf7ebbeee4a42ef77cb22",
+      "html_file": "research_packets/ter-q3-2026.html",
+      "source_episode": "TER-Q3-2026",
+      "source_staged_at": "2026-10-28T21:46:04Z",
+      "source_sha256": {
+        "READY": "86d9607b891fa4f784269a7153a1d119c7c0ad20370a2df37e206790c321d017",
+        "handoff.json": "abbc9555c360cfd98c17a014fdf3da745371ea6ecbbfa23d6f75dcaba89e92ac",
+        "packet/ter-q3-2026-research-packet.html": "013b38e03961d7f6fef8421e4d698ce83cfad9fb0b4bf7ebbeee4a42ef77cb22",
+        "packet/packet_meta.json": "45703cd17dd68be8a3f3434615de10dbb6ab3df6c131b8f7c3d48508cc2fe458",
+        "packet/packet.json": "ad8444a21fd76dee21b5eb2767eee0ec639c8ba8350061f0e3e9d4d4fc6308d7"
+      },
+      "primary_youtube_long": "H17i6_d36Kk",
+      "primary_youtube_short": null,
+      "youtube_studio": null,
+      "youtube_studio_short": null,
+      "what_changed": {
+        "summary": "Teradyne sales rose 70%, while inventory and prepayments absorbed $336M. Earnings ownership, cash conversion and three valuation routes.",
+        "items": [
+          {
+            "title": "Demand has broadened.",
+            "detail": "Memory, interconnect, storage and robotics support the AI story."
+          },
+          {
+            "title": "Cash needs proof.",
+            "detail": "Inventory and prepayments absorbed $336.3M in the quarter."
+          },
+          {
+            "title": "Ownership matters.",
+            "detail": "Consolidated profit exceeds the amount attributable to common shareholders."
+          },
+          {
+            "title": "Guidance remains strong.",
+            "detail": "Q4 sales midpoint is $1.300B, with adjusted EPS midpoint $2.10."
+          },
+          {
+            "title": "Price carries a hurdle.",
+            "detail": "$313.24 implies $1.727B of equity cash at a 3.5% yield."
+          }
+        ]
+      },
+      "source_published": "October 28, 2026",
+      "words": 5848,
+      "figures": 15,
+      "tables": 22
     },
     {
       "key": "TMQ:Q3-FY2026",
