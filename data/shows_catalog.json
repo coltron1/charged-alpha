@@ -10,6 +10,24 @@
   },
   "episodes": [
     {
+      "ticker": "IBM",
+      "company": "International Business Machines Corporation",
+      "sector": "Technology",
+      "quarter": "Q3 2026",
+      "episode_number": "",
+      "title": "IBM Stock: Cash Is Growing — How Much Reaches Owners? | Q3 2026 Earnings",
+      "published_at": "2026-10-28T16:06:32+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=038ny-cpL44",
+      "spotify_url": "",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/ibm-stock-cash-is-growing-%e2%80%94-how-much-reaches-owners-q3-2026-earnings/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
       "ticker": "DECK",
       "company": "Deckers Outdoor Corporation",
       "sector": "Consumer Cyclical",
@@ -48872,7 +48890,7 @@
       ]
     }
   ],
-  "last_synced_at": "2026-10-28T10:50:28-05:00",
+  "last_synced_at": "2026-10-28T11:17:41-05:00",
   "stock_metadata": {
     "A": {
       "company": "Agilent Technologies, Inc.",

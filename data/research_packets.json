@@ -3656,6 +3656,64 @@
       "tables": 34
     },
     {
+      "key": "IBM:Q3-2026",
+      "year": 2026,
+      "quarter": 3,
+      "fiscal": false,
+      "slug": "ibm-q3-2026",
+      "ticker": "IBM",
+      "company": "International Business Machines Corporation",
+      "period": "Q3 2026",
+      "canonical_url": "https://chargedalpha.com/research/ibm-q3-2026",
+      "title": "IBM: Cash Is Growing — How Much Reaches Owners?",
+      "page_title": "IBM Q3 2026 Research Packet — Charged Alpha",
+      "description": "IBM’s software growth meets tax comparisons, financing receivables and acquisition capital. We trace reported cash into per-share value.",
+      "sha256": "7a30586bf4227ee426d7ceb82bbc511e60320d6db7d1bdd46abc1651a86f8cde",
+      "html_file": "research_packets/ibm-q3-2026.html",
+      "source_episode": "IBM-Q3-2026",
+      "source_staged_at": "2026-10-28T16:16:04Z",
+      "source_sha256": {
+        "READY": "41b708922db4daefa2ee71a2968adfacba217aa3a0d212dc29dd36901920de66",
+        "handoff.json": "8c35a774974e0ffcb456c2f48304ce127747e19eac87d72e392995208a60e0d1",
+        "packet/ibm-q3-2026-research-packet.html": "7a30586bf4227ee426d7ceb82bbc511e60320d6db7d1bdd46abc1651a86f8cde",
+        "packet/packet_meta.json": "ba184a0fd07e67bba238a3dffa5ecbc634f39abe01371ed0b935c5fc167fa6d0",
+        "packet/packet.json": "f50e25f1a64dd6c35b8ba6f4a7090202e0ef0dff1d37d81de5584856c80d9d6b"
+      },
+      "primary_youtube_long": "038ny-cpL44",
+      "primary_youtube_short": null,
+      "youtube_studio": null,
+      "youtube_studio_short": null,
+      "what_changed": {
+        "summary": "IBM’s software growth meets tax comparisons, financing receivables and acquisition capital. We trace reported cash into per-share value.",
+        "items": [
+          {
+            "title": "EPS growth is not all operating growth.",
+            "detail": "Pretax income rose 2.76%; the tax rate fell from 28.2% to 11.9%."
+          },
+          {
+            "title": "Cash definitions matter.",
+            "detail": "YTD operating cash rose 28.82%, while issuer FCF rose 8.44% after the financing-receivable adjustment."
+          },
+          {
+            "title": "Software leads, but scope changed.",
+            "detail": "Confluent is included; no invented organic growth rate replaces the reported 8.2%."
+          },
+          {
+            "title": "Capital has competing uses.",
+            "detail": "Acquisition spending, dividends, compensation and financing debt affect what reaches owners."
+          },
+          {
+            "title": "The reference price offers little cushion.",
+            "detail": "Our three methods support $218.50–$250.80 and a rounded $240 anchor."
+          }
+        ]
+      },
+      "source_published": "October 28, 2026",
+      "words": 5982,
+      "figures": 17,
+      "tables": 19
+    },
+    {
       "key": "ISRG:Q3-2026",
       "year": 2026,
       "quarter": 3,

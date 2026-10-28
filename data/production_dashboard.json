@@ -1,20 +1,21 @@
 {
   "schema": "charged-alpha-public-production/1",
-  "updated_at": "2026-10-28T10:27:55.897970-05:00",
+  "updated_at": "2026-10-28T11:06:05.155934-05:00",
   "calendar_updated_at": "2026-10-28T09:47:46.592730-05:00",
   "calendar_status": "fresh",
   "daily_target": 10,
-  "active": [
-    {
-      "ticker": "IBM",
-      "company": "International Business Machines Corporation",
-      "period": "Q3 2026",
-      "status_label": "Building now",
-      "stage_label": "Recording episode",
-      "stock_url": "/shows/ibm"
-    }
-  ],
+  "active": [],
   "history": [
+    {
+      "ticker": "DECK",
+      "company": "Deckers Outdoor Corporation",
+      "period": "Q2 FY2027",
+      "completed_at": "2026-10-28T11:03:26.133262-05:00",
+      "video_url": "https://youtu.be/B9nHOVcu-SE",
+      "short_url": "https://youtu.be/qzTsxd3s2o8",
+      "packet_url": "https://chargedalpha.com/research/deck-q2-fy2027",
+      "stock_url": "/shows/deck"
+    },
     {
       "ticker": "LMT",
       "company": "Lockheed Martin Corporation",
