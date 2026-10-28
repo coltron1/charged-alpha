@@ -35939,6 +35939,36 @@
       "description": "Fast clips that point viewers into full research videos and stock pages.",
       "videos": [
         {
+          "title": "BSX Stock: Cheap Earnings, Where Is the Cash? | Q3 2026 #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/xAmADRdaILg",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-10-28T15:09:28-07:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "BSX"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage.",
+          "earnings_youtube_url": "https://www.youtube.com/watch?v=zFV1SsJ3caQ",
+          "earnings_match": "stock_period_date"
+        },
+        {
+          "title": "TER Stock: AI Demand Broadens. Does Cash Follow? | Q3 2026 Earnings #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/oScqdWnSDbw",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-10-28T22:01:39+00:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "TER"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage.",
+          "earnings_youtube_url": "https://www.youtube.com/watch?v=H17i6_d36Kk",
+          "earnings_match": "stock_period_date"
+        },
+        {
           "title": "VRT Stock: Who Funds the Next Growth Wave? | Q3 2026 Earnings #Shorts",
           "youtube_url": "https://www.youtube.com/shorts/fw4FZLNur-U",
           "spotify_url": "",
@@ -49040,7 +49070,7 @@
       ]
     }
   ],
-  "last_synced_at": "2026-10-28T16:51:46-05:00",
+  "last_synced_at": "2026-10-28T17:12:20-05:00",
   "stock_metadata": {
     "A": {
       "company": "Agilent Technologies, Inc.",
