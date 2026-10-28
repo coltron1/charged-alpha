@@ -3946,6 +3946,64 @@
       "tables": 29
     },
     {
+      "key": "LMT:Q3-2026",
+      "year": 2026,
+      "quarter": 3,
+      "fiscal": false,
+      "slug": "lmt-q3-2026",
+      "ticker": "LMT",
+      "company": "Lockheed Martin Corporation",
+      "period": "Q3 2026",
+      "canonical_url": "https://chargedalpha.com/research/lmt-q3-2026",
+      "title": "LMT: A $292 Billion Backlog Still Has to Become Cash",
+      "page_title": "LMT Q3 2026 Research Packet — Charged Alpha",
+      "description": "Record missile orders strengthen Lockheed Martin’s demand outlook, while F-35 funding, contract assets and capital commitments determine how much reaches shareholders.",
+      "sha256": "bd157bf7e251c86c10216fa74cab64803ab747707f4eeb66e8be3ca9edb171f0",
+      "html_file": "research_packets/lmt-q3-2026.html",
+      "source_episode": "LMT-Q3-2026",
+      "source_staged_at": "2026-10-28T14:35:09Z",
+      "source_sha256": {
+        "READY": "0558632623c38594b65bc6c66fbb5da57a2531112f8de2f123e910c95894938b",
+        "handoff.json": "a85a067dd8817cbf4dcef098f376a2cc36f777388b67c32336a7d57a17805724",
+        "packet/lmt-q3-2026-research-packet.html": "bd157bf7e251c86c10216fa74cab64803ab747707f4eeb66e8be3ca9edb171f0",
+        "packet/packet_meta.json": "e240f656f9053b90abd1073761afeaa2427f6f5677463ccac19a9731f25bc9f5",
+        "packet/packet.json": "728b1cde505b2875ede1348e80d5b84c17270eda2f09c531e33d97d6220ebcf3"
+      },
+      "primary_youtube_long": "GhY6OmdT_oM",
+      "primary_youtube_short": null,
+      "youtube_studio": null,
+      "youtube_studio_short": null,
+      "what_changed": {
+        "summary": "Record missile orders strengthen Lockheed Martin’s demand outlook, while F-35 funding, contract assets and capital commitments determine how much reaches shareholders.",
+        "items": [
+          {
+            "title": "The backlog record has a long clock.",
+            "detail": "The $52.5B PAC-3 award drove about 85% of the quarter’s backlog increase; only 23% of total backlog is expected to convert within twelve months."
+          },
+          {
+            "title": "Cash guidance improved more than profit guidance.",
+            "detail": "FY FCF midpoint rose $800M, while consolidated operating-profit midpoint fell $25M."
+          },
+          {
+            "title": "F-35 funding is a current constraint.",
+            "detail": "Lot 20 advance-acquisition costs began exceeding current authorization and funding during Q3."
+          },
+          {
+            "title": "Liquidity has competing uses.",
+            "detail": "The pending $3.45B Ultra Maritime purchase, program obligations and potential ULA support compete with capital returns."
+          },
+          {
+            "title": "The price offers little cushion.",
+            "detail": "Three valuation routes support a rounded $600 anchor versus the $622.99 reference, with a $480 conditional entry checkpoint."
+          }
+        ]
+      },
+      "source_published": "October 28, 2026",
+      "words": 6120,
+      "figures": 18,
+      "tables": 19
+    },
+    {
       "key": "MKC:Q3-FY2026",
       "year": 2026,
       "quarter": 3,

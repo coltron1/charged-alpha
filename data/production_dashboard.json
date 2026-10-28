@@ -1,10 +1,19 @@
 {
   "schema": "charged-alpha-public-production/1",
-  "updated_at": "2026-10-28T07:52:23.846131-05:00",
-  "calendar_updated_at": "2026-10-28T07:35:27.423734-05:00",
+  "updated_at": "2026-10-28T09:47:47.204119-05:00",
+  "calendar_updated_at": "2026-10-28T09:47:46.592730-05:00",
   "calendar_status": "fresh",
   "daily_target": 10,
-  "active": [],
+  "active": [
+    {
+      "ticker": "DECK",
+      "company": "Deckers Outdoor Corporation",
+      "period": "Q2 FY2027",
+      "status_label": "Building now",
+      "stage_label": "Production in progress",
+      "stock_url": "/shows/deck"
+    }
+  ],
   "history": [
     {
       "ticker": "CDNS",
@@ -1477,6 +1486,16 @@
       "date_status": "Calendar estimate",
       "source_url": null,
       "stock_url": "/shows/tel"
+    },
+    {
+      "ticker": "NPK",
+      "company": "National Presto Industries, Inc.",
+      "report_date": "2026-10-28",
+      "report_time_label": "Time unconfirmed",
+      "planned_date": "",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": null
     },
     {
       "ticker": "FTNT",
@@ -4049,6 +4068,16 @@
       "stock_url": "/shows/bldr"
     },
     {
+      "ticker": "DMRC",
+      "company": "Digimarc Corp.",
+      "report_date": "2026-10-29",
+      "report_time_label": "Time unconfirmed",
+      "planned_date": "",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": null
+    },
+    {
       "ticker": "GATX",
       "company": "GATX Corporation",
       "report_date": "2026-10-29",
@@ -5061,6 +5090,16 @@
     {
       "ticker": "HKD",
       "company": "AMTD Digital Inc.",
+      "report_date": "2026-10-30",
+      "report_time_label": "Time unconfirmed",
+      "planned_date": "",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": null
+    },
+    {
+      "ticker": "MSGK",
+      "company": "MSG Knickerbockers Corp. Class A",
       "report_date": "2026-10-30",
       "report_time_label": "Time unconfirmed",
       "planned_date": "",
@@ -7151,16 +7190,6 @@
     {
       "ticker": "ZVRA",
       "company": "Zevra Therapeutics, Inc.",
-      "report_date": "2026-11-03",
-      "report_time_label": "Time unconfirmed",
-      "planned_date": "",
-      "date_status": "Calendar estimate",
-      "source_url": null,
-      "stock_url": null
-    },
-    {
-      "ticker": "IQMX",
-      "company": "IQM Quantum Computers Oyj",
       "report_date": "2026-11-03",
       "report_time_label": "Time unconfirmed",
       "planned_date": "",
