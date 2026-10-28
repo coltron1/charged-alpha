@@ -19,7 +19,7 @@
       "published_at": "2026-10-28T15:09:48+00:00",
       "status": "youtube_podcast_complete",
       "youtube_url": "https://www.youtube.com/watch?v=B9nHOVcu-SE",
-      "spotify_url": "",
+      "spotify_url": "https://open.spotify.com/episode/4izT4V0Y14smcozmwQ96Hr",
       "apple_url": "",
       "google_url": "",
       "iheart_url": "",
@@ -35831,6 +35831,21 @@
       "description": "Fast clips that point viewers into full research videos and stock pages.",
       "videos": [
         {
+          "title": "DECK Stock: The Refund Is Not Demand | Q2 FY2027 #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/qzTsxd3s2o8",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-10-28T15:44:21+00:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "DECK"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage.",
+          "earnings_youtube_url": "https://www.youtube.com/watch?v=B9nHOVcu-SE",
+          "earnings_match": "stock_period_date"
+        },
+        {
           "title": "LMT Stock: $292B Backlog, But When Does Cash Arrive? | Q3 2026 Earnings #Shorts",
           "youtube_url": "https://www.youtube.com/shorts/kupVn3LmgiE",
           "spotify_url": "",
@@ -48857,7 +48872,7 @@
       ]
     }
   ],
-  "last_synced_at": "2026-10-28T10:14:27-05:00",
+  "last_synced_at": "2026-10-28T10:50:28-05:00",
   "stock_metadata": {
     "A": {
       "company": "Agilent Technologies, Inc.",

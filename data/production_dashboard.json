@@ -1,11 +1,30 @@
 {
   "schema": "charged-alpha-public-production/1",
-  "updated_at": "2026-10-28T10:11:19.144737-05:00",
+  "updated_at": "2026-10-28T10:27:55.897970-05:00",
   "calendar_updated_at": "2026-10-28T09:47:46.592730-05:00",
   "calendar_status": "fresh",
   "daily_target": 10,
-  "active": [],
+  "active": [
+    {
+      "ticker": "IBM",
+      "company": "International Business Machines Corporation",
+      "period": "Q3 2026",
+      "status_label": "Building now",
+      "stage_label": "Recording episode",
+      "stock_url": "/shows/ibm"
+    }
+  ],
   "history": [
+    {
+      "ticker": "LMT",
+      "company": "Lockheed Martin Corporation",
+      "period": "Q3 2026",
+      "completed_at": "2026-10-28T10:24:21.855894-05:00",
+      "video_url": "https://youtu.be/GhY6OmdT_oM",
+      "short_url": "https://youtu.be/kupVn3LmgiE",
+      "packet_url": "https://chargedalpha.com/research/lmt-q3-2026",
+      "stock_url": "/shows/lmt"
+    },
     {
       "ticker": "CDNS",
       "company": "Cadence Design Systems, Inc.",
