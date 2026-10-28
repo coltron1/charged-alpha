@@ -1,11 +1,30 @@
 {
   "schema": "charged-alpha-public-production/1",
-  "updated_at": "2026-10-28T11:06:05.155934-05:00",
+  "updated_at": "2026-10-28T11:35:36.192428-05:00",
   "calendar_updated_at": "2026-10-28T09:47:46.592730-05:00",
   "calendar_status": "fresh",
   "daily_target": 10,
-  "active": [],
+  "active": [
+    {
+      "ticker": "NUE",
+      "company": "Nucor Corporation",
+      "period": "Q3 2026",
+      "status_label": "Building now",
+      "stage_label": "Recording Short",
+      "stock_url": "/shows/nue"
+    }
+  ],
   "history": [
+    {
+      "ticker": "IBM",
+      "company": "International Business Machines Corporation",
+      "period": "Q3 2026",
+      "completed_at": "2026-10-28T11:34:16.339080-05:00",
+      "video_url": "https://youtu.be/038ny-cpL44",
+      "short_url": "https://youtu.be/A4CH5RPimhQ",
+      "packet_url": "https://chargedalpha.com/research/ibm-q3-2026",
+      "stock_url": "/shows/ibm"
+    },
     {
       "ticker": "DECK",
       "company": "Deckers Outdoor Corporation",
