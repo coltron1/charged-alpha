@@ -1,11 +1,31 @@
 {
   "schema": "charged-alpha-public-production/1",
-  "updated_at": "2026-10-28T17:15:55.642210-05:00",
+  "updated_at": "2026-10-28T17:23:46.767950-05:00",
   "calendar_updated_at": "2026-10-28T15:53:06.441381-05:00",
   "calendar_status": "fresh",
   "daily_target": 10,
   "active": [],
   "history": [
+    {
+      "ticker": "BSX",
+      "company": "Boston Scientific Corporation",
+      "period": "Q3 2026",
+      "completed_at": "2026-10-28T17:23:05.774875-05:00",
+      "video_url": "https://youtu.be/zFV1SsJ3caQ",
+      "short_url": "https://youtu.be/xAmADRdaILg",
+      "packet_url": "https://chargedalpha.com/research/bsx-q3-2026",
+      "stock_url": "/shows/bsx"
+    },
+    {
+      "ticker": "TER",
+      "company": "Teradyne, Inc.",
+      "period": "Q3 2026",
+      "completed_at": "2026-10-28T17:22:39.891444-05:00",
+      "video_url": "https://youtu.be/H17i6_d36Kk",
+      "short_url": "https://youtu.be/oScqdWnSDbw",
+      "packet_url": "https://chargedalpha.com/research/ter-q3-2026",
+      "stock_url": "/shows/ter"
+    },
     {
       "ticker": "VRT",
       "company": "Vertiv Holdings",
