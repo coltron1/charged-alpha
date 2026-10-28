@@ -1,19 +1,10 @@
 {
   "schema": "charged-alpha-public-production/1",
-  "updated_at": "2026-10-28T09:47:47.204119-05:00",
+  "updated_at": "2026-10-28T10:11:19.144737-05:00",
   "calendar_updated_at": "2026-10-28T09:47:46.592730-05:00",
   "calendar_status": "fresh",
   "daily_target": 10,
-  "active": [
-    {
-      "ticker": "DECK",
-      "company": "Deckers Outdoor Corporation",
-      "period": "Q2 FY2027",
-      "status_label": "Building now",
-      "stage_label": "Production in progress",
-      "stock_url": "/shows/deck"
-    }
-  ],
+  "active": [],
   "history": [
     {
       "ticker": "CDNS",

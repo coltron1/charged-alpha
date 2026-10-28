@@ -10,6 +10,24 @@
   },
   "episodes": [
     {
+      "ticker": "DECK",
+      "company": "Deckers Outdoor Corporation",
+      "sector": "Consumer Cyclical",
+      "quarter": "Q2 FY2027",
+      "episode_number": "",
+      "title": "DECK Stock: Refunds Lift EPS, Customers Pull Back | Q2 FY2027",
+      "published_at": "2026-10-28T15:09:48+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=B9nHOVcu-SE",
+      "spotify_url": "",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/deck-stock-refunds-lift-eps-customers-pull-back-q2-fy2027/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
       "ticker": "LMT",
       "company": "Lockheed Martin Corporation",
       "sector": "Industrials",
@@ -35813,6 +35831,21 @@
       "description": "Fast clips that point viewers into full research videos and stock pages.",
       "videos": [
         {
+          "title": "LMT Stock: $292B Backlog, But When Does Cash Arrive? | Q3 2026 Earnings #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/kupVn3LmgiE",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-10-28T15:00:05+00:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "LMT"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage.",
+          "earnings_youtube_url": "https://www.youtube.com/watch?v=GhY6OmdT_oM",
+          "earnings_match": "stock_period_date"
+        },
+        {
           "title": "CDNS Stock: 22% Growth, Flat GAAP EPS | Cadence Q3 2026 #Shorts",
           "youtube_url": "https://www.youtube.com/shorts/Ykfdd8lHDrw",
           "spotify_url": "",
@@ -48824,7 +48857,7 @@
       ]
     }
   ],
-  "last_synced_at": "2026-10-28T09:47:31-05:00",
+  "last_synced_at": "2026-10-28T10:14:27-05:00",
   "stock_metadata": {
     "A": {
       "company": "Agilent Technologies, Inc.",

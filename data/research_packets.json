@@ -2,6 +2,64 @@
   "schema_version": 1,
   "packets": [
     {
+      "key": "DECK:Q2-FY2027",
+      "year": 2027,
+      "quarter": 2,
+      "fiscal": true,
+      "slug": "deck-q2-fy2027",
+      "ticker": "DECK",
+      "company": "Deckers Outdoor Corporation",
+      "period": "Q2 FY2027",
+      "canonical_url": "https://chargedalpha.com/research/deck-q2-fy2027",
+      "title": "Deckers: The Refund Raised EPS. The Customer Did Not.",
+      "page_title": "DECK Q2 FY2027 Research Packet — Charged Alpha",
+      "description": "Tariff refunds lift reported profit while direct-sales comps weaken and underlying guidance slips; a cash-aware reset from BUY to HOLD.",
+      "sha256": "13187c3b3898bdba307d22e4d9df425f6be19afb7349c7eafcd819417517824e",
+      "html_file": "research_packets/deck-q2-fy2027.html",
+      "source_episode": "DECK-Q2-FY2027",
+      "source_staged_at": "2026-10-28T15:15:21Z",
+      "source_sha256": {
+        "READY": "16cead00e8063ca1d4de13e9bfdf1dcc7523fc543ca3a07a392fcb6e9c818a62",
+        "handoff.json": "d77f41557e9206e6da7ffd9866fb64ba5379480494ac5a754fdaffd7954edc86",
+        "packet/deck-q2-fy2027-research-packet.html": "13187c3b3898bdba307d22e4d9df425f6be19afb7349c7eafcd819417517824e",
+        "packet/packet_meta.json": "9f4d5ce674d9e53ab9a1cade7f3f588172eb541775e5a9ef7f03d641391c9e34",
+        "packet/packet.json": "7d6829a66dd091c8313b17d6c4bc8985a590feed41f6ea02fa40bc6280b30372"
+      },
+      "primary_youtube_long": "B9nHOVcu-SE",
+      "primary_youtube_short": null,
+      "youtube_studio": null,
+      "youtube_studio_short": null,
+      "what_changed": {
+        "summary": "Tariff refunds lift reported profit while direct-sales comps weaken and underlying guidance slips; a cash-aware reset from BUY to HOLD.",
+        "items": [
+          {
+            "title": "The earnings lift has two sources.",
+            "detail": "Refunds and a lower share count amplify a much smaller underlying operating improvement."
+          },
+          {
+            "title": "Direct demand weakened.",
+            "detail": "DTC revenue fell 1.8%; comparable sales fell 6.4%, while wholesale grew 5.5%."
+          },
+          {
+            "title": "The outlook is not an underlying raise.",
+            "detail": "Subtracting the $0.52 refund benefit puts the EPS midpoint $0.07 below July; sales midpoint fell 2.93%."
+          },
+          {
+            "title": "Cash needs another filing.",
+            "detail": "Receivables rose faster than revenue. The current release does not supply September cash flow; annual cash strength cannot resolve that gap."
+          },
+          {
+            "title": "We are lowering our prior call.",
+            "detail": "BUY/$120 becomes HOLD/$100; the earlier approximate $96 reference is down 16.10% to $80.54, before any other adjustments."
+          }
+        ]
+      },
+      "source_published": "October 28, 2026",
+      "words": 5973,
+      "figures": 19,
+      "tables": 17
+    },
+    {
       "key": "KMX:Q2-FY2027",
       "year": 2027,
       "quarter": 2,
