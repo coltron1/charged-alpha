@@ -4584,6 +4584,64 @@
       "tables": 33
     },
     {
+      "key": "NUE:Q3-2026",
+      "year": 2026,
+      "quarter": 3,
+      "fiscal": false,
+      "slug": "nue-q3-2026",
+      "ticker": "NUE",
+      "company": "Nucor Corporation",
+      "period": "Q3 2026",
+      "canonical_url": "https://chargedalpha.com/research/nue-q3-2026",
+      "title": "Nucor: The Cash Is Real. The Cycle Is Still Expensive.",
+      "page_title": "NUE Q3 2026 Research Packet — Charged Alpha",
+      "description": "Stronger prices and lower investment spending rebuild cash, but the stock already pays for a durable steel upswing.",
+      "sha256": "02d51415484e722e5f532ecaea17fc4f253b7a37178899222a9b7327d953f2a4",
+      "html_file": "research_packets/nue-q3-2026.html",
+      "source_episode": "NUE-Q3-2026",
+      "source_staged_at": "2026-10-28T17:17:30Z",
+      "source_sha256": {
+        "READY": "8cd09af65724f72ee42304da84ce7a7a140b6e9e35708230b4c85b171397b350",
+        "handoff.json": "9871443f846312425bc4a7cb4fc0230df44ecd265814f9228647bc5eb6acecd3",
+        "packet/nue-q3-2026-research-packet.html": "02d51415484e722e5f532ecaea17fc4f253b7a37178899222a9b7327d953f2a4",
+        "packet/packet_meta.json": "bd05f31f7f4d7f8e808b5c4daec9ff3ee85c483d8e26f60d8f8ee32ac3b9e805",
+        "packet/packet.json": "3840f7a87de100262037aad0f66a0fffaa53b9ff7c41df7b5c2ee4b503b72a0c"
+      },
+      "primary_youtube_long": "yrYvXywMbYI",
+      "primary_youtube_short": null,
+      "youtube_studio": null,
+      "youtube_studio_short": null,
+      "what_changed": {
+        "summary": "Stronger prices and lower investment spending rebuild cash, but the stock already pays for a durable steel upswing.",
+        "items": [
+          {
+            "title": "Cash has turned.",
+            "detail": "Operating cash improves and capital spending falls; both explain the recovery."
+          },
+          {
+            "title": "Pricing does the heavy lifting.",
+            "detail": "Mills external volume is flat sequentially while realized prices rise."
+          },
+          {
+            "title": "Q2 was helped twice.",
+            "detail": "Helion contributed $0.20 EPS and procurement refunds reduced costs $130M; the latter is not removed by the company’s Helion-only adjustment."
+          },
+          {
+            "title": "Not all consolidated cash belongs to NUE owners.",
+            "detail": "Minority earnings and distributions require separate treatment."
+          },
+          {
+            "title": "The price expects persistence.",
+            "detail": "Our cash framework needs about 12.45% annual growth after the first forward year to justify $270.79; the base uses 3%."
+          }
+        ]
+      },
+      "source_published": "October 28, 2026",
+      "words": 6379,
+      "figures": 18,
+      "tables": 19
+    },
+    {
       "key": "PCG:Q3-2026",
       "year": 2026,
       "quarter": 3,

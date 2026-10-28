@@ -10,6 +10,24 @@
   },
   "episodes": [
     {
+      "ticker": "NUE",
+      "company": "Nucor Corporation",
+      "sector": "Basic Materials",
+      "quarter": "Q3 2026",
+      "episode_number": "",
+      "title": "NUE Stock: Cash Is Back. Is the Steel Cycle Priced In? | Q3 2026",
+      "published_at": "2026-10-28T17:03:23+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=yrYvXywMbYI",
+      "spotify_url": "https://open.spotify.com/episode/1lJybcRsf2cep7ACT2uV2R",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/nue-stock-cash-is-back-is-the-steel-cycle-priced-in-q3-2026/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
       "ticker": "IBM",
       "company": "International Business Machines Corporation",
       "sector": "Technology",
@@ -19,7 +37,7 @@
       "published_at": "2026-10-28T16:06:32+00:00",
       "status": "youtube_podcast_complete",
       "youtube_url": "https://www.youtube.com/watch?v=038ny-cpL44",
-      "spotify_url": "",
+      "spotify_url": "https://open.spotify.com/episode/50UUZVrrAq4QSndRrvkgOZ",
       "apple_url": "",
       "google_url": "",
       "iheart_url": "",
@@ -48905,7 +48923,7 @@
       ]
     }
   ],
-  "last_synced_at": "2026-10-28T11:26:03-05:00",
+  "last_synced_at": "2026-10-28T12:18:46-05:00",
   "stock_metadata": {
     "A": {
       "company": "Agilent Technologies, Inc.",

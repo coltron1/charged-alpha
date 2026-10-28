@@ -1,19 +1,10 @@
 {
   "schema": "charged-alpha-public-production/1",
-  "updated_at": "2026-10-28T11:35:36.192428-05:00",
-  "calendar_updated_at": "2026-10-28T09:47:46.592730-05:00",
+  "updated_at": "2026-10-28T12:18:34.829281-05:00",
+  "calendar_updated_at": "2026-10-28T11:48:38.181417-05:00",
   "calendar_status": "fresh",
   "daily_target": 10,
-  "active": [
-    {
-      "ticker": "NUE",
-      "company": "Nucor Corporation",
-      "period": "Q3 2026",
-      "status_label": "Building now",
-      "stage_label": "Recording Short",
-      "stock_url": "/shows/nue"
-    }
-  ],
+  "active": [],
   "history": [
     {
       "ticker": "IBM",
@@ -7630,16 +7621,6 @@
     {
       "ticker": "GPK",
       "company": "Graphic Packaging Holding Company",
-      "report_date": "2026-11-03",
-      "report_time_label": "Time unconfirmed",
-      "planned_date": "",
-      "date_status": "Calendar estimate",
-      "source_url": null,
-      "stock_url": null
-    },
-    {
-      "ticker": "WTTR",
-      "company": "Select Water Solutions, Inc.",
       "report_date": "2026-11-03",
       "report_time_label": "Time unconfirmed",
       "planned_date": "",
