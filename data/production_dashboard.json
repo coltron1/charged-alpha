@@ -1,11 +1,31 @@
 {
   "schema": "charged-alpha-public-production/1",
-  "updated_at": "2026-10-28T15:47:29.678975-05:00",
-  "calendar_updated_at": "2026-10-28T13:31:33.994084-05:00",
+  "updated_at": "2026-10-28T16:00:09.935304-05:00",
+  "calendar_updated_at": "2026-10-28T15:53:06.441381-05:00",
   "calendar_status": "fresh",
   "daily_target": 10,
   "active": [],
   "history": [
+    {
+      "ticker": "VRT",
+      "company": "Vertiv Holdings",
+      "period": "Q3 2026",
+      "completed_at": "2026-10-28T15:59:09.343044-05:00",
+      "video_url": "https://youtu.be/IPvXRN9t4_s",
+      "short_url": "https://youtu.be/fw4FZLNur-U",
+      "packet_url": "https://chargedalpha.com/research/vrt-q3-2026",
+      "stock_url": "/shows/vrt"
+    },
+    {
+      "ticker": "APH",
+      "company": "Amphenol Corporation",
+      "period": "Q3 2026",
+      "completed_at": "2026-10-28T15:58:35.241482-05:00",
+      "video_url": "https://youtu.be/Fg9u9MK8YNU",
+      "short_url": "https://youtu.be/faHwXIaBLXU",
+      "packet_url": "https://chargedalpha.com/research/aph-q3-2026",
+      "stock_url": "/shows/aph"
+    },
     {
       "ticker": "NUE",
       "company": "Nucor Corporation",
@@ -1379,6 +1399,16 @@
       "stock_url": null
     },
     {
+      "ticker": "PLPC",
+      "company": "Preformed Line Products Company",
+      "report_date": "2026-10-28",
+      "report_time_label": "Time unconfirmed",
+      "planned_date": "",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": null
+    },
+    {
       "ticker": "ALGN",
       "company": "Align Technology, Inc.",
       "report_date": "2026-10-28",
@@ -2701,6 +2731,16 @@
     {
       "ticker": "PUMP",
       "company": "ProPetro Holding Corp.",
+      "report_date": "2026-10-28",
+      "report_time_label": "Time unconfirmed",
+      "planned_date": "",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": null
+    },
+    {
+      "ticker": "SMHI",
+      "company": "SEACOR Marine Holdings Inc.",
       "report_date": "2026-10-28",
       "report_time_label": "Time unconfirmed",
       "planned_date": "",
