@@ -2786,6 +2786,64 @@
       "tables": 16
     },
     {
+      "key": "APH:Q3-2026",
+      "year": 2026,
+      "quarter": 3,
+      "fiscal": false,
+      "slug": "aph-q3-2026",
+      "ticker": "APH",
+      "company": "Amphenol Corporation",
+      "period": "Q3 2026",
+      "canonical_url": "https://chargedalpha.com/research/aph-q3-2026",
+      "title": "Amphenol: Record Orders, but Who Pays for the Growth?",
+      "page_title": "APH Q3 2026 Research Packet — Charged Alpha",
+      "description": "Organic growth and underlying margins accelerate, while acquisition spending and a demanding valuation make cash conversion the next test.",
+      "sha256": "15b823b368c86e3e373ff146bd2a188bf4fcdc54032773b022142352d2ee4cec",
+      "html_file": "research_packets/aph-q3-2026.html",
+      "source_episode": "APH-Q3-2026",
+      "source_staged_at": "2026-10-28T20:13:55Z",
+      "source_sha256": {
+        "READY": "3a4186b254c99059346664fd0a1f63f348dc99c6cfd85c7f6ffb6abe1e575e44",
+        "handoff.json": "ec821818b22076963e3d28a7f1295f5582dd53ae4169406fadf80b7a630e4239",
+        "packet/aph-q3-2026-research-packet.html": "15b823b368c86e3e373ff146bd2a188bf4fcdc54032773b022142352d2ee4cec",
+        "packet/packet_meta.json": "5ca3975ba9feaadb99cbb8e45aef84438873809760f977e9e17f169649b474e8",
+        "packet/packet.json": "93ec8938271049ea28e5a9faf4be2265dacad7cd8a468dd213ef53b6c0caf972"
+      },
+      "primary_youtube_long": "Fg9u9MK8YNU",
+      "primary_youtube_short": null,
+      "youtube_studio": null,
+      "youtube_studio_short": null,
+      "what_changed": {
+        "summary": "Organic growth and underlying margins accelerate, while acquisition spending and a demanding valuation make cash conversion the next test.",
+        "items": [
+          {
+            "title": "Organic demand is exceptional.",
+            "detail": "The 65% reported growth includes 37% organic growth; this is more than acquired revenue."
+          },
+          {
+            "title": "Refunds obscure improvement.",
+            "detail": "Removing disclosed tariff benefits gives 29.53% Q3 adjusted operating margin versus 28.87% in Q2."
+          },
+          {
+            "title": "FCF does not pay for every acquisition.",
+            "detail": "Issuer FCF deducts capital expenditure but excludes cash spent buying businesses."
+          },
+          {
+            "title": "The split demands care.",
+            "detail": "Earlier per-share history is divided by two; mixed-basis aggregate analyst targets are excluded."
+          },
+          {
+            "title": "Valuation remains the constraint.",
+            "detail": "A $6.5B first forward cash assumption needs roughly 24.64% subsequent annual growth in our five-year model to justify the reference price."
+          }
+        ]
+      },
+      "source_published": "October 28, 2026",
+      "words": 6236,
+      "figures": 19,
+      "tables": 20
+    },
+    {
       "key": "ASML:Q3-2026",
       "year": 2026,
       "quarter": 3,
@@ -5800,6 +5858,64 @@
       "words": 6903,
       "figures": 19,
       "tables": 31
+    },
+    {
+      "key": "VRT:Q3-2026",
+      "year": 2026,
+      "quarter": 3,
+      "fiscal": false,
+      "slug": "vrt-q3-2026",
+      "ticker": "VRT",
+      "company": "Vertiv Holdings Co",
+      "period": "Q3 2026",
+      "canonical_url": "https://chargedalpha.com/research/vrt-q3-2026",
+      "title": "VRT: The Growth Is Real. Who Funds the Next Wave?",
+      "page_title": "VRT Q3 2026 Research Packet — Charged Alpha",
+      "description": "Vertiv sales surged 61%, but customer advances and October acquisition spending change how we value its cash generation.",
+      "sha256": "d4c90b17d653e01e30543f30a48bcf3b42f6f6c50ba05265f03992c6f98cb67e",
+      "html_file": "research_packets/vrt-q3-2026.html",
+      "source_episode": "VRT-Q3-2026",
+      "source_staged_at": "2026-10-28T20:17:23Z",
+      "source_sha256": {
+        "READY": "d961bde98a8f1286090677036c01d091239ece4174542a198ab845e16f3f017c",
+        "handoff.json": "f402d250ede4060d2e42a305bc8c718cb49f57ca34fea843319fba4ee2130953",
+        "packet/vrt-q3-2026-research-packet.html": "d4c90b17d653e01e30543f30a48bcf3b42f6f6c50ba05265f03992c6f98cb67e",
+        "packet/packet_meta.json": "36f1d23259d4b4701bc3739dd5026f123be9bd9e05c5c73fb80236cb222a2f25",
+        "packet/packet.json": "212a9b9cffc4c833553688aae009d7b4d4d9c7e60d2e5c05062c65352512671b"
+      },
+      "primary_youtube_long": "IPvXRN9t4_s",
+      "primary_youtube_short": null,
+      "youtube_studio": null,
+      "youtube_studio_short": null,
+      "what_changed": {
+        "summary": "Vertiv sales surged 61%, but customer advances and October acquisition spending change how we value its cash generation.",
+        "items": [
+          {
+            "title": "Organic demand leads.",
+            "detail": "Sales rose 61% reported and 55% organically; this is more than acquired growth."
+          },
+          {
+            "title": "Cash has a funding component.",
+            "detail": "Customer advances supplied $2.313B of year-to-date operating cash."
+          },
+          {
+            "title": "September liquidity is dated.",
+            "detail": "UIG cost $1.45B upfront after quarter end, with additional contingent consideration."
+          },
+          {
+            "title": "Services need a clean comparison.",
+            "detail": "Services-and-spares grew 41.5% reported versus 18.1% organically."
+          },
+          {
+            "title": "Valuation still asks for progress.",
+            "detail": "Our $225 anchor compares with the $244.59 intraday reference and $238.30 scenario-weighted value."
+          }
+        ]
+      },
+      "source_published": "October 28, 2026",
+      "words": 5716,
+      "figures": 16,
+      "tables": 20
     },
     {
       "key": "IPHA:H1-2026",

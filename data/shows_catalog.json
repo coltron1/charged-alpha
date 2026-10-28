@@ -10,6 +10,42 @@
   },
   "episodes": [
     {
+      "ticker": "VRT",
+      "company": "Vertiv Holdings",
+      "sector": "Industrials",
+      "quarter": "Q3 2026",
+      "episode_number": "",
+      "title": "VRT Stock: Sales Surge 61% — Who Funds the Next Wave? | Q3 2026 Earnings",
+      "published_at": "2026-10-28T20:11:25+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=IPvXRN9t4_s",
+      "spotify_url": "",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/vrt-stock-sales-surge-61-%e2%80%94-who-funds-the-next-wave-q3-2026-earnings/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "APH",
+      "company": "Amphenol Corporation",
+      "sector": "Technology",
+      "quarter": "Q3 2026",
+      "episode_number": "",
+      "title": "APH Stock: Record Orders, but Who Pays for the Growth? | Q3 2026",
+      "published_at": "2026-10-28T20:10:40+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=Fg9u9MK8YNU",
+      "spotify_url": "",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/aph-stock-record-orders-but-who-pays-for-the-growth-q3-2026/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
       "ticker": "NUE",
       "company": "Nucor Corporation",
       "sector": "Basic Materials",
@@ -48938,7 +48974,7 @@
       ]
     }
   ],
-  "last_synced_at": "2026-10-28T12:44:55-05:00",
+  "last_synced_at": "2026-10-28T15:15:23-05:00",
   "stock_metadata": {
     "A": {
       "company": "Agilent Technologies, Inc.",
