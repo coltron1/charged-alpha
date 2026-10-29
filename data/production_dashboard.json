@@ -1,11 +1,21 @@
 {
   "schema": "charged-alpha-public-production/1",
-  "updated_at": "2026-10-28T18:52:36.214248-05:00",
+  "updated_at": "2026-10-28T19:04:02.611297-05:00",
   "calendar_updated_at": "2026-10-28T18:52:35.331542-05:00",
   "calendar_status": "fresh",
   "daily_target": 10,
   "active": [],
   "history": [
+    {
+      "ticker": "GOOGL",
+      "company": "Alphabet Inc.",
+      "period": "Q3 2026",
+      "completed_at": "2026-10-28T19:02:52.661124-05:00",
+      "video_url": "https://youtu.be/JCdcqujCDPo",
+      "short_url": null,
+      "packet_url": "https://chargedalpha.com/research/googl-q3-2026",
+      "stock_url": "/shows/googl"
+    },
     {
       "ticker": "BSX",
       "company": "Boston Scientific Corporation",
