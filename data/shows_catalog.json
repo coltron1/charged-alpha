@@ -36029,6 +36029,36 @@
       "description": "Fast clips that point viewers into full research videos and stock pages.",
       "videos": [
         {
+          "title": "RDDT Stock: Reddit Q3 2026 Earnings — The Search Funnel Test #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/KIp5vU2VG-4",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-11-01T22:25:26-08:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "RDDT"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage.",
+          "earnings_youtube_url": "https://www.youtube.com/watch?v=U5VNmRWd5Gc",
+          "earnings_match": "stock_period_date"
+        },
+        {
+          "title": "CCJ Stock: Cameco Q3 2026 — The Cash Test #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/-P2phs_InKM",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-11-01T22:19:03-08:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "CCJ"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage.",
+          "earnings_youtube_url": "https://www.youtube.com/watch?v=xOVyRamevZU",
+          "earnings_match": "stock_period_date"
+        },
+        {
           "title": "BSX Stock: Cheap Earnings, Where Is the Cash? | Q3 2026 #Shorts",
           "youtube_url": "https://www.youtube.com/shorts/xAmADRdaILg",
           "spotify_url": "",
@@ -49160,7 +49190,7 @@
       ]
     }
   ],
-  "last_synced_at": "2026-11-02T00:17:48-06:00",
+  "last_synced_at": "2026-11-02T00:26:25-06:00",
   "stock_metadata": {
     "A": {
       "company": "Agilent Technologies, Inc.",

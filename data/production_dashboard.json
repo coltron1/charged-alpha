@@ -1,8 +1,8 @@
 {
   "schema": "charged-alpha-public-production/1",
-  "updated_at": "2026-11-02T00:17:23.774887-06:00",
-  "calendar_updated_at": "2026-11-01T21:00:26.483766-06:00",
-  "calendar_status": "stale",
+  "updated_at": "2026-11-02T00:30:21.501922-06:00",
+  "calendar_updated_at": "2026-11-02T00:26:02.550206-06:00",
+  "calendar_status": "fresh",
   "daily_target": 10,
   "active": [],
   "history": [
@@ -1737,6 +1737,16 @@
       "date_status": "Calendar estimate",
       "source_url": null,
       "stock_url": null
+    },
+    {
+      "ticker": "GRAB",
+      "company": "Grab Holdings Limited",
+      "report_date": "2026-11-02",
+      "report_time_label": "Time unconfirmed",
+      "planned_date": "",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": "/shows/grab"
     },
     {
       "ticker": "PPLI",
