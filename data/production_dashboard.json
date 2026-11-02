@@ -1,6 +1,6 @@
 {
   "schema": "charged-alpha-public-production/1",
-  "updated_at": "2026-11-02T09:15:07.657422-06:00",
+  "updated_at": "2026-11-02T09:38:16.213425-06:00",
   "calendar_updated_at": "2026-11-02T09:14:25.804339-06:00",
   "calendar_status": "fresh",
   "daily_target": 10,
@@ -1269,16 +1269,6 @@
   ],
   "upcoming": [
     {
-      "ticker": "TSEM",
-      "company": "Tower Semiconductor Ltd.",
-      "report_date": "2026-11-02",
-      "report_time_label": "Time unconfirmed",
-      "planned_date": "2026-11-03",
-      "date_status": "Calendar estimate",
-      "source_url": null,
-      "stock_url": "/shows/tsem"
-    },
-    {
       "ticker": "WMB",
       "company": "The Williams Companies, Inc.",
       "report_date": "2026-11-02",
@@ -1373,7 +1363,7 @@
       "company": "Jazz Pharmaceuticals plc",
       "report_date": "2026-11-02",
       "report_time_label": "Time unconfirmed",
-      "planned_date": "",
+      "planned_date": "2026-11-03",
       "date_status": "Calendar estimate",
       "source_url": null,
       "stock_url": "/shows/jazz"
