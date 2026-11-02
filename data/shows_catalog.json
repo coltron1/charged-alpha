@@ -10,6 +10,24 @@
   },
   "episodes": [
     {
+      "ticker": "CCJ",
+      "company": "Cameco Corporation",
+      "sector": "Energy",
+      "quarter": "Q3 2026",
+      "episode_number": "",
+      "title": "CCJ Stock: C$267M EBITDA, Just C$3M Operating Cash — Q3 2026",
+      "published_at": "2026-11-02T05:59:24+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=xOVyRamevZU",
+      "spotify_url": "",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/ccj-stock-c267m-ebitda-just-c3m-operating-cash-%e2%80%94-q3-2026/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
       "ticker": "LNG",
       "company": "Cheniere Energy, Inc.",
       "sector": "Energy",
@@ -19,7 +37,7 @@
       "published_at": "2026-11-02T04:25:46+00:00",
       "status": "youtube_podcast_complete",
       "youtube_url": "https://www.youtube.com/watch?v=pmZE3uh_aAY",
-      "spotify_url": "",
+      "spotify_url": "https://open.spotify.com/episode/5rwiIkh0OsFoxaJCg3aeUy",
       "apple_url": "",
       "google_url": "",
       "iheart_url": "",
@@ -37,7 +55,7 @@
       "published_at": "2026-11-02T04:23:41+00:00",
       "status": "youtube_podcast_complete",
       "youtube_url": "https://www.youtube.com/watch?v=uEGc_vVSlSI",
-      "spotify_url": "",
+      "spotify_url": "https://open.spotify.com/episode/4dV3JVxBKr2pFLjzPF61IU",
       "apple_url": "",
       "google_url": "",
       "iheart_url": "",
@@ -49124,7 +49142,7 @@
       ]
     }
   ],
-  "last_synced_at": "2026-11-01T22:32:34-06:00",
+  "last_synced_at": "2026-11-02T00:12:26-06:00",
   "stock_metadata": {
     "A": {
       "company": "Agilent Technologies, Inc.",

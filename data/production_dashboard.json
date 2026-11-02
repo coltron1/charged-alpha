@@ -1,10 +1,19 @@
 {
   "schema": "charged-alpha-public-production/1",
-  "updated_at": "2026-11-01T22:27:22.788003-06:00",
+  "updated_at": "2026-11-02T00:12:32.471737-06:00",
   "calendar_updated_at": "2026-11-01T21:00:26.483766-06:00",
-  "calendar_status": "fresh",
+  "calendar_status": "stale",
   "daily_target": 10,
-  "active": [],
+  "active": [
+    {
+      "ticker": "CCJ",
+      "company": "Cameco Corporation",
+      "period": "Q3 2026",
+      "status_label": "Building now",
+      "stage_label": "Production in progress",
+      "stock_url": "/shows/ccj"
+    }
+  ],
   "history": [
     {
       "ticker": "GOOGL",
@@ -2553,7 +2562,7 @@
       "company": "Primoris Services Corporation",
       "report_date": "2026-11-03",
       "report_time_label": "Time unconfirmed",
-      "planned_date": "",
+      "planned_date": "2026-11-08",
       "date_status": "Calendar estimate",
       "source_url": null,
       "stock_url": null
@@ -4383,7 +4392,7 @@
       "company": "Tutor Perini Corporation",
       "report_date": "2026-11-04",
       "report_time_label": "Time unconfirmed",
-      "planned_date": "",
+      "planned_date": "2026-11-08",
       "date_status": "Calendar estimate",
       "source_url": null,
       "stock_url": null
@@ -4393,7 +4402,7 @@
       "company": "Cognex Corporation",
       "report_date": "2026-11-04",
       "report_time_label": "Time unconfirmed",
-      "planned_date": "",
+      "planned_date": "2026-11-08",
       "date_status": "Calendar estimate",
       "source_url": null,
       "stock_url": "/shows/cgnx"
@@ -4403,7 +4412,7 @@
       "company": "Ralliant Corp",
       "report_date": "2026-11-04",
       "report_time_label": "Time unconfirmed",
-      "planned_date": "",
+      "planned_date": "2026-11-08",
       "date_status": "Calendar estimate",
       "source_url": null,
       "stock_url": null
@@ -4413,7 +4422,7 @@
       "company": "SK Telecom Co.,Ltd",
       "report_date": "2026-11-04",
       "report_time_label": "Time unconfirmed",
-      "planned_date": "",
+      "planned_date": "2026-11-08",
       "date_status": "Calendar estimate",
       "source_url": null,
       "stock_url": null
@@ -7433,7 +7442,7 @@
       "company": "Canadian Natural Resources Limited",
       "report_date": "2026-11-05",
       "report_time_label": "Time unconfirmed",
-      "planned_date": "",
+      "planned_date": "2026-11-08",
       "date_status": "Calendar estimate",
       "source_url": null,
       "stock_url": null
@@ -7443,7 +7452,7 @@
       "company": "Millicom International Cellular S.A.",
       "report_date": "2026-11-05",
       "report_time_label": "Time unconfirmed",
-      "planned_date": "",
+      "planned_date": "2026-11-08",
       "date_status": "Calendar estimate",
       "source_url": null,
       "stock_url": null
@@ -7453,7 +7462,7 @@
       "company": "Devon Energy Corporation",
       "report_date": "2026-11-05",
       "report_time_label": "Time unconfirmed",
-      "planned_date": "",
+      "planned_date": "2026-11-08",
       "date_status": "Calendar estimate",
       "source_url": null,
       "stock_url": "/shows/dvn"
@@ -11043,7 +11052,7 @@
       "company": "Plains All American Pipeline, L.P.",
       "report_date": "2026-11-06",
       "report_time_label": "Time unconfirmed",
-      "planned_date": "",
+      "planned_date": "2026-11-08",
       "date_status": "Calendar estimate",
       "source_url": null,
       "stock_url": null
@@ -11053,7 +11062,7 @@
       "company": "Charter Communications, Inc.",
       "report_date": "2026-11-06",
       "report_time_label": "Time unconfirmed",
-      "planned_date": "",
+      "planned_date": "2026-11-08",
       "date_status": "Calendar estimate",
       "source_url": null,
       "stock_url": "/shows/chtr"

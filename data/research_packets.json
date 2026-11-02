@@ -3076,6 +3076,64 @@
       "tables": 28
     },
     {
+      "key": "CCJ:Q3-2026",
+      "year": 2026,
+      "quarter": 3,
+      "fiscal": false,
+      "slug": "ccj-q3-2026",
+      "ticker": "CCJ",
+      "company": "Cameco Corporation",
+      "period": "Q3 2026",
+      "canonical_url": "https://chargedalpha.com/research/ccj-q3-2026",
+      "title": "CCJ: The nuclear backlog meets a fourth-quarter cash test",
+      "page_title": "CCJ Q3 2026 Research Packet — Charged Alpha",
+      "description": "Cameco generated C$3 million of quarterly operating cash while delivery concentration, rising unit costs and investee spending raise the bar for its nuclear growth valuation.",
+      "sha256": "5c2e453349ff7d744e797974fdc36a1a9e42adc14a767a16491f88b4f4eb5694",
+      "html_file": "research_packets/ccj-q3-2026.html",
+      "source_episode": "CCJ-Q3-2026",
+      "source_staged_at": "2026-11-02T06:10:52Z",
+      "source_sha256": {
+        "READY": "e6c49cade8ca1825627cc7ff6a9e48345e7fccec74515401e58a652a1827268a",
+        "handoff.json": "ad5741109d955b2c3199a6130ba785ac293431fd049ca37642f882122ba08e71",
+        "packet/ccj-q3-2026-research-packet.html": "5c2e453349ff7d744e797974fdc36a1a9e42adc14a767a16491f88b4f4eb5694",
+        "packet/packet_meta.json": "aa4b0d2ad9ef3d8a91a227cdf47dd76fa8daeeb14e69613b4048a9c234c219cd",
+        "packet/packet.json": "13334fbef4a57cd3293c3ea330c383f1a4d55bd6132d54b82ed0645e28cf10c6"
+      },
+      "primary_youtube_long": "xOVyRamevZU",
+      "primary_youtube_short": null,
+      "youtube_studio": null,
+      "youtube_studio_short": null,
+      "what_changed": {
+        "summary": "Cameco generated C$3 million of quarterly operating cash while delivery concentration, rising unit costs and investee spending raise the bar for its nuclear growth valuation.",
+        "items": [
+          {
+            "title": "The cash test moved to Q4.",
+            "detail": "Nine-month operating cash was C$112M against C$322M of PP&E additions. Annual uranium sales guidance implies another 9–10M pounds of deliveries."
+          },
+          {
+            "title": "Planned downtime still costs money.",
+            "detail": "Key Lake’s extended maintenance outage began in Q3; annual uranium cost-of-sales guidance rose to C$67–70/lb from C$63–67.50."
+          },
+          {
+            "title": "The capex reduction is partly timing.",
+            "detail": "Consolidated guidance fell by C$50M at each end to C$440–490M, with projects deferred; Cameco’s Westinghouse capex share adds US$160–200M outside that total."
+          },
+          {
+            "title": "Westinghouse improved this quarter.",
+            "detail": "Cameco’s share of adjusted EBITDA rose to C$143M from C$124M. The year-to-date decline still reflects the prior Dukovany benefit; reported revenue does not consolidate Westinghouse."
+          },
+          {
+            "title": "The stock reset has not removed execution risk.",
+            "detail": "CCJ closed at US$76.91 on October 30, down 7.88%. Our source-based valuation is US$60; the FMP target average of US$133.60 is a differently dated opinion set."
+          }
+        ]
+      },
+      "source_published": "November 1, 2026",
+      "words": 6154,
+      "figures": 15,
+      "tables": 26
+    },
+    {
       "key": "CDNS:Q3-2026",
       "year": 2026,
       "quarter": 3,
