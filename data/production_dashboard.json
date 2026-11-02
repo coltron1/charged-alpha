@@ -1,11 +1,31 @@
 {
   "schema": "charged-alpha-public-production/1",
-  "updated_at": "2026-11-02T12:17:53.966188-06:00",
-  "calendar_updated_at": "2026-11-02T12:17:38.269829-06:00",
+  "updated_at": "2026-11-02T16:55:27.376088-06:00",
+  "calendar_updated_at": "2026-11-02T16:39:35.242688-06:00",
   "calendar_status": "fresh",
   "daily_target": 10,
   "active": [],
   "history": [
+    {
+      "ticker": "STRL",
+      "company": "Sterling Infrastructure",
+      "period": "Q3 2026",
+      "completed_at": "2026-11-02T16:50:11.521473-06:00",
+      "video_url": "https://youtu.be/IntiKNG8wRA",
+      "short_url": "https://youtu.be/W6Zsy_VCdp0",
+      "packet_url": "https://chargedalpha.com/research/strl-q3-2026",
+      "stock_url": "/shows/strl"
+    },
+    {
+      "ticker": "KLAC",
+      "company": "KLA Corporation",
+      "period": "Q1 FY2027",
+      "completed_at": "2026-11-02T16:50:11.017987-06:00",
+      "video_url": "https://youtu.be/Q9ZQ_v4Hnis",
+      "short_url": "https://youtu.be/F6uqYBWDSp8",
+      "packet_url": "https://chargedalpha.com/research/klac-q1-fy2027",
+      "stock_url": "/shows/klac"
+    },
     {
       "ticker": "LNG",
       "company": "Cheniere Energy, Inc.",
@@ -1569,16 +1589,6 @@
       "stock_url": null
     },
     {
-      "ticker": "PKX",
-      "company": "POSCO Holdings Inc.",
-      "report_date": "2026-11-02",
-      "report_time_label": "Time unconfirmed",
-      "planned_date": "",
-      "date_status": "Calendar estimate",
-      "source_url": null,
-      "stock_url": null
-    },
-    {
       "ticker": "INSP",
       "company": "Inspire Medical Systems, Inc.",
       "report_date": "2026-11-02",
@@ -1629,6 +1639,16 @@
       "stock_url": null
     },
     {
+      "ticker": "CRSP",
+      "company": "CRISPR Therapeutics AG",
+      "report_date": "2026-11-02",
+      "report_time_label": "Time unconfirmed",
+      "planned_date": "",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": null
+    },
+    {
       "ticker": "TVTX",
       "company": "Travere Therapeutics, Inc.",
       "report_date": "2026-11-02",
@@ -1669,28 +1689,8 @@
       "stock_url": null
     },
     {
-      "ticker": "RHLD",
-      "company": "Resolute Holdings Management, Inc.",
-      "report_date": "2026-11-02",
-      "report_time_label": "Time unconfirmed",
-      "planned_date": "",
-      "date_status": "Calendar estimate",
-      "source_url": null,
-      "stock_url": null
-    },
-    {
       "ticker": "SIBN",
       "company": "SI-BONE, Inc.",
-      "report_date": "2026-11-02",
-      "report_time_label": "Time unconfirmed",
-      "planned_date": "",
-      "date_status": "Calendar estimate",
-      "source_url": null,
-      "stock_url": null
-    },
-    {
-      "ticker": "SSII",
-      "company": "SS Innovations International, Inc.",
       "report_date": "2026-11-02",
       "report_time_label": "Time unconfirmed",
       "planned_date": "",
@@ -1761,6 +1761,16 @@
     {
       "ticker": "RXRX",
       "company": "Recursion Pharmaceuticals, Inc.",
+      "report_date": "2026-11-02",
+      "report_time_label": "Time unconfirmed",
+      "planned_date": "",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": null
+    },
+    {
+      "ticker": "ELC",
+      "company": "Entergy Louisiana, LLC COLLATERAL TR MT",
       "report_date": "2026-11-02",
       "report_time_label": "Time unconfirmed",
       "planned_date": "",
@@ -2349,6 +2359,16 @@
       "stock_url": null
     },
     {
+      "ticker": "AHRT",
+      "company": "AH Realty Trust, Inc.",
+      "report_date": "2026-11-02",
+      "report_time_label": "Time unconfirmed",
+      "planned_date": "",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": null
+    },
+    {
       "ticker": "ARTNA",
       "company": "Artesian Resources Corporation",
       "report_date": "2026-11-02",
@@ -2379,7 +2399,37 @@
       "stock_url": null
     },
     {
+      "ticker": "EAI",
+      "company": "Entergy Arkansas, Inc. 1M BD 4.875%66",
+      "report_date": "2026-11-02",
+      "report_time_label": "Time unconfirmed",
+      "planned_date": "",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": null
+    },
+    {
+      "ticker": "EMP",
+      "company": "Entergy Mississippi, Inc. 1M BD 66",
+      "report_date": "2026-11-02",
+      "report_time_label": "Time unconfirmed",
+      "planned_date": "",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": null
+    },
+    {
       "ticker": "ENJ",
+      "company": "Entergy New Orleans, LLC",
+      "report_date": "2026-11-02",
+      "report_time_label": "Time unconfirmed",
+      "planned_date": "",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": null
+    },
+    {
+      "ticker": "ENO",
       "company": "Entergy New Orleans, LLC",
       "report_date": "2026-11-02",
       "report_time_label": "Time unconfirmed",
@@ -2989,8 +3039,28 @@
       "stock_url": null
     },
     {
+      "ticker": "RHLD",
+      "company": "Resolute Holdings Management, Inc.",
+      "report_date": "2026-11-03",
+      "report_time_label": "Time unconfirmed",
+      "planned_date": "",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": null
+    },
+    {
       "ticker": "RXST",
       "company": "RxSight, Inc.",
+      "report_date": "2026-11-03",
+      "report_time_label": "Time unconfirmed",
+      "planned_date": "",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": null
+    },
+    {
+      "ticker": "SSII",
+      "company": "SS Innovations International, Inc.",
       "report_date": "2026-11-03",
       "report_time_label": "Time unconfirmed",
       "planned_date": "",
@@ -3161,16 +3231,6 @@
     {
       "ticker": "FTS",
       "company": "Fortis Inc.",
-      "report_date": "2026-11-03",
-      "report_time_label": "Time unconfirmed",
-      "planned_date": "",
-      "date_status": "Calendar estimate",
-      "source_url": null,
-      "stock_url": null
-    },
-    {
-      "ticker": "OCUL",
-      "company": "Ocular Therapeutix, Inc.",
       "report_date": "2026-11-03",
       "report_time_label": "Time unconfirmed",
       "planned_date": "",
@@ -4307,16 +4367,6 @@
       "date_status": "Calendar estimate",
       "source_url": null,
       "stock_url": "/shows/amd"
-    },
-    {
-      "ticker": "DRVN",
-      "company": "Driven Brands Holdings Inc.",
-      "report_date": "2026-11-03",
-      "report_time_label": "Time unconfirmed",
-      "planned_date": "",
-      "date_status": "Calendar estimate",
-      "source_url": null,
-      "stock_url": "/shows/drvn"
     },
     {
       "ticker": "PXED",
@@ -7307,6 +7357,16 @@
       "date_status": "Calendar estimate",
       "source_url": null,
       "stock_url": "/shows/ats"
+    },
+    {
+      "ticker": "DRVN",
+      "company": "Driven Brands Holdings Inc.",
+      "report_date": "2026-11-04",
+      "report_time_label": "Time unconfirmed",
+      "planned_date": "",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": "/shows/drvn"
     },
     {
       "ticker": "CDW",
