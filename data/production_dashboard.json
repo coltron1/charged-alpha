@@ -1,7 +1,7 @@
 {
   "schema": "charged-alpha-public-production/1",
-  "updated_at": "2026-11-02T12:00:02.046024-06:00",
-  "calendar_updated_at": "2026-11-02T09:14:25.804339-06:00",
+  "updated_at": "2026-11-02T12:17:53.966188-06:00",
+  "calendar_updated_at": "2026-11-02T12:17:38.269829-06:00",
   "calendar_status": "fresh",
   "daily_target": 10,
   "active": [],
@@ -1799,14 +1799,14 @@
       "stock_url": null
     },
     {
-      "ticker": "TGTX",
-      "company": "TG Therapeutics, Inc.",
+      "ticker": "LITE",
+      "company": "Lumentum Holdings Inc.",
       "report_date": "2026-11-02",
       "report_time_label": "Time unconfirmed",
       "planned_date": "",
       "date_status": "Calendar estimate",
       "source_url": null,
-      "stock_url": "/shows/tgtx"
+      "stock_url": "/shows/lite"
     },
     {
       "ticker": "SNDX",
@@ -2371,6 +2371,16 @@
     {
       "ticker": "CWH",
       "company": "Camping World Holdings, Inc.",
+      "report_date": "2026-11-02",
+      "report_time_label": "Time unconfirmed",
+      "planned_date": "",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": null
+    },
+    {
+      "ticker": "ENJ",
+      "company": "Entergy New Orleans, LLC",
       "report_date": "2026-11-02",
       "report_time_label": "Time unconfirmed",
       "planned_date": "",
@@ -5351,16 +5361,6 @@
     {
       "ticker": "QURE",
       "company": "uniQure N.V.",
-      "report_date": "2026-11-04",
-      "report_time_label": "Time unconfirmed",
-      "planned_date": "",
-      "date_status": "Calendar estimate",
-      "source_url": null,
-      "stock_url": null
-    },
-    {
-      "ticker": "KLRA",
-      "company": "Kailera Therapeutics, Inc.",
       "report_date": "2026-11-04",
       "report_time_label": "Time unconfirmed",
       "planned_date": "",
@@ -8667,16 +8667,6 @@
       "date_status": "Calendar estimate",
       "source_url": null,
       "stock_url": null
-    },
-    {
-      "ticker": "LITE",
-      "company": "Lumentum Holdings Inc.",
-      "report_date": "2026-11-05",
-      "report_time_label": "Time unconfirmed",
-      "planned_date": "",
-      "date_status": "Calendar estimate",
-      "source_url": null,
-      "stock_url": "/shows/lite"
     },
     {
       "ticker": "NTCT",

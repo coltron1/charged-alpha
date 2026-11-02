@@ -19,7 +19,7 @@
       "published_at": "2026-11-02T17:52:39+00:00",
       "status": "youtube_podcast_complete",
       "youtube_url": "https://www.youtube.com/watch?v=IntiKNG8wRA",
-      "spotify_url": "",
+      "spotify_url": "https://open.spotify.com/episode/48oPgnSmdefaUFgmw933Iz",
       "apple_url": "",
       "google_url": "",
       "iheart_url": "",
@@ -37,7 +37,7 @@
       "published_at": "2026-11-02T17:02:16+00:00",
       "status": "youtube_podcast_complete",
       "youtube_url": "https://www.youtube.com/watch?v=Q9ZQ_v4Hnis",
-      "spotify_url": "",
+      "spotify_url": "https://open.spotify.com/episode/3GpVMGicN0yI0R7GSgbhrL",
       "apple_url": "",
       "google_url": "",
       "iheart_url": "",
@@ -36065,6 +36065,21 @@
       "description": "Fast clips that point viewers into full research videos and stock pages.",
       "videos": [
         {
+          "title": "STRL Stock: Sterling Infrastructure Q3 2026 — The Cash Collection Test #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/W6Zsy_VCdp0",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-11-02T18:07:48+00:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "STRL"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage.",
+          "earnings_youtube_url": "https://www.youtube.com/watch?v=IntiKNG8wRA",
+          "earnings_match": "stock_period_date"
+        },
+        {
           "title": "KLAC Stock: KLA’s $4.7B Ramp Needs Cash | Q1 FY2027 #Shorts",
           "youtube_url": "https://www.youtube.com/shorts/F6uqYBWDSp8",
           "spotify_url": "",
@@ -49242,7 +49257,7 @@
       ]
     }
   ],
-  "last_synced_at": "2026-11-02T12:00:15-06:00",
+  "last_synced_at": "2026-11-02T12:15:54-06:00",
   "stock_metadata": {
     "A": {
       "company": "Agilent Technologies, Inc.",
