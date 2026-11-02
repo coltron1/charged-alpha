@@ -1,11 +1,31 @@
 {
   "schema": "charged-alpha-public-production/1",
-  "updated_at": "2026-11-02T00:30:21.501922-06:00",
-  "calendar_updated_at": "2026-11-02T00:26:02.550206-06:00",
+  "updated_at": "2026-11-02T09:15:07.657422-06:00",
+  "calendar_updated_at": "2026-11-02T09:14:25.804339-06:00",
   "calendar_status": "fresh",
   "daily_target": 10,
   "active": [],
   "history": [
+    {
+      "ticker": "RDDT",
+      "company": "Reddit, Inc.",
+      "period": "Q3 2026",
+      "completed_at": "2026-11-02T09:12:29.034872-06:00",
+      "video_url": "https://youtu.be/U5VNmRWd5Gc",
+      "short_url": "https://youtu.be/KIp5vU2VG-4",
+      "packet_url": "https://chargedalpha.com/research/rddt-q3-2026",
+      "stock_url": "/shows/rddt"
+    },
+    {
+      "ticker": "CCJ",
+      "company": "Cameco Corporation",
+      "period": "Q3 2026",
+      "completed_at": "2026-11-02T09:12:28.500753-06:00",
+      "video_url": "https://youtu.be/xOVyRamevZU",
+      "short_url": "https://youtu.be/-P2phs_InKM",
+      "packet_url": "https://chargedalpha.com/research/ccj-q3-2026",
+      "stock_url": "/shows/ccj"
+    },
     {
       "ticker": "GOOGL",
       "company": "Alphabet Inc.",
@@ -2139,6 +2159,16 @@
       "stock_url": null
     },
     {
+      "ticker": "ALM",
+      "company": "Almonty Industries Inc.",
+      "report_date": "2026-11-02",
+      "report_time_label": "Time unconfirmed",
+      "planned_date": "",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": null
+    },
+    {
       "ticker": "DHC",
       "company": "Diversified Healthcare Trust",
       "report_date": "2026-11-02",
@@ -2151,6 +2181,16 @@
     {
       "ticker": "ALG",
       "company": "Alamo Group Inc.",
+      "report_date": "2026-11-02",
+      "report_time_label": "Time unconfirmed",
+      "planned_date": "",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": null
+    },
+    {
+      "ticker": "SIND",
+      "company": "Sinda Ltd.",
       "report_date": "2026-11-02",
       "report_time_label": "Time unconfirmed",
       "planned_date": "",
@@ -11391,16 +11431,6 @@
     {
       "ticker": "AQN",
       "company": "Algonquin Power & Utilities Corp.",
-      "report_date": "2026-11-06",
-      "report_time_label": "Time unconfirmed",
-      "planned_date": "",
-      "date_status": "Calendar estimate",
-      "source_url": null,
-      "stock_url": null
-    },
-    {
-      "ticker": "ALM",
-      "company": "Almonty Industries Inc.",
       "report_date": "2026-11-06",
       "report_time_label": "Time unconfirmed",
       "planned_date": "",
