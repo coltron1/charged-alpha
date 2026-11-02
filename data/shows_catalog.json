@@ -10,6 +10,24 @@
   },
   "episodes": [
     {
+      "ticker": "STRL",
+      "company": "Sterling Infrastructure",
+      "sector": "Industrials",
+      "quarter": "Q3 2026",
+      "episode_number": "",
+      "title": "STRL Stock: Record Earnings, but Where Is the Cash? — Q3 2026",
+      "published_at": "2026-11-02T17:52:39+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=IntiKNG8wRA",
+      "spotify_url": "",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/strl-stock-record-earnings-but-where-is-the-cash-%e2%80%94-q3-2026/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
       "ticker": "KLAC",
       "company": "KLA Corporation",
       "sector": "Technology",
@@ -49224,7 +49242,7 @@
       ]
     }
   ],
-  "last_synced_at": "2026-11-02T11:30:44-06:00",
+  "last_synced_at": "2026-11-02T12:00:15-06:00",
   "stock_metadata": {
     "A": {
       "company": "Agilent Technologies, Inc.",

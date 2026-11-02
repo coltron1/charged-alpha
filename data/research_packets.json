@@ -5802,6 +5802,64 @@
       "tables": 31
     },
     {
+      "key": "STRL:Q3-2026",
+      "year": 2026,
+      "quarter": 3,
+      "fiscal": false,
+      "slug": "strl-q3-2026",
+      "ticker": "STRL",
+      "company": "Sterling Infrastructure",
+      "period": "Q3 2026",
+      "canonical_url": "https://chargedalpha.com/research/strl-q3-2026",
+      "title": "Sterling (STRL): Record Earnings, but Only $17 Million of Generally Available Cash",
+      "page_title": "STRL Q3 2026 Research Packet — Charged Alpha",
+      "description": "Sterling’s record profit meets a cash-collection test: joint-venture cash, receivables, unsigned awards and the valuation that requires conversion.",
+      "sha256": "c547dfcdb808c4adc60d5c70ff084c73543cb54fd84059c440e83eec82770c23",
+      "html_file": "research_packets/strl-q3-2026.html",
+      "source_episode": "STRL-Q3-2026",
+      "source_staged_at": "2026-11-02T17:58:56Z",
+      "source_sha256": {
+        "READY": "f1ebd5a0b88ea79bda1209f98b0cf8b21ee0f457c28651d4aa7d6bab91ff3bab",
+        "handoff.json": "468457266bc2a9ed675ec2fb849078aa6b17c6626ed073379cc47fdd74fefc7c",
+        "packet/strl-q3-2026-research-packet.html": "c547dfcdb808c4adc60d5c70ff084c73543cb54fd84059c440e83eec82770c23",
+        "packet/packet_meta.json": "85ed3e5d467b7480202b0053cbbd8ebe38ee00cf7806f3735c07b37eeff8cf5a",
+        "packet/packet.json": "ecdc46252638f3b636c08f3a3f7063fbd0eec9aed3747c2a9b49a113b4fabee0"
+      },
+      "primary_youtube_long": "IntiKNG8wRA",
+      "primary_youtube_short": null,
+      "youtube_studio": null,
+      "youtube_studio_short": null,
+      "what_changed": {
+        "summary": "Sterling’s record profit meets a cash-collection test: joint-venture cash, receivables, unsigned awards and the valuation that requires conversion.",
+        "items": [
+          {
+            "title": "Cash has different uses:",
+            "detail": "Of $216.9M reported cash, $200.1M sits in construction joint ventures; $16.8M is generally available. Unused revolving credit remains about $1.4B."
+          },
+          {
+            "title": "Profit outran conversion:",
+            "detail": "Computed standalone Q3 operating cash was $99.1M and free cash flow $53.3M, while GAAP parent profit reached $214.9M. These are different consolidation scopes, not interchangeable earnings measures."
+          },
+          {
+            "title": "The growth is not just acquisitions:",
+            "detail": "Revenue grew 127% as reported and 70% organically, with CEC’s full-quarter ownership and Stone Ridge adding comparability changes."
+          },
+          {
+            "title": "Work certainty matters:",
+            "detail": "$4.14B is signed backlog. Combined backlog of $6.14B adds $2.00B of unsigned awards; nearly $8B of scoped work is broader again."
+          },
+          {
+            "title": "Price requires delivery:",
+            "detail": "Our $400 base is supported by three explicit routes, but cash and execution uncertainty keep a fresh-buy threshold near $320 versus the $345.91 October 30 close."
+          }
+        ]
+      },
+      "source_published": "November 2, 2026",
+      "words": 6235,
+      "figures": 18,
+      "tables": 32
+    },
+    {
       "key": "TER:Q3-2026",
       "year": 2026,
       "quarter": 3,
