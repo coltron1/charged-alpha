@@ -1,11 +1,31 @@
 {
   "schema": "charged-alpha-public-production/1",
-  "updated_at": "2026-11-02T09:38:16.213425-06:00",
+  "updated_at": "2026-11-02T11:01:01.017190-06:00",
   "calendar_updated_at": "2026-11-02T09:14:25.804339-06:00",
   "calendar_status": "fresh",
   "daily_target": 10,
   "active": [],
   "history": [
+    {
+      "ticker": "LNG",
+      "company": "Cheniere Energy, Inc.",
+      "period": "Q3 2026",
+      "completed_at": "2026-11-02T10:58:09.769672-06:00",
+      "video_url": "https://youtu.be/pmZE3uh_aAY",
+      "short_url": null,
+      "packet_url": "https://chargedalpha.com/research/lng-q3-2026",
+      "stock_url": "/shows/lng"
+    },
+    {
+      "ticker": "AUR",
+      "company": "Aurora Innovation, Inc.",
+      "period": "Q3 2026",
+      "completed_at": "2026-11-02T10:58:08.921491-06:00",
+      "video_url": "https://youtu.be/uEGc_vVSlSI",
+      "short_url": null,
+      "packet_url": "https://chargedalpha.com/research/aur-q3-2026",
+      "stock_url": "/shows/aur"
+    },
     {
       "ticker": "RDDT",
       "company": "Reddit, Inc.",

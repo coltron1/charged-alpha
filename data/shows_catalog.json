@@ -10,6 +10,24 @@
   },
   "episodes": [
     {
+      "ticker": "KLAC",
+      "company": "KLA Corporation",
+      "sector": "Technology",
+      "quarter": "Q1 FY2027",
+      "episode_number": "",
+      "title": "KLAC Stock: KLA’s $4.7B Ramp — Can Cash Keep Up? | Q1 FY2027",
+      "published_at": "2026-11-02T17:02:16+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=Q9ZQ_v4Hnis",
+      "spotify_url": "",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/klac-stock-kla-s-47b-ramp-%e2%80%94-can-cash-keep-up-q1-fy2027/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
       "ticker": "RDDT",
       "company": "Reddit, Inc.",
       "sector": "Communication Services",
@@ -49190,7 +49208,7 @@
       ]
     }
   ],
-  "last_synced_at": "2026-11-02T09:17:06-06:00",
+  "last_synced_at": "2026-11-02T11:04:17-06:00",
   "stock_metadata": {
     "A": {
       "company": "Agilent Technologies, Inc.",

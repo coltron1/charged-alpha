@@ -930,6 +930,64 @@
       "tables": 33
     },
     {
+      "key": "KLAC:Q1-FY2027",
+      "year": 2027,
+      "quarter": 1,
+      "fiscal": true,
+      "slug": "klac-q1-fy2027",
+      "ticker": "KLAC",
+      "company": "KLA Corporation",
+      "period": "Q1 FY2027",
+      "canonical_url": "https://chargedalpha.com/research/klac-q1-fy2027",
+      "title": "KLA's $4.7 Billion Ramp: Cash Must Catch Up",
+      "page_title": "KLAC Q1 FY2027 Research Packet — Charged Alpha",
+      "description": "KLA guides another double-digit sequential revenue increase; our $145 base value tests whether cash generation can justify the capacity ramp.",
+      "sha256": "1dee19511943c1bea4e0b966ef076be914dcdc6cc7cbd2130c7f1b0f1324e9bc",
+      "html_file": "research_packets/klac-q1-fy2027.html",
+      "source_episode": "KLAC-Q1-FY2027",
+      "source_staged_at": "2026-11-02T17:06:19Z",
+      "source_sha256": {
+        "READY": "71316c80aeb583727dcf8fd77fe892306d4e1753e87c1b898ae810dc6af6a6b0",
+        "handoff.json": "8b2e0d06896c42f92899e94553c06d19752f0dbd61ba3bbb23c91f5ad7fa8113",
+        "packet/klac-q1-fy2027-research-packet.html": "1dee19511943c1bea4e0b966ef076be914dcdc6cc7cbd2130c7f1b0f1324e9bc",
+        "packet/packet_meta.json": "675f0bba398c0549869741dd0bf85a7c3121ea24cac15386bd1e961950f1a6c4",
+        "packet/packet.json": "fc2c0fe0c077eb8c84cd73e460cd1abc9cbf7bab91baced0606958490442fe7d"
+      },
+      "primary_youtube_long": "Q9ZQ_v4Hnis",
+      "primary_youtube_short": null,
+      "youtube_studio": null,
+      "youtube_studio_short": null,
+      "what_changed": {
+        "summary": "KLA guides another double-digit sequential revenue increase; our $145 base value tests whether cash generation can justify the capacity ramp.",
+        "items": [
+          {
+            "title": "The next ramp is larger.",
+            "detail": "The $4.7B December midpoint requires another 13.6% sequential increase after September growth of 13.1%."
+          },
+          {
+            "title": "Service helps, systems lead.",
+            "detail": "Service grew 14.2%, while products grew 33.3%; both support the thesis, with different cyclicality."
+          },
+          {
+            "title": "Cash growth trails earnings momentum.",
+            "detail": "TTM FCF rose 4.1% to $4.038B as working capital and capacity investment expand."
+          },
+          {
+            "title": "Debt accounting is not debt repayment.",
+            "detail": "$5.95B principal exceeds carrying value because of swaps, discounts and issuance costs."
+          },
+          {
+            "title": "Valuation requires proof.",
+            "detail": "Three routes span $110–162; the rounded $145 base leaves little cushion at the $157.91 reference close."
+          }
+        ]
+      },
+      "source_published": "November 2, 2026",
+      "words": 6349,
+      "figures": 16,
+      "tables": 30
+    },
+    {
       "key": "LRCX:Q1-FY2027",
       "year": 2027,
       "quarter": 1,
