@@ -36047,6 +36047,22 @@
       "description": "Fast clips that point viewers into full research videos and stock pages.",
       "videos": [
         {
+          "title": "KLAC Stock: KLA’s $4.7B Ramp Needs Cash | Q1 FY2027 #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/F6uqYBWDSp8",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-11-02T09:28:10-08:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "KLAC",
+            "KLA"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage.",
+          "earnings_youtube_url": "https://www.youtube.com/watch?v=Q9ZQ_v4Hnis",
+          "earnings_match": "stock_period_date"
+        },
+        {
           "title": "RDDT Stock: Reddit Q3 2026 Earnings — The Search Funnel Test #Shorts",
           "youtube_url": "https://www.youtube.com/shorts/KIp5vU2VG-4",
           "spotify_url": "",
@@ -49208,7 +49224,7 @@
       ]
     }
   ],
-  "last_synced_at": "2026-11-02T11:04:17-06:00",
+  "last_synced_at": "2026-11-02T11:30:44-06:00",
   "stock_metadata": {
     "A": {
       "company": "Agilent Technologies, Inc.",

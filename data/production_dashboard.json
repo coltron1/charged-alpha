@@ -1,10 +1,19 @@
 {
   "schema": "charged-alpha-public-production/1",
-  "updated_at": "2026-11-02T11:01:01.017190-06:00",
+  "updated_at": "2026-11-02T11:30:25.209163-06:00",
   "calendar_updated_at": "2026-11-02T09:14:25.804339-06:00",
   "calendar_status": "fresh",
   "daily_target": 10,
-  "active": [],
+  "active": [
+    {
+      "ticker": "STRL",
+      "company": "Sterling Infrastructure, Inc.",
+      "period": "Q3 2026",
+      "status_label": "Building now",
+      "stage_label": "Production in progress",
+      "stock_url": "/shows/strl"
+    }
+  ],
   "history": [
     {
       "ticker": "LNG",
