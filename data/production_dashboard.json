@@ -1,19 +1,10 @@
 {
   "schema": "charged-alpha-public-production/1",
-  "updated_at": "2026-11-02T00:12:32.471737-06:00",
+  "updated_at": "2026-11-02T00:17:23.774887-06:00",
   "calendar_updated_at": "2026-11-01T21:00:26.483766-06:00",
   "calendar_status": "stale",
   "daily_target": 10,
-  "active": [
-    {
-      "ticker": "CCJ",
-      "company": "Cameco Corporation",
-      "period": "Q3 2026",
-      "status_label": "Building now",
-      "stage_label": "Production in progress",
-      "stock_url": "/shows/ccj"
-    }
-  ],
+  "active": [],
   "history": [
     {
       "ticker": "GOOGL",

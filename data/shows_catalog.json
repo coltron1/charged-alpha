@@ -10,6 +10,24 @@
   },
   "episodes": [
     {
+      "ticker": "RDDT",
+      "company": "Reddit, Inc.",
+      "sector": "Communication Services",
+      "quarter": "Q3 2026",
+      "episode_number": "",
+      "title": "RDDT Stock: A $1B Guide Meets a Shrinking Search Funnel — Q3 2026",
+      "published_at": "2026-11-02T06:09:19+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=U5VNmRWd5Gc",
+      "spotify_url": "",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/rddt-stock-a-1b-guide-meets-a-shrinking-search-funnel-%e2%80%94-q3-2026/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
       "ticker": "CCJ",
       "company": "Cameco Corporation",
       "sector": "Energy",
@@ -49142,7 +49160,7 @@
       ]
     }
   ],
-  "last_synced_at": "2026-11-02T00:12:26-06:00",
+  "last_synced_at": "2026-11-02T00:17:48-06:00",
   "stock_metadata": {
     "A": {
       "company": "Agilent Technologies, Inc.",

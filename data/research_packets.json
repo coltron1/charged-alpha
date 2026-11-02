@@ -5222,6 +5222,64 @@
       "tables": 34
     },
     {
+      "key": "RDDT:Q3-2026",
+      "year": 2026,
+      "quarter": 3,
+      "fiscal": false,
+      "slug": "rddt-q3-2026",
+      "ticker": "RDDT",
+      "company": "Reddit, Inc.",
+      "period": "Q3 2026",
+      "canonical_url": "https://chargedalpha.com/research/rddt-q3-2026",
+      "title": "RDDT: A billion-dollar guide meets a shrinking search funnel",
+      "page_title": "RDDT Q3 2026 Research Packet — Charged Alpha",
+      "description": "Reddit delivered 53% revenue growth, but a conditional audience warning changes the margin of safety required at the new share price.",
+      "sha256": "773bcd7a2ea7378c2a3c75b5ae0774ba6338a38b97d651c3e309c3d4e04f9075",
+      "html_file": "research_packets/rddt-q3-2026.html",
+      "source_episode": "RDDT-Q3-2026",
+      "source_staged_at": "2026-11-02T06:14:30Z",
+      "source_sha256": {
+        "READY": "05fc5a96107f9b843ff2ac84422a44cc87d82eb757aedd36e20fed8937d2bafb",
+        "handoff.json": "cd3c701057e20dd898d869ec205b8f809986a7215a9767a5d4c54bcccfb10fa6",
+        "packet/rddt-q3-2026-research-packet.html": "773bcd7a2ea7378c2a3c75b5ae0774ba6338a38b97d651c3e309c3d4e04f9075",
+        "packet/packet_meta.json": "637c0bca9cf9c5ae69d59f217862ab352728fb08a3d3672ef876e55847111bf6",
+        "packet/packet.json": "698195ada1f939d71f5067912dddc549b70b2e299f50b2d98f2669f0eeccc548"
+      },
+      "primary_youtube_long": "U5VNmRWd5Gc",
+      "primary_youtube_short": null,
+      "youtube_studio": null,
+      "youtube_studio_short": null,
+      "what_changed": {
+        "summary": "Reddit delivered 53% revenue growth, but a conditional audience warning changes the margin of safety required at the new share price.",
+        "items": [
+          {
+            "title": "The revenue engine still works.",
+            "detail": "Q3 revenue grew 53% to $895M and Q4 guidance reaches $1.00–1.03B."
+          },
+          {
+            "title": "The search warning intensified.",
+            "detail": "Management says continuing referral declines could produce a low-double-digit sequential DAUq decline; this is conditional, not formal DAU guidance."
+          },
+          {
+            "title": "The valuable core offers a counterargument.",
+            "detail": "Logged-in and app audiences grew sequentially and represent over 80% of monetization, with overlap between groups."
+          },
+          {
+            "title": "Compensation changes owner economics.",
+            "detail": "$362.6M of FCF becomes a $231.3M analytical proxy after deducting $131.3M of SBC."
+          },
+          {
+            "title": "A cheaper price is not a complete thesis.",
+            "detail": "HOLD, $110 fair value, very high uncertainty; $77 provides the stated 30% margin of safety absent deterioration."
+          }
+        ]
+      },
+      "source_published": "November 1, 2026",
+      "words": 5960,
+      "figures": 18,
+      "tables": 15
+    },
+    {
       "key": "RMBS:Q3-2026",
       "year": 2026,
       "quarter": 3,
