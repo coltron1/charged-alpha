@@ -2902,6 +2902,64 @@
       "tables": 32
     },
     {
+      "key": "AUR:Q3-2026",
+      "year": 2026,
+      "quarter": 3,
+      "fiscal": false,
+      "slug": "aur-q3-2026",
+      "ticker": "AUR",
+      "company": "Aurora Innovation",
+      "period": "Q3 2026",
+      "canonical_url": "https://chargedalpha.com/research/aur-q3-2026",
+      "title": "AUR: A Six-Week Delay Meets a $1 Billion Share-Sale Window",
+      "page_title": "AUR Q3 2026 Research Packet — Charged Alpha",
+      "description": "Aurora cut its 2026 revenue outlook as truck production slipped. We test the cash runway, potential dilution and valuation of the continuing AUR common shares.",
+      "sha256": "e6e0cb7a05c00eb0d8b81f3faba06ea3814be77845fe4a9829adad1f278fd5de",
+      "html_file": "research_packets/aur-q3-2026.html",
+      "source_episode": "AUR-Q3-2026",
+      "source_staged_at": "2026-11-02T04:31:26Z",
+      "source_sha256": {
+        "READY": "dbc16d8dc4d3a5fad3b329ad03d9b87251f1cb9bd7d1d673de83525dab801b68",
+        "handoff.json": "a68f58890b3cd5628bb269901c281401f29a4d8eb3840615b92ca6b1cfb35eeb",
+        "packet/aur-q3-2026-research-packet.html": "e6e0cb7a05c00eb0d8b81f3faba06ea3814be77845fe4a9829adad1f278fd5de",
+        "packet/packet_meta.json": "a46f36486e8a23055ff4c58f046610100ac6d42ca029c07746743dc56fd53192",
+        "packet/packet.json": "2e3503fe3eec094188b3bd1db2a56ce8f450c1771bc7f062f753862aa3b22802"
+      },
+      "primary_youtube_long": "uEGc_vVSlSI",
+      "primary_youtube_short": null,
+      "youtube_studio": null,
+      "youtube_studio_short": null,
+      "what_changed": {
+        "summary": "Aurora cut its 2026 revenue outlook as truck production slipped. We test the cash runway, potential dilution and valuation of the continuing AUR common shares.",
+        "items": [
+          {
+            "title": "The schedule moved, not just the share price.",
+            "detail": "Management says production is about six weeks behind its prior plan. The 200-truck milestone moves from year-end to the end of February, and full-year revenue falls to about $9 million."
+          },
+          {
+            "title": "A billion-dollar financing window is not a billion dollars in the bank.",
+            "detail": "The October 28 prospectus resets ATM availability to $1 billion. At a constant $4.41, full utilization would add roughly 227 million shares before fees; actual proceeds, price and timing are unknown."
+          },
+          {
+            "title": "Count both common-share classes.",
+            "detail": "The October 21 cover-page count is 2.020 billion Class A plus Class B shares. At $4.41 that implies $8.91 billion of common equity value, above the provider’s $7.52 billion field."
+          },
+          {
+            "title": "Commercial progress is real, but commitments have different strength.",
+            "detail": "More than 20 trucks are built and entering the fleet; the Charger 500-truck MOU is explicitly nonbinding. Neither is equivalent to 500 producing trucks or booked backlog."
+          },
+          {
+            "title": "Our call is price-sensitive.",
+            "detail": "Three disclosed valuation routes center near $2.50. We need repeatable output, a funded path and binding customer conversion before paying for the optimistic long-term case."
+          }
+        ]
+      },
+      "source_published": "October 30, 2026",
+      "words": 6054,
+      "figures": 15,
+      "tables": 21
+    },
+    {
       "key": "BSX:Q3-2026",
       "year": 2026,
       "quarter": 3,
@@ -4292,6 +4350,64 @@
       "words": 6120,
       "figures": 18,
       "tables": 19
+    },
+    {
+      "key": "LNG:Q3-2026",
+      "year": 2026,
+      "quarter": 3,
+      "fiscal": false,
+      "slug": "lng-q3-2026",
+      "ticker": "LNG",
+      "company": "Cheniere Energy",
+      "period": "Q3 2026",
+      "canonical_url": "https://chargedalpha.com/research/lng-q3-2026",
+      "title": "Cheniere (LNG): The Raised Guide Needs a Much Bigger Fourth Quarter",
+      "page_title": "LNG Q3 2026 Research Packet — Charged Alpha",
+      "description": "The fourth-quarter cash hurdle, NPNS accounting change and common-owner valuation behind Cheniere’s raised outlook.",
+      "sha256": "707be712b5fefc25ab2770b247baad7e8d322a1746eb22479959109db378e1d9",
+      "html_file": "research_packets/lng-q3-2026.html",
+      "source_episode": "LNG-Q3-2026",
+      "source_staged_at": "2026-11-02T04:33:05Z",
+      "source_sha256": {
+        "READY": "272a25f062098dd2be74b524f1e40e9bf7e1fab046e96e32ffd9eab8ab8ba6b0",
+        "handoff.json": "e2a8c9b8b6873549218da018cb9a4ef4174d5d42f1064c7552f31af23160afae",
+        "packet/lng-q3-2026-research-packet.html": "707be712b5fefc25ab2770b247baad7e8d322a1746eb22479959109db378e1d9",
+        "packet/packet_meta.json": "84056326e4bac5baf968a81653ff8ad050e419e5b3cf0291c315cc0fc9bfcb5a",
+        "packet/packet.json": "deb25fbe19a6bc08408cd2043d5f367b6e7e8e64ba520ea61f07f546a8663688"
+      },
+      "primary_youtube_long": "pmZE3uh_aAY",
+      "primary_youtube_short": null,
+      "youtube_studio": null,
+      "youtube_studio_short": null,
+      "what_changed": {
+        "summary": "The fourth-quarter cash hurdle, NPNS accounting change and common-owner valuation behind Cheniere’s raised outlook.",
+        "items": [
+          {
+            "title": "Fourth-quarter hurdle:",
+            "detail": "$9.00B less $6.037B earned through September leaves $2.963B of adjusted EBITDA."
+          },
+          {
+            "title": "Physical growth is real:",
+            "detail": "188 cargoes versus 163 a year ago, with more Corpus Christi capacity operating."
+          },
+          {
+            "title": "Accounting changed:",
+            "detail": "June NPNS designation covered 73% of fixed minimum IPM volumes, reducing future fair-value remeasurement for those contracts."
+          },
+          {
+            "title": "Cash has several owners:",
+            "detail": "$5.124B operating cash less $2.648B net capex and $594M minority distributions leaves $1.882B, below $2.166B common returns."
+          },
+          {
+            "title": "Price is demanding:",
+            "detail": "$318.94 exceeds our $290 base case and the $310.60 provider target mean, which is not a fully refreshed post-print consensus."
+          }
+        ]
+      },
+      "source_published": "October 30, 2026",
+      "words": 6979,
+      "figures": 19,
+      "tables": 34
     },
     {
       "key": "MKC:Q3-FY2026",

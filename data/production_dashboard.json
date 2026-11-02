@@ -1,19 +1,10 @@
 {
   "schema": "charged-alpha-public-production/1",
-  "updated_at": "2026-11-01T21:00:38.845075-06:00",
+  "updated_at": "2026-11-01T22:27:22.788003-06:00",
   "calendar_updated_at": "2026-11-01T21:00:26.483766-06:00",
   "calendar_status": "fresh",
   "daily_target": 10,
-  "active": [
-    {
-      "ticker": "LNG",
-      "company": "Cheniere Energy, Inc.",
-      "period": "Q3 2026",
-      "status_label": "Building now",
-      "stage_label": "Production in progress",
-      "stock_url": "/shows/lng"
-    }
-  ],
+  "active": [],
   "history": [
     {
       "ticker": "GOOGL",

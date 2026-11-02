@@ -10,6 +10,42 @@
   },
   "episodes": [
     {
+      "ticker": "LNG",
+      "company": "Cheniere Energy, Inc.",
+      "sector": "Energy",
+      "quarter": "Q3 2026",
+      "episode_number": "",
+      "title": "LNG Stock: The Raised Guide Needs a Bigger Fourth Quarter | Q3 2026 Earnings",
+      "published_at": "2026-11-02T04:25:46+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=pmZE3uh_aAY",
+      "spotify_url": "",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/lng-stock-the-raised-guide-needs-a-bigger-fourth-quarter-q3-2026-earnings/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "AUR",
+      "company": "Aurora Innovation, Inc.",
+      "sector": "Consumer Cyclical",
+      "quarter": "Q3 2026",
+      "episode_number": "",
+      "title": "AUR Stock: Revenue Outlook Cut 40% — Who Funds the Delay? | Q3 2026 Earnings",
+      "published_at": "2026-11-02T04:23:41+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=uEGc_vVSlSI",
+      "spotify_url": "",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/aur-stock-revenue-outlook-cut-40-%e2%80%94-who-funds-the-delay-q3-2026-earnings/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
       "ticker": "GOOGL",
       "company": "Alphabet Inc.",
       "sector": "Communication",
@@ -49088,7 +49124,7 @@
       ]
     }
   ],
-  "last_synced_at": "2026-10-28T18:52:36-05:00",
+  "last_synced_at": "2026-11-01T22:32:34-06:00",
   "stock_metadata": {
     "A": {
       "company": "Agilent Technologies, Inc.",
