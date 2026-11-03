@@ -466,6 +466,64 @@
       "tables": 28
     },
     {
+      "key": "AEHR:Q1-FY2027",
+      "year": 2027,
+      "quarter": 1,
+      "fiscal": true,
+      "slug": "aehr-q1-fy2027",
+      "ticker": "AEHR",
+      "company": "Aehr Test Systems",
+      "period": "Q1 FY2027",
+      "canonical_url": "https://chargedalpha.com/research/aehr-q1-fy2027",
+      "title": "AEHR: Record Sales, Negative Cash Flow — Can the AI Ramp Pay for Itself?",
+      "page_title": "AEHR Q1 FY2027 Research Packet — Charged Alpha",
+      "description": "Record AI testing revenue meets a working-capital build, customer concentration and a demanding valuation.",
+      "sha256": "440aace6288bb8f5e10f81e437188ca438fabe55b7bac3674126f7c77b301ad4",
+      "html_file": "research_packets/aehr-q1-fy2027.html",
+      "source_episode": "AEHR-Q1-FY2027",
+      "source_staged_at": "2026-11-03T19:32:41Z",
+      "source_sha256": {
+        "READY": "fb52f19c1bdb62758b6d448e6362432a99c2626479816ebaea71091417bf4156",
+        "handoff.json": "0215f98ea1d46b6cb6b102db16ca4f6e3909761bfc0fe0a41b1634b9d347e8a8",
+        "packet/aehr-q1-fy2027-research-packet.html": "440aace6288bb8f5e10f81e437188ca438fabe55b7bac3674126f7c77b301ad4",
+        "packet/packet_meta.json": "dc44a123d1d17610a27fcd42852304c5d2db568577edc7fd8f93bb6af8270f44",
+        "packet/packet.json": "aed7ef31078b88326b81bcaab103394546daa1ad718265756298fd57df70e60c"
+      },
+      "primary_youtube_long": "h6HWUoP5xys",
+      "primary_youtube_short": null,
+      "youtube_studio": null,
+      "youtube_studio_short": null,
+      "what_changed": {
+        "summary": "Record AI testing revenue meets a working-capital build, customer concentration and a demanding valuation.",
+        "items": [
+          {
+            "title": "Calendar matters.",
+            "detail": "September 25 quarter follows a separate June transition month."
+          },
+          {
+            "title": "Real operating improvement.",
+            "detail": "GAAP operating profit reached $6.047M."
+          },
+          {
+            "title": "Cash lags profit.",
+            "detail": "Receivables and inventory absorbed $19.723M before offsets."
+          },
+          {
+            "title": "Orders are not revenue.",
+            "detail": "Backlog and subsequent effective backlog use different dates."
+          },
+          {
+            "title": "Valuation remains demanding.",
+            "detail": "Our three routes average $25.01 versus $51.47 at the Nov 2 close."
+          }
+        ]
+      },
+      "source_published": "November 3, 2026",
+      "words": 5843,
+      "figures": 15,
+      "tables": 32
+    },
+    {
       "key": "APLD:Q1-FY2027",
       "year": 2027,
       "quarter": 1,
