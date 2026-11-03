@@ -10,6 +10,24 @@
   },
   "episodes": [
     {
+      "ticker": "BWXT",
+      "company": "BWX Technologies",
+      "sector": "Industrials",
+      "quarter": "Q3 2026",
+      "episode_number": "",
+      "title": "BWXT Stock: Cash Improved—What Does the New Portfolio Earn? — Q3 2026",
+      "published_at": "2026-11-03T18:51:42+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=YRr1b9PZy94",
+      "spotify_url": "https://open.spotify.com/episode/6VmDnq2m5JQpgzVRg13oOS",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/bwxt-stock-cash-improved%e2%80%94what-does-the-new-portfolio-earn-%e2%80%94-q3-2026/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
       "ticker": "GLW",
       "company": "Corning Incorporated",
       "sector": "Technology",
@@ -49323,7 +49341,7 @@
       ]
     }
   ],
-  "last_synced_at": "2026-11-02T20:42:46-06:00",
+  "last_synced_at": "2026-11-03T13:01:18-06:00",
   "stock_metadata": {
     "A": {
       "company": "Agilent Technologies, Inc.",

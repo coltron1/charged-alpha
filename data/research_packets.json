@@ -3076,6 +3076,64 @@
       "tables": 20
     },
     {
+      "key": "BWXT:Q3-2026",
+      "year": 2026,
+      "quarter": 3,
+      "fiscal": false,
+      "slug": "bwxt-q3-2026",
+      "ticker": "BWXT",
+      "company": "BWX Technologies",
+      "period": "Q3 2026",
+      "canonical_url": "https://chargedalpha.com/research/bwxt-q3-2026",
+      "title": "BWXT: The Cash Improved. What Does the New Portfolio Earn?",
+      "page_title": "BWXT Q3 2026 Research Packet — Charged Alpha",
+      "description": "A stronger cash quarter meets a changing nuclear portfolio and a demanding valuation.",
+      "sha256": "4c24593a2d840fb79957e20bcd1289596c6e35dc2a7e6848ed6a1e8ee543d022",
+      "html_file": "research_packets/bwxt-q3-2026.html",
+      "source_episode": "BWXT-Q3-2026",
+      "source_staged_at": "2026-11-03T18:57:12Z",
+      "source_sha256": {
+        "READY": "84bb428f3f19d74bc6bd452f70d8db5b4eb64566b6aa76af4693dab48800c155",
+        "handoff.json": "0ffaadfb99b2976f947aa6ac278224aafecd7344a9b0f00f7bcdb3de0dab0d35",
+        "packet/bwxt-q3-2026-research-packet.html": "4c24593a2d840fb79957e20bcd1289596c6e35dc2a7e6848ed6a1e8ee543d022",
+        "packet/packet_meta.json": "75efbb91662ea764aeae769605c46a3150fde90ad36e8e56927e70530a2821ed",
+        "packet/packet.json": "6d84a1f2b74f57b0263985b48a52a36cdb0776616968fdddef9277af5e9a6548"
+      },
+      "primary_youtube_long": "YRr1b9PZy94",
+      "primary_youtube_short": null,
+      "youtube_studio": null,
+      "youtube_studio_short": null,
+      "what_changed": {
+        "summary": "A stronger cash quarter meets a changing nuclear portfolio and a demanding valuation.",
+        "items": [
+          {
+            "title": "Cash conversion strengthened.",
+            "detail": "Quarterly free cash flow reached $150.5M, with payment and billing timing contributing to the nine-month improvement."
+          },
+          {
+            "title": "Government supplied the profit signal.",
+            "detail": "Sales grew 3.6% while calculated segment operating margin reached 19.2%."
+          },
+          {
+            "title": "Commercial growth needs a perimeter check.",
+            "detail": "Revenue rose 25.2%, but margin fell to 8.4% and PCG entered on July 1."
+          },
+          {
+            "title": "The medical deal is still conditional.",
+            "detail": "Up to $800M consideration is not treated as received cash or added to unchanged earnings."
+          },
+          {
+            "title": "The outlook narrowed rather than broadly rose.",
+            "detail": "FY2026 adjusted EPS is $4.72–$4.77; the FCF floor rises to $350M."
+          }
+        ]
+      },
+      "source_published": "November 2, 2026",
+      "words": 5040,
+      "figures": 14,
+      "tables": 19
+    },
+    {
       "key": "CCI:Q3-2026",
       "year": 2026,
       "quarter": 3,
