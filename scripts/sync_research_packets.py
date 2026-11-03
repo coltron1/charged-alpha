@@ -1,5 +1,9 @@
 #!/usr/bin/env python3
-"""Plan or import finalized READY research packets. No network, queue writes, or deploys."""
+"""Import finalized READY packets; default mode is offline and create-only.
+
+The explicit unpublished-replacement mode refreshes Git read-only and shares the
+queue's packet-publication lock. No mode publishes or rewrites producer inputs.
+"""
 from __future__ import annotations
 
 import argparse
@@ -10,6 +14,8 @@ import json
 import os
 from pathlib import Path
 import re
+import stat
+import subprocess
 import sys
 import tempfile
 import unicodedata
@@ -28,6 +34,8 @@ HIGHLIGHTS_REQUIRED_FROM = datetime(2026, 9, 11, tzinfo=timezone.utc)
 DEFERRED_ORIGIN_DIR = "_deferred_short_origin"
 IMMUTABLE_FIELDS = ("key", "ticker", "company", "period", "year", "quarter", "fiscal", "slug",
                     "canonical_url", "title", "page_title", "description", "sha256", "source_episode")
+REPLACEMENT_ORIGIN = "https://github.com/coltron1/charged-alpha.git"
+REPLACEMENT_REPORT = "charged-alpha-unpublished-packet-replacement-review"
 
 
 class HeadMetadata(HTMLParser):
@@ -507,9 +515,13 @@ def classify(candidate, records, index):
     return "ready_to_import"
 
 
+def index_bytes(records):
+    return (json.dumps({"schema_version": 1, "packets": sorted(records, key=packet_sort_key)},
+                       ensure_ascii=False, indent=2) + "\n").encode("utf-8")
+
+
 def atomic_index(index, records):
-    payload = (json.dumps({"schema_version": 1, "packets": sorted(records, key=packet_sort_key)},
-                          ensure_ascii=False, indent=2) + "\n").encode("utf-8")
+    payload = index_bytes(records)
     fd, name = tempfile.mkstemp(prefix=".research-packets-", suffix=".json", dir=index.parent)
     try:
         with os.fdopen(fd, "wb") as stream:
@@ -612,13 +624,277 @@ def sync_packets(queue_root=DEFAULT_QUEUE, index_path=DEFAULT_INDEX, *, execute=
             "enriched": sum(p["status"] == "enriched" for p in results)}
 
 
+def replacement_git(root, *args, missing=False):
+    """Use the actual repository, with no caller-supplied Git repository overrides."""
+    environment = {k: v for k, v in os.environ.items() if not k.startswith("GIT_")}
+    environment["GIT_TERMINAL_PROMPT"] = "0"
+    result = subprocess.run(["git", "-C", str(root), *args], stdout=subprocess.PIPE,
+                            stderr=subprocess.PIPE, env=environment, timeout=35)
+    absent = missing and ((args[0] == "ls-files" and result.returncode == 1)
+                          or (args[0] == "cat-file" and result.returncode == 128
+                              and (b"does not exist in" in result.stderr
+                                   or b"exists on disk, but not in" in result.stderr)))
+    require(result.returncode == 0 or absent, "Unpublished replacement Git check failed")
+    return result.stdout if result.returncode == 0 else None
+
+
+def packet_source_hashes(record):
+    values = record.get("source_sha256", {})
+    result = {}
+    for key, suffix in (("html", ".html"), ("content", "/packet.json"), ("meta", "/packet_meta.json")):
+        matches = [value for name, value in values.items() if name.endswith(suffix)]
+        require(len(matches) == 1, "Unpublished candidate needs three exact source packet hashes")
+        result[key] = matches[0]
+    require(result["html"] == record["sha256"], "Unpublished HTML/source identity differs")
+    return result
+
+
+def replace_bytes(path, raw):
+    fd, temporary = tempfile.mkstemp(prefix=".packet-replacement-", dir=path.parent)
+    try:
+        with os.fdopen(fd, "wb") as stream:
+            stream.write(raw); stream.flush(); os.fsync(stream.fileno())
+        os.chmod(temporary, 0o644)
+        os.replace(temporary, path)
+    finally:
+        if os.path.exists(temporary):
+            os.unlink(temporary)
+
+
+def preserve_bytes(path, raw):
+    reject_symlinks(path)
+    if path.exists():
+        require(path.is_file() and path.read_bytes() == raw, "Preserved replacement evidence differs")
+    else:
+        with path.open("xb") as stream:
+            stream.write(raw); stream.flush(); os.fsync(stream.fileno())
+
+
+def unpublished_queue(queue_root, queue, episode):
+    require(not any((queue / name).exists() or (queue / name).is_symlink()
+                    for name in ("PACKET_DONE", "DONE", "SHORT_DONE", "LONGFORM_DONE")),
+            "A published/completed packet cannot be replaced")
+    archived = queue_root / "_done"
+    require(not (archived / episode).exists()
+            and not any(archived.glob(episode + "--*")), "Archived episodes cannot be replaced")
+
+
+def replace_unpublished_candidate(queue_root, index_path, episode, review_path, *, execute=False):
+    """Share the marker writer's queue lock, without waiting on another owner."""
+    require(episode and review_path, "Replacement requires one episode and an exact Terra review")
+    queue_root = reject_symlinks(queue_root)
+    queue = safe_path(queue_root, episode, must_exist=False)
+    require(queue.is_dir(), "Exact active READY queue required")
+    path = reject_symlinks(queue / ".packet-publication.lock")
+    fd = os.open(path, os.O_RDWR | os.O_CREAT | os.O_NOFOLLOW, 0o600)
+    try:
+        require(stat.S_ISREG(os.fstat(fd).st_mode), "Packet publication lock must be a regular file")
+        try:
+            fcntl.flock(fd, fcntl.LOCK_EX | fcntl.LOCK_NB)
+        except BlockingIOError:
+            raise ValueError("resource_busy: queue packet publication lock") from None
+        return _replace_unpublished_candidate(queue_root, index_path, episode, review_path, execute=execute)
+    finally:
+        os.close(fd)
+
+
+def _replace_unpublished_candidate(queue_root, index_path, episode, review_path, *, execute=False):
+    """Opt-in, reviewed SVG-only correction of one never-published local candidate.
+
+    The default importer remains create-only. This route refreshes origin/main
+    read-only and requires a Terra review binding the exact old index, old/new
+    three-file packet hashes and full source inventories, base commit, evidence,
+    and an outside-Git preservation directory. READY, handoff and packet source
+    bytes are unchanged; the outer wrapper uses the protocol's coordination lock.
+    """
+    require(episode and review_path, "Replacement requires one episode and an exact Terra review")
+    queue_root, index = reject_symlinks(queue_root), reject_symlinks(index_path)
+    require(queue_root.name == "_studio_queue", "Replacement requires the canonical queue root")
+    producer = queue_root.resolve().parent
+    scheduled = producer / "_studio_motion_codex/production/scheduled_runs"
+    review_path = reject_symlinks(review_path)
+    require(review_path.is_absolute() and review_path.resolve().is_relative_to(scheduled.resolve()),
+            "Replacement review must remain in the producer's scheduled run")
+    review_raw = review_path.read_bytes()
+    review = json_object(review_raw, "Replacement review")
+    reviewer = review.get("reviewer", review.get("reviewed_by", ""))
+    require(review.get("schema_version") == 1 and review.get("report_type") == REPLACEMENT_REPORT
+            and review.get("approved") is True and review.get("model") == "gpt-6.1-terra"
+            and isinstance(reviewer, str)
+            and re.fullmatch(r"Terra(?: 6\.1)? /root(?:/[a-z0-9_]+)+", reviewer),
+            "An actual exact Terra replacement approval is required")
+    require(review.get("episode_id") == episode, "Replacement review episode differs")
+    evidence = review.get("evidence")
+    require(isinstance(evidence, list) and len(evidence) >= 2,
+            "Replacement review must bind source-display and canonical queue-revision evidence")
+    evidence_paths, evidence_bindings = set(), []
+    for item in evidence:
+        path = reject_symlinks(item["path"])
+        require(path.is_absolute() and path.resolve().is_relative_to(producer)
+                and path.is_file() and sha256(path.read_bytes()) == item["sha256"],
+                "Replacement review evidence changed")
+        evidence_paths.add(str(path))
+        evidence_bindings.append((path, item["sha256"]))
+    require(len(evidence_paths) == len(evidence), "Duplicate replacement review evidence")
+    queue = safe_path(queue_root, episode, must_exist=False)
+    require(queue.is_dir() and queue.parent == queue_root, "Exact active READY queue required")
+    unpublished_queue(queue_root, queue, episode)
+    candidate = read_candidate(queue)
+    require(candidate["status"] == "validated", "A finalized READY replacement is required")
+    new = candidate["record"]
+    require(candidate["source_episode"] == episode and review.get("new_source_sha256") == new["source_sha256"]
+            and review.get("new_packet_sha256") == packet_source_hashes(new),
+            "Reviewed new packet/source hashes differ")
+    root = index.parent.parent.resolve()
+    require(index.resolve() == root / "data/research_packets.json", "Canonical site registry required")
+    require(replacement_git(root, "rev-parse", "--show-toplevel").decode().strip() == str(root),
+            "Unpublished replacement repository differs")
+    require(replacement_git(root, "remote", "get-url", "origin").decode().strip() == REPLACEMENT_ORIGIN,
+            "Unpublished replacement origin differs")
+    replacement_git(root, "fetch", "--no-tags", "origin", "main")
+    base = review.get("base_commit")
+    require(isinstance(base, str) and re.fullmatch(r"[0-9a-f]{40}", base)
+            and replacement_git(root, "rev-parse", "HEAD").decode().strip() == base
+            and replacement_git(root, "rev-parse", "refs/remotes/origin/main").decode().strip() == base,
+            "Fresh origin/main and HEAD must match the reviewed base")
+    html = safe_path(index.parent, new["html_file"])
+    relative_html = str(html.relative_to(root))
+    require(replacement_git(root, "ls-files", "--error-unmatch", "--", relative_html, missing=True) is None,
+            "Tracked packet HTML cannot be replaced")
+    require(not replacement_git(root, "log", "--all", "--format=%H", "--", relative_html).strip(),
+            "Packet HTML has Git history and is not unpublished")
+    for ref in ("HEAD", "refs/remotes/origin/main"):
+        require(replacement_git(root, "cat-file", "-e", ref + ":" + relative_html, missing=True) is None,
+                "Published packet HTML cannot be replaced")
+        document = json.loads(replacement_git(root, "show", ref + ":data/research_packets.json"))
+        require(not any(p["key"] == new["key"] or p["slug"] == new["slug"]
+                        for p in document["packets"]), "Published packet registry identity cannot be replaced")
+    preserve = reject_symlinks(review["preserve_directory"])
+    require(preserve.is_absolute() and preserve.resolve().is_relative_to(scheduled.resolve())
+            and not preserve.resolve().is_relative_to(root), "Preserve old bytes outside the Git checkout")
+    lock = os.open(html.parent, os.O_RDONLY)
+    try:
+        fcntl.flock(lock, fcntl.LOCK_EX)
+        journal_path = reject_symlinks(preserve / "journal.json")
+        journal = json_object(journal_path.read_bytes(), "Replacement journal") if journal_path.exists() else None
+        if journal:
+            require(journal.get("review_sha256") == sha256(review_raw)
+                    and journal.get("episode_id") == episode, "Replacement journal belongs to another approval")
+            old_index = safe_path(preserve, "old-index.json").read_bytes()
+            old_html = safe_path(preserve, "old-packet.html").read_bytes()
+        else:
+            old_index, old_html = index.read_bytes(), html.read_bytes()
+        require(sha256(old_index) == review.get("expected_index_sha256"), "Reviewed registry hash changed")
+        document = json_object(old_index, "Old registry")
+        require(document.get("schema_version") == 1 and isinstance(document.get("packets"), list),
+                "Invalid preserved registry")
+        records = [validate_record(p) for p in document["packets"]]
+        matched = [p for p in records if p["key"] == new["key"] or p["slug"] == new["slug"]]
+        require(len(matched) == 1, "Exactly one unpublished registry candidate required")
+        old = matched[0]
+        require(review.get("old_source_sha256") == old.get("source_sha256")
+                and review.get("old_packet_sha256") == packet_source_hashes(old)
+                and sha256(old_html) == old["sha256"], "Reviewed old packet/source hashes differ")
+        changing = {"sha256", "source_sha256", "source_staged_at"}
+        require({k: v for k, v in old.items() if k not in changing} ==
+                {k: v for k, v in new.items() if k not in changing},
+                "Replacement changed packet identity, financial summary, links or other metadata")
+        svg = re.compile(rb"<svg\b[^>]*>.*?</svg\s*>", re.I | re.S)
+        old_svgs, new_svgs = svg.findall(old_html), svg.findall(candidate["html_bytes"])
+        require(old_svgs and len(old_svgs) == len(new_svgs)
+                and svg.sub(b"<svg/>\n", old_html) == svg.sub(b"<svg/>\n", candidate["html_bytes"]),
+                "Only source-reviewed SVG display content may change")
+        require(old_html != candidate["html_bytes"], "Unpublished replacement must change reviewed SVG bytes")
+        updated = [new if p["key"] == old["key"] else p for p in records]
+        next_index = index_bytes(updated)
+        current_index, current_html = index.read_bytes(), html.read_bytes()
+        if journal:
+            require(journal.get("old_index_sha256") == sha256(old_index)
+                    and journal.get("new_index_sha256") == sha256(next_index)
+                    and journal.get("old_html_sha256") == sha256(old_html)
+                    and journal.get("new_html_sha256") == new["sha256"], "Replacement journal hashes differ")
+            require(current_index in (old_index, next_index) and current_html in (old_html, candidate["html_bytes"]),
+                    "Replacement state requires explicit reconciliation")
+        else:
+            require(current_index == old_index and current_html == old_html, "Unpublished candidate changed")
+        complete = current_index == next_index and current_html == candidate["html_bytes"]
+        require(complete or current_index == old_index, "Unexpected partial replacement state")
+        result = {"mode": "execute" if execute else "plan", "network_called": True,
+                  "network_scope": "read-only origin/main refresh", "execution_ready": True,
+                  "status": "already_replaced" if complete else "ready_to_replace_unpublished",
+                  "episode_id": episode, "old_packet_sha256": packet_source_hashes(old),
+                  "new_packet_sha256": packet_source_hashes(new), "other_packet_records_preserved": len(records) - 1,
+                  "review_sha256": sha256(review_raw), "preserve_directory": str(preserve),
+                  "expected_index_sha256": sha256(old_index), "new_index_sha256": sha256(next_index)}
+        unchanged(candidate)
+        require(review_path.read_bytes() == review_raw, "Replacement approval changed")
+
+        def recheck_before_mutation():
+            # The caller still holds the queue's .packet-publication.lock and
+            # the site directory lock. Revalidate after Git/network/backup IO.
+            unpublished_queue(queue_root, queue, episode)
+            require(replacement_git(root, "rev-parse", "HEAD").decode().strip() == base
+                    and replacement_git(root, "rev-parse", "refs/remotes/origin/main").decode().strip() == base,
+                    "Reviewed Git base changed before replacement")
+            require(replacement_git(root, "ls-files", "--error-unmatch", "--", relative_html, missing=True) is None,
+                    "Packet was tracked before replacement")
+            require(not replacement_git(root, "log", "--all", "--format=%H", "--", relative_html).strip(),
+                    "Packet entered Git history before replacement")
+            unchanged(candidate)
+            require(review_path.read_bytes() == review_raw and all(
+                sha256(reject_symlinks(p).read_bytes()) == digest for p, digest in evidence_bindings),
+                "Replacement approval/evidence changed before execution")
+
+        if execute and not complete:
+            recheck_before_mutation()
+            preserve.mkdir(parents=True, exist_ok=True)
+            preserve_bytes(preserve / "old-index.json", old_index)
+            preserve_bytes(preserve / "old-packet.html", old_html)
+            preserve_bytes(preserve / "review.json", review_raw)
+            journal = {"episode_id": episode, "review_sha256": sha256(review_raw),
+                       "old_index_sha256": sha256(old_index), "new_index_sha256": sha256(next_index),
+                       "old_html_sha256": sha256(old_html), "new_html_sha256": new["sha256"], "phase": "prepared"}
+            replace_bytes(journal_path, (json.dumps(journal, indent=2) + "\n").encode())
+            recheck_before_mutation()
+            require(index.read_bytes() == old_index and html.read_bytes() in (old_html, candidate["html_bytes"]),
+                    "Candidate changed before replacement")
+            replace_bytes(html, candidate["html_bytes"])
+            recheck_before_mutation()
+            require(review_path.read_bytes() == review_raw and index.read_bytes() == old_index
+                    and html.read_bytes() == candidate["html_bytes"],
+                    "Replacement inputs changed before registry commit")
+            atomic_index(index, updated)
+            journal["phase"] = "complete"
+            replace_bytes(journal_path, (json.dumps(journal, indent=2) + "\n").encode())
+            result["status"] = "replaced_unpublished"
+        return result
+    finally:
+        os.close(lock)
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--queue-root", type=Path, default=DEFAULT_QUEUE)
     parser.add_argument("--index", type=Path, default=DEFAULT_INDEX)
     parser.add_argument("--episode", help="Optionally select one exact READY episode ID")
     parser.add_argument("--execute", action="store_true", help="Copy validated HTML and atomically update registry")
+    parser.add_argument("--replace-unpublished-candidate", action="store_true",
+                        help="Opt in to one exact Terra-reviewed, never-published SVG display correction")
+    parser.add_argument("--replacement-review", type=Path, help="Exact scheduled-run Terra replacement approval")
     args = parser.parse_args()
+    if args.replace_unpublished_candidate:
+        if not args.episode or not args.replacement_review:
+            parser.error("--replace-unpublished-candidate requires --episode and --replacement-review")
+        try:
+            result = replace_unpublished_candidate(args.queue_root, args.index, args.episode,
+                                                   args.replacement_review, execute=args.execute)
+        except (ValueError, OSError, KeyError, TypeError, subprocess.SubprocessError) as exc:
+            print(json.dumps({"status": "blocked", "error": str(exc)}))
+            return 1
+        print(json.dumps(result, ensure_ascii=False, indent=2))
+        return 0
+    if args.replacement_review:
+        parser.error("--replacement-review requires --replace-unpublished-candidate")
     result = sync_packets(args.queue_root, args.index, execute=args.execute, episode=args.episode)
     print(json.dumps(result, ensure_ascii=False, indent=2))
     return 1 if result["errors"] else 0
