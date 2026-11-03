@@ -1,5 +1,8 @@
 from copy import deepcopy
+import json
+import tempfile
 from datetime import datetime, timedelta, timezone
+from pathlib import Path
 import unittest
 from unittest.mock import patch, Mock
 
@@ -177,6 +180,80 @@ class StatementTests(unittest.TestCase):
 
 
 class PageTests(unittest.TestCase):
+    def test_missing_and_out_of_window_board_do_not_deny_issuer_confirmation(self):
+        from app import app, build_show_library
+        from production_board import load_board
+        context = {"shows_data": {}, "show_library": build_show_library([
+            {"ticker": "QCOM", "title": "Earnings", "quarter": "Q3 FY2026",
+             "youtube_url": "https://youtu.be/CurrentVid1", "published_at": "2026-09-09"}])}
+        provider = profile("QCOM")
+        provider.update(next_earnings="2026-11-20", next_earnings_end="2026-11-20")
+        original = deepcopy(provider)
+        now = datetime.fromisoformat("2026-11-03T23:00:00+00:00")
+        with tempfile.TemporaryDirectory() as folder:
+            path = Path(folder) / "board.json"
+            path.write_text(json.dumps({
+                "schema": "charged-alpha-public-production/1", "upcoming": [{
+                    "ticker": "QCOM", "report_date": "2026-11-20", "date_status": "Issuer-announced",
+                    "source_url": "https://investor.qualcomm.com/earnings",
+                    "report_time_label": "After U.S. market close"}]}))
+            outside = load_board(path, now=now)
+            missing = load_board(Path(folder) / "missing.json", now=now)
+        self.assertEqual(outside["upcoming"][0]["date_status"], "Issuer-announced")
+        self.assertFalse(any(day["items"] for day in outside["days"]))
+        self.assertEqual(missing["calendar_status"], "stale")
+        for board in [outside, missing]:
+            with self.subTest(board=board["calendar_status"]), \
+                    patch("app._shows_context", return_value=context), \
+                    patch("app.read_registry", return_value={"profiles": {"QCOM": provider}}), \
+                    patch("app.load_board", return_value=board):
+                response = app.test_client().get("/shows/qcom")
+                self.assertEqual(response.status_code, 200)
+                page = response.get_data(as_text=True)
+                self.assertIn("provider estimate; issuer confirmation unavailable here", page)
+                self.assertNotIn("not issuer-confirmed", page)
+                self.assertNotIn("(issuer-confirmed;", page)
+        self.assertEqual(provider, original)
+
+    def test_earnings_confirmation_requires_exact_ticker_date_and_public_issuer_source(self):
+        from app import app, build_show_library
+        context = {"shows_data": {}, "show_library": build_show_library([
+            {"ticker": "QCOM", "title": "Earnings", "quarter": "Q3 FY2026",
+             "youtube_url": "https://youtu.be/CurrentVid1", "published_at": "2026-09-09"}])}
+        snapshot = profile("QCOM")
+        snapshot.update(next_earnings="2026-11-04", next_earnings_end="2026-11-04")
+        original = deepcopy(snapshot)
+        confirmation = {"ticker": "QCOM", "report_date": "2026-11-04",
+                        "report_time_label": "After U.S. market close", "date_status": "Issuer-announced",
+                        "source_url": "https://investor.qualcomm.com/earnings"}
+        cases = [({}, True), ({"ticker": "RVMD"}, False),
+                 ({"report_date": "2026-11-05"}, False),
+                 ({"date_status": "Calendar estimate"}, False),
+                 ({"source_url": None}, False),
+                 ({"source_url": "file:///Users/private/evidence.json"}, False)]
+        for changes, confirmed in cases:
+            with self.subTest(changes=changes), patch("app._shows_context", return_value=context), \
+                    patch("app.read_registry", return_value={"profiles": {"QCOM": snapshot}}), \
+                    patch("app.load_board", return_value={"days": [{"items": [{**confirmation, **changes}]}]}):
+                response = app.test_client().get("/shows/qcom")
+                self.assertEqual(response.status_code, 200)
+                page = response.get_data(as_text=True)
+                self.assertEqual("(issuer-confirmed;" in page, confirmed)
+                self.assertEqual("(provider estimate; issuer confirmation unavailable here)" in page, not confirmed)
+                if confirmed:
+                    self.assertIn('href="https://investor.qualcomm.com/earnings"', page)
+                    self.assertIn("After U.S. market close", page)
+        self.assertEqual(snapshot, original)
+        with patch("app._shows_context", return_value=context), \
+                patch("app.read_registry", return_value={"profiles": {"QCOM": snapshot}}), \
+                patch("app.load_board", return_value={"days": [{"items": [confirmation, confirmation]}]}):
+            self.assertIn("provider estimate; issuer confirmation unavailable here", app.test_client().get("/shows/qcom").get_data(as_text=True))
+        snapshot["next_earnings_end"] = "2026-11-05"
+        with patch("app._shows_context", return_value=context), \
+                patch("app.read_registry", return_value={"profiles": {"QCOM": snapshot}}), \
+                patch("app.load_board", side_effect=AssertionError("A date range cannot inherit one confirmation")):
+            self.assertIn("provider estimate; issuer confirmation unavailable here", app.test_client().get("/shows/qcom").get_data(as_text=True))
+
     def test_financial_comparison_fx_uses_only_fresh_valid_snapshot_rates(self):
         from app import _financial_comparison_fx
         now = datetime.now(timezone.utc)

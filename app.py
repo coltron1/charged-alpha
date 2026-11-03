@@ -81,7 +81,7 @@ from auth import (
 from chart_storage import save_chart_state, load_chart_state, list_user_charts, delete_chart_state
 from research_packets import load_packets, packet_html_path, packet_sort_key
 from research_reader import reader_html
-from production_board import load_board
+from production_board import load_board, public_url
 from stock_research import read_registry, comparison, format_value, group_episode_archive, age_days
 from stock_research_data import financial_status
 from stock_comparison_data import search_stocks, custom_profile_status, SYMBOL as COMPARISON_SYMBOL
@@ -2982,6 +2982,21 @@ def show_stock_detail_page(ticker_slug):
     stock_detail.setdefault("employees", None)
     stock_detail.setdefault("market_data_source", "unavailable")
 
+    # Keep the provider snapshot intact; attach only an exact, public issuer
+    # confirmation for the same ticker and single earnings date at render time.
+    earnings_confirmation = None
+    earnings_date = stock_detail.get("next_earnings")
+    if earnings_date and stock_detail.get("next_earnings_end", earnings_date) == earnings_date:
+        confirmations = [
+            row for day in load_board().get("days", []) for row in day.get("items", [])
+            if row.get("ticker") == show_stock["ticker"]
+            and row.get("report_date") == earnings_date
+            and row.get("date_status") == "Issuer-announced"
+            and public_url(row.get("source_url"))
+        ]
+        if len(confirmations) == 1:
+            earnings_confirmation = confirmations[0]
+
     for key in (
         "price",
         "change",
@@ -3049,6 +3064,7 @@ def show_stock_detail_page(ticker_slug):
         "show_stock_detail.html",
         show_stock=page_show_stock,
         stock_detail=stock_detail,
+        earnings_confirmation=earnings_confirmation,
         competitor_analysis=competitor_analysis,
         selected_peers=", ".join(custom or []),
         episode_archive=episode_archive,
