@@ -1,6 +1,6 @@
 {
   "schema": "charged-alpha-public-production/1",
-  "updated_at": "2026-11-02T20:56:20.300514-06:00",
+  "updated_at": "2026-11-02T22:23:37.572733-06:00",
   "calendar_updated_at": "2026-11-02T20:33:59.750166-06:00",
   "calendar_status": "fresh",
   "daily_target": 10,
@@ -1339,16 +1339,6 @@
       "stock_url": "/shows/wmb"
     },
     {
-      "ticker": "BWXT",
-      "company": "BWX Technologies, Inc.",
-      "report_date": "2026-11-02",
-      "report_time_label": "Time unconfirmed",
-      "planned_date": "2026-11-03",
-      "date_status": "Calendar estimate",
-      "source_url": null,
-      "stock_url": "/shows/bwxt"
-    },
-    {
       "ticker": "SMMT",
       "company": "Summit Therapeutics Inc.",
       "report_date": "2026-11-02",
@@ -1433,7 +1423,7 @@
       "company": "V2X, Inc.",
       "report_date": "2026-11-02",
       "report_time_label": "Time unconfirmed",
-      "planned_date": "",
+      "planned_date": "2026-11-03",
       "date_status": "Calendar estimate",
       "source_url": null,
       "stock_url": null
@@ -1577,16 +1567,6 @@
       "date_status": "Calendar estimate",
       "source_url": null,
       "stock_url": null
-    },
-    {
-      "ticker": "AEHR",
-      "company": "Aehr Test Systems",
-      "report_date": "2026-11-02",
-      "report_time_label": "After U.S. market close",
-      "planned_date": "",
-      "date_status": "Issuer-announced",
-      "source_url": "https://www.aehr.com/2026/10/aehr-test-systems-to-announce-first-quarter-fiscal-2027-financial-results-on-november-2-2026/",
-      "stock_url": "/shows/aehr"
     },
     {
       "ticker": "STRC",
