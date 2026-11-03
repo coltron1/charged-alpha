@@ -6034,6 +6034,64 @@
       "tables": 36
     },
     {
+      "key": "TSEM:Q3-2026",
+      "year": 2026,
+      "quarter": 3,
+      "fiscal": false,
+      "slug": "tsem-q3-2026",
+      "ticker": "TSEM",
+      "company": "Tower Semiconductor",
+      "period": "Q3 2026",
+      "canonical_url": "https://chargedalpha.com/research/tsem-q3-2026",
+      "title": "Tower (TSEM): Customers Fund Capacity. What Is the 2028 Promise Worth?",
+      "page_title": "TSEM Q3 2026 Research Packet — Charged Alpha",
+      "description": "Customer advances support Tower’s photonics expansion, but the $3.6 billion 2028 model still needs manufacturing delivery and common-owner cash.",
+      "sha256": "07c96ea9575859f0475beb23434f18ac6cb9178efcd3800a7b00fdec32dc5646",
+      "html_file": "research_packets/tsem-q3-2026.html",
+      "source_episode": "TSEM-Q3-2026",
+      "source_staged_at": "2026-11-03T00:19:04Z",
+      "source_sha256": {
+        "READY": "6cc9bce03a12e5b0fa3e397714d56e2da61a82c3e0aa9cce57ba99e4b1151f51",
+        "handoff.json": "7ea0a5bf06ff8ea7f435b0ed4e1f758b98e5bc88f5ae9c2fc57db12d567a0380",
+        "packet/tsem-q3-2026-research-packet.html": "07c96ea9575859f0475beb23434f18ac6cb9178efcd3800a7b00fdec32dc5646",
+        "packet/packet_meta.json": "edd06b895846aebf20be2d442a6a51924e86c727a3daf384d1b52df75a76a368",
+        "packet/packet.json": "24ca9187dbfe33688c2a1661165b29ff8523857ac72f80061e0e2aba32640971"
+      },
+      "primary_youtube_long": "BGyQAJCwj5Y",
+      "primary_youtube_short": null,
+      "youtube_studio": null,
+      "youtube_studio_short": null,
+      "what_changed": {
+        "summary": "Customer advances support Tower’s photonics expansion, but the $3.6 billion 2028 model still needs manufacturing delivery and common-owner cash.",
+        "items": [
+          {
+            "title": "The customer pays early:",
+            "detail": "Nine-month operating cash includes $305.4M of net customer advances. Those receipts support future supply; they are not extra profit."
+          },
+          {
+            "title": "The product mix has changed:",
+            "detail": "RF infrastructure is 56% of Q3 revenue against 27% a year earlier. It includes more than silicon photonics, so do not call the entire category SiPho."
+          },
+          {
+            "title": "There are two Japan tracks:",
+            "detail": "The $3.6B 2028 model follows track one; the additional fab is expected to contribute from 2029. The combined net investment plan is about $3B."
+          },
+          {
+            "title": "Price has changed more than the promise:",
+            "detail": "The completed close is $155.32, down 35.2% from the prior episode’s $239.53 reference. The old $160 fair value was a model, not a guaranteed floor."
+          },
+          {
+            "title": "Our decision is explicit:",
+            "detail": "HOLD at a $150 base, $90–220 range and $152.50 weighted value. High execution uncertainty requires a $120 fresh-buy threshold if the thesis remains intact."
+          }
+        ]
+      },
+      "source_published": "November 2, 2026",
+      "words": 6680,
+      "figures": 18,
+      "tables": 34
+    },
+    {
       "key": "TSM:Q3-2026",
       "year": 2026,
       "quarter": 3,

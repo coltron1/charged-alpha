@@ -10,6 +10,24 @@
   },
   "episodes": [
     {
+      "ticker": "TSEM",
+      "company": "Tower Semiconductor Ltd.",
+      "sector": "Technology",
+      "quarter": "Q3 2026",
+      "episode_number": "",
+      "title": "TSEM Stock: Customers Fund Capacity. What Is the 2028 Promise Worth? | Q3 2026",
+      "published_at": "2026-11-02T23:56:05+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=BGyQAJCwj5Y",
+      "spotify_url": "https://open.spotify.com/episode/5q8mfDhN2ynpQ7N7LBKJFb",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/tsem-stock-customers-fund-capacity-what-is-the-2028-promise-worth-q3-2026/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
       "ticker": "STRL",
       "company": "Sterling Infrastructure",
       "sector": "Industrials",
@@ -49257,7 +49275,7 @@
       ]
     }
   ],
-  "last_synced_at": "2026-11-02T12:15:54-06:00",
+  "last_synced_at": "2026-11-02T18:07:41-06:00",
   "stock_metadata": {
     "A": {
       "company": "Agilent Technologies, Inc.",
