@@ -3830,6 +3830,64 @@
       "tables": 30
     },
     {
+      "key": "GLW:Q3-2026",
+      "year": 2026,
+      "quarter": 3,
+      "fiscal": false,
+      "slug": "glw-q3-2026",
+      "ticker": "GLW",
+      "company": "Corning",
+      "period": "Q3 2026",
+      "canonical_url": "https://chargedalpha.com/research/glw-q3-2026",
+      "title": "GLW: Customers Fund the Buildout. When Does the Cash Become Corning’s?",
+      "page_title": "GLW Q3 2026 Research Packet — Charged Alpha",
+      "description": "Optical sales grew 44%, but Corning’s cash, hedge adjustments and customer-funded capacity determine what the growth is worth.",
+      "sha256": "bad87535b46c8e15c8d5c13f1a87a95e29b408d2944d5131c2be895c38f93ec7",
+      "html_file": "research_packets/glw-q3-2026.html",
+      "source_episode": "GLW-Q3-2026",
+      "source_staged_at": "2026-11-03T00:52:01Z",
+      "source_sha256": {
+        "READY": "63974c43c6152e466fcd9582432691649ed44ffeb3a7511eb017ac6936efe5aa",
+        "handoff.json": "fe4ea3b61481a11930a424549a9ca3704429089e81cbdbd1d891ebcdea889413",
+        "packet/glw-q3-2026-research-packet.html": "bad87535b46c8e15c8d5c13f1a87a95e29b408d2944d5131c2be895c38f93ec7",
+        "packet/packet_meta.json": "87d797fe1564658fa623f42d8de384d4c366e9a105b5bc31df2db3aa9c495b10",
+        "packet/packet.json": "66bc9d8ec8533de3e4305a60fd826a5f13635fca856f4180afa53bd850b40676"
+      },
+      "primary_youtube_long": "4MBtkYc1ktA",
+      "primary_youtube_short": null,
+      "youtube_studio": null,
+      "youtube_studio_short": null,
+      "what_changed": {
+        "summary": "Optical sales grew 44%, but Corning’s cash, hedge adjustments and customer-funded capacity determine what the growth is worth.",
+        "items": [
+          {
+            "title": "Optical is doing the heavy lifting.",
+            "detail": "Sales rose 44% and segment net income rose 80%; optical supplied a computed 89.9% of the total increase in core sales."
+          },
+          {
+            "title": "Core comparability changed in April.",
+            "detail": "Contractual hedge rates now apply only to exposure actually hedged; historical constant-currency results were not rewritten under that methodology."
+          },
+          {
+            "title": "Cash flow has three different answers.",
+            "detail": "Q3 operating cash flow less capex was $516M; adding $145M hedge receipts gives reported adjusted FCF of $661M; also subtracting $43M hedge premiums gives a $618M analytical cash view."
+          },
+          {
+            "title": "Customer funding reduces risk and creates obligations.",
+            "detail": "The nine-month deposit/incentive cash movement was +$639M, while Q3 alone was −$70M. Earlier cash becomes a credit against later customer receivables."
+          },
+          {
+            "title": "The next hurdle is profitable capacity absorption.",
+            "detail": "Q4 core guidance is $5.2–5.3B sales and $0.96–1.00 EPS. Solar’s ramp and recurring cash conversion must validate the ambitious long-term plan."
+          }
+        ]
+      },
+      "source_published": "November 2, 2026",
+      "words": 6973,
+      "figures": 18,
+      "tables": 35
+    },
+    {
       "key": "GOOGL:Q3-2026",
       "year": 2026,
       "quarter": 3,
