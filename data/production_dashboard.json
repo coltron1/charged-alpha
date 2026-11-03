@@ -1,20 +1,21 @@
 {
   "schema": "charged-alpha-public-production/1",
-  "updated_at": "2026-11-03T13:25:18.174597-06:00",
+  "updated_at": "2026-11-03T14:13:40.817304-06:00",
   "calendar_updated_at": "2026-11-03T13:00:37.560996-06:00",
   "calendar_status": "fresh",
   "daily_target": 10,
-  "active": [
+  "active": [],
+  "history": [
     {
       "ticker": "AEHR",
-      "company": "Aehr Test Systems",
+      "company": "Aehr Test Systems, Inc.",
       "period": "Q1 FY2027",
-      "status_label": "Building now",
-      "stage_label": "Production in progress",
+      "completed_at": "2026-11-03T14:11:45.636131-06:00",
+      "video_url": "https://youtu.be/h6HWUoP5xys",
+      "short_url": "https://youtu.be/TWhaHzKcdnk",
+      "packet_url": "https://chargedalpha.com/research/aehr-q1-fy2027",
       "stock_url": "/shows/aehr"
-    }
-  ],
-  "history": [
+    },
     {
       "ticker": "BWXT",
       "company": "BWX Technologies",
