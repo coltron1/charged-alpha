@@ -19,7 +19,7 @@
       "published_at": "2026-11-03T00:46:49+00:00",
       "status": "youtube_podcast_complete",
       "youtube_url": "https://www.youtube.com/watch?v=4MBtkYc1ktA",
-      "spotify_url": "",
+      "spotify_url": "https://open.spotify.com/episode/6bGz1sPzbMZ0wBHKirRFYo",
       "apple_url": "",
       "google_url": "",
       "iheart_url": "",
@@ -36101,6 +36101,21 @@
       "description": "Fast clips that point viewers into full research videos and stock pages.",
       "videos": [
         {
+          "title": "GLW Stock: Corning Q3 2026—Who Keeps the Cash? #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/x7EdiZyE1XI",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-11-02T18:38:37-08:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "GLW"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage.",
+          "earnings_youtube_url": "https://www.youtube.com/watch?v=4MBtkYc1ktA",
+          "earnings_match": "stock_period_date"
+        },
+        {
           "title": "TSEM Stock: Tower Semiconductor Q3 2026 — Customers Pay First #Shorts",
           "youtube_url": "https://www.youtube.com/shorts/RQpPhoFhl5Y",
           "spotify_url": "",
@@ -49308,7 +49323,7 @@
       ]
     }
   ],
-  "last_synced_at": "2026-11-02T18:54:49-06:00",
+  "last_synced_at": "2026-11-02T20:42:46-06:00",
   "stock_metadata": {
     "A": {
       "company": "Agilent Technologies, Inc.",

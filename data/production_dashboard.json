@@ -1,11 +1,21 @@
 {
   "schema": "charged-alpha-public-production/1",
-  "updated_at": "2026-11-02T19:12:05.507305-06:00",
-  "calendar_updated_at": "2026-11-02T16:39:35.242688-06:00",
+  "updated_at": "2026-11-02T20:56:20.300514-06:00",
+  "calendar_updated_at": "2026-11-02T20:33:59.750166-06:00",
   "calendar_status": "fresh",
   "daily_target": 10,
   "active": [],
   "history": [
+    {
+      "ticker": "GLW",
+      "company": "Corning Incorporated",
+      "period": "Q3 2026",
+      "completed_at": "2026-11-02T20:44:53.975772-06:00",
+      "video_url": "https://youtu.be/4MBtkYc1ktA",
+      "short_url": "https://youtu.be/x7EdiZyE1XI",
+      "packet_url": "https://chargedalpha.com/research/glw-q3-2026",
+      "stock_url": "/shows/glw"
+    },
     {
       "ticker": "TSEM",
       "company": "Tower Semiconductor Ltd.",
@@ -1579,6 +1589,16 @@
       "stock_url": "/shows/aehr"
     },
     {
+      "ticker": "STRC",
+      "company": "Strategy Inc",
+      "report_date": "2026-11-02",
+      "report_time_label": "Time unconfirmed",
+      "planned_date": "",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": null
+    },
+    {
       "ticker": "FOXA",
       "company": "Fox Corporation",
       "report_date": "2026-11-02",
@@ -1727,16 +1747,6 @@
       "date_status": "Calendar estimate",
       "source_url": null,
       "stock_url": "/shows/pltr"
-    },
-    {
-      "ticker": "XENE",
-      "company": "Xenon Pharmaceuticals Inc.",
-      "report_date": "2026-11-02",
-      "report_time_label": "Time unconfirmed",
-      "planned_date": "",
-      "date_status": "Calendar estimate",
-      "source_url": null,
-      "stock_url": null
     },
     {
       "ticker": "ROKU",
@@ -2259,8 +2269,28 @@
       "stock_url": null
     },
     {
+      "ticker": "FISK",
+      "company": "Empire State Realty OP, L.P.",
+      "report_date": "2026-11-02",
+      "report_time_label": "Time unconfirmed",
+      "planned_date": "",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": null
+    },
+    {
       "ticker": "IIPR",
       "company": "Innovative Industrial Properties, Inc.",
+      "report_date": "2026-11-02",
+      "report_time_label": "Time unconfirmed",
+      "planned_date": "",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": null
+    },
+    {
+      "ticker": "ESBA",
+      "company": "Empire State Realty OP, L.P.",
       "report_date": "2026-11-02",
       "report_time_label": "Time unconfirmed",
       "planned_date": "",
@@ -2277,6 +2307,16 @@
       "date_status": "Calendar estimate",
       "source_url": null,
       "stock_url": "/shows/nssc"
+    },
+    {
+      "ticker": "OGCP",
+      "company": "Empire State Realty OP, L.P.",
+      "report_date": "2026-11-02",
+      "report_time_label": "Time unconfirmed",
+      "planned_date": "",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": null
     },
     {
       "ticker": "ALX",
@@ -2461,6 +2501,16 @@
     {
       "ticker": "FISN",
       "company": "Deep Fission, Inc.",
+      "report_date": "2026-11-02",
+      "report_time_label": "Time unconfirmed",
+      "planned_date": "",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": null
+    },
+    {
+      "ticker": "PAMT",
+      "company": "Pamt Corp.",
       "report_date": "2026-11-02",
       "report_time_label": "Time unconfirmed",
       "planned_date": "",
@@ -6571,6 +6621,16 @@
     {
       "ticker": "BTU",
       "company": "Peabody Energy Corporation",
+      "report_date": "2026-11-04",
+      "report_time_label": "Time unconfirmed",
+      "planned_date": "",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": null
+    },
+    {
+      "ticker": "TGB",
+      "company": "Trekor Metals Limited",
       "report_date": "2026-11-04",
       "report_time_label": "Time unconfirmed",
       "planned_date": "",
