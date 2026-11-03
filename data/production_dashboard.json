@@ -1,6 +1,6 @@
 {
   "schema": "charged-alpha-public-production/1",
-  "updated_at": "2026-11-03T13:01:08.274136-06:00",
+  "updated_at": "2026-11-03T13:25:18.174597-06:00",
   "calendar_updated_at": "2026-11-03T13:00:37.560996-06:00",
   "calendar_status": "fresh",
   "daily_target": 10,
@@ -15,6 +15,16 @@
     }
   ],
   "history": [
+    {
+      "ticker": "BWXT",
+      "company": "BWX Technologies",
+      "period": "Q3 2026",
+      "completed_at": "2026-11-03T13:25:09.626602-06:00",
+      "video_url": "https://youtu.be/YRr1b9PZy94",
+      "short_url": "https://youtu.be/hK7w8G7O6vY",
+      "packet_url": "https://chargedalpha.com/research/bwxt-q3-2026",
+      "stock_url": "/shows/bwxt"
+    },
     {
       "ticker": "GLW",
       "company": "Corning Incorporated",

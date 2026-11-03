@@ -10,6 +10,24 @@
   },
   "episodes": [
     {
+      "ticker": "AEHR",
+      "company": "Aehr Test Systems, Inc.",
+      "sector": "Technology",
+      "quarter": "Q1 FY2027",
+      "episode_number": "",
+      "title": "AEHR Stock: Record Sales, Negative Cash Flow — Can the AI Ramp Pay? | Q1 FY2027 Earnings",
+      "published_at": "2026-11-03T19:16:28+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=h6HWUoP5xys",
+      "spotify_url": "",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/aehr-stock-record-sales-negative-cash-flow-%e2%80%94-can-the-ai-ramp-pay-q1-fy2027-earnings/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
       "ticker": "BWXT",
       "company": "BWX Technologies",
       "sector": "Industrials",
@@ -36119,6 +36137,21 @@
       "description": "Fast clips that point viewers into full research videos and stock pages.",
       "videos": [
         {
+          "title": "BWXT Stock: Q3 2026 Cash Improved—Who Keeps It? #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/hK7w8G7O6vY",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-11-03T19:19:49+00:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "BWXT"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage.",
+          "earnings_youtube_url": "https://www.youtube.com/watch?v=YRr1b9PZy94",
+          "earnings_match": "stock_period_date"
+        },
+        {
           "title": "GLW Stock: Corning Q3 2026—Who Keeps the Cash? #Shorts",
           "youtube_url": "https://www.youtube.com/shorts/x7EdiZyE1XI",
           "spotify_url": "",
@@ -49341,7 +49374,7 @@
       ]
     }
   ],
-  "last_synced_at": "2026-11-03T13:01:18-06:00",
+  "last_synced_at": "2026-11-03T13:26:45-06:00",
   "stock_metadata": {
     "A": {
       "company": "Agilent Technologies, Inc.",
