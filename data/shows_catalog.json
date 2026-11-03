@@ -10,6 +10,24 @@
   },
   "episodes": [
     {
+      "ticker": "GLW",
+      "company": "Corning Incorporated",
+      "sector": "Technology",
+      "quarter": "Q3 2026",
+      "episode_number": "",
+      "title": "GLW Stock: Customers Fund the Factories—Who Keeps the Cash? — Q3 2026",
+      "published_at": "2026-11-03T00:46:49+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=4MBtkYc1ktA",
+      "spotify_url": "",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/glw-stock-customers-fund-the-factories%e2%80%94who-keeps-the-cash-%e2%80%94-q3-2026/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
       "ticker": "TSEM",
       "company": "Tower Semiconductor Ltd.",
       "sector": "Technology",
@@ -36083,6 +36101,21 @@
       "description": "Fast clips that point viewers into full research videos and stock pages.",
       "videos": [
         {
+          "title": "TSEM Stock: Tower Semiconductor Q3 2026 — Customers Pay First #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/RQpPhoFhl5Y",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-11-02T16:44:12-08:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "TSEM"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage.",
+          "earnings_youtube_url": "https://www.youtube.com/watch?v=BGyQAJCwj5Y",
+          "earnings_match": "stock_period_date"
+        },
+        {
           "title": "STRL Stock: Sterling Infrastructure Q3 2026 — The Cash Collection Test #Shorts",
           "youtube_url": "https://www.youtube.com/shorts/W6Zsy_VCdp0",
           "spotify_url": "",
@@ -49275,7 +49308,7 @@
       ]
     }
   ],
-  "last_synced_at": "2026-11-02T18:07:41-06:00",
+  "last_synced_at": "2026-11-02T18:54:49-06:00",
   "stock_metadata": {
     "A": {
       "company": "Agilent Technologies, Inc.",

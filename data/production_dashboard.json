@@ -1,20 +1,21 @@
 {
   "schema": "charged-alpha-public-production/1",
-  "updated_at": "2026-11-02T18:09:33.726914-06:00",
+  "updated_at": "2026-11-02T19:12:05.507305-06:00",
   "calendar_updated_at": "2026-11-02T16:39:35.242688-06:00",
   "calendar_status": "fresh",
   "daily_target": 10,
-  "active": [
-    {
-      "ticker": "GLW",
-      "company": "Corning Inc",
-      "period": "Q3 2026",
-      "status_label": "Building now",
-      "stage_label": "Finishing episode",
-      "stock_url": "/shows/glw"
-    }
-  ],
+  "active": [],
   "history": [
+    {
+      "ticker": "TSEM",
+      "company": "Tower Semiconductor Ltd.",
+      "period": "Q3 2026",
+      "completed_at": "2026-11-02T19:08:11.979782-06:00",
+      "video_url": "https://youtu.be/BGyQAJCwj5Y",
+      "short_url": "https://youtu.be/RQpPhoFhl5Y",
+      "packet_url": "https://chargedalpha.com/research/tsem-q3-2026",
+      "stock_url": "/shows/tsem"
+    },
     {
       "ticker": "STRL",
       "company": "Sterling Infrastructure",
