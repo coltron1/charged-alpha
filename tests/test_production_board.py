@@ -173,6 +173,46 @@ class ProductionBoardTests(unittest.TestCase):
         self.assertIn(b'/production', home.data)
         self.assertNotIn(b'pilot_state', full.data)
 
+    def test_reporting_next_market_close_boundary_keeps_full_calendar(self):
+        data = project_snapshot(snapshot(), {})
+        base = data['upcoming'][0]
+        data['upcoming'] = [
+            {**base, 'ticker': 'UNK', 'report_time_label': 'Time unconfirmed'},
+            {**base, 'ticker': 'AMC', 'report_time_label': 'After U.S. market close'},
+            {**base, 'ticker': 'TMR', 'report_date': '2026-09-15'},
+            {**base, 'ticker': 'NXT', 'report_date': '2026-09-16'},
+        ]
+        with tempfile.TemporaryDirectory() as folder:
+            path = Path(folder) / 'board.json'; path.write_text(json.dumps(data))
+            before = load_board(path, datetime.fromisoformat('2026-09-14T14:59:59-05:00'))
+            closed = load_board(path, datetime.fromisoformat('2026-09-14T15:00:00-05:00'))
+        self.assertEqual([r['ticker'] for r in before['upcoming']], ['UNK', 'AMC'])
+        self.assertEqual([r['ticker'] for r in closed['upcoming']], ['TMR', 'NXT'])
+        self.assertEqual([r['ticker'] for r in closed['days'][0]['items']], ['UNK', 'AMC'])
+        self.assertEqual(before['history'], closed['history'])
+
+    def test_reporting_next_exact_issuer_time_is_future_in_central_time(self):
+        data = project_snapshot(snapshot(), {})
+        base = data['upcoming'][0]
+        data['upcoming'] = [
+            {**base, 'ticker': 'PAST', 'report_time_label': '3:30 PM CST'},
+            {**base, 'ticker': 'FUT', 'report_time_label': '6:30 PM CST'},
+            {**base, 'ticker': 'UNSOURCED', 'report_time_label': '7:00 PM CST', 'source_url': None},
+            {**base, 'ticker': 'ESTIMATE', 'report_time_label': '7:00 PM CST', 'date_status': 'Calendar estimate'},
+            {**base, 'ticker': 'BADZONE', 'report_time_label': '7:00 PM CDT'},
+            {**base, 'ticker': 'BADTIME', 'report_time_label': '25:00 PM CST'},
+            {**base, 'ticker': 'TMR', 'report_date': '2026-11-04'},
+        ]
+        for row in data['upcoming'][:-1]:
+            row['report_date'] = '2026-11-03'
+        with tempfile.TemporaryDirectory() as folder:
+            path = Path(folder) / 'board.json'; path.write_text(json.dumps(data))
+            before = load_board(path, datetime.fromisoformat('2026-11-03T23:00:00+00:00'))
+            at_release = load_board(path, datetime.fromisoformat('2026-11-04T00:30:00+00:00'))
+        self.assertEqual([r['ticker'] for r in before['upcoming']], ['FUT', 'TMR'])
+        self.assertEqual([r['ticker'] for r in at_release['upcoming']], ['TMR'])
+        self.assertEqual(len(before['days'][0]['items']), 6)
+
 
 if __name__ == '__main__':
     unittest.main()

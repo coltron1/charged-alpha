@@ -185,6 +185,26 @@ def project_snapshot(snapshot, catalog):
             'history': history, 'upcoming': upcoming}
 
 
+def reporting_next(row, now):
+    """Keep uncertain same-day estimates in the calendar after market close."""
+    local_now = now.astimezone(CHICAGO)
+    if row.get('report_date') != local_now.date().isoformat():
+        return True
+    label = row.get('report_time_label', '')
+    if (row.get('date_status') == 'Issuer-announced' and public_url(row.get('source_url'))
+            and re.fullmatch(r'\d{1,2}:\d{2} [AP]M C[DS]T', label)):
+        try:
+            release = datetime.strptime(row['report_date'] + ' ' + label[:-4],
+                                        '%Y-%m-%d %I:%M %p').replace(tzinfo=CHICAGO)
+            if release.strftime('%Z') == label[-3:]:
+                return release > local_now
+        except ValueError:
+            pass
+    # A session label or unknown clock time cannot establish that a same-day
+    # release is still ahead after the regular U.S. market close (15:00 Central).
+    return local_now.hour < 15
+
+
 def load_board(path=None, now=None):
     now = now or datetime.now(timezone.utc)
     today = now.astimezone(CHICAGO).date()
@@ -210,5 +230,6 @@ def load_board(path=None, now=None):
     return {'updated_label': time_label(data.get('updated_at')),
             'calendar_updated_label': time_label(data.get('calendar_updated_at')),
             'calendar_status': 'stale' if stale else 'fresh', 'daily_target': data.get('daily_target', 10),
-            'latest': history[:1], 'active': data.get('active', []), 'upcoming': upcoming[:2], 'history': history,
+            'latest': history[:1], 'active': data.get('active', []),
+            'upcoming': [row for row in upcoming if reporting_next(row, now)][:2], 'history': history,
             'days': days, 'stale': stale}

@@ -16,4 +16,6 @@ The importer is local-only. The deployed website has no dependency on the produc
 
 Canonical `DONE` evidence supplies completed bundles. A primary upload or render alone is not a completed bundle. Forecast entries are tentative and do not bypass the producer's filing, eligibility or quality checks. Dates older than the viewer's current day are removed from “Reporting next”; a source older than four hours is visibly marked as needing refresh.
 
+After 3:00 p.m. America/Chicago, the homepage “Reporting next” preview omits same-day rows without a future, exact issuer-confirmed release time and source link. Known issuer times expire at their release minute. These rows remain in the expanded calendar unless source evidence confirms that results have already been released. Future-date estimates keep their existing labels; this display rule never changes candidate ranking or production admission.
+
 Validation: `DATABASE_URL=sqlite:///:memory: /usr/bin/python3 -m unittest discover -s tests -p 'test_production_board.py'`, the normal website regression modules, and desktop/phone checks of the preview and expansion link.
