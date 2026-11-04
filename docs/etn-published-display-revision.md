@@ -27,3 +27,10 @@ independent live P8 on the revised public artifact before episode completion.
 ## Second explicit revision: desktop price annotations
 
 The first published mobile repair is preserved in Git and its original plan/evidence. The next exact predecessor is `2b5e41998276e5ca7d95763d6e24d6879101be779256b28d92e7cb6d6618287e`. Only the two desktop price reference labels move left and above their lines with a white outline, matching the established mobile treatment. All wording, financial values, price paths, data tips, all financial data remain exact. The only additional change raises the `$105M` Mobility label from y=227.1 to y=211.1 in both desktop and mobile operating-profit SVGs; their neighboring `$146M` labels remain unchanged. Other 16 figures and the mobile price SVG remain exact. A new offline plan and independent actual Terra high review bind this revision. Prior revision receipt provenance is appended to history, and the prior PACKET_DONE is preserved before fresh live verification. This does not assert P8 approval.
+
+
+## Third explicit revision: remaining segment pairs
+
+The exact predecessor is `2d381c32aee6760e4bc69cc1b1d419dd0a616f8db4ff0afa1269698799fef58b`. Only six y attributes change: segment-sales `$1,079M` 200.5 to 184.5, `$775M` 212.7 to 196.7, and segment-profit `$280M` 198.8 to 182.8, each in desktop and mobile SVG. Existing mobile sales, price reference and Mobility repairs remain intact. Data, labels, links, paths, bars and all other figures remain exact.
+
+The combined offline publication plan has an explicit dependency: apply the independently reviewed TLN cash plan first, then this ETN plan before changing Git HEAD. ETN registry-before bytes are the exact TLN plan registry-after bytes, not the currently installed registry. Both runtime helpers retain exact predecessor guards; the second fails unless the first has installed its reviewed state. The original current registry is separately preserved. Commit the reviewed code sets separately and the combined three data files, then push once. Independent actual public P8 remains required for both packets.

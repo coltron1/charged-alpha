@@ -16,13 +16,12 @@ class PublishedDisplayRevisionTests(unittest.TestCase):
         self.root = Path(self.temp.name).resolve(); self.site = self.root / 'site'
         self.queue = self.root / '_studio_queue' / revision.EPISODE
         self.producer = self.root / '_pipeline_v2/episodes' / revision.EPISODE / '_packet'
-        svg = ('<svg><text x="628" y="158.4" font-size="10.5" fill="#4b5563">Base fair value $390</text>'
-               '<text x="628" y="230.9" font-size="10.5" fill="#4b5563">15% safety margin</text></svg>')
-        self.old = ('<p>Research, source links and numbers unchanged</p><figure><figcaption><b>Price history and our revised reference</b></figcaption>'
-                    '<div class="ch-d">' + svg + '</div><div class="ch-m"><svg>Mobile unchanged</svg></div></figure>'
+        self.old = ('<p>Research, source links and numbers unchanged</p><figure><figcaption><b>Segment sales</b></figcaption>'
+                    '<div class="ch-d"><svg><text y="200.5">$1,079M</text><text y="212.7">$775M</text></svg></div>'
+                    '<div class="ch-m"><svg><text y="200.5">$1,079M</text><text y="212.7">$775M</text></svg></div></figure>'
                     '<figure><figcaption><b>Segment operating profit</b></figcaption>'
-                    '<div class="ch-d"><svg><text x="636.8" y="227.1">$105M</text></svg></div>'
-                    '<div class="ch-m"><svg><text x="356.8" y="227.1">$105M</text></svg></div></figure>').encode()
+                    '<div class="ch-d"><svg><text y="198.8">$280M</text></svg></div>'
+                    '<div class="ch-m"><svg><text y="198.8">$280M</text></svg></div></figure>').encode()
         patcher = patch.object(revision, 'OLD_HTML', revision.digest(self.old)); patcher.start(); self.addCleanup(patcher.stop)
         paths = revision.targets(self.root, self.site)
         for path in paths: path.parent.mkdir(parents=True, exist_ok=True)
@@ -78,7 +77,9 @@ class PublishedDisplayRevisionTests(unittest.TestCase):
         self.assertEqual(self.paths[0].read_bytes(), revision.corrected_html(self.old))
         self.assertEqual(self.paths[0].read_bytes(), self.paths[2].read_bytes())
         self.assertEqual(self.paths[2].read_bytes(), self.paths[6].read_bytes())
-        self.assertIn(b'<div class="ch-m"><svg>Mobile unchanged</svg></div>', self.paths[6].read_bytes())
+        self.assertEqual(self.paths[6].read_bytes().count(b'y="184.5">$1,079M'), 2)
+        self.assertEqual(self.paths[6].read_bytes().count(b'y="196.7">$775M'), 2)
+        self.assertEqual(self.paths[6].read_bytes().count(b'y="182.8">$280M'), 2)
         self.assertEqual(json.loads(self.paths[7].read_bytes())['packets'][0], {'slug': 'other', 'untouched': True})
         for index, raw in enumerate(self.before): self.assertEqual((self.directory / f'{index}.before').read_bytes(), raw)
 
