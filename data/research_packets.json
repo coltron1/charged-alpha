@@ -12,7 +12,7 @@
       "period": "Q2 FY2027",
       "canonical_url": "https://chargedalpha.com/research/deck-q2-fy2027",
       "title": "Deckers: The Refund Raised EPS. The Customer Did Not.",
-      "page_title": "DECK Q2 FY2027 Research Packet — Charged Alpha",
+      "page_title": "DECK Q2 FY2027 Research Packet \u2014 Charged Alpha",
       "description": "Tariff refunds lift reported profit while direct-sales comps weaken and underlying guidance slips; a cash-aware reset from BUY to HOLD.",
       "sha256": "13187c3b3898bdba307d22e4d9df425f6be19afb7349c7eafcd819417517824e",
       "html_file": "research_packets/deck-q2-fy2027.html",
@@ -70,7 +70,7 @@
       "period": "Q2 FY2027",
       "canonical_url": "https://chargedalpha.com/research/kmx-q2-fy2027",
       "title": "KMX: The Volume Recovery Still Has a Credit Test",
-      "page_title": "KMX Q2 FY2027 Research Packet — Charged Alpha",
+      "page_title": "KMX Q2 FY2027 Research Packet \u2014 Charged Alpha",
       "description": "CarMax is selling more cars with better overhead leverage; we separate sustainable earnings from credit relief and gains before valuing the recovery.",
       "sha256": "3b35dd385592d79435c459b24bc3772222466f953508dd6b994f5a51ce1d4e2a",
       "html_file": "research_packets/kmx-q2-fy2027.html",
@@ -128,7 +128,7 @@
       "period": "Q2 FY2027",
       "canonical_url": "https://chargedalpha.com/research/love-q2-fy2027",
       "title": "LOVE: The Refund Made the Profit. Can Retail Make the Cash?",
-      "page_title": "LOVE Q2 FY2027 Research Packet — Charged Alpha",
+      "page_title": "LOVE Q2 FY2027 Research Packet \u2014 Charged Alpha",
       "description": "Lovesac Q2 FY2027: the tariff refund, underlying margins, holiday profit hurdle, seasonal cash and a transparent per-share valuation.",
       "sha256": "adca3a6e4e18b90c30751c697d4a7cfb5b211c36d13e67116fd59d8e7aef4086",
       "html_file": "research_packets/love-q2-fy2027.html",
@@ -186,7 +186,7 @@
       "period": "Q2 FY2027",
       "canonical_url": "https://chargedalpha.com/research/sail-q2-fy2027",
       "title": "SAIL: AI demand grows, but converting it to owner cash is the test",
-      "page_title": "SAIL Q2 FY2027 Research Packet — Charged Alpha",
+      "page_title": "SAIL Q2 FY2027 Research Packet \u2014 Charged Alpha",
       "description": "SailPoint Q2 FY2027: the SaaS transition, commission investment, dilution and three transparent valuation routes.",
       "sha256": "8eb019122c79127541fca8a601aff2d2ce2b9f8b86730ac38b2d416666ca810a",
       "html_file": "research_packets/sail-q2-fy2027.html",
@@ -224,11 +224,11 @@
           },
           {
             "title": "Management raised ARR, not revenue.",
-            "detail": "Fiscal 2027 ARR guidance increased, while its $1.265B–$1.275B revenue range stayed unchanged."
+            "detail": "Fiscal 2027 ARR guidance increased, while its $1.265B\u2013$1.275B revenue range stayed unchanged."
           },
           {
             "title": "The destination is partly priced in.",
-            "detail": "Three transparent models produce roughly $15.57–$17.65 before conservative rounding; higher dilution or lower multiples can overwhelm growth."
+            "detail": "Three transparent models produce roughly $15.57\u2013$17.65 before conservative rounding; higher dilution or lower multiples can overwhelm growth."
           }
         ]
       }
@@ -244,8 +244,8 @@
       "period": "Q2 FY2027",
       "canonical_url": "https://chargedalpha.com/research/sig-q2-fy2027",
       "title": "SIG: A $50 Million Profit Raise Beyond the Jewelry Counter",
-      "page_title": "SIG Q2 FY2027 Research Packet — Charged Alpha",
-      "description": "Separating tariff refunds, credit economics and share repurchases from Signet’s recurring operating improvement.",
+      "page_title": "SIG Q2 FY2027 Research Packet \u2014 Charged Alpha",
+      "description": "Separating tariff refunds, credit economics and share repurchases from Signet\u2019s recurring operating improvement.",
       "sha256": "4ca112e8a7c9cc06f2b112a35267ed16e48ffbe21777901aa7b49123b34e5be9",
       "html_file": "research_packets/sig-q2-fy2027.html",
       "source_episode": "SIG-Q2-FY2027",
@@ -266,7 +266,7 @@
       "figures": 19,
       "tables": 33,
       "what_changed": {
-        "summary": "Separating tariff refunds, credit economics and share repurchases from Signet’s recurring operating improvement.",
+        "summary": "Separating tariff refunds, credit economics and share repurchases from Signet\u2019s recurring operating improvement.",
         "items": [
           {
             "title": "Profit is improving.",
@@ -274,7 +274,7 @@
           },
           {
             "title": "The guide has new ingredients.",
-            "detail": "The annual outlook includes tariff refunds and $30–$40M of credit-partner income."
+            "detail": "The annual outlook includes tariff refunds and $30\u2013$40M of credit-partner income."
           },
           {
             "title": "Comps changed perimeter.",
@@ -286,7 +286,7 @@
           },
           {
             "title": "Value needs discipline.",
-            "detail": "Three routes yield $98.51–$108.63; a $105 anchor offers limited margin of safety."
+            "detail": "Three routes yield $98.51\u2013$108.63; a $105 anchor offers limited margin of safety."
           }
         ]
       }
@@ -302,7 +302,7 @@
       "period": "Q2 FY2027",
       "canonical_url": "https://chargedalpha.com/research/stz-q2-fy2027",
       "title": "STZ: Shipments Rebound, Consumer Demand Still Trails",
-      "page_title": "STZ Q2 FY2027 Research Packet — Charged Alpha",
+      "page_title": "STZ Q2 FY2027 Research Packet \u2014 Charged Alpha",
       "description": "Beer shipments rose while depletions declined; flat comparable profit and cash-flow timing shape a $130 base value.",
       "sha256": "f0353de9dc36e57867a2317d67b0ceecc6a22c5056239cef632b687d4624e974",
       "html_file": "research_packets/stz-q2-fy2027.html",
@@ -340,7 +340,7 @@
           },
           {
             "title": "The outlook stayed steady.",
-            "detail": "Comparable EPS $11.20–$11.90 and FCF $1.6–$1.7B were reaffirmed; our base value is $130."
+            "detail": "Comparable EPS $11.20\u2013$11.90 and FCF $1.6\u2013$1.7B were reaffirmed; our base value is $130."
           }
         ]
       },
@@ -360,8 +360,8 @@
       "period": "Q2 FY2027",
       "canonical_url": "https://chargedalpha.com/research/wit-q2-fy2027",
       "title": "WIT: EPS rose. Did the business?",
-      "page_title": "WIT Q2 FY2027 Research Packet — Charged Alpha",
-      "description": "Cash conversion, buyback arithmetic and bookings explain Wipro’s quarter.",
+      "page_title": "WIT Q2 FY2027 Research Packet \u2014 Charged Alpha",
+      "description": "Cash conversion, buyback arithmetic and bookings explain Wipro\u2019s quarter.",
       "sha256": "b8785181e76fc306af3210077570f74b1f746f385f3897ee2b52708a6b4ca63e",
       "html_file": "research_packets/wit-q2-fy2027.html",
       "source_episode": "WIT-Q2-FY2027",
@@ -378,11 +378,11 @@
       "youtube_studio": null,
       "youtube_studio_short": null,
       "what_changed": {
-        "summary": "Cash conversion, buyback arithmetic and bookings explain Wipro’s quarter.",
+        "summary": "Cash conversion, buyback arithmetic and bookings explain Wipro\u2019s quarter.",
         "items": [
           {
             "title": "The share count matters.",
-            "detail": "June’s completed buyback reduces the earnings denominator; it does not establish a demand recovery."
+            "detail": "June\u2019s completed buyback reduces the earnings denominator; it does not establish a demand recovery."
           },
           {
             "title": "Collection improved.",
@@ -418,8 +418,8 @@
       "period": "Q1 FY2027",
       "canonical_url": "https://chargedalpha.com/research/adur-q1-fy2027",
       "title": "ADUR: A Profit Without Sales, and the Cash Behind It",
-      "page_title": "ADUR Q1 FY2027 Research Packet — Charged Alpha",
-      "description": "Separate the noncash profit, financing-funded runway and commercialization assumptions in Aduro’s first fiscal quarter.",
+      "page_title": "ADUR Q1 FY2027 Research Packet \u2014 Charged Alpha",
+      "description": "Separate the noncash profit, financing-funded runway and commercialization assumptions in Aduro\u2019s first fiscal quarter.",
       "sha256": "b77b65712c005fde092274cec56cb9c44455f91ac30a436c89a6f5d39f8c7742",
       "html_file": "research_packets/adur-q1-fy2027.html",
       "source_episode": "ADUR-Q1-FY2027",
@@ -436,7 +436,7 @@
       "youtube_studio": null,
       "youtube_studio_short": null,
       "what_changed": {
-        "summary": "Separate the noncash profit, financing-funded runway and commercialization assumptions in Aduro’s first fiscal quarter.",
+        "summary": "Separate the noncash profit, financing-funded runway and commercialization assumptions in Aduro\u2019s first fiscal quarter.",
         "items": [
           {
             "title": "A positive bottom line can coexist with zero sales.",
@@ -475,8 +475,8 @@
       "company": "Aehr Test Systems",
       "period": "Q1 FY2027",
       "canonical_url": "https://chargedalpha.com/research/aehr-q1-fy2027",
-      "title": "AEHR: Record Sales, Negative Cash Flow — Can the AI Ramp Pay for Itself?",
-      "page_title": "AEHR Q1 FY2027 Research Packet — Charged Alpha",
+      "title": "AEHR: Record Sales, Negative Cash Flow \u2014 Can the AI Ramp Pay for Itself?",
+      "page_title": "AEHR Q1 FY2027 Research Packet \u2014 Charged Alpha",
       "description": "Record AI testing revenue meets a working-capital build, customer concentration and a demanding valuation.",
       "sha256": "440aace6288bb8f5e10f81e437188ca438fabe55b7bac3674126f7c77b301ad4",
       "html_file": "research_packets/aehr-q1-fy2027.html",
@@ -534,7 +534,7 @@
       "period": "Q1 FY2027",
       "canonical_url": "https://chargedalpha.com/research/apld-q1-fy2027",
       "title": "APLD: The Rent Is Real. The Equity Math Is Harder.",
-      "page_title": "APLD Q1 FY2027 Research Packet — Charged Alpha",
+      "page_title": "APLD Q1 FY2027 Research Packet \u2014 Charged Alpha",
       "description": "Recurring rent is taking shape, but tenant fit-out, preferred claims and construction funding separate operating progress from value per common share.",
       "sha256": "0628aa4f634aeb88e35334006ee9fd1055226220e110495d1f92d72c96d01b04",
       "html_file": "research_packets/apld-q1-fy2027.html",
@@ -592,8 +592,8 @@
       "period": "Q1 FY2027",
       "canonical_url": "https://chargedalpha.com/research/avav-q1-fy2027",
       "title": "AVAV: Funded Backlog Still Needs a Funded Factory",
-      "page_title": "AVAV Q1 FY2027 Research Packet — Charged Alpha",
-      "description": "SCDE losses and a major capacity investment cycle complicate the cash return behind AeroVironment’s growing order book.",
+      "page_title": "AVAV Q1 FY2027 Research Packet \u2014 Charged Alpha",
+      "description": "SCDE losses and a major capacity investment cycle complicate the cash return behind AeroVironment\u2019s growing order book.",
       "sha256": "e766813e254838d2a0de2bbd28fce486dae603e4d8934af824dad42dc1fc7a20",
       "html_file": "research_packets/avav-q1-fy2027.html",
       "source_episode": "AVAV-Q1-FY2027",
@@ -614,7 +614,7 @@
       "figures": 19,
       "tables": 36,
       "what_changed": {
-        "summary": "SCDE losses and a major capacity investment cycle complicate the cash return behind AeroVironment’s growing order book.",
+        "summary": "SCDE losses and a major capacity investment cycle complicate the cash return behind AeroVironment\u2019s growing order book.",
         "items": [
           {
             "title": "The profitable engine grew.",
@@ -650,8 +650,8 @@
       "period": "Q1 FY2027",
       "canonical_url": "https://chargedalpha.com/research/cag-q1-fy2027",
       "title": "CAG: Earnings Rose. The Operating Engine Did Not.",
-      "page_title": "CAG Q1 FY2027 Research Packet — Charged Alpha",
-      "description": "Conagra’s adjusted EPS grew while operating profit and cash weakened; joint-venture income, dividend coverage and debt determine the next test.",
+      "page_title": "CAG Q1 FY2027 Research Packet \u2014 Charged Alpha",
+      "description": "Conagra\u2019s adjusted EPS grew while operating profit and cash weakened; joint-venture income, dividend coverage and debt determine the next test.",
       "sha256": "e4ffb0df9c71cec0eea58fc625302ad60d2b1b0ae75844b72b57af4f5f2473c5",
       "html_file": "research_packets/cag-q1-fy2027.html",
       "source_episode": "CAG-Q1-FY2027",
@@ -668,7 +668,7 @@
       "youtube_studio": null,
       "youtube_studio_short": null,
       "what_changed": {
-        "summary": "Conagra’s adjusted EPS grew while operating profit and cash weakened; joint-venture income, dividend coverage and debt determine the next test.",
+        "summary": "Conagra\u2019s adjusted EPS grew while operating profit and cash weakened; joint-venture income, dividend coverage and debt determine the next test.",
         "items": [
           {
             "title": "EPS improved while operations softened.",
@@ -676,7 +676,7 @@
           },
           {
             "title": "Below-the-line help mattered.",
-            "detail": "Ardent Mills equity earnings increased $21M; only $18.2M of this quarter’s $50.4M earnings arrived as distributions."
+            "detail": "Ardent Mills equity earnings increased $21M; only $18.2M of this quarter\u2019s $50.4M earnings arrived as distributions."
           },
           {
             "title": "Two benefits aided the quarter.",
@@ -684,7 +684,7 @@
           },
           {
             "title": "Cash is the next proof point.",
-            "detail": "Free cash flow was −$127.9M, and net debt rose $338.1M from fiscal year-end despite falling year over year."
+            "detail": "Free cash flow was \u2212$127.9M, and net debt rose $338.1M from fiscal year-end despite falling year over year."
           },
           {
             "title": "The dividend leaves a narrow cushion.",
@@ -708,8 +708,8 @@
       "period": "Q1 FY2027",
       "canonical_url": "https://chargedalpha.com/research/calm-q1-fy2027",
       "title": "CALM: A Better Sales Mix Has Not Built an Earnings Floor",
-      "page_title": "CALM Q1 FY2027 Research Packet — Charged Alpha",
-      "description": "Cal-Maine’s specialty and prepared-food share rose to 54.1%, but every reportable segment earned less; cash, normalized profits and the dividend recovery hurdle decide the value.",
+      "page_title": "CALM Q1 FY2027 Research Packet \u2014 Charged Alpha",
+      "description": "Cal-Maine\u2019s specialty and prepared-food share rose to 54.1%, but every reportable segment earned less; cash, normalized profits and the dividend recovery hurdle decide the value.",
       "sha256": "89aeb5ef38f9b88909169f478da55e0a765c8482f01ac1b4aac014eec85fe29c",
       "html_file": "research_packets/calm-q1-fy2027.html",
       "source_episode": "CALM-Q1-FY2027",
@@ -726,7 +726,7 @@
       "youtube_studio": null,
       "youtube_studio_short": null,
       "what_changed": {
-        "summary": "Cal-Maine’s specialty and prepared-food share rose to 54.1%, but every reportable segment earned less; cash, normalized profits and the dividend recovery hurdle decide the value.",
+        "summary": "Cal-Maine\u2019s specialty and prepared-food share rose to 54.1%, but every reportable segment earned less; cash, normalized profits and the dividend recovery hurdle decide the value.",
         "items": [
           {
             "title": "Mix rose while profits fell.",
@@ -746,7 +746,7 @@
           },
           {
             "title": "Price already assumes recovery.",
-            "detail": "The $68.55 reference is the September 29 close, before this print; our $58 base value depends on normalized profits rather than today’s losses."
+            "detail": "The $68.55 reference is the September 29 close, before this print; our $58 base value depends on normalized profits rather than today\u2019s losses."
           }
         ]
       },
@@ -766,8 +766,8 @@
       "period": "Q1 FY2027",
       "canonical_url": "https://chargedalpha.com/research/casy-q1-fy2027",
       "title": "CASY: a strong quarter still leaves a demanding price",
-      "page_title": "CASY Q1 FY2027 Research Packet — Charged Alpha",
-      "description": "Casey’s Q1 FY2027 research: fuel spreads, softer inside growth, weaker cash after capex, and three transparent valuation routes behind a HOLD call.",
+      "page_title": "CASY Q1 FY2027 Research Packet \u2014 Charged Alpha",
+      "description": "Casey\u2019s Q1 FY2027 research: fuel spreads, softer inside growth, weaker cash after capex, and three transparent valuation routes behind a HOLD call.",
       "sha256": "ad0f21300c7d3e6fcfcaa0e104eeaa6462bb55ee1f1208509036d36e22f112db",
       "html_file": "research_packets/casy-q1-fy2027.html",
       "source_episode": "CASY-Q1-FY2027",
@@ -788,7 +788,7 @@
       "figures": 18,
       "tables": 34,
       "what_changed": {
-        "summary": "Casey’s Q1 FY2027 research: fuel spreads, softer inside growth, weaker cash after capex, and three transparent valuation routes behind a HOLD call.",
+        "summary": "Casey\u2019s Q1 FY2027 research: fuel spreads, softer inside growth, weaker cash after capex, and three transparent valuation routes behind a HOLD call.",
         "items": [
           {
             "title": "The beat is real.",
@@ -804,7 +804,7 @@
           },
           {
             "title": "Guidance was maintained.",
-            "detail": "EBITDA growth 8–10% is not an EPS forecast."
+            "detail": "EBITDA growth 8\u201310% is not an EPS forecast."
           },
           {
             "title": "Price still matters.",
@@ -824,7 +824,7 @@
       "period": "Q1 FY2027",
       "canonical_url": "https://chargedalpha.com/research/fizz-q1-fy2027",
       "title": "FIZZ: Pricing Held Sales. Can Profit Recover?",
-      "page_title": "FIZZ Q1 FY2027 Research Packet — Charged Alpha",
+      "page_title": "FIZZ Q1 FY2027 Research Packet \u2014 Charged Alpha",
       "description": "National Beverage pricing, volume and aluminum costs tested against cash quality, concentrated control and three transparent valuation routes.",
       "sha256": "94c63551c2c7b432d7ce1a8e1091deb38d44802740a0a2c4ad6e0380f61773a7",
       "html_file": "research_packets/fizz-q1-fy2027.html",
@@ -882,7 +882,7 @@
       "period": "Q1 FY2027",
       "canonical_url": "https://chargedalpha.com/research/gis-q1-fy2027",
       "title": "GIS: Flat sales hide a $99 million domestic profit gap",
-      "page_title": "GIS Q1 FY2027 Research Packet — Charged Alpha",
+      "page_title": "GIS Q1 FY2027 Research Packet \u2014 Charged Alpha",
       "description": "Retail and Pet lost $99 million of segment profit despite flat company organic sales; our $37 valuation needs better volume, margins and cash conversion.",
       "sha256": "16cf9716d2ec05ed721d8d99297f423bb9aa619bc6ab5e098b0dd6ef6d5803ad",
       "html_file": "research_packets/gis-q1-fy2027.html",
@@ -920,7 +920,7 @@
           },
           {
             "title": "Our valuation leaves little cushion.",
-            "detail": "Three routes produce $36.31–$37.20 per share; the $37 base and $36 weighted value support HOLD at the $35.74 reference quote."
+            "detail": "Three routes produce $36.31\u2013$37.20 per share; the $37 base and $36 weighted value support HOLD at the $35.74 reference quote."
           }
         ]
       },
@@ -940,7 +940,7 @@
       "period": "Q1 FY2027",
       "canonical_url": "https://chargedalpha.com/research/immr-q1-fy2027",
       "title": "IMMR: Profit Recovered. What Is Recurring?",
-      "page_title": "IMMR Q1 FY2027 Research Packet — Charged Alpha",
+      "page_title": "IMMR Q1 FY2027 Research Packet \u2014 Charged Alpha",
       "description": "Immersion returned to attributable profit, but investment gains, a minority-owned consolidated retailer and written options complicate the apparent cash bargain.",
       "sha256": "33baf240870efb778f96f5feeb28fbf7b75665e9a3d3a5dad2852df9e33d1195",
       "html_file": "research_packets/immr-q1-fy2027.html",
@@ -966,7 +966,7 @@
           },
           {
             "title": "Consolidation is not ownership.",
-            "detail": "Immersion consolidates BNED while owning 32.3%; the other shareholders receive most of that subsidiary’s economics."
+            "detail": "Immersion consolidates BNED while owning 32.3%; the other shareholders receive most of that subsidiary\u2019s economics."
           },
           {
             "title": "Cash has claims attached.",
@@ -998,7 +998,7 @@
       "period": "Q1 FY2027",
       "canonical_url": "https://chargedalpha.com/research/klac-q1-fy2027",
       "title": "KLA's $4.7 Billion Ramp: Cash Must Catch Up",
-      "page_title": "KLAC Q1 FY2027 Research Packet — Charged Alpha",
+      "page_title": "KLAC Q1 FY2027 Research Packet \u2014 Charged Alpha",
       "description": "KLA guides another double-digit sequential revenue increase; our $145 base value tests whether cash generation can justify the capacity ramp.",
       "sha256": "1dee19511943c1bea4e0b966ef076be914dcdc6cc7cbd2130c7f1b0f1324e9bc",
       "html_file": "research_packets/klac-q1-fy2027.html",
@@ -1036,7 +1036,7 @@
           },
           {
             "title": "Valuation requires proof.",
-            "detail": "Three routes span $110–162; the rounded $145 base leaves little cushion at the $157.91 reference close."
+            "detail": "Three routes span $110\u2013162; the rounded $145 base leaves little cushion at the $157.91 reference close."
           }
         ]
       },
@@ -1055,8 +1055,8 @@
       "company": "Lam Research",
       "period": "Q1 FY2027",
       "canonical_url": "https://chargedalpha.com/research/lrcx-q1-fy2027",
-      "title": "LRCX: Cash Surged — How Much Can Repeat?",
-      "page_title": "LRCX Q1 FY2027 Research Packet — Charged Alpha",
+      "title": "LRCX: Cash Surged \u2014 How Much Can Repeat?",
+      "page_title": "LRCX Q1 FY2027 Research Packet \u2014 Charged Alpha",
       "description": "Strong equipment growth and a working-capital cash rebound face a demanding valuation; examine the owner-cash path the price requires.",
       "sha256": "b776ea3391693a08fb473fcb70b7001e6d6c1f2a69fde40cc094acc8ab1c583b",
       "html_file": "research_packets/lrcx-q1-fy2027.html",
@@ -1114,7 +1114,7 @@
       "period": "Q1 FY2027",
       "canonical_url": "https://chargedalpha.com/research/lrn-q1-fy2027",
       "title": "LRN: EPS Rose. Did the Business Improve?",
-      "page_title": "LRN Q1 FY2027 Research Packet — Charged Alpha",
+      "page_title": "LRN Q1 FY2027 Research Packet \u2014 Charged Alpha",
       "description": "Stride reported higher GAAP EPS while adjusted earnings and enrollment fell. We trace the compensation credit, seasonal cash and convertible obligations.",
       "sha256": "50b9a74f207eba5caa40449efb2d3b4970b0f0938602a192f833f9176d388afb",
       "html_file": "research_packets/lrn-q1-fy2027.html",
@@ -1172,7 +1172,7 @@
       "period": "Q1 FY2027",
       "canonical_url": "https://chargedalpha.com/research/nke-q1-fy2027",
       "title": "NKE: The Reset Has a Cash Bill",
-      "page_title": "NKE Q1 FY2027 Research Packet — Charged Alpha",
+      "page_title": "NKE Q1 FY2027 Research Packet \u2014 Charged Alpha",
       "description": "NIKE improved gross margin, but weak direct sales, a lower earnings outlook and restructuring cash needs make the recovery price-sensitive.",
       "sha256": "6b8b9781d4bc32a363f55b67a5b5fce773d64474ad10f8a482ace56b6f376b59",
       "html_file": "research_packets/nke-q1-fy2027.html",
@@ -1230,8 +1230,8 @@
       "period": "Q1 FY2027",
       "canonical_url": "https://chargedalpha.com/research/orcl-q1-fy2027",
       "title": "ORCL: Who Funds the $23 Billion Cash Quarter?",
-      "page_title": "ORCL Q1 FY2027 Research Packet — Charged Alpha",
-      "description": "Customer financing, infrastructure reinvestment and the common-share economics behind Oracle’s record operating cash.",
+      "page_title": "ORCL Q1 FY2027 Research Packet \u2014 Charged Alpha",
+      "description": "Customer financing, infrastructure reinvestment and the common-share economics behind Oracle\u2019s record operating cash.",
       "sha256": "a042271220fc76ab836e1ed672deda7e510c48a9d3a428a837d1c33e8444dc11",
       "html_file": "research_packets/orcl-q1-fy2027.html",
       "source_episode": "ORCL-Q1-FY2027",
@@ -1252,7 +1252,7 @@
       "figures": 15,
       "tables": 39,
       "what_changed": {
-        "summary": "Customer financing, infrastructure reinvestment and the common-share economics behind Oracle’s record operating cash.",
+        "summary": "Customer financing, infrastructure reinvestment and the common-share economics behind Oracle\u2019s record operating cash.",
         "items": [
           {
             "title": "The operating beat is real.",
@@ -1288,7 +1288,7 @@
       "period": "Q1 FY2027",
       "canonical_url": "https://chargedalpha.com/research/payx-q1-fy2027",
       "title": "PAYX: The dividend outran quarterly cash. The real test is what recovers.",
-      "page_title": "PAYX Q1 FY2027 Research Packet — Charged Alpha",
+      "page_title": "PAYX Q1 FY2027 Research Packet \u2014 Charged Alpha",
       "description": "Paychex expanded margins and raised its PEO outlook, but quarterly free cash flow fell below dividends; our $114 base value weighs timing recovery against debt and acquisition adjustments.",
       "sha256": "30b03ef1613d2c7b28a3bc11154ba8ded010ae649954f2805e67b6d9fd2dcfdf",
       "html_file": "research_packets/payx-q1-fy2027.html",
@@ -1322,7 +1322,7 @@
           },
           {
             "title": "PEO momentum improved without a company-wide EPS raise.",
-            "detail": "PEO and Insurance Solutions guidance moved to 7%–8% growth and client-interest guidance rose $5 million, while overall revenue, margin and adjusted EPS guidance stayed unchanged."
+            "detail": "PEO and Insurance Solutions guidance moved to 7%\u20138% growth and client-interest guidance rose $5 million, while overall revenue, margin and adjusted EPS guidance stayed unchanged."
           },
           {
             "title": "Client funds are not an equity-value cash windfall.",
@@ -1346,7 +1346,7 @@
       "period": "Q1 FY2027",
       "canonical_url": "https://chargedalpha.com/research/uroy-q1-fy2027",
       "title": "UROY: Surging Earnings, a Bigger Share Count, and a January Debt Deadline",
-      "page_title": "UROY Q1 FY2027 Research Packet — Charged Alpha",
+      "page_title": "UROY Q1 FY2027 Research Packet \u2014 Charged Alpha",
       "description": "Uranium inventory sales funded a transformative royalty acquisition, but current shares, restricted cash and the January bridge repayment matter more than headline EPS.",
       "sha256": "c48abc865a1769a98bcd9d121c6747107153b440682a8aac964a4d11770d879e",
       "html_file": "research_packets/uroy-q1-fy2027.html",
@@ -1372,7 +1372,7 @@
           },
           {
             "title": "The denominator changed.",
-            "detail": "July-end common shares plus exchangeables total 381.067M, far above the quarter’s 157.281M weighted diluted average. Current valuation uses current economic shares."
+            "detail": "July-end common shares plus exchangeables total 381.067M, far above the quarter\u2019s 157.281M weighted diluted average. Current valuation uses current economic shares."
           },
           {
             "title": "Cash has different priorities.",
@@ -1383,7 +1383,7 @@
             "detail": "A $40M bridge balance must be repaid by January 31, 2027. Management explicitly says substantial doubt about continuing as a going concern is not alleviated."
           },
           {
-            "title": "Sweetwater’s full economics are still emerging.",
+            "title": "Sweetwater\u2019s full economics are still emerging.",
             "detail": "The deal closed July 27; the quarter includes only the brief post-acquisition period. Purchase accounting, minority interests and debt service shape what reaches common owners."
           }
         ]
@@ -1404,7 +1404,7 @@
       "period": "Q1 FY2027",
       "canonical_url": "https://chargedalpha.com/research/usau-q1-fy2027",
       "title": "USAU: Who Pays to Build CK Gold?",
-      "page_title": "USAU Q1 FY2027 Research Packet — Charged Alpha",
+      "page_title": "USAU Q1 FY2027 Research Packet \u2014 Charged Alpha",
       "description": "Project NPV meets financing reality: cash use, permits, share claims and a transparent common-equity valuation.",
       "sha256": "fa61f028e9294afa2ba6dadbf9fe8fe0af04fb639801687860e4e09ace4c5fe4",
       "html_file": "research_packets/usau-q1-fy2027.html",
@@ -1462,8 +1462,8 @@
       "period": "Q1 FY2027",
       "canonical_url": "https://chargedalpha.com/research/wdc-q1-fy2027",
       "title": "WDC: Record HDD Economics, but Who Keeps the Cash?",
-      "page_title": "WDC Q1 FY2027 Research Packet — Charged Alpha",
-      "description": "HOLD · 3/5. Western Digital’s HDD margins surged, but rising reinvestment and convertible dilution matter. Our $350 anchor is near the $343.67 closing quote.",
+      "page_title": "WDC Q1 FY2027 Research Packet \u2014 Charged Alpha",
+      "description": "HOLD \u00b7 3/5. Western Digital\u2019s HDD margins surged, but rising reinvestment and convertible dilution matter. Our $350 anchor is near the $343.67 closing quote.",
       "sha256": "abfc3260640cdd884d6df7478e2a60cf8e330a686c587df3dbe2d4532c708873",
       "html_file": "research_packets/wdc-q1-fy2027.html",
       "source_episode": "WDC-Q1-FY2027",
@@ -1480,7 +1480,7 @@
       "youtube_studio": null,
       "youtube_studio_short": null,
       "what_changed": {
-        "summary": "HOLD · 3/5. Western Digital’s HDD margins surged, but rising reinvestment and convertible dilution matter. Our $350 anchor is near the $343.67 closing quote.",
+        "summary": "HOLD \u00b7 3/5. Western Digital\u2019s HDD margins surged, but rising reinvestment and convertible dilution matter. Our $350 anchor is near the $343.67 closing quote.",
         "items": [
           {
             "title": "HDD operating profit accelerated.",
@@ -1519,8 +1519,8 @@
       "company": "American Battery Technology Company",
       "period": "FY2026",
       "canonical_url": "https://chargedalpha.com/research/abat-fy2026",
-      "title": "ABAT Stock: Can the Customers Still Buy? — FY2026",
-      "page_title": "ABAT FY2026 Research Packet — Charged Alpha",
+      "title": "ABAT Stock: Can the Customers Still Buy? \u2014 FY2026",
+      "page_title": "ABAT FY2026 Research Packet \u2014 Charged Alpha",
       "description": "Recycling gross profit improved, but customer access, stock compensation and mine financing determine what reaches each ABAT share.",
       "sha256": "ef90852d1e6fa8567fcf63363485c36a1834c273af73aa765d673b313c0c3cf0",
       "html_file": "research_packets/abat-fy2026.html",
@@ -1578,7 +1578,7 @@
       "period": "FY2026",
       "canonical_url": "https://chargedalpha.com/research/bntc-fy2026",
       "title": "BNTC: The Cash Is Real. So Are the Ownership Claims.",
-      "page_title": "BNTC FY2026 Research Packet — Charged Alpha",
+      "page_title": "BNTC FY2026 Research Packet \u2014 Charged Alpha",
       "description": "Benitec funded its clinical programme, but prefunded warrants and equity compensation change the cash-per-share story.",
       "sha256": "0b34cc363860502846122f20ccff21fab7102c99ec816a61963781257b15ddad",
       "html_file": "research_packets/bntc-fy2026.html",
@@ -1635,8 +1635,8 @@
       "company": "Uranium Energy Corp.",
       "period": "FY2026",
       "canonical_url": "https://chargedalpha.com/research/uec-fy2026",
-      "title": "UEC: the $753 million liquidity headline—and the growth it still has to fund",
-      "page_title": "UEC FY2026 Research Packet — Charged Alpha",
+      "title": "UEC: the $753 million liquidity headline\u2014and the growth it still has to fund",
+      "page_title": "UEC FY2026 Research Packet \u2014 Charged Alpha",
       "description": "Mine costs improved, but cash was rebuilt through share issuance; our model separates spendable capital from unpriced conversion ambition.",
       "sha256": "0912e6e1b2c8b6301befcb712f8de7225f901742a003204b2bb4d8c72c63ce58",
       "html_file": "research_packets/uec-fy2026.html",
@@ -1670,7 +1670,7 @@
           },
           {
             "title": "The government opportunity is not an order.",
-            "detail": "NNSA’s stated need and UEC’s response to an information request are not awarded revenue. The conversion project’s Class IV estimate is expected by mid2027."
+            "detail": "NNSA\u2019s stated need and UEC\u2019s response to an information request are not awarded revenue. The conversion project\u2019s Class IV estimate is expected by mid2027."
           },
           {
             "title": "Our valuation requires more than cost improvement.",
@@ -1694,7 +1694,7 @@
       "period": "Q4 FY2026",
       "canonical_url": "https://chargedalpha.com/research/acn-q4-fy2026",
       "title": "ACN: Earnings Surged, but the Cash Cushion Shrunk",
-      "page_title": "ACN Q4 FY2026 Research Packet — Charged Alpha",
+      "page_title": "ACN Q4 FY2026 Research Packet \u2014 Charged Alpha",
       "description": "Accenture beat its revenue range, but comparison effects, acquisition spending and new debt make owner cash the valuation test.",
       "sha256": "c8a31bfbf20554eaf9042058a8e3553946227aad1146028791b9eea8a26f7007",
       "html_file": "research_packets/acn-q4-fy2026.html",
@@ -1732,7 +1732,7 @@
           },
           {
             "title": "The next cash plan is restrained.",
-            "detail": "FY27 FCF guidance is $11.0–11.8B versus $11.621B in FY26; entry discipline stays important."
+            "detail": "FY27 FCF guidance is $11.0\u201311.8B versus $11.621B in FY26; entry discipline stays important."
           }
         ]
       },
@@ -1752,7 +1752,7 @@
       "period": "Q4 FY2026",
       "canonical_url": "https://chargedalpha.com/research/almu-q4-fy2026",
       "title": "ALMU: The $30 Million CHIPS Deal Has an Equity Price",
-      "page_title": "ALMU Q4 FY2026 Research Packet — Charged Alpha",
+      "page_title": "ALMU Q4 FY2026 Research Packet \u2014 Charged Alpha",
       "description": "Aeluma has cash to fund its photonics ambitions, but conditional CHIPS funding comes with equity and commercial scale remains unproven.",
       "sha256": "57fc114713eeb885cb58389c5893bc82ae503c18bab23c11f83c906ba45e6c2e",
       "html_file": "research_packets/almu-q4-fy2026.html",
@@ -1810,7 +1810,7 @@
       "period": "Q4 FY2026",
       "canonical_url": "https://chargedalpha.com/research/azo-q4-fy2026",
       "title": "AZO: The Margin Rebound Has a Refund Inside",
-      "page_title": "AZO Q4 FY2026 Research Packet — Charged Alpha",
+      "page_title": "AZO Q4 FY2026 Research Packet \u2014 Charged Alpha",
       "description": "AutoZone earnings rose, but tariff refunds, LIFO, growing inventory and flat free cash flow complicate the recovery. Our HOLD model values the stock at $2,800.",
       "sha256": "830e0f3304631494fba46c1ad1bf2c062f0fdc2b88ff729df80b25b53b0b9bac",
       "html_file": "research_packets/azo-q4-fy2026.html",
@@ -1848,7 +1848,7 @@
           },
           {
             "title": "The price already allows for some recovery.",
-            "detail": "Three valuation routes center near $2,800, with a $2,100–$3,900 scenario range."
+            "detail": "Three valuation routes center near $2,800, with a $2,100\u2013$3,900 scenario range."
           }
         ]
       },
@@ -1868,7 +1868,7 @@
       "period": "Q4 FY2026",
       "canonical_url": "https://chargedalpha.com/research/cmc-q4-fy2026",
       "title": "CMC: Steel Is Stronger. The New Portfolio Still Has to Earn Its Price.",
-      "page_title": "CMC Q4 FY2026 Research Packet — Charged Alpha",
+      "page_title": "CMC Q4 FY2026 Research Packet \u2014 Charged Alpha",
       "description": "CMC delivered stronger steel margins and cash flow, but precast softness, normalized taxes and acquisition debt keep our call at Hold with a $70 base value.",
       "sha256": "8b60b3788be3db13a8dc8034d29202608dd51ae245692c680bf16a16bbc35bfa",
       "html_file": "research_packets/cmc-q4-fy2026.html",
@@ -1926,7 +1926,7 @@
       "period": "Q4 FY2026",
       "canonical_url": "https://chargedalpha.com/research/cost-q4-fy2026",
       "title": "COST: A 12% Clean EPS Gain Meets an 18.5% Hurdle",
-      "page_title": "COST Q4 FY2026 Research Packet — Charged Alpha",
+      "page_title": "COST Q4 FY2026 Research Packet \u2014 Charged Alpha",
       "description": "Costco delivered double-digit normalized earnings growth, but our $850 base value says the stock still prices in a faster cash-compounding path than the recent record.",
       "sha256": "457682f37311a07f44708ab5457109f92d15c93e7e991f046eb733454644b412",
       "html_file": "research_packets/cost-q4-fy2026.html",
@@ -1984,8 +1984,8 @@
       "period": "Q4 FY2026",
       "canonical_url": "https://chargedalpha.com/research/cprt-q4-fy2026",
       "title": "CPRT: More free cash, less operating cash",
-      "page_title": "CPRT Q4 FY2026 Research Packet — Charged Alpha",
-      "description": "Copart’s lower capital spending lifts free cash flow while US margins, operating cash and earnings weaken. Three valuation routes test what the rebound requires.",
+      "page_title": "CPRT Q4 FY2026 Research Packet \u2014 Charged Alpha",
+      "description": "Copart\u2019s lower capital spending lifts free cash flow while US margins, operating cash and earnings weaken. Three valuation routes test what the rebound requires.",
       "sha256": "159b584aa2634ea0f42ef580bd17c7ccce90f08111be6de760c8ae6e6b6ffdd5",
       "html_file": "research_packets/cprt-q4-fy2026.html",
       "source_episode": "CPRT-Q4-FY2026",
@@ -2006,7 +2006,7 @@
       "figures": 18,
       "tables": 31,
       "what_changed": {
-        "summary": "Copart’s lower capital spending lifts free cash flow while US margins, operating cash and earnings weaken. Three valuation routes test what the rebound requires.",
+        "summary": "Copart\u2019s lower capital spending lifts free cash flow while US margins, operating cash and earnings weaken. Three valuation routes test what the rebound requires.",
         "items": [
           {
             "title": "Free cash flow and operating cash tell different stories.",
@@ -2042,7 +2042,7 @@
       "period": "Q4 FY2026",
       "canonical_url": "https://chargedalpha.com/research/flws-q4-fy2026",
       "title": "FLWS: The refund that still left almost no cushion",
-      "page_title": "FLWS Q4 FY2026 Research Packet — Charged Alpha",
+      "page_title": "FLWS Q4 FY2026 Research Packet \u2014 Charged Alpha",
       "description": "The flowers and gifting turnaround has valuable brands, but cash generation and financing terms decide how much reaches shareholders.",
       "sha256": "46b46cc6e8866d11f681a7a9c3f0e7493236af55ff3bcb8dabb77ab2e9774cd1",
       "html_file": "research_packets/flws-q4-fy2026.html",
@@ -2100,7 +2100,7 @@
       "period": "Q4 FY2026",
       "canonical_url": "https://chargedalpha.com/research/fps-q4-fy2026",
       "title": "FPS: Record Orders, but Who Funds the Cash Ramp?",
-      "page_title": "FPS Q4 FY2026 Research Packet — Charged Alpha",
+      "page_title": "FPS Q4 FY2026 Research Packet \u2014 Charged Alpha",
       "description": "Record backlog and a stronger growth outlook meet a cash cycle funded by customer advances, an Up-C ownership bridge and a demanding valuation.",
       "sha256": "eaa526005369350ab7123eef2f7be8fb1072396eeb7dc5078ec217ae49a4d2e6",
       "html_file": "research_packets/fps-q4-fy2026.html",
@@ -2122,7 +2122,7 @@
         "items": [
           {
             "title": "The commercial step-up is real.",
-            "detail": "Q4 sales rose 94.3% and bookings reached $1.503B. Powertrain Solutions revenue grew 259.3% for the full year, extending Forgent’s role beyond individual components."
+            "detail": "Q4 sales rose 94.3% and bookings reached $1.503B. Powertrain Solutions revenue grew 259.3% for the full year, extending Forgent\u2019s role beyond individual components."
           },
           {
             "title": "The cash engine depends on advances.",
@@ -2158,8 +2158,8 @@
       "period": "Q4 FY2026",
       "canonical_url": "https://chargedalpha.com/research/idt-q4-fy2026",
       "title": "IDT: Record Profits, a Cash Conversion Test",
-      "page_title": "IDT Q4 FY2026 Research Packet — Charged Alpha",
-      "description": "IDT’s higher-margin businesses are growing, but settlement funding leaves a gap between record profits and owner cash. Our $60 base tests the recovery required.",
+      "page_title": "IDT Q4 FY2026 Research Packet \u2014 Charged Alpha",
+      "description": "IDT\u2019s higher-margin businesses are growing, but settlement funding leaves a gap between record profits and owner cash. Our $60 base tests the recovery required.",
       "sha256": "073d92a70ea00619cf1ff3a18ade7a6abaf0b6346886f837724877351ff97801",
       "html_file": "research_packets/idt-q4-fy2026.html",
       "source_episode": "IDT-Q4-FY2026",
@@ -2176,7 +2176,7 @@
       "youtube_studio": null,
       "youtube_studio_short": null,
       "what_changed": {
-        "summary": "IDT’s higher-margin businesses are growing, but settlement funding leaves a gap between record profits and owner cash. Our $60 base tests the recovery required.",
+        "summary": "IDT\u2019s higher-margin businesses are growing, but settlement funding leaves a gap between record profits and owner cash. Our $60 base tests the recovery required.",
         "items": [
           {
             "title": "Growth is reaching operating profit.",
@@ -2192,7 +2192,7 @@
           },
           {
             "title": "Guidance raises the bar.",
-            "detail": "Management targets FY2027 gross profit of $545–555M and adjusted EBITDA of $176–180M. More accounting profit must eventually produce cash after settlement needs and investment."
+            "detail": "Management targets FY2027 gross profit of $545\u2013555M and adjusted EBITDA of $176\u2013180M. More accounting profit must eventually produce cash after settlement needs and investment."
           },
           {
             "title": "Not every dollar belongs to the public shareholder.",
@@ -2216,7 +2216,7 @@
       "period": "Q4 FY2026",
       "canonical_url": "https://chargedalpha.com/research/jbl-q4-fy2026",
       "title": "JBL: Earnings Accelerate, but Cash Has a Funding Test",
-      "page_title": "JBL Q4 FY2026 Research Packet — Charged Alpha",
+      "page_title": "JBL Q4 FY2026 Research Packet \u2014 Charged Alpha",
       "description": "Jabil guides core EPS growth of34% but adjusted cash growth of4%; working-capital funding, economic costs and valuation decide how much the stronger sales outlook is worth.",
       "sha256": "73ee34278c535e005026f7a26e1b0b10c1a2607178958d625d979d133a05a53b",
       "html_file": "research_packets/jbl-q4-fy2026.html",
@@ -2274,7 +2274,7 @@
       "period": "Q4 FY2026",
       "canonical_url": "https://chargedalpha.com/research/lpth-q4-fy2026",
       "title": "LPTH: Backlog Tripled. Shareholders Funded the Cash.",
-      "page_title": "LPTH Q4 FY2026 Research Packet — Charged Alpha",
+      "page_title": "LPTH Q4 FY2026 Research Packet \u2014 Charged Alpha",
       "description": "LightPath Q4 FY2026: record backlog, acquisition-driven growth, cash burn, dilution and the valuation required to turn optics demand into common-shareholder returns.",
       "sha256": "712915823817c9e75a2ca162b3e702e41c8c34312f2e80c3f24a4d2ad5e1a9fe",
       "html_file": "research_packets/lpth-q4-fy2026.html",
@@ -2316,7 +2316,7 @@
           },
           {
             "title": "No numerical company guide was verified.",
-            "detail": "We separate management’s qualitative outlook, stale/thin Street estimates and our own assumptions. We do not manufacture a beat or miss."
+            "detail": "We separate management\u2019s qualitative outlook, stale/thin Street estimates and our own assumptions. We do not manufacture a beat or miss."
           }
         ]
       }
@@ -2332,7 +2332,7 @@
       "period": "Q4 FY2026",
       "canonical_url": "https://chargedalpha.com/research/manu-q4-fy2026",
       "title": "MANU: Champions League Returns. Where Is the Cash?",
-      "page_title": "MANU Q4 FY2026 Research Packet — Charged Alpha",
+      "page_title": "MANU Q4 FY2026 Research Packet \u2014 Charged Alpha",
       "description": "Record revenue meets flat EBITDA guidance, player investment and stadium funding risk. Our cash-based review of Manchester United.",
       "sha256": "13a104811d92dc3f04ff7e82b55d51d4014cee4b0f8c8fcb5d1115fa57053a36",
       "html_file": "research_packets/manu-q4-fy2026.html",
@@ -2362,15 +2362,15 @@
           },
           {
             "title": "The player bill changes the cash story.",
-            "detail": "£178.715M OCF becomes −£50.859M after all investing cash."
+            "detail": "\u00a3178.715M OCF becomes \u2212\u00a350.859M after all investing cash."
           },
           {
             "title": "Removing land is only one adjustment.",
-            "detail": "Excluding £63.5M stadium land leaves £12.641M, still helped by unquantified transfer-receivable monetization."
+            "detail": "Excluding \u00a363.5M stadium land leaves \u00a312.641M, still helped by unquantified transfer-receivable monetization."
           },
           {
             "title": "The share price already pays for a substantial recovery.",
-            "detail": "At the prior close, enterprise value is 15.19× guided EBITDA; our base uses 11×."
+            "detail": "At the prior close, enterprise value is 15.19\u00d7 guided EBITDA; our base uses 11\u00d7."
           }
         ]
       },
@@ -2390,7 +2390,7 @@
       "period": "Q4 FY2026",
       "canonical_url": "https://chargedalpha.com/research/mtn-q4-fy2026",
       "title": "MTN: The Dividend Needs a Cash Recovery While Pass Commitments Shrink",
-      "page_title": "MTN Q4 FY2026 Research Packet — Charged Alpha",
+      "page_title": "MTN Q4 FY2026 Research Packet \u2014 Charged Alpha",
       "description": "Vail needs stronger cash generation to fund its dividend while advance pass sales weaken; our three valuation routes support a cautious HOLD.",
       "sha256": "6d877c8925c2e40ec6080afdebc2b3643e78c120fab94a9836bf32bc3799f261",
       "html_file": "research_packets/mtn-q4-fy2026.html",
@@ -2420,7 +2420,7 @@
           },
           {
             "title": "The recovery is conditional.",
-            "detail": "Fiscal 2027 resort EBITDA guidance of $805–865M assumes normal weather and roughly $25M of incremental efficiencies, alongside lower pass demand and cost normalization."
+            "detail": "Fiscal 2027 resort EBITDA guidance of $805\u2013865M assumes normal weather and roughly $25M of incremental efficiencies, alongside lower pass demand and cost normalization."
           },
           {
             "title": "Debt takes a larger share.",
@@ -2448,7 +2448,7 @@
       "period": "Q4 FY2026",
       "canonical_url": "https://chargedalpha.com/research/peng-q4-fy2026",
       "title": "PENG: the AI growth test is now cash conversion",
-      "page_title": "PENG Q4 FY2026 Research Packet — Charged Alpha",
+      "page_title": "PENG Q4 FY2026 Research Packet \u2014 Charged Alpha",
       "description": "Penguin beat expectations and raised its outlook. Our research tests memory-led growth, working capital, dilution and valuation.",
       "sha256": "4256a8f8dbb553734e0f22e425489e31c30fc7351839cd7652a7226175f8d802",
       "html_file": "research_packets/peng-q4-fy2026.html",
@@ -2486,7 +2486,7 @@
           },
           {
             "title": "Our call remains price-sensitive.",
-            "detail": "HOLD at a $60 base, with a $35–$100 scenario band and a $48 margin-of-safety checkpoint."
+            "detail": "HOLD at a $60 base, with a $35\u2013$100 scenario band and a $48 margin-of-safety checkpoint."
           }
         ]
       },
@@ -2506,7 +2506,7 @@
       "period": "Q4 FY2026",
       "canonical_url": "https://chargedalpha.com/research/rzlt-q4-fy2026",
       "title": "RZLT: Seven Responses, Two Unresolved Paths",
-      "page_title": "RZLT Q4 FY2026 Research Packet — Charged Alpha",
+      "page_title": "RZLT Q4 FY2026 Research Packet \u2014 Charged Alpha",
       "description": "Rezolute reports seven early tumor-trial responders while the failed congenital study remains under FDA review. We examine the cash runway, economic share count and success burden in the price.",
       "sha256": "11bef05d845a614b7e3c9a4740273da03b0e5bf221a1ade245945b80de86a0bf",
       "html_file": "research_packets/rzlt-q4-fy2026.html",
@@ -2544,7 +2544,7 @@
           },
           {
             "title": "The price asks for more success.",
-            "detail": "Our $2.50 conditional base is below the $3.94 close, with a wide $0.25–$7.00 scenario range."
+            "detail": "Our $2.50 conditional base is below the $3.94 close, with a wide $0.25\u2013$7.00 scenario range."
           }
         ]
       },
@@ -2564,8 +2564,8 @@
       "period": "Q4 FY2026",
       "canonical_url": "https://chargedalpha.com/research/tho-q4-fy2026",
       "title": "THO: A $100M Savings Promise Meets a Cash-Flow Reset",
-      "page_title": "THO Q4 FY2026 Research Packet — Charged Alpha",
-      "description": "THOR’s channel inventory improved, but free cash flow fell sharply; we value the gradual recovery near $70 and test the savings promise against actual margins.",
+      "page_title": "THO Q4 FY2026 Research Packet \u2014 Charged Alpha",
+      "description": "THOR\u2019s channel inventory improved, but free cash flow fell sharply; we value the gradual recovery near $70 and test the savings promise against actual margins.",
       "sha256": "2154950461e1ee1eba896e5f2860463b0c291be7f882fec5ef9120cf30c9af50",
       "html_file": "research_packets/tho-q4-fy2026.html",
       "source_episode": "THO-Q4-FY2026",
@@ -2582,7 +2582,7 @@
       "youtube_studio": null,
       "youtube_studio_short": null,
       "what_changed": {
-        "summary": "THOR’s channel inventory improved, but free cash flow fell sharply; we value the gradual recovery near $70 and test the savings promise against actual margins.",
+        "summary": "THOR\u2019s channel inventory improved, but free cash flow fell sharply; we value the gradual recovery near $70 and test the savings promise against actual margins.",
         "items": [
           {
             "title": "Margins, not just volume, broke lower.",
@@ -2621,8 +2621,8 @@
       "company": "United Natural Foods, Inc.",
       "period": "Q4 FY2026",
       "canonical_url": "https://chargedalpha.com/research/unfi-q4-fy2026",
-      "title": "UNFI: profit recovered. Why is next year’s cash guide lower?",
-      "page_title": "UNFI Q4 FY2026 Research Packet — Charged Alpha",
+      "title": "UNFI: profit recovered. Why is next year\u2019s cash guide lower?",
+      "page_title": "UNFI Q4 FY2026 Research Packet \u2014 Charged Alpha",
       "description": "United Natural Foods Q4 FY2026: verified profit and cash bridges, FY2027 investment demands, three valuation routes, nine-quarter history and dated signposts.",
       "sha256": "582b6712b14760bc40a663e6d1389a5ffb9ca3ec42319e03090d4facbf365de9",
       "html_file": "research_packets/unfi-q4-fy2026.html",
@@ -2680,7 +2680,7 @@
       "period": "Q3 2026",
       "canonical_url": "https://chargedalpha.com/research/abt-q3-2026",
       "title": "ABT: Sales Jumped. What Reaches Shareholders?",
-      "page_title": "ABT Q3 2026 Research Packet — Charged Alpha",
+      "page_title": "ABT Q3 2026 Research Packet \u2014 Charged Alpha",
       "description": "Abbott reported 14.5% sales growth and 9.2% adjusted EPS growth. We separate acquisition effects, specified charges, cash demands and the planned Nutrition separation.",
       "sha256": "4ec000d89c29709a3ef893f4751ca39412a64ba7ab0820bc7e2d508f0e55864e",
       "html_file": "research_packets/abt-q3-2026.html",
@@ -2702,7 +2702,7 @@
         "items": [
           {
             "title": "Growth is real, but the headline includes acquisition scale.",
-            "detail": "Reported sales rose 14.5%; the issuer’s comparable measure rose 7.0%. The calculation adds historical Exact Sciences revenue to the prior base and adjusts FX and an expiring structural-heart agreement."
+            "detail": "Reported sales rose 14.5%; the issuer\u2019s comparable measure rose 7.0%. The calculation adds historical Exact Sciences revenue to the prior base and adjusts FX and an expiring structural-heart agreement."
           },
           {
             "title": "The earnings definitions diverge.",
@@ -2738,8 +2738,8 @@
       "period": "Q3 FY2026",
       "canonical_url": "https://chargedalpha.com/research/adbe-q3-fy2026",
       "title": "ADBE: One Billion Users, but What Reaches Owners?",
-      "page_title": "ADBE Q3 FY2026 Research Packet — Charged Alpha",
-      "description": "AI reach, contracted growth, recurring compensation and the cash economics behind Adobe’s earnings.",
+      "page_title": "ADBE Q3 FY2026 Research Packet \u2014 Charged Alpha",
+      "description": "AI reach, contracted growth, recurring compensation and the cash economics behind Adobe\u2019s earnings.",
       "sha256": "eacb52fe55b469072f7c7976b47928287b34db3b1ddfc7cf5cb663b317fd930e",
       "html_file": "research_packets/adbe-q3-fy2026.html",
       "source_episode": "ADBE-Q3-FY2026",
@@ -2760,7 +2760,7 @@
       "figures": 14,
       "tables": 26,
       "what_changed": {
-        "summary": "AI reach, contracted growth, recurring compensation and the cash economics behind Adobe’s earnings.",
+        "summary": "AI reach, contracted growth, recurring compensation and the cash economics behind Adobe\u2019s earnings.",
         "items": [
           {
             "title": "Adoption is expanding.",
@@ -2780,7 +2780,7 @@
           },
           {
             "title": "Value has a range.",
-            "detail": "Three routes yield $262.68–$314.94; the $300 anchor requires a $225 entry at the stated uncertainty."
+            "detail": "Three routes yield $262.68\u2013$314.94; the $300 anchor requires a $225 entry at the stated uncertainty."
           }
         ]
       }
@@ -2796,7 +2796,7 @@
       "period": "Q3 2026",
       "canonical_url": "https://chargedalpha.com/research/agnc-q3-2026",
       "title": "AGNC: The Dividend Held, but Capital Took the Hit",
-      "page_title": "AGNC Q3 2026 Research Packet — Charged Alpha",
+      "page_title": "AGNC Q3 2026 Research Packet \u2014 Charged Alpha",
       "description": "The dividend remained covered by the carry measure, but a sharp tangible-book decline leaves a thin cushion for leveraged mortgage risk.",
       "sha256": "55c9f50ba730b3690634c3af634749d65f8f467958dbe79db896a083f9cfb72e",
       "html_file": "research_packets/agnc-q3-2026.html",
@@ -2853,8 +2853,8 @@
       "company": "Amkor Technology, Inc.",
       "period": "Q3 2026",
       "canonical_url": "https://chargedalpha.com/research/amkr-q3-2026",
-      "title": "AMKR: Flat Sales, Higher Profit — When Does the Cash Catch Up?",
-      "page_title": "AMKR Q3 2026 Research Packet — Charged Alpha",
+      "title": "AMKR: Flat Sales, Higher Profit \u2014 When Does the Cash Catch Up?",
+      "page_title": "AMKR Q3 2026 Research Packet \u2014 Charged Alpha",
       "description": "Amkor earns more on nearly flat sales, but capital spending still outruns operating cash; mix, utilization and investment returns determine the value.",
       "sha256": "e5145528ce47f61936b5028dfe4d3b7b03981e75c6e3c2f2b9af2134938f20d8",
       "html_file": "research_packets/amkr-q3-2026.html",
@@ -2892,7 +2892,7 @@
           },
           {
             "title": "The spending ceiling narrows.",
-            "detail": "FY2026 capex guidance is now≈$2.5B; returns on that investment remain the valuation test."
+            "detail": "FY2026 capex guidance is now\u2248$2.5B; returns on that investment remain the valuation test."
           }
         ]
       },
@@ -2912,7 +2912,7 @@
       "period": "Q3 2026",
       "canonical_url": "https://chargedalpha.com/research/aph-q3-2026",
       "title": "Amphenol: Record Orders, but Who Pays for the Growth?",
-      "page_title": "APH Q3 2026 Research Packet — Charged Alpha",
+      "page_title": "APH Q3 2026 Research Packet \u2014 Charged Alpha",
       "description": "Organic growth and underlying margins accelerate, while acquisition spending and a demanding valuation make cash conversion the next test.",
       "sha256": "15b823b368c86e3e373ff146bd2a188bf4fcdc54032773b022142352d2ee4cec",
       "html_file": "research_packets/aph-q3-2026.html",
@@ -2970,7 +2970,7 @@
       "period": "Q3 2026",
       "canonical_url": "https://chargedalpha.com/research/asml-q3-2026",
       "title": "ASML: cash surged, but how much can repeat?",
-      "page_title": "ASML Q3 2026 Research Packet — Charged Alpha",
+      "page_title": "ASML Q3 2026 Research Packet \u2014 Charged Alpha",
       "description": "ASML Q3 2026: a stronger operating quarter, advance-funded cash and a HOLD at $1,650 fair value; three valuation routes, scenarios and dated checkpoints.",
       "sha256": "2cfea7496083ae996455f8117c1bc60027f3efe4760777c0add2a66a2876c375",
       "html_file": "research_packets/asml-q3-2026.html",
@@ -2996,11 +2996,11 @@
           },
           {
             "title": "Surging cash is not all repeatable.",
-            "detail": "Working capital supplied €7.009B, or 59.4% of operating cash; future delivery obligations matter."
+            "detail": "Working capital supplied \u20ac7.009B, or 59.4% of operating cash; future delivery obligations matter."
           },
           {
             "title": "Upgrades drove margin strength.",
-            "detail": "Service and field-option sales reached €3.289B; gross margin exceeded the previous guidance ceiling."
+            "detail": "Service and field-option sales reached \u20ac3.289B; gross margin exceeded the previous guidance ceiling."
           },
           {
             "title": "The stock already prices growth.",
@@ -3008,7 +3008,7 @@
           },
           {
             "title": "HOLD, with measurable checkpoints.",
-            "detail": "Watch Q4 revenue of €14.2–15.2B, gross margin near 57% and cash conversion after timing effects."
+            "detail": "Watch Q4 revenue of \u20ac14.2\u201315.2B, gross margin near 57% and cash conversion after timing effects."
           }
         ]
       },
@@ -3028,7 +3028,7 @@
       "period": "Q3 2026",
       "canonical_url": "https://chargedalpha.com/research/aur-q3-2026",
       "title": "AUR: A Six-Week Delay Meets a $1 Billion Share-Sale Window",
-      "page_title": "AUR Q3 2026 Research Packet — Charged Alpha",
+      "page_title": "AUR Q3 2026 Research Packet \u2014 Charged Alpha",
       "description": "Aurora cut its 2026 revenue outlook as truck production slipped. We test the cash runway, potential dilution and valuation of the continuing AUR common shares.",
       "sha256": "e6e0cb7a05c00eb0d8b81f3faba06ea3814be77845fe4a9829adad1f278fd5de",
       "html_file": "research_packets/aur-q3-2026.html",
@@ -3058,7 +3058,7 @@
           },
           {
             "title": "Count both common-share classes.",
-            "detail": "The October 21 cover-page count is 2.020 billion Class A plus Class B shares. At $4.41 that implies $8.91 billion of common equity value, above the provider’s $7.52 billion field."
+            "detail": "The October 21 cover-page count is 2.020 billion Class A plus Class B shares. At $4.41 that implies $8.91 billion of common equity value, above the provider\u2019s $7.52 billion field."
           },
           {
             "title": "Commercial progress is real, but commitments have different strength.",
@@ -3086,7 +3086,7 @@
       "period": "Q3 2026",
       "canonical_url": "https://chargedalpha.com/research/bsx-q3-2026",
       "title": "Boston Scientific: Cheap Earnings, Unfinished Cash Recovery",
-      "page_title": "BSX Q3 2026 Research Packet — Charged Alpha",
+      "page_title": "BSX Q3 2026 Research Packet \u2014 Charged Alpha",
       "description": "A cyber-disrupted quarter, a lower share count and a pending acquisition make cash recovery more important than the headline earnings multiple.",
       "sha256": "d5ff9a973bde599661bdc5c07ad94cf25994db6368be7fb3425ef53aaa89fecf",
       "html_file": "research_packets/bsx-q3-2026.html",
@@ -3144,7 +3144,7 @@
       "period": "Q3 2026",
       "canonical_url": "https://chargedalpha.com/research/bwxt-q3-2026",
       "title": "BWXT: The Cash Improved. What Does the New Portfolio Earn?",
-      "page_title": "BWXT Q3 2026 Research Packet — Charged Alpha",
+      "page_title": "BWXT Q3 2026 Research Packet \u2014 Charged Alpha",
       "description": "A stronger cash quarter meets a changing nuclear portfolio and a demanding valuation.",
       "sha256": "4c24593a2d840fb79957e20bcd1289596c6e35dc2a7e6848ed6a1e8ee543d022",
       "html_file": "research_packets/bwxt-q3-2026.html",
@@ -3182,7 +3182,7 @@
           },
           {
             "title": "The outlook narrowed rather than broadly rose.",
-            "detail": "FY2026 adjusted EPS is $4.72–$4.77; the FCF floor rises to $350M."
+            "detail": "FY2026 adjusted EPS is $4.72\u2013$4.77; the FCF floor rises to $350M."
           }
         ]
       },
@@ -3202,8 +3202,8 @@
       "period": "Q3 2026",
       "canonical_url": "https://chargedalpha.com/research/cci-q3-2026",
       "title": "CCI: Better Per Share, but Are the Towers Turning?",
-      "page_title": "CCI Q3 2026 Research Packet — Charged Alpha",
-      "description": "<b>HOLD, 3/5 conviction.</b> Crown Castle is becoming a simpler tower business, but stronger AFFO per share mainly reflects financing and share-count benefits after the fiber sale. Tower revenue and EBITDA still declined. Our $87 fair-value anchor and $80–$95 range leave little cushion against the dated $85.28 snapshot. High uncertainty requires either stronger leasing evidence or a materially cheaper entry.",
+      "page_title": "CCI Q3 2026 Research Packet \u2014 Charged Alpha",
+      "description": "<b>HOLD, 3/5 conviction.</b> Crown Castle is becoming a simpler tower business, but stronger AFFO per share mainly reflects financing and share-count benefits after the fiber sale. Tower revenue and EBITDA still declined. Our $87 fair-value anchor and $80\u2013$95 range leave little cushion against the dated $85.28 snapshot. High uncertainty requires either stronger leasing evidence or a materially cheaper entry.",
       "sha256": "8b5484e3bec742190653f9fc781ca80f3d901ac9b9c5a8f713ac59248addd872",
       "html_file": "research_packets/cci-q3-2026.html",
       "source_episode": "CCI-Q3-2026",
@@ -3220,7 +3220,7 @@
       "youtube_studio": null,
       "youtube_studio_short": null,
       "what_changed": {
-        "summary": "HOLD, 3/5 conviction. Crown Castle is becoming a simpler tower business, but stronger AFFO per share mainly reflects financing and share-count benefits after the fiber sale. Tower revenue and EBITDA still declined. Our $87 fair-value anchor and $80–$95 range leave little cushion against the dated $85.28 snapshot. High uncertainty requires either stronger leasing evidence or a materially cheaper entry.",
+        "summary": "HOLD, 3/5 conviction. Crown Castle is becoming a simpler tower business, but stronger AFFO per share mainly reflects financing and share-count benefits after the fiber sale. Tower revenue and EBITDA still declined. Our $87 fair-value anchor and $80\u2013$95 range leave little cushion against the dated $85.28 snapshot. High uncertainty requires either stronger leasing evidence or a materially cheaper entry.",
         "items": [
           {
             "title": "The denominator is improving faster than the towers.",
@@ -3228,7 +3228,7 @@
           },
           {
             "title": "The guide increase needs a cash translation.",
-            "detail": "The $20M revenue increase is straight-line rent from contract extensions; core leasing is expected near the low end of $60M–$70M."
+            "detail": "The $20M revenue increase is straight-line rent from contract extensions; core leasing is expected near the low end of $60M\u2013$70M."
           },
           {
             "title": "The fiber sale changes every comparison.",
@@ -3260,7 +3260,7 @@
       "period": "Q3 2026",
       "canonical_url": "https://chargedalpha.com/research/ccj-q3-2026",
       "title": "CCJ: The nuclear backlog meets a fourth-quarter cash test",
-      "page_title": "CCJ Q3 2026 Research Packet — Charged Alpha",
+      "page_title": "CCJ Q3 2026 Research Packet \u2014 Charged Alpha",
       "description": "Cameco generated C$3 million of quarterly operating cash while delivery concentration, rising unit costs and investee spending raise the bar for its nuclear growth valuation.",
       "sha256": "5c2e453349ff7d744e797974fdc36a1a9e42adc14a767a16491f88b4f4eb5694",
       "html_file": "research_packets/ccj-q3-2026.html",
@@ -3282,19 +3282,19 @@
         "items": [
           {
             "title": "The cash test moved to Q4.",
-            "detail": "Nine-month operating cash was C$112M against C$322M of PP&E additions. Annual uranium sales guidance implies another 9–10M pounds of deliveries."
+            "detail": "Nine-month operating cash was C$112M against C$322M of PP&E additions. Annual uranium sales guidance implies another 9\u201310M pounds of deliveries."
           },
           {
             "title": "Planned downtime still costs money.",
-            "detail": "Key Lake’s extended maintenance outage began in Q3; annual uranium cost-of-sales guidance rose to C$67–70/lb from C$63–67.50."
+            "detail": "Key Lake\u2019s extended maintenance outage began in Q3; annual uranium cost-of-sales guidance rose to C$67\u201370/lb from C$63\u201367.50."
           },
           {
             "title": "The capex reduction is partly timing.",
-            "detail": "Consolidated guidance fell by C$50M at each end to C$440–490M, with projects deferred; Cameco’s Westinghouse capex share adds US$160–200M outside that total."
+            "detail": "Consolidated guidance fell by C$50M at each end to C$440\u2013490M, with projects deferred; Cameco\u2019s Westinghouse capex share adds US$160\u2013200M outside that total."
           },
           {
             "title": "Westinghouse improved this quarter.",
-            "detail": "Cameco’s share of adjusted EBITDA rose to C$143M from C$124M. The year-to-date decline still reflects the prior Dukovany benefit; reported revenue does not consolidate Westinghouse."
+            "detail": "Cameco\u2019s share of adjusted EBITDA rose to C$143M from C$124M. The year-to-date decline still reflects the prior Dukovany benefit; reported revenue does not consolidate Westinghouse."
           },
           {
             "title": "The stock reset has not removed execution risk.",
@@ -3318,8 +3318,8 @@
       "period": "Q3 2026",
       "canonical_url": "https://chargedalpha.com/research/cdns-q3-2026",
       "title": "Cadence: 22% Growth, but the Profit Has to Reach the Share",
-      "page_title": "CDNS Q3 2026 Research Packet — Charged Alpha",
-      "description": "Cadence’s recurring-demand strength meets weaker margin conversion, acquisition costs and a stock-compensation burden that matters for per-share cash value.",
+      "page_title": "CDNS Q3 2026 Research Packet \u2014 Charged Alpha",
+      "description": "Cadence\u2019s recurring-demand strength meets weaker margin conversion, acquisition costs and a stock-compensation burden that matters for per-share cash value.",
       "sha256": "69f0df65a562b03c28f05d1a7561c947e28878b34624cd5256fef9c78f0d1fe5",
       "html_file": "research_packets/cdns-q3-2026.html",
       "source_episode": "CDNS-Q3-2026",
@@ -3336,7 +3336,7 @@
       "youtube_studio": null,
       "youtube_studio_short": null,
       "what_changed": {
-        "summary": "Cadence’s recurring-demand strength meets weaker margin conversion, acquisition costs and a stock-compensation burden that matters for per-share cash value.",
+        "summary": "Cadence\u2019s recurring-demand strength meets weaker margin conversion, acquisition costs and a stock-compensation burden that matters for per-share cash value.",
         "items": [
           {
             "title": "Sales growth outpaced operating profit.",
@@ -3376,7 +3376,7 @@
       "period": "Q3 2026",
       "canonical_url": "https://chargedalpha.com/research/clf-q3-2026",
       "title": "CLF: The Recovery Is Real. Can It Pay Down the Debt?",
-      "page_title": "CLF Q3 2026 Research Packet — Charged Alpha",
+      "page_title": "CLF Q3 2026 Research Packet \u2014 Charged Alpha",
       "description": "A source-backed review of Cleveland-Cliffs pricing recovery, cash conversion and conditional 2027 outlook.",
       "sha256": "13b0d7416c98f0da9113a02166a6ac2a0cba33207aa705b52ded4a687cf3e13c",
       "html_file": "research_packets/clf-q3-2026.html",
@@ -3434,7 +3434,7 @@
       "period": "Q3 2026",
       "canonical_url": "https://chargedalpha.com/research/cls-q3-2026",
       "title": "CLS: Adjusted EPS Doubled. The Cash Bill Comes Next.",
-      "page_title": "CLS Q3 2026 Research Packet — Charged Alpha",
+      "page_title": "CLS Q3 2026 Research Packet \u2014 Charged Alpha",
       "description": "Celestica raises its growth outlook while cutting free-cash-flow guidance; the capacity ramp, receivable funding and dilution determine the margin of safety.",
       "sha256": "01608d5f526d5f6d992533bc91f7da3c62d04320b3fed12faa7ab7c894692ad6",
       "html_file": "research_packets/cls-q3-2026.html",
@@ -3456,7 +3456,7 @@
         "items": [
           {
             "title": "The operating beat is real.",
-            "detail": "Q3 revenue of $5.8297B and adjusted EPS of $3.30 exceeded management’s prior high ends."
+            "detail": "Q3 revenue of $5.8297B and adjusted EPS of $3.30 exceeded management\u2019s prior high ends."
           },
           {
             "title": "The cash forecast moved the other way.",
@@ -3472,7 +3472,7 @@
           },
           {
             "title": "The 2027 opportunity carries execution risk.",
-            "detail": "A$40B revenue outlook and $1.5–$2.0B capex plan make cash returns and customer commitments central to valuation."
+            "detail": "A$40B revenue outlook and $1.5\u2013$2.0B capex plan make cash returns and customer commitments central to valuation."
           }
         ]
       },
@@ -3492,7 +3492,7 @@
       "period": "Q3 2026",
       "canonical_url": "https://chargedalpha.com/research/cmcsa-q3-2026",
       "title": "CMCSA: Peacock turned profitable. Why did cash fall?",
-      "page_title": "CMCSA Q3 2026 Research Packet — Charged Alpha",
+      "page_title": "CMCSA Q3 2026 Research Packet \u2014 Charged Alpha",
       "description": "Peacock profitability meets a weaker residential cash engine: Comcast Q3 results, reinvestment, debt and a $23 conditional fair-value framework.",
       "sha256": "0903a2b3c3bd6305e0e6a17e8d973b653e5a5f83167b35b4cc5d4f18b257cc10",
       "html_file": "research_packets/cmcsa-q3-2026.html",
@@ -3530,7 +3530,7 @@
           },
           {
             "title": "Cash value is near the price.",
-            "detail": "Three cautious routes support about $23 against $22.84, with a $16–32 ordinary scenario band."
+            "detail": "Three cautious routes support about $23 against $22.84, with a $16\u201332 ordinary scenario band."
           }
         ]
       },
@@ -3549,8 +3549,8 @@
       "company": "Danaher",
       "period": "Q3 2026",
       "canonical_url": "https://chargedalpha.com/research/dhr-q3-2026",
-      "title": "DHR: Earnings Jumped — How Much Will Repeat?",
-      "page_title": "DHR Q3 2026 Research Packet — Charged Alpha",
+      "title": "DHR: Earnings Jumped \u2014 How Much Will Repeat?",
+      "page_title": "DHR Q3 2026 Research Packet \u2014 Charged Alpha",
       "description": "Separate the tax-assisted earnings increase, revised core-growth definition and Masimo funding from recurring cash value.",
       "sha256": "45b913c8c51c6325eea0dc6299dbc27d123f01fdf1723020734dbc3bca803954",
       "html_file": "research_packets/dhr-q3-2026.html",
@@ -3608,7 +3608,7 @@
       "period": "Q3 2026",
       "canonical_url": "https://chargedalpha.com/research/efx-q3-2026",
       "title": "EFX: Earnings Accelerated. Cash Has Not Caught Up.",
-      "page_title": "EFX Q3 2026 Research Packet — Charged Alpha",
+      "page_title": "EFX Q3 2026 Research Packet \u2014 Charged Alpha",
       "description": "Equifax raises per-share earnings while mortgage guidance weakens; our cash, share-count and valuation analysis separates operating progress from a smaller denominator.",
       "sha256": "dd255c616dde3d1f8c5772988e8536336a4e46ea826833ad773d0c13960a3cd9",
       "html_file": "research_packets/efx-q3-2026.html",
@@ -3646,7 +3646,7 @@
           },
           {
             "title": "Our model leaves little immediate cushion.",
-            "detail": "The $175 base value is close to the $175.17 intraday quote; the $130–230 scenario band reflects mortgage, cash conversion and valuation risk."
+            "detail": "The $175 base value is close to the $175.17 intraday quote; the $130\u2013230 scenario band reflects mortgage, cash conversion and valuation risk."
           }
         ]
       },
@@ -3666,7 +3666,7 @@
       "period": "Q3 2026",
       "canonical_url": "https://chargedalpha.com/research/elv-q3-2026",
       "title": "ELV: A Higher Guide, a Different Earnings Baseline",
-      "page_title": "ELV Q3 2026 Research Packet — Charged Alpha",
+      "page_title": "ELV Q3 2026 Research Packet \u2014 Charged Alpha",
       "description": "Elevance raised adjusted EPS guidance to $29, while its 2027 growth claim starts from $26.75. We test recurring earnings, cash timing and regulated capital.",
       "sha256": "05c889d5640346de9b3e83f2d5bde48566e7156007fb0c8fd4b8690f0b9f7cc5",
       "html_file": "research_packets/elv-q3-2026.html",
@@ -3724,8 +3724,8 @@
       "period": "Q3 2026",
       "canonical_url": "https://chargedalpha.com/research/eric-q3-2026",
       "title": "ERIC: Profit Fell, But the Comparison Is the Trap",
-      "page_title": "ERIC Q3 2026 Research Packet — Charged Alpha",
-      "description": "Ericsson’s underlying operating improvement, cash conversion and dated per-ADS valuation after the Q3 earnings release.",
+      "page_title": "ERIC Q3 2026 Research Packet \u2014 Charged Alpha",
+      "description": "Ericsson\u2019s underlying operating improvement, cash conversion and dated per-ADS valuation after the Q3 earnings release.",
       "sha256": "92c706d7a8870396e3293715f7aac433ccca693151d983677f0fcf712542f456",
       "html_file": "research_packets/eric-q3-2026.html",
       "source_episode": "ERIC-Q3-2026",
@@ -3742,7 +3742,7 @@
       "youtube_studio": null,
       "youtube_studio_short": null,
       "what_changed": {
-        "summary": "Ericsson’s underlying operating improvement, cash conversion and dated per-ADS valuation after the Q3 earnings release.",
+        "summary": "Ericsson\u2019s underlying operating improvement, cash conversion and dated per-ADS valuation after the Q3 earnings release.",
         "items": [
           {
             "title": "Normalize the comparison, not every cost.",
@@ -3782,17 +3782,17 @@
       "period": "Q3 2026",
       "canonical_url": "https://chargedalpha.com/research/etn-q3-2026",
       "title": "ETN: Capacity Is Converting. Has the Price Already Caught Up?",
-      "page_title": "ETN Q3 2026 Research Packet — Charged Alpha",
+      "page_title": "ETN Q3 2026 Research Packet \u2014 Charged Alpha",
       "description": "Eaton turns electrical demand into 19% organic growth and 25.3% segment margin; we reassess cash conversion, acquisition funding and the price of the capacity ramp.",
-      "sha256": "207dcfcdd15dc36f324019d5fda103219ed77332038b71cea131ceeb5ecf63c4",
+      "sha256": "2b5e41998276e5ca7d95763d6e24d6879101be779256b28d92e7cb6d6618287e",
       "html_file": "research_packets/etn-q3-2026.html",
       "source_episode": "ETN-Q3-2026",
       "source_staged_at": "2026-11-04T01:56:41Z",
       "source_sha256": {
         "READY": "07db7ad376652ecf04f3b74c419609255079a3e6f28824411c233a16307027d4",
-        "handoff.json": "04ee7d8b22bed3730b1976f02cc59d248f00b717f6b660b9841dc4ce2d125276",
-        "packet/etn-q3-2026-research-packet.html": "207dcfcdd15dc36f324019d5fda103219ed77332038b71cea131ceeb5ecf63c4",
-        "packet/packet_meta.json": "f6d24f65287ba3acc9400f25d9cdeb9c542d717000edf0bf9d77397db8a6144b",
+        "handoff.json": "0149f4427309ef6ea9cfd3bb486a30a60e672c4a75844fdd6bf50c2fa02f3f33",
+        "packet/etn-q3-2026-research-packet.html": "2b5e41998276e5ca7d95763d6e24d6879101be779256b28d92e7cb6d6618287e",
+        "packet/packet_meta.json": "0f51660b5062ab5009239fc1328e1f4ac809f752f8cf7df302b1bcd5ee12fd12",
         "packet/packet.json": "09ddcb52105fedfe80f02453845a81db5b837e5ea836b6cecf68ee7453c29b9f"
       },
       "primary_youtube_long": "qXGN49hmnCM",
@@ -3840,7 +3840,7 @@
       "period": "Q3 2026",
       "canonical_url": "https://chargedalpha.com/research/fast-q3-2026",
       "title": "FAST: Profit jumped. Why did cash lag?",
-      "page_title": "FAST Q3 2026 Research Packet — Charged Alpha",
+      "page_title": "FAST Q3 2026 Research Packet \u2014 Charged Alpha",
       "description": "Fastenal grew earnings faster than cash after investment. Follow the working-capital bridge, customer mix and the growth priced into the shares.",
       "sha256": "ed6fb6a2a5c2e788ad9a43c2f13d6983ffbcefbe4768fc28ebd57999101b437b",
       "html_file": "research_packets/fast-q3-2026.html",
@@ -3897,9 +3897,9 @@
       "company": "Comfort Systems USA",
       "period": "Q3 2026",
       "canonical_url": "https://chargedalpha.com/research/fix-q3-2026",
-      "title": "FIX: A billion dollars of cash—and the work still owed",
-      "page_title": "FIX Q3 2026 Research Packet — Charged Alpha",
-      "description": "<b>HOLD · 3/5.</b> Comfort Systems is executing strongly, but customer-funded cash and rising capacity spending deserve separate treatment. Our three valuation routes support a rounded $1,100 anchor versus the saved $1,160.41 intraday quote. High uncertainty calls for a wider margin of safety before adding.",
+      "title": "FIX: A billion dollars of cash\u2014and the work still owed",
+      "page_title": "FIX Q3 2026 Research Packet \u2014 Charged Alpha",
+      "description": "<b>HOLD \u00b7 3/5.</b> Comfort Systems is executing strongly, but customer-funded cash and rising capacity spending deserve separate treatment. Our three valuation routes support a rounded $1,100 anchor versus the saved $1,160.41 intraday quote. High uncertainty calls for a wider margin of safety before adding.",
       "sha256": "3720a25c9a3f70eb58e47d5d2822878168931429877f9defe466f1270c2cb959",
       "html_file": "research_packets/fix-q3-2026.html",
       "source_episode": "FIX-Q3-2026",
@@ -3916,7 +3916,7 @@
       "youtube_studio": null,
       "youtube_studio_short": null,
       "what_changed": {
-        "summary": "HOLD · 3/5. Comfort Systems is executing strongly, but customer-funded cash and rising capacity spending deserve separate treatment. Our three valuation routes support a rounded $1,100 anchor versus the saved $1,160.41 intraday quote. High uncertainty calls for a wider margin of safety before adding.",
+        "summary": "HOLD \u00b7 3/5. Comfort Systems is executing strongly, but customer-funded cash and rising capacity spending deserve separate treatment. Our three valuation routes support a rounded $1,100 anchor versus the saved $1,160.41 intraday quote. High uncertainty calls for a wider margin of safety before adding.",
         "items": [
           {
             "title": "Cash conversion surged.",
@@ -3936,7 +3936,7 @@
           },
           {
             "title": "Valuation needs normalization.",
-            "detail": "Our three routes span approximately $1,004–$1,182; a strong backlog alone does not justify treating peak cash generation as permanent."
+            "detail": "Our three routes span approximately $1,004\u2013$1,182; a strong backlog alone does not justify treating peak cash generation as permanent."
           }
         ]
       },
@@ -3956,7 +3956,7 @@
       "period": "Q3 FY2026",
       "canonical_url": "https://chargedalpha.com/research/gldg-q3-fy2026",
       "title": "GLDG: working capital is not the same as spendable cash",
-      "page_title": "GLDG Q3 FY2026 Research Packet — Charged Alpha",
+      "page_title": "GLDG Q3 FY2026 Research Packet \u2014 Charged Alpha",
       "description": "A source-based examination of exploration spending, locked holdings and risk-adjusted project value.",
       "sha256": "9b5c7ad59eb7fa535de4783ba6b915e5612840bcfa96a901237449660db176c0",
       "html_file": "research_packets/gldg-q3-fy2026.html",
@@ -3990,7 +3990,7 @@
           },
           {
             "title": "A PEA is a conditional project study.",
-            "detail": "São Jorge’s $532.5m NPV uses $3,500 gold and does not establish reserves or funded construction."
+            "detail": "S\u00e3o Jorge\u2019s $532.5m NPV uses $3,500 gold and does not establish reserves or funded construction."
           },
           {
             "title": "Price already gives projects credit.",
@@ -4013,9 +4013,9 @@
       "company": "Corning",
       "period": "Q3 2026",
       "canonical_url": "https://chargedalpha.com/research/glw-q3-2026",
-      "title": "GLW: Customers Fund the Buildout. When Does the Cash Become Corning’s?",
-      "page_title": "GLW Q3 2026 Research Packet — Charged Alpha",
-      "description": "Optical sales grew 44%, but Corning’s cash, hedge adjustments and customer-funded capacity determine what the growth is worth.",
+      "title": "GLW: Customers Fund the Buildout. When Does the Cash Become Corning\u2019s?",
+      "page_title": "GLW Q3 2026 Research Packet \u2014 Charged Alpha",
+      "description": "Optical sales grew 44%, but Corning\u2019s cash, hedge adjustments and customer-funded capacity determine what the growth is worth.",
       "sha256": "bad87535b46c8e15c8d5c13f1a87a95e29b408d2944d5131c2be895c38f93ec7",
       "html_file": "research_packets/glw-q3-2026.html",
       "source_episode": "GLW-Q3-2026",
@@ -4032,7 +4032,7 @@
       "youtube_studio": null,
       "youtube_studio_short": null,
       "what_changed": {
-        "summary": "Optical sales grew 44%, but Corning’s cash, hedge adjustments and customer-funded capacity determine what the growth is worth.",
+        "summary": "Optical sales grew 44%, but Corning\u2019s cash, hedge adjustments and customer-funded capacity determine what the growth is worth.",
         "items": [
           {
             "title": "Optical is doing the heavy lifting.",
@@ -4048,11 +4048,11 @@
           },
           {
             "title": "Customer funding reduces risk and creates obligations.",
-            "detail": "The nine-month deposit/incentive cash movement was +$639M, while Q3 alone was −$70M. Earlier cash becomes a credit against later customer receivables."
+            "detail": "The nine-month deposit/incentive cash movement was +$639M, while Q3 alone was \u2212$70M. Earlier cash becomes a credit against later customer receivables."
           },
           {
             "title": "The next hurdle is profitable capacity absorption.",
-            "detail": "Q4 core guidance is $5.2–5.3B sales and $0.96–1.00 EPS. Solar’s ramp and recurring cash conversion must validate the ambitious long-term plan."
+            "detail": "Q4 core guidance is $5.2\u20135.3B sales and $0.96\u20131.00 EPS. Solar\u2019s ramp and recurring cash conversion must validate the ambitious long-term plan."
           }
         ]
       },
@@ -4071,9 +4071,9 @@
       "company": "Alphabet Inc.",
       "period": "Q3 2026",
       "canonical_url": "https://chargedalpha.com/research/googl-q3-2026",
-      "title": "GOOGL Q3 2026: Cloud Doubled — Who Funds the Buildout?",
-      "page_title": "GOOGL Q3 2026 Research Packet — Charged Alpha",
-      "description": "Alphabet’s Cloud expansion, investment-mark earnings and external financing test the cash available to common shareholders.",
+      "title": "GOOGL Q3 2026: Cloud Doubled \u2014 Who Funds the Buildout?",
+      "page_title": "GOOGL Q3 2026 Research Packet \u2014 Charged Alpha",
+      "description": "Alphabet\u2019s Cloud expansion, investment-mark earnings and external financing test the cash available to common shareholders.",
       "sha256": "3d869c04bd9a1cb47f9a2cfa72fd894b316eaf4c9608455f5a93fcc3dadbef5b",
       "html_file": "research_packets/googl-q3-2026.html",
       "source_episode": "GOOGL-Q3-2026",
@@ -4090,7 +4090,7 @@
       "youtube_studio": null,
       "youtube_studio_short": null,
       "what_changed": {
-        "summary": "Alphabet’s Cloud expansion, investment-mark earnings and external financing test the cash available to common shareholders.",
+        "summary": "Alphabet\u2019s Cloud expansion, investment-mark earnings and external financing test the cash available to common shareholders.",
         "items": [
           {
             "title": "Cloud changed its mix.",
@@ -4130,8 +4130,8 @@
       "period": "Q3 2026",
       "canonical_url": "https://chargedalpha.com/research/hal-q3-2026",
       "title": "HAL: Better Adjusted Margins, A Tougher Cash Test",
-      "page_title": "HAL Q3 2026 Research Packet — Charged Alpha",
-      "description": "Halliburton’s adjusted profit improved sequentially, but cash conversion and the price paid for recovery determine our HOLD call.",
+      "page_title": "HAL Q3 2026 Research Packet \u2014 Charged Alpha",
+      "description": "Halliburton\u2019s adjusted profit improved sequentially, but cash conversion and the price paid for recovery determine our HOLD call.",
       "sha256": "f5677934af7f7e3d125bc6e51b4aa3bea20ab5a618aa9e75685fe3b22e234c58",
       "html_file": "research_packets/hal-q3-2026.html",
       "source_episode": "HAL-Q3-2026",
@@ -4148,7 +4148,7 @@
       "youtube_studio": null,
       "youtube_studio_short": null,
       "what_changed": {
-        "summary": "Halliburton’s adjusted profit improved sequentially, but cash conversion and the price paid for recovery determine our HOLD call.",
+        "summary": "Halliburton\u2019s adjusted profit improved sequentially, but cash conversion and the price paid for recovery determine our HOLD call.",
         "items": [
           {
             "title": "Two profit stories:",
@@ -4164,7 +4164,7 @@
           },
           {
             "title": "Recovery remains an outlook:",
-            "detail": "management’s early 2027 view is mid-single-digit growth and about 15% operating margins, assuming flat North America."
+            "detail": "management\u2019s early 2027 view is mid-single-digit growth and about 15% operating margins, assuming flat North America."
           },
           {
             "title": "Price disciplines the call:",
@@ -4188,7 +4188,7 @@
       "period": "Q3 FY2026",
       "canonical_url": "https://chargedalpha.com/research/hiti-q3-fy2026",
       "title": "HITI: Germany Scales, but How Much Profit Becomes Cash?",
-      "page_title": "HITI Q3 FY2026 Research Packet — Charged Alpha",
+      "page_title": "HITI Q3 FY2026 Research Packet \u2014 Charged Alpha",
       "description": "Germany lifts operating earnings, but derivative gains, minority ownership and the full cost of growth keep the cash test unfinished.",
       "sha256": "f562a0ad91abbfdafa5107271507ae6cba6e4419ee816b725ad05834bf0468ae",
       "html_file": "research_packets/hiti-q3-fy2026.html",
@@ -4222,11 +4222,11 @@
           },
           {
             "title": "The balance-sheet and ownership bridge matters.",
-            "detail": "Restricted cash, cash-settled financing, nonrecourse factoring and Remexian’s 49% minority share all affect the interpretation of consolidated results."
+            "detail": "Restricted cash, cash-settled financing, nonrecourse factoring and Remexian\u2019s 49% minority share all affect the interpretation of consolidated results."
           },
           {
             "title": "Price already requires continued progress.",
-            "detail": "Three valuation routes span roughly USD2.39–2.74. The USD2.60 base case assumes stronger recurring owner cash flow, while current controls remain ineffective."
+            "detail": "Three valuation routes span roughly USD2.39\u20132.74. The USD2.60 base case assumes stronger recurring owner cash flow, while current controls remain ineffective."
           }
         ]
       },
@@ -4245,9 +4245,9 @@
       "company": "International Business Machines Corporation",
       "period": "Q3 2026",
       "canonical_url": "https://chargedalpha.com/research/ibm-q3-2026",
-      "title": "IBM: Cash Is Growing — How Much Reaches Owners?",
-      "page_title": "IBM Q3 2026 Research Packet — Charged Alpha",
-      "description": "IBM’s software growth meets tax comparisons, financing receivables and acquisition capital. We trace reported cash into per-share value.",
+      "title": "IBM: Cash Is Growing \u2014 How Much Reaches Owners?",
+      "page_title": "IBM Q3 2026 Research Packet \u2014 Charged Alpha",
+      "description": "IBM\u2019s software growth meets tax comparisons, financing receivables and acquisition capital. We trace reported cash into per-share value.",
       "sha256": "7a30586bf4227ee426d7ceb82bbc511e60320d6db7d1bdd46abc1651a86f8cde",
       "html_file": "research_packets/ibm-q3-2026.html",
       "source_episode": "IBM-Q3-2026",
@@ -4264,7 +4264,7 @@
       "youtube_studio": null,
       "youtube_studio_short": null,
       "what_changed": {
-        "summary": "IBM’s software growth meets tax comparisons, financing receivables and acquisition capital. We trace reported cash into per-share value.",
+        "summary": "IBM\u2019s software growth meets tax comparisons, financing receivables and acquisition capital. We trace reported cash into per-share value.",
         "items": [
           {
             "title": "EPS growth is not all operating growth.",
@@ -4284,7 +4284,7 @@
           },
           {
             "title": "The reference price offers little cushion.",
-            "detail": "Our three methods support $218.50–$250.80 and a rounded $240 anchor."
+            "detail": "Our three methods support $218.50\u2013$250.80 and a rounded $240 anchor."
           }
         ]
       },
@@ -4304,7 +4304,7 @@
       "period": "Q3 2026",
       "canonical_url": "https://chargedalpha.com/research/isrg-q3-2026",
       "title": "ISRG: Strong Procedures, a $450M Charge, and the Price of Growth",
-      "page_title": "ISRG Q3 2026 Research Packet — Charged Alpha",
+      "page_title": "ISRG Q3 2026 Research Packet \u2014 Charged Alpha",
       "description": "Intuitive Surgical grows revenue and raises its margin outlook, but settlement uncertainty, tariff refunds and owner cash economics keep our call at HOLD.",
       "sha256": "944b34ec3dbbe3f00f93f4ce814b6f45ca5a5e8e98e9563de8167b0c05afd233",
       "html_file": "research_packets/isrg-q3-2026.html",
@@ -4338,7 +4338,7 @@
           },
           {
             "title": "Guidance improves unevenly.",
-            "detail": "Gross-margin midpoint rises 0.5 percentage point, while the procedure-growth midpoint remains 14.5% and opex growth stays 11%–13%."
+            "detail": "Gross-margin midpoint rises 0.5 percentage point, while the procedure-growth midpoint remains 14.5% and opex growth stays 11%\u201313%."
           },
           {
             "title": "Valuation keeps the call at HOLD.",
@@ -4362,7 +4362,7 @@
       "period": "Q3 2026",
       "canonical_url": "https://chargedalpha.com/research/jnj-q3-2026",
       "title": "JNJ: sales are growing, but what reaches shareholders?",
-      "page_title": "JNJ Q3 2026 Research Packet — Charged Alpha",
+      "page_title": "JNJ Q3 2026 Research Packet \u2014 Charged Alpha",
       "description": "Johnson & Johnson Q3 2026: growing medicine sales, lower adjusted earnings, litigation cash risk and three transparent valuation routes.",
       "sha256": "9774d27ea55cd44f0616f27e1218a873cff099a0e0f321c6bfa92d22cebc8174",
       "html_file": "research_packets/jnj-q3-2026.html",
@@ -4420,7 +4420,7 @@
       "period": "Q3 FY2026",
       "canonical_url": "https://chargedalpha.com/research/kbh-q3-fy2026",
       "title": "KBH: Backlog Grew. Demand per Community Did Not.",
-      "page_title": "KBH Q3 FY2026 Research Packet — Charged Alpha",
+      "page_title": "KBH Q3 FY2026 Research Packet \u2014 Charged Alpha",
       "description": "KB Home beat depressed EPS expectations, but lower order absorption and rising net debt temper the apparent discount to book value.",
       "sha256": "26260c43b7f403bfff8587874ab43c5fefb69cbf7a3761c5e4f4819acad145eb",
       "html_file": "research_packets/kbh-q3-fy2026.html",
@@ -4477,8 +4477,8 @@
       "company": "Kinder Morgan",
       "period": "Q3 2026",
       "canonical_url": "https://chargedalpha.com/research/kmi-q3-2026",
-      "title": "KMI: Bigger Projects — Who Funds the Growth?",
-      "page_title": "KMI Q3 2026 Research Packet — Charged Alpha",
+      "title": "KMI: Bigger Projects \u2014 Who Funds the Growth?",
+      "page_title": "KMI Q3 2026 Research Packet \u2014 Charged Alpha",
       "description": "Improved earnings meet a larger construction programme. Follow cash after capex and dividends, the project return bridge and a distinct reverse valuation.",
       "sha256": "b2c551cb166bb8ff10fa150cdab7661edca41161f51e5acb5a9e5e5a8d16488a",
       "html_file": "research_packets/kmi-q3-2026.html",
@@ -4536,8 +4536,8 @@
       "period": "Q3 FY2026",
       "canonical_url": "https://chargedalpha.com/research/ladr-q3-fy2026",
       "title": "LADR: Earnings jumped. How much can repeat?",
-      "page_title": "LADR Q3 FY2026 Research Packet — Charged Alpha",
-      "description": "Separate Ladder Capital’s property-sale gain from repeatable dividend capacity, reconcile interest presentation and test book value against funding risk.",
+      "page_title": "LADR Q3 FY2026 Research Packet \u2014 Charged Alpha",
+      "description": "Separate Ladder Capital\u2019s property-sale gain from repeatable dividend capacity, reconcile interest presentation and test book value against funding risk.",
       "sha256": "7a8161fb43d4d9dc64ec2fc4b4a71b444191141417eff22e1bc59f14209bd005",
       "html_file": "research_packets/ladr-q3-fy2026.html",
       "source_episode": "LADR-Q3-FY2026",
@@ -4554,7 +4554,7 @@
       "youtube_studio": null,
       "youtube_studio_short": null,
       "what_changed": {
-        "summary": "Separate Ladder Capital’s property-sale gain from repeatable dividend capacity, reconcile interest presentation and test book value against funding risk.",
+        "summary": "Separate Ladder Capital\u2019s property-sale gain from repeatable dividend capacity, reconcile interest presentation and test book value against funding risk.",
         "items": [
           {
             "title": "Reported coverage needs context.",
@@ -4594,7 +4594,7 @@
       "period": "Q3 FY2026",
       "canonical_url": "https://chargedalpha.com/research/len-q3-fy2026",
       "title": "LEN: Land-Light, Cash-Heavy",
-      "page_title": "LEN Q3 FY2026 Research Packet — Charged Alpha",
+      "page_title": "LEN Q3 FY2026 Research Packet \u2014 Charged Alpha",
       "description": "Lennar is building faster with fewer owned lots, but inventory, land deposits and borrowing show why a cheaper-looking balance sheet still needs a cash recovery.",
       "sha256": "9202d54213153a8d7e1fe6981413c2c8b09c53933fe1587118b9fa58c24d10ce",
       "html_file": "research_packets/len-q3-fy2026.html",
@@ -4624,7 +4624,7 @@
           },
           {
             "title": "The volume target moved down.",
-            "detail": "Full-year deliveries are now expected at 80,000–81,000, versus 82,000–83,000 previously; Q4 gross margin guidance is 15.5%–16.0%."
+            "detail": "Full-year deliveries are now expected at 80,000\u201381,000, versus 82,000\u201383,000 previously; Q4 gross margin guidance is 15.5%\u201316.0%."
           },
           {
             "title": "Small adjusted-EPS gap hides offsetting items.",
@@ -4652,8 +4652,8 @@
       "period": "Q3 2026",
       "canonical_url": "https://chargedalpha.com/research/lmt-q3-2026",
       "title": "LMT: A $292 Billion Backlog Still Has to Become Cash",
-      "page_title": "LMT Q3 2026 Research Packet — Charged Alpha",
-      "description": "Record missile orders strengthen Lockheed Martin’s demand outlook, while F-35 funding, contract assets and capital commitments determine how much reaches shareholders.",
+      "page_title": "LMT Q3 2026 Research Packet \u2014 Charged Alpha",
+      "description": "Record missile orders strengthen Lockheed Martin\u2019s demand outlook, while F-35 funding, contract assets and capital commitments determine how much reaches shareholders.",
       "sha256": "bd157bf7e251c86c10216fa74cab64803ab747707f4eeb66e8be3ca9edb171f0",
       "html_file": "research_packets/lmt-q3-2026.html",
       "source_episode": "LMT-Q3-2026",
@@ -4670,11 +4670,11 @@
       "youtube_studio": null,
       "youtube_studio_short": null,
       "what_changed": {
-        "summary": "Record missile orders strengthen Lockheed Martin’s demand outlook, while F-35 funding, contract assets and capital commitments determine how much reaches shareholders.",
+        "summary": "Record missile orders strengthen Lockheed Martin\u2019s demand outlook, while F-35 funding, contract assets and capital commitments determine how much reaches shareholders.",
         "items": [
           {
             "title": "The backlog record has a long clock.",
-            "detail": "The $52.5B PAC-3 award drove about 85% of the quarter’s backlog increase; only 23% of total backlog is expected to convert within twelve months."
+            "detail": "The $52.5B PAC-3 award drove about 85% of the quarter\u2019s backlog increase; only 23% of total backlog is expected to convert within twelve months."
           },
           {
             "title": "Cash guidance improved more than profit guidance.",
@@ -4710,8 +4710,8 @@
       "period": "Q3 2026",
       "canonical_url": "https://chargedalpha.com/research/lng-q3-2026",
       "title": "Cheniere (LNG): The Raised Guide Needs a Much Bigger Fourth Quarter",
-      "page_title": "LNG Q3 2026 Research Packet — Charged Alpha",
-      "description": "The fourth-quarter cash hurdle, NPNS accounting change and common-owner valuation behind Cheniere’s raised outlook.",
+      "page_title": "LNG Q3 2026 Research Packet \u2014 Charged Alpha",
+      "description": "The fourth-quarter cash hurdle, NPNS accounting change and common-owner valuation behind Cheniere\u2019s raised outlook.",
       "sha256": "707be712b5fefc25ab2770b247baad7e8d322a1746eb22479959109db378e1d9",
       "html_file": "research_packets/lng-q3-2026.html",
       "source_episode": "LNG-Q3-2026",
@@ -4728,7 +4728,7 @@
       "youtube_studio": null,
       "youtube_studio_short": null,
       "what_changed": {
-        "summary": "The fourth-quarter cash hurdle, NPNS accounting change and common-owner valuation behind Cheniere’s raised outlook.",
+        "summary": "The fourth-quarter cash hurdle, NPNS accounting change and common-owner valuation behind Cheniere\u2019s raised outlook.",
         "items": [
           {
             "title": "Fourth-quarter hurdle:",
@@ -4768,8 +4768,8 @@
       "period": "Q3 FY2026",
       "canonical_url": "https://chargedalpha.com/research/mkc-q3-fy2026",
       "title": "MKC: Bigger sales, but what reaches each share?",
-      "page_title": "MKC Q3 FY2026 Research Packet — Charged Alpha",
-      "description": "McCormick’s acquisition-driven growth, cash conversion and pending Unilever combination tested against three valuation routes.",
+      "page_title": "MKC Q3 FY2026 Research Packet \u2014 Charged Alpha",
+      "description": "McCormick\u2019s acquisition-driven growth, cash conversion and pending Unilever combination tested against three valuation routes.",
       "sha256": "c5f3f625e5c354600d705cb9fb3f01559c67d9104a011b58c4854f69c96b3bf9",
       "html_file": "research_packets/mkc-q3-fy2026.html",
       "source_episode": "MKC-Q3-FY2026",
@@ -4786,7 +4786,7 @@
       "youtube_studio": null,
       "youtube_studio_short": null,
       "what_changed": {
-        "summary": "McCormick’s acquisition-driven growth, cash conversion and pending Unilever combination tested against three valuation routes.",
+        "summary": "McCormick\u2019s acquisition-driven growth, cash conversion and pending Unilever combination tested against three valuation routes.",
         "items": [
           {
             "title": "Growth is mostly acquired.",
@@ -4826,8 +4826,8 @@
       "period": "Q3 2026",
       "canonical_url": "https://chargedalpha.com/research/mmm-q3-2026",
       "title": "MMM Q3 2026: Better Earnings. Which Cash Reaches Shareholders?",
-      "page_title": "MMM Q3 2026 Research Packet — Charged Alpha",
-      "description": "Operating gains, cash adjustments and legacy claims define the value of 3M’s recovery.",
+      "page_title": "MMM Q3 2026 Research Packet \u2014 Charged Alpha",
+      "description": "Operating gains, cash adjustments and legacy claims define the value of 3M\u2019s recovery.",
       "sha256": "5f336a5a9d22bdc6cd6bce1c5eb723a4cfea33cf78a8be61dab3f59ff04afa72",
       "html_file": "research_packets/mmm-q3-2026.html",
       "source_episode": "MMM-Q3-2026",
@@ -4844,7 +4844,7 @@
       "youtube_studio": null,
       "youtube_studio_short": null,
       "what_changed": {
-        "summary": "Operating gains, cash adjustments and legacy claims define the value of 3M’s recovery.",
+        "summary": "Operating gains, cash adjustments and legacy claims define the value of 3M\u2019s recovery.",
         "items": [
           {
             "title": "Underlying performance improved.",
@@ -4884,8 +4884,8 @@
       "period": "Q3 2026",
       "canonical_url": "https://chargedalpha.com/research/mxl-q3-2026",
       "title": "MXL: Profit Arrives Before the Cash",
-      "page_title": "MXL Q3 2026 Research Packet — Charged Alpha",
-      "description": "MaxLinear’s profitable revenue ramp still needs wafer funding, working capital and dilution discipline; our model tests the cash-conversion hurdle.",
+      "page_title": "MXL Q3 2026 Research Packet \u2014 Charged Alpha",
+      "description": "MaxLinear\u2019s profitable revenue ramp still needs wafer funding, working capital and dilution discipline; our model tests the cash-conversion hurdle.",
       "sha256": "014b5572c72f172de213d29a2d16da62b68dab08f3067a3a02912746430968af",
       "html_file": "research_packets/mxl-q3-2026.html",
       "source_episode": "MXL-Q3-2026",
@@ -4902,11 +4902,11 @@
       "youtube_studio": null,
       "youtube_studio_short": null,
       "what_changed": {
-        "summary": "MaxLinear’s profitable revenue ramp still needs wafer funding, working capital and dilution discipline; our model tests the cash-conversion hurdle.",
+        "summary": "MaxLinear\u2019s profitable revenue ramp still needs wafer funding, working capital and dilution discipline; our model tests the cash-conversion hurdle.",
         "items": [
           {
             "title": "Profitability has crossed an operating threshold.",
-            "detail": "GAAP operating income is $30.227M versus a $4.185M loss last quarter; this is more meaningful than Q2’s tax-assisted net profit."
+            "detail": "GAAP operating income is $30.227M versus a $4.185M loss last quarter; this is more meaningful than Q2\u2019s tax-assisted net profit."
           },
           {
             "title": "Growth still absorbs cash.",
@@ -4942,8 +4942,8 @@
       "period": "Q3 2026",
       "canonical_url": "https://chargedalpha.com/research/nee-q3-2026",
       "title": "NEE: The growth is real. The funding bill is bigger.",
-      "page_title": "NEE Q3 2026 Research Packet — Charged Alpha",
-      "description": "Adjusted EPS rose 9.7%, but expanding project investment and the Dominion combination make funding terms central to NextEra Energy’s value.",
+      "page_title": "NEE Q3 2026 Research Packet \u2014 Charged Alpha",
+      "description": "Adjusted EPS rose 9.7%, but expanding project investment and the Dominion combination make funding terms central to NextEra Energy\u2019s value.",
       "sha256": "916126838898c330dd7466cd00b1477d8375035af0503fe3544ed185ae7e08d1",
       "html_file": "research_packets/nee-q3-2026.html",
       "source_episode": "NEE-Q3-2026",
@@ -4960,7 +4960,7 @@
       "youtube_studio": null,
       "youtube_studio_short": null,
       "what_changed": {
-        "summary": "Adjusted EPS rose 9.7%, but expanding project investment and the Dominion combination make funding terms central to NextEra Energy’s value.",
+        "summary": "Adjusted EPS rose 9.7%, but expanding project investment and the Dominion combination make funding terms central to NextEra Energy\u2019s value.",
         "items": [
           {
             "title": "Operating growth is healthy.",
@@ -4980,7 +4980,7 @@
           },
           {
             "title": "Price leaves little room for error.",
-            "detail": "Our $80 base and $80 weighted value sit close to the dated $78.86 pre-release close; the scenario range is $60–$100."
+            "detail": "Our $80 base and $80 weighted value sit close to the dated $78.86 pre-release close; the scenario range is $60\u2013$100."
           }
         ]
       },
@@ -4999,8 +4999,8 @@
       "company": "Newmont Corporation",
       "period": "Q3 2026",
       "canonical_url": "https://chargedalpha.com/research/nem-q3-2026",
-      "title": "NEM: Gold Lifts Profit — How Much Cash Is Really Spare?",
-      "page_title": "NEM Q3 2026 Research Packet — Charged Alpha",
+      "title": "NEM: Gold Lifts Profit \u2014 How Much Cash Is Really Spare?",
+      "page_title": "NEM Q3 2026 Research Packet \u2014 Charged Alpha",
       "description": "Newmont earns more from higher gold prices, while mine costs, project spending and the NGM payment test sustainable cash returns.",
       "sha256": "3fbd139138f9a8f2cc1d0304f8e9ee97903dd69f6b6b70ec48b5a4b8f5f0769d",
       "html_file": "research_packets/nem-q3-2026.html",
@@ -5058,7 +5058,7 @@
       "period": "Q3 2026",
       "canonical_url": "https://chargedalpha.com/research/nflx-q3-2026",
       "title": "NFLX: Profit Jumped. What Will Repeat?",
-      "page_title": "NFLX Q3 2026 Research Packet — Charged Alpha",
+      "page_title": "NFLX Q3 2026 Research Packet \u2014 Charged Alpha",
       "description": "Netflix grew profit strongly, but expense timing, a Brazil tax comparison and merger cash complicate the headline. We test recurring cash against the share price.",
       "sha256": "f91850cba2fdf454bbf2ee55d558a33582c926707763ad6963e92f489314c19c",
       "html_file": "research_packets/nflx-q3-2026.html",
@@ -5116,7 +5116,7 @@
       "period": "Q3 2026",
       "canonical_url": "https://chargedalpha.com/research/nly-q3-2026",
       "title": "NLY: The Dividend Is Covered. What Protects the Capital?",
-      "page_title": "NLY Q3 2026 Research Packet — Charged Alpha",
+      "page_title": "NLY Q3 2026 Research Packet \u2014 Charged Alpha",
       "description": "Annaly earned more than its quarterly dividend, yet book value fell sharply. We separate carry, marks, funding and common-equity value.",
       "sha256": "f991f550f0d1646f77cfffa7c194089b323c17f6df29b52e475df2b6853c87a9",
       "html_file": "research_packets/nly-q3-2026.html",
@@ -5174,7 +5174,7 @@
       "period": "Q3 2026",
       "canonical_url": "https://chargedalpha.com/research/noc-q3-2026",
       "title": "NOC Q3 2026: Record Backlog, Uneven Cash",
-      "page_title": "NOC Q3 2026 Research Packet — Charged Alpha",
+      "page_title": "NOC Q3 2026 Research Packet \u2014 Charged Alpha",
       "description": "Record orders and a higher EPS outlook meet a harder cash-flow valuation test.",
       "sha256": "d020802b98551d475c0eea935b7596c6b4e2d9aadf2716d32e08b8a7b7bc363b",
       "html_file": "research_packets/noc-q3-2026.html",
@@ -5232,7 +5232,7 @@
       "period": "Q3 2026",
       "canonical_url": "https://chargedalpha.com/research/nue-q3-2026",
       "title": "Nucor: The Cash Is Real. The Cycle Is Still Expensive.",
-      "page_title": "NUE Q3 2026 Research Packet — Charged Alpha",
+      "page_title": "NUE Q3 2026 Research Packet \u2014 Charged Alpha",
       "description": "Stronger prices and lower investment spending rebuild cash, but the stock already pays for a durable steel upswing.",
       "sha256": "02d51415484e722e5f532ecaea17fc4f253b7a37178899222a9b7327d953f2a4",
       "html_file": "research_packets/nue-q3-2026.html",
@@ -5262,7 +5262,7 @@
           },
           {
             "title": "Q2 was helped twice.",
-            "detail": "Helion contributed $0.20 EPS and procurement refunds reduced costs $130M; the latter is not removed by the company’s Helion-only adjustment."
+            "detail": "Helion contributed $0.20 EPS and procurement refunds reduced costs $130M; the latter is not removed by the company\u2019s Helion-only adjustment."
           },
           {
             "title": "Not all consolidated cash belongs to NUE owners.",
@@ -5290,7 +5290,7 @@
       "period": "Q3 2026",
       "canonical_url": "https://chargedalpha.com/research/pcg-q3-2026",
       "title": "PCG: Earnings Hold. Can the Funding Follow?",
-      "page_title": "PCG Q3 2026 Research Packet — Charged Alpha",
+      "page_title": "PCG Q3 2026 Research Packet \u2014 Charged Alpha",
       "description": "HOLD, 3/5 conviction. PG&E reaffirmed core EPS guidance, but the parent cash-investment gap and wildfire framework keep funding at the center of our $14 valuation.",
       "sha256": "71733c5131fa68aeff0d84e8894e8e31e03cc458d09640ad8553144cc630be65",
       "html_file": "research_packets/pcg-q3-2026.html",
@@ -5320,7 +5320,7 @@
           },
           {
             "title": "The capital plan is smaller.",
-            "detail": "The 2027 plan fell from $13.4B to $11.4B; the old 2028–2030 forecast was withdrawn."
+            "detail": "The 2027 plan fell from $13.4B to $11.4B; the old 2028\u20132030 forecast was withdrawn."
           },
           {
             "title": "Wildfire protection stays conditional.",
@@ -5348,7 +5348,7 @@
       "period": "Q3 2026",
       "canonical_url": "https://chargedalpha.com/research/pega-q3-2026",
       "title": "PEGA: Cloud Growth Is Not the Same as Owner Cash",
-      "page_title": "PEGA Q3 2026 Research Packet — Charged Alpha",
+      "page_title": "PEGA Q3 2026 Research Packet \u2014 Charged Alpha",
       "description": "Cloud ACV rose 20%, but total growth slowed and cash fell. We test the owner economics, buybacks and unresolved Appian risk behind a more cautious valuation.",
       "sha256": "c5877134b029a9c392c9e61f633c4febdb6853e08d714a563fbaaba0becb05f1",
       "html_file": "research_packets/pega-q3-2026.html",
@@ -5406,7 +5406,7 @@
       "period": "Q3 2026",
       "canonical_url": "https://chargedalpha.com/research/pep-q3-2026",
       "title": "PEP Stock: The Refund Behind the Profit Growth",
-      "page_title": "PEP Q3 2026 Research Packet — Charged Alpha",
+      "page_title": "PEP Q3 2026 Research Packet \u2014 Charged Alpha",
       "description": "PepsiCo cut its earnings outlook while a tariff refund exceeded the quarterly increase in core operating profit.",
       "sha256": "b9ea753b9904dcb4d2baf94e786e0336a6d42ad38b8bcbc4a752b4b866a1a84e",
       "html_file": "research_packets/pep-q3-2026.html",
@@ -5432,7 +5432,7 @@
           },
           {
             "title": "The refund matters.",
-            "detail": "Subtracting the disclosed $178m tariff refund from $4.277bn core profit gives $4.099bn, below last year’s $4.137bn. This is our diagnostic, not an issuer measure."
+            "detail": "Subtracting the disclosed $178m tariff refund from $4.277bn core profit gives $4.099bn, below last year\u2019s $4.137bn. This is our diagnostic, not an issuer measure."
           },
           {
             "title": "International is doing the heavy lifting.",
@@ -5464,7 +5464,7 @@
       "period": "Q3 2026",
       "canonical_url": "https://chargedalpha.com/research/pld-q3-2026",
       "title": "PLD: Stronger rents, but how much becomes shareholder cash?",
-      "page_title": "PLD Q3 2026 Research Packet — Charged Alpha",
+      "page_title": "PLD Q3 2026 Research Packet \u2014 Charged Alpha",
       "description": "Core FFO grew, but leasing costs, development funding and a pending acquisition make cash conversion the valuation test.",
       "sha256": "9b1e57ee0a7cae99b4d32658f17350852dce3724e22a3bd041504a2638c09079",
       "html_file": "research_packets/pld-q3-2026.html",
@@ -5522,7 +5522,7 @@
       "period": "Q3 2026",
       "canonical_url": "https://chargedalpha.com/research/rddt-q3-2026",
       "title": "RDDT: A billion-dollar guide meets a shrinking search funnel",
-      "page_title": "RDDT Q3 2026 Research Packet — Charged Alpha",
+      "page_title": "RDDT Q3 2026 Research Packet \u2014 Charged Alpha",
       "description": "Reddit delivered 53% revenue growth, but a conditional audience warning changes the margin of safety required at the new share price.",
       "sha256": "773bcd7a2ea7378c2a3c75b5ae0774ba6338a38b97d651c3e309c3d4e04f9075",
       "html_file": "research_packets/rddt-q3-2026.html",
@@ -5544,7 +5544,7 @@
         "items": [
           {
             "title": "The revenue engine still works.",
-            "detail": "Q3 revenue grew 53% to $895M and Q4 guidance reaches $1.00–1.03B."
+            "detail": "Q3 revenue grew 53% to $895M and Q4 guidance reaches $1.00\u20131.03B."
           },
           {
             "title": "The search warning intensified.",
@@ -5580,7 +5580,7 @@
       "period": "Q3 2026",
       "canonical_url": "https://chargedalpha.com/research/rmbs-q3-2026",
       "title": "RMBS: Record Products. A Bigger Cash Test.",
-      "page_title": "RMBS Q3 2026 Research Packet — Charged Alpha",
+      "page_title": "RMBS Q3 2026 Research Packet \u2014 Charged Alpha",
       "description": "Rambus product growth accelerates while inventory and economic cash conversion set the next test for valuation.",
       "sha256": "b898aea1b353fc06c7f85b230bec81065e6e24eb3e845a8fee8d647b2439af69",
       "html_file": "research_packets/rmbs-q3-2026.html",
@@ -5602,11 +5602,11 @@
         "items": [
           {
             "title": "The beat is real.",
-            "detail": "Revenue of $218.289M and adjusted EPS of $0.84 exceeded management’s prior high ends."
+            "detail": "Revenue of $218.289M and adjusted EPS of $0.84 exceeded management\u2019s prior high ends."
           },
           {
             "title": "Products drive the next step.",
-            "detail": "Q4 product revenue is guided to $127–$133M, changing mix and investment needs."
+            "detail": "Q4 product revenue is guided to $127\u2013$133M, changing mix and investment needs."
           },
           {
             "title": "Inventory is the cash test.",
@@ -5638,7 +5638,7 @@
       "period": "Q3 2026",
       "canonical_url": "https://chargedalpha.com/research/rtx-q3-2026",
       "title": "RTX Q3 2026: How Much of the Earnings Surge Repeats?",
-      "page_title": "RTX Q3 2026 Research Packet — Charged Alpha",
+      "page_title": "RTX Q3 2026 Research Packet \u2014 Charged Alpha",
       "description": "RTX raises its outlook, but IEEPA recovery, customer exposure and cash timing complicate the price paid for growth.",
       "sha256": "1f75ee04f710fa316eb2005a700f145d0321eb60bb40cbf353822f472f531606",
       "html_file": "research_packets/rtx-q3-2026.html",
@@ -5664,7 +5664,7 @@
           },
           {
             "title": "The earnings surge includes a recovery benefit.",
-            "detail": "Adjusted EPS of $2.26 includes $0.25 from IEEPA recovery. Removing only that benefit leaves $2.01, still above last year’s $1.70."
+            "detail": "Adjusted EPS of $2.26 includes $0.25 from IEEPA recovery. Removing only that benefit leaves $2.01, still above last year\u2019s $1.70."
           },
           {
             "title": "Cash timing cuts both ways.",
@@ -5696,7 +5696,7 @@
       "period": "Q3 2026",
       "canonical_url": "https://chargedalpha.com/research/sap-q3-2026",
       "title": "SAP: Cloud Growth Must Become Owner Cash",
-      "page_title": "SAP Q3 2026 Research Packet — Charged Alpha",
+      "page_title": "SAP Q3 2026 Research Packet \u2014 Charged Alpha",
       "description": "Strong cloud growth meets lower cloud gross margin and a valuation that requires durable cash conversion.",
       "sha256": "e6abd8c2b20a3013817881199002c3cb16fa51f5b18e759004c5d3e63f4b8071",
       "html_file": "research_packets/sap-q3-2026.html",
@@ -5718,7 +5718,7 @@
         "items": [
           {
             "title": "Cloud carries the growth.",
-            "detail": "Cloud revenue rose to €6.668B, offsetting shrinking support and license revenue."
+            "detail": "Cloud revenue rose to \u20ac6.668B, offsetting shrinking support and license revenue."
           },
           {
             "title": "Delivery margin is the test.",
@@ -5726,11 +5726,11 @@
           },
           {
             "title": "Cash allocation is crowded.",
-            "detail": "Nine-month distributions totaled €7.007B against €7.968B of issuer free cash flow, before separate acquisition outlays."
+            "detail": "Nine-month distributions totaled \u20ac7.007B against \u20ac7.968B of issuer free cash flow, before separate acquisition outlays."
           },
           {
             "title": "Not every adjusted number is higher.",
-            "detail": "Non-IFRS basic EPS of €1.89 is below IFRS basic EPS of €1.96 after financial adjustments."
+            "detail": "Non-IFRS basic EPS of \u20ac1.89 is below IFRS basic EPS of \u20ac1.96 after financial adjustments."
           },
           {
             "title": "Price requires sustained conversion.",
@@ -5754,8 +5754,8 @@
       "period": "Q3 FY2026",
       "canonical_url": "https://chargedalpha.com/research/scco-q3-fy2026",
       "title": "SCCO: The Nine-Cent Copper Cost Has a Catch",
-      "page_title": "SCCO Q3 FY2026 Research Packet — Charged Alpha",
-      "description": "Record cash generation meets a demanding share price: gross costs, by-product credits and project uncertainty define Southern Copper’s owner-return test.",
+      "page_title": "SCCO Q3 FY2026 Research Packet \u2014 Charged Alpha",
+      "description": "Record cash generation meets a demanding share price: gross costs, by-product credits and project uncertainty define Southern Copper\u2019s owner-return test.",
       "sha256": "8516287be7c743207d7b66a9671a4303a479049d3166fa6227b64b4c66c0a2c3",
       "html_file": "research_packets/scco-q3-fy2026.html",
       "source_episode": "SCCO-Q3-FY2026",
@@ -5772,7 +5772,7 @@
       "youtube_studio": null,
       "youtube_studio_short": null,
       "what_changed": {
-        "summary": "Record cash generation meets a demanding share price: gross costs, by-product credits and project uncertainty define Southern Copper’s owner-return test.",
+        "summary": "Record cash generation meets a demanding share price: gross costs, by-product credits and project uncertainty define Southern Copper\u2019s owner-return test.",
         "items": [
           {
             "title": "Record cash is real.",
@@ -5780,7 +5780,7 @@
           },
           {
             "title": "The low net cost depends on credits.",
-            "detail": "Gross cash cost rose to245.5¢/lb; by-products reduced the net measure to9.5¢/lb."
+            "detail": "Gross cash cost rose to245.5\u00a2/lb; by-products reduced the net measure to9.5\u00a2/lb."
           },
           {
             "title": "Production needs the correct comparison.",
@@ -5812,8 +5812,8 @@
       "period": "Q3 2026",
       "canonical_url": "https://chargedalpha.com/research/slb-q3-2026",
       "title": "SLB: Growth Returns, but the Cash Has Competing Claims",
-      "page_title": "SLB Q3 2026 Research Packet — Charged Alpha",
-      "description": "SLB’s acquired-growth bridge, weaker annual margins and cash-return funding gap frame the value of its core recovery and pending data-center expansion.",
+      "page_title": "SLB Q3 2026 Research Packet \u2014 Charged Alpha",
+      "description": "SLB\u2019s acquired-growth bridge, weaker annual margins and cash-return funding gap frame the value of its core recovery and pending data-center expansion.",
       "sha256": "13f3eee0e43081742c98d2f986e696215398ffe1f05f3635f0d45c0619a0de64",
       "html_file": "research_packets/slb-q3-2026.html",
       "source_episode": "SLB-Q3-2026",
@@ -5830,7 +5830,7 @@
       "youtube_studio": null,
       "youtube_studio_short": null,
       "what_changed": {
-        "summary": "SLB’s acquired-growth bridge, weaker annual margins and cash-return funding gap frame the value of its core recovery and pending data-center expansion.",
+        "summary": "SLB\u2019s acquired-growth bridge, weaker annual margins and cash-return funding gap frame the value of its core recovery and pending data-center expansion.",
         "items": [
           {
             "title": "Growth is positive but acquisition-heavy.",
@@ -5870,7 +5870,7 @@
       "period": "Q3 FY2026",
       "canonical_url": "https://chargedalpha.com/research/snx-q3-fy2026",
       "title": "SNX: Record Profit, a $976 Million Cash Outflow",
-      "page_title": "SNX Q3 FY2026 Research Packet — Charged Alpha",
+      "page_title": "SNX Q3 FY2026 Research Packet \u2014 Charged Alpha",
       "description": "Record operating profit meets a larger funding bill: our $280 base value depends on inventory and receivables converting into cash.",
       "sha256": "0012d652e55a75b4ed988e28cc16d6cd93154d6a699e3f8f4abc1649656f57cf",
       "html_file": "research_packets/snx-q3-fy2026.html",
@@ -5904,7 +5904,7 @@
           },
           {
             "title": "The outlook stays strong.",
-            "detail": "Q4 revenue guidance is $21.8B–$22.6B and adjusted EPS is $5.65–$6.15."
+            "detail": "Q4 revenue guidance is $21.8B\u2013$22.6B and adjusted EPS is $5.65\u2013$6.15."
           },
           {
             "title": "Value needs cash conversion.",
@@ -5927,8 +5927,8 @@
       "company": "Space Exploration Technologies Corp.",
       "period": "Q3 2026",
       "canonical_url": "https://chargedalpha.com/research/spcx-q3-2026",
-      "title": "SPCX: The $6 Billion Earnings Bridge Behind SpaceX’s Turnaround",
-      "page_title": "SPCX Q3 2026 Research Packet — Charged Alpha",
+      "title": "SPCX: The $6 Billion Earnings Bridge Behind SpaceX\u2019s Turnaround",
+      "page_title": "SPCX Q3 2026 Research Packet \u2014 Charged Alpha",
       "description": "SpaceX turns profitable, but a $6 billion EBITDA bridge, major reinvestment and a larger share base raise the cash-return hurdle.",
       "sha256": "ba249242b7b94dac1c7919b9957f2d7fe60890e6cdf659e74aed58d71b07788f",
       "html_file": "research_packets/spcx-q3-2026.html",
@@ -5986,7 +5986,7 @@
       "period": "Q3 2026",
       "canonical_url": "https://chargedalpha.com/research/stld-q3-2026",
       "title": "STLD: Stronger Earnings, a Demanding Price",
-      "page_title": "STLD Q3 2026 Research Packet — Charged Alpha",
+      "page_title": "STLD Q3 2026 Research Packet \u2014 Charged Alpha",
       "description": "Steel margins and cash flow improved, but the current share price requires stronger durable earnings than our normalized case.",
       "sha256": "7e8b8a27778e2da1a693a2f246131d9cf777d25ded26462c9c23fb515761f5b9",
       "html_file": "research_packets/stld-q3-2026.html",
@@ -6044,8 +6044,8 @@
       "period": "Q3 2026",
       "canonical_url": "https://chargedalpha.com/research/strl-q3-2026",
       "title": "Sterling (STRL): Record Earnings, but Only $17 Million of Generally Available Cash",
-      "page_title": "STRL Q3 2026 Research Packet — Charged Alpha",
-      "description": "Sterling’s record profit meets a cash-collection test: joint-venture cash, receivables, unsigned awards and the valuation that requires conversion.",
+      "page_title": "STRL Q3 2026 Research Packet \u2014 Charged Alpha",
+      "description": "Sterling\u2019s record profit meets a cash-collection test: joint-venture cash, receivables, unsigned awards and the valuation that requires conversion.",
       "sha256": "c547dfcdb808c4adc60d5c70ff084c73543cb54fd84059c440e83eec82770c23",
       "html_file": "research_packets/strl-q3-2026.html",
       "source_episode": "STRL-Q3-2026",
@@ -6062,7 +6062,7 @@
       "youtube_studio": null,
       "youtube_studio_short": null,
       "what_changed": {
-        "summary": "Sterling’s record profit meets a cash-collection test: joint-venture cash, receivables, unsigned awards and the valuation that requires conversion.",
+        "summary": "Sterling\u2019s record profit meets a cash-collection test: joint-venture cash, receivables, unsigned awards and the valuation that requires conversion.",
         "items": [
           {
             "title": "Cash has different uses:",
@@ -6074,7 +6074,7 @@
           },
           {
             "title": "The growth is not just acquisitions:",
-            "detail": "Revenue grew 127% as reported and 70% organically, with CEC’s full-quarter ownership and Stone Ridge adding comparability changes."
+            "detail": "Revenue grew 127% as reported and 70% organically, with CEC\u2019s full-quarter ownership and Stone Ridge adding comparability changes."
           },
           {
             "title": "Work certainty matters:",
@@ -6102,7 +6102,7 @@
       "period": "Q3 2026",
       "canonical_url": "https://chargedalpha.com/research/ter-q3-2026",
       "title": "TER: AI Demand Broadens. The $336M Cash Test.",
-      "page_title": "TER Q3 2026 Research Packet — Charged Alpha",
+      "page_title": "TER Q3 2026 Research Packet \u2014 Charged Alpha",
       "description": "Teradyne sales rose 70%, while inventory and prepayments absorbed $336M. Earnings ownership, cash conversion and three valuation routes.",
       "sha256": "013b38e03961d7f6fef8421e4d698ce83cfad9fb0b4bf7ebbeee4a42ef77cb22",
       "html_file": "research_packets/ter-q3-2026.html",
@@ -6160,7 +6160,7 @@
       "period": "Q3 FY2026",
       "canonical_url": "https://chargedalpha.com/research/tmq-q3-fy2026",
       "title": "TMQ: A paper profit, a real funding milestone, and a long road",
-      "page_title": "TMQ Q3 FY2026 Research Packet — Charged Alpha",
+      "page_title": "TMQ Q3 FY2026 Research Packet \u2014 Charged Alpha",
       "description": "Why a derivative gain and closed government investment do not make Trilogy Metals a producing mine.",
       "sha256": "9189a5710636d8082524fb5d5d35c8e06fe343d08cd1187ab947fbcf45af3111",
       "html_file": "research_packets/tmq-q3-fy2026.html",
@@ -6218,8 +6218,8 @@
       "period": "Q3 2026",
       "canonical_url": "https://chargedalpha.com/research/tsco-q3-2026",
       "title": "TSCO: Sales Recover, but Who Funds the Returns?",
-      "page_title": "TSCO Q3 2026 Research Packet — Charged Alpha",
-      "description": "HOLD · 3/5. Tractor Supply sales improved, but nine-month cash after gross investment fell short of dividends and buybacks; our $32 anchor is near the $33.42 quote.",
+      "page_title": "TSCO Q3 2026 Research Packet \u2014 Charged Alpha",
+      "description": "HOLD \u00b7 3/5. Tractor Supply sales improved, but nine-month cash after gross investment fell short of dividends and buybacks; our $32 anchor is near the $33.42 quote.",
       "sha256": "4901655ae49a528981ffbd02bc5c81f097b7ffb26db63bebe838619e4fe2cd52",
       "html_file": "research_packets/tsco-q3-2026.html",
       "source_episode": "TSCO-Q3-2026",
@@ -6236,7 +6236,7 @@
       "youtube_studio": null,
       "youtube_studio_short": null,
       "what_changed": {
-        "summary": "HOLD · 3/5. Tractor Supply sales improved, but nine-month cash after gross investment fell short of dividends and buybacks; our $32 anchor is near the $33.42 quote.",
+        "summary": "HOLD \u00b7 3/5. Tractor Supply sales improved, but nine-month cash after gross investment fell short of dividends and buybacks; our $32 anchor is near the $33.42 quote.",
         "items": [
           {
             "title": "Sales improved while profit declined.",
@@ -6256,7 +6256,7 @@
           },
           {
             "title": "The guide was reaffirmed.",
-            "detail": "Adjusted EPS $1.90–$2.00 differs from GAAP $1.78–$1.88 because of Q2 charges."
+            "detail": "Adjusted EPS $1.90\u2013$2.00 differs from GAAP $1.78\u2013$1.88 because of Q2 charges."
           }
         ]
       },
@@ -6276,8 +6276,8 @@
       "period": "Q3 2026",
       "canonical_url": "https://chargedalpha.com/research/tsem-q3-2026",
       "title": "Tower (TSEM): Customers Fund Capacity. What Is the 2028 Promise Worth?",
-      "page_title": "TSEM Q3 2026 Research Packet — Charged Alpha",
-      "description": "Customer advances support Tower’s photonics expansion, but the $3.6 billion 2028 model still needs manufacturing delivery and common-owner cash.",
+      "page_title": "TSEM Q3 2026 Research Packet \u2014 Charged Alpha",
+      "description": "Customer advances support Tower\u2019s photonics expansion, but the $3.6 billion 2028 model still needs manufacturing delivery and common-owner cash.",
       "sha256": "07c96ea9575859f0475beb23434f18ac6cb9178efcd3800a7b00fdec32dc5646",
       "html_file": "research_packets/tsem-q3-2026.html",
       "source_episode": "TSEM-Q3-2026",
@@ -6294,7 +6294,7 @@
       "youtube_studio": null,
       "youtube_studio_short": null,
       "what_changed": {
-        "summary": "Customer advances support Tower’s photonics expansion, but the $3.6 billion 2028 model still needs manufacturing delivery and common-owner cash.",
+        "summary": "Customer advances support Tower\u2019s photonics expansion, but the $3.6 billion 2028 model still needs manufacturing delivery and common-owner cash.",
         "items": [
           {
             "title": "The customer pays early:",
@@ -6310,11 +6310,11 @@
           },
           {
             "title": "Price has changed more than the promise:",
-            "detail": "The completed close is $155.32, down 35.2% from the prior episode’s $239.53 reference. The old $160 fair value was a model, not a guaranteed floor."
+            "detail": "The completed close is $155.32, down 35.2% from the prior episode\u2019s $239.53 reference. The old $160 fair value was a model, not a guaranteed floor."
           },
           {
             "title": "Our decision is explicit:",
-            "detail": "HOLD at a $150 base, $90–220 range and $152.50 weighted value. High execution uncertainty requires a $120 fresh-buy threshold if the thesis remains intact."
+            "detail": "HOLD at a $150 base, $90\u2013220 range and $152.50 weighted value. High execution uncertainty requires a $120 fresh-buy threshold if the thesis remains intact."
           }
         ]
       },
@@ -6334,7 +6334,7 @@
       "period": "Q3 2026",
       "canonical_url": "https://chargedalpha.com/research/tsm-q3-2026",
       "title": "TSM: a stronger cash quarter still needs a valuation test",
-      "page_title": "TSM Q3 2026 Research Packet — Charged Alpha",
+      "page_title": "TSM Q3 2026 Research Packet \u2014 Charged Alpha",
       "description": "TSMC Q3 2026: the operating improvement, prior-quarter investment gain, cash conversion and three explicit valuation routes.",
       "sha256": "c2d84ea4fc6d7bd32380f90b0307ba22df6881cc177269df92c0fedc8d0f108e",
       "html_file": "research_packets/tsm-q3-2026.html",
@@ -6392,8 +6392,8 @@
       "period": "Q3 2026",
       "canonical_url": "https://chargedalpha.com/research/ttmi-q3-2026",
       "title": "TTMI: Earnings Have Surged. Cash Still Has to Catch Up.",
-      "page_title": "TTMI Q3 2026 Research Packet — Charged Alpha",
-      "description": "A cash-conversion and acquisition-financing test after TTMI’s Q3 2026 results and sharp share-price decline.",
+      "page_title": "TTMI Q3 2026 Research Packet \u2014 Charged Alpha",
+      "description": "A cash-conversion and acquisition-financing test after TTMI\u2019s Q3 2026 results and sharp share-price decline.",
       "sha256": "99862478e08091e129fe9762b1222cadcf7fc646f10a665a3c841be79073af84",
       "html_file": "research_packets/ttmi-q3-2026.html",
       "source_episode": "TTMI-Q3-2026",
@@ -6410,7 +6410,7 @@
       "youtube_studio": null,
       "youtube_studio_short": null,
       "what_changed": {
-        "summary": "A cash-conversion and acquisition-financing test after TTMI’s Q3 2026 results and sharp share-price decline.",
+        "summary": "A cash-conversion and acquisition-financing test after TTMI\u2019s Q3 2026 results and sharp share-price decline.",
         "items": [
           {
             "title": "Profit is real, but definitions matter.",
@@ -6422,7 +6422,7 @@
           },
           {
             "title": "The balance sheet has a date boundary.",
-            "detail": "September 28 statements precede the September 30 Epiq closing; they cannot define today’s enterprise value."
+            "detail": "September 28 statements precede the September 30 Epiq closing; they cannot define today\u2019s enterprise value."
           },
           {
             "title": "Demand and spending rise together.",
@@ -6430,7 +6430,7 @@
           },
           {
             "title": "Cheap EPS is not the whole decision.",
-            "detail": "At 8.69× preliminary FY2027 adjusted midpoint, valuation still depends on integration, dilution and cash available to owners."
+            "detail": "At 8.69\u00d7 preliminary FY2027 adjusted midpoint, valuation still depends on integration, dilution and cash available to owners."
           }
         ]
       },
@@ -6450,7 +6450,7 @@
       "period": "Q3 2026",
       "canonical_url": "https://chargedalpha.com/research/txn-q3-2026",
       "title": "TXN: Cash Is Back. How Much Recovery Is Priced In?",
-      "page_title": "TXN Q3 2026 Research Packet — Charged Alpha",
+      "page_title": "TXN Q3 2026 Research Packet \u2014 Charged Alpha",
       "description": "HOLD, 3/5 conviction. Strong analog recovery meets a demanding cash-flow valuation and pending Silicon Labs financing.",
       "sha256": "8a3603445f9c4c644cd94181b348024ba7938c06a3d9d9353f7837e0f96adac5",
       "html_file": "research_packets/txn-q3-2026.html",
@@ -6508,7 +6508,7 @@
       "period": "Q3 2026",
       "canonical_url": "https://chargedalpha.com/research/unh-q3-2026",
       "title": "UNH: The Recovery Is Real. How Much Is Already Priced In?",
-      "page_title": "UNH Q 3 2026 Research Packet — Charged Alpha",
+      "page_title": "UNH Q 3 2026 Research Packet \u2014 Charged Alpha",
       "description": "UnitedHealth profit recovered and guidance rose, but reserve development, membership contraction and portfolio effects qualify the improvement. Hold, $400 base value.",
       "sha256": "049f002d101a392f269ef553ef94b31a78a46d0831ed6f1cb9870b80cd62888d",
       "html_file": "research_packets/unh-q3-2026.html",
@@ -6565,8 +6565,8 @@
       "company": "United Rentals, Inc.",
       "period": "Q3 2026",
       "canonical_url": "https://chargedalpha.com/research/uri-q3-2026",
-      "title": "URI: A Bigger Fleet, a Bigger Profit — Where Is the Extra Cash?",
-      "page_title": "URI Q3 2026 Research Packet — Charged Alpha",
+      "title": "URI: A Bigger Fleet, a Bigger Profit \u2014 Where Is the Extra Cash?",
+      "page_title": "URI Q3 2026 Research Packet \u2014 Charged Alpha",
       "description": "United Rentals raises revenue and profit guidance while free-cash-flow guidance stays flat; fleet productivity, investment timing and valuation decide what owners receive.",
       "sha256": "4f6a147bd0b12a802a1667c28c678b5626fafd80e24bab2e8c56ca3cfa5d1237",
       "html_file": "research_packets/uri-q3-2026.html",
@@ -6596,7 +6596,7 @@
           },
           {
             "title": "The cash outlook did not rise with profit.",
-            "detail": "Management raised revenue and adjusted EBITDA guidance, alongside equipment investment. Free cash flow excluding restructuring remains $2.15–2.45B."
+            "detail": "Management raised revenue and adjusted EBITDA guidance, alongside equipment investment. Free cash flow excluding restructuring remains $2.15\u20132.45B."
           },
           {
             "title": "Returns need the full funding picture.",
@@ -6624,8 +6624,8 @@
       "period": "Q3 2026",
       "canonical_url": "https://chargedalpha.com/research/vicr-q3-2026",
       "title": "VICR Q3 2026: Royalties Surge. Can the Cash Justify the Price?",
-      "page_title": "VICR Q3 2026 Research Packet — Charged Alpha",
-      "description": "Product growth, royalty recurrence and capacity investment explain why Vicor’s record quarter still demands valuation discipline.",
+      "page_title": "VICR Q3 2026 Research Packet \u2014 Charged Alpha",
+      "description": "Product growth, royalty recurrence and capacity investment explain why Vicor\u2019s record quarter still demands valuation discipline.",
       "sha256": "67a00890938adad0f337a7c167b3a44844896efd1a040ea0234a3fcec7b3ef43",
       "html_file": "research_packets/vicr-q3-2026.html",
       "source_episode": "VICR-Q3-2026",
@@ -6642,7 +6642,7 @@
       "youtube_studio": null,
       "youtube_studio_short": null,
       "what_changed": {
-        "summary": "Product growth, royalty recurrence and capacity investment explain why Vicor’s record quarter still demands valuation discipline.",
+        "summary": "Product growth, royalty recurrence and capacity investment explain why Vicor\u2019s record quarter still demands valuation discipline.",
         "items": [
           {
             "title": "Products are growing, too.",
@@ -6682,7 +6682,7 @@
       "period": "Q3 2026",
       "canonical_url": "https://chargedalpha.com/research/vrt-q3-2026",
       "title": "VRT: The Growth Is Real. Who Funds the Next Wave?",
-      "page_title": "VRT Q3 2026 Research Packet — Charged Alpha",
+      "page_title": "VRT Q3 2026 Research Packet \u2014 Charged Alpha",
       "description": "Vertiv sales surged 61%, but customer advances and October acquisition spending change how we value its cash generation.",
       "sha256": "d4c90b17d653e01e30543f30a48bcf3b42f6f6c50ba05265f03992c6f98cb67e",
       "html_file": "research_packets/vrt-q3-2026.html",
@@ -6740,7 +6740,7 @@
       "period": "H1 2026",
       "canonical_url": "https://chargedalpha.com/research/ipha-h1-2026",
       "title": "IPHA: Funding Bought Time. The Science Still Has to Pay.",
-      "page_title": "IPHA H1 2026 Research Packet — Charged Alpha",
+      "page_title": "IPHA H1 2026 Research Packet \u2014 Charged Alpha",
       "description": "Sobi closed, new shares arrived and runway extended; a careful cash-and-pipeline valuation explains our HOLD at $1.80 base value.",
       "sha256": "81edca0a9e343bef229081c8e6da8fb8f411ce9b20069fcb527b7d7cf6ee62fc",
       "html_file": "research_packets/ipha-h1-2026.html",
@@ -6770,11 +6770,11 @@
           },
           {
             "title": "Revenue is not commercial traction.",
-            "detail": "The €3.115M licensing line includes €2.5M from an expired Sanofi option; research financing brings combined income to €5.663M."
+            "detail": "The \u20ac3.115M licensing line includes \u20ac2.5M from an expired Sanofi option; research financing brings combined income to \u20ac5.663M."
           },
           {
             "title": "Headline cash has several layers.",
-            "detail": "€21.376M includes €10.480M noncurrent financial assets; separate financial and collaboration obligations also matter."
+            "detail": "\u20ac21.376M includes \u20ac10.480M noncurrent financial assets; separate financial and collaboration obligations also matter."
           },
           {
             "title": "The clinical calendar decides the next chapter.",
@@ -6798,7 +6798,7 @@
       "period": "H1 2026",
       "canonical_url": "https://chargedalpha.com/research/laes-h1-2026",
       "title": "LAES: The Cash Cushion Shrinks Per Share",
-      "page_title": "LAES H1 2026 Research Packet — Charged Alpha",
+      "page_title": "LAES H1 2026 Research Packet \u2014 Charged Alpha",
       "description": "Revenue more than doubled, but cash burn and a larger economic share count weaken the apparent cash bargain at SEALSQ.",
       "sha256": "8794e8129be64d07f19b8524d46b4d1c8a3f5607cbcc66092e9208e833c8b858",
       "html_file": "research_packets/laes-h1-2026.html",
@@ -6836,7 +6836,7 @@
           },
           {
             "title": "Commercial opportunities still need conversion.",
-            "detail": "Management reaffirmed $27–36M of FY2026 revenue and described more than $225M of potential opportunities through 2029. That pipeline is not contracted backlog; initial post-quantum product revenue remains expected toward late H2 2026."
+            "detail": "Management reaffirmed $27\u201336M of FY2026 revenue and described more than $225M of potential opportunities through 2029. That pipeline is not contracted backlog; initial post-quantum product revenue remains expected toward late H2 2026."
           }
         ]
       },
@@ -6856,7 +6856,7 @@
       "period": "Q2 2026",
       "canonical_url": "https://chargedalpha.com/research/abvx-q2-2026",
       "title": "ABVX: The Cash Runway Is Real. So Is the Valuation Risk.",
-      "page_title": "ABVX Q2 2026 Research Packet — Charged Alpha",
+      "page_title": "ABVX Q2 2026 Research Packet \u2014 Charged Alpha",
       "description": "Abivax now has funding into Q4 2029 and a planned obefazimod NDA, but nearly $8.6B of diluted value above capital leaves little room for execution mistakes.",
       "sha256": "6c48f560fc5ba8560f336a7e85bf02dd740f272aac3c303687fb994f23f05fa1",
       "html_file": "research_packets/abvx-q2-2026.html",
@@ -6878,19 +6878,19 @@
         "items": [
           {
             "title": "Funding risk moved farther out.",
-            "detail": "€402.4M of June liquidity plus €767.1M of July net proceeds supports management’s runway into Q4 2029."
+            "detail": "\u20ac402.4M of June liquidity plus \u20ac767.1M of July net proceeds supports management\u2019s runway into Q4 2029."
           },
           {
             "title": "The denominator moved too.",
-            "detail": "The July offer added 7.36M ADSs; our valuation uses 95.45M diluted ordinary equivalents, not the provider’s stale 73.43M shares."
+            "detail": "The July offer added 7.36M ADSs; our valuation uses 95.45M diluted ordinary equivalents, not the provider\u2019s stale 73.43M shares."
           },
           {
             "title": "The headline loss is partly unusual.",
-            "detail": "A €43.205M royalty-certificate derecognition drove part of Q2’s €117.433M loss, but R&D, G&A and cash burn also rose sharply."
+            "detail": "A \u20ac43.205M royalty-certificate derecognition drove part of Q2\u2019s \u20ac117.433M loss, but R&D, G&A and cash burn also rose sharply."
           },
           {
             "title": "Regulatory execution is now the center.",
-            "detail": "Management plans an obefazimod UC NDA by year-end 2026 and Crohn’s Phase 2b data in mid-2027."
+            "detail": "Management plans an obefazimod UC NDA by year-end 2026 and Crohn\u2019s Phase 2b data in mid-2027."
           },
           {
             "title": "Reporting controls remain a risk.",
@@ -6914,7 +6914,7 @@
       "period": "Q2 FY2026",
       "canonical_url": "https://chargedalpha.com/research/aci-q2-fy2026",
       "title": "ACI: The cheap multiple lost its forecast",
-      "page_title": "ACI Q2 FY2026 Research Packet — Charged Alpha",
+      "page_title": "ACI Q2 FY2026 Research Packet \u2014 Charged Alpha",
       "description": "Albertsons withdrew its outlook as identical sales fell and debt rose. Three explicit valuation routes support a cautious HOLD and a $14 base value.",
       "sha256": "9556f07cfde14c3a1d2e04a6093f63d37c62511e033662dcbfaa0bdbd8fc9394",
       "html_file": "research_packets/aci-q2-fy2026.html",
@@ -6936,7 +6936,7 @@
         "items": [
           {
             "title": "The forecast has been withdrawn.",
-            "detail": "Management will complete a comprehensive business review before updating its financial framework. July’s reduced outlook is historical, not current guidance."
+            "detail": "Management will complete a comprehensive business review before updating its financial framework. July\u2019s reduced outlook is historical, not current guidance."
           },
           {
             "title": "Flat sales conceal weaker economics.",
@@ -6952,7 +6952,7 @@
           },
           {
             "title": "Our $14 base needs evidence of stabilization.",
-            "detail": "The $8–20 scenario range and $13.10 weighted value reflect uncertainty. A price below $11 would merit reassessment only if sales, EBITDA and cash signposts also improve."
+            "detail": "The $8\u201320 scenario range and $13.10 weighted value reflect uncertainty. A price below $11 would merit reassessment only if sales, EBITDA and cash signposts also improve."
           }
         ]
       },
@@ -6972,7 +6972,7 @@
       "period": "Q2 2026",
       "canonical_url": "https://chargedalpha.com/research/anab-q2-2026",
       "title": "ANAB: The EPS Is Tax Accounting. The Value Is the Royalty Contract.",
-      "page_title": "ANAB Q2 2026 Research Packet — Charged Alpha",
+      "page_title": "ANAB Q2 2026 Research Packet \u2014 Charged Alpha",
       "description": "Anaptys reported growing Jemperli royalties, a one-time tax-driven profit and an unresolved contract case; our HOLD values post-Sagard cash at $58 per share.",
       "sha256": "fd17823b700e18cc69a0f1a3b82d012a0ac64b86d2b19bf6cb00a254f32bbd5d",
       "html_file": "research_packets/anab-q2-2026.html",
@@ -7088,8 +7088,8 @@
       "period": "Q2 2026",
       "canonical_url": "https://chargedalpha.com/research/bzun-q2-2026",
       "title": "Baozun (BZUN): the market prices its business at less than zero",
-      "page_title": "BZUN Q2 2026 Research Packet — Charged Alpha",
-      "description": "Baozun (BZUN) Q2 2026 earnings research packet: the call, three valuation routes, scenarios, signposts, earnings quality, balance sheet, risks and catalysts — companion to the Charged Alpha episode.",
+      "page_title": "BZUN Q2 2026 Research Packet \u2014 Charged Alpha",
+      "description": "Baozun (BZUN) Q2 2026 earnings research packet: the call, three valuation routes, scenarios, signposts, earnings quality, balance sheet, risks and catalysts \u2014 companion to the Charged Alpha episode.",
       "sha256": "524a0c81f3f113e02a2e5dc3b3cf74e6151d22a87410306585e786d0c752455e",
       "html_file": "research_packets/bzun-q2-2026.html",
       "source_episode": "BZUN-Q2-2026",
@@ -7110,23 +7110,23 @@
       "figures": 19,
       "tables": 14,
       "what_changed": {
-        "summary": "Baozun (BZUN) Q2 2026 earnings research packet: the call, three valuation routes, scenarios, signposts, earnings quality, balance sheet, risks and catalysts — companion to the Charged Alpha episode.",
+        "summary": "Baozun (BZUN) Q2 2026 earnings research packet: the call, three valuation routes, scenarios, signposts, earnings quality, balance sheet, risks and catalysts \u2014 companion to the Charged Alpha episode.",
         "items": [
           {
             "title": "The operating swing is real but seasonal.",
-            "detail": "Q2 is a mid-size quarter; Q4 (Singles' Day) carries the year. Non-GAAP operating income of RMB74M in Q2 compares with RMB198M in Q4 2025 and RMB8M in Q1 2026 — read the trailing four quarters (RMB269M), not one print."
+            "detail": "Q2 is a mid-size quarter; Q4 (Singles' Day) carries the year. Non-GAAP operating income of RMB74M in Q2 compares with RMB198M in Q4 2025 and RMB8M in Q1 2026 \u2014 read the trailing four quarters (RMB269M), not one print."
           },
           {
             "title": "Group profit is not shareholder profit.",
-            "detail": "Of RMB43.8M of Q2 net income, RMB26.8M went to minority holders — mostly Cainiao's 37% of the Baotong logistics arm — leaving RMB17.0M for Baozun's shareholders. Any valuation of 'the operating business' has to net this out."
+            "detail": "Of RMB43.8M of Q2 net income, RMB26.8M went to minority holders \u2014 mostly Cainiao's 37% of the Baotong logistics arm \u2014 leaving RMB17.0M for Baozun's shareholders. Any valuation of 'the operating business' has to net this out."
           },
           {
             "title": "The cash is the thesis, and it is real:",
-            "detail": "RMB2.81B of cash and short-term investments against RMB1.24B of short-term loans — $231M net, $3.98 per ADS — but it sits inside a Cayman holding structure with minority holders owning 34% of total equity, a small VIE (4.4% of revenue) and a China-ADR discount that has persisted for years."
+            "detail": "RMB2.81B of cash and short-term investments against RMB1.24B of short-term loans \u2014 $231M net, $3.98 per ADS \u2014 but it sits inside a Cayman holding structure with minority holders owning 34% of total equity, a small VIE (4.4% of revenue) and a China-ADR discount that has persisted for years."
           },
           {
             "title": "Management raised the bar on itself:",
-            "detail": "the 2028 non-GAAP operating income target went from RMB550M (set March 2026) to at least RMB700M (August 2026). Consensus (3–6 analysts) sits at RMB586M for 2028 — the Street does not yet believe it."
+            "detail": "the 2028 non-GAAP operating income target went from RMB550M (set March 2026) to at least RMB700M (August 2026). Consensus (3\u20136 analysts) sits at RMB586M for 2028 \u2014 the Street does not yet believe it."
           },
           {
             "title": "The consumer is the risk, in their own words:",
@@ -7145,8 +7145,8 @@
       "company": "Chewy, Inc.",
       "period": "Q2 FY2026",
       "canonical_url": "https://chargedalpha.com/research/chwy-q2-fy2026",
-      "title": "CHWY: Higher Profit, Less Free Cash — The Cost of Expansion",
-      "page_title": "CHWY Q2 FY2026 Research Packet — Charged Alpha",
+      "title": "CHWY: Higher Profit, Less Free Cash \u2014 The Cost of Expansion",
+      "page_title": "CHWY Q2 FY2026 Research Packet \u2014 Charged Alpha",
       "description": "Chewy raised guidance, but acquisitions, debt and recurring compensation make owner cash the decisive test.",
       "sha256": "e83c98f7a0dae62695c11da04ddca6177b283bda43d7a60a5a9ec1025c3c7553",
       "html_file": "research_packets/chwy-q2-fy2026.html",
@@ -7204,7 +7204,7 @@
       "period": "Q2 FY2026",
       "canonical_url": "https://chargedalpha.com/research/dbi-q2-fy2026",
       "title": "DBI: Who Keeps the Tariff Windfall?",
-      "page_title": "DBI Q2 FY2026 Research Packet — Charged Alpha",
+      "page_title": "DBI Q2 FY2026 Research Packet \u2014 Charged Alpha",
       "description": "DBI tariff recoveries, Investor financing, recurring profit and common shareholder value.",
       "sha256": "60d502dc79daa7e901e74897572a004514361fc0279125856d877228925f728f",
       "html_file": "research_packets/dbi-q2-fy2026.html",
@@ -7262,7 +7262,7 @@
       "period": "Q2 2026",
       "canonical_url": "https://chargedalpha.com/research/impp-q2-2026",
       "title": "IMPP: Who Owns the Cash Windfall?",
-      "page_title": "IMPP Q2 2026 Research Packet — Charged Alpha",
+      "page_title": "IMPP Q2 2026 Research Packet \u2014 Charged Alpha",
       "description": "Record freight earnings meet vessel commitments, preferred claims and a changing common-share denominator.",
       "sha256": "eb20410af1f20bb44487c5368a4b5b2f35f3a716fd542820def883971d8fadeb",
       "html_file": "research_packets/impp-q2-2026.html",
@@ -7320,7 +7320,7 @@
       "period": "Q2 2026",
       "canonical_url": "https://chargedalpha.com/research/uxin-q2-2026",
       "title": "UXIN: Volume Nearly Doubled. Gross Margin Turned Negative.",
-      "page_title": "UXIN Q2 2026 Research Packet — Charged Alpha",
+      "page_title": "UXIN Q2 2026 Research Packet \u2014 Charged Alpha",
       "description": "Retail volume rose 88.8%, but inventory markdowns pushed gross margin below zero while outside capital still supports liquidity.",
       "sha256": "6d2ab1548eeec94b227963fadf1ca6a208720a539279962244ebab03ebaf441f",
       "html_file": "research_packets/uxin-q2-2026.html",

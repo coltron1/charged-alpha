@@ -10,6 +10,24 @@
   },
   "episodes": [
     {
+      "ticker": "TLN",
+      "company": "Talen Energy Corporation",
+      "sector": "Utilities",
+      "quarter": "Q3 2026",
+      "episode_number": "",
+      "title": "TLN Stock: The Buyback Uses Future Cash — Talen Q3 2026 Earnings",
+      "published_at": "2026-11-04T02:01:32+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=Sl2wJGSlK2U",
+      "spotify_url": "",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/tln-stock-the-buyback-uses-future-cash-%e2%80%94-talen-q3-2026-earnings/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
       "ticker": "ETN",
       "company": "Eaton Corporation, PLC",
       "sector": "Industrials",
@@ -36155,6 +36173,21 @@
       "description": "Fast clips that point viewers into full research videos and stock pages.",
       "videos": [
         {
+          "title": "ETN Stock: Eaton Q3 2026 — Capacity Delivers. What About Cash? #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/5wB3TALk9Qo",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-11-03T18:04:40-08:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "ETN"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage.",
+          "earnings_youtube_url": "https://www.youtube.com/watch?v=qXGN49hmnCM",
+          "earnings_match": "stock_period_date"
+        },
+        {
           "title": "AEHR Stock: Record Sales, Negative Cash Flow | Q1 FY2027 #Shorts",
           "youtube_url": "https://www.youtube.com/shorts/TWhaHzKcdnk",
           "spotify_url": "",
@@ -49407,7 +49440,7 @@
       ]
     }
   ],
-  "last_synced_at": "2026-11-03T19:59:30-06:00",
+  "last_synced_at": "2026-11-03T20:26:31-06:00",
   "stock_metadata": {
     "A": {
       "company": "Agilent Technologies, Inc.",
