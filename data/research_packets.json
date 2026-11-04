@@ -3772,6 +3772,64 @@
       "tables": 28
     },
     {
+      "key": "ETN:Q3-2026",
+      "year": 2026,
+      "quarter": 3,
+      "fiscal": false,
+      "slug": "etn-q3-2026",
+      "ticker": "ETN",
+      "company": "Eaton Corporation plc",
+      "period": "Q3 2026",
+      "canonical_url": "https://chargedalpha.com/research/etn-q3-2026",
+      "title": "ETN: Capacity Is Converting. Has the Price Already Caught Up?",
+      "page_title": "ETN Q3 2026 Research Packet — Charged Alpha",
+      "description": "Eaton turns electrical demand into 19% organic growth and 25.3% segment margin; we reassess cash conversion, acquisition funding and the price of the capacity ramp.",
+      "sha256": "207dcfcdd15dc36f324019d5fda103219ed77332038b71cea131ceeb5ecf63c4",
+      "html_file": "research_packets/etn-q3-2026.html",
+      "source_episode": "ETN-Q3-2026",
+      "source_staged_at": "2026-11-04T01:56:41Z",
+      "source_sha256": {
+        "READY": "07db7ad376652ecf04f3b74c419609255079a3e6f28824411c233a16307027d4",
+        "handoff.json": "04ee7d8b22bed3730b1976f02cc59d248f00b717f6b660b9841dc4ce2d125276",
+        "packet/etn-q3-2026-research-packet.html": "207dcfcdd15dc36f324019d5fda103219ed77332038b71cea131ceeb5ecf63c4",
+        "packet/packet_meta.json": "f6d24f65287ba3acc9400f25d9cdeb9c542d717000edf0bf9d77397db8a6144b",
+        "packet/packet.json": "09ddcb52105fedfe80f02453845a81db5b837e5ea836b6cecf68ee7453c29b9f"
+      },
+      "primary_youtube_long": "qXGN49hmnCM",
+      "primary_youtube_short": null,
+      "youtube_studio": null,
+      "youtube_studio_short": null,
+      "what_changed": {
+        "summary": "Eaton turns electrical demand into 19% organic growth and 25.3% segment margin; we reassess cash conversion, acquisition funding and the price of the capacity ramp.",
+        "items": [
+          {
+            "title": "Capacity is delivering.",
+            "detail": "Organic growth 19% and segment margin 25.3% exceeded the prior guided ranges."
+          },
+          {
+            "title": "Americas supplied the operating proof.",
+            "detail": "Margin 29.8% improved 230 bp sequentially; Global growth includes 31 percentage points from Boyd."
+          },
+          {
+            "title": "The call improves to HOLD.",
+            "detail": "We raise the prior $340 reference to $390, while requiring a 15% safety margin for an incremental purchase."
+          },
+          {
+            "title": "Cash and funding still matter.",
+            "detail": "Net financial debt is $19.288 bn; use issuer FCF$1.034 bn, not the erroneous provider mapping."
+          },
+          {
+            "title": "Mobility is still in the numbers.",
+            "detail": "Its planned Dana combination is expected in the first four months of 2027; no transaction windfall is added to our base."
+          }
+        ]
+      },
+      "source_published": "November 3, 2026",
+      "words": 5951,
+      "figures": 18,
+      "tables": 18
+    },
+    {
       "key": "FAST:Q3-2026",
       "year": 2026,
       "quarter": 3,

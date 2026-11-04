@@ -10,6 +10,24 @@
   },
   "episodes": [
     {
+      "ticker": "ETN",
+      "company": "Eaton Corporation, PLC",
+      "sector": "Industrials",
+      "quarter": "Q3 2026",
+      "episode_number": "",
+      "title": "ETN Stock: Capacity Is Delivering — Can Cash Keep Up? Q3 2026",
+      "published_at": "2026-11-04T01:50:14+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=qXGN49hmnCM",
+      "spotify_url": "https://open.spotify.com/episode/25Gb1KGS1S6ZF830xNBP07",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/etn-stock-capacity-is-delivering-%e2%80%94-can-cash-keep-up-q3-2026/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
       "ticker": "AEHR",
       "company": "Aehr Test Systems, Inc.",
       "sector": "Technology",
@@ -49389,7 +49407,7 @@
       ]
     }
   ],
-  "last_synced_at": "2026-11-03T14:01:42-06:00",
+  "last_synced_at": "2026-11-03T19:59:30-06:00",
   "stock_metadata": {
     "A": {
       "company": "Agilent Technologies, Inc.",
