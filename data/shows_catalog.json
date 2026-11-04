@@ -19,7 +19,7 @@
       "published_at": "2026-11-04T02:01:32+00:00",
       "status": "youtube_podcast_complete",
       "youtube_url": "https://www.youtube.com/watch?v=Sl2wJGSlK2U",
-      "spotify_url": "",
+      "spotify_url": "https://open.spotify.com/episode/44o8H4mTTe6ojGRF60kNpP",
       "apple_url": "",
       "google_url": "",
       "iheart_url": "",
@@ -36173,6 +36173,21 @@
       "description": "Fast clips that point viewers into full research videos and stock pages.",
       "videos": [
         {
+          "title": "TLN Stock: Talen Energy Q3 2026 Earnings — The Buyback Uses Future Cash #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/5_KMTXUBtPg",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-11-03T18:51:37-08:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "TLN"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage.",
+          "earnings_youtube_url": "https://www.youtube.com/watch?v=Sl2wJGSlK2U",
+          "earnings_match": "stock_period_date"
+        },
+        {
           "title": "ETN Stock: Eaton Q3 2026 — Capacity Delivers. What About Cash? #Shorts",
           "youtube_url": "https://www.youtube.com/shorts/5wB3TALk9Qo",
           "spotify_url": "",
@@ -49440,7 +49455,7 @@
       ]
     }
   ],
-  "last_synced_at": "2026-11-03T20:26:31-06:00",
+  "last_synced_at": "2026-11-03T21:11:36-06:00",
   "stock_metadata": {
     "A": {
       "company": "Agilent Technologies, Inc.",
