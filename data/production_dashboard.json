@@ -1,11 +1,31 @@
 {
   "schema": "charged-alpha-public-production/1",
-  "updated_at": "2026-11-03T19:59:00.220564-06:00",
+  "updated_at": "2026-11-03T22:16:37.614422-06:00",
   "calendar_updated_at": "2026-11-03T16:49:09.899726-06:00",
-  "calendar_status": "fresh",
+  "calendar_status": "stale",
   "daily_target": 10,
   "active": [],
   "history": [
+    {
+      "ticker": "TLN",
+      "company": "Talen Energy Corporation",
+      "period": "Q3 2026",
+      "completed_at": "2026-11-03T22:15:06.186745-06:00",
+      "video_url": "https://youtu.be/Sl2wJGSlK2U",
+      "short_url": "https://youtu.be/5_KMTXUBtPg",
+      "packet_url": "https://chargedalpha.com/research/tln-q3-2026",
+      "stock_url": "/shows/tln"
+    },
+    {
+      "ticker": "ETN",
+      "company": "Eaton Corporation, PLC",
+      "period": "Q3 2026",
+      "completed_at": "2026-11-03T21:50:43.056983-06:00",
+      "video_url": "https://youtu.be/qXGN49hmnCM",
+      "short_url": "https://youtu.be/5wB3TALk9Qo",
+      "packet_url": "https://chargedalpha.com/research/etn-q3-2026",
+      "stock_url": "/shows/etn"
+    },
     {
       "ticker": "AEHR",
       "company": "Aehr Test Systems, Inc.",
