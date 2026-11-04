@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Plan/apply one review-bound ETN mobile SVG revision; never publish or relax imports."""
+"""Plan/apply one review-bound ETN desktop price SVG revision; never publish or relax imports."""
 import argparse
 import fcntl
 import hashlib
@@ -15,7 +15,7 @@ SITE = Path(__file__).resolve().parents[1]
 EPISODE = 'ETN-Q3-2026'
 SLUG = 'etn-q3-2026'
 FILE = SLUG + '-research-packet.html'
-OLD_HTML = '207dcfcdd15dc36f324019d5fda103219ed77332038b71cea131ceeb5ecf63c4'
+OLD_HTML = '2b5e41998276e5ca7d95763d6e24d6879101be779256b28d92e7cb6d6618287e'
 REPORT = 'charged-alpha-published-etn-display-plan/1'
 
 
@@ -40,21 +40,29 @@ def encoded(value):
 
 
 def corrected_html(raw):
-    """Only four y attributes change; all text, shapes and other SVGs stay byte-exact."""
+    """Move two desktop reference labels and separate two Mobility labels; preserve all data."""
     require(digest(raw) == OLD_HTML, 'Only the exact published ETN predecessor is admitted')
-    figure = re.search(rb'<figure><figcaption><b>Nine-quarter sales progression</b>.*?</figure>', raw, re.S)
-    require(figure is not None, 'Exact sales figure missing')
-    mobile = re.search(rb'<div class="ch-m">(<svg.*?</svg>)</div>', figure.group(), re.S)
-    require(mobile is not None, 'Exact mobile SVG missing')
-    svg = mobile.group(1)
-    for old, new, label in [('104.0', '84.0', '$6,240M'), ('84.9', '64.9', '$7,028M'),
-                            ('84.3', '54.3', '$7,055M'), ('48.5', '18.5', '$8,531M')]:
-        pattern = rb'(<text\b[^>]*\by=")' + re.escape(old.encode()) + rb'("[^>]*>' + re.escape(label.encode()) + rb'</text>)'
-        svg, count = re.subn(pattern, lambda m: m.group(1) + new.encode() + m.group(2), svg)
-        require(count == 1, 'Exact value-label predecessor missing')
-    start = figure.start() + mobile.start(1)
-    end = figure.start() + mobile.end(1)
-    return raw[:start] + svg + raw[end:]
+    figure = re.search(rb'<figure><figcaption><b>Price history and our revised reference</b>.*?</figure>', raw, re.S)
+    require(figure is not None, 'Exact price figure missing')
+    desktop = re.search(rb'<div class="ch-d">(<svg.*?</svg>)</div>', figure.group(), re.S)
+    require(desktop is not None, 'Exact desktop SVG missing')
+    svg = desktop.group(1)
+    for old_y, new_y, label in [('158.4', '149.4', 'Base fair value $390'),
+                                ('230.9', '221.9', '15% safety margin')]:
+        old = ('<text x="628" y="' + old_y + '" font-size="10.5" fill="#4b5563">' + label + '</text>').encode()
+        new = ('<text x="70" y="' + new_y + '" font-size="10.5" fill="#4b5563" style="paint-order:stroke;stroke:#fff;stroke-width:3px">' + label + '</text>').encode()
+        require(svg.count(old) == 1, 'Exact reference-label predecessor missing')
+        svg = svg.replace(old, new)
+    start = figure.start() + desktop.start(1)
+    end = figure.start() + desktop.end(1)
+    result = raw[:start] + svg + raw[end:]
+    profit = re.search(rb'<figure><figcaption><b>Segment operating profit</b>.*?</figure>', result, re.S)
+    require(profit is not None, 'Exact operating-profit figure missing')
+    chart = profit.group()
+    pattern = rb'(<text x="(?:636\.8|356\.8)" y=")227\.1("[^>]*>\$105M</text>)'
+    chart, count = re.subn(pattern, lambda m: m.group(1) + b'211.1' + m.group(2), chart)
+    require(count == 2, 'Exact desktop/mobile Mobility predecessor labels missing')
+    return result[:profit.start()] + chart + result[profit.end():]
 
 
 def targets(root, site):
@@ -94,8 +102,10 @@ def prepare(root, site, directory):
     for index, key in [(2, 'packet/' + FILE), (3, 'packet/packet_meta.json'), (4, 'handoff.json')]:
         require(receipt['staged_file_sha256'][key] == digest(before[index]), 'Staged binding differs')
         receipt['staged_file_sha256'][key] = digest(after[index])
+    if 'published_display_revision' in receipt:
+        receipt.setdefault('published_display_revision_history', []).append(receipt['published_display_revision'])
     receipt['published_display_revision'] = {'previous_html_sha256': OLD_HTML, 'html_sha256': checksum,
-                                           'reason': 'Mobile sales value-label spacing only'}
+                                           'reason': 'Desktop price references and desktop/mobile Mobility label separation only'}
     after[5] = encoded(receipt)
     registry = json.loads(before[7]); matches = [p for p in registry['packets'] if p['slug'] == SLUG]
     require(len(matches) == 1 and matches[0]['sha256'] == OLD_HTML, 'Exact published registry predecessor missing')
