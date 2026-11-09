@@ -10,6 +10,24 @@
   },
   "episodes": [
     {
+      "ticker": "AXON",
+      "company": "Axon Enterprise, Inc.",
+      "sector": "Industrials",
+      "quarter": "Q3 2026",
+      "episode_number": "",
+      "title": "AXON Stock: A $130M Delay Meets a $1.2B Drone Bet — Q3 2026",
+      "published_at": "2026-11-08T22:04:48+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=32BuJNcC4qQ",
+      "spotify_url": "https://open.spotify.com/episode/1a475lIK6EljzwJe6COwKP",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/axon-stock-a-130m-delay-meets-a-12b-drone-bet-%e2%80%94-q3-2026/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
       "ticker": "EOSE",
       "company": "Eos Energy Enterprises, Inc.",
       "sector": "Industrials",
@@ -36191,6 +36209,21 @@
       "description": "Fast clips that point viewers into full research videos and stock pages.",
       "videos": [
         {
+          "title": "AXON Stock: Axon Q3 2026 Earnings — The Drone Funding Test #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/AVIGCfbGU6I",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-11-09T14:16:15+00:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "AXON"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage.",
+          "earnings_youtube_url": "https://www.youtube.com/watch?v=32BuJNcC4qQ",
+          "earnings_match": "stock_period_date"
+        },
+        {
           "title": "EOSE Stock: Eos Energy Q3 2026 — Record Sales, Cash Losses #Shorts",
           "youtube_url": "https://www.youtube.com/shorts/0hIA0FpKJSw",
           "spotify_url": "",
@@ -49488,7 +49521,7 @@
       ]
     }
   ],
-  "last_synced_at": "2026-11-09T07:45:18-06:00",
+  "last_synced_at": "2026-11-09T08:18:49-06:00",
   "stock_metadata": {
     "A": {
       "company": "Agilent Technologies, Inc.",

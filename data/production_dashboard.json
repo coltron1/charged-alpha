@@ -1,19 +1,10 @@
 {
   "schema": "charged-alpha-public-production/1",
-  "updated_at": "2026-11-09T07:30:20.477042-06:00",
+  "updated_at": "2026-11-09T08:19:22.872117-06:00",
   "calendar_updated_at": "2026-11-08T14:50:16.688094-06:00",
   "calendar_status": "stale",
   "daily_target": 10,
-  "active": [
-    {
-      "ticker": "INDI",
-      "company": "indie Semiconductor, Inc.",
-      "period": "Q3 2026",
-      "status_label": "Building now",
-      "stage_label": "Production in progress",
-      "stock_url": null
-    }
-  ],
+  "active": [],
   "history": [
     {
       "ticker": "TLN",

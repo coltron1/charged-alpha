@@ -3076,6 +3076,64 @@
       "tables": 21
     },
     {
+      "key": "AXON:Q3-2026",
+      "year": 2026,
+      "quarter": 3,
+      "fiscal": false,
+      "slug": "axon-q3-2026",
+      "ticker": "AXON",
+      "company": "Axon Enterprise, Inc.",
+      "period": "Q3 2026",
+      "canonical_url": "https://chargedalpha.com/research/axon-q3-2026",
+      "title": "AXON: A $130 Million Delay Meets a $1.2 Billion Drone Bet",
+      "page_title": "AXON Q3 2026 Research Packet \u2014 Charged Alpha",
+      "description": "Software is accelerating, but federal timing, hardware margins and the Skydio funding commitment raise the cash hurdle; our updated base value is $310.",
+      "sha256": "8ca50f8e891b8477f3ab7d1cd7139b6fe2168699923465c0b58b17a08705eb12",
+      "html_file": "research_packets/axon-q3-2026.html",
+      "source_episode": "AXON-Q3-2026",
+      "source_staged_at": "2026-11-09T14:06:46Z",
+      "source_sha256": {
+        "READY": "c255540f1646ccbae14185e2a2549c6e0b915aea3fbc8295de743fd081a8afd4",
+        "handoff.json": "95d1e6b34e150661740247a0429f9e91fc732f9e5ca79c4dca988ebd6a9b0dda",
+        "packet/axon-q3-2026-research-packet.html": "8ca50f8e891b8477f3ab7d1cd7139b6fe2168699923465c0b58b17a08705eb12",
+        "packet/packet_meta.json": "5ca6c4a9b2121d3705d60ada00592e7e8613a753b6ec5006cd246c05c5a74c18",
+        "packet/packet.json": "2da12081008a082dc7c69ebffce02834cc8b2759e93c624d92bb8dc1efeb6488"
+      },
+      "primary_youtube_long": "32BuJNcC4qQ",
+      "primary_youtube_short": null,
+      "youtube_studio": null,
+      "youtube_studio_short": null,
+      "what_changed": {
+        "summary": "Software is accelerating, but federal timing, hardware margins and the Skydio funding commitment raise the cash hurdle; our updated base value is $310.",
+        "items": [
+          {
+            "title": "The guidance cut is concentrated.",
+            "detail": "Three Federal Dedrone deployments, totaling approximately $130M, leave the 2026 outlook. The filing supports a timing problem; it does not establish cancellation or a guaranteed recovery date."
+          },
+          {
+            "title": "Software keeps gaining weight.",
+            "detail": "Software & Services reached $437.0M, up 43.2%, contributing a computed two-thirds of the company\u2019s incremental year-over-year revenue."
+          },
+          {
+            "title": "Hardware growth carries a margin cost.",
+            "detail": "Connected Devices gross margin fell to 43.0% from 49.9%; counter-drone mix, memory costs and new-product scaling matter alongside demand."
+          },
+          {
+            "title": "Skydio expands the commitment before cash conversion is proven.",
+            "detail": "Approximately $127.5M cash was paid at the November 5 primary closing; further tender and secondary investments remain conditional."
+          },
+          {
+            "title": "The prior bearish operating tests largely triggered, yet valuation changed.",
+            "detail": "Negative quarterly FCF and inventory above $550M confirm the old cautions. A much lower share price brings the updated $310 reference close to the market."
+          }
+        ]
+      },
+      "source_published": "November 8, 2026",
+      "words": 6029,
+      "figures": 18,
+      "tables": 16
+    },
+    {
       "key": "BSX:Q3-2026",
       "year": 2026,
       "quarter": 3,
