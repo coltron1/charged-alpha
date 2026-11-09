@@ -2844,6 +2844,64 @@
       "tables": 29
     },
     {
+      "key": "AKAM:Q3-2026",
+      "year": 2026,
+      "quarter": 3,
+      "fiscal": false,
+      "slug": "akam-q3-2026",
+      "ticker": "AKAM",
+      "company": "Akamai Technologies, Inc.",
+      "period": "Q3 2026",
+      "canonical_url": "https://chargedalpha.com/research/akam-q3-2026",
+      "title": "AKAM: The AI Contract Is Huge. So Is the Cash Bill.",
+      "page_title": "AKAM Q3 2026 Research Packet \u2014 Charged Alpha",
+      "description": "Akamai\u2019s cloud commitments expand the opportunity, but cash investment, customer concentration and warrant economics determine what shareholders keep.",
+      "sha256": "c18572fa3106acda9e028fef1eaface6e3b8afda0ff5e3a694299db72f0ea42d",
+      "html_file": "research_packets/akam-q3-2026.html",
+      "source_episode": "AKAM-Q3-2026",
+      "source_staged_at": "2026-11-09T14:42:12Z",
+      "source_sha256": {
+        "READY": "c2d6394b5209e8d19251a3cdf277584a9c9372f5e260fe4dd8209c146fe49b0b",
+        "handoff.json": "02a9fc0c021aa38974f4ec72215776ab9142bd2e12312253159c4336a3269d86",
+        "packet/akam-q3-2026-research-packet.html": "c18572fa3106acda9e028fef1eaface6e3b8afda0ff5e3a694299db72f0ea42d",
+        "packet/packet_meta.json": "83943ed27a6f76dd01d90eb087ae28fb0955160343fead928309dbc02b7913c4",
+        "packet/packet.json": "487e4505e649bc20ecf6c7030ee9be23ebc436a19a6f27d344743159c0329115"
+      },
+      "primary_youtube_long": "IUarHkoSV9Y",
+      "primary_youtube_short": null,
+      "youtube_studio": null,
+      "youtube_studio_short": null,
+      "what_changed": {
+        "summary": "Akamai\u2019s cloud commitments expand the opportunity, but cash investment, customer concentration and warrant economics determine what shareholders keep.",
+        "items": [
+          {
+            "title": "The cash bill arrived.",
+            "detail": "Q3 operating cash of $433.0M was overtaken by $605.2M of cash capex, producing negative $172.1M FCF."
+          },
+          {
+            "title": "The contract predates this print.",
+            "detail": "The $11.6B Anthropic agreement was disclosed in September; Q3 adds explicit 2027 CIS and 2028 company revenue targets."
+          },
+          {
+            "title": "Cash and accrual capex switched places.",
+            "detail": "Cash spending exceeded accrual additions by $141.0M this quarter. Neither is a substitute for a complete investment schedule."
+          },
+          {
+            "title": "The warrant has two economic effects.",
+            "detail": "Potential exercise can dilute shares, while its grant-date fair value is recognized as a future reduction of customer revenue."
+          },
+          {
+            "title": "The price and the call changed.",
+            "detail": "The prior Q2 SELL used $81 value at $110.54. The current HOLD uses $75 at $83.09, with a wide $30\u2013$120 scenario range."
+          }
+        ]
+      },
+      "source_published": "November 8, 2026",
+      "words": 5491,
+      "figures": 17,
+      "tables": 15
+    },
+    {
       "key": "AMKR:Q3-2026",
       "year": 2026,
       "quarter": 3,
