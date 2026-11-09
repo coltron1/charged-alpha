@@ -5454,6 +5454,64 @@
       "tables": 33
     },
     {
+      "key": "NRG:Q3-2026",
+      "year": 2026,
+      "quarter": 3,
+      "fiscal": false,
+      "slug": "nrg-q3-2026",
+      "ticker": "NRG",
+      "company": "NRG Energy, Inc.",
+      "period": "Q3 2026",
+      "canonical_url": "https://chargedalpha.com/research/nrg-q3-2026",
+      "title": "NRG: A Bigger Quarter, a Smaller Forward Step",
+      "page_title": "NRG Q3 2026 Research Packet \u2014 Charged Alpha",
+      "description": "Acquisition-led growth and a proposed $4 billion asset sale make the cash definition and the unchanged pre-sale guidance perimeter decisive.",
+      "sha256": "42177e1ecb343c40726d18db3c180f22e818347aa1104e3fa322fe22fe473e93",
+      "html_file": "research_packets/nrg-q3-2026.html",
+      "source_episode": "NRG-Q3-2026",
+      "source_staged_at": "2026-11-09T19:18:38Z",
+      "source_sha256": {
+        "READY": "607d41ccec1956f374222e01373db882f25be37646f2572595a49c09e8ed34d4",
+        "handoff.json": "fff161a6295a05d952bd819529a49b2f0232bb386e5ab3d7a7ba0b1d34d45f45",
+        "packet/nrg-q3-2026-research-packet.html": "42177e1ecb343c40726d18db3c180f22e818347aa1104e3fa322fe22fe473e93",
+        "packet/packet_meta.json": "04df5bf5249259e3616a39437b6453899bc0c75d1124d72c7f4a6a368ad6e58e",
+        "packet/packet.json": "624cb4e9b0db6f4f3e072981ed22d5c80a235cc4014bacb3c1987e444e72c616"
+      },
+      "primary_youtube_long": "yVYARYf72ec",
+      "primary_youtube_short": null,
+      "youtube_studio": null,
+      "youtube_studio_short": null,
+      "what_changed": {
+        "summary": "Acquisition-led growth and a proposed $4 billion asset sale make the cash definition and the unchanged pre-sale guidance perimeter decisive.",
+        "items": [
+          {
+            "title": "The operating uplift is real but acquired.",
+            "detail": "East supplies $507M of the $808M quarterly adjusted EBITDA increase; acquisitions and capacity pricing both matter."
+          },
+          {
+            "title": "The forward step is modest.",
+            "detail": "FY2027 adjusted EPS midpoint grows 1.69% versus FY2026, while the current-year range is reaffirmed."
+          },
+          {
+            "title": "The sale is not included in guidance.",
+            "detail": "The proposed 4.9 GW sale for $4B requires a full post-close earnings, debt and share-count bridge."
+          },
+          {
+            "title": "Cash definitions change the impression.",
+            "detail": "Nine-month FCF before growth is $2.201B; reported operating cash less all capex is $864M."
+          },
+          {
+            "title": "Price discipline survives good news.",
+            "detail": "Our $110 central value and $82.50 entry checkpoint use the pre-sale footprint and explicitly modeled cash reserves."
+          }
+        ]
+      },
+      "source_published": "November 9, 2026",
+      "words": 6221,
+      "figures": 18,
+      "tables": 15
+    },
+    {
       "key": "NUE:Q3-2026",
       "year": 2026,
       "quarter": 3,

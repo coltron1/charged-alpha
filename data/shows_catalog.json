@@ -10,6 +10,24 @@
   },
   "episodes": [
     {
+      "ticker": "NRG",
+      "company": "NRG Energy, Inc.",
+      "sector": "Energy",
+      "quarter": "Q3 2026",
+      "episode_number": "",
+      "title": "NRG Stock: A Bigger Quarter, a Smaller Forward Step — Q3 2026",
+      "published_at": "2026-11-09T19:13:08+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=yVYARYf72ec",
+      "spotify_url": "",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/nrg-stock-a-bigger-quarter-a-smaller-forward-step-%e2%80%94-q3-2026/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
       "ticker": "INDI",
       "company": "indie Semiconductor, Inc.",
       "sector": "Technology",
@@ -19,7 +37,7 @@
       "published_at": "2026-11-09T14:55:09+00:00",
       "status": "youtube_podcast_complete",
       "youtube_url": "https://www.youtube.com/watch?v=xAbqt_2Guuc",
-      "spotify_url": "",
+      "spotify_url": "https://open.spotify.com/episode/6RE3NGQ2KVSaicxBGVCpfn",
       "apple_url": "",
       "google_url": "",
       "iheart_url": "",
@@ -49587,7 +49605,7 @@
       ]
     }
   ],
-  "last_synced_at": "2026-11-09T09:30:27-06:00",
+  "last_synced_at": "2026-11-09T13:20:18-06:00",
   "stock_metadata": {
     "A": {
       "company": "Agilent Technologies, Inc.",
