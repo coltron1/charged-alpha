@@ -36245,6 +36245,21 @@
       "description": "Fast clips that point viewers into full research videos and stock pages.",
       "videos": [
         {
+          "title": "INDI Stock: indie Semiconductor Q3 2026 — The Cash Test #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/4K-7bm-iU0I",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-11-09T15:28:11+00:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "INDI"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage.",
+          "earnings_youtube_url": "https://www.youtube.com/watch?v=xAbqt_2Guuc",
+          "earnings_match": "stock_period_date"
+        },
+        {
           "title": "AKAM Stock: Akamai Q3 2026 — The AI Cash Bill #Shorts",
           "youtube_url": "https://www.youtube.com/shorts/C6vSkvOU5Qk",
           "spotify_url": "",
@@ -49572,7 +49587,7 @@
       ]
     }
   ],
-  "last_synced_at": "2026-11-09T09:03:29-06:00",
+  "last_synced_at": "2026-11-09T09:30:27-06:00",
   "stock_metadata": {
     "A": {
       "company": "Agilent Technologies, Inc.",
