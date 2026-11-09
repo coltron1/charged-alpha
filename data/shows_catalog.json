@@ -36281,6 +36281,21 @@
       "description": "Fast clips that point viewers into full research videos and stock pages.",
       "videos": [
         {
+          "title": "NRG Stock: Big Earnings, Smaller Next Step — Q3 2026 #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/DqqJKD5qcQQ",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-11-09T21:49:40+00:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "NRG"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage.",
+          "earnings_youtube_url": "https://www.youtube.com/watch?v=yVYARYf72ec",
+          "earnings_match": "stock_period_date"
+        },
+        {
           "title": "CEG Stock: Constellation Q3 2026 — The Cash Test #Shorts",
           "youtube_url": "https://www.youtube.com/shorts/kPytv5_iPAE",
           "spotify_url": "",
@@ -49638,7 +49653,7 @@
       ]
     }
   ],
-  "last_synced_at": "2026-11-09T15:15:02-06:00",
+  "last_synced_at": "2026-11-09T15:52:26-06:00",
   "stock_metadata": {
     "A": {
       "company": "Agilent Technologies, Inc.",
