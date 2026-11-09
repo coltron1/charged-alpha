@@ -10,6 +10,24 @@
   },
   "episodes": [
     {
+      "ticker": "VST",
+      "company": "Vistra Corp.",
+      "sector": "Energy",
+      "quarter": "Q3 2026",
+      "episode_number": "",
+      "title": "VST Stock: EBITDA Surged 50% — Why Cash Tells a Different Story | Q3 2026",
+      "published_at": "2026-11-09T23:22:39+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=lpfuoVdZIXM",
+      "spotify_url": "https://open.spotify.com/episode/71dMWIjIEB8HlfVM9tPxd1",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/vst-stock-ebitda-surged-50-%e2%80%94-why-cash-tells-a-different-story-q3-2026/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
       "ticker": "CEG",
       "company": "Constellation Energy Corporation",
       "sector": "Utilities",
@@ -49653,7 +49671,7 @@
       ]
     }
   ],
-  "last_synced_at": "2026-11-09T15:52:26-06:00",
+  "last_synced_at": "2026-11-09T17:27:45-06:00",
   "stock_metadata": {
     "A": {
       "company": "Agilent Technologies, Inc.",
