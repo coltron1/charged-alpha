@@ -4468,6 +4468,64 @@
       "tables": 19
     },
     {
+      "key": "INDI:Q3-2026",
+      "year": 2026,
+      "quarter": 3,
+      "fiscal": false,
+      "slug": "indi-q3-2026",
+      "ticker": "INDI",
+      "company": "indie Semiconductor, Inc.",
+      "period": "Q3 2026",
+      "canonical_url": "https://chargedalpha.com/research/indi-q3-2026",
+      "title": "INDI: The Rebound Is Real. The Cash Test Is Next.",
+      "page_title": "INDI Q3 2026 Research Packet \u2014 Charged Alpha",
+      "description": "indie\u2019s core growth is accelerating, but cash consumption, stock compensation and minority ownership leave less value for common shareholders than headline revenue implies.",
+      "sha256": "139159f4a31005ddc5393455553e842deb0dab27b90b522519b6712daa69af37",
+      "html_file": "research_packets/indi-q3-2026.html",
+      "source_episode": "INDI-Q3-2026",
+      "source_staged_at": "2026-11-09T15:02:56Z",
+      "source_sha256": {
+        "READY": "ef81fd8169ebec54440527ea92d25abdff65ba08f23857f33ff28da2054ae7e5",
+        "handoff.json": "8d9e58eca6d07b0445c19e378eabebfbd415dc01b28bbf8b9ce412c4a145c7ea",
+        "packet/indi-q3-2026-research-packet.html": "139159f4a31005ddc5393455553e842deb0dab27b90b522519b6712daa69af37",
+        "packet/packet_meta.json": "2e0f04a5d7ec71eaa740b9f807bb19ef614e9df3838dfa51e5b337ae9cc2ce69",
+        "packet/packet.json": "457733a314e0292e34e289cf6ffbfb43bfc159de419e34ee2fe2aaf9c354f671"
+      },
+      "primary_youtube_long": "xAbqt_2Guuc",
+      "primary_youtube_short": null,
+      "youtube_studio": null,
+      "youtube_studio_short": null,
+      "what_changed": {
+        "summary": "indie\u2019s core growth is accelerating, but cash consumption, stock compensation and minority ownership leave less value for common shareholders than headline revenue implies.",
+        "items": [
+          {
+            "title": "The core is accelerating.",
+            "detail": "Core revenue reached $40.7M; the Q4 midpoint implies another 15.5% sequential increase to $47M."
+          },
+          {
+            "title": "Adjusted progress is not GAAP profit.",
+            "detail": "Adjusted operating loss narrowed to $7.2M, but GAAP operating loss was $39.0M and the compensation add-back increased."
+          },
+          {
+            "title": "Cash consumption worsened.",
+            "detail": "Nine-month operating cash outflow was $73.4M before $7.0M of property and equipment spending."
+          },
+          {
+            "title": "Ownership changes the valuation.",
+            "detail": "Wuxi is consolidated despite only 34.38% equity ownership; a large part of its economics belongs to outside owners."
+          },
+          {
+            "title": "Neither deal is completed in the latest filing.",
+            "detail": "The Wuxi stake sale and CMOS acquisition remain conditional, so future cash proceeds are not booked as cash today."
+          }
+        ]
+      },
+      "source_published": "November 8, 2026",
+      "words": 6350,
+      "figures": 17,
+      "tables": 16
+    },
+    {
       "key": "ISRG:Q3-2026",
       "year": 2026,
       "quarter": 3,

@@ -10,6 +10,24 @@
   },
   "episodes": [
     {
+      "ticker": "INDI",
+      "company": "indie Semiconductor, Inc.",
+      "sector": "Technology",
+      "quarter": "Q3 2026",
+      "episode_number": "",
+      "title": "INDI Stock: The Rebound Is Real. The Cash Test Is Next. — Q3 2026",
+      "published_at": "2026-11-09T14:55:09+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=xAbqt_2Guuc",
+      "spotify_url": "",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/indi-stock-the-rebound-is-real-the-cash-test-is-next-%e2%80%94-q3-2026/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
       "ticker": "AKAM",
       "company": "Akamai Technologies, Inc.",
       "sector": "Technology",
@@ -36227,6 +36245,21 @@
       "description": "Fast clips that point viewers into full research videos and stock pages.",
       "videos": [
         {
+          "title": "AKAM Stock: Akamai Q3 2026 — The AI Cash Bill #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/C6vSkvOU5Qk",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-11-09T14:58:25+00:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "AKAM"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage.",
+          "earnings_youtube_url": "https://www.youtube.com/watch?v=IUarHkoSV9Y",
+          "earnings_match": "stock_period_date"
+        },
+        {
           "title": "AXON Stock: Axon Q3 2026 Earnings — The Drone Funding Test #Shorts",
           "youtube_url": "https://www.youtube.com/shorts/AVIGCfbGU6I",
           "spotify_url": "",
@@ -49539,7 +49572,7 @@
       ]
     }
   ],
-  "last_synced_at": "2026-11-09T08:44:14-06:00",
+  "last_synced_at": "2026-11-09T09:03:29-06:00",
   "stock_metadata": {
     "A": {
       "company": "Agilent Technologies, Inc.",
@@ -51667,6 +51700,10 @@
     "INCY": {
       "company": "Incyte Corporation",
       "sector": "Healthcare"
+    },
+    "INDI": {
+      "company": "indie Semiconductor, Inc.",
+      "sector": "Technology"
     },
     "INFY": {
       "company": "Infosys Limited",
