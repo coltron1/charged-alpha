@@ -1,11 +1,21 @@
 {
   "schema": "charged-alpha-public-production/1",
-  "updated_at": "2026-11-09T13:53:43.298839-06:00",
+  "updated_at": "2026-11-09T15:16:11.417435-06:00",
   "calendar_updated_at": "2026-11-09T11:45:57.023865-06:00",
   "calendar_status": "fresh",
   "daily_target": 10,
   "active": [],
   "history": [
+    {
+      "ticker": "CEG",
+      "company": "Constellation Energy Corporation",
+      "period": "Q3 2026",
+      "completed_at": "2026-11-09T15:15:26.340165-06:00",
+      "video_url": "https://youtu.be/vshSmeG8ugg",
+      "short_url": "https://youtu.be/kPytv5_iPAE",
+      "packet_url": "https://chargedalpha.com/research/ceg-q3-2026",
+      "stock_url": "/shows/ceg"
+    },
     {
       "ticker": "INDI",
       "company": "indie Semiconductor, Inc.",
