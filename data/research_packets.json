@@ -3482,6 +3482,64 @@
       "tables": 19
     },
     {
+      "key": "CEG:Q3-2026",
+      "year": 2026,
+      "quarter": 3,
+      "fiscal": false,
+      "slug": "ceg-q3-2026",
+      "ticker": "CEG",
+      "company": "Constellation Energy Corporation",
+      "period": "Q3 2026",
+      "canonical_url": "https://chargedalpha.com/research/ceg-q3-2026",
+      "title": "CEG: A $5 Quarter and a $3 Billion Cash Test",
+      "page_title": "CEG Q3 2026 Research Packet \u2014 Charged Alpha",
+      "description": "Constellation raises its earnings outlook and expands long-term contracts, but buybacks, nuclear uprates and financing make cash allocation the next test. HOLD, $285 base value.",
+      "sha256": "b9dc0bf0a241b20bf26d804a72eb8e72b8409cdf484bf41ca4d65927a82b61fe",
+      "html_file": "research_packets/ceg-q3-2026.html",
+      "source_episode": "CEG-Q3-2026",
+      "source_staged_at": "2026-11-09T19:39:53Z",
+      "source_sha256": {
+        "READY": "37e09b468fd45176946174910703ab656a7864400b6428b913592fe5721426c2",
+        "handoff.json": "0f2fdb4ed0448bc8d37c8494ea2875d51ac6508782e8a1e53797cea01993f0a5",
+        "packet/ceg-q3-2026-research-packet.html": "b9dc0bf0a241b20bf26d804a72eb8e72b8409cdf484bf41ca4d65927a82b61fe",
+        "packet/packet_meta.json": "6e18a7ef353a3685bf13bedae15735bf01d3a4335da56a78856b1dd902098e1c",
+        "packet/packet.json": "fd16ae5ee9e8ea129ca53c0b7e9faa4941c33f0685d1685f789d6258f88ccccf"
+      },
+      "primary_youtube_long": "vshSmeG8ugg",
+      "primary_youtube_short": null,
+      "youtube_studio": null,
+      "youtube_studio_short": null,
+      "what_changed": {
+        "summary": "Constellation raises its earnings outlook and expands long-term contracts, but buybacks, nuclear uprates and financing make cash allocation the next test. HOLD, $285 base value.",
+        "items": [
+          {
+            "title": "The strong quarter raised the annual bar.",
+            "detail": "Adjusted EPS reached $5.06 and the full-year midpoint rose to $12.65; a quarterly earnings burst is not a $20.24 annual run rate."
+          },
+          {
+            "title": "The contract book has become more substantial.",
+            "detail": "The November deck shows 91 million annual MWh of long-term agreements in 2032, supporting about 45% of expected nuclear and geothermal generation."
+          },
+          {
+            "title": "Cash improved sharply, but allocation remains demanding.",
+            "detail": "Computed Q3 OCF less total capex was $2.486B. Nine-month free cash flow was $1.518B against $3.001B of repurchases and $459M of dividends."
+          },
+          {
+            "title": "The uprate funding plan is conditional.",
+            "detail": "The up-to-$5B DOE loan commitment is not cash received. The deck identifies roughly $3B of incremental growth investment during 2028\u20132032."
+          },
+          {
+            "title": "Our prior HOLD and $285 value remain.",
+            "detail": "New contracting supports the old operating thesis, while unresolved project timing, merchant earnings and the cash cost keep a large premium out of our base case."
+          }
+        ]
+      },
+      "source_published": "November 9, 2026",
+      "words": 6070,
+      "figures": 15,
+      "tables": 16
+    },
+    {
       "key": "CLF:Q3-2026",
       "year": 2026,
       "quarter": 3,

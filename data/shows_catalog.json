@@ -10,6 +10,24 @@
   },
   "episodes": [
     {
+      "ticker": "CEG",
+      "company": "Constellation Energy Corporation",
+      "sector": "Utilities",
+      "quarter": "Q3 2026",
+      "episode_number": "",
+      "title": "CEG Stock: A $5 Quarter and a $3B Cash Test — Q3 2026",
+      "published_at": "2026-11-09T19:33:29+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=vshSmeG8ugg",
+      "spotify_url": "",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/ceg-stock-a-5-quarter-and-a-3b-cash-test-%e2%80%94-q3-2026/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
       "ticker": "NRG",
       "company": "NRG Energy, Inc.",
       "sector": "Energy",
@@ -49605,7 +49623,7 @@
       ]
     }
   ],
-  "last_synced_at": "2026-11-09T13:20:18-06:00",
+  "last_synced_at": "2026-11-09T13:41:33-06:00",
   "stock_metadata": {
     "A": {
       "company": "Agilent Technologies, Inc.",
