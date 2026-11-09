@@ -141,6 +141,21 @@ class FxRefreshTests(unittest.TestCase):
         self.assertEqual(updated["revenue_usd"], 90)
         self.assertEqual(updated["observed_at"], RETRY)
 
+    def test_ars_financials_use_fresh_usd_per_peso_rate(self):
+        source = info("YPF", "USD")
+        source.update({"financialCurrency": "ARS", "totalRevenue": 2000})
+        previous = subject.normalize_profile("YPF", info("YPF", "USD"), OLD, {"USD": 1})
+        self.assertIsNone(subject.refreshed_profile("YPF", source, RETRY, {"USD": 1}, previous))
+        def response(symbol, max_retries):
+            return None, ({"regularMarketPrice": .00065} if symbol == "ARSUSD=X" else None)
+        with patch.object(subject, "fetch_ticker_info", side_effect=response):
+            _, fresh, dates, failed, _ = subject.refresh_fx({}, RETRY)
+        self.assertNotIn("ARS", failed)
+        self.assertEqual(dates["ARS"], RETRY)
+        updated = subject.refreshed_profile("YPF", source, RETRY, fresh, previous)
+        self.assertAlmostEqual(updated["revenue_usd"], 1.3)
+        self.assertEqual(updated["market_cap_usd"], 100)
+
     def test_main_failed_targeted_retry_retains_fx_dates_and_whole_nonusd_profile(self):
         previous = subject.normalize_profile("CADCO", info(), OLD, {"USD": 1, "CAD": .75})
         registry = {"schema_version": 1, "refreshed_at": OLD, "full_refreshed_at": OLD,

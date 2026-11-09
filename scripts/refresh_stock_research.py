@@ -11,7 +11,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from stock_research import BUSINESS_GROUPS, SNAPSHOT_PATH, normalize_profile, number, read_registry, age_days
 from yf_utils import fetch_ticker_info
 
-FX_CURRENCIES = ("CAD", "EUR", "GBP", "JPY", "CNY", "TWD", "HKD", "CHF", "AUD", "KRW")
+FX_CURRENCIES = ("CAD", "EUR", "GBP", "JPY", "CNY", "TWD", "HKD", "CHF", "AUD", "KRW", "ARS")
 CATALOG_PATH = Path(__file__).resolve().parents[1] / "data/shows_catalog.json"
 
 

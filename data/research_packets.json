@@ -3714,6 +3714,64 @@
       "tables": 38
     },
     {
+      "key": "EOSE:Q3-2026",
+      "year": 2026,
+      "quarter": 3,
+      "fiscal": false,
+      "slug": "eose-q3-2026",
+      "ticker": "EOSE",
+      "company": "Eos Energy Enterprises",
+      "period": "Q3 2026",
+      "canonical_url": "https://chargedalpha.com/research/eose-q3-2026",
+      "title": "EOSE: Record Sales, Related Parties and the Cash Bridge",
+      "page_title": "EOSE Q3 2026 Research Packet \u2014 Charged Alpha",
+      "description": "Record battery sales mask operating losses, concentrated related-party revenue and a demanding financing bridge to positive cash flow.",
+      "sha256": "d8b226794e2f1bbfa353770cf99467620afc7e0c9b7d7eb56a377fcd216e7353",
+      "html_file": "research_packets/eose-q3-2026.html",
+      "source_episode": "EOSE-Q3-2026",
+      "source_staged_at": "2026-11-09T13:27:00Z",
+      "source_sha256": {
+        "READY": "7e07e7cb84dc65577c5b086ee87f5047f7087af28831bd6da37652af050a01a7",
+        "handoff.json": "1902533285eb13d9b39629a4bfbf1ab61feb842a5db1795984bf511b23b46b3e",
+        "packet/eose-q3-2026-research-packet.html": "d8b226794e2f1bbfa353770cf99467620afc7e0c9b7d7eb56a377fcd216e7353",
+        "packet/packet_meta.json": "9fd5fbf1a146b59dedeee5a712d609ee08121d0464fa75ceff40c4913238b92a",
+        "packet/packet.json": "5701e016c5c6c0a1d400a0e9c5b4ef379476bbd5d8a6e9ddc14f5d3be8079f6a"
+      },
+      "primary_youtube_long": "H3CxI5i9UKA",
+      "primary_youtube_short": null,
+      "youtube_studio": null,
+      "youtube_studio_short": null,
+      "what_changed": {
+        "summary": "Record battery sales mask operating losses, concentrated related-party revenue and a demanding financing bridge to positive cash flow.",
+        "items": [
+          {
+            "title": "Sales reached a record.",
+            "detail": "Revenue rose 171.1% to $82.7M, with related parties contributing 82.7%."
+          },
+          {
+            "title": "Profits need a reconciliation.",
+            "detail": "$125.0M net income includes large noncash marks; operating loss was $79.3M."
+          },
+          {
+            "title": "The factory move is a bridge to cross.",
+            "detail": "Line 1 is expected back near late Q1 2027, with $16\u201318M cash restructuring charges."
+          },
+          {
+            "title": "Cash remains financing-dependent.",
+            "detail": "Nine-month operating outflow was $261.6M before factory and JV investment."
+          },
+          {
+            "title": "Common value depends on claims.",
+            "detail": "Debt principal, preferred rights and warrants matter more than a simple EPS multiple."
+          }
+        ]
+      },
+      "source_published": "November 8, 2026",
+      "words": 6098,
+      "figures": 17,
+      "tables": 29
+    },
+    {
       "key": "ERIC:Q3-2026",
       "year": 2026,
       "quarter": 3,

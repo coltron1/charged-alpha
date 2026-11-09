@@ -10,6 +10,24 @@
   },
   "episodes": [
     {
+      "ticker": "EOSE",
+      "company": "Eos Energy Enterprises, Inc.",
+      "sector": "Industrials",
+      "quarter": "Q3 2026",
+      "episode_number": "",
+      "title": "EOSE Stock: Record Sales, But Who Funds the Growth? — Q3 2026",
+      "published_at": "2026-11-08T21:57:51+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=H3CxI5i9UKA",
+      "spotify_url": "https://open.spotify.com/episode/6AwOVIsHCT9KEqlN5NHa9V",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/eose-stock-record-sales-but-who-funds-the-growth-%e2%80%94-q3-2026/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
       "ticker": "TLN",
       "company": "Talen Energy Corporation",
       "sector": "Utilities",
@@ -36173,6 +36191,21 @@
       "description": "Fast clips that point viewers into full research videos and stock pages.",
       "videos": [
         {
+          "title": "EOSE Stock: Eos Energy Q3 2026 — Record Sales, Cash Losses #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/0hIA0FpKJSw",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-11-09T13:40:31+00:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "EOSE"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage.",
+          "earnings_youtube_url": "https://www.youtube.com/watch?v=H3CxI5i9UKA",
+          "earnings_match": "stock_period_date"
+        },
+        {
           "title": "TLN Stock: Talen Energy Q3 2026 Earnings — The Buyback Uses Future Cash #Shorts",
           "youtube_url": "https://www.youtube.com/shorts/5_KMTXUBtPg",
           "spotify_url": "",
@@ -49455,7 +49488,7 @@
       ]
     }
   ],
-  "last_synced_at": "2026-11-03T21:11:36-06:00",
+  "last_synced_at": "2026-11-09T07:45:18-06:00",
   "stock_metadata": {
     "A": {
       "company": "Agilent Technologies, Inc.",
