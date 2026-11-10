@@ -10,6 +10,24 @@
   },
   "episodes": [
     {
+      "ticker": "ALAB",
+      "company": "Astera Labs, Inc.",
+      "sector": "Technology",
+      "quarter": "Q3 2026",
+      "episode_number": "",
+      "title": "ALAB Stock: Astera Labs Q3 2026 — Scorpio Breaks Out, Price Too High?",
+      "published_at": "2026-11-10T15:29:40+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=gLQpyqFbCXA",
+      "spotify_url": "",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/alab-stock-astera-labs-q3-2026-%e2%80%94-scorpio-breaks-out-price-too-high/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
       "ticker": "KTOS",
       "company": "Kratos Defense & Security Solutions, Inc.",
       "sector": "Industrials",
@@ -49719,7 +49737,7 @@
       ]
     }
   ],
-  "last_synced_at": "2026-11-09T20:13:01-06:00",
+  "last_synced_at": "2026-11-10T09:34:52-06:00",
   "stock_metadata": {
     "A": {
       "company": "Agilent Technologies, Inc.",

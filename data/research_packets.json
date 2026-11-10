@@ -2902,6 +2902,64 @@
       "tables": 15
     },
     {
+      "key": "ALAB:Q3-2026",
+      "year": 2026,
+      "quarter": 3,
+      "fiscal": false,
+      "slug": "alab-q3-2026",
+      "ticker": "ALAB",
+      "company": "Astera Labs, Inc.",
+      "period": "Q3 2026",
+      "canonical_url": "https://chargedalpha.com/research/alab-q3-2026",
+      "title": "ALAB: Scorpio breaks out; the stock still needs a cash-flow breakthrough",
+      "page_title": "ALAB Q3 2026 Research Packet — Charged Alpha",
+      "description": "Record growth meets margin compression, customer concentration and a demanding forward cash valuation.",
+      "sha256": "706aaddb73f77474164718aca1c50b5690f3afa8f24c6ebc992e21f4e7cfc4a5",
+      "html_file": "research_packets/alab-q3-2026.html",
+      "source_episode": "ALAB-Q3-2026",
+      "source_staged_at": "2026-11-10T15:33:32Z",
+      "source_sha256": {
+        "READY": "d6d1a8c8d0c7e85105754dcad461ae285dce5026f67ab2bc9260b78ff6eccd18",
+        "handoff.json": "04220ea22f570093ede20f39c9d6d54e29281769f4064aa5b16c5dfd9627de44",
+        "packet/alab-q3-2026-research-packet.html": "706aaddb73f77474164718aca1c50b5690f3afa8f24c6ebc992e21f4e7cfc4a5",
+        "packet/packet_meta.json": "bc91d7bf3ad4cbc4eddfe1aab1efe9b661f7d18a6881ae45cf95590e86f41714",
+        "packet/packet.json": "2ac374238551b898d93392718cb21d5a6211e8734332d6bea417ffd82ef4b573"
+      },
+      "primary_youtube_long": "gLQpyqFbCXA",
+      "primary_youtube_short": null,
+      "youtube_studio": null,
+      "youtube_studio_short": null,
+      "what_changed": {
+        "summary": "Record growth meets margin compression, customer concentration and a demanding forward cash valuation.",
+        "items": [
+          {
+            "title": "Scorpio becomes the largest product family.",
+            "detail": "The X-Series production ramp drives a step change in revenue; product-level dollars and profits are not disclosed."
+          },
+          {
+            "title": "Operating leverage outweighs a lower gross margin.",
+            "detail": "GAAP operating income reached $179.1M even as gross margin fell to 72.3%."
+          },
+          {
+            "title": "Cash conversion trails the earnings headline.",
+            "detail": "Receivables and inventory consumed $347.4M over nine months; FCF was $268.1M before acquisitions."
+          },
+          {
+            "title": "Dilution belongs in the valuation.",
+            "detail": "Q4 guidance uses 187M diluted shares; our model uses 190M and retains compensation expense in operating margins."
+          },
+          {
+            "title": "The price asks for more than another good quarter.",
+            "detail": "Our base cash model values the stock near $141; more generous earnings and sales routes lift the rounded blended value to $165."
+          }
+        ]
+      },
+      "source_published": "November 9, 2026",
+      "words": 5620,
+      "figures": 16,
+      "tables": 32
+    },
+    {
       "key": "AMKR:Q3-2026",
       "year": 2026,
       "quarter": 3,
