@@ -4816,6 +4816,64 @@
       "tables": 32
     },
     {
+      "key": "KTOS:Q3-2026",
+      "year": 2026,
+      "quarter": 3,
+      "fiscal": false,
+      "slug": "ktos-q3-2026",
+      "ticker": "KTOS",
+      "company": "Kratos Defense & Security Solutions, Inc.",
+      "period": "Q3 2026",
+      "canonical_url": "https://chargedalpha.com/research/ktos-q3-2026",
+      "title": "KTOS: Record Orders, But Who Funds the Growth?",
+      "page_title": "KTOS Q3 2026 Research Packet — Charged Alpha",
+      "description": "Kratos accelerates in government solutions while cash use and shareholder funding remain the valuation test.",
+      "sha256": "8263c0debd36ab3889c213eb51abd23883b431b5c7a5ca011102d17f0e92f6cc",
+      "html_file": "research_packets/ktos-q3-2026.html",
+      "source_episode": "KTOS-Q3-2026",
+      "source_staged_at": "2026-11-10T00:46:48Z",
+      "source_sha256": {
+        "READY": "b36e4c494ae30af13a13193af0e4eb547210b55161ccc5477fc89d5f45139338",
+        "handoff.json": "36ee5fca8853a399c5e0944db22400d9aa4a40160ec10b461f8bd4ed615f2760",
+        "packet/ktos-q3-2026-research-packet.html": "8263c0debd36ab3889c213eb51abd23883b431b5c7a5ca011102d17f0e92f6cc",
+        "packet/packet_meta.json": "a8068322bc4e5c3a7272ba5c47a991791818c86f103f24cfa5dc5620f16fc158",
+        "packet/packet.json": "95da4a48d3cd16a68050cc1f6f123724d1e92b1241c0bbc85c2fb6a987e07a0a"
+      },
+      "primary_youtube_long": "SRrSVscqqmU",
+      "primary_youtube_short": null,
+      "youtube_studio": null,
+      "youtube_studio_short": null,
+      "what_changed": {
+        "summary": "Kratos accelerates in government solutions while cash use and shareholder funding remain the valuation test.",
+        "items": [
+          {
+            "title": "Orders accelerate.",
+            "detail": "Consolidated backlog reached $2.650 billion and quarterly book-to-bill was 2.2."
+          },
+          {
+            "title": "KGS leads the growth.",
+            "detail": "Government solutions grew 35.8% organically; Unmanned revenue fell 14.4%."
+          },
+          {
+            "title": "Adjusted profit improved.",
+            "detail": "EBITDA reached $50.9 million, while GAAP operating loss was $4.9 million."
+          },
+          {
+            "title": "Cash remains the test.",
+            "detail": "Full-year company-defined free-cash-flow use is now guided at $110–120 million."
+          },
+          {
+            "title": "The valuation changed.",
+            "detail": "Our prior AVOID/$26 becomes HOLD/$34 against the lower $35.10 reference close."
+          }
+        ]
+      },
+      "source_published": "November 9, 2026",
+      "words": 5416,
+      "figures": 17,
+      "tables": 27
+    },
+    {
       "key": "LADR:Q3-FY2026",
       "year": 2026,
       "quarter": 3,

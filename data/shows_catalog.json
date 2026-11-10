@@ -10,6 +10,24 @@
   },
   "episodes": [
     {
+      "ticker": "KTOS",
+      "company": "Kratos Defense & Security Solutions, Inc.",
+      "sector": "Industrials",
+      "quarter": "Q3 2026",
+      "episode_number": "",
+      "title": "KTOS Stock: Record Orders, But Who Funds the Growth? — Q3 2026",
+      "published_at": "2026-11-10T00:39:23+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=SRrSVscqqmU",
+      "spotify_url": "",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/ktos-stock-record-orders-but-who-funds-the-growth-%e2%80%94-q3-2026/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
       "ticker": "VST",
       "company": "Vistra Corp.",
       "sector": "Energy",
@@ -49686,7 +49704,7 @@
       ]
     }
   ],
-  "last_synced_at": "2026-11-09T19:10:40-06:00",
+  "last_synced_at": "2026-11-09T19:13:03-06:00",
   "stock_metadata": {
     "A": {
       "company": "Agilent Technologies, Inc.",

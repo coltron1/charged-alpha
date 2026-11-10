@@ -1,11 +1,21 @@
 {
   "schema": "charged-alpha-public-production/1",
-  "updated_at": "2026-11-09T15:16:11.417435-06:00",
+  "updated_at": "2026-11-09T19:14:03.075530-06:00",
   "calendar_updated_at": "2026-11-09T11:45:57.023865-06:00",
-  "calendar_status": "fresh",
+  "calendar_status": "stale",
   "daily_target": 10,
   "active": [],
   "history": [
+    {
+      "ticker": "NRG",
+      "company": "NRG Energy, Inc.",
+      "period": "Q3 2026",
+      "completed_at": "2026-11-09T15:56:11.142165-06:00",
+      "video_url": "https://youtu.be/yVYARYf72ec",
+      "short_url": "https://youtu.be/DqqJKD5qcQQ",
+      "packet_url": "https://chargedalpha.com/research/nrg-q3-2026",
+      "stock_url": "/shows/nrg"
+    },
     {
       "ticker": "CEG",
       "company": "Constellation Energy Corporation",
