@@ -6614,6 +6614,64 @@
       "tables": 32
     },
     {
+      "key": "SYK:Q3-2026",
+      "year": 2026,
+      "quarter": 3,
+      "fiscal": false,
+      "slug": "syk-q3-2026",
+      "ticker": "SYK",
+      "company": "Stryker Corporation",
+      "period": "Q3 2026",
+      "canonical_url": "https://chargedalpha.com/research/syk-q3-2026",
+      "title": "SYK: the growth is real; the recovery premium must be earned",
+      "page_title": "SYK Q3 2026 Research Packet — Charged Alpha",
+      "description": "Stryker grows organically but cuts guidance as acquisition economics and the gap between GAAP and adjusted profit demand scrutiny.",
+      "sha256": "d9b9d2d62f1db99bb03fe1d4eda775518617feecc39324388ab8ec340b71f849",
+      "html_file": "research_packets/syk-q3-2026.html",
+      "source_episode": "SYK-Q3-2026",
+      "source_staged_at": "2026-11-10T18:54:40Z",
+      "source_sha256": {
+        "READY": "153f6bbedf06e3ea1a100294accc5c6026352cebf032ac2f93c088a10c8fa91f",
+        "handoff.json": "bf4568648dcd54e1739f86669e07b4d873c19ae1983362069d48e41601bc794c",
+        "packet/syk-q3-2026-research-packet.html": "d9b9d2d62f1db99bb03fe1d4eda775518617feecc39324388ab8ec340b71f849",
+        "packet/packet_meta.json": "7d641857e2416c0449e7bfcac4593a5fc4f0434a4bd4f050d5eda515fbb5e68e",
+        "packet/packet.json": "9d14896ba8a542a67b18d09e48fedba8e114816afd0f78871d57510b065eda2a"
+      },
+      "primary_youtube_long": "NPwsWFJybgs",
+      "primary_youtube_short": null,
+      "youtube_studio": null,
+      "youtube_studio_short": null,
+      "what_changed": {
+        "summary": "Stryker grows organically but cuts guidance as acquisition economics and the gap between GAAP and adjusted profit demand scrutiny.",
+        "items": [
+          {
+            "title": "Guidance falls despite organic growth.",
+            "detail": "Full-year organic growth moves to 6.5–7.0% from 8.3–9.3%; the quarter grew 7.7%."
+          },
+          {
+            "title": "Adjusted strength masks a wider reported-profit gap.",
+            "detail": "Adjusted operating income is $1.706B versus $1.034B GAAP; the impairment is the largest quarterly add-back."
+          },
+          {
+            "title": "Peripheral Vascular needs an economic recovery.",
+            "detail": "The goodwill charge reflects lower forecast cash flows, supply constraints and a longer recovery period."
+          },
+          {
+            "title": "Cash generation supports capital allocation, with limits.",
+            "detail": "Nine-month FCF is $2.698B before acquisitions; buybacks and dividends consume $2.012B."
+          },
+          {
+            "title": "Robotics optionality is not booked revenue.",
+            "detail": "The October CMR agreement proposes a $400M preferred-equity investment and U.S. distribution rights, subject to closing conditions."
+          }
+        ]
+      },
+      "source_published": "November 10, 2026",
+      "words": 5723,
+      "figures": 16,
+      "tables": 31
+    },
+    {
       "key": "TER:Q3-2026",
       "year": 2026,
       "quarter": 3,

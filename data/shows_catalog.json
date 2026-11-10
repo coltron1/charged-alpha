@@ -10,6 +10,24 @@
   },
   "episodes": [
     {
+      "ticker": "SYK",
+      "company": "Stryker Corporation",
+      "sector": "Healthcare",
+      "quarter": "Q3 2026",
+      "episode_number": "",
+      "title": "SYK Stock: Growth Holds Up, but the Recovery Premium Must Be Earned | Q3 2026",
+      "published_at": "2026-11-10T18:46:19+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=NPwsWFJybgs",
+      "spotify_url": "",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/syk-stock-growth-holds-up-but-the-recovery-premium-must-be-earned-q3-2026/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
       "ticker": "TMUS",
       "company": "T-Mobile US",
       "sector": "Communication Services",
@@ -49804,7 +49822,7 @@
       ]
     }
   ],
-  "last_synced_at": "2026-11-10T12:16:05-06:00",
+  "last_synced_at": "2026-11-10T13:05:43-06:00",
   "stock_metadata": {
     "A": {
       "company": "Agilent Technologies, Inc.",
