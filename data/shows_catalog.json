@@ -36335,6 +36335,21 @@
       "description": "Fast clips that point viewers into full research videos and stock pages.",
       "videos": [
         {
+          "title": "ALAB Stock: Astera Labs Q3 2026 — Scorpio Surges, Price Test #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/K8waYEepbgc",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-11-10T16:10:03+00:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "ALAB"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage.",
+          "earnings_youtube_url": "https://www.youtube.com/watch?v=gLQpyqFbCXA",
+          "earnings_match": "stock_period_date"
+        },
+        {
           "title": "KTOS Stock: Kratos Q3 2026 Earnings — Record Orders, Cash Test #Shorts",
           "youtube_url": "https://www.youtube.com/shorts/aB6csSGxWsE",
           "spotify_url": "",
@@ -49737,7 +49752,7 @@
       ]
     }
   ],
-  "last_synced_at": "2026-11-10T09:34:52-06:00",
+  "last_synced_at": "2026-11-10T10:12:34-06:00",
   "stock_metadata": {
     "A": {
       "company": "Agilent Technologies, Inc.",
