@@ -1,11 +1,41 @@
 {
   "schema": "charged-alpha-public-production/1",
-  "updated_at": "2026-11-10T10:30:35.417531-06:00",
+  "updated_at": "2026-11-10T17:39:25.963900-06:00",
   "calendar_updated_at": "2026-11-09T20:53:37.838765-06:00",
   "calendar_status": "stale",
   "daily_target": 10,
   "active": [],
   "history": [
+    {
+      "ticker": "TMUS",
+      "company": "T-Mobile US",
+      "period": "Q3 2026",
+      "completed_at": "2026-11-10T17:37:05.369011-06:00",
+      "video_url": "https://youtu.be/sOfJ8-CdyII",
+      "short_url": "https://youtu.be/DdDqJUJOGYI",
+      "packet_url": "https://chargedalpha.com/research/tmus-q3-2026",
+      "stock_url": "/shows/tmus"
+    },
+    {
+      "ticker": "SYK",
+      "company": "Stryker Corporation",
+      "period": "Q3 2026",
+      "completed_at": "2026-11-10T16:54:56.590167-06:00",
+      "video_url": "https://youtu.be/NPwsWFJybgs",
+      "short_url": "https://youtu.be/a-gSHHTInJ8",
+      "packet_url": "https://chargedalpha.com/research/syk-q3-2026",
+      "stock_url": "/shows/syk"
+    },
+    {
+      "ticker": "GEV",
+      "company": "GE Vernova",
+      "period": "Q3 2026",
+      "completed_at": "2026-11-10T16:44:23.803878-06:00",
+      "video_url": "https://youtu.be/u9y1vV3JX44",
+      "short_url": "https://youtu.be/r7QB_zPD1s4",
+      "packet_url": "https://chargedalpha.com/research/gev-q3-2026",
+      "stock_url": "/shows/gev"
+    },
     {
       "ticker": "ALAB",
       "company": "Astera Labs, Inc.",

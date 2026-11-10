@@ -19,7 +19,7 @@
       "published_at": "2026-11-10T18:46:19+00:00",
       "status": "youtube_podcast_complete",
       "youtube_url": "https://www.youtube.com/watch?v=NPwsWFJybgs",
-      "spotify_url": "",
+      "spotify_url": "https://open.spotify.com/episode/0fFwegsKtc7GddCFpT2Xls",
       "apple_url": "",
       "google_url": "",
       "iheart_url": "",
@@ -36389,6 +36389,36 @@
       "description": "Fast clips that point viewers into full research videos and stock pages.",
       "videos": [
         {
+          "title": "TMUS Earnings: Higher Bills, Higher Churn | T-Mobile Q3 2026 #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/DdDqJUJOGYI",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-11-10T23:33:23+00:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "TMUS"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage.",
+          "earnings_youtube_url": "https://www.youtube.com/watch?v=sOfJ8-CdyII",
+          "earnings_match": "stock_period_date"
+        },
+        {
+          "title": "SYK Stock: Growth Up, Guidance Down | Stryker Q3 2026 #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/a-gSHHTInJ8",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-11-10T19:22:10+00:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "SYK"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage.",
+          "earnings_youtube_url": "https://www.youtube.com/watch?v=NPwsWFJybgs",
+          "earnings_match": "stock_period_date"
+        },
+        {
           "title": "GEV Earnings: Big Backlog, Early Cash | GE Vernova Q3 2026 #Shorts",
           "youtube_url": "https://www.youtube.com/shorts/r7QB_zPD1s4",
           "spotify_url": "",
@@ -49822,7 +49852,7 @@
       ]
     }
   ],
-  "last_synced_at": "2026-11-10T13:05:43-06:00",
+  "last_synced_at": "2026-11-10T17:35:07-06:00",
   "stock_metadata": {
     "A": {
       "company": "Agilent Technologies, Inc.",
