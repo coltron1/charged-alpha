@@ -424,8 +424,12 @@ def read_candidate(queue):
     require(meta.get("period") == cm.get("period"), "Packet period document/metadata differs")
     require(normalized_period(handoff.get("period")) == normalized_period(meta.get("period")),
             "Packet period identity differs")
-    require(canonical_company_name(handoff.get("company")) == canonical_company_name(cm.get("company")),
-            "Packet company identity differs")
+    handoff_company = canonical_company_name(handoff.get("company"))
+    packet_company = canonical_company_name(cm.get("company"))
+    # Source-verified legal/display pair for GE Vernova; do not generalize suffix stripping.
+    gev_names = {"ge vernova", "ge vernova inc."}
+    same_gev = handoff.get("ticker") == "GEV" and {handoff_company, packet_company} <= gev_names
+    require(handoff_company == packet_company or same_gev, "Packet company identity differs")
     for key in ("slug", "title", "page_title"):
         require(packet.get(key) == cm.get(key), f"Packet content {key} differs")
     parsed = HeadMetadata()

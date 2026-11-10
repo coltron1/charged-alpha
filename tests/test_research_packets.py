@@ -398,6 +398,22 @@ class ResearchPacketTests(unittest.TestCase):
                 self.assertNotEqual(sync.canonical_company_name(name),
                                     sync.canonical_company_name("Casey's General Stores"))
 
+    def test_gev_legal_name_pair_preserves_packet_and_rejects_other_issuers(self):
+        source, raw = self.fixture("GEV", "Q3 2026")
+        self.mutate(source / "handoff.json", lambda h: h.update(company="GE Vernova"))
+        self.mutate(source / "packet/packet.json", lambda p: p["meta"].update(company="GE Vernova Inc."))
+        before = {p: p.read_bytes() for p in source.rglob("*") if p.is_file()}
+        self.assertEqual(self.import_all(False)["packets"][0]["status"], "ready_to_import")
+        self.assertEqual(self.import_all()["imported"], 1)
+        self.assertEqual(packet_html_path(load_packets(self.index)[0], self.index).read_bytes(), raw)
+        self.assertEqual(before, {p: p.read_bytes() for p in before})
+        shutil.rmtree(self.queue); self.queue.mkdir(); self.index.unlink()
+        source, _ = self.fixture("GEV", "Q3 2026")
+        self.mutate(source / "handoff.json", lambda h: h.update(company="GE Vernova"))
+        self.mutate(source / "packet/packet.json", lambda p: p["meta"].update(company="GE Vernova Holdings Inc."))
+        self.assertEqual(self.import_all()["errors"], 1)
+        self.assertFalse(self.index.exists())
+
     def test_aso_conjunction_spelling_preserves_exact_packet_and_sources(self):
         source, raw = self.fixture("ASO", "Q2 FY2026")
         self.mutate(source / "handoff.json", lambda h: h.update(company="Academy Sports and Outdoors"))
