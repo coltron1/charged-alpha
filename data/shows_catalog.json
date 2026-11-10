@@ -36299,6 +36299,21 @@
       "description": "Fast clips that point viewers into full research videos and stock pages.",
       "videos": [
         {
+          "title": "VST Stock: Vistra Corp. Q3 2026 Earnings — The Cash Test #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/giMigb4fD7U",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-11-09T17:07:37-08:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "VST"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage.",
+          "earnings_youtube_url": "https://www.youtube.com/watch?v=lpfuoVdZIXM",
+          "earnings_match": "stock_period_date"
+        },
+        {
           "title": "NRG Stock: Big Earnings, Smaller Next Step — Q3 2026 #Shorts",
           "youtube_url": "https://www.youtube.com/shorts/DqqJKD5qcQQ",
           "spotify_url": "",
@@ -49671,7 +49686,7 @@
       ]
     }
   ],
-  "last_synced_at": "2026-11-09T17:27:45-06:00",
+  "last_synced_at": "2026-11-09T19:10:40-06:00",
   "stock_metadata": {
     "A": {
       "company": "Agilent Technologies, Inc.",
