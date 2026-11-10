@@ -6788,6 +6788,64 @@
       "tables": 27
     },
     {
+      "key": "TMUS:Q3-2026",
+      "year": 2026,
+      "quarter": 3,
+      "fiscal": false,
+      "slug": "tmus-q3-2026",
+      "ticker": "TMUS",
+      "company": "T-Mobile US, Inc.",
+      "period": "Q3 2026",
+      "canonical_url": "https://chargedalpha.com/research/tmus-q3-2026",
+      "title": "TMUS Q3 2026: Higher Bills, Higher Churn",
+      "page_title": "TMUS Q3 2026 Research Packet — Charged Alpha",
+      "description": "Pricing supports service growth, but account churn and capital obligations test the discounted cash-flow case.",
+      "sha256": "08ff0bfebbb0fd948d49573e4290038f4893e2ab9775238d11a7018ba5ba9773",
+      "html_file": "research_packets/tmus-q3-2026.html",
+      "source_episode": "TMUS-Q3-2026",
+      "source_staged_at": "2026-11-10T18:14:53Z",
+      "source_sha256": {
+        "READY": "0ca9afbbb44e1c9a83d9cb58bee04d63c95204f95b1985b8185621dd2e2eac6c",
+        "handoff.json": "4dffe262465d416532fdefc195fe027e5f2c91aaf0fcf28d381d5c8dd46d9a2b",
+        "packet/tmus-q3-2026-research-packet.html": "08ff0bfebbb0fd948d49573e4290038f4893e2ab9775238d11a7018ba5ba9773",
+        "packet/packet_meta.json": "346b247e9e269277ee744628aa365d7416ebe1071ca011581354f9e3979e4ec1",
+        "packet/packet.json": "16b87e3194c714b7ed0b1ea3c67dc1e3a7f5101f208938aab8957294b66624e8"
+      },
+      "primary_youtube_long": "sOfJ8-CdyII",
+      "primary_youtube_short": null,
+      "youtube_studio": null,
+      "youtube_studio_short": null,
+      "what_changed": {
+        "summary": "Pricing supports service growth, but account churn and capital obligations test the discounted cash-flow case.",
+        "items": [
+          {
+            "title": "Accounts pay more.",
+            "detail": "ARPA rose to $155.73 as fees, plan changes and customers per account lifted revenue."
+          },
+          {
+            "title": "Retention weakened.",
+            "detail": "Monthly account churn reached 1.09%, versus 0.97%; this is not phone churn."
+          },
+          {
+            "title": "Cash growth is less dramatic.",
+            "detail": "Lower capex offset declining operating cash to lift adjusted FCF."
+          },
+          {
+            "title": "Capital has competing claims.",
+            "detail": "Spectrum, leases, fiber investments and taxes constrain distributable cash."
+          },
+          {
+            "title": "Valuation offers room.",
+            "detail": "Our $210 anchor supports a BUY below $170, conditional on customer and cash delivery."
+          }
+        ]
+      },
+      "source_published": "November 10, 2026",
+      "words": 6562,
+      "figures": 18,
+      "tables": 35
+    },
+    {
       "key": "TSCO:Q3-2026",
       "year": 2026,
       "quarter": 3,
