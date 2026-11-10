@@ -10,6 +10,24 @@
   },
   "episodes": [
     {
+      "ticker": "GEV",
+      "company": "GE Vernova",
+      "sector": "Industrials",
+      "quarter": "Q3 2026",
+      "episode_number": "",
+      "title": "GEV Stock: Q3 2026 Earnings | Big Backlog, Early Cash | GE Vernova",
+      "published_at": "2026-11-10T16:20:45+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=u9y1vV3JX44",
+      "spotify_url": "",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/gev-stock-q3-2026-earnings-big-backlog-early-cash-ge-vernova/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
       "ticker": "ALAB",
       "company": "Astera Labs, Inc.",
       "sector": "Technology",
@@ -49752,7 +49770,7 @@
       ]
     }
   ],
-  "last_synced_at": "2026-11-10T10:12:34-06:00",
+  "last_synced_at": "2026-11-10T10:29:45-06:00",
   "stock_metadata": {
     "A": {
       "company": "Agilent Technologies, Inc.",
