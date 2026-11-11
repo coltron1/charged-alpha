@@ -10,6 +10,24 @@
   },
   "episodes": [
     {
+      "ticker": "ANET",
+      "company": "Arista Networks",
+      "sector": "Technology",
+      "quarter": "Q3 2026",
+      "episode_number": "",
+      "title": "ANET Stock: The $11.4B Supply Bet Behind the AI Surge — Q3 2026",
+      "published_at": "2026-11-11T04:26:10+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=Mm4uWfuQqLY",
+      "spotify_url": "",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/anet-stock-the-114b-supply-bet-behind-the-ai-surge-%e2%80%94-q3-2026/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
       "ticker": "FCX",
       "company": "Freeport-McMoRan Inc.",
       "sector": "Basic Materials",
@@ -36407,6 +36425,21 @@
       "description": "Fast clips that point viewers into full research videos and stock pages.",
       "videos": [
         {
+          "title": "FCX Stock: Freeport-McMoRan Q3 2026 — The $4.5B Copper Bill #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/WPlfJJDrFtE",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-11-10T20:36:21-08:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "FCX"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage.",
+          "earnings_youtube_url": "https://www.youtube.com/watch?v=lB5rPa6B64k",
+          "earnings_match": "stock_period_date"
+        },
+        {
           "title": "TMUS Earnings: Higher Bills, Higher Churn | T-Mobile Q3 2026 #Shorts",
           "youtube_url": "https://www.youtube.com/shorts/DdDqJUJOGYI",
           "spotify_url": "",
@@ -49870,7 +49903,7 @@
       ]
     }
   ],
-  "last_synced_at": "2026-11-10T22:27:52-06:00",
+  "last_synced_at": "2026-11-10T22:53:08-06:00",
   "stock_metadata": {
     "A": {
       "company": "Agilent Technologies, Inc.",

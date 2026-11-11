@@ -3018,6 +3018,64 @@
       "tables": 16
     },
     {
+      "key": "ANET:Q3-2026",
+      "year": 2026,
+      "quarter": 3,
+      "fiscal": false,
+      "slug": "anet-q3-2026",
+      "ticker": "ANET",
+      "company": "Arista Networks, Inc.",
+      "period": "Q3 2026",
+      "canonical_url": "https://chargedalpha.com/research/anet-q3-2026",
+      "title": "ANET: The $11.4 Billion Supply Bet Behind the AI Surge",
+      "page_title": "ANET Q3 2026 Research Packet — Charged Alpha",
+      "description": "Arista grew revenue 58.5%, but larger supply commitments make cash conversion the next test; our HOLD call uses a $150 current-value anchor.",
+      "sha256": "a4f5f1051098d7dab883b58851dcc26ff2f518754b9113d986b46de2ae891fd5",
+      "html_file": "research_packets/anet-q3-2026.html",
+      "source_episode": "ANET-Q3-2026",
+      "source_staged_at": "2026-11-11T04:35:45Z",
+      "source_sha256": {
+        "READY": "fdeee948b1643786c1dd4739399b3cb7affb16506528c20a847bc025e8912020",
+        "handoff.json": "533f02e3e58159452a9478fbf266016fae765a42398d9b66662003cb88912022",
+        "packet/anet-q3-2026-research-packet.html": "a4f5f1051098d7dab883b58851dcc26ff2f518754b9113d986b46de2ae891fd5",
+        "packet/packet_meta.json": "cab1b32f84fe611626eab78c915e413eb950538bfb91c5052c7ac74272276c48",
+        "packet/packet.json": "a311af56aa44c47ac42317ba1cad1697f0bf17ac73df8b80d90857e4485deb8c"
+      },
+      "primary_youtube_long": "Mm4uWfuQqLY",
+      "primary_youtube_short": null,
+      "youtube_studio": null,
+      "youtube_studio_short": null,
+      "what_changed": {
+        "summary": "Arista grew revenue 58.5%, but larger supply commitments make cash conversion the next test; our HOLD call uses a $150 current-value anchor.",
+        "items": [
+          {
+            "title": "Growth accelerated.",
+            "detail": "Q3 revenue rose 58.5% and beat the company's $3.3B guide by 10.8%."
+          },
+          {
+            "title": "Supply risk expanded.",
+            "detail": "Non-cancellable purchases reached $11.4B versus $6.8B at year-end, with inventory also rising."
+          },
+          {
+            "title": "EPS needs a bridge.",
+            "detail": "A $134.5M strategic-investment gain helps explain why GAAP EPS exceeds adjusted EPS."
+          },
+          {
+            "title": "Cash has timing support.",
+            "detail": "Deferred revenue provided $1.467B of nine-month cash; that contribution cannot be assumed perpetual."
+          },
+          {
+            "title": "Value remains below price.",
+            "detail": "Three explicit routes support $150 current fair value versus the $185.02 reference close."
+          }
+        ]
+      },
+      "source_published": "November 10, 2026",
+      "words": 5998,
+      "figures": 15,
+      "tables": 30
+    },
+    {
       "key": "APH:Q3-2026",
       "year": 2026,
       "quarter": 3,
