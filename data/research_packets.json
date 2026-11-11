@@ -3030,7 +3030,7 @@
       "title": "ANET: The $11.4 Billion Supply Bet Behind the AI Surge",
       "page_title": "ANET Q3 2026 Research Packet \u2014 Charged Alpha",
       "description": "Arista grew revenue 58.5%, but larger supply commitments make cash conversion the next test; our HOLD call uses a $150 current-value anchor.",
-      "sha256": "a4f5f1051098d7dab883b58851dcc26ff2f518754b9113d986b46de2ae891fd5",
+      "sha256": "da74f5f8a4a1abadbcf6c8ab550ff05e7402af3843e9f9413c388b2df62c2ad3",
       "html_file": "research_packets/anet-q3-2026.html",
       "source_episode": "ANET-Q3-2026",
       "source_staged_at": "2026-11-11T04:35:45Z",
@@ -3073,7 +3073,14 @@
       "source_published": "November 10, 2026",
       "words": 5998,
       "figures": 15,
-      "tables": 30
+      "tables": 30,
+      "display_revision": {
+        "id": "anet-q3-2026-display-20261111-01",
+        "predecessor_html_sha256": "a4f5f1051098d7dab883b58851dcc26ff2f518754b9113d986b46de2ae891fd5",
+        "successor_html_sha256": "da74f5f8a4a1abadbcf6c8ab550ff05e7402af3843e9f9413c388b2df62c2ad3",
+        "candidate_meta_sha256": "8929ac65c1ef399fbe9053a7332d687f73e4d37c3f17849ed0916666bff69cbe",
+        "candidate_review_sha256": "bd59387d659efaa126a6df795c3e969af95e227d1f8f3150ef2e440d3eab352a"
+      }
     },
     {
       "key": "APH:Q3-2026",

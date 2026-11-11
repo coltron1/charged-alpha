@@ -492,11 +492,45 @@ def unchanged(candidate):
             "READY packet changed during import")
 
 
+# Exact, independently reviewed ANET archived display revision.  Historical source
+# remains immutable; this exception cannot authorize a different quarter or bytes.
+ANET_DISPLAY_LINEAGE = {
+    "id": "anet-q3-2026-display-20261111-01",
+    "predecessor_html_sha256": "a4f5f1051098d7dab883b58851dcc26ff2f518754b9113d986b46de2ae891fd5",
+    "successor_html_sha256": "da74f5f8a4a1abadbcf6c8ab550ff05e7402af3843e9f9413c388b2df62c2ad3",
+    "candidate_meta_sha256": "8929ac65c1ef399fbe9053a7332d687f73e4d37c3f17849ed0916666bff69cbe",
+    "candidate_review_sha256": "bd59387d659efaa126a6df795c3e969af95e227d1f8f3150ef2e440d3eab352a",
+}
+ANET_ARCHIVE_SOURCES = {
+    "READY": "fdeee948b1643786c1dd4739399b3cb7affb16506528c20a847bc025e8912020",
+    "handoff.json": "533f02e3e58159452a9478fbf266016fae765a42398d9b66662003cb88912022",
+    "packet/anet-q3-2026-research-packet.html": ANET_DISPLAY_LINEAGE["predecessor_html_sha256"],
+    "packet/packet_meta.json": "cab1b32f84fe611626eab78c915e413eb950538bfb91c5052c7ac74272276c48",
+    "packet/packet.json": "a311af56aa44c47ac42317ba1cad1697f0bf17ac73df8b80d90857e4485deb8c",
+}
+
+def is_exact_anet_archived_revision(candidate, registered):
+    record = candidate["record"]
+    queue = Path(candidate["queue_dir"])
+    return (queue.name == "ANET-Q3-2026" and queue.parent.name == "_done"
+            and record.get("key") == registered.get("key") == "ANET:Q3-2026"
+            and record.get("sha256") == ANET_DISPLAY_LINEAGE["predecessor_html_sha256"]
+            and registered.get("sha256") == ANET_DISPLAY_LINEAGE["successor_html_sha256"]
+            and registered.get("display_revision") == ANET_DISPLAY_LINEAGE
+            and record.get("source_sha256") == registered.get("source_sha256") == ANET_ARCHIVE_SOURCES
+            and {k: v for k, v in record.items() if k not in
+                 {"sha256", "primary_youtube_long", "primary_youtube_short", "youtube_studio", "youtube_studio_short"}}
+                == {k: v for k, v in registered.items() if k not in
+                 {"sha256", "display_revision", "primary_youtube_long", "primary_youtube_short", "youtube_studio", "youtube_studio_short"}})
+
+
 def classify(candidate, records, index):
     record = candidate["record"]
     matched = [p for p in records if p["key"] == record["key"] or p["slug"] == record["slug"]]
     if matched:
-        require(len(matched) == 1 and all(matched[0][k] == record[k] for k in IMMUTABLE_FIELDS),
+        require(len(matched) == 1 and (
+                    all(matched[0][k] == record[k] for k in IMMUTABLE_FIELDS)
+                    or is_exact_anet_archived_revision(candidate, matched[0])),
                 "Immutable ticker/period packet conflicts with registry; no overwrite")
         packet_html_path(matched[0], index)
         if record.get("what_changed"):
