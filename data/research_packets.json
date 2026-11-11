@@ -4178,6 +4178,64 @@
       "tables": 17
     },
     {
+      "key": "FCX:Q3-2026",
+      "year": 2026,
+      "quarter": 3,
+      "fiscal": false,
+      "slug": "fcx-q3-2026",
+      "ticker": "FCX",
+      "company": "Freeport-McMoRan Inc.",
+      "period": "Q3 2026",
+      "canonical_url": "https://chargedalpha.com/research/fcx-q3-2026",
+      "title": "FCX: The Copper Windfall Meets a $4.5 Billion Bill",
+      "page_title": "FCX Q3 2026 Research Packet — Charged Alpha",
+      "description": "Higher copper prices lifted profit, but inventory conversion, partner claims and the approved Bagdad expansion decide what common shareholders keep.",
+      "sha256": "78a68e80355d2ef797415aba63673a5ae876dc844c42c0dbca347c993342ba3a",
+      "html_file": "research_packets/fcx-q3-2026.html",
+      "source_episode": "FCX-Q3-2026",
+      "source_staged_at": "2026-11-11T04:19:47Z",
+      "source_sha256": {
+        "READY": "3ba7e78a24ccb9ec43b438d82b499c580de62381d7883956fef9922f6b40220d",
+        "handoff.json": "a239931f50c2d18d7cca3fb572d240baaaaead799641fa72c34ee70ea3bfbcf9",
+        "packet/fcx-q3-2026-research-packet.html": "78a68e80355d2ef797415aba63673a5ae876dc844c42c0dbca347c993342ba3a",
+        "packet/packet_meta.json": "dec2be02ce66f9cf0aaaf7ca2da8a721f21c9315ff065d0d968527e928ffa6ae",
+        "packet/packet.json": "e04bb9c00ae2e439bf294cd08b46f8a003821c859ad96c404a9988df40b62ec2"
+      },
+      "primary_youtube_long": "lB5rPa6B64k",
+      "primary_youtube_short": null,
+      "youtube_studio": null,
+      "youtube_studio_short": null,
+      "what_changed": {
+        "summary": "Higher copper prices lifted profit, but inventory conversion, partner claims and the approved Bagdad expansion decide what common shareholders keep.",
+        "items": [
+          {
+            "title": "Price carried the print.",
+            "detail": "Copper sales fell 23.3%, while realized copper rose 39.7%; revenue still grew 8.2%."
+          },
+          {
+            "title": "Inventory must become cash.",
+            "detail": "Gold sales of 105k ounces missed the prior 160k estimate; the next-quarter target is 300k."
+          },
+          {
+            "title": "Owners do not keep all consolidated profit.",
+            "detail": "$514M of $1.688B quarterly net income was attributable to noncontrolling interests; this is not cash paid."
+          },
+          {
+            "title": "Bagdad is now approved.",
+            "detail": "The November 4 decision commits an estimated $4.5B to a project targeting initial production in mid-2030."
+          },
+          {
+            "title": "Value requires a cash bridge.",
+            "detail": "Our three equity checks support $58 base value and $57.85 probability-weighted value."
+          }
+        ]
+      },
+      "source_published": "November 10, 2026",
+      "words": 5740,
+      "figures": 15,
+      "tables": 28
+    },
+    {
       "key": "FIX:Q3-2026",
       "year": 2026,
       "quarter": 3,

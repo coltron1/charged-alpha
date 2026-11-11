@@ -10,6 +10,24 @@
   },
   "episodes": [
     {
+      "ticker": "FCX",
+      "company": "Freeport-McMoRan Inc.",
+      "sector": "Basic Materials",
+      "quarter": "Q3 2026",
+      "episode_number": "",
+      "title": "FCX Stock: The Copper Windfall Meets a $4.5 Billion Bill — Q3 2026",
+      "published_at": "2026-11-11T04:11:34+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=lB5rPa6B64k",
+      "spotify_url": "https://open.spotify.com/episode/6N85vFoEO0bAVymknBGm9I",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/fcx-stock-the-copper-windfall-meets-a-45-billion-bill-%e2%80%94-q3-2026/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
       "ticker": "SYK",
       "company": "Stryker Corporation",
       "sector": "Healthcare",
@@ -49852,7 +49870,7 @@
       ]
     }
   ],
-  "last_synced_at": "2026-11-10T17:35:07-06:00",
+  "last_synced_at": "2026-11-10T22:27:52-06:00",
   "stock_metadata": {
     "A": {
       "company": "Agilent Technologies, Inc.",
