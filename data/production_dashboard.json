@@ -1,11 +1,41 @@
 {
   "schema": "charged-alpha-public-production/1",
-  "updated_at": "2026-11-10T17:39:25.963900-06:00",
+  "updated_at": "2026-11-11T17:53:00.794318-06:00",
   "calendar_updated_at": "2026-11-09T20:53:37.838765-06:00",
   "calendar_status": "stale",
   "daily_target": 10,
   "active": [],
   "history": [
+    {
+      "ticker": "SNY",
+      "company": "Sanofi",
+      "period": "Q3 2026",
+      "completed_at": "2026-11-11T17:44:20.396355-06:00",
+      "video_url": "https://youtu.be/1KYDcJzkRBY",
+      "short_url": "https://youtu.be/yQ23NUWNYiQ",
+      "packet_url": "https://chargedalpha.com/research/sny-q3-2026",
+      "stock_url": "/shows/sny"
+    },
+    {
+      "ticker": "ANET",
+      "company": "Arista Networks",
+      "period": "Q3 2026",
+      "completed_at": "2026-11-10T23:43:03.088648-06:00",
+      "video_url": "https://youtu.be/Mm4uWfuQqLY",
+      "short_url": "https://youtu.be/H_ueD9Gpejs",
+      "packet_url": "https://chargedalpha.com/research/anet-q3-2026",
+      "stock_url": "/shows/anet"
+    },
+    {
+      "ticker": "FCX",
+      "company": "Freeport-McMoRan Inc.",
+      "period": "Q3 2026",
+      "completed_at": "2026-11-10T23:39:58.433943-06:00",
+      "video_url": "https://youtu.be/lB5rPa6B64k",
+      "short_url": "https://youtu.be/WPlfJJDrFtE",
+      "packet_url": "https://chargedalpha.com/research/fcx-q3-2026",
+      "stock_url": "/shows/fcx"
+    },
     {
       "ticker": "TMUS",
       "company": "T-Mobile US",
@@ -1483,7 +1513,7 @@
       "company": "Occidental Petroleum Corporation",
       "report_date": "2026-11-09",
       "report_time_label": "Time unconfirmed",
-      "planned_date": "2026-11-10",
+      "planned_date": "2026-11-11",
       "date_status": "Calendar estimate",
       "source_url": null,
       "stock_url": "/shows/oxy"
@@ -1493,7 +1523,7 @@
       "company": "Hallador Energy Company",
       "report_date": "2026-11-09",
       "report_time_label": "Time unconfirmed",
-      "planned_date": "2026-11-10",
+      "planned_date": "2026-11-11",
       "date_status": "Calendar estimate",
       "source_url": null,
       "stock_url": null
@@ -1503,7 +1533,7 @@
       "company": "Rocket Lab USA, Inc.",
       "report_date": "2026-11-09",
       "report_time_label": "Time unconfirmed",
-      "planned_date": "2026-11-10",
+      "planned_date": "2026-11-11",
       "date_status": "Calendar estimate",
       "source_url": null,
       "stock_url": "/shows/rklb"
@@ -1513,7 +1543,7 @@
       "company": "Onto Innovation Inc.",
       "report_date": "2026-11-09",
       "report_time_label": "Time unconfirmed",
-      "planned_date": "2026-11-10",
+      "planned_date": "2026-11-11",
       "date_status": "Calendar estimate",
       "source_url": null,
       "stock_url": "/shows/onto"
@@ -1523,7 +1553,7 @@
       "company": "Take-Two Interactive Software, Inc.",
       "report_date": "2026-11-09",
       "report_time_label": "Time unconfirmed",
-      "planned_date": "2026-11-10",
+      "planned_date": "2026-11-11",
       "date_status": "Calendar estimate",
       "source_url": null,
       "stock_url": "/shows/ttwo"
@@ -1533,7 +1563,7 @@
       "company": "AST SpaceMobile, Inc.",
       "report_date": "2026-11-09",
       "report_time_label": "Time unconfirmed",
-      "planned_date": "2026-11-10",
+      "planned_date": "2026-11-11",
       "date_status": "Calendar estimate",
       "source_url": null,
       "stock_url": null
@@ -1543,7 +1573,7 @@
       "company": "Sanmina Corporation",
       "report_date": "2026-11-09",
       "report_time_label": "Time unconfirmed",
-      "planned_date": "2026-11-10",
+      "planned_date": "2026-11-11",
       "date_status": "Calendar estimate",
       "source_url": null,
       "stock_url": null
@@ -1553,7 +1583,7 @@
       "company": "Novanta Inc.",
       "report_date": "2026-11-09",
       "report_time_label": "Time unconfirmed",
-      "planned_date": "2026-11-10",
+      "planned_date": "2026-11-12",
       "date_status": "Calendar estimate",
       "source_url": null,
       "stock_url": null
@@ -1563,7 +1593,7 @@
       "company": "TIM S.A.",
       "report_date": "2026-11-09",
       "report_time_label": "Time unconfirmed",
-      "planned_date": "2026-11-10",
+      "planned_date": "2026-11-12",
       "date_status": "Calendar estimate",
       "source_url": null,
       "stock_url": null
@@ -1573,7 +1603,7 @@
       "company": "Telecom Argentina S.A.",
       "report_date": "2026-11-09",
       "report_time_label": "Time unconfirmed",
-      "planned_date": "2026-11-10",
+      "planned_date": "2026-11-12",
       "date_status": "Calendar estimate",
       "source_url": null,
       "stock_url": null
@@ -1583,7 +1613,7 @@
       "company": "Ameresco, Inc.",
       "report_date": "2026-11-09",
       "report_time_label": "Time unconfirmed",
-      "planned_date": "2026-11-11",
+      "planned_date": "2026-11-12",
       "date_status": "Calendar estimate",
       "source_url": null,
       "stock_url": null
@@ -1593,7 +1623,7 @@
       "company": "Turkcell Iletisim Hizmetleri A.S.",
       "report_date": "2026-11-09",
       "report_time_label": "Time unconfirmed",
-      "planned_date": "2026-11-11",
+      "planned_date": "2026-11-12",
       "date_status": "Calendar estimate",
       "source_url": null,
       "stock_url": null
@@ -1603,7 +1633,7 @@
       "company": "Plug Power Inc.",
       "report_date": "2026-11-09",
       "report_time_label": "Time unconfirmed",
-      "planned_date": "2026-11-11",
+      "planned_date": "2026-11-13",
       "date_status": "Calendar estimate",
       "source_url": null,
       "stock_url": null
@@ -1613,7 +1643,7 @@
       "company": "RB Global, Inc.",
       "report_date": "2026-11-09",
       "report_time_label": "Time unconfirmed",
-      "planned_date": "2026-11-11",
+      "planned_date": "2026-11-13",
       "date_status": "Calendar estimate",
       "source_url": null,
       "stock_url": null
@@ -1623,7 +1653,7 @@
       "company": "Permian Basin Royalty Trust",
       "report_date": "2026-11-09",
       "report_time_label": "Time unconfirmed",
-      "planned_date": "2026-11-12",
+      "planned_date": "2026-11-14",
       "date_status": "Calendar estimate",
       "source_url": null,
       "stock_url": null
@@ -1633,7 +1663,7 @@
       "company": "Silicon Laboratories Inc.",
       "report_date": "2026-11-09",
       "report_time_label": "Time unconfirmed",
-      "planned_date": "2026-11-12",
+      "planned_date": "2026-11-14",
       "date_status": "Calendar estimate",
       "source_url": null,
       "stock_url": null
@@ -1643,7 +1673,7 @@
       "company": "Summit Midstream Corp.",
       "report_date": "2026-11-09",
       "report_time_label": "Time unconfirmed",
-      "planned_date": "2026-11-13",
+      "planned_date": "2026-11-14",
       "date_status": "Calendar estimate",
       "source_url": null,
       "stock_url": null
@@ -1653,7 +1683,7 @@
       "company": "Microvast Holdings, Inc.",
       "report_date": "2026-11-09",
       "report_time_label": "Time unconfirmed",
-      "planned_date": "2026-11-14",
+      "planned_date": "2026-11-15",
       "date_status": "Calendar estimate",
       "source_url": null,
       "stock_url": null
@@ -1663,7 +1693,7 @@
       "company": "Roivant Sciences Ltd.",
       "report_date": "2026-11-09",
       "report_time_label": "Time unconfirmed",
-      "planned_date": "2026-11-14",
+      "planned_date": "2026-11-15",
       "date_status": "Calendar estimate",
       "source_url": null,
       "stock_url": "/shows/roiv"
@@ -1673,7 +1703,7 @@
       "company": "monday.com Ltd.",
       "report_date": "2026-11-09",
       "report_time_label": "Time unconfirmed",
-      "planned_date": "2026-11-14",
+      "planned_date": "2026-11-15",
       "date_status": "Calendar estimate",
       "source_url": null,
       "stock_url": "/shows/mndy"
@@ -1683,7 +1713,7 @@
       "company": "Praxis Precision Medicines, Inc.",
       "report_date": "2026-11-09",
       "report_time_label": "Time unconfirmed",
-      "planned_date": "2026-11-16",
+      "planned_date": "2026-11-17",
       "date_status": "Calendar estimate",
       "source_url": null,
       "stock_url": null
@@ -1693,7 +1723,7 @@
       "company": "Joint Stock Company Kaspi.kz",
       "report_date": "2026-11-09",
       "report_time_label": "Time unconfirmed",
-      "planned_date": "2026-11-16",
+      "planned_date": "2026-11-17",
       "date_status": "Calendar estimate",
       "source_url": null,
       "stock_url": null
@@ -1703,7 +1733,7 @@
       "company": "Apogee Therapeutics, Inc.",
       "report_date": "2026-11-09",
       "report_time_label": "Time unconfirmed",
-      "planned_date": "2026-11-16",
+      "planned_date": "2026-11-17",
       "date_status": "Calendar estimate",
       "source_url": null,
       "stock_url": null
@@ -1713,7 +1743,7 @@
       "company": "ImmunityBio, Inc.",
       "report_date": "2026-11-09",
       "report_time_label": "Time unconfirmed",
-      "planned_date": "2026-11-16",
+      "planned_date": "2026-11-17",
       "date_status": "Calendar estimate",
       "source_url": null,
       "stock_url": null
@@ -1723,7 +1753,7 @@
       "company": "CEVA, Inc.",
       "report_date": "2026-11-09",
       "report_time_label": "Time unconfirmed",
-      "planned_date": "2026-11-16",
+      "planned_date": "2026-11-17",
       "date_status": "Calendar estimate",
       "source_url": null,
       "stock_url": null
@@ -1733,7 +1763,7 @@
       "company": "HighPeak Energy, Inc.",
       "report_date": "2026-11-09",
       "report_time_label": "Time unconfirmed",
-      "planned_date": "2026-11-16",
+      "planned_date": "2026-11-17",
       "date_status": "Calendar estimate",
       "source_url": null,
       "stock_url": null
@@ -1743,7 +1773,7 @@
       "company": "Immunovant, Inc.",
       "report_date": "2026-11-09",
       "report_time_label": "Time unconfirmed",
-      "planned_date": "2026-11-16",
+      "planned_date": "2026-11-17",
       "date_status": "Calendar estimate",
       "source_url": null,
       "stock_url": null
@@ -1753,7 +1783,7 @@
       "company": "Infinity Natural Resources, Inc.",
       "report_date": "2026-11-09",
       "report_time_label": "Time unconfirmed",
-      "planned_date": "",
+      "planned_date": "2026-11-17",
       "date_status": "Calendar estimate",
       "source_url": null,
       "stock_url": null
@@ -3029,16 +3059,6 @@
       "stock_url": "/shows/drvn"
     },
     {
-      "ticker": "CRWV",
-      "company": "CoreWeave, Inc. Class A Common Stock",
-      "report_date": "2026-11-10",
-      "report_time_label": "Time unconfirmed",
-      "planned_date": "2026-11-11",
-      "date_status": "Calendar estimate",
-      "source_url": null,
-      "stock_url": "/shows/crwv"
-    },
-    {
       "ticker": "VOD",
       "company": "Vodafone Group Public Limited Company",
       "report_date": "2026-11-10",
@@ -3073,7 +3093,7 @@
       "company": "TransDigm Group Incorporated",
       "report_date": "2026-11-10",
       "report_time_label": "Time unconfirmed",
-      "planned_date": "2026-11-11",
+      "planned_date": "2026-11-12",
       "date_status": "Calendar estimate",
       "source_url": null,
       "stock_url": "/shows/tdg"
@@ -3083,7 +3103,7 @@
       "company": "Embraer S.A.",
       "report_date": "2026-11-10",
       "report_time_label": "Time unconfirmed",
-      "planned_date": "2026-11-11",
+      "planned_date": "2026-11-12",
       "date_status": "Calendar estimate",
       "source_url": null,
       "stock_url": "/shows/embj"
@@ -3093,7 +3113,7 @@
       "company": "LightPath Technologies, Inc.",
       "report_date": "2026-11-10",
       "report_time_label": "Time unconfirmed",
-      "planned_date": "2026-11-12",
+      "planned_date": "2026-11-13",
       "date_status": "Calendar estimate",
       "source_url": null,
       "stock_url": "/shows/lpth"
@@ -3103,7 +3123,7 @@
       "company": "Mercury Systems, Inc.",
       "report_date": "2026-11-10",
       "report_time_label": "Time unconfirmed",
-      "planned_date": "2026-11-12",
+      "planned_date": "2026-11-13",
       "date_status": "Calendar estimate",
       "source_url": null,
       "stock_url": "/shows/mrcy"
@@ -3113,7 +3133,7 @@
       "company": "Anterix Inc.",
       "report_date": "2026-11-10",
       "report_time_label": "Time unconfirmed",
-      "planned_date": "2026-11-12",
+      "planned_date": "2026-11-14",
       "date_status": "Calendar estimate",
       "source_url": null,
       "stock_url": null
@@ -3123,7 +3143,7 @@
       "company": "Firefly Aerospace Inc.",
       "report_date": "2026-11-10",
       "report_time_label": "Time unconfirmed",
-      "planned_date": "2026-11-12",
+      "planned_date": "2026-11-14",
       "date_status": "Calendar estimate",
       "source_url": null,
       "stock_url": "/shows/fly"
@@ -3133,7 +3153,7 @@
       "company": "Amprius Technologies, Inc.",
       "report_date": "2026-11-10",
       "report_time_label": "Time unconfirmed",
-      "planned_date": "2026-11-12",
+      "planned_date": "2026-11-14",
       "date_status": "Calendar estimate",
       "source_url": null,
       "stock_url": null
@@ -3143,7 +3163,7 @@
       "company": "Petróleo Brasileiro S.A. - Petrobras",
       "report_date": "2026-11-10",
       "report_time_label": "Time unconfirmed",
-      "planned_date": "2026-11-14",
+      "planned_date": "2026-11-15",
       "date_status": "Calendar estimate",
       "source_url": null,
       "stock_url": null
@@ -3153,7 +3173,7 @@
       "company": "Energy Vault Holdings, Inc.",
       "report_date": "2026-11-10",
       "report_time_label": "Time unconfirmed",
-      "planned_date": "2026-11-14",
+      "planned_date": "2026-11-15",
       "date_status": "Calendar estimate",
       "source_url": null,
       "stock_url": null
@@ -3163,7 +3183,7 @@
       "company": "Astronics Corporation",
       "report_date": "2026-11-10",
       "report_time_label": "Time unconfirmed",
-      "planned_date": "2026-11-14",
+      "planned_date": "2026-11-15",
       "date_status": "Calendar estimate",
       "source_url": null,
       "stock_url": "/shows/atro"
@@ -3173,7 +3193,7 @@
       "company": "Elmet Group Co.",
       "report_date": "2026-11-10",
       "report_time_label": "Time unconfirmed",
-      "planned_date": "2026-11-15",
+      "planned_date": "2026-11-16",
       "date_status": "Calendar estimate",
       "source_url": null,
       "stock_url": null
@@ -3183,7 +3203,7 @@
       "company": "Satellogic Inc.",
       "report_date": "2026-11-10",
       "report_time_label": "Time unconfirmed",
-      "planned_date": "2026-11-15",
+      "planned_date": "2026-11-16",
       "date_status": "Calendar estimate",
       "source_url": null,
       "stock_url": null
@@ -3193,7 +3213,7 @@
       "company": "ChipMOS TECHNOLOGIES Inc.",
       "report_date": "2026-11-10",
       "report_time_label": "Time unconfirmed",
-      "planned_date": "2026-11-15",
+      "planned_date": "2026-11-16",
       "date_status": "Calendar estimate",
       "source_url": null,
       "stock_url": "/shows/imos"
@@ -3203,7 +3223,7 @@
       "company": "Ambiq Micro, Inc.",
       "report_date": "2026-11-10",
       "report_time_label": "Time unconfirmed",
-      "planned_date": "2026-11-16",
+      "planned_date": "2026-11-17",
       "date_status": "Calendar estimate",
       "source_url": null,
       "stock_url": "/shows/ambq"
@@ -3883,7 +3903,7 @@
       "company": "RADCOM Ltd.",
       "report_date": "2026-11-11",
       "report_time_label": "Time unconfirmed",
-      "planned_date": "2026-11-13",
+      "planned_date": "2026-11-14",
       "date_status": "Calendar estimate",
       "source_url": null,
       "stock_url": null
@@ -3893,7 +3913,7 @@
       "company": "Aevex Corp.",
       "report_date": "2026-11-11",
       "report_time_label": "Time unconfirmed",
-      "planned_date": "2026-11-15",
+      "planned_date": "2026-11-16",
       "date_status": "Calendar estimate",
       "source_url": null,
       "stock_url": null
@@ -3903,7 +3923,7 @@
       "company": "CGI Inc.",
       "report_date": "2026-11-11",
       "report_time_label": "Time unconfirmed",
-      "planned_date": "2026-11-15",
+      "planned_date": "2026-11-16",
       "date_status": "Calendar estimate",
       "source_url": null,
       "stock_url": null
@@ -4573,7 +4593,7 @@
       "company": "M-tron Industries, Inc.",
       "report_date": "2026-11-12",
       "report_time_label": "Time unconfirmed",
-      "planned_date": "2026-11-13",
+      "planned_date": "2026-11-14",
       "date_status": "Calendar estimate",
       "source_url": null,
       "stock_url": null
@@ -4583,7 +4603,7 @@
       "company": "Accelevation Holdings Corp.",
       "report_date": "2026-11-12",
       "report_time_label": "Time unconfirmed",
-      "planned_date": "2026-11-13",
+      "planned_date": "2026-11-14",
       "date_status": "Calendar estimate",
       "source_url": null,
       "stock_url": null
@@ -4593,7 +4613,7 @@
       "company": "WhiteHawk Minerals Corp",
       "report_date": "2026-11-12",
       "report_time_label": "Time unconfirmed",
-      "planned_date": "2026-11-14",
+      "planned_date": "2026-11-15",
       "date_status": "Calendar estimate",
       "source_url": null,
       "stock_url": null
@@ -4603,7 +4623,7 @@
       "company": "AirJoule Technologies Corporation",
       "report_date": "2026-11-12",
       "report_time_label": "Time unconfirmed",
-      "planned_date": "2026-11-14",
+      "planned_date": "2026-11-15",
       "date_status": "Calendar estimate",
       "source_url": null,
       "stock_url": null
@@ -4613,7 +4633,7 @@
       "company": "NeoVolta Inc",
       "report_date": "2026-11-12",
       "report_time_label": "Time unconfirmed",
-      "planned_date": "2026-11-14",
+      "planned_date": "2026-11-15",
       "date_status": "Calendar estimate",
       "source_url": null,
       "stock_url": null
@@ -4633,7 +4653,7 @@
       "company": "HawkEye 360, Inc.",
       "report_date": "2026-11-12",
       "report_time_label": "Time unconfirmed",
-      "planned_date": "2026-11-15",
+      "planned_date": "2026-11-16",
       "date_status": "Calendar estimate",
       "source_url": null,
       "stock_url": "/shows/hawk"
@@ -4643,7 +4663,7 @@
       "company": "Ascendis Pharma A/S",
       "report_date": "2026-11-12",
       "report_time_label": "Time unconfirmed",
-      "planned_date": "2026-11-15",
+      "planned_date": "2026-11-16",
       "date_status": "Calendar estimate",
       "source_url": null,
       "stock_url": "/shows/asnd"
@@ -4653,7 +4673,7 @@
       "company": "AIRO Group Holdings, Inc. Common Stock",
       "report_date": "2026-11-12",
       "report_time_label": "Time unconfirmed",
-      "planned_date": "2026-11-15",
+      "planned_date": "2026-11-16",
       "date_status": "Calendar estimate",
       "source_url": null,
       "stock_url": null
@@ -4663,7 +4683,7 @@
       "company": "Virgin Galactic Holdings, Inc.",
       "report_date": "2026-11-12",
       "report_time_label": "Time unconfirmed",
-      "planned_date": "2026-11-15",
+      "planned_date": "2026-11-16",
       "date_status": "Calendar estimate",
       "source_url": null,
       "stock_url": null
@@ -4683,7 +4703,7 @@
       "company": "Companhia Siderúrgica Nacional",
       "report_date": "2026-11-12",
       "report_time_label": "Time unconfirmed",
-      "planned_date": "2026-11-16",
+      "planned_date": "2026-11-17",
       "date_status": "Calendar estimate",
       "source_url": null,
       "stock_url": "/shows/sid"

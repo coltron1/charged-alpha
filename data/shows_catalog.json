@@ -36443,6 +36443,21 @@
       "description": "Fast clips that point viewers into full research videos and stock pages.",
       "videos": [
         {
+          "title": "SNY: Who Keeps the Dupixent Cash? | Sanofi Q3 2026 #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/yQ23NUWNYiQ",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-11-11T23:43:11+00:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "SNY"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage.",
+          "earnings_youtube_url": "https://www.youtube.com/watch?v=1KYDcJzkRBY",
+          "earnings_match": "stock_period_date"
+        },
+        {
           "title": "ANET Stock: Arista Networks Q3 2026 — The $11.4B Supply Bet #Shorts",
           "youtube_url": "https://www.youtube.com/shorts/H_ueD9Gpejs",
           "spotify_url": "",
@@ -49936,7 +49951,7 @@
       ]
     }
   ],
-  "last_synced_at": "2026-11-11T18:26:23-05:00",
+  "last_synced_at": "2026-11-11T18:45:37-05:00",
   "stock_metadata": {
     "A": {
       "company": "Agilent Technologies, Inc.",
