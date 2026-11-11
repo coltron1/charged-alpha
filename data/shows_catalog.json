@@ -10,6 +10,24 @@
   },
   "episodes": [
     {
+      "ticker": "SNY",
+      "company": "Sanofi",
+      "sector": "Healthcare",
+      "quarter": "Q3 2026",
+      "episode_number": "",
+      "title": "SNY Stock: Who Keeps the Dupixent Cash? | Sanofi Q3 2026",
+      "published_at": "2026-11-11T05:45:45+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=1KYDcJzkRBY",
+      "spotify_url": "https://open.spotify.com/episode/1fr55Hgwi3Z2i3ZlNCyaXd",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/sny-stock-who-keeps-the-dupixent-cash-sanofi-q3-2026/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
       "ticker": "ANET",
       "company": "Arista Networks",
       "sector": "Technology",
@@ -19,7 +37,7 @@
       "published_at": "2026-11-11T04:26:10+00:00",
       "status": "youtube_podcast_complete",
       "youtube_url": "https://www.youtube.com/watch?v=Mm4uWfuQqLY",
-      "spotify_url": "",
+      "spotify_url": "https://open.spotify.com/episode/3vbsuvSDWnTaHvgKKBAizZ",
       "apple_url": "",
       "google_url": "",
       "iheart_url": "",
@@ -36425,6 +36443,21 @@
       "description": "Fast clips that point viewers into full research videos and stock pages.",
       "videos": [
         {
+          "title": "ANET Stock: Arista Networks Q3 2026 — The $11.4B Supply Bet #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/H_ueD9Gpejs",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-11-11T05:28:14+00:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "ANET"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage.",
+          "earnings_youtube_url": "https://www.youtube.com/watch?v=Mm4uWfuQqLY",
+          "earnings_match": "stock_period_date"
+        },
+        {
           "title": "FCX Stock: Freeport-McMoRan Q3 2026 — The $4.5B Copper Bill #Shorts",
           "youtube_url": "https://www.youtube.com/shorts/WPlfJJDrFtE",
           "spotify_url": "",
@@ -49903,7 +49936,7 @@
       ]
     }
   ],
-  "last_synced_at": "2026-11-10T22:53:08-06:00",
+  "last_synced_at": "2026-11-11T18:26:23-05:00",
   "stock_metadata": {
     "A": {
       "company": "Agilent Technologies, Inc.",
