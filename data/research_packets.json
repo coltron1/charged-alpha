@@ -6389,6 +6389,64 @@
       "tables": 33
     },
     {
+      "key": "RVMD:Q3-2026",
+      "year": 2026,
+      "quarter": 3,
+      "fiscal": false,
+      "slug": "rvmd-q3-2026",
+      "ticker": "RVMD",
+      "company": "Revolution Medicines",
+      "period": "Q3 2026",
+      "canonical_url": "https://chargedalpha.com/research/rvmd-q3-2026",
+      "title": "RVMD: What survives the first five weeks of RASONQUE?",
+      "page_title": "RVMD Q3 2026 Research Packet — Charged Alpha",
+      "description": "RASONQUE begins with $197.6M of sales, but recurring demand, portfolio spending, royalties and dilution determine the value of Revolution Medicines.",
+      "sha256": "bc6e9e4541e306b6a766d925d74a5cc1db3ee0a1919970149e697e91bfb34564",
+      "html_file": "research_packets/rvmd-q3-2026.html",
+      "source_episode": "RVMD-Q3-2026",
+      "source_staged_at": "2026-11-12T02:14:35Z",
+      "source_sha256": {
+        "READY": "cd69f2513f9b62a8efa1776985893a156ebc35f1f2fbb4471f3c0c6b08aa3263",
+        "handoff.json": "55941385548310c6ac41faa11ccdefb65e162bda85e47da0aaa22c77357b466c",
+        "packet/rvmd-q3-2026-research-packet.html": "bc6e9e4541e306b6a766d925d74a5cc1db3ee0a1919970149e697e91bfb34564",
+        "packet/packet_meta.json": "32e1f1943f5369c5b1a94964ffba99e1c3caa9c444ebd2d84805cda8fe57c3a9",
+        "packet/packet.json": "40545874fd869f6417517beb0c6bf5f820c38a1557832a2a64baad91d63454e9"
+      },
+      "primary_youtube_long": "GfGq7Ru_EsI",
+      "primary_youtube_short": null,
+      "youtube_studio": null,
+      "youtube_studio_short": null,
+      "what_changed": {
+        "summary": "RASONQUE begins with $197.6M of sales, but recurring demand, portfolio spending, royalties and dilution determine the value of Revolution Medicines.",
+        "items": [
+          {
+            "title": "The launch is real; its mix is temporary.",
+            "detail": "Expanded-access transitions and the initial waiting-patient cohort are finite. The $197.559M also included newly eligible patients starting treatment and initial channel stocking."
+          },
+          {
+            "title": "Low reported product cost needs context.",
+            "detail": "Restoring $1.8M of previously expensed manufacturing lowers computed gross margin from 99.83% to 98.92%; it does not erase attractive unit economics."
+          },
+          {
+            "title": "The portfolio remains expensive.",
+            "detail": "Quarterly R&D of $417.087M and SG&A of $153.294M far exceed early product gross profit."
+          },
+          {
+            "title": "Cash was financed, not earned.",
+            "detail": "Nine-month CFO was negative $1.157B; equity, convertible notes and royalty financing replenished liquidity. The October loan is subsequent to September cash."
+          },
+          {
+            "title": "Approval boundaries matter.",
+            "detail": "U.S. pancreatic-cancer approval is established; EU Commission approval remains pending, and NSCLC remains investigational despite NCCN inclusion."
+          }
+        ]
+      },
+      "source_published": "November 11, 2026",
+      "words": 6691,
+      "figures": 17,
+      "tables": 30
+    },
+    {
       "key": "SAP:Q3-2026",
       "year": 2026,
       "quarter": 3,

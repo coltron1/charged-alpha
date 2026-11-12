@@ -10,6 +10,42 @@
   },
   "episodes": [
     {
+      "ticker": "RVMD",
+      "company": "Revolution Medicines, Inc.",
+      "sector": "Healthcare",
+      "quarter": "Q3 2026",
+      "episode_number": "",
+      "title": "RVMD Stock: What Survives the RASONQUE Launch Surge? | Q3 2026",
+      "published_at": "2026-11-12T02:08:31+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=GfGq7Ru_EsI",
+      "spotify_url": "https://open.spotify.com/episode/5Z2PUXPTMOwMsLcARGhBro",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/rvmd-stock-what-survives-the-rasonque-launch-surge-q3-2026/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "CRWV",
+      "company": "CoreWeave, Inc.",
+      "sector": "Technology",
+      "quarter": "Q3 2026",
+      "episode_number": "",
+      "title": "CRWV Stock: Customer Cash Is Not Shareholder Cash | CoreWeave Q3 2026",
+      "published_at": "2026-11-12T02:07:49+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=dK3Z7NGkVN4",
+      "spotify_url": "https://open.spotify.com/episode/5xAJ12VhwWzRCohM5xheye",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/crwv-stock-customer-cash-is-not-shareholder-cash-coreweave-q3-2026/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
       "ticker": "GEHC",
       "company": "GE HealthCare Technologies Inc.",
       "sector": "Healthcare",
@@ -19,7 +55,7 @@
       "published_at": "2026-11-11T23:56:20+00:00",
       "status": "youtube_podcast_complete",
       "youtube_url": "https://www.youtube.com/watch?v=VaslmUV4siA",
-      "spotify_url": "",
+      "spotify_url": "https://open.spotify.com/episode/2F6nwAJ6dWYfiYTQ3JFLaN",
       "apple_url": "",
       "google_url": "",
       "iheart_url": "",
@@ -49984,7 +50020,7 @@
       ]
     }
   ],
-  "last_synced_at": "2026-11-11T19:25:07-05:00",
+  "last_synced_at": "2026-11-11T21:16:31-05:00",
   "stock_metadata": {
     "A": {
       "company": "Agilent Technologies, Inc.",
