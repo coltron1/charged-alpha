@@ -10,6 +10,24 @@
   },
   "episodes": [
     {
+      "ticker": "GEHC",
+      "company": "GE HealthCare Technologies Inc.",
+      "sector": "Healthcare",
+      "quarter": "Q3 2026",
+      "episode_number": "",
+      "title": "GEHC Stock: The Recovery Is Real — But What Reaches Owners? | Q3 2026",
+      "published_at": "2026-11-11T23:56:20+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=VaslmUV4siA",
+      "spotify_url": "",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/gehc-stock-the-recovery-is-real-%e2%80%94-but-what-reaches-owners-q3-2026/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
       "ticker": "SNY",
       "company": "Sanofi",
       "sector": "Healthcare",
@@ -49951,7 +49969,7 @@
       ]
     }
   ],
-  "last_synced_at": "2026-11-11T18:45:37-05:00",
+  "last_synced_at": "2026-11-11T19:08:30-05:00",
   "stock_metadata": {
     "A": {
       "company": "Agilent Technologies, Inc.",

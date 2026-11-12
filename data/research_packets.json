@@ -4359,6 +4359,64 @@
       "tables": 20
     },
     {
+      "key": "GEHC:Q3-2026",
+      "year": 2026,
+      "quarter": 3,
+      "fiscal": false,
+      "slug": "gehc-q3-2026",
+      "ticker": "GEHC",
+      "company": "GE HealthCare Technologies Inc.",
+      "period": "Q3 2026",
+      "canonical_url": "https://chargedalpha.com/research/gehc-q3-2026",
+      "title": "GEHC: The Recovery Is Real. How Much Cash Will Reach Owners?",
+      "page_title": "GEHC Q3 2026 Research Packet — Charged Alpha",
+      "description": "GE HealthCare expanded margins across all segments and raised guidance; our $80 HOLD valuation tests recurring cash, tariff refunds and acquisition demands.",
+      "sha256": "1b415b2b24d78f349d1236deb83800613b23cc2b21264f8d62b0d6f3a23a2200",
+      "html_file": "research_packets/gehc-q3-2026.html",
+      "source_episode": "GEHC-Q3-2026",
+      "source_staged_at": "2026-11-12T00:06:13Z",
+      "source_sha256": {
+        "READY": "0fd7668d273104b3137653155f13c037d5c30cc11a3201ba0147ee4e7e285b07",
+        "handoff.json": "13d45203c6af13f7235ddc94accee195f4936801f78b320502a90a949cb98d16",
+        "packet/gehc-q3-2026-research-packet.html": "1b415b2b24d78f349d1236deb83800613b23cc2b21264f8d62b0d6f3a23a2200",
+        "packet/packet_meta.json": "c8b44b37d4590005d9899f6d3be0bbb2757af27527848c8e9730b366415f0f94",
+        "packet/packet.json": "7cedd22bb4a77a2272a7338aa3a3705fd95eb6e426afb455e92cab9a6bd97def"
+      },
+      "primary_youtube_long": "VaslmUV4siA",
+      "primary_youtube_short": null,
+      "youtube_studio": null,
+      "youtube_studio_short": null,
+      "what_changed": {
+        "summary": "GE HealthCare expanded margins across all segments and raised guidance; our $80 HOLD valuation tests recurring cash, tariff refunds and acquisition demands.",
+        "items": [
+          {
+            "title": "Margins recovered broadly.",
+            "detail": "Adjusted EBIT margin rose to 16.6%, with improvement across all three segments."
+          },
+          {
+            "title": "PCS returned to profit.",
+            "detail": "Segment EBIT reached $68M after the Q2 loss; sustained recovery remains the test."
+          },
+          {
+            "title": "Cash exceeded the refund.",
+            "detail": "Q3 FCF was $793M, including $55M of cash tariff refunds; the two figures are not equivalent."
+          },
+          {
+            "title": "Guidance increased.",
+            "detail": "Adjusted EPS is now $4.95–$5.05 and free cash flow is expected above $1.6B."
+          },
+          {
+            "title": "Capital demands remain.",
+            "detail": "Intelerad cost $2.293B; SOFIE is a separate pending $945M transaction. Our current value is $80."
+          }
+        ]
+      },
+      "source_published": "November 10, 2026",
+      "words": 5321,
+      "figures": 16,
+      "tables": 30
+    },
+    {
       "key": "GEV:Q3-2026",
       "year": 2026,
       "quarter": 3,
