@@ -1,11 +1,21 @@
 {
   "schema": "charged-alpha-public-production/1",
-  "updated_at": "2026-11-11T17:53:00.794318-06:00",
+  "updated_at": "2026-11-11T18:19:27.064714-06:00",
   "calendar_updated_at": "2026-11-09T20:53:37.838765-06:00",
   "calendar_status": "stale",
   "daily_target": 10,
   "active": [],
   "history": [
+    {
+      "ticker": "GEHC",
+      "company": "GE HealthCare Technologies Inc.",
+      "period": "Q3 2026",
+      "completed_at": "2026-11-11T18:18:03.319513-06:00",
+      "video_url": "https://youtu.be/VaslmUV4siA",
+      "short_url": "https://youtu.be/NKjVx9IyTUQ",
+      "packet_url": "https://chargedalpha.com/research/gehc-q3-2026",
+      "stock_url": "/shows/gehc"
+    },
     {
       "ticker": "SNY",
       "company": "Sanofi",

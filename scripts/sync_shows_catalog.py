@@ -536,7 +536,9 @@ def newest_unlinked(rows: list[VideoRow], existing_urls: set[str], scan_all: boo
 def extract_tickers(title: str) -> list[str]:
     seen: set[str] = set()
     tickers: list[str] = []
-    for match in TICKER_RE.findall(title):
+    # GE HealthCare is the GEHC issuer name; its GE prefix is not GE Aerospace.
+    ticker_title = re.sub(r"\bGE(?=\s+HealthCare\b)", "", title)
+    for match in TICKER_RE.findall(ticker_title):
         ticker = match.upper()
         if (ticker in TICKER_STOPWORDS or ticker.startswith("Q") and ticker[1:].isdigit()
                 or re.fullmatch(r"FY\d{4}", ticker)):
@@ -550,6 +552,16 @@ def extract_tickers(title: str) -> list[str]:
 def remove_fiscal_year_labels(tickers: list[str]) -> list[str]:
     """Keep historical Short associations while removing non-security FY labels."""
     return [ticker for ticker in tickers if not re.fullmatch(r"FY\d{4}", str(ticker).upper())]
+
+def normalize_short_tickers(title: str, tickers: list[str]) -> list[str]:
+    """Remove labels and GE issuer-name false positives without dropping real GE mentions."""
+    cleaned = remove_fiscal_year_labels(tickers)
+    if (re.match(r"^GEHC\s+Stock\b", title, re.IGNORECASE)
+            and re.search(r"\bGE\s+HealthCare\b", title)
+            and "GE" not in extract_tickers(title)):
+        return [ticker for ticker in cleaned if ticker != "GE"]
+    return cleaned
+
 
 
 def find_section(catalog: dict, title: str) -> dict | None:
@@ -1016,7 +1028,7 @@ def sync_catalog(args: argparse.Namespace) -> dict:
         shorts_section["videos"] = new_shorts + shorts_section["videos"]
         for short in shorts_section["videos"]:
             if isinstance(short.get("tickers"), list):
-                short["tickers"] = remove_fiscal_year_labels(short["tickers"])
+                short["tickers"] = normalize_short_tickers(short.get("title") or "", short["tickers"])
 
     backfilled_links = backfill_catalog_platform_links(
         catalog,

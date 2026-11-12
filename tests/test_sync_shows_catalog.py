@@ -5,6 +5,7 @@ from scripts.sync_shows_catalog import (
     PodcastItem,
     extract_tickers,
     remove_fiscal_year_labels,
+    normalize_short_tickers,
     normalize_title,
     parse_apple_items,
     parse_stock_title,
@@ -19,6 +20,14 @@ class StockTitleParsingTests(unittest.TestCase):
             ["ABAT"],
         )
         self.assertEqual(remove_fiscal_year_labels(["ABAT", "FY2026", "IMPP"]), ["ABAT", "IMPP"])
+
+    def test_gehc_company_name_does_not_add_ge_aerospace(self):
+        self.assertEqual(extract_tickers("GEHC Stock: GE HealthCare Q3 2026 #Shorts"), ["GEHC"])
+        self.assertEqual(extract_tickers("GE Stock: GE Aerospace Q3 2026 #Shorts"), ["GE"])
+        self.assertEqual(extract_tickers("GEHC Stock: GE HealthCare vs GE Q3 2026 #Shorts"), ["GEHC", "GE"])
+        self.assertEqual(normalize_short_tickers("GEHC Stock: GE HealthCare Q3 2026 #Shorts", ["GEHC", "GE"]), ["GEHC"])
+        self.assertEqual(normalize_short_tickers("GEHC Stock: GE HealthCare vs GE Q3 2026 #Shorts", ["GEHC", "GE"]), ["GEHC", "GE"])
+        self.assertEqual(normalize_short_tickers("GE Stock: GE Aerospace Q3 2026 #Shorts", ["GE"]), ["GE"])
 
     def test_parses_ticker_first_title_with_quarter(self):
         self.assertEqual(

@@ -36461,6 +36461,21 @@
       "description": "Fast clips that point viewers into full research videos and stock pages.",
       "videos": [
         {
+          "title": "GEHC Stock: GE HealthCare Q3 2026 — The Cash Test #Shorts",
+          "youtube_url": "https://www.youtube.com/shorts/NKjVx9IyTUQ",
+          "spotify_url": "",
+          "podbean_url": "",
+          "apple_url": "",
+          "published_at": "2026-11-12T00:16:51+00:00",
+          "section": "Shorts and Clips",
+          "tickers": [
+            "GEHC"
+          ],
+          "summary": "A fast Charged Alpha clip pointing viewers into the latest earnings coverage.",
+          "earnings_youtube_url": "https://www.youtube.com/watch?v=VaslmUV4siA",
+          "earnings_match": "stock_period_date"
+        },
+        {
           "title": "SNY: Who Keeps the Dupixent Cash? | Sanofi Q3 2026 #Shorts",
           "youtube_url": "https://www.youtube.com/shorts/yQ23NUWNYiQ",
           "spotify_url": "",
@@ -49969,7 +49984,7 @@
       ]
     }
   ],
-  "last_synced_at": "2026-11-11T19:08:30-05:00",
+  "last_synced_at": "2026-11-11T19:25:07-05:00",
   "stock_metadata": {
     "A": {
       "company": "Agilent Technologies, Inc.",
