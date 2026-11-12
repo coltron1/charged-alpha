@@ -38,6 +38,38 @@ REPLACEMENT_ORIGIN = "https://github.com/coltron1/charged-alpha.git"
 REPLACEMENT_REPORT = "charged-alpha-unpublished-packet-replacement-review"
 
 
+# Source-bound correction to the CRWV Q3 stock-page summary. The packet itself
+# remains byte-identical; published HTML receives the same attribution correction.
+def reviewed_highlight_projection(episode, html_sha256, content_sha256, highlights):
+    if episode != "CRWV-Q3-2026":
+        return highlights
+    require(html_sha256 == "ad9db4c34fdd59a58310cbf3bc71db16e0981e93502f6f0e3390b82f5f097239"
+            and content_sha256 == "e04bc447ca6e045ab66f5174a41047b957a6a764e38ccf3c6b9f17f3b63779f2",
+            "CRWV reviewed highlight source differs")
+    require(isinstance(highlights, dict) and len(highlights.get("items", [])) == 5,
+            "CRWV reviewed highlights differ")
+    old = "Q3 statements are unaudited and unresolved material control weaknesses remain a live risk; no remediation is assumed."
+    item = highlights["items"][4]
+    require(item == {"title": "The evidence has limits.", "detail": old},
+            "CRWV reviewed highlight preimage differs")
+    projected = {**highlights, "items": [dict(value) for value in highlights["items"]]}
+    projected["items"][4]["detail"] = ("Q3 statements are unaudited. The latest quarterly filing reviewed, for Q2, "
+        "reported material control weaknesses; the Q3 release supplied no controls assessment.")
+    return validate_what_changed(projected)
+
+
+def reviewed_html_projection(episode, html_sha256, content_sha256, raw_html):
+    if episode != "CRWV-Q3-2026":
+        return raw_html
+    require(html_sha256 == "ad9db4c34fdd59a58310cbf3bc71db16e0981e93502f6f0e3390b82f5f097239"
+            and content_sha256 == "e04bc447ca6e045ab66f5174a41047b957a6a764e38ccf3c6b9f17f3b63779f2"
+            and sha256(raw_html) == html_sha256, "CRWV reviewed HTML source differs")
+    old = b"Q3 statements are unaudited and unresolved material control weaknesses remain a live risk; no remediation is assumed."
+    new = b"Q3 statements are unaudited. The latest quarterly filing reviewed, for Q2, reported material control weaknesses; the Q3 release supplied no controls assessment."
+    require(raw_html.count(old) == 1, "CRWV reviewed HTML preimage differs")
+    return raw_html.replace(old, new, 1)
+
+
 class HeadMetadata(HTMLParser):
     def __init__(self):
         super().__init__(convert_charrefs=True)
@@ -439,6 +471,7 @@ def read_candidate(queue):
     require(parsed.descriptions[0] == cm.get("description"), "HTML description differs from packet content")
     require(not parsed.canonicals or parsed.canonicals == [canonical], "HTML canonical URL differs")
     what_changed = packet_highlights(content, required=when >= HIGHLIGHTS_REQUIRED_FROM)
+    what_changed = reviewed_highlight_projection(episode, digest, sha256(raw[names["content"]]), what_changed)
     primary, links = handoff.get("primary", {}), meta.get("links", {})
     require(isinstance(primary, dict) and isinstance(links, dict), "Invalid source video links")
     require(content.get("links") == links, "Packet video links differ from metadata")
@@ -450,12 +483,15 @@ def read_candidate(queue):
         require(other in (None, "") or isinstance(other, str) and re.fullmatch(r"[A-Za-z0-9_-]{11}", other), "Invalid handoff video ID")
         require(not value or not other or value == other, "Conflicting primary video IDs")
         videos[("primary_" if name in ("youtube_long", "youtube_short") else "") + name] = value or other or None
+    published_html = reviewed_html_projection(episode, digest, sha256(raw[names["content"]]), raw[names["html"]])
     record = {**identity, "ticker": handoff["ticker"], "company": handoff["company"],
               "period": handoff["period"], "canonical_url": canonical, "title": packet["title"],
-              "page_title": packet["page_title"], "description": parsed.descriptions[0], "sha256": digest,
+              "page_title": packet["page_title"], "description": parsed.descriptions[0], "sha256": sha256(published_html),
               "html_file": f"research_packets/{identity['slug']}.html", "source_episode": episode,
               "source_staged_at": staged_at, "source_sha256": {name: sha256(data) for name, data in raw.items()},
               **videos}
+    if episode == "CRWV-Q3-2026":
+        record["publication_revision"] = {"kind": "source_bound_disclosure_attribution", "source_html_sha256": digest, "source_content_sha256": sha256(raw[names["content"]]), "published_html_sha256": sha256(published_html)}
     if what_changed:
         record["what_changed"] = what_changed
     if cm.get("published"):
@@ -467,7 +503,7 @@ def read_candidate(queue):
             record[field] = meta[field]
     validate_record(record)
     return {"status": "validated", "queue_dir": str(queue), "source_episode": episode,
-            "record": record, "source_bytes": raw, "html_bytes": raw[names["html"]]}
+            "record": record, "source_bytes": raw, "html_bytes": published_html}
 
 
 def ready_folders(queue_root):

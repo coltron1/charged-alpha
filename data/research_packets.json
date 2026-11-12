@@ -3837,6 +3837,70 @@
       "tables": 29
     },
     {
+      "key": "CRWV:Q3-2026",
+      "year": 2026,
+      "quarter": 3,
+      "fiscal": false,
+      "slug": "crwv-q3-2026",
+      "ticker": "CRWV",
+      "company": "CoreWeave",
+      "period": "Q3 2026",
+      "canonical_url": "https://chargedalpha.com/research/crwv-q3-2026",
+      "title": "CRWV: The customer cash arrives before the shareholder cash",
+      "page_title": "CRWV Q3 2026 Research Packet — Charged Alpha",
+      "description": "CoreWeave grows rapidly, but customer funding, interest and infrastructure reinvestment determine the residual value of its common shares.",
+      "sha256": "feda690436e8c54b9c8615b0b832c4ec4f4091ae0445b10bbcb73204474c519a",
+      "html_file": "research_packets/crwv-q3-2026.html",
+      "source_episode": "CRWV-Q3-2026",
+      "source_staged_at": "2026-11-12T02:11:27Z",
+      "source_sha256": {
+        "READY": "ec1651e71d9c37eb9b0d394fa0d74f5c57137e73f1d6fcb8c34fb0cfd98b443e",
+        "handoff.json": "079e8ec5d7263fe67dc16d8111ac6334f6a4c17aceabb1912ba29ab9cc51da81",
+        "packet/crwv-q3-2026-research-packet.html": "ad9db4c34fdd59a58310cbf3bc71db16e0981e93502f6f0e3390b82f5f097239",
+        "packet/packet_meta.json": "6367abd1b9261875e1a2d0d536e44af8ae5c82950ff43670057feca464c6a9cc",
+        "packet/packet.json": "e04bc447ca6e045ab66f5174a41047b957a6a764e38ccf3c6b9f17f3b63779f2"
+      },
+      "primary_youtube_long": "dK3Z7NGkVN4",
+      "primary_youtube_short": null,
+      "youtube_studio": null,
+      "youtube_studio_short": null,
+      "what_changed": {
+        "summary": "CoreWeave grows rapidly, but customer funding, interest and infrastructure reinvestment determine the residual value of its common shares.",
+        "items": [
+          {
+            "title": "Operating improvement is real.",
+            "detail": "Revenue grew sequentially by $1.086B and GAAP operating profit turned positive; adjusted margin also improved from Q2."
+          },
+          {
+            "title": "Customer funding is not free owner cash.",
+            "detail": "A $2.127B deferred-revenue inflow exceeded Q3 operating cash flow of $1.975B. This is a financing-quality diagnostic, not a restatement of cash flow."
+          },
+          {
+            "title": "Interest still dominates.",
+            "detail": "Q3 net interest was $846M versus $379M adjusted operating income, and Q4 interest guidance is $1.05B–$1.15B."
+          },
+          {
+            "title": "The buildout requires continued outside capital.",
+            "detail": "Nine-month CFO less cash capex was negative $17.920B; customer deposits, borrowings and equity issuance can finance growth but carry obligations."
+          },
+          {
+            "title": "The evidence has limits.",
+            "detail": "Q3 statements are unaudited. The latest quarterly filing reviewed, for Q2, reported material control weaknesses; the Q3 release supplied no controls assessment."
+          }
+        ]
+      },
+      "source_published": "November 11, 2026",
+      "words": 6543,
+      "figures": 17,
+      "tables": 32,
+      "publication_revision": {
+        "kind": "source_bound_disclosure_attribution",
+        "source_html_sha256": "ad9db4c34fdd59a58310cbf3bc71db16e0981e93502f6f0e3390b82f5f097239",
+        "source_content_sha256": "e04bc447ca6e045ab66f5174a41047b957a6a764e38ccf3c6b9f17f3b63779f2",
+        "published_html_sha256": "feda690436e8c54b9c8615b0b832c4ec4f4091ae0445b10bbcb73204474c519a"
+      }
+    },
+    {
       "key": "DHR:Q3-2026",
       "year": 2026,
       "quarter": 3,
