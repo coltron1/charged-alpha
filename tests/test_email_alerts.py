@@ -162,6 +162,53 @@ class StockAlertsTests(unittest.TestCase):
         self.assertEqual(sub.state, 'active')
         self.assertEqual(self.client.post('/alerts/confirm/' + token, data={'csrf': self.csrf}).status_code, 400)
 
+    def test_confirmation_measurement_is_private_and_one_time(self):
+        with patch.object(site, 'GOOGLE_ANALYTICS_ID', 'G-TEST123'), patch.object(site, 'CANONICAL_HOST', 'localhost'):
+            direct = self.client.get('/confirmation/alerts')
+            self.assertEqual(direct.status_code, 302)
+            self.assertNotIn('googletagmanager', direct.text)
+            self.assertEqual(self.signup().status_code, 200)
+            token = self.token()
+            self.assertNotIn('googletagmanager', self.client.get('/alerts/confirm/' + token).text)
+            response = self.client.post('/alerts/confirm/' + token, data={'csrf': self.csrf})
+            self.assertEqual(response.headers['Location'], '/confirmation/alerts')
+            self.assertEqual(response.headers['Referrer-Policy'], 'no-referrer')
+            with self.client.session_transaction() as sess:
+                marker = sess['stock_alert_confirmation_marker']
+            success = self.client.get('/confirmation/alerts?email=private@example.com')
+            self.assertEqual(success.status_code, 200)
+            self.assertEqual(success.headers['Cache-Control'], 'no-store')
+            self.assertEqual(success.headers['Referrer-Policy'], 'no-referrer')
+            self.assertIn('alert-confirmation-measurement.js', success.text)
+            self.assertNotIn('private@example.com', success.text)
+            self.assertNotIn(token, success.text)
+            self.assertNotIn(marker, success.text)
+            self.assertEqual(self.client.get('/confirmation/alerts').status_code, 302)
+            with self.client.session_transaction() as sess:
+                sess['stock_alert_confirmation_marker'] = marker
+            self.assertEqual(self.client.get('/confirmation/alerts').status_code, 302)
+            self.assertEqual(self.client.post('/alerts/confirm/' + token, data={'csrf': self.csrf}).status_code, 400)
+
+    def test_access_confirmation_does_not_create_signup_measurement(self):
+        sub = self.active()
+        self.clock.stop()
+        self.clock = patch('email_alerts.now', return_value=FIXED + dt.timedelta(minutes=16))
+        self.clock.start()
+        self.assertEqual(self.post('/api/alerts/request', {'email': sub.email, 'action': 'access'}).status_code, 200)
+        payload = json.loads(Message.query.filter_by(kind='access').order_by(Message.created_at.desc()).first().payload_json)
+        token = re.search(r'/alerts/confirm/([^\s<"]+)', payload['text']).group(1)
+        response = self.client.post('/alerts/confirm/' + token, data={'csrf': self.csrf})
+        self.assertEqual(response.headers['Location'], '/alerts')
+        self.assertEqual(self.client.get('/confirmation/alerts').status_code, 302)
+
+    def test_research_reader_source_persists_through_confirmation(self):
+        response = self.client.get('/alerts?ticker=ADBE&source=research_reader')
+        self.assertIn('data-alert-source="research_reader"', response.text)
+        self.assertEqual(self.signup(source='research_reader').status_code, 200)
+        self.assertEqual(Event.query.filter_by(event_type='signup_requested').one().source, 'research_reader')
+        self.assertEqual(self.client.post('/alerts/confirm/' + self.token(), data={'csrf': self.csrf}).status_code, 302)
+        self.assertEqual(Event.query.filter_by(event_type='signup_confirmed').one().source, 'research_reader')
+
     def test_records_signup_and_preference_attribution(self):
         self.assertEqual(self.signup(source='stock_follow').status_code, 200)
         request_record = Request.query.one()

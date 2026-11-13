@@ -85,7 +85,7 @@ from production_board import load_board, public_url
 from stock_research import read_registry, comparison, format_value, group_episode_archive, age_days
 from stock_research_data import financial_status
 from stock_comparison_data import search_stocks, custom_profile_status, SYMBOL as COMPARISON_SYMBOL
-from email_alerts import init_alerts, start_worker as start_alert_worker
+from email_alerts import init_alerts, public_enabled as stock_alerts_public_enabled, start_worker as start_alert_worker
 
 # ── Import backend modules ──────────────────────────────────────────────────
 from stock_screener import (screen_stocks, get_stock_detail,
@@ -2960,6 +2960,11 @@ def show_stock_detail_page(ticker_slug):
     show_stock = next((stock for stock in show_library["stocks"] if stock["slug"] == requested), None)
     if not show_stock:
         return ("Stock show not found", 404)
+    if ticker_slug != show_stock["slug"]:
+        target = url_for("show_stock_detail_page", ticker_slug=show_stock["slug"])
+        if request.query_string:
+            target += "?" + request.query_string.decode("latin-1")
+        return redirect(target, code=301)
 
     # Page rendering never waits for market-data providers. Scheduled snapshots
     # supply the overview; statements and charts load independently.
@@ -3184,7 +3189,10 @@ def research_packet_page(slug):
                 version = hashlib.sha256((BASE_DIR / "static" / filename).read_bytes()).hexdigest()[:12]
                 assets[extension] = url_for("static", filename=filename, v=version)
             content = reader_html(content, stylesheet_url=assets["css"], script_url=assets["js"],
-                                  canonical_url=packet["canonical_url"])
+                                  canonical_url=packet["canonical_url"], ticker=packet["ticker"],
+                                  youtube_id=packet.get("primary_youtube_long") or "",
+                                  alerts_enabled=stock_alerts_public_enabled(),
+                                  analytics_id=GOOGLE_ANALYTICS_ID if request.host.split(":", 1)[0] in {CANONICAL_HOST, WWW_CANONICAL_HOST} else "")
         except (OSError, ValueError):
             app.logger.exception("Research packet reading view failed for %s", slug)
             abort(503)

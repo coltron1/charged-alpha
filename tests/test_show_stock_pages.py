@@ -33,7 +33,7 @@ class ShowLibraryTests(unittest.TestCase):
                 library = build_show_library(episodes)
                 context = {"shows_data": {"video_sections": [], "platform_links": platforms}, "show_library": library}
                 with patch("app._shows_context", return_value=context), patch("app._cached_show_stock_detail", return_value={}):
-                    response = app.test_client().get("/shows/test")
+                    response = app.test_client().get("/shows/TEST")
                 self.assertEqual(response.status_code, 200)
                 rendered = response.get_data(as_text=True)
                 card = rendered.split('<section class="primary-video-shell"', 1)[1].split('</section>', 1)[0]
@@ -65,7 +65,7 @@ class ShowLibraryTests(unittest.TestCase):
         self.assertNotIn("youtube_shorts", episodes[0])
         context = {"shows_data": {"video_sections": sections}, "show_library": library}
         with patch("app._shows_context", return_value=context), patch("app._cached_show_stock_detail", return_value={}):
-            response = app.test_client().get("/shows/test")
+            response = app.test_client().get("/shows/TEST")
         self.assertEqual(response.status_code, 200)
         rendered = response.get_data(as_text=True)
         self.assertEqual(rendered.count('class="earnings-short-link"'), 5)
@@ -98,7 +98,7 @@ class ShowLibraryTests(unittest.TestCase):
             sections = [{"title": "Shorts and Clips", "videos": clips}]
             context = {"shows_data": {"video_sections": sections}, "show_library": build_show_library(episodes, video_sections=sections)}
             with patch("app._shows_context", return_value=context), patch("app._cached_show_stock_detail", return_value={}):
-                response = app.test_client().get("/shows/test")
+                response = app.test_client().get("/shows/TEST")
             self.assertEqual(response.status_code, 200)
             rendered = response.get_data(as_text=True)
             self.assertEqual(rendered.count('class="earnings-short-link"'), 2 if clips else 0)

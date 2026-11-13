@@ -1,5 +1,44 @@
 (() => {
   'use strict';
+  const script = document.querySelector('script[data-ticker][src*="research-reader.js"]');
+  const ticker = script?.dataset.ticker || '';
+  const youtubeId = script?.dataset.youtubeId || '';
+  const alertsEnabled = script?.dataset.alertsEnabled === 'true';
+  if (/^[A-Z0-9.-]{1,24}$/.test(ticker)) {
+    const links = document.createElement('nav');
+    links.className = 'packet-site-links';
+    links.setAttribute('aria-label', 'Charged Alpha');
+    const stock = document.createElement('a');
+    stock.href = `/shows/${encodeURIComponent(ticker)}`;
+    stock.textContent = `${ticker} stock research`;
+    links.append(stock);
+    const follow = document.createElement('button');
+    follow.type = 'button';
+    follow.dataset.followStock = ticker;
+    if (alertsEnabled) {
+      follow.dataset.followEmailSignup = 'true';
+      follow.dataset.followSource = 'research_reader';
+    }
+    const followLabel = document.createElement('span');
+    followLabel.dataset.followLabel = '';
+    followLabel.textContent = 'Follow this stock';
+    follow.append(followLabel);
+    links.append(follow);
+    if (alertsEnabled) {
+      const alerts = document.createElement('a');
+      alerts.href = `/alerts?ticker=${encodeURIComponent(ticker)}&source=research_reader`;
+      alerts.textContent = 'Free email alerts';
+      links.append(alerts);
+    }
+    if (/^[A-Za-z0-9_-]{11}$/.test(youtubeId)) {
+      const video = document.createElement('a');
+      video.href = `https://www.youtube.com/watch?v=${youtubeId}`;
+      video.textContent = 'Watch on YouTube';
+      video.rel = 'noopener noreferrer';
+      links.append(video);
+    }
+    document.body.prepend(links);
+  }
   const nav = document.querySelector('nav.toc');
   const list = nav?.querySelector('div');
   if (!nav || !list) return;

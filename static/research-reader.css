@@ -94,3 +94,9 @@ nav.toc details[open] summary::after { transform: rotate(225deg); margin-top: 8p
   nav.toc details > div { grid-template-columns: minmax(0, 1fr); }
 }
 @media print { nav.toc { display: none; } }
+
+.packet-site-links { display: flex; flex-wrap: wrap; gap: 12px 24px; padding: 12px 20px; background: #101c2e; }
+.packet-site-links a { color: #fff; font: 600 14px/1.5 system-ui, sans-serif; }
+.packet-site-links a:focus-visible { outline: 2px solid #fff; outline-offset: 3px; }
+.packet-site-links button { padding: 5px 12px; border: 1px solid #adc6e7; border-radius: 5px; background: #fff; color: #101c2e; cursor: pointer; font: 600 14px/1.5 system-ui, sans-serif; }
+.packet-site-links button:focus-visible { outline: 2px solid #fff; outline-offset: 3px; }

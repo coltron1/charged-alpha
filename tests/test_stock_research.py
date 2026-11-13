@@ -207,7 +207,7 @@ class PageTests(unittest.TestCase):
                     patch("app._shows_context", return_value=context), \
                     patch("app.read_registry", return_value={"profiles": {"QCOM": provider}}), \
                     patch("app.load_board", return_value=board):
-                response = app.test_client().get("/shows/qcom")
+                response = app.test_client().get("/shows/QCOM")
                 self.assertEqual(response.status_code, 200)
                 page = response.get_data(as_text=True)
                 self.assertIn("provider estimate; issuer confirmation unavailable here", page)
@@ -235,7 +235,7 @@ class PageTests(unittest.TestCase):
             with self.subTest(changes=changes), patch("app._shows_context", return_value=context), \
                     patch("app.read_registry", return_value={"profiles": {"QCOM": snapshot}}), \
                     patch("app.load_board", return_value={"days": [{"items": [{**confirmation, **changes}]}]}):
-                response = app.test_client().get("/shows/qcom")
+                response = app.test_client().get("/shows/QCOM")
                 self.assertEqual(response.status_code, 200)
                 page = response.get_data(as_text=True)
                 self.assertEqual("(issuer-confirmed;" in page, confirmed)
@@ -247,12 +247,12 @@ class PageTests(unittest.TestCase):
         with patch("app._shows_context", return_value=context), \
                 patch("app.read_registry", return_value={"profiles": {"QCOM": snapshot}}), \
                 patch("app.load_board", return_value={"days": [{"items": [confirmation, confirmation]}]}):
-            self.assertIn("provider estimate; issuer confirmation unavailable here", app.test_client().get("/shows/qcom").get_data(as_text=True))
+            self.assertIn("provider estimate; issuer confirmation unavailable here", app.test_client().get("/shows/QCOM").get_data(as_text=True))
         snapshot["next_earnings_end"] = "2026-11-05"
         with patch("app._shows_context", return_value=context), \
                 patch("app.read_registry", return_value={"profiles": {"QCOM": snapshot}}), \
                 patch("app.load_board", side_effect=AssertionError("A date range cannot inherit one confirmation")):
-            self.assertIn("provider estimate; issuer confirmation unavailable here", app.test_client().get("/shows/qcom").get_data(as_text=True))
+            self.assertIn("provider estimate; issuer confirmation unavailable here", app.test_client().get("/shows/QCOM").get_data(as_text=True))
 
     def test_financial_comparison_fx_uses_only_fresh_valid_snapshot_rates(self):
         from app import _financial_comparison_fx
@@ -273,7 +273,7 @@ class PageTests(unittest.TestCase):
         context = {"shows_data":{}, "show_library":build_show_library([{"ticker":"CASY","title":"Earnings","quarter":"Q1 FY2027","youtube_url":"https://youtu.be/CurrentVid1","published_at":"2026-09-09"}])}
         with patch("app._shows_context", return_value=context), patch("app.read_registry",return_value={"profiles":{"CASY":profile("CASY")}}), patch("app._cached_show_stock_detail", side_effect=AssertionError("Blocking data fetch")), patch("app.fetch_ticker_info", side_effect=AssertionError("Blocking data fetch")):
             client = app.test_client()
-            response = client.get("/shows/casy")
+            response = client.get("/shows/CASY")
             self.assertEqual(response.status_code,200)
             self.assertIn('href="/#searchInput" class="return-search" data-search-return', response.get_data(as_text=True))
             self.assertIn('Search Another Stock</a>', response.get_data(as_text=True))

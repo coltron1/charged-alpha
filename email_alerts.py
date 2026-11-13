@@ -32,7 +32,7 @@ BASE = 'https://chargedalpha.com'
 PERIOD = re.compile(r'^(?:Q[1-4]|H[12])\s+(?:FY)?\d{4}$|^FY\s?\d{4}$')
 PENDING = ('queued', 'sending')
 ALERT_SOURCES = {
-    'campaign', 'direct', 'email', 'following', 'manage', 'podcast', 'resend', 'stock_follow',
+    'campaign', 'direct', 'email', 'following', 'manage', 'podcast', 'resend', 'stock_follow', 'research_reader',
     'unknown', 'website', 'youtube',
 }
 ADMIN_SESSION_SECONDS = 12 * 60 * 60
@@ -441,6 +441,13 @@ def private_response(response):
         "default-src 'self'; base-uri 'none'; form-action 'self'; frame-ancestors 'none'; "
         "object-src 'none'; img-src 'self' data:; style-src 'self'; script-src 'self'; connect-src 'self'"
     )
+    if request.endpoint == 'stock_alerts.confirmation_success':
+        response.headers['Content-Security-Policy'] = (
+            "default-src 'self'; base-uri 'none'; form-action 'self'; frame-ancestors 'none'; object-src 'none'; "
+            "style-src 'self'; script-src 'self' https://www.googletagmanager.com; "
+            "img-src 'self' data: https://*.google-analytics.com https://*.googletagmanager.com; "
+            "connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com"
+        )
     return response
 
 
@@ -534,10 +541,32 @@ def confirm_alerts(token):
             abort(400)
         record.used_at = now()
         establish_session(sub)
+        if record.kind == 'confirm':
+            # A random, short-lived capability lets the clean landing consume the
+            # confirmation once, even if an old signed session cookie is replayed.
+            marker = secrets.token_urlsafe(32)
+            session['stock_alert_confirmation_marker'] = marker
+            key = hashlib.sha256(('confirmation-measurement:' + marker).encode()).hexdigest()
+            db.session.add(Throttle(key=key, hits=0, expires_at=now() + dt.timedelta(minutes=10)))
         db.session.commit()
-        return redirect('/alerts')
+        return redirect('/confirmation/alerts' if record.kind == 'confirm' else '/alerts')
     return render_template('stock_alerts.html', mode='confirm', csrf=csrf_token(),
                            selected=json.loads(record.tickers_json), access=record.kind == 'access', email=masked_email(sub.email))
+
+
+@bp.route('/confirmation/alerts')
+def confirmation_success():
+    marker = session.pop('stock_alert_confirmation_marker', None)
+    if not isinstance(marker, str) or len(marker) > 128:
+        return redirect('/alerts')
+    key = hashlib.sha256(('confirmation-measurement:' + marker).encode()).hexdigest()
+    claimed = (Throttle.query.filter_by(key=key, hits=0)
+               .filter(Throttle.expires_at > now())
+               .update({'hits': 1}, synchronize_session=False))
+    db.session.commit()
+    if claimed != 1:
+        return redirect('/alerts')
+    return render_template('alert_confirmation_success.html')
 
 
 @bp.route('/alerts/access/<token>', methods=['GET', 'POST'])

@@ -37,6 +37,14 @@ class ResearchPageTests(unittest.TestCase):
     def tearDown(self):
         site._shows_cache.clear()
 
+    def test_stock_case_redirect_retains_query_and_canonical(self):
+        response = self.client.get('/shows/crwv?source=research&x=one%20two')
+        self.assertEqual(response.status_code, 301)
+        self.assertEqual(response.headers['Location'], '/shows/CRWV?source=research&x=one%20two')
+        canonical = self.client.get(response.headers['Location'])
+        self.assertEqual(canonical.status_code, 200)
+        self.assertIn(b'rel="canonical" href="https://chargedalpha.com/shows/CRWV"', canonical.data)
+
     def test_packet_response_is_exact_source_with_canonical_header(self):
         source = b'<!doctype html><html><head><title>Report</title></head><body>Exact source.</body></html>'
         row = packet()
@@ -68,7 +76,7 @@ class ResearchPageTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as folder:
             path = Path(folder) / "packet.html"
             path.write_bytes(source)
-            with patch("app.load_packets", return_value=[row]), patch("app.packet_html_path", return_value=path):
+            with patch("app.load_packets", return_value=[row]), patch("app.packet_html_path", return_value=path), patch("app.stock_alerts_public_enabled", return_value=False):
                 original = self.client.get("/research/" + row["slug"])
                 reader = self.client.get("/research/" + row["slug"] + "?view=reader")
                 cached = self.client.get("/research/" + row["slug"] + "?view=reader", headers={"If-None-Match": reader.headers["ETag"]})
@@ -81,6 +89,7 @@ class ResearchPageTests(unittest.TestCase):
             self.assertTrue(reader.data.endswith(b'</HEAD>' + suffix))
             self.assertIn(b'/static/research-reader.css?v=', reader.data)
             self.assertIn(b'/static/research-reader.js?v=', reader.data)
+            self.assertIn(b'data-ticker="BZUN" data-youtube-id="LongVideo01" data-alerts-enabled="false"', reader.data)
             self.assertIn(('rel="canonical" href="' + row['canonical_url'] + '"').encode(), reader.data)
             self.assertEqual(reader.headers['Link'], original.headers['Link'])
             self.assertIn('no-transform', reader.headers['Cache-Control'])
@@ -88,12 +97,50 @@ class ResearchPageTests(unittest.TestCase):
             self.assertEqual(cached.status_code, 304)
             self.assertEqual(different_view.status_code, 200)
 
+    def test_reader_receives_public_alert_availability(self):
+        row = packet()
+        source = b'<html><head></head><body>Report</body></html>'
+        row['sha256'] = hashlib.sha256(source).hexdigest()
+        with tempfile.TemporaryDirectory() as folder:
+            path = Path(folder) / 'packet.html'
+            path.write_bytes(source)
+            with patch('app.load_packets', return_value=[row]), patch('app.packet_html_path', return_value=path):
+                for enabled in (False, True):
+                    with self.subTest(enabled=enabled), patch('app.stock_alerts_public_enabled', return_value=enabled):
+                        response = self.client.get('/research/' + row['slug'] + '?view=reader')
+                        self.assertIn(('data-alerts-enabled="' + str(enabled).lower() + '"').encode(), response.data)
+                        self.assertEqual(path.read_bytes(), source)
+
     def test_reader_preserves_existing_canonical_and_rejects_missing_head(self):
         source = b'<html><head><link rel="canonical" href="https://chargedalpha.com/research/test"></head><body>Report</body></html>'
         args = dict(stylesheet_url='/reader.css', script_url='/reader.js', canonical_url='https://chargedalpha.com/research/test')
         self.assertEqual(reader_html(source, **args).count(b'rel="canonical"'), 1)
         with self.assertRaises(ValueError):
             reader_html(b'<html><body>No head</body></html>', **args)
+
+    def test_reader_analytics_only_on_public_host_and_never_raw_packet(self):
+        source = b'<html><head><title>Report</title></head><body>Exact.</body></html>'
+        row = packet()
+        row['sha256'] = hashlib.sha256(source).hexdigest()
+        with tempfile.TemporaryDirectory() as folder:
+            path = Path(folder) / 'packet.html'
+            path.write_bytes(source)
+            with patch('app.load_packets', return_value=[row]), patch('app.packet_html_path', return_value=path), patch('app.GOOGLE_ANALYTICS_ID', 'G-TEST123'):
+                route = '/research/' + row['slug']
+                public = self.client.get(route + '?view=reader&email=not-for-analytics', base_url='https://chargedalpha.com')
+                local = self.client.get(route + '?view=reader')
+                canonical = self.client.get(route, base_url='https://chargedalpha.com')
+            self.assertIn(b'research-measurement.js', public.data)
+            self.assertIn(b'gtag/js?id=G-TEST123', public.data)
+            self.assertNotIn(b'not-for-analytics', public.data)
+            self.assertNotIn(b'googletagmanager', local.data)
+            self.assertEqual(canonical.data, source)
+            self.assertEqual(path.read_bytes(), source)
+
+    def test_reader_rejects_analytics_id_injection(self):
+        value = reader_html(b'<html><head></head><body></body></html>', stylesheet_url='/r.css', script_url='/r.js', canonical_url='https://chargedalpha.com/research/test', analytics_id='G-TEST\"><script>alert(1)</script>')
+        self.assertNotIn(b'googletagmanager', value)
+        self.assertNotIn(b'alert(1)', value)
 
     def test_quarters_are_grouped_newest_first_without_replacing_older_reports(self):
         rows = [packet("Q2 2026", 2026, 2), packet("Q4 2025", 2025, 4, primary="OldVideo001"), packet("Q1 FY2027", 2027, 1, True, "NewVideo001")]
@@ -118,7 +165,7 @@ class ResearchPageTests(unittest.TestCase):
         self.assertEqual([packet["period"] for packet in selected],
                          ["FY2026", "H2 FY2026", "Q4 FY2026", "H1 FY2026"])
         with patch("app.load_shows_catalog", return_value={"episodes": []}), patch("app.load_packets", return_value=rows), patch("app._cached_show_stock_detail", return_value={}):
-            response = self.client.get("/shows/bzun")
+            response = self.client.get("/shows/BZUN")
         body = response.get_data(as_text=True)
         self.assertEqual(response.status_code, 200)
         self.assertIn('id="period-fy2026" open', body)
@@ -160,7 +207,7 @@ class ResearchPageTests(unittest.TestCase):
     def test_research_section_beside_episodes_and_archive_link_are_present(self):
         rows = [packet(), packet("Q1 2026", 2026, 1, primary="OldVideo001"), packet("Q4 2025", 2025, 4, primary="OldVideo002")]
         with patch("app.load_shows_catalog", return_value={"episodes": []}), patch("app.load_packets", return_value=rows), patch("app._cached_show_stock_detail", return_value={}):
-            response = self.client.get("/shows/bzun")
+            response = self.client.get("/shows/BZUN")
         self.assertEqual(response.status_code, 200)
         body = response.get_data(as_text=True)
         self.assertIn('id="quarterly-research"', body)

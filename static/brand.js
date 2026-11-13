@@ -53,8 +53,8 @@
     window.lucide?.createIcons();
   }
 
-  function openAlertSignup(ticker) {
-    location.assign(`/alerts?ticker=${encodeURIComponent(ticker)}&source=stock_follow`);
+  function openAlertSignup(ticker, source) {
+    location.assign(`/alerts?ticker=${encodeURIComponent(ticker)}&source=${source === 'research_reader' ? source : 'stock_follow'}`);
   }
 
   window.CAFollowing = {read, update, toast};
@@ -68,7 +68,7 @@
     const active = saved.includes(ticker);
     const opensSignup = button.dataset.followEmailSignup === 'true';
     if (!active && saved.length >= 300) {
-      if (opensSignup) openAlertSignup(ticker);
+      if (opensSignup) openAlertSignup(ticker, button.dataset.followSource);
       else toast('Your Following list has 300 stocks. Remove one before adding another.');
       return;
     }
@@ -76,18 +76,36 @@
     try {
       localStorage.setItem(key, JSON.stringify(active ? saved.filter(value => value !== ticker) : [...saved, ticker]));
     } catch {
-      if (!active && opensSignup) openAlertSignup(ticker);
+      if (!active && opensSignup) openAlertSignup(ticker, button.dataset.followSource);
       else toast('This browser could not save your list. Check its storage settings.');
       return;
     }
 
     update();
     window.dispatchEvent(new Event('ca-follow-change'));
+    if (!active && read().includes(ticker) && typeof window.gtag === 'function') {
+      window.gtag('event', 'stock_follow', {event_category: 'engagement', page_location: location.origin + location.pathname});
+    }
     if (!active && opensSignup) {
-      openAlertSignup(ticker);
+      openAlertSignup(ticker, button.dataset.followSource);
       return;
     }
     toast(active ? `${ticker} removed from Following.` : `${ticker} saved to Following on this browser.`);
+  });
+
+  document.addEventListener('click', event => {
+    const link = event.target.closest('a[href]');
+    if (!link || typeof window.gtag !== 'function') return;
+    let host;
+    try { host = new URL(link.href, location.href).hostname.toLowerCase(); } catch { return; }
+    const matches = domain => host === domain || host.endsWith(`.${domain}`);
+    let platform = '';
+    if (matches('youtube.com') || matches('youtu.be')) platform = 'youtube';
+    else if (matches('spotify.com')) platform = 'spotify';
+    else if (matches('podcasts.apple.com')) platform = 'apple_podcasts';
+    else if (matches('podbean.com')) platform = 'podbean';
+    else if (matches('music.amazon.com')) platform = 'amazon_music';
+    if (platform) window.gtag('event', 'media_outbound_click', {platform, page_location: location.origin + location.pathname});
   });
 
   function refreshFollowing() {
