@@ -10,6 +10,24 @@
   },
   "episodes": [
     {
+      "ticker": "ENVX",
+      "company": "Enovix Corporation",
+      "sector": "Industrials",
+      "quarter": "Q3 2026",
+      "episode_number": "",
+      "title": "Enovix (ENVX): Who Pays for the Growth? — Q3 2026 Earnings",
+      "published_at": "2026-11-14T14:34:36-08:00",
+      "status": "youtube_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=0B4u26ISKbg",
+      "spotify_url": "",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/enovix-envx-who-pays-for-the-growth-%e2%80%94-q3-2026-earnings/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
       "ticker": "RVMD",
       "company": "Revolution Medicines, Inc.",
       "sector": "Healthcare",
@@ -50050,7 +50068,7 @@
       ]
     }
   ],
-  "last_synced_at": "2026-11-11T21:35:25-05:00",
+  "last_synced_at": "2026-11-14T16:44:38-06:00",
   "stock_metadata": {
     "A": {
       "company": "Agilent Technologies, Inc.",
@@ -51522,6 +51540,10 @@
     "ENTG": {
       "company": "Entegris, Inc.",
       "sector": "Technology"
+    },
+    "ENVX": {
+      "company": "Enovix Corporation",
+      "sector": "Industrials"
     },
     "EOG": {
       "company": "EOG Resources",
