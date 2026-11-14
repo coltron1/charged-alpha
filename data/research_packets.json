@@ -4075,6 +4075,60 @@
       "tables": 38
     },
     {
+      "key": "ENVX:Q3-2026",
+      "year": 2026,
+      "quarter": 3,
+      "fiscal": false,
+      "slug": "envx-q3-2026",
+      "ticker": "ENVX",
+      "company": "Enovix",
+      "period": "Q3 2026",
+      "canonical_url": "https://chargedalpha.com/research/envx-q3-2026",
+      "title": "ENVX: Growth has a price",
+      "page_title": "ENVX · Q3 2026 | Charged Alpha",
+      "description": "Enovix Q3 2026 research examines revenue growth, financing needs, dilution and scenario-based valuation.",
+      "sha256": "c25dbe549b4157c5117c14d8c12b36da1d1a127e3f66444865d4393a11cc7358",
+      "html_file": "research_packets/envx-q3-2026.html",
+      "source_episode": "ENVX-Q3-2026",
+      "source_staged_at": "2026-11-14T22:04:36.546540+00:00",
+      "source_sha256": {
+        "READY": "f3b815c463ead0effcb5c564fbf63e21fa20b79ea0fcab9de8e625ddd2f44b6c",
+        "handoff.json": "8f728c666c0abece69c937cb7a071f31723c0dfcc3ee64492a21319a1a7fdb30",
+        "packet/envx-q3-2026-research-packet.html": "c25dbe549b4157c5117c14d8c12b36da1d1a127e3f66444865d4393a11cc7358",
+        "packet/packet_meta.json": "5461e3d6f136028c5fb783c697050b7efdbb8f263c6f199b43a327286a4e980e",
+        "packet/packet.json": "73f26331f688ce208327cf5d4b0a5d3bf25100c0abd2fbc0db0e9fcccc4007c1"
+      },
+      "primary_youtube_long": null,
+      "primary_youtube_short": null,
+      "youtube_studio": null,
+      "youtube_studio_short": null,
+      "what_changed": {
+        "summary": "Enovix Q3 2026 research examines revenue growth, financing needs, dilution and scenario-based valuation.",
+        "items": [
+          {
+            "title": "Revenue guidance.",
+            "detail": "Management guides FY2027 revenue of $65–85 million."
+          },
+          {
+            "title": "Third-quarter results.",
+            "detail": "Revenue was $11.039 million and GAAP gross margin was 30.1%."
+          },
+          {
+            "title": "Funding needs.",
+            "detail": "The base scenario models approximately $589 million of new gross equity at an assumed $1 per share; availability is not assured."
+          },
+          {
+            "title": "Market expectations.",
+            "detail": "The $1.60 reference price implies substantially more non-phone revenue than the base scenario under linked cost and funding rules."
+          },
+          {
+            "title": "Financing risk.",
+            "detail": "Future equity issuance and debt obligations affect the value attributable to common shares."
+          }
+        ]
+      }
+    },
+    {
       "key": "EOSE:Q3-2026",
       "year": 2026,
       "quarter": 3,
