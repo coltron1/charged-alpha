@@ -10,6 +10,24 @@
   },
   "episodes": [
     {
+      "ticker": "AMAT",
+      "company": "Applied Materials",
+      "sector": "Technology",
+      "quarter": "Q4 FY2026",
+      "episode_number": "",
+      "title": "AMAT Earnings: Record Revenue. Is the Stock Still a Buy? | Q4 FY2026",
+      "published_at": "2026-11-15T15:37:49+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=dmzoGtrQWlk",
+      "spotify_url": "",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/amat-earnings-record-revenue-is-the-stock-still-a-buy-q4-fy2026/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
       "ticker": "CBRS",
       "company": "Cerebras Systems Inc.",
       "sector": "Technology",
@@ -50119,7 +50137,7 @@
       ]
     }
   ],
-  "last_synced_at": "2026-11-15T09:34:23-06:00",
+  "last_synced_at": "2026-11-15T09:41:34-06:00",
   "stock_metadata": {
     "A": {
       "company": "Agilent Technologies, Inc.",

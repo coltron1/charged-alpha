@@ -1,11 +1,21 @@
 {
   "schema": "charged-alpha-public-production/1",
-  "updated_at": "2026-11-15T09:34:33.981484-06:00",
+  "updated_at": "2026-11-15T09:41:50.417486-06:00",
   "calendar_updated_at": "2026-11-12T17:03:53.753880-06:00",
   "calendar_status": "stale",
   "daily_target": 10,
   "active": [],
   "history": [
+    {
+      "ticker": "AMAT",
+      "company": "Applied Materials",
+      "period": "Q4 FY2026",
+      "completed_at": "2026-11-15T09:41:42.180066-06:00",
+      "video_url": "https://youtu.be/dmzoGtrQWlk",
+      "short_url": null,
+      "packet_url": "https://chargedalpha.com/research/amat-q4-fy2026",
+      "stock_url": "/shows/amat"
+    },
     {
       "ticker": "CBRS",
       "company": "Cerebras Systems Inc.",
