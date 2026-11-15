@@ -4880,6 +4880,61 @@
       "tables": 31
     },
     {
+      "key": "HIMS:Q3-2026",
+      "year": 2026,
+      "quarter": 3,
+      "fiscal": false,
+      "slug": "hims-q3-2026",
+      "ticker": "HIMS",
+      "company": "Hims & Hers Health",
+      "period": "Q3 2026",
+      "canonical_url": "https://chargedalpha.com/research/hims-q3-2026",
+      "title": "HIMS: Bigger Sales, Thinner Margins—What Do Shareholders Keep?",
+      "page_title": "HIMS Q3 2026 Research Packet | Charged Alpha",
+      "description": "Hims Q3 2026 subscriber economics, branded-drug mix, acquisition funding and a supported fair-value model.",
+      "sha256": "8a90de104fb9dc9df1fe3cdd076399744f43ae92ff3644a65106221d9f6dda3e",
+      "html_file": "research_packets/hims-q3-2026.html",
+      "source_episode": "HIMS-Q3-2026",
+      "source_staged_at": "2026-11-15T15:17:49.040435+00:00",
+      "source_sha256": {
+        "READY": "9cc09bb20f538e882488f0bca8c73615cc145b211ea47148e8fe3d3fb0e228af",
+        "handoff.json": "7eef1fbdf6ace3cb2813753df1ed24d5cc7f5150b1ea3d80f075befcc8d56859",
+        "packet/hims-q3-2026-research-packet.html": "8a90de104fb9dc9df1fe3cdd076399744f43ae92ff3644a65106221d9f6dda3e",
+        "packet/packet_meta.json": "934330a7c65a97a3751085f7045ef6e00f59914ec9fe5fb1ea2a7e72cb6e5e08",
+        "packet/packet.json": "a679d9149c7196b25d888681f1340f04c5d14a4483b91177975e46eac6d72257"
+      },
+      "primary_youtube_long": null,
+      "primary_youtube_short": null,
+      "youtube_studio": null,
+      "youtube_studio_short": null,
+      "what_changed": {
+        "summary": "Hims Q3 2026 subscriber economics, branded-drug mix, acquisition funding and a supported fair-value model.",
+        "items": [
+          {
+            "title": "Revenue growth outpaced gross-profit growth.",
+            "detail": "Revenue rose to $890.4 million, up 49%, while gross profit rose about 15% to $509.2 million. Gross margin fell to 57% from 74%."
+          },
+          {
+            "title": "Branded mix changes the economics per dollar sold.",
+            "detail": "Branded products can increase reported sales while leaving less gross profit to cover marketing, service and technology. Our base assumes gradual margin recovery."
+          },
+          {
+            "title": "Subscriber metrics are not disclosed cohort retention.",
+            "detail": "Ending subscribers rose 13% to 2.788 million. The aggregate count gives no separate retention, acquisition cost or contribution data for individual customer cohorts."
+          },
+          {
+            "title": "Acquisition claims and share awards matter to common value.",
+            "detail": "September 30 acquisition claims totaled $733.9 million. The valuation schedules assumed settlements and includes share awards in the ownership bridge."
+          },
+          {
+            "title": "A feasible upside case still requires cash and financing evidence.",
+            "detail": "Free cash flow was $26.0 million, down from $79.4 million. The base explicitly models assumed equity financing and includes the associated shares in per-share value."
+          }
+        ]
+      },
+      "source_published": "November 15, 2026"
+    },
+    {
       "key": "HITI:Q3-FY2026",
       "year": 2026,
       "quarter": 3,
