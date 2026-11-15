@@ -1855,6 +1855,61 @@
       "tables": 27
     },
     {
+      "key": "AMAT:Q4-FY2026",
+      "year": 2026,
+      "quarter": 4,
+      "fiscal": true,
+      "slug": "amat-q4-fy2026",
+      "ticker": "AMAT",
+      "company": "Applied Materials",
+      "period": "Q4 FY2026",
+      "canonical_url": "https://chargedalpha.com/research/amat-q4-fy2026",
+      "title": "AMAT: Record Revenue—How Much Is Already Priced In?",
+      "page_title": "AMAT Q4 FY2026 Research Packet | Charged Alpha",
+      "description": "Applied Materials Q4 FY2026: AI equipment demand, services, cycle risk and a cash-supported fair-value model.",
+      "sha256": "a87b063230811743e150d53d9b00bf085be60914d7abeaa6d8011f08abfcff89",
+      "html_file": "research_packets/amat-q4-fy2026.html",
+      "source_episode": "AMAT-Q4-FY2026",
+      "source_staged_at": "2026-11-15T15:26:42.396481+00:00",
+      "source_sha256": {
+        "READY": "24eea4af2c03c3ce1a72cd6b6b95f71d4222e8c4d64f220731806614e41a2129",
+        "handoff.json": "3606db29f00d50352b865b2c8422fa8dd81dc0bd5a61a80140f0ccdf3795c1ff",
+        "packet/amat-q4-fy2026-research-packet.html": "a87b063230811743e150d53d9b00bf085be60914d7abeaa6d8011f08abfcff89",
+        "packet/packet_meta.json": "822775ca1c42132831083f5b636c31d2e946a52a6dc9b800c5d7386dd01d0d5f",
+        "packet/packet.json": "49c70743c362147ae01f87133377ebcad8011e1b503fec65885faa1175fc8b25"
+      },
+      "primary_youtube_long": null,
+      "primary_youtube_short": null,
+      "youtube_studio": null,
+      "youtube_studio_short": null,
+      "what_changed": {
+        "summary": "Applied Materials Q4 FY2026: AI equipment demand, services, cycle risk and a cash-supported fair-value model.",
+        "items": [
+          {
+            "title": "Demand is translating into profit.",
+            "detail": "Quarterly revenue rose 53% to $10.409 billion, while GAAP operating income more than doubled to $3.658 billion."
+          },
+          {
+            "title": "Services adds a second engine.",
+            "detail": "Applied Global Services generated $1.896 billion of quarterly revenue and $578 million of operating income."
+          },
+          {
+            "title": "Growth still consumes cash.",
+            "detail": "Fiscal 2026 capital expenditure was $2.672 billion and working-capital movements used $1.936 billion."
+          },
+          {
+            "title": "The model includes a cycle.",
+            "detail": "Base Systems revenue falls 5% in fiscal 2029 before recovering; the main present-value estimate is $409.59."
+          },
+          {
+            "title": "The return cushion is modest.",
+            "detail": "Base fiscal 2029 annualized return is 12.84%, only moderately above the stated 12% hurdle."
+          }
+        ]
+      },
+      "source_published": "November 15, 2026"
+    },
+    {
       "key": "AZO:Q4-FY2026",
       "year": 2026,
       "quarter": 4,

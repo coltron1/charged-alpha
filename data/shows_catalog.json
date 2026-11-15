@@ -10,6 +10,42 @@
   },
   "episodes": [
     {
+      "ticker": "CBRS",
+      "company": "Cerebras Systems Inc.",
+      "sector": "Technology",
+      "quarter": "Q3 2026",
+      "episode_number": "",
+      "title": "CBRS Earnings: $26 Billion Backlog. Who Keeps the Cash? | Q3 2026",
+      "published_at": "2026-11-15T15:32:22+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=7iFSP8spe-4",
+      "spotify_url": "",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/cbrs-earnings-26-billion-backlog-who-keeps-the-cash-q3-2026/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "HIMS",
+      "company": "Hims & Hers Health, Inc.",
+      "sector": "Healthcare",
+      "quarter": "Q3 2026",
+      "episode_number": "",
+      "title": "HIMS Earnings: 49% Growth. Where Did the Profit Go? | Q3 2026",
+      "published_at": "2026-11-15T15:24:03+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=pXYIu2MjT7w",
+      "spotify_url": "",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/hims-earnings-49-growth-where-did-the-profit-go-q3-2026/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
       "title": "TTWO Earnings: GTA 6 Can Win. Can the Stock? | Q2 FY2027",
       "youtube_url": "https://www.youtube.com/watch?v=FULm5WhHfXc",
       "spotify_url": "https://open.spotify.com/episode/1UuvGe0hIjzRky9OOkhx0U",
@@ -50083,7 +50119,7 @@
       ]
     }
   ],
-  "last_synced_at": "2026-11-15T09:12:48-06:00",
+  "last_synced_at": "2026-11-15T09:34:23-06:00",
   "stock_metadata": {
     "A": {
       "company": "Agilent Technologies, Inc.",
