@@ -3486,6 +3486,61 @@
       "tables": 19
     },
     {
+      "key": "CBRS:Q3-2026",
+      "year": 2026,
+      "quarter": 3,
+      "fiscal": false,
+      "slug": "cbrs-q3-2026",
+      "ticker": "CBRS",
+      "company": "Cerebras Systems",
+      "period": "Q3 2026",
+      "canonical_url": "https://chargedalpha.com/research/cbrs-q3-2026",
+      "title": "CBRS Earnings: $26 Billion Backlog. Who Keeps the Cash?",
+      "page_title": "CBRS Q3 2026 Research Packet | Charged Alpha",
+      "description": "Cerebras Q3 research connects inference growth, contracted capacity, infrastructure funding and dilution to cash per share.",
+      "sha256": "837df6cd7941078b194755b6c881dc498c907d1ee1b33174e0789162bb4f1498",
+      "html_file": "research_packets/cbrs-q3-2026.html",
+      "source_episode": "CBRS-Q3-2026",
+      "source_staged_at": "2026-11-15T15:12:06.130248+00:00",
+      "source_sha256": {
+        "READY": "cd1e7724aec95debc388ae2e69574ea2b09278603ca370b893af6621ce7fb6c4",
+        "handoff.json": "7ac6063a902799a12081a064d3cd68fee52ed3c94682008573645d45e30cd77a",
+        "packet/cbrs-q3-2026-research-packet.html": "837df6cd7941078b194755b6c881dc498c907d1ee1b33174e0789162bb4f1498",
+        "packet/packet_meta.json": "f2d821d4a5968988fedda1943702e2d97c8bb5d8c7d4c5f5cfc968a26a5e6186",
+        "packet/packet.json": "acb601eb433fbcf48f282eb3aebf29845684135af9e72670b0aece4eea015b74"
+      },
+      "primary_youtube_long": null,
+      "primary_youtube_short": null,
+      "youtube_studio": null,
+      "youtube_studio_short": null,
+      "what_changed": {
+        "summary": "Cerebras Q3 research connects inference growth, contracted capacity, infrastructure funding and dilution to cash per share.",
+        "items": [
+          {
+            "title": "Cloud is driving the growth, while system sales softened.",
+            "detail": "GAAP cloud/services revenue was $141.928m versus $38.920m a year earlier. Hardware revenue fell to $68.881m from $96.794m. These delivery models have different capital requirements."
+          },
+          {
+            "title": "Core and GAAP tell different accounting stories.",
+            "detail": "Q3 GAAP revenue was $210.809m. Subtracting $16.360m of pass-through revenue and adding back $36.424m customer-warrant amortization produces $230.873m Core revenue. Core activity is informative; the warrants remain a real ownership cost."
+          },
+          {
+            "title": "Interest income helps net profit before operations break even.",
+            "detail": "Core operating loss was $33.108m, while Core net income was $29.823m. Reported interest and dividend income was $81.578m. Cash investment income does not establish profitable inference operations."
+          },
+          {
+            "title": "The balance sheet can finance growth, but the commitments are large.",
+            "detail": "Unrestricted cash and investments were $7.361bn, with a separate $444.042m restricted balance. The company had $8.5bn of undiscounted minimum payments on uncommenced leases and disclosed another $217.8m after quarter-end. These are multiyear contractual obligations, not a one-quarter payment."
+          },
+          {
+            "title": "Ownership and service-credit financing are central to valuation.",
+            "detail": "Current common shares totaled 243.003m as of November 5. Remaining customer warrants and employee claims matter. The OpenAI loan balance was $829.082m after $175.489m of noncash service settlements; future credits can reduce fresh cash receipts even when revenue is recognized."
+          }
+        ]
+      },
+      "source_published": "November15,2026"
+    },
+    {
       "key": "CCI:Q3-2026",
       "year": 2026,
       "quarter": 3,
