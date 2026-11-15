@@ -350,6 +350,61 @@
       "tables": 28
     },
     {
+      "key": "TTWO:Q2-FY2027",
+      "year": 2027,
+      "quarter": 2,
+      "fiscal": true,
+      "slug": "ttwo-q2-fy2027",
+      "ticker": "TTWO",
+      "company": "Take-Two Interactive",
+      "period": "Q2 FY2027",
+      "canonical_url": "https://chargedalpha.com/research/ttwo-q2-fy2027",
+      "title": "TTWO earnings: GTA 6 can win. Can the stock?",
+      "page_title": "TTWO Q2 FY2027 Research Packet | Charged Alpha",
+      "description": "Take-Two Q2 FY2027 research connects GTA VI, net bookings, development costs and recurring cash flow to a scenario valuation.",
+      "sha256": "4b0f976654fccf46ca9d3854de85ffa62bb436b06553eef0844f02870c703a21",
+      "html_file": "research_packets/ttwo-q2-fy2027.html",
+      "source_episode": "TTWO-Q2-FY2027",
+      "source_staged_at": "2026-11-15T14:48:43.437182+00:00",
+      "source_sha256": {
+        "READY": "7e1660f58bd125af5ccc2a7e92c99598d17aca1b66e2bc15acdc76f9d7c2fbc3",
+        "handoff.json": "bb82f40a9939802d4a7df3a9835acbc6f23c6dbf06dcb98747098289dd701bab",
+        "packet/ttwo-q2-fy2027-research-packet.html": "4b0f976654fccf46ca9d3854de85ffa62bb436b06553eef0844f02870c703a21",
+        "packet/packet_meta.json": "380a2477fdb2110f6f35ed0a3d11b53fa30c13c59deb0663ba9b3e2ce394138a",
+        "packet/packet.json": "af675c19602cbb7318792dfe8997d6d7f28f72def4e6cdf06232d63597c89375"
+      },
+      "primary_youtube_long": null,
+      "primary_youtube_short": null,
+      "youtube_studio": null,
+      "youtube_studio_short": null,
+      "what_changed": {
+        "summary": "Take-Two Q2 FY2027 research connects GTA VI, net bookings, development costs and recurring cash flow to a scenario valuation.",
+        "items": [
+          {
+            "title": "The existing business softened before the launch.",
+            "detail": "Q2 revenue was $1,497.0m, down 15.6%; bookings were $1,601.3m, down 18.3%. Recurrent bookings fell from $1,428.3m to $1,302.1m, down 8.8%. This is a portfolio with a major catalyst, not a uniformly accelerating quarter."
+          },
+          {
+            "title": "A smaller net loss did not establish stronger operations.",
+            "detail": "The GAAP net loss narrowed to $54.0m, but operating loss widened to $117.5m from $98.0m. A $57.9m tax benefit helped the bottom line. Gross profit of $860.4m still failed to cover $977.9m operating expenses."
+          },
+          {
+            "title": "The second-half cash bridge is demanding.",
+            "detail": "H1 operating cash was negative $173.5m and capital spending $163.3m, giving negative $336.8m free cash flow. Full-year operating-cash guidance above $1bn requires H2 operating cash above $1,173.5m. Full-year capex guidance is approximately $290m. Guidance is a lower bound, not a point forecast."
+          },
+          {
+            "title": "Development and licenses are real investment costs.",
+            "detail": "The balance sheet carries $2,577.3m of software development costs and licenses, including $82.4m current and $2,494.9m noncurrent. H1 cash use for these assets was $372.4m, already included in operating cash. Adding it to reported free-cash outflow again would double-count it."
+          },
+          {
+            "title": "The cash flow valuation and the transaction benchmark disagree materially.",
+            "detail": "Our base DCF gives $148.88. Translating EA’s announced control-transaction EV/bookings ratio gives approximately $288.15. This difference is exposed, not averaged away: the transaction embeds control economics and EA demonstrated stronger cash conversion, while TTWO’s guide includes a future release."
+          }
+        ]
+      },
+      "source_published": "November 15, 2026"
+    },
+    {
       "key": "WIT:Q2-FY2027",
       "year": 2027,
       "quarter": 2,
