@@ -35,6 +35,13 @@ class StockTitleParsingTests(unittest.TestCase):
             ("ISRG", "Q2 2026"),
         )
 
+    def test_parses_earnings_title_with_fiscal_quarter(self):
+        self.assertEqual(
+            parse_stock_title("TTWO Earnings: GTA 6 Can Win. Can the Stock? | Q2 FY2027"),
+            ("TTWO", "Q2 FY2027"),
+        )
+        self.assertIsNone(parse_stock_title("AI Earnings: The Week Ahead"))
+
     def test_parses_company_first_title_with_parenthetical_ticker(self):
         self.assertEqual(
             parse_stock_title(

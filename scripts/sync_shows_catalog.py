@@ -37,6 +37,7 @@ DEFAULT_SPOTIFY_SHOW = "https://open.spotify.com/show/72TRXJNznbvrpM72hdVN3b"
 DEFAULT_APPLE_LOOKUP = "https://itunes.apple.com/lookup?id=1891551459&entity=podcastEpisode&limit=200&country=us"
 
 TICKER_STOCK_TITLE_RE = re.compile(r"^([A-Z][A-Z0-9.\-]{0,12}) Stock\b.*?:\s+(.+)$")
+TICKER_EARNINGS_TITLE_RE = re.compile(r"^([A-Z][A-Z0-9.\-]{0,12}) Earnings:\s+")
 COMPANY_TICKER_STOCK_TITLE_RE = re.compile(
     r"^.+? \(([A-Z][A-Z0-9.\-]{0,12})\)(?:\s+(?:(?:Q[1-4]|H[12])\s+(?:FY)?\d{4}|FY\s?\d{4}))?:\s+(.+)$"
 )
@@ -259,6 +260,10 @@ def parse_stock_title(title: str, fallback_text: str = "") -> tuple[str, str] | 
 
     period_match = PERIOD_RE.search(clean_title)
     period = normalize_period(period_match.group(1)) if period_match else ""
+    if not ticker and period:
+        earnings_match = TICKER_EARNINGS_TITLE_RE.match(clean_title)
+        if earnings_match:
+            ticker = earnings_match.group(1)
 
     metadata_match = PODCAST_IDENTITY_RE.search(fallback_text)
     if metadata_match:
