@@ -172,7 +172,6 @@ def project_snapshot(snapshot, catalog):
             label = exact.astimezone(CHICAGO).strftime('%-I:%M %p %Z')
         upcoming.append({'ticker': ticker, 'company': text(item.get('company') or ticker),
                          'report_date': report_date, 'report_time_label': label,
-                         'planned_date': text(item.get('planned_date'), 10),
                          'date_status': 'Issuer-announced' if str(item.get('date_status', '')).startswith('Issuer') else 'Calendar estimate',
                          'source_url': None if item.get('source_url') == 'https://financialmodelingprep.com/stable/earnings-calendar' else public_url(item.get('source_url')),
                          'stock_url': '/shows/' + ticker.lower() if ticker in known else None})
@@ -219,8 +218,7 @@ def load_board(path=None, now=None):
     for row in data.get('upcoming', []):
         if row.get('report_date', '') < today.isoformat():
             continue
-        upcoming.append({**row, 'report_date_label': date_label(row['report_date']),
-                         'planned_date_label': date_label(row.get('planned_date'))})
+        upcoming.append({**row, 'report_date_label': date_label(row['report_date'])})
     fetched = timestamp(data.get('calendar_updated_at'))
     stale = data.get('calendar_status') != 'fresh' or not fetched or (now - fetched).total_seconds() > 4 * 3600
     days = []
