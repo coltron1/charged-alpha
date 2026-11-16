@@ -1739,6 +1739,61 @@
       "tables": 30
     },
     {
+      "key": "ACM:Q4-FY2026",
+      "year": 2026,
+      "quarter": 4,
+      "fiscal": true,
+      "slug": "acm-q4-fy2026",
+      "ticker": "ACM",
+      "company": "AECOM",
+      "period": "Q4 FY2026",
+      "canonical_url": "https://chargedalpha.com/research/acm-q4-fy2026",
+      "title": "AECOM earnings: Record backlog, a $500m cash bill",
+      "page_title": "ACM Q4 FY2026 Research Packet | Charged Alpha",
+      "description": "AECOM design backlog, net service revenue, project cash runoff and shareholder valuation.",
+      "sha256": "76f421eddd6f4739fb7b9e8fec8ffc6ad7d6a79c431e6dc4e11156a801c667f8",
+      "html_file": "research_packets/acm-q4-fy2026.html",
+      "source_episode": "ACM-Q4-FY2026",
+      "source_staged_at": "2026-11-16T22:39:18.653058+00:00",
+      "source_sha256": {
+        "READY": "dc95519ea030c7a2be9b6a084b2fc06e43fdd624e0810ad49fcf952ff56dd731",
+        "handoff.json": "1de5f89b321bb459bfac015af01a9e343659a30ca197e2716e92609a23b67009",
+        "packet/acm-q4-fy2026-research-packet.html": "76f421eddd6f4739fb7b9e8fec8ffc6ad7d6a79c431e6dc4e11156a801c667f8",
+        "packet/packet_meta.json": "5f164a24b3f142d121e5b74bfdb4a14646932304066f1356c828425c6c579ace",
+        "packet/packet.json": "bd56da9d7ac6f8b6009a997832cc1f980864aea638576b0c3b7a4acdf6ef982a"
+      },
+      "primary_youtube_long": null,
+      "primary_youtube_short": null,
+      "youtube_studio": null,
+      "youtube_studio_short": null,
+      "what_changed": {
+        "summary": "AECOM design backlog, net service revenue, project cash runoff and shareholder valuation.",
+        "items": [
+          {
+            "title": "Gross sales obscure the service trend.",
+            "detail": "Q4 revenue fell, while working-day-adjusted NSR grew 3%; the reported NSR comparison was negative."
+          },
+          {
+            "title": "Record backlog is not cash in hand.",
+            "detail": "About $14bn is awarded rather than contracted, and backlog definitions differ from NSR."
+          },
+          {
+            "title": "The old project charge still has a future cash bill.",
+            "detail": "Management expects approximately $500m of FY2027 cash use on two projects."
+          },
+          {
+            "title": "Adjusted earnings and owner cash differ.",
+            "detail": "Compensation, rentals, recurring spending and investment remain economic costs in the valuation."
+          },
+          {
+            "title": "The price offers only a modest cushion.",
+            "detail": "Base present value is $84.35 against the dated $76.91 quote; a 20% entry cushion points near $67.48."
+          }
+        ]
+      },
+      "source_published": "November 16, 2026"
+    },
+    {
       "key": "ACN:Q4-FY2026",
       "year": 2026,
       "quarter": 4,
