@@ -1,11 +1,21 @@
 {
   "schema": "charged-alpha-public-production/1",
-  "updated_at": "2026-11-16T13:22:17.874078-06:00",
+  "updated_at": "2026-11-16T15:04:16.300025-06:00",
   "calendar_updated_at": "2026-11-16T13:05:53.570317-06:00",
   "calendar_status": "fresh",
   "daily_target": 3,
   "active": [],
   "history": [
+    {
+      "ticker": "POET",
+      "company": "POET Technologies",
+      "period": "Q3 2026",
+      "completed_at": "2026-11-16T15:03:43.789861-06:00",
+      "video_url": "https://youtu.be/d29yFS_G230",
+      "short_url": null,
+      "packet_url": "https://chargedalpha.com/research/poet-q3-2026",
+      "stock_url": "/shows/poet"
+    },
     {
       "ticker": "TSN",
       "company": "Tyson Foods",
@@ -1616,15 +1626,6 @@
       "date_status": "Calendar estimate",
       "source_url": null,
       "stock_url": "/shows/acm"
-    },
-    {
-      "ticker": "POET",
-      "company": "POET Technologies Inc.",
-      "report_date": "2026-11-16",
-      "report_time_label": "Time unconfirmed",
-      "date_status": "Calendar estimate",
-      "source_url": null,
-      "stock_url": "/shows/poet"
     },
     {
       "ticker": "POWL",

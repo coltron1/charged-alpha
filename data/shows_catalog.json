@@ -10,6 +10,24 @@
   },
   "episodes": [
     {
+      "ticker": "POET",
+      "company": "POET Technologies",
+      "sector": "Technology",
+      "quarter": "Q3 2026",
+      "episode_number": "",
+      "title": "POET Earnings: Cash Is Ready. Are the Shipments? | Q3 2026",
+      "published_at": "2026-11-16T20:59:16+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=d29yFS_G230",
+      "spotify_url": "",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/poet-earnings-cash-is-ready-are-the-shipments-q3-2026/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
       "ticker": "TSN",
       "company": "Tyson Foods",
       "sector": "Consumer",
@@ -19,7 +37,7 @@
       "published_at": "2026-11-16T19:11:40+00:00",
       "status": "youtube_podcast_complete",
       "youtube_url": "https://www.youtube.com/watch?v=uAjhRSSfDbA",
-      "spotify_url": "",
+      "spotify_url": "https://open.spotify.com/episode/5u69fpCXmr2BMTfXp5ndii",
       "apple_url": "",
       "google_url": "",
       "iheart_url": "",
@@ -37,7 +55,7 @@
       "published_at": "2026-11-16T19:10:30+00:00",
       "status": "youtube_podcast_complete",
       "youtube_url": "https://www.youtube.com/watch?v=XwQzR5Pm0zk",
-      "spotify_url": "",
+      "spotify_url": "https://open.spotify.com/episode/7rlGAdXmF15l5py5KT6x30",
       "apple_url": "",
       "google_url": "",
       "iheart_url": "",
@@ -50173,7 +50191,7 @@
       ]
     }
   ],
-  "last_synced_at": "2026-11-16T13:12:56-06:00",
+  "last_synced_at": "2026-11-16T15:04:47-06:00",
   "stock_metadata": {
     "A": {
       "company": "Agilent Technologies, Inc.",
