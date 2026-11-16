@@ -2722,6 +2722,61 @@
       "tables": 30
     },
     {
+      "key": "TSN:Q4-FY2026",
+      "year": 2026,
+      "quarter": 4,
+      "fiscal": true,
+      "slug": "tsn-q4-fy2026",
+      "ticker": "TSN",
+      "company": "Tyson Foods",
+      "period": "Q4 FY2026",
+      "canonical_url": "https://chargedalpha.com/research/tsn-q4-fy2026",
+      "title": "Tyson: Can Beef Recovery Justify the Price?",
+      "page_title": "TSN Q4 FY2026 Research Packet — Charged Alpha",
+      "description": "Tyson Q4 FY2026: beef recovery, chicken pressure, investment, cash claims and a cycle-aware valuation.",
+      "sha256": "ecf851838825fc0393414690dbe28235698a6b98d7ae7dab41e8fa290ab0755e",
+      "html_file": "research_packets/tsn-q4-fy2026.html",
+      "source_episode": "TSN-Q4-FY2026",
+      "source_staged_at": "2026-11-16T18:38:01.154920+00:00",
+      "source_sha256": {
+        "READY": "b4a87cc73068b23ee81a3d27e8cebce05da15a948902e2e97d0e6fe01721a612",
+        "handoff.json": "6e2adc29b3e1b4fc22da817f0152662c5c69af292f6007b4253676aaaa454972",
+        "packet/tsn-q4-fy2026-research-packet.html": "ecf851838825fc0393414690dbe28235698a6b98d7ae7dab41e8fa290ab0755e",
+        "packet/packet_meta.json": "a84e7d7d1706e20142b5f158f4431f4f31462a4179a700632850b00b43959247",
+        "packet/packet.json": "93020faf33afca4dba4b1ed2c7182657b999e27dcb0bbcb0e675e283f9f04348"
+      },
+      "primary_youtube_long": null,
+      "primary_youtube_short": null,
+      "youtube_studio": null,
+      "youtube_studio_short": null,
+      "what_changed": {
+        "summary": "Tyson Q4 FY2026: beef recovery, chicken pressure, investment, cash claims and a cycle-aware valuation.",
+        "items": [
+          {
+            "title": "The calendar changes the headline.",
+            "detail": "Reported quarterly sales rose 5.2%, but comparable sales declined 4.0% after removing the extra week and legal accruals."
+          },
+          {
+            "title": "Beef recovery has offsets.",
+            "detail": "Management expects a smaller beef loss or modest profit, while chicken and pork income decline."
+          },
+          {
+            "title": "Cash investment is rising.",
+            "detail": "Fiscal 2027 capex guidance of $1.1–1.4 billion exceeds fiscal 2026 spending of $770 million."
+          },
+          {
+            "title": "Claims matter to equity.",
+            "detail": "Face debt of $7.828 billion and existing legal, benefit and tax obligations are deducted once from operating value."
+          },
+          {
+            "title": "The base return is inadequate.",
+            "detail": "Modeled annualized return through September 2029 is 2.85%, versus a 10% requirement."
+          }
+        ]
+      },
+      "source_published": "November 16, 2026"
+    },
+    {
       "key": "UNFI:Q4-FY2026",
       "year": 2026,
       "quarter": 4,
@@ -3423,6 +3478,61 @@
       "words": 6029,
       "figures": 18,
       "tables": 16
+    },
+    {
+      "key": "BIDU:Q3-2026",
+      "year": 2026,
+      "quarter": 3,
+      "fiscal": false,
+      "slug": "bidu-q3-2026",
+      "ticker": "BIDU",
+      "company": "Baidu",
+      "period": "Q3 2026",
+      "canonical_url": "https://chargedalpha.com/research/bidu-q3-2026",
+      "title": "Baidu earnings: AI cloud surges. Where is the cash?",
+      "page_title": "BIDU Q3 2026 Research Packet | Charged Alpha",
+      "description": "Baidu Q3 2026 cloud growth, shrinking ads, cash conversion, common-equity claims and valuation.",
+      "sha256": "699f84cb50dcc342fef04b9f0936244a14b7cdcbc0999187c218eab5804a3889",
+      "html_file": "research_packets/bidu-q3-2026.html",
+      "source_episode": "BIDU-Q3-2026",
+      "source_staged_at": "2026-11-16T18:36:33.486139+00:00",
+      "source_sha256": {
+        "READY": "8b4048c08f3cc749a0989764514569babe72dabf5f081600ee297e3198be68db",
+        "handoff.json": "5e190f3dde47d9bf3c1f1bb0addbf2a1ff2e90260305b914c713f945bed0647c",
+        "packet/bidu-q3-2026-research-packet.html": "699f84cb50dcc342fef04b9f0936244a14b7cdcbc0999187c218eab5804a3889",
+        "packet/packet_meta.json": "aba766fc9600e5f09e0fa9e6090033bcff505b51dc9b193dd2270078c34a34f2",
+        "packet/packet.json": "429765d255b28ed12ab4da17738d7f26e40fcbc3b3fb498a24b119d82a49b530"
+      },
+      "primary_youtube_long": null,
+      "primary_youtube_short": null,
+      "youtube_studio": null,
+      "youtube_studio_short": null,
+      "what_changed": {
+        "summary": "Baidu Q3 2026 cloud growth, shrinking ads, cash conversion, common-equity claims and valuation.",
+        "items": [
+          {
+            "title": "The growth engine is real, but concentrated.",
+            "detail": "AI Cloud Infra revenue reached RMB 8.2bn, up 94%; applications were approximately flat and AI-native marketing fell 15%. Growth of one AI category does not establish success across all products."
+          },
+          {
+            "title": "The group has not yet returned to broad expansion.",
+            "detail": "Consolidated revenue fell 1.2% to RMB 30.807bn. General Business rose 1.3%, while iQIYI revenue fell 10% on rounded figures."
+          },
+          {
+            "title": "Operating cash materially overstates current owner cash.",
+            "detail": "Q3 operating cash of RMB 2.778bn less RMB 7.349bn capex produces a RMB 4.571bn free-cash outflow. A positive operating-cash headline does not remove reinvestment needs."
+          },
+          {
+            "title": "Liquidity must be reconciled to common ownership.",
+            "detail": "We subtract debt, minority claims, an operating cash floor and estimated interim burn before allocating balance-sheet assets to ADS holders. Strategic investments remain a carrying-value assumption."
+          },
+          {
+            "title": "Price leaves room for weaker cloud economics, conditionally.",
+            "detail": "With our other assumptions fixed, the quote implies a roughly 5.8% cloud operating margin in 2036, versus 18% in our base. Changing asset realizability or cash access changes that interpretation."
+          }
+        ]
+      },
+      "source_published": "November 16, 2026"
     },
     {
       "key": "BSX:Q3-2026",
