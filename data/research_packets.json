@@ -6663,6 +6663,61 @@
       "tables": 34
     },
     {
+      "key": "POET:Q3-2026",
+      "year": 2026,
+      "quarter": 3,
+      "fiscal": false,
+      "slug": "poet-q3-2026",
+      "ticker": "POET",
+      "company": "POET Technologies",
+      "period": "Q3 2026",
+      "canonical_url": "https://chargedalpha.com/research/poet-q3-2026",
+      "title": "POET earnings: Cash is ready. Are the shipments?",
+      "page_title": "POET Q3 2026 Research Packet | Charged Alpha",
+      "description": "POET Q3 earnings, production delays, cash, warrants and a company-specific commercialization valuation.",
+      "sha256": "d324efed8e08f5f8f9ccc95b626df76751370cc467e6446669b3d26f070cc179",
+      "html_file": "research_packets/poet-q3-2026.html",
+      "source_episode": "POET-Q3-2026",
+      "source_staged_at": "2026-11-16T20:41:54.001273+00:00",
+      "source_sha256": {
+        "READY": "752abd5ec9f5943fad3730a4ff65897776c9aae5fa893ae69f3eafadbe96ccf7",
+        "handoff.json": "c2579728e699454a11c655faeb68734632236d6a8f7d897b3e0bc76c35be7872",
+        "packet/poet-q3-2026-research-packet.html": "d324efed8e08f5f8f9ccc95b626df76751370cc467e6446669b3d26f070cc179",
+        "packet/packet_meta.json": "951900bee77726b0355c86cb5d74b97d25a80fa7439e3b107882bbb1706cfdc0",
+        "packet/packet.json": "aaf9c5a19d917ad685203ddb0ddbf2bb79e28f291b547354e1aa8e6a2564df04"
+      },
+      "primary_youtube_long": null,
+      "primary_youtube_short": null,
+      "youtube_studio": null,
+      "youtube_studio_short": null,
+      "what_changed": {
+        "summary": "POET Q3 earnings, production delays, cash, warrants and a company-specific commercialization valuation.",
+        "items": [
+          {
+            "title": "Revenue is improving from a very small base.",
+            "detail": "The $1.026m quarter grew 80% sequentially, but product mix and realized unit economics remain insufficiently disclosed."
+          },
+          {
+            "title": "The shipment deadline moved.",
+            "detail": "The current backlog, including the former 30,000-engine 2026 target, is now expected by Q2 2027."
+          },
+          {
+            "title": "Cash reduces funding risk, not commercial risk.",
+            "detail": "September liquid assets total $774.373m; the model separately charges spending, operating liquidity and debt."
+          },
+          {
+            "title": "Ownership claims matter.",
+            "detail": "Nearly 79m warrants include conditional customer grants; current claims and future compensation receive distinct treatment."
+          },
+          {
+            "title": "The price already requires a large business.",
+            "detail": "With other base assumptions fixed, $4.72 implies 8.85m annual engine equivalents in 2036."
+          }
+        ]
+      },
+      "source_published": "November 16, 2026"
+    },
+    {
       "key": "RDDT:Q3-2026",
       "year": 2026,
       "quarter": 3,
