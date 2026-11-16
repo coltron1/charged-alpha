@@ -1,11 +1,21 @@
 {
   "schema": "charged-alpha-public-production/1",
-  "updated_at": "2026-11-16T15:04:16.300025-06:00",
-  "calendar_updated_at": "2026-11-16T13:05:53.570317-06:00",
+  "updated_at": "2026-11-16T17:10:52.499590-06:00",
+  "calendar_updated_at": "2026-11-16T17:09:55.890951-06:00",
   "calendar_status": "fresh",
   "daily_target": 3,
   "active": [],
   "history": [
+    {
+      "ticker": "ACM",
+      "company": "AECOM",
+      "period": "Q4 FY2026",
+      "completed_at": "2026-11-16T17:10:19.712958-06:00",
+      "video_url": "https://youtu.be/o1H2KOJwCgQ",
+      "short_url": null,
+      "packet_url": "https://chargedalpha.com/research/acm-q4-fy2026",
+      "stock_url": "/shows/acm"
+    },
     {
       "ticker": "POET",
       "company": "POET Technologies",
@@ -1619,15 +1629,6 @@
   ],
   "upcoming": [
     {
-      "ticker": "ACM",
-      "company": "Aecom",
-      "report_date": "2026-11-16",
-      "report_time_label": "Time unconfirmed",
-      "date_status": "Calendar estimate",
-      "source_url": null,
-      "stock_url": "/shows/acm"
-    },
-    {
       "ticker": "POWL",
       "company": "Powell Industries, Inc.",
       "report_date": "2026-11-16",
@@ -1914,6 +1915,15 @@
       "date_status": "Calendar estimate",
       "source_url": null,
       "stock_url": "/shows/htht"
+    },
+    {
+      "ticker": "SKE",
+      "company": "Skeena Resources Limited",
+      "report_date": "2026-11-16",
+      "report_time_label": "Time unconfirmed",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": null
     },
     {
       "ticker": "AIV",
@@ -2742,15 +2752,6 @@
       "date_status": "Calendar estimate",
       "source_url": null,
       "stock_url": "/shows/keys"
-    },
-    {
-      "ticker": "VIPS",
-      "company": "Vipshop Holdings Limited",
-      "report_date": "2026-11-19",
-      "report_time_label": "Time unconfirmed",
-      "date_status": "Calendar estimate",
-      "source_url": null,
-      "stock_url": "/shows/vips"
     },
     {
       "ticker": "WSM",
