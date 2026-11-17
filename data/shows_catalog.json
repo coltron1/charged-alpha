@@ -38,7 +38,7 @@
       "status": "youtube_podcast_complete",
       "youtube_url": "https://www.youtube.com/watch?v=cqT3tZUt2o4",
       "spotify_url": "https://open.spotify.com/episode/0SKS6MM4YVgSVsQ6z3JxqV",
-      "apple_url": "",
+      "apple_url": "https://podcasts.apple.com/us/podcast/red-cat-rcat-growth-without-cash-q3-2026/id1891551459?i=1000802391460&uo=4",
       "google_url": "",
       "iheart_url": "",
       "podbean_url": "https://chargedalpha.podbean.com/e/red-cat-rcat-growth-without-cash-q3-2026/",
@@ -56,7 +56,7 @@
       "status": "youtube_podcast_complete",
       "youtube_url": "https://www.youtube.com/watch?v=ioff48bQawA",
       "spotify_url": "https://open.spotify.com/episode/1xd1xYB9NistCphzUCaFXw",
-      "apple_url": "",
+      "apple_url": "https://podcasts.apple.com/us/podcast/powl-earnings-record-backlog-is-the-stock-too/id1891551459?i=1000802376763&uo=4",
       "google_url": "",
       "iheart_url": "",
       "podbean_url": "https://chargedalpha.podbean.com/e/powl-earnings-record-backlog-is-the-stock-too-expensive-q4-fy2026/",
@@ -74,7 +74,7 @@
       "status": "youtube_podcast_complete",
       "youtube_url": "https://www.youtube.com/watch?v=o1H2KOJwCgQ",
       "spotify_url": "https://open.spotify.com/episode/5LsXegSBHVvXEhDQPiAlzL",
-      "apple_url": "",
+      "apple_url": "https://podcasts.apple.com/us/podcast/acm-earnings-record-backlog-a-%24500m-cash-bill-q4-fy2026/id1891551459?i=1000802363288&uo=4",
       "google_url": "",
       "iheart_url": "",
       "podbean_url": "https://chargedalpha.podbean.com/e/acm-earnings-record-backlog-a-500m-cash-bill-q4-fy2026/",
@@ -50263,7 +50263,7 @@
       ]
     }
   ],
-  "last_synced_at": "2026-11-16T21:40:57-06:00",
+  "last_synced_at": "2026-11-17T17:00:51-06:00",
   "stock_metadata": {
     "A": {
       "company": "Agilent Technologies, Inc.",
@@ -51530,7 +51530,7 @@
     },
     "DIS": {
       "company": "Walt Disney Co.",
-      "sector": "Technology"
+      "sector": "Communication Services"
     },
     "DKNG": {
       "company": "DraftKings Inc.",

@@ -1,7 +1,7 @@
 {
   "schema": "charged-alpha-public-production/1",
-  "updated_at": "2026-11-16T21:47:47.297953-06:00",
-  "calendar_updated_at": "2026-11-16T20:05:27.415739-06:00",
+  "updated_at": "2026-11-17T17:02:05.746486-06:00",
+  "calendar_updated_at": "2026-11-17T17:00:16.422987-06:00",
   "calendar_status": "fresh",
   "daily_target": 3,
   "active": [],
@@ -1659,474 +1659,6 @@
   ],
   "upcoming": [
     {
-      "ticker": "IMPP",
-      "company": "Imperial Petroleum Inc.",
-      "report_date": "2026-11-16",
-      "report_time_label": "Time unconfirmed",
-      "date_status": "Calendar estimate",
-      "source_url": null,
-      "stock_url": "/shows/impp"
-    },
-    {
-      "ticker": "AIRJ",
-      "company": "AirJoule Technologies Corporation",
-      "report_date": "2026-11-16",
-      "report_time_label": "Time unconfirmed",
-      "date_status": "Calendar estimate",
-      "source_url": null,
-      "stock_url": null
-    },
-    {
-      "ticker": "BLDP",
-      "company": "Ballard Power Systems Inc.",
-      "report_date": "2026-11-16",
-      "report_time_label": "Time unconfirmed",
-      "date_status": "Calendar estimate",
-      "source_url": null,
-      "stock_url": null
-    },
-    {
-      "ticker": "POWW",
-      "company": "Outdoor Holding Company",
-      "report_date": "2026-11-16",
-      "report_time_label": "Time unconfirmed",
-      "date_status": "Calendar estimate",
-      "source_url": null,
-      "stock_url": null
-    },
-    {
-      "ticker": "PNRG",
-      "company": "PrimeEnergy Resources Corporation",
-      "report_date": "2026-11-16",
-      "report_time_label": "Time unconfirmed",
-      "date_status": "Calendar estimate",
-      "source_url": null,
-      "stock_url": null
-    },
-    {
-      "ticker": "PAGS",
-      "company": "PagSeguro Digital Ltd.",
-      "report_date": "2026-11-16",
-      "report_time_label": "Time unconfirmed",
-      "date_status": "Calendar estimate",
-      "source_url": null,
-      "stock_url": "/shows/pags"
-    },
-    {
-      "ticker": "EFTY",
-      "company": "Etoiles Capital Group Co., Ltd",
-      "report_date": "2026-11-16",
-      "report_time_label": "Time unconfirmed",
-      "date_status": "Calendar estimate",
-      "source_url": null,
-      "stock_url": null
-    },
-    {
-      "ticker": "SSII",
-      "company": "SS Innovations International, Inc.",
-      "report_date": "2026-11-16",
-      "report_time_label": "Time unconfirmed",
-      "date_status": "Calendar estimate",
-      "source_url": null,
-      "stock_url": null
-    },
-    {
-      "ticker": "OMER",
-      "company": "Omeros Corporation",
-      "report_date": "2026-11-16",
-      "report_time_label": "Time unconfirmed",
-      "date_status": "Calendar estimate",
-      "source_url": null,
-      "stock_url": null
-    },
-    {
-      "ticker": "APMD",
-      "company": "Apnimed, Inc.",
-      "report_date": "2026-11-16",
-      "report_time_label": "Time unconfirmed",
-      "date_status": "Calendar estimate",
-      "source_url": null,
-      "stock_url": null
-    },
-    {
-      "ticker": "ENTA",
-      "company": "Enanta Pharmaceuticals, Inc.",
-      "report_date": "2026-11-16",
-      "report_time_label": "Time unconfirmed",
-      "date_status": "Calendar estimate",
-      "source_url": null,
-      "stock_url": null
-    },
-    {
-      "ticker": "GALT",
-      "company": "Galectin Therapeutics Inc.",
-      "report_date": "2026-11-16",
-      "report_time_label": "Time unconfirmed",
-      "date_status": "Calendar estimate",
-      "source_url": null,
-      "stock_url": null
-    },
-    {
-      "ticker": "GLSI",
-      "company": "Greenwich LifeSciences, Inc.",
-      "report_date": "2026-11-16",
-      "report_time_label": "Time unconfirmed",
-      "date_status": "Calendar estimate",
-      "source_url": null,
-      "stock_url": null
-    },
-    {
-      "ticker": "HELP",
-      "company": "Helus Pharma Inc.",
-      "report_date": "2026-11-16",
-      "report_time_label": "Time unconfirmed",
-      "date_status": "Calendar estimate",
-      "source_url": null,
-      "stock_url": null
-    },
-    {
-      "ticker": "IVVD",
-      "company": "Invivyd, Inc.",
-      "report_date": "2026-11-16",
-      "report_time_label": "Time unconfirmed",
-      "date_status": "Calendar estimate",
-      "source_url": null,
-      "stock_url": null
-    },
-    {
-      "ticker": "LRMR",
-      "company": "Larimar Therapeutics, Inc.",
-      "report_date": "2026-11-16",
-      "report_time_label": "Time unconfirmed",
-      "date_status": "Calendar estimate",
-      "source_url": null,
-      "stock_url": null
-    },
-    {
-      "ticker": "LXEO",
-      "company": "Lexeo Therapeutics, Inc. Common Stock",
-      "report_date": "2026-11-16",
-      "report_time_label": "Time unconfirmed",
-      "date_status": "Calendar estimate",
-      "source_url": null,
-      "stock_url": null
-    },
-    {
-      "ticker": "MPLT",
-      "company": "MapLight Therapeutics, Inc.",
-      "report_date": "2026-11-16",
-      "report_time_label": "Time unconfirmed",
-      "date_status": "Calendar estimate",
-      "source_url": null,
-      "stock_url": null
-    },
-    {
-      "ticker": "NGEN",
-      "company": "NervGen Pharma Corp. Common stock",
-      "report_date": "2026-11-16",
-      "report_time_label": "Time unconfirmed",
-      "date_status": "Calendar estimate",
-      "source_url": null,
-      "stock_url": null
-    },
-    {
-      "ticker": "ORIC",
-      "company": "ORIC Pharmaceuticals, Inc.",
-      "report_date": "2026-11-16",
-      "report_time_label": "Time unconfirmed",
-      "date_status": "Calendar estimate",
-      "source_url": null,
-      "stock_url": null
-    },
-    {
-      "ticker": "PRLD",
-      "company": "Prelude Therapeutics Incorporated",
-      "report_date": "2026-11-16",
-      "report_time_label": "Time unconfirmed",
-      "date_status": "Calendar estimate",
-      "source_url": null,
-      "stock_url": null
-    },
-    {
-      "ticker": "SHAZ",
-      "company": "SharonAI Holdings, Inc. Class A Common Stock",
-      "report_date": "2026-11-16",
-      "report_time_label": "Time unconfirmed",
-      "date_status": "Calendar estimate",
-      "source_url": null,
-      "stock_url": null
-    },
-    {
-      "ticker": "ARMK",
-      "company": "Aramark",
-      "report_date": "2026-11-16",
-      "report_time_label": "Time unconfirmed",
-      "date_status": "Calendar estimate",
-      "source_url": null,
-      "stock_url": "/shows/armk"
-    },
-    {
-      "ticker": "GRRR",
-      "company": "Gorilla Technology Group Inc.",
-      "report_date": "2026-11-16",
-      "report_time_label": "Time unconfirmed",
-      "date_status": "Calendar estimate",
-      "source_url": null,
-      "stock_url": "/shows/grrr"
-    },
-    {
-      "ticker": "STDN",
-      "company": "Standard Nuclear Inc.",
-      "report_date": "2026-11-16",
-      "report_time_label": "Time unconfirmed",
-      "date_status": "Calendar estimate",
-      "source_url": null,
-      "stock_url": "/shows/stdn"
-    },
-    {
-      "ticker": "API",
-      "company": "Agora, Inc.",
-      "report_date": "2026-11-16",
-      "report_time_label": "Time unconfirmed",
-      "date_status": "Calendar estimate",
-      "source_url": null,
-      "stock_url": null
-    },
-    {
-      "ticker": "DUOT",
-      "company": "Duos Technologies Group, Inc.",
-      "report_date": "2026-11-16",
-      "report_time_label": "Time unconfirmed",
-      "date_status": "Calendar estimate",
-      "source_url": null,
-      "stock_url": null
-    },
-    {
-      "ticker": "YALA",
-      "company": "Yalla Group Limited",
-      "report_date": "2026-11-16",
-      "report_time_label": "Time unconfirmed",
-      "date_status": "Calendar estimate",
-      "source_url": null,
-      "stock_url": "/shows/yala"
-    },
-    {
-      "ticker": "ASPI",
-      "company": "ASP Isotopes Inc. Common Stock",
-      "report_date": "2026-11-16",
-      "report_time_label": "Time unconfirmed",
-      "date_status": "Calendar estimate",
-      "source_url": null,
-      "stock_url": null
-    },
-    {
-      "ticker": "HTHT",
-      "company": "H World Group Limited",
-      "report_date": "2026-11-16",
-      "report_time_label": "Time unconfirmed",
-      "date_status": "Calendar estimate",
-      "source_url": null,
-      "stock_url": "/shows/htht"
-    },
-    {
-      "ticker": "SKE",
-      "company": "Skeena Resources Limited",
-      "report_date": "2026-11-16",
-      "report_time_label": "Time unconfirmed",
-      "date_status": "Calendar estimate",
-      "source_url": null,
-      "stock_url": null
-    },
-    {
-      "ticker": "PICS",
-      "company": "PicS N.V.",
-      "report_date": "2026-11-16",
-      "report_time_label": "Time unconfirmed",
-      "date_status": "Calendar estimate",
-      "source_url": null,
-      "stock_url": "/shows/pics"
-    },
-    {
-      "ticker": "AIV",
-      "company": "Apartment Investment and Management Company",
-      "report_date": "2026-11-16",
-      "report_time_label": "Time unconfirmed",
-      "date_status": "Calendar estimate",
-      "source_url": null,
-      "stock_url": null
-    },
-    {
-      "ticker": "CDZI",
-      "company": "Cadiz Inc.",
-      "report_date": "2026-11-16",
-      "report_time_label": "Time unconfirmed",
-      "date_status": "Calendar estimate",
-      "source_url": null,
-      "stock_url": null
-    },
-    {
-      "ticker": "EMAT",
-      "company": "Evolution Metals & Technologies Corp. Common Stock",
-      "report_date": "2026-11-16",
-      "report_time_label": "Time unconfirmed",
-      "date_status": "Calendar estimate",
-      "source_url": null,
-      "stock_url": null
-    },
-    {
-      "ticker": "FIRY",
-      "company": "Firy Inc.",
-      "report_date": "2026-11-16",
-      "report_time_label": "Time unconfirmed",
-      "date_status": "Calendar estimate",
-      "source_url": null,
-      "stock_url": null
-    },
-    {
-      "ticker": "GDEV",
-      "company": "GDEV Inc.",
-      "report_date": "2026-11-16",
-      "report_time_label": "Time unconfirmed",
-      "date_status": "Calendar estimate",
-      "source_url": null,
-      "stock_url": null
-    },
-    {
-      "ticker": "GFUZ",
-      "company": "General Fusion Group Ltd.",
-      "report_date": "2026-11-16",
-      "report_time_label": "Time unconfirmed",
-      "date_status": "Calendar estimate",
-      "source_url": null,
-      "stock_url": null
-    },
-    {
-      "ticker": "IDR",
-      "company": "Idaho Strategic Resources, Inc.",
-      "report_date": "2026-11-16",
-      "report_time_label": "Time unconfirmed",
-      "date_status": "Calendar estimate",
-      "source_url": null,
-      "stock_url": null
-    },
-    {
-      "ticker": "MLP",
-      "company": "Maui Land & Pineapple Company, Inc.",
-      "report_date": "2026-11-16",
-      "report_time_label": "Time unconfirmed",
-      "date_status": "Calendar estimate",
-      "source_url": null,
-      "stock_url": null
-    },
-    {
-      "ticker": "MNTK",
-      "company": "Montauk Renewables, Inc.",
-      "report_date": "2026-11-16",
-      "report_time_label": "Time unconfirmed",
-      "date_status": "Calendar estimate",
-      "source_url": null,
-      "stock_url": null
-    },
-    {
-      "ticker": "NAK",
-      "company": "Northern Dynasty Minerals Ltd.",
-      "report_date": "2026-11-16",
-      "report_time_label": "Time unconfirmed",
-      "date_status": "Calendar estimate",
-      "source_url": null,
-      "stock_url": null
-    },
-    {
-      "ticker": "NKLR",
-      "company": "Terra Innovatum Global N.V. Ordinary shares",
-      "report_date": "2026-11-16",
-      "report_time_label": "Time unconfirmed",
-      "date_status": "Calendar estimate",
-      "source_url": null,
-      "stock_url": null
-    },
-    {
-      "ticker": "NXDT",
-      "company": "NexPoint Diversified Real Estate Trust",
-      "report_date": "2026-11-16",
-      "report_time_label": "Time unconfirmed",
-      "date_status": "Calendar estimate",
-      "source_url": null,
-      "stock_url": null
-    },
-    {
-      "ticker": "PERI",
-      "company": "Perion Network Ltd.",
-      "report_date": "2026-11-16",
-      "report_time_label": "Time unconfirmed",
-      "date_status": "Calendar estimate",
-      "source_url": null,
-      "stock_url": null
-    },
-    {
-      "ticker": "QVCG",
-      "company": "QVC Group, Inc.",
-      "report_date": "2026-11-16",
-      "report_time_label": "Time unconfirmed",
-      "date_status": "Calendar estimate",
-      "source_url": null,
-      "stock_url": null
-    },
-    {
-      "ticker": "SCZM",
-      "company": "Santacruz Silver Mining Ltd.",
-      "report_date": "2026-11-16",
-      "report_time_label": "Time unconfirmed",
-      "date_status": "Calendar estimate",
-      "source_url": null,
-      "stock_url": null
-    },
-    {
-      "ticker": "TOYO",
-      "company": "TOYO Co., Ltd.",
-      "report_date": "2026-11-16",
-      "report_time_label": "Time unconfirmed",
-      "date_status": "Calendar estimate",
-      "source_url": null,
-      "stock_url": null
-    },
-    {
-      "ticker": "BEKE",
-      "company": "KE Holdings Inc.",
-      "report_date": "2026-11-16",
-      "report_time_label": "Time unconfirmed",
-      "date_status": "Calendar estimate",
-      "source_url": null,
-      "stock_url": "/shows/beke"
-    },
-    {
-      "ticker": "BRC",
-      "company": "Brady Corporation",
-      "report_date": "2026-11-16",
-      "report_time_label": "Time unconfirmed",
-      "date_status": "Calendar estimate",
-      "source_url": null,
-      "stock_url": "/shows/brc"
-    },
-    {
-      "ticker": "ELA",
-      "company": "Envela Corporation",
-      "report_date": "2026-11-16",
-      "report_time_label": "Time unconfirmed",
-      "date_status": "Calendar estimate",
-      "source_url": null,
-      "stock_url": null
-    },
-    {
-      "ticker": "DRVN",
-      "company": "Driven Brands Holdings Inc.",
-      "report_date": "2026-11-16",
-      "report_time_label": "Time unconfirmed",
-      "date_status": "Calendar estimate",
-      "source_url": null,
-      "stock_url": "/shows/drvn"
-    },
-    {
       "ticker": "NVDA",
       "company": "NVIDIA Corporation",
       "report_date": "2026-11-17",
@@ -2161,6 +1693,15 @@
       "date_status": "Calendar estimate",
       "source_url": null,
       "stock_url": null
+    },
+    {
+      "ticker": "IMPP",
+      "company": "Imperial Petroleum Inc.",
+      "report_date": "2026-11-17",
+      "report_time_label": "Time unconfirmed",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": "/shows/impp"
     },
     {
       "ticker": "DIS",
@@ -2298,6 +1839,24 @@
       "stock_url": null
     },
     {
+      "ticker": "GDEV",
+      "company": "GDEV Inc.",
+      "report_date": "2026-11-17",
+      "report_time_label": "Time unconfirmed",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": null
+    },
+    {
+      "ticker": "NAK",
+      "company": "Northern Dynasty Minerals Ltd.",
+      "report_date": "2026-11-17",
+      "report_time_label": "Time unconfirmed",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": null
+    },
+    {
       "ticker": "ONEW",
       "company": "OneWater Marine Inc.",
       "report_date": "2026-11-17",
@@ -2314,6 +1873,15 @@
       "date_status": "Calendar estimate",
       "source_url": null,
       "stock_url": "/shows/lzb"
+    },
+    {
+      "ticker": "DRVN",
+      "company": "Driven Brands Holdings Inc.",
+      "report_date": "2026-11-17",
+      "report_time_label": "Time unconfirmed",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": "/shows/drvn"
     },
     {
       "ticker": "GLNG",
@@ -2613,15 +2181,6 @@
       "stock_url": "/shows/wmg"
     },
     {
-      "ticker": "BABA",
-      "company": "Alibaba Group Holding Limited",
-      "report_date": "2026-11-19",
-      "report_time_label": "Time unconfirmed",
-      "date_status": "Calendar estimate",
-      "source_url": null,
-      "stock_url": "/shows/baba"
-    },
-    {
       "ticker": "NTES",
       "company": "NetEase, Inc.",
       "report_date": "2026-11-19",
@@ -2629,6 +2188,15 @@
       "date_status": "Calendar estimate",
       "source_url": null,
       "stock_url": "/shows/ntes"
+    },
+    {
+      "ticker": "BABA",
+      "company": "Alibaba Group Holding Limited",
+      "report_date": "2026-11-19",
+      "report_time_label": "Time unconfirmed",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": "/shows/baba"
     },
     {
       "ticker": "YMM",
@@ -2640,15 +2208,6 @@
       "stock_url": "/shows/ymm"
     },
     {
-      "ticker": "GLOB",
-      "company": "Globant S.A.",
-      "report_date": "2026-11-19",
-      "report_time_label": "Time unconfirmed",
-      "date_status": "Calendar estimate",
-      "source_url": null,
-      "stock_url": null
-    },
-    {
       "ticker": "FORTY",
       "company": "Formula Systems (1985) Ltd.",
       "report_date": "2026-11-19",
@@ -2656,6 +2215,15 @@
       "date_status": "Calendar estimate",
       "source_url": null,
       "stock_url": "/shows/forty"
+    },
+    {
+      "ticker": "GLOB",
+      "company": "Globant S.A.",
+      "report_date": "2026-11-19",
+      "report_time_label": "Time unconfirmed",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": null
     },
     {
       "ticker": "MANU",
@@ -2678,6 +2246,24 @@
     {
       "ticker": "BULL",
       "company": "Webull Corporation Class A Ordinary Shares",
+      "report_date": "2026-11-19",
+      "report_time_label": "Time unconfirmed",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": null
+    },
+    {
+      "ticker": "GRRR",
+      "company": "Gorilla Technology Group Inc.",
+      "report_date": "2026-11-19",
+      "report_time_label": "Time unconfirmed",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": "/shows/grrr"
+    },
+    {
+      "ticker": "CURR",
+      "company": "Currenc Group, Inc.",
       "report_date": "2026-11-19",
       "report_time_label": "Time unconfirmed",
       "date_status": "Calendar estimate",
@@ -2802,6 +2388,15 @@
       "stock_url": "/shows/bbwi"
     },
     {
+      "ticker": "IESC",
+      "company": "IES Holdings, Inc.",
+      "report_date": "2026-11-20",
+      "report_time_label": "Time unconfirmed",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": "/shows/iesc"
+    },
+    {
       "ticker": "BSP",
       "company": "Bending Spoons S.p.A.",
       "report_date": "2026-11-20",
@@ -2827,6 +2422,141 @@
       "date_status": "Calendar estimate",
       "source_url": null,
       "stock_url": null
+    },
+    {
+      "ticker": "AMTM",
+      "company": "Amentum Holdings, Inc.",
+      "report_date": "2026-11-23",
+      "report_time_label": "Time unconfirmed",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": "/shows/amtm"
+    },
+    {
+      "ticker": "HPE",
+      "company": "Hewlett Packard Enterprise Company",
+      "report_date": "2026-11-23",
+      "report_time_label": "Time unconfirmed",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": "/shows/hpe"
+    },
+    {
+      "ticker": "SYM",
+      "company": "Symbotic Inc.",
+      "report_date": "2026-11-23",
+      "report_time_label": "Time unconfirmed",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": "/shows/sym"
+    },
+    {
+      "ticker": "CDLR",
+      "company": "Cadeler A/S",
+      "report_date": "2026-11-23",
+      "report_time_label": "Time unconfirmed",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": "/shows/cdlr"
+    },
+    {
+      "ticker": "ESOA",
+      "company": "Energy Services of America Corporation",
+      "report_date": "2026-11-23",
+      "report_time_label": "Time unconfirmed",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": null
+    },
+    {
+      "ticker": "FLNC",
+      "company": "Fluence Energy, Inc.",
+      "report_date": "2026-11-23",
+      "report_time_label": "Time unconfirmed",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": null
+    },
+    {
+      "ticker": "SMTC",
+      "company": "Semtech Corporation",
+      "report_date": "2026-11-23",
+      "report_time_label": "Time unconfirmed",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": "/shows/smtc"
+    },
+    {
+      "ticker": "EPSN",
+      "company": "Epsilon Energy Ltd.",
+      "report_date": "2026-11-23",
+      "report_time_label": "Time unconfirmed",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": null
+    },
+    {
+      "ticker": "VNET",
+      "company": "VNET Group, Inc.",
+      "report_date": "2026-11-23",
+      "report_time_label": "Time unconfirmed",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": null
+    },
+    {
+      "ticker": "TUYA",
+      "company": "Tuya Inc.",
+      "report_date": "2026-11-23",
+      "report_time_label": "Time unconfirmed",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": "/shows/tuya"
+    },
+    {
+      "ticker": "CENT",
+      "company": "Central Garden & Pet Company",
+      "report_date": "2026-11-23",
+      "report_time_label": "Time unconfirmed",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": null
+    },
+    {
+      "ticker": "DAC",
+      "company": "Danaos Corporation",
+      "report_date": "2026-11-23",
+      "report_time_label": "Time unconfirmed",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": null
+    },
+    {
+      "ticker": "ALCO",
+      "company": "Alico, Inc.",
+      "report_date": "2026-11-23",
+      "report_time_label": "Time unconfirmed",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": null
+    },
+    {
+      "ticker": "CMP",
+      "company": "Compass Minerals International, Inc.",
+      "report_date": "2026-11-23",
+      "report_time_label": "Time unconfirmed",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": null
+    },
+    {
+      "ticker": "UXIN",
+      "company": "Uxin Limited",
+      "report_date": "2026-11-23",
+      "report_time_label": "Time unconfirmed",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": "/shows/uxin"
     }
   ]
 }
