@@ -5439,6 +5439,61 @@
       "tables": 16
     },
     {
+      "key": "INFQ:Q3-2026",
+      "year": 2026,
+      "quarter": 3,
+      "fiscal": false,
+      "slug": "infq-q3-2026",
+      "ticker": "INFQ",
+      "company": "Infleqtion",
+      "period": "Q3 2026",
+      "canonical_url": "https://chargedalpha.com/research/infq-q3-2026",
+      "title": "Infleqtion earnings: Technical progress at what price?",
+      "page_title": "INFQ Q3 2026 Research Packet | Charged Alpha",
+      "description": "Infleqtion quantum sensing, computing, corrected results, available cash and funding-aware valuation.",
+      "sha256": "586176d37ef67258cb798bb5e5d5421781be3f05208e17fbce8655b3099a5d89",
+      "html_file": "research_packets/infq-q3-2026.html",
+      "source_episode": "INFQ-Q3-2026",
+      "source_staged_at": "2026-11-17T03:21:22.514912+00:00",
+      "source_sha256": {
+        "READY": "387ae1c66e722a402ec39fe0d89db4d53adf01c6e92a827cbea5ef61b0befd31",
+        "handoff.json": "82c5d7a70acb905aad540b9a9d521c971f3d395f2d9f9d796d108bb402e688ad",
+        "packet/infq-q3-2026-research-packet.html": "586176d37ef67258cb798bb5e5d5421781be3f05208e17fbce8655b3099a5d89",
+        "packet/packet_meta.json": "490ae3c0d785e645b18b81bfff19e82d9369f9589e9ca0768ba432a747eecb63",
+        "packet/packet.json": "d5152fd997b2823907041754552a87b40c34d7ae1d95e69088c977feb33551c7"
+      },
+      "primary_youtube_long": null,
+      "primary_youtube_short": null,
+      "youtube_studio": null,
+      "youtube_studio_short": null,
+      "what_changed": {
+        "summary": "Infleqtion quantum sensing, computing, corrected results, available cash and funding-aware valuation.",
+        "items": [
+          {
+            "title": "The milestone is technical, not a profit formula.",
+            "detail": "Thirty logical qubits is progress; commercial usefulness and customer economics still matter."
+          },
+          {
+            "title": "The corrected comparison is essential.",
+            "detail": "Q3 revenue grew year over year but was below the corrected $13.538m second quarter."
+          },
+          {
+            "title": "Not all reported cash is spendable.",
+            "detail": "The 10-Q identifies $28.3m held for tax authorities, excluded once from available funds."
+          },
+          {
+            "title": "Investment and ownership shape the outcome.",
+            "detail": "Existing claims and future financing are explicit, with no free-capital assumption."
+          },
+          {
+            "title": "The stock asks for much greater commercial scale.",
+            "detail": "The base value is $1.84 versus the dated $8.01 quote, with low precision confidence."
+          }
+        ]
+      },
+      "source_published": "November 16, 2026"
+    },
+    {
       "key": "ISRG:Q3-2026",
       "year": 2026,
       "quarter": 3,

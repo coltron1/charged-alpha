@@ -1,11 +1,21 @@
 {
   "schema": "charged-alpha-public-production/1",
-  "updated_at": "2026-11-16T18:57:31.900420-06:00",
-  "calendar_updated_at": "2026-11-16T17:09:55.890951-06:00",
+  "updated_at": "2026-11-16T21:16:07.882905-06:00",
+  "calendar_updated_at": "2026-11-16T20:05:27.415739-06:00",
   "calendar_status": "fresh",
   "daily_target": 3,
   "active": [],
   "history": [
+    {
+      "ticker": "RCAT",
+      "company": "Red Cat Holdings, Inc.",
+      "period": "Q3 2026",
+      "completed_at": "2026-11-16T21:15:38.628690-06:00",
+      "video_url": "https://youtu.be/cqT3tZUt2o4",
+      "short_url": null,
+      "packet_url": "https://chargedalpha.com/research/rcat-q3-2026",
+      "stock_url": "/shows/rcat"
+    },
     {
       "ticker": "POWL",
       "company": "Powell Industries, Inc.",
@@ -1675,15 +1685,6 @@
       "stock_url": null
     },
     {
-      "ticker": "RCAT",
-      "company": "Red Cat Holdings, Inc.",
-      "report_date": "2026-11-16",
-      "report_time_label": "Time unconfirmed",
-      "date_status": "Calendar estimate",
-      "source_url": null,
-      "stock_url": null
-    },
-    {
       "ticker": "PNRG",
       "company": "PrimeEnergy Resources Corporation",
       "report_date": "2026-11-16",
@@ -1700,6 +1701,15 @@
       "date_status": "Calendar estimate",
       "source_url": null,
       "stock_url": "/shows/pags"
+    },
+    {
+      "ticker": "EFTY",
+      "company": "Etoiles Capital Group Co., Ltd",
+      "report_date": "2026-11-16",
+      "report_time_label": "Time unconfirmed",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": null
     },
     {
       "ticker": "SSII",
@@ -1927,6 +1937,15 @@
       "stock_url": null
     },
     {
+      "ticker": "PICS",
+      "company": "PicS N.V.",
+      "report_date": "2026-11-16",
+      "report_time_label": "Time unconfirmed",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": "/shows/pics"
+    },
+    {
       "ticker": "AIV",
       "company": "Apartment Investment and Management Company",
       "report_date": "2026-11-16",
@@ -2046,6 +2065,15 @@
     {
       "ticker": "QVCG",
       "company": "QVC Group, Inc.",
+      "report_date": "2026-11-16",
+      "report_time_label": "Time unconfirmed",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": null
+    },
+    {
+      "ticker": "SCZM",
+      "company": "Santacruz Silver Mining Ltd.",
       "report_date": "2026-11-16",
       "report_time_label": "Time unconfirmed",
       "date_status": "Calendar estimate",
