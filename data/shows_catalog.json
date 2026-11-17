@@ -10,6 +10,24 @@
   },
   "episodes": [
     {
+      "ticker": "INFQ",
+      "company": "Infleqtion, Inc.",
+      "sector": "Technology",
+      "quarter": "Q3 2026",
+      "episode_number": "",
+      "title": "Infleqtion (INFQ): 30 Logical Qubits. What Is It Worth? | Q3 2026",
+      "published_at": "2026-11-17T03:35:03+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=cfBPtdFQdJE",
+      "spotify_url": "https://open.spotify.com/episode/3vTWIDhxlEAyfFQgz88Xrk",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/infleqtion-infq-30-logical-qubits-what-is-it-worth-q3-2026/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
       "ticker": "RCAT",
       "company": "Red Cat Holdings, Inc.",
       "sector": "Industrials",
@@ -19,7 +37,7 @@
       "published_at": "2026-11-17T03:02:48+00:00",
       "status": "youtube_podcast_complete",
       "youtube_url": "https://www.youtube.com/watch?v=cqT3tZUt2o4",
-      "spotify_url": "",
+      "spotify_url": "https://open.spotify.com/episode/0SKS6MM4YVgSVsQ6z3JxqV",
       "apple_url": "",
       "google_url": "",
       "iheart_url": "",
@@ -50245,7 +50263,7 @@
       ]
     }
   ],
-  "last_synced_at": "2026-11-16T21:07:46-06:00",
+  "last_synced_at": "2026-11-16T21:40:57-06:00",
   "stock_metadata": {
     "A": {
       "company": "Agilent Technologies, Inc.",
@@ -52380,6 +52398,10 @@
     },
     "INDI": {
       "company": "indie Semiconductor, Inc.",
+      "sector": "Technology"
+    },
+    "INFQ": {
+      "company": "Infleqtion, Inc.",
       "sector": "Technology"
     },
     "INFY": {
