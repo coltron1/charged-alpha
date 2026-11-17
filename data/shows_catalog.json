@@ -10,6 +10,24 @@
   },
   "episodes": [
     {
+      "ticker": "RCAT",
+      "company": "Red Cat Holdings, Inc.",
+      "sector": "Industrials",
+      "quarter": "Q3 2026",
+      "episode_number": "",
+      "title": "Red Cat (RCAT): Growth Without Cash | Q3 2026",
+      "published_at": "2026-11-17T03:02:48+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=cqT3tZUt2o4",
+      "spotify_url": "",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/red-cat-rcat-growth-without-cash-q3-2026/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
       "ticker": "POWL",
       "company": "Powell Industries, Inc.",
       "sector": "Industrials",
@@ -50227,7 +50245,7 @@
       ]
     }
   ],
-  "last_synced_at": "2026-11-16T20:08:38-06:00",
+  "last_synced_at": "2026-11-16T21:07:46-06:00",
   "stock_metadata": {
     "A": {
       "company": "Agilent Technologies, Inc.",
@@ -53605,6 +53623,10 @@
     "RBRK": {
       "company": "Rubrik, Inc.",
       "sector": "Technology"
+    },
+    "RCAT": {
+      "company": "Red Cat Holdings, Inc.",
+      "sector": "Industrials"
     },
     "RCL": {
       "company": "Royal Caribbean Cruises Ltd.",
