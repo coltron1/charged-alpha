@@ -1,11 +1,21 @@
 {
   "schema": "charged-alpha-public-production/1",
-  "updated_at": "2026-11-16T17:10:52.499590-06:00",
+  "updated_at": "2026-11-16T18:57:31.900420-06:00",
   "calendar_updated_at": "2026-11-16T17:09:55.890951-06:00",
   "calendar_status": "fresh",
   "daily_target": 3,
   "active": [],
   "history": [
+    {
+      "ticker": "POWL",
+      "company": "Powell Industries, Inc.",
+      "period": "Q4 FY2026",
+      "completed_at": "2026-11-16T18:56:45.549549-06:00",
+      "video_url": "https://youtu.be/ioff48bQawA",
+      "short_url": null,
+      "packet_url": "https://chargedalpha.com/research/powl-q4-fy2026",
+      "stock_url": "/shows/powl"
+    },
     {
       "ticker": "ACM",
       "company": "AECOM",
@@ -1628,15 +1638,6 @@
     }
   ],
   "upcoming": [
-    {
-      "ticker": "POWL",
-      "company": "Powell Industries, Inc.",
-      "report_date": "2026-11-16",
-      "report_time_label": "Time unconfirmed",
-      "date_status": "Calendar estimate",
-      "source_url": null,
-      "stock_url": "/shows/powl"
-    },
     {
       "ticker": "IMPP",
       "company": "Imperial Petroleum Inc.",

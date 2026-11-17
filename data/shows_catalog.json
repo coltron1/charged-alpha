@@ -10,6 +10,24 @@
   },
   "episodes": [
     {
+      "ticker": "POWL",
+      "company": "Powell Industries, Inc.",
+      "sector": "Industrials",
+      "quarter": "Q4 FY2026",
+      "episode_number": "",
+      "title": "POWL Earnings: Record Backlog. Is the Stock Too Expensive? | Q4 FY2026",
+      "published_at": "2026-11-17T00:53:30+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=ioff48bQawA",
+      "spotify_url": "",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/powl-earnings-record-backlog-is-the-stock-too-expensive-q4-fy2026/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
       "ticker": "ACM",
       "company": "AECOM",
       "sector": "Industrials",
@@ -19,7 +37,7 @@
       "published_at": "2026-11-16T23:06:33+00:00",
       "status": "youtube_podcast_complete",
       "youtube_url": "https://www.youtube.com/watch?v=o1H2KOJwCgQ",
-      "spotify_url": "",
+      "spotify_url": "https://open.spotify.com/episode/5LsXegSBHVvXEhDQPiAlzL",
       "apple_url": "",
       "google_url": "",
       "iheart_url": "",
@@ -50209,7 +50227,7 @@
       ]
     }
   ],
-  "last_synced_at": "2026-11-16T17:10:54-06:00",
+  "last_synced_at": "2026-11-16T18:58:07-06:00",
   "stock_metadata": {
     "A": {
       "company": "Agilent Technologies, Inc.",
