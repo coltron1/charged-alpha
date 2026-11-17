@@ -2,6 +2,61 @@
   "schema_version": 1,
   "packets": [
     {
+      "key": "NVDA:Q3-FY2027",
+      "year": 2027,
+      "quarter": 3,
+      "fiscal": true,
+      "slug": "nvda-q3-fy2027",
+      "ticker": "NVDA",
+      "company": "NVIDIA",
+      "period": "Q3 FY2027",
+      "canonical_url": "https://chargedalpha.com/research/nvda-q3-fy2027",
+      "title": "NVIDIA earnings: Revenue doubled. Who carries the risk?",
+      "page_title": "NVDA Q3 FY2027 Research Packet | Charged Alpha",
+      "description": "NVIDIA platform economics, customer financing, commitments and cash-flow valuation.",
+      "sha256": "6c7cfbfe0c5f01f936fdd30d6210019b9731ed672322d8a926e5c2f6a8e21cbc",
+      "html_file": "research_packets/nvda-q3-fy2027.html",
+      "source_episode": "NVDA-Q3-FY2027",
+      "source_staged_at": "2026-11-17T23:27:23.930277+00:00",
+      "source_sha256": {
+        "READY": "17bdd1afa199aa278cb8ce58953440c89da7c85d145cdffdda4f5f4f630045c3",
+        "handoff.json": "f5202ea629794ae38022782eebe534c2c30955cffdbb90c6bfc89f232518a999",
+        "packet/nvda-q3-fy2027-research-packet.html": "6c7cfbfe0c5f01f936fdd30d6210019b9731ed672322d8a926e5c2f6a8e21cbc",
+        "packet/packet_meta.json": "c2049c486a987cd1e571cb1af53bd52eea86e7e4ae7df84c38e9a368f53bf31b",
+        "packet/packet.json": "6427afe8cb0db6dea0bff246cc409f8bf4e2d6424214d4442928db663d157b65"
+      },
+      "primary_youtube_long": null,
+      "primary_youtube_short": null,
+      "youtube_studio": null,
+      "youtube_studio_short": null,
+      "what_changed": {
+        "summary": "NVIDIA platform economics, customer financing, commitments and cash-flow valuation.",
+        "items": [
+          {
+            "title": "Cash generation is real, but not costless.",
+            "detail": "Q3 FCF was $43.777bn before strategic equity purchases and acquisitions."
+          },
+          {
+            "title": "Commitment categories must stay distinct.",
+            "detail": "Supply, own-use infrastructure, conditional capacity and default guarantees have different economics."
+          },
+          {
+            "title": "The next-year ambition is substantial.",
+            "detail": "The base assumes $742bn of FY2028 sales, near management’s call outlook, then meaningful growth and margin fade."
+          },
+          {
+            "title": "Ownership and liquidity are dated estimates.",
+            "detail": "The diluted denominator and older detailed claims are disclosed proxies, not a fabricated current cap table."
+          },
+          {
+            "title": "The constructive stock call has a severe downside.",
+            "detail": "The earnings check is lower than the main model, and governance questions remain unresolved."
+          }
+        ]
+      },
+      "source_published": "November 17, 2026"
+    },
+    {
       "key": "DECK:Q2-FY2027",
       "year": 2027,
       "quarter": 2,
