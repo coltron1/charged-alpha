@@ -2661,6 +2661,61 @@
       "tables": 30
     },
     {
+      "key": "POWL:Q4-FY2026",
+      "year": 2026,
+      "quarter": 4,
+      "fiscal": true,
+      "slug": "powl-q4-fy2026",
+      "ticker": "POWL",
+      "company": "Powell Industries",
+      "period": "Q4 FY2026",
+      "canonical_url": "https://chargedalpha.com/research/powl-q4-fy2026",
+      "title": "Powell earnings: Record backlog, a demanding price",
+      "page_title": "POWL Q4 FY2026 Research Packet | Charged Alpha",
+      "description": "Powell orders, electrical equipment capacity, customer advances, cash conversion and valuation.",
+      "sha256": "f013b60aa701b23c522b0e50907899a0b812f2a3af7b6323a0bfed92f26c1bfa",
+      "html_file": "research_packets/powl-q4-fy2026.html",
+      "source_episode": "POWL-Q4-FY2026",
+      "source_staged_at": "2026-11-17T00:28:52.888328+00:00",
+      "source_sha256": {
+        "READY": "661efebaf6078e35219f979ee592b5e061b20601e38f2c80e8259e6b97d6965a",
+        "handoff.json": "8a5aebcb2054a409e1b701f3f0a82e1b7824dbdadcd971f26a44cd7dc2d3e665",
+        "packet/powl-q4-fy2026-research-packet.html": "f013b60aa701b23c522b0e50907899a0b812f2a3af7b6323a0bfed92f26c1bfa",
+        "packet/packet_meta.json": "a38645b86bb1bd969429362364ec36418c56df91560228d105ad13a7be52bf4e",
+        "packet/packet.json": "a6292b9711fc9fa1cab16af8e7314689f33ca2713281887923aeea0ddd965b89"
+      },
+      "primary_youtube_long": null,
+      "primary_youtube_short": null,
+      "youtube_studio": null,
+      "youtube_studio_short": null,
+      "what_changed": {
+        "summary": "Powell orders, electrical equipment capacity, customer advances, cash conversion and valuation.",
+        "items": [
+          {
+            "title": "The annual margin is the outlook anchor.",
+            "detail": "Management supports the FY2026 profile, not an indefinite repetition of the 34.9% fourth quarter."
+          },
+          {
+            "title": "Backlog must convert before it becomes owner cash.",
+            "detail": "Timing, cancellations and manufacturing capacity remain material."
+          },
+          {
+            "title": "Customer advances help fund the cash balance.",
+            "detail": "Working-capital normalization and operating liquidity are counted once in the model."
+          },
+          {
+            "title": "Growth requires physical investment.",
+            "detail": "Our base raises capital expenditure and retains economic compensation and rental costs."
+          },
+          {
+            "title": "The price already asks for a strong outcome.",
+            "detail": "The $152.50 quote is close to the conditional bull present value; base value is $95.71."
+          }
+        ]
+      },
+      "source_published": "November 16, 2026"
+    },
+    {
       "key": "RZLT:Q4-FY2026",
       "year": 2026,
       "quarter": 4,
