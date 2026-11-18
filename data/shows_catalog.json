@@ -19,7 +19,7 @@
       "published_at": "2026-11-18T03:10:58+00:00",
       "status": "youtube_podcast_complete",
       "youtube_url": "https://www.youtube.com/watch?v=Ce4wzWZm_nc",
-      "spotify_url": "",
+      "spotify_url": "https://open.spotify.com/episode/4h9rsgpZ7MJR4Fsj5iHhhi",
       "apple_url": "",
       "google_url": "",
       "iheart_url": "",
@@ -37,7 +37,7 @@
       "published_at": "2026-11-18T03:05:31+00:00",
       "status": "youtube_podcast_complete",
       "youtube_url": "https://www.youtube.com/watch?v=AJ7Tx-xaQ-w",
-      "spotify_url": "",
+      "spotify_url": "https://open.spotify.com/episode/1HueSYns6mApvKQ0eqURWo",
       "apple_url": "",
       "google_url": "",
       "iheart_url": "",
@@ -50335,7 +50335,7 @@
       ]
     }
   ],
-  "last_synced_at": "2026-11-17T21:15:24-06:00",
+  "last_synced_at": "2026-11-18T10:43:30-06:00",
   "stock_metadata": {
     "A": {
       "company": "Agilent Technologies, Inc.",
