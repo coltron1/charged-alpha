@@ -7918,6 +7918,61 @@
       "tables": 41
     },
     {
+      "key": "TME:Q3-2026",
+      "year": 2026,
+      "quarter": 3,
+      "fiscal": false,
+      "slug": "tme-q3-2026",
+      "ticker": "TME",
+      "company": "Tencent Music Entertainment Group",
+      "period": "Q3 2026",
+      "canonical_url": "https://chargedalpha.com/research/tme-q3-2026",
+      "title": "Tencent Music: Cash-rich, but what is it worth?",
+      "page_title": "TME Q3 2026 Research Packet | Charged Alpha",
+      "description": "Membership economics, Ximalaya integration, cash and ownership claims, and a valuation disagreement.",
+      "sha256": "7ac50ebd9ba635f76f57f141018b4056363b3306478e1251968caf753419ab4d",
+      "html_file": "research_packets/tme-q3-2026.html",
+      "source_episode": "TME-Q3-2026",
+      "source_staged_at": "2026-11-18T02:08:56.395159+00:00",
+      "source_sha256": {
+        "READY": "9048f8f67bc3725caaf8701e46f0386f9d764058c632ec308560c61e331c3c59",
+        "handoff.json": "52d4665a13509d6d6a8852101d90b87f2f017be4c8ba1e878520e8487babda6b",
+        "packet/tme-q3-2026-research-packet.html": "7ac50ebd9ba635f76f57f141018b4056363b3306478e1251968caf753419ab4d",
+        "packet/packet_meta.json": "421ae5095fbfe74ea125be2f25e2e3d0654ed7cbc01fb4b541123f39a9172cbf",
+        "packet/packet.json": "d7283d92eb285ed3fa17ed0a632fc6bfaa251ade22e86d84322e0d30e2b70b23"
+      },
+      "primary_youtube_long": null,
+      "primary_youtube_short": null,
+      "youtube_studio": null,
+      "youtube_studio_short": null,
+      "what_changed": {
+        "summary": "Membership economics, Ximalaya integration, cash and ownership claims, and a valuation disagreement.",
+        "items": [
+          {
+            "title": "Membership revenue growth is not proven organic growth.",
+            "detail": "Ximalaya closed in May and is consolidated for the full quarter."
+          },
+          {
+            "title": "More cash came with more debt.",
+            "detail": "September’s US$1bn notes issuance explains much of the liquidity increase."
+          },
+          {
+            "title": "Operating income needs normalization.",
+            "detail": "Interest and investment gains are separated from the business cash model."
+          },
+          {
+            "title": "One ADS represents two ordinary shares.",
+            "detail": "Dated awards and acquisition claims require a transparent ownership bridge."
+          },
+          {
+            "title": "The independent check disagrees.",
+            "detail": "Its $7.06–$10.99 range lowers conviction in the $13.74 main valuation."
+          }
+        ]
+      },
+      "source_published": "November 17, 2026"
+    },
+    {
       "key": "TMQ:Q3-FY2026",
       "year": 2026,
       "quarter": 3,
