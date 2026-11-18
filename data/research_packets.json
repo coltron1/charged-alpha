@@ -2252,6 +2252,61 @@
       }
     },
     {
+      "key": "DIS:Q4-FY2026",
+      "year": 2026,
+      "quarter": 4,
+      "fiscal": true,
+      "slug": "dis-q4-fy2026",
+      "ticker": "DIS",
+      "company": "The Walt Disney Company",
+      "period": "Q4 FY2026",
+      "canonical_url": "https://chargedalpha.com/research/dis-q4-fy2026",
+      "title": "Disney earnings: Better profits. Where does the cash go?",
+      "page_title": "DIS Q4 FY2026 Research Packet | Charged Alpha",
+      "description": "Disney segment economics, extra-week normalization, content spending and owner-cash valuation.",
+      "sha256": "c72a167330bf935fcfa48157423c7bca4422ae82b20c16b3a38568ec0ae828ac",
+      "html_file": "research_packets/dis-q4-fy2026.html",
+      "source_episode": "DIS-Q4-FY2026",
+      "source_staged_at": "2026-11-17T23:50:49.645975+00:00",
+      "source_sha256": {
+        "READY": "8093fa3d925e1875fcf60ab780116d0f2df57945e716535fa1565212c0db5773",
+        "handoff.json": "368a91df62e98c45bf5ba571a4ab4f4628ba00c9a6175482da91ec62e3951066",
+        "packet/dis-q4-fy2026-research-packet.html": "c72a167330bf935fcfa48157423c7bca4422ae82b20c16b3a38568ec0ae828ac",
+        "packet/packet_meta.json": "a74da1b043f86d41659632768708cee59200320f3045e3ce0f87ad535d02f9d1",
+        "packet/packet.json": "75f50c0939ef0a3c43a5564baace3452df5fc523df18d46276049120711841f1"
+      },
+      "primary_youtube_long": null,
+      "primary_youtube_short": null,
+      "youtube_studio": null,
+      "youtube_studio_short": null,
+      "what_changed": {
+        "summary": "Disney segment economics, extra-week normalization, content spending and owner-cash valuation.",
+        "items": [
+          {
+            "title": "Normalize the calendar first.",
+            "detail": "The extra week added an estimated $490m of segment profit and $0.17 of adjusted EPS."
+          },
+          {
+            "title": "The segment map has changed.",
+            "detail": "Licensing moves into Entertainment and equity income leaves the segment total; this does not create consolidated earnings."
+          },
+          {
+            "title": "Content is a cash investment.",
+            "detail": "The FY2027 $26bn spending plan is separate from $9bn of property capex and must earn a return."
+          },
+          {
+            "title": "Consolidation is not full ownership.",
+            "detail": "Minority, debt and employee claims reduce the value attributable to common shareholders."
+          },
+          {
+            "title": "A stronger business can still be a HOLD.",
+            "detail": "Base modeled return of 8.5% falls below the 10% purchase hurdle at the dated quote."
+          }
+        ]
+      },
+      "source_published": "November 17, 2026"
+    },
+    {
       "key": "FLWS:Q4-FY2026",
       "year": 2026,
       "quarter": 4,
