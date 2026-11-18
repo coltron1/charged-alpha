@@ -1,11 +1,21 @@
 {
   "schema": "charged-alpha-public-production/1",
-  "updated_at": "2026-11-18T11:35:00.849361-06:00",
+  "updated_at": "2026-11-18T11:56:14.877645-06:00",
   "calendar_updated_at": "2026-11-18T10:43:36.392097-06:00",
   "calendar_status": "fresh",
   "daily_target": 3,
   "active": [],
   "history": [
+    {
+      "ticker": "GLNG",
+      "company": "Golar LNG Limited",
+      "period": "Q3 2026",
+      "completed_at": "2026-11-18T11:56:12.763786-06:00",
+      "video_url": "https://youtu.be/vGY4aEOCxuY",
+      "short_url": null,
+      "packet_url": "https://chargedalpha.com/research/glng-q3-2026",
+      "stock_url": "/shows/glng"
+    },
     {
       "ticker": "GLBE",
       "company": "Global-E Online Ltd.",
@@ -1708,15 +1718,6 @@
     }
   ],
   "upcoming": [
-    {
-      "ticker": "GLNG",
-      "company": "Golar LNG Limited",
-      "report_date": "2026-11-18",
-      "report_time_label": "Time unconfirmed",
-      "date_status": "Calendar estimate",
-      "source_url": null,
-      "stock_url": "/shows/glng"
-    },
     {
       "ticker": "PANW",
       "company": "Palo Alto Networks, Inc.",
