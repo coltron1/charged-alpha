@@ -1,11 +1,31 @@
 {
   "schema": "charged-alpha-public-production/1",
-  "updated_at": "2026-11-17T19:10:40.938494-06:00",
-  "calendar_updated_at": "2026-11-17T19:05:07.862221-06:00",
+  "updated_at": "2026-11-17T21:16:08.288432-06:00",
+  "calendar_updated_at": "2026-11-17T21:16:07.836608-06:00",
   "calendar_status": "fresh",
   "daily_target": 3,
   "active": [],
   "history": [
+    {
+      "ticker": "ESLT",
+      "company": "Elbit Systems Ltd.",
+      "period": "Q3 2026",
+      "completed_at": "2026-11-17T21:15:53.547130-06:00",
+      "video_url": "https://youtu.be/Ce4wzWZm_nc",
+      "short_url": null,
+      "packet_url": "https://chargedalpha.com/research/eslt-q3-2026",
+      "stock_url": "/shows/eslt"
+    },
+    {
+      "ticker": "TME",
+      "company": "Tencent Music Entertainment Group",
+      "period": "Q3 2026",
+      "completed_at": "2026-11-17T21:13:45.319164-06:00",
+      "video_url": "https://youtu.be/AJ7Tx-xaQ-w",
+      "short_url": null,
+      "packet_url": "https://chargedalpha.com/research/tme-q3-2026",
+      "stock_url": "/shows/tme"
+    },
     {
       "ticker": "DIS",
       "company": "Walt Disney Co.",
@@ -1679,15 +1699,6 @@
   ],
   "upcoming": [
     {
-      "ticker": "TME",
-      "company": "Tencent Music Entertainment Group",
-      "report_date": "2026-11-17",
-      "report_time_label": "Time unconfirmed",
-      "date_status": "Calendar estimate",
-      "source_url": null,
-      "stock_url": "/shows/tme"
-    },
-    {
       "ticker": "SQM",
       "company": "Sociedad Química y Minera de Chile S.A.",
       "report_date": "2026-11-17",
@@ -1740,15 +1751,6 @@
       "date_status": "Calendar estimate",
       "source_url": null,
       "stock_url": "/shows/opra"
-    },
-    {
-      "ticker": "ESLT",
-      "company": "Elbit Systems Ltd.",
-      "report_date": "2026-11-17",
-      "report_time_label": "Time unconfirmed",
-      "date_status": "Calendar estimate",
-      "source_url": null,
-      "stock_url": "/shows/eslt"
     },
     {
       "ticker": "IIIV",

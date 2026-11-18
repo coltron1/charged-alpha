@@ -10,6 +10,42 @@
   },
   "episodes": [
     {
+      "ticker": "ESLT",
+      "company": "Elbit Systems Ltd.",
+      "sector": "Industrials",
+      "quarter": "Q3 2026",
+      "episode_number": "",
+      "title": "Elbit Systems (ESLT): $33B Backlog. What Does the Price Demand? | Q3 2026",
+      "published_at": "2026-11-18T03:10:58+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=Ce4wzWZm_nc",
+      "spotify_url": "",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/elbit-systems-eslt-33b-backlog-what-does-the-price-demand-q3-2026/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "TME",
+      "company": "Tencent Music Entertainment Group",
+      "sector": "Communication Services",
+      "quarter": "Q3 2026",
+      "episode_number": "",
+      "title": "Tencent Music (TME): Cash-Rich, but What Is It Worth? | Q3 2026",
+      "published_at": "2026-11-18T03:05:31+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=AJ7Tx-xaQ-w",
+      "spotify_url": "",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/tencent-music-tme-cash-rich-but-what-is-it-worth-q3-2026/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
       "ticker": "DIS",
       "company": "Walt Disney Co.",
       "sector": "Communication Services",
@@ -50299,7 +50335,7 @@
       ]
     }
   ],
-  "last_synced_at": "2026-11-17T19:05:14-06:00",
+  "last_synced_at": "2026-11-17T21:15:24-06:00",
   "stock_metadata": {
     "A": {
       "company": "Agilent Technologies, Inc.",
