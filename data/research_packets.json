@@ -4740,6 +4740,61 @@
       "tables": 28
     },
     {
+      "key": "ESLT:Q3-2026",
+      "year": 2026,
+      "quarter": 3,
+      "fiscal": false,
+      "slug": "eslt-q3-2026",
+      "ticker": "ESLT",
+      "company": "Elbit Systems",
+      "period": "Q3 2026",
+      "canonical_url": "https://chargedalpha.com/research/eslt-q3-2026",
+      "title": "Elbit Systems: What does the price demand?",
+      "page_title": "ESLT Q3 2026 Research Packet | Charged Alpha",
+      "description": "Backlog conversion, capacity, customer funding and the cash expectations embedded in Elbit’s share price.",
+      "sha256": "7b7ae30aadd57fba61d9c22767d5d3c2c43557cf4b17c60b925423eacdee2ff2",
+      "html_file": "research_packets/eslt-q3-2026.html",
+      "source_episode": "ESLT-Q3-2026",
+      "source_staged_at": "2026-11-18T02:15:39.034975+00:00",
+      "source_sha256": {
+        "READY": "815eaae103787e753b1bce387dbcda0ce7b30c42e5b2fb3f6a04e8eed430224a",
+        "handoff.json": "cafce56b24b55ebc29a60b8c3d9441ca34646f16b88ad4dae71170889338e873",
+        "packet/eslt-q3-2026-research-packet.html": "7b7ae30aadd57fba61d9c22767d5d3c2c43557cf4b17c60b925423eacdee2ff2",
+        "packet/packet_meta.json": "7e917df80fd0e59a39832ae415ea9ac303450a20ed1d98bd596958ed8e05b58b",
+        "packet/packet.json": "18a243fe5cc1763d8f7d8e132324f8870347cb5ad3dbbb8fd89fe0485a6fe196"
+      },
+      "primary_youtube_long": null,
+      "primary_youtube_short": null,
+      "youtube_studio": null,
+      "youtube_studio_short": null,
+      "what_changed": {
+        "summary": "Backlog conversion, capacity, customer funding and the cash expectations embedded in Elbit’s share price.",
+        "items": [
+          {
+            "title": "Backlog is a delivery obligation.",
+            "detail": "The $33bn total still requires capacity, costs and customer acceptance."
+          },
+          {
+            "title": "The quarter contains helpful one-offs.",
+            "detail": "The model removes the research incentive and subsidiary-sale gain from recurring earnings."
+          },
+          {
+            "title": "Customer funding changes cash timing.",
+            "detail": "Advances support operations but are not surplus profit."
+          },
+          {
+            "title": "Legacy claims and options remain dated proxies.",
+            "detail": "The bridge identifies their limits and tests sensitivity."
+          },
+          {
+            "title": "Price requires exceptional execution.",
+            "detail": "The reverse margin test is much stronger than the base operating case."
+          }
+        ]
+      },
+      "source_published": "November 17, 2026"
+    },
+    {
       "key": "ETN:Q3-2026",
       "year": 2026,
       "quarter": 3,
