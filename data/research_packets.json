@@ -5256,6 +5256,61 @@
       "tables": 30
     },
     {
+      "key": "GLNG:Q3-2026",
+      "year": 2026,
+      "quarter": 3,
+      "fiscal": false,
+      "slug": "glng-q3-2026",
+      "ticker": "GLNG",
+      "company": "Golar LNG",
+      "period": "Q3 2026",
+      "canonical_url": "https://chargedalpha.com/research/glng-q3-2026",
+      "title": "Golar LNG: $17B backlog. What reaches shareholders?",
+      "page_title": "GLNG Q3 2026 Research Packet | Charged Alpha",
+      "description": "Finite FLNG contracts, construction cash, financing and common-shareholder returns.",
+      "sha256": "524b450f294a0098b3993093f73ff82bbd297ffba85d2a0fffdbd64ca00ce6db",
+      "html_file": "research_packets/glng-q3-2026.html",
+      "source_episode": "GLNG-Q3-2026",
+      "source_staged_at": "2026-11-18T17:25:04.351649+00:00",
+      "source_sha256": {
+        "READY": "e74ceb4709703fcf36f7fe4dcc8bcfb12cec57d431571310b6743876e2d0d0e5",
+        "handoff.json": "1f517c171cbaeb7c06d262657d6c4ddc51dd04c206a2ecf6061c34ccdb2b11cd",
+        "packet/glng-q3-2026-research-packet.html": "524b450f294a0098b3993093f73ff82bbd297ffba85d2a0fffdbd64ca00ce6db",
+        "packet/packet_meta.json": "251b8fe764fdb15ea28a274388045bbdc27b114a18061b2b60d5a42ba1f58b68",
+        "packet/packet.json": "db1446f21e64b3c42efa0bf2c6777e9aa8d65899ea97aac9628f41a001caf979"
+      },
+      "primary_youtube_long": null,
+      "primary_youtube_short": null,
+      "youtube_studio": null,
+      "youtube_studio_short": null,
+      "what_changed": {
+        "summary": "Finite FLNG contracts, construction cash, financing and common-shareholder returns.",
+        "items": [
+          {
+            "title": "Backlog is not equity value.",
+            "detail": "Decades of adjusted EBITDA still face construction, taxes, maintenance and financing claims."
+          },
+          {
+            "title": "The fourth vessel is not yet contracted.",
+            "detail": "Its earnings illustration requires a successful charter."
+          },
+          {
+            "title": "Liquidity includes borrowing capacity.",
+            "detail": "Undrawn and expected facilities are distinct from cash already received."
+          },
+          {
+            "title": "The debt bridge must match ownership.",
+            "detail": "Gimi is 70% owned, while lessor-VIE accounting differs from contractual obligations."
+          },
+          {
+            "title": "The base return falls short.",
+            "detail": "An 8.7% modeled owner return does not meet the 12% hurdle at the dated quote."
+          }
+        ]
+      },
+      "source_published": "November 18, 2026"
+    },
+    {
       "key": "GLW:Q3-2026",
       "year": 2026,
       "quarter": 3,

@@ -10,6 +10,24 @@
   },
   "episodes": [
     {
+      "ticker": "GLBE",
+      "company": "Global-E Online Ltd.",
+      "sector": "Consumer Cyclical",
+      "quarter": "Q3 2026",
+      "episode_number": "",
+      "title": "Global-e (GLBE): Growth Surges. Where Is the Cushion? | Q3 2026",
+      "published_at": "2026-11-18T17:22:23+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=c_nzF35DxDM",
+      "spotify_url": "",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/global-e-glbe-growth-surges-where-is-the-cushion-q3-2026/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
       "ticker": "ESLT",
       "company": "Elbit Systems Ltd.",
       "sector": "Industrials",
@@ -50335,7 +50353,7 @@
       ]
     }
   ],
-  "last_synced_at": "2026-11-18T10:43:30-06:00",
+  "last_synced_at": "2026-11-18T11:28:32-06:00",
   "stock_metadata": {
     "A": {
       "company": "Agilent Technologies, Inc.",
