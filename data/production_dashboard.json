@@ -1,11 +1,31 @@
 {
   "schema": "charged-alpha-public-production/1",
-  "updated_at": "2026-11-17T17:02:05.746486-06:00",
+  "updated_at": "2026-11-17T18:12:16.707342-06:00",
   "calendar_updated_at": "2026-11-17T17:00:16.422987-06:00",
   "calendar_status": "fresh",
   "daily_target": 3,
   "active": [],
   "history": [
+    {
+      "ticker": "DIS",
+      "company": "Walt Disney Co.",
+      "period": "Q4 FY2026",
+      "completed_at": "2026-11-17T18:11:38.446475-06:00",
+      "video_url": "https://youtu.be/3tFVo8ijIgA",
+      "short_url": null,
+      "packet_url": "https://chargedalpha.com/research/dis-q4-fy2026",
+      "stock_url": "/shows/dis"
+    },
+    {
+      "ticker": "NVDA",
+      "company": "NVIDIA Corp.",
+      "period": "Q3 FY2027",
+      "completed_at": "2026-11-17T18:01:32.946543-06:00",
+      "video_url": "https://youtu.be/LU3ENMQ8WTs",
+      "short_url": null,
+      "packet_url": "https://chargedalpha.com/research/nvda-q3-fy2027",
+      "stock_url": "/shows/nvda"
+    },
     {
       "ticker": "INFQ",
       "company": "Infleqtion, Inc.",
@@ -1659,15 +1679,6 @@
   ],
   "upcoming": [
     {
-      "ticker": "NVDA",
-      "company": "NVIDIA Corporation",
-      "report_date": "2026-11-17",
-      "report_time_label": "Time unconfirmed",
-      "date_status": "Calendar estimate",
-      "source_url": null,
-      "stock_url": "/shows/nvda"
-    },
-    {
       "ticker": "TME",
       "company": "Tencent Music Entertainment Group",
       "report_date": "2026-11-17",
@@ -1702,15 +1713,6 @@
       "date_status": "Calendar estimate",
       "source_url": null,
       "stock_url": "/shows/impp"
-    },
-    {
-      "ticker": "DIS",
-      "company": "The Walt Disney Company",
-      "report_date": "2026-11-17",
-      "report_time_label": "Time unconfirmed",
-      "date_status": "Calendar estimate",
-      "source_url": null,
-      "stock_url": "/shows/dis"
     },
     {
       "ticker": "VREX",

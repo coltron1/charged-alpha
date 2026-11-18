@@ -10,6 +10,42 @@
   },
   "episodes": [
     {
+      "ticker": "DIS",
+      "company": "Walt Disney Co.",
+      "sector": "Communication Services",
+      "quarter": "Q4 FY2026",
+      "episode_number": "",
+      "title": "Disney (DIS): Better Profits. Where Does the Cash Go? | Q4 FY2026",
+      "published_at": "2026-11-18T00:09:13+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=3tFVo8ijIgA",
+      "spotify_url": "",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/disney-dis-better-profits-where-does-the-cash-go-q4-fy2026/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
+      "ticker": "NVDA",
+      "company": "NVIDIA Corp.",
+      "sector": "Technology",
+      "quarter": "Q3 FY2027",
+      "episode_number": "",
+      "title": "NVIDIA (NVDA): Revenue Doubled. Who Carries the Risk? | Q3 FY2027",
+      "published_at": "2026-11-17T23:57:23+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=LU3ENMQ8WTs",
+      "spotify_url": "",
+      "apple_url": "",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/nvidia-nvda-revenue-doubled-who-carries-the-risk-q3-fy2027/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
       "ticker": "INFQ",
       "company": "Infleqtion, Inc.",
       "sector": "Technology",
@@ -50263,7 +50299,7 @@
       ]
     }
   ],
-  "last_synced_at": "2026-11-17T17:00:51-06:00",
+  "last_synced_at": "2026-11-17T18:12:45-06:00",
   "stock_metadata": {
     "A": {
       "company": "Agilent Technologies, Inc.",
