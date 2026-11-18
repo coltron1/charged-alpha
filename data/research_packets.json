@@ -5143,6 +5143,61 @@
       "tables": 34
     },
     {
+      "key": "GLBE:Q3-2026",
+      "year": 2026,
+      "quarter": 3,
+      "fiscal": false,
+      "slug": "glbe-q3-2026",
+      "ticker": "GLBE",
+      "company": "Global-e Online",
+      "period": "Q3 2026",
+      "canonical_url": "https://chargedalpha.com/research/glbe-q3-2026",
+      "title": "Global-e: Growth surges. Where is the cushion?",
+      "page_title": "GLBE Q3 2026 Research Packet | Charged Alpha",
+      "description": "Merchant economics, Passport integration, cash quality and value per ordinary share.",
+      "sha256": "0b202a48028077895d3bfdfe91ff2642258f8db978cd38aa49c0e324c820eaf4",
+      "html_file": "research_packets/glbe-q3-2026.html",
+      "source_episode": "GLBE-Q3-2026",
+      "source_staged_at": "2026-11-18T17:02:52.568438+00:00",
+      "source_sha256": {
+        "READY": "ca042f21fa22f3c28ad6a3e0ea77c2b9ed6324d5cf6eea72cf0724e4c511e73d",
+        "handoff.json": "ede01c1c4bcb29ece68089a191500a333b404d148bf6430330547130f03ccabc",
+        "packet/glbe-q3-2026-research-packet.html": "0b202a48028077895d3bfdfe91ff2642258f8db978cd38aa49c0e324c820eaf4",
+        "packet/packet_meta.json": "fdd7ea07a00854bae279d329608922676e6462a50d67ef778643cd22ac21b715",
+        "packet/packet.json": "2e25c4d7e78c62f96a8e00c79b603589ad739da8039059ff9fd2234aae6a05d8"
+      },
+      "primary_youtube_long": null,
+      "primary_youtube_short": null,
+      "youtube_studio": null,
+      "youtube_studio_short": null,
+      "what_changed": {
+        "summary": "Merchant economics, Passport integration, cash quality and value per ordinary share.",
+        "items": [
+          {
+            "title": "Revenue growth is not pure organic growth.",
+            "detail": "Passport contributes a different mix of services and logistics."
+          },
+          {
+            "title": "Reported profit includes a large noncash tax effect.",
+            "detail": "The $49.027m valuation-allowance release is not recurring customer cash."
+          },
+          {
+            "title": "Merchant money is not spare shareholder cash.",
+            "detail": "Matched merchant balances are excluded from the excess-cash bridge."
+          },
+          {
+            "title": "Acquisition and employee claims need separate treatment.",
+            "detail": "Dated options and uncertain earnout accrual overlap are sensitivity-tested."
+          },
+          {
+            "title": "The price already asks for healthy growth.",
+            "detail": "The base return only narrowly clears the hurdle despite an encouraging outside comparison."
+          }
+        ]
+      },
+      "source_published": "November 18, 2026"
+    },
+    {
       "key": "GLDG:Q3-FY2026",
       "year": 2026,
       "quarter": 3,
