@@ -1,7 +1,7 @@
 {
   "schema": "charged-alpha-public-production/1",
-  "updated_at": "2026-11-18T11:56:14.877645-06:00",
-  "calendar_updated_at": "2026-11-18T10:43:36.392097-06:00",
+  "updated_at": "2026-11-18T14:42:50.974676-06:00",
+  "calendar_updated_at": "2026-11-18T14:42:50.544515-06:00",
   "calendar_status": "fresh",
   "daily_target": 3,
   "active": [],
@@ -2007,15 +2007,6 @@
       "stock_url": "/shows/intu"
     },
     {
-      "ticker": "CPRT",
-      "company": "Copart, Inc.",
-      "report_date": "2026-11-19",
-      "report_time_label": "Time unconfirmed",
-      "date_status": "Calendar estimate",
-      "source_url": null,
-      "stock_url": "/shows/cprt"
-    },
-    {
       "ticker": "TEN",
       "company": "Tsakos Energy Navigation Limited",
       "report_date": "2026-11-19",
@@ -2189,15 +2180,6 @@
     {
       "ticker": "NGVC",
       "company": "Natural Grocers by Vitamin Cottage, Inc.",
-      "report_date": "2026-11-19",
-      "report_time_label": "Time unconfirmed",
-      "date_status": "Calendar estimate",
-      "source_url": null,
-      "stock_url": null
-    },
-    {
-      "ticker": "OMSE",
-      "company": "OMS Energy Technologies Inc.",
       "report_date": "2026-11-19",
       "report_time_label": "Time unconfirmed",
       "date_status": "Calendar estimate",
@@ -2527,15 +2509,6 @@
       "date_status": "Calendar estimate",
       "source_url": null,
       "stock_url": "/shows/hpq"
-    },
-    {
-      "ticker": "WOOF",
-      "company": "Petco Health and Wellness Company, Inc.",
-      "report_date": "2026-11-24",
-      "report_time_label": "Time unconfirmed",
-      "date_status": "Calendar estimate",
-      "source_url": null,
-      "stock_url": "/shows/woof"
     },
     {
       "ticker": "DKS",
