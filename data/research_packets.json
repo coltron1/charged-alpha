@@ -2481,6 +2481,61 @@
       "tables": 29
     },
     {
+      "key": "IESC:Q4-FY2026",
+      "year": 2026,
+      "quarter": 4,
+      "fiscal": true,
+      "slug": "iesc-q4-fy2026",
+      "ticker": "IESC",
+      "company": "IES Holdings",
+      "period": "Q4 FY2026",
+      "canonical_url": "https://chargedalpha.com/research/iesc-q4-fy2026",
+      "title": "IES Holdings: Profits double. Is the selloff an opportunity?",
+      "page_title": "IESC Q4 FY2026 Research Packet | Charged Alpha",
+      "description": "Backlog conversion, normalized project margins, DBM financing and owner returns.",
+      "sha256": "69c75efa6c3987612416cff29bbe08976db85e8494acff91191beb44e46610be",
+      "html_file": "research_packets/iesc-q4-fy2026.html",
+      "source_episode": "IESC-Q4-FY2026",
+      "source_staged_at": "2026-11-21T03:21:32.230507+00:00",
+      "source_sha256": {
+        "READY": "e23ef586499a957bfc958dbd4a87b4e77c636846fc3ea325135a88fb36744eb1",
+        "handoff.json": "5942f7552d2ed8bc6de52ce2d7f2b632ed8f91aa19953b4e510981ea6888c652",
+        "packet/iesc-q4-fy2026-research-packet.html": "69c75efa6c3987612416cff29bbe08976db85e8494acff91191beb44e46610be",
+        "packet/packet_meta.json": "52f7abd6f77b3fbf4111b23fd6e2dfc520accd94e1db26f03ac8d50b6534dba7",
+        "packet/packet.json": "59b7e943acfa0dac451bc2f204bf847d70a42605497bde38d113859921f12c98"
+      },
+      "primary_youtube_long": null,
+      "primary_youtube_short": null,
+      "youtube_studio": null,
+      "youtube_studio_short": null,
+      "what_changed": {
+        "summary": "Backlog conversion, normalized project margins, DBM financing and owner returns.",
+        "items": [
+          {
+            "title": "Operating growth is substantial.",
+            "detail": "Quarterly profit doubled, but exceptional C&I margins are normalized."
+          },
+          {
+            "title": "Backlog is not cash.",
+            "detail": "$1.475bn of September backlog was not yet enforceable."
+          },
+          {
+            "title": "The debt-free snapshot is stale.",
+            "detail": "DBM added operations, shares and borrowing after year end."
+          },
+          {
+            "title": "The independent check is lower.",
+            "detail": "$147.01–$188.66 requires growth to justify the higher main value."
+          },
+          {
+            "title": "The call remains conditional.",
+            "detail": "Project conversion, collections and the acquisition balance sheet determine whether the return cushion survives."
+          }
+        ]
+      },
+      "source_published": "November 20, 2026"
+    },
+    {
       "key": "JBL:Q4-FY2026",
       "year": 2026,
       "quarter": 4,
