@@ -1,11 +1,21 @@
 {
   "schema": "charged-alpha-public-production/1",
-  "updated_at": "2026-11-20T21:13:09.986285-06:00",
-  "calendar_updated_at": "2026-11-20T21:13:00.921290-06:00",
+  "updated_at": "2026-11-21T07:52:44.072911-06:00",
+  "calendar_updated_at": "2026-11-21T07:52:43.620943-06:00",
   "calendar_status": "fresh",
   "daily_target": 3,
   "active": [],
   "history": [
+    {
+      "ticker": "IESC",
+      "company": "IES Holdings, Inc.",
+      "period": "Q4 FY2026",
+      "completed_at": "2026-11-21T01:59:58.510414-06:00",
+      "video_url": "https://youtu.be/Bl7F6hrlrBE",
+      "short_url": null,
+      "packet_url": "https://chargedalpha.com/research/iesc-q4-fy2026",
+      "stock_url": "/shows/iesc"
+    },
     {
       "ticker": "GLNG",
       "company": "Golar LNG Limited",
@@ -1719,51 +1729,6 @@
   ],
   "upcoming": [
     {
-      "ticker": "IESC",
-      "company": "IES Holdings, Inc.",
-      "report_date": "2026-11-20",
-      "report_time_label": "Time unconfirmed",
-      "date_status": "Calendar estimate",
-      "source_url": null,
-      "stock_url": "/shows/iesc"
-    },
-    {
-      "ticker": "WRD",
-      "company": "WeRide Inc.",
-      "report_date": "2026-11-20",
-      "report_time_label": "Time unconfirmed",
-      "date_status": "Calendar estimate",
-      "source_url": null,
-      "stock_url": "/shows/wrd"
-    },
-    {
-      "ticker": "RLX",
-      "company": "RLX Technology Inc.",
-      "report_date": "2026-11-20",
-      "report_time_label": "Time unconfirmed",
-      "date_status": "Calendar estimate",
-      "source_url": null,
-      "stock_url": null
-    },
-    {
-      "ticker": "GDRX",
-      "company": "GoodRx Holdings, Inc.",
-      "report_date": "2026-11-20",
-      "report_time_label": "Time unconfirmed",
-      "date_status": "Calendar estimate",
-      "source_url": null,
-      "stock_url": null
-    },
-    {
-      "ticker": "DRVN",
-      "company": "Driven Brands Holdings Inc.",
-      "report_date": "2026-11-20",
-      "report_time_label": "Time unconfirmed",
-      "date_status": "Calendar estimate",
-      "source_url": null,
-      "stock_url": "/shows/drvn"
-    },
-    {
       "ticker": "AMTM",
       "company": "Amentum Holdings, Inc.",
       "report_date": "2026-11-23",
@@ -1890,13 +1855,22 @@
       "stock_url": null
     },
     {
-      "ticker": "RGCO",
-      "company": "RGC Resources, Inc.",
+      "ticker": "GDRX",
+      "company": "GoodRx Holdings, Inc.",
       "report_date": "2026-11-23",
       "report_time_label": "Time unconfirmed",
       "date_status": "Calendar estimate",
       "source_url": null,
       "stock_url": null
+    },
+    {
+      "ticker": "DRVN",
+      "company": "Driven Brands Holdings Inc.",
+      "report_date": "2026-11-23",
+      "report_time_label": "Time unconfirmed",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": "/shows/drvn"
     },
     {
       "ticker": "AMBA",
@@ -2124,13 +2098,31 @@
       "stock_url": null
     },
     {
-      "ticker": "REX",
-      "company": "REX American Resources Corporation",
-      "report_date": "2026-11-26",
+      "ticker": "RGCO",
+      "company": "RGC Resources, Inc.",
+      "report_date": "2026-11-25",
       "report_time_label": "Time unconfirmed",
       "date_status": "Calendar estimate",
       "source_url": null,
-      "stock_url": "/shows/rex"
+      "stock_url": null
+    },
+    {
+      "ticker": "CURR",
+      "company": "Currenc Group, Inc.",
+      "report_date": "2026-11-27",
+      "report_time_label": "Time unconfirmed",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": null
+    },
+    {
+      "ticker": "TRX",
+      "company": "TRX Gold Corporation",
+      "report_date": "2026-11-27",
+      "report_time_label": "Time unconfirmed",
+      "date_status": "Calendar estimate",
+      "source_url": null,
+      "stock_url": null
     }
   ]
 }

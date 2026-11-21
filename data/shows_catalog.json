@@ -10,6 +10,24 @@
   },
   "episodes": [
     {
+      "ticker": "IESC",
+      "company": "IES Holdings, Inc.",
+      "sector": "Industrials",
+      "quarter": "Q4 FY2026",
+      "episode_number": "",
+      "title": "IES Holdings (IESC): Profits Double. Is the Selloff an Opportunity? | Q4 FY2026",
+      "published_at": "2026-11-21T03:49:44+00:00",
+      "status": "youtube_podcast_complete",
+      "youtube_url": "https://www.youtube.com/watch?v=Bl7F6hrlrBE",
+      "spotify_url": "https://open.spotify.com/episode/11nrLm297pGiVqDrcfAfqp",
+      "apple_url": "https://podcasts.apple.com/us/podcast/ies-holdings-iesc-profits-double-is-the-selloff/id1891551459?i=1000803237322&uo=4",
+      "google_url": "",
+      "iheart_url": "",
+      "podbean_url": "https://chargedalpha.podbean.com/e/ies-holdings-iesc-profits-double-is-the-selloff-an-opportunity-q4-fy2026/",
+      "has_episode": true,
+      "amazon_url": ""
+    },
+    {
       "ticker": "GLNG",
       "company": "Golar LNG Limited",
       "sector": "Energy",
@@ -50371,7 +50389,7 @@
       ]
     }
   ],
-  "last_synced_at": "2026-11-20T22:04:43-05:00",
+  "last_synced_at": "2026-11-21T08:52:34-05:00",
   "stock_metadata": {
     "A": {
       "company": "Agilent Technologies, Inc.",
